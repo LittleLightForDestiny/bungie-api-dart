@@ -1,4 +1,5 @@
 node_modules/
+generator/node_modules/
 ts-api/
-build/
+generator/build/
 lib/package-lock.json
