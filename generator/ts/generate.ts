@@ -1,6 +1,6 @@
 /**
- * This is a custom, hand-rolled generator for TS typings for the Bungie.net API. It's meant for use
- * in DIM, but is free for anyone to use.
+ * This is a custom, hand-rolled generator for Dart typings for the Bungie.net API based on DIM's bungie-api-ts. 
+ * It's meant for use in DIM, but is free for anyone to use.
  */
 
 import * as fs from 'fs';
@@ -10,7 +10,6 @@ import { DefInfo } from './util';
 import { generateServiceDefinition } from './generate-api';
 import { generateInterfaceDefinitions } from './generate-interfaces';
 import { computeTypeMaps } from './type-index';
-import { generateIndex, generateSuperIndex } from './generate-index';
 
 const doc = JSON.parse(fs.readFileSync('../api-src/openapi.json').toString()) as OpenAPIObject;
 
@@ -31,11 +30,3 @@ _.each(componentsByFile, (components: DefInfo[], file: string) => {
 _.each(pathPairsByTag, (paths, tag) => {
   generateServiceDefinition(tag, paths, doc, componentByDef);
 });
-
-// _.each(pathPairsByTag, (paths, tag) => {
-//   generateIndex(tag, doc);
-// });
-
-// generateSuperIndex(Object.keys(pathPairsByTag), doc);
-
-// some way to mark "preview" stuff

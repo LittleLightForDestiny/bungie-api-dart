@@ -1,31 +1,30 @@
 {
-  "name": "bungie-api-ts",
+  "name": "bungie-api-dart",
   "version": "1.13.0",
-  "description": "TypeScript mappings for the Bungie.net API",
+  "description": "Dart mappings for the Bungie.net API",
   "main": "./dist/index.ts",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "start": "./build.sh",
     "submodule": "git submodule init && git submodule update",
     "lint": "tslint --fix -p tsconfig.json"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DestinyItemManager/bungie-api-ts.git"
+    "url": "https://github.com/marquesinijatinha/bungie-api-dart.git"
   },
-  "author": "Ben Hollis",
+  "author": "Ben Hollis, João Paulo Marquesini",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DestinyItemManager/bungie-api-ts/issues"
+    "url": "https://github.com/marquesinijatinha/bungie-api-dart/issues"
   },
   "keywords": [
     "Destiny",
     "Bungie",
     "Bungie.net",
-    "TypeScript"
+    "Dart"
   ],
-  "homepage": "https://github.com/DestinyItemManager/bungie-api-ts",
+  "homepage": "https://github.com/marquesinijatinha/bungie-api-dart",
   "devDependencies": {
     "@types/node": "^10.9.3",
     "@types/underscore": "^1.8.9",
