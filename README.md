@@ -21,21 +21,17 @@ In addition to the types, there are also simple helper functions for each API en
 ```dart
 import 'dart:async';
 import 'package:http/http.dart' as http;
-import 'package:bungie_api_dart/http.dart' as httpInterface;
-import 'package:bungie_api_dart/destiny2/api.dart' as destiny2;
-import 'package:bungie_api_dart/common.dart';
-import 'package:bungie_api_dart/destiny2/interfaces.dart';
+import 'package:bungie_api_dart/destiny2.dart';
 
 class BungieApiService{
   Future<ServerResponse<DestinyManifest>> getManifest(){
-    return destiny2.getDestinyManifest(new HttpClient());
+    return getDestinyManifest(new Client());
   }
 }
-
-class HttpClient implements httpInterface.HttpClient{
+class Client implements HttpClient{
   static const API_KEY = "your_key";
   @override
-    Future<Object> request(httpInterface.HttpClientConfig config) {
+    Future<Object> request(HttpClientConfig config) {
       if(config.method == 'GET'){
         return http.get(config.url, headers: {'X-API-Key': API_KEY});
       }
