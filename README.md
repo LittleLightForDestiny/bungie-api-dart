@@ -1,6 +1,6 @@
 # Bungie API Dart support
 
-This project implements Dart definitions and API helpers for the [Bungie.net API](https://github.com/Bungie-net/api). It's based on [bungie-api-ts](https://github.com/DestinyItemManager/bungie-api-ts) that is meant for use in [Destiny Item Manager] (http://destinyitemmanager.com), but should be general enough to use in any project. The code is completely generated from Bungie's documentation - I considered using something like Swagger Codegen, but instead opted for a custom generator so we could make the result as nice as possible.
+This project implements Dart definitions and API helpers for the [Bungie.net API](https://github.com/Bungie-net/api). It's based on [bungie-api-ts](https://github.com/DestinyItemManager/bungie-api-ts) that is meant for use in [Destiny Item Manager](http://destinyitemmanager.com), but should be general enough to use in any project. The code is completely generated from Bungie's documentation - I considered using something like Swagger Codegen, but instead opted for a custom generator so we could make the result as nice as possible.
 
 # Install
 add this to your dependencies block in pubspec.yaml
