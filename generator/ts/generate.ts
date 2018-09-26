@@ -10,6 +10,7 @@ import { DefInfo } from './util';
 import { generateServiceDefinition } from './generate-api';
 import { generateInterfaceDefinitions } from './generate-interfaces';
 import { computeTypeMaps } from './type-index';
+import { generateIndex } from './generate-index';
 
 const doc = JSON.parse(fs.readFileSync('../api-src/openapi.json').toString()) as OpenAPIObject;
 
@@ -29,4 +30,8 @@ _.each(componentsByFile, (components: DefInfo[], file: string) => {
 
 _.each(pathPairsByTag, (paths, tag) => {
   generateServiceDefinition(tag, paths, doc, componentByDef);
+});
+
+_.each(pathPairsByTag, (paths, tag) => {
+  generateIndex(tag, doc);
 });
