@@ -5,12 +5,10 @@
 
 import * as fs from 'fs';
 import * as _ from 'underscore';
-import { OpenAPIObject, PathItemObject } from 'openapi3-ts';
-import { DefInfo } from './util';
-import { generateServiceDefinition } from './generate-api';
-import { generateInterfaceDefinitions } from './generate-interfaces';
+import { OpenAPIObject, PathItemObject, SchemaObject } from 'openapi3-ts';
 import { computeTypeMaps } from './type-index';
-import { generateIndex } from './generate-index';
+import { generateEnumClasses } from './generate-enum-classes';
+import { generateModelClasses } from './generate-model-classes';
 
 const doc = JSON.parse(fs.readFileSync('../api-src/openapi.json').toString()) as OpenAPIObject;
 
@@ -22,16 +20,31 @@ const pathPairsByTag = _.groupBy(pathPairs, ([path, desc]) => {
 
 delete pathPairsByTag[''];
 
-const { componentsByFile, componentByDef } = computeTypeMaps(pathPairsByTag, doc);
+const typeMaps = computeTypeMaps(pathPairsByTag, doc);
 
-_.each(componentsByFile, (components: DefInfo[], file: string) => {
-  generateInterfaceDefinitions(file, components, doc, componentByDef);
+// const enumSchemas = _.filter((doc.components!).schemas!, (schema:SchemaObject)=>{return !!schema.enum});
+const enumSchemas:{[id:string]:SchemaObject} = {};
+const modelSchemas:{[id:string]:SchemaObject} = {};
+_.each((doc.components!).schemas!, (schema, schemaName)=>{
+  if(!!schema.enum){
+    enumSchemas[schemaName] = schema;
+  }else{
+    modelSchemas[schemaName] = schema;
+  }
 });
+generateEnumClasses(enumSchemas, doc);
+// generateModelClasses(doc, typeMaps);
 
-_.each(pathPairsByTag, (paths, tag) => {
-  generateServiceDefinition(tag, paths, doc, componentByDef);
-});
 
-_.each(pathPairsByTag, (paths, tag) => {
-  generateIndex(tag, doc);
-});
+
+// _.each(componentsByFile, (components: DefInfo[], file: string) => {
+//   generateInterfaceDefinitions(file, components, doc, componentByDef);
+// });
+
+// _.each(pathPairsByTag, (paths, tag) => {
+//   generateServiceDefinition(tag, paths, doc, componentByDef);
+// });
+
+// _.each(pathPairsByTag, (paths, tag) => {
+//   generateIndex(tag, doc);
+// });

@@ -2,7 +2,12 @@ import * as _ from 'underscore';
 import { OpenAPIObject, PathItemObject, ParameterObject, SchemaObject, ReferenceObject } from 'openapi3-ts';
 import { getRef, lastPart, getReferencedTypes, DefInfo, interfaceName, isRequestBodyObject } from './util';
 
-export function computeTypeMaps(pathPairsByTag: { [tag: string]: [string, PathItemObject][] }, doc: OpenAPIObject) {
+export interface TypeMaps{
+  byFile:{[id:string]:DefInfo[]};
+  byDef:{[id:string]:DefInfo};
+}
+
+export function computeTypeMaps(pathPairsByTag: { [tag: string]: [string, PathItemObject][] }, doc: OpenAPIObject):TypeMaps {
   const allDefsEverywhere = new Set();
   const defsByTag = {};
   _.each(pathPairsByTag, (paths, tag) => {
@@ -13,8 +18,8 @@ export function computeTypeMaps(pathPairsByTag: { [tag: string]: [string, PathIt
 
   const allTags = Object.keys(pathPairsByTag);
 
-  const componentsByFile = {};
-  const componentByDef = {};
+  const componentsByFile:{[id:string]:DefInfo[]} = {};
+  const componentByDef:{[id:string]:DefInfo} = {};
   for (const def of allDefsEverywhere) {
     const tags: string[] = [];
     _.each(defsByTag, (defs: Set<string>, tag) => {
@@ -34,7 +39,7 @@ export function computeTypeMaps(pathPairsByTag: { [tag: string]: [string, PathIt
     componentByDef[info.def] = info;
   }
 
-  return { componentsByFile, componentByDef };
+  return { byFile:componentsByFile, byDef:componentByDef };
 }
 
 // TODO: put enums in a separate file???
@@ -43,21 +48,19 @@ export function computeTypeMaps(pathPairsByTag: { [tag: string]: [string, PathIt
 function chooseFile(def: string, tags: string[], allTags: string[]) {
   const schemaName: string = _.last(def.split('/'))!;
   const matchingTag = allTags.find((tag) => schemaName.startsWith(tag + '.'));
-
-  const filename = '/interfaces.dart';
   if (matchingTag) {
-    return matchingTag.toLowerCase() + filename;
+    return matchingTag.toLowerCase();
   } else if (schemaName.startsWith('GroupsV2.')) {
-    return 'groupv2' + filename;
+    return 'groupv2';
   } else if (schemaName.startsWith('Destiny.')) {
-    return 'destiny2' + filename;
+    return 'destiny2';
   } else {
     if (tags.length === 1) {
-      return tags[0].toLowerCase() + filename;
+      return tags[0].toLowerCase() + '';
     } else if (!tags.includes('Destiny2')) {
-      return 'platform.dart';
+      return 'platform';
     } else {
-      return 'common.dart';
+      return 'common';
     }
   }
 }

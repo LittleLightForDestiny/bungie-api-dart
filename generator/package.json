@@ -37,5 +37,7 @@
     "typescript": "^3.0.0",
     "underscore": "^1.9.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "mustache": "^3.0.1"
+  }
 }

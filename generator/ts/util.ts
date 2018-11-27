@@ -16,6 +16,19 @@ export function resolveSchemaType(schema: SchemaObject | ReferenceObject, doc: O
   }
 }
 
+export function isDefaultType(type:string):boolean{
+  switch(type){
+    case "int":
+    case "double":
+    case "String":
+    case "bool":
+    case "integer":
+    case "Object":
+      return true;
+  }
+  return false;
+}
+
 export function typeMapping(schema: SchemaObject, doc: OpenAPIObject): string {
   switch (schema.type) {
     case "number":
@@ -25,7 +38,6 @@ export function typeMapping(schema: SchemaObject, doc: OpenAPIObject): string {
     case "boolean":
       return 'bool';
     case "integer":
-      // JS can't represent a 64-bit int as a number, so bungie.net returns it as a string in JSON
       return schema.format === 'int64' ? 'String' : 'int';
     case "array":
       return 'List<' + resolveSchemaType(schema.items!, doc) + '>';
@@ -100,6 +112,9 @@ export function interfaceName(componentPath: string, doc: OpenAPIObject) {
   if (!component) {
     return 'any';
   }
+  if(component.enum){
+    return 'int';
+  }
 
   const singleResponse = name.match(/SingleComponentResponseOf(.*)/);
   if (singleResponse) {
@@ -118,7 +133,6 @@ export function interfaceName(componentPath: string, doc: OpenAPIObject) {
       return `ServerResponse<${paramType}>`;
     }
   }
-
   return name;
 }
 
