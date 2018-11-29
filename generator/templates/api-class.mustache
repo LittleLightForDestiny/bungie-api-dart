@@ -1,0 +1,29 @@
+import '../helpers/http.dart';
+{{#imports}}
+import '../{{type}}/{{filename}}.dart';
+{{/imports}}
+class {{className}}{
+    {{#methods}}
+    static Future<{{returnType}}> {{methodName}} (
+        HttpClient client,
+        {{#parameters}}
+        {{{typeName}}} {{name}},
+        {{/parameters}}
+        {{#requestBody}}
+        {{{typeName}}} body
+        {{/requestBody}}
+    ) {
+        Map<String, String> params = new Map();
+        {{#queryParameters}}
+        params['{{name}}'] = "${ {{name}} }";
+        {{/queryParameters}}
+        HttpClientConfig config = HttpClientConfig('{{method}}', "{{{url}}}", params);
+        {{#requestBody}}
+        config.body = body;
+        {{/requestBody}}
+        return client.request(config).then((response){
+            return {{returnType}}.fromJson(response);
+        });
+    }
+    {{/methods}}
+}

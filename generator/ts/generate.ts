@@ -1,50 +1,49 @@
 /**
  * This is a custom, hand-rolled generator for Dart typings for the Bungie.net API based on DIM's bungie-api-ts. 
- * It's meant for use in DIM, but is free for anyone to use.
+ * It's meant for use in Little Light, but is free for anyone to use.
  */
 
-import * as fs from 'fs';
 import * as _ from 'underscore';
-import { OpenAPIObject, PathItemObject, SchemaObject } from 'openapi3-ts';
-import { computeTypeMaps } from './type-index';
-import { generateEnumClasses } from './generate-enum-classes';
-import { generateModelClasses } from './generate-model-classes';
+import { PathItemObject, ResponseObject, SchemaObject } from 'openapi3-ts';
+import { ApiClass } from './models/ApiClass';
+import { generateApiClass } from './functions/generate-api-class';
+import { deleteAll } from './functions/delete-all';
+import { ApiDocHelper } from './utils/api-doc-helper';
+import { copyCustom } from './functions/copy-custom';
+import { ResponseClass } from './models/ResponseClass';
+import { generateResponseClass } from './functions/generate-response-class';
+import { generateModelClass } from './functions/generate-model-class';
+import { ModelClass } from './models/ModelClass';
 
-const doc = JSON.parse(fs.readFileSync('../api-src/openapi.json').toString()) as OpenAPIObject;
+let doc = ApiDocHelper.load();
 
-const pathPairs = _.pairs(doc.paths) as [string, PathItemObject][];
-
-const pathPairsByTag = _.groupBy(pathPairs, ([path, desc]) => {
-  return (desc.get || desc.post)!.tags![0];
+_.each(doc.paths, (path: PathItemObject, index:string)=>{
+  let [className, functionName] = path.summary!.split('.');
+  let apiClass = ApiClass.all[className] || new ApiClass(className);
+  apiClass.addMethod(functionName, index, path);
 });
 
-delete pathPairsByTag[''];
+_.each(doc.components!.responses!, (response: ResponseObject, index:string)=>{
+  new ResponseClass(index, response);
+});
 
-const typeMaps = computeTypeMaps(pathPairsByTag, doc);
-
-// const enumSchemas = _.filter((doc.components!).schemas!, (schema:SchemaObject)=>{return !!schema.enum});
-const enumSchemas:{[id:string]:SchemaObject} = {};
-const modelSchemas:{[id:string]:SchemaObject} = {};
-_.each((doc.components!).schemas!, (schema, schemaName)=>{
-  if(!!schema.enum){
-    enumSchemas[schemaName] = schema;
-  }else{
-    modelSchemas[schemaName] = schema;
+_.each(doc.components!.schemas!, (schema: SchemaObject, index:string)=>{
+  if(!schema.enum){
+    new ModelClass(index, schema);
   }
 });
-generateEnumClasses(enumSchemas, doc);
-// generateModelClasses(doc, typeMaps);
 
 
+deleteAll();
+copyCustom();
+_.each(ApiClass.all, (apiClass:ApiClass)=>{
+  generateApiClass(apiClass);
+});
 
-// _.each(componentsByFile, (components: DefInfo[], file: string) => {
-//   generateInterfaceDefinitions(file, components, doc, componentByDef);
-// });
+_.each(ResponseClass.all, (responseClass:ResponseClass)=>{
+  generateResponseClass(responseClass);
+});
 
-// _.each(pathPairsByTag, (paths, tag) => {
-//   generateServiceDefinition(tag, paths, doc, componentByDef);
-// });
-
-// _.each(pathPairsByTag, (paths, tag) => {
-//   generateIndex(tag, doc);
-// });
+_.each(ModelClass.all, (modelClass:ModelClass)=>{
+  generateModelClass(modelClass);
+});

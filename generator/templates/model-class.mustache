@@ -1,0 +1,29 @@
+{{#imports}}
+import '{{filename}}.dart';
+{{/imports}}
+class {{className}}{
+	{{#properties}}
+	{{{typeName}}} {{propertyName}};
+	{{/properties}}
+	{{className}}(
+		{{#properties}}
+		{{{typeName}}} this.{{propertyName}},
+		{{/properties}}
+	);
+
+	static {{className}} fromJson(Map<String, dynamic> data){
+		return new {{className}}(
+			{{#properties}}
+				{{{serializationFunction}}},
+			{{/properties}}
+		);
+	}
+
+	static List<{{className}}> fromList(List<dynamic> data){
+		List<{{className}}> list = new List();
+    data.forEach((item) {
+      list.add({{className}}.fromJson(item));
+    });
+    return list;
+	}
+}

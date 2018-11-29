@@ -1,11 +1,9 @@
-import 'dart:async';
-
 class HttpClientConfig {
   String method;
   String url;
   Map<String, dynamic> params;
   Object body;
-  HttpClientConfig(String this.method, String this.url, Map<String, dynamic> this.params, Object this.body);
+  HttpClientConfig(String this.method, String this.url, Map<String, dynamic> this.params, [Object this.body]);
 }
 
 /**
