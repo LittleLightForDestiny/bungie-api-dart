@@ -9,6 +9,9 @@ class UserTheme{
 	);
 
 	static UserTheme fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new UserTheme(
 				data['userThemeId'],
 				data['userThemeName'],
@@ -17,6 +20,9 @@ class UserTheme{
 	}
 
 	static List<UserTheme> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<UserTheme> list = new List();
     data.forEach((item) {
       list.add(UserTheme.fromJson(item));

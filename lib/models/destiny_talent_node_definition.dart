@@ -43,6 +43,9 @@ class DestinyTalentNodeDefinition{
 	);
 
 	static DestinyTalentNodeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentNodeDefinition(
 				data['nodeIndex'],
 				data['nodeHash'],
@@ -67,6 +70,9 @@ class DestinyTalentNodeDefinition{
 	}
 
 	static List<DestinyTalentNodeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentNodeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentNodeDefinition.fromJson(item));

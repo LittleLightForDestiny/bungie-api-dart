@@ -19,6 +19,9 @@ class SearchResultOfContentItemPublicContractResponse{
 	);
 
     static SearchResultOfContentItemPublicContractResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfContentItemPublicContractResponse(
 				SearchResultOfContentItemPublicContract.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class SearchResultOfContentItemPublicContractResponse{
 	}
 
 	static List<SearchResultOfContentItemPublicContractResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfContentItemPublicContractResponse> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfContentItemPublicContractResponse.fromJson(item));

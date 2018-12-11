@@ -12,6 +12,9 @@ class DestinyMaterialRequirementSetDefinition{
 	);
 
 	static DestinyMaterialRequirementSetDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMaterialRequirementSetDefinition(
 				DestinyMaterialRequirement.fromList(data['materials']),
 				data['hash'],
@@ -21,6 +24,9 @@ class DestinyMaterialRequirementSetDefinition{
 	}
 
 	static List<DestinyMaterialRequirementSetDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMaterialRequirementSetDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyMaterialRequirementSetDefinition.fromJson(item));

@@ -17,6 +17,9 @@ class DestinyVendorInventoryFlyoutDefinition{
 	);
 
 	static DestinyVendorInventoryFlyoutDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorInventoryFlyoutDefinition(
 				data['lockedDescription'],
 				data['displayProperties'],
@@ -28,6 +31,9 @@ class DestinyVendorInventoryFlyoutDefinition{
 	}
 
 	static List<DestinyVendorInventoryFlyoutDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorInventoryFlyoutDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorInventoryFlyoutDefinition.fromJson(item));

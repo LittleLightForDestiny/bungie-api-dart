@@ -19,6 +19,9 @@ class SaveMessageResultResponse{
 	);
 
     static SaveMessageResultResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SaveMessageResultResponse(
 				SaveMessageResult.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class SaveMessageResultResponse{
 	}
 
 	static List<SaveMessageResultResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SaveMessageResultResponse> list = new List();
     data.forEach((item) {
       list.add(SaveMessageResultResponse.fromJson(item));

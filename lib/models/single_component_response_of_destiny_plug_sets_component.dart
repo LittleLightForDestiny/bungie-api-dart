@@ -8,6 +8,9 @@ class SingleComponentResponseOfDestinyPlugSetsComponent{
 	);
 
 	static SingleComponentResponseOfDestinyPlugSetsComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SingleComponentResponseOfDestinyPlugSetsComponent(
 				DestinyPlugSetsComponent.fromJson(data['data']),
 				data['privacy'],
@@ -15,6 +18,9 @@ class SingleComponentResponseOfDestinyPlugSetsComponent{
 	}
 
 	static List<SingleComponentResponseOfDestinyPlugSetsComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SingleComponentResponseOfDestinyPlugSetsComponent> list = new List();
     data.forEach((item) {
       list.add(SingleComponentResponseOfDestinyPlugSetsComponent.fromJson(item));

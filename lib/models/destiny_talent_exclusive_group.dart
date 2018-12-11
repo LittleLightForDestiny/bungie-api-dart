@@ -13,6 +13,9 @@ class DestinyTalentExclusiveGroup{
 	);
 
 	static DestinyTalentExclusiveGroup fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentExclusiveGroup(
 				data['groupHash'],
 				data['loreHash'],
@@ -23,6 +26,9 @@ class DestinyTalentExclusiveGroup{
 	}
 
 	static List<DestinyTalentExclusiveGroup> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentExclusiveGroup> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentExclusiveGroup.fromJson(item));

@@ -14,6 +14,9 @@ class DestinyMilestoneQuest{
 	);
 
 	static DestinyMilestoneQuest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneQuest(
 				data['questItemHash'],
 				data['status'],
@@ -23,6 +26,9 @@ class DestinyMilestoneQuest{
 	}
 
 	static List<DestinyMilestoneQuest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneQuest> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneQuest.fromJson(item));

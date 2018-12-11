@@ -5,12 +5,18 @@ class DestinyCurrenciesComponent{
 	);
 
 	static DestinyCurrenciesComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCurrenciesComponent(
 				data['itemQuantities'],
 		);
 	}
 
 	static List<DestinyCurrenciesComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCurrenciesComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyCurrenciesComponent.fromJson(item));

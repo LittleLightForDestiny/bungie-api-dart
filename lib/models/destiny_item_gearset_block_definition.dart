@@ -7,6 +7,9 @@ class DestinyItemGearsetBlockDefinition{
 	);
 
 	static DestinyItemGearsetBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemGearsetBlockDefinition(
 				data['trackingValueMax'],
 				data['itemList'],
@@ -14,6 +17,9 @@ class DestinyItemGearsetBlockDefinition{
 	}
 
 	static List<DestinyItemGearsetBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemGearsetBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemGearsetBlockDefinition.fromJson(item));

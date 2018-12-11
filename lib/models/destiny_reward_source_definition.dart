@@ -14,6 +14,9 @@ class DestinyRewardSourceDefinition{
 	);
 
 	static DestinyRewardSourceDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyRewardSourceDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['category'],
@@ -24,6 +27,9 @@ class DestinyRewardSourceDefinition{
 	}
 
 	static List<DestinyRewardSourceDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyRewardSourceDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyRewardSourceDefinition.fromJson(item));

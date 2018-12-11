@@ -6,12 +6,18 @@ class DestinyBaseItemComponentSetOfint64{
 	);
 
 	static DestinyBaseItemComponentSetOfint64 fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyBaseItemComponentSetOfint64(
 				DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromJson(data['objectives']),
 		);
 	}
 
 	static List<DestinyBaseItemComponentSetOfint64> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyBaseItemComponentSetOfint64> list = new List();
     data.forEach((item) {
       list.add(DestinyBaseItemComponentSetOfint64.fromJson(item));

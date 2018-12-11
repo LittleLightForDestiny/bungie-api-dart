@@ -14,6 +14,9 @@ class DestinyItemSocketBlockDefinition{
 	);
 
 	static DestinyItemSocketBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSocketBlockDefinition(
 				data['detail'],
 				DestinyItemSocketEntryDefinition.fromList(data['socketEntries']),
@@ -23,6 +26,9 @@ class DestinyItemSocketBlockDefinition{
 	}
 
 	static List<DestinyItemSocketBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSocketBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSocketBlockDefinition.fromJson(item));

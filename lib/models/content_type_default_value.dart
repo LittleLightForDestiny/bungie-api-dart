@@ -9,6 +9,9 @@ class ContentTypeDefaultValue{
 	);
 
 	static ContentTypeDefaultValue fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentTypeDefaultValue(
 				data['whenClause'],
 				data['whenValue'],
@@ -17,6 +20,9 @@ class ContentTypeDefaultValue{
 	}
 
 	static List<ContentTypeDefaultValue> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentTypeDefaultValue> list = new List();
     data.forEach((item) {
       list.add(ContentTypeDefaultValue.fromJson(item));

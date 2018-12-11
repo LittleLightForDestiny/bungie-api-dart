@@ -18,6 +18,9 @@ class int32Response{
 	);
 
     static int32Response fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new int32Response(
 				data['Response'],
 				data['ErrorCode'],
@@ -30,6 +33,9 @@ class int32Response{
 	}
 
 	static List<int32Response> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<int32Response> list = new List();
     data.forEach((item) {
       list.add(int32Response.fromJson(item));

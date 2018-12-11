@@ -26,6 +26,9 @@ class DestinyVendorDisplayPropertiesDefinition{
 	);
 
 	static DestinyVendorDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorDisplayPropertiesDefinition(
 				data['largeIcon'],
 				data['subtitle'],
@@ -42,6 +45,9 @@ class DestinyVendorDisplayPropertiesDefinition{
 	}
 
 	static List<DestinyVendorDisplayPropertiesDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorDisplayPropertiesDefinition.fromJson(item));

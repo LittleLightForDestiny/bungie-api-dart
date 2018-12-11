@@ -9,6 +9,9 @@ class ContentRepresentation{
 	);
 
 	static ContentRepresentation fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentRepresentation(
 				data['name'],
 				data['path'],
@@ -17,6 +20,9 @@ class ContentRepresentation{
 	}
 
 	static List<ContentRepresentation> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentRepresentation> list = new List();
     data.forEach((item) {
       list.add(ContentRepresentation.fromJson(item));

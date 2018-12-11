@@ -19,6 +19,9 @@ class CEListOfPublicPartnershipDetailResponse{
 	);
 
     static CEListOfPublicPartnershipDetailResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CEListOfPublicPartnershipDetailResponse(
 				PublicPartnershipDetail.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class CEListOfPublicPartnershipDetailResponse{
 	}
 
 	static List<CEListOfPublicPartnershipDetailResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CEListOfPublicPartnershipDetailResponse> list = new List();
     data.forEach((item) {
       list.add(CEListOfPublicPartnershipDetailResponse.fromJson(item));

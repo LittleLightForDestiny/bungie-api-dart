@@ -35,6 +35,9 @@ class GroupEditAction{
 	);
 
 	static GroupEditAction fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupEditAction(
 				data['name'],
 				data['about'],
@@ -56,6 +59,9 @@ class GroupEditAction{
 	}
 
 	static List<GroupEditAction> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupEditAction> list = new List();
     data.forEach((item) {
       list.add(GroupEditAction.fromJson(item));

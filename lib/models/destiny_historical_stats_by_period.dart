@@ -21,6 +21,9 @@ class DestinyHistoricalStatsByPeriod{
 	);
 
 	static DestinyHistoricalStatsByPeriod fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsByPeriod(
 				data['allTime'],
 				data['allTimeTier1'],
@@ -32,6 +35,9 @@ class DestinyHistoricalStatsByPeriod{
 	}
 
 	static List<DestinyHistoricalStatsByPeriod> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsByPeriod> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsByPeriod.fromJson(item));

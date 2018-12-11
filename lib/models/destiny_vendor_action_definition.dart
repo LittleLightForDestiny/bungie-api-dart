@@ -21,6 +21,9 @@ class DestinyVendorActionDefinition{
 	);
 
 	static DestinyVendorActionDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorActionDefinition(
 				data['description'],
 				data['executeSeconds'],
@@ -35,6 +38,9 @@ class DestinyVendorActionDefinition{
 	}
 
 	static List<DestinyVendorActionDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorActionDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorActionDefinition.fromJson(item));

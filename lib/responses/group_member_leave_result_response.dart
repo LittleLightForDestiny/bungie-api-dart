@@ -19,6 +19,9 @@ class GroupMemberLeaveResultResponse{
 	);
 
     static GroupMemberLeaveResultResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupMemberLeaveResultResponse(
 				GroupMemberLeaveResult.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class GroupMemberLeaveResultResponse{
 	}
 
 	static List<GroupMemberLeaveResultResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupMemberLeaveResultResponse> list = new List();
     data.forEach((item) {
       list.add(GroupMemberLeaveResultResponse.fromJson(item));

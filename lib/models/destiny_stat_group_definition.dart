@@ -19,6 +19,9 @@ class DestinyStatGroupDefinition{
 	);
 
 	static DestinyStatGroupDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyStatGroupDefinition(
 				data['maximumValue'],
 				data['uiPosition'],
@@ -31,6 +34,9 @@ class DestinyStatGroupDefinition{
 	}
 
 	static List<DestinyStatGroupDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyStatGroupDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyStatGroupDefinition.fromJson(item));

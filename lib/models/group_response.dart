@@ -24,6 +24,9 @@ class GroupResponse{
 	);
 
 	static GroupResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupResponse(
 				GroupV2.fromJson(data['detail']),
 				GroupMember.fromJson(data['founder']),
@@ -37,6 +40,9 @@ class GroupResponse{
 	}
 
 	static List<GroupResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupResponse> list = new List();
     data.forEach((item) {
       list.add(GroupResponse.fromJson(item));

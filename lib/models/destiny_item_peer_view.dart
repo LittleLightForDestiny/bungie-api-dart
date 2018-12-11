@@ -8,6 +8,9 @@ class DestinyItemPeerView{
 	);
 
 	static DestinyItemPeerView fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemPeerView(
 				data['itemHash'],
 				DyeReference.fromList(data['dyes']),
@@ -15,6 +18,9 @@ class DestinyItemPeerView{
 	}
 
 	static List<DestinyItemPeerView> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemPeerView> list = new List();
     data.forEach((item) {
       list.add(DestinyItemPeerView.fromJson(item));

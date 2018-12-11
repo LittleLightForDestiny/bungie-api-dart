@@ -17,6 +17,9 @@ class SearchResultOfGroupMemberApplication{
 	);
 
 	static SearchResultOfGroupMemberApplication fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfGroupMemberApplication(
 				GroupMemberApplication.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfGroupMemberApplication{
 	}
 
 	static List<SearchResultOfGroupMemberApplication> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfGroupMemberApplication> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfGroupMemberApplication.fromJson(item));

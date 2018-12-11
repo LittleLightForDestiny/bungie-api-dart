@@ -19,6 +19,9 @@ class ContentItemPublicContractResponse{
 	);
 
     static ContentItemPublicContractResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentItemPublicContractResponse(
 				ContentItemPublicContract.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ContentItemPublicContractResponse{
 	}
 
 	static List<ContentItemPublicContractResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentItemPublicContractResponse> list = new List();
     data.forEach((item) {
       list.add(ContentItemPublicContractResponse.fromJson(item));

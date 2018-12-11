@@ -11,6 +11,9 @@ class DestinyItemStateRequest{
 	);
 
 	static DestinyItemStateRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemStateRequest(
 				data['state'],
 				data['itemId'],
@@ -20,6 +23,9 @@ class DestinyItemStateRequest{
 	}
 
 	static List<DestinyItemStateRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemStateRequest> list = new List();
     data.forEach((item) {
       list.add(DestinyItemStateRequest.fromJson(item));

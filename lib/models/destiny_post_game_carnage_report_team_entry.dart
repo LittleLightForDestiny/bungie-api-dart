@@ -13,6 +13,9 @@ class DestinyPostGameCarnageReportTeamEntry{
 	);
 
 	static DestinyPostGameCarnageReportTeamEntry fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPostGameCarnageReportTeamEntry(
 				data['teamId'],
 				data['standing'],
@@ -22,6 +25,9 @@ class DestinyPostGameCarnageReportTeamEntry{
 	}
 
 	static List<DestinyPostGameCarnageReportTeamEntry> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPostGameCarnageReportTeamEntry> list = new List();
     data.forEach((item) {
       list.add(DestinyPostGameCarnageReportTeamEntry.fromJson(item));

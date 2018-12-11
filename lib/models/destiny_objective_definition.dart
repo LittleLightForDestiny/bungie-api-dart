@@ -44,6 +44,9 @@ class DestinyObjectiveDefinition{
 	);
 
 	static DestinyObjectiveDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyObjectiveDefinition(
 				data['displayProperties'],
 				data['completionValue'],
@@ -68,6 +71,9 @@ class DestinyObjectiveDefinition{
 	}
 
 	static List<DestinyObjectiveDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyObjectiveDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyObjectiveDefinition.fromJson(item));

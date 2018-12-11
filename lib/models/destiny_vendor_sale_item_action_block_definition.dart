@@ -7,6 +7,9 @@ class DestinyVendorSaleItemActionBlockDefinition{
 	);
 
 	static DestinyVendorSaleItemActionBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorSaleItemActionBlockDefinition(
 				data['executeSeconds'],
 				data['isPositive'],
@@ -14,6 +17,9 @@ class DestinyVendorSaleItemActionBlockDefinition{
 	}
 
 	static List<DestinyVendorSaleItemActionBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorSaleItemActionBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorSaleItemActionBlockDefinition.fromJson(item));

@@ -9,6 +9,9 @@ class DestinyItemActionRequiredItemDefinition{
 	);
 
 	static DestinyItemActionRequiredItemDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemActionRequiredItemDefinition(
 				data['count'],
 				data['itemHash'],
@@ -17,6 +20,9 @@ class DestinyItemActionRequiredItemDefinition{
 	}
 
 	static List<DestinyItemActionRequiredItemDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemActionRequiredItemDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemActionRequiredItemDefinition.fromJson(item));

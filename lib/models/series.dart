@@ -8,6 +8,9 @@ class Series{
 	);
 
 	static Series fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new Series(
 				Datapoint.fromList(data['datapoints']),
 				data['target'],
@@ -15,6 +18,9 @@ class Series{
 	}
 
 	static List<Series> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<Series> list = new List();
     data.forEach((item) {
       list.add(Series.fromJson(item));

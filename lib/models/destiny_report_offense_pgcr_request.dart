@@ -9,6 +9,9 @@ class DestinyReportOffensePgcrRequest{
 	);
 
 	static DestinyReportOffensePgcrRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyReportOffensePgcrRequest(
 				data['reasonCategoryHashes'],
 				data['reasonHashes'],
@@ -17,6 +20,9 @@ class DestinyReportOffensePgcrRequest{
 	}
 
 	static List<DestinyReportOffensePgcrRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyReportOffensePgcrRequest> list = new List();
     data.forEach((item) {
       list.add(DestinyReportOffensePgcrRequest.fromJson(item));

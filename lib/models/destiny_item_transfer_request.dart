@@ -15,6 +15,9 @@ class DestinyItemTransferRequest{
 	);
 
 	static DestinyItemTransferRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemTransferRequest(
 				data['itemReferenceHash'],
 				data['stackSize'],
@@ -26,6 +29,9 @@ class DestinyItemTransferRequest{
 	}
 
 	static List<DestinyItemTransferRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemTransferRequest> list = new List();
     data.forEach((item) {
       list.add(DestinyItemTransferRequest.fromJson(item));

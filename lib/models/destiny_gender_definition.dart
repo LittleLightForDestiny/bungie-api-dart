@@ -14,6 +14,9 @@ class DestinyGenderDefinition{
 	);
 
 	static DestinyGenderDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyGenderDefinition(
 				data['genderType'],
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
@@ -24,6 +27,9 @@ class DestinyGenderDefinition{
 	}
 
 	static List<DestinyGenderDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyGenderDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyGenderDefinition.fromJson(item));

@@ -14,6 +14,9 @@ class DestinyMilestoneActivity{
 	);
 
 	static DestinyMilestoneActivity fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneActivity(
 				data['activityHash'],
 				data['activityModeHash'],
@@ -24,6 +27,9 @@ class DestinyMilestoneActivity{
 	}
 
 	static List<DestinyMilestoneActivity> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneActivity> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneActivity.fromJson(item));

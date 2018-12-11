@@ -9,6 +9,9 @@ class DestinyDefinition{
 	);
 
 	static DestinyDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDefinition(
 				data['hash'],
 				data['index'],
@@ -17,6 +20,9 @@ class DestinyDefinition{
 	}
 
 	static List<DestinyDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDefinition.fromJson(item));

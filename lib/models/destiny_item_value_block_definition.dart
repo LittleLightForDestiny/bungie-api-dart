@@ -8,6 +8,9 @@ class DestinyItemValueBlockDefinition{
 	);
 
 	static DestinyItemValueBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemValueBlockDefinition(
 				DestinyItemQuantity.fromList(data['itemValue']),
 				data['valueDescription'],
@@ -15,6 +18,9 @@ class DestinyItemValueBlockDefinition{
 	}
 
 	static List<DestinyItemValueBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemValueBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemValueBlockDefinition.fromJson(item));

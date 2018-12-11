@@ -10,6 +10,9 @@ class ApplicationDeveloper{
 	);
 
 	static ApplicationDeveloper fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ApplicationDeveloper(
 				data['role'],
 				data['apiEulaVersion'],
@@ -18,6 +21,9 @@ class ApplicationDeveloper{
 	}
 
 	static List<ApplicationDeveloper> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ApplicationDeveloper> list = new List();
     data.forEach((item) {
       list.add(ApplicationDeveloper.fromJson(item));

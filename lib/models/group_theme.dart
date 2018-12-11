@@ -9,6 +9,9 @@ class GroupTheme{
 	);
 
 	static GroupTheme fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupTheme(
 				data['name'],
 				data['folder'],
@@ -17,6 +20,9 @@ class GroupTheme{
 	}
 
 	static List<GroupTheme> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupTheme> list = new List();
     data.forEach((item) {
       list.add(GroupTheme.fromJson(item));

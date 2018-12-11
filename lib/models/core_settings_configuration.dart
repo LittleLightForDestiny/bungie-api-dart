@@ -57,6 +57,9 @@ class CoreSettingsConfiguration{
 	);
 
 	static CoreSettingsConfiguration fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CoreSettingsConfiguration(
 				data['systems'],
 				CoreSetting.fromList(data['ignoreReasons']),
@@ -80,6 +83,9 @@ class CoreSettingsConfiguration{
 	}
 
 	static List<CoreSettingsConfiguration> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CoreSettingsConfiguration> list = new List();
     data.forEach((item) {
       list.add(CoreSettingsConfiguration.fromJson(item));

@@ -19,6 +19,9 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 	);
 
     static ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse(
 				data['Response'],
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 	}
 
 	static List<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> list = new List();
     data.forEach((item) {
       list.add(ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(item));

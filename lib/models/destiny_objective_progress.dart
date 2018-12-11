@@ -17,6 +17,9 @@ class DestinyObjectiveProgress{
 	);
 
 	static DestinyObjectiveProgress fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyObjectiveProgress(
 				data['objectiveHash'],
 				data['destinationHash'],
@@ -29,6 +32,9 @@ class DestinyObjectiveProgress{
 	}
 
 	static List<DestinyObjectiveProgress> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyObjectiveProgress> list = new List();
     data.forEach((item) {
       list.add(DestinyObjectiveProgress.fromJson(item));

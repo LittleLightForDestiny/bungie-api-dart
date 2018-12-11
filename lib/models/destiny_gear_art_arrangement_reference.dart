@@ -7,6 +7,9 @@ class DestinyGearArtArrangementReference{
 	);
 
 	static DestinyGearArtArrangementReference fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyGearArtArrangementReference(
 				data['classHash'],
 				data['artArrangementHash'],
@@ -14,6 +17,9 @@ class DestinyGearArtArrangementReference{
 	}
 
 	static List<DestinyGearArtArrangementReference> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyGearArtArrangementReference> list = new List();
     data.forEach((item) {
       list.add(DestinyGearArtArrangementReference.fromJson(item));

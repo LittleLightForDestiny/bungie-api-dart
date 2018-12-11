@@ -50,6 +50,9 @@ class ContentTypeDescription{
 	);
 
 	static ContentTypeDescription fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentTypeDescription(
 				data['cType'],
 				data['name'],
@@ -76,6 +79,9 @@ class ContentTypeDescription{
 	}
 
 	static List<ContentTypeDescription> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentTypeDescription> list = new List();
     data.forEach((item) {
       list.add(ContentTypeDescription.fromJson(item));

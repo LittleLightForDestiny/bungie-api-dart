@@ -25,6 +25,9 @@ class DestinyProgression{
 	);
 
 	static DestinyProgression fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProgression(
 				data['progressionHash'],
 				data['dailyProgress'],
@@ -41,6 +44,9 @@ class DestinyProgression{
 	}
 
 	static List<DestinyProgression> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProgression> list = new List();
     data.forEach((item) {
       list.add(DestinyProgression.fromJson(item));

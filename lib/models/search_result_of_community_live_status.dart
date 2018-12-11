@@ -17,6 +17,9 @@ class SearchResultOfCommunityLiveStatus{
 	);
 
 	static SearchResultOfCommunityLiveStatus fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfCommunityLiveStatus(
 				CommunityLiveStatus.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfCommunityLiveStatus{
 	}
 
 	static List<SearchResultOfCommunityLiveStatus> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfCommunityLiveStatus> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfCommunityLiveStatus.fromJson(item));

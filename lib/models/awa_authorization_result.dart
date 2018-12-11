@@ -19,6 +19,9 @@ class AwaAuthorizationResult{
 	);
 
 	static AwaAuthorizationResult fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new AwaAuthorizationResult(
 				data['userSelection'],
 				data['responseReason'],
@@ -32,6 +35,9 @@ class AwaAuthorizationResult{
 	}
 
 	static List<AwaAuthorizationResult> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<AwaAuthorizationResult> list = new List();
     data.forEach((item) {
       list.add(AwaAuthorizationResult.fromJson(item));

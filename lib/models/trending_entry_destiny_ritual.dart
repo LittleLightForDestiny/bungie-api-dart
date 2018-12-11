@@ -21,6 +21,9 @@ class TrendingEntryDestinyRitual{
 	);
 
 	static TrendingEntryDestinyRitual fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingEntryDestinyRitual(
 				data['image'],
 				data['icon'],
@@ -34,6 +37,9 @@ class TrendingEntryDestinyRitual{
 	}
 
 	static List<TrendingEntryDestinyRitual> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingEntryDestinyRitual> list = new List();
     data.forEach((item) {
       list.add(TrendingEntryDestinyRitual.fromJson(item));

@@ -27,6 +27,9 @@ class DestinyItemComponentSetOfint64{
 	);
 
 	static DestinyItemComponentSetOfint64 fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemComponentSetOfint64(
 				DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent.fromJson(data['instances']),
 				DictionaryComponentResponseOfint64AndDestinyItemPerksComponent.fromJson(data['perks']),
@@ -40,6 +43,9 @@ class DestinyItemComponentSetOfint64{
 	}
 
 	static List<DestinyItemComponentSetOfint64> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemComponentSetOfint64> list = new List();
     data.forEach((item) {
       list.add(DestinyItemComponentSetOfint64.fromJson(item));

@@ -6,12 +6,18 @@ class DestinyActivityHistoryResults{
 	);
 
 	static DestinyActivityHistoryResults fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityHistoryResults(
 				DestinyHistoricalStatsPeriodGroup.fromList(data['activities']),
 		);
 	}
 
 	static List<DestinyActivityHistoryResults> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityHistoryResults> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityHistoryResults.fromJson(item));

@@ -8,6 +8,9 @@ class GroupApplicationListRequest{
 	);
 
 	static GroupApplicationListRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupApplicationListRequest(
 				UserMembership.fromList(data['memberships']),
 				data['message'],
@@ -15,6 +18,9 @@ class GroupApplicationListRequest{
 	}
 
 	static List<GroupApplicationListRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupApplicationListRequest> list = new List();
     data.forEach((item) {
       list.add(GroupApplicationListRequest.fromJson(item));

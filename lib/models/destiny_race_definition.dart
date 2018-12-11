@@ -16,6 +16,9 @@ class DestinyRaceDefinition{
 	);
 
 	static DestinyRaceDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyRaceDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['raceType'],
@@ -27,6 +30,9 @@ class DestinyRaceDefinition{
 	}
 
 	static List<DestinyRaceDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyRaceDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyRaceDefinition.fromJson(item));

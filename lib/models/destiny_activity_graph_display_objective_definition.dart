@@ -7,6 +7,9 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 	);
 
 	static DestinyActivityGraphDisplayObjectiveDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityGraphDisplayObjectiveDefinition(
 				data['id'],
 				data['objectiveHash'],
@@ -14,6 +17,9 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 	}
 
 	static List<DestinyActivityGraphDisplayObjectiveDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityGraphDisplayObjectiveDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityGraphDisplayObjectiveDefinition.fromJson(item));

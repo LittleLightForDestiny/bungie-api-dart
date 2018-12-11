@@ -9,6 +9,9 @@ class DestinyStat{
 	);
 
 	static DestinyStat fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyStat(
 				data['statHash'],
 				data['value'],
@@ -17,6 +20,9 @@ class DestinyStat{
 	}
 
 	static List<DestinyStat> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyStat> list = new List();
     data.forEach((item) {
       list.add(DestinyStat.fromJson(item));

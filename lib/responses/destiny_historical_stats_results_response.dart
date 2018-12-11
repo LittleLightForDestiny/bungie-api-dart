@@ -19,6 +19,9 @@ class DestinyHistoricalStatsResultsResponse{
 	);
 
     static DestinyHistoricalStatsResultsResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsResultsResponse(
 				data['Response'],
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyHistoricalStatsResultsResponse{
 	}
 
 	static List<DestinyHistoricalStatsResultsResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsResultsResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsResultsResponse.fromJson(item));

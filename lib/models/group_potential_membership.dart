@@ -9,6 +9,9 @@ class GroupPotentialMembership{
 	);
 
 	static GroupPotentialMembership fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupPotentialMembership(
 				GroupPotentialMember.fromJson(data['member']),
 				GroupV2.fromJson(data['group']),
@@ -16,6 +19,9 @@ class GroupPotentialMembership{
 	}
 
 	static List<GroupPotentialMembership> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupPotentialMembership> list = new List();
     data.forEach((item) {
       list.add(GroupPotentialMembership.fromJson(item));

@@ -19,6 +19,9 @@ class ListOfEntityActionResultResponse{
 	);
 
     static ListOfEntityActionResultResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ListOfEntityActionResultResponse(
 				EntityActionResult.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ListOfEntityActionResultResponse{
 	}
 
 	static List<ListOfEntityActionResultResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ListOfEntityActionResultResponse> list = new List();
     data.forEach((item) {
       list.add(ListOfEntityActionResultResponse.fromJson(item));

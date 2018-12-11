@@ -8,6 +8,9 @@ class DestinyAggregateActivityStats{
 	);
 
 	static DestinyAggregateActivityStats fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyAggregateActivityStats(
 				data['activityHash'],
 				data['values'],
@@ -15,6 +18,9 @@ class DestinyAggregateActivityStats{
 	}
 
 	static List<DestinyAggregateActivityStats> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyAggregateActivityStats> list = new List();
     data.forEach((item) {
       list.add(DestinyAggregateActivityStats.fromJson(item));

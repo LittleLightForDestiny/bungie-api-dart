@@ -49,6 +49,9 @@ class DestinyCharacterComponent{
 	);
 
 	static DestinyCharacterComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterComponent(
 				data['membershipId'],
 				data['membershipType'],
@@ -76,6 +79,9 @@ class DestinyCharacterComponent{
 	}
 
 	static List<DestinyCharacterComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterComponent.fromJson(item));

@@ -28,6 +28,9 @@ class Application{
 	);
 
 	static Application fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new Application(
 				data['applicationType'],
 				data['applicationId'],
@@ -45,6 +48,9 @@ class Application{
 	}
 
 	static List<Application> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<Application> list = new List();
     data.forEach((item) {
       list.add(Application.fromJson(item));

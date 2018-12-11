@@ -29,6 +29,9 @@ class DestinyTalentGridDefinition{
 	);
 
 	static DestinyTalentGridDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentGridDefinition(
 				data['maxGridLevel'],
 				data['gridLevelPerColumn'],
@@ -45,6 +48,9 @@ class DestinyTalentGridDefinition{
 	}
 
 	static List<DestinyTalentGridDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentGridDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentGridDefinition.fromJson(item));

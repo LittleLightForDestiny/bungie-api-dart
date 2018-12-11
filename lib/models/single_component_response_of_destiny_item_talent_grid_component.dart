@@ -8,6 +8,9 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	);
 
 	static SingleComponentResponseOfDestinyItemTalentGridComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SingleComponentResponseOfDestinyItemTalentGridComponent(
 				DestinyItemTalentGridComponent.fromJson(data['data']),
 				data['privacy'],
@@ -15,6 +18,9 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	}
 
 	static List<SingleComponentResponseOfDestinyItemTalentGridComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SingleComponentResponseOfDestinyItemTalentGridComponent> list = new List();
     data.forEach((item) {
       list.add(SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(item));

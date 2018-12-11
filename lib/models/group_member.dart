@@ -17,6 +17,9 @@ class GroupMember{
 	);
 
 	static GroupMember fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupMember(
 				data['memberType'],
 				data['isOnline'],
@@ -28,6 +31,9 @@ class GroupMember{
 	}
 
 	static List<GroupMember> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupMember> list = new List();
     data.forEach((item) {
       list.add(GroupMember.fromJson(item));

@@ -16,6 +16,9 @@ class DestinyPostGameCarnageReportData{
 	);
 
 	static DestinyPostGameCarnageReportData fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPostGameCarnageReportData(
 				data['period'],
 				data['startingPhaseIndex'],
@@ -26,6 +29,9 @@ class DestinyPostGameCarnageReportData{
 	}
 
 	static List<DestinyPostGameCarnageReportData> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPostGameCarnageReportData> list = new List();
     data.forEach((item) {
       list.add(DestinyPostGameCarnageReportData.fromJson(item));

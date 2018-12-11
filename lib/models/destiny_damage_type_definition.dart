@@ -18,6 +18,9 @@ class DestinyDamageTypeDefinition{
 	);
 
 	static DestinyDamageTypeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDamageTypeDefinition(
 				data['displayProperties'],
 				data['transparentIconPath'],
@@ -30,6 +33,9 @@ class DestinyDamageTypeDefinition{
 	}
 
 	static List<DestinyDamageTypeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDamageTypeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDamageTypeDefinition.fromJson(item));

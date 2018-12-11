@@ -9,6 +9,9 @@ class UserMembershipData{
 	);
 
 	static UserMembershipData fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new UserMembershipData(
 				UserInfoCard.fromList(data['destinyMemberships']),
 				GeneralUser.fromJson(data['bungieNetUser']),
@@ -16,6 +19,9 @@ class UserMembershipData{
 	}
 
 	static List<UserMembershipData> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<UserMembershipData> list = new List();
     data.forEach((item) {
       list.add(UserMembershipData.fromJson(item));

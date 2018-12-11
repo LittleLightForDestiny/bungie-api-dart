@@ -9,6 +9,9 @@ class AwaUserResponse{
 	);
 
 	static AwaUserResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new AwaUserResponse(
 				data['selection'],
 				data['correlationId'],
@@ -17,6 +20,9 @@ class AwaUserResponse{
 	}
 
 	static List<AwaUserResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<AwaUserResponse> list = new List();
     data.forEach((item) {
       list.add(AwaUserResponse.fromJson(item));

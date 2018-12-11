@@ -19,6 +19,9 @@ class AwaInitializeResponseResponse{
 	);
 
     static AwaInitializeResponseResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new AwaInitializeResponseResponse(
 				AwaInitializeResponse.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class AwaInitializeResponseResponse{
 	}
 
 	static List<AwaInitializeResponseResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<AwaInitializeResponseResponse> list = new List();
     data.forEach((item) {
       list.add(AwaInitializeResponseResponse.fromJson(item));

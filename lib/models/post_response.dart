@@ -32,6 +32,9 @@ class PostResponse{
 	);
 
 	static PostResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new PostResponse(
 				data['lastReplyTimestamp'],
 				data['IsPinned'],
@@ -51,6 +54,9 @@ class PostResponse{
 	}
 
 	static List<PostResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<PostResponse> list = new List();
     data.forEach((item) {
       list.add(PostResponse.fromJson(item));

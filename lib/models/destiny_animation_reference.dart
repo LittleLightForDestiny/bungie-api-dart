@@ -9,6 +9,9 @@ class DestinyAnimationReference{
 	);
 
 	static DestinyAnimationReference fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyAnimationReference(
 				data['animName'],
 				data['animIdentifier'],
@@ -17,6 +20,9 @@ class DestinyAnimationReference{
 	}
 
 	static List<DestinyAnimationReference> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyAnimationReference> list = new List();
     data.forEach((item) {
       list.add(DestinyAnimationReference.fromJson(item));

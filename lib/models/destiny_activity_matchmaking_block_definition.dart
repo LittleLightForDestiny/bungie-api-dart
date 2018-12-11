@@ -13,6 +13,9 @@ class DestinyActivityMatchmakingBlockDefinition{
 	);
 
 	static DestinyActivityMatchmakingBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityMatchmakingBlockDefinition(
 				data['isMatchmade'],
 				data['minParty'],
@@ -23,6 +26,9 @@ class DestinyActivityMatchmakingBlockDefinition{
 	}
 
 	static List<DestinyActivityMatchmakingBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityMatchmakingBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityMatchmakingBlockDefinition.fromJson(item));

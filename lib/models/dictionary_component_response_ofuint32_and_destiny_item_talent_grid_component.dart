@@ -8,6 +8,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent{
 	);
 
 	static DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent(
 				data['data'],
 				data['privacy'],
@@ -15,6 +18,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent{
 	}
 
 	static List<DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent> list = new List();
     data.forEach((item) {
       list.add(DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromJson(item));

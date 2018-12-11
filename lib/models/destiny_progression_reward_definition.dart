@@ -9,6 +9,9 @@ class DestinyProgressionRewardDefinition{
 	);
 
 	static DestinyProgressionRewardDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProgressionRewardDefinition(
 				data['progressionMappingHash'],
 				data['amount'],
@@ -17,6 +20,9 @@ class DestinyProgressionRewardDefinition{
 	}
 
 	static List<DestinyProgressionRewardDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProgressionRewardDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyProgressionRewardDefinition.fromJson(item));

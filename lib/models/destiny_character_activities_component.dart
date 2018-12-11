@@ -22,6 +22,9 @@ class DestinyCharacterActivitiesComponent{
 	);
 
 	static DestinyCharacterActivitiesComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterActivitiesComponent(
 				data['dateActivityStarted'],
 				DestinyActivity.fromList(data['availableActivities']),
@@ -36,6 +39,9 @@ class DestinyCharacterActivitiesComponent{
 	}
 
 	static List<DestinyCharacterActivitiesComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterActivitiesComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterActivitiesComponent.fromJson(item));

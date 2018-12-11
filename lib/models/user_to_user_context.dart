@@ -10,6 +10,9 @@ class UserToUserContext{
 	);
 
 	static UserToUserContext fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new UserToUserContext(
 				data['isFollowing'],
 				IgnoreResponse.fromJson(data['ignoreStatus']),
@@ -18,6 +21,9 @@ class UserToUserContext{
 	}
 
 	static List<UserToUserContext> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<UserToUserContext> list = new List();
     data.forEach((item) {
       list.add(UserToUserContext.fromJson(item));

@@ -17,6 +17,9 @@ class SearchResultOfPostResponse{
 	);
 
 	static SearchResultOfPostResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfPostResponse(
 				PostResponse.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfPostResponse{
 	}
 
 	static List<SearchResultOfPostResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfPostResponse> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfPostResponse.fromJson(item));

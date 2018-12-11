@@ -7,6 +7,9 @@ class DestinyItemSocketCategoryDefinition{
 	);
 
 	static DestinyItemSocketCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSocketCategoryDefinition(
 				data['socketCategoryHash'],
 				data['socketIndexes'],
@@ -14,6 +17,9 @@ class DestinyItemSocketCategoryDefinition{
 	}
 
 	static List<DestinyItemSocketCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSocketCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSocketCategoryDefinition.fromJson(item));

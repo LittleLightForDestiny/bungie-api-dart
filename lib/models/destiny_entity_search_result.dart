@@ -8,6 +8,9 @@ class DestinyEntitySearchResult{
 	);
 
 	static DestinyEntitySearchResult fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEntitySearchResult(
 				data['suggestedWords'],
 				data['results'],
@@ -15,6 +18,9 @@ class DestinyEntitySearchResult{
 	}
 
 	static List<DestinyEntitySearchResult> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEntitySearchResult> list = new List();
     data.forEach((item) {
       list.add(DestinyEntitySearchResult.fromJson(item));

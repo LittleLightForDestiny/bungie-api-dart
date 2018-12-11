@@ -19,6 +19,9 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 	);
 
     static DictionaryOfuint32AndDestinyPublicMilestoneResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryOfuint32AndDestinyPublicMilestoneResponse(
 				data['Response'],
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 	}
 
 	static List<DictionaryOfuint32AndDestinyPublicMilestoneResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryOfuint32AndDestinyPublicMilestoneResponse> list = new List();
     data.forEach((item) {
       list.add(DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(item));

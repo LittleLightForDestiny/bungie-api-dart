@@ -19,6 +19,9 @@ class CommunityLiveStatusResponse{
 	);
 
     static CommunityLiveStatusResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CommunityLiveStatusResponse(
 				CommunityLiveStatus.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class CommunityLiveStatusResponse{
 	}
 
 	static List<CommunityLiveStatusResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CommunityLiveStatusResponse> list = new List();
     data.forEach((item) {
       list.add(CommunityLiveStatusResponse.fromJson(item));

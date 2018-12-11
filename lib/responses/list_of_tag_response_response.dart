@@ -19,6 +19,9 @@ class ListOfTagResponseResponse{
 	);
 
     static ListOfTagResponseResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ListOfTagResponseResponse(
 				TagResponse.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ListOfTagResponseResponse{
 	}
 
 	static List<ListOfTagResponseResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ListOfTagResponseResponse> list = new List();
     data.forEach((item) {
       list.add(ListOfTagResponseResponse.fromJson(item));

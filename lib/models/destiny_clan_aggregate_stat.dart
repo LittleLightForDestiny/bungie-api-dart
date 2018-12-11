@@ -10,6 +10,9 @@ class DestinyClanAggregateStat{
 	);
 
 	static DestinyClanAggregateStat fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyClanAggregateStat(
 				data['mode'],
 				data['statId'],
@@ -18,6 +21,9 @@ class DestinyClanAggregateStat{
 	}
 
 	static List<DestinyClanAggregateStat> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyClanAggregateStat> list = new List();
     data.forEach((item) {
       list.add(DestinyClanAggregateStat.fromJson(item));

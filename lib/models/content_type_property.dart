@@ -86,6 +86,9 @@ class ContentTypeProperty{
 	);
 
 	static ContentTypeProperty fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentTypeProperty(
 				data['name'],
 				data['readableName'],
@@ -132,6 +135,9 @@ class ContentTypeProperty{
 	}
 
 	static List<ContentTypeProperty> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentTypeProperty> list = new List();
     data.forEach((item) {
       list.add(ContentTypeProperty.fromJson(item));

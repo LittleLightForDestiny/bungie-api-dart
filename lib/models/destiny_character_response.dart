@@ -45,6 +45,9 @@ class DestinyCharacterResponse{
 	);
 
 	static DestinyCharacterResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterResponse(
 				data['inventory'],
 				data['character'],
@@ -64,6 +67,9 @@ class DestinyCharacterResponse{
 	}
 
 	static List<DestinyCharacterResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterResponse.fromJson(item));

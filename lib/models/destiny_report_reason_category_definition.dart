@@ -15,6 +15,9 @@ class DestinyReportReasonCategoryDefinition{
 	);
 
 	static DestinyReportReasonCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyReportReasonCategoryDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['reasons'],
@@ -25,6 +28,9 @@ class DestinyReportReasonCategoryDefinition{
 	}
 
 	static List<DestinyReportReasonCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyReportReasonCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyReportReasonCategoryDefinition.fromJson(item));

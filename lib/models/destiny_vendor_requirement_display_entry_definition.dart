@@ -11,6 +11,9 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 	);
 
 	static DestinyVendorRequirementDisplayEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorRequirementDisplayEntryDefinition(
 				data['icon'],
 				data['name'],
@@ -20,6 +23,9 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 	}
 
 	static List<DestinyVendorRequirementDisplayEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorRequirementDisplayEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorRequirementDisplayEntryDefinition.fromJson(item));

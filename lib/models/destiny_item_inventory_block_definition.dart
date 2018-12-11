@@ -27,6 +27,9 @@ class DestinyItemInventoryBlockDefinition{
 	);
 
 	static DestinyItemInventoryBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemInventoryBlockDefinition(
 				data['stackUniqueLabel'],
 				data['maxStackSize'],
@@ -44,6 +47,9 @@ class DestinyItemInventoryBlockDefinition{
 	}
 
 	static List<DestinyItemInventoryBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemInventoryBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemInventoryBlockDefinition.fromJson(item));

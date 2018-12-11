@@ -20,6 +20,9 @@ class DestinyActivityGraphNodeDefinition{
 	);
 
 	static DestinyActivityGraphNodeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityGraphNodeDefinition(
 				data['nodeId'],
 				data['overrideDisplay'],
@@ -31,6 +34,9 @@ class DestinyActivityGraphNodeDefinition{
 	}
 
 	static List<DestinyActivityGraphNodeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityGraphNodeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityGraphNodeDefinition.fromJson(item));

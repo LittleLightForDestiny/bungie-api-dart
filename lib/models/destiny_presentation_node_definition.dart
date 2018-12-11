@@ -38,6 +38,9 @@ class DestinyPresentationNodeDefinition{
 	);
 
 	static DestinyPresentationNodeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPresentationNodeDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['originalIcon'],
@@ -59,6 +62,9 @@ class DestinyPresentationNodeDefinition{
 	}
 
 	static List<DestinyPresentationNodeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPresentationNodeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyPresentationNodeDefinition.fromJson(item));

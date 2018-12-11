@@ -8,6 +8,9 @@ class DestinyLeaderboard{
 	);
 
 	static DestinyLeaderboard fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLeaderboard(
 				data['statId'],
 				DestinyLeaderboardEntry.fromList(data['entries']),
@@ -15,6 +18,9 @@ class DestinyLeaderboard{
 	}
 
 	static List<DestinyLeaderboard> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLeaderboard> list = new List();
     data.forEach((item) {
       list.add(DestinyLeaderboard.fromJson(item));

@@ -7,6 +7,9 @@ class DestinyNodeSocketReplaceResponse{
 	);
 
 	static DestinyNodeSocketReplaceResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyNodeSocketReplaceResponse(
 				data['socketTypeHash'],
 				data['plugItemHash'],
@@ -14,6 +17,9 @@ class DestinyNodeSocketReplaceResponse{
 	}
 
 	static List<DestinyNodeSocketReplaceResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyNodeSocketReplaceResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyNodeSocketReplaceResponse.fromJson(item));

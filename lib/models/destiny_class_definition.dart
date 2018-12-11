@@ -18,6 +18,9 @@ class DestinyClassDefinition{
 	);
 
 	static DestinyClassDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyClassDefinition(
 				data['classType'],
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
@@ -30,6 +33,9 @@ class DestinyClassDefinition{
 	}
 
 	static List<DestinyClassDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyClassDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyClassDefinition.fromJson(item));

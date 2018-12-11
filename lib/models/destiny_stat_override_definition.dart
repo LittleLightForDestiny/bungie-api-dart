@@ -8,6 +8,9 @@ class DestinyStatOverrideDefinition{
 	);
 
 	static DestinyStatOverrideDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyStatOverrideDefinition(
 				data['statHash'],
 				data['displayProperties'],
@@ -15,6 +18,9 @@ class DestinyStatOverrideDefinition{
 	}
 
 	static List<DestinyStatOverrideDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyStatOverrideDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyStatOverrideDefinition.fromJson(item));

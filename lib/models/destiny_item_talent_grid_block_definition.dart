@@ -13,6 +13,9 @@ class DestinyItemTalentGridBlockDefinition{
 	);
 
 	static DestinyItemTalentGridBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemTalentGridBlockDefinition(
 				data['talentGridHash'],
 				data['itemDetailString'],
@@ -23,6 +26,9 @@ class DestinyItemTalentGridBlockDefinition{
 	}
 
 	static List<DestinyItemTalentGridBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemTalentGridBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemTalentGridBlockDefinition.fromJson(item));

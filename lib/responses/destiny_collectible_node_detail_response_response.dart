@@ -19,6 +19,9 @@ class DestinyCollectibleNodeDetailResponseResponse{
 	);
 
     static DestinyCollectibleNodeDetailResponseResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCollectibleNodeDetailResponseResponse(
 				DestinyCollectibleNodeDetailResponse.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyCollectibleNodeDetailResponseResponse{
 	}
 
 	static List<DestinyCollectibleNodeDetailResponseResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCollectibleNodeDetailResponseResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyCollectibleNodeDetailResponseResponse.fromJson(item));

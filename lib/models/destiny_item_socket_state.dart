@@ -19,6 +19,9 @@ class DestinyItemSocketState{
 	);
 
 	static DestinyItemSocketState fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSocketState(
 				data['plugHash'],
 				data['isEnabled'],
@@ -31,6 +34,9 @@ class DestinyItemSocketState{
 	}
 
 	static List<DestinyItemSocketState> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSocketState> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSocketState.fromJson(item));

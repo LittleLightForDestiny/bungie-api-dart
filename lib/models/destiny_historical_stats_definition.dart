@@ -31,6 +31,9 @@ class DestinyHistoricalStatsDefinition{
 	);
 
 	static DestinyHistoricalStatsDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsDefinition(
 				data['statId'],
 				data['group'],
@@ -50,6 +53,9 @@ class DestinyHistoricalStatsDefinition{
 	}
 
 	static List<DestinyHistoricalStatsDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsDefinition.fromJson(item));

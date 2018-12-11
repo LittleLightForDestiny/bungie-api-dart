@@ -12,6 +12,9 @@ class DestinyMilestoneContent{
 	);
 
 	static DestinyMilestoneContent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneContent(
 				data['about'],
 				data['status'],
@@ -21,6 +24,9 @@ class DestinyMilestoneContent{
 	}
 
 	static List<DestinyMilestoneContent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneContent> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneContent.fromJson(item));

@@ -8,6 +8,9 @@ class TrendingEntryDestinyActivity{
 	);
 
 	static TrendingEntryDestinyActivity fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingEntryDestinyActivity(
 				data['activityHash'],
 				DestinyPublicActivityStatus.fromJson(data['status']),
@@ -15,6 +18,9 @@ class TrendingEntryDestinyActivity{
 	}
 
 	static List<TrendingEntryDestinyActivity> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingEntryDestinyActivity> list = new List();
     data.forEach((item) {
       list.add(TrendingEntryDestinyActivity.fromJson(item));

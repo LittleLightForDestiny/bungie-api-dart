@@ -13,6 +13,9 @@ class GroupUserBase{
 	);
 
 	static GroupUserBase fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupUserBase(
 				data['groupId'],
 				UserInfoCard.fromJson(data['destinyUserInfo']),
@@ -22,6 +25,9 @@ class GroupUserBase{
 	}
 
 	static List<GroupUserBase> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupUserBase> list = new List();
     data.forEach((item) {
       list.add(GroupUserBase.fromJson(item));

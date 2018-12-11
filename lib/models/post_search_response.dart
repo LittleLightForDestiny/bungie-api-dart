@@ -37,6 +37,9 @@ class PostSearchResponse{
 	);
 
 	static PostSearchResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new PostSearchResponse(
 				PostResponse.fromList(data['relatedPosts']),
 				GeneralUser.fromList(data['authors']),
@@ -55,6 +58,9 @@ class PostSearchResponse{
 	}
 
 	static List<PostSearchResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<PostSearchResponse> list = new List();
     data.forEach((item) {
       list.add(PostSearchResponse.fromJson(item));

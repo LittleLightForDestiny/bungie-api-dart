@@ -16,6 +16,9 @@ class DestinySocketCategoryDefinition{
 	);
 
 	static DestinySocketCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinySocketCategoryDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['uiCategoryStyle'],
@@ -27,6 +30,9 @@ class DestinySocketCategoryDefinition{
 	}
 
 	static List<DestinySocketCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinySocketCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinySocketCategoryDefinition.fromJson(item));

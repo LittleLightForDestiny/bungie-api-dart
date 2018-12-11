@@ -75,6 +75,9 @@ class DestinyProfileResponse{
 	);
 
 	static DestinyProfileResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProfileResponse(
 				data['vendorReceipts'],
 				data['profileInventory'],
@@ -104,6 +107,9 @@ class DestinyProfileResponse{
 	}
 
 	static List<DestinyProfileResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProfileResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyProfileResponse.fromJson(item));

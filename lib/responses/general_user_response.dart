@@ -19,6 +19,9 @@ class GeneralUserResponse{
 	);
 
     static GeneralUserResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GeneralUserResponse(
 				GeneralUser.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class GeneralUserResponse{
 	}
 
 	static List<GeneralUserResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GeneralUserResponse> list = new List();
     data.forEach((item) {
       list.add(GeneralUserResponse.fromJson(item));

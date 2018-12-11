@@ -20,6 +20,9 @@ class DestinyCharacterProgressionComponent{
 	);
 
 	static DestinyCharacterProgressionComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterProgressionComponent(
 				data['progressions'],
 				data['factions'],
@@ -31,6 +34,9 @@ class DestinyCharacterProgressionComponent{
 	}
 
 	static List<DestinyCharacterProgressionComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterProgressionComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterProgressionComponent.fromJson(item));

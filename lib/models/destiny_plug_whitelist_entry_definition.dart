@@ -9,6 +9,9 @@ class DestinyPlugWhitelistEntryDefinition{
 	);
 
 	static DestinyPlugWhitelistEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPlugWhitelistEntryDefinition(
 				data['categoryHash'],
 				data['categoryIdentifier'],
@@ -17,6 +20,9 @@ class DestinyPlugWhitelistEntryDefinition{
 	}
 
 	static List<DestinyPlugWhitelistEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPlugWhitelistEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyPlugWhitelistEntryDefinition.fromJson(item));

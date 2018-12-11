@@ -9,6 +9,9 @@ class DestinyItemPerkEntryDefinition{
 	);
 
 	static DestinyItemPerkEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemPerkEntryDefinition(
 				data['requirementDisplayString'],
 				data['perkHash'],
@@ -17,6 +20,9 @@ class DestinyItemPerkEntryDefinition{
 	}
 
 	static List<DestinyItemPerkEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemPerkEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemPerkEntryDefinition.fromJson(item));

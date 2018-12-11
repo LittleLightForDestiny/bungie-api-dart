@@ -19,6 +19,9 @@ class CEListOfGroupOptionalConversationResponse{
 	);
 
     static CEListOfGroupOptionalConversationResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CEListOfGroupOptionalConversationResponse(
 				GroupOptionalConversation.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class CEListOfGroupOptionalConversationResponse{
 	}
 
 	static List<CEListOfGroupOptionalConversationResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CEListOfGroupOptionalConversationResponse> list = new List();
     data.forEach((item) {
       list.add(CEListOfGroupOptionalConversationResponse.fromJson(item));

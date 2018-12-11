@@ -9,6 +9,9 @@ class DestinyPostGameCarnageReportExtendedData{
 	);
 
 	static DestinyPostGameCarnageReportExtendedData fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPostGameCarnageReportExtendedData(
 				DestinyHistoricalWeaponStats.fromList(data['weapons']),
 				data['values'],
@@ -16,6 +19,9 @@ class DestinyPostGameCarnageReportExtendedData{
 	}
 
 	static List<DestinyPostGameCarnageReportExtendedData> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPostGameCarnageReportExtendedData> list = new List();
     data.forEach((item) {
       list.add(DestinyPostGameCarnageReportExtendedData.fromJson(item));

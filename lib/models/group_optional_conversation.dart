@@ -13,6 +13,9 @@ class GroupOptionalConversation{
 	);
 
 	static GroupOptionalConversation fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupOptionalConversation(
 				data['groupId'],
 				data['conversationId'],
@@ -23,6 +26,9 @@ class GroupOptionalConversation{
 	}
 
 	static List<GroupOptionalConversation> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupOptionalConversation> list = new List();
     data.forEach((item) {
       list.add(GroupOptionalConversation.fromJson(item));

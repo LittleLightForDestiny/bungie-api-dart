@@ -12,6 +12,9 @@ class DestinyEntitySearchResultItem{
 	);
 
 	static DestinyEntitySearchResultItem fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEntitySearchResultItem(
 				data['hash'],
 				data['entityType'],
@@ -21,6 +24,9 @@ class DestinyEntitySearchResultItem{
 	}
 
 	static List<DestinyEntitySearchResultItem> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEntitySearchResultItem> list = new List();
     data.forEach((item) {
       list.add(DestinyEntitySearchResultItem.fromJson(item));

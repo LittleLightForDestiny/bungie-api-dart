@@ -13,6 +13,9 @@ class TagMetadataItem{
 	);
 
 	static TagMetadataItem fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TagMetadataItem(
 				data['description'],
 				data['tagText'],
@@ -23,6 +26,9 @@ class TagMetadataItem{
 	}
 
 	static List<TagMetadataItem> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TagMetadataItem> list = new List();
     data.forEach((item) {
       list.add(TagMetadataItem.fromJson(item));

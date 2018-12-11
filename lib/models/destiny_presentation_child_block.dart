@@ -9,6 +9,9 @@ class DestinyPresentationChildBlock{
 	);
 
 	static DestinyPresentationChildBlock fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPresentationChildBlock(
 				data['presentationNodeType'],
 				data['parentPresentationNodeHashes'],
@@ -17,6 +20,9 @@ class DestinyPresentationChildBlock{
 	}
 
 	static List<DestinyPresentationChildBlock> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPresentationChildBlock> list = new List();
     data.forEach((item) {
       list.add(DestinyPresentationChildBlock.fromJson(item));

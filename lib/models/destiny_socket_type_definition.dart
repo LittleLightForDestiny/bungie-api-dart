@@ -35,6 +35,9 @@ class DestinySocketTypeDefinition{
 	);
 
 	static DestinySocketTypeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinySocketTypeDefinition(
 				data['displayProperties'],
 				data['insertAction'],
@@ -54,6 +57,9 @@ class DestinySocketTypeDefinition{
 	}
 
 	static List<DestinySocketTypeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinySocketTypeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinySocketTypeDefinition.fromJson(item));

@@ -8,6 +8,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent{
 	);
 
 	static DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent(
 				data['data'],
 				data['privacy'],
@@ -15,6 +18,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent{
 	}
 
 	static List<DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent> list = new List();
     data.forEach((item) {
       list.add(DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent.fromJson(item));

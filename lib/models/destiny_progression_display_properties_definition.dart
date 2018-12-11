@@ -13,6 +13,9 @@ class DestinyProgressionDisplayPropertiesDefinition{
 	);
 
 	static DestinyProgressionDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProgressionDisplayPropertiesDefinition(
 				data['displayUnitsName'],
 				data['description'],
@@ -23,6 +26,9 @@ class DestinyProgressionDisplayPropertiesDefinition{
 	}
 
 	static List<DestinyProgressionDisplayPropertiesDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProgressionDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyProgressionDisplayPropertiesDefinition.fromJson(item));

@@ -25,6 +25,9 @@ class DestinyDestinationDefinition{
 	);
 
 	static DestinyDestinationDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDestinationDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['placeHash'],
@@ -39,6 +42,9 @@ class DestinyDestinationDefinition{
 	}
 
 	static List<DestinyDestinationDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDestinationDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDestinationDefinition.fromJson(item));

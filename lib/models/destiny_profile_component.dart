@@ -12,6 +12,9 @@ class DestinyProfileComponent{
 	);
 
 	static DestinyProfileComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProfileComponent(
 				data['userInfo'],
 				data['dateLastPlayed'],
@@ -21,6 +24,9 @@ class DestinyProfileComponent{
 	}
 
 	static List<DestinyProfileComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProfileComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyProfileComponent.fromJson(item));

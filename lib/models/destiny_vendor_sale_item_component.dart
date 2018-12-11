@@ -27,6 +27,9 @@ class DestinyVendorSaleItemComponent{
 	);
 
 	static DestinyVendorSaleItemComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorSaleItemComponent(
 				data['vendorItemIndex'],
 				data['itemHash'],
@@ -43,6 +46,9 @@ class DestinyVendorSaleItemComponent{
 	}
 
 	static List<DestinyVendorSaleItemComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorSaleItemComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorSaleItemComponent.fromJson(item));

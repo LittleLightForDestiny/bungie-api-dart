@@ -17,6 +17,9 @@ class SearchResultOfTrendingEntry{
 	);
 
 	static SearchResultOfTrendingEntry fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfTrendingEntry(
 				TrendingEntry.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfTrendingEntry{
 	}
 
 	static List<SearchResultOfTrendingEntry> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfTrendingEntry> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfTrendingEntry.fromJson(item));

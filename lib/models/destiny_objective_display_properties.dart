@@ -7,6 +7,9 @@ class DestinyObjectiveDisplayProperties{
 	);
 
 	static DestinyObjectiveDisplayProperties fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyObjectiveDisplayProperties(
 				data['activityHash'],
 				data['displayOnItemPreviewScreen'],
@@ -14,6 +17,9 @@ class DestinyObjectiveDisplayProperties{
 	}
 
 	static List<DestinyObjectiveDisplayProperties> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyObjectiveDisplayProperties> list = new List();
     data.forEach((item) {
       list.add(DestinyObjectiveDisplayProperties.fromJson(item));

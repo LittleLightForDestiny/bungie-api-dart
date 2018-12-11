@@ -19,6 +19,9 @@ class CEListOfGlobalAlertResponse{
 	);
 
     static CEListOfGlobalAlertResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CEListOfGlobalAlertResponse(
 				GlobalAlert.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class CEListOfGlobalAlertResponse{
 	}
 
 	static List<CEListOfGlobalAlertResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CEListOfGlobalAlertResponse> list = new List();
     data.forEach((item) {
       list.add(CEListOfGlobalAlertResponse.fromJson(item));

@@ -16,6 +16,9 @@ class TagMetadataDefinition{
 	);
 
 	static TagMetadataDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TagMetadataDefinition(
 				data['description'],
 				data['order'],
@@ -27,6 +30,9 @@ class TagMetadataDefinition{
 	}
 
 	static List<TagMetadataDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TagMetadataDefinition> list = new List();
     data.forEach((item) {
       list.add(TagMetadataDefinition.fromJson(item));

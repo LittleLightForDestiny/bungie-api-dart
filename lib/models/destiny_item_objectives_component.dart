@@ -11,6 +11,9 @@ class DestinyItemObjectivesComponent{
 	);
 
 	static DestinyItemObjectivesComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemObjectivesComponent(
 				DestinyObjectiveProgress.fromList(data['objectives']),
 				data['flavorObjective'],
@@ -19,6 +22,9 @@ class DestinyItemObjectivesComponent{
 	}
 
 	static List<DestinyItemObjectivesComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemObjectivesComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyItemObjectivesComponent.fromJson(item));

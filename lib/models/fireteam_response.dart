@@ -12,6 +12,9 @@ class FireteamResponse{
 	);
 
 	static FireteamResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new FireteamResponse(
 				FireteamSummary.fromJson(data['Summary']),
 				FireteamMember.fromList(data['Members']),
@@ -20,6 +23,9 @@ class FireteamResponse{
 	}
 
 	static List<FireteamResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<FireteamResponse> list = new List();
     data.forEach((item) {
       list.add(FireteamResponse.fromJson(item));

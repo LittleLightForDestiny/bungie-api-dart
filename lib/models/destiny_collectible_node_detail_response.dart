@@ -9,6 +9,9 @@ class DestinyCollectibleNodeDetailResponse{
 	);
 
 	static DestinyCollectibleNodeDetailResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCollectibleNodeDetailResponse(
 				data['collectibles'],
 				data['collectibleItemComponents'],
@@ -16,6 +19,9 @@ class DestinyCollectibleNodeDetailResponse{
 	}
 
 	static List<DestinyCollectibleNodeDetailResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCollectibleNodeDetailResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyCollectibleNodeDetailResponse.fromJson(item));

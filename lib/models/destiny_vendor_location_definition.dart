@@ -7,6 +7,9 @@ class DestinyVendorLocationDefinition{
 	);
 
 	static DestinyVendorLocationDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorLocationDefinition(
 				data['destinationHash'],
 				data['backgroundImagePath'],
@@ -14,6 +17,9 @@ class DestinyVendorLocationDefinition{
 	}
 
 	static List<DestinyVendorLocationDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorLocationDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorLocationDefinition.fromJson(item));

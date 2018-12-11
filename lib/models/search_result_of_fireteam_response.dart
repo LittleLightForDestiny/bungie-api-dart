@@ -17,6 +17,9 @@ class SearchResultOfFireteamResponse{
 	);
 
 	static SearchResultOfFireteamResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfFireteamResponse(
 				FireteamResponse.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfFireteamResponse{
 	}
 
 	static List<SearchResultOfFireteamResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfFireteamResponse> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfFireteamResponse.fromJson(item));

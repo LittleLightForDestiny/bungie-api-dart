@@ -11,6 +11,9 @@ class AwaPermissionRequested{
 	);
 
 	static AwaPermissionRequested fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new AwaPermissionRequested(
 				data['type'],
 				data['affectedItemId'],
@@ -20,6 +23,9 @@ class AwaPermissionRequested{
 	}
 
 	static List<AwaPermissionRequested> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<AwaPermissionRequested> list = new List();
     data.forEach((item) {
       list.add(AwaPermissionRequested.fromJson(item));

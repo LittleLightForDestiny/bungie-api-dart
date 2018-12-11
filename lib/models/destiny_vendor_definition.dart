@@ -84,6 +84,9 @@ class DestinyVendorDefinition{
 	);
 
 	static DestinyVendorDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorDefinition(
 				DestinyVendorDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['buyString'],
@@ -123,6 +126,9 @@ class DestinyVendorDefinition{
 	}
 
 	static List<DestinyVendorDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorDefinition.fromJson(item));

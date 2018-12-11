@@ -28,6 +28,9 @@ class TrendingDetail{
 	);
 
 	static TrendingDetail fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingDetail(
 				data['identifier'],
 				data['entityType'],
@@ -42,6 +45,9 @@ class TrendingDetail{
 	}
 
 	static List<TrendingDetail> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingDetail> list = new List();
     data.forEach((item) {
       list.add(TrendingDetail.fromJson(item));

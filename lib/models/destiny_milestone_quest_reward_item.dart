@@ -13,6 +13,9 @@ class DestinyMilestoneQuestRewardItem{
 	);
 
 	static DestinyMilestoneQuestRewardItem fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneQuestRewardItem(
 				data['vendorHash'],
 				data['vendorItemIndex'],
@@ -23,6 +26,9 @@ class DestinyMilestoneQuestRewardItem{
 	}
 
 	static List<DestinyMilestoneQuestRewardItem> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneQuestRewardItem> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneQuestRewardItem.fromJson(item));

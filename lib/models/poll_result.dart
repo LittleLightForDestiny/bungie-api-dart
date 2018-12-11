@@ -13,6 +13,9 @@ class PollResult{
 	);
 
 	static PollResult fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new PollResult(
 				data['answerText'],
 				data['answerSlot'],
@@ -23,6 +26,9 @@ class PollResult{
 	}
 
 	static List<PollResult> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<PollResult> list = new List();
     data.forEach((item) {
       list.add(PollResult.fromJson(item));

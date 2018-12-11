@@ -12,6 +12,9 @@ class DestinyLinkedProfilesResponse{
 	);
 
 	static DestinyLinkedProfilesResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLinkedProfilesResponse(
 				UserInfoCard.fromList(data['profiles']),
 				data['bnetMembership'],
@@ -20,6 +23,9 @@ class DestinyLinkedProfilesResponse{
 	}
 
 	static List<DestinyLinkedProfilesResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLinkedProfilesResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyLinkedProfilesResponse.fromJson(item));

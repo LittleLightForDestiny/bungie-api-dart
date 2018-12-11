@@ -22,6 +22,9 @@ class DestinyQuestStatus{
 	);
 
 	static DestinyQuestStatus fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyQuestStatus(
 				data['questHash'],
 				data['stepHash'],
@@ -36,6 +39,9 @@ class DestinyQuestStatus{
 	}
 
 	static List<DestinyQuestStatus> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyQuestStatus> list = new List();
     data.forEach((item) {
       list.add(DestinyQuestStatus.fromJson(item));

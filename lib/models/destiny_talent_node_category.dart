@@ -12,6 +12,9 @@ class DestinyTalentNodeCategory{
 	);
 
 	static DestinyTalentNodeCategory fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentNodeCategory(
 				data['identifier'],
 				data['isLoreDriven'],
@@ -21,6 +24,9 @@ class DestinyTalentNodeCategory{
 	}
 
 	static List<DestinyTalentNodeCategory> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentNodeCategory> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentNodeCategory.fromJson(item));

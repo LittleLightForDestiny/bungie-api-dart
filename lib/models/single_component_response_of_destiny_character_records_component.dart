@@ -8,6 +8,9 @@ class SingleComponentResponseOfDestinyCharacterRecordsComponent{
 	);
 
 	static SingleComponentResponseOfDestinyCharacterRecordsComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SingleComponentResponseOfDestinyCharacterRecordsComponent(
 				DestinyCharacterRecordsComponent.fromJson(data['data']),
 				data['privacy'],
@@ -15,6 +18,9 @@ class SingleComponentResponseOfDestinyCharacterRecordsComponent{
 	}
 
 	static List<SingleComponentResponseOfDestinyCharacterRecordsComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SingleComponentResponseOfDestinyCharacterRecordsComponent> list = new List();
     data.forEach((item) {
       list.add(SingleComponentResponseOfDestinyCharacterRecordsComponent.fromJson(item));

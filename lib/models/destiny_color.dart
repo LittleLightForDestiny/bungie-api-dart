@@ -11,6 +11,9 @@ class DestinyColor{
 	);
 
 	static DestinyColor fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyColor(
 				data['red'],
 				data['green'],
@@ -20,6 +23,9 @@ class DestinyColor{
 	}
 
 	static List<DestinyColor> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyColor> list = new List();
     data.forEach((item) {
       list.add(DestinyColor.fromJson(item));

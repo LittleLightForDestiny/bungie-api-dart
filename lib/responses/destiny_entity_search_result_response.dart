@@ -19,6 +19,9 @@ class DestinyEntitySearchResultResponse{
 	);
 
     static DestinyEntitySearchResultResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEntitySearchResultResponse(
 				DestinyEntitySearchResult.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyEntitySearchResultResponse{
 	}
 
 	static List<DestinyEntitySearchResultResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEntitySearchResultResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyEntitySearchResultResponse.fromJson(item));

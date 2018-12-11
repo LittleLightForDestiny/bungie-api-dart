@@ -13,6 +13,9 @@ class DestinyVendorGroupDefinition{
 	);
 
 	static DestinyVendorGroupDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorGroupDefinition(
 				data['order'],
 				data['categoryName'],
@@ -23,6 +26,9 @@ class DestinyVendorGroupDefinition{
 	}
 
 	static List<DestinyVendorGroupDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorGroupDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorGroupDefinition.fromJson(item));

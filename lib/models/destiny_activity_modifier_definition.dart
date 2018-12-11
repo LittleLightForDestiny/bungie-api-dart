@@ -12,6 +12,9 @@ class DestinyActivityModifierDefinition{
 	);
 
 	static DestinyActivityModifierDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityModifierDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['hash'],
@@ -21,6 +24,9 @@ class DestinyActivityModifierDefinition{
 	}
 
 	static List<DestinyActivityModifierDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityModifierDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityModifierDefinition.fromJson(item));

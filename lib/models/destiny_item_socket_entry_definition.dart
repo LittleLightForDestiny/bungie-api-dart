@@ -23,6 +23,9 @@ class DestinyItemSocketEntryDefinition{
 	);
 
 	static DestinyItemSocketEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSocketEntryDefinition(
 				data['socketTypeHash'],
 				data['singleInitialItemHash'],
@@ -37,6 +40,9 @@ class DestinyItemSocketEntryDefinition{
 	}
 
 	static List<DestinyItemSocketEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSocketEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSocketEntryDefinition.fromJson(item));

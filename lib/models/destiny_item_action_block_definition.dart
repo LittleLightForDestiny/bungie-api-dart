@@ -33,6 +33,9 @@ class DestinyItemActionBlockDefinition{
 	);
 
 	static DestinyItemActionBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemActionBlockDefinition(
 				data['verbName'],
 				data['verbDescription'],
@@ -52,6 +55,9 @@ class DestinyItemActionBlockDefinition{
 	}
 
 	static List<DestinyItemActionBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemActionBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemActionBlockDefinition.fromJson(item));

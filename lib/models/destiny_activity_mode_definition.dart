@@ -32,6 +32,9 @@ class DestinyActivityModeDefinition{
 	);
 
 	static DestinyActivityModeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityModeDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['pgcrImage'],
@@ -51,6 +54,9 @@ class DestinyActivityModeDefinition{
 	}
 
 	static List<DestinyActivityModeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityModeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityModeDefinition.fromJson(item));

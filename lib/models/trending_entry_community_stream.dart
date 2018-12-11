@@ -11,6 +11,9 @@ class TrendingEntryCommunityStream{
 	);
 
 	static TrendingEntryCommunityStream fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingEntryCommunityStream(
 				data['image'],
 				data['title'],
@@ -20,6 +23,9 @@ class TrendingEntryCommunityStream{
 	}
 
 	static List<TrendingEntryCommunityStream> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingEntryCommunityStream> list = new List();
     data.forEach((item) {
       list.add(TrendingEntryCommunityStream.fromJson(item));

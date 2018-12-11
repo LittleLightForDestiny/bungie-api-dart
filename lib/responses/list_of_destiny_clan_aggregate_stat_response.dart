@@ -19,6 +19,9 @@ class ListOfDestinyClanAggregateStatResponse{
 	);
 
     static ListOfDestinyClanAggregateStatResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ListOfDestinyClanAggregateStatResponse(
 				DestinyClanAggregateStat.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ListOfDestinyClanAggregateStatResponse{
 	}
 
 	static List<ListOfDestinyClanAggregateStatResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ListOfDestinyClanAggregateStatResponse> list = new List();
     data.forEach((item) {
       list.add(ListOfDestinyClanAggregateStatResponse.fromJson(item));

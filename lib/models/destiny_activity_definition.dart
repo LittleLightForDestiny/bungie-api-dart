@@ -81,6 +81,9 @@ class DestinyActivityDefinition{
 	);
 
 	static DestinyActivityDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityDefinition(
 				data['displayProperties'],
 				data['originalDisplayProperties'],
@@ -118,6 +121,9 @@ class DestinyActivityDefinition{
 	}
 
 	static List<DestinyActivityDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityDefinition.fromJson(item));

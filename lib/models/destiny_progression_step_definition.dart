@@ -14,6 +14,9 @@ class DestinyProgressionStepDefinition{
 	);
 
 	static DestinyProgressionStepDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProgressionStepDefinition(
 				data['stepName'],
 				data['displayEffectType'],
@@ -24,6 +27,9 @@ class DestinyProgressionStepDefinition{
 	}
 
 	static List<DestinyProgressionStepDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProgressionStepDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyProgressionStepDefinition.fromJson(item));

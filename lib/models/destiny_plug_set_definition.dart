@@ -15,6 +15,9 @@ class DestinyPlugSetDefinition{
 	);
 
 	static DestinyPlugSetDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPlugSetDefinition(
 				data['displayProperties'],
 				DestinyItemSocketEntryPlugItemDefinition.fromList(data['reusablePlugItems']),
@@ -25,6 +28,9 @@ class DestinyPlugSetDefinition{
 	}
 
 	static List<DestinyPlugSetDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPlugSetDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyPlugSetDefinition.fromJson(item));

@@ -13,6 +13,9 @@ class DestinyLeaderboardEntry{
 	);
 
 	static DestinyLeaderboardEntry fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLeaderboardEntry(
 				data['rank'],
 				data['player'],
@@ -22,6 +25,9 @@ class DestinyLeaderboardEntry{
 	}
 
 	static List<DestinyLeaderboardEntry> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLeaderboardEntry> list = new List();
     data.forEach((item) {
       list.add(DestinyLeaderboardEntry.fromJson(item));

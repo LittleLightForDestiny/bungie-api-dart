@@ -8,6 +8,9 @@ class GroupV2ClanInfo{
 	);
 
 	static GroupV2ClanInfo fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupV2ClanInfo(
 				data['clanCallsign'],
 				ClanBanner.fromJson(data['clanBannerData']),
@@ -15,6 +18,9 @@ class GroupV2ClanInfo{
 	}
 
 	static List<GroupV2ClanInfo> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupV2ClanInfo> list = new List();
     data.forEach((item) {
       list.add(GroupV2ClanInfo.fromJson(item));

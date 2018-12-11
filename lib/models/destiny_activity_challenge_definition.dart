@@ -8,6 +8,9 @@ class DestinyActivityChallengeDefinition{
 	);
 
 	static DestinyActivityChallengeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityChallengeDefinition(
 				data['objectiveHash'],
 				DestinyItemQuantity.fromList(data['dummyRewards']),
@@ -15,6 +18,9 @@ class DestinyActivityChallengeDefinition{
 	}
 
 	static List<DestinyActivityChallengeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityChallengeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityChallengeDefinition.fromJson(item));

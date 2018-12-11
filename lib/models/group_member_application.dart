@@ -23,6 +23,9 @@ class GroupMemberApplication{
 	);
 
 	static GroupMemberApplication fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupMemberApplication(
 				data['groupId'],
 				data['creationDate'],
@@ -37,6 +40,9 @@ class GroupMemberApplication{
 	}
 
 	static List<GroupMemberApplication> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupMemberApplication> list = new List();
     data.forEach((item) {
       list.add(GroupMemberApplication.fromJson(item));

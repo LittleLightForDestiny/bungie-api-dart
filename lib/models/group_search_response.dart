@@ -17,6 +17,9 @@ class GroupSearchResponse{
 	);
 
 	static GroupSearchResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupSearchResponse(
 				GroupV2Card.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class GroupSearchResponse{
 	}
 
 	static List<GroupSearchResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupSearchResponse> list = new List();
     data.forEach((item) {
       list.add(GroupSearchResponse.fromJson(item));

@@ -8,6 +8,9 @@ class DestinyObjectiveStatEntryDefinition{
 	);
 
 	static DestinyObjectiveStatEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyObjectiveStatEntryDefinition(
 				data['stat'],
 				data['style'],
@@ -15,6 +18,9 @@ class DestinyObjectiveStatEntryDefinition{
 	}
 
 	static List<DestinyObjectiveStatEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyObjectiveStatEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyObjectiveStatEntryDefinition.fromJson(item));

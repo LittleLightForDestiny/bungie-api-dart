@@ -24,6 +24,9 @@ class ForumRecruitmentDetail{
 	);
 
 	static ForumRecruitmentDetail fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ForumRecruitmentDetail(
 				data['topicId'],
 				data['microphoneRequired'],
@@ -39,6 +42,9 @@ class ForumRecruitmentDetail{
 	}
 
 	static List<ForumRecruitmentDetail> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ForumRecruitmentDetail> list = new List();
     data.forEach((item) {
       list.add(ForumRecruitmentDetail.fromJson(item));

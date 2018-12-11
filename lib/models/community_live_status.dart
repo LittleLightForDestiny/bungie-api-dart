@@ -48,6 +48,9 @@ class CommunityLiveStatus{
 	);
 
 	static CommunityLiveStatus fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CommunityLiveStatus(
 				data['dateStatusUpdated'],
 				data['url'],
@@ -75,6 +78,9 @@ class CommunityLiveStatus{
 	}
 
 	static List<CommunityLiveStatus> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CommunityLiveStatus> list = new List();
     data.forEach((item) {
       list.add(CommunityLiveStatus.fromJson(item));

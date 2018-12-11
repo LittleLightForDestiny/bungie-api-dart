@@ -21,6 +21,9 @@ class DestinyVendorsResponse{
 	);
 
 	static DestinyVendorsResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorsResponse(
 				data['vendorGroups'],
 				data['vendors'],
@@ -32,6 +35,9 @@ class DestinyVendorsResponse{
 	}
 
 	static List<DestinyVendorsResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorsResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorsResponse.fromJson(item));

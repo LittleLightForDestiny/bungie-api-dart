@@ -33,6 +33,9 @@ class TrendingEntry{
 	);
 
 	static TrendingEntry fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingEntry(
 				data['weight'],
 				data['isFeatured'],
@@ -53,6 +56,9 @@ class TrendingEntry{
 	}
 
 	static List<TrendingEntry> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingEntry> list = new List();
     data.forEach((item) {
       list.add(TrendingEntry.fromJson(item));

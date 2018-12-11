@@ -10,6 +10,9 @@ class DestinyPublicActivityStatus{
 	);
 
 	static DestinyPublicActivityStatus fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPublicActivityStatus(
 				data['challengeObjectiveHashes'],
 				data['modifierHashes'],
@@ -18,6 +21,9 @@ class DestinyPublicActivityStatus{
 	}
 
 	static List<DestinyPublicActivityStatus> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPublicActivityStatus> list = new List();
     data.forEach((item) {
       list.add(DestinyPublicActivityStatus.fromJson(item));

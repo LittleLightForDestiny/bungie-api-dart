@@ -7,6 +7,9 @@ class DestinyRecordTitleBlock{
 	);
 
 	static DestinyRecordTitleBlock fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyRecordTitleBlock(
 				data['hasTitle'],
 				data['titlesByGender'],
@@ -14,6 +17,9 @@ class DestinyRecordTitleBlock{
 	}
 
 	static List<DestinyRecordTitleBlock> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyRecordTitleBlock> list = new List();
     data.forEach((item) {
       list.add(DestinyRecordTitleBlock.fromJson(item));

@@ -8,6 +8,9 @@ class DestinyDerivedItemCategoryDefinition{
 	);
 
 	static DestinyDerivedItemCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDerivedItemCategoryDefinition(
 				data['categoryDescription'],
 				DestinyDerivedItemDefinition.fromList(data['items']),
@@ -15,6 +18,9 @@ class DestinyDerivedItemCategoryDefinition{
 	}
 
 	static List<DestinyDerivedItemCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDerivedItemCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDerivedItemCategoryDefinition.fromJson(item));

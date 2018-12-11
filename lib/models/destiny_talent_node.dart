@@ -25,6 +25,9 @@ class DestinyTalentNode{
 	);
 
 	static DestinyTalentNode fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentNode(
 				data['nodeIndex'],
 				data['nodeHash'],
@@ -40,6 +43,9 @@ class DestinyTalentNode{
 	}
 
 	static List<DestinyTalentNode> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentNode> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentNode.fromJson(item));

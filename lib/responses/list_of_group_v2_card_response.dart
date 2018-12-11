@@ -19,6 +19,9 @@ class ListOfGroupV2CardResponse{
 	);
 
     static ListOfGroupV2CardResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ListOfGroupV2CardResponse(
 				GroupV2Card.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ListOfGroupV2CardResponse{
 	}
 
 	static List<ListOfGroupV2CardResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ListOfGroupV2CardResponse> list = new List();
     data.forEach((item) {
       list.add(ListOfGroupV2CardResponse.fromJson(item));

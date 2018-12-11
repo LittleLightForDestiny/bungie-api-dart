@@ -19,6 +19,9 @@ class DestinyMilestoneResponse{
 	);
 
     static DestinyMilestoneResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneResponse(
 				DestinyMilestone.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyMilestoneResponse{
 	}
 
 	static List<DestinyMilestoneResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneResponse.fromJson(item));

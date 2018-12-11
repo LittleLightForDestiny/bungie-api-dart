@@ -8,6 +8,9 @@ class DestinyMilestoneRewardCategory{
 	);
 
 	static DestinyMilestoneRewardCategory fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneRewardCategory(
 				data['rewardCategoryHash'],
 				DestinyMilestoneRewardEntry.fromList(data['entries']),
@@ -15,6 +18,9 @@ class DestinyMilestoneRewardCategory{
 	}
 
 	static List<DestinyMilestoneRewardCategory> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneRewardCategory> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneRewardCategory.fromJson(item));

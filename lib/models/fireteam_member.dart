@@ -19,6 +19,9 @@ class FireteamMember{
 	);
 
 	static FireteamMember fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new FireteamMember(
 				UserInfoCard.fromJson(data['destinyUserInfo']),
 				UserInfoCard.fromJson(data['bungieNetUserInfo']),
@@ -31,6 +34,9 @@ class FireteamMember{
 	}
 
 	static List<FireteamMember> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<FireteamMember> list = new List();
     data.forEach((item) {
       list.add(FireteamMember.fromJson(item));

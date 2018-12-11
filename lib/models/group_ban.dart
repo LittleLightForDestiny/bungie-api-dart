@@ -23,6 +23,9 @@ class GroupBan{
 	);
 
 	static GroupBan fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupBan(
 				data['groupId'],
 				UserInfoCard.fromJson(data['lastModifiedBy']),
@@ -36,6 +39,9 @@ class GroupBan{
 	}
 
 	static List<GroupBan> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupBan> list = new List();
     data.forEach((item) {
       list.add(GroupBan.fromJson(item));

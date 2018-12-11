@@ -10,6 +10,9 @@ class TrendingCategory{
 	);
 
 	static TrendingCategory fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingCategory(
 				data['categoryName'],
 				SearchResultOfTrendingEntry.fromJson(data['entries']),
@@ -18,6 +21,9 @@ class TrendingCategory{
 	}
 
 	static List<TrendingCategory> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingCategory> list = new List();
     data.forEach((item) {
       list.add(TrendingCategory.fromJson(item));

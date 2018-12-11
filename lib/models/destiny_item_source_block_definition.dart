@@ -10,6 +10,9 @@ class DestinyItemSourceBlockDefinition{
 	);
 
 	static DestinyItemSourceBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSourceBlockDefinition(
 				data['sourceHashes'],
 				DestinyItemSourceDefinition.fromList(data['sources']),
@@ -18,6 +21,9 @@ class DestinyItemSourceBlockDefinition{
 	}
 
 	static List<DestinyItemSourceBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSourceBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSourceBlockDefinition.fromJson(item));

@@ -7,6 +7,9 @@ class DateRange{
 	);
 
 	static DateRange fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DateRange(
 				data['start'],
 				data['end'],
@@ -14,6 +17,9 @@ class DateRange{
 	}
 
 	static List<DateRange> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DateRange> list = new List();
     data.forEach((item) {
       list.add(DateRange.fromJson(item));

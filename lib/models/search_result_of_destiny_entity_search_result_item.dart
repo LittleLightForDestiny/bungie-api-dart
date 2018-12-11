@@ -17,6 +17,9 @@ class SearchResultOfDestinyEntitySearchResultItem{
 	);
 
 	static SearchResultOfDestinyEntitySearchResultItem fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfDestinyEntitySearchResultItem(
 				DestinyEntitySearchResultItem.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class SearchResultOfDestinyEntitySearchResultItem{
 	}
 
 	static List<SearchResultOfDestinyEntitySearchResultItem> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfDestinyEntitySearchResultItem> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfDestinyEntitySearchResultItem.fromJson(item));

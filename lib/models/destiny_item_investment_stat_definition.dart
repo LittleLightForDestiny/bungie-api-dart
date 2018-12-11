@@ -9,6 +9,9 @@ class DestinyItemInvestmentStatDefinition{
 	);
 
 	static DestinyItemInvestmentStatDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemInvestmentStatDefinition(
 				data['statTypeHash'],
 				data['value'],
@@ -17,6 +20,9 @@ class DestinyItemInvestmentStatDefinition{
 	}
 
 	static List<DestinyItemInvestmentStatDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemInvestmentStatDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemInvestmentStatDefinition.fromJson(item));

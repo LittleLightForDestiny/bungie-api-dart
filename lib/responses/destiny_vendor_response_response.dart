@@ -19,6 +19,9 @@ class DestinyVendorResponseResponse{
 	);
 
     static DestinyVendorResponseResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorResponseResponse(
 				DestinyVendorResponse.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyVendorResponseResponse{
 	}
 
 	static List<DestinyVendorResponseResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorResponseResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorResponseResponse.fromJson(item));

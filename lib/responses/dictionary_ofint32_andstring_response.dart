@@ -18,6 +18,9 @@ class DictionaryOfint32AndstringResponse{
 	);
 
     static DictionaryOfint32AndstringResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryOfint32AndstringResponse(
 				data['Response'],
 				data['ErrorCode'],
@@ -30,6 +33,9 @@ class DictionaryOfint32AndstringResponse{
 	}
 
 	static List<DictionaryOfint32AndstringResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryOfint32AndstringResponse> list = new List();
     data.forEach((item) {
       list.add(DictionaryOfint32AndstringResponse.fromJson(item));

@@ -12,6 +12,9 @@ class DestinyItemPreviewBlockDefinition{
 	);
 
 	static DestinyItemPreviewBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemPreviewBlockDefinition(
 				data['screenStyle'],
 				data['previewVendorHash'],
@@ -21,6 +24,9 @@ class DestinyItemPreviewBlockDefinition{
 	}
 
 	static List<DestinyItemPreviewBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemPreviewBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemPreviewBlockDefinition.fromJson(item));

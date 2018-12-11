@@ -8,6 +8,9 @@ class GroupMemberLeaveResult{
 	);
 
 	static GroupMemberLeaveResult fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupMemberLeaveResult(
 				GroupV2.fromJson(data['group']),
 				data['groupDeleted'],
@@ -15,6 +18,9 @@ class GroupMemberLeaveResult{
 	}
 
 	static List<GroupMemberLeaveResult> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupMemberLeaveResult> list = new List();
     data.forEach((item) {
       list.add(GroupMemberLeaveResult.fromJson(item));

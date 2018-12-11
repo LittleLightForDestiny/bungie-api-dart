@@ -61,6 +61,9 @@ class GroupV2{
 	);
 
 	static GroupV2 fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupV2(
 				data['groupId'],
 				data['name'],
@@ -94,6 +97,9 @@ class GroupV2{
 	}
 
 	static List<GroupV2> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupV2> list = new List();
     data.forEach((item) {
       list.add(GroupV2.fromJson(item));

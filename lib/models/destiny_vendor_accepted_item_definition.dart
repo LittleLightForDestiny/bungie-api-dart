@@ -7,6 +7,9 @@ class DestinyVendorAcceptedItemDefinition{
 	);
 
 	static DestinyVendorAcceptedItemDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorAcceptedItemDefinition(
 				data['acceptedInventoryBucketHash'],
 				data['destinationInventoryBucketHash'],
@@ -14,6 +17,9 @@ class DestinyVendorAcceptedItemDefinition{
 	}
 
 	static List<DestinyVendorAcceptedItemDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorAcceptedItemDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorAcceptedItemDefinition.fromJson(item));

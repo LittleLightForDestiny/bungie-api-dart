@@ -14,6 +14,9 @@ class DestinyInsertPlugsActionRequest{
 	);
 
 	static DestinyInsertPlugsActionRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyInsertPlugsActionRequest(
 				data['actionToken'],
 				data['itemInstanceId'],
@@ -24,6 +27,9 @@ class DestinyInsertPlugsActionRequest{
 	}
 
 	static List<DestinyInsertPlugsActionRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyInsertPlugsActionRequest> list = new List();
     data.forEach((item) {
       list.add(DestinyInsertPlugsActionRequest.fromJson(item));

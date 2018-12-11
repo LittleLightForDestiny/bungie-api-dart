@@ -15,6 +15,9 @@ class ContentPreview{
 	);
 
 	static ContentPreview fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentPreview(
 				data['name'],
 				data['path'],
@@ -26,6 +29,9 @@ class ContentPreview{
 	}
 
 	static List<ContentPreview> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentPreview> list = new List();
     data.forEach((item) {
       list.add(ContentPreview.fromJson(item));

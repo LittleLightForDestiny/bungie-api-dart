@@ -12,6 +12,9 @@ class DestinyCharacterRenderComponent{
 	);
 
 	static DestinyCharacterRenderComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterRenderComponent(
 				DyeReference.fromList(data['customDyes']),
 				data['customization'],
@@ -20,6 +23,9 @@ class DestinyCharacterRenderComponent{
 	}
 
 	static List<DestinyCharacterRenderComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterRenderComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterRenderComponent.fromJson(item));

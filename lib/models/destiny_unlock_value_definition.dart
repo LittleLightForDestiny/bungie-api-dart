@@ -9,6 +9,9 @@ class DestinyUnlockValueDefinition{
 	);
 
 	static DestinyUnlockValueDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyUnlockValueDefinition(
 				data['hash'],
 				data['index'],
@@ -17,6 +20,9 @@ class DestinyUnlockValueDefinition{
 	}
 
 	static List<DestinyUnlockValueDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyUnlockValueDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyUnlockValueDefinition.fromJson(item));

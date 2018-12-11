@@ -16,6 +16,9 @@ class DestinyManifest{
 	);
 
 	static DestinyManifest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyManifest(
 				data['version'],
 				data['mobileAssetContentPath'],
@@ -27,6 +30,9 @@ class DestinyManifest{
 	}
 
 	static List<DestinyManifest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyManifest> list = new List();
     data.forEach((item) {
       list.add(DestinyManifest.fromJson(item));

@@ -8,6 +8,9 @@ class DestinyMilestoneValueDefinition{
 	);
 
 	static DestinyMilestoneValueDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMilestoneValueDefinition(
 				data['key'],
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
@@ -15,6 +18,9 @@ class DestinyMilestoneValueDefinition{
 	}
 
 	static List<DestinyMilestoneValueDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMilestoneValueDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyMilestoneValueDefinition.fromJson(item));

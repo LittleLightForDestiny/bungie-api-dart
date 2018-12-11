@@ -13,6 +13,9 @@ class DestinyActivityPlaylistItemDefinition{
 	);
 
 	static DestinyActivityPlaylistItemDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityPlaylistItemDefinition(
 				data['activityHash'],
 				data['directActivityModeHash'],
@@ -23,6 +26,9 @@ class DestinyActivityPlaylistItemDefinition{
 	}
 
 	static List<DestinyActivityPlaylistItemDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityPlaylistItemDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityPlaylistItemDefinition.fromJson(item));

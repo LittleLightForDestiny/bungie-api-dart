@@ -23,6 +23,9 @@ class GroupQuery{
 	);
 
 	static GroupQuery fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupQuery(
 				data['name'],
 				data['groupType'],
@@ -38,6 +41,9 @@ class GroupQuery{
 	}
 
 	static List<GroupQuery> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupQuery> list = new List();
     data.forEach((item) {
       list.add(GroupQuery.fromJson(item));

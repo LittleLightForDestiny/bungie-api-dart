@@ -41,6 +41,9 @@ class DestinyNodeStepDefinition{
 	);
 
 	static DestinyNodeStepDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyNodeStepDefinition(
 				data['displayProperties'],
 				data['stepIndex'],
@@ -63,6 +66,9 @@ class DestinyNodeStepDefinition{
 	}
 
 	static List<DestinyNodeStepDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyNodeStepDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyNodeStepDefinition.fromJson(item));

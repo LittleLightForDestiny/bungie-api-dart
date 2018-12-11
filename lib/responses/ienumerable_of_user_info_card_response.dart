@@ -19,6 +19,9 @@ class IEnumerableOfUserInfoCardResponse{
 	);
 
     static IEnumerableOfUserInfoCardResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new IEnumerableOfUserInfoCardResponse(
 				UserInfoCard.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class IEnumerableOfUserInfoCardResponse{
 	}
 
 	static List<IEnumerableOfUserInfoCardResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<IEnumerableOfUserInfoCardResponse> list = new List();
     data.forEach((item) {
       list.add(IEnumerableOfUserInfoCardResponse.fromJson(item));

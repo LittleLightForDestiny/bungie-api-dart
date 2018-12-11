@@ -16,6 +16,9 @@ class DestinyHistoricalStatsValue{
 	);
 
 	static DestinyHistoricalStatsValue fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsValue(
 				data['statId'],
 				data['basic'],
@@ -26,6 +29,9 @@ class DestinyHistoricalStatsValue{
 	}
 
 	static List<DestinyHistoricalStatsValue> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsValue> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsValue.fromJson(item));

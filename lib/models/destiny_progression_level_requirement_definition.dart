@@ -14,6 +14,9 @@ class DestinyProgressionLevelRequirementDefinition{
 	);
 
 	static DestinyProgressionLevelRequirementDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProgressionLevelRequirementDefinition(
 				InterpolationPointFloat.fromList(data['requirementCurve']),
 				data['progressionHash'],
@@ -24,6 +27,9 @@ class DestinyProgressionLevelRequirementDefinition{
 	}
 
 	static List<DestinyProgressionLevelRequirementDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProgressionLevelRequirementDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyProgressionLevelRequirementDefinition.fromJson(item));

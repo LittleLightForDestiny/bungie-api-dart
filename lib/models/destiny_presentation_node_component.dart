@@ -8,6 +8,9 @@ class DestinyPresentationNodeComponent{
 	);
 
 	static DestinyPresentationNodeComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPresentationNodeComponent(
 				data['state'],
 				DestinyObjectiveProgress.fromJson(data['objective']),
@@ -15,6 +18,9 @@ class DestinyPresentationNodeComponent{
 	}
 
 	static List<DestinyPresentationNodeComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPresentationNodeComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyPresentationNodeComponent.fromJson(item));

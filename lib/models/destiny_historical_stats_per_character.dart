@@ -13,6 +13,9 @@ class DestinyHistoricalStatsPerCharacter{
 	);
 
 	static DestinyHistoricalStatsPerCharacter fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsPerCharacter(
 				data['characterId'],
 				data['deleted'],
@@ -22,6 +25,9 @@ class DestinyHistoricalStatsPerCharacter{
 	}
 
 	static List<DestinyHistoricalStatsPerCharacter> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsPerCharacter> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsPerCharacter.fromJson(item));

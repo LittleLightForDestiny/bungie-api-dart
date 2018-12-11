@@ -11,6 +11,9 @@ class DestinyMaterialRequirement{
 	);
 
 	static DestinyMaterialRequirement fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyMaterialRequirement(
 				data['itemHash'],
 				data['deleteOnAction'],
@@ -20,6 +23,9 @@ class DestinyMaterialRequirement{
 	}
 
 	static List<DestinyMaterialRequirement> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyMaterialRequirement> list = new List();
     data.forEach((item) {
       list.add(DestinyMaterialRequirement.fromJson(item));

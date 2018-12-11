@@ -19,6 +19,9 @@ class ListOfGroupThemeResponse{
 	);
 
     static ListOfGroupThemeResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ListOfGroupThemeResponse(
 				GroupTheme.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ListOfGroupThemeResponse{
 	}
 
 	static List<ListOfGroupThemeResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ListOfGroupThemeResponse> list = new List();
     data.forEach((item) {
       list.add(ListOfGroupThemeResponse.fromJson(item));

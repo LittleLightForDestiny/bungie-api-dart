@@ -10,6 +10,9 @@ class DestinyProfileRecordsComponent{
 	);
 
 	static DestinyProfileRecordsComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyProfileRecordsComponent(
 				data['score'],
 				data['trackedRecordHash'],
@@ -18,6 +21,9 @@ class DestinyProfileRecordsComponent{
 	}
 
 	static List<DestinyProfileRecordsComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyProfileRecordsComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyProfileRecordsComponent.fromJson(item));

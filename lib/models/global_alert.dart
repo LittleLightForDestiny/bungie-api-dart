@@ -18,6 +18,9 @@ class GlobalAlert{
 	);
 
 	static GlobalAlert fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GlobalAlert(
 				data['AlertKey'],
 				data['AlertHtml'],
@@ -30,6 +33,9 @@ class GlobalAlert{
 	}
 
 	static List<GlobalAlert> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GlobalAlert> list = new List();
     data.forEach((item) {
       list.add(GlobalAlert.fromJson(item));

@@ -12,6 +12,9 @@ class ApiUsage{
 	);
 
 	static ApiUsage fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ApiUsage(
 				data['range'],
 				Series.fromList(data['apiCalls']),
@@ -20,6 +23,9 @@ class ApiUsage{
 	}
 
 	static List<ApiUsage> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ApiUsage> list = new List();
     data.forEach((item) {
       list.add(ApiUsage.fromJson(item));

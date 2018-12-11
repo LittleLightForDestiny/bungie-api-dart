@@ -28,6 +28,9 @@ class DestinyInventoryBucketDefinition{
 	);
 
 	static DestinyInventoryBucketDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyInventoryBucketDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['scope'],
@@ -45,6 +48,9 @@ class DestinyInventoryBucketDefinition{
 	}
 
 	static List<DestinyInventoryBucketDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyInventoryBucketDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyInventoryBucketDefinition.fromJson(item));

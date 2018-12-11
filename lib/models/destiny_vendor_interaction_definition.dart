@@ -32,6 +32,9 @@ class DestinyVendorInteractionDefinition{
 	);
 
 	static DestinyVendorInteractionDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorInteractionDefinition(
 				data['interactionIndex'],
 				DestinyVendorInteractionReplyDefinition.fromList(data['replies']),
@@ -50,6 +53,9 @@ class DestinyVendorInteractionDefinition{
 	}
 
 	static List<DestinyVendorInteractionDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorInteractionDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorInteractionDefinition.fromJson(item));

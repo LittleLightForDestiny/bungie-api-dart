@@ -27,6 +27,9 @@ class DestinyItemComponentSetOfuint32{
 	);
 
 	static DestinyItemComponentSetOfuint32 fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemComponentSetOfuint32(
 				DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent.fromJson(data['instances']),
 				DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent.fromJson(data['perks']),
@@ -40,6 +43,9 @@ class DestinyItemComponentSetOfuint32{
 	}
 
 	static List<DestinyItemComponentSetOfuint32> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemComponentSetOfuint32> list = new List();
     data.forEach((item) {
       list.add(DestinyItemComponentSetOfuint32.fromJson(item));

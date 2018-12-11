@@ -9,6 +9,9 @@ class DestinyActivityGuidedBlockDefinition{
 	);
 
 	static DestinyActivityGuidedBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityGuidedBlockDefinition(
 				data['guidedMaxLobbySize'],
 				data['guidedMinLobbySize'],
@@ -17,6 +20,9 @@ class DestinyActivityGuidedBlockDefinition{
 	}
 
 	static List<DestinyActivityGuidedBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityGuidedBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityGuidedBlockDefinition.fromJson(item));

@@ -11,6 +11,9 @@ class DestinyInventoryItemStatDefinition{
 	);
 
 	static DestinyInventoryItemStatDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyInventoryItemStatDefinition(
 				data['statHash'],
 				data['value'],
@@ -20,6 +23,9 @@ class DestinyInventoryItemStatDefinition{
 	}
 
 	static List<DestinyInventoryItemStatDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyInventoryItemStatDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyInventoryItemStatDefinition.fromJson(item));

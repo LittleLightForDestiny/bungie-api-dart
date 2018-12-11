@@ -19,6 +19,9 @@ class Destiny2CoreSettings{
 	);
 
 	static Destiny2CoreSettings fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new Destiny2CoreSettings(
 				data['collectionRootNode'],
 				data['badgesRootNode'],
@@ -32,6 +35,9 @@ class Destiny2CoreSettings{
 	}
 
 	static List<Destiny2CoreSettings> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<Destiny2CoreSettings> list = new List();
     data.forEach((item) {
       list.add(Destiny2CoreSettings.fromJson(item));

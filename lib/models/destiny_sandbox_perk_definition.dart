@@ -23,6 +23,9 @@ class DestinySandboxPerkDefinition{
 	);
 
 	static DestinySandboxPerkDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinySandboxPerkDefinition(
 				data['displayProperties'],
 				data['perkIdentifier'],
@@ -37,6 +40,9 @@ class DestinySandboxPerkDefinition{
 	}
 
 	static List<DestinySandboxPerkDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinySandboxPerkDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinySandboxPerkDefinition.fromJson(item));

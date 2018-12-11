@@ -17,6 +17,9 @@ class DestinyEquippingBlockDefinition{
 	);
 
 	static DestinyEquippingBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEquippingBlockDefinition(
 				data['gearsetItemHash'],
 				data['uniqueLabel'],
@@ -29,6 +32,9 @@ class DestinyEquippingBlockDefinition{
 	}
 
 	static List<DestinyEquippingBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEquippingBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyEquippingBlockDefinition.fromJson(item));

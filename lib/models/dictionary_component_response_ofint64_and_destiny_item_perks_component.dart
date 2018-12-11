@@ -8,6 +8,9 @@ class DictionaryComponentResponseOfint64AndDestinyItemPerksComponent{
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyItemPerksComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryComponentResponseOfint64AndDestinyItemPerksComponent(
 				data['data'],
 				data['privacy'],
@@ -15,6 +18,9 @@ class DictionaryComponentResponseOfint64AndDestinyItemPerksComponent{
 	}
 
 	static List<DictionaryComponentResponseOfint64AndDestinyItemPerksComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryComponentResponseOfint64AndDestinyItemPerksComponent> list = new List();
     data.forEach((item) {
       list.add(DictionaryComponentResponseOfint64AndDestinyItemPerksComponent.fromJson(item));

@@ -32,6 +32,9 @@ class DestinyLocationReleaseDefinition{
 	);
 
 	static DestinyLocationReleaseDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLocationReleaseDefinition(
 				data['displayProperties'],
 				data['smallTransparentIcon'],
@@ -51,6 +54,9 @@ class DestinyLocationReleaseDefinition{
 	}
 
 	static List<DestinyLocationReleaseDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLocationReleaseDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyLocationReleaseDefinition.fromJson(item));

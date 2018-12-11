@@ -7,6 +7,9 @@ class DestinyItemRenderComponent{
 	);
 
 	static DestinyItemRenderComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemRenderComponent(
 				data['useCustomDyes'],
 				data['artRegions'],
@@ -14,6 +17,9 @@ class DestinyItemRenderComponent{
 	}
 
 	static List<DestinyItemRenderComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemRenderComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyItemRenderComponent.fromJson(item));

@@ -13,6 +13,9 @@ class DestinyEnvironmentLocationMapping{
 	);
 
 	static DestinyEnvironmentLocationMapping fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEnvironmentLocationMapping(
 				data['locationHash'],
 				data['activationSource'],
@@ -23,6 +26,9 @@ class DestinyEnvironmentLocationMapping{
 	}
 
 	static List<DestinyEnvironmentLocationMapping> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEnvironmentLocationMapping> list = new List();
     data.forEach((item) {
       list.add(DestinyEnvironmentLocationMapping.fromJson(item));

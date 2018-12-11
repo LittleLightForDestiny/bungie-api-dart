@@ -19,6 +19,9 @@ class UserMembershipDataResponse{
 	);
 
     static UserMembershipDataResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new UserMembershipDataResponse(
 				UserMembershipData.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class UserMembershipDataResponse{
 	}
 
 	static List<UserMembershipDataResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<UserMembershipDataResponse> list = new List();
     data.forEach((item) {
       list.add(UserMembershipDataResponse.fromJson(item));

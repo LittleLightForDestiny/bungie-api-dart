@@ -19,6 +19,9 @@ class DestinyAggregateActivityResultsResponse{
 	);
 
     static DestinyAggregateActivityResultsResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyAggregateActivityResultsResponse(
 				DestinyAggregateActivityResults.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyAggregateActivityResultsResponse{
 	}
 
 	static List<DestinyAggregateActivityResultsResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyAggregateActivityResultsResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyAggregateActivityResultsResponse.fromJson(item));

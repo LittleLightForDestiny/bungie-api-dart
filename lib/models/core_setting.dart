@@ -15,6 +15,9 @@ class CoreSetting{
 	);
 
 	static CoreSetting fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CoreSetting(
 				data['identifier'],
 				data['isDefault'],
@@ -26,6 +29,9 @@ class CoreSetting{
 	}
 
 	static List<CoreSetting> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CoreSetting> list = new List();
     data.forEach((item) {
       list.add(CoreSetting.fromJson(item));

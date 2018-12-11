@@ -14,6 +14,9 @@ class SearchResult{
 	);
 
 	static SearchResult fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResult(
 				data['totalResults'],
 				data['hasMore'],
@@ -24,6 +27,9 @@ class SearchResult{
 	}
 
 	static List<SearchResult> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResult> list = new List();
     data.forEach((item) {
       list.add(SearchResult.fromJson(item));

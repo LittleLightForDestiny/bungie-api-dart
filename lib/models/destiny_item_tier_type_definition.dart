@@ -15,6 +15,9 @@ class DestinyItemTierTypeDefinition{
 	);
 
 	static DestinyItemTierTypeDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemTierTypeDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['infusionProcess'],
@@ -25,6 +28,9 @@ class DestinyItemTierTypeDefinition{
 	}
 
 	static List<DestinyItemTierTypeDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemTierTypeDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemTierTypeDefinition.fromJson(item));

@@ -16,6 +16,9 @@ class DestinyItemPlugComponent{
 	);
 
 	static DestinyItemPlugComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemPlugComponent(
 				data['plugItemHash'],
 				DestinyObjectiveProgress.fromList(data['plugObjectives']),
@@ -27,6 +30,9 @@ class DestinyItemPlugComponent{
 	}
 
 	static List<DestinyItemPlugComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemPlugComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyItemPlugComponent.fromJson(item));

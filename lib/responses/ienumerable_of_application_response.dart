@@ -19,6 +19,9 @@ class IEnumerableOfApplicationResponse{
 	);
 
     static IEnumerableOfApplicationResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new IEnumerableOfApplicationResponse(
 				Application.fromList(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class IEnumerableOfApplicationResponse{
 	}
 
 	static List<IEnumerableOfApplicationResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<IEnumerableOfApplicationResponse> list = new List();
     data.forEach((item) {
       list.add(IEnumerableOfApplicationResponse.fromJson(item));

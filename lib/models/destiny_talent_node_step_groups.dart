@@ -13,6 +13,9 @@ class DestinyTalentNodeStepGroups{
 	);
 
 	static DestinyTalentNodeStepGroups fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyTalentNodeStepGroups(
 				data['weaponPerformance'],
 				data['impactEffects'],
@@ -23,6 +26,9 @@ class DestinyTalentNodeStepGroups{
 	}
 
 	static List<DestinyTalentNodeStepGroups> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyTalentNodeStepGroups> list = new List();
     data.forEach((item) {
       list.add(DestinyTalentNodeStepGroups.fromJson(item));

@@ -18,6 +18,9 @@ class DestinyStatDefinition{
 	);
 
 	static DestinyStatDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyStatDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['aggregationType'],
@@ -30,6 +33,9 @@ class DestinyStatDefinition{
 	}
 
 	static List<DestinyStatDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyStatDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyStatDefinition.fromJson(item));

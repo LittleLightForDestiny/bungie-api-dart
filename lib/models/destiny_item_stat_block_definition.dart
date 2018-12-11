@@ -14,6 +14,9 @@ class DestinyItemStatBlockDefinition{
 	);
 
 	static DestinyItemStatBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemStatBlockDefinition(
 				data['disablePrimaryStatDisplay'],
 				data['statGroupHash'],
@@ -24,6 +27,9 @@ class DestinyItemStatBlockDefinition{
 	}
 
 	static List<DestinyItemStatBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemStatBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemStatBlockDefinition.fromJson(item));

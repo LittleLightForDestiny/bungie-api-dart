@@ -14,6 +14,9 @@ class DestinyLoreDefinition{
 	);
 
 	static DestinyLoreDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLoreDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['subtitle'],
@@ -24,6 +27,9 @@ class DestinyLoreDefinition{
 	}
 
 	static List<DestinyLoreDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLoreDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyLoreDefinition.fromJson(item));

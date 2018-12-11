@@ -17,6 +17,9 @@ class DestinyLinkedGraphDefinition{
 	);
 
 	static DestinyLinkedGraphDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLinkedGraphDefinition(
 				data['description'],
 				data['name'],
@@ -28,6 +31,9 @@ class DestinyLinkedGraphDefinition{
 	}
 
 	static List<DestinyLinkedGraphDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLinkedGraphDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyLinkedGraphDefinition.fromJson(item));

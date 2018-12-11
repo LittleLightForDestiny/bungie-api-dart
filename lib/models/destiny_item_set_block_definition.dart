@@ -12,6 +12,9 @@ class DestinyItemSetBlockDefinition{
 	);
 
 	static DestinyItemSetBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSetBlockDefinition(
 				DestinyItemSetBlockEntryDefinition.fromList(data['itemList']),
 				data['requireOrderedSetItemAdd'],
@@ -21,6 +24,9 @@ class DestinyItemSetBlockDefinition{
 	}
 
 	static List<DestinyItemSetBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSetBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSetBlockDefinition.fromJson(item));

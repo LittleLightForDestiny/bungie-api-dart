@@ -19,6 +19,9 @@ class DestinyManifestResponse{
 	);
 
     static DestinyManifestResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyManifestResponse(
 				DestinyManifest.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class DestinyManifestResponse{
 	}
 
 	static List<DestinyManifestResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyManifestResponse> list = new List();
     data.forEach((item) {
       list.add(DestinyManifestResponse.fromJson(item));

@@ -7,6 +7,9 @@ class DestinyVendorCategory{
 	);
 
 	static DestinyVendorCategory fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorCategory(
 				data['displayCategoryIndex'],
 				data['itemIndexes'],
@@ -14,6 +17,9 @@ class DestinyVendorCategory{
 	}
 
 	static List<DestinyVendorCategory> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorCategory> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorCategory.fromJson(item));

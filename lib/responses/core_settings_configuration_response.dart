@@ -19,6 +19,9 @@ class CoreSettingsConfigurationResponse{
 	);
 
     static CoreSettingsConfigurationResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new CoreSettingsConfigurationResponse(
 				CoreSettingsConfiguration.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class CoreSettingsConfigurationResponse{
 	}
 
 	static List<CoreSettingsConfigurationResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<CoreSettingsConfigurationResponse> list = new List();
     data.forEach((item) {
       list.add(CoreSettingsConfigurationResponse.fromJson(item));

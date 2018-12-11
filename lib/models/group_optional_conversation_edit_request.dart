@@ -9,6 +9,9 @@ class GroupOptionalConversationEditRequest{
 	);
 
 	static GroupOptionalConversationEditRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupOptionalConversationEditRequest(
 				data['chatEnabled'],
 				data['chatName'],
@@ -17,6 +20,9 @@ class GroupOptionalConversationEditRequest{
 	}
 
 	static List<GroupOptionalConversationEditRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupOptionalConversationEditRequest> list = new List();
     data.forEach((item) {
       list.add(GroupOptionalConversationEditRequest.fromJson(item));

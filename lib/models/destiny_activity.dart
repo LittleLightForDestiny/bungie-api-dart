@@ -21,6 +21,9 @@ class DestinyActivity{
 	);
 
 	static DestinyActivity fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivity(
 				data['activityHash'],
 				data['isNew'],
@@ -35,6 +38,9 @@ class DestinyActivity{
 	}
 
 	static List<DestinyActivity> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivity> list = new List();
     data.forEach((item) {
       list.add(DestinyActivity.fromJson(item));

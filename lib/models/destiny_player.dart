@@ -27,6 +27,9 @@ class DestinyPlayer{
 	);
 
 	static DestinyPlayer fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPlayer(
 				data['destinyUserInfo'],
 				data['characterClass'],
@@ -43,6 +46,9 @@ class DestinyPlayer{
 	}
 
 	static List<DestinyPlayer> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPlayer> list = new List();
     data.forEach((item) {
       list.add(DestinyPlayer.fromJson(item));

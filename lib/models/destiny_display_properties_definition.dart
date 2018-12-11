@@ -11,6 +11,9 @@ class DestinyDisplayPropertiesDefinition{
 	);
 
 	static DestinyDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDisplayPropertiesDefinition(
 				data['description'],
 				data['name'],
@@ -20,6 +23,9 @@ class DestinyDisplayPropertiesDefinition{
 	}
 
 	static List<DestinyDisplayPropertiesDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDisplayPropertiesDefinition.fromJson(item));

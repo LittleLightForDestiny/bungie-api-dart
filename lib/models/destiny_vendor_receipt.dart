@@ -21,6 +21,9 @@ class DestinyVendorReceipt{
 	);
 
 	static DestinyVendorReceipt fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorReceipt(
 				DestinyItemQuantity.fromList(data['currencyPaid']),
 				data['itemReceived'],
@@ -34,6 +37,9 @@ class DestinyVendorReceipt{
 	}
 
 	static List<DestinyVendorReceipt> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorReceipt> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorReceipt.fromJson(item));

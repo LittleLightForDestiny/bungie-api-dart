@@ -13,6 +13,9 @@ class UserInfoCard{
 	);
 
 	static UserInfoCard fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new UserInfoCard(
 				data['supplementalDisplayName'],
 				data['iconPath'],
@@ -23,6 +26,9 @@ class UserInfoCard{
 	}
 
 	static List<UserInfoCard> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<UserInfoCard> list = new List();
     data.forEach((item) {
       list.add(UserInfoCard.fromJson(item));

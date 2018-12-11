@@ -24,6 +24,9 @@ class DestinyChecklistEntryDefinition{
 	);
 
 	static DestinyChecklistEntryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyChecklistEntryDefinition(
 				data['hash'],
 				data['displayProperties'],
@@ -39,6 +42,9 @@ class DestinyChecklistEntryDefinition{
 	}
 
 	static List<DestinyChecklistEntryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyChecklistEntryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyChecklistEntryDefinition.fromJson(item));

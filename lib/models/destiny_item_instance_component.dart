@@ -24,6 +24,9 @@ class DestinyItemInstanceComponent{
 	);
 
 	static DestinyItemInstanceComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemInstanceComponent(
 				data['damageType'],
 				data['damageTypeHash'],
@@ -39,6 +42,9 @@ class DestinyItemInstanceComponent{
 	}
 
 	static List<DestinyItemInstanceComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemInstanceComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyItemInstanceComponent.fromJson(item));

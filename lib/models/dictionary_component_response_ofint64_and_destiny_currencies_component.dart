@@ -8,6 +8,9 @@ class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
 				data['data'],
 				data['privacy'],
@@ -15,6 +18,9 @@ class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
 	}
 
 	static List<DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent> list = new List();
     data.forEach((item) {
       list.add(DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent.fromJson(item));

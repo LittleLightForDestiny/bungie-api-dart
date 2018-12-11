@@ -19,6 +19,9 @@ class DestinyPostGameCarnageReportEntry{
 	);
 
 	static DestinyPostGameCarnageReportEntry fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPostGameCarnageReportEntry(
 				data['standing'],
 				data['score'],
@@ -30,6 +33,9 @@ class DestinyPostGameCarnageReportEntry{
 	}
 
 	static List<DestinyPostGameCarnageReportEntry> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPostGameCarnageReportEntry> list = new List();
     data.forEach((item) {
       list.add(DestinyPostGameCarnageReportEntry.fromJson(item));

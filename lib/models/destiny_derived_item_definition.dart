@@ -15,6 +15,9 @@ class DestinyDerivedItemDefinition{
 	);
 
 	static DestinyDerivedItemDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDerivedItemDefinition(
 				data['itemHash'],
 				data['itemName'],
@@ -26,6 +29,9 @@ class DestinyDerivedItemDefinition{
 	}
 
 	static List<DestinyDerivedItemDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDerivedItemDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDerivedItemDefinition.fromJson(item));

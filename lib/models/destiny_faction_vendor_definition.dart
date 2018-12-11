@@ -9,6 +9,9 @@ class DestinyFactionVendorDefinition{
 	);
 
 	static DestinyFactionVendorDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyFactionVendorDefinition(
 				data['vendorHash'],
 				data['destinationHash'],
@@ -17,6 +20,9 @@ class DestinyFactionVendorDefinition{
 	}
 
 	static List<DestinyFactionVendorDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyFactionVendorDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyFactionVendorDefinition.fromJson(item));

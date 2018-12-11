@@ -20,6 +20,9 @@ class DestinyDisplayCategoryDefinition{
 	);
 
 	static DestinyDisplayCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyDisplayCategoryDefinition(
 				data['identifier'],
 				data['displayCategoryHash'],
@@ -33,6 +36,9 @@ class DestinyDisplayCategoryDefinition{
 	}
 
 	static List<DestinyDisplayCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyDisplayCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyDisplayCategoryDefinition.fromJson(item));

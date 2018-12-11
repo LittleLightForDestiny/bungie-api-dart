@@ -9,6 +9,9 @@ class DestinyPublicMilestoneActivityVariant{
 	);
 
 	static DestinyPublicMilestoneActivityVariant fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPublicMilestoneActivityVariant(
 				data['activityHash'],
 				data['activityModeHash'],
@@ -17,6 +20,9 @@ class DestinyPublicMilestoneActivityVariant{
 	}
 
 	static List<DestinyPublicMilestoneActivityVariant> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPublicMilestoneActivityVariant> list = new List();
     data.forEach((item) {
       list.add(DestinyPublicMilestoneActivityVariant.fromJson(item));

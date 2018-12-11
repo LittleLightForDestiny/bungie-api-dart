@@ -19,6 +19,9 @@ class TrendingCategoriesResponse{
 	);
 
     static TrendingCategoriesResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new TrendingCategoriesResponse(
 				TrendingCategories.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class TrendingCategoriesResponse{
 	}
 
 	static List<TrendingCategoriesResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<TrendingCategoriesResponse> list = new List();
     data.forEach((item) {
       list.add(TrendingCategoriesResponse.fromJson(item));

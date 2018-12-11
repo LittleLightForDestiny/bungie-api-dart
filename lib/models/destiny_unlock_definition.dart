@@ -12,6 +12,9 @@ class DestinyUnlockDefinition{
 	);
 
 	static DestinyUnlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyUnlockDefinition(
 				data['displayProperties'],
 				data['hash'],
@@ -21,6 +24,9 @@ class DestinyUnlockDefinition{
 	}
 
 	static List<DestinyUnlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyUnlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyUnlockDefinition.fromJson(item));

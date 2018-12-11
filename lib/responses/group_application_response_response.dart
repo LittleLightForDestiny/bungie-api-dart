@@ -19,6 +19,9 @@ class GroupApplicationResponseResponse{
 	);
 
     static GroupApplicationResponseResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupApplicationResponseResponse(
 				GroupApplicationResponse.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class GroupApplicationResponseResponse{
 	}
 
 	static List<GroupApplicationResponseResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupApplicationResponseResponse> list = new List();
     data.forEach((item) {
       list.add(GroupApplicationResponseResponse.fromJson(item));

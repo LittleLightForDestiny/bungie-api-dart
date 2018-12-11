@@ -27,6 +27,9 @@ class DestinyCharacterCustomization{
 	);
 
 	static DestinyCharacterCustomization fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCharacterCustomization(
 				data['personality'],
 				data['face'],
@@ -44,6 +47,9 @@ class DestinyCharacterCustomization{
 	}
 
 	static List<DestinyCharacterCustomization> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCharacterCustomization> list = new List();
     data.forEach((item) {
       list.add(DestinyCharacterCustomization.fromJson(item));

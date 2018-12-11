@@ -15,6 +15,9 @@ class DestinyHistoricalStatsActivity{
 	);
 
 	static DestinyHistoricalStatsActivity fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsActivity(
 				data['referenceId'],
 				data['directorActivityHash'],
@@ -26,6 +29,9 @@ class DestinyHistoricalStatsActivity{
 	}
 
 	static List<DestinyHistoricalStatsActivity> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsActivity> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsActivity.fromJson(item));

@@ -9,6 +9,9 @@ class DestinyHistoricalStatsWithMerged{
 	);
 
 	static DestinyHistoricalStatsWithMerged fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyHistoricalStatsWithMerged(
 				data['results'],
 				DestinyHistoricalStatsByPeriod.fromJson(data['merged']),
@@ -16,6 +19,9 @@ class DestinyHistoricalStatsWithMerged{
 	}
 
 	static List<DestinyHistoricalStatsWithMerged> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyHistoricalStatsWithMerged> list = new List();
     data.forEach((item) {
       list.add(DestinyHistoricalStatsWithMerged.fromJson(item));

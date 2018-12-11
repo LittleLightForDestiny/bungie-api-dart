@@ -29,6 +29,9 @@ class DestinyFactionProgression{
 	);
 
 	static DestinyFactionProgression fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyFactionProgression(
 				data['factionHash'],
 				data['factionVendorIndex'],
@@ -47,6 +50,9 @@ class DestinyFactionProgression{
 	}
 
 	static List<DestinyFactionProgression> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyFactionProgression> list = new List();
     data.forEach((item) {
       list.add(DestinyFactionProgression.fromJson(item));

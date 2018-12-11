@@ -38,6 +38,9 @@ class DestinyItemCategoryDefinition{
 	);
 
 	static DestinyItemCategoryDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemCategoryDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['visible'],
@@ -60,6 +63,9 @@ class DestinyItemCategoryDefinition{
 	}
 
 	static List<DestinyItemCategoryDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemCategoryDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemCategoryDefinition.fromJson(item));

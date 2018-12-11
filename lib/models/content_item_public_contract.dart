@@ -36,6 +36,9 @@ class ContentItemPublicContract{
 	);
 
 	static ContentItemPublicContract fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ContentItemPublicContract(
 				data['contentId'],
 				data['cType'],
@@ -56,6 +59,9 @@ class ContentItemPublicContract{
 	}
 
 	static List<ContentItemPublicContract> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ContentItemPublicContract> list = new List();
     data.forEach((item) {
       list.add(ContentItemPublicContract.fromJson(item));

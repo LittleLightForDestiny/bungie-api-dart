@@ -7,6 +7,9 @@ class DestinyPublicMilestoneVendor{
 	);
 
 	static DestinyPublicMilestoneVendor fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyPublicMilestoneVendor(
 				data['vendorHash'],
 				data['previewItemHash'],
@@ -14,6 +17,9 @@ class DestinyPublicMilestoneVendor{
 	}
 
 	static List<DestinyPublicMilestoneVendor> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyPublicMilestoneVendor> list = new List();
     data.forEach((item) {
       list.add(DestinyPublicMilestoneVendor.fromJson(item));

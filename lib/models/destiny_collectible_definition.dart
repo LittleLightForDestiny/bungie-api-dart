@@ -29,6 +29,9 @@ class DestinyCollectibleDefinition{
 	);
 
 	static DestinyCollectibleDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyCollectibleDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['scope'],
@@ -45,6 +48,9 @@ class DestinyCollectibleDefinition{
 	}
 
 	static List<DestinyCollectibleDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyCollectibleDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyCollectibleDefinition.fromJson(item));

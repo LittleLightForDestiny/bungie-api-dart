@@ -35,6 +35,9 @@ class DestinyRecordDefinition{
 	);
 
 	static DestinyRecordDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyRecordDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['scope'],
@@ -53,6 +56,9 @@ class DestinyRecordDefinition{
 	}
 
 	static List<DestinyRecordDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyRecordDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyRecordDefinition.fromJson(item));

@@ -9,6 +9,9 @@ class DestinyActivityLoadoutRequirement{
 	);
 
 	static DestinyActivityLoadoutRequirement fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyActivityLoadoutRequirement(
 				data['equipmentSlotHash'],
 				data['allowedEquippedItemHashes'],
@@ -17,6 +20,9 @@ class DestinyActivityLoadoutRequirement{
 	}
 
 	static List<DestinyActivityLoadoutRequirement> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyActivityLoadoutRequirement> list = new List();
     data.forEach((item) {
       list.add(DestinyActivityLoadoutRequirement.fromJson(item));

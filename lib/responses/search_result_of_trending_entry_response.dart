@@ -19,6 +19,9 @@ class SearchResultOfTrendingEntryResponse{
 	);
 
     static SearchResultOfTrendingEntryResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new SearchResultOfTrendingEntryResponse(
 				SearchResultOfTrendingEntry.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class SearchResultOfTrendingEntryResponse{
 	}
 
 	static List<SearchResultOfTrendingEntryResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<SearchResultOfTrendingEntryResponse> list = new List();
     data.forEach((item) {
       list.add(SearchResultOfTrendingEntryResponse.fromJson(item));

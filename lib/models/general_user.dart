@@ -64,6 +64,9 @@ class GeneralUser{
 	);
 
 	static GeneralUser fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GeneralUser(
 				data['membershipId'],
 				data['uniqueName'],
@@ -99,6 +102,9 @@ class GeneralUser{
 	}
 
 	static List<GeneralUser> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GeneralUser> list = new List();
     data.forEach((item) {
       list.add(GeneralUser.fromJson(item));

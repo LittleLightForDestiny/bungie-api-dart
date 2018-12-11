@@ -30,6 +30,9 @@ class GroupV2Card{
 	);
 
 	static GroupV2Card fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupV2Card(
 				data['groupId'],
 				data['name'],
@@ -48,6 +51,9 @@ class GroupV2Card{
 	}
 
 	static List<GroupV2Card> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupV2Card> list = new List();
     data.forEach((item) {
       list.add(GroupV2Card.fromJson(item));

@@ -18,6 +18,9 @@ class DestinyItemSourceDefinition{
 	);
 
 	static DestinyItemSourceDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSourceDefinition(
 				data['level'],
 				data['minQuality'],
@@ -30,6 +33,9 @@ class DestinyItemSourceDefinition{
 	}
 
 	static List<DestinyItemSourceDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSourceDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSourceDefinition.fromJson(item));

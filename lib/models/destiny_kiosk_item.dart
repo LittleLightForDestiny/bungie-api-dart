@@ -12,6 +12,9 @@ class DestinyKioskItem{
 	);
 
 	static DestinyKioskItem fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyKioskItem(
 				data['index'],
 				data['canAcquire'],
@@ -21,6 +24,9 @@ class DestinyKioskItem{
 	}
 
 	static List<DestinyKioskItem> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyKioskItem> list = new List();
     data.forEach((item) {
       list.add(DestinyKioskItem.fromJson(item));

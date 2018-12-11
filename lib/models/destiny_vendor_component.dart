@@ -18,6 +18,9 @@ class DestinyVendorComponent{
 	);
 
 	static DestinyVendorComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorComponent(
 				data['vendorHash'],
 				data['nextRefreshDate'],
@@ -30,6 +33,9 @@ class DestinyVendorComponent{
 	}
 
 	static List<DestinyVendorComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorComponent> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorComponent.fromJson(item));

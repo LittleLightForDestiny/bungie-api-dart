@@ -13,6 +13,9 @@ class DestinyItemSackBlockDefinition{
 	);
 
 	static DestinyItemSackBlockDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemSackBlockDefinition(
 				data['detailAction'],
 				data['openAction'],
@@ -23,6 +26,9 @@ class DestinyItemSackBlockDefinition{
 	}
 
 	static List<DestinyItemSackBlockDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemSackBlockDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemSackBlockDefinition.fromJson(item));

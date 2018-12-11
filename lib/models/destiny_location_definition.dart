@@ -14,6 +14,9 @@ class DestinyLocationDefinition{
 	);
 
 	static DestinyLocationDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyLocationDefinition(
 				data['vendorHash'],
 				DestinyLocationReleaseDefinition.fromList(data['locationReleases']),
@@ -24,6 +27,9 @@ class DestinyLocationDefinition{
 	}
 
 	static List<DestinyLocationDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyLocationDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyLocationDefinition.fromJson(item));

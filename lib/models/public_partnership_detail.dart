@@ -11,6 +11,9 @@ class PublicPartnershipDetail{
 	);
 
 	static PublicPartnershipDetail fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new PublicPartnershipDetail(
 				data['partnerType'],
 				data['identifier'],
@@ -20,6 +23,9 @@ class PublicPartnershipDetail{
 	}
 
 	static List<PublicPartnershipDetail> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<PublicPartnershipDetail> list = new List();
     data.forEach((item) {
       list.add(PublicPartnershipDetail.fromJson(item));

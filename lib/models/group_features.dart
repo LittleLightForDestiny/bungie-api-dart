@@ -21,6 +21,9 @@ class GroupFeatures{
 	);
 
 	static GroupFeatures fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupFeatures(
 				data['maximumMembers'],
 				data['maximumMembershipsOfGroupType'],
@@ -35,6 +38,9 @@ class GroupFeatures{
 	}
 
 	static List<GroupFeatures> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupFeatures> list = new List();
     data.forEach((item) {
       list.add(GroupFeatures.fromJson(item));

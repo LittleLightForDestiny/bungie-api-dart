@@ -38,6 +38,9 @@ class DestinyItemPlugDefinition{
 	);
 
 	static DestinyItemPlugDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemPlugDefinition(
 				DestinyPlugRuleDefinition.fromList(data['insertionRules']),
 				data['plugCategoryIdentifier'],
@@ -59,6 +62,9 @@ class DestinyItemPlugDefinition{
 	}
 
 	static List<DestinyItemPlugDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemPlugDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyItemPlugDefinition.fromJson(item));

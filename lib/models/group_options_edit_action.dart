@@ -13,6 +13,9 @@ class GroupOptionsEditAction{
 	);
 
 	static GroupOptionsEditAction fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupOptionsEditAction(
 				data['InvitePermissionOverride'],
 				data['UpdateCulturePermissionOverride'],
@@ -23,6 +26,9 @@ class GroupOptionsEditAction{
 	}
 
 	static List<GroupOptionsEditAction> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupOptionsEditAction> list = new List();
     data.forEach((item) {
       list.add(GroupOptionsEditAction.fromJson(item));

@@ -19,6 +19,9 @@ class ForumRecruitmentDetailResponse{
 	);
 
     static ForumRecruitmentDetailResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new ForumRecruitmentDetailResponse(
 				ForumRecruitmentDetail.fromJson(data['Response']),
 				data['ErrorCode'],
@@ -31,6 +34,9 @@ class ForumRecruitmentDetailResponse{
 	}
 
 	static List<ForumRecruitmentDetailResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<ForumRecruitmentDetailResponse> list = new List();
     data.forEach((item) {
       list.add(ForumRecruitmentDetailResponse.fromJson(item));

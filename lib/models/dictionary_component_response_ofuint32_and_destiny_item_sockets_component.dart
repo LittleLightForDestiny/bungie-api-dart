@@ -8,6 +8,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent{
 	);
 
 	static DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent(
 				data['data'],
 				data['privacy'],
@@ -15,6 +18,9 @@ class DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent{
 	}
 
 	static List<DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent> list = new List();
     data.forEach((item) {
       list.add(DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent.fromJson(item));

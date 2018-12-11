@@ -9,6 +9,9 @@ class DestinyItemActionRequest{
 	);
 
 	static DestinyItemActionRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyItemActionRequest(
 				data['itemId'],
 				data['characterId'],
@@ -17,6 +20,9 @@ class DestinyItemActionRequest{
 	}
 
 	static List<DestinyItemActionRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyItemActionRequest> list = new List();
     data.forEach((item) {
       list.add(DestinyItemActionRequest.fromJson(item));

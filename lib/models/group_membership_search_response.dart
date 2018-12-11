@@ -17,6 +17,9 @@ class GroupMembershipSearchResponse{
 	);
 
 	static GroupMembershipSearchResponse fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupMembershipSearchResponse(
 				GroupMembership.fromList(data['results']),
 				data['totalResults'],
@@ -28,6 +31,9 @@ class GroupMembershipSearchResponse{
 	}
 
 	static List<GroupMembershipSearchResponse> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupMembershipSearchResponse> list = new List();
     data.forEach((item) {
       list.add(GroupMembershipSearchResponse.fromJson(item));

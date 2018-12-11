@@ -7,6 +7,9 @@ class GroupBanRequest{
 	);
 
 	static GroupBanRequest fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new GroupBanRequest(
 				data['comment'],
 				data['length'],
@@ -14,6 +17,9 @@ class GroupBanRequest{
 	}
 
 	static List<GroupBanRequest> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<GroupBanRequest> list = new List();
     data.forEach((item) {
       list.add(GroupBanRequest.fromJson(item));

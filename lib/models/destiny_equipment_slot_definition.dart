@@ -21,6 +21,9 @@ class DestinyEquipmentSlotDefinition{
 	);
 
 	static DestinyEquipmentSlotDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyEquipmentSlotDefinition(
 				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
 				data['equipmentCategoryHash'],
@@ -34,6 +37,9 @@ class DestinyEquipmentSlotDefinition{
 	}
 
 	static List<DestinyEquipmentSlotDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyEquipmentSlotDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyEquipmentSlotDefinition.fromJson(item));

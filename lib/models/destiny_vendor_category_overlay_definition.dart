@@ -13,6 +13,9 @@ class DestinyVendorCategoryOverlayDefinition{
 	);
 
 	static DestinyVendorCategoryOverlayDefinition fromJson(Map<String, dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		return new DestinyVendorCategoryOverlayDefinition(
 				data['choiceDescription'],
 				data['description'],
@@ -23,6 +26,9 @@ class DestinyVendorCategoryOverlayDefinition{
 	}
 
 	static List<DestinyVendorCategoryOverlayDefinition> fromList(List<dynamic> data){
+		if(data == null) {
+			return null;
+		};
 		List<DestinyVendorCategoryOverlayDefinition> list = new List();
     data.forEach((item) {
       list.add(DestinyVendorCategoryOverlayDefinition.fromJson(item));
