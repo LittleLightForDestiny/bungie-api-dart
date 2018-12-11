@@ -14,5 +14,5 @@ class HttpClientConfig {
  * helper functions will use this to return the right type.
  */
 abstract class HttpClient{
-  Future<Object> request(HttpClientConfig config);
+  Future<dynamic> request(HttpClientConfig config);
 }
