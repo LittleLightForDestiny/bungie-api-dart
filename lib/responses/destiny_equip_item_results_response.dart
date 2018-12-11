@@ -1,21 +1,21 @@
 import '../models/destiny_equip_item_results.dart';
 class DestinyEquipItemResultsResponse{
-    DestinyEquipItemResults Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    DestinyEquipItemResults response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     DestinyEquipItemResultsResponse(
-		DestinyEquipItemResults this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		DestinyEquipItemResults this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static DestinyEquipItemResultsResponse fromJson(Map<String, dynamic> data){

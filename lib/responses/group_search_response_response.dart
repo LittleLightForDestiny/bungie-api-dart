@@ -1,21 +1,21 @@
 import '../models/group_search_response.dart';
 class GroupSearchResponseResponse{
-    GroupSearchResponse Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    GroupSearchResponse response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     GroupSearchResponseResponse(
-		GroupSearchResponse this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		GroupSearchResponse this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static GroupSearchResponseResponse fromJson(Map<String, dynamic> data){

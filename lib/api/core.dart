@@ -1,6 +1,8 @@
 import '../helpers/http.dart';
 import '../responses/celist_of_global_alert_response.dart';
 class Core{
+    
+    //Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts.
     static Future<CEListOfGlobalAlertResponse> getGlobalAlerts (
         HttpClient client,
         bool includestreaming,
@@ -8,6 +10,7 @@ class Core{
         Map<String, String> params = new Map();
         params['includestreaming'] = "${ includestreaming }";
         HttpClientConfig config = HttpClientConfig('GET', "/GlobalAlerts/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return CEListOfGlobalAlertResponse.fromJson(response);
         });

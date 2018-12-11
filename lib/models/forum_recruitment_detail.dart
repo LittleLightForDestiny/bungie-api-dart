@@ -8,7 +8,7 @@ class ForumRecruitmentDetail{
 	int conversationId;
 	int playerSlotsTotal;
 	int playerSlotsRemaining;
-	List<GeneralUser> Fireteam;
+	List<GeneralUser> fireteam;
 	List<int> kickedPlayerIds;
 	ForumRecruitmentDetail(
 		int this.topicId,
@@ -19,7 +19,7 @@ class ForumRecruitmentDetail{
 		int this.conversationId,
 		int this.playerSlotsTotal,
 		int this.playerSlotsRemaining,
-		List<GeneralUser> this.Fireteam,
+		List<GeneralUser> this.fireteam,
 		List<int> this.kickedPlayerIds,
 	);
 

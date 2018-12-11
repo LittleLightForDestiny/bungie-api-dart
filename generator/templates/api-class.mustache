@@ -4,6 +4,8 @@ import '../{{type}}/{{filename}}.dart';
 {{/imports}}
 class {{className}}{
     {{#methods}}
+    
+    //{{description}}
     static Future<{{returnType}}> {{methodName}} (
         HttpClient client,
         {{#parameters}}
@@ -21,6 +23,7 @@ class {{className}}{
         {{#requestBody}}
         config.body = body;
         {{/requestBody}}
+        config.bodyContentType = {{{requestBodyContentType}}};
         return client.request(config).then((response){
             return {{returnType}}.fromJson(response);
         });

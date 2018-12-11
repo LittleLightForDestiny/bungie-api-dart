@@ -1,7 +1,7 @@
 class StreamInfo{
-	String ChannelName;
+	String channelName;
 	StreamInfo(
-		String this.ChannelName,
+		String this.channelName,
 	);
 
 	static StreamInfo fromJson(Map<String, dynamic> data){

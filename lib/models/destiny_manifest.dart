@@ -5,14 +5,14 @@ class DestinyManifest{
 	List<GearAssetDataBaseDefinition> mobileGearAssetDataBases;
 	Map<String, dynamic> mobileWorldContentPaths;
 	String mobileClanBannerDatabasePath;
-	Map<String, dynamic> mobileGearCDN;
+	Map<String, dynamic> mobileGearCdn;
 	DestinyManifest(
 		String this.version,
 		String this.mobileAssetContentPath,
 		List<GearAssetDataBaseDefinition> this.mobileGearAssetDataBases,
 		Map<String, dynamic> this.mobileWorldContentPaths,
 		String this.mobileClanBannerDatabasePath,
-		Map<String, dynamic> this.mobileGearCDN,
+		Map<String, dynamic> this.mobileGearCdn,
 	);
 
 	static DestinyManifest fromJson(Map<String, dynamic> data){

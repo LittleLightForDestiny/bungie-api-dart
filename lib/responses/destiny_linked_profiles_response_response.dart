@@ -1,21 +1,21 @@
 import '../models/destiny_linked_profiles_response.dart';
 class DestinyLinkedProfilesResponseResponse{
-    DestinyLinkedProfilesResponse Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    DestinyLinkedProfilesResponse response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     DestinyLinkedProfilesResponseResponse(
-		DestinyLinkedProfilesResponse this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		DestinyLinkedProfilesResponse this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static DestinyLinkedProfilesResponseResponse fromJson(Map<String, dynamic> data){

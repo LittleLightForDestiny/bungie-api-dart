@@ -3,6 +3,8 @@ import '../responses/post_search_response_response.dart';
 import '../responses/search_result_of_community_live_status_response.dart';
 import '../responses/community_live_status_response.dart';
 class CommunityContent{
+    
+    //Returns community content.
     static Future<PostSearchResponseResponse> getCommunityContent (
         HttpClient client,
         int mediaFilter,
@@ -11,10 +13,13 @@ class CommunityContent{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Get/${sort}/{mediaFilter}/{page}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
         });
     }
+    
+    //Returns info about community members who are live streaming.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatuses (
         HttpClient client,
         int modeHash,
@@ -27,10 +32,13 @@ class CommunityContent{
         params['modeHash'] = "${ modeHash }";
         params['streamLocale'] = "${ streamLocale }";
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/All/${partnershipType}/{sort}/{page}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
         });
     }
+    
+    //Returns info about community members who are live streaming in your clans.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForClanmates (
         HttpClient client,
         int page,
@@ -39,10 +47,13 @@ class CommunityContent{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Clan/${partnershipType}/{sort}/{page}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
         });
     }
+    
+    //Returns info about community members who are live streaming among your friends.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForFriends (
         HttpClient client,
         int page,
@@ -51,10 +62,13 @@ class CommunityContent{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Friends/${partnershipType}/{sort}/{page}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
         });
     }
+    
+    //Returns info about Featured live streams.
     static Future<SearchResultOfCommunityLiveStatusResponse> getFeaturedCommunityLiveStatuses (
         HttpClient client,
         int page,
@@ -65,10 +79,13 @@ class CommunityContent{
         Map<String, String> params = new Map();
         params['streamLocale'] = "${ streamLocale }";
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Featured/${partnershipType}/{sort}/{page}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
         });
     }
+    
+    //Gets the Live Streaming status of a particular Account and Membership Type.
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,
         int membershipId,
@@ -77,6 +94,7 @@ class CommunityContent{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Users/${partnershipType}/{membershipType}/{membershipId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return CommunityLiveStatusResponse.fromJson(response);
         });

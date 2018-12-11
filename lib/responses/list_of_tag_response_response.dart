@@ -1,21 +1,21 @@
 import '../models/tag_response.dart';
 class ListOfTagResponseResponse{
-    List<TagResponse> Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    List<TagResponse> response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     ListOfTagResponseResponse(
-		List<TagResponse> this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		List<TagResponse> this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static ListOfTagResponseResponse fromJson(Map<String, dynamic> data){

@@ -1,21 +1,21 @@
 import '../models/destiny_historical_stats_account_result.dart';
 class DestinyHistoricalStatsAccountResultResponse{
-    DestinyHistoricalStatsAccountResult Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    DestinyHistoricalStatsAccountResult response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     DestinyHistoricalStatsAccountResultResponse(
-		DestinyHistoricalStatsAccountResult this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		DestinyHistoricalStatsAccountResult this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static DestinyHistoricalStatsAccountResultResponse fromJson(Map<String, dynamic> data){

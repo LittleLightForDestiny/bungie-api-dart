@@ -2,13 +2,13 @@ import 'fireteam_summary.dart';
 import 'fireteam_member.dart';
 import 'fireteam_member.dart';
 class FireteamResponse{
-	FireteamSummary Summary;
-	List<FireteamMember> Members;
-	List<FireteamMember> Alternates;
+	FireteamSummary summary;
+	List<FireteamMember> members;
+	List<FireteamMember> alternates;
 	FireteamResponse(
-		FireteamSummary this.Summary,
-		List<FireteamMember> this.Members,
-		List<FireteamMember> this.Alternates,
+		FireteamSummary this.summary,
+		List<FireteamMember> this.members,
+		List<FireteamMember> this.alternates,
 	);
 
 	static FireteamResponse fromJson(Map<String, dynamic> data){

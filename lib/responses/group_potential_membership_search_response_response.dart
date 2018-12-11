@@ -1,21 +1,21 @@
 import '../models/group_potential_membership_search_response.dart';
 class GroupPotentialMembershipSearchResponseResponse{
-    GroupPotentialMembershipSearchResponse Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    GroupPotentialMembershipSearchResponse response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     GroupPotentialMembershipSearchResponseResponse(
-		GroupPotentialMembershipSearchResponse this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		GroupPotentialMembershipSearchResponse this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static GroupPotentialMembershipSearchResponseResponse fromJson(Map<String, dynamic> data){

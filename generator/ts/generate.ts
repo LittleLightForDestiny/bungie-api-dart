@@ -28,7 +28,7 @@ _.each(doc.components!.responses!, (response: ResponseObject, index:string)=>{
 });
 
 _.each(doc.components!.schemas!, (schema: SchemaObject, index:string)=>{
-  if(!schema.enum){
+  if(schema.type == 'object'){
     new ModelClass(index, schema);
   }
 });

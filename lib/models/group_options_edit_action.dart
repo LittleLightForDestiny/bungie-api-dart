@@ -1,15 +1,15 @@
 class GroupOptionsEditAction{
-	bool InvitePermissionOverride;
-	bool UpdateCulturePermissionOverride;
-	int HostGuidedGamePermissionOverride;
-	bool UpdateBannerPermissionOverride;
-	int JoinLevel;
+	bool invitePermissionOverride;
+	bool updateCulturePermissionOverride;
+	int hostGuidedGamePermissionOverride;
+	bool updateBannerPermissionOverride;
+	int joinLevel;
 	GroupOptionsEditAction(
-		bool this.InvitePermissionOverride,
-		bool this.UpdateCulturePermissionOverride,
-		int this.HostGuidedGamePermissionOverride,
-		bool this.UpdateBannerPermissionOverride,
-		int this.JoinLevel,
+		bool this.invitePermissionOverride,
+		bool this.updateCulturePermissionOverride,
+		int this.hostGuidedGamePermissionOverride,
+		bool this.updateBannerPermissionOverride,
+		int this.joinLevel,
 	);
 
 	static GroupOptionsEditAction fromJson(Map<String, dynamic> data){

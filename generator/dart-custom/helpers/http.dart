@@ -2,8 +2,9 @@ class HttpClientConfig {
   String method;
   String url;
   Map<String, dynamic> params;
-  Object body;
-  HttpClientConfig(String this.method, String this.url, Map<String, dynamic> this.params, [Object this.body]);
+  dynamic body;
+  String bodyContentType;
+  HttpClientConfig(String this.method, String this.url, Map<String, dynamic> this.params, [dynamic this.body , String this.bodyContentType]);
 }
 
 /**

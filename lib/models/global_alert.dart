@@ -1,20 +1,20 @@
 import 'stream_info.dart';
 class GlobalAlert{
-	String AlertKey;
-	String AlertHtml;
-	String AlertTimestamp;
-	String AlertLink;
-	int AlertLevel;
-	int AlertType;
-	StreamInfo StreamInfo;
+	String alertKey;
+	String alertHtml;
+	String alertTimestamp;
+	String alertLink;
+	int alertLevel;
+	int alertType;
+	StreamInfo streamInfo;
 	GlobalAlert(
-		String this.AlertKey,
-		String this.AlertHtml,
-		String this.AlertTimestamp,
-		String this.AlertLink,
-		int this.AlertLevel,
-		int this.AlertType,
-		StreamInfo this.StreamInfo,
+		String this.alertKey,
+		String this.alertHtml,
+		String this.alertTimestamp,
+		String this.alertLink,
+		int this.alertLevel,
+		int this.alertType,
+		StreamInfo this.streamInfo,
 	);
 
 	static GlobalAlert fromJson(Map<String, dynamic> data){

@@ -1,21 +1,21 @@
 import '../models/destiny_collectible_node_detail_response.dart';
 class DestinyCollectibleNodeDetailResponseResponse{
-    DestinyCollectibleNodeDetailResponse Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    DestinyCollectibleNodeDetailResponse response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     DestinyCollectibleNodeDetailResponseResponse(
-		DestinyCollectibleNodeDetailResponse this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		DestinyCollectibleNodeDetailResponse this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static DestinyCollectibleNodeDetailResponseResponse fromJson(Map<String, dynamic> data){

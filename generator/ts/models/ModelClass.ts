@@ -8,7 +8,7 @@ export class ModelClass{
     static all:{[id:string]:ModelClass} = {};
     public className:string;
     constructor(
-        public pathName:String,
+        public pathName:string,
         public data:SchemaObject
     ){
         this.className = pathName.split('.').pop()!;
@@ -16,7 +16,7 @@ export class ModelClass{
     }
 
     properties():ModelProperty[]{
-        let props = map(this.data.properties, (property:ParameterObject|ReferenceObject, index:String)=>{
+        let props = map(this.data.properties, (property:ParameterObject|ReferenceObject, index:string)=>{
            return new ModelProperty(index, property);
         });
         return props as any as ModelProperty[];

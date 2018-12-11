@@ -1,7 +1,7 @@
 import 'ignore_response.dart';
 class PostResponse{
 	String lastReplyTimestamp;
-	bool IsPinned;
+	bool isPinned;
 	int urlMediaType;
 	String thumbnail;
 	int popularity;
@@ -16,7 +16,7 @@ class PostResponse{
 	String locale;
 	PostResponse(
 		String this.lastReplyTimestamp,
-		bool this.IsPinned,
+		bool this.isPinned,
 		int this.urlMediaType,
 		String this.thumbnail,
 		int this.popularity,

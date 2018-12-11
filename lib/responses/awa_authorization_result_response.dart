@@ -1,21 +1,21 @@
 import '../models/awa_authorization_result.dart';
 class AwaAuthorizationResultResponse{
-    AwaAuthorizationResult Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    AwaAuthorizationResult response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     AwaAuthorizationResultResponse(
-		AwaAuthorizationResult this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		AwaAuthorizationResult this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static AwaAuthorizationResultResponse fromJson(Map<String, dynamic> data){

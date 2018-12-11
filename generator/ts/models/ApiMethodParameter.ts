@@ -6,7 +6,7 @@ export class ApiMethodParameter{
     ){
     }
 
-    typeName():String{
+    typeName():string{
         return ApiDocHelper.getObjectType(this.info);
     }
 

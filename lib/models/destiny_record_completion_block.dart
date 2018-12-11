@@ -1,11 +1,11 @@
 class DestinyRecordCompletionBlock{
 	int partialCompletionObjectiveCountThreshold;
-	int ScoreValue;
+	int scoreValue;
 	bool shouldFireToast;
 	int toastStyle;
 	DestinyRecordCompletionBlock(
 		int this.partialCompletionObjectiveCountThreshold,
-		int this.ScoreValue,
+		int this.scoreValue,
 		bool this.shouldFireToast,
 		int this.toastStyle,
 	);

@@ -9,7 +9,7 @@ export class ResponseClass{
     static all:{[id:string]:ResponseClass} = {};
     public className:string;
     constructor(
-        public pathName:String,
+        public pathName:string,
         public data:ResponseObject
     ){
         this.className = pathName.split('.').pop()! + 'Response';
@@ -21,7 +21,7 @@ export class ResponseClass{
         if(!properties){
             return;
         }
-        return map(properties, (property:ParameterObject|ReferenceObject, index:String)=>{
+        return map(properties, (property:ParameterObject|ReferenceObject, index:string)=>{
            return new ModelProperty(index, property);
         });
     }

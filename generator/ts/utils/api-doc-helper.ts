@@ -10,7 +10,7 @@ export class ApiDocHelper{
         return this.doc;
     }
 
-    static getParseFunction(obj:ReferenceObject|ParameterObject|SchemaObject):String|null{
+    static getParseFunction(obj:ReferenceObject|ParameterObject|SchemaObject):string|null{
         if(obj.$ref){
             let ref = this.getRef(obj.$ref);
             if(ref.type == 'object'){
@@ -65,7 +65,7 @@ export class ApiDocHelper{
         return true;
     }
 
-    static getObjectType(obj:ReferenceObject|ParameterObject|SchemaObject):String{
+    static getObjectType(obj:ReferenceObject|ParameterObject|SchemaObject):string{
         let param:ParameterObject = obj as ParameterObject;
 
         if(obj.$ref){

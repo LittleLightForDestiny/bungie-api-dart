@@ -12,7 +12,7 @@ class GeneralUser{
 	String about;
 	String firstAccess;
 	String lastUpdate;
-	int legacyPortalUID;
+	int legacyPortalUid;
 	UserToUserContext context;
 	String psnDisplayName;
 	String xboxDisplayName;
@@ -43,7 +43,7 @@ class GeneralUser{
 		String this.about,
 		String this.firstAccess,
 		String this.lastUpdate,
-		int this.legacyPortalUID,
+		int this.legacyPortalUid,
 		UserToUserContext this.context,
 		String this.psnDisplayName,
 		String this.xboxDisplayName,

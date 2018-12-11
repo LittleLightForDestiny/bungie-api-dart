@@ -1,21 +1,21 @@
 import '../models/destiny_post_game_carnage_report_data.dart';
 class DestinyPostGameCarnageReportDataResponse{
-    DestinyPostGameCarnageReportData Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    DestinyPostGameCarnageReportData response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     DestinyPostGameCarnageReportDataResponse(
-		DestinyPostGameCarnageReportData this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		DestinyPostGameCarnageReportData this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static DestinyPostGameCarnageReportDataResponse fromJson(Map<String, dynamic> data){

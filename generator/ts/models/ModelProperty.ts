@@ -1,8 +1,9 @@
 import { ParameterObject, ReferenceObject } from "openapi3-ts";
 import { ApiDocHelper } from "../utils/api-doc-helper";
+import {camelCase} from 'lodash';
 export class ModelProperty{
     constructor(
-        public name:String,
+        public name:string,
         public info:ParameterObject|ReferenceObject
     ){
     }
@@ -11,7 +12,7 @@ export class ModelProperty{
         return ApiDocHelper.isNativeType(this.info);
     }
 
-    typeName():String{
+    typeName():string{
         return ApiDocHelper.getObjectType(this.info);
     }
 
@@ -24,7 +25,7 @@ export class ModelProperty{
         return `data['${this.name}']`;
     }
 
-    propertyName():String{
-        return this.name;
+    propertyName():string{
+        return camelCase(this.name);
     }
 }

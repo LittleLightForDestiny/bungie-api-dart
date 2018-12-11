@@ -37,15 +37,20 @@ import '../models/destiny_report_offense_pgcr_request.dart';
 import '../models/awa_permission_requested.dart';
 import '../models/awa_user_response.dart';
 class Destiny2{
+    
+    //Returns the current version of the manifest as a json object.
     static Future<DestinyManifestResponse> getDestinyManifest (
         HttpClient client,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyManifestResponse.fromJson(response);
         });
     }
+    
+    //Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions. Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found. Please don&#39;t use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
     static Future<DestinyDefinitionResponse> getDestinyEntityDefinition (
         HttpClient client,
         String entityType,
@@ -53,10 +58,13 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/${entityType}/{hashIdentifier}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyDefinitionResponse.fromJson(response);
         });
     }
+    
+    //Returns a list of Destiny memberships given a full Gamertag or PSN ID.
     static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayer (
         HttpClient client,
         String displayName,
@@ -64,10 +72,13 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/{displayName}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return IEnumerableOfUserInfoCardResponse.fromJson(response);
         });
     }
+    
+    //Returns a summary information about all profiles linked to the requesting membership type&#x2F;membership ID that have valid Destiny information. The passed-in Membership Type&#x2F;Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
     static Future<DestinyLinkedProfilesResponseResponse> getLinkedProfiles (
         HttpClient client,
         int membershipId,
@@ -75,10 +86,13 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{membershipId}/LinkedProfiles/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLinkedProfilesResponseResponse.fromJson(response);
         });
     }
+    
+    //Returns Destiny Profile information for the supplied membership.
     static Future<DestinyProfileResponseResponse> getProfile (
         HttpClient client,
         List<int> components,
@@ -88,10 +102,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyProfileResponseResponse.fromJson(response);
         });
     }
+    
+    //Returns character information for the supplied character.
     static Future<DestinyCharacterResponseResponse> getCharacter (
         HttpClient client,
         int characterId,
@@ -102,20 +119,26 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyCharacterResponseResponse.fromJson(response);
         });
     }
+    
+    //Returns information on the weekly clan rewards and if the clan has earned them or not. Note that this will always report rewards as not redeemed.
     static Future<DestinyMilestoneResponse> getClanWeeklyRewardState (
         HttpClient client,
         int groupId,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Clan/${groupId}/WeeklyRewardState/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyMilestoneResponse.fromJson(response);
         });
     }
+    
+    //Retrieve the details of an instanced Destiny Item. An instanced Destiny item is one with an ItemInstanceId. Non-instanced items, such as materials, have no useful instance-specific details and thus are not queryable here.
     static Future<DestinyItemResponseResponse> getItem (
         HttpClient client,
         List<int> components,
@@ -126,10 +149,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyItemResponseResponse.fromJson(response);
         });
     }
+    
+    //Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating&#x2F;dynamic inventories. Use their definitions as-is for those.
     static Future<DestinyVendorsResponseResponse> getVendors (
         HttpClient client,
         int characterId,
@@ -140,10 +166,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyVendorsResponseResponse.fromJson(response);
         });
     }
+    
+    //Get the details of a specific Vendor.
     static Future<DestinyVendorResponseResponse> getVendor (
         HttpClient client,
         int characterId,
@@ -155,10 +184,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyVendorResponseResponse.fromJson(response);
         });
     }
+    
+    //Given a Presentation Node that has Collectibles as direct descendants, this will return item details about those descendants in the context of the requesting character.
     static Future<DestinyCollectibleNodeDetailResponseResponse> getCollectibleNodeDetails (
         HttpClient client,
         int characterId,
@@ -170,10 +202,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Collectibles/{collectiblePresentationNodeHash}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyCollectibleNodeDetailResponseResponse.fromJson(response);
         });
     }
+    
+    //Transfer an item to&#x2F;from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item. itshappening.gif
     static Future<int32Response> transferItem (
         HttpClient client,
         DestinyItemTransferRequest body
@@ -181,10 +216,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/TransferItem/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Extract an item from the Postmaster, with whatever implications that may entail. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item.
     static Future<int32Response> pullFromPostmaster (
         HttpClient client,
         DestinyPostmasterTransferRequest body
@@ -192,10 +230,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/PullFromPostmaster/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Equip an item. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
     static Future<int32Response> equipItem (
         HttpClient client,
         DestinyItemActionRequest body
@@ -203,10 +244,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItem/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Equip a list of items by itemInstanceIds. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Any items not found on your character will be ignored.
     static Future<DestinyEquipItemResultsResponse> equipItems (
         HttpClient client,
         DestinyItemSetActionRequest body
@@ -214,10 +258,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItems/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return DestinyEquipItemResultsResponse.fromJson(response);
         });
     }
+    
+    //Set the Lock State for an instanced item. You must have a valid Destiny Account.
     static Future<int32Response> setItemLockState (
         HttpClient client,
         DestinyItemStateRequest body
@@ -225,10 +272,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/SetLockState/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Insert a plug into a socketed item. I know how it sounds, but I assure you it&#39;s much more G-rated than you might be guessing. We haven&#39;t decided yet whether this will be able to insert plugs that have side effects, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Request must include proof of permission for &#39;InsertPlugs&#39; from the account owner.
     static Future<DestinyItemChangeResponseResponse> insertSocketPlug (
         HttpClient client,
         DestinyInsertPlugsActionRequest body
@@ -236,20 +286,26 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/InsertSocketPlug/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return DestinyItemChangeResponseResponse.fromJson(response);
         });
     }
+    
+    //Gets the available post game carnage report for the activity ID.
     static Future<DestinyPostGameCarnageReportDataResponse> getPostGameCarnageReport (
         HttpClient client,
         int activityId,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyPostGameCarnageReportDataResponse.fromJson(response);
         });
     }
+    
+    //Report a player that you met in an activity that was engaging in ToS-violating activities. Both you and the offending player must have played in the activityId passed in. Please use this judiciously and only when you have strong suspicions of violation, pretty please.
     static Future<int32Response> reportOffensivePostGameCarnageReportPlayer (
         HttpClient client,
         int activityId,
@@ -258,19 +314,25 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/Report/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Gets historical stats definitions.
     static Future<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> getHistoricalStatsDefinition (
         HttpClient client,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Definition/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(response);
         });
     }
+    
+    //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getClanLeaderboards (
         HttpClient client,
         int groupId,
@@ -283,10 +345,13 @@ class Destiny2{
         params['modes'] = "${ modes }";
         params['statid'] = "${ statid }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/Clans/${groupId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLeaderboardResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets aggregated stats for a clan using the same categories as the clan leaderboards. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<ListOfDestinyClanAggregateStatResponse> getClanAggregateStats (
         HttpClient client,
         int groupId,
@@ -295,10 +360,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['modes'] = "${ modes }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/AggregateClanStats/${groupId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return ListOfDestinyClanAggregateStatResponse.fromJson(response);
         });
     }
+    
+    //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint has not yet been implemented. It is being returned for a preview of future functionality, and for public comment&#x2F;suggestion&#x2F;preparation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboards (
         HttpClient client,
         int destinyMembershipId,
@@ -312,10 +380,13 @@ class Destiny2{
         params['modes'] = "${ modes }";
         params['statid'] = "${ statid }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLeaderboardResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboardsForCharacter (
         HttpClient client,
         int characterId,
@@ -330,10 +401,13 @@ class Destiny2{
         params['modes'] = "${ modes }";
         params['statid'] = "${ statid }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/${membershipType}/{destinyMembershipId}/{characterId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLeaderboardResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets a page list of Destiny items.
     static Future<DestinyEntitySearchResultResponse> searchDestinyEntities (
         HttpClient client,
         int page,
@@ -343,10 +417,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['page'] = "${ page }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Armory/Search/${type}/{searchTerm}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyEntitySearchResultResponse.fromJson(response);
         });
     }
+    
+    //Gets historical stats for indicated character.
     static Future<DestinyHistoricalStatsResultsResponse> getHistoricalStats (
         HttpClient client,
         int characterId,
@@ -365,10 +442,13 @@ class Destiny2{
         params['modes'] = "${ modes }";
         params['periodType'] = "${ periodType }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalStatsResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets aggregate historical stats organized around each character for a given account.
     static Future<DestinyHistoricalStatsAccountResultResponse> getHistoricalStatsForAccount (
         HttpClient client,
         int destinyMembershipId,
@@ -378,10 +458,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         params['groups'] = "${ groups }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Stats/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalStatsAccountResultResponse.fromJson(response);
         });
     }
+    
+    //Gets activity history stats for indicated character.
     static Future<DestinyActivityHistoryResultsResponse> getActivityHistory (
         HttpClient client,
         int characterId,
@@ -396,10 +479,13 @@ class Destiny2{
         params['mode'] = "${ mode }";
         params['page'] = "${ page }";
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyActivityHistoryResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets details about unique weapon usage, including all exotic weapons.
     static Future<DestinyHistoricalWeaponStatsDataResponse> getUniqueWeaponHistory (
         HttpClient client,
         int characterId,
@@ -408,10 +494,13 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalWeaponStatsDataResponse.fromJson(response);
         });
     }
+    
+    //Gets all activities the character has participated in together with aggregate statistics for those activities.
     static Future<DestinyAggregateActivityResultsResponse> getDestinyAggregateActivityStats (
         HttpClient client,
         int characterId,
@@ -420,29 +509,38 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyAggregateActivityResultsResponse.fromJson(response);
         });
     }
+    
+    //Gets custom localized content for the milestone of the given hash, if it exists.
     static Future<DestinyMilestoneContentResponse> getPublicMilestoneContent (
         HttpClient client,
         int milestoneHash,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/${milestoneHash}/Content/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyMilestoneContentResponse.fromJson(response);
         });
     }
+    
+    //Gets public information about currently available Milestones.
     static Future<DictionaryOfuint32AndDestinyPublicMilestoneResponse> getPublicMilestones (
         HttpClient client,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(response);
         });
     }
+    
+    //Initialize a request to perform an advanced write action.
     static Future<AwaInitializeResponseResponse> awaInitializeRequest (
         HttpClient client,
         AwaPermissionRequested body
@@ -450,10 +548,13 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/Initialize/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return AwaInitializeResponseResponse.fromJson(response);
         });
     }
+    
+    //Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.
     static Future<int32Response> awaProvideAuthorizationResult (
         HttpClient client,
         AwaUserResponse body
@@ -461,16 +562,20 @@ class Destiny2{
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/AwaProvideAuthorizationResult/", params);
         config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromJson(response);
         });
     }
+    
+    //Returns the action token if user approves the request.
     static Future<AwaAuthorizationResultResponse> awaGetActionToken (
         HttpClient client,
         String correlationId,
     ) {
         Map<String, String> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Awa/GetActionToken/${correlationId}/", params);
+        config.bodyContentType = null;
         return client.request(config).then((response){
             return AwaAuthorizationResultResponse.fromJson(response);
         });

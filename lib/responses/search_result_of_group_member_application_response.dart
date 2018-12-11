@@ -1,21 +1,21 @@
 import '../models/search_result_of_group_member_application.dart';
 class SearchResultOfGroupMemberApplicationResponse{
-    SearchResultOfGroupMemberApplication Response;
-    int ErrorCode;
-    int ThrottleSeconds;
-    String ErrorStatus;
-    String Message;
-    Map<String, dynamic> MessageData;
-    String DetailedErrorTrace;
+    SearchResultOfGroupMemberApplication response;
+    int errorCode;
+    int throttleSeconds;
+    String errorStatus;
+    String message;
+    Map<String, dynamic> messageData;
+    String detailedErrorTrace;
 
     SearchResultOfGroupMemberApplicationResponse(
-		SearchResultOfGroupMemberApplication this.Response,
-		int this.ErrorCode,
-		int this.ThrottleSeconds,
-		String this.ErrorStatus,
-		String this.Message,
-		Map<String, dynamic> this.MessageData,
-		String this.DetailedErrorTrace,
+		SearchResultOfGroupMemberApplication this.response,
+		int this.errorCode,
+		int this.throttleSeconds,
+		String this.errorStatus,
+		String this.message,
+		Map<String, dynamic> this.messageData,
+		String this.detailedErrorTrace,
 	);
 
     static SearchResultOfGroupMemberApplicationResponse fromJson(Map<String, dynamic> data){
