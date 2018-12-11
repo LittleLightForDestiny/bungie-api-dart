@@ -4,8 +4,12 @@
 import '../helpers/http.dart';
 
 class OAuth{
-  static openOAuth(OAuthBrowser browser, [String languageCode = "en"]){
-    browser.open("https://www.bungie.net/$languageCode/OAuth/Authorize");
+  static openOAuth(OAuthBrowser browser, String clientId, [String languageCode = "en", bool reauth=false]){
+    String url = "https://www.bungie.net/$languageCode/OAuth/Authorize?client_id=$clientId&response_type=code";
+    if(reauth){
+      url = "$url&reauth=true";
+    }
+    browser.open(url);
   }
   static Future<BungieNetToken> getToken(HttpClient client, String clientId, String clientSecret, String code){
     HttpClientConfig config = new HttpClientConfig("POST", "/App/OAuth/token/", null);
