@@ -73,7 +73,7 @@ class GroupV2{
         int mType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/SetUserClanInviteSetting/${mType}/{allowInvites}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/SetUserClanInviteSetting/${mType}/${allowInvites}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return int32Response.fromJson(response);
@@ -87,7 +87,7 @@ class GroupV2{
         int groupType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Recommended/${groupType}/{createDateRange}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Recommended/${groupType}/${createDateRange}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return ListOfGroupV2CardResponse.fromJson(response);
@@ -128,7 +128,7 @@ class GroupV2{
         int groupType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/Name/${groupName}/{groupType}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/Name/${groupName}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupResponseResponse.fromJson(response);
@@ -230,7 +230,7 @@ class GroupV2{
         GroupOptionalConversationEditRequest body
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/OptionalConversations/Edit/{conversationId}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/OptionalConversations/Edit/${conversationId}/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
@@ -279,7 +279,7 @@ class GroupV2{
         int memberType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/{membershipType}/{membershipId}/SetMembershipType/{memberType}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/SetMembershipType/${memberType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return int32Response.fromJson(response);
@@ -294,7 +294,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/{membershipType}/{membershipId}/Kick/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Kick/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupMemberLeaveResultResponse.fromJson(response);
@@ -310,7 +310,7 @@ class GroupV2{
         GroupBanRequest body
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/{membershipType}/{membershipId}/Ban/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Ban/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
@@ -326,7 +326,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/{membershipType}/{membershipId}/Unban/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Unban/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return int32Response.fromJson(response);
@@ -355,7 +355,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Admin/AbdicateFoundership/{membershipType}/{founderIdNew}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Admin/AbdicateFoundership/${membershipType}/${founderIdNew}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return booleanResponse.fromJson(response);
@@ -370,7 +370,7 @@ class GroupV2{
         GroupApplicationRequest body
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Apply/{membershipType}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Apply/${membershipType}/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
@@ -413,7 +413,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Rescind/{membershipType}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Rescind/${membershipType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupMemberLeaveResultResponse.fromJson(response);
@@ -474,7 +474,7 @@ class GroupV2{
         GroupApplicationRequest body
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Approve/{membershipType}/{membershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Approve/${membershipType}/${membershipId}/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
@@ -506,7 +506,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/${membershipType}/{membershipId}/{filter}/{groupType}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/${membershipType}/${membershipId}/${filter}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupMembershipSearchResponseResponse.fromJson(response);
@@ -522,7 +522,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/Potential/${membershipType}/{membershipId}/{filter}/{groupType}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/Potential/${membershipType}/${membershipId}/${filter}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupPotentialMembershipSearchResponseResponse.fromJson(response);
@@ -538,7 +538,7 @@ class GroupV2{
         GroupApplicationRequest body
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInvite/{membershipType}/{membershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInvite/${membershipType}/${membershipId}/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
@@ -554,7 +554,7 @@ class GroupV2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInviteCancel/{membershipType}/{membershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInviteCancel/${membershipType}/${membershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return GroupApplicationResponseResponse.fromJson(response);

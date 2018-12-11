@@ -57,7 +57,7 @@ class Destiny2{
         int hashIdentifier,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/${entityType}/{hashIdentifier}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/${entityType}/${hashIdentifier}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyDefinitionResponse.fromJson(response);
@@ -71,7 +71,7 @@ class Destiny2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/{displayName}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return IEnumerableOfUserInfoCardResponse.fromJson(response);
@@ -85,7 +85,7 @@ class Destiny2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{membershipId}/LinkedProfiles/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLinkedProfilesResponseResponse.fromJson(response);
@@ -101,7 +101,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyProfileResponseResponse.fromJson(response);
@@ -118,7 +118,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyCharacterResponseResponse.fromJson(response);
@@ -148,7 +148,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Item/{itemInstanceId}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyItemResponseResponse.fromJson(response);
@@ -165,7 +165,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyVendorsResponseResponse.fromJson(response);
@@ -183,7 +183,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyVendorResponseResponse.fromJson(response);
@@ -201,7 +201,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['components'] = "${ components }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Collectibles/{collectiblePresentationNodeHash}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Collectibles/${collectiblePresentationNodeHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyCollectibleNodeDetailResponseResponse.fromJson(response);
@@ -379,7 +379,7 @@ class Destiny2{
         params['maxtop'] = "${ maxtop }";
         params['modes'] = "${ modes }";
         params['statid'] = "${ statid }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Stats/Leaderboards/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLeaderboardResultsResponse.fromJson(response);
@@ -400,7 +400,7 @@ class Destiny2{
         params['maxtop'] = "${ maxtop }";
         params['modes'] = "${ modes }";
         params['statid'] = "${ statid }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/${membershipType}/{destinyMembershipId}/{characterId}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyLeaderboardResultsResponse.fromJson(response);
@@ -416,7 +416,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['page'] = "${ page }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Armory/Search/${type}/{searchTerm}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Armory/Search/${type}/${searchTerm}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyEntitySearchResultResponse.fromJson(response);
@@ -441,7 +441,7 @@ class Destiny2{
         params['groups'] = "${ groups }";
         params['modes'] = "${ modes }";
         params['periodType'] = "${ periodType }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalStatsResultsResponse.fromJson(response);
@@ -457,7 +457,7 @@ class Destiny2{
     ) {
         Map<String, String> params = new Map();
         params['groups'] = "${ groups }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Stats/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalStatsAccountResultResponse.fromJson(response);
@@ -478,7 +478,7 @@ class Destiny2{
         params['count'] = "${ count }";
         params['mode'] = "${ mode }";
         params['page'] = "${ page }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/Activities/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyActivityHistoryResultsResponse.fromJson(response);
@@ -493,7 +493,7 @@ class Destiny2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/UniqueWeapons/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyHistoricalWeaponStatsDataResponse.fromJson(response);
@@ -508,7 +508,7 @@ class Destiny2{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Stats/AggregateActivityStats/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return DestinyAggregateActivityResultsResponse.fromJson(response);

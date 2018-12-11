@@ -26,7 +26,7 @@ class Content{
     ) {
         Map<String, String> params = new Map();
         params['head'] = "${ head }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentById/${id}/{locale}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentById/${id}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return ContentItemPublicContractResponse.fromJson(response);
@@ -43,7 +43,7 @@ class Content{
     ) {
         Map<String, String> params = new Map();
         params['head'] = "${ head }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentByTagAndType/${tag}/{type}/{locale}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentByTagAndType/${tag}/${type}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return ContentItemPublicContractResponse.fromJson(response);
@@ -89,7 +89,7 @@ class Content{
         params['currentpage'] = "${ currentpage }";
         params['head'] = "${ head }";
         params['itemsperpage'] = "${ itemsperpage }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Content/SearchContentByTagAndType/${tag}/{type}/{locale}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Content/SearchContentByTagAndType/${tag}/${type}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfContentItemPublicContractResponse.fromJson(response);

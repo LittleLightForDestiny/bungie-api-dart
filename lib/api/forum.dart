@@ -22,7 +22,7 @@ class Forum{
         Map<String, String> params = new Map();
         params['locales'] = "${ locales }";
         params['tagstring'] = "${ tagstring }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicsPaged/${page}/{pageSize}/{group}/{sort}/{quickDate}/{categoryFilter}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicsPaged/${page}/${pageSize}/${group}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
@@ -40,7 +40,7 @@ class Forum{
     ) {
         Map<String, String> params = new Map();
         params['locales'] = "${ locales }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetCoreTopicsPaged/${page}/{sort}/{quickDate}/{categoryFilter}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetCoreTopicsPaged/${page}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
@@ -61,7 +61,7 @@ class Forum{
     ) {
         Map<String, String> params = new Map();
         params['showbanned'] = "${ showbanned }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPaged/${parentPostId}/{page}/{pageSize}/{replySize}/{getParentPost}/{rootThreadMode}/{sortMode}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPaged/${parentPostId}/${page}/${pageSize}/${replySize}/${getParentPost}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
@@ -81,7 +81,7 @@ class Forum{
     ) {
         Map<String, String> params = new Map();
         params['showbanned'] = "${ showbanned }";
-        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPagedFromChild/${childPostId}/{page}/{pageSize}/{replySize}/{rootThreadMode}/{sortMode}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPagedFromChild/${childPostId}/${page}/${pageSize}/${replySize}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
@@ -191,7 +191,7 @@ class Forum{
         int topicId,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/{targetMembershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/${targetMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return ForumRecruitmentDetailResponse.fromJson(response);

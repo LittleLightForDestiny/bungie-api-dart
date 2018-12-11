@@ -52,7 +52,7 @@ class User{
         int membershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsById/${membershipId}/{membershipType}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsById/${membershipId}/${membershipType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return UserMembershipDataResponse.fromJson(response);

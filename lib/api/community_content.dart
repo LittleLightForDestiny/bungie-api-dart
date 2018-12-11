@@ -12,7 +12,7 @@ class CommunityContent{
         int sort,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Get/${sort}/{mediaFilter}/{page}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Get/${sort}/${mediaFilter}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return PostSearchResponseResponse.fromJson(response);
@@ -31,7 +31,7 @@ class CommunityContent{
         Map<String, String> params = new Map();
         params['modeHash'] = "${ modeHash }";
         params['streamLocale'] = "${ streamLocale }";
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/All/${partnershipType}/{sort}/{page}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/All/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
@@ -46,7 +46,7 @@ class CommunityContent{
         int sort,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Clan/${partnershipType}/{sort}/{page}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Clan/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
@@ -61,7 +61,7 @@ class CommunityContent{
         int sort,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Friends/${partnershipType}/{sort}/{page}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Friends/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
@@ -78,7 +78,7 @@ class CommunityContent{
     ) {
         Map<String, String> params = new Map();
         params['streamLocale'] = "${ streamLocale }";
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Featured/${partnershipType}/{sort}/{page}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Featured/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfCommunityLiveStatusResponse.fromJson(response);
@@ -93,7 +93,7 @@ class CommunityContent{
         int partnershipType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Users/${partnershipType}/{membershipType}/{membershipId}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Users/${partnershipType}/${membershipType}/${membershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return CommunityLiveStatusResponse.fromJson(response);

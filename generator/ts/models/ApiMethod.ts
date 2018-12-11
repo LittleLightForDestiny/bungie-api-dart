@@ -23,7 +23,7 @@ export class ApiMethod{
     }
 
     url(){
-        return this.methodUrl.replace('{', '${');
+        return this.methodUrl.split('{').join('${');
     }
 
     description():string{

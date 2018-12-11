@@ -23,7 +23,7 @@ class Trending{
         int pageNumber,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Trending/Categories/${categoryId}/{pageNumber}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Trending/Categories/${categoryId}/${pageNumber}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return SearchResultOfTrendingEntryResponse.fromJson(response);
@@ -37,7 +37,7 @@ class Trending{
         int trendingEntryType,
     ) {
         Map<String, String> params = new Map();
-        HttpClientConfig config = HttpClientConfig('GET', "/Trending/Details/${trendingEntryType}/{identifier}/", params);
+        HttpClientConfig config = HttpClientConfig('GET', "/Trending/Details/${trendingEntryType}/${identifier}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
             return TrendingDetailResponse.fromJson(response);
