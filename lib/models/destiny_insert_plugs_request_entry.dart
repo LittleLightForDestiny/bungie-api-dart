@@ -32,8 +32,9 @@ class DestinyInsertPlugsRequestEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['socketIndex'] = socketIndex;
-			data['socketArrayType'] = socketArrayType;
-			data['plugItemHash'] = plugItemHash;
+			data['socketIndex'] = this.socketIndex;
+			data['socketArrayType'] = this.socketArrayType;
+			data['plugItemHash'] = this.plugItemHash;
+		return data;
 	}
 }

@@ -39,10 +39,11 @@ class DestinyProgressionLevelRequirementDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['requirementCurve'] = requirementCurve.map((item)=>item.toMap());
-			data['progressionHash'] = progressionHash;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['requirementCurve'] = this.requirementCurve.map((item)=>item.toMap());
+			data['progressionHash'] = this.progressionHash;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

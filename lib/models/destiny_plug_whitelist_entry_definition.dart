@@ -32,8 +32,9 @@ class DestinyPlugWhitelistEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categoryHash'] = categoryHash;
-			data['categoryIdentifier'] = categoryIdentifier;
-			data['reinitializationPossiblePlugHashes'] = reinitializationPossiblePlugHashes;
+			data['categoryHash'] = this.categoryHash;
+			data['categoryIdentifier'] = this.categoryIdentifier;
+			data['reinitializationPossiblePlugHashes'] = this.reinitializationPossiblePlugHashes;
+		return data;
 	}
 }

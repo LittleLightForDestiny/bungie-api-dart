@@ -30,7 +30,8 @@ class DestinyLeaderboard{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statId'] = statId;
-			data['entries'] = entries.map((item)=>item.toMap());
+			data['statId'] = this.statId;
+			data['entries'] = this.entries.map((item)=>item.toMap());
+		return data;
 	}
 }

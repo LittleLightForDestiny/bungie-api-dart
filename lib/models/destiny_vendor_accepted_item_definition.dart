@@ -29,7 +29,8 @@ class DestinyVendorAcceptedItemDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['acceptedInventoryBucketHash'] = acceptedInventoryBucketHash;
-			data['destinationInventoryBucketHash'] = destinationInventoryBucketHash;
+			data['acceptedInventoryBucketHash'] = this.acceptedInventoryBucketHash;
+			data['destinationInventoryBucketHash'] = this.destinationInventoryBucketHash;
+		return data;
 	}
 }

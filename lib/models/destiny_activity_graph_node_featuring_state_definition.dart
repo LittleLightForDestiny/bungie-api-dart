@@ -26,6 +26,7 @@ class DestinyActivityGraphNodeFeaturingStateDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['highlightType'] = highlightType;
+			data['highlightType'] = this.highlightType;
+		return data;
 	}
 }

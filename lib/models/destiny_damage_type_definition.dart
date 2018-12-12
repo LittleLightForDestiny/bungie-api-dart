@@ -45,12 +45,13 @@ class DestinyDamageTypeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['transparentIconPath'] = transparentIconPath;
-			data['showIcon'] = showIcon;
-			data['enumValue'] = enumValue;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties;
+			data['transparentIconPath'] = this.transparentIconPath;
+			data['showIcon'] = this.showIcon;
+			data['enumValue'] = this.enumValue;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class ContentTypeDefaultValue{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['whenClause'] = whenClause;
-			data['whenValue'] = whenValue;
-			data['defaultValue'] = defaultValue;
+			data['whenClause'] = this.whenClause;
+			data['whenValue'] = this.whenValue;
+			data['defaultValue'] = this.defaultValue;
+		return data;
 	}
 }

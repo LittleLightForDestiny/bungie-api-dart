@@ -32,8 +32,9 @@ class UserTheme{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['userThemeId'] = userThemeId;
-			data['userThemeName'] = userThemeName;
-			data['userThemeDescription'] = userThemeDescription;
+			data['userThemeId'] = this.userThemeId;
+			data['userThemeName'] = this.userThemeName;
+			data['userThemeDescription'] = this.userThemeDescription;
+		return data;
 	}
 }

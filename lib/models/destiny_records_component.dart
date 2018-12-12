@@ -27,6 +27,7 @@ class DestinyRecordsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['records'] = records;
+			data['records'] = this.records;
+		return data;
 	}
 }

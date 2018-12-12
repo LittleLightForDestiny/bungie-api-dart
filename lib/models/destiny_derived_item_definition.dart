@@ -41,11 +41,12 @@ class DestinyDerivedItemDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
-			data['itemName'] = itemName;
-			data['itemDetail'] = itemDetail;
-			data['itemDescription'] = itemDescription;
-			data['iconPath'] = iconPath;
-			data['vendorItemIndex'] = vendorItemIndex;
+			data['itemHash'] = this.itemHash;
+			data['itemName'] = this.itemName;
+			data['itemDetail'] = this.itemDetail;
+			data['itemDescription'] = this.itemDescription;
+			data['iconPath'] = this.iconPath;
+			data['vendorItemIndex'] = this.vendorItemIndex;
+		return data;
 	}
 }

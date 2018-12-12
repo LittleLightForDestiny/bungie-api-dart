@@ -29,7 +29,8 @@ class DestinyItemSocketCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['socketCategoryHash'] = socketCategoryHash;
-			data['socketIndexes'] = socketIndexes;
+			data['socketCategoryHash'] = this.socketCategoryHash;
+			data['socketIndexes'] = this.socketIndexes;
+		return data;
 	}
 }

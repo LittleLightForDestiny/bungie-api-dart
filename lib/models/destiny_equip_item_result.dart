@@ -29,7 +29,8 @@ class DestinyEquipItemResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemInstanceId'] = itemInstanceId;
-			data['equipStatus'] = equipStatus;
+			data['itemInstanceId'] = this.itemInstanceId;
+			data['equipStatus'] = this.equipStatus;
+		return data;
 	}
 }

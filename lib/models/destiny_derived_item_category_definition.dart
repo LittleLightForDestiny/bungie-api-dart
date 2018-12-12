@@ -30,7 +30,8 @@ class DestinyDerivedItemCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categoryDescription'] = categoryDescription;
-			data['items'] = items.map((item)=>item.toMap());
+			data['categoryDescription'] = this.categoryDescription;
+			data['items'] = this.items.map((item)=>item.toMap());
+		return data;
 	}
 }

@@ -45,12 +45,13 @@ class DestinyVendorComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
-			data['nextRefreshDate'] = nextRefreshDate;
-			data['enabled'] = enabled;
-			data['canPurchase'] = canPurchase;
-			data['progression'] = progression;
-			data['vendorLocationIndex'] = vendorLocationIndex;
-			data['seasonalRank'] = seasonalRank;
+			data['vendorHash'] = this.vendorHash;
+			data['nextRefreshDate'] = this.nextRefreshDate;
+			data['enabled'] = this.enabled;
+			data['canPurchase'] = this.canPurchase;
+			data['progression'] = this.progression;
+			data['vendorLocationIndex'] = this.vendorLocationIndex;
+			data['seasonalRank'] = this.seasonalRank;
+		return data;
 	}
 }

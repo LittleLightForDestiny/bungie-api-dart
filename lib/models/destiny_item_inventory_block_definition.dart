@@ -59,17 +59,18 @@ class DestinyItemInventoryBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stackUniqueLabel'] = stackUniqueLabel;
-			data['maxStackSize'] = maxStackSize;
-			data['bucketTypeHash'] = bucketTypeHash;
-			data['recoveryBucketTypeHash'] = recoveryBucketTypeHash;
-			data['tierTypeHash'] = tierTypeHash;
-			data['isInstanceItem'] = isInstanceItem;
-			data['tierTypeName'] = tierTypeName;
-			data['tierType'] = tierType;
-			data['expirationTooltip'] = expirationTooltip;
-			data['expiredInActivityMessage'] = expiredInActivityMessage;
-			data['expiredInOrbitMessage'] = expiredInOrbitMessage;
-			data['suppressExpirationWhenObjectivesComplete'] = suppressExpirationWhenObjectivesComplete;
+			data['stackUniqueLabel'] = this.stackUniqueLabel;
+			data['maxStackSize'] = this.maxStackSize;
+			data['bucketTypeHash'] = this.bucketTypeHash;
+			data['recoveryBucketTypeHash'] = this.recoveryBucketTypeHash;
+			data['tierTypeHash'] = this.tierTypeHash;
+			data['isInstanceItem'] = this.isInstanceItem;
+			data['tierTypeName'] = this.tierTypeName;
+			data['tierType'] = this.tierType;
+			data['expirationTooltip'] = this.expirationTooltip;
+			data['expiredInActivityMessage'] = this.expiredInActivityMessage;
+			data['expiredInOrbitMessage'] = this.expiredInOrbitMessage;
+			data['suppressExpirationWhenObjectivesComplete'] = this.suppressExpirationWhenObjectivesComplete;
+		return data;
 	}
 }

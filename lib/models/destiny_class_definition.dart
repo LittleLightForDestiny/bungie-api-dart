@@ -45,12 +45,13 @@ class DestinyClassDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['classType'] = classType;
-			data['displayProperties'] = displayProperties.toMap();
-			data['genderedClassNames'] = genderedClassNames;
-			data['mentorVendorHash'] = mentorVendorHash;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['classType'] = this.classType;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['genderedClassNames'] = this.genderedClassNames;
+			data['mentorVendorHash'] = this.mentorVendorHash;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

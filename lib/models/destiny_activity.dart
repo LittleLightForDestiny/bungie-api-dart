@@ -50,14 +50,15 @@ class DestinyActivity{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['isNew'] = isNew;
-			data['canLead'] = canLead;
-			data['canJoin'] = canJoin;
-			data['isCompleted'] = isCompleted;
-			data['isVisible'] = isVisible;
-			data['displayLevel'] = displayLevel;
-			data['recommendedLight'] = recommendedLight;
-			data['difficultyTier'] = difficultyTier;
+			data['activityHash'] = this.activityHash;
+			data['isNew'] = this.isNew;
+			data['canLead'] = this.canLead;
+			data['canJoin'] = this.canJoin;
+			data['isCompleted'] = this.isCompleted;
+			data['isVisible'] = this.isVisible;
+			data['displayLevel'] = this.displayLevel;
+			data['recommendedLight'] = this.recommendedLight;
+			data['difficultyTier'] = this.difficultyTier;
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class DestinyVendorGroup{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorGroupHash'] = vendorGroupHash;
-			data['vendorHashes'] = vendorHashes;
+			data['vendorGroupHash'] = this.vendorGroupHash;
+			data['vendorHashes'] = this.vendorHashes;
+		return data;
 	}
 }

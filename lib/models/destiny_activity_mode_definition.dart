@@ -66,19 +66,20 @@ class DestinyActivityModeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['pgcrImage'] = pgcrImage;
-			data['modeType'] = modeType;
-			data['activityModeCategory'] = activityModeCategory;
-			data['isTeamBased'] = isTeamBased;
-			data['isAggregateMode'] = isAggregateMode;
-			data['parentHashes'] = parentHashes;
-			data['friendlyName'] = friendlyName;
-			data['activityModeMappings'] = activityModeMappings;
-			data['display'] = display;
-			data['order'] = order;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['pgcrImage'] = this.pgcrImage;
+			data['modeType'] = this.modeType;
+			data['activityModeCategory'] = this.activityModeCategory;
+			data['isTeamBased'] = this.isTeamBased;
+			data['isAggregateMode'] = this.isAggregateMode;
+			data['parentHashes'] = this.parentHashes;
+			data['friendlyName'] = this.friendlyName;
+			data['activityModeMappings'] = this.activityModeMappings;
+			data['display'] = this.display;
+			data['order'] = this.order;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

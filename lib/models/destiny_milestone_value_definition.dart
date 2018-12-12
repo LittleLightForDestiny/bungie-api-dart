@@ -30,7 +30,8 @@ class DestinyMilestoneValueDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['key'] = key;
-			data['displayProperties'] = displayProperties.toMap();
+			data['key'] = this.key;
+			data['displayProperties'] = this.displayProperties.toMap();
+		return data;
 	}
 }

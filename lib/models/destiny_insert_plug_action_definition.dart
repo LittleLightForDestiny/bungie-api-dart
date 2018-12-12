@@ -29,7 +29,8 @@ class DestinyInsertPlugActionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['actionExecuteSeconds'] = actionExecuteSeconds;
-			data['actionType'] = actionType;
+			data['actionExecuteSeconds'] = this.actionExecuteSeconds;
+			data['actionType'] = this.actionType;
+		return data;
 	}
 }

@@ -27,6 +27,7 @@ class DestinyItemStatsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stats'] = stats;
+			data['stats'] = this.stats;
+		return data;
 	}
 }

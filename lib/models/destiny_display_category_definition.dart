@@ -48,13 +48,14 @@ class DestinyDisplayCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['identifier'] = identifier;
-			data['displayCategoryHash'] = displayCategoryHash;
-			data['displayProperties'] = displayProperties.toMap();
-			data['displayInBanner'] = displayInBanner;
-			data['progressionHash'] = progressionHash;
-			data['sortOrder'] = sortOrder;
-			data['displayStyleHash'] = displayStyleHash;
-			data['displayStyleIdentifier'] = displayStyleIdentifier;
+			data['identifier'] = this.identifier;
+			data['displayCategoryHash'] = this.displayCategoryHash;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayInBanner'] = this.displayInBanner;
+			data['progressionHash'] = this.progressionHash;
+			data['sortOrder'] = this.sortOrder;
+			data['displayStyleHash'] = this.displayStyleHash;
+			data['displayStyleIdentifier'] = this.displayStyleIdentifier;
+		return data;
 	}
 }

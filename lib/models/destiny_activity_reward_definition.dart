@@ -30,7 +30,8 @@ class DestinyActivityRewardDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['rewardText'] = rewardText;
-			data['rewardItems'] = rewardItems.map((item)=>item.toMap());
+			data['rewardText'] = this.rewardText;
+			data['rewardItems'] = this.rewardItems.map((item)=>item.toMap());
+		return data;
 	}
 }

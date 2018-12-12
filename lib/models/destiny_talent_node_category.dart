@@ -36,9 +36,10 @@ class DestinyTalentNodeCategory{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['identifier'] = identifier;
-			data['isLoreDriven'] = isLoreDriven;
-			data['displayProperties'] = displayProperties;
-			data['nodeHashes'] = nodeHashes;
+			data['identifier'] = this.identifier;
+			data['isLoreDriven'] = this.isLoreDriven;
+			data['displayProperties'] = this.displayProperties;
+			data['nodeHashes'] = this.nodeHashes;
+		return data;
 	}
 }

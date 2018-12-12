@@ -26,6 +26,7 @@ class TrendingEntryDestinyItem{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
+			data['itemHash'] = this.itemHash;
+		return data;
 	}
 }

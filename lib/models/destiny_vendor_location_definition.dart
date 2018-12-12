@@ -29,7 +29,8 @@ class DestinyVendorLocationDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinationHash'] = destinationHash;
-			data['backgroundImagePath'] = backgroundImagePath;
+			data['destinationHash'] = this.destinationHash;
+			data['backgroundImagePath'] = this.backgroundImagePath;
+		return data;
 	}
 }

@@ -30,7 +30,8 @@ class DestinyCharacterRecordsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['featuredRecordHashes'] = featuredRecordHashes;
-			data['records'] = records;
+			data['featuredRecordHashes'] = this.featuredRecordHashes;
+			data['records'] = this.records;
+		return data;
 	}
 }

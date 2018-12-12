@@ -26,6 +26,7 @@ class DestinyItemSummaryBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['sortPriority'] = sortPriority;
+			data['sortPriority'] = this.sortPriority;
+		return data;
 	}
 }

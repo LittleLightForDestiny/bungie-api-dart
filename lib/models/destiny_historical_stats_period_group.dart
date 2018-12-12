@@ -34,8 +34,9 @@ class DestinyHistoricalStatsPeriodGroup{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['period'] = period;
-			data['activityDetails'] = activityDetails;
-			data['values'] = values;
+			data['period'] = this.period;
+			data['activityDetails'] = this.activityDetails;
+			data['values'] = this.values;
+		return data;
 	}
 }

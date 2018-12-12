@@ -65,18 +65,19 @@ class DestinyVendorInteractionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['interactionIndex'] = interactionIndex;
-			data['replies'] = replies.map((item)=>item.toMap());
-			data['vendorCategoryIndex'] = vendorCategoryIndex;
-			data['questlineItemHash'] = questlineItemHash;
-			data['sackInteractionList'] = sackInteractionList.map((item)=>item.toMap());
-			data['uiInteractionType'] = uiInteractionType;
-			data['interactionType'] = interactionType;
-			data['rewardBlockLabel'] = rewardBlockLabel;
-			data['rewardVendorCategoryIndex'] = rewardVendorCategoryIndex;
-			data['flavorLineOne'] = flavorLineOne;
-			data['flavorLineTwo'] = flavorLineTwo;
-			data['headerDisplayProperties'] = headerDisplayProperties;
-			data['instructions'] = instructions;
+			data['interactionIndex'] = this.interactionIndex;
+			data['replies'] = this.replies.map((item)=>item.toMap());
+			data['vendorCategoryIndex'] = this.vendorCategoryIndex;
+			data['questlineItemHash'] = this.questlineItemHash;
+			data['sackInteractionList'] = this.sackInteractionList.map((item)=>item.toMap());
+			data['uiInteractionType'] = this.uiInteractionType;
+			data['interactionType'] = this.interactionType;
+			data['rewardBlockLabel'] = this.rewardBlockLabel;
+			data['rewardVendorCategoryIndex'] = this.rewardVendorCategoryIndex;
+			data['flavorLineOne'] = this.flavorLineOne;
+			data['flavorLineTwo'] = this.flavorLineTwo;
+			data['headerDisplayProperties'] = this.headerDisplayProperties;
+			data['instructions'] = this.instructions;
+		return data;
 	}
 }

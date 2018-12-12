@@ -54,15 +54,16 @@ class DestinyItemInstanceComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['damageType'] = damageType;
-			data['damageTypeHash'] = damageTypeHash;
-			data['primaryStat'] = primaryStat;
-			data['itemLevel'] = itemLevel;
-			data['quality'] = quality;
-			data['isEquipped'] = isEquipped;
-			data['canEquip'] = canEquip;
-			data['equipRequiredLevel'] = equipRequiredLevel;
-			data['unlockHashesRequiredToEquip'] = unlockHashesRequiredToEquip;
-			data['cannotEquipReason'] = cannotEquipReason;
+			data['damageType'] = this.damageType;
+			data['damageTypeHash'] = this.damageTypeHash;
+			data['primaryStat'] = this.primaryStat;
+			data['itemLevel'] = this.itemLevel;
+			data['quality'] = this.quality;
+			data['isEquipped'] = this.isEquipped;
+			data['canEquip'] = this.canEquip;
+			data['equipRequiredLevel'] = this.equipRequiredLevel;
+			data['unlockHashesRequiredToEquip'] = this.unlockHashesRequiredToEquip;
+			data['cannotEquipReason'] = this.cannotEquipReason;
+		return data;
 	}
 }

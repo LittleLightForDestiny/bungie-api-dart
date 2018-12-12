@@ -58,16 +58,17 @@ class DestinyPlayer{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyUserInfo'] = destinyUserInfo;
-			data['characterClass'] = characterClass;
-			data['classHash'] = classHash;
-			data['raceHash'] = raceHash;
-			data['genderHash'] = genderHash;
-			data['characterLevel'] = characterLevel;
-			data['lightLevel'] = lightLevel;
-			data['bungieNetUserInfo'] = bungieNetUserInfo;
-			data['clanName'] = clanName;
-			data['clanTag'] = clanTag;
-			data['emblemHash'] = emblemHash;
+			data['destinyUserInfo'] = this.destinyUserInfo;
+			data['characterClass'] = this.characterClass;
+			data['classHash'] = this.classHash;
+			data['raceHash'] = this.raceHash;
+			data['genderHash'] = this.genderHash;
+			data['characterLevel'] = this.characterLevel;
+			data['lightLevel'] = this.lightLevel;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo;
+			data['clanName'] = this.clanName;
+			data['clanTag'] = this.clanTag;
+			data['emblemHash'] = this.emblemHash;
+		return data;
 	}
 }

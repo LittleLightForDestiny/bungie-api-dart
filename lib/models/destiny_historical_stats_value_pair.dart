@@ -29,7 +29,8 @@ class DestinyHistoricalStatsValuePair{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['value'] = value;
-			data['displayValue'] = displayValue;
+			data['value'] = this.value;
+			data['displayValue'] = this.displayValue;
+		return data;
 	}
 }

@@ -35,9 +35,10 @@ class DestinyPerkReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['perkHash'] = perkHash;
-			data['iconPath'] = iconPath;
-			data['isActive'] = isActive;
-			data['visible'] = visible;
+			data['perkHash'] = this.perkHash;
+			data['iconPath'] = this.iconPath;
+			data['isActive'] = this.isActive;
+			data['visible'] = this.visible;
+		return data;
 	}
 }

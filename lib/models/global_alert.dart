@@ -45,12 +45,13 @@ class GlobalAlert{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['AlertKey'] = alertKey;
-			data['AlertHtml'] = alertHtml;
-			data['AlertTimestamp'] = alertTimestamp;
-			data['AlertLink'] = alertLink;
-			data['AlertLevel'] = alertLevel;
-			data['AlertType'] = alertType;
-			data['StreamInfo'] = streamInfo.toMap();
+			data['AlertKey'] = this.alertKey;
+			data['AlertHtml'] = this.alertHtml;
+			data['AlertTimestamp'] = this.alertTimestamp;
+			data['AlertLink'] = this.alertLink;
+			data['AlertLevel'] = this.alertLevel;
+			data['AlertType'] = this.alertType;
+			data['StreamInfo'] = this.streamInfo.toMap();
+		return data;
 	}
 }

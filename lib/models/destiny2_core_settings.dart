@@ -47,13 +47,14 @@ class Destiny2CoreSettings{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collectionRootNode'] = collectionRootNode;
-			data['badgesRootNode'] = badgesRootNode;
-			data['recordsRootNode'] = recordsRootNode;
-			data['medalsRootNode'] = medalsRootNode;
-			data['undiscoveredCollectibleImage'] = undiscoveredCollectibleImage;
-			data['ammoTypeHeavyIcon'] = ammoTypeHeavyIcon;
-			data['ammoTypeSpecialIcon'] = ammoTypeSpecialIcon;
-			data['ammoTypePrimaryIcon'] = ammoTypePrimaryIcon;
+			data['collectionRootNode'] = this.collectionRootNode;
+			data['badgesRootNode'] = this.badgesRootNode;
+			data['recordsRootNode'] = this.recordsRootNode;
+			data['medalsRootNode'] = this.medalsRootNode;
+			data['undiscoveredCollectibleImage'] = this.undiscoveredCollectibleImage;
+			data['ammoTypeHeavyIcon'] = this.ammoTypeHeavyIcon;
+			data['ammoTypeSpecialIcon'] = this.ammoTypeSpecialIcon;
+			data['ammoTypePrimaryIcon'] = this.ammoTypePrimaryIcon;
+		return data;
 	}
 }

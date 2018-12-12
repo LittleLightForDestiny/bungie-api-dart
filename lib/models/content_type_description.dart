@@ -91,26 +91,27 @@ class ContentTypeDescription{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['cType'] = cType;
-			data['name'] = name;
-			data['contentDescription'] = contentDescription;
-			data['previewImage'] = previewImage;
-			data['priority'] = priority;
-			data['reminder'] = reminder;
-			data['properties'] = properties.map((item)=>item.toMap());
-			data['tagMetadata'] = tagMetadata.map((item)=>item.toMap());
-			data['tagMetadataItems'] = tagMetadataItems;
-			data['usageExamples'] = usageExamples;
-			data['showInContentEditor'] = showInContentEditor;
-			data['typeOf'] = typeOf;
-			data['bindIdentifierToProperty'] = bindIdentifierToProperty;
-			data['boundRegex'] = boundRegex;
-			data['forceIdentifierBinding'] = forceIdentifierBinding;
-			data['allowComments'] = allowComments;
-			data['autoEnglishPropertyFallback'] = autoEnglishPropertyFallback;
-			data['bulkUploadable'] = bulkUploadable;
-			data['previews'] = previews.map((item)=>item.toMap());
-			data['suppressCmsPath'] = suppressCmsPath;
-			data['propertySections'] = propertySections.map((item)=>item.toMap());
+			data['cType'] = this.cType;
+			data['name'] = this.name;
+			data['contentDescription'] = this.contentDescription;
+			data['previewImage'] = this.previewImage;
+			data['priority'] = this.priority;
+			data['reminder'] = this.reminder;
+			data['properties'] = this.properties.map((item)=>item.toMap());
+			data['tagMetadata'] = this.tagMetadata.map((item)=>item.toMap());
+			data['tagMetadataItems'] = this.tagMetadataItems;
+			data['usageExamples'] = this.usageExamples;
+			data['showInContentEditor'] = this.showInContentEditor;
+			data['typeOf'] = this.typeOf;
+			data['bindIdentifierToProperty'] = this.bindIdentifierToProperty;
+			data['boundRegex'] = this.boundRegex;
+			data['forceIdentifierBinding'] = this.forceIdentifierBinding;
+			data['allowComments'] = this.allowComments;
+			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
+			data['bulkUploadable'] = this.bulkUploadable;
+			data['previews'] = this.previews.map((item)=>item.toMap());
+			data['suppressCmsPath'] = this.suppressCmsPath;
+			data['propertySections'] = this.propertySections.map((item)=>item.toMap());
+		return data;
 	}
 }

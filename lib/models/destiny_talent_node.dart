@@ -55,15 +55,16 @@ class DestinyTalentNode{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodeIndex'] = nodeIndex;
-			data['nodeHash'] = nodeHash;
-			data['state'] = state;
-			data['isActivated'] = isActivated;
-			data['stepIndex'] = stepIndex;
-			data['materialsToUpgrade'] = materialsToUpgrade.map((item)=>item.toMap());
-			data['activationGridLevel'] = activationGridLevel;
-			data['progressPercent'] = progressPercent;
-			data['hidden'] = hidden;
-			data['nodeStatsBlock'] = nodeStatsBlock;
+			data['nodeIndex'] = this.nodeIndex;
+			data['nodeHash'] = this.nodeHash;
+			data['state'] = this.state;
+			data['isActivated'] = this.isActivated;
+			data['stepIndex'] = this.stepIndex;
+			data['materialsToUpgrade'] = this.materialsToUpgrade.map((item)=>item.toMap());
+			data['activationGridLevel'] = this.activationGridLevel;
+			data['progressPercent'] = this.progressPercent;
+			data['hidden'] = this.hidden;
+			data['nodeStatsBlock'] = this.nodeStatsBlock;
+		return data;
 	}
 }

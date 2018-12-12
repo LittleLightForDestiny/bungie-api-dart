@@ -51,13 +51,14 @@ class GroupBan{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
-			data['lastModifiedBy'] = lastModifiedBy.toMap();
-			data['createdBy'] = createdBy.toMap();
-			data['dateBanned'] = dateBanned;
-			data['dateExpires'] = dateExpires;
-			data['comment'] = comment;
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
+			data['groupId'] = this.groupId;
+			data['lastModifiedBy'] = this.lastModifiedBy.toMap();
+			data['createdBy'] = this.createdBy.toMap();
+			data['dateBanned'] = this.dateBanned;
+			data['dateExpires'] = this.dateExpires;
+			data['comment'] = this.comment;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+		return data;
 	}
 }

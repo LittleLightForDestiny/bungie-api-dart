@@ -37,9 +37,10 @@ class GroupUserBase{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
-			data['joinDate'] = joinDate;
+			data['groupId'] = this.groupId;
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['joinDate'] = this.joinDate;
+		return data;
 	}
 }

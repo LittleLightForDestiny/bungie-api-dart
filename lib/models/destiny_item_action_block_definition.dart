@@ -67,19 +67,20 @@ class DestinyItemActionBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['verbName'] = verbName;
-			data['verbDescription'] = verbDescription;
-			data['isPositive'] = isPositive;
-			data['overlayScreenName'] = overlayScreenName;
-			data['overlayIcon'] = overlayIcon;
-			data['requiredCooldownSeconds'] = requiredCooldownSeconds;
-			data['requiredItems'] = requiredItems.map((item)=>item.toMap());
-			data['progressionRewards'] = progressionRewards.map((item)=>item.toMap());
-			data['actionTypeLabel'] = actionTypeLabel;
-			data['requiredLocation'] = requiredLocation;
-			data['requiredCooldownHash'] = requiredCooldownHash;
-			data['deleteOnAction'] = deleteOnAction;
-			data['consumeEntireStack'] = consumeEntireStack;
-			data['useOnAcquire'] = useOnAcquire;
+			data['verbName'] = this.verbName;
+			data['verbDescription'] = this.verbDescription;
+			data['isPositive'] = this.isPositive;
+			data['overlayScreenName'] = this.overlayScreenName;
+			data['overlayIcon'] = this.overlayIcon;
+			data['requiredCooldownSeconds'] = this.requiredCooldownSeconds;
+			data['requiredItems'] = this.requiredItems.map((item)=>item.toMap());
+			data['progressionRewards'] = this.progressionRewards.map((item)=>item.toMap());
+			data['actionTypeLabel'] = this.actionTypeLabel;
+			data['requiredLocation'] = this.requiredLocation;
+			data['requiredCooldownHash'] = this.requiredCooldownHash;
+			data['deleteOnAction'] = this.deleteOnAction;
+			data['consumeEntireStack'] = this.consumeEntireStack;
+			data['useOnAcquire'] = this.useOnAcquire;
+		return data;
 	}
 }

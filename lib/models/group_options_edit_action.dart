@@ -38,10 +38,11 @@ class GroupOptionsEditAction{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['InvitePermissionOverride'] = invitePermissionOverride;
-			data['UpdateCulturePermissionOverride'] = updateCulturePermissionOverride;
-			data['HostGuidedGamePermissionOverride'] = hostGuidedGamePermissionOverride;
-			data['UpdateBannerPermissionOverride'] = updateBannerPermissionOverride;
-			data['JoinLevel'] = joinLevel;
+			data['InvitePermissionOverride'] = this.invitePermissionOverride;
+			data['UpdateCulturePermissionOverride'] = this.updateCulturePermissionOverride;
+			data['HostGuidedGamePermissionOverride'] = this.hostGuidedGamePermissionOverride;
+			data['UpdateBannerPermissionOverride'] = this.updateBannerPermissionOverride;
+			data['JoinLevel'] = this.joinLevel;
+		return data;
 	}
 }

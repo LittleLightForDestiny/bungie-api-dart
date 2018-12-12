@@ -37,9 +37,10 @@ class DestinyHistoricalStatsPerCharacter{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['characterId'] = characterId;
-			data['deleted'] = deleted;
-			data['results'] = results;
-			data['merged'] = merged.toMap();
+			data['characterId'] = this.characterId;
+			data['deleted'] = this.deleted;
+			data['results'] = this.results;
+			data['merged'] = this.merged.toMap();
+		return data;
 	}
 }

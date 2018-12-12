@@ -56,14 +56,15 @@ class DestinyActivityGraphDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodes'] = nodes.map((item)=>item.toMap());
-			data['artElements'] = artElements.map((item)=>item.toMap());
-			data['connections'] = connections.map((item)=>item.toMap());
-			data['displayObjectives'] = displayObjectives.map((item)=>item.toMap());
-			data['displayProgressions'] = displayProgressions.map((item)=>item.toMap());
-			data['linkedGraphs'] = linkedGraphs.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['nodes'] = this.nodes.map((item)=>item.toMap());
+			data['artElements'] = this.artElements.map((item)=>item.toMap());
+			data['connections'] = this.connections.map((item)=>item.toMap());
+			data['displayObjectives'] = this.displayObjectives.map((item)=>item.toMap());
+			data['displayProgressions'] = this.displayProgressions.map((item)=>item.toMap());
+			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

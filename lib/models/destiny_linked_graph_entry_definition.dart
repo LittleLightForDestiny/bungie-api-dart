@@ -26,6 +26,7 @@ class DestinyLinkedGraphEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityGraphHash'] = activityGraphHash;
+			data['activityGraphHash'] = this.activityGraphHash;
+		return data;
 	}
 }

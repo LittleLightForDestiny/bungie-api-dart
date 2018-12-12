@@ -29,7 +29,8 @@ class SaveMessageResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['conversationId'] = conversationId;
-			data['messageId'] = messageId;
+			data['conversationId'] = this.conversationId;
+			data['messageId'] = this.messageId;
+		return data;
 	}
 }

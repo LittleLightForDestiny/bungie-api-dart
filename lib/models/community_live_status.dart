@@ -90,27 +90,28 @@ class CommunityLiveStatus{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['dateStatusUpdated'] = dateStatusUpdated;
-			data['url'] = url;
-			data['partnershipIdentifier'] = partnershipIdentifier;
-			data['partnershipType'] = partnershipType;
-			data['thumbnail'] = thumbnail;
-			data['thumbnailSmall'] = thumbnailSmall;
-			data['thumbnailLarge'] = thumbnailLarge;
-			data['destinyCharacterId'] = destinyCharacterId;
-			data['userInfo'] = userInfo.toMap();
-			data['currentActivityHash'] = currentActivityHash;
-			data['dateLastPlayed'] = dateLastPlayed;
-			data['dateStreamStarted'] = dateStreamStarted;
-			data['locale'] = locale;
-			data['currentViewers'] = currentViewers;
-			data['followers'] = followers;
-			data['overallViewers'] = overallViewers;
-			data['isFeatured'] = isFeatured;
-			data['title'] = title;
-			data['activityModeHash'] = activityModeHash;
-			data['dateFeatured'] = dateFeatured;
-			data['trendingValue'] = trendingValue;
-			data['isSubscribable'] = isSubscribable;
+			data['dateStatusUpdated'] = this.dateStatusUpdated;
+			data['url'] = this.url;
+			data['partnershipIdentifier'] = this.partnershipIdentifier;
+			data['partnershipType'] = this.partnershipType;
+			data['thumbnail'] = this.thumbnail;
+			data['thumbnailSmall'] = this.thumbnailSmall;
+			data['thumbnailLarge'] = this.thumbnailLarge;
+			data['destinyCharacterId'] = this.destinyCharacterId;
+			data['userInfo'] = this.userInfo.toMap();
+			data['currentActivityHash'] = this.currentActivityHash;
+			data['dateLastPlayed'] = this.dateLastPlayed;
+			data['dateStreamStarted'] = this.dateStreamStarted;
+			data['locale'] = this.locale;
+			data['currentViewers'] = this.currentViewers;
+			data['followers'] = this.followers;
+			data['overallViewers'] = this.overallViewers;
+			data['isFeatured'] = this.isFeatured;
+			data['title'] = this.title;
+			data['activityModeHash'] = this.activityModeHash;
+			data['dateFeatured'] = this.dateFeatured;
+			data['trendingValue'] = this.trendingValue;
+			data['isSubscribable'] = this.isSubscribable;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['plugItemHash'] = plugItemHash;
-			data['socketTypeHash'] = socketTypeHash;
-			data['defaultVisible'] = defaultVisible;
+			data['plugItemHash'] = this.plugItemHash;
+			data['socketTypeHash'] = this.socketTypeHash;
+			data['defaultVisible'] = this.defaultVisible;
+		return data;
 	}
 }

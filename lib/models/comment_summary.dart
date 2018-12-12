@@ -29,7 +29,8 @@ class CommentSummary{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['topicId'] = topicId;
-			data['commentCount'] = commentCount;
+			data['topicId'] = this.topicId;
+			data['commentCount'] = this.commentCount;
+		return data;
 	}
 }

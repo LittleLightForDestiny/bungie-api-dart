@@ -32,8 +32,9 @@ class DestinyAnimationReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['animName'] = animName;
-			data['animIdentifier'] = animIdentifier;
-			data['path'] = path;
+			data['animName'] = this.animName;
+			data['animIdentifier'] = this.animIdentifier;
+			data['path'] = this.path;
+		return data;
 	}
 }

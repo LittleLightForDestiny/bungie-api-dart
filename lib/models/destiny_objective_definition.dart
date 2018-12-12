@@ -83,24 +83,25 @@ class DestinyObjectiveDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['completionValue'] = completionValue;
-			data['scope'] = scope;
-			data['locationHash'] = locationHash;
-			data['allowNegativeValue'] = allowNegativeValue;
-			data['allowValueChangeWhenCompleted'] = allowValueChangeWhenCompleted;
-			data['isCountingDownward'] = isCountingDownward;
-			data['valueStyle'] = valueStyle;
-			data['progressDescription'] = progressDescription;
-			data['perks'] = perks;
-			data['stats'] = stats;
-			data['minimumVisibilityThreshold'] = minimumVisibilityThreshold;
-			data['allowOvercompletion'] = allowOvercompletion;
-			data['showValueOnComplete'] = showValueOnComplete;
-			data['completedValueStyle'] = completedValueStyle;
-			data['inProgressValueStyle'] = inProgressValueStyle;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties;
+			data['completionValue'] = this.completionValue;
+			data['scope'] = this.scope;
+			data['locationHash'] = this.locationHash;
+			data['allowNegativeValue'] = this.allowNegativeValue;
+			data['allowValueChangeWhenCompleted'] = this.allowValueChangeWhenCompleted;
+			data['isCountingDownward'] = this.isCountingDownward;
+			data['valueStyle'] = this.valueStyle;
+			data['progressDescription'] = this.progressDescription;
+			data['perks'] = this.perks;
+			data['stats'] = this.stats;
+			data['minimumVisibilityThreshold'] = this.minimumVisibilityThreshold;
+			data['allowOvercompletion'] = this.allowOvercompletion;
+			data['showValueOnComplete'] = this.showValueOnComplete;
+			data['completedValueStyle'] = this.completedValueStyle;
+			data['inProgressValueStyle'] = this.inProgressValueStyle;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

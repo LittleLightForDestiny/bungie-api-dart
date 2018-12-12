@@ -29,7 +29,8 @@ class DestinyNodeSocketReplaceResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['socketTypeHash'] = socketTypeHash;
-			data['plugItemHash'] = plugItemHash;
+			data['socketTypeHash'] = this.socketTypeHash;
+			data['plugItemHash'] = this.plugItemHash;
+		return data;
 	}
 }

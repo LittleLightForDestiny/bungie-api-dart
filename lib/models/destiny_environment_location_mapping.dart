@@ -38,10 +38,11 @@ class DestinyEnvironmentLocationMapping{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['locationHash'] = locationHash;
-			data['activationSource'] = activationSource;
-			data['itemHash'] = itemHash;
-			data['objectiveHash'] = objectiveHash;
-			data['activityHash'] = activityHash;
+			data['locationHash'] = this.locationHash;
+			data['activationSource'] = this.activationSource;
+			data['itemHash'] = this.itemHash;
+			data['objectiveHash'] = this.objectiveHash;
+			data['activityHash'] = this.activityHash;
+		return data;
 	}
 }

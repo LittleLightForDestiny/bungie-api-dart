@@ -29,7 +29,8 @@ class DestinyItemTierTypeInfusionBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['baseQualityTransferRatio'] = baseQualityTransferRatio;
-			data['minimumQualityIncrement'] = minimumQualityIncrement;
+			data['baseQualityTransferRatio'] = this.baseQualityTransferRatio;
+			data['minimumQualityIncrement'] = this.minimumQualityIncrement;
+		return data;
 	}
 }

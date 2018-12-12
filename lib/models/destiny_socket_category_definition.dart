@@ -42,11 +42,12 @@ class DestinySocketCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['uiCategoryStyle'] = uiCategoryStyle;
-			data['categoryStyle'] = categoryStyle;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['uiCategoryStyle'] = this.uiCategoryStyle;
+			data['categoryStyle'] = this.categoryStyle;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

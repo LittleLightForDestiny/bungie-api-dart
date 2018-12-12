@@ -27,6 +27,7 @@ class DestinyAggregateActivityResults{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activities'] = activities.map((item)=>item.toMap());
+			data['activities'] = this.activities.map((item)=>item.toMap());
+		return data;
 	}
 }

@@ -40,7 +40,7 @@ export class ApiDocHelper{
         if(obj.$ref){
             let ref = this.getRef(obj.$ref);
             if(ref.type == 'object'){
-                return `${name}.toMap()`;
+                return `this.${name}.toMap()`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;
@@ -50,13 +50,13 @@ export class ApiDocHelper{
         if(param.type == 'array' && param.items && param.items.$ref){
             let ref = this.getRef(param.items.$ref);
             if(ref.type == 'object'){
-                return `${name}.map((item)=>item.toMap())`;
+                return `this.${name}.map((item)=>item.toMap())`;
             }
         }
         if(param.type == 'array' && param.allOf){
             let ref = this.getRef(param.allOf[0].$ref);
             if(ref.type == 'object'){
-                return `${name}.map((item)=>item.toMap())`;
+                return `this.${name}.map((item)=>item.toMap())`;
             }
         }
         return null;

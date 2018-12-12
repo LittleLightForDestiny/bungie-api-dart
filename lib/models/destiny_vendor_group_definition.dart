@@ -38,10 +38,11 @@ class DestinyVendorGroupDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['order'] = order;
-			data['categoryName'] = categoryName;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['order'] = this.order;
+			data['categoryName'] = this.categoryName;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

@@ -41,11 +41,12 @@ class ContentPreview{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['path'] = path;
-			data['itemInSet'] = itemInSet;
-			data['setTag'] = setTag;
-			data['setNesting'] = setNesting;
-			data['useSetId'] = useSetId;
+			data['name'] = this.name;
+			data['path'] = this.path;
+			data['itemInSet'] = this.itemInSet;
+			data['setTag'] = this.setTag;
+			data['setNesting'] = this.setNesting;
+			data['useSetId'] = this.useSetId;
+		return data;
 	}
 }

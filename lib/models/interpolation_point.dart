@@ -29,7 +29,8 @@ class InterpolationPoint{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['value'] = value;
-			data['weight'] = weight;
+			data['value'] = this.value;
+			data['weight'] = this.weight;
+		return data;
 	}
 }

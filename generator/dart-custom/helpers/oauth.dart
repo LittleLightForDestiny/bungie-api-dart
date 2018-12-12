@@ -58,4 +58,14 @@ class BungieNetToken{
       data["membership_id"]
     );
   }
+
+  Map<String, dynamic> toMap(){
+    Map<String, dynamic> data = new Map();
+    data["access_token"] = this.accessToken;
+    data["expires_in"] = this.expiresIn;
+    data["refresh_token"] = this.refreshToken;
+    data["refresh_expires_in"] = this.refreshExpiresIn;
+    data["membership_id"] = this.membershipId;
+    return data;
+  }
 }

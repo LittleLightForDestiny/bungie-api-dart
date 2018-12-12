@@ -36,9 +36,10 @@ class DestinyItemSetBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemList'] = itemList.map((item)=>item.toMap());
-			data['requireOrderedSetItemAdd'] = requireOrderedSetItemAdd;
-			data['setIsFeatured'] = setIsFeatured;
-			data['setType'] = setType;
+			data['itemList'] = this.itemList.map((item)=>item.toMap());
+			data['requireOrderedSetItemAdd'] = this.requireOrderedSetItemAdd;
+			data['setIsFeatured'] = this.setIsFeatured;
+			data['setType'] = this.setType;
+		return data;
 	}
 }

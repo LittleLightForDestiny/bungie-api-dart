@@ -75,22 +75,23 @@ class DestinyVendorCategoryEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categoryIndex'] = categoryIndex;
-			data['categoryId'] = categoryId;
-			data['sortValue'] = sortValue;
-			data['categoryHash'] = categoryHash;
-			data['quantityAvailable'] = quantityAvailable;
-			data['showUnavailableItems'] = showUnavailableItems;
-			data['hideIfNoCurrency'] = hideIfNoCurrency;
-			data['hideFromRegularPurchase'] = hideFromRegularPurchase;
-			data['buyStringOverride'] = buyStringOverride;
-			data['disabledDescription'] = disabledDescription;
-			data['displayTitle'] = displayTitle;
-			data['overlay'] = overlay;
-			data['vendorItemIndexes'] = vendorItemIndexes;
-			data['isPreview'] = isPreview;
-			data['isDisplayOnly'] = isDisplayOnly;
-			data['resetIntervalMinutesOverride'] = resetIntervalMinutesOverride;
-			data['resetOffsetMinutesOverride'] = resetOffsetMinutesOverride;
+			data['categoryIndex'] = this.categoryIndex;
+			data['categoryId'] = this.categoryId;
+			data['sortValue'] = this.sortValue;
+			data['categoryHash'] = this.categoryHash;
+			data['quantityAvailable'] = this.quantityAvailable;
+			data['showUnavailableItems'] = this.showUnavailableItems;
+			data['hideIfNoCurrency'] = this.hideIfNoCurrency;
+			data['hideFromRegularPurchase'] = this.hideFromRegularPurchase;
+			data['buyStringOverride'] = this.buyStringOverride;
+			data['disabledDescription'] = this.disabledDescription;
+			data['displayTitle'] = this.displayTitle;
+			data['overlay'] = this.overlay;
+			data['vendorItemIndexes'] = this.vendorItemIndexes;
+			data['isPreview'] = this.isPreview;
+			data['isDisplayOnly'] = this.isDisplayOnly;
+			data['resetIntervalMinutesOverride'] = this.resetIntervalMinutesOverride;
+			data['resetOffsetMinutesOverride'] = this.resetOffsetMinutesOverride;
+		return data;
 	}
 }

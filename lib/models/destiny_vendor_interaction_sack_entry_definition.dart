@@ -26,6 +26,7 @@ class DestinyVendorInteractionSackEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['sackType'] = sackType;
+			data['sackType'] = this.sackType;
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class DestinyVendorCategory{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayCategoryIndex'] = displayCategoryIndex;
-			data['itemIndexes'] = itemIndexes;
+			data['displayCategoryIndex'] = this.displayCategoryIndex;
+			data['itemIndexes'] = this.itemIndexes;
+		return data;
 	}
 }

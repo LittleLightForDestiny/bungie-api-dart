@@ -33,8 +33,9 @@ class ApplicationDeveloper{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['role'] = role;
-			data['apiEulaVersion'] = apiEulaVersion;
-			data['user'] = user.toMap();
+			data['role'] = this.role;
+			data['apiEulaVersion'] = this.apiEulaVersion;
+			data['user'] = this.user.toMap();
+		return data;
 	}
 }

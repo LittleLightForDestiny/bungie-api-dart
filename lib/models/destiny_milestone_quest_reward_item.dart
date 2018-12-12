@@ -38,10 +38,11 @@ class DestinyMilestoneQuestRewardItem{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
-			data['vendorItemIndex'] = vendorItemIndex;
-			data['itemHash'] = itemHash;
-			data['itemInstanceId'] = itemInstanceId;
-			data['quantity'] = quantity;
+			data['vendorHash'] = this.vendorHash;
+			data['vendorItemIndex'] = this.vendorItemIndex;
+			data['itemHash'] = this.itemHash;
+			data['itemInstanceId'] = this.itemInstanceId;
+			data['quantity'] = this.quantity;
+		return data;
 	}
 }

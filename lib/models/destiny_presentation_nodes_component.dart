@@ -27,6 +27,7 @@ class DestinyPresentationNodesComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodes'] = nodes;
+			data['nodes'] = this.nodes;
+		return data;
 	}
 }

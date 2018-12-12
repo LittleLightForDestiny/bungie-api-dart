@@ -29,7 +29,8 @@ class Datapoint{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['time'] = time;
-			data['count'] = count;
+			data['time'] = this.time;
+			data['count'] = this.count;
+		return data;
 	}
 }

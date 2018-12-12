@@ -31,7 +31,8 @@ class DestinyCollectibleNodeDetailResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collectibles'] = collectibles;
-			data['collectibleItemComponents'] = collectibleItemComponents;
+			data['collectibles'] = this.collectibles;
+			data['collectibleItemComponents'] = this.collectibleItemComponents;
+		return data;
 	}
 }

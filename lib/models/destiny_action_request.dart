@@ -26,6 +26,7 @@ class DestinyActionRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['membershipType'] = membershipType;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

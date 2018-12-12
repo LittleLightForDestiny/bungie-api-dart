@@ -32,8 +32,9 @@ class DestinyItemActionRequiredItemDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['count'] = count;
-			data['itemHash'] = itemHash;
-			data['deleteOnAction'] = deleteOnAction;
+			data['count'] = this.count;
+			data['itemHash'] = this.itemHash;
+			data['deleteOnAction'] = this.deleteOnAction;
+		return data;
 	}
 }

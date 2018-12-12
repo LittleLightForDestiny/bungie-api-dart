@@ -38,10 +38,11 @@ class DestinyVendorCategoryOverlayDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['choiceDescription'] = choiceDescription;
-			data['description'] = description;
-			data['icon'] = icon;
-			data['title'] = title;
-			data['currencyItemHash'] = currencyItemHash;
+			data['choiceDescription'] = this.choiceDescription;
+			data['description'] = this.description;
+			data['icon'] = this.icon;
+			data['title'] = this.title;
+			data['currencyItemHash'] = this.currencyItemHash;
+		return data;
 	}
 }

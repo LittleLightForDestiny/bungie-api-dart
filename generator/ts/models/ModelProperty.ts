@@ -31,7 +31,7 @@ export class ModelProperty{
         if(fn){
             return `data['${this.name}'] = ${fn}`;
         }
-        return `data['${this.name}'] = ${camelCase(this.name)}`;
+        return `data['${this.name}'] = this.${camelCase(this.name)}`;
     }
 
     propertyName():string{

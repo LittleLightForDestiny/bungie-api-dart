@@ -27,6 +27,7 @@ class DestinyMilestoneQuestRewardsDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['items'] = items.map((item)=>item.toMap());
+			data['items'] = this.items.map((item)=>item.toMap());
+		return data;
 	}
 }

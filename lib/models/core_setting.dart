@@ -41,11 +41,12 @@ class CoreSetting{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['identifier'] = identifier;
-			data['isDefault'] = isDefault;
-			data['displayName'] = displayName;
-			data['summary'] = summary;
-			data['imagePath'] = imagePath;
-			data['childSettings'] = childSettings.map((item)=>item.toMap());
+			data['identifier'] = this.identifier;
+			data['isDefault'] = this.isDefault;
+			data['displayName'] = this.displayName;
+			data['summary'] = this.summary;
+			data['imagePath'] = this.imagePath;
+			data['childSettings'] = this.childSettings.map((item)=>item.toMap());
+		return data;
 	}
 }

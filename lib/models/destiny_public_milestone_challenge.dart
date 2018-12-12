@@ -29,7 +29,8 @@ class DestinyPublicMilestoneChallenge{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectiveHash'] = objectiveHash;
-			data['activityHash'] = activityHash;
+			data['objectiveHash'] = this.objectiveHash;
+			data['activityHash'] = this.activityHash;
+		return data;
 	}
 }

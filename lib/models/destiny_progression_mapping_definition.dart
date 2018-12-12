@@ -39,10 +39,11 @@ class DestinyProgressionMappingDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['displayUnits'] = displayUnits;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties;
+			data['displayUnits'] = this.displayUnits;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

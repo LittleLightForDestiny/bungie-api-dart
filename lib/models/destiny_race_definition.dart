@@ -42,11 +42,12 @@ class DestinyRaceDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['raceType'] = raceType;
-			data['genderedRaceNames'] = genderedRaceNames;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['raceType'] = this.raceType;
+			data['genderedRaceNames'] = this.genderedRaceNames;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

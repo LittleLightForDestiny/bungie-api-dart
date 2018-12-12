@@ -29,7 +29,8 @@ class HyperlinkReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['title'] = title;
-			data['url'] = url;
+			data['title'] = this.title;
+			data['url'] = this.url;
+		return data;
 	}
 }

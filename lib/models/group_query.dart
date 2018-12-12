@@ -53,15 +53,16 @@ class GroupQuery{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['groupType'] = groupType;
-			data['creationDate'] = creationDate;
-			data['sortBy'] = sortBy;
-			data['groupMemberCountFilter'] = groupMemberCountFilter;
-			data['localeFilter'] = localeFilter;
-			data['tagText'] = tagText;
-			data['itemsPerPage'] = itemsPerPage;
-			data['currentPage'] = currentPage;
-			data['requestContinuationToken'] = requestContinuationToken;
+			data['name'] = this.name;
+			data['groupType'] = this.groupType;
+			data['creationDate'] = this.creationDate;
+			data['sortBy'] = this.sortBy;
+			data['groupMemberCountFilter'] = this.groupMemberCountFilter;
+			data['localeFilter'] = this.localeFilter;
+			data['tagText'] = this.tagText;
+			data['itemsPerPage'] = this.itemsPerPage;
+			data['currentPage'] = this.currentPage;
+			data['requestContinuationToken'] = this.requestContinuationToken;
+		return data;
 	}
 }

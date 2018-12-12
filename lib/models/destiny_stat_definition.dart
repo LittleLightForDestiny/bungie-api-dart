@@ -45,12 +45,13 @@ class DestinyStatDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['aggregationType'] = aggregationType;
-			data['hasComputedBlock'] = hasComputedBlock;
-			data['statCategory'] = statCategory;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['aggregationType'] = this.aggregationType;
+			data['hasComputedBlock'] = this.hasComputedBlock;
+			data['statCategory'] = this.statCategory;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

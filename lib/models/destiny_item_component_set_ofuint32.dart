@@ -55,13 +55,14 @@ class DestinyItemComponentSetOfuint32{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['instances'] = instances.toMap();
-			data['perks'] = perks.toMap();
-			data['renderData'] = renderData.toMap();
-			data['stats'] = stats.toMap();
-			data['sockets'] = sockets.toMap();
-			data['talentGrids'] = talentGrids.toMap();
-			data['plugStates'] = plugStates.toMap();
-			data['objectives'] = objectives.toMap();
+			data['instances'] = this.instances.toMap();
+			data['perks'] = this.perks.toMap();
+			data['renderData'] = this.renderData.toMap();
+			data['stats'] = this.stats.toMap();
+			data['sockets'] = this.sockets.toMap();
+			data['talentGrids'] = this.talentGrids.toMap();
+			data['plugStates'] = this.plugStates.toMap();
+			data['objectives'] = this.objectives.toMap();
+		return data;
 	}
 }

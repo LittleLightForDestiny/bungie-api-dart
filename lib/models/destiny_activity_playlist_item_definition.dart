@@ -38,10 +38,11 @@ class DestinyActivityPlaylistItemDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['directActivityModeHash'] = directActivityModeHash;
-			data['directActivityModeType'] = directActivityModeType;
-			data['activityModeHashes'] = activityModeHashes;
-			data['activityModeTypes'] = activityModeTypes;
+			data['activityHash'] = this.activityHash;
+			data['directActivityModeHash'] = this.directActivityModeHash;
+			data['directActivityModeType'] = this.directActivityModeType;
+			data['activityModeHashes'] = this.activityModeHashes;
+			data['activityModeTypes'] = this.activityModeTypes;
+		return data;
 	}
 }

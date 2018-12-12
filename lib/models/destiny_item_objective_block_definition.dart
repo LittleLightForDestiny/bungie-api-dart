@@ -51,14 +51,15 @@ class DestinyItemObjectiveBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectiveHashes'] = objectiveHashes;
-			data['displayActivityHashes'] = displayActivityHashes;
-			data['requireFullObjectiveCompletion'] = requireFullObjectiveCompletion;
-			data['questlineItemHash'] = questlineItemHash;
-			data['narrative'] = narrative;
-			data['objectiveVerbName'] = objectiveVerbName;
-			data['questTypeIdentifier'] = questTypeIdentifier;
-			data['questTypeHash'] = questTypeHash;
-			data['perObjectiveDisplayProperties'] = perObjectiveDisplayProperties.map((item)=>item.toMap());
+			data['objectiveHashes'] = this.objectiveHashes;
+			data['displayActivityHashes'] = this.displayActivityHashes;
+			data['requireFullObjectiveCompletion'] = this.requireFullObjectiveCompletion;
+			data['questlineItemHash'] = this.questlineItemHash;
+			data['narrative'] = this.narrative;
+			data['objectiveVerbName'] = this.objectiveVerbName;
+			data['questTypeIdentifier'] = this.questTypeIdentifier;
+			data['questTypeHash'] = this.questTypeHash;
+			data['perObjectiveDisplayProperties'] = this.perObjectiveDisplayProperties.map((item)=>item.toMap());
+		return data;
 	}
 }

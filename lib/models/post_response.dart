@@ -66,19 +66,20 @@ class PostResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['lastReplyTimestamp'] = lastReplyTimestamp;
-			data['IsPinned'] = isPinned;
-			data['urlMediaType'] = urlMediaType;
-			data['thumbnail'] = thumbnail;
-			data['popularity'] = popularity;
-			data['isActive'] = isActive;
-			data['isAnnouncement'] = isAnnouncement;
-			data['userRating'] = userRating;
-			data['userHasRated'] = userHasRated;
-			data['userHasMutedPost'] = userHasMutedPost;
-			data['latestReplyPostId'] = latestReplyPostId;
-			data['latestReplyAuthorId'] = latestReplyAuthorId;
-			data['ignoreStatus'] = ignoreStatus.toMap();
-			data['locale'] = locale;
+			data['lastReplyTimestamp'] = this.lastReplyTimestamp;
+			data['IsPinned'] = this.isPinned;
+			data['urlMediaType'] = this.urlMediaType;
+			data['thumbnail'] = this.thumbnail;
+			data['popularity'] = this.popularity;
+			data['isActive'] = this.isActive;
+			data['isAnnouncement'] = this.isAnnouncement;
+			data['userRating'] = this.userRating;
+			data['userHasRated'] = this.userHasRated;
+			data['userHasMutedPost'] = this.userHasMutedPost;
+			data['latestReplyPostId'] = this.latestReplyPostId;
+			data['latestReplyAuthorId'] = this.latestReplyAuthorId;
+			data['ignoreStatus'] = this.ignoreStatus.toMap();
+			data['locale'] = this.locale;
+		return data;
 	}
 }

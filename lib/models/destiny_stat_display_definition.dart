@@ -36,9 +36,10 @@ class DestinyStatDisplayDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statHash'] = statHash;
-			data['maximumValue'] = maximumValue;
-			data['displayAsNumeric'] = displayAsNumeric;
-			data['displayInterpolation'] = displayInterpolation.map((item)=>item.toMap());
+			data['statHash'] = this.statHash;
+			data['maximumValue'] = this.maximumValue;
+			data['displayAsNumeric'] = this.displayAsNumeric;
+			data['displayInterpolation'] = this.displayInterpolation.map((item)=>item.toMap());
+		return data;
 	}
 }

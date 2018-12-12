@@ -26,6 +26,7 @@ class DestinyMilestoneChallengeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['challengeObjectiveHash'] = challengeObjectiveHash;
+			data['challengeObjectiveHash'] = this.challengeObjectiveHash;
+		return data;
 	}
 }

@@ -46,11 +46,12 @@ class DestinyCharacterProgressionComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['progressions'] = progressions;
-			data['factions'] = factions;
-			data['milestones'] = milestones;
-			data['quests'] = quests.map((item)=>item.toMap());
-			data['uninstancedItemObjectives'] = uninstancedItemObjectives;
-			data['checklists'] = checklists;
+			data['progressions'] = this.progressions;
+			data['factions'] = this.factions;
+			data['milestones'] = this.milestones;
+			data['quests'] = this.quests.map((item)=>item.toMap());
+			data['uninstancedItemObjectives'] = this.uninstancedItemObjectives;
+			data['checklists'] = this.checklists;
+		return data;
 	}
 }

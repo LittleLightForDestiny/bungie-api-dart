@@ -55,15 +55,16 @@ class DestinyProgressionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['scope'] = scope;
-			data['repeatLastStep'] = repeatLastStep;
-			data['source'] = source;
-			data['steps'] = steps.map((item)=>item.toMap());
-			data['visible'] = visible;
-			data['factionHash'] = factionHash;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['scope'] = this.scope;
+			data['repeatLastStep'] = this.repeatLastStep;
+			data['source'] = this.source;
+			data['steps'] = this.steps.map((item)=>item.toMap());
+			data['visible'] = this.visible;
+			data['factionHash'] = this.factionHash;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

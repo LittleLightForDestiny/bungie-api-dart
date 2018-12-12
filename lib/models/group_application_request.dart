@@ -26,6 +26,7 @@ class GroupApplicationRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['message'] = message;
+			data['message'] = this.message;
+		return data;
 	}
 }

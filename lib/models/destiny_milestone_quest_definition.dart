@@ -44,11 +44,12 @@ class DestinyMilestoneQuestDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['questItemHash'] = questItemHash;
-			data['displayProperties'] = displayProperties;
-			data['overrideImage'] = overrideImage;
-			data['questRewards'] = questRewards;
-			data['activities'] = activities;
-			data['destinationHash'] = destinationHash;
+			data['questItemHash'] = this.questItemHash;
+			data['displayProperties'] = this.displayProperties;
+			data['overrideImage'] = this.overrideImage;
+			data['questRewards'] = this.questRewards;
+			data['activities'] = this.activities;
+			data['destinationHash'] = this.destinationHash;
+		return data;
 	}
 }

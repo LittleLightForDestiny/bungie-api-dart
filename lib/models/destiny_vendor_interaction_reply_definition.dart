@@ -32,8 +32,9 @@ class DestinyVendorInteractionReplyDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemRewardsSelection'] = itemRewardsSelection;
-			data['reply'] = reply;
-			data['replyType'] = replyType;
+			data['itemRewardsSelection'] = this.itemRewardsSelection;
+			data['reply'] = this.reply;
+			data['replyType'] = this.replyType;
+		return data;
 	}
 }

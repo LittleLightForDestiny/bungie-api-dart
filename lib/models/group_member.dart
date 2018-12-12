@@ -43,11 +43,12 @@ class GroupMember{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['memberType'] = memberType;
-			data['isOnline'] = isOnline;
-			data['groupId'] = groupId;
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
-			data['joinDate'] = joinDate;
+			data['memberType'] = this.memberType;
+			data['isOnline'] = this.isOnline;
+			data['groupId'] = this.groupId;
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['joinDate'] = this.joinDate;
+		return data;
 	}
 }

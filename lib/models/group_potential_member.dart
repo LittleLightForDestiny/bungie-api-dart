@@ -40,10 +40,11 @@ class GroupPotentialMember{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['potentialStatus'] = potentialStatus;
-			data['groupId'] = groupId;
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
-			data['joinDate'] = joinDate;
+			data['potentialStatus'] = this.potentialStatus;
+			data['groupId'] = this.groupId;
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['joinDate'] = this.joinDate;
+		return data;
 	}
 }

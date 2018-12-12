@@ -32,8 +32,9 @@ class ContentTypePropertySection{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['readableName'] = readableName;
-			data['collapsed'] = collapsed;
+			data['name'] = this.name;
+			data['readableName'] = this.readableName;
+			data['collapsed'] = this.collapsed;
+		return data;
 	}
 }

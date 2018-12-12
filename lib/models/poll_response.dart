@@ -33,8 +33,9 @@ class PollResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['topicId'] = topicId;
-			data['results'] = results.map((item)=>item.toMap());
-			data['totalVotes'] = totalVotes;
+			data['topicId'] = this.topicId;
+			data['results'] = this.results.map((item)=>item.toMap());
+			data['totalVotes'] = this.totalVotes;
+		return data;
 	}
 }

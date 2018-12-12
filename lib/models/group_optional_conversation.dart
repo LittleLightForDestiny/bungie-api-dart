@@ -38,10 +38,11 @@ class GroupOptionalConversation{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
-			data['conversationId'] = conversationId;
-			data['chatEnabled'] = chatEnabled;
-			data['chatName'] = chatName;
-			data['chatSecurity'] = chatSecurity;
+			data['groupId'] = this.groupId;
+			data['conversationId'] = this.conversationId;
+			data['chatEnabled'] = this.chatEnabled;
+			data['chatName'] = this.chatName;
+			data['chatSecurity'] = this.chatSecurity;
+		return data;
 	}
 }

@@ -40,10 +40,11 @@ class DestinyMilestoneRewardCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categoryHash'] = categoryHash;
-			data['categoryIdentifier'] = categoryIdentifier;
-			data['displayProperties'] = displayProperties;
-			data['rewardEntries'] = rewardEntries;
-			data['order'] = order;
+			data['categoryHash'] = this.categoryHash;
+			data['categoryIdentifier'] = this.categoryIdentifier;
+			data['displayProperties'] = this.displayProperties;
+			data['rewardEntries'] = this.rewardEntries;
+			data['order'] = this.order;
+		return data;
 	}
 }

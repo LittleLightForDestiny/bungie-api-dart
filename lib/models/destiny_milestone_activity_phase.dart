@@ -29,7 +29,8 @@ class DestinyMilestoneActivityPhase{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['complete'] = complete;
-			data['phaseHash'] = phaseHash;
+			data['complete'] = this.complete;
+			data['phaseHash'] = this.phaseHash;
+		return data;
 	}
 }

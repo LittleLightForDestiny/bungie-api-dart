@@ -36,9 +36,10 @@ class DestinyKioskItem{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['index'] = index;
-			data['canAcquire'] = canAcquire;
-			data['failureIndexes'] = failureIndexes;
-			data['flavorObjective'] = flavorObjective;
+			data['index'] = this.index;
+			data['canAcquire'] = this.canAcquire;
+			data['failureIndexes'] = this.failureIndexes;
+			data['flavorObjective'] = this.flavorObjective;
+		return data;
 	}
 }

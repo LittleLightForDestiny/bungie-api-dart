@@ -27,6 +27,7 @@ class DestinyDestinationBubbleSettingDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties.toMap();
+		return data;
 	}
 }

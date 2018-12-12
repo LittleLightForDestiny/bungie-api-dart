@@ -26,6 +26,7 @@ class DestinyPresentationNodeChildEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['presentationNodeHash'] = presentationNodeHash;
+			data['presentationNodeHash'] = this.presentationNodeHash;
+		return data;
 	}
 }

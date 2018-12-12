@@ -32,8 +32,9 @@ class DestinyPublicMilestoneActivityVariant{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['activityModeHash'] = activityModeHash;
-			data['activityModeType'] = activityModeType;
+			data['activityHash'] = this.activityHash;
+			data['activityModeHash'] = this.activityModeHash;
+			data['activityModeType'] = this.activityModeType;
+		return data;
 	}
 }

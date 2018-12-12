@@ -26,6 +26,7 @@ class ComponentResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['privacy'] = privacy;
+			data['privacy'] = this.privacy;
+		return data;
 	}
 }

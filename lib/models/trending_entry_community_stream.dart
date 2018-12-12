@@ -35,9 +35,10 @@ class TrendingEntryCommunityStream{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['image'] = image;
-			data['title'] = title;
-			data['partnershipIdentifier'] = partnershipIdentifier;
-			data['partnershipType'] = partnershipType;
+			data['image'] = this.image;
+			data['title'] = this.title;
+			data['partnershipIdentifier'] = this.partnershipIdentifier;
+			data['partnershipType'] = this.partnershipType;
+		return data;
 	}
 }

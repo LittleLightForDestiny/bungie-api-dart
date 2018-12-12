@@ -54,14 +54,15 @@ class DestinyDestinationDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['placeHash'] = placeHash;
-			data['defaultFreeroamActivityHash'] = defaultFreeroamActivityHash;
-			data['activityGraphEntries'] = activityGraphEntries.map((item)=>item.toMap());
-			data['bubbleSettings'] = bubbleSettings.map((item)=>item.toMap());
-			data['bubbles'] = bubbles.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['placeHash'] = this.placeHash;
+			data['defaultFreeroamActivityHash'] = this.defaultFreeroamActivityHash;
+			data['activityGraphEntries'] = this.activityGraphEntries.map((item)=>item.toMap());
+			data['bubbleSettings'] = this.bubbleSettings.map((item)=>item.toMap());
+			data['bubbles'] = this.bubbles.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

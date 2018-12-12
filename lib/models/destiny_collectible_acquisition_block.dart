@@ -29,7 +29,8 @@ class DestinyCollectibleAcquisitionBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['acquireMaterialRequirementHash'] = acquireMaterialRequirementHash;
-			data['acquireTimestampUnlockValueHash'] = acquireTimestampUnlockValueHash;
+			data['acquireMaterialRequirementHash'] = this.acquireMaterialRequirementHash;
+			data['acquireTimestampUnlockValueHash'] = this.acquireTimestampUnlockValueHash;
+		return data;
 	}
 }

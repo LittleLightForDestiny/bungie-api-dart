@@ -43,11 +43,12 @@ class DestinyLinkedGraphDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['description'] = description;
-			data['name'] = name;
-			data['unlockExpression'] = unlockExpression.toMap();
-			data['linkedGraphId'] = linkedGraphId;
-			data['linkedGraphs'] = linkedGraphs.map((item)=>item.toMap());
-			data['overview'] = overview;
+			data['description'] = this.description;
+			data['name'] = this.name;
+			data['unlockExpression'] = this.unlockExpression.toMap();
+			data['linkedGraphId'] = this.linkedGraphId;
+			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap());
+			data['overview'] = this.overview;
+		return data;
 	}
 }

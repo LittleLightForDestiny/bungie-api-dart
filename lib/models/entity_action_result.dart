@@ -29,7 +29,8 @@ class EntityActionResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['entityId'] = entityId;
-			data['result'] = result;
+			data['entityId'] = this.entityId;
+			data['result'] = this.result;
+		return data;
 	}
 }

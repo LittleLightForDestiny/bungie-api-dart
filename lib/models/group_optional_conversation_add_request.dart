@@ -29,7 +29,8 @@ class GroupOptionalConversationAddRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['chatName'] = chatName;
-			data['chatSecurity'] = chatSecurity;
+			data['chatName'] = this.chatName;
+			data['chatSecurity'] = this.chatSecurity;
+		return data;
 	}
 }

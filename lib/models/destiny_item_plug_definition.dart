@@ -74,21 +74,22 @@ class DestinyItemPlugDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['insertionRules'] = insertionRules.map((item)=>item.toMap());
-			data['plugCategoryIdentifier'] = plugCategoryIdentifier;
-			data['plugCategoryHash'] = plugCategoryHash;
-			data['onActionRecreateSelf'] = onActionRecreateSelf;
-			data['insertionMaterialRequirementHash'] = insertionMaterialRequirementHash;
-			data['previewItemOverrideHash'] = previewItemOverrideHash;
-			data['enabledMaterialRequirementHash'] = enabledMaterialRequirementHash;
-			data['enabledRules'] = enabledRules.map((item)=>item.toMap());
-			data['uiPlugLabel'] = uiPlugLabel;
-			data['plugStyle'] = plugStyle;
-			data['isPseudoPlug'] = isPseudoPlug;
-			data['plugAvailability'] = plugAvailability;
-			data['alternateUiPlugLabel'] = alternateUiPlugLabel;
-			data['alternatePlugStyle'] = alternatePlugStyle;
-			data['isDummyPlug'] = isDummyPlug;
-			data['parentItemOverride'] = parentItemOverride;
+			data['insertionRules'] = this.insertionRules.map((item)=>item.toMap());
+			data['plugCategoryIdentifier'] = this.plugCategoryIdentifier;
+			data['plugCategoryHash'] = this.plugCategoryHash;
+			data['onActionRecreateSelf'] = this.onActionRecreateSelf;
+			data['insertionMaterialRequirementHash'] = this.insertionMaterialRequirementHash;
+			data['previewItemOverrideHash'] = this.previewItemOverrideHash;
+			data['enabledMaterialRequirementHash'] = this.enabledMaterialRequirementHash;
+			data['enabledRules'] = this.enabledRules.map((item)=>item.toMap());
+			data['uiPlugLabel'] = this.uiPlugLabel;
+			data['plugStyle'] = this.plugStyle;
+			data['isPseudoPlug'] = this.isPseudoPlug;
+			data['plugAvailability'] = this.plugAvailability;
+			data['alternateUiPlugLabel'] = this.alternateUiPlugLabel;
+			data['alternatePlugStyle'] = this.alternatePlugStyle;
+			data['isDummyPlug'] = this.isDummyPlug;
+			data['parentItemOverride'] = this.parentItemOverride;
+		return data;
 	}
 }

@@ -41,11 +41,12 @@ class DestinyItemTransferRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemReferenceHash'] = itemReferenceHash;
-			data['stackSize'] = stackSize;
-			data['transferToVault'] = transferToVault;
-			data['itemId'] = itemId;
-			data['characterId'] = characterId;
-			data['membershipType'] = membershipType;
+			data['itemReferenceHash'] = this.itemReferenceHash;
+			data['stackSize'] = this.stackSize;
+			data['transferToVault'] = this.transferToVault;
+			data['itemId'] = this.itemId;
+			data['characterId'] = this.characterId;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

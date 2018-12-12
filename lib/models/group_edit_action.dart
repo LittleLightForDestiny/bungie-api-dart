@@ -71,21 +71,22 @@ class GroupEditAction{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['about'] = about;
-			data['motto'] = motto;
-			data['theme'] = theme;
-			data['avatarImageIndex'] = avatarImageIndex;
-			data['tags'] = tags;
-			data['isPublic'] = isPublic;
-			data['membershipOption'] = membershipOption;
-			data['isPublicTopicAdminOnly'] = isPublicTopicAdminOnly;
-			data['allowChat'] = allowChat;
-			data['chatSecurity'] = chatSecurity;
-			data['callsign'] = callsign;
-			data['locale'] = locale;
-			data['homepage'] = homepage;
-			data['enableInvitationMessagingForAdmins'] = enableInvitationMessagingForAdmins;
-			data['defaultPublicity'] = defaultPublicity;
+			data['name'] = this.name;
+			data['about'] = this.about;
+			data['motto'] = this.motto;
+			data['theme'] = this.theme;
+			data['avatarImageIndex'] = this.avatarImageIndex;
+			data['tags'] = this.tags;
+			data['isPublic'] = this.isPublic;
+			data['membershipOption'] = this.membershipOption;
+			data['isPublicTopicAdminOnly'] = this.isPublicTopicAdminOnly;
+			data['allowChat'] = this.allowChat;
+			data['chatSecurity'] = this.chatSecurity;
+			data['callsign'] = this.callsign;
+			data['locale'] = this.locale;
+			data['homepage'] = this.homepage;
+			data['enableInvitationMessagingForAdmins'] = this.enableInvitationMessagingForAdmins;
+			data['defaultPublicity'] = this.defaultPublicity;
+		return data;
 	}
 }

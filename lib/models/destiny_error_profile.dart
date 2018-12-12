@@ -30,7 +30,8 @@ class DestinyErrorProfile{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['errorCode'] = errorCode;
-			data['infoCard'] = infoCard;
+			data['errorCode'] = this.errorCode;
+			data['infoCard'] = this.infoCard;
+		return data;
 	}
 }

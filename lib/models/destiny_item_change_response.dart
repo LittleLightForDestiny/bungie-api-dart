@@ -35,8 +35,9 @@ class DestinyItemChangeResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['item'] = item.toMap();
-			data['addedInventoryItems'] = addedInventoryItems.map((item)=>item.toMap());
-			data['removedInventoryItems'] = removedInventoryItems.map((item)=>item.toMap());
+			data['item'] = this.item.toMap();
+			data['addedInventoryItems'] = this.addedInventoryItems.map((item)=>item.toMap());
+			data['removedInventoryItems'] = this.removedInventoryItems.map((item)=>item.toMap());
+		return data;
 	}
 }

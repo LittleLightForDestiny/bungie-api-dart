@@ -47,13 +47,14 @@ class AwaAuthorizationResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['userSelection'] = userSelection;
-			data['responseReason'] = responseReason;
-			data['developerNote'] = developerNote;
-			data['actionToken'] = actionToken;
-			data['maximumNumberOfUses'] = maximumNumberOfUses;
-			data['validUntil'] = validUntil;
-			data['type'] = type;
-			data['membershipType'] = membershipType;
+			data['userSelection'] = this.userSelection;
+			data['responseReason'] = this.responseReason;
+			data['developerNote'] = this.developerNote;
+			data['actionToken'] = this.actionToken;
+			data['maximumNumberOfUses'] = this.maximumNumberOfUses;
+			data['validUntil'] = this.validUntil;
+			data['type'] = this.type;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

@@ -35,9 +35,10 @@ class AwaPermissionRequested{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['type'] = type;
-			data['affectedItemId'] = affectedItemId;
-			data['membershipType'] = membershipType;
-			data['characterId'] = characterId;
+			data['type'] = this.type;
+			data['affectedItemId'] = this.affectedItemId;
+			data['membershipType'] = this.membershipType;
+			data['characterId'] = this.characterId;
+		return data;
 	}
 }

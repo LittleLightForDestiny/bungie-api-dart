@@ -32,8 +32,9 @@ class DestinyReportOffensePgcrRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['reasonCategoryHashes'] = reasonCategoryHashes;
-			data['reasonHashes'] = reasonHashes;
-			data['offendingCharacterId'] = offendingCharacterId;
+			data['reasonCategoryHashes'] = this.reasonCategoryHashes;
+			data['reasonHashes'] = this.reasonHashes;
+			data['offendingCharacterId'] = this.offendingCharacterId;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class DestinyDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

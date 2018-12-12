@@ -29,7 +29,8 @@ class CoreSystem{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['enabled'] = enabled;
-			data['parameters'] = parameters;
+			data['enabled'] = this.enabled;
+			data['parameters'] = this.parameters;
+		return data;
 	}
 }

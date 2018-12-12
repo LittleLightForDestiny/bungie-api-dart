@@ -29,7 +29,8 @@ class DestinyActivityGraphDisplayProgressionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['id'] = id;
-			data['progressionHash'] = progressionHash;
+			data['id'] = this.id;
+			data['progressionHash'] = this.progressionHash;
+		return data;
 	}
 }

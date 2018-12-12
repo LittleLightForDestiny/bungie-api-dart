@@ -35,9 +35,10 @@ class PublicPartnershipDetail{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['partnerType'] = partnerType;
-			data['identifier'] = identifier;
-			data['name'] = name;
-			data['icon'] = icon;
+			data['partnerType'] = this.partnerType;
+			data['identifier'] = this.identifier;
+			data['name'] = this.name;
+			data['icon'] = this.icon;
+		return data;
 	}
 }

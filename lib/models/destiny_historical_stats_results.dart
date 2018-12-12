@@ -23,5 +23,6 @@ class DestinyHistoricalStatsResults{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
+		return data;
 	}
 }

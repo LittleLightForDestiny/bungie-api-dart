@@ -42,11 +42,12 @@ class DestinyManifest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['version'] = version;
-			data['mobileAssetContentPath'] = mobileAssetContentPath;
-			data['mobileGearAssetDataBases'] = mobileGearAssetDataBases.map((item)=>item.toMap());
-			data['mobileWorldContentPaths'] = mobileWorldContentPaths;
-			data['mobileClanBannerDatabasePath'] = mobileClanBannerDatabasePath;
-			data['mobileGearCDN'] = mobileGearCdn;
+			data['version'] = this.version;
+			data['mobileAssetContentPath'] = this.mobileAssetContentPath;
+			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases.map((item)=>item.toMap());
+			data['mobileWorldContentPaths'] = this.mobileWorldContentPaths;
+			data['mobileClanBannerDatabasePath'] = this.mobileClanBannerDatabasePath;
+			data['mobileGearCDN'] = this.mobileGearCdn;
+		return data;
 	}
 }

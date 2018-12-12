@@ -27,6 +27,7 @@ class DestinyVendorSaleItemSetComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['saleItems'] = saleItems;
+			data['saleItems'] = this.saleItems;
+		return data;
 	}
 }

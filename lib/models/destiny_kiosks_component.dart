@@ -27,6 +27,7 @@ class DestinyKiosksComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['kioskItems'] = kioskItems;
+			data['kioskItems'] = this.kioskItems;
+		return data;
 	}
 }

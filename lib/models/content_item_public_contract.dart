@@ -71,20 +71,21 @@ class ContentItemPublicContract{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['contentId'] = contentId;
-			data['cType'] = cType;
-			data['cmsPath'] = cmsPath;
-			data['creationDate'] = creationDate;
-			data['modifyDate'] = modifyDate;
-			data['allowComments'] = allowComments;
-			data['hasAgeGate'] = hasAgeGate;
-			data['minimumAge'] = minimumAge;
-			data['ratingImagePath'] = ratingImagePath;
-			data['author'] = author.toMap();
-			data['autoEnglishPropertyFallback'] = autoEnglishPropertyFallback;
-			data['properties'] = properties;
-			data['representations'] = representations.map((item)=>item.toMap());
-			data['tags'] = tags;
-			data['commentSummary'] = commentSummary.toMap();
+			data['contentId'] = this.contentId;
+			data['cType'] = this.cType;
+			data['cmsPath'] = this.cmsPath;
+			data['creationDate'] = this.creationDate;
+			data['modifyDate'] = this.modifyDate;
+			data['allowComments'] = this.allowComments;
+			data['hasAgeGate'] = this.hasAgeGate;
+			data['minimumAge'] = this.minimumAge;
+			data['ratingImagePath'] = this.ratingImagePath;
+			data['author'] = this.author.toMap();
+			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
+			data['properties'] = this.properties;
+			data['representations'] = this.representations.map((item)=>item.toMap());
+			data['tags'] = this.tags;
+			data['commentSummary'] = this.commentSummary.toMap();
+		return data;
 	}
 }

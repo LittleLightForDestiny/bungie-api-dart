@@ -29,7 +29,8 @@ class DestinyParentItemOverride{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['additionalEquipRequirementsDisplayStrings'] = additionalEquipRequirementsDisplayStrings;
-			data['pipIcon'] = pipIcon;
+			data['additionalEquipRequirementsDisplayStrings'] = this.additionalEquipRequirementsDisplayStrings;
+			data['pipIcon'] = this.pipIcon;
+		return data;
 	}
 }

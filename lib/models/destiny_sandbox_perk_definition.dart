@@ -52,14 +52,15 @@ class DestinySandboxPerkDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['perkIdentifier'] = perkIdentifier;
-			data['isDisplayable'] = isDisplayable;
-			data['damageType'] = damageType;
-			data['damageTypeHash'] = damageTypeHash;
-			data['perkGroups'] = perkGroups;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties;
+			data['perkIdentifier'] = this.perkIdentifier;
+			data['isDisplayable'] = this.isDisplayable;
+			data['damageType'] = this.damageType;
+			data['damageTypeHash'] = this.damageTypeHash;
+			data['perkGroups'] = this.perkGroups;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

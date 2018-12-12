@@ -32,8 +32,9 @@ class DestinyPositionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['x'] = x;
-			data['y'] = y;
-			data['z'] = z;
+			data['x'] = this.x;
+			data['y'] = this.y;
+			data['z'] = this.z;
+		return data;
 	}
 }

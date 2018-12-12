@@ -33,8 +33,9 @@ class DestinyProfileRecordsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['score'] = score;
-			data['trackedRecordHash'] = trackedRecordHash;
-			data['records'] = records;
+			data['score'] = this.score;
+			data['trackedRecordHash'] = this.trackedRecordHash;
+			data['records'] = this.records;
+		return data;
 	}
 }

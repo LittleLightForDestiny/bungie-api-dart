@@ -36,9 +36,10 @@ class DestinyMilestoneContent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['about'] = about;
-			data['status'] = status;
-			data['tips'] = tips;
-			data['itemCategories'] = itemCategories.map((item)=>item.toMap());
+			data['about'] = this.about;
+			data['status'] = this.status;
+			data['tips'] = this.tips;
+			data['itemCategories'] = this.itemCategories.map((item)=>item.toMap());
+		return data;
 	}
 }

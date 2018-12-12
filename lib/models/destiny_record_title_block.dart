@@ -29,7 +29,8 @@ class DestinyRecordTitleBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['hasTitle'] = hasTitle;
-			data['titlesByGender'] = titlesByGender;
+			data['hasTitle'] = this.hasTitle;
+			data['titlesByGender'] = this.titlesByGender;
+		return data;
 	}
 }

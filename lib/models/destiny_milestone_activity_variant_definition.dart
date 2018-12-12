@@ -29,7 +29,8 @@ class DestinyMilestoneActivityVariantDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['order'] = order;
+			data['activityHash'] = this.activityHash;
+			data['order'] = this.order;
+		return data;
 	}
 }

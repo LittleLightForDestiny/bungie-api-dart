@@ -32,8 +32,9 @@ class DestinyItemInvestmentStatDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statTypeHash'] = statTypeHash;
-			data['value'] = value;
-			data['isConditionallyActive'] = isConditionallyActive;
+			data['statTypeHash'] = this.statTypeHash;
+			data['value'] = this.value;
+			data['isConditionallyActive'] = this.isConditionallyActive;
+		return data;
 	}
 }

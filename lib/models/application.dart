@@ -60,17 +60,18 @@ class Application{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['applicationType'] = applicationType;
-			data['applicationId'] = applicationId;
-			data['name'] = name;
-			data['redirectUrl'] = redirectUrl;
-			data['link'] = link;
-			data['scope'] = scope;
-			data['origin'] = origin;
-			data['status'] = status;
-			data['creationDate'] = creationDate;
-			data['statusChanged'] = statusChanged;
-			data['firstPublished'] = firstPublished;
-			data['team'] = team.map((item)=>item.toMap());
+			data['applicationType'] = this.applicationType;
+			data['applicationId'] = this.applicationId;
+			data['name'] = this.name;
+			data['redirectUrl'] = this.redirectUrl;
+			data['link'] = this.link;
+			data['scope'] = this.scope;
+			data['origin'] = this.origin;
+			data['status'] = this.status;
+			data['creationDate'] = this.creationDate;
+			data['statusChanged'] = this.statusChanged;
+			data['firstPublished'] = this.firstPublished;
+			data['team'] = this.team.map((item)=>item.toMap());
+		return data;
 	}
 }

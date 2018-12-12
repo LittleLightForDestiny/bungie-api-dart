@@ -60,16 +60,17 @@ class DestinyTalentGridDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['maxGridLevel'] = maxGridLevel;
-			data['gridLevelPerColumn'] = gridLevelPerColumn;
-			data['progressionHash'] = progressionHash;
-			data['nodes'] = nodes.map((item)=>item.toMap());
-			data['exclusiveSets'] = exclusiveSets.map((item)=>item.toMap());
-			data['independentNodeIndexes'] = independentNodeIndexes;
-			data['groups'] = groups;
-			data['nodeCategories'] = nodeCategories.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['maxGridLevel'] = this.maxGridLevel;
+			data['gridLevelPerColumn'] = this.gridLevelPerColumn;
+			data['progressionHash'] = this.progressionHash;
+			data['nodes'] = this.nodes.map((item)=>item.toMap());
+			data['exclusiveSets'] = this.exclusiveSets.map((item)=>item.toMap());
+			data['independentNodeIndexes'] = this.independentNodeIndexes;
+			data['groups'] = this.groups;
+			data['nodeCategories'] = this.nodeCategories.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

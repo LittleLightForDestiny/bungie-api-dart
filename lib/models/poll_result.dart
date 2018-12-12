@@ -38,10 +38,11 @@ class PollResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['answerText'] = answerText;
-			data['answerSlot'] = answerSlot;
-			data['lastVoteDate'] = lastVoteDate;
-			data['votes'] = votes;
-			data['requestingUserVoted'] = requestingUserVoted;
+			data['answerText'] = this.answerText;
+			data['answerSlot'] = this.answerSlot;
+			data['lastVoteDate'] = this.lastVoteDate;
+			data['votes'] = this.votes;
+			data['requestingUserVoted'] = this.requestingUserVoted;
+		return data;
 	}
 }

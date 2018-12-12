@@ -49,13 +49,14 @@ class TrendingEntryDestinyRitual{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['image'] = image;
-			data['icon'] = icon;
-			data['title'] = title;
-			data['subtitle'] = subtitle;
-			data['dateStart'] = dateStart;
-			data['dateEnd'] = dateEnd;
-			data['milestoneDetails'] = milestoneDetails;
-			data['eventContent'] = eventContent;
+			data['image'] = this.image;
+			data['icon'] = this.icon;
+			data['title'] = this.title;
+			data['subtitle'] = this.subtitle;
+			data['dateStart'] = this.dateStart;
+			data['dateEnd'] = this.dateEnd;
+			data['milestoneDetails'] = this.milestoneDetails;
+			data['eventContent'] = this.eventContent;
+		return data;
 	}
 }

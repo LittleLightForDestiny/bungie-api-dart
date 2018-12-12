@@ -66,19 +66,20 @@ class DestinyLocationReleaseDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['smallTransparentIcon'] = smallTransparentIcon;
-			data['mapIcon'] = mapIcon;
-			data['largeTransparentIcon'] = largeTransparentIcon;
-			data['spawnPoint'] = spawnPoint;
-			data['destinationHash'] = destinationHash;
-			data['activityHash'] = activityHash;
-			data['activityGraphHash'] = activityGraphHash;
-			data['activityGraphNodeHash'] = activityGraphNodeHash;
-			data['activityBubbleName'] = activityBubbleName;
-			data['activityPathBundle'] = activityPathBundle;
-			data['activityPathDestination'] = activityPathDestination;
-			data['navPointType'] = navPointType;
-			data['worldPosition'] = worldPosition;
+			data['displayProperties'] = this.displayProperties;
+			data['smallTransparentIcon'] = this.smallTransparentIcon;
+			data['mapIcon'] = this.mapIcon;
+			data['largeTransparentIcon'] = this.largeTransparentIcon;
+			data['spawnPoint'] = this.spawnPoint;
+			data['destinationHash'] = this.destinationHash;
+			data['activityHash'] = this.activityHash;
+			data['activityGraphHash'] = this.activityGraphHash;
+			data['activityGraphNodeHash'] = this.activityGraphNodeHash;
+			data['activityBubbleName'] = this.activityBubbleName;
+			data['activityPathBundle'] = this.activityPathBundle;
+			data['activityPathDestination'] = this.activityPathDestination;
+			data['navPointType'] = this.navPointType;
+			data['worldPosition'] = this.worldPosition;
+		return data;
 	}
 }

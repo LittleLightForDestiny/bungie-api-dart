@@ -35,9 +35,10 @@ class DestinyMaterialRequirement{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
-			data['deleteOnAction'] = deleteOnAction;
-			data['count'] = count;
-			data['omitFromRequirements'] = omitFromRequirements;
+			data['itemHash'] = this.itemHash;
+			data['deleteOnAction'] = this.deleteOnAction;
+			data['count'] = this.count;
+			data['omitFromRequirements'] = this.omitFromRequirements;
+		return data;
 	}
 }

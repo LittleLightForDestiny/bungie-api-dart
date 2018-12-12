@@ -26,6 +26,7 @@ class DestinyPresentationNodeCollectibleChildEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collectibleHash'] = collectibleHash;
+			data['collectibleHash'] = this.collectibleHash;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class DestinyActivityLoadoutRequirement{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['equipmentSlotHash'] = equipmentSlotHash;
-			data['allowedEquippedItemHashes'] = allowedEquippedItemHashes;
-			data['allowedWeaponSubTypes'] = allowedWeaponSubTypes;
+			data['equipmentSlotHash'] = this.equipmentSlotHash;
+			data['allowedEquippedItemHashes'] = this.allowedEquippedItemHashes;
+			data['allowedWeaponSubTypes'] = this.allowedWeaponSubTypes;
+		return data;
 	}
 }

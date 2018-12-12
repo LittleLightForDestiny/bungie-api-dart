@@ -29,7 +29,8 @@ class DestinyMilestoneChallengeActivityGraphNodeEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityGraphHash'] = activityGraphHash;
-			data['activityGraphNodeHash'] = activityGraphNodeHash;
+			data['activityGraphHash'] = this.activityGraphHash;
+			data['activityGraphNodeHash'] = this.activityGraphNodeHash;
+		return data;
 	}
 }

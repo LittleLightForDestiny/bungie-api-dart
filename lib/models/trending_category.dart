@@ -33,8 +33,9 @@ class TrendingCategory{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categoryName'] = categoryName;
-			data['entries'] = entries.toMap();
-			data['categoryId'] = categoryId;
+			data['categoryName'] = this.categoryName;
+			data['entries'] = this.entries.toMap();
+			data['categoryId'] = this.categoryId;
+		return data;
 	}
 }

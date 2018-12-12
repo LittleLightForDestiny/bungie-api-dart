@@ -35,9 +35,10 @@ class DestinyColor{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['red'] = red;
-			data['green'] = green;
-			data['blue'] = blue;
-			data['alpha'] = alpha;
+			data['red'] = this.red;
+			data['green'] = this.green;
+			data['blue'] = this.blue;
+			data['alpha'] = this.alpha;
+		return data;
 	}
 }

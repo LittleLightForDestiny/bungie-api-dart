@@ -46,12 +46,13 @@ class DestinyItemSocketState{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['plugHash'] = plugHash;
-			data['isEnabled'] = isEnabled;
-			data['isVisible'] = isVisible;
-			data['enableFailIndexes'] = enableFailIndexes;
-			data['reusablePlugHashes'] = reusablePlugHashes;
-			data['plugObjectives'] = plugObjectives.map((item)=>item.toMap());
-			data['reusablePlugs'] = reusablePlugs.map((item)=>item.toMap());
+			data['plugHash'] = this.plugHash;
+			data['isEnabled'] = this.isEnabled;
+			data['isVisible'] = this.isVisible;
+			data['enableFailIndexes'] = this.enableFailIndexes;
+			data['reusablePlugHashes'] = this.reusablePlugHashes;
+			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap());
+			data['reusablePlugs'] = this.reusablePlugs.map((item)=>item.toMap());
+		return data;
 	}
 }

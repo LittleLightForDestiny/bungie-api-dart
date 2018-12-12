@@ -38,10 +38,11 @@ class UserInfoCard{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['supplementalDisplayName'] = supplementalDisplayName;
-			data['iconPath'] = iconPath;
-			data['membershipType'] = membershipType;
-			data['membershipId'] = membershipId;
-			data['displayName'] = displayName;
+			data['supplementalDisplayName'] = this.supplementalDisplayName;
+			data['iconPath'] = this.iconPath;
+			data['membershipType'] = this.membershipType;
+			data['membershipId'] = this.membershipId;
+			data['displayName'] = this.displayName;
+		return data;
 	}
 }

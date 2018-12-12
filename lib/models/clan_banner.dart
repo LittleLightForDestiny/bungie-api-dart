@@ -44,12 +44,13 @@ class ClanBanner{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['decalId'] = decalId;
-			data['decalColorId'] = decalColorId;
-			data['decalBackgroundColorId'] = decalBackgroundColorId;
-			data['gonfalonId'] = gonfalonId;
-			data['gonfalonColorId'] = gonfalonColorId;
-			data['gonfalonDetailId'] = gonfalonDetailId;
-			data['gonfalonDetailColorId'] = gonfalonDetailColorId;
+			data['decalId'] = this.decalId;
+			data['decalColorId'] = this.decalColorId;
+			data['decalBackgroundColorId'] = this.decalBackgroundColorId;
+			data['gonfalonId'] = this.gonfalonId;
+			data['gonfalonColorId'] = this.gonfalonColorId;
+			data['gonfalonDetailId'] = this.gonfalonDetailId;
+			data['gonfalonDetailColorId'] = this.gonfalonDetailColorId;
+		return data;
 	}
 }

@@ -65,19 +65,20 @@ class DestinyHistoricalStatsDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statId'] = statId;
-			data['group'] = group;
-			data['periodTypes'] = periodTypes;
-			data['modes'] = modes;
-			data['category'] = category;
-			data['statName'] = statName;
-			data['statNameAbbr'] = statNameAbbr;
-			data['statDescription'] = statDescription;
-			data['unitType'] = unitType;
-			data['iconImage'] = iconImage;
-			data['mergeMethod'] = mergeMethod;
-			data['unitLabel'] = unitLabel;
-			data['weight'] = weight;
-			data['medalTierHash'] = medalTierHash;
+			data['statId'] = this.statId;
+			data['group'] = this.group;
+			data['periodTypes'] = this.periodTypes;
+			data['modes'] = this.modes;
+			data['category'] = this.category;
+			data['statName'] = this.statName;
+			data['statNameAbbr'] = this.statNameAbbr;
+			data['statDescription'] = this.statDescription;
+			data['unitType'] = this.unitType;
+			data['iconImage'] = this.iconImage;
+			data['mergeMethod'] = this.mergeMethod;
+			data['unitLabel'] = this.unitLabel;
+			data['weight'] = this.weight;
+			data['medalTierHash'] = this.medalTierHash;
+		return data;
 	}
 }

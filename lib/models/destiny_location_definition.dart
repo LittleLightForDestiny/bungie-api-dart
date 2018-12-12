@@ -39,10 +39,11 @@ class DestinyLocationDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
-			data['locationReleases'] = locationReleases.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['vendorHash'] = this.vendorHash;
+			data['locationReleases'] = this.locationReleases.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

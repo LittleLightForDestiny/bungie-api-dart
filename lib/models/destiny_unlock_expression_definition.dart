@@ -26,6 +26,7 @@ class DestinyUnlockExpressionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['scope'] = scope;
+			data['scope'] = this.scope;
+		return data;
 	}
 }

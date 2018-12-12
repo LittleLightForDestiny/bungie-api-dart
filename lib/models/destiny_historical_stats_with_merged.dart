@@ -31,7 +31,8 @@ class DestinyHistoricalStatsWithMerged{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['results'] = results;
-			data['merged'] = merged.toMap();
+			data['results'] = this.results;
+			data['merged'] = this.merged.toMap();
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class AwaInitializeResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['correlationId'] = correlationId;
-			data['sentToSelf'] = sentToSelf;
+			data['correlationId'] = this.correlationId;
+			data['sentToSelf'] = this.sentToSelf;
+		return data;
 	}
 }

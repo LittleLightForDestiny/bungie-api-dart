@@ -63,18 +63,19 @@ class GroupV2Card{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
-			data['name'] = name;
-			data['groupType'] = groupType;
-			data['creationDate'] = creationDate;
-			data['about'] = about;
-			data['motto'] = motto;
-			data['memberCount'] = memberCount;
-			data['locale'] = locale;
-			data['membershipOption'] = membershipOption;
-			data['capabilities'] = capabilities;
-			data['clanInfo'] = clanInfo.toMap();
-			data['avatarPath'] = avatarPath;
-			data['theme'] = theme;
+			data['groupId'] = this.groupId;
+			data['name'] = this.name;
+			data['groupType'] = this.groupType;
+			data['creationDate'] = this.creationDate;
+			data['about'] = this.about;
+			data['motto'] = this.motto;
+			data['memberCount'] = this.memberCount;
+			data['locale'] = this.locale;
+			data['membershipOption'] = this.membershipOption;
+			data['capabilities'] = this.capabilities;
+			data['clanInfo'] = this.clanInfo.toMap();
+			data['avatarPath'] = this.avatarPath;
+			data['theme'] = this.theme;
+		return data;
 	}
 }

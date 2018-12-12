@@ -77,23 +77,24 @@ class FireteamSummary{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['fireteamId'] = fireteamId;
-			data['groupId'] = groupId;
-			data['platform'] = platform;
-			data['activityType'] = activityType;
-			data['isImmediate'] = isImmediate;
-			data['scheduledTime'] = scheduledTime;
-			data['ownerMembershipId'] = ownerMembershipId;
-			data['playerSlotCount'] = playerSlotCount;
-			data['alternateSlotCount'] = alternateSlotCount;
-			data['availablePlayerSlotCount'] = availablePlayerSlotCount;
-			data['availableAlternateSlotCount'] = availableAlternateSlotCount;
-			data['title'] = title;
-			data['dateCreated'] = dateCreated;
-			data['dateModified'] = dateModified;
-			data['isPublic'] = isPublic;
-			data['locale'] = locale;
-			data['isValid'] = isValid;
-			data['datePlayerModified'] = datePlayerModified;
+			data['fireteamId'] = this.fireteamId;
+			data['groupId'] = this.groupId;
+			data['platform'] = this.platform;
+			data['activityType'] = this.activityType;
+			data['isImmediate'] = this.isImmediate;
+			data['scheduledTime'] = this.scheduledTime;
+			data['ownerMembershipId'] = this.ownerMembershipId;
+			data['playerSlotCount'] = this.playerSlotCount;
+			data['alternateSlotCount'] = this.alternateSlotCount;
+			data['availablePlayerSlotCount'] = this.availablePlayerSlotCount;
+			data['availableAlternateSlotCount'] = this.availableAlternateSlotCount;
+			data['title'] = this.title;
+			data['dateCreated'] = this.dateCreated;
+			data['dateModified'] = this.dateModified;
+			data['isPublic'] = this.isPublic;
+			data['locale'] = this.locale;
+			data['isValid'] = this.isValid;
+			data['datePlayerModified'] = this.datePlayerModified;
+		return data;
 	}
 }

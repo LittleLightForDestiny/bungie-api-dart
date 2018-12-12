@@ -29,7 +29,8 @@ class DestinyNodeActivationRequirement{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['gridLevel'] = gridLevel;
-			data['materialRequirementHashes'] = materialRequirementHashes;
+			data['gridLevel'] = this.gridLevel;
+			data['materialRequirementHashes'] = this.materialRequirementHashes;
+		return data;
 	}
 }

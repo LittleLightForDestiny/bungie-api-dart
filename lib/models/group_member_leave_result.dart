@@ -30,7 +30,8 @@ class GroupMemberLeaveResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['group'] = group.toMap();
-			data['groupDeleted'] = groupDeleted;
+			data['group'] = this.group.toMap();
+			data['groupDeleted'] = this.groupDeleted;
+		return data;
 	}
 }

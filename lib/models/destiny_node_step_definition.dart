@@ -78,22 +78,23 @@ class DestinyNodeStepDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['stepIndex'] = stepIndex;
-			data['nodeStepHash'] = nodeStepHash;
-			data['interactionDescription'] = interactionDescription;
-			data['damageType'] = damageType;
-			data['damageTypeHash'] = damageTypeHash;
-			data['activationRequirement'] = activationRequirement;
-			data['canActivateNextStep'] = canActivateNextStep;
-			data['nextStepIndex'] = nextStepIndex;
-			data['isNextStepRandom'] = isNextStepRandom;
-			data['perkHashes'] = perkHashes;
-			data['startProgressionBarAtProgress'] = startProgressionBarAtProgress;
-			data['statHashes'] = statHashes;
-			data['affectsQuality'] = affectsQuality;
-			data['stepGroups'] = stepGroups;
-			data['affectsLevel'] = affectsLevel;
-			data['socketReplacements'] = socketReplacements.map((item)=>item.toMap());
+			data['displayProperties'] = this.displayProperties;
+			data['stepIndex'] = this.stepIndex;
+			data['nodeStepHash'] = this.nodeStepHash;
+			data['interactionDescription'] = this.interactionDescription;
+			data['damageType'] = this.damageType;
+			data['damageTypeHash'] = this.damageTypeHash;
+			data['activationRequirement'] = this.activationRequirement;
+			data['canActivateNextStep'] = this.canActivateNextStep;
+			data['nextStepIndex'] = this.nextStepIndex;
+			data['isNextStepRandom'] = this.isNextStepRandom;
+			data['perkHashes'] = this.perkHashes;
+			data['startProgressionBarAtProgress'] = this.startProgressionBarAtProgress;
+			data['statHashes'] = this.statHashes;
+			data['affectsQuality'] = this.affectsQuality;
+			data['stepGroups'] = this.stepGroups;
+			data['affectsLevel'] = this.affectsLevel;
+			data['socketReplacements'] = this.socketReplacements.map((item)=>item.toMap());
+		return data;
 	}
 }

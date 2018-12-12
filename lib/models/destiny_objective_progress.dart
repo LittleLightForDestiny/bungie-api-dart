@@ -44,12 +44,13 @@ class DestinyObjectiveProgress{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectiveHash'] = objectiveHash;
-			data['destinationHash'] = destinationHash;
-			data['activityHash'] = activityHash;
-			data['progress'] = progress;
-			data['completionValue'] = completionValue;
-			data['complete'] = complete;
-			data['visible'] = visible;
+			data['objectiveHash'] = this.objectiveHash;
+			data['destinationHash'] = this.destinationHash;
+			data['activityHash'] = this.activityHash;
+			data['progress'] = this.progress;
+			data['completionValue'] = this.completionValue;
+			data['complete'] = this.complete;
+			data['visible'] = this.visible;
+		return data;
 	}
 }

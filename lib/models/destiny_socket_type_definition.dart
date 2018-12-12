@@ -69,19 +69,20 @@ class DestinySocketTypeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties;
-			data['insertAction'] = insertAction;
-			data['plugWhitelist'] = plugWhitelist.map((item)=>item.toMap());
-			data['socketCategoryHash'] = socketCategoryHash;
-			data['visibility'] = visibility;
-			data['alwaysRandomizeSockets'] = alwaysRandomizeSockets;
-			data['isPreviewEnabled'] = isPreviewEnabled;
-			data['hideDuplicateReusablePlugs'] = hideDuplicateReusablePlugs;
-			data['overridesUiAppearance'] = overridesUiAppearance;
-			data['avoidDuplicatesOnInitialization'] = avoidDuplicatesOnInitialization;
-			data['currencyScalars'] = currencyScalars.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties;
+			data['insertAction'] = this.insertAction;
+			data['plugWhitelist'] = this.plugWhitelist.map((item)=>item.toMap());
+			data['socketCategoryHash'] = this.socketCategoryHash;
+			data['visibility'] = this.visibility;
+			data['alwaysRandomizeSockets'] = this.alwaysRandomizeSockets;
+			data['isPreviewEnabled'] = this.isPreviewEnabled;
+			data['hideDuplicateReusablePlugs'] = this.hideDuplicateReusablePlugs;
+			data['overridesUiAppearance'] = this.overridesUiAppearance;
+			data['avoidDuplicatesOnInitialization'] = this.avoidDuplicatesOnInitialization;
+			data['currencyScalars'] = this.currencyScalars.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

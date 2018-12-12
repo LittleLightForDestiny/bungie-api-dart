@@ -26,6 +26,7 @@ class DestinyActivityInsertionPointDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['phaseHash'] = phaseHash;
+			data['phaseHash'] = this.phaseHash;
+		return data;
 	}
 }

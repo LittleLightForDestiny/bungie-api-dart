@@ -74,21 +74,22 @@ class DestinyPresentationNodeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['originalIcon'] = originalIcon;
-			data['rootViewIcon'] = rootViewIcon;
-			data['nodeType'] = nodeType;
-			data['scope'] = scope;
-			data['objectiveHash'] = objectiveHash;
-			data['completionRecordHash'] = completionRecordHash;
-			data['children'] = children;
-			data['displayStyle'] = displayStyle;
-			data['screenStyle'] = screenStyle;
-			data['requirements'] = requirements;
-			data['disableChildSubscreenNavigation'] = disableChildSubscreenNavigation;
-			data['parentNodeHashes'] = parentNodeHashes;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['originalIcon'] = this.originalIcon;
+			data['rootViewIcon'] = this.rootViewIcon;
+			data['nodeType'] = this.nodeType;
+			data['scope'] = this.scope;
+			data['objectiveHash'] = this.objectiveHash;
+			data['completionRecordHash'] = this.completionRecordHash;
+			data['children'] = this.children;
+			data['displayStyle'] = this.displayStyle;
+			data['screenStyle'] = this.screenStyle;
+			data['requirements'] = this.requirements;
+			data['disableChildSubscreenNavigation'] = this.disableChildSubscreenNavigation;
+			data['parentNodeHashes'] = this.parentNodeHashes;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

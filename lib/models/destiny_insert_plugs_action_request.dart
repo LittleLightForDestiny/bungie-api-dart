@@ -39,10 +39,11 @@ class DestinyInsertPlugsActionRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['actionToken'] = actionToken;
-			data['itemInstanceId'] = itemInstanceId;
-			data['plug'] = plug;
-			data['characterId'] = characterId;
-			data['membershipType'] = membershipType;
+			data['actionToken'] = this.actionToken;
+			data['itemInstanceId'] = this.itemInstanceId;
+			data['plug'] = this.plug;
+			data['characterId'] = this.characterId;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

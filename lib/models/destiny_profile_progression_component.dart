@@ -26,6 +26,7 @@ class DestinyProfileProgressionComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['checklists'] = checklists;
+			data['checklists'] = this.checklists;
+		return data;
 	}
 }

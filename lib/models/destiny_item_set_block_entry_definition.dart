@@ -29,7 +29,8 @@ class DestinyItemSetBlockEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['trackingValue'] = trackingValue;
-			data['itemHash'] = itemHash;
+			data['trackingValue'] = this.trackingValue;
+			data['itemHash'] = this.itemHash;
+		return data;
 	}
 }

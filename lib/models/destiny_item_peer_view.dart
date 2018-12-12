@@ -30,7 +30,8 @@ class DestinyItemPeerView{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
-			data['dyes'] = dyes.map((item)=>item.toMap());
+			data['itemHash'] = this.itemHash;
+			data['dyes'] = this.dyes.map((item)=>item.toMap());
+		return data;
 	}
 }

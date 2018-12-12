@@ -32,8 +32,9 @@ class DestinyMilestoneRewardEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['rewardEntryHash'] = rewardEntryHash;
-			data['earned'] = earned;
-			data['redeemed'] = redeemed;
+			data['rewardEntryHash'] = this.rewardEntryHash;
+			data['earned'] = this.earned;
+			data['redeemed'] = this.redeemed;
+		return data;
 	}
 }

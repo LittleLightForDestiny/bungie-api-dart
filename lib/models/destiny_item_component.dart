@@ -56,16 +56,17 @@ class DestinyItemComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
-			data['itemInstanceId'] = itemInstanceId;
-			data['quantity'] = quantity;
-			data['bindStatus'] = bindStatus;
-			data['location'] = location;
-			data['bucketHash'] = bucketHash;
-			data['transferStatus'] = transferStatus;
-			data['lockable'] = lockable;
-			data['state'] = state;
-			data['overrideStyleItemHash'] = overrideStyleItemHash;
-			data['expirationDate'] = expirationDate;
+			data['itemHash'] = this.itemHash;
+			data['itemInstanceId'] = this.itemInstanceId;
+			data['quantity'] = this.quantity;
+			data['bindStatus'] = this.bindStatus;
+			data['location'] = this.location;
+			data['bucketHash'] = this.bucketHash;
+			data['transferStatus'] = this.transferStatus;
+			data['lockable'] = this.lockable;
+			data['state'] = this.state;
+			data['overrideStyleItemHash'] = this.overrideStyleItemHash;
+			data['expirationDate'] = this.expirationDate;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class ContentRepresentation{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['path'] = path;
-			data['validationString'] = validationString;
+			data['name'] = this.name;
+			data['path'] = this.path;
+			data['validationString'] = this.validationString;
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class IgnoreResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['isIgnored'] = isIgnored;
-			data['ignoreFlags'] = ignoreFlags;
+			data['isIgnored'] = this.isIgnored;
+			data['ignoreFlags'] = this.ignoreFlags;
+		return data;
 	}
 }

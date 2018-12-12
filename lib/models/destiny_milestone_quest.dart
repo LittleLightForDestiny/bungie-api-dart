@@ -38,9 +38,10 @@ class DestinyMilestoneQuest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['questItemHash'] = questItemHash;
-			data['status'] = status;
-			data['activity'] = activity;
-			data['challenges'] = challenges.map((item)=>item.toMap());
+			data['questItemHash'] = this.questItemHash;
+			data['status'] = this.status;
+			data['activity'] = this.activity;
+			data['challenges'] = this.challenges.map((item)=>item.toMap());
+		return data;
 	}
 }

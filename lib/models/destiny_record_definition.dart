@@ -68,18 +68,19 @@ class DestinyRecordDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['scope'] = scope;
-			data['presentationInfo'] = presentationInfo.toMap();
-			data['loreHash'] = loreHash;
-			data['objectiveHashes'] = objectiveHashes;
-			data['recordValueStyle'] = recordValueStyle;
-			data['titleInfo'] = titleInfo.toMap();
-			data['completionInfo'] = completionInfo.toMap();
-			data['stateInfo'] = stateInfo.toMap();
-			data['requirements'] = requirements.toMap();
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['scope'] = this.scope;
+			data['presentationInfo'] = this.presentationInfo.toMap();
+			data['loreHash'] = this.loreHash;
+			data['objectiveHashes'] = this.objectiveHashes;
+			data['recordValueStyle'] = this.recordValueStyle;
+			data['titleInfo'] = this.titleInfo.toMap();
+			data['completionInfo'] = this.completionInfo.toMap();
+			data['stateInfo'] = this.stateInfo.toMap();
+			data['requirements'] = this.requirements.toMap();
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

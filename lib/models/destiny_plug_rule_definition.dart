@@ -26,6 +26,7 @@ class DestinyPlugRuleDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['failureMessage'] = failureMessage;
+			data['failureMessage'] = this.failureMessage;
+		return data;
 	}
 }

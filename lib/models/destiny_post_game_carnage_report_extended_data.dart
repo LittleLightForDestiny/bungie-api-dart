@@ -31,7 +31,8 @@ class DestinyPostGameCarnageReportExtendedData{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['weapons'] = weapons.map((item)=>item.toMap());
-			data['values'] = values;
+			data['weapons'] = this.weapons.map((item)=>item.toMap());
+			data['values'] = this.values;
+		return data;
 	}
 }

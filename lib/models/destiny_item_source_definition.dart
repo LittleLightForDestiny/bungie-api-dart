@@ -45,12 +45,13 @@ class DestinyItemSourceDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['level'] = level;
-			data['minQuality'] = minQuality;
-			data['maxQuality'] = maxQuality;
-			data['minLevelRequired'] = minLevelRequired;
-			data['maxLevelRequired'] = maxLevelRequired;
-			data['computedStats'] = computedStats;
-			data['sourceHashes'] = sourceHashes;
+			data['level'] = this.level;
+			data['minQuality'] = this.minQuality;
+			data['maxQuality'] = this.maxQuality;
+			data['minLevelRequired'] = this.minLevelRequired;
+			data['maxLevelRequired'] = this.maxLevelRequired;
+			data['computedStats'] = this.computedStats;
+			data['sourceHashes'] = this.sourceHashes;
+		return data;
 	}
 }

@@ -30,7 +30,8 @@ class DestinyEntitySearchResult{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['suggestedWords'] = suggestedWords;
-			data['results'] = results;
+			data['suggestedWords'] = this.suggestedWords;
+			data['results'] = this.results;
+		return data;
 	}
 }

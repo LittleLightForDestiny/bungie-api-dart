@@ -30,7 +30,8 @@ class DestinyStatOverrideDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statHash'] = statHash;
-			data['displayProperties'] = displayProperties;
+			data['statHash'] = this.statHash;
+			data['displayProperties'] = this.displayProperties;
+		return data;
 	}
 }

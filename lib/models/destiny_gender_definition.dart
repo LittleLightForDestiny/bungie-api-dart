@@ -39,10 +39,11 @@ class DestinyGenderDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['genderType'] = genderType;
-			data['displayProperties'] = displayProperties.toMap();
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['genderType'] = this.genderType;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

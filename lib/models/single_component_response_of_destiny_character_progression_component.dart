@@ -30,7 +30,8 @@ class SingleComponentResponseOfDestinyCharacterProgressionComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = data.toMap();
-			data['privacy'] = privacy;
+			data['data'] = this.data.toMap();
+			data['privacy'] = this.privacy;
+		return data;
 	}
 }

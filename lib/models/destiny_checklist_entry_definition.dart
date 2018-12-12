@@ -54,15 +54,16 @@ class DestinyChecklistEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['hash'] = hash;
-			data['displayProperties'] = displayProperties;
-			data['destinationHash'] = destinationHash;
-			data['locationHash'] = locationHash;
-			data['bubbleHash'] = bubbleHash;
-			data['activityHash'] = activityHash;
-			data['itemHash'] = itemHash;
-			data['vendorHash'] = vendorHash;
-			data['vendorInteractionIndex'] = vendorInteractionIndex;
-			data['scope'] = scope;
+			data['hash'] = this.hash;
+			data['displayProperties'] = this.displayProperties;
+			data['destinationHash'] = this.destinationHash;
+			data['locationHash'] = this.locationHash;
+			data['bubbleHash'] = this.bubbleHash;
+			data['activityHash'] = this.activityHash;
+			data['itemHash'] = this.itemHash;
+			data['vendorHash'] = this.vendorHash;
+			data['vendorInteractionIndex'] = this.vendorInteractionIndex;
+			data['scope'] = this.scope;
+		return data;
 	}
 }

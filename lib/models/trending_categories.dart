@@ -27,6 +27,7 @@ class TrendingCategories{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['categories'] = categories.map((item)=>item.toMap());
+			data['categories'] = this.categories.map((item)=>item.toMap());
+		return data;
 	}
 }

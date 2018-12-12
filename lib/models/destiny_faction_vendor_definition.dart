@@ -32,8 +32,9 @@ class DestinyFactionVendorDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
-			data['destinationHash'] = destinationHash;
-			data['backgroundImagePath'] = backgroundImagePath;
+			data['vendorHash'] = this.vendorHash;
+			data['destinationHash'] = this.destinationHash;
+			data['backgroundImagePath'] = this.backgroundImagePath;
+		return data;
 	}
 }

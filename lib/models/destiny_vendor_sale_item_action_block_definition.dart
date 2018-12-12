@@ -29,7 +29,8 @@ class DestinyVendorSaleItemActionBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['executeSeconds'] = executeSeconds;
-			data['isPositive'] = isPositive;
+			data['executeSeconds'] = this.executeSeconds;
+			data['isPositive'] = this.isPositive;
+		return data;
 	}
 }

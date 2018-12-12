@@ -32,8 +32,9 @@ class DestinyProgressionRewardDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['progressionMappingHash'] = progressionMappingHash;
-			data['amount'] = amount;
-			data['applyThrottles'] = applyThrottles;
+			data['progressionMappingHash'] = this.progressionMappingHash;
+			data['amount'] = this.amount;
+			data['applyThrottles'] = this.applyThrottles;
+		return data;
 	}
 }

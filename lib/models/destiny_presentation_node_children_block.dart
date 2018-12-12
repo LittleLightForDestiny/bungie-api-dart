@@ -35,8 +35,9 @@ class DestinyPresentationNodeChildrenBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['presentationNodes'] = presentationNodes.map((item)=>item.toMap());
-			data['collectibles'] = collectibles.map((item)=>item.toMap());
-			data['records'] = records.map((item)=>item.toMap());
+			data['presentationNodes'] = this.presentationNodes.map((item)=>item.toMap());
+			data['collectibles'] = this.collectibles.map((item)=>item.toMap());
+			data['records'] = this.records.map((item)=>item.toMap());
+		return data;
 	}
 }

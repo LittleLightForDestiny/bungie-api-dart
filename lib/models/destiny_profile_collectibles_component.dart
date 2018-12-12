@@ -33,8 +33,9 @@ class DestinyProfileCollectiblesComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['recentCollectibleHashes'] = recentCollectibleHashes;
-			data['newnessFlaggedCollectibleHashes'] = newnessFlaggedCollectibleHashes;
-			data['collectibles'] = collectibles;
+			data['recentCollectibleHashes'] = this.recentCollectibleHashes;
+			data['newnessFlaggedCollectibleHashes'] = this.newnessFlaggedCollectibleHashes;
+			data['collectibles'] = this.collectibles;
+		return data;
 	}
 }

@@ -26,6 +26,7 @@ class GroupCreationResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
+			data['groupId'] = this.groupId;
+		return data;
 	}
 }

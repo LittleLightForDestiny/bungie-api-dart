@@ -32,8 +32,9 @@ class UserMembership{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['membershipType'] = membershipType;
-			data['membershipId'] = membershipId;
-			data['displayName'] = displayName;
+			data['membershipType'] = this.membershipType;
+			data['membershipId'] = this.membershipId;
+			data['displayName'] = this.displayName;
+		return data;
 	}
 }

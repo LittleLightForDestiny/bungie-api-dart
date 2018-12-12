@@ -32,8 +32,9 @@ class PagedQuery{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemsPerPage'] = itemsPerPage;
-			data['currentPage'] = currentPage;
-			data['requestContinuationToken'] = requestContinuationToken;
+			data['itemsPerPage'] = this.itemsPerPage;
+			data['currentPage'] = this.currentPage;
+			data['requestContinuationToken'] = this.requestContinuationToken;
+		return data;
 	}
 }

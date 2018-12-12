@@ -32,8 +32,9 @@ class DestinyVendorItemSocketOverride{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['singleItemHash'] = singleItemHash;
-			data['randomizedOptionsCount'] = randomizedOptionsCount;
-			data['socketTypeHash'] = socketTypeHash;
+			data['singleItemHash'] = this.singleItemHash;
+			data['randomizedOptionsCount'] = this.randomizedOptionsCount;
+			data['socketTypeHash'] = this.socketTypeHash;
+		return data;
 	}
 }

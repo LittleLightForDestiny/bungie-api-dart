@@ -38,10 +38,11 @@ class DestinyItemTalentGridBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['talentGridHash'] = talentGridHash;
-			data['itemDetailString'] = itemDetailString;
-			data['buildName'] = buildName;
-			data['hudDamageType'] = hudDamageType;
-			data['hudIcon'] = hudIcon;
+			data['talentGridHash'] = this.talentGridHash;
+			data['itemDetailString'] = this.itemDetailString;
+			data['buildName'] = this.buildName;
+			data['hudDamageType'] = this.hudDamageType;
+			data['hudIcon'] = this.hudIcon;
+		return data;
 	}
 }

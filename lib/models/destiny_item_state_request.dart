@@ -35,9 +35,10 @@ class DestinyItemStateRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['state'] = state;
-			data['itemId'] = itemId;
-			data['characterId'] = characterId;
-			data['membershipType'] = membershipType;
+			data['state'] = this.state;
+			data['itemId'] = this.itemId;
+			data['characterId'] = this.characterId;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

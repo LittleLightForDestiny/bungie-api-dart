@@ -26,6 +26,7 @@ class DestinyActivityUnlockStringDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayString'] = displayString;
+			data['displayString'] = this.displayString;
+		return data;
 	}
 }

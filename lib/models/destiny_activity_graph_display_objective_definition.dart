@@ -29,7 +29,8 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['id'] = id;
-			data['objectiveHash'] = objectiveHash;
+			data['id'] = this.id;
+			data['objectiveHash'] = this.objectiveHash;
+		return data;
 	}
 }

@@ -44,12 +44,13 @@ class DestinyEquippingBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['gearsetItemHash'] = gearsetItemHash;
-			data['uniqueLabel'] = uniqueLabel;
-			data['uniqueLabelHash'] = uniqueLabelHash;
-			data['equipmentSlotTypeHash'] = equipmentSlotTypeHash;
-			data['attributes'] = attributes;
-			data['ammoType'] = ammoType;
-			data['displayStrings'] = displayStrings;
+			data['gearsetItemHash'] = this.gearsetItemHash;
+			data['uniqueLabel'] = this.uniqueLabel;
+			data['uniqueLabelHash'] = this.uniqueLabelHash;
+			data['equipmentSlotTypeHash'] = this.equipmentSlotTypeHash;
+			data['attributes'] = this.attributes;
+			data['ammoType'] = this.ammoType;
+			data['displayStrings'] = this.displayStrings;
+		return data;
 	}
 }

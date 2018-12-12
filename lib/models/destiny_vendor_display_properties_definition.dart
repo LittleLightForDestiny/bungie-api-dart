@@ -57,16 +57,17 @@ class DestinyVendorDisplayPropertiesDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['largeIcon'] = largeIcon;
-			data['subtitle'] = subtitle;
-			data['originalIcon'] = originalIcon;
-			data['requirementsDisplay'] = requirementsDisplay.map((item)=>item.toMap());
-			data['smallTransparentIcon'] = smallTransparentIcon;
-			data['mapIcon'] = mapIcon;
-			data['largeTransparentIcon'] = largeTransparentIcon;
-			data['description'] = description;
-			data['name'] = name;
-			data['icon'] = icon;
-			data['hasIcon'] = hasIcon;
+			data['largeIcon'] = this.largeIcon;
+			data['subtitle'] = this.subtitle;
+			data['originalIcon'] = this.originalIcon;
+			data['requirementsDisplay'] = this.requirementsDisplay.map((item)=>item.toMap());
+			data['smallTransparentIcon'] = this.smallTransparentIcon;
+			data['mapIcon'] = this.mapIcon;
+			data['largeTransparentIcon'] = this.largeTransparentIcon;
+			data['description'] = this.description;
+			data['name'] = this.name;
+			data['icon'] = this.icon;
+			data['hasIcon'] = this.hasIcon;
+		return data;
 	}
 }

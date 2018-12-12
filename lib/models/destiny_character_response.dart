@@ -79,19 +79,20 @@ class DestinyCharacterResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['inventory'] = inventory;
-			data['character'] = character;
-			data['progressions'] = progressions;
-			data['renderData'] = renderData;
-			data['activities'] = activities;
-			data['equipment'] = equipment;
-			data['kiosks'] = kiosks;
-			data['plugSets'] = plugSets;
-			data['presentationNodes'] = presentationNodes;
-			data['records'] = records;
-			data['collectibles'] = collectibles;
-			data['itemComponents'] = itemComponents;
-			data['uninstancedItemComponents'] = uninstancedItemComponents;
-			data['currencyLookups'] = currencyLookups;
+			data['inventory'] = this.inventory;
+			data['character'] = this.character;
+			data['progressions'] = this.progressions;
+			data['renderData'] = this.renderData;
+			data['activities'] = this.activities;
+			data['equipment'] = this.equipment;
+			data['kiosks'] = this.kiosks;
+			data['plugSets'] = this.plugSets;
+			data['presentationNodes'] = this.presentationNodes;
+			data['records'] = this.records;
+			data['collectibles'] = this.collectibles;
+			data['itemComponents'] = this.itemComponents;
+			data['uninstancedItemComponents'] = this.uninstancedItemComponents;
+			data['currencyLookups'] = this.currencyLookups;
+		return data;
 	}
 }

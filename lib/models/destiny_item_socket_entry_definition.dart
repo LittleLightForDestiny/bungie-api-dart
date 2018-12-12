@@ -52,14 +52,15 @@ class DestinyItemSocketEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['socketTypeHash'] = socketTypeHash;
-			data['singleInitialItemHash'] = singleInitialItemHash;
-			data['reusablePlugItems'] = reusablePlugItems.map((item)=>item.toMap());
-			data['preventInitializationOnVendorPurchase'] = preventInitializationOnVendorPurchase;
-			data['hidePerksInItemTooltip'] = hidePerksInItemTooltip;
-			data['plugSources'] = plugSources;
-			data['reusablePlugSetHash'] = reusablePlugSetHash;
-			data['randomizedPlugItems'] = randomizedPlugItems.map((item)=>item.toMap());
-			data['defaultVisible'] = defaultVisible;
+			data['socketTypeHash'] = this.socketTypeHash;
+			data['singleInitialItemHash'] = this.singleInitialItemHash;
+			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap());
+			data['preventInitializationOnVendorPurchase'] = this.preventInitializationOnVendorPurchase;
+			data['hidePerksInItemTooltip'] = this.hidePerksInItemTooltip;
+			data['plugSources'] = this.plugSources;
+			data['reusablePlugSetHash'] = this.reusablePlugSetHash;
+			data['randomizedPlugItems'] = this.randomizedPlugItems.map((item)=>item.toMap());
+			data['defaultVisible'] = this.defaultVisible;
+		return data;
 	}
 }

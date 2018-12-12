@@ -35,9 +35,10 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['icon'] = icon;
-			data['name'] = name;
-			data['source'] = source;
-			data['type'] = type;
+			data['icon'] = this.icon;
+			data['name'] = this.name;
+			data['source'] = this.source;
+			data['type'] = this.type;
+		return data;
 	}
 }

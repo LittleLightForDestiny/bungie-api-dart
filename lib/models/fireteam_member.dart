@@ -46,12 +46,13 @@ class FireteamMember{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
-			data['characterId'] = characterId;
-			data['dateJoined'] = dateJoined;
-			data['hasMicrophone'] = hasMicrophone;
-			data['lastPlatformInviteAttemptDate'] = lastPlatformInviteAttemptDate;
-			data['lastPlatformInviteAttemptResult'] = lastPlatformInviteAttemptResult;
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['characterId'] = this.characterId;
+			data['dateJoined'] = this.dateJoined;
+			data['hasMicrophone'] = this.hasMicrophone;
+			data['lastPlatformInviteAttemptDate'] = this.lastPlatformInviteAttemptDate;
+			data['lastPlatformInviteAttemptResult'] = this.lastPlatformInviteAttemptResult;
+		return data;
 	}
 }

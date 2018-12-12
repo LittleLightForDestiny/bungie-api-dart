@@ -32,8 +32,9 @@ class DestinyPresentationChildBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['presentationNodeType'] = presentationNodeType;
-			data['parentPresentationNodeHashes'] = parentPresentationNodeHashes;
-			data['displayStyle'] = displayStyle;
+			data['presentationNodeType'] = this.presentationNodeType;
+			data['parentPresentationNodeHashes'] = this.parentPresentationNodeHashes;
+			data['displayStyle'] = this.displayStyle;
+		return data;
 	}
 }

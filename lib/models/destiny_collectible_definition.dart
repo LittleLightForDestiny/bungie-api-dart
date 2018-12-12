@@ -60,16 +60,17 @@ class DestinyCollectibleDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['scope'] = scope;
-			data['sourceString'] = sourceString;
-			data['sourceHash'] = sourceHash;
-			data['itemHash'] = itemHash;
-			data['acquisitionInfo'] = acquisitionInfo.toMap();
-			data['stateInfo'] = stateInfo.toMap();
-			data['presentationInfo'] = presentationInfo.toMap();
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['scope'] = this.scope;
+			data['sourceString'] = this.sourceString;
+			data['sourceHash'] = this.sourceHash;
+			data['itemHash'] = this.itemHash;
+			data['acquisitionInfo'] = this.acquisitionInfo.toMap();
+			data['stateInfo'] = this.stateInfo.toMap();
+			data['presentationInfo'] = this.presentationInfo.toMap();
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

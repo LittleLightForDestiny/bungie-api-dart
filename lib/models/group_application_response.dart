@@ -26,6 +26,7 @@ class GroupApplicationResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['resolution'] = resolution;
+			data['resolution'] = this.resolution;
+		return data;
 	}
 }

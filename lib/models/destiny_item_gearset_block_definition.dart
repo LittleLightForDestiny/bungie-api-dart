@@ -29,7 +29,8 @@ class DestinyItemGearsetBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['trackingValueMax'] = trackingValueMax;
-			data['itemList'] = itemList;
+			data['trackingValueMax'] = this.trackingValueMax;
+			data['itemList'] = this.itemList;
+		return data;
 	}
 }

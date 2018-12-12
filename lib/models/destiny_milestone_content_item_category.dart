@@ -29,7 +29,8 @@ class DestinyMilestoneContentItemCategory{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['title'] = title;
-			data['itemHashes'] = itemHashes;
+			data['title'] = this.title;
+			data['itemHashes'] = this.itemHashes;
+		return data;
 	}
 }

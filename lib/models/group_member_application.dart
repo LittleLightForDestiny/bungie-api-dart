@@ -52,14 +52,15 @@ class GroupMemberApplication{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupId'] = groupId;
-			data['creationDate'] = creationDate;
-			data['resolveState'] = resolveState;
-			data['resolveDate'] = resolveDate;
-			data['resolvedByMembershipId'] = resolvedByMembershipId;
-			data['requestMessage'] = requestMessage;
-			data['resolveMessage'] = resolveMessage;
-			data['destinyUserInfo'] = destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['groupId'] = this.groupId;
+			data['creationDate'] = this.creationDate;
+			data['resolveState'] = this.resolveState;
+			data['resolveDate'] = this.resolveDate;
+			data['resolvedByMembershipId'] = this.resolvedByMembershipId;
+			data['requestMessage'] = this.requestMessage;
+			data['resolveMessage'] = this.resolveMessage;
+			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+		return data;
 	}
 }

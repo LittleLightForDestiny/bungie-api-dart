@@ -39,10 +39,11 @@ class DestinyItemStatBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['disablePrimaryStatDisplay'] = disablePrimaryStatDisplay;
-			data['statGroupHash'] = statGroupHash;
-			data['stats'] = stats;
-			data['hasDisplayableStats'] = hasDisplayableStats;
-			data['primaryBaseStatHash'] = primaryBaseStatHash;
+			data['disablePrimaryStatDisplay'] = this.disablePrimaryStatDisplay;
+			data['statGroupHash'] = this.statGroupHash;
+			data['stats'] = this.stats;
+			data['hasDisplayableStats'] = this.hasDisplayableStats;
+			data['primaryBaseStatHash'] = this.primaryBaseStatHash;
+		return data;
 	}
 }

@@ -26,6 +26,7 @@ class DestinyItemCreationEntryLevelDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['level'] = level;
+			data['level'] = this.level;
+		return data;
 	}
 }

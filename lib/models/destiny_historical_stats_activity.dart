@@ -41,11 +41,12 @@ class DestinyHistoricalStatsActivity{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['referenceId'] = referenceId;
-			data['directorActivityHash'] = directorActivityHash;
-			data['instanceId'] = instanceId;
-			data['mode'] = mode;
-			data['modes'] = modes;
-			data['isPrivate'] = isPrivate;
+			data['referenceId'] = this.referenceId;
+			data['directorActivityHash'] = this.directorActivityHash;
+			data['instanceId'] = this.instanceId;
+			data['mode'] = this.mode;
+			data['modes'] = this.modes;
+			data['isPrivate'] = this.isPrivate;
+		return data;
 	}
 }

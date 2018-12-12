@@ -77,23 +77,24 @@ class GroupAction{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupType'] = groupType;
-			data['name'] = name;
-			data['about'] = about;
-			data['motto'] = motto;
-			data['theme'] = theme;
-			data['avatarImageIndex'] = avatarImageIndex;
-			data['tags'] = tags;
-			data['isPublic'] = isPublic;
-			data['membershipOption'] = membershipOption;
-			data['isPublicTopicAdminOnly'] = isPublicTopicAdminOnly;
-			data['isDefaultPostPublic'] = isDefaultPostPublic;
-			data['allowChat'] = allowChat;
-			data['isDefaultPostAlliance'] = isDefaultPostAlliance;
-			data['chatSecurity'] = chatSecurity;
-			data['callsign'] = callsign;
-			data['locale'] = locale;
-			data['homepage'] = homepage;
-			data['platformMembershipType'] = platformMembershipType;
+			data['groupType'] = this.groupType;
+			data['name'] = this.name;
+			data['about'] = this.about;
+			data['motto'] = this.motto;
+			data['theme'] = this.theme;
+			data['avatarImageIndex'] = this.avatarImageIndex;
+			data['tags'] = this.tags;
+			data['isPublic'] = this.isPublic;
+			data['membershipOption'] = this.membershipOption;
+			data['isPublicTopicAdminOnly'] = this.isPublicTopicAdminOnly;
+			data['isDefaultPostPublic'] = this.isDefaultPostPublic;
+			data['allowChat'] = this.allowChat;
+			data['isDefaultPostAlliance'] = this.isDefaultPostAlliance;
+			data['chatSecurity'] = this.chatSecurity;
+			data['callsign'] = this.callsign;
+			data['locale'] = this.locale;
+			data['homepage'] = this.homepage;
+			data['platformMembershipType'] = this.platformMembershipType;
+		return data;
 	}
 }

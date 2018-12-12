@@ -36,9 +36,10 @@ class DestinyItemPreviewBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['screenStyle'] = screenStyle;
-			data['previewVendorHash'] = previewVendorHash;
-			data['previewActionString'] = previewActionString;
-			data['derivedItemCategories'] = derivedItemCategories.map((item)=>item.toMap());
+			data['screenStyle'] = this.screenStyle;
+			data['previewVendorHash'] = this.previewVendorHash;
+			data['previewActionString'] = this.previewActionString;
+			data['derivedItemCategories'] = this.derivedItemCategories.map((item)=>item.toMap());
+		return data;
 	}
 }

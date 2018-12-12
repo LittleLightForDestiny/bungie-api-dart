@@ -41,10 +41,11 @@ class DestinyHistoricalStatsValue{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statId'] = statId;
-			data['basic'] = basic;
-			data['pga'] = pga;
-			data['weighted'] = weighted;
-			data['activityId'] = activityId;
+			data['statId'] = this.statId;
+			data['basic'] = this.basic;
+			data['pga'] = this.pga;
+			data['weighted'] = this.weighted;
+			data['activityId'] = this.activityId;
+		return data;
 	}
 }

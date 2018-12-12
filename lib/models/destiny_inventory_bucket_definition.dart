@@ -60,17 +60,18 @@ class DestinyInventoryBucketDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['scope'] = scope;
-			data['category'] = category;
-			data['bucketOrder'] = bucketOrder;
-			data['itemCount'] = itemCount;
-			data['location'] = location;
-			data['hasTransferDestination'] = hasTransferDestination;
-			data['enabled'] = enabled;
-			data['fifo'] = fifo;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['scope'] = this.scope;
+			data['category'] = this.category;
+			data['bucketOrder'] = this.bucketOrder;
+			data['itemCount'] = this.itemCount;
+			data['location'] = this.location;
+			data['hasTransferDestination'] = this.hasTransferDestination;
+			data['enabled'] = this.enabled;
+			data['fifo'] = this.fifo;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

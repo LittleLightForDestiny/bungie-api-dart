@@ -26,6 +26,7 @@ class DestinyArtDyeReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['artDyeChannelHash'] = artDyeChannelHash;
+			data['artDyeChannelHash'] = this.artDyeChannelHash;
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class DateRange{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['start'] = start;
-			data['end'] = end;
+			data['start'] = this.start;
+			data['end'] = this.end;
+		return data;
 	}
 }

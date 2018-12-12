@@ -50,14 +50,15 @@ class DestinyVendorActionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['description'] = description;
-			data['executeSeconds'] = executeSeconds;
-			data['icon'] = icon;
-			data['name'] = name;
-			data['verb'] = verb;
-			data['isPositive'] = isPositive;
-			data['actionId'] = actionId;
-			data['actionHash'] = actionHash;
-			data['autoPerformAction'] = autoPerformAction;
+			data['description'] = this.description;
+			data['executeSeconds'] = this.executeSeconds;
+			data['icon'] = this.icon;
+			data['name'] = this.name;
+			data['verb'] = this.verb;
+			data['isPositive'] = this.isPositive;
+			data['actionId'] = this.actionId;
+			data['actionHash'] = this.actionHash;
+			data['autoPerformAction'] = this.autoPerformAction;
+		return data;
 	}
 }

@@ -35,8 +35,9 @@ class DestinyLinkedProfilesResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['profiles'] = profiles.map((item)=>item.toMap());
-			data['bnetMembership'] = bnetMembership;
-			data['profilesWithErrors'] = profilesWithErrors.map((item)=>item.toMap());
+			data['profiles'] = this.profiles.map((item)=>item.toMap());
+			data['bnetMembership'] = this.bnetMembership;
+			data['profilesWithErrors'] = this.profilesWithErrors.map((item)=>item.toMap());
+		return data;
 	}
 }

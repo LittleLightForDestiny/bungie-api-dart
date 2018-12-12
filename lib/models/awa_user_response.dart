@@ -32,8 +32,9 @@ class AwaUserResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['selection'] = selection;
-			data['correlationId'] = correlationId;
-			data['nonce'] = nonce;
+			data['selection'] = this.selection;
+			data['correlationId'] = this.correlationId;
+			data['nonce'] = this.nonce;
+		return data;
 	}
 }

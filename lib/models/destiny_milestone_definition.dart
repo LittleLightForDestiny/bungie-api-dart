@@ -89,25 +89,26 @@ class DestinyMilestoneDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['image'] = image;
-			data['milestoneType'] = milestoneType;
-			data['recruitable'] = recruitable;
-			data['friendlyName'] = friendlyName;
-			data['showInExplorer'] = showInExplorer;
-			data['showInMilestones'] = showInMilestones;
-			data['explorePrioritizesActivityImage'] = explorePrioritizesActivityImage;
-			data['hasPredictableDates'] = hasPredictableDates;
-			data['quests'] = quests;
-			data['rewards'] = rewards;
-			data['vendorsDisplayTitle'] = vendorsDisplayTitle;
-			data['vendors'] = vendors.map((item)=>item.toMap());
-			data['values'] = values;
-			data['isInGameMilestone'] = isInGameMilestone;
-			data['activities'] = activities.map((item)=>item.toMap());
-			data['defaultOrder'] = defaultOrder;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['image'] = this.image;
+			data['milestoneType'] = this.milestoneType;
+			data['recruitable'] = this.recruitable;
+			data['friendlyName'] = this.friendlyName;
+			data['showInExplorer'] = this.showInExplorer;
+			data['showInMilestones'] = this.showInMilestones;
+			data['explorePrioritizesActivityImage'] = this.explorePrioritizesActivityImage;
+			data['hasPredictableDates'] = this.hasPredictableDates;
+			data['quests'] = this.quests;
+			data['rewards'] = this.rewards;
+			data['vendorsDisplayTitle'] = this.vendorsDisplayTitle;
+			data['vendors'] = this.vendors.map((item)=>item.toMap());
+			data['values'] = this.values;
+			data['isInGameMilestone'] = this.isInGameMilestone;
+			data['activities'] = this.activities.map((item)=>item.toMap());
+			data['defaultOrder'] = this.defaultOrder;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

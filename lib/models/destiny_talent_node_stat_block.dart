@@ -31,7 +31,8 @@ class DestinyTalentNodeStatBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['currentStepStats'] = currentStepStats.map((item)=>item.toMap());
-			data['nextStepStats'] = nextStepStats.map((item)=>item.toMap());
+			data['currentStepStats'] = this.currentStepStats.map((item)=>item.toMap());
+			data['nextStepStats'] = this.nextStepStats.map((item)=>item.toMap());
+		return data;
 	}
 }

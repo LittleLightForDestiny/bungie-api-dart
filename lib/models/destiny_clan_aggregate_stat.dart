@@ -33,8 +33,9 @@ class DestinyClanAggregateStat{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['mode'] = mode;
-			data['statId'] = statId;
-			data['value'] = value;
+			data['mode'] = this.mode;
+			data['statId'] = this.statId;
+			data['value'] = this.value;
+		return data;
 	}
 }

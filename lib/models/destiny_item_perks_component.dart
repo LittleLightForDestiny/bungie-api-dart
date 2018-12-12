@@ -27,6 +27,7 @@ class DestinyItemPerksComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['perks'] = perks.map((item)=>item.toMap());
+			data['perks'] = this.perks.map((item)=>item.toMap());
+		return data;
 	}
 }

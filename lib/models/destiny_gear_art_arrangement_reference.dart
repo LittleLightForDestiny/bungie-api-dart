@@ -29,7 +29,8 @@ class DestinyGearArtArrangementReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['classHash'] = classHash;
-			data['artArrangementHash'] = artArrangementHash;
+			data['classHash'] = this.classHash;
+			data['artArrangementHash'] = this.artArrangementHash;
+		return data;
 	}
 }

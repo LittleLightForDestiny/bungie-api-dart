@@ -29,7 +29,8 @@ class GearAssetDataBaseDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['version'] = version;
-			data['path'] = path;
+			data['version'] = this.version;
+			data['path'] = this.path;
+		return data;
 	}
 }

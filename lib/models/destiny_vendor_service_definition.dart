@@ -26,6 +26,7 @@ class DestinyVendorServiceDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
+			data['name'] = this.name;
+		return data;
 	}
 }

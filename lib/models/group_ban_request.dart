@@ -29,7 +29,8 @@ class GroupBanRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['comment'] = comment;
-			data['length'] = length;
+			data['comment'] = this.comment;
+			data['length'] = this.length;
+		return data;
 	}
 }

@@ -30,7 +30,8 @@ class DestinyPresentationNodeComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['state'] = state;
-			data['objective'] = objective.toMap();
+			data['state'] = this.state;
+			data['objective'] = this.objective.toMap();
+		return data;
 	}
 }

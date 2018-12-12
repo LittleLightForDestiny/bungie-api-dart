@@ -40,10 +40,11 @@ class DestinyMilestoneChallengeActivity{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['challenges'] = challenges.map((item)=>item.toMap());
-			data['modifierHashes'] = modifierHashes;
-			data['loadoutRequirementIndex'] = loadoutRequirementIndex;
-			data['phases'] = phases.map((item)=>item.toMap());
+			data['activityHash'] = this.activityHash;
+			data['challenges'] = this.challenges.map((item)=>item.toMap());
+			data['modifierHashes'] = this.modifierHashes;
+			data['loadoutRequirementIndex'] = this.loadoutRequirementIndex;
+			data['phases'] = this.phases.map((item)=>item.toMap());
+		return data;
 	}
 }

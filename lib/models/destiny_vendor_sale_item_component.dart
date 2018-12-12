@@ -58,16 +58,17 @@ class DestinyVendorSaleItemComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorItemIndex'] = vendorItemIndex;
-			data['itemHash'] = itemHash;
-			data['overrideStyleItemHash'] = overrideStyleItemHash;
-			data['quantity'] = quantity;
-			data['saleStatus'] = saleStatus;
-			data['costs'] = costs.map((item)=>item.toMap());
-			data['requiredUnlocks'] = requiredUnlocks;
-			data['unlockStatuses'] = unlockStatuses.map((item)=>item.toMap());
-			data['failureIndexes'] = failureIndexes;
-			data['augments'] = augments;
-			data['overrideNextRefreshDate'] = overrideNextRefreshDate;
+			data['vendorItemIndex'] = this.vendorItemIndex;
+			data['itemHash'] = this.itemHash;
+			data['overrideStyleItemHash'] = this.overrideStyleItemHash;
+			data['quantity'] = this.quantity;
+			data['saleStatus'] = this.saleStatus;
+			data['costs'] = this.costs.map((item)=>item.toMap());
+			data['requiredUnlocks'] = this.requiredUnlocks;
+			data['unlockStatuses'] = this.unlockStatuses.map((item)=>item.toMap());
+			data['failureIndexes'] = this.failureIndexes;
+			data['augments'] = this.augments;
+			data['overrideNextRefreshDate'] = this.overrideNextRefreshDate;
+		return data;
 	}
 }

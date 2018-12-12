@@ -29,7 +29,8 @@ class DestinyPublicMilestoneVendor{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
-			data['previewItemHash'] = previewItemHash;
+			data['vendorHash'] = this.vendorHash;
+			data['previewItemHash'] = this.previewItemHash;
+		return data;
 	}
 }

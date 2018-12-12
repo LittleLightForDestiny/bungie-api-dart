@@ -37,9 +37,10 @@ class DestinyItemTalentGridComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['talentGridHash'] = talentGridHash;
-			data['nodes'] = nodes.map((item)=>item.toMap());
-			data['isGridComplete'] = isGridComplete;
-			data['gridProgression'] = gridProgression;
+			data['talentGridHash'] = this.talentGridHash;
+			data['nodes'] = this.nodes.map((item)=>item.toMap());
+			data['isGridComplete'] = this.isGridComplete;
+			data['gridProgression'] = this.gridProgression;
+		return data;
 	}
 }

@@ -29,7 +29,8 @@ class DestinyActivityGraphNodeActivityDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodeActivityId'] = nodeActivityId;
-			data['activityHash'] = activityHash;
+			data['nodeActivityId'] = this.nodeActivityId;
+			data['activityHash'] = this.activityHash;
+		return data;
 	}
 }

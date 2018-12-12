@@ -26,6 +26,7 @@ class DestinyPresentationNodeRequirementsBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['entitlementUnavailableMessage'] = entitlementUnavailableMessage;
+			data['entitlementUnavailableMessage'] = this.entitlementUnavailableMessage;
+		return data;
 	}
 }

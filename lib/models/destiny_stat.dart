@@ -32,8 +32,9 @@ class DestinyStat{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statHash'] = statHash;
-			data['value'] = value;
-			data['maximumValue'] = maximumValue;
+			data['statHash'] = this.statHash;
+			data['value'] = this.value;
+			data['maximumValue'] = this.maximumValue;
+		return data;
 	}
 }

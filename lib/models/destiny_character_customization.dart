@@ -59,17 +59,18 @@ class DestinyCharacterCustomization{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['personality'] = personality;
-			data['face'] = face;
-			data['skinColor'] = skinColor;
-			data['lipColor'] = lipColor;
-			data['eyeColor'] = eyeColor;
-			data['hairColors'] = hairColors;
-			data['featureColors'] = featureColors;
-			data['decalColor'] = decalColor;
-			data['wearHelmet'] = wearHelmet;
-			data['hairIndex'] = hairIndex;
-			data['featureIndex'] = featureIndex;
-			data['decalIndex'] = decalIndex;
+			data['personality'] = this.personality;
+			data['face'] = this.face;
+			data['skinColor'] = this.skinColor;
+			data['lipColor'] = this.lipColor;
+			data['eyeColor'] = this.eyeColor;
+			data['hairColors'] = this.hairColors;
+			data['featureColors'] = this.featureColors;
+			data['decalColor'] = this.decalColor;
+			data['wearHelmet'] = this.wearHelmet;
+			data['hairIndex'] = this.hairIndex;
+			data['featureIndex'] = this.featureIndex;
+			data['decalIndex'] = this.decalIndex;
+		return data;
 	}
 }

@@ -35,9 +35,10 @@ class DestinyInventoryItemStatDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['statHash'] = statHash;
-			data['value'] = value;
-			data['minimum'] = minimum;
-			data['maximum'] = maximum;
+			data['statHash'] = this.statHash;
+			data['value'] = this.value;
+			data['minimum'] = this.minimum;
+			data['maximum'] = this.maximum;
+		return data;
 	}
 }

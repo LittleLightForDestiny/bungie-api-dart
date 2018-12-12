@@ -68,20 +68,21 @@ class TrendingEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['weight'] = weight;
-			data['isFeatured'] = isFeatured;
-			data['identifier'] = identifier;
-			data['entityType'] = entityType;
-			data['displayName'] = displayName;
-			data['tagline'] = tagline;
-			data['image'] = image;
-			data['startDate'] = startDate;
-			data['endDate'] = endDate;
-			data['link'] = link;
-			data['webmVideo'] = webmVideo;
-			data['mp4Video'] = mp4Video;
-			data['featureImage'] = featureImage;
-			data['items'] = items.map((item)=>item.toMap());
-			data['creationDate'] = creationDate;
+			data['weight'] = this.weight;
+			data['isFeatured'] = this.isFeatured;
+			data['identifier'] = this.identifier;
+			data['entityType'] = this.entityType;
+			data['displayName'] = this.displayName;
+			data['tagline'] = this.tagline;
+			data['image'] = this.image;
+			data['startDate'] = this.startDate;
+			data['endDate'] = this.endDate;
+			data['link'] = this.link;
+			data['webmVideo'] = this.webmVideo;
+			data['mp4Video'] = this.mp4Video;
+			data['featureImage'] = this.featureImage;
+			data['items'] = this.items.map((item)=>item.toMap());
+			data['creationDate'] = this.creationDate;
+		return data;
 	}
 }

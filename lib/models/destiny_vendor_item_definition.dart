@@ -102,30 +102,31 @@ class DestinyVendorItemDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorItemIndex'] = vendorItemIndex;
-			data['itemHash'] = itemHash;
-			data['quantity'] = quantity;
-			data['failureIndexes'] = failureIndexes;
-			data['currencies'] = currencies.map((item)=>item.toMap());
-			data['refundPolicy'] = refundPolicy;
-			data['refundTimeLimit'] = refundTimeLimit;
-			data['creationLevels'] = creationLevels.map((item)=>item.toMap());
-			data['displayCategoryIndex'] = displayCategoryIndex;
-			data['categoryIndex'] = categoryIndex;
-			data['originalCategoryIndex'] = originalCategoryIndex;
-			data['minimumLevel'] = minimumLevel;
-			data['maximumLevel'] = maximumLevel;
-			data['action'] = action;
-			data['displayCategory'] = displayCategory;
-			data['inventoryBucketHash'] = inventoryBucketHash;
-			data['visibilityScope'] = visibilityScope;
-			data['purchasableScope'] = purchasableScope;
-			data['exclusivity'] = exclusivity;
-			data['isOffer'] = isOffer;
-			data['isCrm'] = isCrm;
-			data['sortValue'] = sortValue;
-			data['expirationTooltip'] = expirationTooltip;
-			data['redirectToSaleIndexes'] = redirectToSaleIndexes;
-			data['socketOverrides'] = socketOverrides.map((item)=>item.toMap());
+			data['vendorItemIndex'] = this.vendorItemIndex;
+			data['itemHash'] = this.itemHash;
+			data['quantity'] = this.quantity;
+			data['failureIndexes'] = this.failureIndexes;
+			data['currencies'] = this.currencies.map((item)=>item.toMap());
+			data['refundPolicy'] = this.refundPolicy;
+			data['refundTimeLimit'] = this.refundTimeLimit;
+			data['creationLevels'] = this.creationLevels.map((item)=>item.toMap());
+			data['displayCategoryIndex'] = this.displayCategoryIndex;
+			data['categoryIndex'] = this.categoryIndex;
+			data['originalCategoryIndex'] = this.originalCategoryIndex;
+			data['minimumLevel'] = this.minimumLevel;
+			data['maximumLevel'] = this.maximumLevel;
+			data['action'] = this.action;
+			data['displayCategory'] = this.displayCategory;
+			data['inventoryBucketHash'] = this.inventoryBucketHash;
+			data['visibilityScope'] = this.visibilityScope;
+			data['purchasableScope'] = this.purchasableScope;
+			data['exclusivity'] = this.exclusivity;
+			data['isOffer'] = this.isOffer;
+			data['isCrm'] = this.isCrm;
+			data['sortValue'] = this.sortValue;
+			data['expirationTooltip'] = this.expirationTooltip;
+			data['redirectToSaleIndexes'] = this.redirectToSaleIndexes;
+			data['socketOverrides'] = this.socketOverrides.map((item)=>item.toMap());
+		return data;
 	}
 }

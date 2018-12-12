@@ -38,10 +38,11 @@ class DestinyTalentExclusiveGroup{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groupHash'] = groupHash;
-			data['loreHash'] = loreHash;
-			data['nodeHashes'] = nodeHashes;
-			data['opposingGroupHashes'] = opposingGroupHashes;
-			data['opposingNodeHashes'] = opposingNodeHashes;
+			data['groupHash'] = this.groupHash;
+			data['loreHash'] = this.loreHash;
+			data['nodeHashes'] = this.nodeHashes;
+			data['opposingGroupHashes'] = this.opposingGroupHashes;
+			data['opposingNodeHashes'] = this.opposingNodeHashes;
+		return data;
 	}
 }

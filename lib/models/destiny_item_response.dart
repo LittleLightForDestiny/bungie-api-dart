@@ -58,14 +58,15 @@ class DestinyItemResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['characterId'] = characterId;
-			data['item'] = item;
-			data['instance'] = instance;
-			data['objectives'] = objectives;
-			data['perks'] = perks;
-			data['renderData'] = renderData;
-			data['stats'] = stats;
-			data['talentGrid'] = talentGrid;
-			data['sockets'] = sockets;
+			data['characterId'] = this.characterId;
+			data['item'] = this.item;
+			data['instance'] = this.instance;
+			data['objectives'] = this.objectives;
+			data['perks'] = this.perks;
+			data['renderData'] = this.renderData;
+			data['stats'] = this.stats;
+			data['talentGrid'] = this.talentGrid;
+			data['sockets'] = this.sockets;
+		return data;
 	}
 }

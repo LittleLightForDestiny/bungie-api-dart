@@ -32,8 +32,9 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collapsible'] = collapsible;
-			data['inventoryBucketHash'] = inventoryBucketHash;
-			data['sortItemsBy'] = sortItemsBy;
+			data['collapsible'] = this.collapsible;
+			data['inventoryBucketHash'] = this.inventoryBucketHash;
+			data['sortItemsBy'] = this.sortItemsBy;
+		return data;
 	}
 }

@@ -27,6 +27,7 @@ class GroupMembershipBase{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['group'] = group.toMap();
+			data['group'] = this.group.toMap();
+		return data;
 	}
 }

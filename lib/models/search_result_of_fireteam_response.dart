@@ -43,11 +43,12 @@ class SearchResultOfFireteamResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['results'] = results.map((item)=>item.toMap());
-			data['totalResults'] = totalResults;
-			data['hasMore'] = hasMore;
-			data['query'] = query.toMap();
-			data['replacementContinuationToken'] = replacementContinuationToken;
-			data['useTotalResults'] = useTotalResults;
+			data['results'] = this.results.map((item)=>item.toMap());
+			data['totalResults'] = this.totalResults;
+			data['hasMore'] = this.hasMore;
+			data['query'] = this.query.toMap();
+			data['replacementContinuationToken'] = this.replacementContinuationToken;
+			data['useTotalResults'] = this.useTotalResults;
+		return data;
 	}
 }

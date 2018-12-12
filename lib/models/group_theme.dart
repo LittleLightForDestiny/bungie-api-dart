@@ -32,8 +32,9 @@ class GroupTheme{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['name'] = name;
-			data['folder'] = folder;
-			data['description'] = description;
+			data['name'] = this.name;
+			data['folder'] = this.folder;
+			data['description'] = this.description;
+		return data;
 	}
 }

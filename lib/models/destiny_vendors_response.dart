@@ -47,11 +47,12 @@ class DestinyVendorsResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorGroups'] = vendorGroups;
-			data['vendors'] = vendors;
-			data['categories'] = categories;
-			data['sales'] = sales;
-			data['itemComponents'] = itemComponents;
-			data['currencyLookups'] = currencyLookups;
+			data['vendorGroups'] = this.vendorGroups;
+			data['vendors'] = this.vendors;
+			data['categories'] = this.categories;
+			data['sales'] = this.sales;
+			data['itemComponents'] = this.itemComponents;
+			data['currencyLookups'] = this.currencyLookups;
+		return data;
 	}
 }

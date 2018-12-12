@@ -27,6 +27,7 @@ class DestinyBaseItemComponentSetOfint64{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectives'] = objectives.toMap();
+			data['objectives'] = this.objectives.toMap();
+		return data;
 	}
 }

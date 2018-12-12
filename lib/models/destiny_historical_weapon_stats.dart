@@ -30,7 +30,8 @@ class DestinyHistoricalWeaponStats{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['referenceId'] = referenceId;
-			data['values'] = values;
+			data['referenceId'] = this.referenceId;
+			data['values'] = this.values;
+		return data;
 	}
 }

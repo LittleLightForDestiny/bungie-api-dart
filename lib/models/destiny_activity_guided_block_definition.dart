@@ -32,8 +32,9 @@ class DestinyActivityGuidedBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['guidedMaxLobbySize'] = guidedMaxLobbySize;
-			data['guidedMinLobbySize'] = guidedMinLobbySize;
-			data['guidedDisbandCount'] = guidedDisbandCount;
+			data['guidedMaxLobbySize'] = this.guidedMaxLobbySize;
+			data['guidedMinLobbySize'] = this.guidedMinLobbySize;
+			data['guidedDisbandCount'] = this.guidedDisbandCount;
+		return data;
 	}
 }

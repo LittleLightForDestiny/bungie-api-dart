@@ -29,7 +29,8 @@ class DestinyObjectivePerkEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['perkHash'] = perkHash;
-			data['style'] = style;
+			data['perkHash'] = this.perkHash;
+			data['style'] = this.style;
+		return data;
 	}
 }

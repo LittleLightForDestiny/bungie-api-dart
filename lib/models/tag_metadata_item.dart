@@ -38,10 +38,11 @@ class TagMetadataItem{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['description'] = description;
-			data['tagText'] = tagText;
-			data['groups'] = groups;
-			data['isDefault'] = isDefault;
-			data['name'] = name;
+			data['description'] = this.description;
+			data['tagText'] = this.tagText;
+			data['groups'] = this.groups;
+			data['isDefault'] = this.isDefault;
+			data['name'] = this.name;
+		return data;
 	}
 }

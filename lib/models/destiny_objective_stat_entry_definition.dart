@@ -30,7 +30,8 @@ class DestinyObjectiveStatEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stat'] = stat;
-			data['style'] = style;
+			data['stat'] = this.stat;
+			data['style'] = this.style;
+		return data;
 	}
 }

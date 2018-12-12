@@ -38,10 +38,11 @@ class DestinyTalentNodeStepGroups{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['weaponPerformance'] = weaponPerformance;
-			data['impactEffects'] = impactEffects;
-			data['guardianAttributes'] = guardianAttributes;
-			data['lightAbilities'] = lightAbilities;
-			data['damageTypes'] = damageTypes;
+			data['weaponPerformance'] = this.weaponPerformance;
+			data['impactEffects'] = this.impactEffects;
+			data['guardianAttributes'] = this.guardianAttributes;
+			data['lightAbilities'] = this.lightAbilities;
+			data['damageTypes'] = this.damageTypes;
+		return data;
 	}
 }

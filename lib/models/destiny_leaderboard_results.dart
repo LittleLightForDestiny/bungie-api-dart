@@ -29,7 +29,8 @@ class DestinyLeaderboardResults{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['focusMembershipId'] = focusMembershipId;
-			data['focusCharacterId'] = focusCharacterId;
+			data['focusMembershipId'] = this.focusMembershipId;
+			data['focusCharacterId'] = this.focusCharacterId;
+		return data;
 	}
 }

@@ -32,8 +32,9 @@ class DestinyItemPerkEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['requirementDisplayString'] = requirementDisplayString;
-			data['perkHash'] = perkHash;
-			data['perkVisibility'] = perkVisibility;
+			data['requirementDisplayString'] = this.requirementDisplayString;
+			data['perkHash'] = this.perkHash;
+			data['perkVisibility'] = this.perkVisibility;
+		return data;
 	}
 }

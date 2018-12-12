@@ -52,14 +52,15 @@ class DestinyFactionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['progressionHash'] = progressionHash;
-			data['tokenValues'] = tokenValues;
-			data['rewardItemHash'] = rewardItemHash;
-			data['rewardVendorHash'] = rewardVendorHash;
-			data['vendors'] = vendors.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['progressionHash'] = this.progressionHash;
+			data['tokenValues'] = this.tokenValues;
+			data['rewardItemHash'] = this.rewardItemHash;
+			data['rewardVendorHash'] = this.rewardVendorHash;
+			data['vendors'] = this.vendors.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

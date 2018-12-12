@@ -29,7 +29,8 @@ class DestinyActivityGraphConnectionDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['sourceNodeHash'] = sourceNodeHash;
-			data['destNodeHash'] = destNodeHash;
+			data['sourceNodeHash'] = this.sourceNodeHash;
+			data['destNodeHash'] = this.destNodeHash;
+		return data;
 	}
 }

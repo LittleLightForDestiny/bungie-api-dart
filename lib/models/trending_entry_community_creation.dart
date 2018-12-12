@@ -44,12 +44,13 @@ class TrendingEntryCommunityCreation{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['media'] = media;
-			data['title'] = title;
-			data['author'] = author;
-			data['authorMembershipId'] = authorMembershipId;
-			data['postId'] = postId;
-			data['body'] = body;
-			data['upvotes'] = upvotes;
+			data['media'] = this.media;
+			data['title'] = this.title;
+			data['author'] = this.author;
+			data['authorMembershipId'] = this.authorMembershipId;
+			data['postId'] = this.postId;
+			data['body'] = this.body;
+			data['upvotes'] = this.upvotes;
+		return data;
 	}
 }

@@ -91,27 +91,28 @@ class DestinyCharacterComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['membershipId'] = membershipId;
-			data['membershipType'] = membershipType;
-			data['characterId'] = characterId;
-			data['dateLastPlayed'] = dateLastPlayed;
-			data['minutesPlayedThisSession'] = minutesPlayedThisSession;
-			data['minutesPlayedTotal'] = minutesPlayedTotal;
-			data['light'] = light;
-			data['stats'] = stats;
-			data['raceHash'] = raceHash;
-			data['genderHash'] = genderHash;
-			data['classHash'] = classHash;
-			data['raceType'] = raceType;
-			data['classType'] = classType;
-			data['genderType'] = genderType;
-			data['emblemPath'] = emblemPath;
-			data['emblemBackgroundPath'] = emblemBackgroundPath;
-			data['emblemHash'] = emblemHash;
-			data['emblemColor'] = emblemColor;
-			data['levelProgression'] = levelProgression;
-			data['baseCharacterLevel'] = baseCharacterLevel;
-			data['percentToNextLevel'] = percentToNextLevel;
-			data['titleRecordHash'] = titleRecordHash;
+			data['membershipId'] = this.membershipId;
+			data['membershipType'] = this.membershipType;
+			data['characterId'] = this.characterId;
+			data['dateLastPlayed'] = this.dateLastPlayed;
+			data['minutesPlayedThisSession'] = this.minutesPlayedThisSession;
+			data['minutesPlayedTotal'] = this.minutesPlayedTotal;
+			data['light'] = this.light;
+			data['stats'] = this.stats;
+			data['raceHash'] = this.raceHash;
+			data['genderHash'] = this.genderHash;
+			data['classHash'] = this.classHash;
+			data['raceType'] = this.raceType;
+			data['classType'] = this.classType;
+			data['genderType'] = this.genderType;
+			data['emblemPath'] = this.emblemPath;
+			data['emblemBackgroundPath'] = this.emblemBackgroundPath;
+			data['emblemHash'] = this.emblemHash;
+			data['emblemColor'] = this.emblemColor;
+			data['levelProgression'] = this.levelProgression;
+			data['baseCharacterLevel'] = this.baseCharacterLevel;
+			data['percentToNextLevel'] = this.percentToNextLevel;
+			data['titleRecordHash'] = this.titleRecordHash;
+		return data;
 	}
 }

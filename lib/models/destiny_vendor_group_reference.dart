@@ -26,6 +26,7 @@ class DestinyVendorGroupReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorGroupHash'] = vendorGroupHash;
+			data['vendorGroupHash'] = this.vendorGroupHash;
+		return data;
 	}
 }

@@ -41,11 +41,12 @@ class DestinyItemQualityBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemLevels'] = itemLevels;
-			data['qualityLevel'] = qualityLevel;
-			data['infusionCategoryName'] = infusionCategoryName;
-			data['infusionCategoryHash'] = infusionCategoryHash;
-			data['infusionCategoryHashes'] = infusionCategoryHashes;
-			data['progressionLevelRequirementHash'] = progressionLevelRequirementHash;
+			data['itemLevels'] = this.itemLevels;
+			data['qualityLevel'] = this.qualityLevel;
+			data['infusionCategoryName'] = this.infusionCategoryName;
+			data['infusionCategoryHash'] = this.infusionCategoryHash;
+			data['infusionCategoryHashes'] = this.infusionCategoryHashes;
+			data['progressionLevelRequirementHash'] = this.progressionLevelRequirementHash;
+		return data;
 	}
 }

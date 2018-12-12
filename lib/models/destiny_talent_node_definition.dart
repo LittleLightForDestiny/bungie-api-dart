@@ -82,24 +82,25 @@ class DestinyTalentNodeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodeIndex'] = nodeIndex;
-			data['nodeHash'] = nodeHash;
-			data['row'] = row;
-			data['column'] = column;
-			data['prerequisiteNodeIndexes'] = prerequisiteNodeIndexes;
-			data['binaryPairNodeIndex'] = binaryPairNodeIndex;
-			data['autoUnlocks'] = autoUnlocks;
-			data['lastStepRepeats'] = lastStepRepeats;
-			data['isRandom'] = isRandom;
-			data['randomActivationRequirement'] = randomActivationRequirement;
-			data['isRandomRepurchasable'] = isRandomRepurchasable;
-			data['steps'] = steps.map((item)=>item.toMap());
-			data['exclusiveWithNodeHashes'] = exclusiveWithNodeHashes;
-			data['randomStartProgressionBarAtProgression'] = randomStartProgressionBarAtProgression;
-			data['layoutIdentifier'] = layoutIdentifier;
-			data['groupHash'] = groupHash;
-			data['loreHash'] = loreHash;
-			data['nodeStyleIdentifier'] = nodeStyleIdentifier;
-			data['ignoreForCompletion'] = ignoreForCompletion;
+			data['nodeIndex'] = this.nodeIndex;
+			data['nodeHash'] = this.nodeHash;
+			data['row'] = this.row;
+			data['column'] = this.column;
+			data['prerequisiteNodeIndexes'] = this.prerequisiteNodeIndexes;
+			data['binaryPairNodeIndex'] = this.binaryPairNodeIndex;
+			data['autoUnlocks'] = this.autoUnlocks;
+			data['lastStepRepeats'] = this.lastStepRepeats;
+			data['isRandom'] = this.isRandom;
+			data['randomActivationRequirement'] = this.randomActivationRequirement;
+			data['isRandomRepurchasable'] = this.isRandomRepurchasable;
+			data['steps'] = this.steps.map((item)=>item.toMap());
+			data['exclusiveWithNodeHashes'] = this.exclusiveWithNodeHashes;
+			data['randomStartProgressionBarAtProgression'] = this.randomStartProgressionBarAtProgression;
+			data['layoutIdentifier'] = this.layoutIdentifier;
+			data['groupHash'] = this.groupHash;
+			data['loreHash'] = this.loreHash;
+			data['nodeStyleIdentifier'] = this.nodeStyleIdentifier;
+			data['ignoreForCompletion'] = this.ignoreForCompletion;
+		return data;
 	}
 }

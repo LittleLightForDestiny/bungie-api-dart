@@ -26,6 +26,7 @@ class DestinyMilestoneVendorDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorHash'] = vendorHash;
+			data['vendorHash'] = this.vendorHash;
+		return data;
 	}
 }

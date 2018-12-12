@@ -119,29 +119,30 @@ class DestinyProfileResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorReceipts'] = vendorReceipts;
-			data['profileInventory'] = profileInventory;
-			data['profileCurrencies'] = profileCurrencies;
-			data['profile'] = profile;
-			data['profileKiosks'] = profileKiosks;
-			data['profilePlugSets'] = profilePlugSets;
-			data['profileProgression'] = profileProgression;
-			data['profilePresentationNodes'] = profilePresentationNodes;
-			data['profileRecords'] = profileRecords;
-			data['profileCollectibles'] = profileCollectibles;
-			data['characters'] = characters;
-			data['characterInventories'] = characterInventories;
-			data['characterProgressions'] = characterProgressions;
-			data['characterRenderData'] = characterRenderData;
-			data['characterActivities'] = characterActivities;
-			data['characterEquipment'] = characterEquipment;
-			data['characterKiosks'] = characterKiosks;
-			data['characterPlugSets'] = characterPlugSets;
-			data['characterUninstancedItemComponents'] = characterUninstancedItemComponents;
-			data['characterPresentationNodes'] = characterPresentationNodes;
-			data['characterRecords'] = characterRecords;
-			data['characterCollectibles'] = characterCollectibles;
-			data['itemComponents'] = itemComponents;
-			data['characterCurrencyLookups'] = characterCurrencyLookups;
+			data['vendorReceipts'] = this.vendorReceipts;
+			data['profileInventory'] = this.profileInventory;
+			data['profileCurrencies'] = this.profileCurrencies;
+			data['profile'] = this.profile;
+			data['profileKiosks'] = this.profileKiosks;
+			data['profilePlugSets'] = this.profilePlugSets;
+			data['profileProgression'] = this.profileProgression;
+			data['profilePresentationNodes'] = this.profilePresentationNodes;
+			data['profileRecords'] = this.profileRecords;
+			data['profileCollectibles'] = this.profileCollectibles;
+			data['characters'] = this.characters;
+			data['characterInventories'] = this.characterInventories;
+			data['characterProgressions'] = this.characterProgressions;
+			data['characterRenderData'] = this.characterRenderData;
+			data['characterActivities'] = this.characterActivities;
+			data['characterEquipment'] = this.characterEquipment;
+			data['characterKiosks'] = this.characterKiosks;
+			data['characterPlugSets'] = this.characterPlugSets;
+			data['characterUninstancedItemComponents'] = this.characterUninstancedItemComponents;
+			data['characterPresentationNodes'] = this.characterPresentationNodes;
+			data['characterRecords'] = this.characterRecords;
+			data['characterCollectibles'] = this.characterCollectibles;
+			data['itemComponents'] = this.itemComponents;
+			data['characterCurrencyLookups'] = this.characterCurrencyLookups;
+		return data;
 	}
 }

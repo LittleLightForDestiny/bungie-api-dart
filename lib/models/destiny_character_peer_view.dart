@@ -27,6 +27,7 @@ class DestinyCharacterPeerView{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['equipment'] = equipment.map((item)=>item.toMap());
+			data['equipment'] = this.equipment.map((item)=>item.toMap());
+		return data;
 	}
 }

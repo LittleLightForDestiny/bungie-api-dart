@@ -33,8 +33,9 @@ class UserToUserContext{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['isFollowing'] = isFollowing;
-			data['ignoreStatus'] = ignoreStatus.toMap();
-			data['globalIgnoreEndDate'] = globalIgnoreEndDate;
+			data['isFollowing'] = this.isFollowing;
+			data['ignoreStatus'] = this.ignoreStatus.toMap();
+			data['globalIgnoreEndDate'] = this.globalIgnoreEndDate;
+		return data;
 	}
 }

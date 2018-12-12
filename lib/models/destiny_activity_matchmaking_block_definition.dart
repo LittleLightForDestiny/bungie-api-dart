@@ -38,10 +38,11 @@ class DestinyActivityMatchmakingBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['isMatchmade'] = isMatchmade;
-			data['minParty'] = minParty;
-			data['maxParty'] = maxParty;
-			data['maxPlayers'] = maxPlayers;
-			data['requiresGuardianOath'] = requiresGuardianOath;
+			data['isMatchmade'] = this.isMatchmade;
+			data['minParty'] = this.minParty;
+			data['maxParty'] = this.maxParty;
+			data['maxPlayers'] = this.maxPlayers;
+			data['requiresGuardianOath'] = this.requiresGuardianOath;
+		return data;
 	}
 }

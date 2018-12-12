@@ -56,16 +56,17 @@ class DestinyProgression{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['progressionHash'] = progressionHash;
-			data['dailyProgress'] = dailyProgress;
-			data['dailyLimit'] = dailyLimit;
-			data['weeklyProgress'] = weeklyProgress;
-			data['weeklyLimit'] = weeklyLimit;
-			data['currentProgress'] = currentProgress;
-			data['level'] = level;
-			data['levelCap'] = levelCap;
-			data['stepIndex'] = stepIndex;
-			data['progressToNextLevel'] = progressToNextLevel;
-			data['nextLevelAt'] = nextLevelAt;
+			data['progressionHash'] = this.progressionHash;
+			data['dailyProgress'] = this.dailyProgress;
+			data['dailyLimit'] = this.dailyLimit;
+			data['weeklyProgress'] = this.weeklyProgress;
+			data['weeklyLimit'] = this.weeklyLimit;
+			data['currentProgress'] = this.currentProgress;
+			data['level'] = this.level;
+			data['levelCap'] = this.levelCap;
+			data['stepIndex'] = this.stepIndex;
+			data['progressToNextLevel'] = this.progressToNextLevel;
+			data['nextLevelAt'] = this.nextLevelAt;
+		return data;
 	}
 }

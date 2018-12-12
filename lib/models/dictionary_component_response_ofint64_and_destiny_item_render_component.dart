@@ -30,7 +30,8 @@ class DictionaryComponentResponseOfint64AndDestinyItemRenderComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = data;
-			data['privacy'] = privacy;
+			data['data'] = this.data;
+			data['privacy'] = this.privacy;
+		return data;
 	}
 }

@@ -30,7 +30,8 @@ class Series{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['datapoints'] = datapoints.map((item)=>item.toMap());
-			data['target'] = target;
+			data['datapoints'] = this.datapoints.map((item)=>item.toMap());
+			data['target'] = this.target;
+		return data;
 	}
 }

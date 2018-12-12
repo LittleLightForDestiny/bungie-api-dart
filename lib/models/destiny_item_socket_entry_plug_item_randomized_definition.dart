@@ -26,6 +26,7 @@ class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['plugItemHash'] = plugItemHash;
+			data['plugItemHash'] = this.plugItemHash;
+		return data;
 	}
 }

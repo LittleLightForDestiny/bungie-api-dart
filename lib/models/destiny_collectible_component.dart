@@ -26,6 +26,7 @@ class DestinyCollectibleComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['state'] = state;
+			data['state'] = this.state;
+		return data;
 	}
 }

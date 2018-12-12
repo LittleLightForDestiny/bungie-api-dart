@@ -29,7 +29,8 @@ class DyeReference{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['channelHash'] = channelHash;
-			data['dyeHash'] = dyeHash;
+			data['channelHash'] = this.channelHash;
+			data['dyeHash'] = this.dyeHash;
+		return data;
 	}
 }

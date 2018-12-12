@@ -32,8 +32,9 @@ class DestinyItemQuantity{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemHash'] = itemHash;
-			data['itemInstanceId'] = itemInstanceId;
-			data['quantity'] = quantity;
+			data['itemHash'] = this.itemHash;
+			data['itemInstanceId'] = this.itemInstanceId;
+			data['quantity'] = this.quantity;
+		return data;
 	}
 }

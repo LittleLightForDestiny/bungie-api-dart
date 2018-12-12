@@ -31,7 +31,8 @@ class UserMembershipData{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyMemberships'] = destinyMemberships.map((item)=>item.toMap());
-			data['bungieNetUser'] = bungieNetUser.toMap();
+			data['destinyMemberships'] = this.destinyMemberships.map((item)=>item.toMap());
+			data['bungieNetUser'] = this.bungieNetUser.toMap();
+		return data;
 	}
 }

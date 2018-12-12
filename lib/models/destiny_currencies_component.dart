@@ -26,6 +26,7 @@ class DestinyCurrenciesComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemQuantities'] = itemQuantities;
+			data['itemQuantities'] = this.itemQuantities;
+		return data;
 	}
 }

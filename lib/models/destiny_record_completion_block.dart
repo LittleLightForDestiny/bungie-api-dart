@@ -35,9 +35,10 @@ class DestinyRecordCompletionBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['partialCompletionObjectiveCountThreshold'] = partialCompletionObjectiveCountThreshold;
-			data['ScoreValue'] = scoreValue;
-			data['shouldFireToast'] = shouldFireToast;
-			data['toastStyle'] = toastStyle;
+			data['partialCompletionObjectiveCountThreshold'] = this.partialCompletionObjectiveCountThreshold;
+			data['ScoreValue'] = this.scoreValue;
+			data['shouldFireToast'] = this.shouldFireToast;
+			data['toastStyle'] = this.toastStyle;
+		return data;
 	}
 }

@@ -42,11 +42,12 @@ class TagMetadataDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['description'] = description;
-			data['order'] = order;
-			data['items'] = items.map((item)=>item.toMap());
-			data['datatype'] = datatype;
-			data['name'] = name;
-			data['isRequired'] = isRequired;
+			data['description'] = this.description;
+			data['order'] = this.order;
+			data['items'] = this.items.map((item)=>item.toMap());
+			data['datatype'] = this.datatype;
+			data['name'] = this.name;
+			data['isRequired'] = this.isRequired;
+		return data;
 	}
 }

@@ -26,6 +26,7 @@ class DestinyActivityModifierReferenceDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityModifierHash'] = activityModifierHash;
+			data['activityModifierHash'] = this.activityModifierHash;
+		return data;
 	}
 }

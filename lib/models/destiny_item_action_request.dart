@@ -32,8 +32,9 @@ class DestinyItemActionRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemId'] = itemId;
-			data['characterId'] = characterId;
-			data['membershipType'] = membershipType;
+			data['itemId'] = this.itemId;
+			data['characterId'] = this.characterId;
+			data['membershipType'] = this.membershipType;
+		return data;
 	}
 }

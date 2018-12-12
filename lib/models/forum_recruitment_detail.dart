@@ -54,15 +54,16 @@ class ForumRecruitmentDetail{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['topicId'] = topicId;
-			data['microphoneRequired'] = microphoneRequired;
-			data['intensity'] = intensity;
-			data['tone'] = tone;
-			data['approved'] = approved;
-			data['conversationId'] = conversationId;
-			data['playerSlotsTotal'] = playerSlotsTotal;
-			data['playerSlotsRemaining'] = playerSlotsRemaining;
-			data['Fireteam'] = fireteam.map((item)=>item.toMap());
-			data['kickedPlayerIds'] = kickedPlayerIds;
+			data['topicId'] = this.topicId;
+			data['microphoneRequired'] = this.microphoneRequired;
+			data['intensity'] = this.intensity;
+			data['tone'] = this.tone;
+			data['approved'] = this.approved;
+			data['conversationId'] = this.conversationId;
+			data['playerSlotsTotal'] = this.playerSlotsTotal;
+			data['playerSlotsRemaining'] = this.playerSlotsRemaining;
+			data['Fireteam'] = this.fireteam.map((item)=>item.toMap());
+			data['kickedPlayerIds'] = this.kickedPlayerIds;
+		return data;
 	}
 }

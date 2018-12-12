@@ -29,7 +29,8 @@ class SchemaRecordStateBlock{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['featuredPriority'] = featuredPriority;
-			data['obscuredString'] = obscuredString;
+			data['featuredPriority'] = this.featuredPriority;
+			data['obscuredString'] = this.obscuredString;
+		return data;
 	}
 }

@@ -46,12 +46,13 @@ class DestinyStatGroupDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['maximumValue'] = maximumValue;
-			data['uiPosition'] = uiPosition;
-			data['scaledStats'] = scaledStats.map((item)=>item.toMap());
-			data['overrides'] = overrides;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['maximumValue'] = this.maximumValue;
+			data['uiPosition'] = this.uiPosition;
+			data['scaledStats'] = this.scaledStats.map((item)=>item.toMap());
+			data['overrides'] = this.overrides;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

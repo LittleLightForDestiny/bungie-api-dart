@@ -30,7 +30,8 @@ class DestinyActivityChallengeDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectiveHash'] = objectiveHash;
-			data['dummyRewards'] = dummyRewards.map((item)=>item.toMap());
+			data['objectiveHash'] = this.objectiveHash;
+			data['dummyRewards'] = this.dummyRewards.map((item)=>item.toMap());
+		return data;
 	}
 }

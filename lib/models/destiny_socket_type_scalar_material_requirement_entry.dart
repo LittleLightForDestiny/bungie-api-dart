@@ -29,7 +29,8 @@ class DestinySocketTypeScalarMaterialRequirementEntry{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['currencyItemHash'] = currencyItemHash;
-			data['scalarValue'] = scalarValue;
+			data['currencyItemHash'] = this.currencyItemHash;
+			data['scalarValue'] = this.scalarValue;
+		return data;
 	}
 }

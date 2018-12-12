@@ -29,7 +29,8 @@ class DestinyObjectiveDisplayProperties{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activityHash'] = activityHash;
-			data['displayOnItemPreviewScreen'] = displayOnItemPreviewScreen;
+			data['activityHash'] = this.activityHash;
+			data['displayOnItemPreviewScreen'] = this.displayOnItemPreviewScreen;
+		return data;
 	}
 }

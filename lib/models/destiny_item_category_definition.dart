@@ -75,22 +75,23 @@ class DestinyItemCategoryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['visible'] = visible;
-			data['deprecated'] = deprecated;
-			data['shortTitle'] = shortTitle;
-			data['itemTypeRegex'] = itemTypeRegex;
-			data['plugCategoryIdentifier'] = plugCategoryIdentifier;
-			data['itemTypeRegexNot'] = itemTypeRegexNot;
-			data['originBucketIdentifier'] = originBucketIdentifier;
-			data['grantDestinyItemType'] = grantDestinyItemType;
-			data['grantDestinySubType'] = grantDestinySubType;
-			data['grantDestinyClass'] = grantDestinyClass;
-			data['groupedCategoryHashes'] = groupedCategoryHashes;
-			data['parentCategoryHashes'] = parentCategoryHashes;
-			data['groupCategoryOnly'] = groupCategoryOnly;
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['visible'] = this.visible;
+			data['deprecated'] = this.deprecated;
+			data['shortTitle'] = this.shortTitle;
+			data['itemTypeRegex'] = this.itemTypeRegex;
+			data['plugCategoryIdentifier'] = this.plugCategoryIdentifier;
+			data['itemTypeRegexNot'] = this.itemTypeRegexNot;
+			data['originBucketIdentifier'] = this.originBucketIdentifier;
+			data['grantDestinyItemType'] = this.grantDestinyItemType;
+			data['grantDestinySubType'] = this.grantDestinySubType;
+			data['grantDestinyClass'] = this.grantDestinyClass;
+			data['groupedCategoryHashes'] = this.groupedCategoryHashes;
+			data['parentCategoryHashes'] = this.parentCategoryHashes;
+			data['groupCategoryOnly'] = this.groupCategoryOnly;
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

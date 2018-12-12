@@ -29,7 +29,8 @@ class DestinyUnlockStatus{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['unlockHash'] = unlockHash;
-			data['isSet'] = isSet;
+			data['unlockHash'] = this.unlockHash;
+			data['isSet'] = this.isSet;
+		return data;
 	}
 }

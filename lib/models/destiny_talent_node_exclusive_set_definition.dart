@@ -26,6 +26,7 @@ class DestinyTalentNodeExclusiveSetDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodeIndexes'] = nodeIndexes;
+			data['nodeIndexes'] = this.nodeIndexes;
+		return data;
 	}
 }

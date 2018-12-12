@@ -49,13 +49,14 @@ class DestinyEquipmentSlotDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = displayProperties.toMap();
-			data['equipmentCategoryHash'] = equipmentCategoryHash;
-			data['bucketTypeHash'] = bucketTypeHash;
-			data['applyCustomArtDyes'] = applyCustomArtDyes;
-			data['artDyeChannels'] = artDyeChannels.map((item)=>item.toMap());
-			data['hash'] = hash;
-			data['index'] = index;
-			data['redacted'] = redacted;
+			data['displayProperties'] = this.displayProperties.toMap();
+			data['equipmentCategoryHash'] = this.equipmentCategoryHash;
+			data['bucketTypeHash'] = this.bucketTypeHash;
+			data['applyCustomArtDyes'] = this.applyCustomArtDyes;
+			data['artDyeChannels'] = this.artDyeChannels.map((item)=>item.toMap());
+			data['hash'] = this.hash;
+			data['index'] = this.index;
+			data['redacted'] = this.redacted;
+		return data;
 	}
 }

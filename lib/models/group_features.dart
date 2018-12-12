@@ -50,14 +50,15 @@ class GroupFeatures{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['maximumMembers'] = maximumMembers;
-			data['maximumMembershipsOfGroupType'] = maximumMembershipsOfGroupType;
-			data['capabilities'] = capabilities;
-			data['membershipTypes'] = membershipTypes;
-			data['invitePermissionOverride'] = invitePermissionOverride;
-			data['updateCulturePermissionOverride'] = updateCulturePermissionOverride;
-			data['hostGuidedGamePermissionOverride'] = hostGuidedGamePermissionOverride;
-			data['updateBannerPermissionOverride'] = updateBannerPermissionOverride;
-			data['joinLevel'] = joinLevel;
+			data['maximumMembers'] = this.maximumMembers;
+			data['maximumMembershipsOfGroupType'] = this.maximumMembershipsOfGroupType;
+			data['capabilities'] = this.capabilities;
+			data['membershipTypes'] = this.membershipTypes;
+			data['invitePermissionOverride'] = this.invitePermissionOverride;
+			data['updateCulturePermissionOverride'] = this.updateCulturePermissionOverride;
+			data['hostGuidedGamePermissionOverride'] = this.hostGuidedGamePermissionOverride;
+			data['updateBannerPermissionOverride'] = this.updateBannerPermissionOverride;
+			data['joinLevel'] = this.joinLevel;
+		return data;
 	}
 }

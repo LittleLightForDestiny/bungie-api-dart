@@ -39,10 +39,11 @@ class DestinyProgressionStepDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stepName'] = stepName;
-			data['displayEffectType'] = displayEffectType;
-			data['progressTotal'] = progressTotal;
-			data['rewardItems'] = rewardItems.map((item)=>item.toMap());
-			data['icon'] = icon;
+			data['stepName'] = this.stepName;
+			data['displayEffectType'] = this.displayEffectType;
+			data['progressTotal'] = this.progressTotal;
+			data['rewardItems'] = this.rewardItems.map((item)=>item.toMap());
+			data['icon'] = this.icon;
+		return data;
 	}
 }

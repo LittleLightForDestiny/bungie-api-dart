@@ -32,8 +32,9 @@ class GroupOptionalConversationEditRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['chatEnabled'] = chatEnabled;
-			data['chatName'] = chatName;
-			data['chatSecurity'] = chatSecurity;
+			data['chatEnabled'] = this.chatEnabled;
+			data['chatName'] = this.chatName;
+			data['chatSecurity'] = this.chatSecurity;
+		return data;
 	}
 }

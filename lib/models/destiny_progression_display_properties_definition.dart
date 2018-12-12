@@ -38,10 +38,11 @@ class DestinyProgressionDisplayPropertiesDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayUnitsName'] = displayUnitsName;
-			data['description'] = description;
-			data['name'] = name;
-			data['icon'] = icon;
-			data['hasIcon'] = hasIcon;
+			data['displayUnitsName'] = this.displayUnitsName;
+			data['description'] = this.description;
+			data['name'] = this.name;
+			data['icon'] = this.icon;
+			data['hasIcon'] = this.hasIcon;
+		return data;
 	}
 }

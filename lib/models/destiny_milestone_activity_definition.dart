@@ -30,7 +30,8 @@ class DestinyMilestoneActivityDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['conceptualActivityHash'] = conceptualActivityHash;
-			data['variants'] = variants;
+			data['conceptualActivityHash'] = this.conceptualActivityHash;
+			data['variants'] = this.variants;
+		return data;
 	}
 }

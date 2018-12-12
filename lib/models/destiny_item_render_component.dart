@@ -29,7 +29,8 @@ class DestinyItemRenderComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['useCustomDyes'] = useCustomDyes;
-			data['artRegions'] = artRegions;
+			data['useCustomDyes'] = this.useCustomDyes;
+			data['artRegions'] = this.artRegions;
+		return data;
 	}
 }
