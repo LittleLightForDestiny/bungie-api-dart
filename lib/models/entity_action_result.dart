@@ -1,8 +1,8 @@
 class EntityActionResult{
-	int entityId;
+	String entityId;
 	int result;
 	EntityActionResult(
-		int this.entityId,
+		String this.entityId,
 		int this.result,
 	);
 

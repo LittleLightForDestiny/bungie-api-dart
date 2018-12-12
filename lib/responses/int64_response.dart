@@ -1,5 +1,5 @@
 class int64Response{
-    int response;
+    String response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
@@ -8,7 +8,7 @@ class int64Response{
     String detailedErrorTrace;
 
     int64Response(
-		int this.response,
+		String this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,

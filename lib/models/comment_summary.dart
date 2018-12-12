@@ -1,8 +1,8 @@
 class CommentSummary{
-	int topicId;
+	String topicId;
 	int commentCount;
 	CommentSummary(
-		int this.topicId,
+		String this.topicId,
 		int this.commentCount,
 	);
 

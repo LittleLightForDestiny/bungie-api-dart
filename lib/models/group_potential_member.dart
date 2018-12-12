@@ -2,13 +2,13 @@ import 'user_info_card.dart';
 import 'user_info_card.dart';
 class GroupPotentialMember{
 	int potentialStatus;
-	int groupId;
+	String groupId;
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupPotentialMember(
 		int this.potentialStatus,
-		int this.groupId,
+		String this.groupId,
 		UserInfoCard this.destinyUserInfo,
 		UserInfoCard this.bungieNetUserInfo,
 		String this.joinDate,

@@ -1,12 +1,12 @@
 class GroupOptionalConversation{
-	int groupId;
-	int conversationId;
+	String groupId;
+	String conversationId;
 	bool chatEnabled;
 	String chatName;
 	int chatSecurity;
 	GroupOptionalConversation(
-		int this.groupId,
-		int this.conversationId,
+		String this.groupId,
+		String this.conversationId,
 		bool this.chatEnabled,
 		String this.chatName,
 		int this.chatSecurity,

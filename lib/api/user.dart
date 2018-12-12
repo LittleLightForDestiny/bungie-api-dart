@@ -9,7 +9,7 @@ class User{
     //Loads a bungienet user by membership id.
     static Future<GeneralUserResponse> getBungieNetUserById (
         HttpClient client,
-        int id,
+        String id,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetBungieNetUserById/${id}/", params);
@@ -48,7 +48,7 @@ class User{
     //Returns a list of accounts associated with the supplied membership ID and membership type. This will include all linked accounts (even when hidden) if supplied credentials permit it.
     static Future<UserMembershipDataResponse> getMembershipDataById (
         HttpClient client,
-        int membershipId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -74,7 +74,7 @@ class User{
     //Returns a user&#39;s linked Partnerships.
     static Future<CEListOfPublicPartnershipDetailResponse> getPartnerships (
         HttpClient client,
-        int membershipId,
+        String membershipId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/${membershipId}/Partnerships/", params);

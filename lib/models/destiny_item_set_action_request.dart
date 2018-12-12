@@ -1,10 +1,10 @@
 class DestinyItemSetActionRequest{
-	List<int> itemIds;
-	int characterId;
+	List<String> itemIds;
+	String characterId;
 	int membershipType;
 	DestinyItemSetActionRequest(
-		List<int> this.itemIds,
-		int this.characterId,
+		List<String> this.itemIds,
+		String this.characterId,
 		int this.membershipType,
 	);
 

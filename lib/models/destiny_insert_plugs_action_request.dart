@@ -1,15 +1,15 @@
 import 'destiny_insert_plugs_request_entry.dart';
 class DestinyInsertPlugsActionRequest{
 	String actionToken;
-	int itemInstanceId;
+	String itemInstanceId;
 	DestinyInsertPlugsRequestEntry plug;
-	int characterId;
+	String characterId;
 	int membershipType;
 	DestinyInsertPlugsActionRequest(
 		String this.actionToken,
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		DestinyInsertPlugsRequestEntry this.plug,
-		int this.characterId,
+		String this.characterId,
 		int this.membershipType,
 	);
 

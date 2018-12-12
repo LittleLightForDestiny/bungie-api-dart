@@ -1,14 +1,14 @@
 class DestinyPostmasterTransferRequest{
 	int itemReferenceHash;
 	int stackSize;
-	int itemId;
-	int characterId;
+	String itemId;
+	String characterId;
 	int membershipType;
 	DestinyPostmasterTransferRequest(
 		int this.itemReferenceHash,
 		int this.stackSize,
-		int this.itemId,
-		int this.characterId,
+		String this.itemId,
+		String this.characterId,
 		int this.membershipType,
 	);
 

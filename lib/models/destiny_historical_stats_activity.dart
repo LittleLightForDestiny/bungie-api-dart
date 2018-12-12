@@ -1,14 +1,14 @@
 class DestinyHistoricalStatsActivity{
 	int referenceId;
 	int directorActivityHash;
-	int instanceId;
+	String instanceId;
 	int mode;
 	List<int> modes;
 	bool isPrivate;
 	DestinyHistoricalStatsActivity(
 		int this.referenceId,
 		int this.directorActivityHash,
-		int this.instanceId,
+		String this.instanceId,
 		int this.mode,
 		List<int> this.modes,
 		bool this.isPrivate,

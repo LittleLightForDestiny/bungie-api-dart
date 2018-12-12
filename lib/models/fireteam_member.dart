@@ -3,7 +3,7 @@ import 'user_info_card.dart';
 class FireteamMember{
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
-	int characterId;
+	String characterId;
 	String dateJoined;
 	bool hasMicrophone;
 	String lastPlatformInviteAttemptDate;
@@ -11,7 +11,7 @@ class FireteamMember{
 	FireteamMember(
 		UserInfoCard this.destinyUserInfo,
 		UserInfoCard this.bungieNetUserInfo,
-		int this.characterId,
+		String this.characterId,
 		String this.dateJoined,
 		bool this.hasMicrophone,
 		String this.lastPlatformInviteAttemptDate,

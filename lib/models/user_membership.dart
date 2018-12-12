@@ -1,10 +1,10 @@
 class UserMembership{
 	int membershipType;
-	int membershipId;
+	String membershipId;
 	String displayName;
 	UserMembership(
 		int this.membershipType,
-		int this.membershipId,
+		String this.membershipId,
 		String this.displayName,
 	);
 

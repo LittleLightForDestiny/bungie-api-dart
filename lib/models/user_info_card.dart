@@ -2,13 +2,13 @@ class UserInfoCard{
 	String supplementalDisplayName;
 	String iconPath;
 	int membershipType;
-	int membershipId;
+	String membershipId;
 	String displayName;
 	UserInfoCard(
 		String this.supplementalDisplayName,
 		String this.iconPath,
 		int this.membershipType,
-		int this.membershipId,
+		String this.membershipId,
 		String this.displayName,
 	);
 

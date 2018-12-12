@@ -7,7 +7,7 @@ import 'single_component_response_of_destiny_item_stats_component.dart';
 import 'single_component_response_of_destiny_item_talent_grid_component.dart';
 import 'single_component_response_of_destiny_item_sockets_component.dart';
 class DestinyItemResponse{
-	int characterId;
+	String characterId;
 	SingleComponentResponseOfDestinyItemComponent item;
 	SingleComponentResponseOfDestinyItemInstanceComponent instance;
 	SingleComponentResponseOfDestinyItemObjectivesComponent objectives;
@@ -17,7 +17,7 @@ class DestinyItemResponse{
 	SingleComponentResponseOfDestinyItemTalentGridComponent talentGrid;
 	SingleComponentResponseOfDestinyItemSocketsComponent sockets;
 	DestinyItemResponse(
-		int this.characterId,
+		String this.characterId,
 		SingleComponentResponseOfDestinyItemComponent this.item,
 		SingleComponentResponseOfDestinyItemInstanceComponent this.instance,
 		SingleComponentResponseOfDestinyItemObjectivesComponent this.objectives,

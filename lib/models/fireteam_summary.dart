@@ -1,11 +1,11 @@
 class FireteamSummary{
-	int fireteamId;
-	int groupId;
+	String fireteamId;
+	String groupId;
 	int platform;
 	int activityType;
 	bool isImmediate;
 	String scheduledTime;
-	int ownerMembershipId;
+	String ownerMembershipId;
 	int playerSlotCount;
 	int alternateSlotCount;
 	int availablePlayerSlotCount;
@@ -18,13 +18,13 @@ class FireteamSummary{
 	bool isValid;
 	String datePlayerModified;
 	FireteamSummary(
-		int this.fireteamId,
-		int this.groupId,
+		String this.fireteamId,
+		String this.groupId,
 		int this.platform,
 		int this.activityType,
 		bool this.isImmediate,
 		String this.scheduledTime,
-		int this.ownerMembershipId,
+		String this.ownerMembershipId,
 		int this.playerSlotCount,
 		int this.alternateSlotCount,
 		int this.availablePlayerSlotCount,

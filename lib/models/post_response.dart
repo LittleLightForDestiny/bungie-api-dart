@@ -10,8 +10,8 @@ class PostResponse{
 	int userRating;
 	bool userHasRated;
 	bool userHasMutedPost;
-	int latestReplyPostId;
-	int latestReplyAuthorId;
+	String latestReplyPostId;
+	String latestReplyAuthorId;
 	IgnoreResponse ignoreStatus;
 	String locale;
 	PostResponse(
@@ -25,8 +25,8 @@ class PostResponse{
 		int this.userRating,
 		bool this.userHasRated,
 		bool this.userHasMutedPost,
-		int this.latestReplyPostId,
-		int this.latestReplyAuthorId,
+		String this.latestReplyPostId,
+		String this.latestReplyAuthorId,
 		IgnoreResponse this.ignoreStatus,
 		String this.locale,
 	);

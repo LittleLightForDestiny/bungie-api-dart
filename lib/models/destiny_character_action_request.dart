@@ -1,8 +1,8 @@
 class DestinyCharacterActionRequest{
-	int characterId;
+	String characterId;
 	int membershipType;
 	DestinyCharacterActionRequest(
-		int this.characterId,
+		String this.characterId,
 		int this.membershipType,
 	);
 

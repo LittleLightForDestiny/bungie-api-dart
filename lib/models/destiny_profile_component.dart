@@ -3,12 +3,12 @@ class DestinyProfileComponent{
 	UserInfoCard userInfo;
 	String dateLastPlayed;
 	int versionsOwned;
-	List<int> characterIds;
+	List<String> characterIds;
 	DestinyProfileComponent(
 		UserInfoCard this.userInfo,
 		String this.dateLastPlayed,
 		int this.versionsOwned,
-		List<int> this.characterIds,
+		List<String> this.characterIds,
 	);
 
 	static DestinyProfileComponent fromMap(Map<String, dynamic> data){

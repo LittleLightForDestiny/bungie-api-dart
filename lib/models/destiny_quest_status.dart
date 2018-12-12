@@ -4,7 +4,7 @@ class DestinyQuestStatus{
 	int stepHash;
 	List<DestinyObjectiveProgress> stepObjectives;
 	bool tracked;
-	int itemInstanceId;
+	String itemInstanceId;
 	bool completed;
 	bool redeemed;
 	bool started;
@@ -14,7 +14,7 @@ class DestinyQuestStatus{
 		int this.stepHash,
 		List<DestinyObjectiveProgress> this.stepObjectives,
 		bool this.tracked,
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		bool this.completed,
 		bool this.redeemed,
 		bool this.started,

@@ -2,16 +2,16 @@ class TrendingEntryCommunityCreation{
 	String media;
 	String title;
 	String author;
-	int authorMembershipId;
-	int postId;
+	String authorMembershipId;
+	String postId;
 	String body;
 	int upvotes;
 	TrendingEntryCommunityCreation(
 		String this.media,
 		String this.title,
 		String this.author,
-		int this.authorMembershipId,
-		int this.postId,
+		String this.authorMembershipId,
+		String this.postId,
 		String this.body,
 		int this.upvotes,
 	);

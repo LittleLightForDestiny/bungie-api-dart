@@ -1,12 +1,12 @@
 import 'destiny_color.dart';
 import 'destiny_progression.dart';
 class DestinyCharacterComponent{
-	int membershipId;
+	String membershipId;
 	int membershipType;
-	int characterId;
+	String characterId;
 	String dateLastPlayed;
-	int minutesPlayedThisSession;
-	int minutesPlayedTotal;
+	String minutesPlayedThisSession;
+	String minutesPlayedTotal;
 	int light;
 	Map<int, dynamic> stats;
 	int raceHash;
@@ -24,12 +24,12 @@ class DestinyCharacterComponent{
 	int percentToNextLevel;
 	int titleRecordHash;
 	DestinyCharacterComponent(
-		int this.membershipId,
+		String this.membershipId,
 		int this.membershipType,
-		int this.characterId,
+		String this.characterId,
 		String this.dateLastPlayed,
-		int this.minutesPlayedThisSession,
-		int this.minutesPlayedTotal,
+		String this.minutesPlayedThisSession,
+		String this.minutesPlayedTotal,
 		int this.light,
 		Map<int, dynamic> this.stats,
 		int this.raceHash,

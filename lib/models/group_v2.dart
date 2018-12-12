@@ -1,10 +1,10 @@
 import 'group_features.dart';
 import 'group_v2_clan_info_and_investment.dart';
 class GroupV2{
-	int groupId;
+	String groupId;
 	String name;
 	int groupType;
-	int membershipIdCreated;
+	String membershipIdCreated;
 	String creationDate;
 	String modificationDate;
 	String about;
@@ -24,16 +24,16 @@ class GroupV2{
 	String theme;
 	String bannerPath;
 	String avatarPath;
-	int conversationId;
+	String conversationId;
 	bool enableInvitationMessagingForAdmins;
 	String banExpireDate;
 	GroupFeatures features;
 	GroupV2ClanInfoAndInvestment clanInfo;
 	GroupV2(
-		int this.groupId,
+		String this.groupId,
 		String this.name,
 		int this.groupType,
-		int this.membershipIdCreated,
+		String this.membershipIdCreated,
 		String this.creationDate,
 		String this.modificationDate,
 		String this.about,
@@ -53,7 +53,7 @@ class GroupV2{
 		String this.theme,
 		String this.bannerPath,
 		String this.avatarPath,
-		int this.conversationId,
+		String this.conversationId,
 		bool this.enableInvitationMessagingForAdmins,
 		String this.banExpireDate,
 		GroupFeatures this.features,

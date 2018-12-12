@@ -1,9 +1,9 @@
 class SaveMessageResult{
-	int conversationId;
-	int messageId;
+	String conversationId;
+	String messageId;
 	SaveMessageResult(
-		int this.conversationId,
-		int this.messageId,
+		String this.conversationId,
+		String this.messageId,
 	);
 
 	static SaveMessageResult fromMap(Map<String, dynamic> data){

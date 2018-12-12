@@ -1,6 +1,6 @@
 import 'group_v2_clan_info.dart';
 class GroupV2Card{
-	int groupId;
+	String groupId;
 	String name;
 	int groupType;
 	String creationDate;
@@ -14,7 +14,7 @@ class GroupV2Card{
 	String avatarPath;
 	String theme;
 	GroupV2Card(
-		int this.groupId,
+		String this.groupId,
 		String this.name,
 		int this.groupType,
 		String this.creationDate,

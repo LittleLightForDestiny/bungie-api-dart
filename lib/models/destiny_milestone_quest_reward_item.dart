@@ -2,13 +2,13 @@ class DestinyMilestoneQuestRewardItem{
 	int vendorHash;
 	int vendorItemIndex;
 	int itemHash;
-	int itemInstanceId;
+	String itemInstanceId;
 	int quantity;
 	DestinyMilestoneQuestRewardItem(
 		int this.vendorHash,
 		int this.vendorItemIndex,
 		int this.itemHash,
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		int this.quantity,
 	);
 

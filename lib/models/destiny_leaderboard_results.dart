@@ -1,9 +1,9 @@
 class DestinyLeaderboardResults{
-	int focusMembershipId;
-	int focusCharacterId;
+	String focusMembershipId;
+	String focusCharacterId;
 	DestinyLeaderboardResults(
-		int this.focusMembershipId,
-		int this.focusCharacterId,
+		String this.focusMembershipId,
+		String this.focusCharacterId,
 	);
 
 	static DestinyLeaderboardResults fromMap(Map<String, dynamic> data){

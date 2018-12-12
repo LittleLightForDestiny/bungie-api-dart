@@ -3,14 +3,14 @@ import 'user_info_card.dart';
 class GroupMember{
 	int memberType;
 	bool isOnline;
-	int groupId;
+	String groupId;
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupMember(
 		int this.memberType,
 		bool this.isOnline,
-		int this.groupId,
+		String this.groupId,
 		UserInfoCard this.destinyUserInfo,
 		UserInfoCard this.bungieNetUserInfo,
 		String this.joinDate,

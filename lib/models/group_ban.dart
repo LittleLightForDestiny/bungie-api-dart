@@ -3,7 +3,7 @@ import 'user_info_card.dart';
 import 'user_info_card.dart';
 import 'user_info_card.dart';
 class GroupBan{
-	int groupId;
+	String groupId;
 	UserInfoCard lastModifiedBy;
 	UserInfoCard createdBy;
 	String dateBanned;
@@ -12,7 +12,7 @@ class GroupBan{
 	UserInfoCard bungieNetUserInfo;
 	UserInfoCard destinyUserInfo;
 	GroupBan(
-		int this.groupId,
+		String this.groupId,
 		UserInfoCard this.lastModifiedBy,
 		UserInfoCard this.createdBy,
 		String this.dateBanned,

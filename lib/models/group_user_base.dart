@@ -1,12 +1,12 @@
 import 'user_info_card.dart';
 import 'user_info_card.dart';
 class GroupUserBase{
-	int groupId;
+	String groupId;
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupUserBase(
-		int this.groupId,
+		String this.groupId,
 		UserInfoCard this.destinyUserInfo,
 		UserInfoCard this.bungieNetUserInfo,
 		String this.joinDate,

@@ -4,19 +4,19 @@ class DestinyVendorReceipt{
 	List<DestinyItemQuantity> currencyPaid;
 	DestinyItemQuantity itemReceived;
 	int licenseUnlockHash;
-	int purchasedByCharacterId;
+	String purchasedByCharacterId;
 	int refundPolicy;
 	int sequenceNumber;
-	int timeToExpiration;
+	String timeToExpiration;
 	String expiresOn;
 	DestinyVendorReceipt(
 		List<DestinyItemQuantity> this.currencyPaid,
 		DestinyItemQuantity this.itemReceived,
 		int this.licenseUnlockHash,
-		int this.purchasedByCharacterId,
+		String this.purchasedByCharacterId,
 		int this.refundPolicy,
 		int this.sequenceNumber,
-		int this.timeToExpiration,
+		String this.timeToExpiration,
 		String this.expiresOn,
 	);
 

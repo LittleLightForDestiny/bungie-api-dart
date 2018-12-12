@@ -8,7 +8,7 @@ class Fireteam{
     //Gets a count of all active non-public fireteams for the specified clan. Maximum value returned is 25.
     static Future<int32Response> getActivePrivateClanFireteamCount (
         HttpClient client,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/ActiveCount/", params);
@@ -23,7 +23,7 @@ class Fireteam{
         HttpClient client,
         int activityType,
         int dateRange,
-        int groupId,
+        String groupId,
         String langFilter,
         int page,
         int platform,
@@ -62,7 +62,7 @@ class Fireteam{
     static Future<SearchResultOfFireteamResponseResponse> getMyClanFireteams (
         HttpClient client,
         bool groupFilter,
-        int groupId,
+        String groupId,
         bool includeClosed,
         String langFilter,
         int page,
@@ -81,8 +81,8 @@ class Fireteam{
     //Gets a specific clan fireteam.
     static Future<FireteamResponseResponse> getClanFireteam (
         HttpClient client,
-        int fireteamId,
-        int groupId,
+        String fireteamId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/Summary/${fireteamId}/", params);

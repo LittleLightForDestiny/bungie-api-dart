@@ -1,21 +1,21 @@
 import 'user_info_card.dart';
 import 'user_info_card.dart';
 class GroupMemberApplication{
-	int groupId;
+	String groupId;
 	String creationDate;
 	int resolveState;
 	String resolveDate;
-	int resolvedByMembershipId;
+	String resolvedByMembershipId;
 	String requestMessage;
 	String resolveMessage;
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
 	GroupMemberApplication(
-		int this.groupId,
+		String this.groupId,
 		String this.creationDate,
 		int this.resolveState,
 		String this.resolveDate,
-		int this.resolvedByMembershipId,
+		String this.resolvedByMembershipId,
 		String this.requestMessage,
 		String this.resolveMessage,
 		UserInfoCard this.destinyUserInfo,

@@ -6,7 +6,7 @@ import 'group_potential_member.dart';
 class GroupResponse{
 	GroupV2 detail;
 	GroupMember founder;
-	List<int> alliedIds;
+	List<String> alliedIds;
 	GroupV2 parentGroup;
 	int allianceStatus;
 	int groupJoinInviteCount;
@@ -15,7 +15,7 @@ class GroupResponse{
 	GroupResponse(
 		GroupV2 this.detail,
 		GroupMember this.founder,
-		List<int> this.alliedIds,
+		List<String> this.alliedIds,
 		GroupV2 this.parentGroup,
 		int this.allianceStatus,
 		int this.groupJoinInviteCount,

@@ -6,14 +6,14 @@ class DestinyPostGameCarnageReportEntry{
 	int standing;
 	DestinyHistoricalStatsValue score;
 	DestinyPlayer player;
-	int characterId;
+	String characterId;
 	Map<DestinyHistoricalStatsValue, dynamic> values;
 	DestinyPostGameCarnageReportExtendedData extended;
 	DestinyPostGameCarnageReportEntry(
 		int this.standing,
 		DestinyHistoricalStatsValue this.score,
 		DestinyPlayer this.player,
-		int this.characterId,
+		String this.characterId,
 		Map<DestinyHistoricalStatsValue, dynamic> this.values,
 		DestinyPostGameCarnageReportExtendedData this.extended,
 	);

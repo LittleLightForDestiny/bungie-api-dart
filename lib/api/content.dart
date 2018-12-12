@@ -21,7 +21,7 @@ class Content{
     static Future<ContentItemPublicContractResponse> getContentById (
         HttpClient client,
         bool head,
-        int id,
+        String id,
         String locale,
     ) {
         Map<String, dynamic> params = new Map();

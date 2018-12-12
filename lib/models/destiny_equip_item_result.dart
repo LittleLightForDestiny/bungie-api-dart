@@ -1,8 +1,8 @@
 class DestinyEquipItemResult{
-	int itemInstanceId;
+	String itemInstanceId;
 	int equipStatus;
 	DestinyEquipItemResult(
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		int this.equipStatus,
 	);
 

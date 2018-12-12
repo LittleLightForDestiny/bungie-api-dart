@@ -124,7 +124,7 @@ export class ApiDocHelper{
             return `Map<String, String>`;
         }
         if(param.type){
-            return this.parseType(param.type);
+            return this.parseType(param.type, param.format);
         }
         return param.name;
     }
@@ -154,12 +154,15 @@ export class ApiDocHelper{
         return null;
     }
 
-    static parseType(type:string){
+    static parseType(type:string, format:string){
         switch(type){
             case 'string':
                 return 'String';
             case 'integer':
             case 'number':
+                if(format == 'int64'){
+                    return 'String';
+                }
                 return 'int';
             case 'boolean':
                 return 'bool';

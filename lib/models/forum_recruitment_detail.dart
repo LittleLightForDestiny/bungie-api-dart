@@ -1,26 +1,26 @@
 import 'general_user.dart';
 class ForumRecruitmentDetail{
-	int topicId;
+	String topicId;
 	bool microphoneRequired;
 	int intensity;
 	int tone;
 	bool approved;
-	int conversationId;
+	String conversationId;
 	int playerSlotsTotal;
 	int playerSlotsRemaining;
 	List<GeneralUser> fireteam;
-	List<int> kickedPlayerIds;
+	List<String> kickedPlayerIds;
 	ForumRecruitmentDetail(
-		int this.topicId,
+		String this.topicId,
 		bool this.microphoneRequired,
 		int this.intensity,
 		int this.tone,
 		bool this.approved,
-		int this.conversationId,
+		String this.conversationId,
 		int this.playerSlotsTotal,
 		int this.playerSlotsRemaining,
 		List<GeneralUser> this.fireteam,
-		List<int> this.kickedPlayerIds,
+		List<String> this.kickedPlayerIds,
 	);
 
 	static ForumRecruitmentDetail fromMap(Map<String, dynamic> data){

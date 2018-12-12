@@ -5,7 +5,7 @@ class Application{
 	String name;
 	String redirectUrl;
 	String link;
-	int scope;
+	String scope;
 	String origin;
 	int status;
 	String creationDate;
@@ -18,7 +18,7 @@ class Application{
 		String this.name,
 		String this.redirectUrl,
 		String this.link,
-		int this.scope,
+		String this.scope,
 		String this.origin,
 		int this.status,
 		String this.creationDate,

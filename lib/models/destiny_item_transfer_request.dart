@@ -2,15 +2,15 @@ class DestinyItemTransferRequest{
 	int itemReferenceHash;
 	int stackSize;
 	bool transferToVault;
-	int itemId;
-	int characterId;
+	String itemId;
+	String characterId;
 	int membershipType;
 	DestinyItemTransferRequest(
 		int this.itemReferenceHash,
 		int this.stackSize,
 		bool this.transferToVault,
-		int this.itemId,
-		int this.characterId,
+		String this.itemId,
+		String this.characterId,
 		int this.membershipType,
 	);
 

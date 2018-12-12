@@ -11,7 +11,7 @@ class Forum{
     static Future<PostSearchResponseResponse> getTopicsPaged (
         HttpClient client,
         int categoryFilter,
-        int group,
+        String group,
         String locales,
         int page,
         int pageSize,
@@ -53,7 +53,7 @@ class Forum{
         bool getParentPost,
         int page,
         int pageSize,
-        int parentPostId,
+        String parentPostId,
         int replySize,
         bool rootThreadMode,
         String showbanned,
@@ -71,7 +71,7 @@ class Forum{
     //Returns a thread of posts starting at the topicId of the input childPostId, optionally returning replies to those posts as well as the original parent.
     static Future<PostSearchResponseResponse> getPostsThreadedPagedFromChild (
         HttpClient client,
-        int childPostId,
+        String childPostId,
         int page,
         int pageSize,
         int replySize,
@@ -91,7 +91,7 @@ class Forum{
     //Returns the post specified and its immediate parent.
     static Future<PostSearchResponseResponse> getPostAndParent (
         HttpClient client,
-        int childPostId,
+        String childPostId,
         String showbanned,
     ) {
         Map<String, dynamic> params = new Map();
@@ -106,7 +106,7 @@ class Forum{
     //Returns the post specified and its immediate parent of posts that are awaiting approval.
     static Future<PostSearchResponseResponse> getPostAndParentAwaitingApproval (
         HttpClient client,
-        int childPostId,
+        String childPostId,
         String showbanned,
     ) {
         Map<String, dynamic> params = new Map();
@@ -121,7 +121,7 @@ class Forum{
     //Gets the post Id for the given content item&#39;s comments, if it exists.
     static Future<int64Response> getTopicForContent (
         HttpClient client,
-        int contentId,
+        String contentId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicForContent/${contentId}/", params);
@@ -148,7 +148,7 @@ class Forum{
     //Gets the specified forum poll.
     static Future<PostSearchResponseResponse> getPoll (
         HttpClient client,
-        int topicId,
+        String topicId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/Poll/${topicId}/", params);
@@ -161,7 +161,7 @@ class Forum{
     //Allows a user to slot themselves into a recruitment thread fireteam slot. Returns the new state of the fireteam.
     static Future<ForumRecruitmentDetailResponse> joinFireteamThread (
         HttpClient client,
-        int topicId,
+        String topicId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Join/${topicId}/", params);
@@ -174,7 +174,7 @@ class Forum{
     //Allows a user to remove themselves from a recruitment thread fireteam slot. Returns the new state of the fireteam.
     static Future<ForumRecruitmentDetailResponse> leaveFireteamThread (
         HttpClient client,
-        int topicId,
+        String topicId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Leave/${topicId}/", params);
@@ -187,8 +187,8 @@ class Forum{
     //Allows a recruitment thread owner to kick a join user from the fireteam. Returns the new state of the fireteam.
     static Future<ForumRecruitmentDetailResponse> kickBanFireteamApplicant (
         HttpClient client,
-        int targetMembershipId,
-        int topicId,
+        String targetMembershipId,
+        String topicId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/${targetMembershipId}/", params);
@@ -201,7 +201,7 @@ class Forum{
     //Allows the owner of a fireteam thread to approve all joined members and start a private message conversation with them.
     static Future<SaveMessageResultResponse> approveFireteamThread (
         HttpClient client,
-        int topicId,
+        String topicId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Approve/${topicId}/", params);
@@ -214,7 +214,7 @@ class Forum{
     //Allows the caller to get a list of to 25 recruitment thread summary information objects.
     static Future<CEListOfForumRecruitmentDetailResponse> getRecruitmentThreadSummaries (
         HttpClient client,
-        List<int> body
+        List<String> body
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Summaries/", params);

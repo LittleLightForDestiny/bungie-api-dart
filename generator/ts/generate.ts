@@ -14,6 +14,8 @@ import { ResponseClass } from './models/ResponseClass';
 import { generateResponseClass } from './functions/generate-response-class';
 import { generateModelClass } from './functions/generate-model-class';
 import { ModelClass } from './models/ModelClass';
+import { EnumClass } from './models/EnumClass';
+import { generateEnumClass } from './functions/generate-enum-class';
 
 let doc = ApiDocHelper.load();
 
@@ -31,6 +33,9 @@ _.each(doc.components!.schemas!, (schema: SchemaObject, index:string)=>{
   if(schema.type == 'object'){
     new ModelClass(index, schema);
   }
+  if(schema.enum){
+    new EnumClass(index, schema);
+  }
 });
 
 
@@ -47,3 +52,7 @@ _.each(ResponseClass.all, (responseClass:ResponseClass)=>{
 _.each(ModelClass.all, (modelClass:ModelClass)=>{
   generateModelClass(modelClass);
 });
+
+_.each(EnumClass.all, (enumClass:EnumClass)=>{
+  generateEnumClass(enumClass);
+})

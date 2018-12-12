@@ -7,7 +7,7 @@ class CommunityLiveStatus{
 	String thumbnail;
 	String thumbnailSmall;
 	String thumbnailLarge;
-	int destinyCharacterId;
+	String destinyCharacterId;
 	UserInfoCard userInfo;
 	int currentActivityHash;
 	String dateLastPlayed;
@@ -30,7 +30,7 @@ class CommunityLiveStatus{
 		String this.thumbnail,
 		String this.thumbnailSmall,
 		String this.thumbnailLarge,
-		int this.destinyCharacterId,
+		String this.destinyCharacterId,
 		UserInfoCard this.userInfo,
 		int this.currentActivityHash,
 		String this.dateLastPlayed,

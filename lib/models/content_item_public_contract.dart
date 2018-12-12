@@ -2,7 +2,7 @@ import 'general_user.dart';
 import 'content_representation.dart';
 import 'comment_summary.dart';
 class ContentItemPublicContract{
-	int contentId;
+	String contentId;
 	String cType;
 	String cmsPath;
 	String creationDate;
@@ -18,7 +18,7 @@ class ContentItemPublicContract{
 	List<String> tags;
 	CommentSummary commentSummary;
 	ContentItemPublicContract(
-		int this.contentId,
+		String this.contentId,
 		String this.cType,
 		String this.cmsPath,
 		String this.creationDate,

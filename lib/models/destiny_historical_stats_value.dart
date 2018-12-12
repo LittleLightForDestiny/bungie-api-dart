@@ -6,13 +6,13 @@ class DestinyHistoricalStatsValue{
 	DestinyHistoricalStatsValuePair basic;
 	DestinyHistoricalStatsValuePair pga;
 	DestinyHistoricalStatsValuePair weighted;
-	int activityId;
+	String activityId;
 	DestinyHistoricalStatsValue(
 		String this.statId,
 		DestinyHistoricalStatsValuePair this.basic,
 		DestinyHistoricalStatsValuePair this.pga,
 		DestinyHistoricalStatsValuePair this.weighted,
-		int this.activityId,
+		String this.activityId,
 	);
 
 	static DestinyHistoricalStatsValue fromMap(Map<String, dynamic> data){

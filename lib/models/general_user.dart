@@ -1,18 +1,18 @@
 import 'user_to_user_context.dart';
 class GeneralUser{
-	int membershipId;
+	String membershipId;
 	String uniqueName;
 	String normalizedName;
 	String displayName;
 	int profilePicture;
 	int profileTheme;
 	int userTitle;
-	int successMessageFlags;
+	String successMessageFlags;
 	bool isDeleted;
 	String about;
 	String firstAccess;
 	String lastUpdate;
-	int legacyPortalUid;
+	String legacyPortalUid;
 	UserToUserContext context;
 	String psnDisplayName;
 	String xboxDisplayName;
@@ -20,7 +20,7 @@ class GeneralUser{
 	bool showActivity;
 	String locale;
 	bool localeInheritDefault;
-	int lastBanReportId;
+	String lastBanReportId;
 	bool showGroupMessaging;
 	String profilePicturePath;
 	String profilePictureWidePath;
@@ -31,19 +31,19 @@ class GeneralUser{
 	String profileBanExpire;
 	String blizzardDisplayName;
 	GeneralUser(
-		int this.membershipId,
+		String this.membershipId,
 		String this.uniqueName,
 		String this.normalizedName,
 		String this.displayName,
 		int this.profilePicture,
 		int this.profileTheme,
 		int this.userTitle,
-		int this.successMessageFlags,
+		String this.successMessageFlags,
 		bool this.isDeleted,
 		String this.about,
 		String this.firstAccess,
 		String this.lastUpdate,
-		int this.legacyPortalUid,
+		String this.legacyPortalUid,
 		UserToUserContext this.context,
 		String this.psnDisplayName,
 		String this.xboxDisplayName,
@@ -51,7 +51,7 @@ class GeneralUser{
 		bool this.showActivity,
 		String this.locale,
 		bool this.localeInheritDefault,
-		int this.lastBanReportId,
+		String this.lastBanReportId,
 		bool this.showGroupMessaging,
 		String this.profilePicturePath,
 		String this.profilePictureWidePath,

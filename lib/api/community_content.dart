@@ -88,7 +88,7 @@ class CommunityContent{
     //Gets the Live Streaming status of a particular Account and Membership Type.
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,
-        int membershipId,
+        String membershipId,
         int membershipType,
         int partnershipType,
     ) {

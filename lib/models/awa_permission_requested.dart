@@ -1,13 +1,13 @@
 class AwaPermissionRequested{
 	int type;
-	int affectedItemId;
+	String affectedItemId;
 	int membershipType;
-	int characterId;
+	String characterId;
 	AwaPermissionRequested(
 		int this.type,
-		int this.affectedItemId,
+		String this.affectedItemId,
 		int this.membershipType,
-		int this.characterId,
+		String this.characterId,
 	);
 
 	static AwaPermissionRequested fromMap(Map<String, dynamic> data){

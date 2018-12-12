@@ -81,7 +81,7 @@ class Destiny2{
     //Returns a summary information about all profiles linked to the requesting membership type&#x2F;membership ID that have valid Destiny information. The passed-in Membership Type&#x2F;Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
     static Future<DestinyLinkedProfilesResponseResponse> getLinkedProfiles (
         HttpClient client,
-        int membershipId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -96,7 +96,7 @@ class Destiny2{
     static Future<DestinyProfileResponseResponse> getProfile (
         HttpClient client,
         List<int> components,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -111,9 +111,9 @@ class Destiny2{
     //Returns character information for the supplied character.
     static Future<DestinyCharacterResponseResponse> getCharacter (
         HttpClient client,
-        int characterId,
+        String characterId,
         List<int> components,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -128,7 +128,7 @@ class Destiny2{
     //Returns information on the weekly clan rewards and if the clan has earned them or not. Note that this will always report rewards as not redeemed.
     static Future<DestinyMilestoneResponse> getClanWeeklyRewardState (
         HttpClient client,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Clan/${groupId}/WeeklyRewardState/", params);
@@ -142,8 +142,8 @@ class Destiny2{
     static Future<DestinyItemResponseResponse> getItem (
         HttpClient client,
         List<int> components,
-        int destinyMembershipId,
-        int itemInstanceId,
+        String destinyMembershipId,
+        String itemInstanceId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -158,9 +158,9 @@ class Destiny2{
     //Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating&#x2F;dynamic inventories. Use their definitions as-is for those.
     static Future<DestinyVendorsResponseResponse> getVendors (
         HttpClient client,
-        int characterId,
+        String characterId,
         List<int> components,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -175,9 +175,9 @@ class Destiny2{
     //Get the details of a specific Vendor.
     static Future<DestinyVendorResponseResponse> getVendor (
         HttpClient client,
-        int characterId,
+        String characterId,
         List<int> components,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
         int vendorHash,
     ) {
@@ -193,10 +193,10 @@ class Destiny2{
     //Given a Presentation Node that has Collectibles as direct descendants, this will return item details about those descendants in the context of the requesting character.
     static Future<DestinyCollectibleNodeDetailResponseResponse> getCollectibleNodeDetails (
         HttpClient client,
-        int characterId,
+        String characterId,
         int collectiblePresentationNodeHash,
         List<int> components,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -295,7 +295,7 @@ class Destiny2{
     //Gets the available post game carnage report for the activity ID.
     static Future<DestinyPostGameCarnageReportDataResponse> getPostGameCarnageReport (
         HttpClient client,
-        int activityId,
+        String activityId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/", params);
@@ -308,7 +308,7 @@ class Destiny2{
     //Report a player that you met in an activity that was engaging in ToS-violating activities. Both you and the offending player must have played in the activityId passed in. Please use this judiciously and only when you have strong suspicions of violation, pretty please.
     static Future<int32Response> reportOffensivePostGameCarnageReportPlayer (
         HttpClient client,
-        int activityId,
+        String activityId,
         DestinyReportOffensePgcrRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -335,7 +335,7 @@ class Destiny2{
     //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getClanLeaderboards (
         HttpClient client,
-        int groupId,
+        String groupId,
         int maxtop,
         String modes,
         String statid,
@@ -354,7 +354,7 @@ class Destiny2{
     //Gets aggregated stats for a clan using the same categories as the clan leaderboards. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<ListOfDestinyClanAggregateStatResponse> getClanAggregateStats (
         HttpClient client,
-        int groupId,
+        String groupId,
         String modes,
     ) {
         Map<String, dynamic> params = new Map();
@@ -369,7 +369,7 @@ class Destiny2{
     //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint has not yet been implemented. It is being returned for a preview of future functionality, and for public comment&#x2F;suggestion&#x2F;preparation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboards (
         HttpClient client,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int maxtop,
         int membershipType,
         String modes,
@@ -389,8 +389,8 @@ class Destiny2{
     //Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboardsForCharacter (
         HttpClient client,
-        int characterId,
-        int destinyMembershipId,
+        String characterId,
+        String destinyMembershipId,
         int maxtop,
         int membershipType,
         String modes,
@@ -426,10 +426,10 @@ class Destiny2{
     //Gets historical stats for indicated character.
     static Future<DestinyHistoricalStatsResultsResponse> getHistoricalStats (
         HttpClient client,
-        int characterId,
+        String characterId,
         String dayend,
         String daystart,
-        int destinyMembershipId,
+        String destinyMembershipId,
         List<int> groups,
         int membershipType,
         List<int> modes,
@@ -451,7 +451,7 @@ class Destiny2{
     //Gets aggregate historical stats organized around each character for a given account.
     static Future<DestinyHistoricalStatsAccountResultResponse> getHistoricalStatsForAccount (
         HttpClient client,
-        int destinyMembershipId,
+        String destinyMembershipId,
         List<int> groups,
         int membershipType,
     ) {
@@ -467,9 +467,9 @@ class Destiny2{
     //Gets activity history stats for indicated character.
     static Future<DestinyActivityHistoryResultsResponse> getActivityHistory (
         HttpClient client,
-        int characterId,
+        String characterId,
         int count,
-        int destinyMembershipId,
+        String destinyMembershipId,
         int membershipType,
         int mode,
         int page,
@@ -488,8 +488,8 @@ class Destiny2{
     //Gets details about unique weapon usage, including all exotic weapons.
     static Future<DestinyHistoricalWeaponStatsDataResponse> getUniqueWeaponHistory (
         HttpClient client,
-        int characterId,
-        int destinyMembershipId,
+        String characterId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -503,8 +503,8 @@ class Destiny2{
     //Gets all activities the character has participated in together with aggregate statistics for those activities.
     static Future<DestinyAggregateActivityResultsResponse> getDestinyAggregateActivityStats (
         HttpClient client,
-        int characterId,
-        int destinyMembershipId,
+        String characterId,
+        String destinyMembershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();

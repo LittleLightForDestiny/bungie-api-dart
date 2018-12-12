@@ -1,11 +1,11 @@
 class DestinyReportOffensePgcrRequest{
 	List<int> reasonCategoryHashes;
 	List<int> reasonHashes;
-	int offendingCharacterId;
+	String offendingCharacterId;
 	DestinyReportOffensePgcrRequest(
 		List<int> this.reasonCategoryHashes,
 		List<int> this.reasonHashes,
-		int this.offendingCharacterId,
+		String this.offendingCharacterId,
 	);
 
 	static DestinyReportOffensePgcrRequest fromMap(Map<String, dynamic> data){

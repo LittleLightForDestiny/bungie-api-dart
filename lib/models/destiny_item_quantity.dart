@@ -1,10 +1,10 @@
 class DestinyItemQuantity{
 	int itemHash;
-	int itemInstanceId;
+	String itemInstanceId;
 	int quantity;
 	DestinyItemQuantity(
 		int this.itemHash,
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		int this.quantity,
 	);
 

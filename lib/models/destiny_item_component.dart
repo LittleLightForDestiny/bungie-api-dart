@@ -1,6 +1,6 @@
 class DestinyItemComponent{
 	int itemHash;
-	int itemInstanceId;
+	String itemInstanceId;
 	int quantity;
 	int bindStatus;
 	int location;
@@ -12,7 +12,7 @@ class DestinyItemComponent{
 	String expirationDate;
 	DestinyItemComponent(
 		int this.itemHash,
-		int this.itemInstanceId,
+		String this.itemInstanceId,
 		int this.quantity,
 		int this.bindStatus,
 		int this.location,

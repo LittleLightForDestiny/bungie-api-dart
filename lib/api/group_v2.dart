@@ -111,7 +111,7 @@ class GroupV2{
     //Get information about a specific group of the given ID.
     static Future<GroupResponseResponse> getGroup (
         HttpClient client,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/", params);
@@ -138,7 +138,7 @@ class GroupV2{
     //Gets a list of available optional conversation channels and their settings.
     static Future<CEListOfGroupOptionalConversationResponse> getGroupOptionalConversations (
         HttpClient client,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/OptionalConversations/", params);
@@ -165,7 +165,7 @@ class GroupV2{
     //Edit an existing group. You must have suitable permissions in the group to perform this operation. This latest revision will only edit the fields you pass in - pass null for properties you want to leave unaltered.
     static Future<int32Response> editGroup (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupEditAction body
     ) {
         Map<String, dynamic> params = new Map();
@@ -180,7 +180,7 @@ class GroupV2{
     //Edit an existing group&#39;s clan banner. You must have suitable permissions in the group to perform this operation. All fields are required.
     static Future<int32Response> editClanBanner (
         HttpClient client,
-        int groupId,
+        String groupId,
         ClanBanner body
     ) {
         Map<String, dynamic> params = new Map();
@@ -195,7 +195,7 @@ class GroupV2{
     //Edit group options only available to a founder. You must have suitable permissions in the group to perform this operation.
     static Future<int32Response> editFounderOptions (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupOptionsEditAction body
     ) {
         Map<String, dynamic> params = new Map();
@@ -210,7 +210,7 @@ class GroupV2{
     //Add a new optional conversation&#x2F;chat channel. Requires admin permissions to the group.
     static Future<int64Response> addOptionalConversation (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupOptionalConversationAddRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -225,8 +225,8 @@ class GroupV2{
     //Edit the settings of an optional conversation&#x2F;chat channel. Requires admin permissions to the group.
     static Future<int64Response> editOptionalConversation (
         HttpClient client,
-        int conversationId,
-        int groupId,
+        String conversationId,
+        String groupId,
         GroupOptionalConversationEditRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -242,7 +242,7 @@ class GroupV2{
     static Future<SearchResultOfGroupMemberResponse> getMembersOfGroup (
         HttpClient client,
         int currentpage,
-        int groupId,
+        String groupId,
         int memberType,
         String nameSearch,
     ) {
@@ -260,7 +260,7 @@ class GroupV2{
     static Future<SearchResultOfGroupMemberResponse> getAdminsAndFounderOfGroup (
         HttpClient client,
         int currentpage,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/AdminsAndFounder/", params);
@@ -273,8 +273,8 @@ class GroupV2{
     //Edit the membership type of a given member. You must have suitable permissions in the group to perform this operation.
     static Future<int32Response> editGroupMembership (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
         int memberType,
     ) {
@@ -289,8 +289,8 @@ class GroupV2{
     //Kick a member from the given group, forcing them to reapply if they wish to re-join the group. You must have suitable permissions in the group to perform this operation.
     static Future<GroupMemberLeaveResultResponse> kickMember (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -304,8 +304,8 @@ class GroupV2{
     //Bans the requested member from the requested group for the specified period of time.
     static Future<int32Response> banMember (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
         GroupBanRequest body
     ) {
@@ -321,8 +321,8 @@ class GroupV2{
     //Unbans the requested member, allowing them to re-apply for membership.
     static Future<int32Response> unbanMember (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -337,7 +337,7 @@ class GroupV2{
     static Future<SearchResultOfGroupBanResponse> getBannedMembersOfGroup (
         HttpClient client,
         int currentpage,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Banned/", params);
@@ -350,8 +350,8 @@ class GroupV2{
     //An administrative method to allow the founder of a group or clan to give up their position to another admin permanently.
     static Future<booleanResponse> abdicateFoundership (
         HttpClient client,
-        int founderIdNew,
-        int groupId,
+        String founderIdNew,
+        String groupId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -365,7 +365,7 @@ class GroupV2{
     //Request permission to join the given group.
     static Future<GroupApplicationResponseResponse> requestGroupMembership (
         HttpClient client,
-        int groupId,
+        String groupId,
         int membershipType,
         GroupApplicationRequest body
     ) {
@@ -382,7 +382,7 @@ class GroupV2{
     static Future<SearchResultOfGroupMemberApplicationResponse> getPendingMemberships (
         HttpClient client,
         int currentpage,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Members/Pending/", params);
@@ -396,7 +396,7 @@ class GroupV2{
     static Future<SearchResultOfGroupMemberApplicationResponse> getInvitedIndividuals (
         HttpClient client,
         int currentpage,
-        int groupId,
+        String groupId,
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Members/InvitedIndividuals/", params);
@@ -409,7 +409,7 @@ class GroupV2{
     //Rescind your application to join the given group or leave the group if you are already a member..
     static Future<GroupMemberLeaveResultResponse> rescindGroupMembership (
         HttpClient client,
-        int groupId,
+        String groupId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -423,7 +423,7 @@ class GroupV2{
     //Approve all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> approveAllPending (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupApplicationRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -438,7 +438,7 @@ class GroupV2{
     //Deny all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> denyAllPending (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupApplicationRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -453,7 +453,7 @@ class GroupV2{
     //Approve all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> approvePendingForList (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupApplicationListRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -468,8 +468,8 @@ class GroupV2{
     //Approve the given membershipId to join the group&#x2F;clan as long as they have applied.
     static Future<booleanResponse> approvePending (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
         GroupApplicationRequest body
     ) {
@@ -485,7 +485,7 @@ class GroupV2{
     //Deny all of the pending users for the given group that match the passed-in .
     static Future<ListOfEntityActionResultResponse> denyPendingForList (
         HttpClient client,
-        int groupId,
+        String groupId,
         GroupApplicationListRequest body
     ) {
         Map<String, dynamic> params = new Map();
@@ -502,7 +502,7 @@ class GroupV2{
         HttpClient client,
         int filter,
         int groupType,
-        int membershipId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -518,7 +518,7 @@ class GroupV2{
         HttpClient client,
         int filter,
         int groupType,
-        int membershipId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
@@ -532,8 +532,8 @@ class GroupV2{
     //Invite a user to join this group.
     static Future<GroupApplicationResponseResponse> individualGroupInvite (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
         GroupApplicationRequest body
     ) {
@@ -549,8 +549,8 @@ class GroupV2{
     //Cancels a pending invitation to join a group.
     static Future<GroupApplicationResponseResponse> individualGroupInviteCancel (
         HttpClient client,
-        int groupId,
-        int membershipId,
+        String groupId,
+        String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();

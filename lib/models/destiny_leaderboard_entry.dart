@@ -3,12 +3,12 @@ import 'destiny_historical_stats_value.dart';
 class DestinyLeaderboardEntry{
 	int rank;
 	DestinyPlayer player;
-	int characterId;
+	String characterId;
 	DestinyHistoricalStatsValue value;
 	DestinyLeaderboardEntry(
 		int this.rank,
 		DestinyPlayer this.player,
-		int this.characterId,
+		String this.characterId,
 		DestinyHistoricalStatsValue this.value,
 	);
 

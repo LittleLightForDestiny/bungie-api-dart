@@ -1,10 +1,10 @@
 class DestinyItemActionRequest{
-	int itemId;
-	int characterId;
+	String itemId;
+	String characterId;
 	int membershipType;
 	DestinyItemActionRequest(
-		int this.itemId,
-		int this.characterId,
+		String this.itemId,
+		String this.characterId,
 		int this.membershipType,
 	);
 
