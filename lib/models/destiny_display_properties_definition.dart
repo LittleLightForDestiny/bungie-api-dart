@@ -10,7 +10,7 @@ class DestinyDisplayPropertiesDefinition{
 		bool this.hasIcon,
 	);
 
-	static DestinyDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyDisplayPropertiesDefinition{
 		};
 		List<DestinyDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDisplayPropertiesDefinition.fromJson(item));
+      list.add(DestinyDisplayPropertiesDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['description'] = description;
+			data['name'] = name;
+			data['icon'] = icon;
+			data['hasIcon'] = hasIcon;
 	}
 }

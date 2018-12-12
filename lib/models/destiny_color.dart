@@ -10,7 +10,7 @@ class DestinyColor{
 		String this.alpha,
 	);
 
-	static DestinyColor fromJson(Map<String, dynamic> data){
+	static DestinyColor fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyColor{
 		};
 		List<DestinyColor> list = new List();
     data.forEach((item) {
-      list.add(DestinyColor.fromJson(item));
+      list.add(DestinyColor.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['red'] = red;
+			data['green'] = green;
+			data['blue'] = blue;
+			data['alpha'] = alpha;
 	}
 }

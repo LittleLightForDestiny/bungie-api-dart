@@ -12,7 +12,7 @@ class DestinyItemTalentGridComponent{
 		DestinyProgression this.gridProgression,
 	);
 
-	static DestinyItemTalentGridComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -30,8 +30,16 @@ class DestinyItemTalentGridComponent{
 		};
 		List<DestinyItemTalentGridComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemTalentGridComponent.fromJson(item));
+      list.add(DestinyItemTalentGridComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['talentGridHash'] = talentGridHash;
+			data['nodes'] = nodes.map((item)=>item.toMap());
+			data['isGridComplete'] = isGridComplete;
+			data['gridProgression'] = gridProgression;
 	}
 }

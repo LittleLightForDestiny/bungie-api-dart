@@ -15,9 +15,9 @@ class {{className}}{
         {{{typeName}}} body
         {{/requestBody}}
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         {{#queryParameters}}
-        params['{{name}}'] = "${ {{name}} }";
+        params['{{name}}'] = {{name}};
         {{/queryParameters}}
         HttpClientConfig config = HttpClientConfig('{{method}}', "{{{url}}}", params);
         {{#requestBody}}
@@ -25,7 +25,7 @@ class {{className}}{
         {{/requestBody}}
         config.bodyContentType = {{{requestBodyContentType}}};
         return client.request(config).then((response){
-            return {{returnType}}.fromJson(response);
+            return {{returnType}}.fromMap(response);
         });
     }
     {{/methods}}

@@ -6,7 +6,7 @@ class InterpolationPointFloat{
 		int this.weight,
 	);
 
-	static InterpolationPointFloat fromJson(Map<String, dynamic> data){
+	static InterpolationPointFloat fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class InterpolationPointFloat{
 		};
 		List<InterpolationPointFloat> list = new List();
     data.forEach((item) {
-      list.add(InterpolationPointFloat.fromJson(item));
+      list.add(InterpolationPointFloat.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['value'] = value;
+			data['weight'] = weight;
 	}
 }

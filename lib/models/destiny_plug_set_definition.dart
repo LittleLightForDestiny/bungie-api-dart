@@ -14,7 +14,7 @@ class DestinyPlugSetDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyPlugSetDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPlugSetDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -33,8 +33,17 @@ class DestinyPlugSetDefinition{
 		};
 		List<DestinyPlugSetDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPlugSetDefinition.fromJson(item));
+      list.add(DestinyPlugSetDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['reusablePlugItems'] = reusablePlugItems.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

@@ -11,7 +11,7 @@ class ApiUsage{
 		List<Series> this.throttledRequests,
 	);
 
-	static ApiUsage fromJson(Map<String, dynamic> data){
+	static ApiUsage fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,15 @@ class ApiUsage{
 		};
 		List<ApiUsage> list = new List();
     data.forEach((item) {
-      list.add(ApiUsage.fromJson(item));
+      list.add(ApiUsage.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['range'] = range;
+			data['apiCalls'] = apiCalls.map((item)=>item.toMap());
+			data['throttledRequests'] = throttledRequests.map((item)=>item.toMap());
 	}
 }

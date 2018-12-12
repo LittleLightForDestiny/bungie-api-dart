@@ -32,7 +32,7 @@ class TrendingEntry{
 		String this.creationDate,
 	);
 
-	static TrendingEntry fromJson(Map<String, dynamic> data){
+	static TrendingEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -61,8 +61,27 @@ class TrendingEntry{
 		};
 		List<TrendingEntry> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntry.fromJson(item));
+      list.add(TrendingEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['weight'] = weight;
+			data['isFeatured'] = isFeatured;
+			data['identifier'] = identifier;
+			data['entityType'] = entityType;
+			data['displayName'] = displayName;
+			data['tagline'] = tagline;
+			data['image'] = image;
+			data['startDate'] = startDate;
+			data['endDate'] = endDate;
+			data['link'] = link;
+			data['webmVideo'] = webmVideo;
+			data['mp4Video'] = mp4Video;
+			data['featureImage'] = featureImage;
+			data['items'] = items.map((item)=>item.toMap());
+			data['creationDate'] = creationDate;
 	}
 }

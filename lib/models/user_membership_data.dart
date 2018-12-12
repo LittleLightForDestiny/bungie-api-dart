@@ -8,13 +8,13 @@ class UserMembershipData{
 		GeneralUser this.bungieNetUser,
 	);
 
-	static UserMembershipData fromJson(Map<String, dynamic> data){
+	static UserMembershipData fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new UserMembershipData(
 				UserInfoCard.fromList(data['destinyMemberships']),
-				GeneralUser.fromJson(data['bungieNetUser']),
+				GeneralUser.fromMap(data['bungieNetUser']),
 		);
 	}
 
@@ -24,8 +24,14 @@ class UserMembershipData{
 		};
 		List<UserMembershipData> list = new List();
     data.forEach((item) {
-      list.add(UserMembershipData.fromJson(item));
+      list.add(UserMembershipData.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['destinyMemberships'] = destinyMemberships.map((item)=>item.toMap());
+			data['bungieNetUser'] = bungieNetUser.toMap();
 	}
 }

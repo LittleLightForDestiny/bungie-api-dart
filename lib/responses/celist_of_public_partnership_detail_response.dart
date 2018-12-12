@@ -18,7 +18,7 @@ class CEListOfPublicPartnershipDetailResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CEListOfPublicPartnershipDetailResponse fromJson(Map<String, dynamic> data){
+    static CEListOfPublicPartnershipDetailResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class CEListOfPublicPartnershipDetailResponse{
 		};
 		List<CEListOfPublicPartnershipDetailResponse> list = new List();
     data.forEach((item) {
-      list.add(CEListOfPublicPartnershipDetailResponse.fromJson(item));
+      list.add(CEListOfPublicPartnershipDetailResponse.fromMap(item));
     });
     return list;
 	}

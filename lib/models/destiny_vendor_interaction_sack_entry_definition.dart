@@ -4,7 +4,7 @@ class DestinyVendorInteractionSackEntryDefinition{
 		int this.sackType,
 	);
 
-	static DestinyVendorInteractionSackEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorInteractionSackEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyVendorInteractionSackEntryDefinition{
 		};
 		List<DestinyVendorInteractionSackEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorInteractionSackEntryDefinition.fromJson(item));
+      list.add(DestinyVendorInteractionSackEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['sackType'] = sackType;
 	}
 }

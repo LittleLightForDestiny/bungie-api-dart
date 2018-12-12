@@ -42,7 +42,7 @@ class DestinyTalentNodeDefinition{
 		bool this.ignoreForCompletion,
 	);
 
-	static DestinyTalentNodeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyTalentNodeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -75,8 +75,31 @@ class DestinyTalentNodeDefinition{
 		};
 		List<DestinyTalentNodeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNodeDefinition.fromJson(item));
+      list.add(DestinyTalentNodeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodeIndex'] = nodeIndex;
+			data['nodeHash'] = nodeHash;
+			data['row'] = row;
+			data['column'] = column;
+			data['prerequisiteNodeIndexes'] = prerequisiteNodeIndexes;
+			data['binaryPairNodeIndex'] = binaryPairNodeIndex;
+			data['autoUnlocks'] = autoUnlocks;
+			data['lastStepRepeats'] = lastStepRepeats;
+			data['isRandom'] = isRandom;
+			data['randomActivationRequirement'] = randomActivationRequirement;
+			data['isRandomRepurchasable'] = isRandomRepurchasable;
+			data['steps'] = steps.map((item)=>item.toMap());
+			data['exclusiveWithNodeHashes'] = exclusiveWithNodeHashes;
+			data['randomStartProgressionBarAtProgression'] = randomStartProgressionBarAtProgression;
+			data['layoutIdentifier'] = layoutIdentifier;
+			data['groupHash'] = groupHash;
+			data['loreHash'] = loreHash;
+			data['nodeStyleIdentifier'] = nodeStyleIdentifier;
+			data['ignoreForCompletion'] = ignoreForCompletion;
 	}
 }

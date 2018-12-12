@@ -9,7 +9,7 @@ class DestinyClanAggregateStat{
 		DestinyHistoricalStatsValue this.value,
 	);
 
-	static DestinyClanAggregateStat fromJson(Map<String, dynamic> data){
+	static DestinyClanAggregateStat fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -26,8 +26,15 @@ class DestinyClanAggregateStat{
 		};
 		List<DestinyClanAggregateStat> list = new List();
     data.forEach((item) {
-      list.add(DestinyClanAggregateStat.fromJson(item));
+      list.add(DestinyClanAggregateStat.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['mode'] = mode;
+			data['statId'] = statId;
+			data['value'] = value;
 	}
 }

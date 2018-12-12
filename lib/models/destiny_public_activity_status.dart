@@ -9,7 +9,7 @@ class DestinyPublicActivityStatus{
 		List<DestinyItemQuantity> this.rewardTooltipItems,
 	);
 
-	static DestinyPublicActivityStatus fromJson(Map<String, dynamic> data){
+	static DestinyPublicActivityStatus fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -26,8 +26,15 @@ class DestinyPublicActivityStatus{
 		};
 		List<DestinyPublicActivityStatus> list = new List();
     data.forEach((item) {
-      list.add(DestinyPublicActivityStatus.fromJson(item));
+      list.add(DestinyPublicActivityStatus.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['challengeObjectiveHashes'] = challengeObjectiveHashes;
+			data['modifierHashes'] = modifierHashes;
+			data['rewardTooltipItems'] = rewardTooltipItems.map((item)=>item.toMap());
 	}
 }

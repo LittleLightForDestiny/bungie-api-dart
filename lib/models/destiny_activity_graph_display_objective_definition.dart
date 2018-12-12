@@ -6,7 +6,7 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 		int this.objectiveHash,
 	);
 
-	static DestinyActivityGraphDisplayObjectiveDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphDisplayObjectiveDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 		};
 		List<DestinyActivityGraphDisplayObjectiveDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphDisplayObjectiveDefinition.fromJson(item));
+      list.add(DestinyActivityGraphDisplayObjectiveDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['id'] = id;
+			data['objectiveHash'] = objectiveHash;
 	}
 }

@@ -6,7 +6,7 @@ class Datapoint{
 		int this.count,
 	);
 
-	static Datapoint fromJson(Map<String, dynamic> data){
+	static Datapoint fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class Datapoint{
 		};
 		List<Datapoint> list = new List();
     data.forEach((item) {
-      list.add(Datapoint.fromJson(item));
+      list.add(Datapoint.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['time'] = time;
+			data['count'] = count;
 	}
 }

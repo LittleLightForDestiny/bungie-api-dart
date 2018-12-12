@@ -17,7 +17,7 @@ class booleanResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static booleanResponse fromJson(Map<String, dynamic> data){
+    static booleanResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,7 +38,7 @@ class booleanResponse{
 		};
 		List<booleanResponse> list = new List();
     data.forEach((item) {
-      list.add(booleanResponse.fromJson(item));
+      list.add(booleanResponse.fromMap(item));
     });
     return list;
 	}

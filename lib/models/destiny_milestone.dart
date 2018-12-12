@@ -26,7 +26,7 @@ class DestinyMilestone{
 		int this.order,
 	);
 
-	static DestinyMilestone fromJson(Map<String, dynamic> data){
+	static DestinyMilestone fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -50,8 +50,22 @@ class DestinyMilestone{
 		};
 		List<DestinyMilestone> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestone.fromJson(item));
+      list.add(DestinyMilestone.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['milestoneHash'] = milestoneHash;
+			data['availableQuests'] = availableQuests.map((item)=>item.toMap());
+			data['activities'] = activities.map((item)=>item.toMap());
+			data['values'] = values;
+			data['vendorHashes'] = vendorHashes;
+			data['vendors'] = vendors.map((item)=>item.toMap());
+			data['rewards'] = rewards.map((item)=>item.toMap());
+			data['startDate'] = startDate;
+			data['endDate'] = endDate;
+			data['order'] = order;
 	}
 }

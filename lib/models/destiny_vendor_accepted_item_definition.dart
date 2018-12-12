@@ -6,7 +6,7 @@ class DestinyVendorAcceptedItemDefinition{
 		int this.destinationInventoryBucketHash,
 	);
 
-	static DestinyVendorAcceptedItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorAcceptedItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyVendorAcceptedItemDefinition{
 		};
 		List<DestinyVendorAcceptedItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorAcceptedItemDefinition.fromJson(item));
+      list.add(DestinyVendorAcceptedItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['acceptedInventoryBucketHash'] = acceptedInventoryBucketHash;
+			data['destinationInventoryBucketHash'] = destinationInventoryBucketHash;
 	}
 }

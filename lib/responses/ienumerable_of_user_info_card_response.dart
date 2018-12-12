@@ -18,7 +18,7 @@ class IEnumerableOfUserInfoCardResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static IEnumerableOfUserInfoCardResponse fromJson(Map<String, dynamic> data){
+    static IEnumerableOfUserInfoCardResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class IEnumerableOfUserInfoCardResponse{
 		};
 		List<IEnumerableOfUserInfoCardResponse> list = new List();
     data.forEach((item) {
-      list.add(IEnumerableOfUserInfoCardResponse.fromJson(item));
+      list.add(IEnumerableOfUserInfoCardResponse.fromMap(item));
     });
     return list;
 	}

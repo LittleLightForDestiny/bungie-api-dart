@@ -31,7 +31,7 @@ class PostResponse{
 		String this.locale,
 	);
 
-	static PostResponse fromJson(Map<String, dynamic> data){
+	static PostResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -48,7 +48,7 @@ class PostResponse{
 				data['userHasMutedPost'],
 				data['latestReplyPostId'],
 				data['latestReplyAuthorId'],
-				IgnoreResponse.fromJson(data['ignoreStatus']),
+				IgnoreResponse.fromMap(data['ignoreStatus']),
 				data['locale'],
 		);
 	}
@@ -59,8 +59,26 @@ class PostResponse{
 		};
 		List<PostResponse> list = new List();
     data.forEach((item) {
-      list.add(PostResponse.fromJson(item));
+      list.add(PostResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['lastReplyTimestamp'] = lastReplyTimestamp;
+			data['IsPinned'] = isPinned;
+			data['urlMediaType'] = urlMediaType;
+			data['thumbnail'] = thumbnail;
+			data['popularity'] = popularity;
+			data['isActive'] = isActive;
+			data['isAnnouncement'] = isAnnouncement;
+			data['userRating'] = userRating;
+			data['userHasRated'] = userHasRated;
+			data['userHasMutedPost'] = userHasMutedPost;
+			data['latestReplyPostId'] = latestReplyPostId;
+			data['latestReplyAuthorId'] = latestReplyAuthorId;
+			data['ignoreStatus'] = ignoreStatus.toMap();
+			data['locale'] = locale;
 	}
 }

@@ -5,12 +5,12 @@ class DestinyDestinationBubbleSettingDefinition{
 		DestinyDisplayPropertiesDefinition this.displayProperties,
 	);
 
-	static DestinyDestinationBubbleSettingDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDestinationBubbleSettingDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyDestinationBubbleSettingDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 		);
 	}
 
@@ -20,8 +20,13 @@ class DestinyDestinationBubbleSettingDefinition{
 		};
 		List<DestinyDestinationBubbleSettingDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDestinationBubbleSettingDefinition.fromJson(item));
+      list.add(DestinyDestinationBubbleSettingDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
 	}
 }

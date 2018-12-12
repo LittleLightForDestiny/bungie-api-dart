@@ -6,7 +6,7 @@ class DestinyInsertPlugActionDefinition{
 		int this.actionType,
 	);
 
-	static DestinyInsertPlugActionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyInsertPlugActionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyInsertPlugActionDefinition{
 		};
 		List<DestinyInsertPlugActionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyInsertPlugActionDefinition.fromJson(item));
+      list.add(DestinyInsertPlugActionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['actionExecuteSeconds'] = actionExecuteSeconds;
+			data['actionType'] = actionType;
 	}
 }

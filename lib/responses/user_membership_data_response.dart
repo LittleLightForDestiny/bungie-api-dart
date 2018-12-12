@@ -18,12 +18,12 @@ class UserMembershipDataResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static UserMembershipDataResponse fromJson(Map<String, dynamic> data){
+    static UserMembershipDataResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new UserMembershipDataResponse(
-				UserMembershipData.fromJson(data['Response']),
+				UserMembershipData.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class UserMembershipDataResponse{
 		};
 		List<UserMembershipDataResponse> list = new List();
     data.forEach((item) {
-      list.add(UserMembershipDataResponse.fromJson(item));
+      list.add(UserMembershipDataResponse.fromMap(item));
     });
     return list;
 	}

@@ -11,12 +11,12 @@ class DestinyActivityTypeDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyActivityTypeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityTypeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyActivityTypeDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -29,8 +29,16 @@ class DestinyActivityTypeDefinition{
 		};
 		List<DestinyActivityTypeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityTypeDefinition.fromJson(item));
+      list.add(DestinyActivityTypeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

@@ -12,7 +12,7 @@ class DestinyActivityPlaylistItemDefinition{
 		List<int> this.activityModeTypes,
 	);
 
-	static DestinyActivityPlaylistItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityPlaylistItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyActivityPlaylistItemDefinition{
 		};
 		List<DestinyActivityPlaylistItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityPlaylistItemDefinition.fromJson(item));
+      list.add(DestinyActivityPlaylistItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['directActivityModeHash'] = directActivityModeHash;
+			data['directActivityModeType'] = directActivityModeType;
+			data['activityModeHashes'] = activityModeHashes;
+			data['activityModeTypes'] = activityModeTypes;
 	}
 }

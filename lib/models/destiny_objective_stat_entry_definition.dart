@@ -7,7 +7,7 @@ class DestinyObjectiveStatEntryDefinition{
 		int this.style,
 	);
 
-	static DestinyObjectiveStatEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyObjectiveStatEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyObjectiveStatEntryDefinition{
 		};
 		List<DestinyObjectiveStatEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyObjectiveStatEntryDefinition.fromJson(item));
+      list.add(DestinyObjectiveStatEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['stat'] = stat;
+			data['style'] = style;
 	}
 }

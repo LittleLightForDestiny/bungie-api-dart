@@ -18,12 +18,12 @@ class GeneralUserResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static GeneralUserResponse fromJson(Map<String, dynamic> data){
+    static GeneralUserResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GeneralUserResponse(
-				GeneralUser.fromJson(data['Response']),
+				GeneralUser.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class GeneralUserResponse{
 		};
 		List<GeneralUserResponse> list = new List();
     data.forEach((item) {
-      list.add(GeneralUserResponse.fromJson(item));
+      list.add(GeneralUserResponse.fromMap(item));
     });
     return list;
 	}

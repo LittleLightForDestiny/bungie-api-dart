@@ -10,7 +10,7 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 		String this.type,
 	);
 
-	static DestinyVendorRequirementDisplayEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorRequirementDisplayEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 		};
 		List<DestinyVendorRequirementDisplayEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorRequirementDisplayEntryDefinition.fromJson(item));
+      list.add(DestinyVendorRequirementDisplayEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['icon'] = icon;
+			data['name'] = name;
+			data['source'] = source;
+			data['type'] = type;
 	}
 }

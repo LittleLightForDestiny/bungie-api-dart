@@ -18,7 +18,7 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse fromJson(Map<String, dynamic> data){
+    static ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 		};
 		List<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> list = new List();
     data.forEach((item) {
-      list.add(ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(item));
+      list.add(ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromMap(item));
     });
     return list;
 	}

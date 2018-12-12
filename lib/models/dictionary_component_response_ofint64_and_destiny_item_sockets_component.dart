@@ -7,7 +7,7 @@ class DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent{
 		int this.privacy,
 	);
 
-	static DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent fromJson(Map<String, dynamic> data){
+	static DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent{
 		};
 		List<DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent> list = new List();
     data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent.fromJson(item));
+      list.add(DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data;
+			data['privacy'] = privacy;
 	}
 }

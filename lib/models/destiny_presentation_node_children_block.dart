@@ -11,7 +11,7 @@ class DestinyPresentationNodeChildrenBlock{
 		List<DestinyPresentationNodeRecordChildEntry> this.records,
 	);
 
-	static DestinyPresentationNodeChildrenBlock fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodeChildrenBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,15 @@ class DestinyPresentationNodeChildrenBlock{
 		};
 		List<DestinyPresentationNodeChildrenBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodeChildrenBlock.fromJson(item));
+      list.add(DestinyPresentationNodeChildrenBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['presentationNodes'] = presentationNodes.map((item)=>item.toMap());
+			data['collectibles'] = collectibles.map((item)=>item.toMap());
+			data['records'] = records.map((item)=>item.toMap());
 	}
 }

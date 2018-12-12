@@ -129,12 +129,12 @@ class DestinyInventoryItemDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyInventoryItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyInventoryItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyInventoryItemDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['collectibleHash'],
 				data['secondaryIcon'],
 				data['secondaryOverlay'],
@@ -195,8 +195,64 @@ class DestinyInventoryItemDefinition{
 		};
 		List<DestinyInventoryItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyInventoryItemDefinition.fromJson(item));
+      list.add(DestinyInventoryItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['collectibleHash'] = collectibleHash;
+			data['secondaryIcon'] = secondaryIcon;
+			data['secondaryOverlay'] = secondaryOverlay;
+			data['secondarySpecial'] = secondarySpecial;
+			data['backgroundColor'] = backgroundColor;
+			data['screenshot'] = screenshot;
+			data['itemTypeDisplayName'] = itemTypeDisplayName;
+			data['uiItemDisplayStyle'] = uiItemDisplayStyle;
+			data['itemTypeAndTierDisplayName'] = itemTypeAndTierDisplayName;
+			data['displaySource'] = displaySource;
+			data['tooltipStyle'] = tooltipStyle;
+			data['action'] = action;
+			data['inventory'] = inventory;
+			data['setData'] = setData;
+			data['stats'] = stats;
+			data['emblemObjectiveHash'] = emblemObjectiveHash;
+			data['equippingBlock'] = equippingBlock;
+			data['translationBlock'] = translationBlock;
+			data['preview'] = preview;
+			data['quality'] = quality;
+			data['value'] = value;
+			data['sourceData'] = sourceData;
+			data['objectives'] = objectives;
+			data['plug'] = plug;
+			data['gearset'] = gearset;
+			data['sack'] = sack;
+			data['sockets'] = sockets;
+			data['summary'] = summary;
+			data['talentGrid'] = talentGrid;
+			data['investmentStats'] = investmentStats.map((item)=>item.toMap());
+			data['perks'] = perks.map((item)=>item.toMap());
+			data['loreHash'] = loreHash;
+			data['summaryItemHash'] = summaryItemHash;
+			data['animations'] = animations.map((item)=>item.toMap());
+			data['allowActions'] = allowActions;
+			data['links'] = links.map((item)=>item.toMap());
+			data['doesPostmasterPullHaveSideEffects'] = doesPostmasterPullHaveSideEffects;
+			data['nonTransferrable'] = nonTransferrable;
+			data['itemCategoryHashes'] = itemCategoryHashes;
+			data['specialItemType'] = specialItemType;
+			data['itemType'] = itemType;
+			data['itemSubType'] = itemSubType;
+			data['classType'] = classType;
+			data['equippable'] = equippable;
+			data['damageTypeHashes'] = damageTypeHashes;
+			data['damageTypes'] = damageTypes;
+			data['defaultDamageType'] = defaultDamageType;
+			data['defaultDamageTypeHash'] = defaultDamageTypeHash;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

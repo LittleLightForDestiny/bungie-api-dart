@@ -7,13 +7,13 @@ class DestinyCollectibleStateBlock{
 		DestinyPresentationNodeRequirementsBlock this.requirements,
 	);
 
-	static DestinyCollectibleStateBlock fromJson(Map<String, dynamic> data){
+	static DestinyCollectibleStateBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyCollectibleStateBlock(
 				data['obscuredOverrideItemHash'],
-				DestinyPresentationNodeRequirementsBlock.fromJson(data['requirements']),
+				DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class DestinyCollectibleStateBlock{
 		};
 		List<DestinyCollectibleStateBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleStateBlock.fromJson(item));
+      list.add(DestinyCollectibleStateBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['obscuredOverrideItemHash'] = obscuredOverrideItemHash;
+			data['requirements'] = requirements.toMap();
 	}
 }

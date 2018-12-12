@@ -12,14 +12,14 @@ class GroupUserBase{
 		String this.joinDate,
 	);
 
-	static GroupUserBase fromJson(Map<String, dynamic> data){
+	static GroupUserBase fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupUserBase(
 				data['groupId'],
-				UserInfoCard.fromJson(data['destinyUserInfo']),
-				UserInfoCard.fromJson(data['bungieNetUserInfo']),
+				UserInfoCard.fromMap(data['destinyUserInfo']),
+				UserInfoCard.fromMap(data['bungieNetUserInfo']),
 				data['joinDate'],
 		);
 	}
@@ -30,8 +30,16 @@ class GroupUserBase{
 		};
 		List<GroupUserBase> list = new List();
     data.forEach((item) {
-      list.add(GroupUserBase.fromJson(item));
+      list.add(GroupUserBase.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
+			data['destinyUserInfo'] = destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['joinDate'] = joinDate;
 	}
 }

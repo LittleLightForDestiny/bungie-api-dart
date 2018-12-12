@@ -4,7 +4,7 @@ class DestinyLinkedGraphEntryDefinition{
 		int this.activityGraphHash,
 	);
 
-	static DestinyLinkedGraphEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyLinkedGraphEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyLinkedGraphEntryDefinition{
 		};
 		List<DestinyLinkedGraphEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyLinkedGraphEntryDefinition.fromJson(item));
+      list.add(DestinyLinkedGraphEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityGraphHash'] = activityGraphHash;
 	}
 }

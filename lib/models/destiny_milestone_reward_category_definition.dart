@@ -14,7 +14,7 @@ class DestinyMilestoneRewardCategoryDefinition{
 		int this.order,
 	);
 
-	static DestinyMilestoneRewardCategoryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneRewardCategoryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -33,8 +33,17 @@ class DestinyMilestoneRewardCategoryDefinition{
 		};
 		List<DestinyMilestoneRewardCategoryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneRewardCategoryDefinition.fromJson(item));
+      list.add(DestinyMilestoneRewardCategoryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categoryHash'] = categoryHash;
+			data['categoryIdentifier'] = categoryIdentifier;
+			data['displayProperties'] = displayProperties;
+			data['rewardEntries'] = rewardEntries;
+			data['order'] = order;
 	}
 }

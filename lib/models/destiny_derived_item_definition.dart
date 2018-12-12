@@ -14,7 +14,7 @@ class DestinyDerivedItemDefinition{
 		int this.vendorItemIndex,
 	);
 
-	static DestinyDerivedItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDerivedItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class DestinyDerivedItemDefinition{
 		};
 		List<DestinyDerivedItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDerivedItemDefinition.fromJson(item));
+      list.add(DestinyDerivedItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemHash'] = itemHash;
+			data['itemName'] = itemName;
+			data['itemDetail'] = itemDetail;
+			data['itemDescription'] = itemDescription;
+			data['iconPath'] = iconPath;
+			data['vendorItemIndex'] = vendorItemIndex;
 	}
 }

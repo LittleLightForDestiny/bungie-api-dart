@@ -7,7 +7,7 @@ class DestinyBubbleDefinition{
 		DestinyDisplayPropertiesDefinition this.displayProperties,
 	);
 
-	static DestinyBubbleDefinition fromJson(Map<String, dynamic> data){
+	static DestinyBubbleDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyBubbleDefinition{
 		};
 		List<DestinyBubbleDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyBubbleDefinition.fromJson(item));
+      list.add(DestinyBubbleDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['hash'] = hash;
+			data['displayProperties'] = displayProperties;
 	}
 }

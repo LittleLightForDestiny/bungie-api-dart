@@ -5,7 +5,7 @@ class DestinyVendorCategoriesComponent{
 		List<DestinyVendorCategory> this.categories,
 	);
 
-	static DestinyVendorCategoriesComponent fromJson(Map<String, dynamic> data){
+	static DestinyVendorCategoriesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyVendorCategoriesComponent{
 		};
 		List<DestinyVendorCategoriesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorCategoriesComponent.fromJson(item));
+      list.add(DestinyVendorCategoriesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categories'] = categories.map((item)=>item.toMap());
 	}
 }

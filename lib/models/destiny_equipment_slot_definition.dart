@@ -20,12 +20,12 @@ class DestinyEquipmentSlotDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyEquipmentSlotDefinition fromJson(Map<String, dynamic> data){
+	static DestinyEquipmentSlotDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyEquipmentSlotDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['equipmentCategoryHash'],
 				data['bucketTypeHash'],
 				data['applyCustomArtDyes'],
@@ -42,8 +42,20 @@ class DestinyEquipmentSlotDefinition{
 		};
 		List<DestinyEquipmentSlotDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyEquipmentSlotDefinition.fromJson(item));
+      list.add(DestinyEquipmentSlotDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['equipmentCategoryHash'] = equipmentCategoryHash;
+			data['bucketTypeHash'] = bucketTypeHash;
+			data['applyCustomArtDyes'] = applyCustomArtDyes;
+			data['artDyeChannels'] = artDyeChannels.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

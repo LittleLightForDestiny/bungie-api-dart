@@ -16,13 +16,22 @@ export class ModelProperty{
         return ApiDocHelper.getObjectType(this.info);
     }
 
-    serializationFunction(){
+    deserializationFunction(){
         let fn = ApiDocHelper.getParseFunction(this.info);
         
         if(fn){
             return `${fn}(data['${this.name}'])`;
         }
         return `data['${this.name}']`;
+    }
+
+    serializationFunction(){
+        let fn = ApiDocHelper.getSerializeFunction(this.info, camelCase(this.name));
+        
+        if(fn){
+            return `data['${this.name}'] = ${fn}`;
+        }
+        return `data['${this.name}'] = ${camelCase(this.name)}`;
     }
 
     propertyName():string{

@@ -7,7 +7,7 @@ class DestinyErrorProfile{
 		UserInfoCard this.infoCard,
 	);
 
-	static DestinyErrorProfile fromJson(Map<String, dynamic> data){
+	static DestinyErrorProfile fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyErrorProfile{
 		};
 		List<DestinyErrorProfile> list = new List();
     data.forEach((item) {
-      list.add(DestinyErrorProfile.fromJson(item));
+      list.add(DestinyErrorProfile.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['errorCode'] = errorCode;
+			data['infoCard'] = infoCard;
 	}
 }

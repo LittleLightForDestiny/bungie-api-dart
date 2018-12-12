@@ -13,7 +13,7 @@ class DestinyItemSocketBlockDefinition{
 		List<DestinyItemSocketCategoryDefinition> this.socketCategories,
 	);
 
-	static DestinyItemSocketBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,16 @@ class DestinyItemSocketBlockDefinition{
 		};
 		List<DestinyItemSocketBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketBlockDefinition.fromJson(item));
+      list.add(DestinyItemSocketBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['detail'] = detail;
+			data['socketEntries'] = socketEntries.map((item)=>item.toMap());
+			data['intrinsicSockets'] = intrinsicSockets.map((item)=>item.toMap());
+			data['socketCategories'] = socketCategories.map((item)=>item.toMap());
 	}
 }

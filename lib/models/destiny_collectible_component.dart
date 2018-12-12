@@ -4,7 +4,7 @@ class DestinyCollectibleComponent{
 		int this.state,
 	);
 
-	static DestinyCollectibleComponent fromJson(Map<String, dynamic> data){
+	static DestinyCollectibleComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyCollectibleComponent{
 		};
 		List<DestinyCollectibleComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleComponent.fromJson(item));
+      list.add(DestinyCollectibleComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['state'] = state;
 	}
 }

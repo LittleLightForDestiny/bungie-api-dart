@@ -4,7 +4,7 @@ class DestinyActivityInsertionPointDefinition{
 		int this.phaseHash,
 	);
 
-	static DestinyActivityInsertionPointDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityInsertionPointDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityInsertionPointDefinition{
 		};
 		List<DestinyActivityInsertionPointDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityInsertionPointDefinition.fromJson(item));
+      list.add(DestinyActivityInsertionPointDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['phaseHash'] = phaseHash;
 	}
 }

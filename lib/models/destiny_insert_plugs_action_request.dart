@@ -13,7 +13,7 @@ class DestinyInsertPlugsActionRequest{
 		int this.membershipType,
 	);
 
-	static DestinyInsertPlugsActionRequest fromJson(Map<String, dynamic> data){
+	static DestinyInsertPlugsActionRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyInsertPlugsActionRequest{
 		};
 		List<DestinyInsertPlugsActionRequest> list = new List();
     data.forEach((item) {
-      list.add(DestinyInsertPlugsActionRequest.fromJson(item));
+      list.add(DestinyInsertPlugsActionRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['actionToken'] = actionToken;
+			data['itemInstanceId'] = itemInstanceId;
+			data['plug'] = plug;
+			data['characterId'] = characterId;
+			data['membershipType'] = membershipType;
 	}
 }

@@ -18,7 +18,7 @@ class CEListOfForumRecruitmentDetailResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CEListOfForumRecruitmentDetailResponse fromJson(Map<String, dynamic> data){
+    static CEListOfForumRecruitmentDetailResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class CEListOfForumRecruitmentDetailResponse{
 		};
 		List<CEListOfForumRecruitmentDetailResponse> list = new List();
     data.forEach((item) {
-      list.add(CEListOfForumRecruitmentDetailResponse.fromJson(item));
+      list.add(CEListOfForumRecruitmentDetailResponse.fromMap(item));
     });
     return list;
 	}

@@ -40,7 +40,7 @@ class DestinyNodeStepDefinition{
 		List<DestinyNodeSocketReplaceResponse> this.socketReplacements,
 	);
 
-	static DestinyNodeStepDefinition fromJson(Map<String, dynamic> data){
+	static DestinyNodeStepDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -71,8 +71,29 @@ class DestinyNodeStepDefinition{
 		};
 		List<DestinyNodeStepDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyNodeStepDefinition.fromJson(item));
+      list.add(DestinyNodeStepDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['stepIndex'] = stepIndex;
+			data['nodeStepHash'] = nodeStepHash;
+			data['interactionDescription'] = interactionDescription;
+			data['damageType'] = damageType;
+			data['damageTypeHash'] = damageTypeHash;
+			data['activationRequirement'] = activationRequirement;
+			data['canActivateNextStep'] = canActivateNextStep;
+			data['nextStepIndex'] = nextStepIndex;
+			data['isNextStepRandom'] = isNextStepRandom;
+			data['perkHashes'] = perkHashes;
+			data['startProgressionBarAtProgress'] = startProgressionBarAtProgress;
+			data['statHashes'] = statHashes;
+			data['affectsQuality'] = affectsQuality;
+			data['stepGroups'] = stepGroups;
+			data['affectsLevel'] = affectsLevel;
+			data['socketReplacements'] = socketReplacements.map((item)=>item.toMap());
 	}
 }

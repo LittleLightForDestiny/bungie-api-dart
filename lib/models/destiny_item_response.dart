@@ -28,7 +28,7 @@ class DestinyItemResponse{
 		SingleComponentResponseOfDestinyItemSocketsComponent this.sockets,
 	);
 
-	static DestinyItemResponse fromJson(Map<String, dynamic> data){
+	static DestinyItemResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -51,8 +51,21 @@ class DestinyItemResponse{
 		};
 		List<DestinyItemResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemResponse.fromJson(item));
+      list.add(DestinyItemResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['characterId'] = characterId;
+			data['item'] = item;
+			data['instance'] = instance;
+			data['objectives'] = objectives;
+			data['perks'] = perks;
+			data['renderData'] = renderData;
+			data['stats'] = stats;
+			data['talentGrid'] = talentGrid;
+			data['sockets'] = sockets;
 	}
 }

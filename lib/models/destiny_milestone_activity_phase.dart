@@ -6,7 +6,7 @@ class DestinyMilestoneActivityPhase{
 		int this.phaseHash,
 	);
 
-	static DestinyMilestoneActivityPhase fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneActivityPhase fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyMilestoneActivityPhase{
 		};
 		List<DestinyMilestoneActivityPhase> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneActivityPhase.fromJson(item));
+      list.add(DestinyMilestoneActivityPhase.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['complete'] = complete;
+			data['phaseHash'] = phaseHash;
 	}
 }

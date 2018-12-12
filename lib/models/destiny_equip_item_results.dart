@@ -5,7 +5,7 @@ class DestinyEquipItemResults{
 		List<DestinyEquipItemResult> this.equipResults,
 	);
 
-	static DestinyEquipItemResults fromJson(Map<String, dynamic> data){
+	static DestinyEquipItemResults fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyEquipItemResults{
 		};
 		List<DestinyEquipItemResults> list = new List();
     data.forEach((item) {
-      list.add(DestinyEquipItemResults.fromJson(item));
+      list.add(DestinyEquipItemResults.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['equipResults'] = equipResults.map((item)=>item.toMap());
 	}
 }

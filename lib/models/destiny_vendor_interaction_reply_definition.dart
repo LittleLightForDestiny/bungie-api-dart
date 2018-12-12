@@ -8,7 +8,7 @@ class DestinyVendorInteractionReplyDefinition{
 		int this.replyType,
 	);
 
-	static DestinyVendorInteractionReplyDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorInteractionReplyDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyVendorInteractionReplyDefinition{
 		};
 		List<DestinyVendorInteractionReplyDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorInteractionReplyDefinition.fromJson(item));
+      list.add(DestinyVendorInteractionReplyDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemRewardsSelection'] = itemRewardsSelection;
+			data['reply'] = reply;
+			data['replyType'] = replyType;
 	}
 }

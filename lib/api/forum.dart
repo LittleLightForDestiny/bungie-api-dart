@@ -19,13 +19,13 @@ class Forum{
         int sort,
         String tagstring,
     ) {
-        Map<String, String> params = new Map();
-        params['locales'] = "${ locales }";
-        params['tagstring'] = "${ tagstring }";
+        Map<String, dynamic> params = new Map();
+        params['locales'] = locales;
+        params['tagstring'] = tagstring;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicsPaged/${page}/${pageSize}/${group}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -38,12 +38,12 @@ class Forum{
         int quickDate,
         int sort,
     ) {
-        Map<String, String> params = new Map();
-        params['locales'] = "${ locales }";
+        Map<String, dynamic> params = new Map();
+        params['locales'] = locales;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetCoreTopicsPaged/${page}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -59,12 +59,12 @@ class Forum{
         String showbanned,
         int sortMode,
     ) {
-        Map<String, String> params = new Map();
-        params['showbanned'] = "${ showbanned }";
+        Map<String, dynamic> params = new Map();
+        params['showbanned'] = showbanned;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPaged/${parentPostId}/${page}/${pageSize}/${replySize}/${getParentPost}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -79,12 +79,12 @@ class Forum{
         String showbanned,
         int sortMode,
     ) {
-        Map<String, String> params = new Map();
-        params['showbanned'] = "${ showbanned }";
+        Map<String, dynamic> params = new Map();
+        params['showbanned'] = showbanned;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPagedFromChild/${childPostId}/${page}/${pageSize}/${replySize}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -94,12 +94,12 @@ class Forum{
         int childPostId,
         String showbanned,
     ) {
-        Map<String, String> params = new Map();
-        params['showbanned'] = "${ showbanned }";
+        Map<String, dynamic> params = new Map();
+        params['showbanned'] = showbanned;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostAndParent/${childPostId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -109,12 +109,12 @@ class Forum{
         int childPostId,
         String showbanned,
     ) {
-        Map<String, String> params = new Map();
-        params['showbanned'] = "${ showbanned }";
+        Map<String, dynamic> params = new Map();
+        params['showbanned'] = showbanned;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostAndParentAwaitingApproval/${childPostId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -123,11 +123,11 @@ class Forum{
         HttpClient client,
         int contentId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicForContent/${contentId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int64Response.fromJson(response);
+            return int64Response.fromMap(response);
         });
     }
     
@@ -136,12 +136,12 @@ class Forum{
         HttpClient client,
         String partialtag,
     ) {
-        Map<String, String> params = new Map();
-        params['partialtag'] = "${ partialtag }";
+        Map<String, dynamic> params = new Map();
+        params['partialtag'] = partialtag;
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetForumTagSuggestions/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfTagResponseResponse.fromJson(response);
+            return ListOfTagResponseResponse.fromMap(response);
         });
     }
     
@@ -150,11 +150,11 @@ class Forum{
         HttpClient client,
         int topicId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/Poll/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromJson(response);
+            return PostSearchResponseResponse.fromMap(response);
         });
     }
     
@@ -163,11 +163,11 @@ class Forum{
         HttpClient client,
         int topicId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Join/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromJson(response);
+            return ForumRecruitmentDetailResponse.fromMap(response);
         });
     }
     
@@ -176,11 +176,11 @@ class Forum{
         HttpClient client,
         int topicId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Leave/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromJson(response);
+            return ForumRecruitmentDetailResponse.fromMap(response);
         });
     }
     
@@ -190,11 +190,11 @@ class Forum{
         int targetMembershipId,
         int topicId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/${targetMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromJson(response);
+            return ForumRecruitmentDetailResponse.fromMap(response);
         });
     }
     
@@ -203,11 +203,11 @@ class Forum{
         HttpClient client,
         int topicId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Approve/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SaveMessageResultResponse.fromJson(response);
+            return SaveMessageResultResponse.fromMap(response);
         });
     }
     
@@ -216,12 +216,12 @@ class Forum{
         HttpClient client,
         List<int> body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Summaries/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return CEListOfForumRecruitmentDetailResponse.fromJson(response);
+            return CEListOfForumRecruitmentDetailResponse.fromMap(response);
         });
     }
 }

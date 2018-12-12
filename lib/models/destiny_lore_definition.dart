@@ -13,12 +13,12 @@ class DestinyLoreDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyLoreDefinition fromJson(Map<String, dynamic> data){
+	static DestinyLoreDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyLoreDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['subtitle'],
 				data['hash'],
 				data['index'],
@@ -32,8 +32,17 @@ class DestinyLoreDefinition{
 		};
 		List<DestinyLoreDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyLoreDefinition.fromJson(item));
+      list.add(DestinyLoreDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['subtitle'] = subtitle;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

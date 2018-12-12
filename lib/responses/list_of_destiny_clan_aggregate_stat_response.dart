@@ -18,7 +18,7 @@ class ListOfDestinyClanAggregateStatResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfDestinyClanAggregateStatResponse fromJson(Map<String, dynamic> data){
+    static ListOfDestinyClanAggregateStatResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfDestinyClanAggregateStatResponse{
 		};
 		List<ListOfDestinyClanAggregateStatResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfDestinyClanAggregateStatResponse.fromJson(item));
+      list.add(ListOfDestinyClanAggregateStatResponse.fromMap(item));
     });
     return list;
 	}

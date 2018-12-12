@@ -6,7 +6,7 @@ class DestinyItemTierTypeInfusionBlock{
 		int this.minimumQualityIncrement,
 	);
 
-	static DestinyItemTierTypeInfusionBlock fromJson(Map<String, dynamic> data){
+	static DestinyItemTierTypeInfusionBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyItemTierTypeInfusionBlock{
 		};
 		List<DestinyItemTierTypeInfusionBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemTierTypeInfusionBlock.fromJson(item));
+      list.add(DestinyItemTierTypeInfusionBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['baseQualityTransferRatio'] = baseQualityTransferRatio;
+			data['minimumQualityIncrement'] = minimumQualityIncrement;
 	}
 }

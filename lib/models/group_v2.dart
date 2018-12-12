@@ -60,7 +60,7 @@ class GroupV2{
 		GroupV2ClanInfoAndInvestment this.clanInfo,
 	);
 
-	static GroupV2 fromJson(Map<String, dynamic> data){
+	static GroupV2 fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -91,8 +91,8 @@ class GroupV2{
 				data['conversationId'],
 				data['enableInvitationMessagingForAdmins'],
 				data['banExpireDate'],
-				GroupFeatures.fromJson(data['features']),
-				GroupV2ClanInfoAndInvestment.fromJson(data['clanInfo']),
+				GroupFeatures.fromMap(data['features']),
+				GroupV2ClanInfoAndInvestment.fromMap(data['clanInfo']),
 		);
 	}
 
@@ -102,8 +102,40 @@ class GroupV2{
 		};
 		List<GroupV2> list = new List();
     data.forEach((item) {
-      list.add(GroupV2.fromJson(item));
+      list.add(GroupV2.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
+			data['name'] = name;
+			data['groupType'] = groupType;
+			data['membershipIdCreated'] = membershipIdCreated;
+			data['creationDate'] = creationDate;
+			data['modificationDate'] = modificationDate;
+			data['about'] = about;
+			data['tags'] = tags;
+			data['memberCount'] = memberCount;
+			data['isPublic'] = isPublic;
+			data['isPublicTopicAdminOnly'] = isPublicTopicAdminOnly;
+			data['motto'] = motto;
+			data['allowChat'] = allowChat;
+			data['isDefaultPostPublic'] = isDefaultPostPublic;
+			data['chatSecurity'] = chatSecurity;
+			data['locale'] = locale;
+			data['avatarImageIndex'] = avatarImageIndex;
+			data['homepage'] = homepage;
+			data['membershipOption'] = membershipOption;
+			data['defaultPublicity'] = defaultPublicity;
+			data['theme'] = theme;
+			data['bannerPath'] = bannerPath;
+			data['avatarPath'] = avatarPath;
+			data['conversationId'] = conversationId;
+			data['enableInvitationMessagingForAdmins'] = enableInvitationMessagingForAdmins;
+			data['banExpireDate'] = banExpireDate;
+			data['features'] = features.toMap();
+			data['clanInfo'] = clanInfo.toMap();
 	}
 }

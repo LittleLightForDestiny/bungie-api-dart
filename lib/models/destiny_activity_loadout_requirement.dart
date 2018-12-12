@@ -8,7 +8,7 @@ class DestinyActivityLoadoutRequirement{
 		List<int> this.allowedWeaponSubTypes,
 	);
 
-	static DestinyActivityLoadoutRequirement fromJson(Map<String, dynamic> data){
+	static DestinyActivityLoadoutRequirement fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyActivityLoadoutRequirement{
 		};
 		List<DestinyActivityLoadoutRequirement> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityLoadoutRequirement.fromJson(item));
+      list.add(DestinyActivityLoadoutRequirement.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['equipmentSlotHash'] = equipmentSlotHash;
+			data['allowedEquippedItemHashes'] = allowedEquippedItemHashes;
+			data['allowedWeaponSubTypes'] = allowedWeaponSubTypes;
 	}
 }

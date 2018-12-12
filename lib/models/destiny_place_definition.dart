@@ -11,12 +11,12 @@ class DestinyPlaceDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyPlaceDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPlaceDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyPlaceDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -29,8 +29,16 @@ class DestinyPlaceDefinition{
 		};
 		List<DestinyPlaceDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPlaceDefinition.fromJson(item));
+      list.add(DestinyPlaceDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

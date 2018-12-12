@@ -18,12 +18,12 @@ class AwaAuthorizationResultResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static AwaAuthorizationResultResponse fromJson(Map<String, dynamic> data){
+    static AwaAuthorizationResultResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new AwaAuthorizationResultResponse(
-				AwaAuthorizationResult.fromJson(data['Response']),
+				AwaAuthorizationResult.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class AwaAuthorizationResultResponse{
 		};
 		List<AwaAuthorizationResultResponse> list = new List();
     data.forEach((item) {
-      list.add(AwaAuthorizationResultResponse.fromJson(item));
+      list.add(AwaAuthorizationResultResponse.fromMap(item));
     });
     return list;
 	}

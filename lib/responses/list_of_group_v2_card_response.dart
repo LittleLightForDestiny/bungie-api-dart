@@ -18,7 +18,7 @@ class ListOfGroupV2CardResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfGroupV2CardResponse fromJson(Map<String, dynamic> data){
+    static ListOfGroupV2CardResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfGroupV2CardResponse{
 		};
 		List<ListOfGroupV2CardResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfGroupV2CardResponse.fromJson(item));
+      list.add(ListOfGroupV2CardResponse.fromMap(item));
     });
     return list;
 	}

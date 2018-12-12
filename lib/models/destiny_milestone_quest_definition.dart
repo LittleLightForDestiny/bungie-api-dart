@@ -17,7 +17,7 @@ class DestinyMilestoneQuestDefinition{
 		int this.destinationHash,
 	);
 
-	static DestinyMilestoneQuestDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneQuestDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -37,8 +37,18 @@ class DestinyMilestoneQuestDefinition{
 		};
 		List<DestinyMilestoneQuestDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneQuestDefinition.fromJson(item));
+      list.add(DestinyMilestoneQuestDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['questItemHash'] = questItemHash;
+			data['displayProperties'] = displayProperties;
+			data['overrideImage'] = overrideImage;
+			data['questRewards'] = questRewards;
+			data['activities'] = activities;
+			data['destinationHash'] = destinationHash;
 	}
 }

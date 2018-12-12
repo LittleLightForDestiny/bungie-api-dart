@@ -8,7 +8,7 @@ class DestinyVendorItemQuantity{
 		int this.quantity,
 	);
 
-	static DestinyVendorItemQuantity fromJson(Map<String, dynamic> data){
+	static DestinyVendorItemQuantity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyVendorItemQuantity{
 		};
 		List<DestinyVendorItemQuantity> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorItemQuantity.fromJson(item));
+      list.add(DestinyVendorItemQuantity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemHash'] = itemHash;
+			data['itemInstanceId'] = itemInstanceId;
+			data['quantity'] = quantity;
 	}
 }

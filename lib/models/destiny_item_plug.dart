@@ -15,7 +15,7 @@ class DestinyItemPlug{
 		List<int> this.enableFailIndexes,
 	);
 
-	static DestinyItemPlug fromJson(Map<String, dynamic> data){
+	static DestinyItemPlug fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -35,8 +35,18 @@ class DestinyItemPlug{
 		};
 		List<DestinyItemPlug> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemPlug.fromJson(item));
+      list.add(DestinyItemPlug.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugItemHash'] = plugItemHash;
+			data['plugObjectives'] = plugObjectives.map((item)=>item.toMap());
+			data['canInsert'] = canInsert;
+			data['enabled'] = enabled;
+			data['insertFailIndexes'] = insertFailIndexes;
+			data['enableFailIndexes'] = enableFailIndexes;
 	}
 }

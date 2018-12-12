@@ -6,7 +6,7 @@ class DestinyActivityGraphConnectionDefinition{
 		int this.destNodeHash,
 	);
 
-	static DestinyActivityGraphConnectionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphConnectionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyActivityGraphConnectionDefinition{
 		};
 		List<DestinyActivityGraphConnectionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphConnectionDefinition.fromJson(item));
+      list.add(DestinyActivityGraphConnectionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['sourceNodeHash'] = sourceNodeHash;
+			data['destNodeHash'] = destNodeHash;
 	}
 }

@@ -5,7 +5,7 @@ class TrendingCategories{
 		List<TrendingCategory> this.categories,
 	);
 
-	static TrendingCategories fromJson(Map<String, dynamic> data){
+	static TrendingCategories fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class TrendingCategories{
 		};
 		List<TrendingCategories> list = new List();
     data.forEach((item) {
-      list.add(TrendingCategories.fromJson(item));
+      list.add(TrendingCategories.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categories'] = categories.map((item)=>item.toMap());
 	}
 }

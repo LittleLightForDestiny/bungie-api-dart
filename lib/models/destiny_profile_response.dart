@@ -74,7 +74,7 @@ class DestinyProfileResponse{
 		DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent this.characterCurrencyLookups,
 	);
 
-	static DestinyProfileResponse fromJson(Map<String, dynamic> data){
+	static DestinyProfileResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -112,8 +112,36 @@ class DestinyProfileResponse{
 		};
 		List<DestinyProfileResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyProfileResponse.fromJson(item));
+      list.add(DestinyProfileResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorReceipts'] = vendorReceipts;
+			data['profileInventory'] = profileInventory;
+			data['profileCurrencies'] = profileCurrencies;
+			data['profile'] = profile;
+			data['profileKiosks'] = profileKiosks;
+			data['profilePlugSets'] = profilePlugSets;
+			data['profileProgression'] = profileProgression;
+			data['profilePresentationNodes'] = profilePresentationNodes;
+			data['profileRecords'] = profileRecords;
+			data['profileCollectibles'] = profileCollectibles;
+			data['characters'] = characters;
+			data['characterInventories'] = characterInventories;
+			data['characterProgressions'] = characterProgressions;
+			data['characterRenderData'] = characterRenderData;
+			data['characterActivities'] = characterActivities;
+			data['characterEquipment'] = characterEquipment;
+			data['characterKiosks'] = characterKiosks;
+			data['characterPlugSets'] = characterPlugSets;
+			data['characterUninstancedItemComponents'] = characterUninstancedItemComponents;
+			data['characterPresentationNodes'] = characterPresentationNodes;
+			data['characterRecords'] = characterRecords;
+			data['characterCollectibles'] = characterCollectibles;
+			data['itemComponents'] = itemComponents;
+			data['characterCurrencyLookups'] = characterCurrencyLookups;
 	}
 }

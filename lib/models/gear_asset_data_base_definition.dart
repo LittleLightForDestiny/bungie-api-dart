@@ -6,7 +6,7 @@ class GearAssetDataBaseDefinition{
 		String this.path,
 	);
 
-	static GearAssetDataBaseDefinition fromJson(Map<String, dynamic> data){
+	static GearAssetDataBaseDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class GearAssetDataBaseDefinition{
 		};
 		List<GearAssetDataBaseDefinition> list = new List();
     data.forEach((item) {
-      list.add(GearAssetDataBaseDefinition.fromJson(item));
+      list.add(GearAssetDataBaseDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['version'] = version;
+			data['path'] = path;
 	}
 }

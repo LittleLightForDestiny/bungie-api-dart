@@ -18,7 +18,7 @@ class DestinyHistoricalStatsResultsResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyHistoricalStatsResultsResponse fromJson(Map<String, dynamic> data){
+    static DestinyHistoricalStatsResultsResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class DestinyHistoricalStatsResultsResponse{
 		};
 		List<DestinyHistoricalStatsResultsResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsResultsResponse.fromJson(item));
+      list.add(DestinyHistoricalStatsResultsResponse.fromMap(item));
     });
     return list;
 	}

@@ -6,7 +6,7 @@ class DestinyMilestoneChallengeActivityGraphNodeEntry{
 		int this.activityGraphNodeHash,
 	);
 
-	static DestinyMilestoneChallengeActivityGraphNodeEntry fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneChallengeActivityGraphNodeEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyMilestoneChallengeActivityGraphNodeEntry{
 		};
 		List<DestinyMilestoneChallengeActivityGraphNodeEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(item));
+      list.add(DestinyMilestoneChallengeActivityGraphNodeEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityGraphHash'] = activityGraphHash;
+			data['activityGraphNodeHash'] = activityGraphNodeHash;
 	}
 }

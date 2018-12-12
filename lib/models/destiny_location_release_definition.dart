@@ -31,7 +31,7 @@ class DestinyLocationReleaseDefinition{
 		List<int> this.worldPosition,
 	);
 
-	static DestinyLocationReleaseDefinition fromJson(Map<String, dynamic> data){
+	static DestinyLocationReleaseDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -59,8 +59,26 @@ class DestinyLocationReleaseDefinition{
 		};
 		List<DestinyLocationReleaseDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyLocationReleaseDefinition.fromJson(item));
+      list.add(DestinyLocationReleaseDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['smallTransparentIcon'] = smallTransparentIcon;
+			data['mapIcon'] = mapIcon;
+			data['largeTransparentIcon'] = largeTransparentIcon;
+			data['spawnPoint'] = spawnPoint;
+			data['destinationHash'] = destinationHash;
+			data['activityHash'] = activityHash;
+			data['activityGraphHash'] = activityGraphHash;
+			data['activityGraphNodeHash'] = activityGraphNodeHash;
+			data['activityBubbleName'] = activityBubbleName;
+			data['activityPathBundle'] = activityPathBundle;
+			data['activityPathDestination'] = activityPathDestination;
+			data['navPointType'] = navPointType;
+			data['worldPosition'] = worldPosition;
 	}
 }

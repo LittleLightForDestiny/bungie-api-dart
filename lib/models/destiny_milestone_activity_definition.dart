@@ -7,7 +7,7 @@ class DestinyMilestoneActivityDefinition{
 		Map<DestinyMilestoneActivityVariantDefinition, dynamic> this.variants,
 	);
 
-	static DestinyMilestoneActivityDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneActivityDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyMilestoneActivityDefinition{
 		};
 		List<DestinyMilestoneActivityDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneActivityDefinition.fromJson(item));
+      list.add(DestinyMilestoneActivityDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['conceptualActivityHash'] = conceptualActivityHash;
+			data['variants'] = variants;
 	}
 }

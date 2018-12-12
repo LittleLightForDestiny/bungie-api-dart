@@ -22,19 +22,19 @@ class GroupBan{
 		UserInfoCard this.destinyUserInfo,
 	);
 
-	static GroupBan fromJson(Map<String, dynamic> data){
+	static GroupBan fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupBan(
 				data['groupId'],
-				UserInfoCard.fromJson(data['lastModifiedBy']),
-				UserInfoCard.fromJson(data['createdBy']),
+				UserInfoCard.fromMap(data['lastModifiedBy']),
+				UserInfoCard.fromMap(data['createdBy']),
 				data['dateBanned'],
 				data['dateExpires'],
 				data['comment'],
-				UserInfoCard.fromJson(data['bungieNetUserInfo']),
-				UserInfoCard.fromJson(data['destinyUserInfo']),
+				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				UserInfoCard.fromMap(data['destinyUserInfo']),
 		);
 	}
 
@@ -44,8 +44,20 @@ class GroupBan{
 		};
 		List<GroupBan> list = new List();
     data.forEach((item) {
-      list.add(GroupBan.fromJson(item));
+      list.add(GroupBan.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
+			data['lastModifiedBy'] = lastModifiedBy.toMap();
+			data['createdBy'] = createdBy.toMap();
+			data['dateBanned'] = dateBanned;
+			data['dateExpires'] = dateExpires;
+			data['comment'] = comment;
+			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['destinyUserInfo'] = destinyUserInfo.toMap();
 	}
 }

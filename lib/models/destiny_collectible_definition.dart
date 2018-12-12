@@ -28,19 +28,19 @@ class DestinyCollectibleDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyCollectibleDefinition fromJson(Map<String, dynamic> data){
+	static DestinyCollectibleDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyCollectibleDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['scope'],
 				data['sourceString'],
 				data['sourceHash'],
 				data['itemHash'],
-				DestinyCollectibleAcquisitionBlock.fromJson(data['acquisitionInfo']),
-				DestinyCollectibleStateBlock.fromJson(data['stateInfo']),
-				DestinyPresentationChildBlock.fromJson(data['presentationInfo']),
+				DestinyCollectibleAcquisitionBlock.fromMap(data['acquisitionInfo']),
+				DestinyCollectibleStateBlock.fromMap(data['stateInfo']),
+				DestinyPresentationChildBlock.fromMap(data['presentationInfo']),
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -53,8 +53,23 @@ class DestinyCollectibleDefinition{
 		};
 		List<DestinyCollectibleDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleDefinition.fromJson(item));
+      list.add(DestinyCollectibleDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['scope'] = scope;
+			data['sourceString'] = sourceString;
+			data['sourceHash'] = sourceHash;
+			data['itemHash'] = itemHash;
+			data['acquisitionInfo'] = acquisitionInfo.toMap();
+			data['stateInfo'] = stateInfo.toMap();
+			data['presentationInfo'] = presentationInfo.toMap();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

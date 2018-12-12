@@ -18,7 +18,7 @@ class ListOfTagResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfTagResponseResponse fromJson(Map<String, dynamic> data){
+    static ListOfTagResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfTagResponseResponse{
 		};
 		List<ListOfTagResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfTagResponseResponse.fromJson(item));
+      list.add(ListOfTagResponseResponse.fromMap(item));
     });
     return list;
 	}

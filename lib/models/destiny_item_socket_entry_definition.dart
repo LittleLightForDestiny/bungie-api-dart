@@ -22,7 +22,7 @@ class DestinyItemSocketEntryDefinition{
 		bool this.defaultVisible,
 	);
 
-	static DestinyItemSocketEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -45,8 +45,21 @@ class DestinyItemSocketEntryDefinition{
 		};
 		List<DestinyItemSocketEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketEntryDefinition.fromJson(item));
+      list.add(DestinyItemSocketEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['socketTypeHash'] = socketTypeHash;
+			data['singleInitialItemHash'] = singleInitialItemHash;
+			data['reusablePlugItems'] = reusablePlugItems.map((item)=>item.toMap());
+			data['preventInitializationOnVendorPurchase'] = preventInitializationOnVendorPurchase;
+			data['hidePerksInItemTooltip'] = hidePerksInItemTooltip;
+			data['plugSources'] = plugSources;
+			data['reusablePlugSetHash'] = reusablePlugSetHash;
+			data['randomizedPlugItems'] = randomizedPlugItems.map((item)=>item.toMap());
+			data['defaultVisible'] = defaultVisible;
 	}
 }

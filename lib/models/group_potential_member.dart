@@ -14,15 +14,15 @@ class GroupPotentialMember{
 		String this.joinDate,
 	);
 
-	static GroupPotentialMember fromJson(Map<String, dynamic> data){
+	static GroupPotentialMember fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupPotentialMember(
 				data['potentialStatus'],
 				data['groupId'],
-				UserInfoCard.fromJson(data['destinyUserInfo']),
-				UserInfoCard.fromJson(data['bungieNetUserInfo']),
+				UserInfoCard.fromMap(data['destinyUserInfo']),
+				UserInfoCard.fromMap(data['bungieNetUserInfo']),
 				data['joinDate'],
 		);
 	}
@@ -33,8 +33,17 @@ class GroupPotentialMember{
 		};
 		List<GroupPotentialMember> list = new List();
     data.forEach((item) {
-      list.add(GroupPotentialMember.fromJson(item));
+      list.add(GroupPotentialMember.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['potentialStatus'] = potentialStatus;
+			data['groupId'] = groupId;
+			data['destinyUserInfo'] = destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['joinDate'] = joinDate;
 	}
 }

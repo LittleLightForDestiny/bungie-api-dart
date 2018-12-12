@@ -16,7 +16,7 @@ class ClanBanner{
 		int this.gonfalonDetailColorId,
 	);
 
-	static ClanBanner fromJson(Map<String, dynamic> data){
+	static ClanBanner fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -37,8 +37,19 @@ class ClanBanner{
 		};
 		List<ClanBanner> list = new List();
     data.forEach((item) {
-      list.add(ClanBanner.fromJson(item));
+      list.add(ClanBanner.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['decalId'] = decalId;
+			data['decalColorId'] = decalColorId;
+			data['decalBackgroundColorId'] = decalBackgroundColorId;
+			data['gonfalonId'] = gonfalonId;
+			data['gonfalonColorId'] = gonfalonColorId;
+			data['gonfalonDetailId'] = gonfalonDetailId;
+			data['gonfalonDetailColorId'] = gonfalonDetailColorId;
 	}
 }

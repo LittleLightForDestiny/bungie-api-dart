@@ -18,7 +18,7 @@ class CEListOfGlobalAlertResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CEListOfGlobalAlertResponse fromJson(Map<String, dynamic> data){
+    static CEListOfGlobalAlertResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class CEListOfGlobalAlertResponse{
 		};
 		List<CEListOfGlobalAlertResponse> list = new List();
     data.forEach((item) {
-      list.add(CEListOfGlobalAlertResponse.fromJson(item));
+      list.add(CEListOfGlobalAlertResponse.fromMap(item));
     });
     return list;
 	}

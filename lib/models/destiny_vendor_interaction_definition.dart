@@ -31,7 +31,7 @@ class DestinyVendorInteractionDefinition{
 		String this.instructions,
 	);
 
-	static DestinyVendorInteractionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorInteractionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -58,8 +58,25 @@ class DestinyVendorInteractionDefinition{
 		};
 		List<DestinyVendorInteractionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorInteractionDefinition.fromJson(item));
+      list.add(DestinyVendorInteractionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['interactionIndex'] = interactionIndex;
+			data['replies'] = replies.map((item)=>item.toMap());
+			data['vendorCategoryIndex'] = vendorCategoryIndex;
+			data['questlineItemHash'] = questlineItemHash;
+			data['sackInteractionList'] = sackInteractionList.map((item)=>item.toMap());
+			data['uiInteractionType'] = uiInteractionType;
+			data['interactionType'] = interactionType;
+			data['rewardBlockLabel'] = rewardBlockLabel;
+			data['rewardVendorCategoryIndex'] = rewardVendorCategoryIndex;
+			data['flavorLineOne'] = flavorLineOne;
+			data['flavorLineTwo'] = flavorLineTwo;
+			data['headerDisplayProperties'] = headerDisplayProperties;
+			data['instructions'] = instructions;
 	}
 }

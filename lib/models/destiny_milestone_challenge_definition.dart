@@ -4,7 +4,7 @@ class DestinyMilestoneChallengeDefinition{
 		int this.challengeObjectiveHash,
 	);
 
-	static DestinyMilestoneChallengeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneChallengeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyMilestoneChallengeDefinition{
 		};
 		List<DestinyMilestoneChallengeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneChallengeDefinition.fromJson(item));
+      list.add(DestinyMilestoneChallengeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['challengeObjectiveHash'] = challengeObjectiveHash;
 	}
 }

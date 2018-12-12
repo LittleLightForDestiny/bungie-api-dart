@@ -19,14 +19,14 @@ class DestinyDisplayCategoryDefinition{
 		String this.displayStyleIdentifier,
 	);
 
-	static DestinyDisplayCategoryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDisplayCategoryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyDisplayCategoryDefinition(
 				data['identifier'],
 				data['displayCategoryHash'],
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['displayInBanner'],
 				data['progressionHash'],
 				data['sortOrder'],
@@ -41,8 +41,20 @@ class DestinyDisplayCategoryDefinition{
 		};
 		List<DestinyDisplayCategoryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDisplayCategoryDefinition.fromJson(item));
+      list.add(DestinyDisplayCategoryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['identifier'] = identifier;
+			data['displayCategoryHash'] = displayCategoryHash;
+			data['displayProperties'] = displayProperties.toMap();
+			data['displayInBanner'] = displayInBanner;
+			data['progressionHash'] = progressionHash;
+			data['sortOrder'] = sortOrder;
+			data['displayStyleHash'] = displayStyleHash;
+			data['displayStyleIdentifier'] = displayStyleIdentifier;
 	}
 }

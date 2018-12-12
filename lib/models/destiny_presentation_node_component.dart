@@ -7,13 +7,13 @@ class DestinyPresentationNodeComponent{
 		DestinyObjectiveProgress this.objective,
 	);
 
-	static DestinyPresentationNodeComponent fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodeComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyPresentationNodeComponent(
 				data['state'],
-				DestinyObjectiveProgress.fromJson(data['objective']),
+				DestinyObjectiveProgress.fromMap(data['objective']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class DestinyPresentationNodeComponent{
 		};
 		List<DestinyPresentationNodeComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodeComponent.fromJson(item));
+      list.add(DestinyPresentationNodeComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['state'] = state;
+			data['objective'] = objective.toMap();
 	}
 }

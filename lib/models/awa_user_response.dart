@@ -8,7 +8,7 @@ class AwaUserResponse{
 		List<String> this.nonce,
 	);
 
-	static AwaUserResponse fromJson(Map<String, dynamic> data){
+	static AwaUserResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class AwaUserResponse{
 		};
 		List<AwaUserResponse> list = new List();
     data.forEach((item) {
-      list.add(AwaUserResponse.fromJson(item));
+      list.add(AwaUserResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['selection'] = selection;
+			data['correlationId'] = correlationId;
+			data['nonce'] = nonce;
 	}
 }

@@ -5,12 +5,12 @@ class DestinyBaseItemComponentSetOfint64{
 		DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent this.objectives,
 	);
 
-	static DestinyBaseItemComponentSetOfint64 fromJson(Map<String, dynamic> data){
+	static DestinyBaseItemComponentSetOfint64 fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyBaseItemComponentSetOfint64(
-				DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromJson(data['objectives']),
+				DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromMap(data['objectives']),
 		);
 	}
 
@@ -20,8 +20,13 @@ class DestinyBaseItemComponentSetOfint64{
 		};
 		List<DestinyBaseItemComponentSetOfint64> list = new List();
     data.forEach((item) {
-      list.add(DestinyBaseItemComponentSetOfint64.fromJson(item));
+      list.add(DestinyBaseItemComponentSetOfint64.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectives'] = objectives.toMap();
 	}
 }

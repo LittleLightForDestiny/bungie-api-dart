@@ -18,12 +18,12 @@ class PostSearchResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static PostSearchResponseResponse fromJson(Map<String, dynamic> data){
+    static PostSearchResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new PostSearchResponseResponse(
-				PostSearchResponse.fromJson(data['Response']),
+				PostSearchResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class PostSearchResponseResponse{
 		};
 		List<PostSearchResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(PostSearchResponseResponse.fromJson(item));
+      list.add(PostSearchResponseResponse.fromMap(item));
     });
     return list;
 	}

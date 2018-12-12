@@ -7,12 +7,12 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 		int this.privacy,
 	);
 
-	static SingleComponentResponseOfDestinyItemTalentGridComponent fromJson(Map<String, dynamic> data){
+	static SingleComponentResponseOfDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyItemTalentGridComponent(
-				DestinyItemTalentGridComponent.fromJson(data['data']),
+				DestinyItemTalentGridComponent.fromMap(data['data']),
 				data['privacy'],
 		);
 	}
@@ -23,8 +23,14 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 		};
 		List<SingleComponentResponseOfDestinyItemTalentGridComponent> list = new List();
     data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(item));
+      list.add(SingleComponentResponseOfDestinyItemTalentGridComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data.toMap();
+			data['privacy'] = privacy;
 	}
 }

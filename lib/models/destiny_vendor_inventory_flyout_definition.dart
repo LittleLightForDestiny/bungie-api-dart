@@ -16,7 +16,7 @@ class DestinyVendorInventoryFlyoutDefinition{
 		int this.equipmentSlotHash,
 	);
 
-	static DestinyVendorInventoryFlyoutDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorInventoryFlyoutDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -36,8 +36,18 @@ class DestinyVendorInventoryFlyoutDefinition{
 		};
 		List<DestinyVendorInventoryFlyoutDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorInventoryFlyoutDefinition.fromJson(item));
+      list.add(DestinyVendorInventoryFlyoutDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['lockedDescription'] = lockedDescription;
+			data['displayProperties'] = displayProperties;
+			data['buckets'] = buckets.map((item)=>item.toMap());
+			data['flyoutId'] = flyoutId;
+			data['suppressNewness'] = suppressNewness;
+			data['equipmentSlotHash'] = equipmentSlotHash;
 	}
 }

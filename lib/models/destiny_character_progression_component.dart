@@ -19,7 +19,7 @@ class DestinyCharacterProgressionComponent{
 		Map<Map<bool, dynamic>, dynamic> this.checklists,
 	);
 
-	static DestinyCharacterProgressionComponent fromJson(Map<String, dynamic> data){
+	static DestinyCharacterProgressionComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,8 +39,18 @@ class DestinyCharacterProgressionComponent{
 		};
 		List<DestinyCharacterProgressionComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterProgressionComponent.fromJson(item));
+      list.add(DestinyCharacterProgressionComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['progressions'] = progressions;
+			data['factions'] = factions;
+			data['milestones'] = milestones;
+			data['quests'] = quests.map((item)=>item.toMap());
+			data['uninstancedItemObjectives'] = uninstancedItemObjectives;
+			data['checklists'] = checklists;
 	}
 }

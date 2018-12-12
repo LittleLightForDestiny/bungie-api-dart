@@ -8,7 +8,7 @@ class DestinyItemSetActionRequest{
 		int this.membershipType,
 	);
 
-	static DestinyItemSetActionRequest fromJson(Map<String, dynamic> data){
+	static DestinyItemSetActionRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyItemSetActionRequest{
 		};
 		List<DestinyItemSetActionRequest> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSetActionRequest.fromJson(item));
+      list.add(DestinyItemSetActionRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemIds'] = itemIds;
+			data['characterId'] = characterId;
+			data['membershipType'] = membershipType;
 	}
 }

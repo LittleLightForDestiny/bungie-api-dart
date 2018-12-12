@@ -23,15 +23,15 @@ class GroupResponse{
 		Map<GroupPotentialMember, dynamic> this.currentUserPotentialMemberMap,
 	);
 
-	static GroupResponse fromJson(Map<String, dynamic> data){
+	static GroupResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupResponse(
-				GroupV2.fromJson(data['detail']),
-				GroupMember.fromJson(data['founder']),
+				GroupV2.fromMap(data['detail']),
+				GroupMember.fromMap(data['founder']),
 				data['alliedIds'],
-				GroupV2.fromJson(data['parentGroup']),
+				GroupV2.fromMap(data['parentGroup']),
 				data['allianceStatus'],
 				data['groupJoinInviteCount'],
 				data['currentUserMemberMap'],
@@ -45,8 +45,20 @@ class GroupResponse{
 		};
 		List<GroupResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupResponse.fromJson(item));
+      list.add(GroupResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['detail'] = detail.toMap();
+			data['founder'] = founder.toMap();
+			data['alliedIds'] = alliedIds;
+			data['parentGroup'] = parentGroup.toMap();
+			data['allianceStatus'] = allianceStatus;
+			data['groupJoinInviteCount'] = groupJoinInviteCount;
+			data['currentUserMemberMap'] = currentUserMemberMap;
+			data['currentUserPotentialMemberMap'] = currentUserPotentialMemberMap;
 	}
 }

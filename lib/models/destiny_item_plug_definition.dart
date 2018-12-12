@@ -37,7 +37,7 @@ class DestinyItemPlugDefinition{
 		DestinyParentItemOverride this.parentItemOverride,
 	);
 
-	static DestinyItemPlugDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemPlugDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -67,8 +67,28 @@ class DestinyItemPlugDefinition{
 		};
 		List<DestinyItemPlugDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemPlugDefinition.fromJson(item));
+      list.add(DestinyItemPlugDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['insertionRules'] = insertionRules.map((item)=>item.toMap());
+			data['plugCategoryIdentifier'] = plugCategoryIdentifier;
+			data['plugCategoryHash'] = plugCategoryHash;
+			data['onActionRecreateSelf'] = onActionRecreateSelf;
+			data['insertionMaterialRequirementHash'] = insertionMaterialRequirementHash;
+			data['previewItemOverrideHash'] = previewItemOverrideHash;
+			data['enabledMaterialRequirementHash'] = enabledMaterialRequirementHash;
+			data['enabledRules'] = enabledRules.map((item)=>item.toMap());
+			data['uiPlugLabel'] = uiPlugLabel;
+			data['plugStyle'] = plugStyle;
+			data['isPseudoPlug'] = isPseudoPlug;
+			data['plugAvailability'] = plugAvailability;
+			data['alternateUiPlugLabel'] = alternateUiPlugLabel;
+			data['alternatePlugStyle'] = alternatePlugStyle;
+			data['isDummyPlug'] = isDummyPlug;
+			data['parentItemOverride'] = parentItemOverride;
 	}
 }

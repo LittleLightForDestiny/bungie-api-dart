@@ -27,20 +27,20 @@ class TrendingDetail{
 		TrendingEntryCommunityStream this.stream,
 	);
 
-	static TrendingDetail fromJson(Map<String, dynamic> data){
+	static TrendingDetail fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingDetail(
 				data['identifier'],
 				data['entityType'],
-				TrendingEntryNews.fromJson(data['news']),
-				TrendingEntrySupportArticle.fromJson(data['support']),
-				TrendingEntryDestinyItem.fromJson(data['destinyItem']),
-				TrendingEntryDestinyActivity.fromJson(data['destinyActivity']),
-				TrendingEntryDestinyRitual.fromJson(data['destinyRitual']),
-				TrendingEntryCommunityCreation.fromJson(data['creation']),
-				TrendingEntryCommunityStream.fromJson(data['stream']),
+				TrendingEntryNews.fromMap(data['news']),
+				TrendingEntrySupportArticle.fromMap(data['support']),
+				TrendingEntryDestinyItem.fromMap(data['destinyItem']),
+				TrendingEntryDestinyActivity.fromMap(data['destinyActivity']),
+				TrendingEntryDestinyRitual.fromMap(data['destinyRitual']),
+				TrendingEntryCommunityCreation.fromMap(data['creation']),
+				TrendingEntryCommunityStream.fromMap(data['stream']),
 		);
 	}
 
@@ -50,8 +50,21 @@ class TrendingDetail{
 		};
 		List<TrendingDetail> list = new List();
     data.forEach((item) {
-      list.add(TrendingDetail.fromJson(item));
+      list.add(TrendingDetail.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['identifier'] = identifier;
+			data['entityType'] = entityType;
+			data['news'] = news.toMap();
+			data['support'] = support.toMap();
+			data['destinyItem'] = destinyItem.toMap();
+			data['destinyActivity'] = destinyActivity.toMap();
+			data['destinyRitual'] = destinyRitual.toMap();
+			data['creation'] = creation.toMap();
+			data['stream'] = stream.toMap();
 	}
 }

@@ -18,7 +18,7 @@ class Destiny2CoreSettings{
 		String this.ammoTypePrimaryIcon,
 	);
 
-	static Destiny2CoreSettings fromJson(Map<String, dynamic> data){
+	static Destiny2CoreSettings fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -40,8 +40,20 @@ class Destiny2CoreSettings{
 		};
 		List<Destiny2CoreSettings> list = new List();
     data.forEach((item) {
-      list.add(Destiny2CoreSettings.fromJson(item));
+      list.add(Destiny2CoreSettings.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['collectionRootNode'] = collectionRootNode;
+			data['badgesRootNode'] = badgesRootNode;
+			data['recordsRootNode'] = recordsRootNode;
+			data['medalsRootNode'] = medalsRootNode;
+			data['undiscoveredCollectibleImage'] = undiscoveredCollectibleImage;
+			data['ammoTypeHeavyIcon'] = ammoTypeHeavyIcon;
+			data['ammoTypeSpecialIcon'] = ammoTypeSpecialIcon;
+			data['ammoTypePrimaryIcon'] = ammoTypePrimaryIcon;
 	}
 }

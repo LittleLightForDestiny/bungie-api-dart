@@ -10,11 +10,11 @@ class Fireteam{
         HttpClient client,
         int groupId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/ActiveCount/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -30,12 +30,12 @@ class Fireteam{
         int publicOnly,
         int slotFilter,
     ) {
-        Map<String, String> params = new Map();
-        params['langFilter'] = "${ langFilter }";
+        Map<String, dynamic> params = new Map();
+        params['langFilter'] = langFilter;
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/Available/${platform}/${activityType}/${dateRange}/${slotFilter}/${publicOnly}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamSummaryResponse.fromJson(response);
+            return SearchResultOfFireteamSummaryResponse.fromMap(response);
         });
     }
     
@@ -49,12 +49,12 @@ class Fireteam{
         int platform,
         int slotFilter,
     ) {
-        Map<String, String> params = new Map();
-        params['langFilter'] = "${ langFilter }";
+        Map<String, dynamic> params = new Map();
+        params['langFilter'] = langFilter;
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Search/Available/${platform}/${activityType}/${dateRange}/${slotFilter}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamSummaryResponse.fromJson(response);
+            return SearchResultOfFireteamSummaryResponse.fromMap(response);
         });
     }
     
@@ -68,13 +68,13 @@ class Fireteam{
         int page,
         int platform,
     ) {
-        Map<String, String> params = new Map();
-        params['groupFilter'] = "${ groupFilter }";
-        params['langFilter'] = "${ langFilter }";
+        Map<String, dynamic> params = new Map();
+        params['groupFilter'] = groupFilter;
+        params['langFilter'] = langFilter;
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/My/${platform}/${includeClosed}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamResponseResponse.fromJson(response);
+            return SearchResultOfFireteamResponseResponse.fromMap(response);
         });
     }
     
@@ -84,11 +84,11 @@ class Fireteam{
         int fireteamId,
         int groupId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/Summary/${fireteamId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return FireteamResponseResponse.fromJson(response);
+            return FireteamResponseResponse.fromMap(response);
         });
     }
 }

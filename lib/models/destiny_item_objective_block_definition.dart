@@ -21,7 +21,7 @@ class DestinyItemObjectiveBlockDefinition{
 		List<DestinyObjectiveDisplayProperties> this.perObjectiveDisplayProperties,
 	);
 
-	static DestinyItemObjectiveBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemObjectiveBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -44,8 +44,21 @@ class DestinyItemObjectiveBlockDefinition{
 		};
 		List<DestinyItemObjectiveBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemObjectiveBlockDefinition.fromJson(item));
+      list.add(DestinyItemObjectiveBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectiveHashes'] = objectiveHashes;
+			data['displayActivityHashes'] = displayActivityHashes;
+			data['requireFullObjectiveCompletion'] = requireFullObjectiveCompletion;
+			data['questlineItemHash'] = questlineItemHash;
+			data['narrative'] = narrative;
+			data['objectiveVerbName'] = objectiveVerbName;
+			data['questTypeIdentifier'] = questTypeIdentifier;
+			data['questTypeHash'] = questTypeHash;
+			data['perObjectiveDisplayProperties'] = perObjectiveDisplayProperties.map((item)=>item.toMap());
 	}
 }

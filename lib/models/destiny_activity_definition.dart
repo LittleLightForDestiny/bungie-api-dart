@@ -80,7 +80,7 @@ class DestinyActivityDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyActivityDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -126,8 +126,44 @@ class DestinyActivityDefinition{
 		};
 		List<DestinyActivityDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityDefinition.fromJson(item));
+      list.add(DestinyActivityDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['originalDisplayProperties'] = originalDisplayProperties;
+			data['selectionScreenDisplayProperties'] = selectionScreenDisplayProperties;
+			data['releaseIcon'] = releaseIcon;
+			data['releaseTime'] = releaseTime;
+			data['activityLevel'] = activityLevel;
+			data['activityLightLevel'] = activityLightLevel;
+			data['destinationHash'] = destinationHash;
+			data['placeHash'] = placeHash;
+			data['activityTypeHash'] = activityTypeHash;
+			data['tier'] = tier;
+			data['pgcrImage'] = pgcrImage;
+			data['rewards'] = rewards.map((item)=>item.toMap());
+			data['modifiers'] = modifiers.map((item)=>item.toMap());
+			data['isPlaylist'] = isPlaylist;
+			data['challenges'] = challenges.map((item)=>item.toMap());
+			data['optionalUnlockStrings'] = optionalUnlockStrings.map((item)=>item.toMap());
+			data['playlistItems'] = playlistItems.map((item)=>item.toMap());
+			data['activityGraphList'] = activityGraphList.map((item)=>item.toMap());
+			data['matchmaking'] = matchmaking;
+			data['guidedGame'] = guidedGame;
+			data['directActivityModeHash'] = directActivityModeHash;
+			data['directActivityModeType'] = directActivityModeType;
+			data['loadouts'] = loadouts.map((item)=>item.toMap());
+			data['activityModeHashes'] = activityModeHashes;
+			data['activityModeTypes'] = activityModeTypes;
+			data['isPvP'] = isPvP;
+			data['insertionPoints'] = insertionPoints.map((item)=>item.toMap());
+			data['activityLocationMappings'] = activityLocationMappings.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

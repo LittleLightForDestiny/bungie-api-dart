@@ -10,13 +10,13 @@ class App{
         String end,
         String start,
     ) {
-        Map<String, String> params = new Map();
-        params['end'] = "${ end }";
-        params['start'] = "${ start }";
+        Map<String, dynamic> params = new Map();
+        params['end'] = end;
+        params['start'] = start;
         HttpClientConfig config = HttpClientConfig('GET', "/App/ApiUsage/${applicationId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ApiUsageResponse.fromJson(response);
+            return ApiUsageResponse.fromMap(response);
         });
     }
     
@@ -24,11 +24,11 @@ class App{
     static Future<IEnumerableOfApplicationResponse> getBungieApplications (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/App/FirstParty/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return IEnumerableOfApplicationResponse.fromJson(response);
+            return IEnumerableOfApplicationResponse.fromMap(response);
         });
     }
 }

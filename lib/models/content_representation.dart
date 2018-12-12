@@ -8,7 +8,7 @@ class ContentRepresentation{
 		String this.validationString,
 	);
 
-	static ContentRepresentation fromJson(Map<String, dynamic> data){
+	static ContentRepresentation fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class ContentRepresentation{
 		};
 		List<ContentRepresentation> list = new List();
     data.forEach((item) {
-      list.add(ContentRepresentation.fromJson(item));
+      list.add(ContentRepresentation.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['path'] = path;
+			data['validationString'] = validationString;
 	}
 }

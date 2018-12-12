@@ -17,7 +17,7 @@ class DestinyItemSourceDefinition{
 		List<int> this.sourceHashes,
 	);
 
-	static DestinyItemSourceDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSourceDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,8 +38,19 @@ class DestinyItemSourceDefinition{
 		};
 		List<DestinyItemSourceDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSourceDefinition.fromJson(item));
+      list.add(DestinyItemSourceDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['level'] = level;
+			data['minQuality'] = minQuality;
+			data['maxQuality'] = maxQuality;
+			data['minLevelRequired'] = minLevelRequired;
+			data['maxLevelRequired'] = maxLevelRequired;
+			data['computedStats'] = computedStats;
+			data['sourceHashes'] = sourceHashes;
 	}
 }

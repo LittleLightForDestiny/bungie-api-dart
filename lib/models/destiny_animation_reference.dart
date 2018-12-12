@@ -8,7 +8,7 @@ class DestinyAnimationReference{
 		String this.path,
 	);
 
-	static DestinyAnimationReference fromJson(Map<String, dynamic> data){
+	static DestinyAnimationReference fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyAnimationReference{
 		};
 		List<DestinyAnimationReference> list = new List();
     data.forEach((item) {
-      list.add(DestinyAnimationReference.fromJson(item));
+      list.add(DestinyAnimationReference.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['animName'] = animName;
+			data['animIdentifier'] = animIdentifier;
+			data['path'] = path;
 	}
 }

@@ -6,7 +6,7 @@ class DyeReference{
 		int this.dyeHash,
 	);
 
-	static DyeReference fromJson(Map<String, dynamic> data){
+	static DyeReference fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DyeReference{
 		};
 		List<DyeReference> list = new List();
     data.forEach((item) {
-      list.add(DyeReference.fromJson(item));
+      list.add(DyeReference.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['channelHash'] = channelHash;
+			data['dyeHash'] = dyeHash;
 	}
 }

@@ -18,12 +18,12 @@ class TrendingCategoriesResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static TrendingCategoriesResponse fromJson(Map<String, dynamic> data){
+    static TrendingCategoriesResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingCategoriesResponse(
-				TrendingCategories.fromJson(data['Response']),
+				TrendingCategories.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class TrendingCategoriesResponse{
 		};
 		List<TrendingCategoriesResponse> list = new List();
     data.forEach((item) {
-      list.add(TrendingCategoriesResponse.fromJson(item));
+      list.add(TrendingCategoriesResponse.fromMap(item));
     });
     return list;
 	}

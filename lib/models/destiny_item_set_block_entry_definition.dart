@@ -6,7 +6,7 @@ class DestinyItemSetBlockEntryDefinition{
 		int this.itemHash,
 	);
 
-	static DestinyItemSetBlockEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSetBlockEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyItemSetBlockEntryDefinition{
 		};
 		List<DestinyItemSetBlockEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSetBlockEntryDefinition.fromJson(item));
+      list.add(DestinyItemSetBlockEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['trackingValue'] = trackingValue;
+			data['itemHash'] = itemHash;
 	}
 }

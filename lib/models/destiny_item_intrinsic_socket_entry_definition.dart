@@ -8,7 +8,7 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 		bool this.defaultVisible,
 	);
 
-	static DestinyItemIntrinsicSocketEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemIntrinsicSocketEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 		};
 		List<DestinyItemIntrinsicSocketEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemIntrinsicSocketEntryDefinition.fromJson(item));
+      list.add(DestinyItemIntrinsicSocketEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugItemHash'] = plugItemHash;
+			data['socketTypeHash'] = socketTypeHash;
+			data['defaultVisible'] = defaultVisible;
 	}
 }

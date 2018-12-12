@@ -6,7 +6,7 @@ class CommentSummary{
 		int this.commentCount,
 	);
 
-	static CommentSummary fromJson(Map<String, dynamic> data){
+	static CommentSummary fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class CommentSummary{
 		};
 		List<CommentSummary> list = new List();
     data.forEach((item) {
-      list.add(CommentSummary.fromJson(item));
+      list.add(CommentSummary.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['topicId'] = topicId;
+			data['commentCount'] = commentCount;
 	}
 }

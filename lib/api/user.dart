@@ -11,11 +11,11 @@ class User{
         HttpClient client,
         int id,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetBungieNetUserById/${id}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GeneralUserResponse.fromJson(response);
+            return GeneralUserResponse.fromMap(response);
         });
     }
     
@@ -24,12 +24,12 @@ class User{
         HttpClient client,
         String q,
     ) {
-        Map<String, String> params = new Map();
-        params['q'] = "${ q }";
+        Map<String, dynamic> params = new Map();
+        params['q'] = q;
         HttpClientConfig config = HttpClientConfig('GET', "/User/SearchUsers/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfGeneralUserResponse.fromJson(response);
+            return ListOfGeneralUserResponse.fromMap(response);
         });
     }
     
@@ -37,11 +37,11 @@ class User{
     static Future<ListOfUserThemeResponse> getAvailableThemes (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetAvailableThemes/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfUserThemeResponse.fromJson(response);
+            return ListOfUserThemeResponse.fromMap(response);
         });
     }
     
@@ -51,11 +51,11 @@ class User{
         int membershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsById/${membershipId}/${membershipType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return UserMembershipDataResponse.fromJson(response);
+            return UserMembershipDataResponse.fromMap(response);
         });
     }
     
@@ -63,11 +63,11 @@ class User{
     static Future<UserMembershipDataResponse> getMembershipDataForCurrentUser (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsForCurrentUser/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return UserMembershipDataResponse.fromJson(response);
+            return UserMembershipDataResponse.fromMap(response);
         });
     }
     
@@ -76,11 +76,11 @@ class User{
         HttpClient client,
         int membershipId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/User/${membershipId}/Partnerships/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CEListOfPublicPartnershipDetailResponse.fromJson(response);
+            return CEListOfPublicPartnershipDetailResponse.fromMap(response);
         });
     }
 }

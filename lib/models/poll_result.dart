@@ -12,7 +12,7 @@ class PollResult{
 		bool this.requestingUserVoted,
 	);
 
-	static PollResult fromJson(Map<String, dynamic> data){
+	static PollResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class PollResult{
 		};
 		List<PollResult> list = new List();
     data.forEach((item) {
-      list.add(PollResult.fromJson(item));
+      list.add(PollResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['answerText'] = answerText;
+			data['answerSlot'] = answerSlot;
+			data['lastVoteDate'] = lastVoteDate;
+			data['votes'] = votes;
+			data['requestingUserVoted'] = requestingUserVoted;
 	}
 }

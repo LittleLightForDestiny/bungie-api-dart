@@ -18,7 +18,7 @@ class ListOfGeneralUserResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfGeneralUserResponse fromJson(Map<String, dynamic> data){
+    static ListOfGeneralUserResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfGeneralUserResponse{
 		};
 		List<ListOfGeneralUserResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfGeneralUserResponse.fromJson(item));
+      list.add(ListOfGeneralUserResponse.fromMap(item));
     });
     return list;
 	}

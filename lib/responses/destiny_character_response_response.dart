@@ -18,12 +18,12 @@ class DestinyCharacterResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyCharacterResponseResponse fromJson(Map<String, dynamic> data){
+    static DestinyCharacterResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyCharacterResponseResponse(
-				DestinyCharacterResponse.fromJson(data['Response']),
+				DestinyCharacterResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyCharacterResponseResponse{
 		};
 		List<DestinyCharacterResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterResponseResponse.fromJson(item));
+      list.add(DestinyCharacterResponseResponse.fromMap(item));
     });
     return list;
 	}

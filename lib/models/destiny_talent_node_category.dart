@@ -11,7 +11,7 @@ class DestinyTalentNodeCategory{
 		List<int> this.nodeHashes,
 	);
 
-	static DestinyTalentNodeCategory fromJson(Map<String, dynamic> data){
+	static DestinyTalentNodeCategory fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyTalentNodeCategory{
 		};
 		List<DestinyTalentNodeCategory> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNodeCategory.fromJson(item));
+      list.add(DestinyTalentNodeCategory.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['identifier'] = identifier;
+			data['isLoreDriven'] = isLoreDriven;
+			data['displayProperties'] = displayProperties;
+			data['nodeHashes'] = nodeHashes;
 	}
 }

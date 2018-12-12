@@ -4,7 +4,7 @@ class DestinyCurrenciesComponent{
 		Map<int, dynamic> this.itemQuantities,
 	);
 
-	static DestinyCurrenciesComponent fromJson(Map<String, dynamic> data){
+	static DestinyCurrenciesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyCurrenciesComponent{
 		};
 		List<DestinyCurrenciesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCurrenciesComponent.fromJson(item));
+      list.add(DestinyCurrenciesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemQuantities'] = itemQuantities;
 	}
 }

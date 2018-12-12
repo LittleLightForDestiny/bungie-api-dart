@@ -18,12 +18,12 @@ class AwaInitializeResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static AwaInitializeResponseResponse fromJson(Map<String, dynamic> data){
+    static AwaInitializeResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new AwaInitializeResponseResponse(
-				AwaInitializeResponse.fromJson(data['Response']),
+				AwaInitializeResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class AwaInitializeResponseResponse{
 		};
 		List<AwaInitializeResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(AwaInitializeResponseResponse.fromJson(item));
+      list.add(AwaInitializeResponseResponse.fromMap(item));
     });
     return list;
 	}

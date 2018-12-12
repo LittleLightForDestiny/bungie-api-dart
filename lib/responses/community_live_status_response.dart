@@ -18,12 +18,12 @@ class CommunityLiveStatusResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CommunityLiveStatusResponse fromJson(Map<String, dynamic> data){
+    static CommunityLiveStatusResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new CommunityLiveStatusResponse(
-				CommunityLiveStatus.fromJson(data['Response']),
+				CommunityLiveStatus.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class CommunityLiveStatusResponse{
 		};
 		List<CommunityLiveStatusResponse> list = new List();
     data.forEach((item) {
-      list.add(CommunityLiveStatusResponse.fromJson(item));
+      list.add(CommunityLiveStatusResponse.fromMap(item));
     });
     return list;
 	}

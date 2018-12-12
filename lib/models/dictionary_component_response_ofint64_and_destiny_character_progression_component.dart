@@ -7,7 +7,7 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent{
 		int this.privacy,
 	);
 
-	static DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent fromJson(Map<String, dynamic> data){
+	static DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent{
 		};
 		List<DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent> list = new List();
     data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent.fromJson(item));
+      list.add(DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data;
+			data['privacy'] = privacy;
 	}
 }

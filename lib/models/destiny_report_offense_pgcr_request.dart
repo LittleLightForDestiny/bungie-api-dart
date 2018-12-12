@@ -8,7 +8,7 @@ class DestinyReportOffensePgcrRequest{
 		int this.offendingCharacterId,
 	);
 
-	static DestinyReportOffensePgcrRequest fromJson(Map<String, dynamic> data){
+	static DestinyReportOffensePgcrRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyReportOffensePgcrRequest{
 		};
 		List<DestinyReportOffensePgcrRequest> list = new List();
     data.forEach((item) {
-      list.add(DestinyReportOffensePgcrRequest.fromJson(item));
+      list.add(DestinyReportOffensePgcrRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['reasonCategoryHashes'] = reasonCategoryHashes;
+			data['reasonHashes'] = reasonHashes;
+			data['offendingCharacterId'] = offendingCharacterId;
 	}
 }

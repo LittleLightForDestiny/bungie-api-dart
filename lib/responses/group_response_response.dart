@@ -18,12 +18,12 @@ class GroupResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static GroupResponseResponse fromJson(Map<String, dynamic> data){
+    static GroupResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupResponseResponse(
-				GroupResponse.fromJson(data['Response']),
+				GroupResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class GroupResponseResponse{
 		};
 		List<GroupResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupResponseResponse.fromJson(item));
+      list.add(GroupResponseResponse.fromMap(item));
     });
     return list;
 	}

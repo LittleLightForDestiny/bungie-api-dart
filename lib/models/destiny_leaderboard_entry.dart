@@ -12,7 +12,7 @@ class DestinyLeaderboardEntry{
 		DestinyHistoricalStatsValue this.value,
 	);
 
-	static DestinyLeaderboardEntry fromJson(Map<String, dynamic> data){
+	static DestinyLeaderboardEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -30,8 +30,16 @@ class DestinyLeaderboardEntry{
 		};
 		List<DestinyLeaderboardEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyLeaderboardEntry.fromJson(item));
+      list.add(DestinyLeaderboardEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['rank'] = rank;
+			data['player'] = player;
+			data['characterId'] = characterId;
+			data['value'] = value;
 	}
 }

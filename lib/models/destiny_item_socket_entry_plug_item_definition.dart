@@ -4,7 +4,7 @@ class DestinyItemSocketEntryPlugItemDefinition{
 		int this.plugItemHash,
 	);
 
-	static DestinyItemSocketEntryPlugItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketEntryPlugItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyItemSocketEntryPlugItemDefinition{
 		};
 		List<DestinyItemSocketEntryPlugItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketEntryPlugItemDefinition.fromJson(item));
+      list.add(DestinyItemSocketEntryPlugItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugItemHash'] = plugItemHash;
 	}
 }

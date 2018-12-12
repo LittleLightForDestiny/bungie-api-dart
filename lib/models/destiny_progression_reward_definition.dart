@@ -8,7 +8,7 @@ class DestinyProgressionRewardDefinition{
 		bool this.applyThrottles,
 	);
 
-	static DestinyProgressionRewardDefinition fromJson(Map<String, dynamic> data){
+	static DestinyProgressionRewardDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyProgressionRewardDefinition{
 		};
 		List<DestinyProgressionRewardDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyProgressionRewardDefinition.fromJson(item));
+      list.add(DestinyProgressionRewardDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['progressionMappingHash'] = progressionMappingHash;
+			data['amount'] = amount;
+			data['applyThrottles'] = applyThrottles;
 	}
 }

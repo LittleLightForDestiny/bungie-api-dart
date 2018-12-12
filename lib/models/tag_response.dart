@@ -7,13 +7,13 @@ class TagResponse{
 		IgnoreResponse this.ignoreStatus,
 	);
 
-	static TagResponse fromJson(Map<String, dynamic> data){
+	static TagResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TagResponse(
 				data['tagText'],
-				IgnoreResponse.fromJson(data['ignoreStatus']),
+				IgnoreResponse.fromMap(data['ignoreStatus']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class TagResponse{
 		};
 		List<TagResponse> list = new List();
     data.forEach((item) {
-      list.add(TagResponse.fromJson(item));
+      list.add(TagResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['tagText'] = tagText;
+			data['ignoreStatus'] = ignoreStatus.toMap();
 	}
 }

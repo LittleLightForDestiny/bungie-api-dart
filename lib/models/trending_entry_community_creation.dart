@@ -16,7 +16,7 @@ class TrendingEntryCommunityCreation{
 		int this.upvotes,
 	);
 
-	static TrendingEntryCommunityCreation fromJson(Map<String, dynamic> data){
+	static TrendingEntryCommunityCreation fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -37,8 +37,19 @@ class TrendingEntryCommunityCreation{
 		};
 		List<TrendingEntryCommunityCreation> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntryCommunityCreation.fromJson(item));
+      list.add(TrendingEntryCommunityCreation.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['media'] = media;
+			data['title'] = title;
+			data['author'] = author;
+			data['authorMembershipId'] = authorMembershipId;
+			data['postId'] = postId;
+			data['body'] = body;
+			data['upvotes'] = upvotes;
 	}
 }

@@ -9,13 +9,13 @@ class UserToUserContext{
 		String this.globalIgnoreEndDate,
 	);
 
-	static UserToUserContext fromJson(Map<String, dynamic> data){
+	static UserToUserContext fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new UserToUserContext(
 				data['isFollowing'],
-				IgnoreResponse.fromJson(data['ignoreStatus']),
+				IgnoreResponse.fromMap(data['ignoreStatus']),
 				data['globalIgnoreEndDate'],
 		);
 	}
@@ -26,8 +26,15 @@ class UserToUserContext{
 		};
 		List<UserToUserContext> list = new List();
     data.forEach((item) {
-      list.add(UserToUserContext.fromJson(item));
+      list.add(UserToUserContext.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['isFollowing'] = isFollowing;
+			data['ignoreStatus'] = ignoreStatus.toMap();
+			data['globalIgnoreEndDate'] = globalIgnoreEndDate;
 	}
 }

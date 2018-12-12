@@ -6,7 +6,7 @@ class SchemaRecordStateBlock{
 		String this.obscuredString,
 	);
 
-	static SchemaRecordStateBlock fromJson(Map<String, dynamic> data){
+	static SchemaRecordStateBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class SchemaRecordStateBlock{
 		};
 		List<SchemaRecordStateBlock> list = new List();
     data.forEach((item) {
-      list.add(SchemaRecordStateBlock.fromJson(item));
+      list.add(SchemaRecordStateBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['featuredPriority'] = featuredPriority;
+			data['obscuredString'] = obscuredString;
 	}
 }

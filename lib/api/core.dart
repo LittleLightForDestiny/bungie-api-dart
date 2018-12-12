@@ -7,12 +7,12 @@ class Core{
         HttpClient client,
         bool includestreaming,
     ) {
-        Map<String, String> params = new Map();
-        params['includestreaming'] = "${ includestreaming }";
+        Map<String, dynamic> params = new Map();
+        params['includestreaming'] = includestreaming;
         HttpClientConfig config = HttpClientConfig('GET', "/GlobalAlerts/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CEListOfGlobalAlertResponse.fromJson(response);
+            return CEListOfGlobalAlertResponse.fromMap(response);
         });
     }
 }

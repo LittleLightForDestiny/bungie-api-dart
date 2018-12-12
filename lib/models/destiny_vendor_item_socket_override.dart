@@ -8,7 +8,7 @@ class DestinyVendorItemSocketOverride{
 		int this.socketTypeHash,
 	);
 
-	static DestinyVendorItemSocketOverride fromJson(Map<String, dynamic> data){
+	static DestinyVendorItemSocketOverride fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyVendorItemSocketOverride{
 		};
 		List<DestinyVendorItemSocketOverride> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorItemSocketOverride.fromJson(item));
+      list.add(DestinyVendorItemSocketOverride.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['singleItemHash'] = singleItemHash;
+			data['randomizedOptionsCount'] = randomizedOptionsCount;
+			data['socketTypeHash'] = socketTypeHash;
 	}
 }

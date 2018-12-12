@@ -5,7 +5,7 @@ class DestinyPresentationNodesComponent{
 		Map<DestinyPresentationNodeComponent, dynamic> this.nodes,
 	);
 
-	static DestinyPresentationNodesComponent fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyPresentationNodesComponent{
 		};
 		List<DestinyPresentationNodesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodesComponent.fromJson(item));
+      list.add(DestinyPresentationNodesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodes'] = nodes;
 	}
 }

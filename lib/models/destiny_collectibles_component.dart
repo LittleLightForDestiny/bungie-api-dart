@@ -5,7 +5,7 @@ class DestinyCollectiblesComponent{
 		Map<DestinyCollectibleComponent, dynamic> this.collectibles,
 	);
 
-	static DestinyCollectiblesComponent fromJson(Map<String, dynamic> data){
+	static DestinyCollectiblesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyCollectiblesComponent{
 		};
 		List<DestinyCollectiblesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectiblesComponent.fromJson(item));
+      list.add(DestinyCollectiblesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['collectibles'] = collectibles;
 	}
 }

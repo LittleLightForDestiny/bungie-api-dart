@@ -18,7 +18,7 @@ class IEnumerableOfApplicationResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static IEnumerableOfApplicationResponse fromJson(Map<String, dynamic> data){
+    static IEnumerableOfApplicationResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class IEnumerableOfApplicationResponse{
 		};
 		List<IEnumerableOfApplicationResponse> list = new List();
     data.forEach((item) {
-      list.add(IEnumerableOfApplicationResponse.fromJson(item));
+      list.add(IEnumerableOfApplicationResponse.fromMap(item));
     });
     return list;
 	}

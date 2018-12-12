@@ -31,12 +31,12 @@ class DestinyActivityModeDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyActivityModeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityModeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyActivityModeDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['pgcrImage'],
 				data['modeType'],
 				data['activityModeCategory'],
@@ -59,8 +59,26 @@ class DestinyActivityModeDefinition{
 		};
 		List<DestinyActivityModeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityModeDefinition.fromJson(item));
+      list.add(DestinyActivityModeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['pgcrImage'] = pgcrImage;
+			data['modeType'] = modeType;
+			data['activityModeCategory'] = activityModeCategory;
+			data['isTeamBased'] = isTeamBased;
+			data['isAggregateMode'] = isAggregateMode;
+			data['parentHashes'] = parentHashes;
+			data['friendlyName'] = friendlyName;
+			data['activityModeMappings'] = activityModeMappings;
+			data['display'] = display;
+			data['order'] = order;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

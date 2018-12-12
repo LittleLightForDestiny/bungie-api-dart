@@ -6,7 +6,7 @@ class DestinyNodeActivationRequirement{
 		List<int> this.materialRequirementHashes,
 	);
 
-	static DestinyNodeActivationRequirement fromJson(Map<String, dynamic> data){
+	static DestinyNodeActivationRequirement fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyNodeActivationRequirement{
 		};
 		List<DestinyNodeActivationRequirement> list = new List();
     data.forEach((item) {
-      list.add(DestinyNodeActivationRequirement.fromJson(item));
+      list.add(DestinyNodeActivationRequirement.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['gridLevel'] = gridLevel;
+			data['materialRequirementHashes'] = materialRequirementHashes;
 	}
 }

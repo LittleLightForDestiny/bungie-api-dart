@@ -18,12 +18,12 @@ class FireteamResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static FireteamResponseResponse fromJson(Map<String, dynamic> data){
+    static FireteamResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new FireteamResponseResponse(
-				FireteamResponse.fromJson(data['Response']),
+				FireteamResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class FireteamResponseResponse{
 		};
 		List<FireteamResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(FireteamResponseResponse.fromJson(item));
+      list.add(FireteamResponseResponse.fromMap(item));
     });
     return list;
 	}

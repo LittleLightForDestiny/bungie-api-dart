@@ -47,7 +47,7 @@ class CommunityLiveStatus{
 		bool this.isSubscribable,
 	);
 
-	static CommunityLiveStatus fromJson(Map<String, dynamic> data){
+	static CommunityLiveStatus fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -60,7 +60,7 @@ class CommunityLiveStatus{
 				data['thumbnailSmall'],
 				data['thumbnailLarge'],
 				data['destinyCharacterId'],
-				UserInfoCard.fromJson(data['userInfo']),
+				UserInfoCard.fromMap(data['userInfo']),
 				data['currentActivityHash'],
 				data['dateLastPlayed'],
 				data['dateStreamStarted'],
@@ -83,8 +83,34 @@ class CommunityLiveStatus{
 		};
 		List<CommunityLiveStatus> list = new List();
     data.forEach((item) {
-      list.add(CommunityLiveStatus.fromJson(item));
+      list.add(CommunityLiveStatus.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['dateStatusUpdated'] = dateStatusUpdated;
+			data['url'] = url;
+			data['partnershipIdentifier'] = partnershipIdentifier;
+			data['partnershipType'] = partnershipType;
+			data['thumbnail'] = thumbnail;
+			data['thumbnailSmall'] = thumbnailSmall;
+			data['thumbnailLarge'] = thumbnailLarge;
+			data['destinyCharacterId'] = destinyCharacterId;
+			data['userInfo'] = userInfo.toMap();
+			data['currentActivityHash'] = currentActivityHash;
+			data['dateLastPlayed'] = dateLastPlayed;
+			data['dateStreamStarted'] = dateStreamStarted;
+			data['locale'] = locale;
+			data['currentViewers'] = currentViewers;
+			data['followers'] = followers;
+			data['overallViewers'] = overallViewers;
+			data['isFeatured'] = isFeatured;
+			data['title'] = title;
+			data['activityModeHash'] = activityModeHash;
+			data['dateFeatured'] = dateFeatured;
+			data['trendingValue'] = trendingValue;
+			data['isSubscribable'] = isSubscribable;
 	}
 }

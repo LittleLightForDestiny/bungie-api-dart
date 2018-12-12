@@ -10,7 +10,7 @@ class DestinyMaterialRequirement{
 		bool this.omitFromRequirements,
 	);
 
-	static DestinyMaterialRequirement fromJson(Map<String, dynamic> data){
+	static DestinyMaterialRequirement fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyMaterialRequirement{
 		};
 		List<DestinyMaterialRequirement> list = new List();
     data.forEach((item) {
-      list.add(DestinyMaterialRequirement.fromJson(item));
+      list.add(DestinyMaterialRequirement.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemHash'] = itemHash;
+			data['deleteOnAction'] = deleteOnAction;
+			data['count'] = count;
+			data['omitFromRequirements'] = omitFromRequirements;
 	}
 }

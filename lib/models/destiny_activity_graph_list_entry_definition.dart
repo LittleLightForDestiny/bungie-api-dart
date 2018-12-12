@@ -4,7 +4,7 @@ class DestinyActivityGraphListEntryDefinition{
 		int this.activityGraphHash,
 	);
 
-	static DestinyActivityGraphListEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphListEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityGraphListEntryDefinition{
 		};
 		List<DestinyActivityGraphListEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphListEntryDefinition.fromJson(item));
+      list.add(DestinyActivityGraphListEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityGraphHash'] = activityGraphHash;
 	}
 }

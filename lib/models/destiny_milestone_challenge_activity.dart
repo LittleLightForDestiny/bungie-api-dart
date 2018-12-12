@@ -14,7 +14,7 @@ class DestinyMilestoneChallengeActivity{
 		List<DestinyMilestoneActivityPhase> this.phases,
 	);
 
-	static DestinyMilestoneChallengeActivity fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneChallengeActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -33,8 +33,17 @@ class DestinyMilestoneChallengeActivity{
 		};
 		List<DestinyMilestoneChallengeActivity> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneChallengeActivity.fromJson(item));
+      list.add(DestinyMilestoneChallengeActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['challenges'] = challenges.map((item)=>item.toMap());
+			data['modifierHashes'] = modifierHashes;
+			data['loadoutRequirementIndex'] = loadoutRequirementIndex;
+			data['phases'] = phases.map((item)=>item.toMap());
 	}
 }

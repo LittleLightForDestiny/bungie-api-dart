@@ -49,7 +49,7 @@ class ContentTypeDescription{
 		List<ContentTypePropertySection> this.propertySections,
 	);
 
-	static ContentTypeDescription fromJson(Map<String, dynamic> data){
+	static ContentTypeDescription fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -84,8 +84,33 @@ class ContentTypeDescription{
 		};
 		List<ContentTypeDescription> list = new List();
     data.forEach((item) {
-      list.add(ContentTypeDescription.fromJson(item));
+      list.add(ContentTypeDescription.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['cType'] = cType;
+			data['name'] = name;
+			data['contentDescription'] = contentDescription;
+			data['previewImage'] = previewImage;
+			data['priority'] = priority;
+			data['reminder'] = reminder;
+			data['properties'] = properties.map((item)=>item.toMap());
+			data['tagMetadata'] = tagMetadata.map((item)=>item.toMap());
+			data['tagMetadataItems'] = tagMetadataItems;
+			data['usageExamples'] = usageExamples;
+			data['showInContentEditor'] = showInContentEditor;
+			data['typeOf'] = typeOf;
+			data['bindIdentifierToProperty'] = bindIdentifierToProperty;
+			data['boundRegex'] = boundRegex;
+			data['forceIdentifierBinding'] = forceIdentifierBinding;
+			data['allowComments'] = allowComments;
+			data['autoEnglishPropertyFallback'] = autoEnglishPropertyFallback;
+			data['bulkUploadable'] = bulkUploadable;
+			data['previews'] = previews.map((item)=>item.toMap());
+			data['suppressCmsPath'] = suppressCmsPath;
+			data['propertySections'] = propertySections.map((item)=>item.toMap());
 	}
 }

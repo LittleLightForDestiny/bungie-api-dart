@@ -12,7 +12,7 @@ class DestinyProgressionDisplayPropertiesDefinition{
 		bool this.hasIcon,
 	);
 
-	static DestinyProgressionDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+	static DestinyProgressionDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyProgressionDisplayPropertiesDefinition{
 		};
 		List<DestinyProgressionDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyProgressionDisplayPropertiesDefinition.fromJson(item));
+      list.add(DestinyProgressionDisplayPropertiesDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayUnitsName'] = displayUnitsName;
+			data['description'] = description;
+			data['name'] = name;
+			data['icon'] = icon;
+			data['hasIcon'] = hasIcon;
 	}
 }

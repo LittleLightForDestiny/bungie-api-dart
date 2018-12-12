@@ -11,12 +11,12 @@ class DestinyItemChangeResponse{
 		List<DestinyItemComponent> this.removedInventoryItems,
 	);
 
-	static DestinyItemChangeResponse fromJson(Map<String, dynamic> data){
+	static DestinyItemChangeResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyItemChangeResponse(
-				DestinyItemResponse.fromJson(data['item']),
+				DestinyItemResponse.fromMap(data['item']),
 				DestinyItemComponent.fromList(data['addedInventoryItems']),
 				DestinyItemComponent.fromList(data['removedInventoryItems']),
 		);
@@ -28,8 +28,15 @@ class DestinyItemChangeResponse{
 		};
 		List<DestinyItemChangeResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemChangeResponse.fromJson(item));
+      list.add(DestinyItemChangeResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['item'] = item.toMap();
+			data['addedInventoryItems'] = addedInventoryItems.map((item)=>item.toMap());
+			data['removedInventoryItems'] = removedInventoryItems.map((item)=>item.toMap());
 	}
 }

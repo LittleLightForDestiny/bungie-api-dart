@@ -11,7 +11,7 @@ class DestinyLinkedProfilesResponse{
 		List<DestinyErrorProfile> this.profilesWithErrors,
 	);
 
-	static DestinyLinkedProfilesResponse fromJson(Map<String, dynamic> data){
+	static DestinyLinkedProfilesResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,15 @@ class DestinyLinkedProfilesResponse{
 		};
 		List<DestinyLinkedProfilesResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyLinkedProfilesResponse.fromJson(item));
+      list.add(DestinyLinkedProfilesResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['profiles'] = profiles.map((item)=>item.toMap());
+			data['bnetMembership'] = bnetMembership;
+			data['profilesWithErrors'] = profilesWithErrors.map((item)=>item.toMap());
 	}
 }

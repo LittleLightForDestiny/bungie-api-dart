@@ -20,7 +20,7 @@ class DestinyVendorsResponse{
 		SingleComponentResponseOfDestinyCurrenciesComponent this.currencyLookups,
 	);
 
-	static DestinyVendorsResponse fromJson(Map<String, dynamic> data){
+	static DestinyVendorsResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -40,8 +40,18 @@ class DestinyVendorsResponse{
 		};
 		List<DestinyVendorsResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorsResponse.fromJson(item));
+      list.add(DestinyVendorsResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorGroups'] = vendorGroups;
+			data['vendors'] = vendors;
+			data['categories'] = categories;
+			data['sales'] = sales;
+			data['itemComponents'] = itemComponents;
+			data['currencyLookups'] = currencyLookups;
 	}
 }

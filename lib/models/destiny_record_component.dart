@@ -7,7 +7,7 @@ class DestinyRecordComponent{
 		List<DestinyObjectiveProgress> this.objectives,
 	);
 
-	static DestinyRecordComponent fromJson(Map<String, dynamic> data){
+	static DestinyRecordComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyRecordComponent{
 		};
 		List<DestinyRecordComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyRecordComponent.fromJson(item));
+      list.add(DestinyRecordComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['state'] = state;
+			data['objectives'] = objectives.map((item)=>item.toMap());
 	}
 }

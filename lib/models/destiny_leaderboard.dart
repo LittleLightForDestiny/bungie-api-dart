@@ -7,7 +7,7 @@ class DestinyLeaderboard{
 		List<DestinyLeaderboardEntry> this.entries,
 	);
 
-	static DestinyLeaderboard fromJson(Map<String, dynamic> data){
+	static DestinyLeaderboard fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyLeaderboard{
 		};
 		List<DestinyLeaderboard> list = new List();
     data.forEach((item) {
-      list.add(DestinyLeaderboard.fromJson(item));
+      list.add(DestinyLeaderboard.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statId'] = statId;
+			data['entries'] = entries.map((item)=>item.toMap());
 	}
 }

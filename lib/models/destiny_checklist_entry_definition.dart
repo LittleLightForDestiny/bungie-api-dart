@@ -23,7 +23,7 @@ class DestinyChecklistEntryDefinition{
 		int this.scope,
 	);
 
-	static DestinyChecklistEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyChecklistEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -47,8 +47,22 @@ class DestinyChecklistEntryDefinition{
 		};
 		List<DestinyChecklistEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyChecklistEntryDefinition.fromJson(item));
+      list.add(DestinyChecklistEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['hash'] = hash;
+			data['displayProperties'] = displayProperties;
+			data['destinationHash'] = destinationHash;
+			data['locationHash'] = locationHash;
+			data['bubbleHash'] = bubbleHash;
+			data['activityHash'] = activityHash;
+			data['itemHash'] = itemHash;
+			data['vendorHash'] = vendorHash;
+			data['vendorInteractionIndex'] = vendorInteractionIndex;
+			data['scope'] = scope;
 	}
 }

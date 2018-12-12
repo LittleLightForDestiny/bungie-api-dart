@@ -35,7 +35,7 @@ class ContentItemPublicContract{
 		CommentSummary this.commentSummary,
 	);
 
-	static ContentItemPublicContract fromJson(Map<String, dynamic> data){
+	static ContentItemPublicContract fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -49,12 +49,12 @@ class ContentItemPublicContract{
 				data['hasAgeGate'],
 				data['minimumAge'],
 				data['ratingImagePath'],
-				GeneralUser.fromJson(data['author']),
+				GeneralUser.fromMap(data['author']),
 				data['autoEnglishPropertyFallback'],
 				data['properties'],
 				ContentRepresentation.fromList(data['representations']),
 				data['tags'],
-				CommentSummary.fromJson(data['commentSummary']),
+				CommentSummary.fromMap(data['commentSummary']),
 		);
 	}
 
@@ -64,8 +64,27 @@ class ContentItemPublicContract{
 		};
 		List<ContentItemPublicContract> list = new List();
     data.forEach((item) {
-      list.add(ContentItemPublicContract.fromJson(item));
+      list.add(ContentItemPublicContract.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['contentId'] = contentId;
+			data['cType'] = cType;
+			data['cmsPath'] = cmsPath;
+			data['creationDate'] = creationDate;
+			data['modifyDate'] = modifyDate;
+			data['allowComments'] = allowComments;
+			data['hasAgeGate'] = hasAgeGate;
+			data['minimumAge'] = minimumAge;
+			data['ratingImagePath'] = ratingImagePath;
+			data['author'] = author.toMap();
+			data['autoEnglishPropertyFallback'] = autoEnglishPropertyFallback;
+			data['properties'] = properties;
+			data['representations'] = representations.map((item)=>item.toMap());
+			data['tags'] = tags;
+			data['commentSummary'] = commentSummary.toMap();
 	}
 }

@@ -4,7 +4,7 @@ class DestinyActivityUnlockStringDefinition{
 		String this.displayString,
 	);
 
-	static DestinyActivityUnlockStringDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityUnlockStringDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityUnlockStringDefinition{
 		};
 		List<DestinyActivityUnlockStringDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityUnlockStringDefinition.fromJson(item));
+      list.add(DestinyActivityUnlockStringDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayString'] = displayString;
 	}
 }

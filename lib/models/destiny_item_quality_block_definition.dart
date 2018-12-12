@@ -14,7 +14,7 @@ class DestinyItemQualityBlockDefinition{
 		int this.progressionLevelRequirementHash,
 	);
 
-	static DestinyItemQualityBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemQualityBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class DestinyItemQualityBlockDefinition{
 		};
 		List<DestinyItemQualityBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemQualityBlockDefinition.fromJson(item));
+      list.add(DestinyItemQualityBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemLevels'] = itemLevels;
+			data['qualityLevel'] = qualityLevel;
+			data['infusionCategoryName'] = infusionCategoryName;
+			data['infusionCategoryHash'] = infusionCategoryHash;
+			data['infusionCategoryHashes'] = infusionCategoryHashes;
+			data['progressionLevelRequirementHash'] = progressionLevelRequirementHash;
 	}
 }

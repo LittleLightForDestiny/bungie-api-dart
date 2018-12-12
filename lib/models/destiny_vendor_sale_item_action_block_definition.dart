@@ -6,7 +6,7 @@ class DestinyVendorSaleItemActionBlockDefinition{
 		bool this.isPositive,
 	);
 
-	static DestinyVendorSaleItemActionBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorSaleItemActionBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyVendorSaleItemActionBlockDefinition{
 		};
 		List<DestinyVendorSaleItemActionBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorSaleItemActionBlockDefinition.fromJson(item));
+      list.add(DestinyVendorSaleItemActionBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['executeSeconds'] = executeSeconds;
+			data['isPositive'] = isPositive;
 	}
 }

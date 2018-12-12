@@ -29,7 +29,7 @@ class GroupV2Card{
 		String this.theme,
 	);
 
-	static GroupV2Card fromJson(Map<String, dynamic> data){
+	static GroupV2Card fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -44,7 +44,7 @@ class GroupV2Card{
 				data['locale'],
 				data['membershipOption'],
 				data['capabilities'],
-				GroupV2ClanInfo.fromJson(data['clanInfo']),
+				GroupV2ClanInfo.fromMap(data['clanInfo']),
 				data['avatarPath'],
 				data['theme'],
 		);
@@ -56,8 +56,25 @@ class GroupV2Card{
 		};
 		List<GroupV2Card> list = new List();
     data.forEach((item) {
-      list.add(GroupV2Card.fromJson(item));
+      list.add(GroupV2Card.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
+			data['name'] = name;
+			data['groupType'] = groupType;
+			data['creationDate'] = creationDate;
+			data['about'] = about;
+			data['motto'] = motto;
+			data['memberCount'] = memberCount;
+			data['locale'] = locale;
+			data['membershipOption'] = membershipOption;
+			data['capabilities'] = capabilities;
+			data['clanInfo'] = clanInfo.toMap();
+			data['avatarPath'] = avatarPath;
+			data['theme'] = theme;
 	}
 }

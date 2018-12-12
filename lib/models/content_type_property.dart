@@ -85,7 +85,7 @@ class ContentTypeProperty{
 		bool this.isImage,
 	);
 
-	static ContentTypeProperty fromJson(Map<String, dynamic> data){
+	static ContentTypeProperty fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -140,8 +140,53 @@ class ContentTypeProperty{
 		};
 		List<ContentTypeProperty> list = new List();
     data.forEach((item) {
-      list.add(ContentTypeProperty.fromJson(item));
+      list.add(ContentTypeProperty.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['readableName'] = readableName;
+			data['value'] = value;
+			data['propertyDescription'] = propertyDescription;
+			data['localizable'] = localizable;
+			data['fallback'] = fallback;
+			data['enabled'] = enabled;
+			data['order'] = order;
+			data['visible'] = visible;
+			data['isTitle'] = isTitle;
+			data['required'] = required;
+			data['maxLength'] = maxLength;
+			data['maxByteLength'] = maxByteLength;
+			data['maxFileSize'] = maxFileSize;
+			data['regexp'] = regexp;
+			data['validateAs'] = validateAs;
+			data['rssAttribute'] = rssAttribute;
+			data['visibleDependency'] = visibleDependency;
+			data['visibleOn'] = visibleOn;
+			data['datatype'] = datatype;
+			data['attributes'] = attributes;
+			data['childProperties'] = childProperties.map((item)=>item.toMap());
+			data['contentTypeAllowed'] = contentTypeAllowed;
+			data['bindToProperty'] = bindToProperty;
+			data['boundRegex'] = boundRegex;
+			data['representationSelection'] = representationSelection;
+			data['defaultValues'] = defaultValues.map((item)=>item.toMap());
+			data['isExternalAllowed'] = isExternalAllowed;
+			data['propertySection'] = propertySection;
+			data['weight'] = weight;
+			data['entitytype'] = entitytype;
+			data['isCombo'] = isCombo;
+			data['suppressProperty'] = suppressProperty;
+			data['legalContentTypes'] = legalContentTypes;
+			data['representationValidationString'] = representationValidationString;
+			data['minWidth'] = minWidth;
+			data['maxWidth'] = maxWidth;
+			data['minHeight'] = minHeight;
+			data['maxHeight'] = maxHeight;
+			data['isVideo'] = isVideo;
+			data['isImage'] = isImage;
 	}
 }

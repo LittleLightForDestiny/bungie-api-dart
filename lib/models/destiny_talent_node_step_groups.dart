@@ -12,7 +12,7 @@ class DestinyTalentNodeStepGroups{
 		int this.damageTypes,
 	);
 
-	static DestinyTalentNodeStepGroups fromJson(Map<String, dynamic> data){
+	static DestinyTalentNodeStepGroups fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyTalentNodeStepGroups{
 		};
 		List<DestinyTalentNodeStepGroups> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNodeStepGroups.fromJson(item));
+      list.add(DestinyTalentNodeStepGroups.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['weaponPerformance'] = weaponPerformance;
+			data['impactEffects'] = impactEffects;
+			data['guardianAttributes'] = guardianAttributes;
+			data['lightAbilities'] = lightAbilities;
+			data['damageTypes'] = damageTypes;
 	}
 }

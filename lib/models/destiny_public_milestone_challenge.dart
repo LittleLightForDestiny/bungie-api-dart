@@ -6,7 +6,7 @@ class DestinyPublicMilestoneChallenge{
 		int this.activityHash,
 	);
 
-	static DestinyPublicMilestoneChallenge fromJson(Map<String, dynamic> data){
+	static DestinyPublicMilestoneChallenge fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyPublicMilestoneChallenge{
 		};
 		List<DestinyPublicMilestoneChallenge> list = new List();
     data.forEach((item) {
-      list.add(DestinyPublicMilestoneChallenge.fromJson(item));
+      list.add(DestinyPublicMilestoneChallenge.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectiveHash'] = objectiveHash;
+			data['activityHash'] = activityHash;
 	}
 }

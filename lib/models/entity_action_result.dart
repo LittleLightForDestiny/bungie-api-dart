@@ -6,7 +6,7 @@ class EntityActionResult{
 		int this.result,
 	);
 
-	static EntityActionResult fromJson(Map<String, dynamic> data){
+	static EntityActionResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class EntityActionResult{
 		};
 		List<EntityActionResult> list = new List();
     data.forEach((item) {
-      list.add(EntityActionResult.fromJson(item));
+      list.add(EntityActionResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['entityId'] = entityId;
+			data['result'] = result;
 	}
 }

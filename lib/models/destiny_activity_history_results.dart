@@ -5,7 +5,7 @@ class DestinyActivityHistoryResults{
 		List<DestinyHistoricalStatsPeriodGroup> this.activities,
 	);
 
-	static DestinyActivityHistoryResults fromJson(Map<String, dynamic> data){
+	static DestinyActivityHistoryResults fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyActivityHistoryResults{
 		};
 		List<DestinyActivityHistoryResults> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityHistoryResults.fromJson(item));
+      list.add(DestinyActivityHistoryResults.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activities'] = activities.map((item)=>item.toMap());
 	}
 }

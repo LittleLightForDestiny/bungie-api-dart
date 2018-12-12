@@ -8,13 +8,13 @@ class DestinyHistoricalStatsWithMerged{
 		DestinyHistoricalStatsByPeriod this.merged,
 	);
 
-	static DestinyHistoricalStatsWithMerged fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsWithMerged fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyHistoricalStatsWithMerged(
 				data['results'],
-				DestinyHistoricalStatsByPeriod.fromJson(data['merged']),
+				DestinyHistoricalStatsByPeriod.fromMap(data['merged']),
 		);
 	}
 
@@ -24,8 +24,14 @@ class DestinyHistoricalStatsWithMerged{
 		};
 		List<DestinyHistoricalStatsWithMerged> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsWithMerged.fromJson(item));
+      list.add(DestinyHistoricalStatsWithMerged.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['results'] = results;
+			data['merged'] = merged.toMap();
 	}
 }

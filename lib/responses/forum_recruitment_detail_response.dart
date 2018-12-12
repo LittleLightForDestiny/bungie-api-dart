@@ -18,12 +18,12 @@ class ForumRecruitmentDetailResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ForumRecruitmentDetailResponse fromJson(Map<String, dynamic> data){
+    static ForumRecruitmentDetailResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new ForumRecruitmentDetailResponse(
-				ForumRecruitmentDetail.fromJson(data['Response']),
+				ForumRecruitmentDetail.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class ForumRecruitmentDetailResponse{
 		};
 		List<ForumRecruitmentDetailResponse> list = new List();
     data.forEach((item) {
-      list.add(ForumRecruitmentDetailResponse.fromJson(item));
+      list.add(ForumRecruitmentDetailResponse.fromMap(item));
     });
     return list;
 	}

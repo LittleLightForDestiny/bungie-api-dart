@@ -8,7 +8,7 @@ class GroupTheme{
 		String this.description,
 	);
 
-	static GroupTheme fromJson(Map<String, dynamic> data){
+	static GroupTheme fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class GroupTheme{
 		};
 		List<GroupTheme> list = new List();
     data.forEach((item) {
-      list.add(GroupTheme.fromJson(item));
+      list.add(GroupTheme.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['folder'] = folder;
+			data['description'] = description;
 	}
 }

@@ -11,7 +11,7 @@ class DestinyMilestoneContent{
 		List<DestinyMilestoneContentItemCategory> this.itemCategories,
 	);
 
-	static DestinyMilestoneContent fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneContent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyMilestoneContent{
 		};
 		List<DestinyMilestoneContent> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneContent.fromJson(item));
+      list.add(DestinyMilestoneContent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['about'] = about;
+			data['status'] = status;
+			data['tips'] = tips;
+			data['itemCategories'] = itemCategories.map((item)=>item.toMap());
 	}
 }

@@ -13,7 +13,7 @@ class DestinyItemStatBlockDefinition{
 		int this.primaryBaseStatHash,
 	);
 
-	static DestinyItemStatBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemStatBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyItemStatBlockDefinition{
 		};
 		List<DestinyItemStatBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemStatBlockDefinition.fromJson(item));
+      list.add(DestinyItemStatBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['disablePrimaryStatDisplay'] = disablePrimaryStatDisplay;
+			data['statGroupHash'] = statGroupHash;
+			data['stats'] = stats;
+			data['hasDisplayableStats'] = hasDisplayableStats;
+			data['primaryBaseStatHash'] = primaryBaseStatHash;
 	}
 }

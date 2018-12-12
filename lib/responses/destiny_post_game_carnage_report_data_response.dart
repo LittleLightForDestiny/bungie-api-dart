@@ -18,12 +18,12 @@ class DestinyPostGameCarnageReportDataResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyPostGameCarnageReportDataResponse fromJson(Map<String, dynamic> data){
+    static DestinyPostGameCarnageReportDataResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyPostGameCarnageReportDataResponse(
-				DestinyPostGameCarnageReportData.fromJson(data['Response']),
+				DestinyPostGameCarnageReportData.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyPostGameCarnageReportDataResponse{
 		};
 		List<DestinyPostGameCarnageReportDataResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportDataResponse.fromJson(item));
+      list.add(DestinyPostGameCarnageReportDataResponse.fromMap(item));
     });
     return list;
 	}

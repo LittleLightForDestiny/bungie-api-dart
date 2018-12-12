@@ -5,7 +5,7 @@ class DestinyActivityGraphArtElementDefinition{
 		DestinyPositionDefinition this.position,
 	);
 
-	static DestinyActivityGraphArtElementDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphArtElementDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyActivityGraphArtElementDefinition{
 		};
 		List<DestinyActivityGraphArtElementDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphArtElementDefinition.fromJson(item));
+      list.add(DestinyActivityGraphArtElementDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['position'] = position;
 	}
 }

@@ -15,7 +15,7 @@ class DestinyPostGameCarnageReportData{
 		List<DestinyPostGameCarnageReportTeamEntry> this.teams,
 	);
 
-	static DestinyPostGameCarnageReportData fromJson(Map<String, dynamic> data){
+	static DestinyPostGameCarnageReportData fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,17 @@ class DestinyPostGameCarnageReportData{
 		};
 		List<DestinyPostGameCarnageReportData> list = new List();
     data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportData.fromJson(item));
+      list.add(DestinyPostGameCarnageReportData.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['period'] = period;
+			data['startingPhaseIndex'] = startingPhaseIndex;
+			data['activityDetails'] = activityDetails;
+			data['entries'] = entries.map((item)=>item.toMap());
+			data['teams'] = teams.map((item)=>item.toMap());
 	}
 }

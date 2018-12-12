@@ -17,7 +17,7 @@ class CEDictionaryOfstringAndstringResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CEDictionaryOfstringAndstringResponse fromJson(Map<String, dynamic> data){
+    static CEDictionaryOfstringAndstringResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,7 +38,7 @@ class CEDictionaryOfstringAndstringResponse{
 		};
 		List<CEDictionaryOfstringAndstringResponse> list = new List();
     data.forEach((item) {
-      list.add(CEDictionaryOfstringAndstringResponse.fromJson(item));
+      list.add(CEDictionaryOfstringAndstringResponse.fromMap(item));
     });
     return list;
 	}

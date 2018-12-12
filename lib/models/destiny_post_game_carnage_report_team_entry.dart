@@ -12,7 +12,7 @@ class DestinyPostGameCarnageReportTeamEntry{
 		String this.teamName,
 	);
 
-	static DestinyPostGameCarnageReportTeamEntry fromJson(Map<String, dynamic> data){
+	static DestinyPostGameCarnageReportTeamEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -30,8 +30,16 @@ class DestinyPostGameCarnageReportTeamEntry{
 		};
 		List<DestinyPostGameCarnageReportTeamEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportTeamEntry.fromJson(item));
+      list.add(DestinyPostGameCarnageReportTeamEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['teamId'] = teamId;
+			data['standing'] = standing;
+			data['score'] = score;
+			data['teamName'] = teamName;
 	}
 }

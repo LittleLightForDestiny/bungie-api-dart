@@ -17,7 +17,7 @@ class int32Response{
 		String this.detailedErrorTrace,
 	);
 
-    static int32Response fromJson(Map<String, dynamic> data){
+    static int32Response fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,7 +38,7 @@ class int32Response{
 		};
 		List<int32Response> list = new List();
     data.forEach((item) {
-      list.add(int32Response.fromJson(item));
+      list.add(int32Response.fromMap(item));
     });
     return list;
 	}

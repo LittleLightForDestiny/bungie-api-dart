@@ -7,7 +7,7 @@ class Series{
 		String this.target,
 	);
 
-	static Series fromJson(Map<String, dynamic> data){
+	static Series fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class Series{
 		};
 		List<Series> list = new List();
     data.forEach((item) {
-      list.add(Series.fromJson(item));
+      list.add(Series.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['datapoints'] = datapoints.map((item)=>item.toMap());
+			data['target'] = target;
 	}
 }

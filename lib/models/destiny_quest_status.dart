@@ -21,7 +21,7 @@ class DestinyQuestStatus{
 		int this.vendorHash,
 	);
 
-	static DestinyQuestStatus fromJson(Map<String, dynamic> data){
+	static DestinyQuestStatus fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -44,8 +44,21 @@ class DestinyQuestStatus{
 		};
 		List<DestinyQuestStatus> list = new List();
     data.forEach((item) {
-      list.add(DestinyQuestStatus.fromJson(item));
+      list.add(DestinyQuestStatus.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['questHash'] = questHash;
+			data['stepHash'] = stepHash;
+			data['stepObjectives'] = stepObjectives.map((item)=>item.toMap());
+			data['tracked'] = tracked;
+			data['itemInstanceId'] = itemInstanceId;
+			data['completed'] = completed;
+			data['redeemed'] = redeemed;
+			data['started'] = started;
+			data['vendorHash'] = vendorHash;
 	}
 }

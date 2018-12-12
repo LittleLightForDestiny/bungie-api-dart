@@ -12,7 +12,7 @@ class GroupOptionalConversation{
 		int this.chatSecurity,
 	);
 
-	static GroupOptionalConversation fromJson(Map<String, dynamic> data){
+	static GroupOptionalConversation fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class GroupOptionalConversation{
 		};
 		List<GroupOptionalConversation> list = new List();
     data.forEach((item) {
-      list.add(GroupOptionalConversation.fromJson(item));
+      list.add(GroupOptionalConversation.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
+			data['conversationId'] = conversationId;
+			data['chatEnabled'] = chatEnabled;
+			data['chatName'] = chatName;
+			data['chatSecurity'] = chatSecurity;
 	}
 }

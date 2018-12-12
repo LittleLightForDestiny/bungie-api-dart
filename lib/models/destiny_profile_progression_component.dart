@@ -4,7 +4,7 @@ class DestinyProfileProgressionComponent{
 		Map<Map<bool, dynamic>, dynamic> this.checklists,
 	);
 
-	static DestinyProfileProgressionComponent fromJson(Map<String, dynamic> data){
+	static DestinyProfileProgressionComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyProfileProgressionComponent{
 		};
 		List<DestinyProfileProgressionComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyProfileProgressionComponent.fromJson(item));
+      list.add(DestinyProfileProgressionComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['checklists'] = checklists;
 	}
 }

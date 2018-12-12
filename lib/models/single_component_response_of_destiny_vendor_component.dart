@@ -7,12 +7,12 @@ class SingleComponentResponseOfDestinyVendorComponent{
 		int this.privacy,
 	);
 
-	static SingleComponentResponseOfDestinyVendorComponent fromJson(Map<String, dynamic> data){
+	static SingleComponentResponseOfDestinyVendorComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyVendorComponent(
-				DestinyVendorComponent.fromJson(data['data']),
+				DestinyVendorComponent.fromMap(data['data']),
 				data['privacy'],
 		);
 	}
@@ -23,8 +23,14 @@ class SingleComponentResponseOfDestinyVendorComponent{
 		};
 		List<SingleComponentResponseOfDestinyVendorComponent> list = new List();
     data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyVendorComponent.fromJson(item));
+      list.add(SingleComponentResponseOfDestinyVendorComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data.toMap();
+			data['privacy'] = privacy;
 	}
 }

@@ -16,7 +16,7 @@ class SearchResultOfGroupBan{
 		bool this.useTotalResults,
 	);
 
-	static SearchResultOfGroupBan fromJson(Map<String, dynamic> data){
+	static SearchResultOfGroupBan fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,7 +24,7 @@ class SearchResultOfGroupBan{
 				GroupBan.fromList(data['results']),
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromJson(data['query']),
+				PagedQuery.fromMap(data['query']),
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);
@@ -36,8 +36,18 @@ class SearchResultOfGroupBan{
 		};
 		List<SearchResultOfGroupBan> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfGroupBan.fromJson(item));
+      list.add(SearchResultOfGroupBan.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['results'] = results.map((item)=>item.toMap());
+			data['totalResults'] = totalResults;
+			data['hasMore'] = hasMore;
+			data['query'] = query.toMap();
+			data['replacementContinuationToken'] = replacementContinuationToken;
+			data['useTotalResults'] = useTotalResults;
 	}
 }

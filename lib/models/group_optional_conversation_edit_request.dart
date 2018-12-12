@@ -8,7 +8,7 @@ class GroupOptionalConversationEditRequest{
 		int this.chatSecurity,
 	);
 
-	static GroupOptionalConversationEditRequest fromJson(Map<String, dynamic> data){
+	static GroupOptionalConversationEditRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class GroupOptionalConversationEditRequest{
 		};
 		List<GroupOptionalConversationEditRequest> list = new List();
     data.forEach((item) {
-      list.add(GroupOptionalConversationEditRequest.fromJson(item));
+      list.add(GroupOptionalConversationEditRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['chatEnabled'] = chatEnabled;
+			data['chatName'] = chatName;
+			data['chatSecurity'] = chatSecurity;
 	}
 }

@@ -4,7 +4,7 @@ class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 		int this.plugItemHash,
 	);
 
-	static DestinyItemSocketEntryPlugItemRandomizedDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketEntryPlugItemRandomizedDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 		};
 		List<DestinyItemSocketEntryPlugItemRandomizedDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(item));
+      list.add(DestinyItemSocketEntryPlugItemRandomizedDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugItemHash'] = plugItemHash;
 	}
 }

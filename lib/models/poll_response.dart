@@ -9,7 +9,7 @@ class PollResponse{
 		int this.totalVotes,
 	);
 
-	static PollResponse fromJson(Map<String, dynamic> data){
+	static PollResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -26,8 +26,15 @@ class PollResponse{
 		};
 		List<PollResponse> list = new List();
     data.forEach((item) {
-      list.add(PollResponse.fromJson(item));
+      list.add(PollResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['topicId'] = topicId;
+			data['results'] = results.map((item)=>item.toMap());
+			data['totalVotes'] = totalVotes;
 	}
 }

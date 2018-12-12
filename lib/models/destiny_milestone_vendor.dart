@@ -6,7 +6,7 @@ class DestinyMilestoneVendor{
 		int this.previewItemHash,
 	);
 
-	static DestinyMilestoneVendor fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneVendor fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyMilestoneVendor{
 		};
 		List<DestinyMilestoneVendor> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneVendor.fromJson(item));
+      list.add(DestinyMilestoneVendor.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorHash'] = vendorHash;
+			data['previewItemHash'] = previewItemHash;
 	}
 }

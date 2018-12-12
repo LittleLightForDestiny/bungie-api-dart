@@ -8,7 +8,7 @@ class DestinyItemActionRequiredItemDefinition{
 		bool this.deleteOnAction,
 	);
 
-	static DestinyItemActionRequiredItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemActionRequiredItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyItemActionRequiredItemDefinition{
 		};
 		List<DestinyItemActionRequiredItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemActionRequiredItemDefinition.fromJson(item));
+      list.add(DestinyItemActionRequiredItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['count'] = count;
+			data['itemHash'] = itemHash;
+			data['deleteOnAction'] = deleteOnAction;
 	}
 }

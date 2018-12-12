@@ -10,7 +10,7 @@ class PublicPartnershipDetail{
 		String this.icon,
 	);
 
-	static PublicPartnershipDetail fromJson(Map<String, dynamic> data){
+	static PublicPartnershipDetail fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class PublicPartnershipDetail{
 		};
 		List<PublicPartnershipDetail> list = new List();
     data.forEach((item) {
-      list.add(PublicPartnershipDetail.fromJson(item));
+      list.add(PublicPartnershipDetail.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['partnerType'] = partnerType;
+			data['identifier'] = identifier;
+			data['name'] = name;
+			data['icon'] = icon;
 	}
 }

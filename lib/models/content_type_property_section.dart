@@ -8,7 +8,7 @@ class ContentTypePropertySection{
 		bool this.collapsed,
 	);
 
-	static ContentTypePropertySection fromJson(Map<String, dynamic> data){
+	static ContentTypePropertySection fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class ContentTypePropertySection{
 		};
 		List<ContentTypePropertySection> list = new List();
     data.forEach((item) {
-      list.add(ContentTypePropertySection.fromJson(item));
+      list.add(ContentTypePropertySection.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['readableName'] = readableName;
+			data['collapsed'] = collapsed;
 	}
 }

@@ -42,11 +42,11 @@ class Destiny2{
     static Future<DestinyManifestResponse> getDestinyManifest (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyManifestResponse.fromJson(response);
+            return DestinyManifestResponse.fromMap(response);
         });
     }
     
@@ -56,11 +56,11 @@ class Destiny2{
         String entityType,
         int hashIdentifier,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/${entityType}/${hashIdentifier}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyDefinitionResponse.fromJson(response);
+            return DestinyDefinitionResponse.fromMap(response);
         });
     }
     
@@ -70,11 +70,11 @@ class Destiny2{
         String displayName,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return IEnumerableOfUserInfoCardResponse.fromJson(response);
+            return IEnumerableOfUserInfoCardResponse.fromMap(response);
         });
     }
     
@@ -84,11 +84,11 @@ class Destiny2{
         int membershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLinkedProfilesResponseResponse.fromJson(response);
+            return DestinyLinkedProfilesResponseResponse.fromMap(response);
         });
     }
     
@@ -99,12 +99,12 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyProfileResponseResponse.fromJson(response);
+            return DestinyProfileResponseResponse.fromMap(response);
         });
     }
     
@@ -116,12 +116,12 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyCharacterResponseResponse.fromJson(response);
+            return DestinyCharacterResponseResponse.fromMap(response);
         });
     }
     
@@ -130,11 +130,11 @@ class Destiny2{
         HttpClient client,
         int groupId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Clan/${groupId}/WeeklyRewardState/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyMilestoneResponse.fromJson(response);
+            return DestinyMilestoneResponse.fromMap(response);
         });
     }
     
@@ -146,12 +146,12 @@ class Destiny2{
         int itemInstanceId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyItemResponseResponse.fromJson(response);
+            return DestinyItemResponseResponse.fromMap(response);
         });
     }
     
@@ -163,12 +163,12 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyVendorsResponseResponse.fromJson(response);
+            return DestinyVendorsResponseResponse.fromMap(response);
         });
     }
     
@@ -181,12 +181,12 @@ class Destiny2{
         int membershipType,
         int vendorHash,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyVendorResponseResponse.fromJson(response);
+            return DestinyVendorResponseResponse.fromMap(response);
         });
     }
     
@@ -199,12 +199,12 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['components'] = "${ components }";
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Collectibles/${collectiblePresentationNodeHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyCollectibleNodeDetailResponseResponse.fromJson(response);
+            return DestinyCollectibleNodeDetailResponseResponse.fromMap(response);
         });
     }
     
@@ -213,12 +213,12 @@ class Destiny2{
         HttpClient client,
         DestinyItemTransferRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/TransferItem/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -227,12 +227,12 @@ class Destiny2{
         HttpClient client,
         DestinyPostmasterTransferRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/PullFromPostmaster/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -241,12 +241,12 @@ class Destiny2{
         HttpClient client,
         DestinyItemActionRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItem/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -255,12 +255,12 @@ class Destiny2{
         HttpClient client,
         DestinyItemSetActionRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItems/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return DestinyEquipItemResultsResponse.fromJson(response);
+            return DestinyEquipItemResultsResponse.fromMap(response);
         });
     }
     
@@ -269,12 +269,12 @@ class Destiny2{
         HttpClient client,
         DestinyItemStateRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/SetLockState/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -283,12 +283,12 @@ class Destiny2{
         HttpClient client,
         DestinyInsertPlugsActionRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/InsertSocketPlug/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return DestinyItemChangeResponseResponse.fromJson(response);
+            return DestinyItemChangeResponseResponse.fromMap(response);
         });
     }
     
@@ -297,11 +297,11 @@ class Destiny2{
         HttpClient client,
         int activityId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyPostGameCarnageReportDataResponse.fromJson(response);
+            return DestinyPostGameCarnageReportDataResponse.fromMap(response);
         });
     }
     
@@ -311,12 +311,12 @@ class Destiny2{
         int activityId,
         DestinyReportOffensePgcrRequest body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/Report/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -324,11 +324,11 @@ class Destiny2{
     static Future<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> getHistoricalStatsDefinition (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Definition/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(response);
+            return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromMap(response);
         });
     }
     
@@ -340,14 +340,14 @@ class Destiny2{
         String modes,
         String statid,
     ) {
-        Map<String, String> params = new Map();
-        params['maxtop'] = "${ maxtop }";
-        params['modes'] = "${ modes }";
-        params['statid'] = "${ statid }";
+        Map<String, dynamic> params = new Map();
+        params['maxtop'] = maxtop;
+        params['modes'] = modes;
+        params['statid'] = statid;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/Clans/${groupId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromJson(response);
+            return DestinyLeaderboardResultsResponse.fromMap(response);
         });
     }
     
@@ -357,12 +357,12 @@ class Destiny2{
         int groupId,
         String modes,
     ) {
-        Map<String, String> params = new Map();
-        params['modes'] = "${ modes }";
+        Map<String, dynamic> params = new Map();
+        params['modes'] = modes;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/AggregateClanStats/${groupId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfDestinyClanAggregateStatResponse.fromJson(response);
+            return ListOfDestinyClanAggregateStatResponse.fromMap(response);
         });
     }
     
@@ -375,14 +375,14 @@ class Destiny2{
         String modes,
         String statid,
     ) {
-        Map<String, String> params = new Map();
-        params['maxtop'] = "${ maxtop }";
-        params['modes'] = "${ modes }";
-        params['statid'] = "${ statid }";
+        Map<String, dynamic> params = new Map();
+        params['maxtop'] = maxtop;
+        params['modes'] = modes;
+        params['statid'] = statid;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromJson(response);
+            return DestinyLeaderboardResultsResponse.fromMap(response);
         });
     }
     
@@ -396,14 +396,14 @@ class Destiny2{
         String modes,
         String statid,
     ) {
-        Map<String, String> params = new Map();
-        params['maxtop'] = "${ maxtop }";
-        params['modes'] = "${ modes }";
-        params['statid'] = "${ statid }";
+        Map<String, dynamic> params = new Map();
+        params['maxtop'] = maxtop;
+        params['modes'] = modes;
+        params['statid'] = statid;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromJson(response);
+            return DestinyLeaderboardResultsResponse.fromMap(response);
         });
     }
     
@@ -414,12 +414,12 @@ class Destiny2{
         String searchTerm,
         String type,
     ) {
-        Map<String, String> params = new Map();
-        params['page'] = "${ page }";
+        Map<String, dynamic> params = new Map();
+        params['page'] = page;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Armory/Search/${type}/${searchTerm}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyEntitySearchResultResponse.fromJson(response);
+            return DestinyEntitySearchResultResponse.fromMap(response);
         });
     }
     
@@ -435,16 +435,16 @@ class Destiny2{
         List<int> modes,
         int periodType,
     ) {
-        Map<String, String> params = new Map();
-        params['dayend'] = "${ dayend }";
-        params['daystart'] = "${ daystart }";
-        params['groups'] = "${ groups }";
-        params['modes'] = "${ modes }";
-        params['periodType'] = "${ periodType }";
+        Map<String, dynamic> params = new Map();
+        params['dayend'] = dayend;
+        params['daystart'] = daystart;
+        params['groups'] = groups;
+        params['modes'] = modes;
+        params['periodType'] = periodType;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalStatsResultsResponse.fromJson(response);
+            return DestinyHistoricalStatsResultsResponse.fromMap(response);
         });
     }
     
@@ -455,12 +455,12 @@ class Destiny2{
         List<int> groups,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
-        params['groups'] = "${ groups }";
+        Map<String, dynamic> params = new Map();
+        params['groups'] = groups;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalStatsAccountResultResponse.fromJson(response);
+            return DestinyHistoricalStatsAccountResultResponse.fromMap(response);
         });
     }
     
@@ -474,14 +474,14 @@ class Destiny2{
         int mode,
         int page,
     ) {
-        Map<String, String> params = new Map();
-        params['count'] = "${ count }";
-        params['mode'] = "${ mode }";
-        params['page'] = "${ page }";
+        Map<String, dynamic> params = new Map();
+        params['count'] = count;
+        params['mode'] = mode;
+        params['page'] = page;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyActivityHistoryResultsResponse.fromJson(response);
+            return DestinyActivityHistoryResultsResponse.fromMap(response);
         });
     }
     
@@ -492,11 +492,11 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalWeaponStatsDataResponse.fromJson(response);
+            return DestinyHistoricalWeaponStatsDataResponse.fromMap(response);
         });
     }
     
@@ -507,11 +507,11 @@ class Destiny2{
         int destinyMembershipId,
         int membershipType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyAggregateActivityResultsResponse.fromJson(response);
+            return DestinyAggregateActivityResultsResponse.fromMap(response);
         });
     }
     
@@ -520,11 +520,11 @@ class Destiny2{
         HttpClient client,
         int milestoneHash,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/${milestoneHash}/Content/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyMilestoneContentResponse.fromJson(response);
+            return DestinyMilestoneContentResponse.fromMap(response);
         });
     }
     
@@ -532,11 +532,11 @@ class Destiny2{
     static Future<DictionaryOfuint32AndDestinyPublicMilestoneResponse> getPublicMilestones (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(response);
+            return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromMap(response);
         });
     }
     
@@ -545,12 +545,12 @@ class Destiny2{
         HttpClient client,
         AwaPermissionRequested body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/Initialize/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return AwaInitializeResponseResponse.fromJson(response);
+            return AwaInitializeResponseResponse.fromMap(response);
         });
     }
     
@@ -559,12 +559,12 @@ class Destiny2{
         HttpClient client,
         AwaUserResponse body
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/AwaProvideAuthorizationResult/", params);
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromJson(response);
+            return int32Response.fromMap(response);
         });
     }
     
@@ -573,11 +573,11 @@ class Destiny2{
         HttpClient client,
         String correlationId,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Awa/GetActionToken/${correlationId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return AwaAuthorizationResultResponse.fromJson(response);
+            return AwaAuthorizationResultResponse.fromMap(response);
         });
     }
 }

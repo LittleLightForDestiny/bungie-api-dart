@@ -20,7 +20,7 @@ class DestinyHistoricalStatsByPeriod{
 		List<DestinyHistoricalStatsPeriodGroup> this.monthly,
 	);
 
-	static DestinyHistoricalStatsByPeriod fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsByPeriod fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -40,8 +40,18 @@ class DestinyHistoricalStatsByPeriod{
 		};
 		List<DestinyHistoricalStatsByPeriod> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsByPeriod.fromJson(item));
+      list.add(DestinyHistoricalStatsByPeriod.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['allTime'] = allTime;
+			data['allTimeTier1'] = allTimeTier1;
+			data['allTimeTier2'] = allTimeTier2;
+			data['allTimeTier3'] = allTimeTier3;
+			data['daily'] = daily.map((item)=>item.toMap());
+			data['monthly'] = monthly.map((item)=>item.toMap());
 	}
 }

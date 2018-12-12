@@ -18,12 +18,12 @@ class SearchResultOfTrendingEntryResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SearchResultOfTrendingEntryResponse fromJson(Map<String, dynamic> data){
+    static SearchResultOfTrendingEntryResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SearchResultOfTrendingEntryResponse(
-				SearchResultOfTrendingEntry.fromJson(data['Response']),
+				SearchResultOfTrendingEntry.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SearchResultOfTrendingEntryResponse{
 		};
 		List<SearchResultOfTrendingEntryResponse> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfTrendingEntryResponse.fromJson(item));
+      list.add(SearchResultOfTrendingEntryResponse.fromMap(item));
     });
     return list;
 	}

@@ -4,7 +4,7 @@ class ComponentResponse{
 		int this.privacy,
 	);
 
-	static ComponentResponse fromJson(Map<String, dynamic> data){
+	static ComponentResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class ComponentResponse{
 		};
 		List<ComponentResponse> list = new List();
     data.forEach((item) {
-      list.add(ComponentResponse.fromJson(item));
+      list.add(ComponentResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['privacy'] = privacy;
 	}
 }

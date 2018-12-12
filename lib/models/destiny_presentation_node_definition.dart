@@ -37,12 +37,12 @@ class DestinyPresentationNodeDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyPresentationNodeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyPresentationNodeDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['originalIcon'],
 				data['rootViewIcon'],
 				data['nodeType'],
@@ -67,8 +67,28 @@ class DestinyPresentationNodeDefinition{
 		};
 		List<DestinyPresentationNodeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodeDefinition.fromJson(item));
+      list.add(DestinyPresentationNodeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['originalIcon'] = originalIcon;
+			data['rootViewIcon'] = rootViewIcon;
+			data['nodeType'] = nodeType;
+			data['scope'] = scope;
+			data['objectiveHash'] = objectiveHash;
+			data['completionRecordHash'] = completionRecordHash;
+			data['children'] = children;
+			data['displayStyle'] = displayStyle;
+			data['screenStyle'] = screenStyle;
+			data['requirements'] = requirements;
+			data['disableChildSubscreenNavigation'] = disableChildSubscreenNavigation;
+			data['parentNodeHashes'] = parentNodeHashes;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

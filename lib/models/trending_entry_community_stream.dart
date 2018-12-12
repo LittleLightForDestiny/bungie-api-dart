@@ -10,7 +10,7 @@ class TrendingEntryCommunityStream{
 		int this.partnershipType,
 	);
 
-	static TrendingEntryCommunityStream fromJson(Map<String, dynamic> data){
+	static TrendingEntryCommunityStream fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class TrendingEntryCommunityStream{
 		};
 		List<TrendingEntryCommunityStream> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntryCommunityStream.fromJson(item));
+      list.add(TrendingEntryCommunityStream.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['image'] = image;
+			data['title'] = title;
+			data['partnershipIdentifier'] = partnershipIdentifier;
+			data['partnershipType'] = partnershipType;
 	}
 }

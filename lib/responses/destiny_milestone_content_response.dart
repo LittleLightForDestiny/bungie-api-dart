@@ -18,12 +18,12 @@ class DestinyMilestoneContentResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyMilestoneContentResponse fromJson(Map<String, dynamic> data){
+    static DestinyMilestoneContentResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyMilestoneContentResponse(
-				DestinyMilestoneContent.fromJson(data['Response']),
+				DestinyMilestoneContent.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyMilestoneContentResponse{
 		};
 		List<DestinyMilestoneContentResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneContentResponse.fromJson(item));
+      list.add(DestinyMilestoneContentResponse.fromMap(item));
     });
     return list;
 	}

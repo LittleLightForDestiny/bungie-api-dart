@@ -34,21 +34,21 @@ class DestinyRecordDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyRecordDefinition fromJson(Map<String, dynamic> data){
+	static DestinyRecordDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyRecordDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['scope'],
-				DestinyPresentationChildBlock.fromJson(data['presentationInfo']),
+				DestinyPresentationChildBlock.fromMap(data['presentationInfo']),
 				data['loreHash'],
 				data['objectiveHashes'],
 				data['recordValueStyle'],
-				DestinyRecordTitleBlock.fromJson(data['titleInfo']),
-				DestinyRecordCompletionBlock.fromJson(data['completionInfo']),
-				SchemaRecordStateBlock.fromJson(data['stateInfo']),
-				DestinyPresentationNodeRequirementsBlock.fromJson(data['requirements']),
+				DestinyRecordTitleBlock.fromMap(data['titleInfo']),
+				DestinyRecordCompletionBlock.fromMap(data['completionInfo']),
+				SchemaRecordStateBlock.fromMap(data['stateInfo']),
+				DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']),
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -61,8 +61,25 @@ class DestinyRecordDefinition{
 		};
 		List<DestinyRecordDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyRecordDefinition.fromJson(item));
+      list.add(DestinyRecordDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['scope'] = scope;
+			data['presentationInfo'] = presentationInfo.toMap();
+			data['loreHash'] = loreHash;
+			data['objectiveHashes'] = objectiveHashes;
+			data['recordValueStyle'] = recordValueStyle;
+			data['titleInfo'] = titleInfo.toMap();
+			data['completionInfo'] = completionInfo.toMap();
+			data['stateInfo'] = stateInfo.toMap();
+			data['requirements'] = requirements.toMap();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

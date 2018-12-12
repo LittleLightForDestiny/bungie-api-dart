@@ -28,7 +28,7 @@ class DestinyTalentGridDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyTalentGridDefinition fromJson(Map<String, dynamic> data){
+	static DestinyTalentGridDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -53,8 +53,23 @@ class DestinyTalentGridDefinition{
 		};
 		List<DestinyTalentGridDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentGridDefinition.fromJson(item));
+      list.add(DestinyTalentGridDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['maxGridLevel'] = maxGridLevel;
+			data['gridLevelPerColumn'] = gridLevelPerColumn;
+			data['progressionHash'] = progressionHash;
+			data['nodes'] = nodes.map((item)=>item.toMap());
+			data['exclusiveSets'] = exclusiveSets.map((item)=>item.toMap());
+			data['independentNodeIndexes'] = independentNodeIndexes;
+			data['groups'] = groups;
+			data['nodeCategories'] = nodeCategories.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

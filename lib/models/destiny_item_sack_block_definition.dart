@@ -12,7 +12,7 @@ class DestinyItemSackBlockDefinition{
 		bool this.openOnAcquire,
 	);
 
-	static DestinyItemSackBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSackBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyItemSackBlockDefinition{
 		};
 		List<DestinyItemSackBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSackBlockDefinition.fromJson(item));
+      list.add(DestinyItemSackBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['detailAction'] = detailAction;
+			data['openAction'] = openAction;
+			data['selectItemCount'] = selectItemCount;
+			data['vendorSackType'] = vendorSackType;
+			data['openOnAcquire'] = openOnAcquire;
 	}
 }

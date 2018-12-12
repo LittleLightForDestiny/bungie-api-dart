@@ -8,7 +8,7 @@ class DestinyUnlockValueDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyUnlockValueDefinition fromJson(Map<String, dynamic> data){
+	static DestinyUnlockValueDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyUnlockValueDefinition{
 		};
 		List<DestinyUnlockValueDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyUnlockValueDefinition.fromJson(item));
+      list.add(DestinyUnlockValueDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

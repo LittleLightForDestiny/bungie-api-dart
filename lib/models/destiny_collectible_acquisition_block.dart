@@ -6,7 +6,7 @@ class DestinyCollectibleAcquisitionBlock{
 		int this.acquireTimestampUnlockValueHash,
 	);
 
-	static DestinyCollectibleAcquisitionBlock fromJson(Map<String, dynamic> data){
+	static DestinyCollectibleAcquisitionBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyCollectibleAcquisitionBlock{
 		};
 		List<DestinyCollectibleAcquisitionBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleAcquisitionBlock.fromJson(item));
+      list.add(DestinyCollectibleAcquisitionBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['acquireMaterialRequirementHash'] = acquireMaterialRequirementHash;
+			data['acquireTimestampUnlockValueHash'] = acquireTimestampUnlockValueHash;
 	}
 }

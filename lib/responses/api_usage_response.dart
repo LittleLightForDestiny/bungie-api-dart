@@ -18,12 +18,12 @@ class ApiUsageResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ApiUsageResponse fromJson(Map<String, dynamic> data){
+    static ApiUsageResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new ApiUsageResponse(
-				ApiUsage.fromJson(data['Response']),
+				ApiUsage.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class ApiUsageResponse{
 		};
 		List<ApiUsageResponse> list = new List();
     data.forEach((item) {
-      list.add(ApiUsageResponse.fromJson(item));
+      list.add(ApiUsageResponse.fromMap(item));
     });
     return list;
 	}

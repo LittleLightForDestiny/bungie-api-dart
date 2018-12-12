@@ -16,7 +16,7 @@ class GroupPotentialMembershipSearchResponse{
 		bool this.useTotalResults,
 	);
 
-	static GroupPotentialMembershipSearchResponse fromJson(Map<String, dynamic> data){
+	static GroupPotentialMembershipSearchResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,7 +24,7 @@ class GroupPotentialMembershipSearchResponse{
 				GroupPotentialMembership.fromList(data['results']),
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromJson(data['query']),
+				PagedQuery.fromMap(data['query']),
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);
@@ -36,8 +36,18 @@ class GroupPotentialMembershipSearchResponse{
 		};
 		List<GroupPotentialMembershipSearchResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupPotentialMembershipSearchResponse.fromJson(item));
+      list.add(GroupPotentialMembershipSearchResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['results'] = results.map((item)=>item.toMap());
+			data['totalResults'] = totalResults;
+			data['hasMore'] = hasMore;
+			data['query'] = query.toMap();
+			data['replacementContinuationToken'] = replacementContinuationToken;
+			data['useTotalResults'] = useTotalResults;
 	}
 }

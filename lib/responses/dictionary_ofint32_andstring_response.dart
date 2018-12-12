@@ -17,7 +17,7 @@ class DictionaryOfint32AndstringResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DictionaryOfint32AndstringResponse fromJson(Map<String, dynamic> data){
+    static DictionaryOfint32AndstringResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,7 +38,7 @@ class DictionaryOfint32AndstringResponse{
 		};
 		List<DictionaryOfint32AndstringResponse> list = new List();
     data.forEach((item) {
-      list.add(DictionaryOfint32AndstringResponse.fromJson(item));
+      list.add(DictionaryOfint32AndstringResponse.fromMap(item));
     });
     return list;
 	}

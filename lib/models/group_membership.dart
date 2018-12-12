@@ -8,13 +8,13 @@ class GroupMembership{
 		GroupV2 this.group,
 	);
 
-	static GroupMembership fromJson(Map<String, dynamic> data){
+	static GroupMembership fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupMembership(
-				GroupMember.fromJson(data['member']),
-				GroupV2.fromJson(data['group']),
+				GroupMember.fromMap(data['member']),
+				GroupV2.fromMap(data['group']),
 		);
 	}
 
@@ -24,8 +24,14 @@ class GroupMembership{
 		};
 		List<GroupMembership> list = new List();
     data.forEach((item) {
-      list.add(GroupMembership.fromJson(item));
+      list.add(GroupMembership.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['member'] = member.toMap();
+			data['group'] = group.toMap();
 	}
 }

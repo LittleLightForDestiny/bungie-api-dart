@@ -5,12 +5,12 @@ class TrendingEntrySupportArticle{
 		ContentItemPublicContract this.article,
 	);
 
-	static TrendingEntrySupportArticle fromJson(Map<String, dynamic> data){
+	static TrendingEntrySupportArticle fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingEntrySupportArticle(
-				ContentItemPublicContract.fromJson(data['article']),
+				ContentItemPublicContract.fromMap(data['article']),
 		);
 	}
 
@@ -20,8 +20,13 @@ class TrendingEntrySupportArticle{
 		};
 		List<TrendingEntrySupportArticle> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntrySupportArticle.fromJson(item));
+      list.add(TrendingEntrySupportArticle.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['article'] = article.toMap();
 	}
 }

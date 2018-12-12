@@ -8,7 +8,7 @@ class DestinyFactionVendorDefinition{
 		String this.backgroundImagePath,
 	);
 
-	static DestinyFactionVendorDefinition fromJson(Map<String, dynamic> data){
+	static DestinyFactionVendorDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyFactionVendorDefinition{
 		};
 		List<DestinyFactionVendorDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyFactionVendorDefinition.fromJson(item));
+      list.add(DestinyFactionVendorDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorHash'] = vendorHash;
+			data['destinationHash'] = destinationHash;
+			data['backgroundImagePath'] = backgroundImagePath;
 	}
 }

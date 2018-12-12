@@ -7,7 +7,7 @@ class DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent{
 		int this.privacy,
 	);
 
-	static DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent fromJson(Map<String, dynamic> data){
+	static DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent{
 		};
 		List<DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent> list = new List();
     data.forEach((item) {
-      list.add(DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromJson(item));
+      list.add(DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data;
+			data['privacy'] = privacy;
 	}
 }

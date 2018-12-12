@@ -7,7 +7,7 @@ class DestinyEntitySearchResult{
 		SearchResultOfDestinyEntitySearchResultItem this.results,
 	);
 
-	static DestinyEntitySearchResult fromJson(Map<String, dynamic> data){
+	static DestinyEntitySearchResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyEntitySearchResult{
 		};
 		List<DestinyEntitySearchResult> list = new List();
     data.forEach((item) {
-      list.add(DestinyEntitySearchResult.fromJson(item));
+      list.add(DestinyEntitySearchResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['suggestedWords'] = suggestedWords;
+			data['results'] = results;
 	}
 }

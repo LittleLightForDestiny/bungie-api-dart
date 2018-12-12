@@ -8,7 +8,7 @@ class PagedQuery{
 		String this.requestContinuationToken,
 	);
 
-	static PagedQuery fromJson(Map<String, dynamic> data){
+	static PagedQuery fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class PagedQuery{
 		};
 		List<PagedQuery> list = new List();
     data.forEach((item) {
-      list.add(PagedQuery.fromJson(item));
+      list.add(PagedQuery.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemsPerPage'] = itemsPerPage;
+			data['currentPage'] = currentPage;
+			data['requestContinuationToken'] = requestContinuationToken;
 	}
 }

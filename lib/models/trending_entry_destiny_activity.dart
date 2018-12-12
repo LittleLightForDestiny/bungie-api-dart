@@ -7,13 +7,13 @@ class TrendingEntryDestinyActivity{
 		DestinyPublicActivityStatus this.status,
 	);
 
-	static TrendingEntryDestinyActivity fromJson(Map<String, dynamic> data){
+	static TrendingEntryDestinyActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingEntryDestinyActivity(
 				data['activityHash'],
-				DestinyPublicActivityStatus.fromJson(data['status']),
+				DestinyPublicActivityStatus.fromMap(data['status']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class TrendingEntryDestinyActivity{
 		};
 		List<TrendingEntryDestinyActivity> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntryDestinyActivity.fromJson(item));
+      list.add(TrendingEntryDestinyActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['status'] = status.toMap();
 	}
 }

@@ -25,7 +25,7 @@ class DestinyVendorDisplayPropertiesDefinition{
 		bool this.hasIcon,
 	);
 
-	static DestinyVendorDisplayPropertiesDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -50,8 +50,23 @@ class DestinyVendorDisplayPropertiesDefinition{
 		};
 		List<DestinyVendorDisplayPropertiesDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorDisplayPropertiesDefinition.fromJson(item));
+      list.add(DestinyVendorDisplayPropertiesDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['largeIcon'] = largeIcon;
+			data['subtitle'] = subtitle;
+			data['originalIcon'] = originalIcon;
+			data['requirementsDisplay'] = requirementsDisplay.map((item)=>item.toMap());
+			data['smallTransparentIcon'] = smallTransparentIcon;
+			data['mapIcon'] = mapIcon;
+			data['largeTransparentIcon'] = largeTransparentIcon;
+			data['description'] = description;
+			data['name'] = name;
+			data['icon'] = icon;
+			data['hasIcon'] = hasIcon;
 	}
 }

@@ -24,7 +24,7 @@ class DestinyTalentNode{
 		DestinyTalentNodeStatBlock this.nodeStatsBlock,
 	);
 
-	static DestinyTalentNode fromJson(Map<String, dynamic> data){
+	static DestinyTalentNode fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -48,8 +48,22 @@ class DestinyTalentNode{
 		};
 		List<DestinyTalentNode> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNode.fromJson(item));
+      list.add(DestinyTalentNode.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodeIndex'] = nodeIndex;
+			data['nodeHash'] = nodeHash;
+			data['state'] = state;
+			data['isActivated'] = isActivated;
+			data['stepIndex'] = stepIndex;
+			data['materialsToUpgrade'] = materialsToUpgrade.map((item)=>item.toMap());
+			data['activationGridLevel'] = activationGridLevel;
+			data['progressPercent'] = progressPercent;
+			data['hidden'] = hidden;
+			data['nodeStatsBlock'] = nodeStatsBlock;
 	}
 }

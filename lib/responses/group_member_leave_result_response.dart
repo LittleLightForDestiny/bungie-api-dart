@@ -18,12 +18,12 @@ class GroupMemberLeaveResultResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static GroupMemberLeaveResultResponse fromJson(Map<String, dynamic> data){
+    static GroupMemberLeaveResultResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupMemberLeaveResultResponse(
-				GroupMemberLeaveResult.fromJson(data['Response']),
+				GroupMemberLeaveResult.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class GroupMemberLeaveResultResponse{
 		};
 		List<GroupMemberLeaveResultResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupMemberLeaveResultResponse.fromJson(item));
+      list.add(GroupMemberLeaveResultResponse.fromMap(item));
     });
     return list;
 	}

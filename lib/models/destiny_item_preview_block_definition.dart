@@ -11,7 +11,7 @@ class DestinyItemPreviewBlockDefinition{
 		List<DestinyDerivedItemCategoryDefinition> this.derivedItemCategories,
 	);
 
-	static DestinyItemPreviewBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemPreviewBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyItemPreviewBlockDefinition{
 		};
 		List<DestinyItemPreviewBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemPreviewBlockDefinition.fromJson(item));
+      list.add(DestinyItemPreviewBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['screenStyle'] = screenStyle;
+			data['previewVendorHash'] = previewVendorHash;
+			data['previewActionString'] = previewActionString;
+			data['derivedItemCategories'] = derivedItemCategories.map((item)=>item.toMap());
 	}
 }

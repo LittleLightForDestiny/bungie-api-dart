@@ -5,7 +5,7 @@ class DestinyPlugSetsComponent{
 		Map<List<DestinyItemPlug>, dynamic> this.plugs,
 	);
 
-	static DestinyPlugSetsComponent fromJson(Map<String, dynamic> data){
+	static DestinyPlugSetsComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyPlugSetsComponent{
 		};
 		List<DestinyPlugSetsComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyPlugSetsComponent.fromJson(item));
+      list.add(DestinyPlugSetsComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugs'] = plugs;
 	}
 }

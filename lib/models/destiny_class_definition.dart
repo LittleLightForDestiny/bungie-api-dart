@@ -17,13 +17,13 @@ class DestinyClassDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyClassDefinition fromJson(Map<String, dynamic> data){
+	static DestinyClassDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyClassDefinition(
 				data['classType'],
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['genderedClassNames'],
 				data['mentorVendorHash'],
 				data['hash'],
@@ -38,8 +38,19 @@ class DestinyClassDefinition{
 		};
 		List<DestinyClassDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyClassDefinition.fromJson(item));
+      list.add(DestinyClassDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['classType'] = classType;
+			data['displayProperties'] = displayProperties.toMap();
+			data['genderedClassNames'] = genderedClassNames;
+			data['mentorVendorHash'] = mentorVendorHash;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

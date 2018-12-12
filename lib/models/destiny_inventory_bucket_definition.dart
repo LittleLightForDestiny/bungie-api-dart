@@ -27,12 +27,12 @@ class DestinyInventoryBucketDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyInventoryBucketDefinition fromJson(Map<String, dynamic> data){
+	static DestinyInventoryBucketDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyInventoryBucketDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['scope'],
 				data['category'],
 				data['bucketOrder'],
@@ -53,8 +53,24 @@ class DestinyInventoryBucketDefinition{
 		};
 		List<DestinyInventoryBucketDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyInventoryBucketDefinition.fromJson(item));
+      list.add(DestinyInventoryBucketDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['scope'] = scope;
+			data['category'] = category;
+			data['bucketOrder'] = bucketOrder;
+			data['itemCount'] = itemCount;
+			data['location'] = location;
+			data['hasTransferDestination'] = hasTransferDestination;
+			data['enabled'] = enabled;
+			data['fifo'] = fifo;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

@@ -13,12 +13,12 @@ class DestinyRewardSourceDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyRewardSourceDefinition fromJson(Map<String, dynamic> data){
+	static DestinyRewardSourceDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyRewardSourceDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['category'],
 				data['hash'],
 				data['index'],
@@ -32,8 +32,17 @@ class DestinyRewardSourceDefinition{
 		};
 		List<DestinyRewardSourceDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyRewardSourceDefinition.fromJson(item));
+      list.add(DestinyRewardSourceDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['category'] = category;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

@@ -6,7 +6,7 @@ class DestinyItemRenderComponent{
 		Map<int, dynamic> this.artRegions,
 	);
 
-	static DestinyItemRenderComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemRenderComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyItemRenderComponent{
 		};
 		List<DestinyItemRenderComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemRenderComponent.fromJson(item));
+      list.add(DestinyItemRenderComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['useCustomDyes'] = useCustomDyes;
+			data['artRegions'] = artRegions;
 	}
 }

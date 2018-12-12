@@ -44,7 +44,7 @@ class DestinyCharacterResponse{
 		SingleComponentResponseOfDestinyCurrenciesComponent this.currencyLookups,
 	);
 
-	static DestinyCharacterResponse fromJson(Map<String, dynamic> data){
+	static DestinyCharacterResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -72,8 +72,26 @@ class DestinyCharacterResponse{
 		};
 		List<DestinyCharacterResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterResponse.fromJson(item));
+      list.add(DestinyCharacterResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['inventory'] = inventory;
+			data['character'] = character;
+			data['progressions'] = progressions;
+			data['renderData'] = renderData;
+			data['activities'] = activities;
+			data['equipment'] = equipment;
+			data['kiosks'] = kiosks;
+			data['plugSets'] = plugSets;
+			data['presentationNodes'] = presentationNodes;
+			data['records'] = records;
+			data['collectibles'] = collectibles;
+			data['itemComponents'] = itemComponents;
+			data['uninstancedItemComponents'] = uninstancedItemComponents;
+			data['currencyLookups'] = currencyLookups;
 	}
 }

@@ -17,7 +17,7 @@ class DestinyVendorComponent{
 		int this.seasonalRank,
 	);
 
-	static DestinyVendorComponent fromJson(Map<String, dynamic> data){
+	static DestinyVendorComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,8 +38,19 @@ class DestinyVendorComponent{
 		};
 		List<DestinyVendorComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorComponent.fromJson(item));
+      list.add(DestinyVendorComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorHash'] = vendorHash;
+			data['nextRefreshDate'] = nextRefreshDate;
+			data['enabled'] = enabled;
+			data['canPurchase'] = canPurchase;
+			data['progression'] = progression;
+			data['vendorLocationIndex'] = vendorLocationIndex;
+			data['seasonalRank'] = seasonalRank;
 	}
 }

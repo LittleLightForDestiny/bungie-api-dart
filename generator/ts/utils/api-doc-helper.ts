@@ -14,7 +14,7 @@ export class ApiDocHelper{
         if(obj.$ref){
             let ref = this.getRef(obj.$ref);
             if(ref.type == 'object'){
-                return `${this.getRefClassName(obj.$ref)}.fromJson`;
+                return `${this.getRefClassName(obj.$ref)}.fromMap`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;
@@ -31,6 +31,32 @@ export class ApiDocHelper{
             let ref = this.getRef(param.allOf[0].$ref);
             if(ref.type == 'object'){
                 return `${this.getObjectType(param.allOf[0])}.fromList`;
+            }
+        }
+        return null;
+    }
+
+    static getSerializeFunction(obj:ReferenceObject|ParameterObject|SchemaObject, name:String):string|null{
+        if(obj.$ref){
+            let ref = this.getRef(obj.$ref);
+            if(ref.type == 'object'){
+                return `${name}.toMap()`;
+            }
+        }
+        let param:ParameterObject = obj as ParameterObject;
+        if(param.schema){
+            return this.getSerializeFunction(param.schema, name);
+        }
+        if(param.type == 'array' && param.items && param.items.$ref){
+            let ref = this.getRef(param.items.$ref);
+            if(ref.type == 'object'){
+                return `${name}.map((item)=>item.toMap())`;
+            }
+        }
+        if(param.type == 'array' && param.allOf){
+            let ref = this.getRef(param.allOf[0].$ref);
+            if(ref.type == 'object'){
+                return `${name}.map((item)=>item.toMap())`;
             }
         }
         return null;

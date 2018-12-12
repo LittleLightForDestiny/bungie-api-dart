@@ -14,7 +14,7 @@ class CoreSetting{
 		List<CoreSetting> this.childSettings,
 	);
 
-	static CoreSetting fromJson(Map<String, dynamic> data){
+	static CoreSetting fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class CoreSetting{
 		};
 		List<CoreSetting> list = new List();
     data.forEach((item) {
-      list.add(CoreSetting.fromJson(item));
+      list.add(CoreSetting.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['identifier'] = identifier;
+			data['isDefault'] = isDefault;
+			data['displayName'] = displayName;
+			data['summary'] = summary;
+			data['imagePath'] = imagePath;
+			data['childSettings'] = childSettings.map((item)=>item.toMap());
 	}
 }

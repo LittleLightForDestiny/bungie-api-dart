@@ -12,7 +12,7 @@ class DestinyPostmasterTransferRequest{
 		int this.membershipType,
 	);
 
-	static DestinyPostmasterTransferRequest fromJson(Map<String, dynamic> data){
+	static DestinyPostmasterTransferRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyPostmasterTransferRequest{
 		};
 		List<DestinyPostmasterTransferRequest> list = new List();
     data.forEach((item) {
-      list.add(DestinyPostmasterTransferRequest.fromJson(item));
+      list.add(DestinyPostmasterTransferRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemReferenceHash'] = itemReferenceHash;
+			data['stackSize'] = stackSize;
+			data['itemId'] = itemId;
+			data['characterId'] = characterId;
+			data['membershipType'] = membershipType;
 	}
 }

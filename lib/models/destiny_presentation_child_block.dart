@@ -8,7 +8,7 @@ class DestinyPresentationChildBlock{
 		int this.displayStyle,
 	);
 
-	static DestinyPresentationChildBlock fromJson(Map<String, dynamic> data){
+	static DestinyPresentationChildBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyPresentationChildBlock{
 		};
 		List<DestinyPresentationChildBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationChildBlock.fromJson(item));
+      list.add(DestinyPresentationChildBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['presentationNodeType'] = presentationNodeType;
+			data['parentPresentationNodeHashes'] = parentPresentationNodeHashes;
+			data['displayStyle'] = displayStyle;
 	}
 }

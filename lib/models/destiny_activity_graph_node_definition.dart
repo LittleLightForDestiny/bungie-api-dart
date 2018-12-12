@@ -19,7 +19,7 @@ class DestinyActivityGraphNodeDefinition{
 		List<DestinyActivityGraphNodeStateEntry> this.states,
 	);
 
-	static DestinyActivityGraphNodeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphNodeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,8 +39,18 @@ class DestinyActivityGraphNodeDefinition{
 		};
 		List<DestinyActivityGraphNodeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphNodeDefinition.fromJson(item));
+      list.add(DestinyActivityGraphNodeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodeId'] = nodeId;
+			data['overrideDisplay'] = overrideDisplay;
+			data['position'] = position;
+			data['featuringStates'] = featuringStates.map((item)=>item.toMap());
+			data['activities'] = activities.map((item)=>item.toMap());
+			data['states'] = states.map((item)=>item.toMap());
 	}
 }

@@ -13,7 +13,7 @@ class DestinyLocationDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyLocationDefinition fromJson(Map<String, dynamic> data){
+	static DestinyLocationDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyLocationDefinition{
 		};
 		List<DestinyLocationDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyLocationDefinition.fromJson(item));
+      list.add(DestinyLocationDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorHash'] = vendorHash;
+			data['locationReleases'] = locationReleases.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

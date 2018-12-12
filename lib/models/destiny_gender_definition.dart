@@ -13,13 +13,13 @@ class DestinyGenderDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyGenderDefinition fromJson(Map<String, dynamic> data){
+	static DestinyGenderDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyGenderDefinition(
 				data['genderType'],
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -32,8 +32,17 @@ class DestinyGenderDefinition{
 		};
 		List<DestinyGenderDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyGenderDefinition.fromJson(item));
+      list.add(DestinyGenderDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['genderType'] = genderType;
+			data['displayProperties'] = displayProperties.toMap();
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

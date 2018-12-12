@@ -8,7 +8,7 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 		int this.sortItemsBy,
 	);
 
-	static DestinyVendorInventoryFlyoutBucketDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorInventoryFlyoutBucketDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 		};
 		List<DestinyVendorInventoryFlyoutBucketDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorInventoryFlyoutBucketDefinition.fromJson(item));
+      list.add(DestinyVendorInventoryFlyoutBucketDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['collapsible'] = collapsible;
+			data['inventoryBucketHash'] = inventoryBucketHash;
+			data['sortItemsBy'] = sortItemsBy;
 	}
 }

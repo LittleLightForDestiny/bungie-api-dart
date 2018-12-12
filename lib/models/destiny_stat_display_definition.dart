@@ -11,7 +11,7 @@ class DestinyStatDisplayDefinition{
 		List<InterpolationPoint> this.displayInterpolation,
 	);
 
-	static DestinyStatDisplayDefinition fromJson(Map<String, dynamic> data){
+	static DestinyStatDisplayDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyStatDisplayDefinition{
 		};
 		List<DestinyStatDisplayDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyStatDisplayDefinition.fromJson(item));
+      list.add(DestinyStatDisplayDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statHash'] = statHash;
+			data['maximumValue'] = maximumValue;
+			data['displayAsNumeric'] = displayAsNumeric;
+			data['displayInterpolation'] = displayInterpolation.map((item)=>item.toMap());
 	}
 }

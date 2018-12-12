@@ -11,7 +11,7 @@ class DestinyEntitySearchResultItem{
 		int this.weight,
 	);
 
-	static DestinyEntitySearchResultItem fromJson(Map<String, dynamic> data){
+	static DestinyEntitySearchResultItem fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyEntitySearchResultItem{
 		};
 		List<DestinyEntitySearchResultItem> list = new List();
     data.forEach((item) {
-      list.add(DestinyEntitySearchResultItem.fromJson(item));
+      list.add(DestinyEntitySearchResultItem.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['hash'] = hash;
+			data['entityType'] = entityType;
+			data['displayProperties'] = displayProperties;
+			data['weight'] = weight;
 	}
 }

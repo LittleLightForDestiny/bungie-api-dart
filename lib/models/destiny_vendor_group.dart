@@ -6,7 +6,7 @@ class DestinyVendorGroup{
 		List<int> this.vendorHashes,
 	);
 
-	static DestinyVendorGroup fromJson(Map<String, dynamic> data){
+	static DestinyVendorGroup fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyVendorGroup{
 		};
 		List<DestinyVendorGroup> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorGroup.fromJson(item));
+      list.add(DestinyVendorGroup.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorGroupHash'] = vendorGroupHash;
+			data['vendorHashes'] = vendorHashes;
 	}
 }

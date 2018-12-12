@@ -8,7 +8,7 @@ class ContentTypeDefaultValue{
 		String this.defaultValue,
 	);
 
-	static ContentTypeDefaultValue fromJson(Map<String, dynamic> data){
+	static ContentTypeDefaultValue fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class ContentTypeDefaultValue{
 		};
 		List<ContentTypeDefaultValue> list = new List();
     data.forEach((item) {
-      list.add(ContentTypeDefaultValue.fromJson(item));
+      list.add(ContentTypeDefaultValue.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['whenClause'] = whenClause;
+			data['whenValue'] = whenValue;
+			data['defaultValue'] = defaultValue;
 	}
 }

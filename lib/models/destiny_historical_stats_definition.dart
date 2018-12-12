@@ -30,7 +30,7 @@ class DestinyHistoricalStatsDefinition{
 		int this.medalTierHash,
 	);
 
-	static DestinyHistoricalStatsDefinition fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -58,8 +58,26 @@ class DestinyHistoricalStatsDefinition{
 		};
 		List<DestinyHistoricalStatsDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsDefinition.fromJson(item));
+      list.add(DestinyHistoricalStatsDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statId'] = statId;
+			data['group'] = group;
+			data['periodTypes'] = periodTypes;
+			data['modes'] = modes;
+			data['category'] = category;
+			data['statName'] = statName;
+			data['statNameAbbr'] = statNameAbbr;
+			data['statDescription'] = statDescription;
+			data['unitType'] = unitType;
+			data['iconImage'] = iconImage;
+			data['mergeMethod'] = mergeMethod;
+			data['unitLabel'] = unitLabel;
+			data['weight'] = weight;
+			data['medalTierHash'] = medalTierHash;
 	}
 }

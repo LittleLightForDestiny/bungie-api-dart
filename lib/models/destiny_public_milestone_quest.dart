@@ -10,7 +10,7 @@ class DestinyPublicMilestoneQuest{
 		List<DestinyPublicMilestoneChallenge> this.challenges,
 	);
 
-	static DestinyPublicMilestoneQuest fromJson(Map<String, dynamic> data){
+	static DestinyPublicMilestoneQuest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -27,8 +27,15 @@ class DestinyPublicMilestoneQuest{
 		};
 		List<DestinyPublicMilestoneQuest> list = new List();
     data.forEach((item) {
-      list.add(DestinyPublicMilestoneQuest.fromJson(item));
+      list.add(DestinyPublicMilestoneQuest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['questItemHash'] = questItemHash;
+			data['activity'] = activity;
+			data['challenges'] = challenges.map((item)=>item.toMap());
 	}
 }

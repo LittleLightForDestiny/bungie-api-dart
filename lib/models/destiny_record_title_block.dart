@@ -6,7 +6,7 @@ class DestinyRecordTitleBlock{
 		Map<String, dynamic> this.titlesByGender,
 	);
 
-	static DestinyRecordTitleBlock fromJson(Map<String, dynamic> data){
+	static DestinyRecordTitleBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyRecordTitleBlock{
 		};
 		List<DestinyRecordTitleBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyRecordTitleBlock.fromJson(item));
+      list.add(DestinyRecordTitleBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['hasTitle'] = hasTitle;
+			data['titlesByGender'] = titlesByGender;
 	}
 }

@@ -12,7 +12,7 @@ class TagMetadataItem{
 		String this.name,
 	);
 
-	static TagMetadataItem fromJson(Map<String, dynamic> data){
+	static TagMetadataItem fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class TagMetadataItem{
 		};
 		List<TagMetadataItem> list = new List();
     data.forEach((item) {
-      list.add(TagMetadataItem.fromJson(item));
+      list.add(TagMetadataItem.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['description'] = description;
+			data['tagText'] = tagText;
+			data['groups'] = groups;
+			data['isDefault'] = isDefault;
+			data['name'] = name;
 	}
 }

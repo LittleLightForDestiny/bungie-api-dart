@@ -27,7 +27,7 @@ class Application{
 		List<ApplicationDeveloper> this.team,
 	);
 
-	static Application fromJson(Map<String, dynamic> data){
+	static Application fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -53,8 +53,24 @@ class Application{
 		};
 		List<Application> list = new List();
     data.forEach((item) {
-      list.add(Application.fromJson(item));
+      list.add(Application.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['applicationType'] = applicationType;
+			data['applicationId'] = applicationId;
+			data['name'] = name;
+			data['redirectUrl'] = redirectUrl;
+			data['link'] = link;
+			data['scope'] = scope;
+			data['origin'] = origin;
+			data['status'] = status;
+			data['creationDate'] = creationDate;
+			data['statusChanged'] = statusChanged;
+			data['firstPublished'] = firstPublished;
+			data['team'] = team.map((item)=>item.toMap());
 	}
 }

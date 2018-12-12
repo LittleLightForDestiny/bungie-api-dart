@@ -15,7 +15,7 @@ class DestinyManifest{
 		Map<String, dynamic> this.mobileGearCdn,
 	);
 
-	static DestinyManifest fromJson(Map<String, dynamic> data){
+	static DestinyManifest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -35,8 +35,18 @@ class DestinyManifest{
 		};
 		List<DestinyManifest> list = new List();
     data.forEach((item) {
-      list.add(DestinyManifest.fromJson(item));
+      list.add(DestinyManifest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['version'] = version;
+			data['mobileAssetContentPath'] = mobileAssetContentPath;
+			data['mobileGearAssetDataBases'] = mobileGearAssetDataBases.map((item)=>item.toMap());
+			data['mobileWorldContentPaths'] = mobileWorldContentPaths;
+			data['mobileClanBannerDatabasePath'] = mobileClanBannerDatabasePath;
+			data['mobileGearCDN'] = mobileGearCdn;
 	}
 }

@@ -11,7 +11,7 @@ class DestinyItemSetBlockDefinition{
 		String this.setType,
 	);
 
-	static DestinyItemSetBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSetBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyItemSetBlockDefinition{
 		};
 		List<DestinyItemSetBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSetBlockDefinition.fromJson(item));
+      list.add(DestinyItemSetBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemList'] = itemList.map((item)=>item.toMap());
+			data['requireOrderedSetItemAdd'] = requireOrderedSetItemAdd;
+			data['setIsFeatured'] = setIsFeatured;
+			data['setType'] = setType;
 	}
 }

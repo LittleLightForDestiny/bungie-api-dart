@@ -4,7 +4,7 @@ class DestinyItemSummaryBlockDefinition{
 		int this.sortPriority,
 	);
 
-	static DestinyItemSummaryBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSummaryBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyItemSummaryBlockDefinition{
 		};
 		List<DestinyItemSummaryBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSummaryBlockDefinition.fromJson(item));
+      list.add(DestinyItemSummaryBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['sortPriority'] = sortPriority;
 	}
 }

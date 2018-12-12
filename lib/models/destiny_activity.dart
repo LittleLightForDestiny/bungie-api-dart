@@ -20,7 +20,7 @@ class DestinyActivity{
 		int this.difficultyTier,
 	);
 
-	static DestinyActivity fromJson(Map<String, dynamic> data){
+	static DestinyActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -43,8 +43,21 @@ class DestinyActivity{
 		};
 		List<DestinyActivity> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivity.fromJson(item));
+      list.add(DestinyActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['isNew'] = isNew;
+			data['canLead'] = canLead;
+			data['canJoin'] = canJoin;
+			data['isCompleted'] = isCompleted;
+			data['isVisible'] = isVisible;
+			data['displayLevel'] = displayLevel;
+			data['recommendedLight'] = recommendedLight;
+			data['difficultyTier'] = difficultyTier;
 	}
 }

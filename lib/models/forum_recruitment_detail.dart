@@ -23,7 +23,7 @@ class ForumRecruitmentDetail{
 		List<int> this.kickedPlayerIds,
 	);
 
-	static ForumRecruitmentDetail fromJson(Map<String, dynamic> data){
+	static ForumRecruitmentDetail fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -47,8 +47,22 @@ class ForumRecruitmentDetail{
 		};
 		List<ForumRecruitmentDetail> list = new List();
     data.forEach((item) {
-      list.add(ForumRecruitmentDetail.fromJson(item));
+      list.add(ForumRecruitmentDetail.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['topicId'] = topicId;
+			data['microphoneRequired'] = microphoneRequired;
+			data['intensity'] = intensity;
+			data['tone'] = tone;
+			data['approved'] = approved;
+			data['conversationId'] = conversationId;
+			data['playerSlotsTotal'] = playerSlotsTotal;
+			data['playerSlotsRemaining'] = playerSlotsRemaining;
+			data['Fireteam'] = fireteam.map((item)=>item.toMap());
+			data['kickedPlayerIds'] = kickedPlayerIds;
 	}
 }

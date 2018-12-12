@@ -11,7 +11,7 @@ class DestinyMaterialRequirementSetDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyMaterialRequirementSetDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMaterialRequirementSetDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyMaterialRequirementSetDefinition{
 		};
 		List<DestinyMaterialRequirementSetDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMaterialRequirementSetDefinition.fromJson(item));
+      list.add(DestinyMaterialRequirementSetDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['materials'] = materials.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

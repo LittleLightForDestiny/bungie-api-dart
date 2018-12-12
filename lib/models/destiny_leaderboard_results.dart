@@ -6,7 +6,7 @@ class DestinyLeaderboardResults{
 		int this.focusCharacterId,
 	);
 
-	static DestinyLeaderboardResults fromJson(Map<String, dynamic> data){
+	static DestinyLeaderboardResults fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyLeaderboardResults{
 		};
 		List<DestinyLeaderboardResults> list = new List();
     data.forEach((item) {
-      list.add(DestinyLeaderboardResults.fromJson(item));
+      list.add(DestinyLeaderboardResults.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['focusMembershipId'] = focusMembershipId;
+			data['focusCharacterId'] = focusCharacterId;
 	}
 }

@@ -8,7 +8,7 @@ class DestinyItemInvestmentStatDefinition{
 		bool this.isConditionallyActive,
 	);
 
-	static DestinyItemInvestmentStatDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemInvestmentStatDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyItemInvestmentStatDefinition{
 		};
 		List<DestinyItemInvestmentStatDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemInvestmentStatDefinition.fromJson(item));
+      list.add(DestinyItemInvestmentStatDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statTypeHash'] = statTypeHash;
+			data['value'] = value;
+			data['isConditionallyActive'] = isConditionallyActive;
 	}
 }

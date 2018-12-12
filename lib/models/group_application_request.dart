@@ -4,7 +4,7 @@ class GroupApplicationRequest{
 		String this.message,
 	);
 
-	static GroupApplicationRequest fromJson(Map<String, dynamic> data){
+	static GroupApplicationRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class GroupApplicationRequest{
 		};
 		List<GroupApplicationRequest> list = new List();
     data.forEach((item) {
-      list.add(GroupApplicationRequest.fromJson(item));
+      list.add(GroupApplicationRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['message'] = message;
 	}
 }

@@ -9,14 +9,14 @@ class ApplicationDeveloper{
 		UserInfoCard this.user,
 	);
 
-	static ApplicationDeveloper fromJson(Map<String, dynamic> data){
+	static ApplicationDeveloper fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new ApplicationDeveloper(
 				data['role'],
 				data['apiEulaVersion'],
-				UserInfoCard.fromJson(data['user']),
+				UserInfoCard.fromMap(data['user']),
 		);
 	}
 
@@ -26,8 +26,15 @@ class ApplicationDeveloper{
 		};
 		List<ApplicationDeveloper> list = new List();
     data.forEach((item) {
-      list.add(ApplicationDeveloper.fromJson(item));
+      list.add(ApplicationDeveloper.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['role'] = role;
+			data['apiEulaVersion'] = apiEulaVersion;
+			data['user'] = user.toMap();
 	}
 }

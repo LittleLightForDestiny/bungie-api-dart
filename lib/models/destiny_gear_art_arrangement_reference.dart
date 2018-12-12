@@ -6,7 +6,7 @@ class DestinyGearArtArrangementReference{
 		int this.artArrangementHash,
 	);
 
-	static DestinyGearArtArrangementReference fromJson(Map<String, dynamic> data){
+	static DestinyGearArtArrangementReference fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyGearArtArrangementReference{
 		};
 		List<DestinyGearArtArrangementReference> list = new List();
     data.forEach((item) {
-      list.add(DestinyGearArtArrangementReference.fromJson(item));
+      list.add(DestinyGearArtArrangementReference.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['classHash'] = classHash;
+			data['artArrangementHash'] = artArrangementHash;
 	}
 }

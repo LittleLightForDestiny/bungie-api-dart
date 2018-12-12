@@ -8,7 +8,7 @@ class DestinyPlugWhitelistEntryDefinition{
 		List<int> this.reinitializationPossiblePlugHashes,
 	);
 
-	static DestinyPlugWhitelistEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPlugWhitelistEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyPlugWhitelistEntryDefinition{
 		};
 		List<DestinyPlugWhitelistEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPlugWhitelistEntryDefinition.fromJson(item));
+      list.add(DestinyPlugWhitelistEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categoryHash'] = categoryHash;
+			data['categoryIdentifier'] = categoryIdentifier;
+			data['reinitializationPossiblePlugHashes'] = reinitializationPossiblePlugHashes;
 	}
 }

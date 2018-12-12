@@ -7,7 +7,7 @@ class DestinyItemValueBlockDefinition{
 		String this.valueDescription,
 	);
 
-	static DestinyItemValueBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemValueBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyItemValueBlockDefinition{
 		};
 		List<DestinyItemValueBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemValueBlockDefinition.fromJson(item));
+      list.add(DestinyItemValueBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemValue'] = itemValue.map((item)=>item.toMap());
+			data['valueDescription'] = valueDescription;
 	}
 }

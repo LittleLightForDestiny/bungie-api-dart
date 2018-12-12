@@ -11,13 +11,13 @@ class {{className}}{
 		{{/properties}}
 	);
 
-	static {{className}} fromJson(Map<String, dynamic> data){
+	static {{className}} fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new {{className}}(
 			{{#properties}}
-				{{{serializationFunction}}},
+				{{{deserializationFunction}}},
 			{{/properties}}
 		);
 	}
@@ -28,8 +28,15 @@ class {{className}}{
 		};
 		List<{{className}}> list = new List();
     data.forEach((item) {
-      list.add({{className}}.fromJson(item));
+      list.add({{className}}.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+		{{#properties}}
+			{{{serializationFunction}}};
+		{{/properties}}
 	}
 }

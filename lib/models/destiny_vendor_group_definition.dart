@@ -12,7 +12,7 @@ class DestinyVendorGroupDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyVendorGroupDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorGroupDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyVendorGroupDefinition{
 		};
 		List<DestinyVendorGroupDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorGroupDefinition.fromJson(item));
+      list.add(DestinyVendorGroupDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['order'] = order;
+			data['categoryName'] = categoryName;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

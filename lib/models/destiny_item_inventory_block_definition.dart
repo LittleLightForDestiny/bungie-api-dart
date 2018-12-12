@@ -26,7 +26,7 @@ class DestinyItemInventoryBlockDefinition{
 		bool this.suppressExpirationWhenObjectivesComplete,
 	);
 
-	static DestinyItemInventoryBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemInventoryBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -52,8 +52,24 @@ class DestinyItemInventoryBlockDefinition{
 		};
 		List<DestinyItemInventoryBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemInventoryBlockDefinition.fromJson(item));
+      list.add(DestinyItemInventoryBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['stackUniqueLabel'] = stackUniqueLabel;
+			data['maxStackSize'] = maxStackSize;
+			data['bucketTypeHash'] = bucketTypeHash;
+			data['recoveryBucketTypeHash'] = recoveryBucketTypeHash;
+			data['tierTypeHash'] = tierTypeHash;
+			data['isInstanceItem'] = isInstanceItem;
+			data['tierTypeName'] = tierTypeName;
+			data['tierType'] = tierType;
+			data['expirationTooltip'] = expirationTooltip;
+			data['expiredInActivityMessage'] = expiredInActivityMessage;
+			data['expiredInOrbitMessage'] = expiredInOrbitMessage;
+			data['suppressExpirationWhenObjectivesComplete'] = suppressExpirationWhenObjectivesComplete;
 	}
 }

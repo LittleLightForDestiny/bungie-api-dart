@@ -17,7 +17,7 @@ class DestinyDamageTypeDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyDamageTypeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDamageTypeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,8 +38,19 @@ class DestinyDamageTypeDefinition{
 		};
 		List<DestinyDamageTypeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDamageTypeDefinition.fromJson(item));
+      list.add(DestinyDamageTypeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['transparentIconPath'] = transparentIconPath;
+			data['showIcon'] = showIcon;
+			data['enumValue'] = enumValue;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

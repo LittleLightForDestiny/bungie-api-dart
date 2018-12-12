@@ -22,7 +22,7 @@ class GroupQuery{
 		String this.requestContinuationToken,
 	);
 
-	static GroupQuery fromJson(Map<String, dynamic> data){
+	static GroupQuery fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -46,8 +46,22 @@ class GroupQuery{
 		};
 		List<GroupQuery> list = new List();
     data.forEach((item) {
-      list.add(GroupQuery.fromJson(item));
+      list.add(GroupQuery.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['groupType'] = groupType;
+			data['creationDate'] = creationDate;
+			data['sortBy'] = sortBy;
+			data['groupMemberCountFilter'] = groupMemberCountFilter;
+			data['localeFilter'] = localeFilter;
+			data['tagText'] = tagText;
+			data['itemsPerPage'] = itemsPerPage;
+			data['currentPage'] = currentPage;
+			data['requestContinuationToken'] = requestContinuationToken;
 	}
 }

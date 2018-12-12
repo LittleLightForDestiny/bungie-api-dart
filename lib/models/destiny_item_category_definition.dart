@@ -37,12 +37,12 @@ class DestinyItemCategoryDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyItemCategoryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemCategoryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyItemCategoryDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['visible'],
 				data['deprecated'],
 				data['shortTitle'],
@@ -68,8 +68,29 @@ class DestinyItemCategoryDefinition{
 		};
 		List<DestinyItemCategoryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemCategoryDefinition.fromJson(item));
+      list.add(DestinyItemCategoryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['visible'] = visible;
+			data['deprecated'] = deprecated;
+			data['shortTitle'] = shortTitle;
+			data['itemTypeRegex'] = itemTypeRegex;
+			data['plugCategoryIdentifier'] = plugCategoryIdentifier;
+			data['itemTypeRegexNot'] = itemTypeRegexNot;
+			data['originBucketIdentifier'] = originBucketIdentifier;
+			data['grantDestinyItemType'] = grantDestinyItemType;
+			data['grantDestinySubType'] = grantDestinySubType;
+			data['grantDestinyClass'] = grantDestinyClass;
+			data['groupedCategoryHashes'] = groupedCategoryHashes;
+			data['parentCategoryHashes'] = parentCategoryHashes;
+			data['groupCategoryOnly'] = groupCategoryOnly;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

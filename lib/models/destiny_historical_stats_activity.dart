@@ -14,7 +14,7 @@ class DestinyHistoricalStatsActivity{
 		bool this.isPrivate,
 	);
 
-	static DestinyHistoricalStatsActivity fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class DestinyHistoricalStatsActivity{
 		};
 		List<DestinyHistoricalStatsActivity> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsActivity.fromJson(item));
+      list.add(DestinyHistoricalStatsActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['referenceId'] = referenceId;
+			data['directorActivityHash'] = directorActivityHash;
+			data['instanceId'] = instanceId;
+			data['mode'] = mode;
+			data['modes'] = modes;
+			data['isPrivate'] = isPrivate;
 	}
 }

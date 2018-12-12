@@ -7,7 +7,7 @@ class DestinyCharacterRecordsComponent{
 		Map<DestinyRecordComponent, dynamic> this.records,
 	);
 
-	static DestinyCharacterRecordsComponent fromJson(Map<String, dynamic> data){
+	static DestinyCharacterRecordsComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyCharacterRecordsComponent{
 		};
 		List<DestinyCharacterRecordsComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterRecordsComponent.fromJson(item));
+      list.add(DestinyCharacterRecordsComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['featuredRecordHashes'] = featuredRecordHashes;
+			data['records'] = records;
 	}
 }

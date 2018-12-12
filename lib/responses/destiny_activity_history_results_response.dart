@@ -18,12 +18,12 @@ class DestinyActivityHistoryResultsResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyActivityHistoryResultsResponse fromJson(Map<String, dynamic> data){
+    static DestinyActivityHistoryResultsResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyActivityHistoryResultsResponse(
-				DestinyActivityHistoryResults.fromJson(data['Response']),
+				DestinyActivityHistoryResults.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyActivityHistoryResultsResponse{
 		};
 		List<DestinyActivityHistoryResultsResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityHistoryResultsResponse.fromJson(item));
+      list.add(DestinyActivityHistoryResultsResponse.fromMap(item));
     });
     return list;
 	}

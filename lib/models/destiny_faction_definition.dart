@@ -22,12 +22,12 @@ class DestinyFactionDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyFactionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyFactionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyFactionDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['progressionHash'],
 				data['tokenValues'],
 				data['rewardItemHash'],
@@ -45,8 +45,21 @@ class DestinyFactionDefinition{
 		};
 		List<DestinyFactionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyFactionDefinition.fromJson(item));
+      list.add(DestinyFactionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['progressionHash'] = progressionHash;
+			data['tokenValues'] = tokenValues;
+			data['rewardItemHash'] = rewardItemHash;
+			data['rewardVendorHash'] = rewardVendorHash;
+			data['vendors'] = vendors.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

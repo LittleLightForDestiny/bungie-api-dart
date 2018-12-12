@@ -18,7 +18,7 @@ class CEListOfGroupOptionalConversationResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CEListOfGroupOptionalConversationResponse fromJson(Map<String, dynamic> data){
+    static CEListOfGroupOptionalConversationResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class CEListOfGroupOptionalConversationResponse{
 		};
 		List<CEListOfGroupOptionalConversationResponse> list = new List();
     data.forEach((item) {
-      list.add(CEListOfGroupOptionalConversationResponse.fromJson(item));
+      list.add(CEListOfGroupOptionalConversationResponse.fromMap(item));
     });
     return list;
 	}

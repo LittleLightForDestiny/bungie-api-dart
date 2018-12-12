@@ -43,7 +43,7 @@ class DestinyObjectiveDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyObjectiveDefinition fromJson(Map<String, dynamic> data){
+	static DestinyObjectiveDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -76,8 +76,31 @@ class DestinyObjectiveDefinition{
 		};
 		List<DestinyObjectiveDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyObjectiveDefinition.fromJson(item));
+      list.add(DestinyObjectiveDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['completionValue'] = completionValue;
+			data['scope'] = scope;
+			data['locationHash'] = locationHash;
+			data['allowNegativeValue'] = allowNegativeValue;
+			data['allowValueChangeWhenCompleted'] = allowValueChangeWhenCompleted;
+			data['isCountingDownward'] = isCountingDownward;
+			data['valueStyle'] = valueStyle;
+			data['progressDescription'] = progressDescription;
+			data['perks'] = perks;
+			data['stats'] = stats;
+			data['minimumVisibilityThreshold'] = minimumVisibilityThreshold;
+			data['allowOvercompletion'] = allowOvercompletion;
+			data['showValueOnComplete'] = showValueOnComplete;
+			data['completedValueStyle'] = completedValueStyle;
+			data['inProgressValueStyle'] = inProgressValueStyle;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

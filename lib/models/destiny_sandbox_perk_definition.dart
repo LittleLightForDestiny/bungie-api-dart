@@ -22,7 +22,7 @@ class DestinySandboxPerkDefinition{
 		bool this.redacted,
 	);
 
-	static DestinySandboxPerkDefinition fromJson(Map<String, dynamic> data){
+	static DestinySandboxPerkDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -45,8 +45,21 @@ class DestinySandboxPerkDefinition{
 		};
 		List<DestinySandboxPerkDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinySandboxPerkDefinition.fromJson(item));
+      list.add(DestinySandboxPerkDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['perkIdentifier'] = perkIdentifier;
+			data['isDisplayable'] = isDisplayable;
+			data['damageType'] = damageType;
+			data['damageTypeHash'] = damageTypeHash;
+			data['perkGroups'] = perkGroups;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

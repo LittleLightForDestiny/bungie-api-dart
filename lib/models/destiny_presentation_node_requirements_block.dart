@@ -4,7 +4,7 @@ class DestinyPresentationNodeRequirementsBlock{
 		String this.entitlementUnavailableMessage,
 	);
 
-	static DestinyPresentationNodeRequirementsBlock fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodeRequirementsBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyPresentationNodeRequirementsBlock{
 		};
 		List<DestinyPresentationNodeRequirementsBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodeRequirementsBlock.fromJson(item));
+      list.add(DestinyPresentationNodeRequirementsBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['entitlementUnavailableMessage'] = entitlementUnavailableMessage;
 	}
 }

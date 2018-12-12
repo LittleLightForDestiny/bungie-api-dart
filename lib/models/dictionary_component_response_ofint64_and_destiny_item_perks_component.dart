@@ -7,7 +7,7 @@ class DictionaryComponentResponseOfint64AndDestinyItemPerksComponent{
 		int this.privacy,
 	);
 
-	static DictionaryComponentResponseOfint64AndDestinyItemPerksComponent fromJson(Map<String, dynamic> data){
+	static DictionaryComponentResponseOfint64AndDestinyItemPerksComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DictionaryComponentResponseOfint64AndDestinyItemPerksComponent{
 		};
 		List<DictionaryComponentResponseOfint64AndDestinyItemPerksComponent> list = new List();
     data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyItemPerksComponent.fromJson(item));
+      list.add(DictionaryComponentResponseOfint64AndDestinyItemPerksComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data;
+			data['privacy'] = privacy;
 	}
 }

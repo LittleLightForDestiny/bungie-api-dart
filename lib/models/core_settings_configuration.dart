@@ -56,7 +56,7 @@ class CoreSettingsConfiguration{
 		Destiny2CoreSettings this.destiny2CoreSettings,
 	);
 
-	static CoreSettingsConfiguration fromJson(Map<String, dynamic> data){
+	static CoreSettingsConfiguration fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -78,7 +78,7 @@ class CoreSettingsConfiguration{
 				CoreSetting.fromList(data['clanBannerGonfalonDetails']),
 				CoreSetting.fromList(data['clanBannerGonfalonDetailColors']),
 				CoreSetting.fromList(data['clanBannerStandards']),
-				Destiny2CoreSettings.fromJson(data['destiny2CoreSettings']),
+				Destiny2CoreSettings.fromMap(data['destiny2CoreSettings']),
 		);
 	}
 
@@ -88,8 +88,30 @@ class CoreSettingsConfiguration{
 		};
 		List<CoreSettingsConfiguration> list = new List();
     data.forEach((item) {
-      list.add(CoreSettingsConfiguration.fromJson(item));
+      list.add(CoreSettingsConfiguration.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['systems'] = systems;
+			data['ignoreReasons'] = ignoreReasons.map((item)=>item.toMap());
+			data['forumCategories'] = forumCategories.map((item)=>item.toMap());
+			data['groupAvatars'] = groupAvatars.map((item)=>item.toMap());
+			data['destinyMembershipTypes'] = destinyMembershipTypes.map((item)=>item.toMap());
+			data['recruitmentPlatformTags'] = recruitmentPlatformTags.map((item)=>item.toMap());
+			data['recruitmentMiscTags'] = recruitmentMiscTags.map((item)=>item.toMap());
+			data['recruitmentActivities'] = recruitmentActivities.map((item)=>item.toMap());
+			data['userContentLocales'] = userContentLocales.map((item)=>item.toMap());
+			data['systemContentLocales'] = systemContentLocales.map((item)=>item.toMap());
+			data['clanBannerDecals'] = clanBannerDecals.map((item)=>item.toMap());
+			data['clanBannerDecalColors'] = clanBannerDecalColors.map((item)=>item.toMap());
+			data['clanBannerGonfalons'] = clanBannerGonfalons.map((item)=>item.toMap());
+			data['clanBannerGonfalonColors'] = clanBannerGonfalonColors.map((item)=>item.toMap());
+			data['clanBannerGonfalonDetails'] = clanBannerGonfalonDetails.map((item)=>item.toMap());
+			data['clanBannerGonfalonDetailColors'] = clanBannerGonfalonDetailColors.map((item)=>item.toMap());
+			data['clanBannerStandards'] = clanBannerStandards.map((item)=>item.toMap());
+			data['destiny2CoreSettings'] = destiny2CoreSettings.toMap();
 	}
 }

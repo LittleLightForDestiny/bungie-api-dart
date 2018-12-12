@@ -9,13 +9,13 @@ class TrendingCategory{
 		String this.categoryId,
 	);
 
-	static TrendingCategory fromJson(Map<String, dynamic> data){
+	static TrendingCategory fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingCategory(
 				data['categoryName'],
-				SearchResultOfTrendingEntry.fromJson(data['entries']),
+				SearchResultOfTrendingEntry.fromMap(data['entries']),
 				data['categoryId'],
 		);
 	}
@@ -26,8 +26,15 @@ class TrendingCategory{
 		};
 		List<TrendingCategory> list = new List();
     data.forEach((item) {
-      list.add(TrendingCategory.fromJson(item));
+      list.add(TrendingCategory.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categoryName'] = categoryName;
+			data['entries'] = entries.toMap();
+			data['categoryId'] = categoryId;
 	}
 }

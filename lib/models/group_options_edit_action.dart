@@ -12,7 +12,7 @@ class GroupOptionsEditAction{
 		int this.joinLevel,
 	);
 
-	static GroupOptionsEditAction fromJson(Map<String, dynamic> data){
+	static GroupOptionsEditAction fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class GroupOptionsEditAction{
 		};
 		List<GroupOptionsEditAction> list = new List();
     data.forEach((item) {
-      list.add(GroupOptionsEditAction.fromJson(item));
+      list.add(GroupOptionsEditAction.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['InvitePermissionOverride'] = invitePermissionOverride;
+			data['UpdateCulturePermissionOverride'] = updateCulturePermissionOverride;
+			data['HostGuidedGamePermissionOverride'] = hostGuidedGamePermissionOverride;
+			data['UpdateBannerPermissionOverride'] = updateBannerPermissionOverride;
+			data['JoinLevel'] = joinLevel;
 	}
 }

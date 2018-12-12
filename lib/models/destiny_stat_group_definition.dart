@@ -18,7 +18,7 @@ class DestinyStatGroupDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyStatGroupDefinition fromJson(Map<String, dynamic> data){
+	static DestinyStatGroupDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,8 +39,19 @@ class DestinyStatGroupDefinition{
 		};
 		List<DestinyStatGroupDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyStatGroupDefinition.fromJson(item));
+      list.add(DestinyStatGroupDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['maximumValue'] = maximumValue;
+			data['uiPosition'] = uiPosition;
+			data['scaledStats'] = scaledStats.map((item)=>item.toMap());
+			data['overrides'] = overrides;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

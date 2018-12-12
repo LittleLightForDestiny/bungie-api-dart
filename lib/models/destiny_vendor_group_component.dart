@@ -5,7 +5,7 @@ class DestinyVendorGroupComponent{
 		List<DestinyVendorGroup> this.groups,
 	);
 
-	static DestinyVendorGroupComponent fromJson(Map<String, dynamic> data){
+	static DestinyVendorGroupComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyVendorGroupComponent{
 		};
 		List<DestinyVendorGroupComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorGroupComponent.fromJson(item));
+      list.add(DestinyVendorGroupComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groups'] = groups.map((item)=>item.toMap());
 	}
 }

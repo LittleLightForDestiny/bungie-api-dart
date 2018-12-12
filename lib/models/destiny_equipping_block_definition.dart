@@ -16,7 +16,7 @@ class DestinyEquippingBlockDefinition{
 		List<String> this.displayStrings,
 	);
 
-	static DestinyEquippingBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyEquippingBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -37,8 +37,19 @@ class DestinyEquippingBlockDefinition{
 		};
 		List<DestinyEquippingBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyEquippingBlockDefinition.fromJson(item));
+      list.add(DestinyEquippingBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['gearsetItemHash'] = gearsetItemHash;
+			data['uniqueLabel'] = uniqueLabel;
+			data['uniqueLabelHash'] = uniqueLabelHash;
+			data['equipmentSlotTypeHash'] = equipmentSlotTypeHash;
+			data['attributes'] = attributes;
+			data['ammoType'] = ammoType;
+			data['displayStrings'] = displayStrings;
 	}
 }

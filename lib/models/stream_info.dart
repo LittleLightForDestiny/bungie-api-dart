@@ -4,7 +4,7 @@ class StreamInfo{
 		String this.channelName,
 	);
 
-	static StreamInfo fromJson(Map<String, dynamic> data){
+	static StreamInfo fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class StreamInfo{
 		};
 		List<StreamInfo> list = new List();
     data.forEach((item) {
-      list.add(StreamInfo.fromJson(item));
+      list.add(StreamInfo.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['ChannelName'] = channelName;
 	}
 }

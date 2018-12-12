@@ -5,7 +5,7 @@ class DestinyItemSocketsComponent{
 		List<DestinyItemSocketState> this.sockets,
 	);
 
-	static DestinyItemSocketsComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketsComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyItemSocketsComponent{
 		};
 		List<DestinyItemSocketsComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketsComponent.fromJson(item));
+      list.add(DestinyItemSocketsComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['sockets'] = sockets.map((item)=>item.toMap());
 	}
 }

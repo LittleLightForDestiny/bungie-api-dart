@@ -48,7 +48,7 @@ class DestinyCharacterComponent{
 		int this.titleRecordHash,
 	);
 
-	static DestinyCharacterComponent fromJson(Map<String, dynamic> data){
+	static DestinyCharacterComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -84,8 +84,34 @@ class DestinyCharacterComponent{
 		};
 		List<DestinyCharacterComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterComponent.fromJson(item));
+      list.add(DestinyCharacterComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['membershipId'] = membershipId;
+			data['membershipType'] = membershipType;
+			data['characterId'] = characterId;
+			data['dateLastPlayed'] = dateLastPlayed;
+			data['minutesPlayedThisSession'] = minutesPlayedThisSession;
+			data['minutesPlayedTotal'] = minutesPlayedTotal;
+			data['light'] = light;
+			data['stats'] = stats;
+			data['raceHash'] = raceHash;
+			data['genderHash'] = genderHash;
+			data['classHash'] = classHash;
+			data['raceType'] = raceType;
+			data['classType'] = classType;
+			data['genderType'] = genderType;
+			data['emblemPath'] = emblemPath;
+			data['emblemBackgroundPath'] = emblemBackgroundPath;
+			data['emblemHash'] = emblemHash;
+			data['emblemColor'] = emblemColor;
+			data['levelProgression'] = levelProgression;
+			data['baseCharacterLevel'] = baseCharacterLevel;
+			data['percentToNextLevel'] = percentToNextLevel;
+			data['titleRecordHash'] = titleRecordHash;
 	}
 }

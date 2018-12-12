@@ -6,7 +6,7 @@ class DestinyObjectiveDisplayProperties{
 		bool this.displayOnItemPreviewScreen,
 	);
 
-	static DestinyObjectiveDisplayProperties fromJson(Map<String, dynamic> data){
+	static DestinyObjectiveDisplayProperties fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyObjectiveDisplayProperties{
 		};
 		List<DestinyObjectiveDisplayProperties> list = new List();
     data.forEach((item) {
-      list.add(DestinyObjectiveDisplayProperties.fromJson(item));
+      list.add(DestinyObjectiveDisplayProperties.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['displayOnItemPreviewScreen'] = displayOnItemPreviewScreen;
 	}
 }

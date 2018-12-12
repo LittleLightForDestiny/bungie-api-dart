@@ -8,7 +8,7 @@ class DestinyMilestoneRewardEntry{
 		bool this.redeemed,
 	);
 
-	static DestinyMilestoneRewardEntry fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneRewardEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyMilestoneRewardEntry{
 		};
 		List<DestinyMilestoneRewardEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneRewardEntry.fromJson(item));
+      list.add(DestinyMilestoneRewardEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['rewardEntryHash'] = rewardEntryHash;
+			data['earned'] = earned;
+			data['redeemed'] = redeemed;
 	}
 }

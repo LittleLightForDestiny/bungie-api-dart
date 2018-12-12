@@ -18,7 +18,7 @@ class DestinyItemSocketState{
 		List<DestinyItemPlug> this.reusablePlugs,
 	);
 
-	static DestinyItemSocketState fromJson(Map<String, dynamic> data){
+	static DestinyItemSocketState fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,8 +39,19 @@ class DestinyItemSocketState{
 		};
 		List<DestinyItemSocketState> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSocketState.fromJson(item));
+      list.add(DestinyItemSocketState.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['plugHash'] = plugHash;
+			data['isEnabled'] = isEnabled;
+			data['isVisible'] = isVisible;
+			data['enableFailIndexes'] = enableFailIndexes;
+			data['reusablePlugHashes'] = reusablePlugHashes;
+			data['plugObjectives'] = plugObjectives.map((item)=>item.toMap());
+			data['reusablePlugs'] = reusablePlugs.map((item)=>item.toMap());
 	}
 }

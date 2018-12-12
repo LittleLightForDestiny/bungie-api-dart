@@ -10,7 +10,7 @@ class DestinyInventoryItemStatDefinition{
 		int this.maximum,
 	);
 
-	static DestinyInventoryItemStatDefinition fromJson(Map<String, dynamic> data){
+	static DestinyInventoryItemStatDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyInventoryItemStatDefinition{
 		};
 		List<DestinyInventoryItemStatDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyInventoryItemStatDefinition.fromJson(item));
+      list.add(DestinyInventoryItemStatDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statHash'] = statHash;
+			data['value'] = value;
+			data['minimum'] = minimum;
+			data['maximum'] = maximum;
 	}
 }

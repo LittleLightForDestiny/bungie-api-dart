@@ -14,7 +14,7 @@ class ContentPreview{
 		int this.useSetId,
 	);
 
-	static ContentPreview fromJson(Map<String, dynamic> data){
+	static ContentPreview fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class ContentPreview{
 		};
 		List<ContentPreview> list = new List();
     data.forEach((item) {
-      list.add(ContentPreview.fromJson(item));
+      list.add(ContentPreview.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['name'] = name;
+			data['path'] = path;
+			data['itemInSet'] = itemInSet;
+			data['setTag'] = setTag;
+			data['setNesting'] = setNesting;
+			data['useSetId'] = useSetId;
 	}
 }

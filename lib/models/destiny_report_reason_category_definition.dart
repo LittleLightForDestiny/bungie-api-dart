@@ -14,12 +14,12 @@ class DestinyReportReasonCategoryDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyReportReasonCategoryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyReportReasonCategoryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyReportReasonCategoryDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['reasons'],
 				data['hash'],
 				data['index'],
@@ -33,8 +33,17 @@ class DestinyReportReasonCategoryDefinition{
 		};
 		List<DestinyReportReasonCategoryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyReportReasonCategoryDefinition.fromJson(item));
+      list.add(DestinyReportReasonCategoryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['reasons'] = reasons;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

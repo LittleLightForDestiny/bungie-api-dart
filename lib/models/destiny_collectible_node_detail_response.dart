@@ -8,7 +8,7 @@ class DestinyCollectibleNodeDetailResponse{
 		DestinyItemComponentSetOfuint32 this.collectibleItemComponents,
 	);
 
-	static DestinyCollectibleNodeDetailResponse fromJson(Map<String, dynamic> data){
+	static DestinyCollectibleNodeDetailResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,8 +24,14 @@ class DestinyCollectibleNodeDetailResponse{
 		};
 		List<DestinyCollectibleNodeDetailResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleNodeDetailResponse.fromJson(item));
+      list.add(DestinyCollectibleNodeDetailResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['collectibles'] = collectibles;
+			data['collectibleItemComponents'] = collectibleItemComponents;
 	}
 }

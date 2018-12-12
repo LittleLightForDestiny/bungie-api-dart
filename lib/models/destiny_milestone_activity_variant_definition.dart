@@ -6,7 +6,7 @@ class DestinyMilestoneActivityVariantDefinition{
 		int this.order,
 	);
 
-	static DestinyMilestoneActivityVariantDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneActivityVariantDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyMilestoneActivityVariantDefinition{
 		};
 		List<DestinyMilestoneActivityVariantDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneActivityVariantDefinition.fromJson(item));
+      list.add(DestinyMilestoneActivityVariantDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['order'] = order;
 	}
 }

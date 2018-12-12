@@ -38,7 +38,7 @@ class FireteamSummary{
 		String this.datePlayerModified,
 	);
 
-	static FireteamSummary fromJson(Map<String, dynamic> data){
+	static FireteamSummary fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -70,8 +70,30 @@ class FireteamSummary{
 		};
 		List<FireteamSummary> list = new List();
     data.forEach((item) {
-      list.add(FireteamSummary.fromJson(item));
+      list.add(FireteamSummary.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['fireteamId'] = fireteamId;
+			data['groupId'] = groupId;
+			data['platform'] = platform;
+			data['activityType'] = activityType;
+			data['isImmediate'] = isImmediate;
+			data['scheduledTime'] = scheduledTime;
+			data['ownerMembershipId'] = ownerMembershipId;
+			data['playerSlotCount'] = playerSlotCount;
+			data['alternateSlotCount'] = alternateSlotCount;
+			data['availablePlayerSlotCount'] = availablePlayerSlotCount;
+			data['availableAlternateSlotCount'] = availableAlternateSlotCount;
+			data['title'] = title;
+			data['dateCreated'] = dateCreated;
+			data['dateModified'] = dateModified;
+			data['isPublic'] = isPublic;
+			data['locale'] = locale;
+			data['isValid'] = isValid;
+			data['datePlayerModified'] = datePlayerModified;
 	}
 }

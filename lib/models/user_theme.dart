@@ -8,7 +8,7 @@ class UserTheme{
 		String this.userThemeDescription,
 	);
 
-	static UserTheme fromJson(Map<String, dynamic> data){
+	static UserTheme fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class UserTheme{
 		};
 		List<UserTheme> list = new List();
     data.forEach((item) {
-      list.add(UserTheme.fromJson(item));
+      list.add(UserTheme.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['userThemeId'] = userThemeId;
+			data['userThemeName'] = userThemeName;
+			data['userThemeDescription'] = userThemeDescription;
 	}
 }

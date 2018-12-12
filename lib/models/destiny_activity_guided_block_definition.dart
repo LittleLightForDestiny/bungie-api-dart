@@ -8,7 +8,7 @@ class DestinyActivityGuidedBlockDefinition{
 		int this.guidedDisbandCount,
 	);
 
-	static DestinyActivityGuidedBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGuidedBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyActivityGuidedBlockDefinition{
 		};
 		List<DestinyActivityGuidedBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGuidedBlockDefinition.fromJson(item));
+      list.add(DestinyActivityGuidedBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['guidedMaxLobbySize'] = guidedMaxLobbySize;
+			data['guidedMinLobbySize'] = guidedMinLobbySize;
+			data['guidedDisbandCount'] = guidedDisbandCount;
 	}
 }

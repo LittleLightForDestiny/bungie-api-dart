@@ -18,12 +18,12 @@ class ContentTypeDescriptionResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ContentTypeDescriptionResponse fromJson(Map<String, dynamic> data){
+    static ContentTypeDescriptionResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new ContentTypeDescriptionResponse(
-				ContentTypeDescription.fromJson(data['Response']),
+				ContentTypeDescription.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class ContentTypeDescriptionResponse{
 		};
 		List<ContentTypeDescriptionResponse> list = new List();
     data.forEach((item) {
-      list.add(ContentTypeDescriptionResponse.fromJson(item));
+      list.add(ContentTypeDescriptionResponse.fromMap(item));
     });
     return list;
 	}

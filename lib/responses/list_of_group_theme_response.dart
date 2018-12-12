@@ -18,7 +18,7 @@ class ListOfGroupThemeResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfGroupThemeResponse fromJson(Map<String, dynamic> data){
+    static ListOfGroupThemeResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfGroupThemeResponse{
 		};
 		List<ListOfGroupThemeResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfGroupThemeResponse.fromJson(item));
+      list.add(ListOfGroupThemeResponse.fromMap(item));
     });
     return list;
 	}

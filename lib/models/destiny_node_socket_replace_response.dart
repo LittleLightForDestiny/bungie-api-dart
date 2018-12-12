@@ -6,7 +6,7 @@ class DestinyNodeSocketReplaceResponse{
 		int this.plugItemHash,
 	);
 
-	static DestinyNodeSocketReplaceResponse fromJson(Map<String, dynamic> data){
+	static DestinyNodeSocketReplaceResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyNodeSocketReplaceResponse{
 		};
 		List<DestinyNodeSocketReplaceResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyNodeSocketReplaceResponse.fromJson(item));
+      list.add(DestinyNodeSocketReplaceResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['socketTypeHash'] = socketTypeHash;
+			data['plugItemHash'] = plugItemHash;
 	}
 }

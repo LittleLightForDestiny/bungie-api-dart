@@ -8,11 +8,11 @@ class Trending{
     static Future<TrendingCategoriesResponse> getTrendingCategories (
         HttpClient client,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Trending/Categories/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return TrendingCategoriesResponse.fromJson(response);
+            return TrendingCategoriesResponse.fromMap(response);
         });
     }
     
@@ -22,11 +22,11 @@ class Trending{
         String categoryId,
         int pageNumber,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Trending/Categories/${categoryId}/${pageNumber}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfTrendingEntryResponse.fromJson(response);
+            return SearchResultOfTrendingEntryResponse.fromMap(response);
         });
     }
     
@@ -36,11 +36,11 @@ class Trending{
         String identifier,
         int trendingEntryType,
     ) {
-        Map<String, String> params = new Map();
+        Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/Trending/Details/${trendingEntryType}/${identifier}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return TrendingDetailResponse.fromJson(response);
+            return TrendingDetailResponse.fromMap(response);
         });
     }
 }

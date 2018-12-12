@@ -6,7 +6,7 @@ class DestinySocketTypeScalarMaterialRequirementEntry{
 		int this.scalarValue,
 	);
 
-	static DestinySocketTypeScalarMaterialRequirementEntry fromJson(Map<String, dynamic> data){
+	static DestinySocketTypeScalarMaterialRequirementEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinySocketTypeScalarMaterialRequirementEntry{
 		};
 		List<DestinySocketTypeScalarMaterialRequirementEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinySocketTypeScalarMaterialRequirementEntry.fromJson(item));
+      list.add(DestinySocketTypeScalarMaterialRequirementEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['currencyItemHash'] = currencyItemHash;
+			data['scalarValue'] = scalarValue;
 	}
 }

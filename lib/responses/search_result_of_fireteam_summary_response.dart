@@ -18,12 +18,12 @@ class SearchResultOfFireteamSummaryResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SearchResultOfFireteamSummaryResponse fromJson(Map<String, dynamic> data){
+    static SearchResultOfFireteamSummaryResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SearchResultOfFireteamSummaryResponse(
-				SearchResultOfFireteamSummary.fromJson(data['Response']),
+				SearchResultOfFireteamSummary.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SearchResultOfFireteamSummaryResponse{
 		};
 		List<SearchResultOfFireteamSummaryResponse> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfFireteamSummaryResponse.fromJson(item));
+      list.add(SearchResultOfFireteamSummaryResponse.fromMap(item));
     });
     return list;
 	}

@@ -12,7 +12,7 @@ class DestinyEnvironmentLocationMapping{
 		int this.activityHash,
 	);
 
-	static DestinyEnvironmentLocationMapping fromJson(Map<String, dynamic> data){
+	static DestinyEnvironmentLocationMapping fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyEnvironmentLocationMapping{
 		};
 		List<DestinyEnvironmentLocationMapping> list = new List();
     data.forEach((item) {
-      list.add(DestinyEnvironmentLocationMapping.fromJson(item));
+      list.add(DestinyEnvironmentLocationMapping.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['locationHash'] = locationHash;
+			data['activationSource'] = activationSource;
+			data['itemHash'] = itemHash;
+			data['objectiveHash'] = objectiveHash;
+			data['activityHash'] = activityHash;
 	}
 }

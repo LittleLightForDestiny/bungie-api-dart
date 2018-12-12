@@ -18,12 +18,12 @@ class DestinyHistoricalWeaponStatsDataResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyHistoricalWeaponStatsDataResponse fromJson(Map<String, dynamic> data){
+    static DestinyHistoricalWeaponStatsDataResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyHistoricalWeaponStatsDataResponse(
-				DestinyHistoricalWeaponStatsData.fromJson(data['Response']),
+				DestinyHistoricalWeaponStatsData.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyHistoricalWeaponStatsDataResponse{
 		};
 		List<DestinyHistoricalWeaponStatsDataResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalWeaponStatsDataResponse.fromJson(item));
+      list.add(DestinyHistoricalWeaponStatsDataResponse.fromMap(item));
     });
     return list;
 	}

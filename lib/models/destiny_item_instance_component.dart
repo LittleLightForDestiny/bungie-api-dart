@@ -23,7 +23,7 @@ class DestinyItemInstanceComponent{
 		int this.cannotEquipReason,
 	);
 
-	static DestinyItemInstanceComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemInstanceComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -47,8 +47,22 @@ class DestinyItemInstanceComponent{
 		};
 		List<DestinyItemInstanceComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemInstanceComponent.fromJson(item));
+      list.add(DestinyItemInstanceComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['damageType'] = damageType;
+			data['damageTypeHash'] = damageTypeHash;
+			data['primaryStat'] = primaryStat;
+			data['itemLevel'] = itemLevel;
+			data['quality'] = quality;
+			data['isEquipped'] = isEquipped;
+			data['canEquip'] = canEquip;
+			data['equipRequiredLevel'] = equipRequiredLevel;
+			data['unlockHashesRequiredToEquip'] = unlockHashesRequiredToEquip;
+			data['cannotEquipReason'] = cannotEquipReason;
 	}
 }

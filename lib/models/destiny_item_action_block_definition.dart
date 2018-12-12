@@ -32,7 +32,7 @@ class DestinyItemActionBlockDefinition{
 		bool this.useOnAcquire,
 	);
 
-	static DestinyItemActionBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemActionBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -60,8 +60,26 @@ class DestinyItemActionBlockDefinition{
 		};
 		List<DestinyItemActionBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemActionBlockDefinition.fromJson(item));
+      list.add(DestinyItemActionBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['verbName'] = verbName;
+			data['verbDescription'] = verbDescription;
+			data['isPositive'] = isPositive;
+			data['overlayScreenName'] = overlayScreenName;
+			data['overlayIcon'] = overlayIcon;
+			data['requiredCooldownSeconds'] = requiredCooldownSeconds;
+			data['requiredItems'] = requiredItems.map((item)=>item.toMap());
+			data['progressionRewards'] = progressionRewards.map((item)=>item.toMap());
+			data['actionTypeLabel'] = actionTypeLabel;
+			data['requiredLocation'] = requiredLocation;
+			data['requiredCooldownHash'] = requiredCooldownHash;
+			data['deleteOnAction'] = deleteOnAction;
+			data['consumeEntireStack'] = consumeEntireStack;
+			data['useOnAcquire'] = useOnAcquire;
 	}
 }

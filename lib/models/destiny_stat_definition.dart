@@ -17,12 +17,12 @@ class DestinyStatDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyStatDefinition fromJson(Map<String, dynamic> data){
+	static DestinyStatDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyStatDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['aggregationType'],
 				data['hasComputedBlock'],
 				data['statCategory'],
@@ -38,8 +38,19 @@ class DestinyStatDefinition{
 		};
 		List<DestinyStatDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyStatDefinition.fromJson(item));
+      list.add(DestinyStatDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['aggregationType'] = aggregationType;
+			data['hasComputedBlock'] = hasComputedBlock;
+			data['statCategory'] = statCategory;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

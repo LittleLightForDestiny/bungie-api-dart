@@ -12,7 +12,7 @@ class DestinyItemTalentGridBlockDefinition{
 		String this.hudIcon,
 	);
 
-	static DestinyItemTalentGridBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemTalentGridBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyItemTalentGridBlockDefinition{
 		};
 		List<DestinyItemTalentGridBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemTalentGridBlockDefinition.fromJson(item));
+      list.add(DestinyItemTalentGridBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['talentGridHash'] = talentGridHash;
+			data['itemDetailString'] = itemDetailString;
+			data['buildName'] = buildName;
+			data['hudDamageType'] = hudDamageType;
+			data['hudIcon'] = hudIcon;
 	}
 }

@@ -6,7 +6,7 @@ class SaveMessageResult{
 		int this.messageId,
 	);
 
-	static SaveMessageResult fromJson(Map<String, dynamic> data){
+	static SaveMessageResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class SaveMessageResult{
 		};
 		List<SaveMessageResult> list = new List();
     data.forEach((item) {
-      list.add(SaveMessageResult.fromJson(item));
+      list.add(SaveMessageResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['conversationId'] = conversationId;
+			data['messageId'] = messageId;
 	}
 }

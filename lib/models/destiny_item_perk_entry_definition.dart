@@ -8,7 +8,7 @@ class DestinyItemPerkEntryDefinition{
 		int this.perkVisibility,
 	);
 
-	static DestinyItemPerkEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemPerkEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyItemPerkEntryDefinition{
 		};
 		List<DestinyItemPerkEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemPerkEntryDefinition.fromJson(item));
+      list.add(DestinyItemPerkEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['requirementDisplayString'] = requirementDisplayString;
+			data['perkHash'] = perkHash;
+			data['perkVisibility'] = perkVisibility;
 	}
 }

@@ -7,7 +7,7 @@ class DestinyMilestoneActivityCompletionStatus{
 		List<DestinyMilestoneActivityPhase> this.phases,
 	);
 
-	static DestinyMilestoneActivityCompletionStatus fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneActivityCompletionStatus fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyMilestoneActivityCompletionStatus{
 		};
 		List<DestinyMilestoneActivityCompletionStatus> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneActivityCompletionStatus.fromJson(item));
+      list.add(DestinyMilestoneActivityCompletionStatus.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['completed'] = completed;
+			data['phases'] = phases.map((item)=>item.toMap());
 	}
 }

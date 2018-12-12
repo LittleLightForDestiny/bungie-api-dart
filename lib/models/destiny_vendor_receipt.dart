@@ -20,7 +20,7 @@ class DestinyVendorReceipt{
 		String this.expiresOn,
 	);
 
-	static DestinyVendorReceipt fromJson(Map<String, dynamic> data){
+	static DestinyVendorReceipt fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -42,8 +42,20 @@ class DestinyVendorReceipt{
 		};
 		List<DestinyVendorReceipt> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorReceipt.fromJson(item));
+      list.add(DestinyVendorReceipt.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['currencyPaid'] = currencyPaid.map((item)=>item.toMap());
+			data['itemReceived'] = itemReceived;
+			data['licenseUnlockHash'] = licenseUnlockHash;
+			data['purchasedByCharacterId'] = purchasedByCharacterId;
+			data['refundPolicy'] = refundPolicy;
+			data['sequenceNumber'] = sequenceNumber;
+			data['timeToExpiration'] = timeToExpiration;
+			data['expiresOn'] = expiresOn;
 	}
 }

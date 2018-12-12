@@ -18,7 +18,7 @@ class AwaAuthorizationResult{
 		int this.membershipType,
 	);
 
-	static AwaAuthorizationResult fromJson(Map<String, dynamic> data){
+	static AwaAuthorizationResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -40,8 +40,20 @@ class AwaAuthorizationResult{
 		};
 		List<AwaAuthorizationResult> list = new List();
     data.forEach((item) {
-      list.add(AwaAuthorizationResult.fromJson(item));
+      list.add(AwaAuthorizationResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['userSelection'] = userSelection;
+			data['responseReason'] = responseReason;
+			data['developerNote'] = developerNote;
+			data['actionToken'] = actionToken;
+			data['maximumNumberOfUses'] = maximumNumberOfUses;
+			data['validUntil'] = validUntil;
+			data['type'] = type;
+			data['membershipType'] = membershipType;
 	}
 }

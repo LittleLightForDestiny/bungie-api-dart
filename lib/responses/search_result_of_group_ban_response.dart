@@ -18,12 +18,12 @@ class SearchResultOfGroupBanResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SearchResultOfGroupBanResponse fromJson(Map<String, dynamic> data){
+    static SearchResultOfGroupBanResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SearchResultOfGroupBanResponse(
-				SearchResultOfGroupBan.fromJson(data['Response']),
+				SearchResultOfGroupBan.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SearchResultOfGroupBanResponse{
 		};
 		List<SearchResultOfGroupBanResponse> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfGroupBanResponse.fromJson(item));
+      list.add(SearchResultOfGroupBanResponse.fromMap(item));
     });
     return list;
 	}

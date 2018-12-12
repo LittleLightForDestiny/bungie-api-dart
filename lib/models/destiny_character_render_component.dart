@@ -11,7 +11,7 @@ class DestinyCharacterRenderComponent{
 		DestinyCharacterPeerView this.peerView,
 	);
 
-	static DestinyCharacterRenderComponent fromJson(Map<String, dynamic> data){
+	static DestinyCharacterRenderComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,15 @@ class DestinyCharacterRenderComponent{
 		};
 		List<DestinyCharacterRenderComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterRenderComponent.fromJson(item));
+      list.add(DestinyCharacterRenderComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['customDyes'] = customDyes.map((item)=>item.toMap());
+			data['customization'] = customization;
+			data['peerView'] = peerView;
 	}
 }

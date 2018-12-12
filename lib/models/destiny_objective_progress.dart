@@ -16,7 +16,7 @@ class DestinyObjectiveProgress{
 		bool this.visible,
 	);
 
-	static DestinyObjectiveProgress fromJson(Map<String, dynamic> data){
+	static DestinyObjectiveProgress fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -37,8 +37,19 @@ class DestinyObjectiveProgress{
 		};
 		List<DestinyObjectiveProgress> list = new List();
     data.forEach((item) {
-      list.add(DestinyObjectiveProgress.fromJson(item));
+      list.add(DestinyObjectiveProgress.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectiveHash'] = objectiveHash;
+			data['destinationHash'] = destinationHash;
+			data['activityHash'] = activityHash;
+			data['progress'] = progress;
+			data['completionValue'] = completionValue;
+			data['complete'] = complete;
+			data['visible'] = visible;
 	}
 }

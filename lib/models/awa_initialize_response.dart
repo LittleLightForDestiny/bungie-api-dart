@@ -6,7 +6,7 @@ class AwaInitializeResponse{
 		bool this.sentToSelf,
 	);
 
-	static AwaInitializeResponse fromJson(Map<String, dynamic> data){
+	static AwaInitializeResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class AwaInitializeResponse{
 		};
 		List<AwaInitializeResponse> list = new List();
     data.forEach((item) {
-      list.add(AwaInitializeResponse.fromJson(item));
+      list.add(AwaInitializeResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['correlationId'] = correlationId;
+			data['sentToSelf'] = sentToSelf;
 	}
 }

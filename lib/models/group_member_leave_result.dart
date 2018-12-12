@@ -7,12 +7,12 @@ class GroupMemberLeaveResult{
 		bool this.groupDeleted,
 	);
 
-	static GroupMemberLeaveResult fromJson(Map<String, dynamic> data){
+	static GroupMemberLeaveResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupMemberLeaveResult(
-				GroupV2.fromJson(data['group']),
+				GroupV2.fromMap(data['group']),
 				data['groupDeleted'],
 		);
 	}
@@ -23,8 +23,14 @@ class GroupMemberLeaveResult{
 		};
 		List<GroupMemberLeaveResult> list = new List();
     data.forEach((item) {
-      list.add(GroupMemberLeaveResult.fromJson(item));
+      list.add(GroupMemberLeaveResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['group'] = group.toMap();
+			data['groupDeleted'] = groupDeleted;
 	}
 }

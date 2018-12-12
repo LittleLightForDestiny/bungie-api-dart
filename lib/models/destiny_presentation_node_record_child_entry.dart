@@ -4,7 +4,7 @@ class DestinyPresentationNodeRecordChildEntry{
 		int this.recordHash,
 	);
 
-	static DestinyPresentationNodeRecordChildEntry fromJson(Map<String, dynamic> data){
+	static DestinyPresentationNodeRecordChildEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyPresentationNodeRecordChildEntry{
 		};
 		List<DestinyPresentationNodeRecordChildEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyPresentationNodeRecordChildEntry.fromJson(item));
+      list.add(DestinyPresentationNodeRecordChildEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['recordHash'] = recordHash;
 	}
 }

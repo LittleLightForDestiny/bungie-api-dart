@@ -6,7 +6,7 @@ class DestinyUnlockStatus{
 		bool this.isSet,
 	);
 
-	static DestinyUnlockStatus fromJson(Map<String, dynamic> data){
+	static DestinyUnlockStatus fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyUnlockStatus{
 		};
 		List<DestinyUnlockStatus> list = new List();
     data.forEach((item) {
-      list.add(DestinyUnlockStatus.fromJson(item));
+      list.add(DestinyUnlockStatus.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['unlockHash'] = unlockHash;
+			data['isSet'] = isSet;
 	}
 }

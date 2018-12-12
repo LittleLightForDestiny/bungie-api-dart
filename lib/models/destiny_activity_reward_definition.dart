@@ -7,7 +7,7 @@ class DestinyActivityRewardDefinition{
 		List<DestinyItemQuantity> this.rewardItems,
 	);
 
-	static DestinyActivityRewardDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityRewardDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyActivityRewardDefinition{
 		};
 		List<DestinyActivityRewardDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityRewardDefinition.fromJson(item));
+      list.add(DestinyActivityRewardDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['rewardText'] = rewardText;
+			data['rewardItems'] = rewardItems.map((item)=>item.toMap());
 	}
 }

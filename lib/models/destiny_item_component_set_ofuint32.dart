@@ -26,19 +26,19 @@ class DestinyItemComponentSetOfuint32{
 		DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent this.objectives,
 	);
 
-	static DestinyItemComponentSetOfuint32 fromJson(Map<String, dynamic> data){
+	static DestinyItemComponentSetOfuint32 fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyItemComponentSetOfuint32(
-				DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent.fromJson(data['instances']),
-				DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent.fromJson(data['perks']),
-				DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent.fromJson(data['renderData']),
-				DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent.fromJson(data['stats']),
-				DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent.fromJson(data['sockets']),
-				DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromJson(data['talentGrids']),
-				DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromJson(data['plugStates']),
-				DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent.fromJson(data['objectives']),
+				DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent.fromMap(data['instances']),
+				DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent.fromMap(data['perks']),
+				DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent.fromMap(data['renderData']),
+				DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent.fromMap(data['stats']),
+				DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent.fromMap(data['sockets']),
+				DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromMap(data['talentGrids']),
+				DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromMap(data['plugStates']),
+				DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']),
 		);
 	}
 
@@ -48,8 +48,20 @@ class DestinyItemComponentSetOfuint32{
 		};
 		List<DestinyItemComponentSetOfuint32> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemComponentSetOfuint32.fromJson(item));
+      list.add(DestinyItemComponentSetOfuint32.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['instances'] = instances.toMap();
+			data['perks'] = perks.toMap();
+			data['renderData'] = renderData.toMap();
+			data['stats'] = stats.toMap();
+			data['sockets'] = sockets.toMap();
+			data['talentGrids'] = talentGrids.toMap();
+			data['plugStates'] = plugStates.toMap();
+			data['objectives'] = objectives.toMap();
 	}
 }

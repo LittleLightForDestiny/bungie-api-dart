@@ -11,7 +11,7 @@ class DestinyKioskItem{
 		DestinyObjectiveProgress this.flavorObjective,
 	);
 
-	static DestinyKioskItem fromJson(Map<String, dynamic> data){
+	static DestinyKioskItem fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyKioskItem{
 		};
 		List<DestinyKioskItem> list = new List();
     data.forEach((item) {
-      list.add(DestinyKioskItem.fromJson(item));
+      list.add(DestinyKioskItem.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['index'] = index;
+			data['canAcquire'] = canAcquire;
+			data['failureIndexes'] = failureIndexes;
+			data['flavorObjective'] = flavorObjective;
 	}
 }

@@ -4,7 +4,7 @@ class DestinyActivityModifierReferenceDefinition{
 		int this.activityModifierHash,
 	);
 
-	static DestinyActivityModifierReferenceDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityModifierReferenceDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityModifierReferenceDefinition{
 		};
 		List<DestinyActivityModifierReferenceDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityModifierReferenceDefinition.fromJson(item));
+      list.add(DestinyActivityModifierReferenceDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityModifierHash'] = activityModifierHash;
 	}
 }

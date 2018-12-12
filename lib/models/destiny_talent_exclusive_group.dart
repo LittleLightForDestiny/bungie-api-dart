@@ -12,7 +12,7 @@ class DestinyTalentExclusiveGroup{
 		List<int> this.opposingNodeHashes,
 	);
 
-	static DestinyTalentExclusiveGroup fromJson(Map<String, dynamic> data){
+	static DestinyTalentExclusiveGroup fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyTalentExclusiveGroup{
 		};
 		List<DestinyTalentExclusiveGroup> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentExclusiveGroup.fromJson(item));
+      list.add(DestinyTalentExclusiveGroup.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupHash'] = groupHash;
+			data['loreHash'] = loreHash;
+			data['nodeHashes'] = nodeHashes;
+			data['opposingGroupHashes'] = opposingGroupHashes;
+			data['opposingNodeHashes'] = opposingNodeHashes;
 	}
 }

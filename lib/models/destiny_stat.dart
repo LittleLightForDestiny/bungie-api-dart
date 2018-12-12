@@ -8,7 +8,7 @@ class DestinyStat{
 		int this.maximumValue,
 	);
 
-	static DestinyStat fromJson(Map<String, dynamic> data){
+	static DestinyStat fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyStat{
 		};
 		List<DestinyStat> list = new List();
     data.forEach((item) {
-      list.add(DestinyStat.fromJson(item));
+      list.add(DestinyStat.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statHash'] = statHash;
+			data['value'] = value;
+			data['maximumValue'] = maximumValue;
 	}
 }

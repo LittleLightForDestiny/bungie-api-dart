@@ -26,7 +26,7 @@ class DestinyCharacterCustomization{
 		int this.decalIndex,
 	);
 
-	static DestinyCharacterCustomization fromJson(Map<String, dynamic> data){
+	static DestinyCharacterCustomization fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -52,8 +52,24 @@ class DestinyCharacterCustomization{
 		};
 		List<DestinyCharacterCustomization> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterCustomization.fromJson(item));
+      list.add(DestinyCharacterCustomization.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['personality'] = personality;
+			data['face'] = face;
+			data['skinColor'] = skinColor;
+			data['lipColor'] = lipColor;
+			data['eyeColor'] = eyeColor;
+			data['hairColors'] = hairColors;
+			data['featureColors'] = featureColors;
+			data['decalColor'] = decalColor;
+			data['wearHelmet'] = wearHelmet;
+			data['hairIndex'] = hairIndex;
+			data['featureIndex'] = featureIndex;
+			data['decalIndex'] = decalIndex;
 	}
 }

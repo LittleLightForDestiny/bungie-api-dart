@@ -18,12 +18,12 @@ class SearchResultOfCommunityLiveStatusResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SearchResultOfCommunityLiveStatusResponse fromJson(Map<String, dynamic> data){
+    static SearchResultOfCommunityLiveStatusResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SearchResultOfCommunityLiveStatusResponse(
-				SearchResultOfCommunityLiveStatus.fromJson(data['Response']),
+				SearchResultOfCommunityLiveStatus.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SearchResultOfCommunityLiveStatusResponse{
 		};
 		List<SearchResultOfCommunityLiveStatusResponse> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfCommunityLiveStatusResponse.fromJson(item));
+      list.add(SearchResultOfCommunityLiveStatusResponse.fromMap(item));
     });
     return list;
 	}

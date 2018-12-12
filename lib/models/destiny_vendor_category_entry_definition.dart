@@ -37,7 +37,7 @@ class DestinyVendorCategoryEntryDefinition{
 		int this.resetOffsetMinutesOverride,
 	);
 
-	static DestinyVendorCategoryEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorCategoryEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -68,8 +68,29 @@ class DestinyVendorCategoryEntryDefinition{
 		};
 		List<DestinyVendorCategoryEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorCategoryEntryDefinition.fromJson(item));
+      list.add(DestinyVendorCategoryEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['categoryIndex'] = categoryIndex;
+			data['categoryId'] = categoryId;
+			data['sortValue'] = sortValue;
+			data['categoryHash'] = categoryHash;
+			data['quantityAvailable'] = quantityAvailable;
+			data['showUnavailableItems'] = showUnavailableItems;
+			data['hideIfNoCurrency'] = hideIfNoCurrency;
+			data['hideFromRegularPurchase'] = hideFromRegularPurchase;
+			data['buyStringOverride'] = buyStringOverride;
+			data['disabledDescription'] = disabledDescription;
+			data['displayTitle'] = displayTitle;
+			data['overlay'] = overlay;
+			data['vendorItemIndexes'] = vendorItemIndexes;
+			data['isPreview'] = isPreview;
+			data['isDisplayOnly'] = isDisplayOnly;
+			data['resetIntervalMinutesOverride'] = resetIntervalMinutesOverride;
+			data['resetOffsetMinutesOverride'] = resetOffsetMinutesOverride;
 	}
 }

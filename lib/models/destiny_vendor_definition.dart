@@ -83,12 +83,12 @@ class DestinyVendorDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyVendorDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyVendorDefinition(
-				DestinyVendorDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyVendorDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['buyString'],
 				data['sellString'],
 				data['displayItemHash'],
@@ -131,8 +131,46 @@ class DestinyVendorDefinition{
 		};
 		List<DestinyVendorDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorDefinition.fromJson(item));
+      list.add(DestinyVendorDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['buyString'] = buyString;
+			data['sellString'] = sellString;
+			data['displayItemHash'] = displayItemHash;
+			data['inhibitBuying'] = inhibitBuying;
+			data['inhibitSelling'] = inhibitSelling;
+			data['factionHash'] = factionHash;
+			data['resetIntervalMinutes'] = resetIntervalMinutes;
+			data['resetOffsetMinutes'] = resetOffsetMinutes;
+			data['failureStrings'] = failureStrings;
+			data['unlockRanges'] = unlockRanges.map((item)=>item.toMap());
+			data['vendorIdentifier'] = vendorIdentifier;
+			data['vendorPortrait'] = vendorPortrait;
+			data['vendorBanner'] = vendorBanner;
+			data['enabled'] = enabled;
+			data['visible'] = visible;
+			data['vendorSubcategoryIdentifier'] = vendorSubcategoryIdentifier;
+			data['consolidateCategories'] = consolidateCategories;
+			data['actions'] = actions.map((item)=>item.toMap());
+			data['categories'] = categories.map((item)=>item.toMap());
+			data['originalCategories'] = originalCategories.map((item)=>item.toMap());
+			data['displayCategories'] = displayCategories.map((item)=>item.toMap());
+			data['interactions'] = interactions.map((item)=>item.toMap());
+			data['inventoryFlyouts'] = inventoryFlyouts.map((item)=>item.toMap());
+			data['itemList'] = itemList.map((item)=>item.toMap());
+			data['services'] = services.map((item)=>item.toMap());
+			data['acceptedItems'] = acceptedItems.map((item)=>item.toMap());
+			data['returnWithVendorRequest'] = returnWithVendorRequest;
+			data['locations'] = locations.map((item)=>item.toMap());
+			data['groups'] = groups.map((item)=>item.toMap());
+			data['ignoreSaleItemHashes'] = ignoreSaleItemHashes;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

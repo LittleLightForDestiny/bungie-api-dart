@@ -15,12 +15,12 @@ class DestinyRaceDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyRaceDefinition fromJson(Map<String, dynamic> data){
+	static DestinyRaceDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyRaceDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['raceType'],
 				data['genderedRaceNames'],
 				data['hash'],
@@ -35,8 +35,18 @@ class DestinyRaceDefinition{
 		};
 		List<DestinyRaceDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyRaceDefinition.fromJson(item));
+      list.add(DestinyRaceDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['raceType'] = raceType;
+			data['genderedRaceNames'] = genderedRaceNames;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

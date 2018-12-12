@@ -21,7 +21,7 @@ class DestinyCharacterActivitiesComponent{
 		int this.lastCompletedStoryHash,
 	);
 
-	static DestinyCharacterActivitiesComponent fromJson(Map<String, dynamic> data){
+	static DestinyCharacterActivitiesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -44,8 +44,21 @@ class DestinyCharacterActivitiesComponent{
 		};
 		List<DestinyCharacterActivitiesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterActivitiesComponent.fromJson(item));
+      list.add(DestinyCharacterActivitiesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['dateActivityStarted'] = dateActivityStarted;
+			data['availableActivities'] = availableActivities.map((item)=>item.toMap());
+			data['currentActivityHash'] = currentActivityHash;
+			data['currentActivityModeHash'] = currentActivityModeHash;
+			data['currentActivityModeType'] = currentActivityModeType;
+			data['currentActivityModeHashes'] = currentActivityModeHashes;
+			data['currentActivityModeTypes'] = currentActivityModeTypes;
+			data['currentPlaylistActivityHash'] = currentPlaylistActivityHash;
+			data['lastCompletedStoryHash'] = lastCompletedStoryHash;
 	}
 }

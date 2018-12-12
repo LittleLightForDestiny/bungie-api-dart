@@ -5,7 +5,7 @@ class DestinyItemPerksComponent{
 		List<DestinyPerkReference> this.perks,
 	);
 
-	static DestinyItemPerksComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemPerksComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyItemPerksComponent{
 		};
 		List<DestinyItemPerksComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemPerksComponent.fromJson(item));
+      list.add(DestinyItemPerksComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['perks'] = perks.map((item)=>item.toMap());
 	}
 }

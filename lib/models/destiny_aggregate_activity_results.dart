@@ -5,7 +5,7 @@ class DestinyAggregateActivityResults{
 		List<DestinyAggregateActivityStats> this.activities,
 	);
 
-	static DestinyAggregateActivityResults fromJson(Map<String, dynamic> data){
+	static DestinyAggregateActivityResults fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyAggregateActivityResults{
 		};
 		List<DestinyAggregateActivityResults> list = new List();
     data.forEach((item) {
-      list.add(DestinyAggregateActivityResults.fromJson(item));
+      list.add(DestinyAggregateActivityResults.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activities'] = activities.map((item)=>item.toMap());
 	}
 }

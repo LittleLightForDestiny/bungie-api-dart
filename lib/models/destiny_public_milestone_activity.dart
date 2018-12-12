@@ -13,7 +13,7 @@ class DestinyPublicMilestoneActivity{
 		int this.activityModeType,
 	);
 
-	static DestinyPublicMilestoneActivity fromJson(Map<String, dynamic> data){
+	static DestinyPublicMilestoneActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyPublicMilestoneActivity{
 		};
 		List<DestinyPublicMilestoneActivity> list = new List();
     data.forEach((item) {
-      list.add(DestinyPublicMilestoneActivity.fromJson(item));
+      list.add(DestinyPublicMilestoneActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['modifierHashes'] = modifierHashes;
+			data['variants'] = variants.map((item)=>item.toMap());
+			data['activityModeHash'] = activityModeHash;
+			data['activityModeType'] = activityModeType;
 	}
 }

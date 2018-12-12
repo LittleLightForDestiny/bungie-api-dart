@@ -28,7 +28,7 @@ class DestinyFactionProgression{
 		int this.nextLevelAt,
 	);
 
-	static DestinyFactionProgression fromJson(Map<String, dynamic> data){
+	static DestinyFactionProgression fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -55,8 +55,25 @@ class DestinyFactionProgression{
 		};
 		List<DestinyFactionProgression> list = new List();
     data.forEach((item) {
-      list.add(DestinyFactionProgression.fromJson(item));
+      list.add(DestinyFactionProgression.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['factionHash'] = factionHash;
+			data['factionVendorIndex'] = factionVendorIndex;
+			data['progressionHash'] = progressionHash;
+			data['dailyProgress'] = dailyProgress;
+			data['dailyLimit'] = dailyLimit;
+			data['weeklyProgress'] = weeklyProgress;
+			data['weeklyLimit'] = weeklyLimit;
+			data['currentProgress'] = currentProgress;
+			data['level'] = level;
+			data['levelCap'] = levelCap;
+			data['stepIndex'] = stepIndex;
+			data['progressToNextLevel'] = progressToNextLevel;
+			data['nextLevelAt'] = nextLevelAt;
 	}
 }

@@ -16,7 +16,7 @@ class GroupMember{
 		String this.joinDate,
 	);
 
-	static GroupMember fromJson(Map<String, dynamic> data){
+	static GroupMember fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,8 +24,8 @@ class GroupMember{
 				data['memberType'],
 				data['isOnline'],
 				data['groupId'],
-				UserInfoCard.fromJson(data['destinyUserInfo']),
-				UserInfoCard.fromJson(data['bungieNetUserInfo']),
+				UserInfoCard.fromMap(data['destinyUserInfo']),
+				UserInfoCard.fromMap(data['bungieNetUserInfo']),
 				data['joinDate'],
 		);
 	}
@@ -36,8 +36,18 @@ class GroupMember{
 		};
 		List<GroupMember> list = new List();
     data.forEach((item) {
-      list.add(GroupMember.fromJson(item));
+      list.add(GroupMember.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['memberType'] = memberType;
+			data['isOnline'] = isOnline;
+			data['groupId'] = groupId;
+			data['destinyUserInfo'] = destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['joinDate'] = joinDate;
 	}
 }

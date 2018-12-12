@@ -24,12 +24,12 @@ class DestinyDestinationDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyDestinationDefinition fromJson(Map<String, dynamic> data){
+	static DestinyDestinationDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyDestinationDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['placeHash'],
 				data['defaultFreeroamActivityHash'],
 				DestinyActivityGraphListEntryDefinition.fromList(data['activityGraphEntries']),
@@ -47,8 +47,21 @@ class DestinyDestinationDefinition{
 		};
 		List<DestinyDestinationDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyDestinationDefinition.fromJson(item));
+      list.add(DestinyDestinationDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['placeHash'] = placeHash;
+			data['defaultFreeroamActivityHash'] = defaultFreeroamActivityHash;
+			data['activityGraphEntries'] = activityGraphEntries.map((item)=>item.toMap());
+			data['bubbleSettings'] = bubbleSettings.map((item)=>item.toMap());
+			data['bubbles'] = bubbles.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

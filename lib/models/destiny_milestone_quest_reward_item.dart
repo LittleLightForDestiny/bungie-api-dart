@@ -12,7 +12,7 @@ class DestinyMilestoneQuestRewardItem{
 		int this.quantity,
 	);
 
-	static DestinyMilestoneQuestRewardItem fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneQuestRewardItem fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyMilestoneQuestRewardItem{
 		};
 		List<DestinyMilestoneQuestRewardItem> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneQuestRewardItem.fromJson(item));
+      list.add(DestinyMilestoneQuestRewardItem.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorHash'] = vendorHash;
+			data['vendorItemIndex'] = vendorItemIndex;
+			data['itemHash'] = itemHash;
+			data['itemInstanceId'] = itemInstanceId;
+			data['quantity'] = quantity;
 	}
 }

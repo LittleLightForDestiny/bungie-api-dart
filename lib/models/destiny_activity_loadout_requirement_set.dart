@@ -5,7 +5,7 @@ class DestinyActivityLoadoutRequirementSet{
 		List<DestinyActivityLoadoutRequirement> this.requirements,
 	);
 
-	static DestinyActivityLoadoutRequirementSet fromJson(Map<String, dynamic> data){
+	static DestinyActivityLoadoutRequirementSet fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyActivityLoadoutRequirementSet{
 		};
 		List<DestinyActivityLoadoutRequirementSet> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityLoadoutRequirementSet.fromJson(item));
+      list.add(DestinyActivityLoadoutRequirementSet.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['requirements'] = requirements.map((item)=>item.toMap());
 	}
 }

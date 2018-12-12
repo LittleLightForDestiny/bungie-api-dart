@@ -48,12 +48,12 @@ class DestinyMilestoneDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyMilestoneDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyMilestoneDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['image'],
 				data['milestoneType'],
 				data['recruitable'],
@@ -82,8 +82,32 @@ class DestinyMilestoneDefinition{
 		};
 		List<DestinyMilestoneDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneDefinition.fromJson(item));
+      list.add(DestinyMilestoneDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['image'] = image;
+			data['milestoneType'] = milestoneType;
+			data['recruitable'] = recruitable;
+			data['friendlyName'] = friendlyName;
+			data['showInExplorer'] = showInExplorer;
+			data['showInMilestones'] = showInMilestones;
+			data['explorePrioritizesActivityImage'] = explorePrioritizesActivityImage;
+			data['hasPredictableDates'] = hasPredictableDates;
+			data['quests'] = quests;
+			data['rewards'] = rewards;
+			data['vendorsDisplayTitle'] = vendorsDisplayTitle;
+			data['vendors'] = vendors.map((item)=>item.toMap());
+			data['values'] = values;
+			data['isInGameMilestone'] = isInGameMilestone;
+			data['activities'] = activities.map((item)=>item.toMap());
+			data['defaultOrder'] = defaultOrder;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

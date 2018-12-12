@@ -7,12 +7,12 @@ class SingleComponentResponseOfDestinyCharacterProgressionComponent{
 		int this.privacy,
 	);
 
-	static SingleComponentResponseOfDestinyCharacterProgressionComponent fromJson(Map<String, dynamic> data){
+	static SingleComponentResponseOfDestinyCharacterProgressionComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyCharacterProgressionComponent(
-				DestinyCharacterProgressionComponent.fromJson(data['data']),
+				DestinyCharacterProgressionComponent.fromMap(data['data']),
 				data['privacy'],
 		);
 	}
@@ -23,8 +23,14 @@ class SingleComponentResponseOfDestinyCharacterProgressionComponent{
 		};
 		List<SingleComponentResponseOfDestinyCharacterProgressionComponent> list = new List();
     data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyCharacterProgressionComponent.fromJson(item));
+      list.add(SingleComponentResponseOfDestinyCharacterProgressionComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['data'] = data.toMap();
+			data['privacy'] = privacy;
 	}
 }

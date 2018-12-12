@@ -10,7 +10,7 @@ class DestinyPublicMilestoneChallengeActivity{
 		int this.loadoutRequirementIndex,
 	);
 
-	static DestinyPublicMilestoneChallengeActivity fromJson(Map<String, dynamic> data){
+	static DestinyPublicMilestoneChallengeActivity fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyPublicMilestoneChallengeActivity{
 		};
 		List<DestinyPublicMilestoneChallengeActivity> list = new List();
     data.forEach((item) {
-      list.add(DestinyPublicMilestoneChallengeActivity.fromJson(item));
+      list.add(DestinyPublicMilestoneChallengeActivity.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['activityHash'] = activityHash;
+			data['challengeObjectiveHashes'] = challengeObjectiveHashes;
+			data['modifierHashes'] = modifierHashes;
+			data['loadoutRequirementIndex'] = loadoutRequirementIndex;
 	}
 }

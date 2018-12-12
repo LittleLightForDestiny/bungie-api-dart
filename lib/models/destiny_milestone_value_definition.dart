@@ -7,13 +7,13 @@ class DestinyMilestoneValueDefinition{
 		DestinyDisplayPropertiesDefinition this.displayProperties,
 	);
 
-	static DestinyMilestoneValueDefinition fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneValueDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyMilestoneValueDefinition(
 				data['key'],
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class DestinyMilestoneValueDefinition{
 		};
 		List<DestinyMilestoneValueDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneValueDefinition.fromJson(item));
+      list.add(DestinyMilestoneValueDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['key'] = key;
+			data['displayProperties'] = displayProperties.toMap();
 	}
 }

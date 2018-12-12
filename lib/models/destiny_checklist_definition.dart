@@ -18,12 +18,12 @@ class DestinyChecklistDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyChecklistDefinition fromJson(Map<String, dynamic> data){
+	static DestinyChecklistDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyChecklistDefinition(
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 				data['viewActionString'],
 				data['scope'],
 				DestinyChecklistEntryDefinition.fromList(data['entries']),
@@ -39,8 +39,19 @@ class DestinyChecklistDefinition{
 		};
 		List<DestinyChecklistDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyChecklistDefinition.fromJson(item));
+      list.add(DestinyChecklistDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties.toMap();
+			data['viewActionString'] = viewActionString;
+			data['scope'] = scope;
+			data['entries'] = entries.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

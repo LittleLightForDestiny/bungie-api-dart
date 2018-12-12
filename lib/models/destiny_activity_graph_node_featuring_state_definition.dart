@@ -4,7 +4,7 @@ class DestinyActivityGraphNodeFeaturingStateDefinition{
 		int this.highlightType,
 	);
 
-	static DestinyActivityGraphNodeFeaturingStateDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphNodeFeaturingStateDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityGraphNodeFeaturingStateDefinition{
 		};
 		List<DestinyActivityGraphNodeFeaturingStateDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphNodeFeaturingStateDefinition.fromJson(item));
+      list.add(DestinyActivityGraphNodeFeaturingStateDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['highlightType'] = highlightType;
 	}
 }

@@ -36,7 +36,7 @@ class PostSearchResponse{
 		bool this.useTotalResults,
 	);
 
-	static PostSearchResponse fromJson(Map<String, dynamic> data){
+	static PostSearchResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -51,7 +51,7 @@ class PostSearchResponse{
 				PostResponse.fromList(data['results']),
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromJson(data['query']),
+				PagedQuery.fromMap(data['query']),
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);
@@ -63,8 +63,25 @@ class PostSearchResponse{
 		};
 		List<PostSearchResponse> list = new List();
     data.forEach((item) {
-      list.add(PostSearchResponse.fromJson(item));
+      list.add(PostSearchResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['relatedPosts'] = relatedPosts.map((item)=>item.toMap());
+			data['authors'] = authors.map((item)=>item.toMap());
+			data['groups'] = groups.map((item)=>item.toMap());
+			data['searchedTags'] = searchedTags.map((item)=>item.toMap());
+			data['polls'] = polls.map((item)=>item.toMap());
+			data['recruitmentDetails'] = recruitmentDetails.map((item)=>item.toMap());
+			data['availablePages'] = availablePages;
+			data['results'] = results.map((item)=>item.toMap());
+			data['totalResults'] = totalResults;
+			data['hasMore'] = hasMore;
+			data['query'] = query.toMap();
+			data['replacementContinuationToken'] = replacementContinuationToken;
+			data['useTotalResults'] = useTotalResults;
 	}
 }

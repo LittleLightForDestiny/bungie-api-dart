@@ -18,12 +18,12 @@ class SearchResultOfContentItemPublicContractResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SearchResultOfContentItemPublicContractResponse fromJson(Map<String, dynamic> data){
+    static SearchResultOfContentItemPublicContractResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SearchResultOfContentItemPublicContractResponse(
-				SearchResultOfContentItemPublicContract.fromJson(data['Response']),
+				SearchResultOfContentItemPublicContract.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SearchResultOfContentItemPublicContractResponse{
 		};
 		List<SearchResultOfContentItemPublicContractResponse> list = new List();
     data.forEach((item) {
-      list.add(SearchResultOfContentItemPublicContractResponse.fromJson(item));
+      list.add(SearchResultOfContentItemPublicContractResponse.fromMap(item));
     });
     return list;
 	}

@@ -4,7 +4,7 @@ class DestinyUnlockExpressionDefinition{
 		int this.scope,
 	);
 
-	static DestinyUnlockExpressionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyUnlockExpressionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyUnlockExpressionDefinition{
 		};
 		List<DestinyUnlockExpressionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyUnlockExpressionDefinition.fromJson(item));
+      list.add(DestinyUnlockExpressionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['scope'] = scope;
 	}
 }

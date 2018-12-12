@@ -18,7 +18,7 @@ class DestinyLeaderboardResultsResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyLeaderboardResultsResponse fromJson(Map<String, dynamic> data){
+    static DestinyLeaderboardResultsResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class DestinyLeaderboardResultsResponse{
 		};
 		List<DestinyLeaderboardResultsResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyLeaderboardResultsResponse.fromJson(item));
+      list.add(DestinyLeaderboardResultsResponse.fromMap(item));
     });
     return list;
 	}

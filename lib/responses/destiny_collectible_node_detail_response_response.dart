@@ -18,12 +18,12 @@ class DestinyCollectibleNodeDetailResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyCollectibleNodeDetailResponseResponse fromJson(Map<String, dynamic> data){
+    static DestinyCollectibleNodeDetailResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyCollectibleNodeDetailResponseResponse(
-				DestinyCollectibleNodeDetailResponse.fromJson(data['Response']),
+				DestinyCollectibleNodeDetailResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyCollectibleNodeDetailResponseResponse{
 		};
 		List<DestinyCollectibleNodeDetailResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyCollectibleNodeDetailResponseResponse.fromJson(item));
+      list.add(DestinyCollectibleNodeDetailResponseResponse.fromMap(item));
     });
     return list;
 	}

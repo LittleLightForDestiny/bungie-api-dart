@@ -11,12 +11,12 @@ class FireteamResponse{
 		List<FireteamMember> this.alternates,
 	);
 
-	static FireteamResponse fromJson(Map<String, dynamic> data){
+	static FireteamResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new FireteamResponse(
-				FireteamSummary.fromJson(data['Summary']),
+				FireteamSummary.fromMap(data['Summary']),
 				FireteamMember.fromList(data['Members']),
 				FireteamMember.fromList(data['Alternates']),
 		);
@@ -28,8 +28,15 @@ class FireteamResponse{
 		};
 		List<FireteamResponse> list = new List();
     data.forEach((item) {
-      list.add(FireteamResponse.fromJson(item));
+      list.add(FireteamResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['Summary'] = summary.toMap();
+			data['Members'] = members.map((item)=>item.toMap());
+			data['Alternates'] = alternates.map((item)=>item.toMap());
 	}
 }

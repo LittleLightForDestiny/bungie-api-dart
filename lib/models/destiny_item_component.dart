@@ -24,7 +24,7 @@ class DestinyItemComponent{
 		String this.expirationDate,
 	);
 
-	static DestinyItemComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -49,8 +49,23 @@ class DestinyItemComponent{
 		};
 		List<DestinyItemComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemComponent.fromJson(item));
+      list.add(DestinyItemComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemHash'] = itemHash;
+			data['itemInstanceId'] = itemInstanceId;
+			data['quantity'] = quantity;
+			data['bindStatus'] = bindStatus;
+			data['location'] = location;
+			data['bucketHash'] = bucketHash;
+			data['transferStatus'] = transferStatus;
+			data['lockable'] = lockable;
+			data['state'] = state;
+			data['overrideStyleItemHash'] = overrideStyleItemHash;
+			data['expirationDate'] = expirationDate;
 	}
 }

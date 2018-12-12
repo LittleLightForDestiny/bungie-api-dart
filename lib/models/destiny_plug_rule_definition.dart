@@ -4,7 +4,7 @@ class DestinyPlugRuleDefinition{
 		String this.failureMessage,
 	);
 
-	static DestinyPlugRuleDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPlugRuleDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyPlugRuleDefinition{
 		};
 		List<DestinyPlugRuleDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPlugRuleDefinition.fromJson(item));
+      list.add(DestinyPlugRuleDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['failureMessage'] = failureMessage;
 	}
 }

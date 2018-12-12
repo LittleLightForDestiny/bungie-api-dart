@@ -8,7 +8,7 @@ class DestinyPostGameCarnageReportExtendedData{
 		Map<DestinyHistoricalStatsValue, dynamic> this.values,
 	);
 
-	static DestinyPostGameCarnageReportExtendedData fromJson(Map<String, dynamic> data){
+	static DestinyPostGameCarnageReportExtendedData fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,8 +24,14 @@ class DestinyPostGameCarnageReportExtendedData{
 		};
 		List<DestinyPostGameCarnageReportExtendedData> list = new List();
     data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportExtendedData.fromJson(item));
+      list.add(DestinyPostGameCarnageReportExtendedData.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['weapons'] = weapons.map((item)=>item.toMap());
+			data['values'] = values;
 	}
 }

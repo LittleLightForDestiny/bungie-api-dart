@@ -16,7 +16,7 @@ class OAuth{
     config.bodyContentType = "application/x-www-form-urlencoded";
     config.body = "client_id=$clientId&client_secret=$clientSecret&code=$code&grant_type=authorization_code";
     return client.request(config).then((response){
-      return BungieNetToken.fromJson(response);
+      return BungieNetToken.fromMap(response);
     });
   }
   static Future<BungieNetToken> refreshToken(HttpClient client, String clientId, String clientSecret, String refreshToken){
@@ -24,7 +24,7 @@ class OAuth{
     config.bodyContentType = "application/x-www-form-urlencoded";
     config.body = "client_id=$clientId&client_secret=$clientSecret&refresh_token=$refreshToken&grant_type=refresh_token";
     return client.request(config).then((response){
-      return BungieNetToken.fromJson(response);
+      return BungieNetToken.fromMap(response);
     });
   }
 }
@@ -49,7 +49,7 @@ class BungieNetToken{
     this.membershipId
 	);
 
-  static BungieNetToken fromJson(Map<String, dynamic> data){
+  static BungieNetToken fromMap(Map<String, dynamic> data){
     return BungieNetToken(
       data["access_token"],
       data["expires_in"],

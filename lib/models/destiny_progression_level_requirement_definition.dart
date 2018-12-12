@@ -13,7 +13,7 @@ class DestinyProgressionLevelRequirementDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyProgressionLevelRequirementDefinition fromJson(Map<String, dynamic> data){
+	static DestinyProgressionLevelRequirementDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyProgressionLevelRequirementDefinition{
 		};
 		List<DestinyProgressionLevelRequirementDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyProgressionLevelRequirementDefinition.fromJson(item));
+      list.add(DestinyProgressionLevelRequirementDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['requirementCurve'] = requirementCurve.map((item)=>item.toMap());
+			data['progressionHash'] = progressionHash;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

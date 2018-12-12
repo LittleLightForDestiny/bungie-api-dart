@@ -18,12 +18,12 @@ class ContentItemPublicContractResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ContentItemPublicContractResponse fromJson(Map<String, dynamic> data){
+    static ContentItemPublicContractResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new ContentItemPublicContractResponse(
-				ContentItemPublicContract.fromJson(data['Response']),
+				ContentItemPublicContract.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class ContentItemPublicContractResponse{
 		};
 		List<ContentItemPublicContractResponse> list = new List();
     data.forEach((item) {
-      list.add(ContentItemPublicContractResponse.fromJson(item));
+      list.add(ContentItemPublicContractResponse.fromMap(item));
     });
     return list;
 	}

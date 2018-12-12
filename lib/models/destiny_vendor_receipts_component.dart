@@ -5,7 +5,7 @@ class DestinyVendorReceiptsComponent{
 		List<DestinyVendorReceipt> this.receipts,
 	);
 
-	static DestinyVendorReceiptsComponent fromJson(Map<String, dynamic> data){
+	static DestinyVendorReceiptsComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyVendorReceiptsComponent{
 		};
 		List<DestinyVendorReceiptsComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorReceiptsComponent.fromJson(item));
+      list.add(DestinyVendorReceiptsComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['receipts'] = receipts.map((item)=>item.toMap());
 	}
 }

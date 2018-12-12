@@ -6,7 +6,7 @@ class HyperlinkReference{
 		String this.url,
 	);
 
-	static HyperlinkReference fromJson(Map<String, dynamic> data){
+	static HyperlinkReference fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class HyperlinkReference{
 		};
 		List<HyperlinkReference> list = new List();
     data.forEach((item) {
-      list.add(HyperlinkReference.fromJson(item));
+      list.add(HyperlinkReference.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['title'] = title;
+			data['url'] = url;
 	}
 }

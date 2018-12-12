@@ -20,7 +20,7 @@ class TrendingEntryDestinyRitual{
 		DestinyMilestoneContent this.eventContent,
 	);
 
-	static TrendingEntryDestinyRitual fromJson(Map<String, dynamic> data){
+	static TrendingEntryDestinyRitual fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -42,8 +42,20 @@ class TrendingEntryDestinyRitual{
 		};
 		List<TrendingEntryDestinyRitual> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntryDestinyRitual.fromJson(item));
+      list.add(TrendingEntryDestinyRitual.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['image'] = image;
+			data['icon'] = icon;
+			data['title'] = title;
+			data['subtitle'] = subtitle;
+			data['dateStart'] = dateStart;
+			data['dateEnd'] = dateEnd;
+			data['milestoneDetails'] = milestoneDetails;
+			data['eventContent'] = eventContent;
 	}
 }

@@ -8,7 +8,7 @@ class DestinyInsertPlugsRequestEntry{
 		int this.plugItemHash,
 	);
 
-	static DestinyInsertPlugsRequestEntry fromJson(Map<String, dynamic> data){
+	static DestinyInsertPlugsRequestEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyInsertPlugsRequestEntry{
 		};
 		List<DestinyInsertPlugsRequestEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyInsertPlugsRequestEntry.fromJson(item));
+      list.add(DestinyInsertPlugsRequestEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['socketIndex'] = socketIndex;
+			data['socketArrayType'] = socketArrayType;
+			data['plugItemHash'] = plugItemHash;
 	}
 }

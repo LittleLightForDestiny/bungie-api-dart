@@ -18,12 +18,12 @@ class GroupPotentialMembershipSearchResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static GroupPotentialMembershipSearchResponseResponse fromJson(Map<String, dynamic> data){
+    static GroupPotentialMembershipSearchResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupPotentialMembershipSearchResponseResponse(
-				GroupPotentialMembershipSearchResponse.fromJson(data['Response']),
+				GroupPotentialMembershipSearchResponse.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class GroupPotentialMembershipSearchResponseResponse{
 		};
 		List<GroupPotentialMembershipSearchResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupPotentialMembershipSearchResponseResponse.fromJson(item));
+      list.add(GroupPotentialMembershipSearchResponseResponse.fromMap(item));
     });
     return list;
 	}

@@ -15,7 +15,7 @@ class DestinyHistoricalStatsValue{
 		int this.activityId,
 	);
 
-	static DestinyHistoricalStatsValue fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsValue fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,17 @@ class DestinyHistoricalStatsValue{
 		};
 		List<DestinyHistoricalStatsValue> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsValue.fromJson(item));
+      list.add(DestinyHistoricalStatsValue.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['statId'] = statId;
+			data['basic'] = basic;
+			data['pga'] = pga;
+			data['weighted'] = weighted;
+			data['activityId'] = activityId;
 	}
 }

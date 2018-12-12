@@ -8,7 +8,7 @@ class InventoryChangedResponse{
 		List<DestinyItemComponent> this.removedInventoryItems,
 	);
 
-	static InventoryChangedResponse fromJson(Map<String, dynamic> data){
+	static InventoryChangedResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,8 +24,14 @@ class InventoryChangedResponse{
 		};
 		List<InventoryChangedResponse> list = new List();
     data.forEach((item) {
-      list.add(InventoryChangedResponse.fromJson(item));
+      list.add(InventoryChangedResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['addedInventoryItems'] = addedInventoryItems.map((item)=>item.toMap());
+			data['removedInventoryItems'] = removedInventoryItems.map((item)=>item.toMap());
 	}
 }

@@ -14,7 +14,7 @@ class DestinyItemTransferRequest{
 		int this.membershipType,
 	);
 
-	static DestinyItemTransferRequest fromJson(Map<String, dynamic> data){
+	static DestinyItemTransferRequest fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -34,8 +34,18 @@ class DestinyItemTransferRequest{
 		};
 		List<DestinyItemTransferRequest> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemTransferRequest.fromJson(item));
+      list.add(DestinyItemTransferRequest.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['itemReferenceHash'] = itemReferenceHash;
+			data['stackSize'] = stackSize;
+			data['transferToVault'] = transferToVault;
+			data['itemId'] = itemId;
+			data['characterId'] = characterId;
+			data['membershipType'] = membershipType;
 	}
 }

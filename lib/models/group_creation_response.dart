@@ -4,7 +4,7 @@ class GroupCreationResponse{
 		int this.groupId,
 	);
 
-	static GroupCreationResponse fromJson(Map<String, dynamic> data){
+	static GroupCreationResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class GroupCreationResponse{
 		};
 		List<GroupCreationResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupCreationResponse.fromJson(item));
+      list.add(GroupCreationResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupId'] = groupId;
 	}
 }

@@ -38,7 +38,7 @@ class GroupAction{
 		int this.platformMembershipType,
 	);
 
-	static GroupAction fromJson(Map<String, dynamic> data){
+	static GroupAction fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -70,8 +70,30 @@ class GroupAction{
 		};
 		List<GroupAction> list = new List();
     data.forEach((item) {
-      list.add(GroupAction.fromJson(item));
+      list.add(GroupAction.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['groupType'] = groupType;
+			data['name'] = name;
+			data['about'] = about;
+			data['motto'] = motto;
+			data['theme'] = theme;
+			data['avatarImageIndex'] = avatarImageIndex;
+			data['tags'] = tags;
+			data['isPublic'] = isPublic;
+			data['membershipOption'] = membershipOption;
+			data['isPublicTopicAdminOnly'] = isPublicTopicAdminOnly;
+			data['isDefaultPostPublic'] = isDefaultPostPublic;
+			data['allowChat'] = allowChat;
+			data['isDefaultPostAlliance'] = isDefaultPostAlliance;
+			data['chatSecurity'] = chatSecurity;
+			data['callsign'] = callsign;
+			data['locale'] = locale;
+			data['homepage'] = homepage;
+			data['platformMembershipType'] = platformMembershipType;
 	}
 }

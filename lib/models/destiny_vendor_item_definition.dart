@@ -56,7 +56,7 @@ class DestinyVendorItemDefinition{
 		List<DestinyVendorItemSocketOverride> this.socketOverrides,
 	);
 
-	static DestinyVendorItemDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorItemDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -95,8 +95,37 @@ class DestinyVendorItemDefinition{
 		};
 		List<DestinyVendorItemDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorItemDefinition.fromJson(item));
+      list.add(DestinyVendorItemDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorItemIndex'] = vendorItemIndex;
+			data['itemHash'] = itemHash;
+			data['quantity'] = quantity;
+			data['failureIndexes'] = failureIndexes;
+			data['currencies'] = currencies.map((item)=>item.toMap());
+			data['refundPolicy'] = refundPolicy;
+			data['refundTimeLimit'] = refundTimeLimit;
+			data['creationLevels'] = creationLevels.map((item)=>item.toMap());
+			data['displayCategoryIndex'] = displayCategoryIndex;
+			data['categoryIndex'] = categoryIndex;
+			data['originalCategoryIndex'] = originalCategoryIndex;
+			data['minimumLevel'] = minimumLevel;
+			data['maximumLevel'] = maximumLevel;
+			data['action'] = action;
+			data['displayCategory'] = displayCategory;
+			data['inventoryBucketHash'] = inventoryBucketHash;
+			data['visibilityScope'] = visibilityScope;
+			data['purchasableScope'] = purchasableScope;
+			data['exclusivity'] = exclusivity;
+			data['isOffer'] = isOffer;
+			data['isCrm'] = isCrm;
+			data['sortValue'] = sortValue;
+			data['expirationTooltip'] = expirationTooltip;
+			data['redirectToSaleIndexes'] = redirectToSaleIndexes;
+			data['socketOverrides'] = socketOverrides.map((item)=>item.toMap());
 	}
 }

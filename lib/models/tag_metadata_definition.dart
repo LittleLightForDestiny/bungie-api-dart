@@ -15,7 +15,7 @@ class TagMetadataDefinition{
 		bool this.isRequired,
 	);
 
-	static TagMetadataDefinition fromJson(Map<String, dynamic> data){
+	static TagMetadataDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -35,8 +35,18 @@ class TagMetadataDefinition{
 		};
 		List<TagMetadataDefinition> list = new List();
     data.forEach((item) {
-      list.add(TagMetadataDefinition.fromJson(item));
+      list.add(TagMetadataDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['description'] = description;
+			data['order'] = order;
+			data['items'] = items.map((item)=>item.toMap());
+			data['datatype'] = datatype;
+			data['name'] = name;
+			data['isRequired'] = isRequired;
 	}
 }

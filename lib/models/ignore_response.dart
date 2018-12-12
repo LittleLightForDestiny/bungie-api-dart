@@ -6,7 +6,7 @@ class IgnoreResponse{
 		int this.ignoreFlags,
 	);
 
-	static IgnoreResponse fromJson(Map<String, dynamic> data){
+	static IgnoreResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class IgnoreResponse{
 		};
 		List<IgnoreResponse> list = new List();
     data.forEach((item) {
-      list.add(IgnoreResponse.fromJson(item));
+      list.add(IgnoreResponse.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['isIgnored'] = isIgnored;
+			data['ignoreFlags'] = ignoreFlags;
 	}
 }

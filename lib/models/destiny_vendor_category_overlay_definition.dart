@@ -12,7 +12,7 @@ class DestinyVendorCategoryOverlayDefinition{
 		int this.currencyItemHash,
 	);
 
-	static DestinyVendorCategoryOverlayDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorCategoryOverlayDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -31,8 +31,17 @@ class DestinyVendorCategoryOverlayDefinition{
 		};
 		List<DestinyVendorCategoryOverlayDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorCategoryOverlayDefinition.fromJson(item));
+      list.add(DestinyVendorCategoryOverlayDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['choiceDescription'] = choiceDescription;
+			data['description'] = description;
+			data['icon'] = icon;
+			data['title'] = title;
+			data['currencyItemHash'] = currencyItemHash;
 	}
 }

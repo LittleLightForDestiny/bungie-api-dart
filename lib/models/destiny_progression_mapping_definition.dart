@@ -13,7 +13,7 @@ class DestinyProgressionMappingDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyProgressionMappingDefinition fromJson(Map<String, dynamic> data){
+	static DestinyProgressionMappingDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -32,8 +32,17 @@ class DestinyProgressionMappingDefinition{
 		};
 		List<DestinyProgressionMappingDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyProgressionMappingDefinition.fromJson(item));
+      list.add(DestinyProgressionMappingDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['displayUnits'] = displayUnits;
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

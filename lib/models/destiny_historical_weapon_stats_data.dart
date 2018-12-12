@@ -5,7 +5,7 @@ class DestinyHistoricalWeaponStatsData{
 		List<DestinyHistoricalWeaponStats> this.weapons,
 	);
 
-	static DestinyHistoricalWeaponStatsData fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalWeaponStatsData fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyHistoricalWeaponStatsData{
 		};
 		List<DestinyHistoricalWeaponStatsData> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalWeaponStatsData.fromJson(item));
+      list.add(DestinyHistoricalWeaponStatsData.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['weapons'] = weapons.map((item)=>item.toMap());
 	}
 }

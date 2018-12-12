@@ -17,7 +17,7 @@ class GlobalAlert{
 		StreamInfo this.streamInfo,
 	);
 
-	static GlobalAlert fromJson(Map<String, dynamic> data){
+	static GlobalAlert fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,7 +28,7 @@ class GlobalAlert{
 				data['AlertLink'],
 				data['AlertLevel'],
 				data['AlertType'],
-				StreamInfo.fromJson(data['StreamInfo']),
+				StreamInfo.fromMap(data['StreamInfo']),
 		);
 	}
 
@@ -38,8 +38,19 @@ class GlobalAlert{
 		};
 		List<GlobalAlert> list = new List();
     data.forEach((item) {
-      list.add(GlobalAlert.fromJson(item));
+      list.add(GlobalAlert.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['AlertKey'] = alertKey;
+			data['AlertHtml'] = alertHtml;
+			data['AlertTimestamp'] = alertTimestamp;
+			data['AlertLink'] = alertLink;
+			data['AlertLevel'] = alertLevel;
+			data['AlertType'] = alertType;
+			data['StreamInfo'] = streamInfo.toMap();
 	}
 }

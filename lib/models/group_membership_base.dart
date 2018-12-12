@@ -5,12 +5,12 @@ class GroupMembershipBase{
 		GroupV2 this.group,
 	);
 
-	static GroupMembershipBase fromJson(Map<String, dynamic> data){
+	static GroupMembershipBase fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupMembershipBase(
-				GroupV2.fromJson(data['group']),
+				GroupV2.fromMap(data['group']),
 		);
 	}
 
@@ -20,8 +20,13 @@ class GroupMembershipBase{
 		};
 		List<GroupMembershipBase> list = new List();
     data.forEach((item) {
-      list.add(GroupMembershipBase.fromJson(item));
+      list.add(GroupMembershipBase.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['group'] = group.toMap();
 	}
 }

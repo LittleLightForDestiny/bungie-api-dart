@@ -18,7 +18,7 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DictionaryOfuint32AndDestinyPublicMilestoneResponse fromJson(Map<String, dynamic> data){
+    static DictionaryOfuint32AndDestinyPublicMilestoneResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 		};
 		List<DictionaryOfuint32AndDestinyPublicMilestoneResponse> list = new List();
     data.forEach((item) {
-      list.add(DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(item));
+      list.add(DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromMap(item));
     });
     return list;
 	}

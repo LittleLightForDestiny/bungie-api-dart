@@ -18,7 +18,7 @@ class ListOfEntityActionResultResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static ListOfEntityActionResultResponse fromJson(Map<String, dynamic> data){
+    static ListOfEntityActionResultResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -39,7 +39,7 @@ class ListOfEntityActionResultResponse{
 		};
 		List<ListOfEntityActionResultResponse> list = new List();
     data.forEach((item) {
-      list.add(ListOfEntityActionResultResponse.fromJson(item));
+      list.add(ListOfEntityActionResultResponse.fromMap(item));
     });
     return list;
 	}

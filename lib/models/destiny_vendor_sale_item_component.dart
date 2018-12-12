@@ -26,7 +26,7 @@ class DestinyVendorSaleItemComponent{
 		String this.overrideNextRefreshDate,
 	);
 
-	static DestinyVendorSaleItemComponent fromJson(Map<String, dynamic> data){
+	static DestinyVendorSaleItemComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -51,8 +51,23 @@ class DestinyVendorSaleItemComponent{
 		};
 		List<DestinyVendorSaleItemComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorSaleItemComponent.fromJson(item));
+      list.add(DestinyVendorSaleItemComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['vendorItemIndex'] = vendorItemIndex;
+			data['itemHash'] = itemHash;
+			data['overrideStyleItemHash'] = overrideStyleItemHash;
+			data['quantity'] = quantity;
+			data['saleStatus'] = saleStatus;
+			data['costs'] = costs.map((item)=>item.toMap());
+			data['requiredUnlocks'] = requiredUnlocks;
+			data['unlockStatuses'] = unlockStatuses.map((item)=>item.toMap());
+			data['failureIndexes'] = failureIndexes;
+			data['augments'] = augments;
+			data['overrideNextRefreshDate'] = overrideNextRefreshDate;
 	}
 }

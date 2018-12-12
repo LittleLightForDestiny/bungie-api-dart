@@ -7,7 +7,7 @@ class DestinyActivityChallengeDefinition{
 		List<DestinyItemQuantity> this.dummyRewards,
 	);
 
-	static DestinyActivityChallengeDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityChallengeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -23,8 +23,14 @@ class DestinyActivityChallengeDefinition{
 		};
 		List<DestinyActivityChallengeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityChallengeDefinition.fromJson(item));
+      list.add(DestinyActivityChallengeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectiveHash'] = objectiveHash;
+			data['dummyRewards'] = dummyRewards.map((item)=>item.toMap());
 	}
 }

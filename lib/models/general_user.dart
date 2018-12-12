@@ -63,7 +63,7 @@ class GeneralUser{
 		String this.blizzardDisplayName,
 	);
 
-	static GeneralUser fromJson(Map<String, dynamic> data){
+	static GeneralUser fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -81,7 +81,7 @@ class GeneralUser{
 				data['firstAccess'],
 				data['lastUpdate'],
 				data['legacyPortalUID'],
-				UserToUserContext.fromJson(data['context']),
+				UserToUserContext.fromMap(data['context']),
 				data['psnDisplayName'],
 				data['xboxDisplayName'],
 				data['fbDisplayName'],
@@ -107,8 +107,42 @@ class GeneralUser{
 		};
 		List<GeneralUser> list = new List();
     data.forEach((item) {
-      list.add(GeneralUser.fromJson(item));
+      list.add(GeneralUser.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['membershipId'] = membershipId;
+			data['uniqueName'] = uniqueName;
+			data['normalizedName'] = normalizedName;
+			data['displayName'] = displayName;
+			data['profilePicture'] = profilePicture;
+			data['profileTheme'] = profileTheme;
+			data['userTitle'] = userTitle;
+			data['successMessageFlags'] = successMessageFlags;
+			data['isDeleted'] = isDeleted;
+			data['about'] = about;
+			data['firstAccess'] = firstAccess;
+			data['lastUpdate'] = lastUpdate;
+			data['legacyPortalUID'] = legacyPortalUid;
+			data['context'] = context.toMap();
+			data['psnDisplayName'] = psnDisplayName;
+			data['xboxDisplayName'] = xboxDisplayName;
+			data['fbDisplayName'] = fbDisplayName;
+			data['showActivity'] = showActivity;
+			data['locale'] = locale;
+			data['localeInheritDefault'] = localeInheritDefault;
+			data['lastBanReportId'] = lastBanReportId;
+			data['showGroupMessaging'] = showGroupMessaging;
+			data['profilePicturePath'] = profilePicturePath;
+			data['profilePictureWidePath'] = profilePictureWidePath;
+			data['profileThemeName'] = profileThemeName;
+			data['userTitleDisplay'] = userTitleDisplay;
+			data['statusText'] = statusText;
+			data['statusDate'] = statusDate;
+			data['profileBanExpire'] = profileBanExpire;
+			data['blizzardDisplayName'] = blizzardDisplayName;
 	}
 }

@@ -20,7 +20,7 @@ class GroupFeatures{
 		int this.joinLevel,
 	);
 
-	static GroupFeatures fromJson(Map<String, dynamic> data){
+	static GroupFeatures fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -43,8 +43,21 @@ class GroupFeatures{
 		};
 		List<GroupFeatures> list = new List();
     data.forEach((item) {
-      list.add(GroupFeatures.fromJson(item));
+      list.add(GroupFeatures.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['maximumMembers'] = maximumMembers;
+			data['maximumMembershipsOfGroupType'] = maximumMembershipsOfGroupType;
+			data['capabilities'] = capabilities;
+			data['membershipTypes'] = membershipTypes;
+			data['invitePermissionOverride'] = invitePermissionOverride;
+			data['updateCulturePermissionOverride'] = updateCulturePermissionOverride;
+			data['hostGuidedGamePermissionOverride'] = hostGuidedGamePermissionOverride;
+			data['updateBannerPermissionOverride'] = updateBannerPermissionOverride;
+			data['joinLevel'] = joinLevel;
 	}
 }

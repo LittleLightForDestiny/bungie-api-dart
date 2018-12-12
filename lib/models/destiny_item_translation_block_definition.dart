@@ -20,7 +20,7 @@ class DestinyItemTranslationBlockDefinition{
 		bool this.hasGeometry,
 	);
 
-	static DestinyItemTranslationBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemTranslationBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -41,8 +41,19 @@ class DestinyItemTranslationBlockDefinition{
 		};
 		List<DestinyItemTranslationBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemTranslationBlockDefinition.fromJson(item));
+      list.add(DestinyItemTranslationBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['weaponPatternIdentifier'] = weaponPatternIdentifier;
+			data['weaponPatternHash'] = weaponPatternHash;
+			data['defaultDyes'] = defaultDyes.map((item)=>item.toMap());
+			data['lockedDyes'] = lockedDyes.map((item)=>item.toMap());
+			data['customDyes'] = customDyes.map((item)=>item.toMap());
+			data['arrangements'] = arrangements.map((item)=>item.toMap());
+			data['hasGeometry'] = hasGeometry;
 	}
 }

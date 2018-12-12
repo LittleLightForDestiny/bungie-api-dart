@@ -18,12 +18,12 @@ class SaveMessageResultResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static SaveMessageResultResponse fromJson(Map<String, dynamic> data){
+    static SaveMessageResultResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new SaveMessageResultResponse(
-				SaveMessageResult.fromJson(data['Response']),
+				SaveMessageResult.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class SaveMessageResultResponse{
 		};
 		List<SaveMessageResultResponse> list = new List();
     data.forEach((item) {
-      list.add(SaveMessageResultResponse.fromJson(item));
+      list.add(SaveMessageResultResponse.fromMap(item));
     });
     return list;
 	}

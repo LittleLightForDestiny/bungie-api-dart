@@ -5,7 +5,7 @@ class DestinyCharacterPeerView{
 		List<DestinyItemPeerView> this.equipment,
 	);
 
-	static DestinyCharacterPeerView fromJson(Map<String, dynamic> data){
+	static DestinyCharacterPeerView fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -20,8 +20,13 @@ class DestinyCharacterPeerView{
 		};
 		List<DestinyCharacterPeerView> list = new List();
     data.forEach((item) {
-      list.add(DestinyCharacterPeerView.fromJson(item));
+      list.add(DestinyCharacterPeerView.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['equipment'] = equipment.map((item)=>item.toMap());
 	}
 }

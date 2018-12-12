@@ -10,7 +10,7 @@ class DestinyItemObjectivesComponent{
 		String this.dateCompleted,
 	);
 
-	static DestinyItemObjectivesComponent fromJson(Map<String, dynamic> data){
+	static DestinyItemObjectivesComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -27,8 +27,15 @@ class DestinyItemObjectivesComponent{
 		};
 		List<DestinyItemObjectivesComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemObjectivesComponent.fromJson(item));
+      list.add(DestinyItemObjectivesComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['objectives'] = objectives.map((item)=>item.toMap());
+			data['flavorObjective'] = flavorObjective;
+			data['dateCompleted'] = dateCompleted;
 	}
 }

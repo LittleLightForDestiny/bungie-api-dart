@@ -17,7 +17,7 @@ class int64Response{
 		String this.detailedErrorTrace,
 	);
 
-    static int64Response fromJson(Map<String, dynamic> data){
+    static int64Response fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -38,7 +38,7 @@ class int64Response{
 		};
 		List<int64Response> list = new List();
     data.forEach((item) {
-      list.add(int64Response.fromJson(item));
+      list.add(int64Response.fromMap(item));
     });
     return list;
 	}

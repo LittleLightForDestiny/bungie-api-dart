@@ -6,7 +6,7 @@ class CoreSystem{
 		Map<String, dynamic> this.parameters,
 	);
 
-	static CoreSystem fromJson(Map<String, dynamic> data){
+	static CoreSystem fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class CoreSystem{
 		};
 		List<CoreSystem> list = new List();
     data.forEach((item) {
-      list.add(CoreSystem.fromJson(item));
+      list.add(CoreSystem.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['enabled'] = enabled;
+			data['parameters'] = parameters;
 	}
 }

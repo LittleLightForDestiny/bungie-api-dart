@@ -18,12 +18,12 @@ class DestinyEntitySearchResultResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyEntitySearchResultResponse fromJson(Map<String, dynamic> data){
+    static DestinyEntitySearchResultResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyEntitySearchResultResponse(
-				DestinyEntitySearchResult.fromJson(data['Response']),
+				DestinyEntitySearchResult.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyEntitySearchResultResponse{
 		};
 		List<DestinyEntitySearchResultResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyEntitySearchResultResponse.fromJson(item));
+      list.add(DestinyEntitySearchResultResponse.fromMap(item));
     });
     return list;
 	}

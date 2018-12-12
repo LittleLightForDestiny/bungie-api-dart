@@ -6,7 +6,7 @@ class DestinyMilestoneContentItemCategory{
 		List<int> this.itemHashes,
 	);
 
-	static DestinyMilestoneContentItemCategory fromJson(Map<String, dynamic> data){
+	static DestinyMilestoneContentItemCategory fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyMilestoneContentItemCategory{
 		};
 		List<DestinyMilestoneContentItemCategory> list = new List();
     data.forEach((item) {
-      list.add(DestinyMilestoneContentItemCategory.fromJson(item));
+      list.add(DestinyMilestoneContentItemCategory.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['title'] = title;
+			data['itemHashes'] = itemHashes;
 	}
 }

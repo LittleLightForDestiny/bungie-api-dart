@@ -10,7 +10,7 @@ class DestinyRecordCompletionBlock{
 		int this.toastStyle,
 	);
 
-	static DestinyRecordCompletionBlock fromJson(Map<String, dynamic> data){
+	static DestinyRecordCompletionBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class DestinyRecordCompletionBlock{
 		};
 		List<DestinyRecordCompletionBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyRecordCompletionBlock.fromJson(item));
+      list.add(DestinyRecordCompletionBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['partialCompletionObjectiveCountThreshold'] = partialCompletionObjectiveCountThreshold;
+			data['ScoreValue'] = scoreValue;
+			data['shouldFireToast'] = shouldFireToast;
+			data['toastStyle'] = toastStyle;
 	}
 }

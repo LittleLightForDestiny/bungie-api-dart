@@ -10,14 +10,14 @@ class GroupV2ClanInfoAndInvestment{
 		ClanBanner this.clanBannerData,
 	);
 
-	static GroupV2ClanInfoAndInvestment fromJson(Map<String, dynamic> data){
+	static GroupV2ClanInfoAndInvestment fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new GroupV2ClanInfoAndInvestment(
 				data['d2ClanProgressions'],
 				data['clanCallsign'],
-				ClanBanner.fromJson(data['clanBannerData']),
+				ClanBanner.fromMap(data['clanBannerData']),
 		);
 	}
 
@@ -27,8 +27,15 @@ class GroupV2ClanInfoAndInvestment{
 		};
 		List<GroupV2ClanInfoAndInvestment> list = new List();
     data.forEach((item) {
-      list.add(GroupV2ClanInfoAndInvestment.fromJson(item));
+      list.add(GroupV2ClanInfoAndInvestment.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['d2ClanProgressions'] = d2ClanProgressions;
+			data['clanCallsign'] = clanCallsign;
+			data['clanBannerData'] = clanBannerData.toMap();
 	}
 }

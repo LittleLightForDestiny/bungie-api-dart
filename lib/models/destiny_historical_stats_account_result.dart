@@ -11,13 +11,13 @@ class DestinyHistoricalStatsAccountResult{
 		List<DestinyHistoricalStatsPerCharacter> this.characters,
 	);
 
-	static DestinyHistoricalStatsAccountResult fromJson(Map<String, dynamic> data){
+	static DestinyHistoricalStatsAccountResult fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyHistoricalStatsAccountResult(
-				DestinyHistoricalStatsWithMerged.fromJson(data['mergedDeletedCharacters']),
-				DestinyHistoricalStatsWithMerged.fromJson(data['mergedAllCharacters']),
+				DestinyHistoricalStatsWithMerged.fromMap(data['mergedDeletedCharacters']),
+				DestinyHistoricalStatsWithMerged.fromMap(data['mergedAllCharacters']),
 				DestinyHistoricalStatsPerCharacter.fromList(data['characters']),
 		);
 	}
@@ -28,8 +28,15 @@ class DestinyHistoricalStatsAccountResult{
 		};
 		List<DestinyHistoricalStatsAccountResult> list = new List();
     data.forEach((item) {
-      list.add(DestinyHistoricalStatsAccountResult.fromJson(item));
+      list.add(DestinyHistoricalStatsAccountResult.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['mergedDeletedCharacters'] = mergedDeletedCharacters.toMap();
+			data['mergedAllCharacters'] = mergedAllCharacters.toMap();
+			data['characters'] = characters.map((item)=>item.toMap());
 	}
 }

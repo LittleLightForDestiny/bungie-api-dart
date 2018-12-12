@@ -34,7 +34,7 @@ class DestinySocketTypeDefinition{
 		bool this.redacted,
 	);
 
-	static DestinySocketTypeDefinition fromJson(Map<String, dynamic> data){
+	static DestinySocketTypeDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -62,8 +62,26 @@ class DestinySocketTypeDefinition{
 		};
 		List<DestinySocketTypeDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinySocketTypeDefinition.fromJson(item));
+      list.add(DestinySocketTypeDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['displayProperties'] = displayProperties;
+			data['insertAction'] = insertAction;
+			data['plugWhitelist'] = plugWhitelist.map((item)=>item.toMap());
+			data['socketCategoryHash'] = socketCategoryHash;
+			data['visibility'] = visibility;
+			data['alwaysRandomizeSockets'] = alwaysRandomizeSockets;
+			data['isPreviewEnabled'] = isPreviewEnabled;
+			data['hideDuplicateReusablePlugs'] = hideDuplicateReusablePlugs;
+			data['overridesUiAppearance'] = overridesUiAppearance;
+			data['avoidDuplicatesOnInitialization'] = avoidDuplicatesOnInitialization;
+			data['currencyScalars'] = currencyScalars.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

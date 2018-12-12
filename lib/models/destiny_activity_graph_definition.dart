@@ -26,7 +26,7 @@ class DestinyActivityGraphDefinition{
 		bool this.redacted,
 	);
 
-	static DestinyActivityGraphDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -49,8 +49,21 @@ class DestinyActivityGraphDefinition{
 		};
 		List<DestinyActivityGraphDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphDefinition.fromJson(item));
+      list.add(DestinyActivityGraphDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodes'] = nodes.map((item)=>item.toMap());
+			data['artElements'] = artElements.map((item)=>item.toMap());
+			data['connections'] = connections.map((item)=>item.toMap());
+			data['displayObjectives'] = displayObjectives.map((item)=>item.toMap());
+			data['displayProgressions'] = displayProgressions.map((item)=>item.toMap());
+			data['linkedGraphs'] = linkedGraphs.map((item)=>item.toMap());
+			data['hash'] = hash;
+			data['index'] = index;
+			data['redacted'] = redacted;
 	}
 }

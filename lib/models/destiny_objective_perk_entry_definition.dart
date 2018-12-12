@@ -6,7 +6,7 @@ class DestinyObjectivePerkEntryDefinition{
 		int this.style,
 	);
 
-	static DestinyObjectivePerkEntryDefinition fromJson(Map<String, dynamic> data){
+	static DestinyObjectivePerkEntryDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyObjectivePerkEntryDefinition{
 		};
 		List<DestinyObjectivePerkEntryDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyObjectivePerkEntryDefinition.fromJson(item));
+      list.add(DestinyObjectivePerkEntryDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['perkHash'] = perkHash;
+			data['style'] = style;
 	}
 }

@@ -4,7 +4,7 @@ class DestinyTalentNodeExclusiveSetDefinition{
 		List<int> this.nodeIndexes,
 	);
 
-	static DestinyTalentNodeExclusiveSetDefinition fromJson(Map<String, dynamic> data){
+	static DestinyTalentNodeExclusiveSetDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyTalentNodeExclusiveSetDefinition{
 		};
 		List<DestinyTalentNodeExclusiveSetDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNodeExclusiveSetDefinition.fromJson(item));
+      list.add(DestinyTalentNodeExclusiveSetDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['nodeIndexes'] = nodeIndexes;
 	}
 }

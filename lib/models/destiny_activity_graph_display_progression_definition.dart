@@ -6,7 +6,7 @@ class DestinyActivityGraphDisplayProgressionDefinition{
 		int this.progressionHash,
 	);
 
-	static DestinyActivityGraphDisplayProgressionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphDisplayProgressionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -22,8 +22,14 @@ class DestinyActivityGraphDisplayProgressionDefinition{
 		};
 		List<DestinyActivityGraphDisplayProgressionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphDisplayProgressionDefinition.fromJson(item));
+      list.add(DestinyActivityGraphDisplayProgressionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['id'] = id;
+			data['progressionHash'] = progressionHash;
 	}
 }

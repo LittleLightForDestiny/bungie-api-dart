@@ -18,13 +18,13 @@ class FireteamMember{
 		int this.lastPlatformInviteAttemptResult,
 	);
 
-	static FireteamMember fromJson(Map<String, dynamic> data){
+	static FireteamMember fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new FireteamMember(
-				UserInfoCard.fromJson(data['destinyUserInfo']),
-				UserInfoCard.fromJson(data['bungieNetUserInfo']),
+				UserInfoCard.fromMap(data['destinyUserInfo']),
+				UserInfoCard.fromMap(data['bungieNetUserInfo']),
 				data['characterId'],
 				data['dateJoined'],
 				data['hasMicrophone'],
@@ -39,8 +39,19 @@ class FireteamMember{
 		};
 		List<FireteamMember> list = new List();
     data.forEach((item) {
-      list.add(FireteamMember.fromJson(item));
+      list.add(FireteamMember.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['destinyUserInfo'] = destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = bungieNetUserInfo.toMap();
+			data['characterId'] = characterId;
+			data['dateJoined'] = dateJoined;
+			data['hasMicrophone'] = hasMicrophone;
+			data['lastPlatformInviteAttemptDate'] = lastPlatformInviteAttemptDate;
+			data['lastPlatformInviteAttemptResult'] = lastPlatformInviteAttemptResult;
 	}
 }

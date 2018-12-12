@@ -8,7 +8,7 @@ class DestinyPositionDefinition{
 		int this.z,
 	);
 
-	static DestinyPositionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyPositionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -25,8 +25,15 @@ class DestinyPositionDefinition{
 		};
 		List<DestinyPositionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyPositionDefinition.fromJson(item));
+      list.add(DestinyPositionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['x'] = x;
+			data['y'] = y;
+			data['z'] = z;
 	}
 }

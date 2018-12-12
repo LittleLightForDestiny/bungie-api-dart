@@ -20,7 +20,7 @@ class DestinyVendorActionDefinition{
 		bool this.autoPerformAction,
 	);
 
-	static DestinyVendorActionDefinition fromJson(Map<String, dynamic> data){
+	static DestinyVendorActionDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -43,8 +43,21 @@ class DestinyVendorActionDefinition{
 		};
 		List<DestinyVendorActionDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyVendorActionDefinition.fromJson(item));
+      list.add(DestinyVendorActionDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['description'] = description;
+			data['executeSeconds'] = executeSeconds;
+			data['icon'] = icon;
+			data['name'] = name;
+			data['verb'] = verb;
+			data['isPositive'] = isPositive;
+			data['actionId'] = actionId;
+			data['actionHash'] = actionHash;
+			data['autoPerformAction'] = autoPerformAction;
 	}
 }

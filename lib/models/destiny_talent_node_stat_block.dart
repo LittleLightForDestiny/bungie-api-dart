@@ -8,7 +8,7 @@ class DestinyTalentNodeStatBlock{
 		List<DestinyStat> this.nextStepStats,
 	);
 
-	static DestinyTalentNodeStatBlock fromJson(Map<String, dynamic> data){
+	static DestinyTalentNodeStatBlock fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -24,8 +24,14 @@ class DestinyTalentNodeStatBlock{
 		};
 		List<DestinyTalentNodeStatBlock> list = new List();
     data.forEach((item) {
-      list.add(DestinyTalentNodeStatBlock.fromJson(item));
+      list.add(DestinyTalentNodeStatBlock.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['currentStepStats'] = currentStepStats.map((item)=>item.toMap());
+			data['nextStepStats'] = nextStepStats.map((item)=>item.toMap());
 	}
 }

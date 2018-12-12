@@ -18,12 +18,12 @@ class DestinyAggregateActivityResultsResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static DestinyAggregateActivityResultsResponse fromJson(Map<String, dynamic> data){
+    static DestinyAggregateActivityResultsResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyAggregateActivityResultsResponse(
-				DestinyAggregateActivityResults.fromJson(data['Response']),
+				DestinyAggregateActivityResults.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class DestinyAggregateActivityResultsResponse{
 		};
 		List<DestinyAggregateActivityResultsResponse> list = new List();
     data.forEach((item) {
-      list.add(DestinyAggregateActivityResultsResponse.fromJson(item));
+      list.add(DestinyAggregateActivityResultsResponse.fromMap(item));
     });
     return list;
 	}

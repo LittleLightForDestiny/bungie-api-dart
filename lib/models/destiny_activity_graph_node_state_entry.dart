@@ -4,7 +4,7 @@ class DestinyActivityGraphNodeStateEntry{
 		int this.state,
 	);
 
-	static DestinyActivityGraphNodeStateEntry fromJson(Map<String, dynamic> data){
+	static DestinyActivityGraphNodeStateEntry fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -19,8 +19,13 @@ class DestinyActivityGraphNodeStateEntry{
 		};
 		List<DestinyActivityGraphNodeStateEntry> list = new List();
     data.forEach((item) {
-      list.add(DestinyActivityGraphNodeStateEntry.fromJson(item));
+      list.add(DestinyActivityGraphNodeStateEntry.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['state'] = state;
 	}
 }

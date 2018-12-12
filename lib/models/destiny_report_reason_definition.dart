@@ -7,13 +7,13 @@ class DestinyReportReasonDefinition{
 		DestinyDisplayPropertiesDefinition this.displayProperties,
 	);
 
-	static DestinyReportReasonDefinition fromJson(Map<String, dynamic> data){
+	static DestinyReportReasonDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyReportReasonDefinition(
 				data['reasonHash'],
-				DestinyDisplayPropertiesDefinition.fromJson(data['displayProperties']),
+				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
 		);
 	}
 
@@ -23,8 +23,14 @@ class DestinyReportReasonDefinition{
 		};
 		List<DestinyReportReasonDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyReportReasonDefinition.fromJson(item));
+      list.add(DestinyReportReasonDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['reasonHash'] = reasonHash;
+			data['displayProperties'] = displayProperties.toMap();
 	}
 }

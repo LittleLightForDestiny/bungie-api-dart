@@ -5,12 +5,12 @@ class TrendingEntryNews{
 		ContentItemPublicContract this.article,
 	);
 
-	static TrendingEntryNews fromJson(Map<String, dynamic> data){
+	static TrendingEntryNews fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new TrendingEntryNews(
-				ContentItemPublicContract.fromJson(data['article']),
+				ContentItemPublicContract.fromMap(data['article']),
 		);
 	}
 
@@ -20,8 +20,13 @@ class TrendingEntryNews{
 		};
 		List<TrendingEntryNews> list = new List();
     data.forEach((item) {
-      list.add(TrendingEntryNews.fromJson(item));
+      list.add(TrendingEntryNews.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['article'] = article.toMap();
 	}
 }

@@ -18,12 +18,12 @@ class CoreSettingsConfigurationResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static CoreSettingsConfigurationResponse fromJson(Map<String, dynamic> data){
+    static CoreSettingsConfigurationResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new CoreSettingsConfigurationResponse(
-				CoreSettingsConfiguration.fromJson(data['Response']),
+				CoreSettingsConfiguration.fromMap(data['Response']),
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -39,7 +39,7 @@ class CoreSettingsConfigurationResponse{
 		};
 		List<CoreSettingsConfigurationResponse> list = new List();
     data.forEach((item) {
-      list.add(CoreSettingsConfigurationResponse.fromJson(item));
+      list.add(CoreSettingsConfigurationResponse.fromMap(item));
     });
     return list;
 	}

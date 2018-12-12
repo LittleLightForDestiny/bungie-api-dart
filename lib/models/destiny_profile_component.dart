@@ -11,7 +11,7 @@ class DestinyProfileComponent{
 		List<int> this.characterIds,
 	);
 
-	static DestinyProfileComponent fromJson(Map<String, dynamic> data){
+	static DestinyProfileComponent fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -29,8 +29,16 @@ class DestinyProfileComponent{
 		};
 		List<DestinyProfileComponent> list = new List();
     data.forEach((item) {
-      list.add(DestinyProfileComponent.fromJson(item));
+      list.add(DestinyProfileComponent.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['userInfo'] = userInfo;
+			data['dateLastPlayed'] = dateLastPlayed;
+			data['versionsOwned'] = versionsOwned;
+			data['characterIds'] = characterIds;
 	}
 }

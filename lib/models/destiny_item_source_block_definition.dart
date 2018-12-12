@@ -9,7 +9,7 @@ class DestinyItemSourceBlockDefinition{
 		int this.exclusive,
 	);
 
-	static DestinyItemSourceBlockDefinition fromJson(Map<String, dynamic> data){
+	static DestinyItemSourceBlockDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -26,8 +26,15 @@ class DestinyItemSourceBlockDefinition{
 		};
 		List<DestinyItemSourceBlockDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyItemSourceBlockDefinition.fromJson(item));
+      list.add(DestinyItemSourceBlockDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['sourceHashes'] = sourceHashes;
+			data['sources'] = sources.map((item)=>item.toMap());
+			data['exclusive'] = exclusive;
 	}
 }

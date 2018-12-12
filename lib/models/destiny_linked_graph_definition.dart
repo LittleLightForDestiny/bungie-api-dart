@@ -16,14 +16,14 @@ class DestinyLinkedGraphDefinition{
 		String this.overview,
 	);
 
-	static DestinyLinkedGraphDefinition fromJson(Map<String, dynamic> data){
+	static DestinyLinkedGraphDefinition fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
 		return new DestinyLinkedGraphDefinition(
 				data['description'],
 				data['name'],
-				DestinyUnlockExpressionDefinition.fromJson(data['unlockExpression']),
+				DestinyUnlockExpressionDefinition.fromMap(data['unlockExpression']),
 				data['linkedGraphId'],
 				DestinyLinkedGraphEntryDefinition.fromList(data['linkedGraphs']),
 				data['overview'],
@@ -36,8 +36,18 @@ class DestinyLinkedGraphDefinition{
 		};
 		List<DestinyLinkedGraphDefinition> list = new List();
     data.forEach((item) {
-      list.add(DestinyLinkedGraphDefinition.fromJson(item));
+      list.add(DestinyLinkedGraphDefinition.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['description'] = description;
+			data['name'] = name;
+			data['unlockExpression'] = unlockExpression.toMap();
+			data['linkedGraphId'] = linkedGraphId;
+			data['linkedGraphs'] = linkedGraphs.map((item)=>item.toMap());
+			data['overview'] = overview;
 	}
 }

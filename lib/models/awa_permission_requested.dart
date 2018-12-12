@@ -10,7 +10,7 @@ class AwaPermissionRequested{
 		int this.characterId,
 	);
 
-	static AwaPermissionRequested fromJson(Map<String, dynamic> data){
+	static AwaPermissionRequested fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
@@ -28,8 +28,16 @@ class AwaPermissionRequested{
 		};
 		List<AwaPermissionRequested> list = new List();
     data.forEach((item) {
-      list.add(AwaPermissionRequested.fromJson(item));
+      list.add(AwaPermissionRequested.fromMap(item));
     });
     return list;
+	}
+
+	Map<String, dynamic> toMap(){
+		Map<String, dynamic> data = new Map();
+			data['type'] = type;
+			data['affectedItemId'] = affectedItemId;
+			data['membershipType'] = membershipType;
+			data['characterId'] = characterId;
 	}
 }
