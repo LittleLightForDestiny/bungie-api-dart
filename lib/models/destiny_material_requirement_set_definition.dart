@@ -36,7 +36,7 @@ class DestinyMaterialRequirementSetDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['materials'] = this.materials.map((item)=>item.toMap());
+			data['materials'] = this.materials.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

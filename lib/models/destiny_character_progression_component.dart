@@ -49,7 +49,7 @@ class DestinyCharacterProgressionComponent{
 			data['progressions'] = this.progressions;
 			data['factions'] = this.factions;
 			data['milestones'] = this.milestones;
-			data['quests'] = this.quests.map((item)=>item.toMap());
+			data['quests'] = this.quests.map((item)=>item.toMap()).toList();
 			data['uninstancedItemObjectives'] = this.uninstancedItemObjectives;
 			data['checklists'] = this.checklists;
 		return data;

@@ -45,7 +45,7 @@ class DestinyVendorInventoryFlyoutDefinition{
 		Map<String, dynamic> data = new Map();
 			data['lockedDescription'] = this.lockedDescription;
 			data['displayProperties'] = this.displayProperties;
-			data['buckets'] = this.buckets.map((item)=>item.toMap());
+			data['buckets'] = this.buckets.map((item)=>item.toMap()).toList();
 			data['flyoutId'] = this.flyoutId;
 			data['suppressNewness'] = this.suppressNewness;
 			data['equipmentSlotHash'] = this.equipmentSlotHash;

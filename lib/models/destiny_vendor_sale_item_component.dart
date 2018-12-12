@@ -63,9 +63,9 @@ class DestinyVendorSaleItemComponent{
 			data['overrideStyleItemHash'] = this.overrideStyleItemHash;
 			data['quantity'] = this.quantity;
 			data['saleStatus'] = this.saleStatus;
-			data['costs'] = this.costs.map((item)=>item.toMap());
+			data['costs'] = this.costs.map((item)=>item.toMap()).toList();
 			data['requiredUnlocks'] = this.requiredUnlocks;
-			data['unlockStatuses'] = this.unlockStatuses.map((item)=>item.toMap());
+			data['unlockStatuses'] = this.unlockStatuses.map((item)=>item.toMap()).toList();
 			data['failureIndexes'] = this.failureIndexes;
 			data['augments'] = this.augments;
 			data['overrideNextRefreshDate'] = this.overrideNextRefreshDate;

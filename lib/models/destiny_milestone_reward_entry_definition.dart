@@ -45,7 +45,7 @@ class DestinyMilestoneRewardEntryDefinition{
 		Map<String, dynamic> data = new Map();
 			data['rewardEntryHash'] = this.rewardEntryHash;
 			data['rewardEntryIdentifier'] = this.rewardEntryIdentifier;
-			data['items'] = this.items.map((item)=>item.toMap());
+			data['items'] = this.items.map((item)=>item.toMap()).toList();
 			data['vendorHash'] = this.vendorHash;
 			data['displayProperties'] = this.displayProperties;
 			data['order'] = this.order;

@@ -49,9 +49,9 @@ class DestinyActivityGraphNodeDefinition{
 			data['nodeId'] = this.nodeId;
 			data['overrideDisplay'] = this.overrideDisplay;
 			data['position'] = this.position;
-			data['featuringStates'] = this.featuringStates.map((item)=>item.toMap());
-			data['activities'] = this.activities.map((item)=>item.toMap());
-			data['states'] = this.states.map((item)=>item.toMap());
+			data['featuringStates'] = this.featuringStates.map((item)=>item.toMap()).toList();
+			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
+			data['states'] = this.states.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

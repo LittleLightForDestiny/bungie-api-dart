@@ -74,14 +74,14 @@ class DestinyItemPlugDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['insertionRules'] = this.insertionRules.map((item)=>item.toMap());
+			data['insertionRules'] = this.insertionRules.map((item)=>item.toMap()).toList();
 			data['plugCategoryIdentifier'] = this.plugCategoryIdentifier;
 			data['plugCategoryHash'] = this.plugCategoryHash;
 			data['onActionRecreateSelf'] = this.onActionRecreateSelf;
 			data['insertionMaterialRequirementHash'] = this.insertionMaterialRequirementHash;
 			data['previewItemOverrideHash'] = this.previewItemOverrideHash;
 			data['enabledMaterialRequirementHash'] = this.enabledMaterialRequirementHash;
-			data['enabledRules'] = this.enabledRules.map((item)=>item.toMap());
+			data['enabledRules'] = this.enabledRules.map((item)=>item.toMap()).toList();
 			data['uiPlugLabel'] = this.uiPlugLabel;
 			data['plugStyle'] = this.plugStyle;
 			data['isPseudoPlug'] = this.isPseudoPlug;

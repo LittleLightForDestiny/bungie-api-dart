@@ -232,13 +232,13 @@ class DestinyInventoryItemDefinition{
 			data['sockets'] = this.sockets;
 			data['summary'] = this.summary;
 			data['talentGrid'] = this.talentGrid;
-			data['investmentStats'] = this.investmentStats.map((item)=>item.toMap());
-			data['perks'] = this.perks.map((item)=>item.toMap());
+			data['investmentStats'] = this.investmentStats.map((item)=>item.toMap()).toList();
+			data['perks'] = this.perks.map((item)=>item.toMap()).toList();
 			data['loreHash'] = this.loreHash;
 			data['summaryItemHash'] = this.summaryItemHash;
-			data['animations'] = this.animations.map((item)=>item.toMap());
+			data['animations'] = this.animations.map((item)=>item.toMap()).toList();
 			data['allowActions'] = this.allowActions;
-			data['links'] = this.links.map((item)=>item.toMap());
+			data['links'] = this.links.map((item)=>item.toMap()).toList();
 			data['doesPostmasterPullHaveSideEffects'] = this.doesPostmasterPullHaveSideEffects;
 			data['nonTransferrable'] = this.nonTransferrable;
 			data['itemCategoryHashes'] = this.itemCategoryHashes;

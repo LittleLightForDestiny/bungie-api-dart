@@ -43,7 +43,7 @@ class DestinyItemPlugComponent{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['plugItemHash'] = this.plugItemHash;
-			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap());
+			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap()).toList();
 			data['canInsert'] = this.canInsert;
 			data['enabled'] = this.enabled;
 			data['insertFailIndexes'] = this.insertFailIndexes;

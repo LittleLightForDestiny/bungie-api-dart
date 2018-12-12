@@ -39,7 +39,7 @@ class DestinyItemPreviewBlockDefinition{
 			data['screenStyle'] = this.screenStyle;
 			data['previewVendorHash'] = this.previewVendorHash;
 			data['previewActionString'] = this.previewActionString;
-			data['derivedItemCategories'] = this.derivedItemCategories.map((item)=>item.toMap());
+			data['derivedItemCategories'] = this.derivedItemCategories.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

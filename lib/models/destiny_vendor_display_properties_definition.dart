@@ -60,7 +60,7 @@ class DestinyVendorDisplayPropertiesDefinition{
 			data['largeIcon'] = this.largeIcon;
 			data['subtitle'] = this.subtitle;
 			data['originalIcon'] = this.originalIcon;
-			data['requirementsDisplay'] = this.requirementsDisplay.map((item)=>item.toMap());
+			data['requirementsDisplay'] = this.requirementsDisplay.map((item)=>item.toMap()).toList();
 			data['smallTransparentIcon'] = this.smallTransparentIcon;
 			data['mapIcon'] = this.mapIcon;
 			data['largeTransparentIcon'] = this.largeTransparentIcon;

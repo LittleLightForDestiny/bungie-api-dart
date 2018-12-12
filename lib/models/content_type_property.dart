@@ -168,12 +168,12 @@ class ContentTypeProperty{
 			data['visibleOn'] = this.visibleOn;
 			data['datatype'] = this.datatype;
 			data['attributes'] = this.attributes;
-			data['childProperties'] = this.childProperties.map((item)=>item.toMap());
+			data['childProperties'] = this.childProperties.map((item)=>item.toMap()).toList();
 			data['contentTypeAllowed'] = this.contentTypeAllowed;
 			data['bindToProperty'] = this.bindToProperty;
 			data['boundRegex'] = this.boundRegex;
 			data['representationSelection'] = this.representationSelection;
-			data['defaultValues'] = this.defaultValues.map((item)=>item.toMap());
+			data['defaultValues'] = this.defaultValues.map((item)=>item.toMap()).toList();
 			data['isExternalAllowed'] = this.isExternalAllowed;
 			data['propertySection'] = this.propertySection;
 			data['weight'] = this.weight;

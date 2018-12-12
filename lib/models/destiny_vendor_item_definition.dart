@@ -106,10 +106,10 @@ class DestinyVendorItemDefinition{
 			data['itemHash'] = this.itemHash;
 			data['quantity'] = this.quantity;
 			data['failureIndexes'] = this.failureIndexes;
-			data['currencies'] = this.currencies.map((item)=>item.toMap());
+			data['currencies'] = this.currencies.map((item)=>item.toMap()).toList();
 			data['refundPolicy'] = this.refundPolicy;
 			data['refundTimeLimit'] = this.refundTimeLimit;
-			data['creationLevels'] = this.creationLevels.map((item)=>item.toMap());
+			data['creationLevels'] = this.creationLevels.map((item)=>item.toMap()).toList();
 			data['displayCategoryIndex'] = this.displayCategoryIndex;
 			data['categoryIndex'] = this.categoryIndex;
 			data['originalCategoryIndex'] = this.originalCategoryIndex;
@@ -126,7 +126,7 @@ class DestinyVendorItemDefinition{
 			data['sortValue'] = this.sortValue;
 			data['expirationTooltip'] = this.expirationTooltip;
 			data['redirectToSaleIndexes'] = this.redirectToSaleIndexes;
-			data['socketOverrides'] = this.socketOverrides.map((item)=>item.toMap());
+			data['socketOverrides'] = this.socketOverrides.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

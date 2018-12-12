@@ -51,10 +51,10 @@ class DestinyPublicMilestone{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['milestoneHash'] = this.milestoneHash;
-			data['availableQuests'] = this.availableQuests.map((item)=>item.toMap());
-			data['activities'] = this.activities.map((item)=>item.toMap());
+			data['availableQuests'] = this.availableQuests.map((item)=>item.toMap()).toList();
+			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
 			data['vendorHashes'] = this.vendorHashes;
-			data['vendors'] = this.vendors.map((item)=>item.toMap());
+			data['vendors'] = this.vendors.map((item)=>item.toMap()).toList();
 			data['startDate'] = this.startDate;
 			data['endDate'] = this.endDate;
 			data['order'] = this.order;

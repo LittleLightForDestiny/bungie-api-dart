@@ -66,10 +66,10 @@ class DestinyVendorInteractionDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['interactionIndex'] = this.interactionIndex;
-			data['replies'] = this.replies.map((item)=>item.toMap());
+			data['replies'] = this.replies.map((item)=>item.toMap()).toList();
 			data['vendorCategoryIndex'] = this.vendorCategoryIndex;
 			data['questlineItemHash'] = this.questlineItemHash;
-			data['sackInteractionList'] = this.sackInteractionList.map((item)=>item.toMap());
+			data['sackInteractionList'] = this.sackInteractionList.map((item)=>item.toMap()).toList();
 			data['uiInteractionType'] = this.uiInteractionType;
 			data['interactionType'] = this.interactionType;
 			data['rewardBlockLabel'] = this.rewardBlockLabel;

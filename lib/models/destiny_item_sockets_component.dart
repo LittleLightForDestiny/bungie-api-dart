@@ -27,7 +27,7 @@ class DestinyItemSocketsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['sockets'] = this.sockets.map((item)=>item.toMap());
+			data['sockets'] = this.sockets.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

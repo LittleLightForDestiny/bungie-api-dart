@@ -101,10 +101,10 @@ class DestinyMilestoneDefinition{
 			data['quests'] = this.quests;
 			data['rewards'] = this.rewards;
 			data['vendorsDisplayTitle'] = this.vendorsDisplayTitle;
-			data['vendors'] = this.vendors.map((item)=>item.toMap());
+			data['vendors'] = this.vendors.map((item)=>item.toMap()).toList();
 			data['values'] = this.values;
 			data['isInGameMilestone'] = this.isInGameMilestone;
-			data['activities'] = this.activities.map((item)=>item.toMap());
+			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
 			data['defaultOrder'] = this.defaultOrder;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

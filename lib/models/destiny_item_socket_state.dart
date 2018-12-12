@@ -51,8 +51,8 @@ class DestinyItemSocketState{
 			data['isVisible'] = this.isVisible;
 			data['enableFailIndexes'] = this.enableFailIndexes;
 			data['reusablePlugHashes'] = this.reusablePlugHashes;
-			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap());
-			data['reusablePlugs'] = this.reusablePlugs.map((item)=>item.toMap());
+			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap()).toList();
+			data['reusablePlugs'] = this.reusablePlugs.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

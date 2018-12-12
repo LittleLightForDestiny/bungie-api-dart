@@ -57,7 +57,7 @@ class DestinyFactionDefinition{
 			data['tokenValues'] = this.tokenValues;
 			data['rewardItemHash'] = this.rewardItemHash;
 			data['rewardVendorHash'] = this.rewardVendorHash;
-			data['vendors'] = this.vendors.map((item)=>item.toMap());
+			data['vendors'] = this.vendors.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

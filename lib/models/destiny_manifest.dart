@@ -44,7 +44,7 @@ class DestinyManifest{
 		Map<String, dynamic> data = new Map();
 			data['version'] = this.version;
 			data['mobileAssetContentPath'] = this.mobileAssetContentPath;
-			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases.map((item)=>item.toMap());
+			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases.map((item)=>item.toMap()).toList();
 			data['mobileWorldContentPaths'] = this.mobileWorldContentPaths;
 			data['mobileClanBannerDatabasePath'] = this.mobileClanBannerDatabasePath;
 			data['mobileGearCDN'] = this.mobileGearCdn;

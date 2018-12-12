@@ -34,7 +34,7 @@ class DestinyItemObjectivesComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectives'] = this.objectives.map((item)=>item.toMap());
+			data['objectives'] = this.objectives.map((item)=>item.toMap()).toList();
 			data['flavorObjective'] = this.flavorObjective;
 			data['dateCompleted'] = this.dateCompleted;
 		return data;

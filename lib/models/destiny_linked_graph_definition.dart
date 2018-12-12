@@ -47,7 +47,7 @@ class DestinyLinkedGraphDefinition{
 			data['name'] = this.name;
 			data['unlockExpression'] = this.unlockExpression.toMap();
 			data['linkedGraphId'] = this.linkedGraphId;
-			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap());
+			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap()).toList();
 			data['overview'] = this.overview;
 		return data;
 	}

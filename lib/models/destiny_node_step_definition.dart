@@ -94,7 +94,7 @@ class DestinyNodeStepDefinition{
 			data['affectsQuality'] = this.affectsQuality;
 			data['stepGroups'] = this.stepGroups;
 			data['affectsLevel'] = this.affectsLevel;
-			data['socketReplacements'] = this.socketReplacements.map((item)=>item.toMap());
+			data['socketReplacements'] = this.socketReplacements.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

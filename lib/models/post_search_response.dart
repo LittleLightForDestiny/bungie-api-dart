@@ -70,14 +70,14 @@ class PostSearchResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['relatedPosts'] = this.relatedPosts.map((item)=>item.toMap());
-			data['authors'] = this.authors.map((item)=>item.toMap());
-			data['groups'] = this.groups.map((item)=>item.toMap());
-			data['searchedTags'] = this.searchedTags.map((item)=>item.toMap());
-			data['polls'] = this.polls.map((item)=>item.toMap());
-			data['recruitmentDetails'] = this.recruitmentDetails.map((item)=>item.toMap());
+			data['relatedPosts'] = this.relatedPosts.map((item)=>item.toMap()).toList();
+			data['authors'] = this.authors.map((item)=>item.toMap()).toList();
+			data['groups'] = this.groups.map((item)=>item.toMap()).toList();
+			data['searchedTags'] = this.searchedTags.map((item)=>item.toMap()).toList();
+			data['polls'] = this.polls.map((item)=>item.toMap()).toList();
+			data['recruitmentDetails'] = this.recruitmentDetails.map((item)=>item.toMap()).toList();
 			data['availablePages'] = this.availablePages;
-			data['results'] = this.results.map((item)=>item.toMap());
+			data['results'] = this.results.map((item)=>item.toMap()).toList();
 			data['totalResults'] = this.totalResults;
 			data['hasMore'] = this.hasMore;
 			data['query'] = this.query.toMap();

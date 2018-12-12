@@ -50,10 +50,10 @@ class DestinyItemTranslationBlockDefinition{
 		Map<String, dynamic> data = new Map();
 			data['weaponPatternIdentifier'] = this.weaponPatternIdentifier;
 			data['weaponPatternHash'] = this.weaponPatternHash;
-			data['defaultDyes'] = this.defaultDyes.map((item)=>item.toMap());
-			data['lockedDyes'] = this.lockedDyes.map((item)=>item.toMap());
-			data['customDyes'] = this.customDyes.map((item)=>item.toMap());
-			data['arrangements'] = this.arrangements.map((item)=>item.toMap());
+			data['defaultDyes'] = this.defaultDyes.map((item)=>item.toMap()).toList();
+			data['lockedDyes'] = this.lockedDyes.map((item)=>item.toMap()).toList();
+			data['customDyes'] = this.customDyes.map((item)=>item.toMap()).toList();
+			data['arrangements'] = this.arrangements.map((item)=>item.toMap()).toList();
 			data['hasGeometry'] = this.hasGeometry;
 		return data;
 	}

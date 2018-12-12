@@ -31,8 +31,8 @@ class InventoryChangedResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['addedInventoryItems'] = this.addedInventoryItems.map((item)=>item.toMap());
-			data['removedInventoryItems'] = this.removedInventoryItems.map((item)=>item.toMap());
+			data['addedInventoryItems'] = this.addedInventoryItems.map((item)=>item.toMap()).toList();
+			data['removedInventoryItems'] = this.removedInventoryItems.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

@@ -96,22 +96,22 @@ class CoreSettingsConfiguration{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['systems'] = this.systems;
-			data['ignoreReasons'] = this.ignoreReasons.map((item)=>item.toMap());
-			data['forumCategories'] = this.forumCategories.map((item)=>item.toMap());
-			data['groupAvatars'] = this.groupAvatars.map((item)=>item.toMap());
-			data['destinyMembershipTypes'] = this.destinyMembershipTypes.map((item)=>item.toMap());
-			data['recruitmentPlatformTags'] = this.recruitmentPlatformTags.map((item)=>item.toMap());
-			data['recruitmentMiscTags'] = this.recruitmentMiscTags.map((item)=>item.toMap());
-			data['recruitmentActivities'] = this.recruitmentActivities.map((item)=>item.toMap());
-			data['userContentLocales'] = this.userContentLocales.map((item)=>item.toMap());
-			data['systemContentLocales'] = this.systemContentLocales.map((item)=>item.toMap());
-			data['clanBannerDecals'] = this.clanBannerDecals.map((item)=>item.toMap());
-			data['clanBannerDecalColors'] = this.clanBannerDecalColors.map((item)=>item.toMap());
-			data['clanBannerGonfalons'] = this.clanBannerGonfalons.map((item)=>item.toMap());
-			data['clanBannerGonfalonColors'] = this.clanBannerGonfalonColors.map((item)=>item.toMap());
-			data['clanBannerGonfalonDetails'] = this.clanBannerGonfalonDetails.map((item)=>item.toMap());
-			data['clanBannerGonfalonDetailColors'] = this.clanBannerGonfalonDetailColors.map((item)=>item.toMap());
-			data['clanBannerStandards'] = this.clanBannerStandards.map((item)=>item.toMap());
+			data['ignoreReasons'] = this.ignoreReasons.map((item)=>item.toMap()).toList();
+			data['forumCategories'] = this.forumCategories.map((item)=>item.toMap()).toList();
+			data['groupAvatars'] = this.groupAvatars.map((item)=>item.toMap()).toList();
+			data['destinyMembershipTypes'] = this.destinyMembershipTypes.map((item)=>item.toMap()).toList();
+			data['recruitmentPlatformTags'] = this.recruitmentPlatformTags.map((item)=>item.toMap()).toList();
+			data['recruitmentMiscTags'] = this.recruitmentMiscTags.map((item)=>item.toMap()).toList();
+			data['recruitmentActivities'] = this.recruitmentActivities.map((item)=>item.toMap()).toList();
+			data['userContentLocales'] = this.userContentLocales.map((item)=>item.toMap()).toList();
+			data['systemContentLocales'] = this.systemContentLocales.map((item)=>item.toMap()).toList();
+			data['clanBannerDecals'] = this.clanBannerDecals.map((item)=>item.toMap()).toList();
+			data['clanBannerDecalColors'] = this.clanBannerDecalColors.map((item)=>item.toMap()).toList();
+			data['clanBannerGonfalons'] = this.clanBannerGonfalons.map((item)=>item.toMap()).toList();
+			data['clanBannerGonfalonColors'] = this.clanBannerGonfalonColors.map((item)=>item.toMap()).toList();
+			data['clanBannerGonfalonDetails'] = this.clanBannerGonfalonDetails.map((item)=>item.toMap()).toList();
+			data['clanBannerGonfalonDetailColors'] = this.clanBannerGonfalonDetailColors.map((item)=>item.toMap()).toList();
+			data['clanBannerStandards'] = this.clanBannerStandards.map((item)=>item.toMap()).toList();
 			data['destiny2CoreSettings'] = this.destiny2CoreSettings.toMap();
 		return data;
 	}

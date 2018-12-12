@@ -37,7 +37,7 @@ class DestinyHistoricalStatsAccountResult{
 		Map<String, dynamic> data = new Map();
 			data['mergedDeletedCharacters'] = this.mergedDeletedCharacters.toMap();
 			data['mergedAllCharacters'] = this.mergedAllCharacters.toMap();
-			data['characters'] = this.characters.map((item)=>item.toMap());
+			data['characters'] = this.characters.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

@@ -83,7 +83,7 @@ class ContentItemPublicContract{
 			data['author'] = this.author.toMap();
 			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
 			data['properties'] = this.properties;
-			data['representations'] = this.representations.map((item)=>item.toMap());
+			data['representations'] = this.representations.map((item)=>item.toMap()).toList();
 			data['tags'] = this.tags;
 			data['commentSummary'] = this.commentSummary.toMap();
 		return data;

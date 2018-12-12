@@ -30,7 +30,7 @@ class DestinyItemValueBlockDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemValue'] = this.itemValue.map((item)=>item.toMap());
+			data['itemValue'] = this.itemValue.map((item)=>item.toMap()).toList();
 			data['valueDescription'] = this.valueDescription;
 		return data;
 	}

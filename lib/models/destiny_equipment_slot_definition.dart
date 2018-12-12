@@ -53,7 +53,7 @@ class DestinyEquipmentSlotDefinition{
 			data['equipmentCategoryHash'] = this.equipmentCategoryHash;
 			data['bucketTypeHash'] = this.bucketTypeHash;
 			data['applyCustomArtDyes'] = this.applyCustomArtDyes;
-			data['artDyeChannels'] = this.artDyeChannels.map((item)=>item.toMap());
+			data['artDyeChannels'] = this.artDyeChannels.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

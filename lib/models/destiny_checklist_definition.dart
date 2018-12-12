@@ -49,7 +49,7 @@ class DestinyChecklistDefinition{
 			data['displayProperties'] = this.displayProperties.toMap();
 			data['viewActionString'] = this.viewActionString;
 			data['scope'] = this.scope;
-			data['entries'] = this.entries.map((item)=>item.toMap());
+			data['entries'] = this.entries.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

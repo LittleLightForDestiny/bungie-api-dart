@@ -41,7 +41,7 @@ class DestinyMilestoneQuest{
 			data['questItemHash'] = this.questItemHash;
 			data['status'] = this.status;
 			data['activity'] = this.activity;
-			data['challenges'] = this.challenges.map((item)=>item.toMap());
+			data['challenges'] = this.challenges.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

@@ -71,7 +71,7 @@ class Application{
 			data['creationDate'] = this.creationDate;
 			data['statusChanged'] = this.statusChanged;
 			data['firstPublished'] = this.firstPublished;
-			data['team'] = this.team.map((item)=>item.toMap());
+			data['team'] = this.team.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

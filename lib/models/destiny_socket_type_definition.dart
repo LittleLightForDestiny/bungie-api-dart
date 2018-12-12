@@ -71,7 +71,7 @@ class DestinySocketTypeDefinition{
 		Map<String, dynamic> data = new Map();
 			data['displayProperties'] = this.displayProperties;
 			data['insertAction'] = this.insertAction;
-			data['plugWhitelist'] = this.plugWhitelist.map((item)=>item.toMap());
+			data['plugWhitelist'] = this.plugWhitelist.map((item)=>item.toMap()).toList();
 			data['socketCategoryHash'] = this.socketCategoryHash;
 			data['visibility'] = this.visibility;
 			data['alwaysRandomizeSockets'] = this.alwaysRandomizeSockets;
@@ -79,7 +79,7 @@ class DestinySocketTypeDefinition{
 			data['hideDuplicateReusablePlugs'] = this.hideDuplicateReusablePlugs;
 			data['overridesUiAppearance'] = this.overridesUiAppearance;
 			data['avoidDuplicatesOnInitialization'] = this.avoidDuplicatesOnInitialization;
-			data['currencyScalars'] = this.currencyScalars.map((item)=>item.toMap());
+			data['currencyScalars'] = this.currencyScalars.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

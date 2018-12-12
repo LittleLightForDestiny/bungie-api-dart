@@ -51,8 +51,8 @@ class DestinyHistoricalStatsByPeriod{
 			data['allTimeTier1'] = this.allTimeTier1;
 			data['allTimeTier2'] = this.allTimeTier2;
 			data['allTimeTier3'] = this.allTimeTier3;
-			data['daily'] = this.daily.map((item)=>item.toMap());
-			data['monthly'] = this.monthly.map((item)=>item.toMap());
+			data['daily'] = this.daily.map((item)=>item.toMap()).toList();
+			data['monthly'] = this.monthly.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

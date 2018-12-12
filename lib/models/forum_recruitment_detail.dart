@@ -62,7 +62,7 @@ class ForumRecruitmentDetail{
 			data['conversationId'] = this.conversationId;
 			data['playerSlotsTotal'] = this.playerSlotsTotal;
 			data['playerSlotsRemaining'] = this.playerSlotsRemaining;
-			data['Fireteam'] = this.fireteam.map((item)=>item.toMap());
+			data['Fireteam'] = this.fireteam.map((item)=>item.toMap()).toList();
 			data['kickedPlayerIds'] = this.kickedPlayerIds;
 		return data;
 	}

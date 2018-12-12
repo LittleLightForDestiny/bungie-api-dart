@@ -41,7 +41,7 @@ class DestinyPlugSetDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['displayProperties'] = this.displayProperties;
-			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap());
+			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

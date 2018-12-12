@@ -3,3 +3,4 @@ generator/node_modules/
 ts-api/
 generator/build/
 lib/package-lock.json
+.npm-debug.log

@@ -44,7 +44,7 @@ class TagMetadataDefinition{
 		Map<String, dynamic> data = new Map();
 			data['description'] = this.description;
 			data['order'] = this.order;
-			data['items'] = this.items.map((item)=>item.toMap());
+			data['items'] = this.items.map((item)=>item.toMap()).toList();
 			data['datatype'] = this.datatype;
 			data['name'] = this.name;
 			data['isRequired'] = this.isRequired;

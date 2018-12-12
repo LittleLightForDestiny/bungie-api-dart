@@ -44,8 +44,8 @@ class DestinyPostGameCarnageReportData{
 			data['period'] = this.period;
 			data['startingPhaseIndex'] = this.startingPhaseIndex;
 			data['activityDetails'] = this.activityDetails;
-			data['entries'] = this.entries.map((item)=>item.toMap());
-			data['teams'] = this.teams.map((item)=>item.toMap());
+			data['entries'] = this.entries.map((item)=>item.toMap()).toList();
+			data['teams'] = this.teams.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

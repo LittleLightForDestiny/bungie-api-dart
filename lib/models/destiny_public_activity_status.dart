@@ -35,7 +35,7 @@ class DestinyPublicActivityStatus{
 		Map<String, dynamic> data = new Map();
 			data['challengeObjectiveHashes'] = this.challengeObjectiveHashes;
 			data['modifierHashes'] = this.modifierHashes;
-			data['rewardTooltipItems'] = this.rewardTooltipItems.map((item)=>item.toMap());
+			data['rewardTooltipItems'] = this.rewardTooltipItems.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

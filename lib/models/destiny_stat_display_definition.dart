@@ -39,7 +39,7 @@ class DestinyStatDisplayDefinition{
 			data['statHash'] = this.statHash;
 			data['maximumValue'] = this.maximumValue;
 			data['displayAsNumeric'] = this.displayAsNumeric;
-			data['displayInterpolation'] = this.displayInterpolation.map((item)=>item.toMap());
+			data['displayInterpolation'] = this.displayInterpolation.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

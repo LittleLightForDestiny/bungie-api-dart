@@ -35,7 +35,7 @@ class DestinyCharacterRenderComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['customDyes'] = this.customDyes.map((item)=>item.toMap());
+			data['customDyes'] = this.customDyes.map((item)=>item.toMap()).toList();
 			data['customization'] = this.customization;
 			data['peerView'] = this.peerView;
 		return data;

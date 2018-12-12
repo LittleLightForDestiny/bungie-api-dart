@@ -97,8 +97,8 @@ class ContentTypeDescription{
 			data['previewImage'] = this.previewImage;
 			data['priority'] = this.priority;
 			data['reminder'] = this.reminder;
-			data['properties'] = this.properties.map((item)=>item.toMap());
-			data['tagMetadata'] = this.tagMetadata.map((item)=>item.toMap());
+			data['properties'] = this.properties.map((item)=>item.toMap()).toList();
+			data['tagMetadata'] = this.tagMetadata.map((item)=>item.toMap()).toList();
 			data['tagMetadataItems'] = this.tagMetadataItems;
 			data['usageExamples'] = this.usageExamples;
 			data['showInContentEditor'] = this.showInContentEditor;
@@ -109,9 +109,9 @@ class ContentTypeDescription{
 			data['allowComments'] = this.allowComments;
 			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
 			data['bulkUploadable'] = this.bulkUploadable;
-			data['previews'] = this.previews.map((item)=>item.toMap());
+			data['previews'] = this.previews.map((item)=>item.toMap()).toList();
 			data['suppressCmsPath'] = this.suppressCmsPath;
-			data['propertySections'] = this.propertySections.map((item)=>item.toMap());
+			data['propertySections'] = this.propertySections.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

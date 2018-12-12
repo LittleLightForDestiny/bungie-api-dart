@@ -93,7 +93,7 @@ class DestinyTalentNodeDefinition{
 			data['isRandom'] = this.isRandom;
 			data['randomActivationRequirement'] = this.randomActivationRequirement;
 			data['isRandomRepurchasable'] = this.isRandomRepurchasable;
-			data['steps'] = this.steps.map((item)=>item.toMap());
+			data['steps'] = this.steps.map((item)=>item.toMap()).toList();
 			data['exclusiveWithNodeHashes'] = this.exclusiveWithNodeHashes;
 			data['randomStartProgressionBarAtProgression'] = this.randomStartProgressionBarAtProgression;
 			data['layoutIdentifier'] = this.layoutIdentifier;

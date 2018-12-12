@@ -36,8 +36,8 @@ class FireteamResponse{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['Summary'] = this.summary.toMap();
-			data['Members'] = this.members.map((item)=>item.toMap());
-			data['Alternates'] = this.alternates.map((item)=>item.toMap());
+			data['Members'] = this.members.map((item)=>item.toMap()).toList();
+			data['Alternates'] = this.alternates.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

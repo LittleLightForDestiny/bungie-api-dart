@@ -53,7 +53,7 @@ class DestinyQuestStatus{
 		Map<String, dynamic> data = new Map();
 			data['questHash'] = this.questHash;
 			data['stepHash'] = this.stepHash;
-			data['stepObjectives'] = this.stepObjectives.map((item)=>item.toMap());
+			data['stepObjectives'] = this.stepObjectives.map((item)=>item.toMap()).toList();
 			data['tracked'] = this.tracked;
 			data['itemInstanceId'] = this.itemInstanceId;
 			data['completed'] = this.completed;

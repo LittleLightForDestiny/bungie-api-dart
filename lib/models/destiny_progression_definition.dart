@@ -59,7 +59,7 @@ class DestinyProgressionDefinition{
 			data['scope'] = this.scope;
 			data['repeatLastStep'] = this.repeatLastStep;
 			data['source'] = this.source;
-			data['steps'] = this.steps.map((item)=>item.toMap());
+			data['steps'] = this.steps.map((item)=>item.toMap()).toList();
 			data['visible'] = this.visible;
 			data['factionHash'] = this.factionHash;
 			data['hash'] = this.hash;

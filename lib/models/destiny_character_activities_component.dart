@@ -52,7 +52,7 @@ class DestinyCharacterActivitiesComponent{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['dateActivityStarted'] = this.dateActivityStarted;
-			data['availableActivities'] = this.availableActivities.map((item)=>item.toMap());
+			data['availableActivities'] = this.availableActivities.map((item)=>item.toMap()).toList();
 			data['currentActivityHash'] = this.currentActivityHash;
 			data['currentActivityModeHash'] = this.currentActivityModeHash;
 			data['currentActivityModeType'] = this.currentActivityModeType;

@@ -43,7 +43,7 @@ class GroupMembershipSearchResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['results'] = this.results.map((item)=>item.toMap());
+			data['results'] = this.results.map((item)=>item.toMap()).toList();
 			data['totalResults'] = this.totalResults;
 			data['hasMore'] = this.hasMore;
 			data['query'] = this.query.toMap();

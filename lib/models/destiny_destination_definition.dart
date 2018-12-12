@@ -57,9 +57,9 @@ class DestinyDestinationDefinition{
 			data['displayProperties'] = this.displayProperties.toMap();
 			data['placeHash'] = this.placeHash;
 			data['defaultFreeroamActivityHash'] = this.defaultFreeroamActivityHash;
-			data['activityGraphEntries'] = this.activityGraphEntries.map((item)=>item.toMap());
-			data['bubbleSettings'] = this.bubbleSettings.map((item)=>item.toMap());
-			data['bubbles'] = this.bubbles.map((item)=>item.toMap());
+			data['activityGraphEntries'] = this.activityGraphEntries.map((item)=>item.toMap()).toList();
+			data['bubbleSettings'] = this.bubbleSettings.map((item)=>item.toMap()).toList();
+			data['bubbles'] = this.bubbles.map((item)=>item.toMap()).toList();
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

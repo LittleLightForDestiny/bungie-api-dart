@@ -54,12 +54,12 @@ class DestinyItemSocketEntryDefinition{
 		Map<String, dynamic> data = new Map();
 			data['socketTypeHash'] = this.socketTypeHash;
 			data['singleInitialItemHash'] = this.singleInitialItemHash;
-			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap());
+			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap()).toList();
 			data['preventInitializationOnVendorPurchase'] = this.preventInitializationOnVendorPurchase;
 			data['hidePerksInItemTooltip'] = this.hidePerksInItemTooltip;
 			data['plugSources'] = this.plugSources;
 			data['reusablePlugSetHash'] = this.reusablePlugSetHash;
-			data['randomizedPlugItems'] = this.randomizedPlugItems.map((item)=>item.toMap());
+			data['randomizedPlugItems'] = this.randomizedPlugItems.map((item)=>item.toMap()).toList();
 			data['defaultVisible'] = this.defaultVisible;
 		return data;
 	}

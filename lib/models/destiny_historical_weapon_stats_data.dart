@@ -27,7 +27,7 @@ class DestinyHistoricalWeaponStatsData{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['weapons'] = this.weapons.map((item)=>item.toMap());
+			data['weapons'] = this.weapons.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

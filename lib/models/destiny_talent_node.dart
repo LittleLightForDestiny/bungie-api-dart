@@ -60,7 +60,7 @@ class DestinyTalentNode{
 			data['state'] = this.state;
 			data['isActivated'] = this.isActivated;
 			data['stepIndex'] = this.stepIndex;
-			data['materialsToUpgrade'] = this.materialsToUpgrade.map((item)=>item.toMap());
+			data['materialsToUpgrade'] = this.materialsToUpgrade.map((item)=>item.toMap()).toList();
 			data['activationGridLevel'] = this.activationGridLevel;
 			data['progressPercent'] = this.progressPercent;
 			data['hidden'] = this.hidden;

@@ -73,8 +73,8 @@ class DestinyItemActionBlockDefinition{
 			data['overlayScreenName'] = this.overlayScreenName;
 			data['overlayIcon'] = this.overlayIcon;
 			data['requiredCooldownSeconds'] = this.requiredCooldownSeconds;
-			data['requiredItems'] = this.requiredItems.map((item)=>item.toMap());
-			data['progressionRewards'] = this.progressionRewards.map((item)=>item.toMap());
+			data['requiredItems'] = this.requiredItems.map((item)=>item.toMap()).toList();
+			data['progressionRewards'] = this.progressionRewards.map((item)=>item.toMap()).toList();
 			data['actionTypeLabel'] = this.actionTypeLabel;
 			data['requiredLocation'] = this.requiredLocation;
 			data['requiredCooldownHash'] = this.requiredCooldownHash;
