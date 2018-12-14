@@ -4,10 +4,10 @@ class AwaPermissionRequested{
 	int membershipType;
 	String characterId;
 	AwaPermissionRequested(
-		int this.type,
-		String this.affectedItemId,
-		int this.membershipType,
-		String this.characterId,
+		this.type,
+		this.affectedItemId,
+		this.membershipType,
+		this.characterId,
 	);
 
 	static AwaPermissionRequested fromMap(Map<String, dynamic> data){

@@ -16,19 +16,19 @@ class DestinyVendorInteractionDefinition{
 	DestinyDisplayPropertiesDefinition headerDisplayProperties;
 	String instructions;
 	DestinyVendorInteractionDefinition(
-		int this.interactionIndex,
-		List<DestinyVendorInteractionReplyDefinition> this.replies,
-		int this.vendorCategoryIndex,
-		int this.questlineItemHash,
-		List<DestinyVendorInteractionSackEntryDefinition> this.sackInteractionList,
-		int this.uiInteractionType,
-		int this.interactionType,
-		String this.rewardBlockLabel,
-		int this.rewardVendorCategoryIndex,
-		String this.flavorLineOne,
-		String this.flavorLineTwo,
-		DestinyDisplayPropertiesDefinition this.headerDisplayProperties,
-		String this.instructions,
+		this.interactionIndex,
+		this.replies,
+		this.vendorCategoryIndex,
+		this.questlineItemHash,
+		this.sackInteractionList,
+		this.uiInteractionType,
+		this.interactionType,
+		this.rewardBlockLabel,
+		this.rewardVendorCategoryIndex,
+		this.flavorLineOne,
+		this.flavorLineTwo,
+		this.headerDisplayProperties,
+		this.instructions,
 	);
 
 	static DestinyVendorInteractionDefinition fromMap(Map<String, dynamic> data){
@@ -37,17 +37,17 @@ class DestinyVendorInteractionDefinition{
 		};
 		return new DestinyVendorInteractionDefinition(
 				data['interactionIndex'],
-				DestinyVendorInteractionReplyDefinition.fromList(data['replies']),
+				data['replies'] != null ? DestinyVendorInteractionReplyDefinition.fromList(data['replies']) : null,
 				data['vendorCategoryIndex'],
 				data['questlineItemHash'],
-				DestinyVendorInteractionSackEntryDefinition.fromList(data['sackInteractionList']),
+				data['sackInteractionList'] != null ? DestinyVendorInteractionSackEntryDefinition.fromList(data['sackInteractionList']) : null,
 				data['uiInteractionType'],
 				data['interactionType'],
 				data['rewardBlockLabel'],
 				data['rewardVendorCategoryIndex'],
 				data['flavorLineOne'],
 				data['flavorLineTwo'],
-				data['headerDisplayProperties'],
+				data['headerDisplayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['headerDisplayProperties']) : null,
 				data['instructions'],
 		);
 	}

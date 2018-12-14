@@ -2,7 +2,7 @@ import 'destiny_position_definition.dart';
 class DestinyActivityGraphArtElementDefinition{
 	DestinyPositionDefinition position;
 	DestinyActivityGraphArtElementDefinition(
-		DestinyPositionDefinition this.position,
+		this.position,
 	);
 
 	static DestinyActivityGraphArtElementDefinition fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyActivityGraphArtElementDefinition{
 			return null;
 		};
 		return new DestinyActivityGraphArtElementDefinition(
-				data['position'],
+				data['position'] != null ? DestinyPositionDefinition.fromMap(data['position']) : null,
 		);
 	}
 

@@ -7,11 +7,11 @@ class GroupPotentialMember{
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupPotentialMember(
-		int this.potentialStatus,
-		String this.groupId,
-		UserInfoCard this.destinyUserInfo,
-		UserInfoCard this.bungieNetUserInfo,
-		String this.joinDate,
+		this.potentialStatus,
+		this.groupId,
+		this.destinyUserInfo,
+		this.bungieNetUserInfo,
+		this.joinDate,
 	);
 
 	static GroupPotentialMember fromMap(Map<String, dynamic> data){
@@ -21,8 +21,8 @@ class GroupPotentialMember{
 		return new GroupPotentialMember(
 				data['potentialStatus'],
 				data['groupId'],
-				UserInfoCard.fromMap(data['destinyUserInfo']),
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 				data['joinDate'],
 		);
 	}

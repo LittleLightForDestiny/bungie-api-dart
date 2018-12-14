@@ -2,7 +2,7 @@ import 'destiny_vendor_category.dart';
 class DestinyVendorCategoriesComponent{
 	List<DestinyVendorCategory> categories;
 	DestinyVendorCategoriesComponent(
-		List<DestinyVendorCategory> this.categories,
+		this.categories,
 	);
 
 	static DestinyVendorCategoriesComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyVendorCategoriesComponent{
 			return null;
 		};
 		return new DestinyVendorCategoriesComponent(
-				DestinyVendorCategory.fromList(data['categories']),
+				data['categories'] != null ? DestinyVendorCategory.fromList(data['categories']) : null,
 		);
 	}
 

@@ -1,20 +1,20 @@
 import '../models/destiny_leaderboard.dart';
 class DestinyLeaderboardResultsResponse{
-    Map<Map<DestinyLeaderboard, dynamic>, dynamic> response;
+    Map<String, Map<String, DestinyLeaderboard>> response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     DestinyLeaderboardResultsResponse(
-		Map<Map<DestinyLeaderboard, dynamic>, dynamic> this.response,
+		Map<String, Map<String, DestinyLeaderboard>> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class DestinyLeaderboardResultsResponse{
 			return null;
 		};
 		return new DestinyLeaderboardResultsResponse(
-				data['Response'],
+				data['Response'] != null ? Map<String, Map<String, DestinyLeaderboard>>.from(data['Response'].map((k, v)=>MapEntry(k, Map<String, DestinyLeaderboard>.from(v.map((k, v)=>MapEntry(k, DestinyLeaderboard.fromMap(v))))))) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

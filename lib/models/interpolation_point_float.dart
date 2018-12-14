@@ -1,9 +1,9 @@
 class InterpolationPointFloat{
-	int value;
-	int weight;
+	double value;
+	double weight;
 	InterpolationPointFloat(
-		int this.value,
-		int this.weight,
+		this.value,
+		this.weight,
 	);
 
 	static InterpolationPointFloat fromMap(Map<String, dynamic> data){

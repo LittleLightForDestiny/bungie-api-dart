@@ -1,7 +1,7 @@
 class DestinyVendorGroupReference{
 	int vendorGroupHash;
 	DestinyVendorGroupReference(
-		int this.vendorGroupHash,
+		this.vendorGroupHash,
 	);
 
 	static DestinyVendorGroupReference fromMap(Map<String, dynamic> data){

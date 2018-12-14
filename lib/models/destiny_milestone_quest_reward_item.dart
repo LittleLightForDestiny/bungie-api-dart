@@ -5,11 +5,11 @@ class DestinyMilestoneQuestRewardItem{
 	String itemInstanceId;
 	int quantity;
 	DestinyMilestoneQuestRewardItem(
-		int this.vendorHash,
-		int this.vendorItemIndex,
-		int this.itemHash,
-		String this.itemInstanceId,
-		int this.quantity,
+		this.vendorHash,
+		this.vendorItemIndex,
+		this.itemHash,
+		this.itemInstanceId,
+		this.quantity,
 	);
 
 	static DestinyMilestoneQuestRewardItem fromMap(Map<String, dynamic> data){

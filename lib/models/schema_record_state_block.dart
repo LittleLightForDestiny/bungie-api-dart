@@ -2,8 +2,8 @@ class SchemaRecordStateBlock{
 	int featuredPriority;
 	String obscuredString;
 	SchemaRecordStateBlock(
-		int this.featuredPriority,
-		String this.obscuredString,
+		this.featuredPriority,
+		this.obscuredString,
 	);
 
 	static SchemaRecordStateBlock fromMap(Map<String, dynamic> data){

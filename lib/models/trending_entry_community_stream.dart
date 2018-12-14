@@ -4,10 +4,10 @@ class TrendingEntryCommunityStream{
 	String partnershipIdentifier;
 	int partnershipType;
 	TrendingEntryCommunityStream(
-		String this.image,
-		String this.title,
-		String this.partnershipIdentifier,
-		int this.partnershipType,
+		this.image,
+		this.title,
+		this.partnershipIdentifier,
+		this.partnershipType,
 	);
 
 	static TrendingEntryCommunityStream fromMap(Map<String, dynamic> data){

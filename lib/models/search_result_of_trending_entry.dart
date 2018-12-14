@@ -8,12 +8,12 @@ class SearchResultOfTrendingEntry{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	SearchResultOfTrendingEntry(
-		List<TrendingEntry> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static SearchResultOfTrendingEntry fromMap(Map<String, dynamic> data){
@@ -21,10 +21,10 @@ class SearchResultOfTrendingEntry{
 			return null;
 		};
 		return new SearchResultOfTrendingEntry(
-				TrendingEntry.fromList(data['results']),
+				data['results'] != null ? TrendingEntry.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

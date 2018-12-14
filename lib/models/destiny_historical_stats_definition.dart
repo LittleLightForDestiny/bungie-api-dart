@@ -14,20 +14,20 @@ class DestinyHistoricalStatsDefinition{
 	int weight;
 	int medalTierHash;
 	DestinyHistoricalStatsDefinition(
-		String this.statId,
-		int this.group,
-		List<int> this.periodTypes,
-		List<int> this.modes,
-		int this.category,
-		String this.statName,
-		String this.statNameAbbr,
-		String this.statDescription,
-		int this.unitType,
-		String this.iconImage,
-		int this.mergeMethod,
-		String this.unitLabel,
-		int this.weight,
-		int this.medalTierHash,
+		this.statId,
+		this.group,
+		this.periodTypes,
+		this.modes,
+		this.category,
+		this.statName,
+		this.statNameAbbr,
+		this.statDescription,
+		this.unitType,
+		this.iconImage,
+		this.mergeMethod,
+		this.unitLabel,
+		this.weight,
+		this.medalTierHash,
 	);
 
 	static DestinyHistoricalStatsDefinition fromMap(Map<String, dynamic> data){

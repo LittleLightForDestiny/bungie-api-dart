@@ -2,7 +2,7 @@ import 'destiny_perk_reference.dart';
 class DestinyItemPerksComponent{
 	List<DestinyPerkReference> perks;
 	DestinyItemPerksComponent(
-		List<DestinyPerkReference> this.perks,
+		this.perks,
 	);
 
 	static DestinyItemPerksComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyItemPerksComponent{
 			return null;
 		};
 		return new DestinyItemPerksComponent(
-				DestinyPerkReference.fromList(data['perks']),
+				data['perks'] != null ? DestinyPerkReference.fromList(data['perks']) : null,
 		);
 	}
 

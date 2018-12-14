@@ -2,8 +2,8 @@ class DestinyGearArtArrangementReference{
 	int classHash;
 	int artArrangementHash;
 	DestinyGearArtArrangementReference(
-		int this.classHash,
-		int this.artArrangementHash,
+		this.classHash,
+		this.artArrangementHash,
 	);
 
 	static DestinyGearArtArrangementReference fromMap(Map<String, dynamic> data){

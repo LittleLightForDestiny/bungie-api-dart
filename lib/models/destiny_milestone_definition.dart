@@ -14,11 +14,11 @@ class DestinyMilestoneDefinition{
 	bool showInMilestones;
 	bool explorePrioritizesActivityImage;
 	bool hasPredictableDates;
-	Map<DestinyMilestoneQuestDefinition, dynamic> quests;
-	Map<DestinyMilestoneRewardCategoryDefinition, dynamic> rewards;
+	Map<String, DestinyMilestoneQuestDefinition> quests;
+	Map<String, DestinyMilestoneRewardCategoryDefinition> rewards;
 	String vendorsDisplayTitle;
 	List<DestinyMilestoneVendorDefinition> vendors;
-	Map<DestinyMilestoneValueDefinition, dynamic> values;
+	Map<String, DestinyMilestoneValueDefinition> values;
 	bool isInGameMilestone;
 	List<DestinyMilestoneChallengeActivityDefinition> activities;
 	int defaultOrder;
@@ -26,26 +26,26 @@ class DestinyMilestoneDefinition{
 	int index;
 	bool redacted;
 	DestinyMilestoneDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.image,
-		int this.milestoneType,
-		bool this.recruitable,
-		String this.friendlyName,
-		bool this.showInExplorer,
-		bool this.showInMilestones,
-		bool this.explorePrioritizesActivityImage,
-		bool this.hasPredictableDates,
-		Map<DestinyMilestoneQuestDefinition, dynamic> this.quests,
-		Map<DestinyMilestoneRewardCategoryDefinition, dynamic> this.rewards,
-		String this.vendorsDisplayTitle,
-		List<DestinyMilestoneVendorDefinition> this.vendors,
-		Map<DestinyMilestoneValueDefinition, dynamic> this.values,
-		bool this.isInGameMilestone,
-		List<DestinyMilestoneChallengeActivityDefinition> this.activities,
-		int this.defaultOrder,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.image,
+		this.milestoneType,
+		this.recruitable,
+		this.friendlyName,
+		this.showInExplorer,
+		this.showInMilestones,
+		this.explorePrioritizesActivityImage,
+		this.hasPredictableDates,
+		this.quests,
+		this.rewards,
+		this.vendorsDisplayTitle,
+		this.vendors,
+		this.values,
+		this.isInGameMilestone,
+		this.activities,
+		this.defaultOrder,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyMilestoneDefinition fromMap(Map<String, dynamic> data){
@@ -53,7 +53,7 @@ class DestinyMilestoneDefinition{
 			return null;
 		};
 		return new DestinyMilestoneDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['image'],
 				data['milestoneType'],
 				data['recruitable'],
@@ -62,13 +62,13 @@ class DestinyMilestoneDefinition{
 				data['showInMilestones'],
 				data['explorePrioritizesActivityImage'],
 				data['hasPredictableDates'],
-				data['quests'],
-				data['rewards'],
+				data['quests'] != null ? Map<String, DestinyMilestoneQuestDefinition>.from(data['quests'].map((k, v)=>MapEntry(k, DestinyMilestoneQuestDefinition.fromMap(v)))) : null,
+				data['rewards'] != null ? Map<String, DestinyMilestoneRewardCategoryDefinition>.from(data['rewards'].map((k, v)=>MapEntry(k, DestinyMilestoneRewardCategoryDefinition.fromMap(v)))) : null,
 				data['vendorsDisplayTitle'],
-				DestinyMilestoneVendorDefinition.fromList(data['vendors']),
-				data['values'],
+				data['vendors'] != null ? DestinyMilestoneVendorDefinition.fromList(data['vendors']) : null,
+				data['values'] != null ? Map<String, DestinyMilestoneValueDefinition>.from(data['values'].map((k, v)=>MapEntry(k, DestinyMilestoneValueDefinition.fromMap(v)))) : null,
 				data['isInGameMilestone'],
-				DestinyMilestoneChallengeActivityDefinition.fromList(data['activities']),
+				data['activities'] != null ? DestinyMilestoneChallengeActivityDefinition.fromList(data['activities']) : null,
 				data['defaultOrder'],
 				data['hash'],
 				data['index'],

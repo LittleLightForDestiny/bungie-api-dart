@@ -1,7 +1,7 @@
 class DestinyMilestoneChallengeDefinition{
 	int challengeObjectiveHash;
 	DestinyMilestoneChallengeDefinition(
-		int this.challengeObjectiveHash,
+		this.challengeObjectiveHash,
 	);
 
 	static DestinyMilestoneChallengeDefinition fromMap(Map<String, dynamic> data){

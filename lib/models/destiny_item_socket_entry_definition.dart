@@ -11,15 +11,15 @@ class DestinyItemSocketEntryDefinition{
 	List<DestinyItemSocketEntryPlugItemRandomizedDefinition> randomizedPlugItems;
 	bool defaultVisible;
 	DestinyItemSocketEntryDefinition(
-		int this.socketTypeHash,
-		int this.singleInitialItemHash,
-		List<DestinyItemSocketEntryPlugItemDefinition> this.reusablePlugItems,
-		bool this.preventInitializationOnVendorPurchase,
-		bool this.hidePerksInItemTooltip,
-		int this.plugSources,
-		int this.reusablePlugSetHash,
-		List<DestinyItemSocketEntryPlugItemRandomizedDefinition> this.randomizedPlugItems,
-		bool this.defaultVisible,
+		this.socketTypeHash,
+		this.singleInitialItemHash,
+		this.reusablePlugItems,
+		this.preventInitializationOnVendorPurchase,
+		this.hidePerksInItemTooltip,
+		this.plugSources,
+		this.reusablePlugSetHash,
+		this.randomizedPlugItems,
+		this.defaultVisible,
 	);
 
 	static DestinyItemSocketEntryDefinition fromMap(Map<String, dynamic> data){
@@ -29,12 +29,12 @@ class DestinyItemSocketEntryDefinition{
 		return new DestinyItemSocketEntryDefinition(
 				data['socketTypeHash'],
 				data['singleInitialItemHash'],
-				DestinyItemSocketEntryPlugItemDefinition.fromList(data['reusablePlugItems']),
+				data['reusablePlugItems'] != null ? DestinyItemSocketEntryPlugItemDefinition.fromList(data['reusablePlugItems']) : null,
 				data['preventInitializationOnVendorPurchase'],
 				data['hidePerksInItemTooltip'],
 				data['plugSources'],
 				data['reusablePlugSetHash'],
-				DestinyItemSocketEntryPlugItemRandomizedDefinition.fromList(data['randomizedPlugItems']),
+				data['randomizedPlugItems'] != null ? DestinyItemSocketEntryPlugItemRandomizedDefinition.fromList(data['randomizedPlugItems']) : null,
 				data['defaultVisible'],
 		);
 	}

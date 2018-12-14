@@ -13,18 +13,18 @@ class DestinyInventoryBucketDefinition{
 	int index;
 	bool redacted;
 	DestinyInventoryBucketDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.scope,
-		int this.category,
-		int this.bucketOrder,
-		int this.itemCount,
-		int this.location,
-		bool this.hasTransferDestination,
-		bool this.enabled,
-		bool this.fifo,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.scope,
+		this.category,
+		this.bucketOrder,
+		this.itemCount,
+		this.location,
+		this.hasTransferDestination,
+		this.enabled,
+		this.fifo,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyInventoryBucketDefinition fromMap(Map<String, dynamic> data){
@@ -32,7 +32,7 @@ class DestinyInventoryBucketDefinition{
 			return null;
 		};
 		return new DestinyInventoryBucketDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['scope'],
 				data['category'],
 				data['bucketOrder'],

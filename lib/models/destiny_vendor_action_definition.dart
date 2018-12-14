@@ -9,15 +9,15 @@ class DestinyVendorActionDefinition{
 	int actionHash;
 	bool autoPerformAction;
 	DestinyVendorActionDefinition(
-		String this.description,
-		int this.executeSeconds,
-		String this.icon,
-		String this.name,
-		String this.verb,
-		bool this.isPositive,
-		String this.actionId,
-		int this.actionHash,
-		bool this.autoPerformAction,
+		this.description,
+		this.executeSeconds,
+		this.icon,
+		this.name,
+		this.verb,
+		this.isPositive,
+		this.actionId,
+		this.actionHash,
+		this.autoPerformAction,
 	);
 
 	static DestinyVendorActionDefinition fromMap(Map<String, dynamic> data){

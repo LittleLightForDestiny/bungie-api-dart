@@ -6,12 +6,12 @@ class DestinyItemQualityBlockDefinition{
 	List<int> infusionCategoryHashes;
 	int progressionLevelRequirementHash;
 	DestinyItemQualityBlockDefinition(
-		List<int> this.itemLevels,
-		int this.qualityLevel,
-		String this.infusionCategoryName,
-		int this.infusionCategoryHash,
-		List<int> this.infusionCategoryHashes,
-		int this.progressionLevelRequirementHash,
+		this.itemLevels,
+		this.qualityLevel,
+		this.infusionCategoryName,
+		this.infusionCategoryHash,
+		this.infusionCategoryHashes,
+		this.progressionLevelRequirementHash,
 	);
 
 	static DestinyItemQualityBlockDefinition fromMap(Map<String, dynamic> data){
@@ -19,11 +19,11 @@ class DestinyItemQualityBlockDefinition{
 			return null;
 		};
 		return new DestinyItemQualityBlockDefinition(
-				data['itemLevels'],
+				data['itemLevels'] != null ? data['itemLevels']?.cast<int>() ?? null : null,
 				data['qualityLevel'],
 				data['infusionCategoryName'],
 				data['infusionCategoryHash'],
-				data['infusionCategoryHashes'],
+				data['infusionCategoryHashes'] != null ? data['infusionCategoryHashes']?.cast<int>() ?? null : null,
 				data['progressionLevelRequirementHash'],
 		);
 	}

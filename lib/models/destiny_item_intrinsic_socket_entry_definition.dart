@@ -3,9 +3,9 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 	int socketTypeHash;
 	bool defaultVisible;
 	DestinyItemIntrinsicSocketEntryDefinition(
-		int this.plugItemHash,
-		int this.socketTypeHash,
-		bool this.defaultVisible,
+		this.plugItemHash,
+		this.socketTypeHash,
+		this.defaultVisible,
 	);
 
 	static DestinyItemIntrinsicSocketEntryDefinition fromMap(Map<String, dynamic> data){

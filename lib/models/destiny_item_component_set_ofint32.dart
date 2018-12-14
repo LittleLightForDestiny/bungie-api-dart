@@ -16,14 +16,14 @@ class DestinyItemComponentSetOfint32{
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
 	DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent objectives;
 	DestinyItemComponentSetOfint32(
-		DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent this.instances,
-		DictionaryComponentResponseOfint32AndDestinyItemPerksComponent this.perks,
-		DictionaryComponentResponseOfint32AndDestinyItemRenderComponent this.renderData,
-		DictionaryComponentResponseOfint32AndDestinyItemStatsComponent this.stats,
-		DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent this.sockets,
-		DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent this.talentGrids,
-		DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent this.plugStates,
-		DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent this.objectives,
+		this.instances,
+		this.perks,
+		this.renderData,
+		this.stats,
+		this.sockets,
+		this.talentGrids,
+		this.plugStates,
+		this.objectives,
 	);
 
 	static DestinyItemComponentSetOfint32 fromMap(Map<String, dynamic> data){
@@ -31,14 +31,14 @@ class DestinyItemComponentSetOfint32{
 			return null;
 		};
 		return new DestinyItemComponentSetOfint32(
-				DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent.fromMap(data['instances']),
-				DictionaryComponentResponseOfint32AndDestinyItemPerksComponent.fromMap(data['perks']),
-				DictionaryComponentResponseOfint32AndDestinyItemRenderComponent.fromMap(data['renderData']),
-				DictionaryComponentResponseOfint32AndDestinyItemStatsComponent.fromMap(data['stats']),
-				DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent.fromMap(data['sockets']),
-				DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent.fromMap(data['talentGrids']),
-				DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromMap(data['plugStates']),
-				DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']),
+				data['instances'] != null ? DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent.fromMap(data['instances']) : null,
+				data['perks'] != null ? DictionaryComponentResponseOfint32AndDestinyItemPerksComponent.fromMap(data['perks']) : null,
+				data['renderData'] != null ? DictionaryComponentResponseOfint32AndDestinyItemRenderComponent.fromMap(data['renderData']) : null,
+				data['stats'] != null ? DictionaryComponentResponseOfint32AndDestinyItemStatsComponent.fromMap(data['stats']) : null,
+				data['sockets'] != null ? DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent.fromMap(data['sockets']) : null,
+				data['talentGrids'] != null ? DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent.fromMap(data['talentGrids']) : null,
+				data['plugStates'] != null ? DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromMap(data['plugStates']) : null,
+				data['objectives'] != null ? DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
 		);
 	}
 

@@ -9,13 +9,13 @@ class DestinyItemSocketState{
 	List<DestinyObjectiveProgress> plugObjectives;
 	List<DestinyItemPlug> reusablePlugs;
 	DestinyItemSocketState(
-		int this.plugHash,
-		bool this.isEnabled,
-		bool this.isVisible,
-		List<int> this.enableFailIndexes,
-		List<int> this.reusablePlugHashes,
-		List<DestinyObjectiveProgress> this.plugObjectives,
-		List<DestinyItemPlug> this.reusablePlugs,
+		this.plugHash,
+		this.isEnabled,
+		this.isVisible,
+		this.enableFailIndexes,
+		this.reusablePlugHashes,
+		this.plugObjectives,
+		this.reusablePlugs,
 	);
 
 	static DestinyItemSocketState fromMap(Map<String, dynamic> data){
@@ -26,10 +26,10 @@ class DestinyItemSocketState{
 				data['plugHash'],
 				data['isEnabled'],
 				data['isVisible'],
-				data['enableFailIndexes'],
-				data['reusablePlugHashes'],
-				DestinyObjectiveProgress.fromList(data['plugObjectives']),
-				DestinyItemPlug.fromList(data['reusablePlugs']),
+				data['enableFailIndexes'] != null ? data['enableFailIndexes']?.cast<int>() ?? null : null,
+				data['reusablePlugHashes'] != null ? data['reusablePlugHashes']?.cast<int>() ?? null : null,
+				data['plugObjectives'] != null ? DestinyObjectiveProgress.fromList(data['plugObjectives']) : null,
+				data['reusablePlugs'] != null ? DestinyItemPlug.fromList(data['reusablePlugs']) : null,
 		);
 	}
 

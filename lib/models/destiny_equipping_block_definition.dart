@@ -7,13 +7,13 @@ class DestinyEquippingBlockDefinition{
 	int ammoType;
 	List<String> displayStrings;
 	DestinyEquippingBlockDefinition(
-		int this.gearsetItemHash,
-		String this.uniqueLabel,
-		int this.uniqueLabelHash,
-		int this.equipmentSlotTypeHash,
-		int this.attributes,
-		int this.ammoType,
-		List<String> this.displayStrings,
+		this.gearsetItemHash,
+		this.uniqueLabel,
+		this.uniqueLabelHash,
+		this.equipmentSlotTypeHash,
+		this.attributes,
+		this.ammoType,
+		this.displayStrings,
 	);
 
 	static DestinyEquippingBlockDefinition fromMap(Map<String, dynamic> data){
@@ -27,7 +27,7 @@ class DestinyEquippingBlockDefinition{
 				data['equipmentSlotTypeHash'],
 				data['attributes'],
 				data['ammoType'],
-				data['displayStrings'],
+				data['displayStrings'] != null ? data['displayStrings']?.cast<String>() ?? null : null,
 		);
 	}
 

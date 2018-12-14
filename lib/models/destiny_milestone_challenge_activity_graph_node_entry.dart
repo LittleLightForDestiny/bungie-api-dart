@@ -2,8 +2,8 @@ class DestinyMilestoneChallengeActivityGraphNodeEntry{
 	int activityGraphHash;
 	int activityGraphNodeHash;
 	DestinyMilestoneChallengeActivityGraphNodeEntry(
-		int this.activityGraphHash,
-		int this.activityGraphNodeHash,
+		this.activityGraphHash,
+		this.activityGraphNodeHash,
 	);
 
 	static DestinyMilestoneChallengeActivityGraphNodeEntry fromMap(Map<String, dynamic> data){

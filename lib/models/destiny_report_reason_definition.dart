@@ -3,8 +3,8 @@ class DestinyReportReasonDefinition{
 	int reasonHash;
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyReportReasonDefinition(
-		int this.reasonHash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
+		this.reasonHash,
+		this.displayProperties,
 	);
 
 	static DestinyReportReasonDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyReportReasonDefinition{
 		};
 		return new DestinyReportReasonDefinition(
 				data['reasonHash'],
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 		);
 	}
 

@@ -6,9 +6,9 @@ class FireteamResponse{
 	List<FireteamMember> members;
 	List<FireteamMember> alternates;
 	FireteamResponse(
-		FireteamSummary this.summary,
-		List<FireteamMember> this.members,
-		List<FireteamMember> this.alternates,
+		this.summary,
+		this.members,
+		this.alternates,
 	);
 
 	static FireteamResponse fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class FireteamResponse{
 			return null;
 		};
 		return new FireteamResponse(
-				FireteamSummary.fromMap(data['Summary']),
-				FireteamMember.fromList(data['Members']),
-				FireteamMember.fromList(data['Alternates']),
+				data['Summary'] != null ? FireteamSummary.fromMap(data['Summary']) : null,
+				data['Members'] != null ? FireteamMember.fromList(data['Members']) : null,
+				data['Alternates'] != null ? FireteamMember.fromList(data['Alternates']) : null,
 		);
 	}
 

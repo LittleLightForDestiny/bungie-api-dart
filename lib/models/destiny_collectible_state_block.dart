@@ -3,8 +3,8 @@ class DestinyCollectibleStateBlock{
 	int obscuredOverrideItemHash;
 	DestinyPresentationNodeRequirementsBlock requirements;
 	DestinyCollectibleStateBlock(
-		int this.obscuredOverrideItemHash,
-		DestinyPresentationNodeRequirementsBlock this.requirements,
+		this.obscuredOverrideItemHash,
+		this.requirements,
 	);
 
 	static DestinyCollectibleStateBlock fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyCollectibleStateBlock{
 		};
 		return new DestinyCollectibleStateBlock(
 				data['obscuredOverrideItemHash'],
-				DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']),
+				data['requirements'] != null ? DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']) : null,
 		);
 	}
 

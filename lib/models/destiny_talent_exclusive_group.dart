@@ -5,11 +5,11 @@ class DestinyTalentExclusiveGroup{
 	List<int> opposingGroupHashes;
 	List<int> opposingNodeHashes;
 	DestinyTalentExclusiveGroup(
-		int this.groupHash,
-		int this.loreHash,
-		List<int> this.nodeHashes,
-		List<int> this.opposingGroupHashes,
-		List<int> this.opposingNodeHashes,
+		this.groupHash,
+		this.loreHash,
+		this.nodeHashes,
+		this.opposingGroupHashes,
+		this.opposingNodeHashes,
 	);
 
 	static DestinyTalentExclusiveGroup fromMap(Map<String, dynamic> data){
@@ -19,9 +19,9 @@ class DestinyTalentExclusiveGroup{
 		return new DestinyTalentExclusiveGroup(
 				data['groupHash'],
 				data['loreHash'],
-				data['nodeHashes'],
-				data['opposingGroupHashes'],
-				data['opposingNodeHashes'],
+				data['nodeHashes'] != null ? data['nodeHashes']?.cast<int>() ?? null : null,
+				data['opposingGroupHashes'] != null ? data['opposingGroupHashes']?.cast<int>() ?? null : null,
+				data['opposingNodeHashes'] != null ? data['opposingNodeHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

@@ -3,8 +3,8 @@ class DestinyMilestoneRewardCategory{
 	int rewardCategoryHash;
 	List<DestinyMilestoneRewardEntry> entries;
 	DestinyMilestoneRewardCategory(
-		int this.rewardCategoryHash,
-		List<DestinyMilestoneRewardEntry> this.entries,
+		this.rewardCategoryHash,
+		this.entries,
 	);
 
 	static DestinyMilestoneRewardCategory fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyMilestoneRewardCategory{
 		};
 		return new DestinyMilestoneRewardCategory(
 				data['rewardCategoryHash'],
-				DestinyMilestoneRewardEntry.fromList(data['entries']),
+				data['entries'] != null ? DestinyMilestoneRewardEntry.fromList(data['entries']) : null,
 		);
 	}
 

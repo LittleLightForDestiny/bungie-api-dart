@@ -6,9 +6,9 @@ class DestinyCharacterRenderComponent{
 	DestinyCharacterCustomization customization;
 	DestinyCharacterPeerView peerView;
 	DestinyCharacterRenderComponent(
-		List<DyeReference> this.customDyes,
-		DestinyCharacterCustomization this.customization,
-		DestinyCharacterPeerView this.peerView,
+		this.customDyes,
+		this.customization,
+		this.peerView,
 	);
 
 	static DestinyCharacterRenderComponent fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class DestinyCharacterRenderComponent{
 			return null;
 		};
 		return new DestinyCharacterRenderComponent(
-				DyeReference.fromList(data['customDyes']),
-				data['customization'],
-				data['peerView'],
+				data['customDyes'] != null ? DyeReference.fromList(data['customDyes']) : null,
+				data['customization'] != null ? DestinyCharacterCustomization.fromMap(data['customization']) : null,
+				data['peerView'] != null ? DestinyCharacterPeerView.fromMap(data['peerView']) : null,
 		);
 	}
 

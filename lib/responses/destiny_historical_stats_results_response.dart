@@ -1,20 +1,20 @@
 import '../models/destiny_historical_stats_by_period.dart';
 class DestinyHistoricalStatsResultsResponse{
-    Map<DestinyHistoricalStatsByPeriod, dynamic> response;
+    Map<String, DestinyHistoricalStatsByPeriod> response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     DestinyHistoricalStatsResultsResponse(
-		Map<DestinyHistoricalStatsByPeriod, dynamic> this.response,
+		Map<String, DestinyHistoricalStatsByPeriod> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class DestinyHistoricalStatsResultsResponse{
 			return null;
 		};
 		return new DestinyHistoricalStatsResultsResponse(
-				data['Response'],
+				data['Response'] != null ? Map<String, DestinyHistoricalStatsByPeriod>.from(data['Response'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsByPeriod.fromMap(v)))) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

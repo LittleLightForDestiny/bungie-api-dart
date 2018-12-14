@@ -4,18 +4,18 @@ class DestinyStatGroupDefinition{
 	int maximumValue;
 	int uiPosition;
 	List<DestinyStatDisplayDefinition> scaledStats;
-	Map<DestinyStatOverrideDefinition, dynamic> overrides;
+	Map<String, DestinyStatOverrideDefinition> overrides;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyStatGroupDefinition(
-		int this.maximumValue,
-		int this.uiPosition,
-		List<DestinyStatDisplayDefinition> this.scaledStats,
-		Map<DestinyStatOverrideDefinition, dynamic> this.overrides,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.maximumValue,
+		this.uiPosition,
+		this.scaledStats,
+		this.overrides,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyStatGroupDefinition fromMap(Map<String, dynamic> data){
@@ -25,8 +25,8 @@ class DestinyStatGroupDefinition{
 		return new DestinyStatGroupDefinition(
 				data['maximumValue'],
 				data['uiPosition'],
-				DestinyStatDisplayDefinition.fromList(data['scaledStats']),
-				data['overrides'],
+				data['scaledStats'] != null ? DestinyStatDisplayDefinition.fromList(data['scaledStats']) : null,
+				data['overrides'] != null ? Map<String, DestinyStatOverrideDefinition>.from(data['overrides'].map((k, v)=>MapEntry(k, DestinyStatOverrideDefinition.fromMap(v)))) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

@@ -3,9 +3,9 @@ class GroupTheme{
 	String folder;
 	String description;
 	GroupTheme(
-		String this.name,
-		String this.folder,
-		String this.description,
+		this.name,
+		this.folder,
+		this.description,
 	);
 
 	static GroupTheme fromMap(Map<String, dynamic> data){

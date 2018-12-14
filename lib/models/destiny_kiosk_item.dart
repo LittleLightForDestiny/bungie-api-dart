@@ -5,10 +5,10 @@ class DestinyKioskItem{
 	List<int> failureIndexes;
 	DestinyObjectiveProgress flavorObjective;
 	DestinyKioskItem(
-		int this.index,
-		bool this.canAcquire,
-		List<int> this.failureIndexes,
-		DestinyObjectiveProgress this.flavorObjective,
+		this.index,
+		this.canAcquire,
+		this.failureIndexes,
+		this.flavorObjective,
 	);
 
 	static DestinyKioskItem fromMap(Map<String, dynamic> data){
@@ -18,8 +18,8 @@ class DestinyKioskItem{
 		return new DestinyKioskItem(
 				data['index'],
 				data['canAcquire'],
-				data['failureIndexes'],
-				data['flavorObjective'],
+				data['failureIndexes'] != null ? data['failureIndexes']?.cast<int>() ?? null : null,
+				data['flavorObjective'] != null ? DestinyObjectiveProgress.fromMap(data['flavorObjective']) : null,
 		);
 	}
 

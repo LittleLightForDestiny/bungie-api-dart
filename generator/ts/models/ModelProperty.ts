@@ -17,10 +17,10 @@ export class ModelProperty{
     }
 
     deserializationFunction(){
-        let fn = ApiDocHelper.getParseFunction(this.info);
+        let fn = ApiDocHelper.getParseFunction(this.info, this.name, `data['${this.name}']`);
         
         if(fn){
-            return `${fn}(data['${this.name}'])`;
+            return `data['${this.name}'] != null ? ${fn} : null`;
         }
         return `data['${this.name}']`;
     }

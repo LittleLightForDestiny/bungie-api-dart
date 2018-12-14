@@ -18,23 +18,23 @@ class DestinyItemCategoryDefinition{
 	int index;
 	bool redacted;
 	DestinyItemCategoryDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		bool this.visible,
-		bool this.deprecated,
-		String this.shortTitle,
-		String this.itemTypeRegex,
-		String this.plugCategoryIdentifier,
-		String this.itemTypeRegexNot,
-		String this.originBucketIdentifier,
-		int this.grantDestinyItemType,
-		int this.grantDestinySubType,
-		int this.grantDestinyClass,
-		List<int> this.groupedCategoryHashes,
-		List<int> this.parentCategoryHashes,
-		bool this.groupCategoryOnly,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.visible,
+		this.deprecated,
+		this.shortTitle,
+		this.itemTypeRegex,
+		this.plugCategoryIdentifier,
+		this.itemTypeRegexNot,
+		this.originBucketIdentifier,
+		this.grantDestinyItemType,
+		this.grantDestinySubType,
+		this.grantDestinyClass,
+		this.groupedCategoryHashes,
+		this.parentCategoryHashes,
+		this.groupCategoryOnly,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyItemCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -42,7 +42,7 @@ class DestinyItemCategoryDefinition{
 			return null;
 		};
 		return new DestinyItemCategoryDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['visible'],
 				data['deprecated'],
 				data['shortTitle'],
@@ -53,8 +53,8 @@ class DestinyItemCategoryDefinition{
 				data['grantDestinyItemType'],
 				data['grantDestinySubType'],
 				data['grantDestinyClass'],
-				data['groupedCategoryHashes'],
-				data['parentCategoryHashes'],
+				data['groupedCategoryHashes'] != null ? data['groupedCategoryHashes']?.cast<int>() ?? null : null,
+				data['parentCategoryHashes'] != null ? data['parentCategoryHashes']?.cast<int>() ?? null : null,
 				data['groupCategoryOnly'],
 				data['hash'],
 				data['index'],

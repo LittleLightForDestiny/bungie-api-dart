@@ -2,8 +2,8 @@ class DyeReference{
 	int channelHash;
 	int dyeHash;
 	DyeReference(
-		int this.channelHash,
-		int this.dyeHash,
+		this.channelHash,
+		this.dyeHash,
 	);
 
 	static DyeReference fromMap(Map<String, dynamic> data){

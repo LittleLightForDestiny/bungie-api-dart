@@ -3,9 +3,9 @@ class DestinyPositionDefinition{
 	int y;
 	int z;
 	DestinyPositionDefinition(
-		int this.x,
-		int this.y,
-		int this.z,
+		this.x,
+		this.y,
+		this.z,
 	);
 
 	static DestinyPositionDefinition fromMap(Map<String, dynamic> data){

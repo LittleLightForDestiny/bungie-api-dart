@@ -13,26 +13,26 @@ class ContentItemPublicContract{
 	String ratingImagePath;
 	GeneralUser author;
 	bool autoEnglishPropertyFallback;
-	Map<Map<String, String>, dynamic> properties;
+	Map<String, Map<String, String>> properties;
 	List<ContentRepresentation> representations;
 	List<String> tags;
 	CommentSummary commentSummary;
 	ContentItemPublicContract(
-		String this.contentId,
-		String this.cType,
-		String this.cmsPath,
-		String this.creationDate,
-		String this.modifyDate,
-		bool this.allowComments,
-		bool this.hasAgeGate,
-		int this.minimumAge,
-		String this.ratingImagePath,
-		GeneralUser this.author,
-		bool this.autoEnglishPropertyFallback,
-		Map<Map<String, String>, dynamic> this.properties,
-		List<ContentRepresentation> this.representations,
-		List<String> this.tags,
-		CommentSummary this.commentSummary,
+		this.contentId,
+		this.cType,
+		this.cmsPath,
+		this.creationDate,
+		this.modifyDate,
+		this.allowComments,
+		this.hasAgeGate,
+		this.minimumAge,
+		this.ratingImagePath,
+		this.author,
+		this.autoEnglishPropertyFallback,
+		this.properties,
+		this.representations,
+		this.tags,
+		this.commentSummary,
 	);
 
 	static ContentItemPublicContract fromMap(Map<String, dynamic> data){
@@ -49,12 +49,12 @@ class ContentItemPublicContract{
 				data['hasAgeGate'],
 				data['minimumAge'],
 				data['ratingImagePath'],
-				GeneralUser.fromMap(data['author']),
+				data['author'] != null ? GeneralUser.fromMap(data['author']) : null,
 				data['autoEnglishPropertyFallback'],
-				data['properties'],
-				ContentRepresentation.fromList(data['representations']),
-				data['tags'],
-				CommentSummary.fromMap(data['commentSummary']),
+				data['properties'] != null ? Map<String, Map<String, String>>.from(data['properties'].map((k, v)=>MapEntry(k, v))) : null,
+				data['representations'] != null ? ContentRepresentation.fromList(data['representations']) : null,
+				data['tags'] != null ? data['tags']?.cast<String>() ?? null : null,
+				data['commentSummary'] != null ? CommentSummary.fromMap(data['commentSummary']) : null,
 		);
 	}
 

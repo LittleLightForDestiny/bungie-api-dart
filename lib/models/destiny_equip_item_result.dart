@@ -2,8 +2,8 @@ class DestinyEquipItemResult{
 	String itemInstanceId;
 	int equipStatus;
 	DestinyEquipItemResult(
-		String this.itemInstanceId,
-		int this.equipStatus,
+		this.itemInstanceId,
+		this.equipStatus,
 	);
 
 	static DestinyEquipItemResult fromMap(Map<String, dynamic> data){

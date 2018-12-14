@@ -2,16 +2,16 @@ import 'destiny_display_properties_definition.dart';
 import 'destiny_report_reason_definition.dart';
 class DestinyReportReasonCategoryDefinition{
 	DestinyDisplayPropertiesDefinition displayProperties;
-	Map<DestinyReportReasonDefinition, dynamic> reasons;
+	Map<String, DestinyReportReasonDefinition> reasons;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyReportReasonCategoryDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		Map<DestinyReportReasonDefinition, dynamic> this.reasons,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.reasons,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyReportReasonCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -19,8 +19,8 @@ class DestinyReportReasonCategoryDefinition{
 			return null;
 		};
 		return new DestinyReportReasonCategoryDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
-				data['reasons'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['reasons'] != null ? Map<String, DestinyReportReasonDefinition>.from(data['reasons'].map((k, v)=>MapEntry(k, DestinyReportReasonDefinition.fromMap(v)))) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

@@ -2,7 +2,7 @@ import 'destiny_item_component.dart';
 class DestinyInventoryComponent{
 	List<DestinyItemComponent> items;
 	DestinyInventoryComponent(
-		List<DestinyItemComponent> this.items,
+		this.items,
 	);
 
 	static DestinyInventoryComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyInventoryComponent{
 			return null;
 		};
 		return new DestinyInventoryComponent(
-				DestinyItemComponent.fromList(data['items']),
+				data['items'] != null ? DestinyItemComponent.fromList(data['items']) : null,
 		);
 	}
 

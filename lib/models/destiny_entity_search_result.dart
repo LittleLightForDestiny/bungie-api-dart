@@ -3,8 +3,8 @@ class DestinyEntitySearchResult{
 	List<String> suggestedWords;
 	SearchResultOfDestinyEntitySearchResultItem results;
 	DestinyEntitySearchResult(
-		List<String> this.suggestedWords,
-		SearchResultOfDestinyEntitySearchResultItem this.results,
+		this.suggestedWords,
+		this.results,
 	);
 
 	static DestinyEntitySearchResult fromMap(Map<String, dynamic> data){
@@ -12,8 +12,8 @@ class DestinyEntitySearchResult{
 			return null;
 		};
 		return new DestinyEntitySearchResult(
-				data['suggestedWords'],
-				data['results'],
+				data['suggestedWords'] != null ? data['suggestedWords']?.cast<String>() ?? null : null,
+				data['results'] != null ? SearchResultOfDestinyEntitySearchResultItem.fromMap(data['results']) : null,
 		);
 	}
 

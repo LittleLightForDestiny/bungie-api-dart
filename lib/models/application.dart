@@ -13,18 +13,18 @@ class Application{
 	String firstPublished;
 	List<ApplicationDeveloper> team;
 	Application(
-		int this.applicationType,
-		int this.applicationId,
-		String this.name,
-		String this.redirectUrl,
-		String this.link,
-		String this.scope,
-		String this.origin,
-		int this.status,
-		String this.creationDate,
-		String this.statusChanged,
-		String this.firstPublished,
-		List<ApplicationDeveloper> this.team,
+		this.applicationType,
+		this.applicationId,
+		this.name,
+		this.redirectUrl,
+		this.link,
+		this.scope,
+		this.origin,
+		this.status,
+		this.creationDate,
+		this.statusChanged,
+		this.firstPublished,
+		this.team,
 	);
 
 	static Application fromMap(Map<String, dynamic> data){
@@ -43,7 +43,7 @@ class Application{
 				data['creationDate'],
 				data['statusChanged'],
 				data['firstPublished'],
-				ApplicationDeveloper.fromList(data['team']),
+				data['team'] != null ? ApplicationDeveloper.fromList(data['team']) : null,
 		);
 	}
 

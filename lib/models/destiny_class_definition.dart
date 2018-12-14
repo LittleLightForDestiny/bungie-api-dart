@@ -2,19 +2,21 @@ import 'destiny_display_properties_definition.dart';
 class DestinyClassDefinition{
 	int classType;
 	DestinyDisplayPropertiesDefinition displayProperties;
-	Map<String, dynamic> genderedClassNames;
+	Map<String, String> genderedClassNames;
+	Map<String, String> genderedClassNamesByGenderHash;
 	int mentorVendorHash;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyClassDefinition(
-		int this.classType,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		Map<String, dynamic> this.genderedClassNames,
-		int this.mentorVendorHash,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.classType,
+		this.displayProperties,
+		this.genderedClassNames,
+		this.genderedClassNamesByGenderHash,
+		this.mentorVendorHash,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyClassDefinition fromMap(Map<String, dynamic> data){
@@ -23,8 +25,9 @@ class DestinyClassDefinition{
 		};
 		return new DestinyClassDefinition(
 				data['classType'],
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
-				data['genderedClassNames'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['genderedClassNames'] != null ? Map<String, String>.from(data['genderedClassNames'].map((k, v)=>MapEntry(k, v))) : null,
+				data['genderedClassNamesByGenderHash'] != null ? Map<String, String>.from(data['genderedClassNamesByGenderHash'].map((k, v)=>MapEntry(k, v))) : null,
 				data['mentorVendorHash'],
 				data['hash'],
 				data['index'],
@@ -48,6 +51,7 @@ class DestinyClassDefinition{
 			data['classType'] = this.classType;
 			data['displayProperties'] = this.displayProperties.toMap();
 			data['genderedClassNames'] = this.genderedClassNames;
+			data['genderedClassNamesByGenderHash'] = this.genderedClassNamesByGenderHash;
 			data['mentorVendorHash'] = this.mentorVendorHash;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

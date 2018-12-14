@@ -5,10 +5,10 @@ class DestinyEntitySearchResultItem{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	int weight;
 	DestinyEntitySearchResultItem(
-		int this.hash,
-		String this.entityType,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.weight,
+		this.hash,
+		this.entityType,
+		this.displayProperties,
+		this.weight,
 	);
 
 	static DestinyEntitySearchResultItem fromMap(Map<String, dynamic> data){
@@ -18,7 +18,7 @@ class DestinyEntitySearchResultItem{
 		return new DestinyEntitySearchResultItem(
 				data['hash'],
 				data['entityType'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['weight'],
 		);
 	}

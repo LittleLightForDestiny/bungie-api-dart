@@ -8,13 +8,13 @@ class GlobalAlert{
 	int alertType;
 	StreamInfo streamInfo;
 	GlobalAlert(
-		String this.alertKey,
-		String this.alertHtml,
-		String this.alertTimestamp,
-		String this.alertLink,
-		int this.alertLevel,
-		int this.alertType,
-		StreamInfo this.streamInfo,
+		this.alertKey,
+		this.alertHtml,
+		this.alertTimestamp,
+		this.alertLink,
+		this.alertLevel,
+		this.alertType,
+		this.streamInfo,
 	);
 
 	static GlobalAlert fromMap(Map<String, dynamic> data){
@@ -28,7 +28,7 @@ class GlobalAlert{
 				data['AlertLink'],
 				data['AlertLevel'],
 				data['AlertType'],
-				StreamInfo.fromMap(data['StreamInfo']),
+				data['StreamInfo'] != null ? StreamInfo.fromMap(data['StreamInfo']) : null,
 		);
 	}
 

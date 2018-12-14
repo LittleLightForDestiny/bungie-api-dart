@@ -11,17 +11,17 @@ class DestinyItemComponent{
 	int overrideStyleItemHash;
 	String expirationDate;
 	DestinyItemComponent(
-		int this.itemHash,
-		String this.itemInstanceId,
-		int this.quantity,
-		int this.bindStatus,
-		int this.location,
-		int this.bucketHash,
-		int this.transferStatus,
-		bool this.lockable,
-		int this.state,
-		int this.overrideStyleItemHash,
-		String this.expirationDate,
+		this.itemHash,
+		this.itemInstanceId,
+		this.quantity,
+		this.bindStatus,
+		this.location,
+		this.bucketHash,
+		this.transferStatus,
+		this.lockable,
+		this.state,
+		this.overrideStyleItemHash,
+		this.expirationDate,
 	);
 
 	static DestinyItemComponent fromMap(Map<String, dynamic> data){

@@ -6,10 +6,10 @@ class GroupUserBase{
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupUserBase(
-		String this.groupId,
-		UserInfoCard this.destinyUserInfo,
-		UserInfoCard this.bungieNetUserInfo,
-		String this.joinDate,
+		this.groupId,
+		this.destinyUserInfo,
+		this.bungieNetUserInfo,
+		this.joinDate,
 	);
 
 	static GroupUserBase fromMap(Map<String, dynamic> data){
@@ -18,8 +18,8 @@ class GroupUserBase{
 		};
 		return new GroupUserBase(
 				data['groupId'],
-				UserInfoCard.fromMap(data['destinyUserInfo']),
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 				data['joinDate'],
 		);
 	}

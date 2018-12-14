@@ -5,11 +5,11 @@ class DestinyTalentNodeStepGroups{
 	int lightAbilities;
 	int damageTypes;
 	DestinyTalentNodeStepGroups(
-		int this.weaponPerformance,
-		int this.impactEffects,
-		int this.guardianAttributes,
-		int this.lightAbilities,
-		int this.damageTypes,
+		this.weaponPerformance,
+		this.impactEffects,
+		this.guardianAttributes,
+		this.lightAbilities,
+		this.damageTypes,
 	);
 
 	static DestinyTalentNodeStepGroups fromMap(Map<String, dynamic> data){

@@ -2,8 +2,8 @@ class DestinyNodeSocketReplaceResponse{
 	int socketTypeHash;
 	int plugItemHash;
 	DestinyNodeSocketReplaceResponse(
-		int this.socketTypeHash,
-		int this.plugItemHash,
+		this.socketTypeHash,
+		this.plugItemHash,
 	);
 
 	static DestinyNodeSocketReplaceResponse fromMap(Map<String, dynamic> data){

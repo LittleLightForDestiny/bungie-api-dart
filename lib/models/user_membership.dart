@@ -3,9 +3,9 @@ class UserMembership{
 	String membershipId;
 	String displayName;
 	UserMembership(
-		int this.membershipType,
-		String this.membershipId,
-		String this.displayName,
+		this.membershipType,
+		this.membershipId,
+		this.displayName,
 	);
 
 	static UserMembership fromMap(Map<String, dynamic> data){

@@ -2,11 +2,11 @@ import 'destiny_record_component.dart';
 class DestinyProfileRecordsComponent{
 	int score;
 	int trackedRecordHash;
-	Map<DestinyRecordComponent, dynamic> records;
+	Map<String, DestinyRecordComponent> records;
 	DestinyProfileRecordsComponent(
-		int this.score,
-		int this.trackedRecordHash,
-		Map<DestinyRecordComponent, dynamic> this.records,
+		this.score,
+		this.trackedRecordHash,
+		this.records,
 	);
 
 	static DestinyProfileRecordsComponent fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyProfileRecordsComponent{
 		return new DestinyProfileRecordsComponent(
 				data['score'],
 				data['trackedRecordHash'],
-				data['records'],
+				data['records'] != null ? Map<String, DestinyRecordComponent>.from(data['records'].map((k, v)=>MapEntry(k, DestinyRecordComponent.fromMap(v)))) : null,
 		);
 	}
 

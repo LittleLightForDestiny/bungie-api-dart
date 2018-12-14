@@ -5,11 +5,11 @@ class DestinyPostmasterTransferRequest{
 	String characterId;
 	int membershipType;
 	DestinyPostmasterTransferRequest(
-		int this.itemReferenceHash,
-		int this.stackSize,
-		String this.itemId,
-		String this.characterId,
-		int this.membershipType,
+		this.itemReferenceHash,
+		this.stackSize,
+		this.itemId,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyPostmasterTransferRequest fromMap(Map<String, dynamic> data){

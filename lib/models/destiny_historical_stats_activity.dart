@@ -6,12 +6,12 @@ class DestinyHistoricalStatsActivity{
 	List<int> modes;
 	bool isPrivate;
 	DestinyHistoricalStatsActivity(
-		int this.referenceId,
-		int this.directorActivityHash,
-		String this.instanceId,
-		int this.mode,
-		List<int> this.modes,
-		bool this.isPrivate,
+		this.referenceId,
+		this.directorActivityHash,
+		this.instanceId,
+		this.mode,
+		this.modes,
+		this.isPrivate,
 	);
 
 	static DestinyHistoricalStatsActivity fromMap(Map<String, dynamic> data){

@@ -9,13 +9,13 @@ class FireteamMember{
 	String lastPlatformInviteAttemptDate;
 	int lastPlatformInviteAttemptResult;
 	FireteamMember(
-		UserInfoCard this.destinyUserInfo,
-		UserInfoCard this.bungieNetUserInfo,
-		String this.characterId,
-		String this.dateJoined,
-		bool this.hasMicrophone,
-		String this.lastPlatformInviteAttemptDate,
-		int this.lastPlatformInviteAttemptResult,
+		this.destinyUserInfo,
+		this.bungieNetUserInfo,
+		this.characterId,
+		this.dateJoined,
+		this.hasMicrophone,
+		this.lastPlatformInviteAttemptDate,
+		this.lastPlatformInviteAttemptResult,
 	);
 
 	static FireteamMember fromMap(Map<String, dynamic> data){
@@ -23,8 +23,8 @@ class FireteamMember{
 			return null;
 		};
 		return new FireteamMember(
-				UserInfoCard.fromMap(data['destinyUserInfo']),
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 				data['characterId'],
 				data['dateJoined'],
 				data['hasMicrophone'],

@@ -15,17 +15,17 @@ class DestinyCollectibleDefinition{
 	int index;
 	bool redacted;
 	DestinyCollectibleDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.scope,
-		String this.sourceString,
-		int this.sourceHash,
-		int this.itemHash,
-		DestinyCollectibleAcquisitionBlock this.acquisitionInfo,
-		DestinyCollectibleStateBlock this.stateInfo,
-		DestinyPresentationChildBlock this.presentationInfo,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.scope,
+		this.sourceString,
+		this.sourceHash,
+		this.itemHash,
+		this.acquisitionInfo,
+		this.stateInfo,
+		this.presentationInfo,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyCollectibleDefinition fromMap(Map<String, dynamic> data){
@@ -33,14 +33,14 @@ class DestinyCollectibleDefinition{
 			return null;
 		};
 		return new DestinyCollectibleDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['scope'],
 				data['sourceString'],
 				data['sourceHash'],
 				data['itemHash'],
-				DestinyCollectibleAcquisitionBlock.fromMap(data['acquisitionInfo']),
-				DestinyCollectibleStateBlock.fromMap(data['stateInfo']),
-				DestinyPresentationChildBlock.fromMap(data['presentationInfo']),
+				data['acquisitionInfo'] != null ? DestinyCollectibleAcquisitionBlock.fromMap(data['acquisitionInfo']) : null,
+				data['stateInfo'] != null ? DestinyCollectibleStateBlock.fromMap(data['stateInfo']) : null,
+				data['presentationInfo'] != null ? DestinyPresentationChildBlock.fromMap(data['presentationInfo']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

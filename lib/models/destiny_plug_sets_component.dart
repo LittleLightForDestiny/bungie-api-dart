@@ -1,8 +1,8 @@
 import 'destiny_item_plug.dart';
 class DestinyPlugSetsComponent{
-	Map<List<DestinyItemPlug>, dynamic> plugs;
+	Map<String, List<DestinyItemPlug>> plugs;
 	DestinyPlugSetsComponent(
-		Map<List<DestinyItemPlug>, dynamic> this.plugs,
+		this.plugs,
 	);
 
 	static DestinyPlugSetsComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyPlugSetsComponent{
 			return null;
 		};
 		return new DestinyPlugSetsComponent(
-				data['plugs'],
+				data['plugs'] != null ? Map<String, List<DestinyItemPlug>>.from(data['plugs'].map((k, v)=>MapEntry(k, DestinyItemPlug.fromList(v)))) : null,
 		);
 	}
 

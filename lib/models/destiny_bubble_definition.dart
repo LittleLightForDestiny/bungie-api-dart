@@ -3,8 +3,8 @@ class DestinyBubbleDefinition{
 	int hash;
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyBubbleDefinition(
-		int this.hash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
+		this.hash,
+		this.displayProperties,
 	);
 
 	static DestinyBubbleDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyBubbleDefinition{
 		};
 		return new DestinyBubbleDefinition(
 				data['hash'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 		);
 	}
 

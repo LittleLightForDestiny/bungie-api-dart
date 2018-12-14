@@ -5,16 +5,16 @@ class DestinyItemSourceDefinition{
 	int maxQuality;
 	int minLevelRequired;
 	int maxLevelRequired;
-	Map<DestinyInventoryItemStatDefinition, dynamic> computedStats;
+	Map<String, DestinyInventoryItemStatDefinition> computedStats;
 	List<int> sourceHashes;
 	DestinyItemSourceDefinition(
-		int this.level,
-		int this.minQuality,
-		int this.maxQuality,
-		int this.minLevelRequired,
-		int this.maxLevelRequired,
-		Map<DestinyInventoryItemStatDefinition, dynamic> this.computedStats,
-		List<int> this.sourceHashes,
+		this.level,
+		this.minQuality,
+		this.maxQuality,
+		this.minLevelRequired,
+		this.maxLevelRequired,
+		this.computedStats,
+		this.sourceHashes,
 	);
 
 	static DestinyItemSourceDefinition fromMap(Map<String, dynamic> data){
@@ -27,8 +27,8 @@ class DestinyItemSourceDefinition{
 				data['maxQuality'],
 				data['minLevelRequired'],
 				data['maxLevelRequired'],
-				data['computedStats'],
-				data['sourceHashes'],
+				data['computedStats'] != null ? Map<String, DestinyInventoryItemStatDefinition>.from(data['computedStats'].map((k, v)=>MapEntry(k, DestinyInventoryItemStatDefinition.fromMap(v)))) : null,
+				data['sourceHashes'] != null ? data['sourceHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

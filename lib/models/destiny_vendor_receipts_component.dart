@@ -2,7 +2,7 @@ import 'destiny_vendor_receipt.dart';
 class DestinyVendorReceiptsComponent{
 	List<DestinyVendorReceipt> receipts;
 	DestinyVendorReceiptsComponent(
-		List<DestinyVendorReceipt> this.receipts,
+		this.receipts,
 	);
 
 	static DestinyVendorReceiptsComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyVendorReceiptsComponent{
 			return null;
 		};
 		return new DestinyVendorReceiptsComponent(
-				DestinyVendorReceipt.fromList(data['receipts']),
+				data['receipts'] != null ? DestinyVendorReceipt.fromList(data['receipts']) : null,
 		);
 	}
 

@@ -3,11 +3,11 @@ import 'destiny_historical_stats_value.dart';
 class DestinyHistoricalStatsPeriodGroup{
 	String period;
 	DestinyHistoricalStatsActivity activityDetails;
-	Map<DestinyHistoricalStatsValue, dynamic> values;
+	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyHistoricalStatsPeriodGroup(
-		String this.period,
-		DestinyHistoricalStatsActivity this.activityDetails,
-		Map<DestinyHistoricalStatsValue, dynamic> this.values,
+		this.period,
+		this.activityDetails,
+		this.values,
 	);
 
 	static DestinyHistoricalStatsPeriodGroup fromMap(Map<String, dynamic> data){
@@ -16,8 +16,8 @@ class DestinyHistoricalStatsPeriodGroup{
 		};
 		return new DestinyHistoricalStatsPeriodGroup(
 				data['period'],
-				data['activityDetails'],
-				data['values'],
+				data['activityDetails'] != null ? DestinyHistoricalStatsActivity.fromMap(data['activityDetails']) : null,
+				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
 		);
 	}
 

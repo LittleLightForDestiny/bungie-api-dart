@@ -7,12 +7,12 @@ class DestinySocketCategoryDefinition{
 	int index;
 	bool redacted;
 	DestinySocketCategoryDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.uiCategoryStyle,
-		int this.categoryStyle,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.uiCategoryStyle,
+		this.categoryStyle,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinySocketCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -20,7 +20,7 @@ class DestinySocketCategoryDefinition{
 			return null;
 		};
 		return new DestinySocketCategoryDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['uiCategoryStyle'],
 				data['categoryStyle'],
 				data['hash'],

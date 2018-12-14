@@ -4,8 +4,8 @@ class GroupMembership{
 	GroupMember member;
 	GroupV2 group;
 	GroupMembership(
-		GroupMember this.member,
-		GroupV2 this.group,
+		this.member,
+		this.group,
 	);
 
 	static GroupMembership fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class GroupMembership{
 			return null;
 		};
 		return new GroupMembership(
-				GroupMember.fromMap(data['member']),
-				GroupV2.fromMap(data['group']),
+				data['member'] != null ? GroupMember.fromMap(data['member']) : null,
+				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
 		);
 	}
 

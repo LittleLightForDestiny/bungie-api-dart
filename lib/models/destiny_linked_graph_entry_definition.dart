@@ -1,7 +1,7 @@
 class DestinyLinkedGraphEntryDefinition{
 	int activityGraphHash;
 	DestinyLinkedGraphEntryDefinition(
-		int this.activityGraphHash,
+		this.activityGraphHash,
 	);
 
 	static DestinyLinkedGraphEntryDefinition fromMap(Map<String, dynamic> data){

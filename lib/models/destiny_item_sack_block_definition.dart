@@ -5,11 +5,11 @@ class DestinyItemSackBlockDefinition{
 	String vendorSackType;
 	bool openOnAcquire;
 	DestinyItemSackBlockDefinition(
-		String this.detailAction,
-		String this.openAction,
-		int this.selectItemCount,
-		String this.vendorSackType,
-		bool this.openOnAcquire,
+		this.detailAction,
+		this.openAction,
+		this.selectItemCount,
+		this.vendorSackType,
+		this.openOnAcquire,
 	);
 
 	static DestinyItemSackBlockDefinition fromMap(Map<String, dynamic> data){

@@ -1,7 +1,7 @@
 class DestinyItemSummaryBlockDefinition{
 	int sortPriority;
 	DestinyItemSummaryBlockDefinition(
-		int this.sortPriority,
+		this.sortPriority,
 	);
 
 	static DestinyItemSummaryBlockDefinition fromMap(Map<String, dynamic> data){

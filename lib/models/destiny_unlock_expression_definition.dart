@@ -1,7 +1,7 @@
 class DestinyUnlockExpressionDefinition{
 	int scope;
 	DestinyUnlockExpressionDefinition(
-		int this.scope,
+		this.scope,
 	);
 
 	static DestinyUnlockExpressionDefinition fromMap(Map<String, dynamic> data){

@@ -3,8 +3,8 @@ class GroupMemberLeaveResult{
 	GroupV2 group;
 	bool groupDeleted;
 	GroupMemberLeaveResult(
-		GroupV2 this.group,
-		bool this.groupDeleted,
+		this.group,
+		this.groupDeleted,
 	);
 
 	static GroupMemberLeaveResult fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class GroupMemberLeaveResult{
 			return null;
 		};
 		return new GroupMemberLeaveResult(
-				GroupV2.fromMap(data['group']),
+				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
 				data['groupDeleted'],
 		);
 	}

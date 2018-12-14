@@ -2,8 +2,8 @@ class IgnoreResponse{
 	bool isIgnored;
 	int ignoreFlags;
 	IgnoreResponse(
-		bool this.isIgnored,
-		int this.ignoreFlags,
+		this.isIgnored,
+		this.ignoreFlags,
 	);
 
 	static IgnoreResponse fromMap(Map<String, dynamic> data){

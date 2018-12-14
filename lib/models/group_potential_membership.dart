@@ -4,8 +4,8 @@ class GroupPotentialMembership{
 	GroupPotentialMember member;
 	GroupV2 group;
 	GroupPotentialMembership(
-		GroupPotentialMember this.member,
-		GroupV2 this.group,
+		this.member,
+		this.group,
 	);
 
 	static GroupPotentialMembership fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class GroupPotentialMembership{
 			return null;
 		};
 		return new GroupPotentialMembership(
-				GroupPotentialMember.fromMap(data['member']),
-				GroupV2.fromMap(data['group']),
+				data['member'] != null ? GroupPotentialMember.fromMap(data['member']) : null,
+				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
 		);
 	}
 

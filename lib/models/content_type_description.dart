@@ -12,7 +12,7 @@ class ContentTypeDescription{
 	String reminder;
 	List<ContentTypeProperty> properties;
 	List<TagMetadataDefinition> tagMetadata;
-	Map<TagMetadataItem, dynamic> tagMetadataItems;
+	Map<String, TagMetadataItem> tagMetadataItems;
 	List<String> usageExamples;
 	bool showInContentEditor;
 	String typeOf;
@@ -26,27 +26,27 @@ class ContentTypeDescription{
 	bool suppressCmsPath;
 	List<ContentTypePropertySection> propertySections;
 	ContentTypeDescription(
-		String this.cType,
-		String this.name,
-		String this.contentDescription,
-		String this.previewImage,
-		int this.priority,
-		String this.reminder,
-		List<ContentTypeProperty> this.properties,
-		List<TagMetadataDefinition> this.tagMetadata,
-		Map<TagMetadataItem, dynamic> this.tagMetadataItems,
-		List<String> this.usageExamples,
-		bool this.showInContentEditor,
-		String this.typeOf,
-		String this.bindIdentifierToProperty,
-		String this.boundRegex,
-		bool this.forceIdentifierBinding,
-		bool this.allowComments,
-		bool this.autoEnglishPropertyFallback,
-		bool this.bulkUploadable,
-		List<ContentPreview> this.previews,
-		bool this.suppressCmsPath,
-		List<ContentTypePropertySection> this.propertySections,
+		this.cType,
+		this.name,
+		this.contentDescription,
+		this.previewImage,
+		this.priority,
+		this.reminder,
+		this.properties,
+		this.tagMetadata,
+		this.tagMetadataItems,
+		this.usageExamples,
+		this.showInContentEditor,
+		this.typeOf,
+		this.bindIdentifierToProperty,
+		this.boundRegex,
+		this.forceIdentifierBinding,
+		this.allowComments,
+		this.autoEnglishPropertyFallback,
+		this.bulkUploadable,
+		this.previews,
+		this.suppressCmsPath,
+		this.propertySections,
 	);
 
 	static ContentTypeDescription fromMap(Map<String, dynamic> data){
@@ -60,10 +60,10 @@ class ContentTypeDescription{
 				data['previewImage'],
 				data['priority'],
 				data['reminder'],
-				ContentTypeProperty.fromList(data['properties']),
-				TagMetadataDefinition.fromList(data['tagMetadata']),
-				data['tagMetadataItems'],
-				data['usageExamples'],
+				data['properties'] != null ? ContentTypeProperty.fromList(data['properties']) : null,
+				data['tagMetadata'] != null ? TagMetadataDefinition.fromList(data['tagMetadata']) : null,
+				data['tagMetadataItems'] != null ? Map<String, TagMetadataItem>.from(data['tagMetadataItems'].map((k, v)=>MapEntry(k, TagMetadataItem.fromMap(v)))) : null,
+				data['usageExamples'] != null ? data['usageExamples']?.cast<String>() ?? null : null,
 				data['showInContentEditor'],
 				data['typeOf'],
 				data['bindIdentifierToProperty'],
@@ -72,9 +72,9 @@ class ContentTypeDescription{
 				data['allowComments'],
 				data['autoEnglishPropertyFallback'],
 				data['bulkUploadable'],
-				ContentPreview.fromList(data['previews']),
+				data['previews'] != null ? ContentPreview.fromList(data['previews']) : null,
 				data['suppressCmsPath'],
-				ContentTypePropertySection.fromList(data['propertySections']),
+				data['propertySections'] != null ? ContentTypePropertySection.fromList(data['propertySections']) : null,
 		);
 	}
 

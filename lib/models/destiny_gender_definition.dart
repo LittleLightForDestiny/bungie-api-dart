@@ -6,11 +6,11 @@ class DestinyGenderDefinition{
 	int index;
 	bool redacted;
 	DestinyGenderDefinition(
-		int this.genderType,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.genderType,
+		this.displayProperties,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyGenderDefinition fromMap(Map<String, dynamic> data){
@@ -19,7 +19,7 @@ class DestinyGenderDefinition{
 		};
 		return new DestinyGenderDefinition(
 				data['genderType'],
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

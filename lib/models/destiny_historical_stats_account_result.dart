@@ -6,9 +6,9 @@ class DestinyHistoricalStatsAccountResult{
 	DestinyHistoricalStatsWithMerged mergedAllCharacters;
 	List<DestinyHistoricalStatsPerCharacter> characters;
 	DestinyHistoricalStatsAccountResult(
-		DestinyHistoricalStatsWithMerged this.mergedDeletedCharacters,
-		DestinyHistoricalStatsWithMerged this.mergedAllCharacters,
-		List<DestinyHistoricalStatsPerCharacter> this.characters,
+		this.mergedDeletedCharacters,
+		this.mergedAllCharacters,
+		this.characters,
 	);
 
 	static DestinyHistoricalStatsAccountResult fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class DestinyHistoricalStatsAccountResult{
 			return null;
 		};
 		return new DestinyHistoricalStatsAccountResult(
-				DestinyHistoricalStatsWithMerged.fromMap(data['mergedDeletedCharacters']),
-				DestinyHistoricalStatsWithMerged.fromMap(data['mergedAllCharacters']),
-				DestinyHistoricalStatsPerCharacter.fromList(data['characters']),
+				data['mergedDeletedCharacters'] != null ? DestinyHistoricalStatsWithMerged.fromMap(data['mergedDeletedCharacters']) : null,
+				data['mergedAllCharacters'] != null ? DestinyHistoricalStatsWithMerged.fromMap(data['mergedAllCharacters']) : null,
+				data['characters'] != null ? DestinyHistoricalStatsPerCharacter.fromList(data['characters']) : null,
 		);
 	}
 

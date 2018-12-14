@@ -1,20 +1,20 @@
 import '../models/destiny_historical_stats_definition.dart';
 class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
-    Map<DestinyHistoricalStatsDefinition, dynamic> response;
+    Map<String, DestinyHistoricalStatsDefinition> response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse(
-		Map<DestinyHistoricalStatsDefinition, dynamic> this.response,
+		Map<String, DestinyHistoricalStatsDefinition> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 			return null;
 		};
 		return new ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse(
-				data['Response'],
+				data['Response'] != null ? Map<String, DestinyHistoricalStatsDefinition>.from(data['Response'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsDefinition.fromMap(v)))) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

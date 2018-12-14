@@ -1,7 +1,7 @@
 class DestinyActivityGraphNodeFeaturingStateDefinition{
 	int highlightType;
 	DestinyActivityGraphNodeFeaturingStateDefinition(
-		int this.highlightType,
+		this.highlightType,
 	);
 
 	static DestinyActivityGraphNodeFeaturingStateDefinition fromMap(Map<String, dynamic> data){

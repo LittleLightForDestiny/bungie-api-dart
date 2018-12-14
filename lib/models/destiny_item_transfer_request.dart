@@ -6,12 +6,12 @@ class DestinyItemTransferRequest{
 	String characterId;
 	int membershipType;
 	DestinyItemTransferRequest(
-		int this.itemReferenceHash,
-		int this.stackSize,
-		bool this.transferToVault,
-		String this.itemId,
-		String this.characterId,
-		int this.membershipType,
+		this.itemReferenceHash,
+		this.stackSize,
+		this.transferToVault,
+		this.itemId,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyItemTransferRequest fromMap(Map<String, dynamic> data){

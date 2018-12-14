@@ -2,8 +2,8 @@ class DestinyCharacterActionRequest{
 	String characterId;
 	int membershipType;
 	DestinyCharacterActionRequest(
-		String this.characterId,
-		int this.membershipType,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyCharacterActionRequest fromMap(Map<String, dynamic> data){

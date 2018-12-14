@@ -5,10 +5,10 @@ class DestinyStatDisplayDefinition{
 	bool displayAsNumeric;
 	List<InterpolationPoint> displayInterpolation;
 	DestinyStatDisplayDefinition(
-		int this.statHash,
-		int this.maximumValue,
-		bool this.displayAsNumeric,
-		List<InterpolationPoint> this.displayInterpolation,
+		this.statHash,
+		this.maximumValue,
+		this.displayAsNumeric,
+		this.displayInterpolation,
 	);
 
 	static DestinyStatDisplayDefinition fromMap(Map<String, dynamic> data){
@@ -19,7 +19,7 @@ class DestinyStatDisplayDefinition{
 				data['statHash'],
 				data['maximumValue'],
 				data['displayAsNumeric'],
-				InterpolationPoint.fromList(data['displayInterpolation']),
+				data['displayInterpolation'] != null ? InterpolationPoint.fromList(data['displayInterpolation']) : null,
 		);
 	}
 

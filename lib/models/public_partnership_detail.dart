@@ -4,10 +4,10 @@ class PublicPartnershipDetail{
 	String name;
 	String icon;
 	PublicPartnershipDetail(
-		int this.partnerType,
-		String this.identifier,
-		String this.name,
-		String this.icon,
+		this.partnerType,
+		this.identifier,
+		this.name,
+		this.icon,
 	);
 
 	static PublicPartnershipDetail fromMap(Map<String, dynamic> data){

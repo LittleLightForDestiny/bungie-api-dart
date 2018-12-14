@@ -5,10 +5,10 @@ class DestinyMilestoneActivityVariant{
 	int activityModeHash;
 	int activityModeType;
 	DestinyMilestoneActivityVariant(
-		int this.activityHash,
-		DestinyMilestoneActivityCompletionStatus this.completionStatus,
-		int this.activityModeHash,
-		int this.activityModeType,
+		this.activityHash,
+		this.completionStatus,
+		this.activityModeHash,
+		this.activityModeType,
 	);
 
 	static DestinyMilestoneActivityVariant fromMap(Map<String, dynamic> data){
@@ -17,7 +17,7 @@ class DestinyMilestoneActivityVariant{
 		};
 		return new DestinyMilestoneActivityVariant(
 				data['activityHash'],
-				data['completionStatus'],
+				data['completionStatus'] != null ? DestinyMilestoneActivityCompletionStatus.fromMap(data['completionStatus']) : null,
 				data['activityModeHash'],
 				data['activityModeType'],
 		);

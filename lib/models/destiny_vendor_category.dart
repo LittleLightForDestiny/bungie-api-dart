@@ -2,8 +2,8 @@ class DestinyVendorCategory{
 	int displayCategoryIndex;
 	List<int> itemIndexes;
 	DestinyVendorCategory(
-		int this.displayCategoryIndex,
-		List<int> this.itemIndexes,
+		this.displayCategoryIndex,
+		this.itemIndexes,
 	);
 
 	static DestinyVendorCategory fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyVendorCategory{
 		};
 		return new DestinyVendorCategory(
 				data['displayCategoryIndex'],
-				data['itemIndexes'],
+				data['itemIndexes'] != null ? data['itemIndexes']?.cast<int>() ?? null : null,
 		);
 	}
 

@@ -2,8 +2,8 @@ class HyperlinkReference{
 	String title;
 	String url;
 	HyperlinkReference(
-		String this.title,
-		String this.url,
+		this.title,
+		this.url,
 	);
 
 	static HyperlinkReference fromMap(Map<String, dynamic> data){

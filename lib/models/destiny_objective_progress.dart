@@ -7,13 +7,13 @@ class DestinyObjectiveProgress{
 	bool complete;
 	bool visible;
 	DestinyObjectiveProgress(
-		int this.objectiveHash,
-		int this.destinationHash,
-		int this.activityHash,
-		int this.progress,
-		int this.completionValue,
-		bool this.complete,
-		bool this.visible,
+		this.objectiveHash,
+		this.destinationHash,
+		this.activityHash,
+		this.progress,
+		this.completionValue,
+		this.complete,
+		this.visible,
 	);
 
 	static DestinyObjectiveProgress fromMap(Map<String, dynamic> data){

@@ -3,8 +3,8 @@ class SingleComponentResponseOfDestinyCharacterRenderComponent{
 	DestinyCharacterRenderComponent data;
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterRenderComponent(
-		DestinyCharacterRenderComponent this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static SingleComponentResponseOfDestinyCharacterRenderComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class SingleComponentResponseOfDestinyCharacterRenderComponent{
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyCharacterRenderComponent(
-				DestinyCharacterRenderComponent.fromMap(data['data']),
+				data['data'] != null ? DestinyCharacterRenderComponent.fromMap(data['data']) : null,
 				data['privacy'],
 		);
 	}

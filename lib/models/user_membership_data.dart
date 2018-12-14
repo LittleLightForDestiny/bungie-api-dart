@@ -4,8 +4,8 @@ class UserMembershipData{
 	List<UserInfoCard> destinyMemberships;
 	GeneralUser bungieNetUser;
 	UserMembershipData(
-		List<UserInfoCard> this.destinyMemberships,
-		GeneralUser this.bungieNetUser,
+		this.destinyMemberships,
+		this.bungieNetUser,
 	);
 
 	static UserMembershipData fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class UserMembershipData{
 			return null;
 		};
 		return new UserMembershipData(
-				UserInfoCard.fromList(data['destinyMemberships']),
-				GeneralUser.fromMap(data['bungieNetUser']),
+				data['destinyMemberships'] != null ? UserInfoCard.fromList(data['destinyMemberships']) : null,
+				data['bungieNetUser'] != null ? GeneralUser.fromMap(data['bungieNetUser']) : null,
 		);
 	}
 

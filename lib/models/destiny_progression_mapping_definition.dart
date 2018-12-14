@@ -6,11 +6,11 @@ class DestinyProgressionMappingDefinition{
 	int index;
 	bool redacted;
 	DestinyProgressionMappingDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.displayUnits,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.displayUnits,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyProgressionMappingDefinition fromMap(Map<String, dynamic> data){
@@ -18,7 +18,7 @@ class DestinyProgressionMappingDefinition{
 			return null;
 		};
 		return new DestinyProgressionMappingDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['displayUnits'],
 				data['hash'],
 				data['index'],

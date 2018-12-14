@@ -3,9 +3,9 @@ class PagedQuery{
 	int currentPage;
 	String requestContinuationToken;
 	PagedQuery(
-		int this.itemsPerPage,
-		int this.currentPage,
-		String this.requestContinuationToken,
+		this.itemsPerPage,
+		this.currentPage,
+		this.requestContinuationToken,
 	);
 
 	static PagedQuery fromMap(Map<String, dynamic> data){

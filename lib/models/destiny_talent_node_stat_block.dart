@@ -4,8 +4,8 @@ class DestinyTalentNodeStatBlock{
 	List<DestinyStat> currentStepStats;
 	List<DestinyStat> nextStepStats;
 	DestinyTalentNodeStatBlock(
-		List<DestinyStat> this.currentStepStats,
-		List<DestinyStat> this.nextStepStats,
+		this.currentStepStats,
+		this.nextStepStats,
 	);
 
 	static DestinyTalentNodeStatBlock fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class DestinyTalentNodeStatBlock{
 			return null;
 		};
 		return new DestinyTalentNodeStatBlock(
-				DestinyStat.fromList(data['currentStepStats']),
-				DestinyStat.fromList(data['nextStepStats']),
+				data['currentStepStats'] != null ? DestinyStat.fromList(data['currentStepStats']) : null,
+				data['nextStepStats'] != null ? DestinyStat.fromList(data['nextStepStats']) : null,
 		);
 	}
 

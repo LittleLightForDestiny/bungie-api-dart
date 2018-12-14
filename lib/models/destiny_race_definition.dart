@@ -2,17 +2,19 @@ import 'destiny_display_properties_definition.dart';
 class DestinyRaceDefinition{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	int raceType;
-	Map<String, dynamic> genderedRaceNames;
+	Map<String, String> genderedRaceNames;
+	Map<String, String> genderedRaceNamesByGenderHash;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyRaceDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.raceType,
-		Map<String, dynamic> this.genderedRaceNames,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.raceType,
+		this.genderedRaceNames,
+		this.genderedRaceNamesByGenderHash,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyRaceDefinition fromMap(Map<String, dynamic> data){
@@ -20,9 +22,10 @@ class DestinyRaceDefinition{
 			return null;
 		};
 		return new DestinyRaceDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['raceType'],
-				data['genderedRaceNames'],
+				data['genderedRaceNames'] != null ? Map<String, String>.from(data['genderedRaceNames'].map((k, v)=>MapEntry(k, v))) : null,
+				data['genderedRaceNamesByGenderHash'] != null ? Map<String, String>.from(data['genderedRaceNamesByGenderHash'].map((k, v)=>MapEntry(k, v))) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -45,6 +48,7 @@ class DestinyRaceDefinition{
 			data['displayProperties'] = this.displayProperties.toMap();
 			data['raceType'] = this.raceType;
 			data['genderedRaceNames'] = this.genderedRaceNames;
+			data['genderedRaceNamesByGenderHash'] = this.genderedRaceNamesByGenderHash;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

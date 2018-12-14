@@ -2,8 +2,8 @@ class DestinyActivityGraphConnectionDefinition{
 	int sourceNodeHash;
 	int destNodeHash;
 	DestinyActivityGraphConnectionDefinition(
-		int this.sourceNodeHash,
-		int this.destNodeHash,
+		this.sourceNodeHash,
+		this.destNodeHash,
 	);
 
 	static DestinyActivityGraphConnectionDefinition fromMap(Map<String, dynamic> data){

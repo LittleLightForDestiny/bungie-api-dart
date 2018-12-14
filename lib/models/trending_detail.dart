@@ -16,15 +16,15 @@ class TrendingDetail{
 	TrendingEntryCommunityCreation creation;
 	TrendingEntryCommunityStream stream;
 	TrendingDetail(
-		String this.identifier,
-		int this.entityType,
-		TrendingEntryNews this.news,
-		TrendingEntrySupportArticle this.support,
-		TrendingEntryDestinyItem this.destinyItem,
-		TrendingEntryDestinyActivity this.destinyActivity,
-		TrendingEntryDestinyRitual this.destinyRitual,
-		TrendingEntryCommunityCreation this.creation,
-		TrendingEntryCommunityStream this.stream,
+		this.identifier,
+		this.entityType,
+		this.news,
+		this.support,
+		this.destinyItem,
+		this.destinyActivity,
+		this.destinyRitual,
+		this.creation,
+		this.stream,
 	);
 
 	static TrendingDetail fromMap(Map<String, dynamic> data){
@@ -34,13 +34,13 @@ class TrendingDetail{
 		return new TrendingDetail(
 				data['identifier'],
 				data['entityType'],
-				TrendingEntryNews.fromMap(data['news']),
-				TrendingEntrySupportArticle.fromMap(data['support']),
-				TrendingEntryDestinyItem.fromMap(data['destinyItem']),
-				TrendingEntryDestinyActivity.fromMap(data['destinyActivity']),
-				TrendingEntryDestinyRitual.fromMap(data['destinyRitual']),
-				TrendingEntryCommunityCreation.fromMap(data['creation']),
-				TrendingEntryCommunityStream.fromMap(data['stream']),
+				data['news'] != null ? TrendingEntryNews.fromMap(data['news']) : null,
+				data['support'] != null ? TrendingEntrySupportArticle.fromMap(data['support']) : null,
+				data['destinyItem'] != null ? TrendingEntryDestinyItem.fromMap(data['destinyItem']) : null,
+				data['destinyActivity'] != null ? TrendingEntryDestinyActivity.fromMap(data['destinyActivity']) : null,
+				data['destinyRitual'] != null ? TrendingEntryDestinyRitual.fromMap(data['destinyRitual']) : null,
+				data['creation'] != null ? TrendingEntryCommunityCreation.fromMap(data['creation']) : null,
+				data['stream'] != null ? TrendingEntryCommunityStream.fromMap(data['stream']) : null,
 		);
 	}
 

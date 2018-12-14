@@ -2,8 +2,8 @@ class DestinyObjectiveDisplayProperties{
 	int activityHash;
 	bool displayOnItemPreviewScreen;
 	DestinyObjectiveDisplayProperties(
-		int this.activityHash,
-		bool this.displayOnItemPreviewScreen,
+		this.activityHash,
+		this.displayOnItemPreviewScreen,
 	);
 
 	static DestinyObjectiveDisplayProperties fromMap(Map<String, dynamic> data){

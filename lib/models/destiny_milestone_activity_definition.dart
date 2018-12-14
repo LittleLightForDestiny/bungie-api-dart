@@ -1,10 +1,10 @@
 import 'destiny_milestone_activity_variant_definition.dart';
 class DestinyMilestoneActivityDefinition{
 	int conceptualActivityHash;
-	Map<DestinyMilestoneActivityVariantDefinition, dynamic> variants;
+	Map<String, DestinyMilestoneActivityVariantDefinition> variants;
 	DestinyMilestoneActivityDefinition(
-		int this.conceptualActivityHash,
-		Map<DestinyMilestoneActivityVariantDefinition, dynamic> this.variants,
+		this.conceptualActivityHash,
+		this.variants,
 	);
 
 	static DestinyMilestoneActivityDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyMilestoneActivityDefinition{
 		};
 		return new DestinyMilestoneActivityDefinition(
 				data['conceptualActivityHash'],
-				data['variants'],
+				data['variants'] != null ? Map<String, DestinyMilestoneActivityVariantDefinition>.from(data['variants'].map((k, v)=>MapEntry(k, DestinyMilestoneActivityVariantDefinition.fromMap(v)))) : null,
 		);
 	}
 

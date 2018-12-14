@@ -4,10 +4,10 @@ class DestinyRecordCompletionBlock{
 	bool shouldFireToast;
 	int toastStyle;
 	DestinyRecordCompletionBlock(
-		int this.partialCompletionObjectiveCountThreshold,
-		int this.scoreValue,
-		bool this.shouldFireToast,
-		int this.toastStyle,
+		this.partialCompletionObjectiveCountThreshold,
+		this.scoreValue,
+		this.shouldFireToast,
+		this.toastStyle,
 	);
 
 	static DestinyRecordCompletionBlock fromMap(Map<String, dynamic> data){

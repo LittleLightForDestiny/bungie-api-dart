@@ -2,8 +2,8 @@ class EntityActionResult{
 	String entityId;
 	int result;
 	EntityActionResult(
-		String this.entityId,
-		int this.result,
+		this.entityId,
+		this.result,
 	);
 
 	static EntityActionResult fromMap(Map<String, dynamic> data){

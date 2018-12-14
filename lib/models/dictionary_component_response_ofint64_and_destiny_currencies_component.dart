@@ -1,10 +1,10 @@
 import 'destiny_currencies_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
-	Map<DestinyCurrenciesComponent, dynamic> data;
+	Map<String, DestinyCurrenciesComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
-		Map<DestinyCurrenciesComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyCurrenciesComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCurrenciesComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

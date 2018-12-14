@@ -1,10 +1,10 @@
 import 'destiny_historical_stats_value.dart';
 class DestinyAggregateActivityStats{
 	int activityHash;
-	Map<DestinyHistoricalStatsValue, dynamic> values;
+	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyAggregateActivityStats(
-		int this.activityHash,
-		Map<DestinyHistoricalStatsValue, dynamic> this.values,
+		this.activityHash,
+		this.values,
 	);
 
 	static DestinyAggregateActivityStats fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyAggregateActivityStats{
 		};
 		return new DestinyAggregateActivityStats(
 				data['activityHash'],
-				data['values'],
+				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
 		);
 	}
 

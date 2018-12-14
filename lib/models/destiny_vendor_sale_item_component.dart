@@ -13,17 +13,17 @@ class DestinyVendorSaleItemComponent{
 	int augments;
 	String overrideNextRefreshDate;
 	DestinyVendorSaleItemComponent(
-		int this.vendorItemIndex,
-		int this.itemHash,
-		int this.overrideStyleItemHash,
-		int this.quantity,
-		int this.saleStatus,
-		List<DestinyItemQuantity> this.costs,
-		List<int> this.requiredUnlocks,
-		List<DestinyUnlockStatus> this.unlockStatuses,
-		List<int> this.failureIndexes,
-		int this.augments,
-		String this.overrideNextRefreshDate,
+		this.vendorItemIndex,
+		this.itemHash,
+		this.overrideStyleItemHash,
+		this.quantity,
+		this.saleStatus,
+		this.costs,
+		this.requiredUnlocks,
+		this.unlockStatuses,
+		this.failureIndexes,
+		this.augments,
+		this.overrideNextRefreshDate,
 	);
 
 	static DestinyVendorSaleItemComponent fromMap(Map<String, dynamic> data){
@@ -36,10 +36,10 @@ class DestinyVendorSaleItemComponent{
 				data['overrideStyleItemHash'],
 				data['quantity'],
 				data['saleStatus'],
-				DestinyItemQuantity.fromList(data['costs']),
-				data['requiredUnlocks'],
-				DestinyUnlockStatus.fromList(data['unlockStatuses']),
-				data['failureIndexes'],
+				data['costs'] != null ? DestinyItemQuantity.fromList(data['costs']) : null,
+				data['requiredUnlocks'] != null ? data['requiredUnlocks']?.cast<int>() ?? null : null,
+				data['unlockStatuses'] != null ? DestinyUnlockStatus.fromList(data['unlockStatuses']) : null,
+				data['failureIndexes'] != null ? data['failureIndexes']?.cast<int>() ?? null : null,
 				data['augments'],
 				data['overrideNextRefreshDate'],
 		);

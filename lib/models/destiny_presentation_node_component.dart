@@ -2,9 +2,13 @@ import 'destiny_objective_progress.dart';
 class DestinyPresentationNodeComponent{
 	int state;
 	DestinyObjectiveProgress objective;
+	int progressValue;
+	int completionValue;
 	DestinyPresentationNodeComponent(
-		int this.state,
-		DestinyObjectiveProgress this.objective,
+		this.state,
+		this.objective,
+		this.progressValue,
+		this.completionValue,
 	);
 
 	static DestinyPresentationNodeComponent fromMap(Map<String, dynamic> data){
@@ -13,7 +17,9 @@ class DestinyPresentationNodeComponent{
 		};
 		return new DestinyPresentationNodeComponent(
 				data['state'],
-				DestinyObjectiveProgress.fromMap(data['objective']),
+				data['objective'] != null ? DestinyObjectiveProgress.fromMap(data['objective']) : null,
+				data['progressValue'],
+				data['completionValue'],
 		);
 	}
 
@@ -31,7 +37,9 @@ class DestinyPresentationNodeComponent{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['state'] = this.state;
-			data['objective'] = this.objective.toMap();
+			data['objective'] = this.objective;
+			data['progressValue'] = this.progressValue;
+			data['completionValue'] = this.completionValue;
 		return data;
 	}
 }

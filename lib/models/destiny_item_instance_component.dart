@@ -11,16 +11,16 @@ class DestinyItemInstanceComponent{
 	List<int> unlockHashesRequiredToEquip;
 	int cannotEquipReason;
 	DestinyItemInstanceComponent(
-		int this.damageType,
-		int this.damageTypeHash,
-		DestinyStat this.primaryStat,
-		int this.itemLevel,
-		int this.quality,
-		bool this.isEquipped,
-		bool this.canEquip,
-		int this.equipRequiredLevel,
-		List<int> this.unlockHashesRequiredToEquip,
-		int this.cannotEquipReason,
+		this.damageType,
+		this.damageTypeHash,
+		this.primaryStat,
+		this.itemLevel,
+		this.quality,
+		this.isEquipped,
+		this.canEquip,
+		this.equipRequiredLevel,
+		this.unlockHashesRequiredToEquip,
+		this.cannotEquipReason,
 	);
 
 	static DestinyItemInstanceComponent fromMap(Map<String, dynamic> data){
@@ -30,13 +30,13 @@ class DestinyItemInstanceComponent{
 		return new DestinyItemInstanceComponent(
 				data['damageType'],
 				data['damageTypeHash'],
-				data['primaryStat'],
+				data['primaryStat'] != null ? DestinyStat.fromMap(data['primaryStat']) : null,
 				data['itemLevel'],
 				data['quality'],
 				data['isEquipped'],
 				data['canEquip'],
 				data['equipRequiredLevel'],
-				data['unlockHashesRequiredToEquip'],
+				data['unlockHashesRequiredToEquip'] != null ? data['unlockHashesRequiredToEquip']?.cast<int>() ?? null : null,
 				data['cannotEquipReason'],
 		);
 	}

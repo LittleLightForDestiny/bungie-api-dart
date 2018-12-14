@@ -1,7 +1,7 @@
 class DestinyPresentationNodeRequirementsBlock{
 	String entitlementUnavailableMessage;
 	DestinyPresentationNodeRequirementsBlock(
-		String this.entitlementUnavailableMessage,
+		this.entitlementUnavailableMessage,
 	);
 
 	static DestinyPresentationNodeRequirementsBlock fromMap(Map<String, dynamic> data){

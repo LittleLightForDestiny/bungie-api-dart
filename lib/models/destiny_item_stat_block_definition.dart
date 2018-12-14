@@ -2,15 +2,15 @@ import 'destiny_inventory_item_stat_definition.dart';
 class DestinyItemStatBlockDefinition{
 	bool disablePrimaryStatDisplay;
 	int statGroupHash;
-	Map<DestinyInventoryItemStatDefinition, dynamic> stats;
+	Map<String, DestinyInventoryItemStatDefinition> stats;
 	bool hasDisplayableStats;
 	int primaryBaseStatHash;
 	DestinyItemStatBlockDefinition(
-		bool this.disablePrimaryStatDisplay,
-		int this.statGroupHash,
-		Map<DestinyInventoryItemStatDefinition, dynamic> this.stats,
-		bool this.hasDisplayableStats,
-		int this.primaryBaseStatHash,
+		this.disablePrimaryStatDisplay,
+		this.statGroupHash,
+		this.stats,
+		this.hasDisplayableStats,
+		this.primaryBaseStatHash,
 	);
 
 	static DestinyItemStatBlockDefinition fromMap(Map<String, dynamic> data){
@@ -20,7 +20,7 @@ class DestinyItemStatBlockDefinition{
 		return new DestinyItemStatBlockDefinition(
 				data['disablePrimaryStatDisplay'],
 				data['statGroupHash'],
-				data['stats'],
+				data['stats'] != null ? Map<String, DestinyInventoryItemStatDefinition>.from(data['stats'].map((k, v)=>MapEntry(k, DestinyInventoryItemStatDefinition.fromMap(v)))) : null,
 				data['hasDisplayableStats'],
 				data['primaryBaseStatHash'],
 		);

@@ -8,27 +8,27 @@ class DestinyActivityModeDefinition{
 	bool isAggregateMode;
 	List<int> parentHashes;
 	String friendlyName;
-	Map<int, dynamic> activityModeMappings;
+	Map<String, int> activityModeMappings;
 	bool display;
 	int order;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyActivityModeDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.pgcrImage,
-		int this.modeType,
-		int this.activityModeCategory,
-		bool this.isTeamBased,
-		bool this.isAggregateMode,
-		List<int> this.parentHashes,
-		String this.friendlyName,
-		Map<int, dynamic> this.activityModeMappings,
-		bool this.display,
-		int this.order,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.pgcrImage,
+		this.modeType,
+		this.activityModeCategory,
+		this.isTeamBased,
+		this.isAggregateMode,
+		this.parentHashes,
+		this.friendlyName,
+		this.activityModeMappings,
+		this.display,
+		this.order,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyActivityModeDefinition fromMap(Map<String, dynamic> data){
@@ -36,15 +36,15 @@ class DestinyActivityModeDefinition{
 			return null;
 		};
 		return new DestinyActivityModeDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['pgcrImage'],
 				data['modeType'],
 				data['activityModeCategory'],
 				data['isTeamBased'],
 				data['isAggregateMode'],
-				data['parentHashes'],
+				data['parentHashes'] != null ? data['parentHashes']?.cast<int>() ?? null : null,
 				data['friendlyName'],
-				data['activityModeMappings'],
+				data['activityModeMappings'] != null ? Map<String, int>.from(data['activityModeMappings'].map((k, v)=>MapEntry(k, v))) : null,
 				data['display'],
 				data['order'],
 				data['hash'],

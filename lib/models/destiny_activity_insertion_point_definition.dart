@@ -1,7 +1,7 @@
 class DestinyActivityInsertionPointDefinition{
 	int phaseHash;
 	DestinyActivityInsertionPointDefinition(
-		int this.phaseHash,
+		this.phaseHash,
 	);
 
 	static DestinyActivityInsertionPointDefinition fromMap(Map<String, dynamic> data){

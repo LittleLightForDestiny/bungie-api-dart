@@ -2,8 +2,8 @@ class DestinyObjectivePerkEntryDefinition{
 	int perkHash;
 	int style;
 	DestinyObjectivePerkEntryDefinition(
-		int this.perkHash,
-		int this.style,
+		this.perkHash,
+		this.style,
 	);
 
 	static DestinyObjectivePerkEntryDefinition fromMap(Map<String, dynamic> data){

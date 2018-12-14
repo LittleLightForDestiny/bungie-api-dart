@@ -4,10 +4,10 @@ class DestinyDisplayPropertiesDefinition{
 	String icon;
 	bool hasIcon;
 	DestinyDisplayPropertiesDefinition(
-		String this.description,
-		String this.name,
-		String this.icon,
-		bool this.hasIcon,
+		this.description,
+		this.name,
+		this.icon,
+		this.hasIcon,
 	);
 
 	static DestinyDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){

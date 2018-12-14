@@ -1,7 +1,7 @@
 class DestinyMilestoneVendorDefinition{
 	int vendorHash;
 	DestinyMilestoneVendorDefinition(
-		int this.vendorHash,
+		this.vendorHash,
 	);
 
 	static DestinyMilestoneVendorDefinition fromMap(Map<String, dynamic> data){

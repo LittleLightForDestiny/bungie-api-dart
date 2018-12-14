@@ -2,7 +2,7 @@ import 'dictionary_component_response_ofint32_and_destiny_item_objectives_compon
 class DestinyBaseItemComponentSetOfint32{
 	DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent objectives;
 	DestinyBaseItemComponentSetOfint32(
-		DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent this.objectives,
+		this.objectives,
 	);
 
 	static DestinyBaseItemComponentSetOfint32 fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyBaseItemComponentSetOfint32{
 			return null;
 		};
 		return new DestinyBaseItemComponentSetOfint32(
-				DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']),
+				data['objectives'] != null ? DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
 		);
 	}
 

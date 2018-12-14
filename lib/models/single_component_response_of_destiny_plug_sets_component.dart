@@ -3,8 +3,8 @@ class SingleComponentResponseOfDestinyPlugSetsComponent{
 	DestinyPlugSetsComponent data;
 	int privacy;
 	SingleComponentResponseOfDestinyPlugSetsComponent(
-		DestinyPlugSetsComponent this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static SingleComponentResponseOfDestinyPlugSetsComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class SingleComponentResponseOfDestinyPlugSetsComponent{
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyPlugSetsComponent(
-				DestinyPlugSetsComponent.fromMap(data['data']),
+				data['data'] != null ? DestinyPlugSetsComponent.fromMap(data['data']) : null,
 				data['privacy'],
 		);
 	}

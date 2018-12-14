@@ -1,9 +1,9 @@
 class CoreSystem{
 	bool enabled;
-	Map<String, dynamic> parameters;
+	Map<String, String> parameters;
 	CoreSystem(
-		bool this.enabled,
-		Map<String, dynamic> this.parameters,
+		this.enabled,
+		this.parameters,
 	);
 
 	static CoreSystem fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class CoreSystem{
 		};
 		return new CoreSystem(
 				data['enabled'],
-				data['parameters'],
+				data['parameters'] != null ? Map<String, String>.from(data['parameters'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 

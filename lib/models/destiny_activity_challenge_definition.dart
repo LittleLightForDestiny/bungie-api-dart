@@ -3,8 +3,8 @@ class DestinyActivityChallengeDefinition{
 	int objectiveHash;
 	List<DestinyItemQuantity> dummyRewards;
 	DestinyActivityChallengeDefinition(
-		int this.objectiveHash,
-		List<DestinyItemQuantity> this.dummyRewards,
+		this.objectiveHash,
+		this.dummyRewards,
 	);
 
 	static DestinyActivityChallengeDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyActivityChallengeDefinition{
 		};
 		return new DestinyActivityChallengeDefinition(
 				data['objectiveHash'],
-				DestinyItemQuantity.fromList(data['dummyRewards']),
+				data['dummyRewards'] != null ? DestinyItemQuantity.fromList(data['dummyRewards']) : null,
 		);
 	}
 

@@ -1,8 +1,8 @@
 import 'destiny_collectible_component.dart';
 class DestinyCollectiblesComponent{
-	Map<DestinyCollectibleComponent, dynamic> collectibles;
+	Map<String, DestinyCollectibleComponent> collectibles;
 	DestinyCollectiblesComponent(
-		Map<DestinyCollectibleComponent, dynamic> this.collectibles,
+		this.collectibles,
 	);
 
 	static DestinyCollectiblesComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyCollectiblesComponent{
 			return null;
 		};
 		return new DestinyCollectiblesComponent(
-				data['collectibles'],
+				data['collectibles'] != null ? Map<String, DestinyCollectibleComponent>.from(data['collectibles'].map((k, v)=>MapEntry(k, DestinyCollectibleComponent.fromMap(v)))) : null,
 		);
 	}
 

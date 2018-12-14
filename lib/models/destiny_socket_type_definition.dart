@@ -18,20 +18,20 @@ class DestinySocketTypeDefinition{
 	int index;
 	bool redacted;
 	DestinySocketTypeDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		DestinyInsertPlugActionDefinition this.insertAction,
-		List<DestinyPlugWhitelistEntryDefinition> this.plugWhitelist,
-		int this.socketCategoryHash,
-		int this.visibility,
-		bool this.alwaysRandomizeSockets,
-		bool this.isPreviewEnabled,
-		bool this.hideDuplicateReusablePlugs,
-		bool this.overridesUiAppearance,
-		bool this.avoidDuplicatesOnInitialization,
-		List<DestinySocketTypeScalarMaterialRequirementEntry> this.currencyScalars,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.insertAction,
+		this.plugWhitelist,
+		this.socketCategoryHash,
+		this.visibility,
+		this.alwaysRandomizeSockets,
+		this.isPreviewEnabled,
+		this.hideDuplicateReusablePlugs,
+		this.overridesUiAppearance,
+		this.avoidDuplicatesOnInitialization,
+		this.currencyScalars,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinySocketTypeDefinition fromMap(Map<String, dynamic> data){
@@ -39,9 +39,9 @@ class DestinySocketTypeDefinition{
 			return null;
 		};
 		return new DestinySocketTypeDefinition(
-				data['displayProperties'],
-				data['insertAction'],
-				DestinyPlugWhitelistEntryDefinition.fromList(data['plugWhitelist']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['insertAction'] != null ? DestinyInsertPlugActionDefinition.fromMap(data['insertAction']) : null,
+				data['plugWhitelist'] != null ? DestinyPlugWhitelistEntryDefinition.fromList(data['plugWhitelist']) : null,
 				data['socketCategoryHash'],
 				data['visibility'],
 				data['alwaysRandomizeSockets'],
@@ -49,7 +49,7 @@ class DestinySocketTypeDefinition{
 				data['hideDuplicateReusablePlugs'],
 				data['overridesUiAppearance'],
 				data['avoidDuplicatesOnInitialization'],
-				DestinySocketTypeScalarMaterialRequirementEntry.fromList(data['currencyScalars']),
+				data['currencyScalars'] != null ? DestinySocketTypeScalarMaterialRequirementEntry.fromList(data['currencyScalars']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

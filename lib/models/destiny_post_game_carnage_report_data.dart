@@ -8,11 +8,11 @@ class DestinyPostGameCarnageReportData{
 	List<DestinyPostGameCarnageReportEntry> entries;
 	List<DestinyPostGameCarnageReportTeamEntry> teams;
 	DestinyPostGameCarnageReportData(
-		String this.period,
-		int this.startingPhaseIndex,
-		DestinyHistoricalStatsActivity this.activityDetails,
-		List<DestinyPostGameCarnageReportEntry> this.entries,
-		List<DestinyPostGameCarnageReportTeamEntry> this.teams,
+		this.period,
+		this.startingPhaseIndex,
+		this.activityDetails,
+		this.entries,
+		this.teams,
 	);
 
 	static DestinyPostGameCarnageReportData fromMap(Map<String, dynamic> data){
@@ -22,9 +22,9 @@ class DestinyPostGameCarnageReportData{
 		return new DestinyPostGameCarnageReportData(
 				data['period'],
 				data['startingPhaseIndex'],
-				data['activityDetails'],
-				DestinyPostGameCarnageReportEntry.fromList(data['entries']),
-				DestinyPostGameCarnageReportTeamEntry.fromList(data['teams']),
+				data['activityDetails'] != null ? DestinyHistoricalStatsActivity.fromMap(data['activityDetails']) : null,
+				data['entries'] != null ? DestinyPostGameCarnageReportEntry.fromList(data['entries']) : null,
+				data['teams'] != null ? DestinyPostGameCarnageReportTeamEntry.fromList(data['teams']) : null,
 		);
 	}
 

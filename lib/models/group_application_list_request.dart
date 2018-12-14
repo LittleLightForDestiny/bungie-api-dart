@@ -3,8 +3,8 @@ class GroupApplicationListRequest{
 	List<UserMembership> memberships;
 	String message;
 	GroupApplicationListRequest(
-		List<UserMembership> this.memberships,
-		String this.message,
+		this.memberships,
+		this.message,
 	);
 
 	static GroupApplicationListRequest fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class GroupApplicationListRequest{
 			return null;
 		};
 		return new GroupApplicationListRequest(
-				UserMembership.fromList(data['memberships']),
+				data['memberships'] != null ? UserMembership.fromList(data['memberships']) : null,
 				data['message'],
 		);
 	}

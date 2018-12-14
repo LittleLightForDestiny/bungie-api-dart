@@ -2,8 +2,8 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 	int id;
 	int objectiveHash;
 	DestinyActivityGraphDisplayObjectiveDefinition(
-		int this.id,
-		int this.objectiveHash,
+		this.id,
+		this.objectiveHash,
 	);
 
 	static DestinyActivityGraphDisplayObjectiveDefinition fromMap(Map<String, dynamic> data){

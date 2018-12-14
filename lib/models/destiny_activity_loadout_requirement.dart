@@ -3,9 +3,9 @@ class DestinyActivityLoadoutRequirement{
 	List<int> allowedEquippedItemHashes;
 	List<int> allowedWeaponSubTypes;
 	DestinyActivityLoadoutRequirement(
-		int this.equipmentSlotHash,
-		List<int> this.allowedEquippedItemHashes,
-		List<int> this.allowedWeaponSubTypes,
+		this.equipmentSlotHash,
+		this.allowedEquippedItemHashes,
+		this.allowedWeaponSubTypes,
 	);
 
 	static DestinyActivityLoadoutRequirement fromMap(Map<String, dynamic> data){
@@ -14,7 +14,7 @@ class DestinyActivityLoadoutRequirement{
 		};
 		return new DestinyActivityLoadoutRequirement(
 				data['equipmentSlotHash'],
-				data['allowedEquippedItemHashes'],
+				data['allowedEquippedItemHashes'] != null ? data['allowedEquippedItemHashes']?.cast<int>() ?? null : null,
 				data['allowedWeaponSubTypes'],
 		);
 	}

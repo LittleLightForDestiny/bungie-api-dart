@@ -11,17 +11,17 @@ class DestinyProgression{
 	int progressToNextLevel;
 	int nextLevelAt;
 	DestinyProgression(
-		int this.progressionHash,
-		int this.dailyProgress,
-		int this.dailyLimit,
-		int this.weeklyProgress,
-		int this.weeklyLimit,
-		int this.currentProgress,
-		int this.level,
-		int this.levelCap,
-		int this.stepIndex,
-		int this.progressToNextLevel,
-		int this.nextLevelAt,
+		this.progressionHash,
+		this.dailyProgress,
+		this.dailyLimit,
+		this.weeklyProgress,
+		this.weeklyLimit,
+		this.currentProgress,
+		this.level,
+		this.levelCap,
+		this.stepIndex,
+		this.progressToNextLevel,
+		this.nextLevelAt,
 	);
 
 	static DestinyProgression fromMap(Map<String, dynamic> data){

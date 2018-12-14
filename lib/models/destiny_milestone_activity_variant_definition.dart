@@ -2,8 +2,8 @@ class DestinyMilestoneActivityVariantDefinition{
 	int activityHash;
 	int order;
 	DestinyMilestoneActivityVariantDefinition(
-		int this.activityHash,
-		int this.order,
+		this.activityHash,
+		this.order,
 	);
 
 	static DestinyMilestoneActivityVariantDefinition fromMap(Map<String, dynamic> data){

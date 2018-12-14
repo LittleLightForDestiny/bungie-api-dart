@@ -3,9 +3,9 @@ class DestinyItemSetActionRequest{
 	String characterId;
 	int membershipType;
 	DestinyItemSetActionRequest(
-		List<String> this.itemIds,
-		String this.characterId,
-		int this.membershipType,
+		this.itemIds,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyItemSetActionRequest fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyItemSetActionRequest{
 			return null;
 		};
 		return new DestinyItemSetActionRequest(
-				data['itemIds'],
+				data['itemIds'] != null ? data['itemIds']?.cast<String>() ?? null : null,
 				data['characterId'],
 				data['membershipType'],
 		);

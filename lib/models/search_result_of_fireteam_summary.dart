@@ -8,12 +8,12 @@ class SearchResultOfFireteamSummary{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	SearchResultOfFireteamSummary(
-		List<FireteamSummary> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static SearchResultOfFireteamSummary fromMap(Map<String, dynamic> data){
@@ -21,10 +21,10 @@ class SearchResultOfFireteamSummary{
 			return null;
 		};
 		return new SearchResultOfFireteamSummary(
-				FireteamSummary.fromList(data['results']),
+				data['results'] != null ? FireteamSummary.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

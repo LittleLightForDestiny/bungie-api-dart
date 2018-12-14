@@ -5,10 +5,10 @@ class DestinyTalentNodeCategory{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	List<int> nodeHashes;
 	DestinyTalentNodeCategory(
-		String this.identifier,
-		bool this.isLoreDriven,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		List<int> this.nodeHashes,
+		this.identifier,
+		this.isLoreDriven,
+		this.displayProperties,
+		this.nodeHashes,
 	);
 
 	static DestinyTalentNodeCategory fromMap(Map<String, dynamic> data){
@@ -18,8 +18,8 @@ class DestinyTalentNodeCategory{
 		return new DestinyTalentNodeCategory(
 				data['identifier'],
 				data['isLoreDriven'],
-				data['displayProperties'],
-				data['nodeHashes'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['nodeHashes'] != null ? data['nodeHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

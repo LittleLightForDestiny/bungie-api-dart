@@ -6,11 +6,11 @@ class DestinyLocationDefinition{
 	int index;
 	bool redacted;
 	DestinyLocationDefinition(
-		int this.vendorHash,
-		List<DestinyLocationReleaseDefinition> this.locationReleases,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.vendorHash,
+		this.locationReleases,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyLocationDefinition fromMap(Map<String, dynamic> data){
@@ -19,7 +19,7 @@ class DestinyLocationDefinition{
 		};
 		return new DestinyLocationDefinition(
 				data['vendorHash'],
-				DestinyLocationReleaseDefinition.fromList(data['locationReleases']),
+				data['locationReleases'] != null ? DestinyLocationReleaseDefinition.fromList(data['locationReleases']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

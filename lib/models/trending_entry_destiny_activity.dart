@@ -3,8 +3,8 @@ class TrendingEntryDestinyActivity{
 	int activityHash;
 	DestinyPublicActivityStatus status;
 	TrendingEntryDestinyActivity(
-		int this.activityHash,
-		DestinyPublicActivityStatus this.status,
+		this.activityHash,
+		this.status,
 	);
 
 	static TrendingEntryDestinyActivity fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class TrendingEntryDestinyActivity{
 		};
 		return new TrendingEntryDestinyActivity(
 				data['activityHash'],
-				DestinyPublicActivityStatus.fromMap(data['status']),
+				data['status'] != null ? DestinyPublicActivityStatus.fromMap(data['status']) : null,
 		);
 	}
 

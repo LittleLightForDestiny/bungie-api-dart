@@ -4,10 +4,10 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 	String source;
 	String type;
 	DestinyVendorRequirementDisplayEntryDefinition(
-		String this.icon,
-		String this.name,
-		String this.source,
-		String this.type,
+		this.icon,
+		this.name,
+		this.source,
+		this.type,
 	);
 
 	static DestinyVendorRequirementDisplayEntryDefinition fromMap(Map<String, dynamic> data){

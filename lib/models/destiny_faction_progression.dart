@@ -13,19 +13,19 @@ class DestinyFactionProgression{
 	int progressToNextLevel;
 	int nextLevelAt;
 	DestinyFactionProgression(
-		int this.factionHash,
-		int this.factionVendorIndex,
-		int this.progressionHash,
-		int this.dailyProgress,
-		int this.dailyLimit,
-		int this.weeklyProgress,
-		int this.weeklyLimit,
-		int this.currentProgress,
-		int this.level,
-		int this.levelCap,
-		int this.stepIndex,
-		int this.progressToNextLevel,
-		int this.nextLevelAt,
+		this.factionHash,
+		this.factionVendorIndex,
+		this.progressionHash,
+		this.dailyProgress,
+		this.dailyLimit,
+		this.weeklyProgress,
+		this.weeklyLimit,
+		this.currentProgress,
+		this.level,
+		this.levelCap,
+		this.stepIndex,
+		this.progressToNextLevel,
+		this.nextLevelAt,
 	);
 
 	static DestinyFactionProgression fromMap(Map<String, dynamic> data){

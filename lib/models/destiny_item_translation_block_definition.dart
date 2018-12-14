@@ -11,13 +11,13 @@ class DestinyItemTranslationBlockDefinition{
 	List<DestinyGearArtArrangementReference> arrangements;
 	bool hasGeometry;
 	DestinyItemTranslationBlockDefinition(
-		String this.weaponPatternIdentifier,
-		int this.weaponPatternHash,
-		List<DyeReference> this.defaultDyes,
-		List<DyeReference> this.lockedDyes,
-		List<DyeReference> this.customDyes,
-		List<DestinyGearArtArrangementReference> this.arrangements,
-		bool this.hasGeometry,
+		this.weaponPatternIdentifier,
+		this.weaponPatternHash,
+		this.defaultDyes,
+		this.lockedDyes,
+		this.customDyes,
+		this.arrangements,
+		this.hasGeometry,
 	);
 
 	static DestinyItemTranslationBlockDefinition fromMap(Map<String, dynamic> data){
@@ -27,10 +27,10 @@ class DestinyItemTranslationBlockDefinition{
 		return new DestinyItemTranslationBlockDefinition(
 				data['weaponPatternIdentifier'],
 				data['weaponPatternHash'],
-				DyeReference.fromList(data['defaultDyes']),
-				DyeReference.fromList(data['lockedDyes']),
-				DyeReference.fromList(data['customDyes']),
-				DestinyGearArtArrangementReference.fromList(data['arrangements']),
+				data['defaultDyes'] != null ? DyeReference.fromList(data['defaultDyes']) : null,
+				data['lockedDyes'] != null ? DyeReference.fromList(data['lockedDyes']) : null,
+				data['customDyes'] != null ? DyeReference.fromList(data['customDyes']) : null,
+				data['arrangements'] != null ? DestinyGearArtArrangementReference.fromList(data['arrangements']) : null,
 				data['hasGeometry'],
 		);
 	}

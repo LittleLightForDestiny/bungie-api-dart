@@ -2,8 +2,8 @@ class GroupOptionalConversationAddRequest{
 	String chatName;
 	int chatSecurity;
 	GroupOptionalConversationAddRequest(
-		String this.chatName,
-		int this.chatSecurity,
+		this.chatName,
+		this.chatSecurity,
 	);
 
 	static GroupOptionalConversationAddRequest fromMap(Map<String, dynamic> data){

@@ -3,8 +3,8 @@ class DestinyErrorProfile{
 	int errorCode;
 	UserInfoCard infoCard;
 	DestinyErrorProfile(
-		int this.errorCode,
-		UserInfoCard this.infoCard,
+		this.errorCode,
+		this.infoCard,
 	);
 
 	static DestinyErrorProfile fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyErrorProfile{
 		};
 		return new DestinyErrorProfile(
 				data['errorCode'],
-				data['infoCard'],
+				data['infoCard'] != null ? UserInfoCard.fromMap(data['infoCard']) : null,
 		);
 	}
 

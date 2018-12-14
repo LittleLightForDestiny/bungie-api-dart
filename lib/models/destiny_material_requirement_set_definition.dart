@@ -5,10 +5,10 @@ class DestinyMaterialRequirementSetDefinition{
 	int index;
 	bool redacted;
 	DestinyMaterialRequirementSetDefinition(
-		List<DestinyMaterialRequirement> this.materials,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.materials,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyMaterialRequirementSetDefinition fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyMaterialRequirementSetDefinition{
 			return null;
 		};
 		return new DestinyMaterialRequirementSetDefinition(
-				DestinyMaterialRequirement.fromList(data['materials']),
+				data['materials'] != null ? DestinyMaterialRequirement.fromList(data['materials']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

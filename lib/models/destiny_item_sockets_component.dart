@@ -2,7 +2,7 @@ import 'destiny_item_socket_state.dart';
 class DestinyItemSocketsComponent{
 	List<DestinyItemSocketState> sockets;
 	DestinyItemSocketsComponent(
-		List<DestinyItemSocketState> this.sockets,
+		this.sockets,
 	);
 
 	static DestinyItemSocketsComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyItemSocketsComponent{
 			return null;
 		};
 		return new DestinyItemSocketsComponent(
-				DestinyItemSocketState.fromList(data['sockets']),
+				data['sockets'] != null ? DestinyItemSocketState.fromList(data['sockets']) : null,
 		);
 	}
 

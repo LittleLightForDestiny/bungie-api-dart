@@ -3,9 +3,9 @@ class DestinyProgressionRewardDefinition{
 	int amount;
 	bool applyThrottles;
 	DestinyProgressionRewardDefinition(
-		int this.progressionMappingHash,
-		int this.amount,
-		bool this.applyThrottles,
+		this.progressionMappingHash,
+		this.amount,
+		this.applyThrottles,
 	);
 
 	static DestinyProgressionRewardDefinition fromMap(Map<String, dynamic> data){

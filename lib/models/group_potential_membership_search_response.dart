@@ -8,12 +8,12 @@ class GroupPotentialMembershipSearchResponse{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	GroupPotentialMembershipSearchResponse(
-		List<GroupPotentialMembership> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static GroupPotentialMembershipSearchResponse fromMap(Map<String, dynamic> data){
@@ -21,10 +21,10 @@ class GroupPotentialMembershipSearchResponse{
 			return null;
 		};
 		return new GroupPotentialMembershipSearchResponse(
-				GroupPotentialMembership.fromList(data['results']),
+				data['results'] != null ? GroupPotentialMembership.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

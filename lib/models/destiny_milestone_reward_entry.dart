@@ -3,9 +3,9 @@ class DestinyMilestoneRewardEntry{
 	bool earned;
 	bool redeemed;
 	DestinyMilestoneRewardEntry(
-		int this.rewardEntryHash,
-		bool this.earned,
-		bool this.redeemed,
+		this.rewardEntryHash,
+		this.earned,
+		this.redeemed,
 	);
 
 	static DestinyMilestoneRewardEntry fromMap(Map<String, dynamic> data){

@@ -9,15 +9,15 @@ class DestinyVendorsResponse{
 	DictionaryComponentResponseOfuint32AndDestinyVendorComponent vendors;
 	DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent categories;
 	DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent sales;
-	Map<DestinyItemComponentSetOfint32, dynamic> itemComponents;
+	Map<String, DestinyItemComponentSetOfint32> itemComponents;
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;
 	DestinyVendorsResponse(
-		SingleComponentResponseOfDestinyVendorGroupComponent this.vendorGroups,
-		DictionaryComponentResponseOfuint32AndDestinyVendorComponent this.vendors,
-		DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent this.categories,
-		DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent this.sales,
-		Map<DestinyItemComponentSetOfint32, dynamic> this.itemComponents,
-		SingleComponentResponseOfDestinyCurrenciesComponent this.currencyLookups,
+		this.vendorGroups,
+		this.vendors,
+		this.categories,
+		this.sales,
+		this.itemComponents,
+		this.currencyLookups,
 	);
 
 	static DestinyVendorsResponse fromMap(Map<String, dynamic> data){
@@ -25,12 +25,12 @@ class DestinyVendorsResponse{
 			return null;
 		};
 		return new DestinyVendorsResponse(
-				data['vendorGroups'],
-				data['vendors'],
-				data['categories'],
-				data['sales'],
-				data['itemComponents'],
-				data['currencyLookups'],
+				data['vendorGroups'] != null ? SingleComponentResponseOfDestinyVendorGroupComponent.fromMap(data['vendorGroups']) : null,
+				data['vendors'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorComponent.fromMap(data['vendors']) : null,
+				data['categories'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent.fromMap(data['categories']) : null,
+				data['sales'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent.fromMap(data['sales']) : null,
+				data['itemComponents'] != null ? Map<String, DestinyItemComponentSetOfint32>.from(data['itemComponents'].map((k, v)=>MapEntry(k, DestinyItemComponentSetOfint32.fromMap(v)))) : null,
+				data['currencyLookups'] != null ? SingleComponentResponseOfDestinyCurrenciesComponent.fromMap(data['currencyLookups']) : null,
 		);
 	}
 

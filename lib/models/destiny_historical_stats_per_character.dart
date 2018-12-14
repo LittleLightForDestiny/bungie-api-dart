@@ -3,13 +3,13 @@ import 'destiny_historical_stats_by_period.dart';
 class DestinyHistoricalStatsPerCharacter{
 	String characterId;
 	bool deleted;
-	Map<DestinyHistoricalStatsByPeriod, dynamic> results;
+	Map<String, DestinyHistoricalStatsByPeriod> results;
 	DestinyHistoricalStatsByPeriod merged;
 	DestinyHistoricalStatsPerCharacter(
-		String this.characterId,
-		bool this.deleted,
-		Map<DestinyHistoricalStatsByPeriod, dynamic> this.results,
-		DestinyHistoricalStatsByPeriod this.merged,
+		this.characterId,
+		this.deleted,
+		this.results,
+		this.merged,
 	);
 
 	static DestinyHistoricalStatsPerCharacter fromMap(Map<String, dynamic> data){
@@ -19,8 +19,8 @@ class DestinyHistoricalStatsPerCharacter{
 		return new DestinyHistoricalStatsPerCharacter(
 				data['characterId'],
 				data['deleted'],
-				data['results'],
-				DestinyHistoricalStatsByPeriod.fromMap(data['merged']),
+				data['results'] != null ? Map<String, DestinyHistoricalStatsByPeriod>.from(data['results'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsByPeriod.fromMap(v)))) : null,
+				data['merged'] != null ? DestinyHistoricalStatsByPeriod.fromMap(data['merged']) : null,
 		);
 	}
 

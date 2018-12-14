@@ -2,8 +2,8 @@ class AwaInitializeResponse{
 	String correlationId;
 	bool sentToSelf;
 	AwaInitializeResponse(
-		String this.correlationId,
-		bool this.sentToSelf,
+		this.correlationId,
+		this.sentToSelf,
 	);
 
 	static AwaInitializeResponse fromMap(Map<String, dynamic> data){

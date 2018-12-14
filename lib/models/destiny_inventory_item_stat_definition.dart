@@ -4,10 +4,10 @@ class DestinyInventoryItemStatDefinition{
 	int minimum;
 	int maximum;
 	DestinyInventoryItemStatDefinition(
-		int this.statHash,
-		int this.value,
-		int this.minimum,
-		int this.maximum,
+		this.statHash,
+		this.value,
+		this.minimum,
+		this.maximum,
 	);
 
 	static DestinyInventoryItemStatDefinition fromMap(Map<String, dynamic> data){

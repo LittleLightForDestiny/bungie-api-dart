@@ -2,8 +2,8 @@ class DestinyCollectibleAcquisitionBlock{
 	int acquireMaterialRequirementHash;
 	int acquireTimestampUnlockValueHash;
 	DestinyCollectibleAcquisitionBlock(
-		int this.acquireMaterialRequirementHash,
-		int this.acquireTimestampUnlockValueHash,
+		this.acquireMaterialRequirementHash,
+		this.acquireTimestampUnlockValueHash,
 	);
 
 	static DestinyCollectibleAcquisitionBlock fromMap(Map<String, dynamic> data){

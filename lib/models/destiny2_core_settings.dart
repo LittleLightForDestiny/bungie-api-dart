@@ -3,19 +3,21 @@ class Destiny2CoreSettings{
 	int badgesRootNode;
 	int recordsRootNode;
 	int medalsRootNode;
+	List<int> currentRankProgressionHashes;
 	String undiscoveredCollectibleImage;
 	String ammoTypeHeavyIcon;
 	String ammoTypeSpecialIcon;
 	String ammoTypePrimaryIcon;
 	Destiny2CoreSettings(
-		int this.collectionRootNode,
-		int this.badgesRootNode,
-		int this.recordsRootNode,
-		int this.medalsRootNode,
-		String this.undiscoveredCollectibleImage,
-		String this.ammoTypeHeavyIcon,
-		String this.ammoTypeSpecialIcon,
-		String this.ammoTypePrimaryIcon,
+		this.collectionRootNode,
+		this.badgesRootNode,
+		this.recordsRootNode,
+		this.medalsRootNode,
+		this.currentRankProgressionHashes,
+		this.undiscoveredCollectibleImage,
+		this.ammoTypeHeavyIcon,
+		this.ammoTypeSpecialIcon,
+		this.ammoTypePrimaryIcon,
 	);
 
 	static Destiny2CoreSettings fromMap(Map<String, dynamic> data){
@@ -27,6 +29,7 @@ class Destiny2CoreSettings{
 				data['badgesRootNode'],
 				data['recordsRootNode'],
 				data['medalsRootNode'],
+				data['currentRankProgressionHashes'] != null ? data['currentRankProgressionHashes']?.cast<int>() ?? null : null,
 				data['undiscoveredCollectibleImage'],
 				data['ammoTypeHeavyIcon'],
 				data['ammoTypeSpecialIcon'],
@@ -51,6 +54,7 @@ class Destiny2CoreSettings{
 			data['badgesRootNode'] = this.badgesRootNode;
 			data['recordsRootNode'] = this.recordsRootNode;
 			data['medalsRootNode'] = this.medalsRootNode;
+			data['currentRankProgressionHashes'] = this.currentRankProgressionHashes;
 			data['undiscoveredCollectibleImage'] = this.undiscoveredCollectibleImage;
 			data['ammoTypeHeavyIcon'] = this.ammoTypeHeavyIcon;
 			data['ammoTypeSpecialIcon'] = this.ammoTypeSpecialIcon;

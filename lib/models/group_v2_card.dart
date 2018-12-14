@@ -14,19 +14,19 @@ class GroupV2Card{
 	String avatarPath;
 	String theme;
 	GroupV2Card(
-		String this.groupId,
-		String this.name,
-		int this.groupType,
-		String this.creationDate,
-		String this.about,
-		String this.motto,
-		int this.memberCount,
-		String this.locale,
-		int this.membershipOption,
-		int this.capabilities,
-		GroupV2ClanInfo this.clanInfo,
-		String this.avatarPath,
-		String this.theme,
+		this.groupId,
+		this.name,
+		this.groupType,
+		this.creationDate,
+		this.about,
+		this.motto,
+		this.memberCount,
+		this.locale,
+		this.membershipOption,
+		this.capabilities,
+		this.clanInfo,
+		this.avatarPath,
+		this.theme,
 	);
 
 	static GroupV2Card fromMap(Map<String, dynamic> data){
@@ -44,7 +44,7 @@ class GroupV2Card{
 				data['locale'],
 				data['membershipOption'],
 				data['capabilities'],
-				GroupV2ClanInfo.fromMap(data['clanInfo']),
+				data['clanInfo'] != null ? GroupV2ClanInfo.fromMap(data['clanInfo']) : null,
 				data['avatarPath'],
 				data['theme'],
 		);

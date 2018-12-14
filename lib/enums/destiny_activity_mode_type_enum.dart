@@ -58,4 +58,7 @@ class DestinyActivityModeType {
   static const int Gambit = 63;
   static const int AllPvECompetitive = 64;
   static const int Breakthrough = 65;
+  static const int BlackArmoryRun = 66;
+  static const int Salvage = 67;
+  static const int IronBannerSalvage = 68;
 }

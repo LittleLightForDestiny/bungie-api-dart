@@ -3,9 +3,9 @@ class ContentTypeDefaultValue{
 	String whenValue;
 	String defaultValue;
 	ContentTypeDefaultValue(
-		String this.whenClause,
-		String this.whenValue,
-		String this.defaultValue,
+		this.whenClause,
+		this.whenValue,
+		this.defaultValue,
 	);
 
 	static ContentTypeDefaultValue fromMap(Map<String, dynamic> data){

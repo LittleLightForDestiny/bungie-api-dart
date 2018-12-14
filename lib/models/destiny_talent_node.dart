@@ -8,20 +8,20 @@ class DestinyTalentNode{
 	int stepIndex;
 	List<DestinyMaterialRequirement> materialsToUpgrade;
 	int activationGridLevel;
-	int progressPercent;
+	double progressPercent;
 	bool hidden;
 	DestinyTalentNodeStatBlock nodeStatsBlock;
 	DestinyTalentNode(
-		int this.nodeIndex,
-		int this.nodeHash,
-		int this.state,
-		bool this.isActivated,
-		int this.stepIndex,
-		List<DestinyMaterialRequirement> this.materialsToUpgrade,
-		int this.activationGridLevel,
-		int this.progressPercent,
-		bool this.hidden,
-		DestinyTalentNodeStatBlock this.nodeStatsBlock,
+		this.nodeIndex,
+		this.nodeHash,
+		this.state,
+		this.isActivated,
+		this.stepIndex,
+		this.materialsToUpgrade,
+		this.activationGridLevel,
+		this.progressPercent,
+		this.hidden,
+		this.nodeStatsBlock,
 	);
 
 	static DestinyTalentNode fromMap(Map<String, dynamic> data){
@@ -34,11 +34,11 @@ class DestinyTalentNode{
 				data['state'],
 				data['isActivated'],
 				data['stepIndex'],
-				DestinyMaterialRequirement.fromList(data['materialsToUpgrade']),
+				data['materialsToUpgrade'] != null ? DestinyMaterialRequirement.fromList(data['materialsToUpgrade']) : null,
 				data['activationGridLevel'],
 				data['progressPercent'],
 				data['hidden'],
-				data['nodeStatsBlock'],
+				data['nodeStatsBlock'] != null ? DestinyTalentNodeStatBlock.fromMap(data['nodeStatsBlock']) : null,
 		);
 	}
 

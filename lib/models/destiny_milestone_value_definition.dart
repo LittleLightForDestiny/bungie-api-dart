@@ -3,8 +3,8 @@ class DestinyMilestoneValueDefinition{
 	String key;
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyMilestoneValueDefinition(
-		String this.key,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
+		this.key,
+		this.displayProperties,
 	);
 
 	static DestinyMilestoneValueDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyMilestoneValueDefinition{
 		};
 		return new DestinyMilestoneValueDefinition(
 				data['key'],
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 		);
 	}
 

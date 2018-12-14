@@ -5,10 +5,10 @@ class DestinyMilestoneContent{
 	List<String> tips;
 	List<DestinyMilestoneContentItemCategory> itemCategories;
 	DestinyMilestoneContent(
-		String this.about,
-		String this.status,
-		List<String> this.tips,
-		List<DestinyMilestoneContentItemCategory> this.itemCategories,
+		this.about,
+		this.status,
+		this.tips,
+		this.itemCategories,
 	);
 
 	static DestinyMilestoneContent fromMap(Map<String, dynamic> data){
@@ -18,8 +18,8 @@ class DestinyMilestoneContent{
 		return new DestinyMilestoneContent(
 				data['about'],
 				data['status'],
-				data['tips'],
-				DestinyMilestoneContentItemCategory.fromList(data['itemCategories']),
+				data['tips'] != null ? data['tips']?.cast<String>() ?? null : null,
+				data['itemCategories'] != null ? DestinyMilestoneContentItemCategory.fromList(data['itemCategories']) : null,
 		);
 	}
 

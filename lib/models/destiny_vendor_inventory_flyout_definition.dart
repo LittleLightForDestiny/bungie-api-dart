@@ -8,12 +8,12 @@ class DestinyVendorInventoryFlyoutDefinition{
 	bool suppressNewness;
 	int equipmentSlotHash;
 	DestinyVendorInventoryFlyoutDefinition(
-		String this.lockedDescription,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		List<DestinyVendorInventoryFlyoutBucketDefinition> this.buckets,
-		int this.flyoutId,
-		bool this.suppressNewness,
-		int this.equipmentSlotHash,
+		this.lockedDescription,
+		this.displayProperties,
+		this.buckets,
+		this.flyoutId,
+		this.suppressNewness,
+		this.equipmentSlotHash,
 	);
 
 	static DestinyVendorInventoryFlyoutDefinition fromMap(Map<String, dynamic> data){
@@ -22,8 +22,8 @@ class DestinyVendorInventoryFlyoutDefinition{
 		};
 		return new DestinyVendorInventoryFlyoutDefinition(
 				data['lockedDescription'],
-				data['displayProperties'],
-				DestinyVendorInventoryFlyoutBucketDefinition.fromList(data['buckets']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['buckets'] != null ? DestinyVendorInventoryFlyoutBucketDefinition.fromList(data['buckets']) : null,
 				data['flyoutId'],
 				data['suppressNewness'],
 				data['equipmentSlotHash'],

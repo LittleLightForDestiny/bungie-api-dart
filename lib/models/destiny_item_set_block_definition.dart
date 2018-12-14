@@ -5,10 +5,10 @@ class DestinyItemSetBlockDefinition{
 	bool setIsFeatured;
 	String setType;
 	DestinyItemSetBlockDefinition(
-		List<DestinyItemSetBlockEntryDefinition> this.itemList,
-		bool this.requireOrderedSetItemAdd,
-		bool this.setIsFeatured,
-		String this.setType,
+		this.itemList,
+		this.requireOrderedSetItemAdd,
+		this.setIsFeatured,
+		this.setType,
 	);
 
 	static DestinyItemSetBlockDefinition fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyItemSetBlockDefinition{
 			return null;
 		};
 		return new DestinyItemSetBlockDefinition(
-				DestinyItemSetBlockEntryDefinition.fromList(data['itemList']),
+				data['itemList'] != null ? DestinyItemSetBlockEntryDefinition.fromList(data['itemList']) : null,
 				data['requireOrderedSetItemAdd'],
 				data['setIsFeatured'],
 				data['setType'],

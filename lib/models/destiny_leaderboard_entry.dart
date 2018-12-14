@@ -6,10 +6,10 @@ class DestinyLeaderboardEntry{
 	String characterId;
 	DestinyHistoricalStatsValue value;
 	DestinyLeaderboardEntry(
-		int this.rank,
-		DestinyPlayer this.player,
-		String this.characterId,
-		DestinyHistoricalStatsValue this.value,
+		this.rank,
+		this.player,
+		this.characterId,
+		this.value,
 	);
 
 	static DestinyLeaderboardEntry fromMap(Map<String, dynamic> data){
@@ -18,9 +18,9 @@ class DestinyLeaderboardEntry{
 		};
 		return new DestinyLeaderboardEntry(
 				data['rank'],
-				data['player'],
+				data['player'] != null ? DestinyPlayer.fromMap(data['player']) : null,
 				data['characterId'],
-				data['value'],
+				data['value'] != null ? DestinyHistoricalStatsValue.fromMap(data['value']) : null,
 		);
 	}
 

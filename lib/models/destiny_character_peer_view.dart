@@ -2,7 +2,7 @@ import 'destiny_item_peer_view.dart';
 class DestinyCharacterPeerView{
 	List<DestinyItemPeerView> equipment;
 	DestinyCharacterPeerView(
-		List<DestinyItemPeerView> this.equipment,
+		this.equipment,
 	);
 
 	static DestinyCharacterPeerView fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyCharacterPeerView{
 			return null;
 		};
 		return new DestinyCharacterPeerView(
-				DestinyItemPeerView.fromList(data['equipment']),
+				data['equipment'] != null ? DestinyItemPeerView.fromList(data['equipment']) : null,
 		);
 	}
 

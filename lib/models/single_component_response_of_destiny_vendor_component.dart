@@ -3,8 +3,8 @@ class SingleComponentResponseOfDestinyVendorComponent{
 	DestinyVendorComponent data;
 	int privacy;
 	SingleComponentResponseOfDestinyVendorComponent(
-		DestinyVendorComponent this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static SingleComponentResponseOfDestinyVendorComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class SingleComponentResponseOfDestinyVendorComponent{
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyVendorComponent(
-				DestinyVendorComponent.fromMap(data['data']),
+				data['data'] != null ? DestinyVendorComponent.fromMap(data['data']) : null,
 				data['privacy'],
 		);
 	}

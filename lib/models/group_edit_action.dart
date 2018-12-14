@@ -16,22 +16,22 @@ class GroupEditAction{
 	bool enableInvitationMessagingForAdmins;
 	int defaultPublicity;
 	GroupEditAction(
-		String this.name,
-		String this.about,
-		String this.motto,
-		String this.theme,
-		int this.avatarImageIndex,
-		String this.tags,
-		bool this.isPublic,
-		int this.membershipOption,
-		bool this.isPublicTopicAdminOnly,
-		bool this.allowChat,
-		int this.chatSecurity,
-		String this.callsign,
-		String this.locale,
-		int this.homepage,
-		bool this.enableInvitationMessagingForAdmins,
-		int this.defaultPublicity,
+		this.name,
+		this.about,
+		this.motto,
+		this.theme,
+		this.avatarImageIndex,
+		this.tags,
+		this.isPublic,
+		this.membershipOption,
+		this.isPublicTopicAdminOnly,
+		this.allowChat,
+		this.chatSecurity,
+		this.callsign,
+		this.locale,
+		this.homepage,
+		this.enableInvitationMessagingForAdmins,
+		this.defaultPublicity,
 	);
 
 	static GroupEditAction fromMap(Map<String, dynamic> data){

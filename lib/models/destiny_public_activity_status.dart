@@ -4,9 +4,9 @@ class DestinyPublicActivityStatus{
 	List<int> modifierHashes;
 	List<DestinyItemQuantity> rewardTooltipItems;
 	DestinyPublicActivityStatus(
-		List<int> this.challengeObjectiveHashes,
-		List<int> this.modifierHashes,
-		List<DestinyItemQuantity> this.rewardTooltipItems,
+		this.challengeObjectiveHashes,
+		this.modifierHashes,
+		this.rewardTooltipItems,
 	);
 
 	static DestinyPublicActivityStatus fromMap(Map<String, dynamic> data){
@@ -14,9 +14,9 @@ class DestinyPublicActivityStatus{
 			return null;
 		};
 		return new DestinyPublicActivityStatus(
-				data['challengeObjectiveHashes'],
-				data['modifierHashes'],
-				DestinyItemQuantity.fromList(data['rewardTooltipItems']),
+				data['challengeObjectiveHashes'] != null ? data['challengeObjectiveHashes']?.cast<int>() ?? null : null,
+				data['modifierHashes'] != null ? data['modifierHashes']?.cast<int>() ?? null : null,
+				data['rewardTooltipItems'] != null ? DestinyItemQuantity.fromList(data['rewardTooltipItems']) : null,
 		);
 	}
 

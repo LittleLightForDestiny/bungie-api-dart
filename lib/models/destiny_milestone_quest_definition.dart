@@ -6,15 +6,15 @@ class DestinyMilestoneQuestDefinition{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	String overrideImage;
 	DestinyMilestoneQuestRewardsDefinition questRewards;
-	Map<DestinyMilestoneActivityDefinition, dynamic> activities;
+	Map<String, DestinyMilestoneActivityDefinition> activities;
 	int destinationHash;
 	DestinyMilestoneQuestDefinition(
-		int this.questItemHash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.overrideImage,
-		DestinyMilestoneQuestRewardsDefinition this.questRewards,
-		Map<DestinyMilestoneActivityDefinition, dynamic> this.activities,
-		int this.destinationHash,
+		this.questItemHash,
+		this.displayProperties,
+		this.overrideImage,
+		this.questRewards,
+		this.activities,
+		this.destinationHash,
 	);
 
 	static DestinyMilestoneQuestDefinition fromMap(Map<String, dynamic> data){
@@ -23,10 +23,10 @@ class DestinyMilestoneQuestDefinition{
 		};
 		return new DestinyMilestoneQuestDefinition(
 				data['questItemHash'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['overrideImage'],
-				data['questRewards'],
-				data['activities'],
+				data['questRewards'] != null ? DestinyMilestoneQuestRewardsDefinition.fromMap(data['questRewards']) : null,
+				data['activities'] != null ? Map<String, DestinyMilestoneActivityDefinition>.from(data['activities'].map((k, v)=>MapEntry(k, DestinyMilestoneActivityDefinition.fromMap(v)))) : null,
 				data['destinationHash'],
 		);
 	}

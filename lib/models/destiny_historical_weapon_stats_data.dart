@@ -2,7 +2,7 @@ import 'destiny_historical_weapon_stats.dart';
 class DestinyHistoricalWeaponStatsData{
 	List<DestinyHistoricalWeaponStats> weapons;
 	DestinyHistoricalWeaponStatsData(
-		List<DestinyHistoricalWeaponStats> this.weapons,
+		this.weapons,
 	);
 
 	static DestinyHistoricalWeaponStatsData fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyHistoricalWeaponStatsData{
 			return null;
 		};
 		return new DestinyHistoricalWeaponStatsData(
-				DestinyHistoricalWeaponStats.fromList(data['weapons']),
+				data['weapons'] != null ? DestinyHistoricalWeaponStats.fromList(data['weapons']) : null,
 		);
 	}
 

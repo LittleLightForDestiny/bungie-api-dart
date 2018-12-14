@@ -3,8 +3,8 @@ class DestinyObjectiveStatEntryDefinition{
 	DestinyItemInvestmentStatDefinition stat;
 	int style;
 	DestinyObjectiveStatEntryDefinition(
-		DestinyItemInvestmentStatDefinition this.stat,
-		int this.style,
+		this.stat,
+		this.style,
 	);
 
 	static DestinyObjectiveStatEntryDefinition fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyObjectiveStatEntryDefinition{
 			return null;
 		};
 		return new DestinyObjectiveStatEntryDefinition(
-				data['stat'],
+				data['stat'] != null ? DestinyItemInvestmentStatDefinition.fromMap(data['stat']) : null,
 				data['style'],
 		);
 	}

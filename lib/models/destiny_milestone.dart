@@ -6,7 +6,7 @@ class DestinyMilestone{
 	int milestoneHash;
 	List<DestinyMilestoneQuest> availableQuests;
 	List<DestinyMilestoneChallengeActivity> activities;
-	Map<int, dynamic> values;
+	Map<String, double> values;
 	List<int> vendorHashes;
 	List<DestinyMilestoneVendor> vendors;
 	List<DestinyMilestoneRewardCategory> rewards;
@@ -14,16 +14,16 @@ class DestinyMilestone{
 	String endDate;
 	int order;
 	DestinyMilestone(
-		int this.milestoneHash,
-		List<DestinyMilestoneQuest> this.availableQuests,
-		List<DestinyMilestoneChallengeActivity> this.activities,
-		Map<int, dynamic> this.values,
-		List<int> this.vendorHashes,
-		List<DestinyMilestoneVendor> this.vendors,
-		List<DestinyMilestoneRewardCategory> this.rewards,
-		String this.startDate,
-		String this.endDate,
-		int this.order,
+		this.milestoneHash,
+		this.availableQuests,
+		this.activities,
+		this.values,
+		this.vendorHashes,
+		this.vendors,
+		this.rewards,
+		this.startDate,
+		this.endDate,
+		this.order,
 	);
 
 	static DestinyMilestone fromMap(Map<String, dynamic> data){
@@ -32,12 +32,12 @@ class DestinyMilestone{
 		};
 		return new DestinyMilestone(
 				data['milestoneHash'],
-				DestinyMilestoneQuest.fromList(data['availableQuests']),
-				DestinyMilestoneChallengeActivity.fromList(data['activities']),
-				data['values'],
-				data['vendorHashes'],
-				DestinyMilestoneVendor.fromList(data['vendors']),
-				DestinyMilestoneRewardCategory.fromList(data['rewards']),
+				data['availableQuests'] != null ? DestinyMilestoneQuest.fromList(data['availableQuests']) : null,
+				data['activities'] != null ? DestinyMilestoneChallengeActivity.fromList(data['activities']) : null,
+				data['values'] != null ? Map<String, double>.from(data['values'].map((k, v)=>MapEntry(k, v))) : null,
+				data['vendorHashes'] != null ? data['vendorHashes']?.cast<int>() ?? null : null,
+				data['vendors'] != null ? DestinyMilestoneVendor.fromList(data['vendors']) : null,
+				data['rewards'] != null ? DestinyMilestoneRewardCategory.fromList(data['rewards']) : null,
 				data['startDate'],
 				data['endDate'],
 				data['order'],

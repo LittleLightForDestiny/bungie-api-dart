@@ -7,11 +7,11 @@ class DestinyPlugSetDefinition{
 	int index;
 	bool redacted;
 	DestinyPlugSetDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		List<DestinyItemSocketEntryPlugItemDefinition> this.reusablePlugItems,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.reusablePlugItems,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyPlugSetDefinition fromMap(Map<String, dynamic> data){
@@ -19,8 +19,8 @@ class DestinyPlugSetDefinition{
 			return null;
 		};
 		return new DestinyPlugSetDefinition(
-				data['displayProperties'],
-				DestinyItemSocketEntryPlugItemDefinition.fromList(data['reusablePlugItems']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['reusablePlugItems'] != null ? DestinyItemSocketEntryPlugItemDefinition.fromList(data['reusablePlugItems']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

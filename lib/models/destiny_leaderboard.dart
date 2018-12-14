@@ -3,8 +3,8 @@ class DestinyLeaderboard{
 	String statId;
 	List<DestinyLeaderboardEntry> entries;
 	DestinyLeaderboard(
-		String this.statId,
-		List<DestinyLeaderboardEntry> this.entries,
+		this.statId,
+		this.entries,
 	);
 
 	static DestinyLeaderboard fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyLeaderboard{
 		};
 		return new DestinyLeaderboard(
 				data['statId'],
-				DestinyLeaderboardEntry.fromList(data['entries']),
+				data['entries'] != null ? DestinyLeaderboardEntry.fromList(data['entries']) : null,
 		);
 	}
 

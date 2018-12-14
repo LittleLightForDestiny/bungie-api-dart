@@ -4,8 +4,8 @@ class InventoryChangedResponse{
 	List<DestinyItemComponent> addedInventoryItems;
 	List<DestinyItemComponent> removedInventoryItems;
 	InventoryChangedResponse(
-		List<DestinyItemComponent> this.addedInventoryItems,
-		List<DestinyItemComponent> this.removedInventoryItems,
+		this.addedInventoryItems,
+		this.removedInventoryItems,
 	);
 
 	static InventoryChangedResponse fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class InventoryChangedResponse{
 			return null;
 		};
 		return new InventoryChangedResponse(
-				DestinyItemComponent.fromList(data['addedInventoryItems']),
-				DestinyItemComponent.fromList(data['removedInventoryItems']),
+				data['addedInventoryItems'] != null ? DestinyItemComponent.fromList(data['addedInventoryItems']) : null,
+				data['removedInventoryItems'] != null ? DestinyItemComponent.fromList(data['removedInventoryItems']) : null,
 		);
 	}
 

@@ -2,8 +2,8 @@ class DestinyLeaderboardResults{
 	String focusMembershipId;
 	String focusCharacterId;
 	DestinyLeaderboardResults(
-		String this.focusMembershipId,
-		String this.focusCharacterId,
+		this.focusMembershipId,
+		this.focusCharacterId,
 	);
 
 	static DestinyLeaderboardResults fromMap(Map<String, dynamic> data){

@@ -2,7 +2,7 @@ import 'group_v2.dart';
 class GroupMembershipBase{
 	GroupV2 group;
 	GroupMembershipBase(
-		GroupV2 this.group,
+		this.group,
 	);
 
 	static GroupMembershipBase fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class GroupMembershipBase{
 			return null;
 		};
 		return new GroupMembershipBase(
-				GroupV2.fromMap(data['group']),
+				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
 		);
 	}
 

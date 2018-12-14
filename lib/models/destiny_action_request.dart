@@ -1,7 +1,7 @@
 class DestinyActionRequest{
 	int membershipType;
 	DestinyActionRequest(
-		int this.membershipType,
+		this.membershipType,
 	);
 
 	static DestinyActionRequest fromMap(Map<String, dynamic> data){

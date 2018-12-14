@@ -7,12 +7,12 @@ class DestinyItemPlugComponent{
 	List<int> insertFailIndexes;
 	List<int> enableFailIndexes;
 	DestinyItemPlugComponent(
-		int this.plugItemHash,
-		List<DestinyObjectiveProgress> this.plugObjectives,
-		bool this.canInsert,
-		bool this.enabled,
-		List<int> this.insertFailIndexes,
-		List<int> this.enableFailIndexes,
+		this.plugItemHash,
+		this.plugObjectives,
+		this.canInsert,
+		this.enabled,
+		this.insertFailIndexes,
+		this.enableFailIndexes,
 	);
 
 	static DestinyItemPlugComponent fromMap(Map<String, dynamic> data){
@@ -21,11 +21,11 @@ class DestinyItemPlugComponent{
 		};
 		return new DestinyItemPlugComponent(
 				data['plugItemHash'],
-				DestinyObjectiveProgress.fromList(data['plugObjectives']),
+				data['plugObjectives'] != null ? DestinyObjectiveProgress.fromList(data['plugObjectives']) : null,
 				data['canInsert'],
 				data['enabled'],
-				data['insertFailIndexes'],
-				data['enableFailIndexes'],
+				data['insertFailIndexes'] != null ? data['insertFailIndexes']?.cast<int>() ?? null : null,
+				data['enableFailIndexes'] != null ? data['enableFailIndexes']?.cast<int>() ?? null : null,
 		);
 	}
 

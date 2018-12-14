@@ -10,14 +10,14 @@ class TrendingEntryDestinyRitual{
 	DestinyPublicMilestone milestoneDetails;
 	DestinyMilestoneContent eventContent;
 	TrendingEntryDestinyRitual(
-		String this.image,
-		String this.icon,
-		String this.title,
-		String this.subtitle,
-		String this.dateStart,
-		String this.dateEnd,
-		DestinyPublicMilestone this.milestoneDetails,
-		DestinyMilestoneContent this.eventContent,
+		this.image,
+		this.icon,
+		this.title,
+		this.subtitle,
+		this.dateStart,
+		this.dateEnd,
+		this.milestoneDetails,
+		this.eventContent,
 	);
 
 	static TrendingEntryDestinyRitual fromMap(Map<String, dynamic> data){
@@ -31,8 +31,8 @@ class TrendingEntryDestinyRitual{
 				data['subtitle'],
 				data['dateStart'],
 				data['dateEnd'],
-				data['milestoneDetails'],
-				data['eventContent'],
+				data['milestoneDetails'] != null ? DestinyPublicMilestone.fromMap(data['milestoneDetails']) : null,
+				data['eventContent'] != null ? DestinyMilestoneContent.fromMap(data['eventContent']) : null,
 		);
 	}
 

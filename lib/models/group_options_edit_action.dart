@@ -5,11 +5,11 @@ class GroupOptionsEditAction{
 	bool updateBannerPermissionOverride;
 	int joinLevel;
 	GroupOptionsEditAction(
-		bool this.invitePermissionOverride,
-		bool this.updateCulturePermissionOverride,
-		int this.hostGuidedGamePermissionOverride,
-		bool this.updateBannerPermissionOverride,
-		int this.joinLevel,
+		this.invitePermissionOverride,
+		this.updateCulturePermissionOverride,
+		this.hostGuidedGamePermissionOverride,
+		this.updateBannerPermissionOverride,
+		this.joinLevel,
 	);
 
 	static GroupOptionsEditAction fromMap(Map<String, dynamic> data){

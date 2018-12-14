@@ -10,15 +10,15 @@ class DestinyItemObjectiveBlockDefinition{
 	int questTypeHash;
 	List<DestinyObjectiveDisplayProperties> perObjectiveDisplayProperties;
 	DestinyItemObjectiveBlockDefinition(
-		List<int> this.objectiveHashes,
-		List<int> this.displayActivityHashes,
-		bool this.requireFullObjectiveCompletion,
-		int this.questlineItemHash,
-		String this.narrative,
-		String this.objectiveVerbName,
-		String this.questTypeIdentifier,
-		int this.questTypeHash,
-		List<DestinyObjectiveDisplayProperties> this.perObjectiveDisplayProperties,
+		this.objectiveHashes,
+		this.displayActivityHashes,
+		this.requireFullObjectiveCompletion,
+		this.questlineItemHash,
+		this.narrative,
+		this.objectiveVerbName,
+		this.questTypeIdentifier,
+		this.questTypeHash,
+		this.perObjectiveDisplayProperties,
 	);
 
 	static DestinyItemObjectiveBlockDefinition fromMap(Map<String, dynamic> data){
@@ -26,15 +26,15 @@ class DestinyItemObjectiveBlockDefinition{
 			return null;
 		};
 		return new DestinyItemObjectiveBlockDefinition(
-				data['objectiveHashes'],
-				data['displayActivityHashes'],
+				data['objectiveHashes'] != null ? data['objectiveHashes']?.cast<int>() ?? null : null,
+				data['displayActivityHashes'] != null ? data['displayActivityHashes']?.cast<int>() ?? null : null,
 				data['requireFullObjectiveCompletion'],
 				data['questlineItemHash'],
 				data['narrative'],
 				data['objectiveVerbName'],
 				data['questTypeIdentifier'],
 				data['questTypeHash'],
-				DestinyObjectiveDisplayProperties.fromList(data['perObjectiveDisplayProperties']),
+				data['perObjectiveDisplayProperties'] != null ? DestinyObjectiveDisplayProperties.fromList(data['perObjectiveDisplayProperties']) : null,
 		);
 	}
 

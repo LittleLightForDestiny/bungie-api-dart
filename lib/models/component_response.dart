@@ -1,7 +1,7 @@
 class ComponentResponse{
 	int privacy;
 	ComponentResponse(
-		int this.privacy,
+		this.privacy,
 	);
 
 	static ComponentResponse fromMap(Map<String, dynamic> data){

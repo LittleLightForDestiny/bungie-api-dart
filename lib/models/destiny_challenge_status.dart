@@ -2,7 +2,7 @@ import 'destiny_objective_progress.dart';
 class DestinyChallengeStatus{
 	DestinyObjectiveProgress objective;
 	DestinyChallengeStatus(
-		DestinyObjectiveProgress this.objective,
+		this.objective,
 	);
 
 	static DestinyChallengeStatus fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyChallengeStatus{
 			return null;
 		};
 		return new DestinyChallengeStatus(
-				data['objective'],
+				data['objective'] != null ? DestinyObjectiveProgress.fromMap(data['objective']) : null,
 		);
 	}
 

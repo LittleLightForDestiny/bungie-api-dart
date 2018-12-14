@@ -8,12 +8,12 @@ class SearchResultOfDestinyEntitySearchResultItem{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	SearchResultOfDestinyEntitySearchResultItem(
-		List<DestinyEntitySearchResultItem> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static SearchResultOfDestinyEntitySearchResultItem fromMap(Map<String, dynamic> data){
@@ -21,10 +21,10 @@ class SearchResultOfDestinyEntitySearchResultItem{
 			return null;
 		};
 		return new SearchResultOfDestinyEntitySearchResultItem(
-				DestinyEntitySearchResultItem.fromList(data['results']),
+				data['results'] != null ? DestinyEntitySearchResultItem.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

@@ -6,11 +6,11 @@ class DestinyInsertPlugsActionRequest{
 	String characterId;
 	int membershipType;
 	DestinyInsertPlugsActionRequest(
-		String this.actionToken,
-		String this.itemInstanceId,
-		DestinyInsertPlugsRequestEntry this.plug,
-		String this.characterId,
-		int this.membershipType,
+		this.actionToken,
+		this.itemInstanceId,
+		this.plug,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyInsertPlugsActionRequest fromMap(Map<String, dynamic> data){
@@ -20,7 +20,7 @@ class DestinyInsertPlugsActionRequest{
 		return new DestinyInsertPlugsActionRequest(
 				data['actionToken'],
 				data['itemInstanceId'],
-				data['plug'],
+				data['plug'] != null ? DestinyInsertPlugsRequestEntry.fromMap(data['plug']) : null,
 				data['characterId'],
 				data['membershipType'],
 		);

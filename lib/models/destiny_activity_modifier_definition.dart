@@ -5,10 +5,10 @@ class DestinyActivityModifierDefinition{
 	int index;
 	bool redacted;
 	DestinyActivityModifierDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyActivityModifierDefinition fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyActivityModifierDefinition{
 			return null;
 		};
 		return new DestinyActivityModifierDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

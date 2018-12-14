@@ -1,10 +1,10 @@
 import 'destiny_item_sockets_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent{
-	Map<DestinyItemSocketsComponent, dynamic> data;
+	Map<String, DestinyItemSocketsComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent(
-		Map<DestinyItemSocketsComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyItemSocketsComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemSocketsComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

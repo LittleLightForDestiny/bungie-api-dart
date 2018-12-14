@@ -1,10 +1,10 @@
 import 'destiny_historical_stats_value.dart';
 class DestinyHistoricalWeaponStats{
 	int referenceId;
-	Map<DestinyHistoricalStatsValue, dynamic> values;
+	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyHistoricalWeaponStats(
-		int this.referenceId,
-		Map<DestinyHistoricalStatsValue, dynamic> this.values,
+		this.referenceId,
+		this.values,
 	);
 
 	static DestinyHistoricalWeaponStats fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyHistoricalWeaponStats{
 		};
 		return new DestinyHistoricalWeaponStats(
 				data['referenceId'],
-				data['values'],
+				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
 		);
 	}
 

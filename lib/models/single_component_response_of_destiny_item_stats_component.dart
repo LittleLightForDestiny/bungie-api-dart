@@ -3,8 +3,8 @@ class SingleComponentResponseOfDestinyItemStatsComponent{
 	DestinyItemStatsComponent data;
 	int privacy;
 	SingleComponentResponseOfDestinyItemStatsComponent(
-		DestinyItemStatsComponent this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static SingleComponentResponseOfDestinyItemStatsComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class SingleComponentResponseOfDestinyItemStatsComponent{
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyItemStatsComponent(
-				DestinyItemStatsComponent.fromMap(data['data']),
+				data['data'] != null ? DestinyItemStatsComponent.fromMap(data['data']) : null,
 				data['privacy'],
 		);
 	}

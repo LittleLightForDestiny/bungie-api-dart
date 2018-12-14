@@ -1,7 +1,7 @@
 class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 	int plugItemHash;
 	DestinyItemSocketEntryPlugItemRandomizedDefinition(
-		int this.plugItemHash,
+		this.plugItemHash,
 	);
 
 	static DestinyItemSocketEntryPlugItemRandomizedDefinition fromMap(Map<String, dynamic> data){

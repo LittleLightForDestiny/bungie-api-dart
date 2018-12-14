@@ -17,7 +17,7 @@ import 'core_setting.dart';
 import 'core_setting.dart';
 import 'destiny2_core_settings.dart';
 class CoreSettingsConfiguration{
-	Map<CoreSystem, dynamic> systems;
+	Map<String, CoreSystem> systems;
 	List<CoreSetting> ignoreReasons;
 	List<CoreSetting> forumCategories;
 	List<CoreSetting> groupAvatars;
@@ -36,24 +36,24 @@ class CoreSettingsConfiguration{
 	List<CoreSetting> clanBannerStandards;
 	Destiny2CoreSettings destiny2CoreSettings;
 	CoreSettingsConfiguration(
-		Map<CoreSystem, dynamic> this.systems,
-		List<CoreSetting> this.ignoreReasons,
-		List<CoreSetting> this.forumCategories,
-		List<CoreSetting> this.groupAvatars,
-		List<CoreSetting> this.destinyMembershipTypes,
-		List<CoreSetting> this.recruitmentPlatformTags,
-		List<CoreSetting> this.recruitmentMiscTags,
-		List<CoreSetting> this.recruitmentActivities,
-		List<CoreSetting> this.userContentLocales,
-		List<CoreSetting> this.systemContentLocales,
-		List<CoreSetting> this.clanBannerDecals,
-		List<CoreSetting> this.clanBannerDecalColors,
-		List<CoreSetting> this.clanBannerGonfalons,
-		List<CoreSetting> this.clanBannerGonfalonColors,
-		List<CoreSetting> this.clanBannerGonfalonDetails,
-		List<CoreSetting> this.clanBannerGonfalonDetailColors,
-		List<CoreSetting> this.clanBannerStandards,
-		Destiny2CoreSettings this.destiny2CoreSettings,
+		this.systems,
+		this.ignoreReasons,
+		this.forumCategories,
+		this.groupAvatars,
+		this.destinyMembershipTypes,
+		this.recruitmentPlatformTags,
+		this.recruitmentMiscTags,
+		this.recruitmentActivities,
+		this.userContentLocales,
+		this.systemContentLocales,
+		this.clanBannerDecals,
+		this.clanBannerDecalColors,
+		this.clanBannerGonfalons,
+		this.clanBannerGonfalonColors,
+		this.clanBannerGonfalonDetails,
+		this.clanBannerGonfalonDetailColors,
+		this.clanBannerStandards,
+		this.destiny2CoreSettings,
 	);
 
 	static CoreSettingsConfiguration fromMap(Map<String, dynamic> data){
@@ -61,24 +61,24 @@ class CoreSettingsConfiguration{
 			return null;
 		};
 		return new CoreSettingsConfiguration(
-				data['systems'],
-				CoreSetting.fromList(data['ignoreReasons']),
-				CoreSetting.fromList(data['forumCategories']),
-				CoreSetting.fromList(data['groupAvatars']),
-				CoreSetting.fromList(data['destinyMembershipTypes']),
-				CoreSetting.fromList(data['recruitmentPlatformTags']),
-				CoreSetting.fromList(data['recruitmentMiscTags']),
-				CoreSetting.fromList(data['recruitmentActivities']),
-				CoreSetting.fromList(data['userContentLocales']),
-				CoreSetting.fromList(data['systemContentLocales']),
-				CoreSetting.fromList(data['clanBannerDecals']),
-				CoreSetting.fromList(data['clanBannerDecalColors']),
-				CoreSetting.fromList(data['clanBannerGonfalons']),
-				CoreSetting.fromList(data['clanBannerGonfalonColors']),
-				CoreSetting.fromList(data['clanBannerGonfalonDetails']),
-				CoreSetting.fromList(data['clanBannerGonfalonDetailColors']),
-				CoreSetting.fromList(data['clanBannerStandards']),
-				Destiny2CoreSettings.fromMap(data['destiny2CoreSettings']),
+				data['systems'] != null ? Map<String, CoreSystem>.from(data['systems'].map((k, v)=>MapEntry(k, CoreSystem.fromMap(v)))) : null,
+				data['ignoreReasons'] != null ? CoreSetting.fromList(data['ignoreReasons']) : null,
+				data['forumCategories'] != null ? CoreSetting.fromList(data['forumCategories']) : null,
+				data['groupAvatars'] != null ? CoreSetting.fromList(data['groupAvatars']) : null,
+				data['destinyMembershipTypes'] != null ? CoreSetting.fromList(data['destinyMembershipTypes']) : null,
+				data['recruitmentPlatformTags'] != null ? CoreSetting.fromList(data['recruitmentPlatformTags']) : null,
+				data['recruitmentMiscTags'] != null ? CoreSetting.fromList(data['recruitmentMiscTags']) : null,
+				data['recruitmentActivities'] != null ? CoreSetting.fromList(data['recruitmentActivities']) : null,
+				data['userContentLocales'] != null ? CoreSetting.fromList(data['userContentLocales']) : null,
+				data['systemContentLocales'] != null ? CoreSetting.fromList(data['systemContentLocales']) : null,
+				data['clanBannerDecals'] != null ? CoreSetting.fromList(data['clanBannerDecals']) : null,
+				data['clanBannerDecalColors'] != null ? CoreSetting.fromList(data['clanBannerDecalColors']) : null,
+				data['clanBannerGonfalons'] != null ? CoreSetting.fromList(data['clanBannerGonfalons']) : null,
+				data['clanBannerGonfalonColors'] != null ? CoreSetting.fromList(data['clanBannerGonfalonColors']) : null,
+				data['clanBannerGonfalonDetails'] != null ? CoreSetting.fromList(data['clanBannerGonfalonDetails']) : null,
+				data['clanBannerGonfalonDetailColors'] != null ? CoreSetting.fromList(data['clanBannerGonfalonDetailColors']) : null,
+				data['clanBannerStandards'] != null ? CoreSetting.fromList(data['clanBannerStandards']) : null,
+				data['destiny2CoreSettings'] != null ? Destiny2CoreSettings.fromMap(data['destiny2CoreSettings']) : null,
 		);
 	}
 

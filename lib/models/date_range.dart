@@ -2,8 +2,8 @@ class DateRange{
 	String start;
 	String end;
 	DateRange(
-		String this.start,
-		String this.end,
+		this.start,
+		this.end,
 	);
 
 	static DateRange fromMap(Map<String, dynamic> data){

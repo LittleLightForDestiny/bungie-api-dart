@@ -1,10 +1,10 @@
 import 'destiny_vendor_sale_item_set_component.dart';
 class DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent{
-	Map<DestinyVendorSaleItemSetComponent, dynamic> data;
+	Map<String, DestinyVendorSaleItemSetComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent(
-		Map<DestinyVendorSaleItemSetComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyVendorSaleItemSetComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyVendorSaleItemSetComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

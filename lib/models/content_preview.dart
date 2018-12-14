@@ -6,12 +6,12 @@ class ContentPreview{
 	int setNesting;
 	int useSetId;
 	ContentPreview(
-		String this.name,
-		String this.path,
-		bool this.itemInSet,
-		String this.setTag,
-		int this.setNesting,
-		int this.useSetId,
+		this.name,
+		this.path,
+		this.itemInSet,
+		this.setTag,
+		this.setNesting,
+		this.useSetId,
 	);
 
 	static ContentPreview fromMap(Map<String, dynamic> data){

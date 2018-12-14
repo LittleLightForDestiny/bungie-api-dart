@@ -1,13 +1,13 @@
 class DestinyColor{
-	String red;
-	String green;
-	String blue;
-	String alpha;
+	int red;
+	int green;
+	int blue;
+	int alpha;
 	DestinyColor(
-		String this.red,
-		String this.green,
-		String this.blue,
-		String this.alpha,
+		this.red,
+		this.green,
+		this.blue,
+		this.alpha,
 	);
 
 	static DestinyColor fromMap(Map<String, dynamic> data){

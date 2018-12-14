@@ -5,11 +5,11 @@ class DestinyVendorCategoryOverlayDefinition{
 	String title;
 	int currencyItemHash;
 	DestinyVendorCategoryOverlayDefinition(
-		String this.choiceDescription,
-		String this.description,
-		String this.icon,
-		String this.title,
-		int this.currencyItemHash,
+		this.choiceDescription,
+		this.description,
+		this.icon,
+		this.title,
+		this.currencyItemHash,
 	);
 
 	static DestinyVendorCategoryOverlayDefinition fromMap(Map<String, dynamic> data){

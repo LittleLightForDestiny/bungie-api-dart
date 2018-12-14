@@ -2,7 +2,7 @@ import 'destiny_display_properties_definition.dart';
 class DestinyDestinationBubbleSettingDefinition{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyDestinationBubbleSettingDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
+		this.displayProperties,
 	);
 
 	static DestinyDestinationBubbleSettingDefinition fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyDestinationBubbleSettingDefinition{
 			return null;
 		};
 		return new DestinyDestinationBubbleSettingDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 		);
 	}
 

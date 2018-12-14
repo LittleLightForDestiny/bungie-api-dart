@@ -3,9 +3,9 @@ class DestinyStat{
 	int value;
 	int maximumValue;
 	DestinyStat(
-		int this.statHash,
-		int this.value,
-		int this.maximumValue,
+		this.statHash,
+		this.value,
+		this.maximumValue,
 	);
 
 	static DestinyStat fromMap(Map<String, dynamic> data){

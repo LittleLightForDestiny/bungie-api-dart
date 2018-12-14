@@ -7,11 +7,11 @@ class DestinyItemTierTypeDefinition{
 	int index;
 	bool redacted;
 	DestinyItemTierTypeDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		DestinyItemTierTypeInfusionBlock this.infusionProcess,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.infusionProcess,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyItemTierTypeDefinition fromMap(Map<String, dynamic> data){
@@ -19,8 +19,8 @@ class DestinyItemTierTypeDefinition{
 			return null;
 		};
 		return new DestinyItemTierTypeDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
-				data['infusionProcess'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
+				data['infusionProcess'] != null ? DestinyItemTierTypeInfusionBlock.fromMap(data['infusionProcess']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

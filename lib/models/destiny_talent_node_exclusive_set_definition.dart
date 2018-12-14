@@ -1,7 +1,7 @@
 class DestinyTalentNodeExclusiveSetDefinition{
 	List<int> nodeIndexes;
 	DestinyTalentNodeExclusiveSetDefinition(
-		List<int> this.nodeIndexes,
+		this.nodeIndexes,
 	);
 
 	static DestinyTalentNodeExclusiveSetDefinition fromMap(Map<String, dynamic> data){
@@ -9,7 +9,7 @@ class DestinyTalentNodeExclusiveSetDefinition{
 			return null;
 		};
 		return new DestinyTalentNodeExclusiveSetDefinition(
-				data['nodeIndexes'],
+				data['nodeIndexes'] != null ? data['nodeIndexes']?.cast<int>() ?? null : null,
 		);
 	}
 

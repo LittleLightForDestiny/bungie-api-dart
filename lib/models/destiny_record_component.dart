@@ -3,8 +3,8 @@ class DestinyRecordComponent{
 	int state;
 	List<DestinyObjectiveProgress> objectives;
 	DestinyRecordComponent(
-		int this.state,
-		List<DestinyObjectiveProgress> this.objectives,
+		this.state,
+		this.objectives,
 	);
 
 	static DestinyRecordComponent fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyRecordComponent{
 		};
 		return new DestinyRecordComponent(
 				data['state'],
-				DestinyObjectiveProgress.fromList(data['objectives']),
+				data['objectives'] != null ? DestinyObjectiveProgress.fromList(data['objectives']) : null,
 		);
 	}
 

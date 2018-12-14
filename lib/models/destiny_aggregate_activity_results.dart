@@ -2,7 +2,7 @@ import 'destiny_aggregate_activity_stats.dart';
 class DestinyAggregateActivityResults{
 	List<DestinyAggregateActivityStats> activities;
 	DestinyAggregateActivityResults(
-		List<DestinyAggregateActivityStats> this.activities,
+		this.activities,
 	);
 
 	static DestinyAggregateActivityResults fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyAggregateActivityResults{
 			return null;
 		};
 		return new DestinyAggregateActivityResults(
-				DestinyAggregateActivityStats.fromList(data['activities']),
+				data['activities'] != null ? DestinyAggregateActivityStats.fromList(data['activities']) : null,
 		);
 	}
 

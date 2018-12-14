@@ -5,11 +5,11 @@ class TagMetadataItem{
 	bool isDefault;
 	String name;
 	TagMetadataItem(
-		String this.description,
-		String this.tagText,
-		List<String> this.groups,
-		bool this.isDefault,
-		String this.name,
+		this.description,
+		this.tagText,
+		this.groups,
+		this.isDefault,
+		this.name,
 	);
 
 	static TagMetadataItem fromMap(Map<String, dynamic> data){
@@ -19,7 +19,7 @@ class TagMetadataItem{
 		return new TagMetadataItem(
 				data['description'],
 				data['tagText'],
-				data['groups'],
+				data['groups'] != null ? data['groups']?.cast<String>() ?? null : null,
 				data['isDefault'],
 				data['name'],
 		);

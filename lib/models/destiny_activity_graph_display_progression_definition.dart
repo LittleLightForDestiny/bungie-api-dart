@@ -2,8 +2,8 @@ class DestinyActivityGraphDisplayProgressionDefinition{
 	int id;
 	int progressionHash;
 	DestinyActivityGraphDisplayProgressionDefinition(
-		int this.id,
-		int this.progressionHash,
+		this.id,
+		this.progressionHash,
 	);
 
 	static DestinyActivityGraphDisplayProgressionDefinition fromMap(Map<String, dynamic> data){

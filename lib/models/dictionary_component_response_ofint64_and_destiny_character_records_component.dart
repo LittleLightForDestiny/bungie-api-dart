@@ -1,10 +1,10 @@
 import 'destiny_character_records_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent{
-	Map<DestinyCharacterRecordsComponent, dynamic> data;
+	Map<String, DestinyCharacterRecordsComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent(
-		Map<DestinyCharacterRecordsComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyCharacterRecordsComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCharacterRecordsComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

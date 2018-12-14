@@ -4,9 +4,9 @@ class ApplicationDeveloper{
 	int apiEulaVersion;
 	UserInfoCard user;
 	ApplicationDeveloper(
-		int this.role,
-		int this.apiEulaVersion,
-		UserInfoCard this.user,
+		this.role,
+		this.apiEulaVersion,
+		this.user,
 	);
 
 	static ApplicationDeveloper fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class ApplicationDeveloper{
 		return new ApplicationDeveloper(
 				data['role'],
 				data['apiEulaVersion'],
-				UserInfoCard.fromMap(data['user']),
+				data['user'] != null ? UserInfoCard.fromMap(data['user']) : null,
 		);
 	}
 

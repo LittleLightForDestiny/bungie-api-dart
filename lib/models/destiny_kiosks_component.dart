@@ -1,8 +1,8 @@
 import 'destiny_kiosk_item.dart';
 class DestinyKiosksComponent{
-	Map<List<DestinyKioskItem>, dynamic> kioskItems;
+	Map<String, List<DestinyKioskItem>> kioskItems;
 	DestinyKiosksComponent(
-		Map<List<DestinyKioskItem>, dynamic> this.kioskItems,
+		this.kioskItems,
 	);
 
 	static DestinyKiosksComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyKiosksComponent{
 			return null;
 		};
 		return new DestinyKiosksComponent(
-				data['kioskItems'],
+				data['kioskItems'] != null ? Map<String, List<DestinyKioskItem>>.from(data['kioskItems'].map((k, v)=>MapEntry(k, DestinyKioskItem.fromList(v)))) : null,
 		);
 	}
 

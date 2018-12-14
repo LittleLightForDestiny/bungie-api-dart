@@ -3,8 +3,8 @@ class Series{
 	List<Datapoint> datapoints;
 	String target;
 	Series(
-		List<Datapoint> this.datapoints,
-		String this.target,
+		this.datapoints,
+		this.target,
 	);
 
 	static Series fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class Series{
 			return null;
 		};
 		return new Series(
-				Datapoint.fromList(data['datapoints']),
+				data['datapoints'] != null ? Datapoint.fromList(data['datapoints']) : null,
 				data['target'],
 		);
 	}

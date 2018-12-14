@@ -21,23 +21,23 @@ class DestinyNodeStepDefinition{
 	bool affectsLevel;
 	List<DestinyNodeSocketReplaceResponse> socketReplacements;
 	DestinyNodeStepDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.stepIndex,
-		int this.nodeStepHash,
-		String this.interactionDescription,
-		int this.damageType,
-		int this.damageTypeHash,
-		DestinyNodeActivationRequirement this.activationRequirement,
-		bool this.canActivateNextStep,
-		int this.nextStepIndex,
-		bool this.isNextStepRandom,
-		List<int> this.perkHashes,
-		int this.startProgressionBarAtProgress,
-		List<int> this.statHashes,
-		bool this.affectsQuality,
-		DestinyTalentNodeStepGroups this.stepGroups,
-		bool this.affectsLevel,
-		List<DestinyNodeSocketReplaceResponse> this.socketReplacements,
+		this.displayProperties,
+		this.stepIndex,
+		this.nodeStepHash,
+		this.interactionDescription,
+		this.damageType,
+		this.damageTypeHash,
+		this.activationRequirement,
+		this.canActivateNextStep,
+		this.nextStepIndex,
+		this.isNextStepRandom,
+		this.perkHashes,
+		this.startProgressionBarAtProgress,
+		this.statHashes,
+		this.affectsQuality,
+		this.stepGroups,
+		this.affectsLevel,
+		this.socketReplacements,
 	);
 
 	static DestinyNodeStepDefinition fromMap(Map<String, dynamic> data){
@@ -45,23 +45,23 @@ class DestinyNodeStepDefinition{
 			return null;
 		};
 		return new DestinyNodeStepDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['stepIndex'],
 				data['nodeStepHash'],
 				data['interactionDescription'],
 				data['damageType'],
 				data['damageTypeHash'],
-				data['activationRequirement'],
+				data['activationRequirement'] != null ? DestinyNodeActivationRequirement.fromMap(data['activationRequirement']) : null,
 				data['canActivateNextStep'],
 				data['nextStepIndex'],
 				data['isNextStepRandom'],
-				data['perkHashes'],
+				data['perkHashes'] != null ? data['perkHashes']?.cast<int>() ?? null : null,
 				data['startProgressionBarAtProgress'],
-				data['statHashes'],
+				data['statHashes'] != null ? data['statHashes']?.cast<int>() ?? null : null,
 				data['affectsQuality'],
-				data['stepGroups'],
+				data['stepGroups'] != null ? DestinyTalentNodeStepGroups.fromMap(data['stepGroups']) : null,
 				data['affectsLevel'],
-				DestinyNodeSocketReplaceResponse.fromList(data['socketReplacements']),
+				data['socketReplacements'] != null ? DestinyNodeSocketReplaceResponse.fromList(data['socketReplacements']) : null,
 		);
 	}
 

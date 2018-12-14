@@ -3,9 +3,9 @@ class GroupOptionalConversationEditRequest{
 	String chatName;
 	int chatSecurity;
 	GroupOptionalConversationEditRequest(
-		bool this.chatEnabled,
-		String this.chatName,
-		int this.chatSecurity,
+		this.chatEnabled,
+		this.chatName,
+		this.chatSecurity,
 	);
 
 	static GroupOptionalConversationEditRequest fromMap(Map<String, dynamic> data){

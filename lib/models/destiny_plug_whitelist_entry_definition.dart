@@ -3,9 +3,9 @@ class DestinyPlugWhitelistEntryDefinition{
 	String categoryIdentifier;
 	List<int> reinitializationPossiblePlugHashes;
 	DestinyPlugWhitelistEntryDefinition(
-		int this.categoryHash,
-		String this.categoryIdentifier,
-		List<int> this.reinitializationPossiblePlugHashes,
+		this.categoryHash,
+		this.categoryIdentifier,
+		this.reinitializationPossiblePlugHashes,
 	);
 
 	static DestinyPlugWhitelistEntryDefinition fromMap(Map<String, dynamic> data){
@@ -15,7 +15,7 @@ class DestinyPlugWhitelistEntryDefinition{
 		return new DestinyPlugWhitelistEntryDefinition(
 				data['categoryHash'],
 				data['categoryIdentifier'],
-				data['reinitializationPossiblePlugHashes'],
+				data['reinitializationPossiblePlugHashes'] != null ? data['reinitializationPossiblePlugHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

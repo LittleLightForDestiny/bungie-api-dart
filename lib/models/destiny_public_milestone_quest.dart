@@ -5,9 +5,9 @@ class DestinyPublicMilestoneQuest{
 	DestinyPublicMilestoneActivity activity;
 	List<DestinyPublicMilestoneChallenge> challenges;
 	DestinyPublicMilestoneQuest(
-		int this.questItemHash,
-		DestinyPublicMilestoneActivity this.activity,
-		List<DestinyPublicMilestoneChallenge> this.challenges,
+		this.questItemHash,
+		this.activity,
+		this.challenges,
 	);
 
 	static DestinyPublicMilestoneQuest fromMap(Map<String, dynamic> data){
@@ -16,8 +16,8 @@ class DestinyPublicMilestoneQuest{
 		};
 		return new DestinyPublicMilestoneQuest(
 				data['questItemHash'],
-				data['activity'],
-				DestinyPublicMilestoneChallenge.fromList(data['challenges']),
+				data['activity'] != null ? DestinyPublicMilestoneActivity.fromMap(data['activity']) : null,
+				data['challenges'] != null ? DestinyPublicMilestoneChallenge.fromList(data['challenges']) : null,
 		);
 	}
 

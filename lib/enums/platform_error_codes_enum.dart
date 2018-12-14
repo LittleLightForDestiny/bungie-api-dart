@@ -604,6 +604,12 @@ class PlatformErrorCodes {
   static const int MissingEververseHistoryError = 2048;
   static const int BungieRewardEmailStateInvalid = 2049;
   static const int BungieRewardNotYetClaimable = 2050;
+  static const int MissingOfferConfig = 2051;
+  static const int RAFQuestEntitlementRequiresBnet = 2052;
+  static const int RAFQuestEntitlementTransportFailure = 2053;
+  static const int RAFQuestEntitlementUnknownFailure = 2054;
+  static const int RAFVeteranRewardUnknownFailure = 2055;
+  static const int RAFTooEarlyToCancelBond = 2056;
   static const int ApiExceededMaxKeys = 2100;
   static const int ApiInvalidOrExpiredKey = 2101;
   static const int ApiKeyMissingFromRequest = 2102;

@@ -3,9 +3,9 @@ class DestinyReportOffensePgcrRequest{
 	List<int> reasonHashes;
 	String offendingCharacterId;
 	DestinyReportOffensePgcrRequest(
-		List<int> this.reasonCategoryHashes,
-		List<int> this.reasonHashes,
-		String this.offendingCharacterId,
+		this.reasonCategoryHashes,
+		this.reasonHashes,
+		this.offendingCharacterId,
 	);
 
 	static DestinyReportOffensePgcrRequest fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class DestinyReportOffensePgcrRequest{
 			return null;
 		};
 		return new DestinyReportOffensePgcrRequest(
-				data['reasonCategoryHashes'],
-				data['reasonHashes'],
+				data['reasonCategoryHashes'] != null ? data['reasonCategoryHashes']?.cast<int>() ?? null : null,
+				data['reasonHashes'] != null ? data['reasonHashes']?.cast<int>() ?? null : null,
 				data['offendingCharacterId'],
 		);
 	}

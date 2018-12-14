@@ -3,9 +3,9 @@ class ContentTypePropertySection{
 	String readableName;
 	bool collapsed;
 	ContentTypePropertySection(
-		String this.name,
-		String this.readableName,
-		bool this.collapsed,
+		this.name,
+		this.readableName,
+		this.collapsed,
 	);
 
 	static ContentTypePropertySection fromMap(Map<String, dynamic> data){

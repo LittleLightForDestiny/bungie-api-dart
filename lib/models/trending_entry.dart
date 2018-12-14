@@ -15,21 +15,21 @@ class TrendingEntry{
 	List<TrendingEntry> items;
 	String creationDate;
 	TrendingEntry(
-		int this.weight,
-		bool this.isFeatured,
-		String this.identifier,
-		int this.entityType,
-		String this.displayName,
-		String this.tagline,
-		String this.image,
-		String this.startDate,
-		String this.endDate,
-		String this.link,
-		String this.webmVideo,
-		String this.mp4Video,
-		String this.featureImage,
-		List<TrendingEntry> this.items,
-		String this.creationDate,
+		this.weight,
+		this.isFeatured,
+		this.identifier,
+		this.entityType,
+		this.displayName,
+		this.tagline,
+		this.image,
+		this.startDate,
+		this.endDate,
+		this.link,
+		this.webmVideo,
+		this.mp4Video,
+		this.featureImage,
+		this.items,
+		this.creationDate,
 	);
 
 	static TrendingEntry fromMap(Map<String, dynamic> data){
@@ -50,7 +50,7 @@ class TrendingEntry{
 				data['webmVideo'],
 				data['mp4Video'],
 				data['featureImage'],
-				TrendingEntry.fromList(data['items']),
+				data['items'] != null ? TrendingEntry.fromList(data['items']) : null,
 				data['creationDate'],
 		);
 	}

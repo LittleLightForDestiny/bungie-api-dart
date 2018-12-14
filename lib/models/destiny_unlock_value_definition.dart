@@ -3,9 +3,9 @@ class DestinyUnlockValueDefinition{
 	int index;
 	bool redacted;
 	DestinyUnlockValueDefinition(
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyUnlockValueDefinition fromMap(Map<String, dynamic> data){

@@ -3,11 +3,15 @@ class DestinyPublicMilestoneChallengeActivity{
 	List<int> challengeObjectiveHashes;
 	List<int> modifierHashes;
 	int loadoutRequirementIndex;
+	List<int> phaseHashes;
+	Map<String, bool> booleanActivityOptions;
 	DestinyPublicMilestoneChallengeActivity(
-		int this.activityHash,
-		List<int> this.challengeObjectiveHashes,
-		List<int> this.modifierHashes,
-		int this.loadoutRequirementIndex,
+		this.activityHash,
+		this.challengeObjectiveHashes,
+		this.modifierHashes,
+		this.loadoutRequirementIndex,
+		this.phaseHashes,
+		this.booleanActivityOptions,
 	);
 
 	static DestinyPublicMilestoneChallengeActivity fromMap(Map<String, dynamic> data){
@@ -16,9 +20,11 @@ class DestinyPublicMilestoneChallengeActivity{
 		};
 		return new DestinyPublicMilestoneChallengeActivity(
 				data['activityHash'],
-				data['challengeObjectiveHashes'],
-				data['modifierHashes'],
+				data['challengeObjectiveHashes'] != null ? data['challengeObjectiveHashes']?.cast<int>() ?? null : null,
+				data['modifierHashes'] != null ? data['modifierHashes']?.cast<int>() ?? null : null,
 				data['loadoutRequirementIndex'],
+				data['phaseHashes'] != null ? data['phaseHashes']?.cast<int>() ?? null : null,
+				data['booleanActivityOptions'] != null ? Map<String, bool>.from(data['booleanActivityOptions'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 
@@ -39,6 +45,8 @@ class DestinyPublicMilestoneChallengeActivity{
 			data['challengeObjectiveHashes'] = this.challengeObjectiveHashes;
 			data['modifierHashes'] = this.modifierHashes;
 			data['loadoutRequirementIndex'] = this.loadoutRequirementIndex;
+			data['phaseHashes'] = this.phaseHashes;
+			data['booleanActivityOptions'] = this.booleanActivityOptions;
 		return data;
 	}
 }

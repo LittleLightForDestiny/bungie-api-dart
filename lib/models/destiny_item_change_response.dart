@@ -6,9 +6,9 @@ class DestinyItemChangeResponse{
 	List<DestinyItemComponent> addedInventoryItems;
 	List<DestinyItemComponent> removedInventoryItems;
 	DestinyItemChangeResponse(
-		DestinyItemResponse this.item,
-		List<DestinyItemComponent> this.addedInventoryItems,
-		List<DestinyItemComponent> this.removedInventoryItems,
+		this.item,
+		this.addedInventoryItems,
+		this.removedInventoryItems,
 	);
 
 	static DestinyItemChangeResponse fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class DestinyItemChangeResponse{
 			return null;
 		};
 		return new DestinyItemChangeResponse(
-				DestinyItemResponse.fromMap(data['item']),
-				DestinyItemComponent.fromList(data['addedInventoryItems']),
-				DestinyItemComponent.fromList(data['removedInventoryItems']),
+				data['item'] != null ? DestinyItemResponse.fromMap(data['item']) : null,
+				data['addedInventoryItems'] != null ? DestinyItemComponent.fromList(data['addedInventoryItems']) : null,
+				data['removedInventoryItems'] != null ? DestinyItemComponent.fromList(data['removedInventoryItems']) : null,
 		);
 	}
 

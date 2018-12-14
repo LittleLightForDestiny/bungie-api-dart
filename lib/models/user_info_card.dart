@@ -5,11 +5,11 @@ class UserInfoCard{
 	String membershipId;
 	String displayName;
 	UserInfoCard(
-		String this.supplementalDisplayName,
-		String this.iconPath,
-		int this.membershipType,
-		String this.membershipId,
-		String this.displayName,
+		this.supplementalDisplayName,
+		this.iconPath,
+		this.membershipType,
+		this.membershipId,
+		this.displayName,
 	);
 
 	static UserInfoCard fromMap(Map<String, dynamic> data){

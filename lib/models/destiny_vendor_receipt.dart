@@ -10,14 +10,14 @@ class DestinyVendorReceipt{
 	String timeToExpiration;
 	String expiresOn;
 	DestinyVendorReceipt(
-		List<DestinyItemQuantity> this.currencyPaid,
-		DestinyItemQuantity this.itemReceived,
-		int this.licenseUnlockHash,
-		String this.purchasedByCharacterId,
-		int this.refundPolicy,
-		int this.sequenceNumber,
-		String this.timeToExpiration,
-		String this.expiresOn,
+		this.currencyPaid,
+		this.itemReceived,
+		this.licenseUnlockHash,
+		this.purchasedByCharacterId,
+		this.refundPolicy,
+		this.sequenceNumber,
+		this.timeToExpiration,
+		this.expiresOn,
 	);
 
 	static DestinyVendorReceipt fromMap(Map<String, dynamic> data){
@@ -25,8 +25,8 @@ class DestinyVendorReceipt{
 			return null;
 		};
 		return new DestinyVendorReceipt(
-				DestinyItemQuantity.fromList(data['currencyPaid']),
-				data['itemReceived'],
+				data['currencyPaid'] != null ? DestinyItemQuantity.fromList(data['currencyPaid']) : null,
+				data['itemReceived'] != null ? DestinyItemQuantity.fromMap(data['itemReceived']) : null,
 				data['licenseUnlockHash'],
 				data['purchasedByCharacterId'],
 				data['refundPolicy'],

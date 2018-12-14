@@ -3,9 +3,9 @@ class DestinyInsertPlugsRequestEntry{
 	int socketArrayType;
 	int plugItemHash;
 	DestinyInsertPlugsRequestEntry(
-		int this.socketIndex,
-		int this.socketArrayType,
-		int this.plugItemHash,
+		this.socketIndex,
+		this.socketArrayType,
+		this.plugItemHash,
 	);
 
 	static DestinyInsertPlugsRequestEntry fromMap(Map<String, dynamic> data){

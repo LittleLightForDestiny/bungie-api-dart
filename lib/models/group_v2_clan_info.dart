@@ -3,8 +3,8 @@ class GroupV2ClanInfo{
 	String clanCallsign;
 	ClanBanner clanBannerData;
 	GroupV2ClanInfo(
-		String this.clanCallsign,
-		ClanBanner this.clanBannerData,
+		this.clanCallsign,
+		this.clanBannerData,
 	);
 
 	static GroupV2ClanInfo fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class GroupV2ClanInfo{
 		};
 		return new GroupV2ClanInfo(
 				data['clanCallsign'],
-				ClanBanner.fromMap(data['clanBannerData']),
+				data['clanBannerData'] != null ? ClanBanner.fromMap(data['clanBannerData']) : null,
 		);
 	}
 

@@ -1,7 +1,7 @@
 class GroupApplicationResponse{
 	int resolution;
 	GroupApplicationResponse(
-		int this.resolution,
+		this.resolution,
 	);
 
 	static GroupApplicationResponse fromMap(Map<String, dynamic> data){

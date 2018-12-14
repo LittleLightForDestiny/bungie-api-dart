@@ -2,8 +2,8 @@ class DestinyNodeActivationRequirement{
 	int gridLevel;
 	List<int> materialRequirementHashes;
 	DestinyNodeActivationRequirement(
-		int this.gridLevel,
-		List<int> this.materialRequirementHashes,
+		this.gridLevel,
+		this.materialRequirementHashes,
 	);
 
 	static DestinyNodeActivationRequirement fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyNodeActivationRequirement{
 		};
 		return new DestinyNodeActivationRequirement(
 				data['gridLevel'],
-				data['materialRequirementHashes'],
+				data['materialRequirementHashes'] != null ? data['materialRequirementHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

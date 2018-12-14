@@ -2,7 +2,7 @@ import 'trending_category.dart';
 class TrendingCategories{
 	List<TrendingCategory> categories;
 	TrendingCategories(
-		List<TrendingCategory> this.categories,
+		this.categories,
 	);
 
 	static TrendingCategories fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class TrendingCategories{
 			return null;
 		};
 		return new TrendingCategories(
-				TrendingCategory.fromList(data['categories']),
+				data['categories'] != null ? TrendingCategory.fromList(data['categories']) : null,
 		);
 	}
 

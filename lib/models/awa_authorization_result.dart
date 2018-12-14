@@ -8,14 +8,14 @@ class AwaAuthorizationResult{
 	int type;
 	int membershipType;
 	AwaAuthorizationResult(
-		int this.userSelection,
-		int this.responseReason,
-		String this.developerNote,
-		String this.actionToken,
-		int this.maximumNumberOfUses,
-		String this.validUntil,
-		int this.type,
-		int this.membershipType,
+		this.userSelection,
+		this.responseReason,
+		this.developerNote,
+		this.actionToken,
+		this.maximumNumberOfUses,
+		this.validUntil,
+		this.type,
+		this.membershipType,
 	);
 
 	static AwaAuthorizationResult fromMap(Map<String, dynamic> data){

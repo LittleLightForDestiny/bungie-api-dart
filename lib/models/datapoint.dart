@@ -2,8 +2,8 @@ class Datapoint{
 	String time;
 	int count;
 	Datapoint(
-		String this.time,
-		int this.count,
+		this.time,
+		this.count,
 	);
 
 	static Datapoint fromMap(Map<String, dynamic> data){

@@ -15,20 +15,20 @@ class DestinyLocationReleaseDefinition{
 	int navPointType;
 	List<int> worldPosition;
 	DestinyLocationReleaseDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.smallTransparentIcon,
-		String this.mapIcon,
-		String this.largeTransparentIcon,
-		int this.spawnPoint,
-		int this.destinationHash,
-		int this.activityHash,
-		int this.activityGraphHash,
-		int this.activityGraphNodeHash,
-		int this.activityBubbleName,
-		int this.activityPathBundle,
-		int this.activityPathDestination,
-		int this.navPointType,
-		List<int> this.worldPosition,
+		this.displayProperties,
+		this.smallTransparentIcon,
+		this.mapIcon,
+		this.largeTransparentIcon,
+		this.spawnPoint,
+		this.destinationHash,
+		this.activityHash,
+		this.activityGraphHash,
+		this.activityGraphNodeHash,
+		this.activityBubbleName,
+		this.activityPathBundle,
+		this.activityPathDestination,
+		this.navPointType,
+		this.worldPosition,
 	);
 
 	static DestinyLocationReleaseDefinition fromMap(Map<String, dynamic> data){
@@ -36,7 +36,7 @@ class DestinyLocationReleaseDefinition{
 			return null;
 		};
 		return new DestinyLocationReleaseDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['smallTransparentIcon'],
 				data['mapIcon'],
 				data['largeTransparentIcon'],
@@ -49,7 +49,7 @@ class DestinyLocationReleaseDefinition{
 				data['activityPathBundle'],
 				data['activityPathDestination'],
 				data['navPointType'],
-				data['worldPosition'],
+				data['worldPosition'] != null ? data['worldPosition']?.cast<int>() ?? null : null,
 		);
 	}
 

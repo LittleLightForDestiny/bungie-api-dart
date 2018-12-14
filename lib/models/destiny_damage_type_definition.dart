@@ -8,13 +8,13 @@ class DestinyDamageTypeDefinition{
 	int index;
 	bool redacted;
 	DestinyDamageTypeDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.transparentIconPath,
-		bool this.showIcon,
-		int this.enumValue,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.transparentIconPath,
+		this.showIcon,
+		this.enumValue,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyDamageTypeDefinition fromMap(Map<String, dynamic> data){
@@ -22,7 +22,7 @@ class DestinyDamageTypeDefinition{
 			return null;
 		};
 		return new DestinyDamageTypeDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['transparentIconPath'],
 				data['showIcon'],
 				data['enumValue'],

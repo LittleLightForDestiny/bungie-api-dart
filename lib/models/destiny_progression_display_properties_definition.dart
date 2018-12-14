@@ -5,11 +5,11 @@ class DestinyProgressionDisplayPropertiesDefinition{
 	String icon;
 	bool hasIcon;
 	DestinyProgressionDisplayPropertiesDefinition(
-		String this.displayUnitsName,
-		String this.description,
-		String this.name,
-		String this.icon,
-		bool this.hasIcon,
+		this.displayUnitsName,
+		this.description,
+		this.name,
+		this.icon,
+		this.hasIcon,
 	);
 
 	static DestinyProgressionDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){

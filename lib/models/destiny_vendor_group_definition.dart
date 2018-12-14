@@ -5,11 +5,11 @@ class DestinyVendorGroupDefinition{
 	int index;
 	bool redacted;
 	DestinyVendorGroupDefinition(
-		int this.order,
-		String this.categoryName,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.order,
+		this.categoryName,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyVendorGroupDefinition fromMap(Map<String, dynamic> data){

@@ -1,7 +1,7 @@
 class DestinyItemSocketEntryPlugItemDefinition{
 	int plugItemHash;
 	DestinyItemSocketEntryPlugItemDefinition(
-		int this.plugItemHash,
+		this.plugItemHash,
 	);
 
 	static DestinyItemSocketEntryPlugItemDefinition fromMap(Map<String, dynamic> data){

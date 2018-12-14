@@ -2,8 +2,8 @@ class DestinyVendorAcceptedItemDefinition{
 	int acceptedInventoryBucketHash;
 	int destinationInventoryBucketHash;
 	DestinyVendorAcceptedItemDefinition(
-		int this.acceptedInventoryBucketHash,
-		int this.destinationInventoryBucketHash,
+		this.acceptedInventoryBucketHash,
+		this.destinationInventoryBucketHash,
 	);
 
 	static DestinyVendorAcceptedItemDefinition fromMap(Map<String, dynamic> data){

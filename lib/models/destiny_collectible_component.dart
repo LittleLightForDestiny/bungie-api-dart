@@ -1,7 +1,7 @@
 class DestinyCollectibleComponent{
 	int state;
 	DestinyCollectibleComponent(
-		int this.state,
+		this.state,
 	);
 
 	static DestinyCollectibleComponent fromMap(Map<String, dynamic> data){

@@ -2,8 +2,8 @@ class DestinyItemSocketCategoryDefinition{
 	int socketCategoryHash;
 	List<int> socketIndexes;
 	DestinyItemSocketCategoryDefinition(
-		int this.socketCategoryHash,
-		List<int> this.socketIndexes,
+		this.socketCategoryHash,
+		this.socketIndexes,
 	);
 
 	static DestinyItemSocketCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyItemSocketCategoryDefinition{
 		};
 		return new DestinyItemSocketCategoryDefinition(
 				data['socketCategoryHash'],
-				data['socketIndexes'],
+				data['socketIndexes'] != null ? data['socketIndexes']?.cast<int>() ?? null : null,
 		);
 	}
 

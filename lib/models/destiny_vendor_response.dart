@@ -10,11 +10,11 @@ class DestinyVendorResponse{
 	DestinyItemComponentSetOfint32 itemComponents;
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;
 	DestinyVendorResponse(
-		SingleComponentResponseOfDestinyVendorComponent this.vendor,
-		SingleComponentResponseOfDestinyVendorCategoriesComponent this.categories,
-		DictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent this.sales,
-		DestinyItemComponentSetOfint32 this.itemComponents,
-		SingleComponentResponseOfDestinyCurrenciesComponent this.currencyLookups,
+		this.vendor,
+		this.categories,
+		this.sales,
+		this.itemComponents,
+		this.currencyLookups,
 	);
 
 	static DestinyVendorResponse fromMap(Map<String, dynamic> data){
@@ -22,11 +22,11 @@ class DestinyVendorResponse{
 			return null;
 		};
 		return new DestinyVendorResponse(
-				data['vendor'],
-				data['categories'],
-				data['sales'],
-				data['itemComponents'],
-				data['currencyLookups'],
+				data['vendor'] != null ? SingleComponentResponseOfDestinyVendorComponent.fromMap(data['vendor']) : null,
+				data['categories'] != null ? SingleComponentResponseOfDestinyVendorCategoriesComponent.fromMap(data['categories']) : null,
+				data['sales'] != null ? DictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent.fromMap(data['sales']) : null,
+				data['itemComponents'] != null ? DestinyItemComponentSetOfint32.fromMap(data['itemComponents']) : null,
+				data['currencyLookups'] != null ? SingleComponentResponseOfDestinyCurrenciesComponent.fromMap(data['currencyLookups']) : null,
 		);
 	}
 

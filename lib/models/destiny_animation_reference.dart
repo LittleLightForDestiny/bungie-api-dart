@@ -3,9 +3,9 @@ class DestinyAnimationReference{
 	String animIdentifier;
 	String path;
 	DestinyAnimationReference(
-		String this.animName,
-		String this.animIdentifier,
-		String this.path,
+		this.animName,
+		this.animIdentifier,
+		this.path,
 	);
 
 	static DestinyAnimationReference fromMap(Map<String, dynamic> data){

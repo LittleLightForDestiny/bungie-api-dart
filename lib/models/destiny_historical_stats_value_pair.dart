@@ -2,8 +2,8 @@ class DestinyHistoricalStatsValuePair{
 	int value;
 	String displayValue;
 	DestinyHistoricalStatsValuePair(
-		int this.value,
-		String this.displayValue,
+		this.value,
+		this.displayValue,
 	);
 
 	static DestinyHistoricalStatsValuePair fromMap(Map<String, dynamic> data){

@@ -3,9 +3,9 @@ class DestinyVendorItemSocketOverride{
 	int randomizedOptionsCount;
 	int socketTypeHash;
 	DestinyVendorItemSocketOverride(
-		int this.singleItemHash,
-		int this.randomizedOptionsCount,
-		int this.socketTypeHash,
+		this.singleItemHash,
+		this.randomizedOptionsCount,
+		this.socketTypeHash,
 	);
 
 	static DestinyVendorItemSocketOverride fromMap(Map<String, dynamic> data){

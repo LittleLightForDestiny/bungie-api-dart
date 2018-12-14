@@ -2,7 +2,7 @@ import 'destiny_milestone_quest_reward_item.dart';
 class DestinyMilestoneQuestRewardsDefinition{
 	List<DestinyMilestoneQuestRewardItem> items;
 	DestinyMilestoneQuestRewardsDefinition(
-		List<DestinyMilestoneQuestRewardItem> this.items,
+		this.items,
 	);
 
 	static DestinyMilestoneQuestRewardsDefinition fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyMilestoneQuestRewardsDefinition{
 			return null;
 		};
 		return new DestinyMilestoneQuestRewardsDefinition(
-				DestinyMilestoneQuestRewardItem.fromList(data['items']),
+				data['items'] != null ? DestinyMilestoneQuestRewardItem.fromList(data['items']) : null,
 		);
 	}
 

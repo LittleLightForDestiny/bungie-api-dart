@@ -4,9 +4,9 @@ class TrendingCategory{
 	SearchResultOfTrendingEntry entries;
 	String categoryId;
 	TrendingCategory(
-		String this.categoryName,
-		SearchResultOfTrendingEntry this.entries,
-		String this.categoryId,
+		this.categoryName,
+		this.entries,
+		this.categoryId,
 	);
 
 	static TrendingCategory fromMap(Map<String, dynamic> data){
@@ -15,7 +15,7 @@ class TrendingCategory{
 		};
 		return new TrendingCategory(
 				data['categoryName'],
-				SearchResultOfTrendingEntry.fromMap(data['entries']),
+				data['entries'] != null ? SearchResultOfTrendingEntry.fromMap(data['entries']) : null,
 				data['categoryId'],
 		);
 	}

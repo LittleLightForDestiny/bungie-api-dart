@@ -3,8 +3,8 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	DestinyItemTalentGridComponent data;
 	int privacy;
 	SingleComponentResponseOfDestinyItemTalentGridComponent(
-		DestinyItemTalentGridComponent this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static SingleComponentResponseOfDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 			return null;
 		};
 		return new SingleComponentResponseOfDestinyItemTalentGridComponent(
-				DestinyItemTalentGridComponent.fromMap(data['data']),
+				data['data'] != null ? DestinyItemTalentGridComponent.fromMap(data['data']) : null,
 				data['privacy'],
 		);
 	}

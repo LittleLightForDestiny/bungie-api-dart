@@ -3,8 +3,8 @@ class TagResponse{
 	String tagText;
 	IgnoreResponse ignoreStatus;
 	TagResponse(
-		String this.tagText,
-		IgnoreResponse this.ignoreStatus,
+		this.tagText,
+		this.ignoreStatus,
 	);
 
 	static TagResponse fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class TagResponse{
 		};
 		return new TagResponse(
 				data['tagText'],
-				IgnoreResponse.fromMap(data['ignoreStatus']),
+				data['ignoreStatus'] != null ? IgnoreResponse.fromMap(data['ignoreStatus']) : null,
 		);
 	}
 

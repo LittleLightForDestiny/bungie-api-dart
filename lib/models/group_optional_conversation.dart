@@ -5,11 +5,11 @@ class GroupOptionalConversation{
 	String chatName;
 	int chatSecurity;
 	GroupOptionalConversation(
-		String this.groupId,
-		String this.conversationId,
-		bool this.chatEnabled,
-		String this.chatName,
-		int this.chatSecurity,
+		this.groupId,
+		this.conversationId,
+		this.chatEnabled,
+		this.chatName,
+		this.chatSecurity,
 	);
 
 	static GroupOptionalConversation fromMap(Map<String, dynamic> data){

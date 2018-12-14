@@ -2,8 +2,8 @@ class DestinyParentItemOverride{
 	List<String> additionalEquipRequirementsDisplayStrings;
 	String pipIcon;
 	DestinyParentItemOverride(
-		List<String> this.additionalEquipRequirementsDisplayStrings,
-		String this.pipIcon,
+		this.additionalEquipRequirementsDisplayStrings,
+		this.pipIcon,
 	);
 
 	static DestinyParentItemOverride fromMap(Map<String, dynamic> data){
@@ -11,7 +11,7 @@ class DestinyParentItemOverride{
 			return null;
 		};
 		return new DestinyParentItemOverride(
-				data['additionalEquipRequirementsDisplayStrings'],
+				data['additionalEquipRequirementsDisplayStrings'] != null ? data['additionalEquipRequirementsDisplayStrings']?.cast<String>() ?? null : null,
 				data['pipIcon'],
 		);
 	}

@@ -2,8 +2,8 @@ class DestinyItemGearsetBlockDefinition{
 	int trackingValueMax;
 	List<int> itemList;
 	DestinyItemGearsetBlockDefinition(
-		int this.trackingValueMax,
-		List<int> this.itemList,
+		this.trackingValueMax,
+		this.itemList,
 	);
 
 	static DestinyItemGearsetBlockDefinition fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyItemGearsetBlockDefinition{
 		};
 		return new DestinyItemGearsetBlockDefinition(
 				data['trackingValueMax'],
-				data['itemList'],
+				data['itemList'] != null ? data['itemList']?.cast<int>() ?? null : null,
 		);
 	}
 

@@ -9,15 +9,15 @@ class GroupFeatures{
 	bool updateBannerPermissionOverride;
 	int joinLevel;
 	GroupFeatures(
-		int this.maximumMembers,
-		int this.maximumMembershipsOfGroupType,
-		int this.capabilities,
-		List<int> this.membershipTypes,
-		bool this.invitePermissionOverride,
-		bool this.updateCulturePermissionOverride,
-		int this.hostGuidedGamePermissionOverride,
-		bool this.updateBannerPermissionOverride,
-		int this.joinLevel,
+		this.maximumMembers,
+		this.maximumMembershipsOfGroupType,
+		this.capabilities,
+		this.membershipTypes,
+		this.invitePermissionOverride,
+		this.updateCulturePermissionOverride,
+		this.hostGuidedGamePermissionOverride,
+		this.updateBannerPermissionOverride,
+		this.joinLevel,
 	);
 
 	static GroupFeatures fromMap(Map<String, dynamic> data){

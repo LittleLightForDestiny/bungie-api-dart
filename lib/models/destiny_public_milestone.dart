@@ -11,14 +11,14 @@ class DestinyPublicMilestone{
 	String endDate;
 	int order;
 	DestinyPublicMilestone(
-		int this.milestoneHash,
-		List<DestinyPublicMilestoneQuest> this.availableQuests,
-		List<DestinyPublicMilestoneChallengeActivity> this.activities,
-		List<int> this.vendorHashes,
-		List<DestinyPublicMilestoneVendor> this.vendors,
-		String this.startDate,
-		String this.endDate,
-		int this.order,
+		this.milestoneHash,
+		this.availableQuests,
+		this.activities,
+		this.vendorHashes,
+		this.vendors,
+		this.startDate,
+		this.endDate,
+		this.order,
 	);
 
 	static DestinyPublicMilestone fromMap(Map<String, dynamic> data){
@@ -27,10 +27,10 @@ class DestinyPublicMilestone{
 		};
 		return new DestinyPublicMilestone(
 				data['milestoneHash'],
-				DestinyPublicMilestoneQuest.fromList(data['availableQuests']),
-				DestinyPublicMilestoneChallengeActivity.fromList(data['activities']),
-				data['vendorHashes'],
-				DestinyPublicMilestoneVendor.fromList(data['vendors']),
+				data['availableQuests'] != null ? DestinyPublicMilestoneQuest.fromList(data['availableQuests']) : null,
+				data['activities'] != null ? DestinyPublicMilestoneChallengeActivity.fromList(data['activities']) : null,
+				data['vendorHashes'] != null ? data['vendorHashes']?.cast<int>() ?? null : null,
+				data['vendors'] != null ? DestinyPublicMilestoneVendor.fromList(data['vendors']) : null,
 				data['startDate'],
 				data['endDate'],
 				data['order'],

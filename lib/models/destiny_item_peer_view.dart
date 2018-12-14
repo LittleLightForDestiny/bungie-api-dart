@@ -3,8 +3,8 @@ class DestinyItemPeerView{
 	int itemHash;
 	List<DyeReference> dyes;
 	DestinyItemPeerView(
-		int this.itemHash,
-		List<DyeReference> this.dyes,
+		this.itemHash,
+		this.dyes,
 	);
 
 	static DestinyItemPeerView fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyItemPeerView{
 		};
 		return new DestinyItemPeerView(
 				data['itemHash'],
-				DyeReference.fromList(data['dyes']),
+				data['dyes'] != null ? DyeReference.fromList(data['dyes']) : null,
 		);
 	}
 

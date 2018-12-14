@@ -2,8 +2,8 @@ class InterpolationPoint{
 	int value;
 	int weight;
 	InterpolationPoint(
-		int this.value,
-		int this.weight,
+		this.value,
+		this.weight,
 	);
 
 	static InterpolationPoint fromMap(Map<String, dynamic> data){

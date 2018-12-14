@@ -13,17 +13,17 @@ class DestinyPlayer{
 	String clanTag;
 	int emblemHash;
 	DestinyPlayer(
-		UserInfoCard this.destinyUserInfo,
-		String this.characterClass,
-		int this.classHash,
-		int this.raceHash,
-		int this.genderHash,
-		int this.characterLevel,
-		int this.lightLevel,
-		UserInfoCard this.bungieNetUserInfo,
-		String this.clanName,
-		String this.clanTag,
-		int this.emblemHash,
+		this.destinyUserInfo,
+		this.characterClass,
+		this.classHash,
+		this.raceHash,
+		this.genderHash,
+		this.characterLevel,
+		this.lightLevel,
+		this.bungieNetUserInfo,
+		this.clanName,
+		this.clanTag,
+		this.emblemHash,
 	);
 
 	static DestinyPlayer fromMap(Map<String, dynamic> data){
@@ -31,14 +31,14 @@ class DestinyPlayer{
 			return null;
 		};
 		return new DestinyPlayer(
-				data['destinyUserInfo'],
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
 				data['characterClass'],
 				data['classHash'],
 				data['raceHash'],
 				data['genderHash'],
 				data['characterLevel'],
 				data['lightLevel'],
-				data['bungieNetUserInfo'],
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 				data['clanName'],
 				data['clanTag'],
 				data['emblemHash'],

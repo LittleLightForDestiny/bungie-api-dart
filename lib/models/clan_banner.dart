@@ -7,13 +7,13 @@ class ClanBanner{
 	int gonfalonDetailId;
 	int gonfalonDetailColorId;
 	ClanBanner(
-		int this.decalId,
-		int this.decalColorId,
-		int this.decalBackgroundColorId,
-		int this.gonfalonId,
-		int this.gonfalonColorId,
-		int this.gonfalonDetailId,
-		int this.gonfalonDetailColorId,
+		this.decalId,
+		this.decalColorId,
+		this.decalBackgroundColorId,
+		this.gonfalonId,
+		this.gonfalonColorId,
+		this.gonfalonDetailId,
+		this.gonfalonDetailColorId,
 	);
 
 	static ClanBanner fromMap(Map<String, dynamic> data){

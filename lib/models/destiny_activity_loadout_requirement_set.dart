@@ -2,7 +2,7 @@ import 'destiny_activity_loadout_requirement.dart';
 class DestinyActivityLoadoutRequirementSet{
 	List<DestinyActivityLoadoutRequirement> requirements;
 	DestinyActivityLoadoutRequirementSet(
-		List<DestinyActivityLoadoutRequirement> this.requirements,
+		this.requirements,
 	);
 
 	static DestinyActivityLoadoutRequirementSet fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyActivityLoadoutRequirementSet{
 			return null;
 		};
 		return new DestinyActivityLoadoutRequirementSet(
-				DestinyActivityLoadoutRequirement.fromList(data['requirements']),
+				data['requirements'] != null ? DestinyActivityLoadoutRequirement.fromList(data['requirements']) : null,
 		);
 	}
 

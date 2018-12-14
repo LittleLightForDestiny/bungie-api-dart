@@ -2,8 +2,8 @@ class DestinyPublicMilestoneChallenge{
 	int objectiveHash;
 	int activityHash;
 	DestinyPublicMilestoneChallenge(
-		int this.objectiveHash,
-		int this.activityHash,
+		this.objectiveHash,
+		this.activityHash,
 	);
 
 	static DestinyPublicMilestoneChallenge fromMap(Map<String, dynamic> data){

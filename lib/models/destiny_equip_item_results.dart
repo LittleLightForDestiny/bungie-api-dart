@@ -2,7 +2,7 @@ import 'destiny_equip_item_result.dart';
 class DestinyEquipItemResults{
 	List<DestinyEquipItemResult> equipResults;
 	DestinyEquipItemResults(
-		List<DestinyEquipItemResult> this.equipResults,
+		this.equipResults,
 	);
 
 	static DestinyEquipItemResults fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyEquipItemResults{
 			return null;
 		};
 		return new DestinyEquipItemResults(
-				DestinyEquipItemResult.fromList(data['equipResults']),
+				data['equipResults'] != null ? DestinyEquipItemResult.fromList(data['equipResults']) : null,
 		);
 	}
 

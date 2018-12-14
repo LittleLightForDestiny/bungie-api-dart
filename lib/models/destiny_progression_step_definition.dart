@@ -6,11 +6,11 @@ class DestinyProgressionStepDefinition{
 	List<DestinyItemQuantity> rewardItems;
 	String icon;
 	DestinyProgressionStepDefinition(
-		String this.stepName,
-		int this.displayEffectType,
-		int this.progressTotal,
-		List<DestinyItemQuantity> this.rewardItems,
-		String this.icon,
+		this.stepName,
+		this.displayEffectType,
+		this.progressTotal,
+		this.rewardItems,
+		this.icon,
 	);
 
 	static DestinyProgressionStepDefinition fromMap(Map<String, dynamic> data){
@@ -21,7 +21,7 @@ class DestinyProgressionStepDefinition{
 				data['stepName'],
 				data['displayEffectType'],
 				data['progressTotal'],
-				DestinyItemQuantity.fromList(data['rewardItems']),
+				data['rewardItems'] != null ? DestinyItemQuantity.fromList(data['rewardItems']) : null,
 				data['icon'],
 		);
 	}

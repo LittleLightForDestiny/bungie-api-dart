@@ -5,11 +5,11 @@ class PollResult{
 	int votes;
 	bool requestingUserVoted;
 	PollResult(
-		String this.answerText,
-		int this.answerSlot,
-		String this.lastVoteDate,
-		int this.votes,
-		bool this.requestingUserVoted,
+		this.answerText,
+		this.answerSlot,
+		this.lastVoteDate,
+		this.votes,
+		this.requestingUserVoted,
 	);
 
 	static PollResult fromMap(Map<String, dynamic> data){

@@ -9,23 +9,23 @@ class DestinyTalentGridDefinition{
 	List<DestinyTalentNodeDefinition> nodes;
 	List<DestinyTalentNodeExclusiveSetDefinition> exclusiveSets;
 	List<int> independentNodeIndexes;
-	Map<DestinyTalentExclusiveGroup, dynamic> groups;
+	Map<String, DestinyTalentExclusiveGroup> groups;
 	List<DestinyTalentNodeCategory> nodeCategories;
 	int hash;
 	int index;
 	bool redacted;
 	DestinyTalentGridDefinition(
-		int this.maxGridLevel,
-		int this.gridLevelPerColumn,
-		int this.progressionHash,
-		List<DestinyTalentNodeDefinition> this.nodes,
-		List<DestinyTalentNodeExclusiveSetDefinition> this.exclusiveSets,
-		List<int> this.independentNodeIndexes,
-		Map<DestinyTalentExclusiveGroup, dynamic> this.groups,
-		List<DestinyTalentNodeCategory> this.nodeCategories,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.maxGridLevel,
+		this.gridLevelPerColumn,
+		this.progressionHash,
+		this.nodes,
+		this.exclusiveSets,
+		this.independentNodeIndexes,
+		this.groups,
+		this.nodeCategories,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyTalentGridDefinition fromMap(Map<String, dynamic> data){
@@ -36,11 +36,11 @@ class DestinyTalentGridDefinition{
 				data['maxGridLevel'],
 				data['gridLevelPerColumn'],
 				data['progressionHash'],
-				DestinyTalentNodeDefinition.fromList(data['nodes']),
-				DestinyTalentNodeExclusiveSetDefinition.fromList(data['exclusiveSets']),
-				data['independentNodeIndexes'],
-				data['groups'],
-				DestinyTalentNodeCategory.fromList(data['nodeCategories']),
+				data['nodes'] != null ? DestinyTalentNodeDefinition.fromList(data['nodes']) : null,
+				data['exclusiveSets'] != null ? DestinyTalentNodeExclusiveSetDefinition.fromList(data['exclusiveSets']) : null,
+				data['independentNodeIndexes'] != null ? data['independentNodeIndexes']?.cast<int>() ?? null : null,
+				data['groups'] != null ? Map<String, DestinyTalentExclusiveGroup>.from(data['groups'].map((k, v)=>MapEntry(k, DestinyTalentExclusiveGroup.fromMap(v)))) : null,
+				data['nodeCategories'] != null ? DestinyTalentNodeCategory.fromList(data['nodeCategories']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

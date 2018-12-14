@@ -1,9 +1,9 @@
 class DestinyItemTierTypeInfusionBlock{
-	int baseQualityTransferRatio;
+	double baseQualityTransferRatio;
 	int minimumQualityIncrement;
 	DestinyItemTierTypeInfusionBlock(
-		int this.baseQualityTransferRatio,
-		int this.minimumQualityIncrement,
+		this.baseQualityTransferRatio,
+		this.minimumQualityIncrement,
 	);
 
 	static DestinyItemTierTypeInfusionBlock fromMap(Map<String, dynamic> data){

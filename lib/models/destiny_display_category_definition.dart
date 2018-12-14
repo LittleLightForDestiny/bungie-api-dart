@@ -9,14 +9,14 @@ class DestinyDisplayCategoryDefinition{
 	int displayStyleHash;
 	String displayStyleIdentifier;
 	DestinyDisplayCategoryDefinition(
-		String this.identifier,
-		int this.displayCategoryHash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		bool this.displayInBanner,
-		int this.progressionHash,
-		int this.sortOrder,
-		int this.displayStyleHash,
-		String this.displayStyleIdentifier,
+		this.identifier,
+		this.displayCategoryHash,
+		this.displayProperties,
+		this.displayInBanner,
+		this.progressionHash,
+		this.sortOrder,
+		this.displayStyleHash,
+		this.displayStyleIdentifier,
 	);
 
 	static DestinyDisplayCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -26,7 +26,7 @@ class DestinyDisplayCategoryDefinition{
 		return new DestinyDisplayCategoryDefinition(
 				data['identifier'],
 				data['displayCategoryHash'],
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['displayInBanner'],
 				data['progressionHash'],
 				data['sortOrder'],

@@ -11,15 +11,15 @@ class GroupMemberApplication{
 	UserInfoCard destinyUserInfo;
 	UserInfoCard bungieNetUserInfo;
 	GroupMemberApplication(
-		String this.groupId,
-		String this.creationDate,
-		int this.resolveState,
-		String this.resolveDate,
-		String this.resolvedByMembershipId,
-		String this.requestMessage,
-		String this.resolveMessage,
-		UserInfoCard this.destinyUserInfo,
-		UserInfoCard this.bungieNetUserInfo,
+		this.groupId,
+		this.creationDate,
+		this.resolveState,
+		this.resolveDate,
+		this.resolvedByMembershipId,
+		this.requestMessage,
+		this.resolveMessage,
+		this.destinyUserInfo,
+		this.bungieNetUserInfo,
 	);
 
 	static GroupMemberApplication fromMap(Map<String, dynamic> data){
@@ -34,8 +34,8 @@ class GroupMemberApplication{
 				data['resolvedByMembershipId'],
 				data['requestMessage'],
 				data['resolveMessage'],
-				UserInfoCard.fromMap(data['destinyUserInfo']),
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 		);
 	}
 

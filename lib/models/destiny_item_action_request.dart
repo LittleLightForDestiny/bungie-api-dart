@@ -3,9 +3,9 @@ class DestinyItemActionRequest{
 	String characterId;
 	int membershipType;
 	DestinyItemActionRequest(
-		String this.itemId,
-		String this.characterId,
-		int this.membershipType,
+		this.itemId,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyItemActionRequest fromMap(Map<String, dynamic> data){

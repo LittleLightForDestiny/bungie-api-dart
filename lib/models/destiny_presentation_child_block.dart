@@ -3,9 +3,9 @@ class DestinyPresentationChildBlock{
 	List<int> parentPresentationNodeHashes;
 	int displayStyle;
 	DestinyPresentationChildBlock(
-		int this.presentationNodeType,
-		List<int> this.parentPresentationNodeHashes,
-		int this.displayStyle,
+		this.presentationNodeType,
+		this.parentPresentationNodeHashes,
+		this.displayStyle,
 	);
 
 	static DestinyPresentationChildBlock fromMap(Map<String, dynamic> data){
@@ -14,7 +14,7 @@ class DestinyPresentationChildBlock{
 		};
 		return new DestinyPresentationChildBlock(
 				data['presentationNodeType'],
-				data['parentPresentationNodeHashes'],
+				data['parentPresentationNodeHashes'] != null ? data['parentPresentationNodeHashes']?.cast<int>() ?? null : null,
 				data['displayStyle'],
 		);
 	}

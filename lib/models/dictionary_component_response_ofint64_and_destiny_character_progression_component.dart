@@ -1,10 +1,10 @@
 import 'destiny_character_progression_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent{
-	Map<DestinyCharacterProgressionComponent, dynamic> data;
+	Map<String, DestinyCharacterProgressionComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent(
-		Map<DestinyCharacterProgressionComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyCharacterProgressionComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCharacterProgressionComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

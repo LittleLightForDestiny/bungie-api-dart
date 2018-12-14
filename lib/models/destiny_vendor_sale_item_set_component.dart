@@ -1,8 +1,8 @@
 import 'destiny_vendor_sale_item_component.dart';
 class DestinyVendorSaleItemSetComponent{
-	Map<DestinyVendorSaleItemComponent, dynamic> saleItems;
+	Map<String, DestinyVendorSaleItemComponent> saleItems;
 	DestinyVendorSaleItemSetComponent(
-		Map<DestinyVendorSaleItemComponent, dynamic> this.saleItems,
+		this.saleItems,
 	);
 
 	static DestinyVendorSaleItemSetComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyVendorSaleItemSetComponent{
 			return null;
 		};
 		return new DestinyVendorSaleItemSetComponent(
-				data['saleItems'],
+				data['saleItems'] != null ? Map<String, DestinyVendorSaleItemComponent>.from(data['saleItems'].map((k, v)=>MapEntry(k, DestinyVendorSaleItemComponent.fromMap(v)))) : null,
 		);
 	}
 

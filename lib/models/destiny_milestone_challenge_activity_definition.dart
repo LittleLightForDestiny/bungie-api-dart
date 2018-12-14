@@ -1,13 +1,16 @@
 import 'destiny_milestone_challenge_definition.dart';
 import 'destiny_milestone_challenge_activity_graph_node_entry.dart';
+import 'destiny_milestone_challenge_activity_phase.dart';
 class DestinyMilestoneChallengeActivityDefinition{
 	int activityHash;
 	List<DestinyMilestoneChallengeDefinition> challenges;
 	List<DestinyMilestoneChallengeActivityGraphNodeEntry> activityGraphNodes;
+	List<DestinyMilestoneChallengeActivityPhase> phases;
 	DestinyMilestoneChallengeActivityDefinition(
-		int this.activityHash,
-		List<DestinyMilestoneChallengeDefinition> this.challenges,
-		List<DestinyMilestoneChallengeActivityGraphNodeEntry> this.activityGraphNodes,
+		this.activityHash,
+		this.challenges,
+		this.activityGraphNodes,
+		this.phases,
 	);
 
 	static DestinyMilestoneChallengeActivityDefinition fromMap(Map<String, dynamic> data){
@@ -16,8 +19,9 @@ class DestinyMilestoneChallengeActivityDefinition{
 		};
 		return new DestinyMilestoneChallengeActivityDefinition(
 				data['activityHash'],
-				DestinyMilestoneChallengeDefinition.fromList(data['challenges']),
-				DestinyMilestoneChallengeActivityGraphNodeEntry.fromList(data['activityGraphNodes']),
+				data['challenges'] != null ? DestinyMilestoneChallengeDefinition.fromList(data['challenges']) : null,
+				data['activityGraphNodes'] != null ? DestinyMilestoneChallengeActivityGraphNodeEntry.fromList(data['activityGraphNodes']) : null,
+				data['phases'] != null ? DestinyMilestoneChallengeActivityPhase.fromList(data['phases']) : null,
 		);
 	}
 
@@ -37,6 +41,7 @@ class DestinyMilestoneChallengeActivityDefinition{
 			data['activityHash'] = this.activityHash;
 			data['challenges'] = this.challenges.map((item)=>item.toMap()).toList();
 			data['activityGraphNodes'] = this.activityGraphNodes.map((item)=>item.toMap()).toList();
+			data['phases'] = this.phases.map((item)=>item.toMap()).toList();
 		return data;
 	}
 }

@@ -2,8 +2,8 @@ class DestinySocketTypeScalarMaterialRequirementEntry{
 	int currencyItemHash;
 	int scalarValue;
 	DestinySocketTypeScalarMaterialRequirementEntry(
-		int this.currencyItemHash,
-		int this.scalarValue,
+		this.currencyItemHash,
+		this.scalarValue,
 	);
 
 	static DestinySocketTypeScalarMaterialRequirementEntry fromMap(Map<String, dynamic> data){

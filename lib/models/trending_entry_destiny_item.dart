@@ -1,7 +1,7 @@
 class TrendingEntryDestinyItem{
 	int itemHash;
 	TrendingEntryDestinyItem(
-		int this.itemHash,
+		this.itemHash,
 	);
 
 	static TrendingEntryDestinyItem fromMap(Map<String, dynamic> data){

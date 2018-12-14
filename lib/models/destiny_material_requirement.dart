@@ -4,10 +4,10 @@ class DestinyMaterialRequirement{
 	int count;
 	bool omitFromRequirements;
 	DestinyMaterialRequirement(
-		int this.itemHash,
-		bool this.deleteOnAction,
-		int this.count,
-		bool this.omitFromRequirements,
+		this.itemHash,
+		this.deleteOnAction,
+		this.count,
+		this.omitFromRequirements,
 	);
 
 	static DestinyMaterialRequirement fromMap(Map<String, dynamic> data){

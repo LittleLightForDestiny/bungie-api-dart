@@ -1,9 +1,9 @@
 class DestinyVendorSaleItemActionBlockDefinition{
-	int executeSeconds;
+	double executeSeconds;
 	bool isPositive;
 	DestinyVendorSaleItemActionBlockDefinition(
-		int this.executeSeconds,
-		bool this.isPositive,
+		this.executeSeconds,
+		this.isPositive,
 	);
 
 	static DestinyVendorSaleItemActionBlockDefinition fromMap(Map<String, dynamic> data){

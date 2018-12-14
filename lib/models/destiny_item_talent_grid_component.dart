@@ -6,10 +6,10 @@ class DestinyItemTalentGridComponent{
 	bool isGridComplete;
 	DestinyProgression gridProgression;
 	DestinyItemTalentGridComponent(
-		int this.talentGridHash,
-		List<DestinyTalentNode> this.nodes,
-		bool this.isGridComplete,
-		DestinyProgression this.gridProgression,
+		this.talentGridHash,
+		this.nodes,
+		this.isGridComplete,
+		this.gridProgression,
 	);
 
 	static DestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
@@ -18,9 +18,9 @@ class DestinyItemTalentGridComponent{
 		};
 		return new DestinyItemTalentGridComponent(
 				data['talentGridHash'],
-				DestinyTalentNode.fromList(data['nodes']),
+				data['nodes'] != null ? DestinyTalentNode.fromList(data['nodes']) : null,
 				data['isGridComplete'],
-				data['gridProgression'],
+				data['gridProgression'] != null ? DestinyProgression.fromMap(data['gridProgression']) : null,
 		);
 	}
 

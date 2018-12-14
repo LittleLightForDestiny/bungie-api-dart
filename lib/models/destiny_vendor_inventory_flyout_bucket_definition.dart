@@ -3,9 +3,9 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 	int inventoryBucketHash;
 	int sortItemsBy;
 	DestinyVendorInventoryFlyoutBucketDefinition(
-		bool this.collapsible,
-		int this.inventoryBucketHash,
-		int this.sortItemsBy,
+		this.collapsible,
+		this.inventoryBucketHash,
+		this.sortItemsBy,
 	);
 
 	static DestinyVendorInventoryFlyoutBucketDefinition fromMap(Map<String, dynamic> data){

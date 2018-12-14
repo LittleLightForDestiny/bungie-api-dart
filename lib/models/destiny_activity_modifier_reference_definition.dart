@@ -1,7 +1,7 @@
 class DestinyActivityModifierReferenceDefinition{
 	int activityModifierHash;
 	DestinyActivityModifierReferenceDefinition(
-		int this.activityModifierHash,
+		this.activityModifierHash,
 	);
 
 	static DestinyActivityModifierReferenceDefinition fromMap(Map<String, dynamic> data){

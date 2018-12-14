@@ -5,7 +5,7 @@ class CommunityLiveStatusResponse{
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     CommunityLiveStatusResponse(
@@ -14,7 +14,7 @@ class CommunityLiveStatusResponse{
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class CommunityLiveStatusResponse{
 			return null;
 		};
 		return new CommunityLiveStatusResponse(
-				CommunityLiveStatus.fromMap(data['Response']),
+				data['Response'] != null ? CommunityLiveStatus.fromMap(data['Response']) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

@@ -6,11 +6,11 @@ class DestinyRewardSourceDefinition{
 	int index;
 	bool redacted;
 	DestinyRewardSourceDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.category,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.category,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyRewardSourceDefinition fromMap(Map<String, dynamic> data){
@@ -18,7 +18,7 @@ class DestinyRewardSourceDefinition{
 			return null;
 		};
 		return new DestinyRewardSourceDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['category'],
 				data['hash'],
 				data['index'],

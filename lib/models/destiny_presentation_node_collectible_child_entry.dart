@@ -1,7 +1,7 @@
 class DestinyPresentationNodeCollectibleChildEntry{
 	int collectibleHash;
 	DestinyPresentationNodeCollectibleChildEntry(
-		int this.collectibleHash,
+		this.collectibleHash,
 	);
 
 	static DestinyPresentationNodeCollectibleChildEntry fromMap(Map<String, dynamic> data){

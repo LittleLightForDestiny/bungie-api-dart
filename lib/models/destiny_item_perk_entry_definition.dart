@@ -3,9 +3,9 @@ class DestinyItemPerkEntryDefinition{
 	int perkHash;
 	int perkVisibility;
 	DestinyItemPerkEntryDefinition(
-		String this.requirementDisplayString,
-		int this.perkHash,
-		int this.perkVisibility,
+		this.requirementDisplayString,
+		this.perkHash,
+		this.perkVisibility,
 	);
 
 	static DestinyItemPerkEntryDefinition fromMap(Map<String, dynamic> data){

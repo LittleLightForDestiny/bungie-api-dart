@@ -19,19 +19,19 @@ class DestinyRecordDefinition{
 	int index;
 	bool redacted;
 	DestinyRecordDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.scope,
-		DestinyPresentationChildBlock this.presentationInfo,
-		int this.loreHash,
-		List<int> this.objectiveHashes,
-		int this.recordValueStyle,
-		DestinyRecordTitleBlock this.titleInfo,
-		DestinyRecordCompletionBlock this.completionInfo,
-		SchemaRecordStateBlock this.stateInfo,
-		DestinyPresentationNodeRequirementsBlock this.requirements,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.scope,
+		this.presentationInfo,
+		this.loreHash,
+		this.objectiveHashes,
+		this.recordValueStyle,
+		this.titleInfo,
+		this.completionInfo,
+		this.stateInfo,
+		this.requirements,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyRecordDefinition fromMap(Map<String, dynamic> data){
@@ -39,16 +39,16 @@ class DestinyRecordDefinition{
 			return null;
 		};
 		return new DestinyRecordDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['scope'],
-				DestinyPresentationChildBlock.fromMap(data['presentationInfo']),
+				data['presentationInfo'] != null ? DestinyPresentationChildBlock.fromMap(data['presentationInfo']) : null,
 				data['loreHash'],
-				data['objectiveHashes'],
+				data['objectiveHashes'] != null ? data['objectiveHashes']?.cast<int>() ?? null : null,
 				data['recordValueStyle'],
-				DestinyRecordTitleBlock.fromMap(data['titleInfo']),
-				DestinyRecordCompletionBlock.fromMap(data['completionInfo']),
-				SchemaRecordStateBlock.fromMap(data['stateInfo']),
-				DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']),
+				data['titleInfo'] != null ? DestinyRecordTitleBlock.fromMap(data['titleInfo']) : null,
+				data['completionInfo'] != null ? DestinyRecordCompletionBlock.fromMap(data['completionInfo']) : null,
+				data['stateInfo'] != null ? SchemaRecordStateBlock.fromMap(data['stateInfo']) : null,
+				data['requirements'] != null ? DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

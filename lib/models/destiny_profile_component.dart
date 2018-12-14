@@ -5,10 +5,10 @@ class DestinyProfileComponent{
 	int versionsOwned;
 	List<String> characterIds;
 	DestinyProfileComponent(
-		UserInfoCard this.userInfo,
-		String this.dateLastPlayed,
-		int this.versionsOwned,
-		List<String> this.characterIds,
+		this.userInfo,
+		this.dateLastPlayed,
+		this.versionsOwned,
+		this.characterIds,
 	);
 
 	static DestinyProfileComponent fromMap(Map<String, dynamic> data){
@@ -16,10 +16,10 @@ class DestinyProfileComponent{
 			return null;
 		};
 		return new DestinyProfileComponent(
-				data['userInfo'],
+				data['userInfo'] != null ? UserInfoCard.fromMap(data['userInfo']) : null,
 				data['dateLastPlayed'],
 				data['versionsOwned'],
-				data['characterIds'],
+				data['characterIds'] != null ? data['characterIds']?.cast<String>() ?? null : null,
 		);
 	}
 

@@ -3,8 +3,8 @@ class DestinyMilestoneActivityCompletionStatus{
 	bool completed;
 	List<DestinyMilestoneActivityPhase> phases;
 	DestinyMilestoneActivityCompletionStatus(
-		bool this.completed,
-		List<DestinyMilestoneActivityPhase> this.phases,
+		this.completed,
+		this.phases,
 	);
 
 	static DestinyMilestoneActivityCompletionStatus fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyMilestoneActivityCompletionStatus{
 		};
 		return new DestinyMilestoneActivityCompletionStatus(
 				data['completed'],
-				DestinyMilestoneActivityPhase.fromList(data['phases']),
+				data['phases'] != null ? DestinyMilestoneActivityPhase.fromList(data['phases']) : null,
 		);
 	}
 

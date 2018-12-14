@@ -10,15 +10,15 @@ class DestinyQuestStatus{
 	bool started;
 	int vendorHash;
 	DestinyQuestStatus(
-		int this.questHash,
-		int this.stepHash,
-		List<DestinyObjectiveProgress> this.stepObjectives,
-		bool this.tracked,
-		String this.itemInstanceId,
-		bool this.completed,
-		bool this.redeemed,
-		bool this.started,
-		int this.vendorHash,
+		this.questHash,
+		this.stepHash,
+		this.stepObjectives,
+		this.tracked,
+		this.itemInstanceId,
+		this.completed,
+		this.redeemed,
+		this.started,
+		this.vendorHash,
 	);
 
 	static DestinyQuestStatus fromMap(Map<String, dynamic> data){
@@ -28,7 +28,7 @@ class DestinyQuestStatus{
 		return new DestinyQuestStatus(
 				data['questHash'],
 				data['stepHash'],
-				DestinyObjectiveProgress.fromList(data['stepObjectives']),
+				data['stepObjectives'] != null ? DestinyObjectiveProgress.fromList(data['stepObjectives']) : null,
 				data['tracked'],
 				data['itemInstanceId'],
 				data['completed'],

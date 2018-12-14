@@ -4,9 +4,9 @@ class PollResponse{
 	List<PollResult> results;
 	int totalVotes;
 	PollResponse(
-		String this.topicId,
-		List<PollResult> this.results,
-		int this.totalVotes,
+		this.topicId,
+		this.results,
+		this.totalVotes,
 	);
 
 	static PollResponse fromMap(Map<String, dynamic> data){
@@ -15,7 +15,7 @@ class PollResponse{
 		};
 		return new PollResponse(
 				data['topicId'],
-				PollResult.fromList(data['results']),
+				data['results'] != null ? PollResult.fromList(data['results']) : null,
 				data['totalVotes'],
 		);
 	}

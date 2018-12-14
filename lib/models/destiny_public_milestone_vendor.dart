@@ -2,8 +2,8 @@ class DestinyPublicMilestoneVendor{
 	int vendorHash;
 	int previewItemHash;
 	DestinyPublicMilestoneVendor(
-		int this.vendorHash,
-		int this.previewItemHash,
+		this.vendorHash,
+		this.previewItemHash,
 	);
 
 	static DestinyPublicMilestoneVendor fromMap(Map<String, dynamic> data){

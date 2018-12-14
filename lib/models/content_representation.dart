@@ -3,9 +3,9 @@ class ContentRepresentation{
 	String path;
 	String validationString;
 	ContentRepresentation(
-		String this.name,
-		String this.path,
-		String this.validationString,
+		this.name,
+		this.path,
+		this.validationString,
 	);
 
 	static ContentRepresentation fromMap(Map<String, dynamic> data){

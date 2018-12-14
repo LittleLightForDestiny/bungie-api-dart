@@ -1,8 +1,8 @@
 import 'destiny_stat.dart';
 class DestinyItemStatsComponent{
-	Map<DestinyStat, dynamic> stats;
+	Map<String, DestinyStat> stats;
 	DestinyItemStatsComponent(
-		Map<DestinyStat, dynamic> this.stats,
+		this.stats,
 	);
 
 	static DestinyItemStatsComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyItemStatsComponent{
 			return null;
 		};
 		return new DestinyItemStatsComponent(
-				data['stats'],
+				data['stats'] != null ? Map<String, DestinyStat>.from(data['stats'].map((k, v)=>MapEntry(k, DestinyStat.fromMap(v)))) : null,
 		);
 	}
 

@@ -1,7 +1,7 @@
 class GroupCreationResponse{
 	String groupId;
 	GroupCreationResponse(
-		String this.groupId,
+		this.groupId,
 	);
 
 	static GroupCreationResponse fromMap(Map<String, dynamic> data){

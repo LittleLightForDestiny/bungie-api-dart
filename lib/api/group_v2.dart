@@ -18,6 +18,7 @@ import '../responses/list_of_entity_action_result_response.dart';
 import '../responses/group_membership_search_response_response.dart';
 import '../responses/group_potential_membership_search_response_response.dart';
 import '../models/group_query.dart';
+import '../models/group_name_search_request.dart';
 import '../models/group_action.dart';
 import '../models/group_edit_action.dart';
 import '../models/clan_banner.dart';
@@ -130,6 +131,20 @@ class GroupV2{
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/Name/${groupName}/${groupType}/", params);
         config.bodyContentType = null;
+        return client.request(config).then((response){
+            return GroupResponseResponse.fromMap(response);
+        });
+    }
+    
+    //Get information about a specific group with the given name and type. The POST version.
+    static Future<GroupResponseResponse> getGroupByNameV2 (
+        HttpClient client,
+        GroupNameSearchRequest body
+    ) {
+        Map<String, dynamic> params = new Map();
+        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/NameV2/", params);
+        config.body = body;
+        config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupResponseResponse.fromMap(response);
         });

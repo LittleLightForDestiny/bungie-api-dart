@@ -6,12 +6,12 @@ class DestinyDerivedItemDefinition{
 	String iconPath;
 	int vendorItemIndex;
 	DestinyDerivedItemDefinition(
-		int this.itemHash,
-		String this.itemName,
-		String this.itemDetail,
-		String this.itemDescription,
-		String this.iconPath,
-		int this.vendorItemIndex,
+		this.itemHash,
+		this.itemName,
+		this.itemDetail,
+		this.itemDescription,
+		this.iconPath,
+		this.vendorItemIndex,
 	);
 
 	static DestinyDerivedItemDefinition fromMap(Map<String, dynamic> data){

@@ -5,19 +5,19 @@ import 'destiny_historical_stats_value.dart';
 import 'destiny_historical_stats_period_group.dart';
 import 'destiny_historical_stats_period_group.dart';
 class DestinyHistoricalStatsByPeriod{
-	Map<DestinyHistoricalStatsValue, dynamic> allTime;
-	Map<DestinyHistoricalStatsValue, dynamic> allTimeTier1;
-	Map<DestinyHistoricalStatsValue, dynamic> allTimeTier2;
-	Map<DestinyHistoricalStatsValue, dynamic> allTimeTier3;
+	Map<String, DestinyHistoricalStatsValue> allTime;
+	Map<String, DestinyHistoricalStatsValue> allTimeTier1;
+	Map<String, DestinyHistoricalStatsValue> allTimeTier2;
+	Map<String, DestinyHistoricalStatsValue> allTimeTier3;
 	List<DestinyHistoricalStatsPeriodGroup> daily;
 	List<DestinyHistoricalStatsPeriodGroup> monthly;
 	DestinyHistoricalStatsByPeriod(
-		Map<DestinyHistoricalStatsValue, dynamic> this.allTime,
-		Map<DestinyHistoricalStatsValue, dynamic> this.allTimeTier1,
-		Map<DestinyHistoricalStatsValue, dynamic> this.allTimeTier2,
-		Map<DestinyHistoricalStatsValue, dynamic> this.allTimeTier3,
-		List<DestinyHistoricalStatsPeriodGroup> this.daily,
-		List<DestinyHistoricalStatsPeriodGroup> this.monthly,
+		this.allTime,
+		this.allTimeTier1,
+		this.allTimeTier2,
+		this.allTimeTier3,
+		this.daily,
+		this.monthly,
 	);
 
 	static DestinyHistoricalStatsByPeriod fromMap(Map<String, dynamic> data){
@@ -25,12 +25,12 @@ class DestinyHistoricalStatsByPeriod{
 			return null;
 		};
 		return new DestinyHistoricalStatsByPeriod(
-				data['allTime'],
-				data['allTimeTier1'],
-				data['allTimeTier2'],
-				data['allTimeTier3'],
-				DestinyHistoricalStatsPeriodGroup.fromList(data['daily']),
-				DestinyHistoricalStatsPeriodGroup.fromList(data['monthly']),
+				data['allTime'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['allTime'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
+				data['allTimeTier1'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['allTimeTier1'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
+				data['allTimeTier2'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['allTimeTier2'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
+				data['allTimeTier3'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['allTimeTier3'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
+				data['daily'] != null ? DestinyHistoricalStatsPeriodGroup.fromList(data['daily']) : null,
+				data['monthly'] != null ? DestinyHistoricalStatsPeriodGroup.fromList(data['monthly']) : null,
 		);
 	}
 

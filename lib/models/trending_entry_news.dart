@@ -2,7 +2,7 @@ import 'content_item_public_contract.dart';
 class TrendingEntryNews{
 	ContentItemPublicContract article;
 	TrendingEntryNews(
-		ContentItemPublicContract this.article,
+		this.article,
 	);
 
 	static TrendingEntryNews fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class TrendingEntryNews{
 			return null;
 		};
 		return new TrendingEntryNews(
-				ContentItemPublicContract.fromMap(data['article']),
+				data['article'] != null ? ContentItemPublicContract.fromMap(data['article']) : null,
 		);
 	}
 

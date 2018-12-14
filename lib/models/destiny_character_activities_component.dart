@@ -10,15 +10,15 @@ class DestinyCharacterActivitiesComponent{
 	int currentPlaylistActivityHash;
 	int lastCompletedStoryHash;
 	DestinyCharacterActivitiesComponent(
-		String this.dateActivityStarted,
-		List<DestinyActivity> this.availableActivities,
-		int this.currentActivityHash,
-		int this.currentActivityModeHash,
-		int this.currentActivityModeType,
-		List<int> this.currentActivityModeHashes,
-		List<int> this.currentActivityModeTypes,
-		int this.currentPlaylistActivityHash,
-		int this.lastCompletedStoryHash,
+		this.dateActivityStarted,
+		this.availableActivities,
+		this.currentActivityHash,
+		this.currentActivityModeHash,
+		this.currentActivityModeType,
+		this.currentActivityModeHashes,
+		this.currentActivityModeTypes,
+		this.currentPlaylistActivityHash,
+		this.lastCompletedStoryHash,
 	);
 
 	static DestinyCharacterActivitiesComponent fromMap(Map<String, dynamic> data){
@@ -27,11 +27,11 @@ class DestinyCharacterActivitiesComponent{
 		};
 		return new DestinyCharacterActivitiesComponent(
 				data['dateActivityStarted'],
-				DestinyActivity.fromList(data['availableActivities']),
+				data['availableActivities'] != null ? DestinyActivity.fromList(data['availableActivities']) : null,
 				data['currentActivityHash'],
 				data['currentActivityModeHash'],
 				data['currentActivityModeType'],
-				data['currentActivityModeHashes'],
+				data['currentActivityModeHashes'] != null ? data['currentActivityModeHashes']?.cast<int>() ?? null : null,
 				data['currentActivityModeTypes'],
 				data['currentPlaylistActivityHash'],
 				data['lastCompletedStoryHash'],

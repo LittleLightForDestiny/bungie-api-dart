@@ -1,8 +1,8 @@
 import 'destiny_record_component.dart';
 class DestinyRecordsComponent{
-	Map<DestinyRecordComponent, dynamic> records;
+	Map<String, DestinyRecordComponent> records;
 	DestinyRecordsComponent(
-		Map<DestinyRecordComponent, dynamic> this.records,
+		this.records,
 	);
 
 	static DestinyRecordsComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyRecordsComponent{
 			return null;
 		};
 		return new DestinyRecordsComponent(
-				data['records'],
+				data['records'] != null ? Map<String, DestinyRecordComponent>.from(data['records'].map((k, v)=>MapEntry(k, DestinyRecordComponent.fromMap(v)))) : null,
 		);
 	}
 

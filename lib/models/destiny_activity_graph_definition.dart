@@ -15,15 +15,15 @@ class DestinyActivityGraphDefinition{
 	int index;
 	bool redacted;
 	DestinyActivityGraphDefinition(
-		List<DestinyActivityGraphNodeDefinition> this.nodes,
-		List<DestinyActivityGraphArtElementDefinition> this.artElements,
-		List<DestinyActivityGraphConnectionDefinition> this.connections,
-		List<DestinyActivityGraphDisplayObjectiveDefinition> this.displayObjectives,
-		List<DestinyActivityGraphDisplayProgressionDefinition> this.displayProgressions,
-		List<DestinyLinkedGraphDefinition> this.linkedGraphs,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.nodes,
+		this.artElements,
+		this.connections,
+		this.displayObjectives,
+		this.displayProgressions,
+		this.linkedGraphs,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyActivityGraphDefinition fromMap(Map<String, dynamic> data){
@@ -31,12 +31,12 @@ class DestinyActivityGraphDefinition{
 			return null;
 		};
 		return new DestinyActivityGraphDefinition(
-				DestinyActivityGraphNodeDefinition.fromList(data['nodes']),
-				DestinyActivityGraphArtElementDefinition.fromList(data['artElements']),
-				DestinyActivityGraphConnectionDefinition.fromList(data['connections']),
-				DestinyActivityGraphDisplayObjectiveDefinition.fromList(data['displayObjectives']),
-				DestinyActivityGraphDisplayProgressionDefinition.fromList(data['displayProgressions']),
-				DestinyLinkedGraphDefinition.fromList(data['linkedGraphs']),
+				data['nodes'] != null ? DestinyActivityGraphNodeDefinition.fromList(data['nodes']) : null,
+				data['artElements'] != null ? DestinyActivityGraphArtElementDefinition.fromList(data['artElements']) : null,
+				data['connections'] != null ? DestinyActivityGraphConnectionDefinition.fromList(data['connections']) : null,
+				data['displayObjectives'] != null ? DestinyActivityGraphDisplayObjectiveDefinition.fromList(data['displayObjectives']) : null,
+				data['displayProgressions'] != null ? DestinyActivityGraphDisplayProgressionDefinition.fromList(data['displayProgressions']) : null,
+				data['linkedGraphs'] != null ? DestinyLinkedGraphDefinition.fromList(data['linkedGraphs']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

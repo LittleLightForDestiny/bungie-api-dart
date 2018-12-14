@@ -1,10 +1,10 @@
 import 'destiny_collectibles_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent{
-	Map<DestinyCollectiblesComponent, dynamic> data;
+	Map<String, DestinyCollectiblesComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent(
-		Map<DestinyCollectiblesComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyCollectiblesComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCollectiblesComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

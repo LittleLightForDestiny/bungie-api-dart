@@ -1,7 +1,7 @@
 class DestinyArtDyeReference{
 	int artDyeChannelHash;
 	DestinyArtDyeReference(
-		int this.artDyeChannelHash,
+		this.artDyeChannelHash,
 	);
 
 	static DestinyArtDyeReference fromMap(Map<String, dynamic> data){

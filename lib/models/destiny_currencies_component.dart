@@ -1,7 +1,7 @@
 class DestinyCurrenciesComponent{
-	Map<int, dynamic> itemQuantities;
+	Map<String, int> itemQuantities;
 	DestinyCurrenciesComponent(
-		Map<int, dynamic> this.itemQuantities,
+		this.itemQuantities,
 	);
 
 	static DestinyCurrenciesComponent fromMap(Map<String, dynamic> data){
@@ -9,7 +9,7 @@ class DestinyCurrenciesComponent{
 			return null;
 		};
 		return new DestinyCurrenciesComponent(
-				data['itemQuantities'],
+				data['itemQuantities'] != null ? Map<String, int>.from(data['itemQuantities'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 

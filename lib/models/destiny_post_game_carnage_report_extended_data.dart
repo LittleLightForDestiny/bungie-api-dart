@@ -2,10 +2,10 @@ import 'destiny_historical_weapon_stats.dart';
 import 'destiny_historical_stats_value.dart';
 class DestinyPostGameCarnageReportExtendedData{
 	List<DestinyHistoricalWeaponStats> weapons;
-	Map<DestinyHistoricalStatsValue, dynamic> values;
+	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyPostGameCarnageReportExtendedData(
-		List<DestinyHistoricalWeaponStats> this.weapons,
-		Map<DestinyHistoricalStatsValue, dynamic> this.values,
+		this.weapons,
+		this.values,
 	);
 
 	static DestinyPostGameCarnageReportExtendedData fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class DestinyPostGameCarnageReportExtendedData{
 			return null;
 		};
 		return new DestinyPostGameCarnageReportExtendedData(
-				DestinyHistoricalWeaponStats.fromList(data['weapons']),
-				data['values'],
+				data['weapons'] != null ? DestinyHistoricalWeaponStats.fromList(data['weapons']) : null,
+				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
 		);
 	}
 

@@ -3,8 +3,8 @@ class DestinyActivityRewardDefinition{
 	String rewardText;
 	List<DestinyItemQuantity> rewardItems;
 	DestinyActivityRewardDefinition(
-		String this.rewardText,
-		List<DestinyItemQuantity> this.rewardItems,
+		this.rewardText,
+		this.rewardItems,
 	);
 
 	static DestinyActivityRewardDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyActivityRewardDefinition{
 		};
 		return new DestinyActivityRewardDefinition(
 				data['rewardText'],
-				DestinyItemQuantity.fromList(data['rewardItems']),
+				data['rewardItems'] != null ? DestinyItemQuantity.fromList(data['rewardItems']) : null,
 		);
 	}
 

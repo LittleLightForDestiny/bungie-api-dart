@@ -1,7 +1,7 @@
 class DestinyProfileProgressionComponent{
-	Map<Map<bool, dynamic>, dynamic> checklists;
+	Map<String, Map<String, bool>> checklists;
 	DestinyProfileProgressionComponent(
-		Map<Map<bool, dynamic>, dynamic> this.checklists,
+		this.checklists,
 	);
 
 	static DestinyProfileProgressionComponent fromMap(Map<String, dynamic> data){
@@ -9,7 +9,7 @@ class DestinyProfileProgressionComponent{
 			return null;
 		};
 		return new DestinyProfileProgressionComponent(
-				data['checklists'],
+				data['checklists'] != null ? Map<String, Map<String, bool>>.from(data['checklists'].map((k, v)=>MapEntry(k, Map<String, bool>.from(v.map((k, v)=>MapEntry(k, v)))))) : null,
 		);
 	}
 

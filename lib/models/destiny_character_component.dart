@@ -8,7 +8,7 @@ class DestinyCharacterComponent{
 	String minutesPlayedThisSession;
 	String minutesPlayedTotal;
 	int light;
-	Map<int, dynamic> stats;
+	Map<String, int> stats;
 	int raceHash;
 	int genderHash;
 	int classHash;
@@ -21,31 +21,31 @@ class DestinyCharacterComponent{
 	DestinyColor emblemColor;
 	DestinyProgression levelProgression;
 	int baseCharacterLevel;
-	int percentToNextLevel;
+	double percentToNextLevel;
 	int titleRecordHash;
 	DestinyCharacterComponent(
-		String this.membershipId,
-		int this.membershipType,
-		String this.characterId,
-		String this.dateLastPlayed,
-		String this.minutesPlayedThisSession,
-		String this.minutesPlayedTotal,
-		int this.light,
-		Map<int, dynamic> this.stats,
-		int this.raceHash,
-		int this.genderHash,
-		int this.classHash,
-		int this.raceType,
-		int this.classType,
-		int this.genderType,
-		String this.emblemPath,
-		String this.emblemBackgroundPath,
-		int this.emblemHash,
-		DestinyColor this.emblemColor,
-		DestinyProgression this.levelProgression,
-		int this.baseCharacterLevel,
-		int this.percentToNextLevel,
-		int this.titleRecordHash,
+		this.membershipId,
+		this.membershipType,
+		this.characterId,
+		this.dateLastPlayed,
+		this.minutesPlayedThisSession,
+		this.minutesPlayedTotal,
+		this.light,
+		this.stats,
+		this.raceHash,
+		this.genderHash,
+		this.classHash,
+		this.raceType,
+		this.classType,
+		this.genderType,
+		this.emblemPath,
+		this.emblemBackgroundPath,
+		this.emblemHash,
+		this.emblemColor,
+		this.levelProgression,
+		this.baseCharacterLevel,
+		this.percentToNextLevel,
+		this.titleRecordHash,
 	);
 
 	static DestinyCharacterComponent fromMap(Map<String, dynamic> data){
@@ -60,7 +60,7 @@ class DestinyCharacterComponent{
 				data['minutesPlayedThisSession'],
 				data['minutesPlayedTotal'],
 				data['light'],
-				data['stats'],
+				data['stats'] != null ? Map<String, int>.from(data['stats'].map((k, v)=>MapEntry(k, v))) : null,
 				data['raceHash'],
 				data['genderHash'],
 				data['classHash'],
@@ -70,8 +70,8 @@ class DestinyCharacterComponent{
 				data['emblemPath'],
 				data['emblemBackgroundPath'],
 				data['emblemHash'],
-				data['emblemColor'],
-				data['levelProgression'],
+				data['emblemColor'] != null ? DestinyColor.fromMap(data['emblemColor']) : null,
+				data['levelProgression'] != null ? DestinyProgression.fromMap(data['levelProgression']) : null,
 				data['baseCharacterLevel'],
 				data['percentToNextLevel'],
 				data['titleRecordHash'],

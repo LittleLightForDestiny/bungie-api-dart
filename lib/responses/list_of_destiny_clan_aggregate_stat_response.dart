@@ -5,7 +5,7 @@ class ListOfDestinyClanAggregateStatResponse{
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     ListOfDestinyClanAggregateStatResponse(
@@ -14,7 +14,7 @@ class ListOfDestinyClanAggregateStatResponse{
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class ListOfDestinyClanAggregateStatResponse{
 			return null;
 		};
 		return new ListOfDestinyClanAggregateStatResponse(
-				DestinyClanAggregateStat.fromList(data['Response']),
+				data['Response'] != null ? DestinyClanAggregateStat.fromList(data['Response']) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

@@ -8,11 +8,11 @@ class DestinyHistoricalStatsValue{
 	DestinyHistoricalStatsValuePair weighted;
 	String activityId;
 	DestinyHistoricalStatsValue(
-		String this.statId,
-		DestinyHistoricalStatsValuePair this.basic,
-		DestinyHistoricalStatsValuePair this.pga,
-		DestinyHistoricalStatsValuePair this.weighted,
-		String this.activityId,
+		this.statId,
+		this.basic,
+		this.pga,
+		this.weighted,
+		this.activityId,
 	);
 
 	static DestinyHistoricalStatsValue fromMap(Map<String, dynamic> data){
@@ -21,9 +21,9 @@ class DestinyHistoricalStatsValue{
 		};
 		return new DestinyHistoricalStatsValue(
 				data['statId'],
-				data['basic'],
-				data['pga'],
-				data['weighted'],
+				data['basic'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['basic']) : null,
+				data['pga'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['pga']) : null,
+				data['weighted'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['weighted']) : null,
 				data['activityId'],
 		);
 	}

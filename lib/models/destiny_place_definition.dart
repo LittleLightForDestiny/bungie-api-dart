@@ -5,10 +5,10 @@ class DestinyPlaceDefinition{
 	int index;
 	bool redacted;
 	DestinyPlaceDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyPlaceDefinition fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyPlaceDefinition{
 			return null;
 		};
 		return new DestinyPlaceDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

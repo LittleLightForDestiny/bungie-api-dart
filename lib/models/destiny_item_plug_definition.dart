@@ -19,22 +19,22 @@ class DestinyItemPlugDefinition{
 	bool isDummyPlug;
 	DestinyParentItemOverride parentItemOverride;
 	DestinyItemPlugDefinition(
-		List<DestinyPlugRuleDefinition> this.insertionRules,
-		String this.plugCategoryIdentifier,
-		int this.plugCategoryHash,
-		bool this.onActionRecreateSelf,
-		int this.insertionMaterialRequirementHash,
-		int this.previewItemOverrideHash,
-		int this.enabledMaterialRequirementHash,
-		List<DestinyPlugRuleDefinition> this.enabledRules,
-		String this.uiPlugLabel,
-		int this.plugStyle,
-		bool this.isPseudoPlug,
-		int this.plugAvailability,
-		String this.alternateUiPlugLabel,
-		int this.alternatePlugStyle,
-		bool this.isDummyPlug,
-		DestinyParentItemOverride this.parentItemOverride,
+		this.insertionRules,
+		this.plugCategoryIdentifier,
+		this.plugCategoryHash,
+		this.onActionRecreateSelf,
+		this.insertionMaterialRequirementHash,
+		this.previewItemOverrideHash,
+		this.enabledMaterialRequirementHash,
+		this.enabledRules,
+		this.uiPlugLabel,
+		this.plugStyle,
+		this.isPseudoPlug,
+		this.plugAvailability,
+		this.alternateUiPlugLabel,
+		this.alternatePlugStyle,
+		this.isDummyPlug,
+		this.parentItemOverride,
 	);
 
 	static DestinyItemPlugDefinition fromMap(Map<String, dynamic> data){
@@ -42,14 +42,14 @@ class DestinyItemPlugDefinition{
 			return null;
 		};
 		return new DestinyItemPlugDefinition(
-				DestinyPlugRuleDefinition.fromList(data['insertionRules']),
+				data['insertionRules'] != null ? DestinyPlugRuleDefinition.fromList(data['insertionRules']) : null,
 				data['plugCategoryIdentifier'],
 				data['plugCategoryHash'],
 				data['onActionRecreateSelf'],
 				data['insertionMaterialRequirementHash'],
 				data['previewItemOverrideHash'],
 				data['enabledMaterialRequirementHash'],
-				DestinyPlugRuleDefinition.fromList(data['enabledRules']),
+				data['enabledRules'] != null ? DestinyPlugRuleDefinition.fromList(data['enabledRules']) : null,
 				data['uiPlugLabel'],
 				data['plugStyle'],
 				data['isPseudoPlug'],
@@ -57,7 +57,7 @@ class DestinyItemPlugDefinition{
 				data['alternateUiPlugLabel'],
 				data['alternatePlugStyle'],
 				data['isDummyPlug'],
-				data['parentItemOverride'],
+				data['parentItemOverride'] != null ? DestinyParentItemOverride.fromMap(data['parentItemOverride']) : null,
 		);
 	}
 

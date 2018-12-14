@@ -3,9 +3,9 @@ class DestinyActivityGuidedBlockDefinition{
 	int guidedMinLobbySize;
 	int guidedDisbandCount;
 	DestinyActivityGuidedBlockDefinition(
-		int this.guidedMaxLobbySize,
-		int this.guidedMinLobbySize,
-		int this.guidedDisbandCount,
+		this.guidedMaxLobbySize,
+		this.guidedMinLobbySize,
+		this.guidedDisbandCount,
 	);
 
 	static DestinyActivityGuidedBlockDefinition fromMap(Map<String, dynamic> data){

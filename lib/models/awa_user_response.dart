@@ -1,11 +1,11 @@
 class AwaUserResponse{
 	int selection;
 	String correlationId;
-	List<String> nonce;
+	List<int> nonce;
 	AwaUserResponse(
-		int this.selection,
-		String this.correlationId,
-		List<String> this.nonce,
+		this.selection,
+		this.correlationId,
+		this.nonce,
 	);
 
 	static AwaUserResponse fromMap(Map<String, dynamic> data){
@@ -15,7 +15,7 @@ class AwaUserResponse{
 		return new AwaUserResponse(
 				data['selection'],
 				data['correlationId'],
-				data['nonce'],
+				data['nonce'] != null ? data['nonce']?.cast<int>() ?? null : null,
 		);
 	}
 

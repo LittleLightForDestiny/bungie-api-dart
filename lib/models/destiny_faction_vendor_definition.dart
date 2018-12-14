@@ -3,9 +3,9 @@ class DestinyFactionVendorDefinition{
 	int destinationHash;
 	String backgroundImagePath;
 	DestinyFactionVendorDefinition(
-		int this.vendorHash,
-		int this.destinationHash,
-		String this.backgroundImagePath,
+		this.vendorHash,
+		this.destinationHash,
+		this.backgroundImagePath,
 	);
 
 	static DestinyFactionVendorDefinition fromMap(Map<String, dynamic> data){

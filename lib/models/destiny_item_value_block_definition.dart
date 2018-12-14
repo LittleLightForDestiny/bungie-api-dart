@@ -3,8 +3,8 @@ class DestinyItemValueBlockDefinition{
 	List<DestinyItemQuantity> itemValue;
 	String valueDescription;
 	DestinyItemValueBlockDefinition(
-		List<DestinyItemQuantity> this.itemValue,
-		String this.valueDescription,
+		this.itemValue,
+		this.valueDescription,
 	);
 
 	static DestinyItemValueBlockDefinition fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyItemValueBlockDefinition{
 			return null;
 		};
 		return new DestinyItemValueBlockDefinition(
-				DestinyItemQuantity.fromList(data['itemValue']),
+				data['itemValue'] != null ? DestinyItemQuantity.fromList(data['itemValue']) : null,
 				data['valueDescription'],
 		);
 	}

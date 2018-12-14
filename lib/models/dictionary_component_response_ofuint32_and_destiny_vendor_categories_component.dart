@@ -1,10 +1,10 @@
 import 'destiny_vendor_categories_component.dart';
 class DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent{
-	Map<DestinyVendorCategoriesComponent, dynamic> data;
+	Map<String, DestinyVendorCategoriesComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent(
-		Map<DestinyVendorCategoriesComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyVendorCategoriesComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyVendorCategoriesComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

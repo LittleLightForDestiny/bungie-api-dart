@@ -9,13 +9,13 @@ class DestinyChecklistDefinition{
 	int index;
 	bool redacted;
 	DestinyChecklistDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.viewActionString,
-		int this.scope,
-		List<DestinyChecklistEntryDefinition> this.entries,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.viewActionString,
+		this.scope,
+		this.entries,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyChecklistDefinition fromMap(Map<String, dynamic> data){
@@ -23,10 +23,10 @@ class DestinyChecklistDefinition{
 			return null;
 		};
 		return new DestinyChecklistDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['viewActionString'],
 				data['scope'],
-				DestinyChecklistEntryDefinition.fromList(data['entries']),
+				data['entries'] != null ? DestinyChecklistEntryDefinition.fromList(data['entries']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

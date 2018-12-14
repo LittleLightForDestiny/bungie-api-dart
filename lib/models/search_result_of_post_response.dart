@@ -8,12 +8,12 @@ class SearchResultOfPostResponse{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	SearchResultOfPostResponse(
-		List<PostResponse> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static SearchResultOfPostResponse fromMap(Map<String, dynamic> data){
@@ -21,10 +21,10 @@ class SearchResultOfPostResponse{
 			return null;
 		};
 		return new SearchResultOfPostResponse(
-				PostResponse.fromList(data['results']),
+				data['results'] != null ? PostResponse.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

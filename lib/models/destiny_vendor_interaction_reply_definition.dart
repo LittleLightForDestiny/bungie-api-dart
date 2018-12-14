@@ -3,9 +3,9 @@ class DestinyVendorInteractionReplyDefinition{
 	String reply;
 	int replyType;
 	DestinyVendorInteractionReplyDefinition(
-		int this.itemRewardsSelection,
-		String this.reply,
-		int this.replyType,
+		this.itemRewardsSelection,
+		this.reply,
+		this.replyType,
 	);
 
 	static DestinyVendorInteractionReplyDefinition fromMap(Map<String, dynamic> data){

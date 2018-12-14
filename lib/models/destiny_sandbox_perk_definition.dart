@@ -11,15 +11,15 @@ class DestinySandboxPerkDefinition{
 	int index;
 	bool redacted;
 	DestinySandboxPerkDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.perkIdentifier,
-		bool this.isDisplayable,
-		int this.damageType,
-		int this.damageTypeHash,
-		DestinyTalentNodeStepGroups this.perkGroups,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.perkIdentifier,
+		this.isDisplayable,
+		this.damageType,
+		this.damageTypeHash,
+		this.perkGroups,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinySandboxPerkDefinition fromMap(Map<String, dynamic> data){
@@ -27,12 +27,12 @@ class DestinySandboxPerkDefinition{
 			return null;
 		};
 		return new DestinySandboxPerkDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['perkIdentifier'],
 				data['isDisplayable'],
 				data['damageType'],
 				data['damageTypeHash'],
-				data['perkGroups'],
+				data['perkGroups'] != null ? DestinyTalentNodeStepGroups.fromMap(data['perkGroups']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

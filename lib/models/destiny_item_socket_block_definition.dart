@@ -7,10 +7,10 @@ class DestinyItemSocketBlockDefinition{
 	List<DestinyItemIntrinsicSocketEntryDefinition> intrinsicSockets;
 	List<DestinyItemSocketCategoryDefinition> socketCategories;
 	DestinyItemSocketBlockDefinition(
-		String this.detail,
-		List<DestinyItemSocketEntryDefinition> this.socketEntries,
-		List<DestinyItemIntrinsicSocketEntryDefinition> this.intrinsicSockets,
-		List<DestinyItemSocketCategoryDefinition> this.socketCategories,
+		this.detail,
+		this.socketEntries,
+		this.intrinsicSockets,
+		this.socketCategories,
 	);
 
 	static DestinyItemSocketBlockDefinition fromMap(Map<String, dynamic> data){
@@ -19,9 +19,9 @@ class DestinyItemSocketBlockDefinition{
 		};
 		return new DestinyItemSocketBlockDefinition(
 				data['detail'],
-				DestinyItemSocketEntryDefinition.fromList(data['socketEntries']),
-				DestinyItemIntrinsicSocketEntryDefinition.fromList(data['intrinsicSockets']),
-				DestinyItemSocketCategoryDefinition.fromList(data['socketCategories']),
+				data['socketEntries'] != null ? DestinyItemSocketEntryDefinition.fromList(data['socketEntries']) : null,
+				data['intrinsicSockets'] != null ? DestinyItemIntrinsicSocketEntryDefinition.fromList(data['intrinsicSockets']) : null,
+				data['socketCategories'] != null ? DestinyItemSocketCategoryDefinition.fromList(data['socketCategories']) : null,
 		);
 	}
 

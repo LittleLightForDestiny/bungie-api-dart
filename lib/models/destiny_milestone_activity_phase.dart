@@ -2,8 +2,8 @@ class DestinyMilestoneActivityPhase{
 	bool complete;
 	int phaseHash;
 	DestinyMilestoneActivityPhase(
-		bool this.complete,
-		int this.phaseHash,
+		this.complete,
+		this.phaseHash,
 	);
 
 	static DestinyMilestoneActivityPhase fromMap(Map<String, dynamic> data){

@@ -9,15 +9,15 @@ class DestinyActivity{
 	int recommendedLight;
 	int difficultyTier;
 	DestinyActivity(
-		int this.activityHash,
-		bool this.isNew,
-		bool this.canLead,
-		bool this.canJoin,
-		bool this.isCompleted,
-		bool this.isVisible,
-		int this.displayLevel,
-		int this.recommendedLight,
-		int this.difficultyTier,
+		this.activityHash,
+		this.isNew,
+		this.canLead,
+		this.canJoin,
+		this.isCompleted,
+		this.isVisible,
+		this.displayLevel,
+		this.recommendedLight,
+		this.difficultyTier,
 	);
 
 	static DestinyActivity fromMap(Map<String, dynamic> data){

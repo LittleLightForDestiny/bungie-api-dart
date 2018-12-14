@@ -4,9 +4,9 @@ class DestinyClanAggregateStat{
 	String statId;
 	DestinyHistoricalStatsValue value;
 	DestinyClanAggregateStat(
-		int this.mode,
-		String this.statId,
-		DestinyHistoricalStatsValue this.value,
+		this.mode,
+		this.statId,
+		this.value,
 	);
 
 	static DestinyClanAggregateStat fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyClanAggregateStat{
 		return new DestinyClanAggregateStat(
 				data['mode'],
 				data['statId'],
-				data['value'],
+				data['value'] != null ? DestinyHistoricalStatsValue.fromMap(data['value']) : null,
 		);
 	}
 

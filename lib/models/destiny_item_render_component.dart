@@ -1,9 +1,9 @@
 class DestinyItemRenderComponent{
 	bool useCustomDyes;
-	Map<int, dynamic> artRegions;
+	Map<String, int> artRegions;
 	DestinyItemRenderComponent(
-		bool this.useCustomDyes,
-		Map<int, dynamic> this.artRegions,
+		this.useCustomDyes,
+		this.artRegions,
 	);
 
 	static DestinyItemRenderComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyItemRenderComponent{
 		};
 		return new DestinyItemRenderComponent(
 				data['useCustomDyes'],
-				data['artRegions'],
+				data['artRegions'] != null ? Map<String, int>.from(data['artRegions'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 

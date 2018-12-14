@@ -3,8 +3,8 @@ class DestinyStatOverrideDefinition{
 	int statHash;
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyStatOverrideDefinition(
-		int this.statHash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
+		this.statHash,
+		this.displayProperties,
 	);
 
 	static DestinyStatOverrideDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyStatOverrideDefinition{
 		};
 		return new DestinyStatOverrideDefinition(
 				data['statHash'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 		);
 	}
 

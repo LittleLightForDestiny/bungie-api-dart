@@ -1,10 +1,10 @@
 import 'destiny_item_stats_component.dart';
 class DictionaryComponentResponseOfint32AndDestinyItemStatsComponent{
-	Map<DestinyItemStatsComponent, dynamic> data;
+	Map<String, DestinyItemStatsComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint32AndDestinyItemStatsComponent(
-		Map<DestinyItemStatsComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint32AndDestinyItemStatsComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint32AndDestinyItemStatsComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint32AndDestinyItemStatsComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyItemStatsComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemStatsComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

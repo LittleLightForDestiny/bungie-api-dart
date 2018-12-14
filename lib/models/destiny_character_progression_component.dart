@@ -4,19 +4,19 @@ import 'destiny_milestone.dart';
 import 'destiny_quest_status.dart';
 import 'destiny_objective_progress.dart';
 class DestinyCharacterProgressionComponent{
-	Map<DestinyProgression, dynamic> progressions;
-	Map<DestinyFactionProgression, dynamic> factions;
-	Map<DestinyMilestone, dynamic> milestones;
+	Map<String, DestinyProgression> progressions;
+	Map<String, DestinyFactionProgression> factions;
+	Map<String, DestinyMilestone> milestones;
 	List<DestinyQuestStatus> quests;
-	Map<List<DestinyObjectiveProgress>, dynamic> uninstancedItemObjectives;
-	Map<Map<bool, dynamic>, dynamic> checklists;
+	Map<String, List<DestinyObjectiveProgress>> uninstancedItemObjectives;
+	Map<String, Map<String, bool>> checklists;
 	DestinyCharacterProgressionComponent(
-		Map<DestinyProgression, dynamic> this.progressions,
-		Map<DestinyFactionProgression, dynamic> this.factions,
-		Map<DestinyMilestone, dynamic> this.milestones,
-		List<DestinyQuestStatus> this.quests,
-		Map<List<DestinyObjectiveProgress>, dynamic> this.uninstancedItemObjectives,
-		Map<Map<bool, dynamic>, dynamic> this.checklists,
+		this.progressions,
+		this.factions,
+		this.milestones,
+		this.quests,
+		this.uninstancedItemObjectives,
+		this.checklists,
 	);
 
 	static DestinyCharacterProgressionComponent fromMap(Map<String, dynamic> data){
@@ -24,12 +24,12 @@ class DestinyCharacterProgressionComponent{
 			return null;
 		};
 		return new DestinyCharacterProgressionComponent(
-				data['progressions'],
-				data['factions'],
-				data['milestones'],
-				DestinyQuestStatus.fromList(data['quests']),
-				data['uninstancedItemObjectives'],
-				data['checklists'],
+				data['progressions'] != null ? Map<String, DestinyProgression>.from(data['progressions'].map((k, v)=>MapEntry(k, DestinyProgression.fromMap(v)))) : null,
+				data['factions'] != null ? Map<String, DestinyFactionProgression>.from(data['factions'].map((k, v)=>MapEntry(k, DestinyFactionProgression.fromMap(v)))) : null,
+				data['milestones'] != null ? Map<String, DestinyMilestone>.from(data['milestones'].map((k, v)=>MapEntry(k, DestinyMilestone.fromMap(v)))) : null,
+				data['quests'] != null ? DestinyQuestStatus.fromList(data['quests']) : null,
+				data['uninstancedItemObjectives'] != null ? Map<String, List<DestinyObjectiveProgress>>.from(data['uninstancedItemObjectives'].map((k, v)=>MapEntry(k, DestinyObjectiveProgress.fromList(v)))) : null,
+				data['checklists'] != null ? Map<String, Map<String, bool>>.from(data['checklists'].map((k, v)=>MapEntry(k, Map<String, bool>.from(v.map((k, v)=>MapEntry(k, v)))))) : null,
 		);
 	}
 

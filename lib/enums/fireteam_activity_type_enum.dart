@@ -7,4 +7,7 @@ class FireteamActivityType {
   static const int Nightfall = 4;
   static const int Anything = 5;
   static const int Gambit = 6;
+  static const int BlindWell = 7;
+  static const int EscalationProtocol = 8;
+  static const int Forge = 9;
 }

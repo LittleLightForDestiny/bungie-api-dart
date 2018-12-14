@@ -3,9 +3,9 @@ class DestinyDefinition{
 	int index;
 	bool redacted;
 	DestinyDefinition(
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyDefinition fromMap(Map<String, dynamic> data){

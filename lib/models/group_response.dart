@@ -10,17 +10,17 @@ class GroupResponse{
 	GroupV2 parentGroup;
 	int allianceStatus;
 	int groupJoinInviteCount;
-	Map<GroupMember, dynamic> currentUserMemberMap;
-	Map<GroupPotentialMember, dynamic> currentUserPotentialMemberMap;
+	Map<String, GroupMember> currentUserMemberMap;
+	Map<String, GroupPotentialMember> currentUserPotentialMemberMap;
 	GroupResponse(
-		GroupV2 this.detail,
-		GroupMember this.founder,
-		List<String> this.alliedIds,
-		GroupV2 this.parentGroup,
-		int this.allianceStatus,
-		int this.groupJoinInviteCount,
-		Map<GroupMember, dynamic> this.currentUserMemberMap,
-		Map<GroupPotentialMember, dynamic> this.currentUserPotentialMemberMap,
+		this.detail,
+		this.founder,
+		this.alliedIds,
+		this.parentGroup,
+		this.allianceStatus,
+		this.groupJoinInviteCount,
+		this.currentUserMemberMap,
+		this.currentUserPotentialMemberMap,
 	);
 
 	static GroupResponse fromMap(Map<String, dynamic> data){
@@ -28,14 +28,14 @@ class GroupResponse{
 			return null;
 		};
 		return new GroupResponse(
-				GroupV2.fromMap(data['detail']),
-				GroupMember.fromMap(data['founder']),
-				data['alliedIds'],
-				GroupV2.fromMap(data['parentGroup']),
+				data['detail'] != null ? GroupV2.fromMap(data['detail']) : null,
+				data['founder'] != null ? GroupMember.fromMap(data['founder']) : null,
+				data['alliedIds'] != null ? data['alliedIds']?.cast<String>() ?? null : null,
+				data['parentGroup'] != null ? GroupV2.fromMap(data['parentGroup']) : null,
 				data['allianceStatus'],
 				data['groupJoinInviteCount'],
-				data['currentUserMemberMap'],
-				data['currentUserPotentialMemberMap'],
+				data['currentUserMemberMap'] != null ? Map<String, GroupMember>.from(data['currentUserMemberMap'].map((k, v)=>MapEntry(k, GroupMember.fromMap(v)))) : null,
+				data['currentUserPotentialMemberMap'] != null ? Map<String, GroupPotentialMember>.from(data['currentUserPotentialMemberMap'].map((k, v)=>MapEntry(k, GroupPotentialMember.fromMap(v)))) : null,
 		);
 	}
 

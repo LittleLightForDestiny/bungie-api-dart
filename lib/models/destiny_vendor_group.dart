@@ -2,8 +2,8 @@ class DestinyVendorGroup{
 	int vendorGroupHash;
 	List<int> vendorHashes;
 	DestinyVendorGroup(
-		int this.vendorGroupHash,
-		List<int> this.vendorHashes,
+		this.vendorGroupHash,
+		this.vendorHashes,
 	);
 
 	static DestinyVendorGroup fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyVendorGroup{
 		};
 		return new DestinyVendorGroup(
 				data['vendorGroupHash'],
-				data['vendorHashes'],
+				data['vendorHashes'] != null ? data['vendorHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

@@ -4,10 +4,10 @@ class DestinyItemStateRequest{
 	String characterId;
 	int membershipType;
 	DestinyItemStateRequest(
-		bool this.state,
-		String this.itemId,
-		String this.characterId,
-		int this.membershipType,
+		this.state,
+		this.itemId,
+		this.characterId,
+		this.membershipType,
 	);
 
 	static DestinyItemStateRequest fromMap(Map<String, dynamic> data){

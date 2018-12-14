@@ -1,7 +1,7 @@
 class DestinyActivityGraphNodeStateEntry{
 	int state;
 	DestinyActivityGraphNodeStateEntry(
-		int this.state,
+		this.state,
 	);
 
 	static DestinyActivityGraphNodeStateEntry fromMap(Map<String, dynamic> data){

@@ -2,8 +2,8 @@ class DestinyItemSetBlockEntryDefinition{
 	int trackingValue;
 	int itemHash;
 	DestinyItemSetBlockEntryDefinition(
-		int this.trackingValue,
-		int this.itemHash,
+		this.trackingValue,
+		this.itemHash,
 	);
 
 	static DestinyItemSetBlockEntryDefinition fromMap(Map<String, dynamic> data){

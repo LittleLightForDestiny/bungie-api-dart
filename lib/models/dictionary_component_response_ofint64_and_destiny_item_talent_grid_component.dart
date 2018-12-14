@@ -1,10 +1,10 @@
 import 'destiny_item_talent_grid_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent{
-	Map<DestinyItemTalentGridComponent, dynamic> data;
+	Map<String, DestinyItemTalentGridComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent(
-		Map<DestinyItemTalentGridComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyItemTalentGridComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemTalentGridComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

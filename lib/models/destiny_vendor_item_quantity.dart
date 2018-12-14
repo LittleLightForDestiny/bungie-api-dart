@@ -3,9 +3,9 @@ class DestinyVendorItemQuantity{
 	String itemInstanceId;
 	int quantity;
 	DestinyVendorItemQuantity(
-		int this.itemHash,
-		String this.itemInstanceId,
-		int this.quantity,
+		this.itemHash,
+		this.itemInstanceId,
+		this.quantity,
 	);
 
 	static DestinyVendorItemQuantity fromMap(Map<String, dynamic> data){

@@ -1,8 +1,8 @@
 import 'destiny_presentation_node_component.dart';
 class DestinyPresentationNodesComponent{
-	Map<DestinyPresentationNodeComponent, dynamic> nodes;
+	Map<String, DestinyPresentationNodeComponent> nodes;
 	DestinyPresentationNodesComponent(
-		Map<DestinyPresentationNodeComponent, dynamic> this.nodes,
+		this.nodes,
 	);
 
 	static DestinyPresentationNodesComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyPresentationNodesComponent{
 			return null;
 		};
 		return new DestinyPresentationNodesComponent(
-				data['nodes'],
+				data['nodes'] != null ? Map<String, DestinyPresentationNodeComponent>.from(data['nodes'].map((k, v)=>MapEntry(k, DestinyPresentationNodeComponent.fromMap(v)))) : null,
 		);
 	}
 

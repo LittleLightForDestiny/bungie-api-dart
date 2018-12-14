@@ -12,14 +12,14 @@ class GroupBan{
 	UserInfoCard bungieNetUserInfo;
 	UserInfoCard destinyUserInfo;
 	GroupBan(
-		String this.groupId,
-		UserInfoCard this.lastModifiedBy,
-		UserInfoCard this.createdBy,
-		String this.dateBanned,
-		String this.dateExpires,
-		String this.comment,
-		UserInfoCard this.bungieNetUserInfo,
-		UserInfoCard this.destinyUserInfo,
+		this.groupId,
+		this.lastModifiedBy,
+		this.createdBy,
+		this.dateBanned,
+		this.dateExpires,
+		this.comment,
+		this.bungieNetUserInfo,
+		this.destinyUserInfo,
 	);
 
 	static GroupBan fromMap(Map<String, dynamic> data){
@@ -28,13 +28,13 @@ class GroupBan{
 		};
 		return new GroupBan(
 				data['groupId'],
-				UserInfoCard.fromMap(data['lastModifiedBy']),
-				UserInfoCard.fromMap(data['createdBy']),
+				data['lastModifiedBy'] != null ? UserInfoCard.fromMap(data['lastModifiedBy']) : null,
+				data['createdBy'] != null ? UserInfoCard.fromMap(data['createdBy']) : null,
 				data['dateBanned'],
 				data['dateExpires'],
 				data['comment'],
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
-				UserInfoCard.fromMap(data['destinyUserInfo']),
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
 		);
 	}
 

@@ -6,9 +6,9 @@ class ApiUsage{
 	List<Series> apiCalls;
 	List<Series> throttledRequests;
 	ApiUsage(
-		DateRange this.range,
-		List<Series> this.apiCalls,
-		List<Series> this.throttledRequests,
+		this.range,
+		this.apiCalls,
+		this.throttledRequests,
 	);
 
 	static ApiUsage fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class ApiUsage{
 			return null;
 		};
 		return new ApiUsage(
-				data['range'],
-				Series.fromList(data['apiCalls']),
-				Series.fromList(data['throttledRequests']),
+				data['range'] != null ? DateRange.fromMap(data['range']) : null,
+				data['apiCalls'] != null ? Series.fromList(data['apiCalls']) : null,
+				data['throttledRequests'] != null ? Series.fromList(data['throttledRequests']) : null,
 		);
 	}
 

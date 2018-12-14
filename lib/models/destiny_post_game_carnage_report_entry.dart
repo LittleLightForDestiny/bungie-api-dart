@@ -7,15 +7,15 @@ class DestinyPostGameCarnageReportEntry{
 	DestinyHistoricalStatsValue score;
 	DestinyPlayer player;
 	String characterId;
-	Map<DestinyHistoricalStatsValue, dynamic> values;
+	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyPostGameCarnageReportExtendedData extended;
 	DestinyPostGameCarnageReportEntry(
-		int this.standing,
-		DestinyHistoricalStatsValue this.score,
-		DestinyPlayer this.player,
-		String this.characterId,
-		Map<DestinyHistoricalStatsValue, dynamic> this.values,
-		DestinyPostGameCarnageReportExtendedData this.extended,
+		this.standing,
+		this.score,
+		this.player,
+		this.characterId,
+		this.values,
+		this.extended,
 	);
 
 	static DestinyPostGameCarnageReportEntry fromMap(Map<String, dynamic> data){
@@ -24,11 +24,11 @@ class DestinyPostGameCarnageReportEntry{
 		};
 		return new DestinyPostGameCarnageReportEntry(
 				data['standing'],
-				data['score'],
-				data['player'],
+				data['score'] != null ? DestinyHistoricalStatsValue.fromMap(data['score']) : null,
+				data['player'] != null ? DestinyPlayer.fromMap(data['player']) : null,
 				data['characterId'],
-				data['values'],
-				data['extended'],
+				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
+				data['extended'] != null ? DestinyPostGameCarnageReportExtendedData.fromMap(data['extended']) : null,
 		);
 	}
 

@@ -5,11 +5,11 @@ class DestinyItemTalentGridBlockDefinition{
 	int hudDamageType;
 	String hudIcon;
 	DestinyItemTalentGridBlockDefinition(
-		int this.talentGridHash,
-		String this.itemDetailString,
-		String this.buildName,
-		int this.hudDamageType,
-		String this.hudIcon,
+		this.talentGridHash,
+		this.itemDetailString,
+		this.buildName,
+		this.hudDamageType,
+		this.hudIcon,
 	);
 
 	static DestinyItemTalentGridBlockDefinition fromMap(Map<String, dynamic> data){

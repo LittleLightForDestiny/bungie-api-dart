@@ -7,12 +7,12 @@ class TagMetadataDefinition{
 	String name;
 	bool isRequired;
 	TagMetadataDefinition(
-		String this.description,
-		int this.order,
-		List<TagMetadataItem> this.items,
-		String this.datatype,
-		String this.name,
-		bool this.isRequired,
+		this.description,
+		this.order,
+		this.items,
+		this.datatype,
+		this.name,
+		this.isRequired,
 	);
 
 	static TagMetadataDefinition fromMap(Map<String, dynamic> data){
@@ -22,7 +22,7 @@ class TagMetadataDefinition{
 		return new TagMetadataDefinition(
 				data['description'],
 				data['order'],
-				TagMetadataItem.fromList(data['items']),
+				data['items'] != null ? TagMetadataItem.fromList(data['items']) : null,
 				data['datatype'],
 				data['name'],
 				data['isRequired'],

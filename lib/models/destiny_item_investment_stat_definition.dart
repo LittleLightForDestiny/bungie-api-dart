@@ -3,9 +3,9 @@ class DestinyItemInvestmentStatDefinition{
 	int value;
 	bool isConditionallyActive;
 	DestinyItemInvestmentStatDefinition(
-		int this.statTypeHash,
-		int this.value,
-		bool this.isConditionallyActive,
+		this.statTypeHash,
+		this.value,
+		this.isConditionallyActive,
 	);
 
 	static DestinyItemInvestmentStatDefinition fromMap(Map<String, dynamic> data){

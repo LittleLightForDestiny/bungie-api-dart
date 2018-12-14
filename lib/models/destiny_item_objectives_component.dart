@@ -5,9 +5,9 @@ class DestinyItemObjectivesComponent{
 	DestinyObjectiveProgress flavorObjective;
 	String dateCompleted;
 	DestinyItemObjectivesComponent(
-		List<DestinyObjectiveProgress> this.objectives,
-		DestinyObjectiveProgress this.flavorObjective,
-		String this.dateCompleted,
+		this.objectives,
+		this.flavorObjective,
+		this.dateCompleted,
 	);
 
 	static DestinyItemObjectivesComponent fromMap(Map<String, dynamic> data){
@@ -15,8 +15,8 @@ class DestinyItemObjectivesComponent{
 			return null;
 		};
 		return new DestinyItemObjectivesComponent(
-				DestinyObjectiveProgress.fromList(data['objectives']),
-				data['flavorObjective'],
+				data['objectives'] != null ? DestinyObjectiveProgress.fromList(data['objectives']) : null,
+				data['flavorObjective'] != null ? DestinyObjectiveProgress.fromMap(data['flavorObjective']) : null,
 				data['dateCompleted'],
 		);
 	}

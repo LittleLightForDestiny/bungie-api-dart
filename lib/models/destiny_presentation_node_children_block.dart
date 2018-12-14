@@ -6,9 +6,9 @@ class DestinyPresentationNodeChildrenBlock{
 	List<DestinyPresentationNodeCollectibleChildEntry> collectibles;
 	List<DestinyPresentationNodeRecordChildEntry> records;
 	DestinyPresentationNodeChildrenBlock(
-		List<DestinyPresentationNodeChildEntry> this.presentationNodes,
-		List<DestinyPresentationNodeCollectibleChildEntry> this.collectibles,
-		List<DestinyPresentationNodeRecordChildEntry> this.records,
+		this.presentationNodes,
+		this.collectibles,
+		this.records,
 	);
 
 	static DestinyPresentationNodeChildrenBlock fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class DestinyPresentationNodeChildrenBlock{
 			return null;
 		};
 		return new DestinyPresentationNodeChildrenBlock(
-				DestinyPresentationNodeChildEntry.fromList(data['presentationNodes']),
-				DestinyPresentationNodeCollectibleChildEntry.fromList(data['collectibles']),
-				DestinyPresentationNodeRecordChildEntry.fromList(data['records']),
+				data['presentationNodes'] != null ? DestinyPresentationNodeChildEntry.fromList(data['presentationNodes']) : null,
+				data['collectibles'] != null ? DestinyPresentationNodeCollectibleChildEntry.fromList(data['collectibles']) : null,
+				data['records'] != null ? DestinyPresentationNodeRecordChildEntry.fromList(data['records']) : null,
 		);
 	}
 

@@ -1,7 +1,7 @@
 class DestinyPlugRuleDefinition{
 	String failureMessage;
 	DestinyPlugRuleDefinition(
-		String this.failureMessage,
+		this.failureMessage,
 	);
 
 	static DestinyPlugRuleDefinition fromMap(Map<String, dynamic> data){

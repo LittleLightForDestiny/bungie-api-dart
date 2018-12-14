@@ -4,9 +4,9 @@ class UserToUserContext{
 	IgnoreResponse ignoreStatus;
 	String globalIgnoreEndDate;
 	UserToUserContext(
-		bool this.isFollowing,
-		IgnoreResponse this.ignoreStatus,
-		String this.globalIgnoreEndDate,
+		this.isFollowing,
+		this.ignoreStatus,
+		this.globalIgnoreEndDate,
 	);
 
 	static UserToUserContext fromMap(Map<String, dynamic> data){
@@ -15,7 +15,7 @@ class UserToUserContext{
 		};
 		return new UserToUserContext(
 				data['isFollowing'],
-				IgnoreResponse.fromMap(data['ignoreStatus']),
+				data['ignoreStatus'] != null ? IgnoreResponse.fromMap(data['ignoreStatus']) : null,
 				data['globalIgnoreEndDate'],
 		);
 	}

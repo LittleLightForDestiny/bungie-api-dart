@@ -6,11 +6,11 @@ class DestinyMilestoneActivity{
 	List<int> modifierHashes;
 	List<DestinyMilestoneActivityVariant> variants;
 	DestinyMilestoneActivity(
-		int this.activityHash,
-		int this.activityModeHash,
-		int this.activityModeType,
-		List<int> this.modifierHashes,
-		List<DestinyMilestoneActivityVariant> this.variants,
+		this.activityHash,
+		this.activityModeHash,
+		this.activityModeType,
+		this.modifierHashes,
+		this.variants,
 	);
 
 	static DestinyMilestoneActivity fromMap(Map<String, dynamic> data){
@@ -21,8 +21,8 @@ class DestinyMilestoneActivity{
 				data['activityHash'],
 				data['activityModeHash'],
 				data['activityModeType'],
-				data['modifierHashes'],
-				DestinyMilestoneActivityVariant.fromList(data['variants']),
+				data['modifierHashes'] != null ? data['modifierHashes']?.cast<int>() ?? null : null,
+				data['variants'] != null ? DestinyMilestoneActivityVariant.fromList(data['variants']) : null,
 		);
 	}
 

@@ -2,8 +2,8 @@ class SaveMessageResult{
 	String conversationId;
 	String messageId;
 	SaveMessageResult(
-		String this.conversationId,
-		String this.messageId,
+		this.conversationId,
+		this.messageId,
 	);
 
 	static SaveMessageResult fromMap(Map<String, dynamic> data){

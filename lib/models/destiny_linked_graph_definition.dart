@@ -8,12 +8,12 @@ class DestinyLinkedGraphDefinition{
 	List<DestinyLinkedGraphEntryDefinition> linkedGraphs;
 	String overview;
 	DestinyLinkedGraphDefinition(
-		String this.description,
-		String this.name,
-		DestinyUnlockExpressionDefinition this.unlockExpression,
-		int this.linkedGraphId,
-		List<DestinyLinkedGraphEntryDefinition> this.linkedGraphs,
-		String this.overview,
+		this.description,
+		this.name,
+		this.unlockExpression,
+		this.linkedGraphId,
+		this.linkedGraphs,
+		this.overview,
 	);
 
 	static DestinyLinkedGraphDefinition fromMap(Map<String, dynamic> data){
@@ -23,9 +23,9 @@ class DestinyLinkedGraphDefinition{
 		return new DestinyLinkedGraphDefinition(
 				data['description'],
 				data['name'],
-				DestinyUnlockExpressionDefinition.fromMap(data['unlockExpression']),
+				data['unlockExpression'] != null ? DestinyUnlockExpressionDefinition.fromMap(data['unlockExpression']) : null,
 				data['linkedGraphId'],
-				DestinyLinkedGraphEntryDefinition.fromList(data['linkedGraphs']),
+				data['linkedGraphs'] != null ? DestinyLinkedGraphEntryDefinition.fromList(data['linkedGraphs']) : null,
 				data['overview'],
 		);
 	}

@@ -6,11 +6,11 @@ class DestinyLoreDefinition{
 	int index;
 	bool redacted;
 	DestinyLoreDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		String this.subtitle,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.subtitle,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyLoreDefinition fromMap(Map<String, dynamic> data){
@@ -18,7 +18,7 @@ class DestinyLoreDefinition{
 			return null;
 		};
 		return new DestinyLoreDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['subtitle'],
 				data['hash'],
 				data['index'],

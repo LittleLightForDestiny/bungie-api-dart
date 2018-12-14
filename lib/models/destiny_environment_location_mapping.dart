@@ -5,11 +5,11 @@ class DestinyEnvironmentLocationMapping{
 	int objectiveHash;
 	int activityHash;
 	DestinyEnvironmentLocationMapping(
-		int this.locationHash,
-		String this.activationSource,
-		int this.itemHash,
-		int this.objectiveHash,
-		int this.activityHash,
+		this.locationHash,
+		this.activationSource,
+		this.itemHash,
+		this.objectiveHash,
+		this.activityHash,
 	);
 
 	static DestinyEnvironmentLocationMapping fromMap(Map<String, dynamic> data){

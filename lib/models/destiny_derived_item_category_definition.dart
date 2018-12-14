@@ -3,8 +3,8 @@ class DestinyDerivedItemCategoryDefinition{
 	String categoryDescription;
 	List<DestinyDerivedItemDefinition> items;
 	DestinyDerivedItemCategoryDefinition(
-		String this.categoryDescription,
-		List<DestinyDerivedItemDefinition> this.items,
+		this.categoryDescription,
+		this.items,
 	);
 
 	static DestinyDerivedItemCategoryDefinition fromMap(Map<String, dynamic> data){
@@ -13,7 +13,7 @@ class DestinyDerivedItemCategoryDefinition{
 		};
 		return new DestinyDerivedItemCategoryDefinition(
 				data['categoryDescription'],
-				DestinyDerivedItemDefinition.fromList(data['items']),
+				data['items'] != null ? DestinyDerivedItemDefinition.fromList(data['items']) : null,
 		);
 	}
 

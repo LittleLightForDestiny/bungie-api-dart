@@ -1,7 +1,7 @@
 class DestinyVendorInteractionSackEntryDefinition{
 	int sackType;
 	DestinyVendorInteractionSackEntryDefinition(
-		int this.sackType,
+		this.sackType,
 	);
 
 	static DestinyVendorInteractionSackEntryDefinition fromMap(Map<String, dynamic> data){

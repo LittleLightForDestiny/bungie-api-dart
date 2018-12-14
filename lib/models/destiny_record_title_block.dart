@@ -1,9 +1,11 @@
 class DestinyRecordTitleBlock{
 	bool hasTitle;
-	Map<String, dynamic> titlesByGender;
+	Map<String, String> titlesByGender;
+	Map<String, String> titlesByGenderHash;
 	DestinyRecordTitleBlock(
-		bool this.hasTitle,
-		Map<String, dynamic> this.titlesByGender,
+		this.hasTitle,
+		this.titlesByGender,
+		this.titlesByGenderHash,
 	);
 
 	static DestinyRecordTitleBlock fromMap(Map<String, dynamic> data){
@@ -12,7 +14,8 @@ class DestinyRecordTitleBlock{
 		};
 		return new DestinyRecordTitleBlock(
 				data['hasTitle'],
-				data['titlesByGender'],
+				data['titlesByGender'] != null ? Map<String, String>.from(data['titlesByGender'].map((k, v)=>MapEntry(k, v))) : null,
+				data['titlesByGenderHash'] != null ? Map<String, String>.from(data['titlesByGenderHash'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 
@@ -31,6 +34,7 @@ class DestinyRecordTitleBlock{
 		Map<String, dynamic> data = new Map();
 			data['hasTitle'] = this.hasTitle;
 			data['titlesByGender'] = this.titlesByGender;
+			data['titlesByGenderHash'] = this.titlesByGenderHash;
 		return data;
 	}
 }

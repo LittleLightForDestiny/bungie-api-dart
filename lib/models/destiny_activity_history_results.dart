@@ -2,7 +2,7 @@ import 'destiny_historical_stats_period_group.dart';
 class DestinyActivityHistoryResults{
 	List<DestinyHistoricalStatsPeriodGroup> activities;
 	DestinyActivityHistoryResults(
-		List<DestinyHistoricalStatsPeriodGroup> this.activities,
+		this.activities,
 	);
 
 	static DestinyActivityHistoryResults fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyActivityHistoryResults{
 			return null;
 		};
 		return new DestinyActivityHistoryResults(
-				DestinyHistoricalStatsPeriodGroup.fromList(data['activities']),
+				data['activities'] != null ? DestinyHistoricalStatsPeriodGroup.fromList(data['activities']) : null,
 		);
 	}
 

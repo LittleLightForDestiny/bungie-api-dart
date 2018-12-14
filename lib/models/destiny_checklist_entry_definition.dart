@@ -11,16 +11,16 @@ class DestinyChecklistEntryDefinition{
 	int vendorInteractionIndex;
 	int scope;
 	DestinyChecklistEntryDefinition(
-		int this.hash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.destinationHash,
-		int this.locationHash,
-		int this.bubbleHash,
-		int this.activityHash,
-		int this.itemHash,
-		int this.vendorHash,
-		int this.vendorInteractionIndex,
-		int this.scope,
+		this.hash,
+		this.displayProperties,
+		this.destinationHash,
+		this.locationHash,
+		this.bubbleHash,
+		this.activityHash,
+		this.itemHash,
+		this.vendorHash,
+		this.vendorInteractionIndex,
+		this.scope,
 	);
 
 	static DestinyChecklistEntryDefinition fromMap(Map<String, dynamic> data){
@@ -29,7 +29,7 @@ class DestinyChecklistEntryDefinition{
 		};
 		return new DestinyChecklistEntryDefinition(
 				data['hash'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['destinationHash'],
 				data['locationHash'],
 				data['bubbleHash'],

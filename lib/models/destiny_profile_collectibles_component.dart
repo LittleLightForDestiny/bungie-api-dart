@@ -2,11 +2,11 @@ import 'destiny_collectible_component.dart';
 class DestinyProfileCollectiblesComponent{
 	List<int> recentCollectibleHashes;
 	List<int> newnessFlaggedCollectibleHashes;
-	Map<DestinyCollectibleComponent, dynamic> collectibles;
+	Map<String, DestinyCollectibleComponent> collectibles;
 	DestinyProfileCollectiblesComponent(
-		List<int> this.recentCollectibleHashes,
-		List<int> this.newnessFlaggedCollectibleHashes,
-		Map<DestinyCollectibleComponent, dynamic> this.collectibles,
+		this.recentCollectibleHashes,
+		this.newnessFlaggedCollectibleHashes,
+		this.collectibles,
 	);
 
 	static DestinyProfileCollectiblesComponent fromMap(Map<String, dynamic> data){
@@ -14,9 +14,9 @@ class DestinyProfileCollectiblesComponent{
 			return null;
 		};
 		return new DestinyProfileCollectiblesComponent(
-				data['recentCollectibleHashes'],
-				data['newnessFlaggedCollectibleHashes'],
-				data['collectibles'],
+				data['recentCollectibleHashes'] != null ? data['recentCollectibleHashes']?.cast<int>() ?? null : null,
+				data['newnessFlaggedCollectibleHashes'] != null ? data['newnessFlaggedCollectibleHashes']?.cast<int>() ?? null : null,
+				data['collectibles'] != null ? Map<String, DestinyCollectibleComponent>.from(data['collectibles'].map((k, v)=>MapEntry(k, DestinyCollectibleComponent.fromMap(v)))) : null,
 		);
 	}
 

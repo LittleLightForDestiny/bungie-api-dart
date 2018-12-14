@@ -28,20 +28,20 @@ class DestinyCharacterResponse{
 	DestinyBaseItemComponentSetOfuint32 uninstancedItemComponents;
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;
 	DestinyCharacterResponse(
-		SingleComponentResponseOfDestinyInventoryComponent this.inventory,
-		SingleComponentResponseOfDestinyCharacterComponent this.character,
-		SingleComponentResponseOfDestinyCharacterProgressionComponent this.progressions,
-		SingleComponentResponseOfDestinyCharacterRenderComponent this.renderData,
-		SingleComponentResponseOfDestinyCharacterActivitiesComponent this.activities,
-		SingleComponentResponseOfDestinyInventoryComponent this.equipment,
-		SingleComponentResponseOfDestinyKiosksComponent this.kiosks,
-		SingleComponentResponseOfDestinyPlugSetsComponent this.plugSets,
-		SingleComponentResponseOfDestinyPresentationNodesComponent this.presentationNodes,
-		SingleComponentResponseOfDestinyCharacterRecordsComponent this.records,
-		SingleComponentResponseOfDestinyCollectiblesComponent this.collectibles,
-		DestinyItemComponentSetOfint64 this.itemComponents,
-		DestinyBaseItemComponentSetOfuint32 this.uninstancedItemComponents,
-		SingleComponentResponseOfDestinyCurrenciesComponent this.currencyLookups,
+		this.inventory,
+		this.character,
+		this.progressions,
+		this.renderData,
+		this.activities,
+		this.equipment,
+		this.kiosks,
+		this.plugSets,
+		this.presentationNodes,
+		this.records,
+		this.collectibles,
+		this.itemComponents,
+		this.uninstancedItemComponents,
+		this.currencyLookups,
 	);
 
 	static DestinyCharacterResponse fromMap(Map<String, dynamic> data){
@@ -49,20 +49,20 @@ class DestinyCharacterResponse{
 			return null;
 		};
 		return new DestinyCharacterResponse(
-				data['inventory'],
-				data['character'],
-				data['progressions'],
-				data['renderData'],
-				data['activities'],
-				data['equipment'],
-				data['kiosks'],
-				data['plugSets'],
-				data['presentationNodes'],
-				data['records'],
-				data['collectibles'],
-				data['itemComponents'],
-				data['uninstancedItemComponents'],
-				data['currencyLookups'],
+				data['inventory'] != null ? SingleComponentResponseOfDestinyInventoryComponent.fromMap(data['inventory']) : null,
+				data['character'] != null ? SingleComponentResponseOfDestinyCharacterComponent.fromMap(data['character']) : null,
+				data['progressions'] != null ? SingleComponentResponseOfDestinyCharacterProgressionComponent.fromMap(data['progressions']) : null,
+				data['renderData'] != null ? SingleComponentResponseOfDestinyCharacterRenderComponent.fromMap(data['renderData']) : null,
+				data['activities'] != null ? SingleComponentResponseOfDestinyCharacterActivitiesComponent.fromMap(data['activities']) : null,
+				data['equipment'] != null ? SingleComponentResponseOfDestinyInventoryComponent.fromMap(data['equipment']) : null,
+				data['kiosks'] != null ? SingleComponentResponseOfDestinyKiosksComponent.fromMap(data['kiosks']) : null,
+				data['plugSets'] != null ? SingleComponentResponseOfDestinyPlugSetsComponent.fromMap(data['plugSets']) : null,
+				data['presentationNodes'] != null ? SingleComponentResponseOfDestinyPresentationNodesComponent.fromMap(data['presentationNodes']) : null,
+				data['records'] != null ? SingleComponentResponseOfDestinyCharacterRecordsComponent.fromMap(data['records']) : null,
+				data['collectibles'] != null ? SingleComponentResponseOfDestinyCollectiblesComponent.fromMap(data['collectibles']) : null,
+				data['itemComponents'] != null ? DestinyItemComponentSetOfint64.fromMap(data['itemComponents']) : null,
+				data['uninstancedItemComponents'] != null ? DestinyBaseItemComponentSetOfuint32.fromMap(data['uninstancedItemComponents']) : null,
+				data['currencyLookups'] != null ? SingleComponentResponseOfDestinyCurrenciesComponent.fromMap(data['currencyLookups']) : null,
 		);
 	}
 

@@ -8,12 +8,12 @@ class DestinyMilestoneRewardEntryDefinition{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	int order;
 	DestinyMilestoneRewardEntryDefinition(
-		int this.rewardEntryHash,
-		String this.rewardEntryIdentifier,
-		List<DestinyItemQuantity> this.items,
-		int this.vendorHash,
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.order,
+		this.rewardEntryHash,
+		this.rewardEntryIdentifier,
+		this.items,
+		this.vendorHash,
+		this.displayProperties,
+		this.order,
 	);
 
 	static DestinyMilestoneRewardEntryDefinition fromMap(Map<String, dynamic> data){
@@ -23,9 +23,9 @@ class DestinyMilestoneRewardEntryDefinition{
 		return new DestinyMilestoneRewardEntryDefinition(
 				data['rewardEntryHash'],
 				data['rewardEntryIdentifier'],
-				DestinyItemQuantity.fromList(data['items']),
+				data['items'] != null ? DestinyItemQuantity.fromList(data['items']) : null,
 				data['vendorHash'],
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['order'],
 		);
 	}

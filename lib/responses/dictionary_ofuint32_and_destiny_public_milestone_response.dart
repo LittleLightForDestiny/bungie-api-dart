@@ -1,20 +1,20 @@
 import '../models/destiny_public_milestone.dart';
 class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
-    Map<DestinyPublicMilestone, dynamic> response;
+    Map<String, DestinyPublicMilestone> response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     DictionaryOfuint32AndDestinyPublicMilestoneResponse(
-		Map<DestinyPublicMilestone, dynamic> this.response,
+		Map<String, DestinyPublicMilestone> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 			return null;
 		};
 		return new DictionaryOfuint32AndDestinyPublicMilestoneResponse(
-				data['Response'],
+				data['Response'] != null ? Map<String, DestinyPublicMilestone>.from(data['Response'].map((k, v)=>MapEntry(k, DestinyPublicMilestone.fromMap(v)))) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

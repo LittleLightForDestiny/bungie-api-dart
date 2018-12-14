@@ -13,15 +13,15 @@ class DestinyDestinationDefinition{
 	int index;
 	bool redacted;
 	DestinyDestinationDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.placeHash,
-		int this.defaultFreeroamActivityHash,
-		List<DestinyActivityGraphListEntryDefinition> this.activityGraphEntries,
-		List<DestinyDestinationBubbleSettingDefinition> this.bubbleSettings,
-		List<DestinyBubbleDefinition> this.bubbles,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.placeHash,
+		this.defaultFreeroamActivityHash,
+		this.activityGraphEntries,
+		this.bubbleSettings,
+		this.bubbles,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyDestinationDefinition fromMap(Map<String, dynamic> data){
@@ -29,12 +29,12 @@ class DestinyDestinationDefinition{
 			return null;
 		};
 		return new DestinyDestinationDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['placeHash'],
 				data['defaultFreeroamActivityHash'],
-				DestinyActivityGraphListEntryDefinition.fromList(data['activityGraphEntries']),
-				DestinyDestinationBubbleSettingDefinition.fromList(data['bubbleSettings']),
-				DestinyBubbleDefinition.fromList(data['bubbles']),
+				data['activityGraphEntries'] != null ? DestinyActivityGraphListEntryDefinition.fromList(data['activityGraphEntries']) : null,
+				data['bubbleSettings'] != null ? DestinyDestinationBubbleSettingDefinition.fromList(data['bubbleSettings']) : null,
+				data['bubbles'] != null ? DestinyBubbleDefinition.fromList(data['bubbles']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

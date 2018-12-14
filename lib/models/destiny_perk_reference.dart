@@ -4,10 +4,10 @@ class DestinyPerkReference{
 	bool isActive;
 	bool visible;
 	DestinyPerkReference(
-		int this.perkHash,
-		String this.iconPath,
-		bool this.isActive,
-		bool this.visible,
+		this.perkHash,
+		this.iconPath,
+		this.isActive,
+		this.visible,
 	);
 
 	static DestinyPerkReference fromMap(Map<String, dynamic> data){

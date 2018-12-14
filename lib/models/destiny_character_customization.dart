@@ -12,18 +12,18 @@ class DestinyCharacterCustomization{
 	int featureIndex;
 	int decalIndex;
 	DestinyCharacterCustomization(
-		int this.personality,
-		int this.face,
-		int this.skinColor,
-		int this.lipColor,
-		int this.eyeColor,
-		List<int> this.hairColors,
-		List<int> this.featureColors,
-		int this.decalColor,
-		bool this.wearHelmet,
-		int this.hairIndex,
-		int this.featureIndex,
-		int this.decalIndex,
+		this.personality,
+		this.face,
+		this.skinColor,
+		this.lipColor,
+		this.eyeColor,
+		this.hairColors,
+		this.featureColors,
+		this.decalColor,
+		this.wearHelmet,
+		this.hairIndex,
+		this.featureIndex,
+		this.decalIndex,
 	);
 
 	static DestinyCharacterCustomization fromMap(Map<String, dynamic> data){
@@ -36,8 +36,8 @@ class DestinyCharacterCustomization{
 				data['skinColor'],
 				data['lipColor'],
 				data['eyeColor'],
-				data['hairColors'],
-				data['featureColors'],
+				data['hairColors'] != null ? data['hairColors']?.cast<int>() ?? null : null,
+				data['featureColors'] != null ? data['featureColors']?.cast<int>() ?? null : null,
 				data['decalColor'],
 				data['wearHelmet'],
 				data['hairIndex'],

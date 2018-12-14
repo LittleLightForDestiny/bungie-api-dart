@@ -5,11 +5,11 @@ class DestinyActivityMatchmakingBlockDefinition{
 	int maxPlayers;
 	bool requiresGuardianOath;
 	DestinyActivityMatchmakingBlockDefinition(
-		bool this.isMatchmade,
-		int this.minParty,
-		int this.maxParty,
-		int this.maxPlayers,
-		bool this.requiresGuardianOath,
+		this.isMatchmade,
+		this.minParty,
+		this.maxParty,
+		this.maxPlayers,
+		this.requiresGuardianOath,
 	);
 
 	static DestinyActivityMatchmakingBlockDefinition fromMap(Map<String, dynamic> data){

@@ -10,16 +10,16 @@ class GroupQuery{
 	int currentPage;
 	String requestContinuationToken;
 	GroupQuery(
-		String this.name,
-		int this.groupType,
-		int this.creationDate,
-		int this.sortBy,
-		int this.groupMemberCountFilter,
-		String this.localeFilter,
-		String this.tagText,
-		int this.itemsPerPage,
-		int this.currentPage,
-		String this.requestContinuationToken,
+		this.name,
+		this.groupType,
+		this.creationDate,
+		this.sortBy,
+		this.groupMemberCountFilter,
+		this.localeFilter,
+		this.tagText,
+		this.itemsPerPage,
+		this.currentPage,
+		this.requestContinuationToken,
 	);
 
 	static GroupQuery fromMap(Map<String, dynamic> data){

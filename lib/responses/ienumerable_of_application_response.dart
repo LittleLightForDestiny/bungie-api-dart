@@ -5,7 +5,7 @@ class IEnumerableOfApplicationResponse{
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     IEnumerableOfApplicationResponse(
@@ -14,7 +14,7 @@ class IEnumerableOfApplicationResponse{
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -23,12 +23,12 @@ class IEnumerableOfApplicationResponse{
 			return null;
 		};
 		return new IEnumerableOfApplicationResponse(
-				Application.fromList(data['Response']),
+				data['Response'] != null ? Application.fromList(data['Response']) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

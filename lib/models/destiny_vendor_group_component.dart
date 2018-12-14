@@ -2,7 +2,7 @@ import 'destiny_vendor_group.dart';
 class DestinyVendorGroupComponent{
 	List<DestinyVendorGroup> groups;
 	DestinyVendorGroupComponent(
-		List<DestinyVendorGroup> this.groups,
+		this.groups,
 	);
 
 	static DestinyVendorGroupComponent fromMap(Map<String, dynamic> data){
@@ -10,7 +10,7 @@ class DestinyVendorGroupComponent{
 			return null;
 		};
 		return new DestinyVendorGroupComponent(
-				DestinyVendorGroup.fromList(data['groups']),
+				data['groups'] != null ? DestinyVendorGroup.fromList(data['groups']) : null,
 		);
 	}
 

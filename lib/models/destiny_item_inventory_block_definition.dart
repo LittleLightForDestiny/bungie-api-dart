@@ -12,18 +12,18 @@ class DestinyItemInventoryBlockDefinition{
 	String expiredInOrbitMessage;
 	bool suppressExpirationWhenObjectivesComplete;
 	DestinyItemInventoryBlockDefinition(
-		String this.stackUniqueLabel,
-		int this.maxStackSize,
-		int this.bucketTypeHash,
-		int this.recoveryBucketTypeHash,
-		int this.tierTypeHash,
-		bool this.isInstanceItem,
-		String this.tierTypeName,
-		int this.tierType,
-		String this.expirationTooltip,
-		String this.expiredInActivityMessage,
-		String this.expiredInOrbitMessage,
-		bool this.suppressExpirationWhenObjectivesComplete,
+		this.stackUniqueLabel,
+		this.maxStackSize,
+		this.bucketTypeHash,
+		this.recoveryBucketTypeHash,
+		this.tierTypeHash,
+		this.isInstanceItem,
+		this.tierTypeName,
+		this.tierType,
+		this.expirationTooltip,
+		this.expiredInActivityMessage,
+		this.expiredInOrbitMessage,
+		this.suppressExpirationWhenObjectivesComplete,
 	);
 
 	static DestinyItemInventoryBlockDefinition fromMap(Map<String, dynamic> data){

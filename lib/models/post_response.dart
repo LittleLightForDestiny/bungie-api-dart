@@ -15,20 +15,20 @@ class PostResponse{
 	IgnoreResponse ignoreStatus;
 	String locale;
 	PostResponse(
-		String this.lastReplyTimestamp,
-		bool this.isPinned,
-		int this.urlMediaType,
-		String this.thumbnail,
-		int this.popularity,
-		bool this.isActive,
-		bool this.isAnnouncement,
-		int this.userRating,
-		bool this.userHasRated,
-		bool this.userHasMutedPost,
-		String this.latestReplyPostId,
-		String this.latestReplyAuthorId,
-		IgnoreResponse this.ignoreStatus,
-		String this.locale,
+		this.lastReplyTimestamp,
+		this.isPinned,
+		this.urlMediaType,
+		this.thumbnail,
+		this.popularity,
+		this.isActive,
+		this.isAnnouncement,
+		this.userRating,
+		this.userHasRated,
+		this.userHasMutedPost,
+		this.latestReplyPostId,
+		this.latestReplyAuthorId,
+		this.ignoreStatus,
+		this.locale,
 	);
 
 	static PostResponse fromMap(Map<String, dynamic> data){
@@ -48,7 +48,7 @@ class PostResponse{
 				data['userHasMutedPost'],
 				data['latestReplyPostId'],
 				data['latestReplyAuthorId'],
-				IgnoreResponse.fromMap(data['ignoreStatus']),
+				data['ignoreStatus'] != null ? IgnoreResponse.fromMap(data['ignoreStatus']) : null,
 				data['locale'],
 		);
 	}

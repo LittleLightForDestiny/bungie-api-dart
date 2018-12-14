@@ -7,13 +7,13 @@ class TrendingEntryCommunityCreation{
 	String body;
 	int upvotes;
 	TrendingEntryCommunityCreation(
-		String this.media,
-		String this.title,
-		String this.author,
-		String this.authorMembershipId,
-		String this.postId,
-		String this.body,
-		int this.upvotes,
+		this.media,
+		this.title,
+		this.author,
+		this.authorMembershipId,
+		this.postId,
+		this.body,
+		this.upvotes,
 	);
 
 	static TrendingEntryCommunityCreation fromMap(Map<String, dynamic> data){

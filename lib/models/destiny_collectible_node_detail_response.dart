@@ -4,8 +4,8 @@ class DestinyCollectibleNodeDetailResponse{
 	SingleComponentResponseOfDestinyCollectiblesComponent collectibles;
 	DestinyItemComponentSetOfuint32 collectibleItemComponents;
 	DestinyCollectibleNodeDetailResponse(
-		SingleComponentResponseOfDestinyCollectiblesComponent this.collectibles,
-		DestinyItemComponentSetOfuint32 this.collectibleItemComponents,
+		this.collectibles,
+		this.collectibleItemComponents,
 	);
 
 	static DestinyCollectibleNodeDetailResponse fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class DestinyCollectibleNodeDetailResponse{
 			return null;
 		};
 		return new DestinyCollectibleNodeDetailResponse(
-				data['collectibles'],
-				data['collectibleItemComponents'],
+				data['collectibles'] != null ? SingleComponentResponseOfDestinyCollectiblesComponent.fromMap(data['collectibles']) : null,
+				data['collectibleItemComponents'] != null ? DestinyItemComponentSetOfuint32.fromMap(data['collectibleItemComponents']) : null,
 		);
 	}
 

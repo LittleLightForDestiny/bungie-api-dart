@@ -1,7 +1,7 @@
 class DestinyVendorServiceDefinition{
 	String name;
 	DestinyVendorServiceDefinition(
-		String this.name,
+		this.name,
 	);
 
 	static DestinyVendorServiceDefinition fromMap(Map<String, dynamic> data){

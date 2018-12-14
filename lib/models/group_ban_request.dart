@@ -2,8 +2,8 @@ class GroupBanRequest{
 	String comment;
 	int length;
 	GroupBanRequest(
-		String this.comment,
-		int this.length,
+		this.comment,
+		this.length,
 	);
 
 	static GroupBanRequest fromMap(Map<String, dynamic> data){

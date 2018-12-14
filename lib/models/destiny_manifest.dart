@@ -3,16 +3,18 @@ class DestinyManifest{
 	String version;
 	String mobileAssetContentPath;
 	List<GearAssetDataBaseDefinition> mobileGearAssetDataBases;
-	Map<String, dynamic> mobileWorldContentPaths;
+	Map<String, String> mobileWorldContentPaths;
+	Map<String, String> jsonWorldContentPaths;
 	String mobileClanBannerDatabasePath;
-	Map<String, dynamic> mobileGearCdn;
+	Map<String, String> mobileGearCdn;
 	DestinyManifest(
-		String this.version,
-		String this.mobileAssetContentPath,
-		List<GearAssetDataBaseDefinition> this.mobileGearAssetDataBases,
-		Map<String, dynamic> this.mobileWorldContentPaths,
-		String this.mobileClanBannerDatabasePath,
-		Map<String, dynamic> this.mobileGearCdn,
+		this.version,
+		this.mobileAssetContentPath,
+		this.mobileGearAssetDataBases,
+		this.mobileWorldContentPaths,
+		this.jsonWorldContentPaths,
+		this.mobileClanBannerDatabasePath,
+		this.mobileGearCdn,
 	);
 
 	static DestinyManifest fromMap(Map<String, dynamic> data){
@@ -22,10 +24,11 @@ class DestinyManifest{
 		return new DestinyManifest(
 				data['version'],
 				data['mobileAssetContentPath'],
-				GearAssetDataBaseDefinition.fromList(data['mobileGearAssetDataBases']),
-				data['mobileWorldContentPaths'],
+				data['mobileGearAssetDataBases'] != null ? GearAssetDataBaseDefinition.fromList(data['mobileGearAssetDataBases']) : null,
+				data['mobileWorldContentPaths'] != null ? Map<String, String>.from(data['mobileWorldContentPaths'].map((k, v)=>MapEntry(k, v))) : null,
+				data['jsonWorldContentPaths'] != null ? Map<String, String>.from(data['jsonWorldContentPaths'].map((k, v)=>MapEntry(k, v))) : null,
 				data['mobileClanBannerDatabasePath'],
-				data['mobileGearCDN'],
+				data['mobileGearCDN'] != null ? Map<String, String>.from(data['mobileGearCDN'].map((k, v)=>MapEntry(k, v))) : null,
 		);
 	}
 
@@ -46,6 +49,7 @@ class DestinyManifest{
 			data['mobileAssetContentPath'] = this.mobileAssetContentPath;
 			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases.map((item)=>item.toMap()).toList();
 			data['mobileWorldContentPaths'] = this.mobileWorldContentPaths;
+			data['jsonWorldContentPaths'] = this.jsonWorldContentPaths;
 			data['mobileClanBannerDatabasePath'] = this.mobileClanBannerDatabasePath;
 			data['mobileGearCDN'] = this.mobileGearCdn;
 		return data;

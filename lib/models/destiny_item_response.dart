@@ -17,15 +17,15 @@ class DestinyItemResponse{
 	SingleComponentResponseOfDestinyItemTalentGridComponent talentGrid;
 	SingleComponentResponseOfDestinyItemSocketsComponent sockets;
 	DestinyItemResponse(
-		String this.characterId,
-		SingleComponentResponseOfDestinyItemComponent this.item,
-		SingleComponentResponseOfDestinyItemInstanceComponent this.instance,
-		SingleComponentResponseOfDestinyItemObjectivesComponent this.objectives,
-		SingleComponentResponseOfDestinyItemPerksComponent this.perks,
-		SingleComponentResponseOfDestinyItemRenderComponent this.renderData,
-		SingleComponentResponseOfDestinyItemStatsComponent this.stats,
-		SingleComponentResponseOfDestinyItemTalentGridComponent this.talentGrid,
-		SingleComponentResponseOfDestinyItemSocketsComponent this.sockets,
+		this.characterId,
+		this.item,
+		this.instance,
+		this.objectives,
+		this.perks,
+		this.renderData,
+		this.stats,
+		this.talentGrid,
+		this.sockets,
 	);
 
 	static DestinyItemResponse fromMap(Map<String, dynamic> data){
@@ -34,14 +34,14 @@ class DestinyItemResponse{
 		};
 		return new DestinyItemResponse(
 				data['characterId'],
-				data['item'],
-				data['instance'],
-				data['objectives'],
-				data['perks'],
-				data['renderData'],
-				data['stats'],
-				data['talentGrid'],
-				data['sockets'],
+				data['item'] != null ? SingleComponentResponseOfDestinyItemComponent.fromMap(data['item']) : null,
+				data['instance'] != null ? SingleComponentResponseOfDestinyItemInstanceComponent.fromMap(data['instance']) : null,
+				data['objectives'] != null ? SingleComponentResponseOfDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
+				data['perks'] != null ? SingleComponentResponseOfDestinyItemPerksComponent.fromMap(data['perks']) : null,
+				data['renderData'] != null ? SingleComponentResponseOfDestinyItemRenderComponent.fromMap(data['renderData']) : null,
+				data['stats'] != null ? SingleComponentResponseOfDestinyItemStatsComponent.fromMap(data['stats']) : null,
+				data['talentGrid'] != null ? SingleComponentResponseOfDestinyItemTalentGridComponent.fromMap(data['talentGrid']) : null,
+				data['sockets'] != null ? SingleComponentResponseOfDestinyItemSocketsComponent.fromMap(data['sockets']) : null,
 		);
 	}
 

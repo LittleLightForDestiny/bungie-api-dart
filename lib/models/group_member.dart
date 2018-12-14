@@ -8,12 +8,12 @@ class GroupMember{
 	UserInfoCard bungieNetUserInfo;
 	String joinDate;
 	GroupMember(
-		int this.memberType,
-		bool this.isOnline,
-		String this.groupId,
-		UserInfoCard this.destinyUserInfo,
-		UserInfoCard this.bungieNetUserInfo,
-		String this.joinDate,
+		this.memberType,
+		this.isOnline,
+		this.groupId,
+		this.destinyUserInfo,
+		this.bungieNetUserInfo,
+		this.joinDate,
 	);
 
 	static GroupMember fromMap(Map<String, dynamic> data){
@@ -24,8 +24,8 @@ class GroupMember{
 				data['memberType'],
 				data['isOnline'],
 				data['groupId'],
-				UserInfoCard.fromMap(data['destinyUserInfo']),
-				UserInfoCard.fromMap(data['bungieNetUserInfo']),
+				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
+				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
 				data['joinDate'],
 		);
 	}

@@ -3,9 +3,9 @@ class DestinyPublicMilestoneActivityVariant{
 	int activityModeHash;
 	int activityModeType;
 	DestinyPublicMilestoneActivityVariant(
-		int this.activityHash,
-		int this.activityModeHash,
-		int this.activityModeType,
+		this.activityHash,
+		this.activityModeHash,
+		this.activityModeType,
 	);
 
 	static DestinyPublicMilestoneActivityVariant fromMap(Map<String, dynamic> data){

@@ -1,14 +1,14 @@
-import 'user_info_card.dart';
+import 'destiny_profile_user_info_card.dart';
 import 'user_info_card.dart';
 import 'destiny_error_profile.dart';
 class DestinyLinkedProfilesResponse{
-	List<UserInfoCard> profiles;
+	List<DestinyProfileUserInfoCard> profiles;
 	UserInfoCard bnetMembership;
 	List<DestinyErrorProfile> profilesWithErrors;
 	DestinyLinkedProfilesResponse(
-		List<UserInfoCard> this.profiles,
-		UserInfoCard this.bnetMembership,
-		List<DestinyErrorProfile> this.profilesWithErrors,
+		this.profiles,
+		this.bnetMembership,
+		this.profilesWithErrors,
 	);
 
 	static DestinyLinkedProfilesResponse fromMap(Map<String, dynamic> data){
@@ -16,9 +16,9 @@ class DestinyLinkedProfilesResponse{
 			return null;
 		};
 		return new DestinyLinkedProfilesResponse(
-				UserInfoCard.fromList(data['profiles']),
-				data['bnetMembership'],
-				DestinyErrorProfile.fromList(data['profilesWithErrors']),
+				data['profiles'] != null ? DestinyProfileUserInfoCard.fromList(data['profiles']) : null,
+				data['bnetMembership'] != null ? UserInfoCard.fromMap(data['bnetMembership']) : null,
+				data['profilesWithErrors'] != null ? DestinyErrorProfile.fromList(data['profilesWithErrors']) : null,
 		);
 	}
 

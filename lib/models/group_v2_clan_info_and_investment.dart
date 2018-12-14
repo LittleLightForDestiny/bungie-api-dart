@@ -1,13 +1,13 @@
 import 'destiny_progression.dart';
 import 'clan_banner.dart';
 class GroupV2ClanInfoAndInvestment{
-	Map<DestinyProgression, dynamic> d2ClanProgressions;
+	Map<String, DestinyProgression> d2ClanProgressions;
 	String clanCallsign;
 	ClanBanner clanBannerData;
 	GroupV2ClanInfoAndInvestment(
-		Map<DestinyProgression, dynamic> this.d2ClanProgressions,
-		String this.clanCallsign,
-		ClanBanner this.clanBannerData,
+		this.d2ClanProgressions,
+		this.clanCallsign,
+		this.clanBannerData,
 	);
 
 	static GroupV2ClanInfoAndInvestment fromMap(Map<String, dynamic> data){
@@ -15,9 +15,9 @@ class GroupV2ClanInfoAndInvestment{
 			return null;
 		};
 		return new GroupV2ClanInfoAndInvestment(
-				data['d2ClanProgressions'],
+				data['d2ClanProgressions'] != null ? Map<String, DestinyProgression>.from(data['d2ClanProgressions'].map((k, v)=>MapEntry(k, DestinyProgression.fromMap(v)))) : null,
 				data['clanCallsign'],
-				ClanBanner.fromMap(data['clanBannerData']),
+				data['clanBannerData'] != null ? ClanBanner.fromMap(data['clanBannerData']) : null,
 		);
 	}
 

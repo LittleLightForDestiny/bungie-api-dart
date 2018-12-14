@@ -4,9 +4,9 @@ class DestinyItemSourceBlockDefinition{
 	List<DestinyItemSourceDefinition> sources;
 	int exclusive;
 	DestinyItemSourceBlockDefinition(
-		List<int> this.sourceHashes,
-		List<DestinyItemSourceDefinition> this.sources,
-		int this.exclusive,
+		this.sourceHashes,
+		this.sources,
+		this.exclusive,
 	);
 
 	static DestinyItemSourceBlockDefinition fromMap(Map<String, dynamic> data){
@@ -14,8 +14,8 @@ class DestinyItemSourceBlockDefinition{
 			return null;
 		};
 		return new DestinyItemSourceBlockDefinition(
-				data['sourceHashes'],
-				DestinyItemSourceDefinition.fromList(data['sources']),
+				data['sourceHashes'] != null ? data['sourceHashes']?.cast<int>() ?? null : null,
+				data['sources'] != null ? DestinyItemSourceDefinition.fromList(data['sources']) : null,
 				data['exclusive'],
 		);
 	}

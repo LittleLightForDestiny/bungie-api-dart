@@ -1,7 +1,7 @@
 class DestinyItemCreationEntryLevelDefinition{
 	int level;
 	DestinyItemCreationEntryLevelDefinition(
-		int this.level,
+		this.level,
 	);
 
 	static DestinyItemCreationEntryLevelDefinition fromMap(Map<String, dynamic> data){

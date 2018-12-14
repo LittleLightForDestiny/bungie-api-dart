@@ -1,10 +1,10 @@
 import 'destiny_kiosks_component.dart';
 class DictionaryComponentResponseOfint64AndDestinyKiosksComponent{
-	Map<DestinyKiosksComponent, dynamic> data;
+	Map<String, DestinyKiosksComponent> data;
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyKiosksComponent(
-		Map<DestinyKiosksComponent, dynamic> this.data,
-		int this.privacy,
+		this.data,
+		this.privacy,
 	);
 
 	static DictionaryComponentResponseOfint64AndDestinyKiosksComponent fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DictionaryComponentResponseOfint64AndDestinyKiosksComponent{
 			return null;
 		};
 		return new DictionaryComponentResponseOfint64AndDestinyKiosksComponent(
-				data['data'],
+				data['data'] != null ? Map<String, DestinyKiosksComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyKiosksComponent.fromMap(v)))) : null,
 				data['privacy'],
 		);
 	}

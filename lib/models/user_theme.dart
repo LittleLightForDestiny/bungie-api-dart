@@ -3,9 +3,9 @@ class UserTheme{
 	String userThemeName;
 	String userThemeDescription;
 	UserTheme(
-		int this.userThemeId,
-		String this.userThemeName,
-		String this.userThemeDescription,
+		this.userThemeId,
+		this.userThemeName,
+		this.userThemeDescription,
 	);
 
 	static UserTheme fromMap(Map<String, dynamic> data){

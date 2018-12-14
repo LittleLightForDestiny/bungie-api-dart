@@ -6,12 +6,12 @@ class CoreSetting{
 	String imagePath;
 	List<CoreSetting> childSettings;
 	CoreSetting(
-		String this.identifier,
-		bool this.isDefault,
-		String this.displayName,
-		String this.summary,
-		String this.imagePath,
-		List<CoreSetting> this.childSettings,
+		this.identifier,
+		this.isDefault,
+		this.displayName,
+		this.summary,
+		this.imagePath,
+		this.childSettings,
 	);
 
 	static CoreSetting fromMap(Map<String, dynamic> data){
@@ -24,7 +24,7 @@ class CoreSetting{
 				data['displayName'],
 				data['summary'],
 				data['imagePath'],
-				CoreSetting.fromList(data['childSettings']),
+				data['childSettings'] != null ? CoreSetting.fromList(data['childSettings']) : null,
 		);
 	}
 

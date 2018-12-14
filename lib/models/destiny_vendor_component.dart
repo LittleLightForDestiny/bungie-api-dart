@@ -8,13 +8,13 @@ class DestinyVendorComponent{
 	int vendorLocationIndex;
 	int seasonalRank;
 	DestinyVendorComponent(
-		int this.vendorHash,
-		String this.nextRefreshDate,
-		bool this.enabled,
-		bool this.canPurchase,
-		DestinyProgression this.progression,
-		int this.vendorLocationIndex,
-		int this.seasonalRank,
+		this.vendorHash,
+		this.nextRefreshDate,
+		this.enabled,
+		this.canPurchase,
+		this.progression,
+		this.vendorLocationIndex,
+		this.seasonalRank,
 	);
 
 	static DestinyVendorComponent fromMap(Map<String, dynamic> data){
@@ -26,7 +26,7 @@ class DestinyVendorComponent{
 				data['nextRefreshDate'],
 				data['enabled'],
 				data['canPurchase'],
-				data['progression'],
+				data['progression'] != null ? DestinyProgression.fromMap(data['progression']) : null,
 				data['vendorLocationIndex'],
 				data['seasonalRank'],
 		);

@@ -2,8 +2,8 @@ class DestinyMilestoneContentItemCategory{
 	String title;
 	List<int> itemHashes;
 	DestinyMilestoneContentItemCategory(
-		String this.title,
-		List<int> this.itemHashes,
+		this.title,
+		this.itemHashes,
 	);
 
 	static DestinyMilestoneContentItemCategory fromMap(Map<String, dynamic> data){
@@ -12,7 +12,7 @@ class DestinyMilestoneContentItemCategory{
 		};
 		return new DestinyMilestoneContentItemCategory(
 				data['title'],
-				data['itemHashes'],
+				data['itemHashes'] != null ? data['itemHashes']?.cast<int>() ?? null : null,
 		);
 	}
 

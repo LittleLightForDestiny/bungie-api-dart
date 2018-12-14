@@ -1,7 +1,7 @@
 class GroupApplicationRequest{
 	String message;
 	GroupApplicationRequest(
-		String this.message,
+		this.message,
 	);
 
 	static GroupApplicationRequest fromMap(Map<String, dynamic> data){

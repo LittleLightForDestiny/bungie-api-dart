@@ -8,13 +8,13 @@ class DestinyStatDefinition{
 	int index;
 	bool redacted;
 	DestinyStatDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.aggregationType,
-		bool this.hasComputedBlock,
-		int this.statCategory,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.aggregationType,
+		this.hasComputedBlock,
+		this.statCategory,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyStatDefinition fromMap(Map<String, dynamic> data){
@@ -22,7 +22,7 @@ class DestinyStatDefinition{
 			return null;
 		};
 		return new DestinyStatDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['aggregationType'],
 				data['hasComputedBlock'],
 				data['statCategory'],

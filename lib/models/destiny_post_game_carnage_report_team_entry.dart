@@ -6,10 +6,10 @@ class DestinyPostGameCarnageReportTeamEntry{
 	DestinyHistoricalStatsValue score;
 	String teamName;
 	DestinyPostGameCarnageReportTeamEntry(
-		int this.teamId,
-		DestinyHistoricalStatsValue this.standing,
-		DestinyHistoricalStatsValue this.score,
-		String this.teamName,
+		this.teamId,
+		this.standing,
+		this.score,
+		this.teamName,
 	);
 
 	static DestinyPostGameCarnageReportTeamEntry fromMap(Map<String, dynamic> data){
@@ -18,8 +18,8 @@ class DestinyPostGameCarnageReportTeamEntry{
 		};
 		return new DestinyPostGameCarnageReportTeamEntry(
 				data['teamId'],
-				data['standing'],
-				data['score'],
+				data['standing'] != null ? DestinyHistoricalStatsValue.fromMap(data['standing']) : null,
+				data['score'] != null ? DestinyHistoricalStatsValue.fromMap(data['score']) : null,
 				data['teamName'],
 		);
 	}

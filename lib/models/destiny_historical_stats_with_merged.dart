@@ -1,11 +1,11 @@
 import 'destiny_historical_stats_by_period.dart';
 import 'destiny_historical_stats_by_period.dart';
 class DestinyHistoricalStatsWithMerged{
-	Map<DestinyHistoricalStatsByPeriod, dynamic> results;
+	Map<String, DestinyHistoricalStatsByPeriod> results;
 	DestinyHistoricalStatsByPeriod merged;
 	DestinyHistoricalStatsWithMerged(
-		Map<DestinyHistoricalStatsByPeriod, dynamic> this.results,
-		DestinyHistoricalStatsByPeriod this.merged,
+		this.results,
+		this.merged,
 	);
 
 	static DestinyHistoricalStatsWithMerged fromMap(Map<String, dynamic> data){
@@ -13,8 +13,8 @@ class DestinyHistoricalStatsWithMerged{
 			return null;
 		};
 		return new DestinyHistoricalStatsWithMerged(
-				data['results'],
-				DestinyHistoricalStatsByPeriod.fromMap(data['merged']),
+				data['results'] != null ? Map<String, DestinyHistoricalStatsByPeriod>.from(data['results'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsByPeriod.fromMap(v)))) : null,
+				data['merged'] != null ? DestinyHistoricalStatsByPeriod.fromMap(data['merged']) : null,
 		);
 	}
 

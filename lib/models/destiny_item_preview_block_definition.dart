@@ -5,10 +5,10 @@ class DestinyItemPreviewBlockDefinition{
 	String previewActionString;
 	List<DestinyDerivedItemCategoryDefinition> derivedItemCategories;
 	DestinyItemPreviewBlockDefinition(
-		String this.screenStyle,
-		int this.previewVendorHash,
-		String this.previewActionString,
-		List<DestinyDerivedItemCategoryDefinition> this.derivedItemCategories,
+		this.screenStyle,
+		this.previewVendorHash,
+		this.previewActionString,
+		this.derivedItemCategories,
 	);
 
 	static DestinyItemPreviewBlockDefinition fromMap(Map<String, dynamic> data){
@@ -19,7 +19,7 @@ class DestinyItemPreviewBlockDefinition{
 				data['screenStyle'],
 				data['previewVendorHash'],
 				data['previewActionString'],
-				DestinyDerivedItemCategoryDefinition.fromList(data['derivedItemCategories']),
+				data['derivedItemCategories'] != null ? DestinyDerivedItemCategoryDefinition.fromList(data['derivedItemCategories']) : null,
 		);
 	}
 

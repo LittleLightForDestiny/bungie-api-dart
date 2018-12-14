@@ -6,11 +6,11 @@ class DestinyProgressionLevelRequirementDefinition{
 	int index;
 	bool redacted;
 	DestinyProgressionLevelRequirementDefinition(
-		List<InterpolationPointFloat> this.requirementCurve,
-		int this.progressionHash,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.requirementCurve,
+		this.progressionHash,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyProgressionLevelRequirementDefinition fromMap(Map<String, dynamic> data){
@@ -18,7 +18,7 @@ class DestinyProgressionLevelRequirementDefinition{
 			return null;
 		};
 		return new DestinyProgressionLevelRequirementDefinition(
-				InterpolationPointFloat.fromList(data['requirementCurve']),
+				data['requirementCurve'] != null ? InterpolationPointFloat.fromList(data['requirementCurve']) : null,
 				data['progressionHash'],
 				data['hash'],
 				data['index'],

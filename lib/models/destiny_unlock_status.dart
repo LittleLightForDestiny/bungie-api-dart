@@ -2,8 +2,8 @@ class DestinyUnlockStatus{
 	int unlockHash;
 	bool isSet;
 	DestinyUnlockStatus(
-		int this.unlockHash,
-		bool this.isSet,
+		this.unlockHash,
+		this.isSet,
 	);
 
 	static DestinyUnlockStatus fromMap(Map<String, dynamic> data){

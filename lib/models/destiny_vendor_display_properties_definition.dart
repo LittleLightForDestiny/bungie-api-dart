@@ -12,17 +12,17 @@ class DestinyVendorDisplayPropertiesDefinition{
 	String icon;
 	bool hasIcon;
 	DestinyVendorDisplayPropertiesDefinition(
-		String this.largeIcon,
-		String this.subtitle,
-		String this.originalIcon,
-		List<DestinyVendorRequirementDisplayEntryDefinition> this.requirementsDisplay,
-		String this.smallTransparentIcon,
-		String this.mapIcon,
-		String this.largeTransparentIcon,
-		String this.description,
-		String this.name,
-		String this.icon,
-		bool this.hasIcon,
+		this.largeIcon,
+		this.subtitle,
+		this.originalIcon,
+		this.requirementsDisplay,
+		this.smallTransparentIcon,
+		this.mapIcon,
+		this.largeTransparentIcon,
+		this.description,
+		this.name,
+		this.icon,
+		this.hasIcon,
 	);
 
 	static DestinyVendorDisplayPropertiesDefinition fromMap(Map<String, dynamic> data){
@@ -33,7 +33,7 @@ class DestinyVendorDisplayPropertiesDefinition{
 				data['largeIcon'],
 				data['subtitle'],
 				data['originalIcon'],
-				DestinyVendorRequirementDisplayEntryDefinition.fromList(data['requirementsDisplay']),
+				data['requirementsDisplay'] != null ? DestinyVendorRequirementDisplayEntryDefinition.fromList(data['requirementsDisplay']) : null,
 				data['smallTransparentIcon'],
 				data['mapIcon'],
 				data['largeTransparentIcon'],

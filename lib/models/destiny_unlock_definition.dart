@@ -5,10 +5,10 @@ class DestinyUnlockDefinition{
 	int index;
 	bool redacted;
 	DestinyUnlockDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyUnlockDefinition fromMap(Map<String, dynamic> data){
@@ -16,7 +16,7 @@ class DestinyUnlockDefinition{
 			return null;
 		};
 		return new DestinyUnlockDefinition(
-				data['displayProperties'],
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

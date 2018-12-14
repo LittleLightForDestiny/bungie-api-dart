@@ -2,8 +2,8 @@ class GearAssetDataBaseDefinition{
 	int version;
 	String path;
 	GearAssetDataBaseDefinition(
-		int this.version,
-		String this.path,
+		this.version,
+		this.path,
 	);
 
 	static GearAssetDataBaseDefinition fromMap(Map<String, dynamic> data){

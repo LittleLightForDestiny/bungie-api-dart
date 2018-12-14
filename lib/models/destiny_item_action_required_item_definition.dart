@@ -3,9 +3,9 @@ class DestinyItemActionRequiredItemDefinition{
 	int itemHash;
 	bool deleteOnAction;
 	DestinyItemActionRequiredItemDefinition(
-		int this.count,
-		int this.itemHash,
-		bool this.deleteOnAction,
+		this.count,
+		this.itemHash,
+		this.deleteOnAction,
 	);
 
 	static DestinyItemActionRequiredItemDefinition fromMap(Map<String, dynamic> data){

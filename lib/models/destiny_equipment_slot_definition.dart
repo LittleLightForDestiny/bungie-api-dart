@@ -10,14 +10,14 @@ class DestinyEquipmentSlotDefinition{
 	int index;
 	bool redacted;
 	DestinyEquipmentSlotDefinition(
-		DestinyDisplayPropertiesDefinition this.displayProperties,
-		int this.equipmentCategoryHash,
-		int this.bucketTypeHash,
-		bool this.applyCustomArtDyes,
-		List<DestinyArtDyeReference> this.artDyeChannels,
-		int this.hash,
-		int this.index,
-		bool this.redacted,
+		this.displayProperties,
+		this.equipmentCategoryHash,
+		this.bucketTypeHash,
+		this.applyCustomArtDyes,
+		this.artDyeChannels,
+		this.hash,
+		this.index,
+		this.redacted,
 	);
 
 	static DestinyEquipmentSlotDefinition fromMap(Map<String, dynamic> data){
@@ -25,11 +25,11 @@ class DestinyEquipmentSlotDefinition{
 			return null;
 		};
 		return new DestinyEquipmentSlotDefinition(
-				DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']),
+				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
 				data['equipmentCategoryHash'],
 				data['bucketTypeHash'],
 				data['applyCustomArtDyes'],
-				DestinyArtDyeReference.fromList(data['artDyeChannels']),
+				data['artDyeChannels'] != null ? DestinyArtDyeReference.fromList(data['artDyeChannels']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],

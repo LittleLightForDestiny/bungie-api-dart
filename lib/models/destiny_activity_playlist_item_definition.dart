@@ -5,11 +5,11 @@ class DestinyActivityPlaylistItemDefinition{
 	List<int> activityModeHashes;
 	List<int> activityModeTypes;
 	DestinyActivityPlaylistItemDefinition(
-		int this.activityHash,
-		int this.directActivityModeHash,
-		int this.directActivityModeType,
-		List<int> this.activityModeHashes,
-		List<int> this.activityModeTypes,
+		this.activityHash,
+		this.directActivityModeHash,
+		this.directActivityModeType,
+		this.activityModeHashes,
+		this.activityModeTypes,
 	);
 
 	static DestinyActivityPlaylistItemDefinition fromMap(Map<String, dynamic> data){
@@ -20,7 +20,7 @@ class DestinyActivityPlaylistItemDefinition{
 				data['activityHash'],
 				data['directActivityModeHash'],
 				data['directActivityModeType'],
-				data['activityModeHashes'],
+				data['activityModeHashes'] != null ? data['activityModeHashes']?.cast<int>() ?? null : null,
 				data['activityModeTypes'],
 		);
 	}

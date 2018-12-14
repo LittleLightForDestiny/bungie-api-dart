@@ -1,19 +1,19 @@
 class CEDictionaryOfstringAndstringResponse{
-    Map<String, dynamic> response;
+    Map<String, String> response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
     String message;
-    Map<String, dynamic> messageData;
+    Map<String, String> messageData;
     String detailedErrorTrace;
 
     CEDictionaryOfstringAndstringResponse(
-		Map<String, dynamic> this.response,
+		Map<String, String> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
 		String this.message,
-		Map<String, dynamic> this.messageData,
+		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
 	);
 
@@ -22,12 +22,12 @@ class CEDictionaryOfstringAndstringResponse{
 			return null;
 		};
 		return new CEDictionaryOfstringAndstringResponse(
-				data['Response'],
+				data['Response'] != null ? Map<String, String>.from(data['Response'].map((k, v)=>MapEntry(k, v))) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
 				data['Message'],
-				data['MessageData'],
+				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
 				data['DetailedErrorTrace'],
 		);
 	}

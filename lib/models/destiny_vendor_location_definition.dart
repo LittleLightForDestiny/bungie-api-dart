@@ -2,8 +2,8 @@ class DestinyVendorLocationDefinition{
 	int destinationHash;
 	String backgroundImagePath;
 	DestinyVendorLocationDefinition(
-		int this.destinationHash,
-		String this.backgroundImagePath,
+		this.destinationHash,
+		this.backgroundImagePath,
 	);
 
 	static DestinyVendorLocationDefinition fromMap(Map<String, dynamic> data){

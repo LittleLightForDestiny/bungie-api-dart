@@ -2,8 +2,8 @@ class CommentSummary{
 	String topicId;
 	int commentCount;
 	CommentSummary(
-		String this.topicId,
-		int this.commentCount,
+		this.topicId,
+		this.commentCount,
 	);
 
 	static CommentSummary fromMap(Map<String, dynamic> data){

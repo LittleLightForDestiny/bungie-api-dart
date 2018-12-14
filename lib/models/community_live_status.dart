@@ -20,31 +20,31 @@ class CommunityLiveStatus{
 	String title;
 	int activityModeHash;
 	String dateFeatured;
-	int trendingValue;
+	double trendingValue;
 	bool isSubscribable;
 	CommunityLiveStatus(
-		String this.dateStatusUpdated,
-		String this.url,
-		String this.partnershipIdentifier,
-		int this.partnershipType,
-		String this.thumbnail,
-		String this.thumbnailSmall,
-		String this.thumbnailLarge,
-		String this.destinyCharacterId,
-		UserInfoCard this.userInfo,
-		int this.currentActivityHash,
-		String this.dateLastPlayed,
-		String this.dateStreamStarted,
-		String this.locale,
-		int this.currentViewers,
-		int this.followers,
-		int this.overallViewers,
-		bool this.isFeatured,
-		String this.title,
-		int this.activityModeHash,
-		String this.dateFeatured,
-		int this.trendingValue,
-		bool this.isSubscribable,
+		this.dateStatusUpdated,
+		this.url,
+		this.partnershipIdentifier,
+		this.partnershipType,
+		this.thumbnail,
+		this.thumbnailSmall,
+		this.thumbnailLarge,
+		this.destinyCharacterId,
+		this.userInfo,
+		this.currentActivityHash,
+		this.dateLastPlayed,
+		this.dateStreamStarted,
+		this.locale,
+		this.currentViewers,
+		this.followers,
+		this.overallViewers,
+		this.isFeatured,
+		this.title,
+		this.activityModeHash,
+		this.dateFeatured,
+		this.trendingValue,
+		this.isSubscribable,
 	);
 
 	static CommunityLiveStatus fromMap(Map<String, dynamic> data){
@@ -60,7 +60,7 @@ class CommunityLiveStatus{
 				data['thumbnailSmall'],
 				data['thumbnailLarge'],
 				data['destinyCharacterId'],
-				UserInfoCard.fromMap(data['userInfo']),
+				data['userInfo'] != null ? UserInfoCard.fromMap(data['userInfo']) : null,
 				data['currentActivityHash'],
 				data['dateLastPlayed'],
 				data['dateStreamStarted'],

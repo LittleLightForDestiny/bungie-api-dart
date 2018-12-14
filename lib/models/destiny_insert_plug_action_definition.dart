@@ -2,8 +2,8 @@ class DestinyInsertPlugActionDefinition{
 	int actionExecuteSeconds;
 	int actionType;
 	DestinyInsertPlugActionDefinition(
-		int this.actionExecuteSeconds,
-		int this.actionType,
+		this.actionExecuteSeconds,
+		this.actionType,
 	);
 
 	static DestinyInsertPlugActionDefinition fromMap(Map<String, dynamic> data){

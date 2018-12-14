@@ -2,8 +2,8 @@ class DestinyActivityGraphNodeActivityDefinition{
 	int nodeActivityId;
 	int activityHash;
 	DestinyActivityGraphNodeActivityDefinition(
-		int this.nodeActivityId,
-		int this.activityHash,
+		this.nodeActivityId,
+		this.activityHash,
 	);
 
 	static DestinyActivityGraphNodeActivityDefinition fromMap(Map<String, dynamic> data){

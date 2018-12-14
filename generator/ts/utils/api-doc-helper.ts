@@ -1,6 +1,7 @@
 import { OpenAPIObject, ReferenceObject, ParameterObject, SchemaObject } from "openapi3-ts";
 import { readFileSync } from "fs";
 import { ImportInfo } from "../models/ImportInfo";
+import { camelCase } from "lodash";
 
 export class ApiDocHelper{
     static doc:OpenAPIObject;
@@ -10,28 +11,45 @@ export class ApiDocHelper{
         return this.doc;
     }
 
-    static getParseFunction(obj:ReferenceObject|ParameterObject|SchemaObject):string|null{
+    static getParseFunction(obj:ReferenceObject|ParameterObject|SchemaObject, fieldName:String, source:String):string|null{
         if(obj.$ref){
             let ref = this.getRef(obj.$ref);
             if(ref.type == 'object'){
-                return `${this.getRefClassName(obj.$ref)}.fromMap`;
+                return `${this.getRefClassName(obj.$ref)}.fromMap(${source})`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;
         if(param.schema){
-            return this.getParseFunction(param.schema);
+            return this.getParseFunction(param.schema, fieldName, source);
         }
         if(param.type == 'array' && param.items && param.items.$ref){
             let ref = this.getRef(param.items.$ref);
             if(ref.type == 'object'){
-                return `${this.getObjectType(param.items)}.fromList`;
+                return `${this.getObjectType(param.items)}.fromList(${source})`;
             }
         }
+
         if(param.type == 'array' && param.allOf){
             let ref = this.getRef(param.allOf[0].$ref);
             if(ref.type == 'object'){
-                return `${this.getObjectType(param.allOf[0])}.fromList`;
+                return `${this.getObjectType(param.allOf[0])}.fromList(${source})`;
             }
+        }
+        let isNativeType = this.isNativeType(param);
+        if(param.additionalProperties && param['x-dictionary-key']){
+            let keyType = this.getObjectType(param['x-dictionary-key']);
+            let valueType = this.getObjectType(param.additionalProperties);
+            let value = this.getParseFunction(param.additionalProperties, 'v', 'v') || 'v';
+            return `Map<String, ${valueType}>.from(${source}.map((k, v)=>MapEntry(k, ${value})))`;
+        }
+
+        if(param.type == 'array' && param.items && param.items.type){
+            let valueType = this.getObjectType(param.items);
+            return `${source}?.cast<${valueType}>() ?? null`;
+        }
+        
+        if(!isNativeType){
+            return `${this.getObjectType(param)}.fromMap(${source})`;
         }
         return null;
     }
@@ -116,9 +134,9 @@ export class ApiDocHelper{
             return objType;
         }
         if(param.type == 'object' && param.additionalProperties && param['x-dictionary-key']){
-            let keyType = this.getObjectType(param.additionalProperties);
+            let keyType = this.getObjectType(param['x-dictionary-key']);
             let valueType = this.getObjectType(param.additionalProperties);
-            return `Map<${keyType}, dynamic>`;
+            return `Map<String, ${valueType}>`;
         }
         if(param.type == 'object'){
             return `Map<String, String>`;
@@ -157,11 +175,17 @@ export class ApiDocHelper{
     static parseType(type:string, format:string){
         switch(type){
             case 'string':
+                if(format == 'byte'){
+                    return 'int';
+                }
                 return 'String';
             case 'integer':
             case 'number':
                 if(format == 'int64'){
                     return 'String';
+                }
+                if(format == 'float'){
+                    return 'double';
                 }
                 return 'int';
             case 'boolean':

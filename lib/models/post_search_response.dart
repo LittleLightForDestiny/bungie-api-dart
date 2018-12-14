@@ -21,19 +21,19 @@ class PostSearchResponse{
 	String replacementContinuationToken;
 	bool useTotalResults;
 	PostSearchResponse(
-		List<PostResponse> this.relatedPosts,
-		List<GeneralUser> this.authors,
-		List<GroupResponse> this.groups,
-		List<TagResponse> this.searchedTags,
-		List<PollResponse> this.polls,
-		List<ForumRecruitmentDetail> this.recruitmentDetails,
-		int this.availablePages,
-		List<PostResponse> this.results,
-		int this.totalResults,
-		bool this.hasMore,
-		PagedQuery this.query,
-		String this.replacementContinuationToken,
-		bool this.useTotalResults,
+		this.relatedPosts,
+		this.authors,
+		this.groups,
+		this.searchedTags,
+		this.polls,
+		this.recruitmentDetails,
+		this.availablePages,
+		this.results,
+		this.totalResults,
+		this.hasMore,
+		this.query,
+		this.replacementContinuationToken,
+		this.useTotalResults,
 	);
 
 	static PostSearchResponse fromMap(Map<String, dynamic> data){
@@ -41,17 +41,17 @@ class PostSearchResponse{
 			return null;
 		};
 		return new PostSearchResponse(
-				PostResponse.fromList(data['relatedPosts']),
-				GeneralUser.fromList(data['authors']),
-				GroupResponse.fromList(data['groups']),
-				TagResponse.fromList(data['searchedTags']),
-				PollResponse.fromList(data['polls']),
-				ForumRecruitmentDetail.fromList(data['recruitmentDetails']),
+				data['relatedPosts'] != null ? PostResponse.fromList(data['relatedPosts']) : null,
+				data['authors'] != null ? GeneralUser.fromList(data['authors']) : null,
+				data['groups'] != null ? GroupResponse.fromList(data['groups']) : null,
+				data['searchedTags'] != null ? TagResponse.fromList(data['searchedTags']) : null,
+				data['polls'] != null ? PollResponse.fromList(data['polls']) : null,
+				data['recruitmentDetails'] != null ? ForumRecruitmentDetail.fromList(data['recruitmentDetails']) : null,
 				data['availablePages'],
-				PostResponse.fromList(data['results']),
+				data['results'] != null ? PostResponse.fromList(data['results']) : null,
 				data['totalResults'],
 				data['hasMore'],
-				PagedQuery.fromMap(data['query']),
+				data['query'] != null ? PagedQuery.fromMap(data['query']) : null,
 				data['replacementContinuationToken'],
 				data['useTotalResults'],
 		);

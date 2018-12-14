@@ -11,16 +11,16 @@ class ForumRecruitmentDetail{
 	List<GeneralUser> fireteam;
 	List<String> kickedPlayerIds;
 	ForumRecruitmentDetail(
-		String this.topicId,
-		bool this.microphoneRequired,
-		int this.intensity,
-		int this.tone,
-		bool this.approved,
-		String this.conversationId,
-		int this.playerSlotsTotal,
-		int this.playerSlotsRemaining,
-		List<GeneralUser> this.fireteam,
-		List<String> this.kickedPlayerIds,
+		this.topicId,
+		this.microphoneRequired,
+		this.intensity,
+		this.tone,
+		this.approved,
+		this.conversationId,
+		this.playerSlotsTotal,
+		this.playerSlotsRemaining,
+		this.fireteam,
+		this.kickedPlayerIds,
 	);
 
 	static ForumRecruitmentDetail fromMap(Map<String, dynamic> data){
@@ -36,8 +36,8 @@ class ForumRecruitmentDetail{
 				data['conversationId'],
 				data['playerSlotsTotal'],
 				data['playerSlotsRemaining'],
-				GeneralUser.fromList(data['Fireteam']),
-				data['kickedPlayerIds'],
+				data['Fireteam'] != null ? GeneralUser.fromList(data['Fireteam']) : null,
+				data['kickedPlayerIds'] != null ? data['kickedPlayerIds']?.cast<String>() ?? null : null,
 		);
 	}
 

@@ -1,7 +1,7 @@
 class DestinyActivityUnlockStringDefinition{
 	String displayString;
 	DestinyActivityUnlockStringDefinition(
-		String this.displayString,
+		this.displayString,
 	);
 
 	static DestinyActivityUnlockStringDefinition fromMap(Map<String, dynamic> data){
