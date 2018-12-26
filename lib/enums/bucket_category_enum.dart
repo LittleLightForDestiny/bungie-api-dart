@@ -1,8 +1,8 @@
 class BucketCategory {
   BucketCategory._();
-  static const int Invisible = 0;
-  static const int Item = 1;
-  static const int Currency = 2;
-  static const int Equippable = 3;
-  static const int Ignored = 4;
+  static const int invisible = 0;
+  static const int item = 1;
+  static const int currency = 2;
+  static const int equippable = 3;
+  static const int ignored = 4;
 }

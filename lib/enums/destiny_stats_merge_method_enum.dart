@@ -1,6 +1,6 @@
 class DestinyStatsMergeMethod {
   DestinyStatsMergeMethod._();
-  static const int Add = 0;
-  static const int Min = 1;
-  static const int Max = 2;
+  static const int add = 0;
+  static const int min = 1;
+  static const int max = 2;
 }

@@ -1,7 +1,7 @@
 class GroupMemberCountFilter {
   GroupMemberCountFilter._();
-  static const int All = 0;
-  static const int OneToTen = 1;
-  static const int ElevenToOneHundred = 2;
-  static const int GreaterThanOneHundred = 3;
+  static const int all = 0;
+  static const int oneToTen = 1;
+  static const int elevenToOneHundred = 2;
+  static const int greaterThanOneHundred = 3;
 }

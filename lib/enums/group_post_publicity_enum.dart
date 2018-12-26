@@ -1,6 +1,6 @@
 class GroupPostPublicity {
   GroupPostPublicity._();
-  static const int Public = 0;
-  static const int Alliance = 1;
-  static const int Private = 2;
+  static const int public = 0;
+  static const int alliance = 1;
+  static const int private = 2;
 }

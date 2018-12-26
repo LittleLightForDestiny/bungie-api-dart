@@ -1,9 +1,9 @@
 class DestinyRecordToastStyle {
   DestinyRecordToastStyle._();
-  static const int None = 0;
-  static const int Record = 1;
-  static const int Lore = 2;
-  static const int Badge = 3;
-  static const int MetaRecord = 4;
-  static const int MedalComplete = 5;
+  static const int none = 0;
+  static const int record = 1;
+  static const int lore = 2;
+  static const int badge = 3;
+  static const int metaRecord = 4;
+  static const int medalComplete = 5;
 }

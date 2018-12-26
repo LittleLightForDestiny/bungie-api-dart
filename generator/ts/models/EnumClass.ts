@@ -1,4 +1,5 @@
 import { SchemaObject} from "openapi3-ts";
+import { camelCase } from "lodash";
 
 export class EnumClass{
     static all:{[id:string]:EnumClass} = {};
@@ -16,7 +17,7 @@ export class EnumClass{
         return enumValues.map((enumValue)=>{
             return {
                 type:"int",
-                name:enumValue.identifier,
+                name:camelCase(enumValue.identifier),
                 value:enumValue.numericValue
             }
         });

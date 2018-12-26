@@ -1,6 +1,6 @@
 class FireteamPublicSearchOption {
   FireteamPublicSearchOption._();
-  static const int PublicAndPrivate = 0;
-  static const int PublicOnly = 1;
-  static const int PrivateOnly = 2;
+  static const int publicAndPrivate = 0;
+  static const int publicOnly = 1;
+  static const int privateOnly = 2;
 }

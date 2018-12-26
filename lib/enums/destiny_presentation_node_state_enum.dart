@@ -1,6 +1,6 @@
 class DestinyPresentationNodeState {
   DestinyPresentationNodeState._();
-  static const int None = 0;
-  static const int Invisible = 1;
-  static const int Obscured = 2;
+  static const int none = 0;
+  static const int invisible = 1;
+  static const int obscured = 2;
 }

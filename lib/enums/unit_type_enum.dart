@@ -1,17 +1,17 @@
 class UnitType {
   UnitType._();
-  static const int None = 0;
-  static const int Count = 1;
-  static const int PerGame = 2;
-  static const int Seconds = 3;
-  static const int Points = 4;
-  static const int Team = 5;
-  static const int Distance = 6;
-  static const int Percent = 7;
-  static const int Ratio = 8;
-  static const int Boolean = 9;
-  static const int WeaponType = 10;
-  static const int Standing = 11;
-  static const int Milliseconds = 12;
-  static const int CompletionReason = 13;
+  static const int none = 0;
+  static const int count = 1;
+  static const int perGame = 2;
+  static const int seconds = 3;
+  static const int points = 4;
+  static const int team = 5;
+  static const int distance = 6;
+  static const int percent = 7;
+  static const int ratio = 8;
+  static const int boolean = 9;
+  static const int weaponType = 10;
+  static const int standing = 11;
+  static const int milliseconds = 12;
+  static const int completionReason = 13;
 }

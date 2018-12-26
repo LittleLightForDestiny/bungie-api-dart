@@ -1,6 +1,6 @@
 class ComponentPrivacySetting {
   ComponentPrivacySetting._();
-  static const int None = 0;
-  static const int Public = 1;
-  static const int Private = 2;
+  static const int none = 0;
+  static const int public = 1;
+  static const int private = 2;
 }

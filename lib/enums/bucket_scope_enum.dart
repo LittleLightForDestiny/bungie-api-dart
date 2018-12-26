@@ -1,5 +1,5 @@
 class BucketScope {
   BucketScope._();
-  static const int Character = 0;
-  static const int Account = 1;
+  static const int character = 0;
+  static const int account = 1;
 }

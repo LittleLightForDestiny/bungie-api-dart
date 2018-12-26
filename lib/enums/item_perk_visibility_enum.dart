@@ -1,6 +1,6 @@
 class ItemPerkVisibility {
   ItemPerkVisibility._();
-  static const int Visible = 0;
-  static const int Disabled = 1;
-  static const int Hidden = 2;
+  static const int visible = 0;
+  static const int disabled = 1;
+  static const int hidden = 2;
 }

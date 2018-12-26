@@ -1,9 +1,9 @@
 class RuntimeGroupMemberType {
   RuntimeGroupMemberType._();
-  static const int None = 0;
-  static const int Beginner = 1;
-  static const int Member = 2;
-  static const int Admin = 3;
-  static const int ActingFounder = 4;
-  static const int Founder = 5;
+  static const int none = 0;
+  static const int beginner = 1;
+  static const int member = 2;
+  static const int admin = 3;
+  static const int actingFounder = 4;
+  static const int founder = 5;
 }
