@@ -23,7 +23,7 @@ class DestinyHistoricalStatsActivity{
 				data['directorActivityHash'],
 				data['instanceId'],
 				data['mode'],
-				data['modes'],
+				data['modes'] != null ? data['modes']?.cast<int>() ?? null : null,
 				data['isPrivate'],
 		);
 	}

@@ -21,7 +21,7 @@ class DestinyActivityPlaylistItemDefinition{
 				data['directActivityModeHash'],
 				data['directActivityModeType'],
 				data['activityModeHashes'] != null ? data['activityModeHashes']?.cast<int>() ?? null : null,
-				data['activityModeTypes'],
+				data['activityModeTypes'] != null ? data['activityModeTypes']?.cast<int>() ?? null : null,
 		);
 	}
 

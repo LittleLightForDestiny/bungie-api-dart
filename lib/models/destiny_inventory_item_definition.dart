@@ -180,7 +180,7 @@ class DestinyInventoryItemDefinition{
 				data['classType'],
 				data['equippable'],
 				data['damageTypeHashes'] != null ? data['damageTypeHashes']?.cast<int>() ?? null : null,
-				data['damageTypes'],
+				data['damageTypes'] != null ? data['damageTypes']?.cast<int>() ?? null : null,
 				data['defaultDamageType'],
 				data['defaultDamageTypeHash'],
 				data['hash'],

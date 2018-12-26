@@ -110,7 +110,7 @@ class DestinyActivityDefinition{
 				data['directActivityModeType'],
 				data['loadouts'] != null ? DestinyActivityLoadoutRequirementSet.fromList(data['loadouts']) : null,
 				data['activityModeHashes'] != null ? data['activityModeHashes']?.cast<int>() ?? null : null,
-				data['activityModeTypes'],
+				data['activityModeTypes'] != null ? data['activityModeTypes']?.cast<int>() ?? null : null,
 				data['isPvP'],
 				data['insertionPoints'] != null ? DestinyActivityInsertionPointDefinition.fromList(data['insertionPoints']) : null,
 				data['activityLocationMappings'] != null ? DestinyEnvironmentLocationMapping.fromList(data['activityLocationMappings']) : null,

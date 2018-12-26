@@ -32,7 +32,7 @@ class DestinyCharacterActivitiesComponent{
 				data['currentActivityModeHash'],
 				data['currentActivityModeType'],
 				data['currentActivityModeHashes'] != null ? data['currentActivityModeHashes']?.cast<int>() ?? null : null,
-				data['currentActivityModeTypes'],
+				data['currentActivityModeTypes'] != null ? data['currentActivityModeTypes']?.cast<int>() ?? null : null,
 				data['currentPlaylistActivityHash'],
 				data['lastCompletedStoryHash'],
 		);

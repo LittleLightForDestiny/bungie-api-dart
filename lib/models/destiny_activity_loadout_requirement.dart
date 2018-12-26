@@ -15,7 +15,7 @@ class DestinyActivityLoadoutRequirement{
 		return new DestinyActivityLoadoutRequirement(
 				data['equipmentSlotHash'],
 				data['allowedEquippedItemHashes'] != null ? data['allowedEquippedItemHashes']?.cast<int>() ?? null : null,
-				data['allowedWeaponSubTypes'],
+				data['allowedWeaponSubTypes'] != null ? data['allowedWeaponSubTypes']?.cast<int>() ?? null : null,
 		);
 	}
 

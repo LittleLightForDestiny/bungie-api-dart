@@ -28,7 +28,7 @@ class GroupFeatures{
 				data['maximumMembers'],
 				data['maximumMembershipsOfGroupType'],
 				data['capabilities'],
-				data['membershipTypes'],
+				data['membershipTypes'] != null ? data['membershipTypes']?.cast<int>() ?? null : null,
 				data['invitePermissionOverride'],
 				data['updateCulturePermissionOverride'],
 				data['hostGuidedGamePermissionOverride'],

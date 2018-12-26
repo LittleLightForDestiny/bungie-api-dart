@@ -37,8 +37,8 @@ class DestinyHistoricalStatsDefinition{
 		return new DestinyHistoricalStatsDefinition(
 				data['statId'],
 				data['group'],
-				data['periodTypes'],
-				data['modes'],
+				data['periodTypes'] != null ? data['periodTypes']?.cast<int>() ?? null : null,
+				data['modes'] != null ? data['modes']?.cast<int>() ?? null : null,
 				data['category'],
 				data['statName'],
 				data['statNameAbbr'],

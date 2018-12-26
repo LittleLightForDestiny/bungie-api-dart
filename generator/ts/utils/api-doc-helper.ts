@@ -43,7 +43,7 @@ export class ApiDocHelper{
             return `Map<String, ${valueType}>.from(${source}.map((k, v)=>MapEntry(k, ${value})))`;
         }
 
-        if(param.type == 'array' && param.items && param.items.type){
+        if(param.type == 'array' && param.items){
             let valueType = this.getObjectType(param.items);
             return `${source}?.cast<${valueType}>() ?? null`;
         }
