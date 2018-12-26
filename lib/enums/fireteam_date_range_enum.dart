@@ -1,8 +1,8 @@
 class FireteamDateRange {
   FireteamDateRange._();
-  static const int all = 0;
-  static const int now = 1;
-  static const int twentyFourHours = 2;
-  static const int fortyEightHours = 3;
-  static const int thisWeek = 4;
+  static const int All = 0;
+  static const int Now = 1;
+  static const int TwentyFourHours = 2;
+  static const int FortyEightHours = 3;
+  static const int ThisWeek = 4;
 }

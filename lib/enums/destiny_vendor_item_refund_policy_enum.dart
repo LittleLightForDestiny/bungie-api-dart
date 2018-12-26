@@ -1,6 +1,6 @@
 class DestinyVendorItemRefundPolicy {
   DestinyVendorItemRefundPolicy._();
-  static const int notRefundable = 0;
-  static const int deletesItem = 1;
-  static const int revokesLicense = 2;
+  static const int NotRefundable = 0;
+  static const int DeletesItem = 1;
+  static const int RevokesLicense = 2;
 }

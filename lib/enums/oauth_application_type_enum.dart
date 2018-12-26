@@ -1,6 +1,6 @@
 class OAuthApplicationType {
   OAuthApplicationType._();
-  static const int none = 0;
-  static const int confidential = 1;
-  static const int public = 2;
+  static const int None = 0;
+  static const int Confidential = 1;
+  static const int Public = 2;
 }

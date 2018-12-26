@@ -1,5 +1,5 @@
 class DestinySocketArrayType {
   DestinySocketArrayType._();
-  static const int default = 0;
-  static const int intrinsic = 1;
+  static const int Default = 0;
+  static const int Intrinsic = 1;
 }

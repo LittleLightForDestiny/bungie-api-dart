@@ -1,5 +1,5 @@
 class PlugUiStyles {
   PlugUiStyles._();
-  static const int none = 0;
-  static const int masterwork = 1;
+  static const int None = 0;
+  static const int Masterwork = 1;
 }

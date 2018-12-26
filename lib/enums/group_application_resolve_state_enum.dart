@@ -1,7 +1,7 @@
 class GroupApplicationResolveState {
   GroupApplicationResolveState._();
-  static const int unresolved = 0;
-  static const int accepted = 1;
-  static const int denied = 2;
-  static const int rescinded = 3;
+  static const int Unresolved = 0;
+  static const int Accepted = 1;
+  static const int Denied = 2;
+  static const int Rescinded = 3;
 }

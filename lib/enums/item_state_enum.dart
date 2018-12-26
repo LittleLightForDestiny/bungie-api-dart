@@ -1,7 +1,7 @@
 class ItemState {
   ItemState._();
-  static const int none = 0;
-  static const int locked = 1;
-  static const int tracked = 2;
-  static const int masterwork = 4;
+  static const int None = 0;
+  static const int Locked = 1;
+  static const int Tracked = 2;
+  static const int Masterwork = 4;
 }

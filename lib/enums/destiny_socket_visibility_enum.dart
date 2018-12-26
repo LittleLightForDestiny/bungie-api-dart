@@ -1,7 +1,7 @@
 class DestinySocketVisibility {
   DestinySocketVisibility._();
-  static const int visible = 0;
-  static const int hidden = 1;
-  static const int hiddenWhenEmpty = 2;
-  static const int hiddenIfNoPlugsAvailable = 3;
+  static const int Visible = 0;
+  static const int Hidden = 1;
+  static const int HiddenWhenEmpty = 2;
+  static const int HiddenIfNoPlugsAvailable = 3;
 }

@@ -1,11 +1,11 @@
 class Capabilities {
   Capabilities._();
-  static const int none = 0;
-  static const int leaderboards = 1;
-  static const int callsign = 2;
-  static const int optionalConversations = 4;
-  static const int clanBanner = 8;
-  static const int d2InvestmentData = 16;
-  static const int tags = 32;
-  static const int alliances = 64;
+  static const int None = 0;
+  static const int Leaderboards = 1;
+  static const int Callsign = 2;
+  static const int OptionalConversations = 4;
+  static const int ClanBanner = 8;
+  static const int D2InvestmentData = 16;
+  static const int Tags = 32;
+  static const int Alliances = 64;
 }

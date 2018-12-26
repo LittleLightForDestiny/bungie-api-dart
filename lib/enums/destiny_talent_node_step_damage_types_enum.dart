@@ -1,9 +1,9 @@
 class DestinyTalentNodeStepDamageTypes {
   DestinyTalentNodeStepDamageTypes._();
-  static const int none = 0;
-  static const int kinetic = 1;
-  static const int arc = 2;
-  static const int solar = 4;
-  static const int void = 8;
-  static const int all = 15;
+  static const int None = 0;
+  static const int Kinetic = 1;
+  static const int Arc = 2;
+  static const int Solar = 4;
+  static const int Void = 8;
+  static const int All = 15;
 }

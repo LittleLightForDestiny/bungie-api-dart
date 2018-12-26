@@ -1,6 +1,6 @@
 class DestinyPresentationScreenStyle {
   DestinyPresentationScreenStyle._();
-  static const int default = 0;
-  static const int categorySets = 1;
-  static const int badge = 2;
+  static const int Default = 0;
+  static const int CategorySets = 1;
+  static const int Badge = 2;
 }

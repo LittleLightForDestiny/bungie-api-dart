@@ -1,9 +1,9 @@
 class EquipFailureReason {
   EquipFailureReason._();
-  static const int none = 0;
-  static const int itemUnequippable = 1;
-  static const int itemUniqueEquipRestricted = 2;
-  static const int itemFailedUnlockCheck = 4;
-  static const int itemFailedLevelCheck = 8;
-  static const int itemNotOnCharacter = 16;
+  static const int None = 0;
+  static const int ItemUnequippable = 1;
+  static const int ItemUniqueEquipRestricted = 2;
+  static const int ItemFailedUnlockCheck = 4;
+  static const int ItemFailedLevelCheck = 8;
+  static const int ItemNotOnCharacter = 16;
 }

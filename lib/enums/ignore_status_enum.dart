@@ -1,10 +1,10 @@
 class IgnoreStatus {
   IgnoreStatus._();
-  static const int notIgnored = 0;
-  static const int ignoredUser = 1;
-  static const int ignoredGroup = 2;
-  static const int ignoredByGroup = 4;
-  static const int ignoredPost = 8;
-  static const int ignoredTag = 16;
-  static const int ignoredGlobal = 32;
+  static const int NotIgnored = 0;
+  static const int IgnoredUser = 1;
+  static const int IgnoredGroup = 2;
+  static const int IgnoredByGroup = 4;
+  static const int IgnoredPost = 8;
+  static const int IgnoredTag = 16;
+  static const int IgnoredGlobal = 32;
 }

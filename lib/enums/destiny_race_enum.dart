@@ -1,7 +1,7 @@
 class DestinyRace {
   DestinyRace._();
-  static const int human = 0;
-  static const int awoken = 1;
-  static const int exo = 2;
-  static const int unknown = 3;
+  static const int Human = 0;
+  static const int Awoken = 1;
+  static const int Exo = 2;
+  static const int Unknown = 3;
 }

@@ -1,11 +1,11 @@
 class DestinyTalentNodeStepLightAbilities {
   DestinyTalentNodeStepLightAbilities._();
-  static const int none = 0;
-  static const int grenades = 1;
-  static const int melee = 2;
-  static const int movementModes = 4;
-  static const int orbs = 8;
-  static const int superEnergy = 16;
-  static const int superMods = 32;
-  static const int all = 63;
+  static const int None = 0;
+  static const int Grenades = 1;
+  static const int Melee = 2;
+  static const int MovementModes = 4;
+  static const int Orbs = 8;
+  static const int SuperEnergy = 16;
+  static const int SuperMods = 32;
+  static const int All = 63;
 }

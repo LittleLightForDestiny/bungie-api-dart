@@ -1,5 +1,5 @@
 class AwaType {
   AwaType._();
-  static const int none = 0;
-  static const int insertPlugs = 1;
+  static const int None = 0;
+  static const int InsertPlugs = 1;
 }

@@ -1,11 +1,11 @@
 class DestinyActivityDifficultyTier {
   DestinyActivityDifficultyTier._();
-  static const int trivial = 0;
-  static const int easy = 1;
-  static const int normal = 2;
-  static const int challenging = 3;
-  static const int hard = 4;
-  static const int brave = 5;
-  static const int almostImpossible = 6;
-  static const int impossible = 7;
+  static const int Trivial = 0;
+  static const int Easy = 1;
+  static const int Normal = 2;
+  static const int Challenging = 3;
+  static const int Hard = 4;
+  static const int Brave = 5;
+  static const int AlmostImpossible = 6;
+  static const int Impossible = 7;
 }

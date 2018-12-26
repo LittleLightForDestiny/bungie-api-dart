@@ -1,6 +1,6 @@
 class SocketTypeActionType {
   SocketTypeActionType._();
-  static const int insertPlug = 0;
-  static const int infuseItem = 1;
-  static const int reinitializeSocket = 2;
+  static const int InsertPlug = 0;
+  static const int InfuseItem = 1;
+  static const int ReinitializeSocket = 2;
 }

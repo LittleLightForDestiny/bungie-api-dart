@@ -1,5 +1,5 @@
 class PartnershipType {
   PartnershipType._();
-  static const int none = 0;
-  static const int twitch = 1;
+  static const int None = 0;
+  static const int Twitch = 1;
 }
