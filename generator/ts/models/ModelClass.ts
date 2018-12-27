@@ -30,7 +30,7 @@ export class ModelClass{
             })
             .filter(Boolean)
             .filter((importInfo:ImportInfo)=>importInfo.filename() != filename)
-            .uniq()
+            .uniqBy((item)=>item.filename())
             .value();
         return imports;
     }

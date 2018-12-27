@@ -1,5 +1,4 @@
 import 'destiny_objective_progress.dart';
-import 'destiny_objective_progress.dart';
 class DestinyItemObjectivesComponent{
 	List<DestinyObjectiveProgress> objectives;
 	DestinyObjectiveProgress flavorObjective;

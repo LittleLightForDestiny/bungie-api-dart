@@ -1,5 +1,4 @@
 import 'destiny_plug_rule_definition.dart';
-import 'destiny_plug_rule_definition.dart';
 import 'destiny_parent_item_override.dart';
 class DestinyItemPlugDefinition{
 	List<DestinyPlugRuleDefinition> insertionRules;

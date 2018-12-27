@@ -1,6 +1,5 @@
 import 'fireteam_summary.dart';
 import 'fireteam_member.dart';
-import 'fireteam_member.dart';
 class FireteamResponse{
 	FireteamSummary summary;
 	List<FireteamMember> members;

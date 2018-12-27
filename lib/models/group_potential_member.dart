@@ -1,5 +1,4 @@
 import 'user_info_card.dart';
-import 'user_info_card.dart';
 class GroupPotentialMember{
 	int potentialStatus;
 	String groupId;

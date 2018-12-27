@@ -1,7 +1,5 @@
 import 'group_v2.dart';
 import 'group_member.dart';
-import 'group_v2.dart';
-import 'group_member.dart';
 import 'group_potential_member.dart';
 class GroupResponse{
 	GroupV2 detail;

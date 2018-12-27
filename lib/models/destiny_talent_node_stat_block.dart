@@ -1,5 +1,4 @@
 import 'destiny_stat.dart';
-import 'destiny_stat.dart';
 class DestinyTalentNodeStatBlock{
 	List<DestinyStat> currentStepStats;
 	List<DestinyStat> nextStepStats;

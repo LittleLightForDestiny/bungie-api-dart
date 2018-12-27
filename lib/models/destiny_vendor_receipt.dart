@@ -1,5 +1,4 @@
 import 'destiny_item_quantity.dart';
-import 'destiny_item_quantity.dart';
 class DestinyVendorReceipt{
 	List<DestinyItemQuantity> currencyPaid;
 	DestinyItemQuantity itemReceived;

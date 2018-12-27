@@ -1,6 +1,4 @@
 import 'destiny_historical_stats_value_pair.dart';
-import 'destiny_historical_stats_value_pair.dart';
-import 'destiny_historical_stats_value_pair.dart';
 class DestinyHistoricalStatsValue{
 	String statId;
 	DestinyHistoricalStatsValuePair basic;

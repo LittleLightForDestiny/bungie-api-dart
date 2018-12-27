@@ -2,7 +2,6 @@ import 'destiny_vendor_display_properties_definition.dart';
 import 'date_range.dart';
 import 'destiny_vendor_action_definition.dart';
 import 'destiny_vendor_category_entry_definition.dart';
-import 'destiny_vendor_category_entry_definition.dart';
 import 'destiny_display_category_definition.dart';
 import 'destiny_vendor_interaction_definition.dart';
 import 'destiny_vendor_inventory_flyout_definition.dart';

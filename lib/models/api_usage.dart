@@ -1,6 +1,5 @@
 import 'date_range.dart';
 import 'series.dart';
-import 'series.dart';
 class ApiUsage{
 	DateRange range;
 	List<Series> apiCalls;

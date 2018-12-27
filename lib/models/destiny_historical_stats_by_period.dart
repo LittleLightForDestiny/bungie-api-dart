@@ -1,8 +1,4 @@
 import 'destiny_historical_stats_value.dart';
-import 'destiny_historical_stats_value.dart';
-import 'destiny_historical_stats_value.dart';
-import 'destiny_historical_stats_value.dart';
-import 'destiny_historical_stats_period_group.dart';
 import 'destiny_historical_stats_period_group.dart';
 class DestinyHistoricalStatsByPeriod{
 	Map<String, DestinyHistoricalStatsValue> allTime;

@@ -1,5 +1,4 @@
 import 'destiny_historical_stats_by_period.dart';
-import 'destiny_historical_stats_by_period.dart';
 class DestinyHistoricalStatsPerCharacter{
 	String characterId;
 	bool deleted;

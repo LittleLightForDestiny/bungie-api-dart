@@ -1,20 +1,5 @@
 import 'core_system.dart';
 import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
-import 'core_setting.dart';
 import 'destiny2_core_settings.dart';
 class CoreSettingsConfiguration{
 	Map<String, CoreSystem> systems;

@@ -1,6 +1,4 @@
 import 'dye_reference.dart';
-import 'dye_reference.dart';
-import 'dye_reference.dart';
 import 'destiny_gear_art_arrangement_reference.dart';
 class DestinyItemTranslationBlockDefinition{
 	String weaponPatternIdentifier;

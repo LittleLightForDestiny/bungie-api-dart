@@ -3,7 +3,6 @@ import 'single_component_response_of_destiny_character_component.dart';
 import 'single_component_response_of_destiny_character_progression_component.dart';
 import 'single_component_response_of_destiny_character_render_component.dart';
 import 'single_component_response_of_destiny_character_activities_component.dart';
-import 'single_component_response_of_destiny_inventory_component.dart';
 import 'single_component_response_of_destiny_kiosks_component.dart';
 import 'single_component_response_of_destiny_plug_sets_component.dart';
 import 'single_component_response_of_destiny_presentation_nodes_component.dart';

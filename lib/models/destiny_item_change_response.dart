@@ -1,6 +1,5 @@
 import 'destiny_item_response.dart';
 import 'destiny_item_component.dart';
-import 'destiny_item_component.dart';
 class DestinyItemChangeResponse{
 	DestinyItemResponse item;
 	List<DestinyItemComponent> addedInventoryItems;

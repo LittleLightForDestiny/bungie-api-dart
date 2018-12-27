@@ -1,5 +1,4 @@
 import 'destiny_item_component.dart';
-import 'destiny_item_component.dart';
 class InventoryChangedResponse{
 	List<DestinyItemComponent> addedInventoryItems;
 	List<DestinyItemComponent> removedInventoryItems;

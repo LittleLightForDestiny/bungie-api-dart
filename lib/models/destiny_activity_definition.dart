@@ -1,6 +1,4 @@
 import 'destiny_display_properties_definition.dart';
-import 'destiny_display_properties_definition.dart';
-import 'destiny_display_properties_definition.dart';
 import 'destiny_activity_reward_definition.dart';
 import 'destiny_activity_modifier_reference_definition.dart';
 import 'destiny_activity_challenge_definition.dart';

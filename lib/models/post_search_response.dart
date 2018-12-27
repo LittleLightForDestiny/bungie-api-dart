@@ -4,7 +4,6 @@ import 'group_response.dart';
 import 'tag_response.dart';
 import 'poll_response.dart';
 import 'forum_recruitment_detail.dart';
-import 'post_response.dart';
 import 'paged_query.dart';
 class PostSearchResponse{
 	List<PostResponse> relatedPosts;

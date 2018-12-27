@@ -1,5 +1,4 @@
 import 'destiny_historical_stats_value.dart';
-import 'destiny_historical_stats_value.dart';
 class DestinyPostGameCarnageReportTeamEntry{
 	int teamId;
 	DestinyHistoricalStatsValue standing;

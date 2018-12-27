@@ -1,6 +1,5 @@
 import 'destiny_historical_stats_value.dart';
 import 'destiny_player.dart';
-import 'destiny_historical_stats_value.dart';
 import 'destiny_post_game_carnage_report_extended_data.dart';
 class DestinyPostGameCarnageReportEntry{
 	int standing;

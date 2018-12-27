@@ -1,6 +1,5 @@
 import 'single_component_response_of_destiny_vendor_receipts_component.dart';
 import 'single_component_response_of_destiny_inventory_component.dart';
-import 'single_component_response_of_destiny_inventory_component.dart';
 import 'single_component_response_of_destiny_profile_component.dart';
 import 'single_component_response_of_destiny_kiosks_component.dart';
 import 'single_component_response_of_destiny_plug_sets_component.dart';
@@ -13,7 +12,6 @@ import 'dictionary_component_response_ofint64_and_destiny_inventory_component.da
 import 'dictionary_component_response_ofint64_and_destiny_character_progression_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_render_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_activities_component.dart';
-import 'dictionary_component_response_ofint64_and_destiny_inventory_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_kiosks_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_plug_sets_component.dart';
 import 'destiny_base_item_component_set_ofuint32.dart';

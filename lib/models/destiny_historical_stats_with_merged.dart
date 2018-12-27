@@ -1,5 +1,4 @@
 import 'destiny_historical_stats_by_period.dart';
-import 'destiny_historical_stats_by_period.dart';
 class DestinyHistoricalStatsWithMerged{
 	Map<String, DestinyHistoricalStatsByPeriod> results;
 	DestinyHistoricalStatsByPeriod merged;
