@@ -5,15 +5,35 @@ import 'trending_entry_destiny_activity.dart';
 import 'trending_entry_destiny_ritual.dart';
 import 'trending_entry_community_creation.dart';
 import 'trending_entry_community_stream.dart';
+
+/*  */
 class TrendingDetail{
+	
+	/*  */
 	String identifier;
+	
+	/*  */
 	int entityType;
+	
+	/*  */
 	TrendingEntryNews news;
+	
+	/*  */
 	TrendingEntrySupportArticle support;
+	
+	/*  */
 	TrendingEntryDestinyItem destinyItem;
+	
+	/*  */
 	TrendingEntryDestinyActivity destinyActivity;
+	
+	/*  */
 	TrendingEntryDestinyRitual destinyRitual;
+	
+	/*  */
 	TrendingEntryCommunityCreation creation;
+	
+	/*  */
 	TrendingEntryCommunityStream stream;
 	TrendingDetail(
 		this.identifier,

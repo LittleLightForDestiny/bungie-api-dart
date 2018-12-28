@@ -3,11 +3,28 @@ import 'single_component_response_of_destiny_vendor_categories_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_vendor_sale_item_component.dart';
 import 'destiny_item_component_set_ofint32.dart';
 import 'single_component_response_of_destiny_currencies_component.dart';
+
+/* A response containing all of the components for a vendor. */
 class DestinyVendorResponse{
+	
+	/* The base properties of the vendor.
+COMPONENT TYPE: Vendors */
 	SingleComponentResponseOfDestinyVendorComponent vendor;
+	
+	/* Categories that the vendor has available, and references to the sales therein.
+COMPONENT TYPE: VendorCategories */
 	SingleComponentResponseOfDestinyVendorCategoriesComponent categories;
+	
+	/* Sales, keyed by the vendorItemIndex of the item being sold.
+COMPONENT TYPE: VendorSales */
 	DictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent sales;
+	
+	/* Item components, keyed by the vendorItemIndex of the active sale items.
+COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.] */
 	DestinyItemComponentSetOfint32 itemComponents;
+	
+	/* A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+COMPONENT TYPE: CurrencyLookups */
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;
 	DestinyVendorResponse(
 		this.vendor,

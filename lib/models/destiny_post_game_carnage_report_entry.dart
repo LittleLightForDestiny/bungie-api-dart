@@ -1,12 +1,26 @@
 import 'destiny_historical_stats_value.dart';
 import 'destiny_player.dart';
 import 'destiny_post_game_carnage_report_extended_data.dart';
+
+/*  */
 class DestinyPostGameCarnageReportEntry{
+	
+	/* Standing of the player */
 	int standing;
+	
+	/* Score of the player if available */
 	DestinyHistoricalStatsValue score;
+	
+	/* Identity details of the player */
 	DestinyPlayer player;
+	
+	/* ID of the player's character used in the activity. */
 	String characterId;
+	
+	/* Collection of stats for the player in this activity. */
 	Map<String, DestinyHistoricalStatsValue> values;
+	
+	/* Extended data extracted from the activity blob. */
 	DestinyPostGameCarnageReportExtendedData extended;
 	DestinyPostGameCarnageReportEntry(
 		this.standing,

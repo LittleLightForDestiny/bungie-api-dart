@@ -1,6 +1,12 @@
 import 'destiny_item_talent_grid_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent{
+	
+	/*  */
 	Map<String, DestinyItemTalentGridComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent(
 		this.data,

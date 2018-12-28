@@ -1,8 +1,20 @@
+
+/* If the activity is a playlist, this is the definition for a specific entry in the playlist: a single possible combination of Activity and Activity Mode that can be chosen. */
 class DestinyActivityPlaylistItemDefinition{
+	
+	/* The hash identifier of the Activity that can be played. Use it to look up the DestinyActivityDefinition. */
 	int activityHash;
+	
+	/* If this playlist entry had an activity mode directly defined on it, this will be the hash of that mode. */
 	int directActivityModeHash;
+	
+	/* If the playlist entry had an activity mode directly defined on it, this will be the enum value of that mode. */
 	int directActivityModeType;
+	
+	/* The hash identifiers for Activity Modes relevant to this entry. */
 	List<int> activityModeHashes;
+	
+	/* The activity modes - if any - in enum form. Because we can't seem to escape the enums. */
 	List<int> activityModeTypes;
 	DestinyActivityPlaylistItemDefinition(
 		this.activityHash,

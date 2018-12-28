@@ -1,6 +1,12 @@
 import 'clan_banner.dart';
+
+/* This contract contains clan-specific group information. It does not include any investment data. */
 class GroupV2ClanInfo{
+	
+	/*  */
 	String clanCallsign;
+	
+	/*  */
 	ClanBanner clanBannerData;
 	GroupV2ClanInfo(
 		this.clanCallsign,

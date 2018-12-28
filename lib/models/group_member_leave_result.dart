@@ -1,6 +1,12 @@
 import 'group_v2.dart';
+
+/*  */
 class GroupMemberLeaveResult{
+	
+	/*  */
 	GroupV2 group;
+	
+	/*  */
 	bool groupDeleted;
 	GroupMemberLeaveResult(
 		this.group,

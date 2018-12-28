@@ -1,6 +1,12 @@
 import 'destiny_collectibles_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent{
+	
+	/*  */
 	Map<String, DestinyCollectiblesComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent(
 		this.data,

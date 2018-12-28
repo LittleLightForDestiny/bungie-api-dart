@@ -1,13 +1,33 @@
 import 'user_info_card.dart';
+
+/*  */
 class GroupMemberApplication{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	String creationDate;
+	
+	/*  */
 	int resolveState;
+	
+	/*  */
 	String resolveDate;
+	
+	/*  */
 	String resolvedByMembershipId;
+	
+	/*  */
 	String requestMessage;
+	
+	/*  */
 	String resolveMessage;
+	
+	/*  */
 	UserInfoCard destinyUserInfo;
+	
+	/*  */
 	UserInfoCard bungieNetUserInfo;
 	GroupMemberApplication(
 		this.groupId,

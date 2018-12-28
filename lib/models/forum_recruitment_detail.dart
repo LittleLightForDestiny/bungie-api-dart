@@ -1,14 +1,36 @@
 import 'general_user.dart';
+
+/*  */
 class ForumRecruitmentDetail{
+	
+	/*  */
 	String topicId;
+	
+	/*  */
 	bool microphoneRequired;
+	
+	/*  */
 	int intensity;
+	
+	/*  */
 	int tone;
+	
+	/*  */
 	bool approved;
+	
+	/*  */
 	String conversationId;
+	
+	/*  */
 	int playerSlotsTotal;
+	
+	/*  */
 	int playerSlotsRemaining;
+	
+	/*  */
 	List<GeneralUser> fireteam;
+	
+	/*  */
 	List<String> kickedPlayerIds;
 	ForumRecruitmentDetail(
 		this.topicId,

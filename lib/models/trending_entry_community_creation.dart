@@ -1,10 +1,26 @@
+
+/*  */
 class TrendingEntryCommunityCreation{
+	
+	/*  */
 	String media;
+	
+	/*  */
 	String title;
+	
+	/*  */
 	String author;
+	
+	/*  */
 	String authorMembershipId;
+	
+	/*  */
 	String postId;
+	
+	/*  */
 	String body;
+	
+	/*  */
 	int upvotes;
 	TrendingEntryCommunityCreation(
 		this.media,

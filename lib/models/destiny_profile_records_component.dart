@@ -1,7 +1,15 @@
 import 'destiny_record_component.dart';
+
+/*  */
 class DestinyProfileRecordsComponent{
+	
+	/* Your "Triumphs" score. */
 	int score;
+	
+	/* If this profile is tracking a record, this is the hash identifier of the record it is tracking. */
 	int trackedRecordHash;
+	
+	/*  */
 	Map<String, DestinyRecordComponent> records;
 	DestinyProfileRecordsComponent(
 		this.score,

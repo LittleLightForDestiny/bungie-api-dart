@@ -1,6 +1,12 @@
 import 'destiny_item_stats_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyItemStatsComponent{
+	
+	/*  */
 	Map<String, DestinyItemStatsComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemStatsComponent(
 		this.data,

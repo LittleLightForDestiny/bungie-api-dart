@@ -1,6 +1,12 @@
 import 'destiny_item_sockets_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent{
+	
+	/*  */
 	Map<String, DestinyItemSocketsComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent(
 		this.data,

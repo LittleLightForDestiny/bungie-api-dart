@@ -1,6 +1,12 @@
 import 'destiny_item_render_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent{
+	
+	/*  */
 	Map<String, DestinyItemRenderComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent(
 		this.data,

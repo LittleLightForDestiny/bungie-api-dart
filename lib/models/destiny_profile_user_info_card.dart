@@ -1,9 +1,23 @@
+
+/*  */
 class DestinyProfileUserInfoCard{
+	
+	/*  */
 	String dateLastPlayed;
+	
+	/* A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc. */
 	String supplementalDisplayName;
+	
+	/* URL the Icon if available. */
 	String iconPath;
+	
+	/* Type of the membership. */
 	int membershipType;
+	
+	/* Membership ID as they user is known in the Accounts service */
 	String membershipId;
+	
+	/* Display Name the player has chosen for themselves. The display name is optional when the data type is used as input to a platform API. */
 	String displayName;
 	DestinyProfileUserInfoCard(
 		this.dateLastPlayed,

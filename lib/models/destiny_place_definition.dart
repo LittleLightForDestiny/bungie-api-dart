@@ -1,8 +1,20 @@
 import 'destiny_display_properties_definition.dart';
+
+/* Okay, so Activities (DestinyActivityDefinition) take place in Destinations (DestinyDestinationDefinition). Destinations are part of larger locations known as Places (you're reading its documentation right now).
+Places are more on the planetary scale, like "Earth" and "Your Mom." */
 class DestinyPlaceDefinition{
+	
+	/*  */
 	DestinyDisplayPropertiesDefinition displayProperties;
+	
+	/* The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
+When entities refer to each other in Destiny content, it is this hash that they are referring to. */
 	int hash;
+	
+	/* The index of the entity as it was found in the investment tables. */
 	int index;
+	
+	/* If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
 	bool redacted;
 	DestinyPlaceDefinition(
 		this.displayProperties,

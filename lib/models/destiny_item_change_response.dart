@@ -1,8 +1,16 @@
 import 'destiny_item_response.dart';
 import 'destiny_item_component.dart';
+
+/*  */
 class DestinyItemChangeResponse{
+	
+	/*  */
 	DestinyItemResponse item;
+	
+	/* Items that appeared in the inventory possibly as a result of an action. */
 	List<DestinyItemComponent> addedInventoryItems;
+	
+	/* Items that disappeared from the inventory possibly as a result of an action. */
 	List<DestinyItemComponent> removedInventoryItems;
 	DestinyItemChangeResponse(
 		this.item,

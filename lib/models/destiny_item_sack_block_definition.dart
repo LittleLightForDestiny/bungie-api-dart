@@ -1,8 +1,20 @@
+
+/* Some items are "sacks" - they can be "opened" to produce other items. This is information related to its sack status, mostly UI strings. Engrams are an example of items that are considered to be "Sacks". */
 class DestinyItemSackBlockDefinition{
+	
+	/* A description of what will happen when you open the sack. As far as I can tell, this is blank currently. Unknown whether it will eventually be populated with useful info. */
 	String detailAction;
+	
+	/* The localized name of the action being performed when you open the sack. */
 	String openAction;
+	
+	/*  */
 	int selectItemCount;
+	
+	/*  */
 	String vendorSackType;
+	
+	/*  */
 	bool openOnAcquire;
 	DestinyItemSackBlockDefinition(
 		this.detailAction,

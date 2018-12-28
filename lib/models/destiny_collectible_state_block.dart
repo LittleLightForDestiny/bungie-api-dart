@@ -1,6 +1,12 @@
 import 'destiny_presentation_node_requirements_block.dart';
+
+/*  */
 class DestinyCollectibleStateBlock{
+	
+	/*  */
 	int obscuredOverrideItemHash;
+	
+	/*  */
 	DestinyPresentationNodeRequirementsBlock requirements;
 	DestinyCollectibleStateBlock(
 		this.obscuredOverrideItemHash,

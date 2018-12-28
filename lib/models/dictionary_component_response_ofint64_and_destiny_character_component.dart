@@ -1,6 +1,12 @@
 import 'destiny_character_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyCharacterComponent{
+	
+	/*  */
 	Map<String, DestinyCharacterComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCharacterComponent(
 		this.data,

@@ -1,6 +1,12 @@
 import 'destiny_item_perks_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint32AndDestinyItemPerksComponent{
+	
+	/*  */
 	Map<String, DestinyItemPerksComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint32AndDestinyItemPerksComponent(
 		this.data,

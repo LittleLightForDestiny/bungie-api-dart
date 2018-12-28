@@ -1,5 +1,11 @@
+
+/*  */
 class DestinyHistoricalStatsValuePair{
+	
+	/* Raw value of the statistic */
 	int value;
+	
+	/* Localized formated version of the value. */
 	String displayValue;
 	DestinyHistoricalStatsValuePair(
 		this.value,

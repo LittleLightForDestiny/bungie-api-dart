@@ -1,9 +1,21 @@
 import 'user_info_card.dart';
+
+/*  */
 class GroupPotentialMember{
+	
+	/*  */
 	int potentialStatus;
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	UserInfoCard destinyUserInfo;
+	
+	/*  */
 	UserInfoCard bungieNetUserInfo;
+	
+	/*  */
 	String joinDate;
 	GroupPotentialMember(
 		this.potentialStatus,

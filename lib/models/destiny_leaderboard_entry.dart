@@ -1,9 +1,19 @@
 import 'destiny_player.dart';
 import 'destiny_historical_stats_value.dart';
+
+/*  */
 class DestinyLeaderboardEntry{
+	
+	/* Where this player ranks on the leaderboard. A value of 1 is the top rank. */
 	int rank;
+	
+	/* Identity details of the player */
 	DestinyPlayer player;
+	
+	/* ID of the player's best character for the reported stat. */
 	String characterId;
+	
+	/* Value of the stat for this player */
 	DestinyHistoricalStatsValue value;
 	DestinyLeaderboardEntry(
 		this.rank,

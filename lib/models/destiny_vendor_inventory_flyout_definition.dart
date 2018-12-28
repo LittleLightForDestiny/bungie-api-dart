@@ -1,11 +1,25 @@
 import 'destiny_display_properties_definition.dart';
 import 'destiny_vendor_inventory_flyout_bucket_definition.dart';
+
+/* The definition for an "inventory flyout": a UI screen where we show you part of an otherwise hidden vendor inventory: like the Vault inventory buckets. */
 class DestinyVendorInventoryFlyoutDefinition{
+	
+	/* If the flyout is locked, this is the reason why. */
 	String lockedDescription;
+	
+	/* The title and other common properties of the flyout. */
 	DestinyDisplayPropertiesDefinition displayProperties;
+	
+	/* A list of inventory buckets and other metadata to show on the screen. */
 	List<DestinyVendorInventoryFlyoutBucketDefinition> buckets;
+	
+	/* An identifier for the flyout, in case anything else needs to refer to them. */
 	int flyoutId;
+	
+	/* If this is true, don't show any of the glistening "this is a new item" UI elements, like we show on the inventory items themselves in in-game UI. */
 	bool suppressNewness;
+	
+	/* If this flyout is meant to show you the contents of the player's equipment slot, this is the slot to show. */
 	int equipmentSlotHash;
 	DestinyVendorInventoryFlyoutDefinition(
 		this.lockedDescription,

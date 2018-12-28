@@ -1,7 +1,13 @@
 import 'destiny_historical_weapon_stats.dart';
 import 'destiny_historical_stats_value.dart';
+
+/*  */
 class DestinyPostGameCarnageReportExtendedData{
+	
+	/* List of weapons and their perspective values. */
 	List<DestinyHistoricalWeaponStats> weapons;
+	
+	/* Collection of stats for the player in this activity. */
 	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyPostGameCarnageReportExtendedData(
 		this.weapons,

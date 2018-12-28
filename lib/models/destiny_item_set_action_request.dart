@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyItemSetActionRequest{
+	
+	/*  */
 	List<String> itemIds;
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyItemSetActionRequest(
 		this.itemIds,

@@ -1,5 +1,11 @@
+
+/* Not terribly useful, some basic cooldown interaction info. */
 class DestinyVendorSaleItemActionBlockDefinition{
+	
+	/*  */
 	double executeSeconds;
+	
+	/*  */
 	bool isPositive;
 	DestinyVendorSaleItemActionBlockDefinition(
 		this.executeSeconds,

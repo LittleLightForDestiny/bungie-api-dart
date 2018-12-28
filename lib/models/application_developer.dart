@@ -1,7 +1,15 @@
 import 'user_info_card.dart';
+
+/*  */
 class ApplicationDeveloper{
+	
+	/*  */
 	int role;
+	
+	/*  */
 	int apiEulaVersion;
+	
+	/*  */
 	UserInfoCard user;
 	ApplicationDeveloper(
 		this.role,

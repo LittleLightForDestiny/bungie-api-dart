@@ -1,45 +1,129 @@
 import 'content_type_default_value.dart';
+
+/*  */
 class ContentTypeProperty{
+	
+	/*  */
 	String name;
+	
+	/*  */
 	String readableName;
+	
+	/*  */
 	String value;
+	
+	/*  */
 	String propertyDescription;
+	
+	/*  */
 	bool localizable;
+	
+	/*  */
 	bool fallback;
+	
+	/*  */
 	bool enabled;
+	
+	/*  */
 	int order;
+	
+	/*  */
 	bool visible;
+	
+	/*  */
 	bool isTitle;
+	
+	/*  */
 	bool required;
+	
+	/*  */
 	int maxLength;
+	
+	/*  */
 	int maxByteLength;
+	
+	/*  */
 	int maxFileSize;
+	
+	/*  */
 	String regexp;
+	
+	/*  */
 	String validateAs;
+	
+	/*  */
 	String rssAttribute;
+	
+	/*  */
 	String visibleDependency;
+	
+	/*  */
 	String visibleOn;
+	
+	/*  */
 	int datatype;
+	
+	/*  */
 	Map<String, String> attributes;
+	
+	/*  */
 	List<ContentTypeProperty> childProperties;
+	
+	/*  */
 	String contentTypeAllowed;
+	
+	/*  */
 	String bindToProperty;
+	
+	/*  */
 	String boundRegex;
+	
+	/*  */
 	Map<String, String> representationSelection;
+	
+	/*  */
 	List<ContentTypeDefaultValue> defaultValues;
+	
+	/*  */
 	bool isExternalAllowed;
+	
+	/*  */
 	String propertySection;
+	
+	/*  */
 	int weight;
+	
+	/*  */
 	String entitytype;
+	
+	/*  */
 	bool isCombo;
+	
+	/*  */
 	bool suppressProperty;
+	
+	/*  */
 	List<String> legalContentTypes;
+	
+	/*  */
 	String representationValidationString;
+	
+	/*  */
 	int minWidth;
+	
+	/*  */
 	int maxWidth;
+	
+	/*  */
 	int minHeight;
+	
+	/*  */
 	int maxHeight;
+	
+	/*  */
 	bool isVideo;
+	
+	/*  */
 	bool isImage;
 	ContentTypeProperty(
 		this.name,

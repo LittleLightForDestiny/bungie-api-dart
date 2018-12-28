@@ -1,4 +1,8 @@
+
+/*  */
 class DestinyMilestoneChallengeDefinition{
+	
+	/* The challenge related to this milestone. */
 	int challengeObjectiveHash;
 	DestinyMilestoneChallengeDefinition(
 		this.challengeObjectiveHash,

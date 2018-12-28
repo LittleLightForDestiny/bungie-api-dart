@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyActivityLoadoutRequirement{
+	
+	/*  */
 	int equipmentSlotHash;
+	
+	/*  */
 	List<int> allowedEquippedItemHashes;
+	
+	/*  */
 	List<int> allowedWeaponSubTypes;
 	DestinyActivityLoadoutRequirement(
 		this.equipmentSlotHash,

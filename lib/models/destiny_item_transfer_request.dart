@@ -1,9 +1,23 @@
+
+/*  */
 class DestinyItemTransferRequest{
+	
+	/*  */
 	int itemReferenceHash;
+	
+	/*  */
 	int stackSize;
+	
+	/*  */
 	bool transferToVault;
+	
+	/*  */
 	String itemId;
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyItemTransferRequest(
 		this.itemReferenceHash,

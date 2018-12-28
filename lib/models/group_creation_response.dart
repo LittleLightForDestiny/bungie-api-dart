@@ -1,4 +1,8 @@
+
+/*  */
 class GroupCreationResponse{
+	
+	/*  */
 	String groupId;
 	GroupCreationResponse(
 		this.groupId,

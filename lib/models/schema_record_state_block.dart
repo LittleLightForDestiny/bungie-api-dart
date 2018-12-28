@@ -1,5 +1,11 @@
+
+/*  */
 class SchemaRecordStateBlock{
+	
+	/*  */
 	int featuredPriority;
+	
+	/*  */
 	String obscuredString;
 	SchemaRecordStateBlock(
 		this.featuredPriority,

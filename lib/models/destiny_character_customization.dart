@@ -1,15 +1,42 @@
+
+/* Raw data about the customization options chosen for a character's face and appearance.
+You can look up the relevant class/race/gender combo in DestinyCharacterCustomizationOptionDefinition for the character, and then look up these values within the CustomizationOptions found to pull some data about their choices. Warning: not all of that data is meaningful. Some data has useful icons. Others have nothing, and are only meant for 3D rendering purposes (which we sadly do not expose yet) */
 class DestinyCharacterCustomization{
+	
+	/*  */
 	int personality;
+	
+	/*  */
 	int face;
+	
+	/*  */
 	int skinColor;
+	
+	/*  */
 	int lipColor;
+	
+	/*  */
 	int eyeColor;
+	
+	/*  */
 	List<int> hairColors;
+	
+	/*  */
 	List<int> featureColors;
+	
+	/*  */
 	int decalColor;
+	
+	/*  */
 	bool wearHelmet;
+	
+	/*  */
 	int hairIndex;
+	
+	/*  */
 	int featureIndex;
+	
+	/*  */
 	int decalIndex;
 	DestinyCharacterCustomization(
 		this.personality,

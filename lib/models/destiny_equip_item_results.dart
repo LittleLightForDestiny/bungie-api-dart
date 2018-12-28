@@ -1,5 +1,9 @@
 import 'destiny_equip_item_result.dart';
+
+/* The results of a bulk Equipping operation performed through the Destiny API. */
 class DestinyEquipItemResults{
+	
+	/*  */
 	List<DestinyEquipItemResult> equipResults;
 	DestinyEquipItemResults(
 		this.equipResults,

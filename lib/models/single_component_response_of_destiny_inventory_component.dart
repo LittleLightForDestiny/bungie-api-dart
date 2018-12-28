@@ -1,6 +1,12 @@
 import 'destiny_inventory_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyInventoryComponent{
+	
+	/*  */
 	DestinyInventoryComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyInventoryComponent(
 		this.data,

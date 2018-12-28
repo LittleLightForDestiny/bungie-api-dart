@@ -1,21 +1,54 @@
 import 'general_user.dart';
 import 'content_representation.dart';
 import 'comment_summary.dart';
+
+/*  */
 class ContentItemPublicContract{
+	
+	/*  */
 	String contentId;
+	
+	/*  */
 	String cType;
+	
+	/*  */
 	String cmsPath;
+	
+	/*  */
 	String creationDate;
+	
+	/*  */
 	String modifyDate;
+	
+	/*  */
 	bool allowComments;
+	
+	/*  */
 	bool hasAgeGate;
+	
+	/*  */
 	int minimumAge;
+	
+	/*  */
 	String ratingImagePath;
+	
+	/*  */
 	GeneralUser author;
+	
+	/*  */
 	bool autoEnglishPropertyFallback;
+	
+	/* Firehose content is really a collection of metadata and "properties", which are the potentially-but-not-strictly localizable data that comprises the meat of whatever content is being shown.
+As Cole Porter would have crooned, "Anything Goes" with Firehose properties. They are most often strings, but they can theoretically be anything. They are JSON encoded, and could be JSON structures, simple strings, numbers etc... The Content Type of the item (cType) will describe the properties, and thus how they ought to be deserialized. */
 	Map<String, Map<String, String>> properties;
+	
+	/*  */
 	List<ContentRepresentation> representations;
+	
+	/*  */
 	List<String> tags;
+	
+	/*  */
 	CommentSummary commentSummary;
 	ContentItemPublicContract(
 		this.contentId,

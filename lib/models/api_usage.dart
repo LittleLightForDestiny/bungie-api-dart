@@ -1,8 +1,16 @@
 import 'date_range.dart';
 import 'series.dart';
+
+/*  */
 class ApiUsage{
+	
+	/* The date range for the data being reported. */
 	DateRange range;
+	
+	/* Counts for on API calls made for the time range. */
 	List<Series> apiCalls;
+	
+	/* Instances of blocked requests or requests that crossed the warn threshold during the time range. */
 	List<Series> throttledRequests;
 	ApiUsage(
 		this.range,

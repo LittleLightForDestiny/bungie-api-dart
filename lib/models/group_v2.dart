@@ -1,33 +1,91 @@
 import 'group_features.dart';
 import 'group_v2_clan_info_and_investment.dart';
+
+/*  */
 class GroupV2{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	int groupType;
+	
+	/*  */
 	String membershipIdCreated;
+	
+	/*  */
 	String creationDate;
+	
+	/*  */
 	String modificationDate;
+	
+	/*  */
 	String about;
+	
+	/*  */
 	List<String> tags;
+	
+	/*  */
 	int memberCount;
+	
+	/*  */
 	bool isPublic;
+	
+	/*  */
 	bool isPublicTopicAdminOnly;
+	
+	/*  */
 	String motto;
+	
+	/*  */
 	bool allowChat;
+	
+	/*  */
 	bool isDefaultPostPublic;
+	
+	/*  */
 	int chatSecurity;
+	
+	/*  */
 	String locale;
+	
+	/*  */
 	int avatarImageIndex;
+	
+	/*  */
 	int homepage;
+	
+	/*  */
 	int membershipOption;
+	
+	/*  */
 	int defaultPublicity;
+	
+	/*  */
 	String theme;
+	
+	/*  */
 	String bannerPath;
+	
+	/*  */
 	String avatarPath;
+	
+	/*  */
 	String conversationId;
+	
+	/*  */
 	bool enableInvitationMessagingForAdmins;
+	
+	/*  */
 	String banExpireDate;
+	
+	/*  */
 	GroupFeatures features;
+	
+	/*  */
 	GroupV2ClanInfoAndInvestment clanInfo;
 	GroupV2(
 		this.groupId,

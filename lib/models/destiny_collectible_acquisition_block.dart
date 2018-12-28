@@ -1,5 +1,11 @@
+
+/*  */
 class DestinyCollectibleAcquisitionBlock{
+	
+	/*  */
 	int acquireMaterialRequirementHash;
+	
+	/*  */
 	int acquireTimestampUnlockValueHash;
 	DestinyCollectibleAcquisitionBlock(
 		this.acquireMaterialRequirementHash,

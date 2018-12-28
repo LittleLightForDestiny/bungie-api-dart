@@ -1,8 +1,16 @@
 import 'fireteam_summary.dart';
 import 'fireteam_member.dart';
+
+/*  */
 class FireteamResponse{
+	
+	/*  */
 	FireteamSummary summary;
+	
+	/*  */
 	List<FireteamMember> members;
+	
+	/*  */
 	List<FireteamMember> alternates;
 	FireteamResponse(
 		this.summary,

@@ -1,6 +1,12 @@
 import 'destiny_plug_sets_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyPlugSetsComponent{
+	
+	/*  */
 	DestinyPlugSetsComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyPlugSetsComponent(
 		this.data,

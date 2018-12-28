@@ -1,5 +1,11 @@
+
+/*  */
 class CommentSummary{
+	
+	/*  */
 	String topicId;
+	
+	/*  */
 	int commentCount;
 	CommentSummary(
 		this.topicId,

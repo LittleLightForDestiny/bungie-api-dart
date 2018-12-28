@@ -1,7 +1,17 @@
+
+/* All the partnership info that's fit to expose externally, if we care to do so. */
 class PublicPartnershipDetail{
+	
+	/*  */
 	int partnerType;
+	
+	/*  */
 	String identifier;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	String icon;
 	PublicPartnershipDetail(
 		this.partnerType,

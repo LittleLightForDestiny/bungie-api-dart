@@ -1,6 +1,12 @@
 import 'destiny_kiosks_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyKiosksComponent{
+	
+	/*  */
 	DestinyKiosksComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyKiosksComponent(
 		this.data,

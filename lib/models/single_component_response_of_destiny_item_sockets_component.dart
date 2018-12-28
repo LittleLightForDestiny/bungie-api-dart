@@ -1,6 +1,12 @@
 import 'destiny_item_sockets_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyItemSocketsComponent{
+	
+	/*  */
 	DestinyItemSocketsComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemSocketsComponent(
 		this.data,

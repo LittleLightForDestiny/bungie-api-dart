@@ -1,5 +1,9 @@
 import 'destiny_item_peer_view.dart';
+
+/* A minimal view of a character's equipped items, for the purpose of rendering a summary screen or showing the character in 3D. */
 class DestinyCharacterPeerView{
+	
+	/*  */
 	List<DestinyItemPeerView> equipment;
 	DestinyCharacterPeerView(
 		this.equipment,

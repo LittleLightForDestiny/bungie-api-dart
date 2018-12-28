@@ -1,8 +1,20 @@
+
+/* The details of an overlay prompt to show to a user. They are all fairly self-explanatory localized strings that can be shown. */
 class DestinyVendorCategoryOverlayDefinition{
+	
+	/*  */
 	String choiceDescription;
+	
+	/*  */
 	String description;
+	
+	/*  */
 	String icon;
+	
+	/*  */
 	String title;
+	
+	/* If this overlay has a currency item that it features, this is said featured item. */
 	int currencyItemHash;
 	DestinyVendorCategoryOverlayDefinition(
 		this.choiceDescription,

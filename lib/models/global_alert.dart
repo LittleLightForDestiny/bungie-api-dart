@@ -1,11 +1,27 @@
 import 'stream_info.dart';
+
+/*  */
 class GlobalAlert{
+	
+	/*  */
 	String alertKey;
+	
+	/*  */
 	String alertHtml;
+	
+	/*  */
 	String alertTimestamp;
+	
+	/*  */
 	String alertLink;
+	
+	/*  */
 	int alertLevel;
+	
+	/*  */
 	int alertType;
+	
+	/*  */
 	StreamInfo streamInfo;
 	GlobalAlert(
 		this.alertKey,

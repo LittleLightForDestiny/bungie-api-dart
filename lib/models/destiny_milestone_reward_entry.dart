@@ -1,6 +1,14 @@
+
+/* The character-specific data for a milestone's reward entry. See DestinyMilestoneDefinition for more information about Reward Entries. */
 class DestinyMilestoneRewardEntry{
+	
+	/* The identifier for the reward entry in question. It is important to look up the related DestinyMilestoneRewardEntryDefinition to get the static details about the reward, which you can do by looking up the milestone's DestinyMilestoneDefinition and examining the DestinyMilestoneDefinition.rewards[rewardCategoryHash].rewardEntries[rewardEntryHash] data. */
 	int rewardEntryHash;
+	
+	/* If TRUE, the player has earned this reward. */
 	bool earned;
+	
+	/* If TRUE, the player has redeemed/picked up/obtained this reward. Feel free to alias this to "gotTheShinyBauble" in your own codebase. */
 	bool redeemed;
 	DestinyMilestoneRewardEntry(
 		this.rewardEntryHash,

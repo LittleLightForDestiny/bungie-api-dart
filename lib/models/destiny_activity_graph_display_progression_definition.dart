@@ -1,5 +1,11 @@
+
+/* When a Graph needs to show active Progressions, this defines those objectives as well as an identifier. */
 class DestinyActivityGraphDisplayProgressionDefinition{
+	
+	/*  */
 	int id;
+	
+	/*  */
 	int progressionHash;
 	DestinyActivityGraphDisplayProgressionDefinition(
 		this.id,

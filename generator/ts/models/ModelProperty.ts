@@ -37,4 +37,12 @@ export class ModelProperty{
     propertyName():string{
         return camelCase(this.name);
     }
+
+    description():string{
+        if(this.info['description']){
+            return this.info['description'];
+        }
+
+        return "";
+    }
 }

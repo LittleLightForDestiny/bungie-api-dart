@@ -1,9 +1,23 @@
+
+/*  */
 class CoreSetting{
+	
+	/*  */
 	String identifier;
+	
+	/*  */
 	bool isDefault;
+	
+	/*  */
 	String displayName;
+	
+	/*  */
 	String summary;
+	
+	/*  */
 	String imagePath;
+	
+	/*  */
 	List<CoreSetting> childSettings;
 	CoreSetting(
 		this.identifier,

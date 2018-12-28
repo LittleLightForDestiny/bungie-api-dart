@@ -7,7 +7,7 @@ import '../responses/save_message_result_response.dart';
 import '../responses/celist_of_forum_recruitment_detail_response.dart';
 class Forum{
     
-    //Get topics from any forum.
+    /* Get topics from any forum. */
     static Future<PostSearchResponseResponse> getTopicsPaged (
         HttpClient client,
         int categoryFilter,
@@ -29,7 +29,7 @@ class Forum{
         });
     }
     
-    //Gets a listing of all topics marked as part of the core group.
+    /* Gets a listing of all topics marked as part of the core group. */
     static Future<PostSearchResponseResponse> getCoreTopicsPaged (
         HttpClient client,
         int categoryFilter,
@@ -47,7 +47,7 @@ class Forum{
         });
     }
     
-    //Returns a thread of posts at the given parent, optionally returning replies to those posts as well as the original parent.
+    /* Returns a thread of posts at the given parent, optionally returning replies to those posts as well as the original parent. */
     static Future<PostSearchResponseResponse> getPostsThreadedPaged (
         HttpClient client,
         bool getParentPost,
@@ -68,7 +68,7 @@ class Forum{
         });
     }
     
-    //Returns a thread of posts starting at the topicId of the input childPostId, optionally returning replies to those posts as well as the original parent.
+    /* Returns a thread of posts starting at the topicId of the input childPostId, optionally returning replies to those posts as well as the original parent. */
     static Future<PostSearchResponseResponse> getPostsThreadedPagedFromChild (
         HttpClient client,
         String childPostId,
@@ -88,7 +88,7 @@ class Forum{
         });
     }
     
-    //Returns the post specified and its immediate parent.
+    /* Returns the post specified and its immediate parent. */
     static Future<PostSearchResponseResponse> getPostAndParent (
         HttpClient client,
         String childPostId,
@@ -103,7 +103,7 @@ class Forum{
         });
     }
     
-    //Returns the post specified and its immediate parent of posts that are awaiting approval.
+    /* Returns the post specified and its immediate parent of posts that are awaiting approval. */
     static Future<PostSearchResponseResponse> getPostAndParentAwaitingApproval (
         HttpClient client,
         String childPostId,
@@ -118,7 +118,7 @@ class Forum{
         });
     }
     
-    //Gets the post Id for the given content item&#39;s comments, if it exists.
+    /* Gets the post Id for the given content item's comments, if it exists. */
     static Future<int64Response> getTopicForContent (
         HttpClient client,
         String contentId,
@@ -131,7 +131,7 @@ class Forum{
         });
     }
     
-    //Gets tag suggestions based on partial text entry, matching them with other tags previously used in the forums.
+    /* Gets tag suggestions based on partial text entry, matching them with other tags previously used in the forums. */
     static Future<ListOfTagResponseResponse> getForumTagSuggestions (
         HttpClient client,
         String partialtag,
@@ -145,7 +145,7 @@ class Forum{
         });
     }
     
-    //Gets the specified forum poll.
+    /* Gets the specified forum poll. */
     static Future<PostSearchResponseResponse> getPoll (
         HttpClient client,
         String topicId,
@@ -158,7 +158,7 @@ class Forum{
         });
     }
     
-    //Allows a user to slot themselves into a recruitment thread fireteam slot. Returns the new state of the fireteam.
+    /* Allows a user to slot themselves into a recruitment thread fireteam slot. Returns the new state of the fireteam. */
     static Future<ForumRecruitmentDetailResponse> joinFireteamThread (
         HttpClient client,
         String topicId,
@@ -171,7 +171,7 @@ class Forum{
         });
     }
     
-    //Allows a user to remove themselves from a recruitment thread fireteam slot. Returns the new state of the fireteam.
+    /* Allows a user to remove themselves from a recruitment thread fireteam slot. Returns the new state of the fireteam. */
     static Future<ForumRecruitmentDetailResponse> leaveFireteamThread (
         HttpClient client,
         String topicId,
@@ -184,7 +184,7 @@ class Forum{
         });
     }
     
-    //Allows a recruitment thread owner to kick a join user from the fireteam. Returns the new state of the fireteam.
+    /* Allows a recruitment thread owner to kick a join user from the fireteam. Returns the new state of the fireteam. */
     static Future<ForumRecruitmentDetailResponse> kickBanFireteamApplicant (
         HttpClient client,
         String targetMembershipId,
@@ -198,7 +198,7 @@ class Forum{
         });
     }
     
-    //Allows the owner of a fireteam thread to approve all joined members and start a private message conversation with them.
+    /* Allows the owner of a fireteam thread to approve all joined members and start a private message conversation with them. */
     static Future<SaveMessageResultResponse> approveFireteamThread (
         HttpClient client,
         String topicId,
@@ -211,7 +211,7 @@ class Forum{
         });
     }
     
-    //Allows the caller to get a list of to 25 recruitment thread summary information objects.
+    /* Allows the caller to get a list of to 25 recruitment thread summary information objects. */
     static Future<CEListOfForumRecruitmentDetailResponse> getRecruitmentThreadSummaries (
         HttpClient client,
         List<String> body

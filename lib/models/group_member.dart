@@ -1,10 +1,24 @@
 import 'user_info_card.dart';
+
+/*  */
 class GroupMember{
+	
+	/*  */
 	int memberType;
+	
+	/*  */
 	bool isOnline;
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	UserInfoCard destinyUserInfo;
+	
+	/*  */
 	UserInfoCard bungieNetUserInfo;
+	
+	/*  */
 	String joinDate;
 	GroupMember(
 		this.memberType,

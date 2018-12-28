@@ -22,6 +22,10 @@ export class ModelClass{
         return props as any as ModelProperty[];
     }
 
+    description(){
+        return this.data.description;
+    }
+
     imports(){
         let filename = camelcaseToUnderscore(this.className);
         let imports = chain(this.data.properties)

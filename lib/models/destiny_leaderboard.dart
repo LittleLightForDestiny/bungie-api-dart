@@ -1,6 +1,12 @@
 import 'destiny_leaderboard_entry.dart';
+
+/*  */
 class DestinyLeaderboard{
+	
+	/*  */
 	String statId;
+	
+	/*  */
 	List<DestinyLeaderboardEntry> entries;
 	DestinyLeaderboard(
 		this.statId,

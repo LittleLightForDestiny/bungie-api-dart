@@ -1,18 +1,48 @@
 import 'destiny_display_properties_definition.dart';
+
+/* A specific "spot" referred to by a location. Only one of these can be active at a time for a given Location. */
 class DestinyLocationReleaseDefinition{
+	
+	/* Sadly, these don't appear to be populated anymore (ever?) */
 	DestinyDisplayPropertiesDefinition displayProperties;
+	
+	/*  */
 	String smallTransparentIcon;
+	
+	/*  */
 	String mapIcon;
+	
+	/*  */
 	String largeTransparentIcon;
+	
+	/* If we had map information, this spawnPoint would be interesting. But sadly, we don't have that info. */
 	int spawnPoint;
+	
+	/* The Destination being pointed to by this location. */
 	int destinationHash;
+	
+	/* The Activity being pointed to by this location. */
 	int activityHash;
+	
+	/* The Activity Graph being pointed to by this location. */
 	int activityGraphHash;
+	
+	/* The Activity Graph Node being pointed to by this location. (Remember that Activity Graph Node hashes are only unique within an Activity Graph: so use the combination to find the node being spoken of) */
 	int activityGraphNodeHash;
+	
+	/* The Activity Bubble within the Destination. Look this up in the DestinyDestinationDefinition's bubbles and bubbleSettings properties. */
 	int activityBubbleName;
+	
+	/* If we had map information, this would tell us something cool about the path this location wants you to take. I wish we had map information. */
 	int activityPathBundle;
+	
+	/* If we had map information, this would tell us about path information related to destination on the map. Sad. Maybe you can do something cool with it. Go to town man. */
 	int activityPathDestination;
+	
+	/* The type of Nav Point that this represents. See the enumeration for more info. */
 	int navPointType;
+	
+	/* Looks like it should be the position on the map, but sadly it does not look populated... yet? */
 	List<int> worldPosition;
 	DestinyLocationReleaseDefinition(
 		this.displayProperties,

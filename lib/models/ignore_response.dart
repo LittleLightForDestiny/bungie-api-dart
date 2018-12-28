@@ -1,5 +1,11 @@
+
+/*  */
 class IgnoreResponse{
+	
+	/*  */
 	bool isIgnored;
+	
+	/*  */
 	int ignoreFlags;
 	IgnoreResponse(
 		this.isIgnored,

@@ -1,18 +1,48 @@
 import 'ignore_response.dart';
+
+/*  */
 class PostResponse{
+	
+	/*  */
 	String lastReplyTimestamp;
+	
+	/*  */
 	bool isPinned;
+	
+	/*  */
 	int urlMediaType;
+	
+	/*  */
 	String thumbnail;
+	
+	/*  */
 	int popularity;
+	
+	/*  */
 	bool isActive;
+	
+	/*  */
 	bool isAnnouncement;
+	
+	/*  */
 	int userRating;
+	
+	/*  */
 	bool userHasRated;
+	
+	/*  */
 	bool userHasMutedPost;
+	
+	/*  */
 	String latestReplyPostId;
+	
+	/*  */
 	String latestReplyAuthorId;
+	
+	/*  */
 	IgnoreResponse ignoreStatus;
+	
+	/*  */
 	String locale;
 	PostResponse(
 		this.lastReplyTimestamp,

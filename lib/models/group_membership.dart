@@ -1,7 +1,13 @@
 import 'group_member.dart';
 import 'group_v2.dart';
+
+/*  */
 class GroupMembership{
+	
+	/*  */
 	GroupMember member;
+	
+	/*  */
 	GroupV2 group;
 	GroupMembership(
 		this.member,

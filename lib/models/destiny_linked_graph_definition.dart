@@ -1,11 +1,25 @@
 import 'destiny_unlock_expression_definition.dart';
 import 'destiny_linked_graph_entry_definition.dart';
+
+/* This describes links between the current graph and others, as well as when that link is relevant. */
 class DestinyLinkedGraphDefinition{
+	
+	/*  */
 	String description;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	DestinyUnlockExpressionDefinition unlockExpression;
+	
+	/*  */
 	int linkedGraphId;
+	
+	/*  */
 	List<DestinyLinkedGraphEntryDefinition> linkedGraphs;
+	
+	/*  */
 	String overview;
 	DestinyLinkedGraphDefinition(
 		this.description,

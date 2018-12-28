@@ -1,5 +1,11 @@
+
+/*  */
 class DestinyParentItemOverride{
+	
+	/*  */
 	List<String> additionalEquipRequirementsDisplayStrings;
+	
+	/*  */
 	String pipIcon;
 	DestinyParentItemOverride(
 		this.additionalEquipRequirementsDisplayStrings,

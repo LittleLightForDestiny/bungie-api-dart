@@ -1,6 +1,12 @@
 import 'destiny_vendor_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfuint32AndDestinyVendorComponent{
+	
+	/*  */
 	Map<String, DestinyVendorComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyVendorComponent(
 		this.data,

@@ -1,6 +1,12 @@
 import 'datapoint.dart';
+
+/*  */
 class Series{
+	
+	/* Collection of samples with time and value. */
 	List<Datapoint> datapoints;
+	
+	/* Target to which to datapoints apply. */
 	String target;
 	Series(
 		this.datapoints,

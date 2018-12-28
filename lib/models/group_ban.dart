@@ -1,12 +1,30 @@
 import 'user_info_card.dart';
+
+/*  */
 class GroupBan{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	UserInfoCard lastModifiedBy;
+	
+	/*  */
 	UserInfoCard createdBy;
+	
+	/*  */
 	String dateBanned;
+	
+	/*  */
 	String dateExpires;
+	
+	/*  */
 	String comment;
+	
+	/*  */
 	UserInfoCard bungieNetUserInfo;
+	
+	/*  */
 	UserInfoCard destinyUserInfo;
 	GroupBan(
 		this.groupId,

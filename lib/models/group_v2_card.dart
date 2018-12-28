@@ -1,17 +1,45 @@
 import 'group_v2_clan_info.dart';
+
+/* A small infocard of group information, usually used for when a list of groups are returned */
 class GroupV2Card{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	int groupType;
+	
+	/*  */
 	String creationDate;
+	
+	/*  */
 	String about;
+	
+	/*  */
 	String motto;
+	
+	/*  */
 	int memberCount;
+	
+	/*  */
 	String locale;
+	
+	/*  */
 	int membershipOption;
+	
+	/*  */
 	int capabilities;
+	
+	/*  */
 	GroupV2ClanInfo clanInfo;
+	
+	/*  */
 	String avatarPath;
+	
+	/*  */
 	String theme;
 	GroupV2Card(
 		this.groupId,

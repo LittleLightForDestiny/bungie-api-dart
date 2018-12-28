@@ -1,6 +1,12 @@
 import 'ignore_response.dart';
+
+/*  */
 class TagResponse{
+	
+	/*  */
 	String tagText;
+	
+	/*  */
 	IgnoreResponse ignoreStatus;
 	TagResponse(
 		this.tagText,

@@ -1,24 +1,62 @@
 import 'core_system.dart';
 import 'core_setting.dart';
 import 'destiny2_core_settings.dart';
+
+/*  */
 class CoreSettingsConfiguration{
+	
+	/*  */
 	Map<String, CoreSystem> systems;
+	
+	/*  */
 	List<CoreSetting> ignoreReasons;
+	
+	/*  */
 	List<CoreSetting> forumCategories;
+	
+	/*  */
 	List<CoreSetting> groupAvatars;
+	
+	/*  */
 	List<CoreSetting> destinyMembershipTypes;
+	
+	/*  */
 	List<CoreSetting> recruitmentPlatformTags;
+	
+	/*  */
 	List<CoreSetting> recruitmentMiscTags;
+	
+	/*  */
 	List<CoreSetting> recruitmentActivities;
+	
+	/*  */
 	List<CoreSetting> userContentLocales;
+	
+	/*  */
 	List<CoreSetting> systemContentLocales;
+	
+	/*  */
 	List<CoreSetting> clanBannerDecals;
+	
+	/*  */
 	List<CoreSetting> clanBannerDecalColors;
+	
+	/*  */
 	List<CoreSetting> clanBannerGonfalons;
+	
+	/*  */
 	List<CoreSetting> clanBannerGonfalonColors;
+	
+	/*  */
 	List<CoreSetting> clanBannerGonfalonDetails;
+	
+	/*  */
 	List<CoreSetting> clanBannerGonfalonDetailColors;
+	
+	/*  */
 	List<CoreSetting> clanBannerStandards;
+	
+	/*  */
 	Destiny2CoreSettings destiny2CoreSettings;
 	CoreSettingsConfiguration(
 		this.systems,

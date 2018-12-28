@@ -5,19 +5,50 @@ import 'tag_response.dart';
 import 'poll_response.dart';
 import 'forum_recruitment_detail.dart';
 import 'paged_query.dart';
+
+/*  */
 class PostSearchResponse{
+	
+	/*  */
 	List<PostResponse> relatedPosts;
+	
+	/*  */
 	List<GeneralUser> authors;
+	
+	/*  */
 	List<GroupResponse> groups;
+	
+	/*  */
 	List<TagResponse> searchedTags;
+	
+	/*  */
 	List<PollResponse> polls;
+	
+	/*  */
 	List<ForumRecruitmentDetail> recruitmentDetails;
+	
+	/*  */
 	int availablePages;
+	
+	/*  */
 	List<PostResponse> results;
+	
+	/*  */
 	int totalResults;
+	
+	/*  */
 	bool hasMore;
+	
+	/*  */
 	PagedQuery query;
+	
+	/*  */
 	String replacementContinuationToken;
+	
+	/* If useTotalResults is true, then totalResults represents an accurate count.
+If False, it does not, and may be estimated/only the size of the current page.
+Either way, you should probably always only trust hasMore.
+This is a long-held historical throwback to when we used to do paging with known total results. Those queries toasted our database, and we were left to hastily alter our endpoints and create backward- compatible shims, of which useTotalResults is one. */
 	bool useTotalResults;
 	PostSearchResponse(
 		this.relatedPosts,

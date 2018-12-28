@@ -1,4 +1,8 @@
+
+/*  */
 class DestinyPresentationNodeRecordChildEntry{
+	
+	/*  */
 	int recordHash;
 	DestinyPresentationNodeRecordChildEntry(
 		this.recordHash,

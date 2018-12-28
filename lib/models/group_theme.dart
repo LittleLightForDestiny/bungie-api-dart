@@ -1,6 +1,14 @@
+
+/*  */
 class GroupTheme{
+	
+	/*  */
 	String name;
+	
+	/*  */
 	String folder;
+	
+	/*  */
 	String description;
 	GroupTheme(
 		this.name,

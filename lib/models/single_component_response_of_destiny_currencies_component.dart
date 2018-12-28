@@ -1,6 +1,12 @@
 import 'destiny_currencies_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyCurrenciesComponent{
+	
+	/*  */
 	DestinyCurrenciesComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyCurrenciesComponent(
 		this.data,

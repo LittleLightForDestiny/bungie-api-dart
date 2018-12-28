@@ -1,4 +1,8 @@
+
+/*  */
 class DestinyCollectibleComponent{
+	
+	/*  */
 	int state;
 	DestinyCollectibleComponent(
 		this.state,

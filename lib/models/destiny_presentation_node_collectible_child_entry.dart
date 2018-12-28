@@ -1,4 +1,8 @@
+
+/*  */
 class DestinyPresentationNodeCollectibleChildEntry{
+	
+	/*  */
 	int collectibleHash;
 	DestinyPresentationNodeCollectibleChildEntry(
 		this.collectibleHash,

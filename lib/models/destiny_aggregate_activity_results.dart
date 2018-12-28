@@ -1,5 +1,9 @@
 import 'destiny_aggregate_activity_stats.dart';
+
+/*  */
 class DestinyAggregateActivityResults{
+	
+	/* List of all activities the player has participated in. */
 	List<DestinyAggregateActivityStats> activities;
 	DestinyAggregateActivityResults(
 		this.activities,

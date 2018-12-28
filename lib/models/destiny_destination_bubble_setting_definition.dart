@@ -1,5 +1,10 @@
 import 'destiny_display_properties_definition.dart';
+
+/* Human readable data about the bubble. Combine with DestinyBubbleDefinition - see DestinyDestinationDefinition.bubbleSettings for more information.
+DEPRECATED - Just use bubbles. */
 class DestinyDestinationBubbleSettingDefinition{
+	
+	/*  */
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyDestinationBubbleSettingDefinition(
 		this.displayProperties,

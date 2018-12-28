@@ -1,8 +1,20 @@
+
+/*  */
 class GroupOptionalConversation{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	String conversationId;
+	
+	/*  */
 	bool chatEnabled;
+	
+	/*  */
 	String chatName;
+	
+	/*  */
 	int chatSecurity;
 	GroupOptionalConversation(
 		this.groupId,

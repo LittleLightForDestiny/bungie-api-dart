@@ -1,7 +1,17 @@
+
+/* The localized properties of the requirementsDisplay, allowing information about the requirement or item being featured to be seen. */
 class DestinyVendorRequirementDisplayEntryDefinition{
+	
+	/*  */
 	String icon;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	String source;
+	
+	/*  */
 	String type;
 	DestinyVendorRequirementDisplayEntryDefinition(
 		this.icon,

@@ -1,6 +1,12 @@
 import 'destiny_currencies_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
+	
+	/*  */
 	Map<String, DestinyCurrenciesComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
 		this.data,

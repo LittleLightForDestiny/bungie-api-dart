@@ -1,6 +1,12 @@
 import 'destiny_collectibles_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyCollectiblesComponent{
+	
+	/*  */
 	DestinyCollectiblesComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyCollectiblesComponent(
 		this.data,

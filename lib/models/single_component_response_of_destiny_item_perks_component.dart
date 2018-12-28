@@ -1,6 +1,12 @@
 import 'destiny_item_perks_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyItemPerksComponent{
+	
+	/*  */
 	DestinyItemPerksComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemPerksComponent(
 		this.data,

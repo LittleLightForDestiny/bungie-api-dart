@@ -1,6 +1,12 @@
 import 'destiny_historical_stats_value.dart';
+
+/*  */
 class DestinyHistoricalWeaponStats{
+	
+	/* The hash ID of the item definition that describes the weapon. */
 	int referenceId;
+	
+	/* Collection of stats for the period. */
 	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyHistoricalWeaponStats(
 		this.referenceId,

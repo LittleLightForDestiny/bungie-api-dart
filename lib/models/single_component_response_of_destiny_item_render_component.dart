@@ -1,6 +1,12 @@
 import 'destiny_item_render_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyItemRenderComponent{
+	
+	/*  */
 	DestinyItemRenderComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemRenderComponent(
 		this.data,

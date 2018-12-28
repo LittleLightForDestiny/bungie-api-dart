@@ -1,6 +1,12 @@
 import 'destiny_vendor_categories_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyVendorCategoriesComponent{
+	
+	/*  */
 	DestinyVendorCategoriesComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyVendorCategoriesComponent(
 		this.data,

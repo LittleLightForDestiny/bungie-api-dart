@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyRecordTitleBlock{
+	
+	/*  */
 	bool hasTitle;
+	
+	/*  */
 	Map<String, String> titlesByGender;
+	
+	/* For those who prefer to use the definitions. */
 	Map<String, String> titlesByGenderHash;
 	DestinyRecordTitleBlock(
 		this.hasTitle,

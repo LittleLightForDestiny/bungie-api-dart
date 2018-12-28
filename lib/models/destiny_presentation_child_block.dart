@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyPresentationChildBlock{
+	
+	/*  */
 	int presentationNodeType;
+	
+	/*  */
 	List<int> parentPresentationNodeHashes;
+	
+	/*  */
 	int displayStyle;
 	DestinyPresentationChildBlock(
 		this.presentationNodeType,

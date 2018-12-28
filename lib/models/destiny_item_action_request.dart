@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyItemActionRequest{
+	
+	/*  */
 	String itemId;
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyItemActionRequest(
 		this.itemId,

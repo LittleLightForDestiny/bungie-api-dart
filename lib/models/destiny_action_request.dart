@@ -1,4 +1,8 @@
+
+/*  */
 class DestinyActionRequest{
+	
+	/*  */
 	int membershipType;
 	DestinyActionRequest(
 		this.membershipType,

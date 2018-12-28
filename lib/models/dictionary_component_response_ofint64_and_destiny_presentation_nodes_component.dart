@@ -1,6 +1,12 @@
 import 'destiny_presentation_nodes_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyPresentationNodesComponent{
+	
+	/*  */
 	Map<String, DestinyPresentationNodesComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyPresentationNodesComponent(
 		this.data,

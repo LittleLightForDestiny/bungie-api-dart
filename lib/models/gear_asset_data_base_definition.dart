@@ -1,5 +1,11 @@
+
+/*  */
 class GearAssetDataBaseDefinition{
+	
+	/*  */
 	int version;
+	
+	/*  */
 	String path;
 	GearAssetDataBaseDefinition(
 		this.version,

@@ -1,6 +1,12 @@
 import 'destiny_character_activities_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyCharacterActivitiesComponent{
+	
+	/*  */
 	DestinyCharacterActivitiesComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterActivitiesComponent(
 		this.data,

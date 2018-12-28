@@ -1,6 +1,12 @@
 import 'destiny_objective_progress.dart';
+
+/*  */
 class DestinyRecordComponent{
+	
+	/*  */
 	int state;
+	
+	/*  */
 	List<DestinyObjectiveProgress> objectives;
 	DestinyRecordComponent(
 		this.state,

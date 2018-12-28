@@ -1,6 +1,12 @@
 import 'destiny_public_activity_status.dart';
+
+/*  */
 class TrendingEntryDestinyActivity{
+	
+	/*  */
 	int activityHash;
+	
+	/*  */
 	DestinyPublicActivityStatus status;
 	TrendingEntryDestinyActivity(
 		this.activityHash,

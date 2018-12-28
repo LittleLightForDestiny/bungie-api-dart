@@ -1,6 +1,14 @@
+
+/*  */
 class DestinyPositionDefinition{
+	
+	/*  */
 	int x;
+	
+	/*  */
 	int y;
+	
+	/*  */
 	int z;
 	DestinyPositionDefinition(
 		this.x,

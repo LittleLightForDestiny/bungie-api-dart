@@ -1,6 +1,12 @@
 import 'destiny_record_component.dart';
+
+/*  */
 class DestinyCharacterRecordsComponent{
+	
+	/*  */
 	List<int> featuredRecordHashes;
+	
+	/*  */
 	Map<String, DestinyRecordComponent> records;
 	DestinyCharacterRecordsComponent(
 		this.featuredRecordHashes,

@@ -1,5 +1,9 @@
 import 'destiny_record_component.dart';
+
+/*  */
 class DestinyRecordsComponent{
+	
+	/*  */
 	Map<String, DestinyRecordComponent> records;
 	DestinyRecordsComponent(
 		this.records,

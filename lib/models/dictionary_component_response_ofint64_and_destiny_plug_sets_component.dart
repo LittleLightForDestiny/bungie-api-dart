@@ -1,6 +1,12 @@
 import 'destiny_plug_sets_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent{
+	
+	/*  */
 	Map<String, DestinyPlugSetsComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent(
 		this.data,

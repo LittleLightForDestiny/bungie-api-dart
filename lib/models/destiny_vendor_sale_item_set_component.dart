@@ -1,5 +1,9 @@
 import 'destiny_vendor_sale_item_component.dart';
+
+/* The collection of all items currently being sold by a specific Vendor and visible to the given character for which the request was made. */
 class DestinyVendorSaleItemSetComponent{
+	
+	/* The items being sold by this vendor, keyed by the vendorItemIndex of the item being sold. (because showing sale items depends on the ordering dictated by the categories being shown - see DestinyVendorCategoryComponent - this is a dictionary for quick lookup capability.) */
 	Map<String, DestinyVendorSaleItemComponent> saleItems;
 	DestinyVendorSaleItemSetComponent(
 		this.saleItems,

@@ -1,4 +1,8 @@
+
+/*  */
 class StreamInfo{
+	
+	/*  */
 	String channelName;
 	StreamInfo(
 		this.channelName,

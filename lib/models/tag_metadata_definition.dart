@@ -1,10 +1,24 @@
 import 'tag_metadata_item.dart';
+
+/*  */
 class TagMetadataDefinition{
+	
+	/*  */
 	String description;
+	
+	/*  */
 	int order;
+	
+	/*  */
 	List<TagMetadataItem> items;
+	
+	/*  */
 	String datatype;
+	
+	/*  */
 	String name;
+	
+	/*  */
 	bool isRequired;
 	TagMetadataDefinition(
 		this.description,

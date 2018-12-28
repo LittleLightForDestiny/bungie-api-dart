@@ -1,12 +1,28 @@
 import 'dye_reference.dart';
 import 'destiny_gear_art_arrangement_reference.dart';
+
+/* This Block defines the rendering data associated with the item, if any. */
 class DestinyItemTranslationBlockDefinition{
+	
+	/*  */
 	String weaponPatternIdentifier;
+	
+	/*  */
 	int weaponPatternHash;
+	
+	/*  */
 	List<DyeReference> defaultDyes;
+	
+	/*  */
 	List<DyeReference> lockedDyes;
+	
+	/*  */
 	List<DyeReference> customDyes;
+	
+	/*  */
 	List<DestinyGearArtArrangementReference> arrangements;
+	
+	/*  */
 	bool hasGeometry;
 	DestinyItemTranslationBlockDefinition(
 		this.weaponPatternIdentifier,

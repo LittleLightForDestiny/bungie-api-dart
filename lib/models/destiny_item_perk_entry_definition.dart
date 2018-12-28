@@ -1,6 +1,14 @@
+
+/* An intrinsic perk on an item, and the requirements for it to be activated. */
 class DestinyItemPerkEntryDefinition{
+	
+	/* If this perk is not active, this is the string to show for why it's not providing its benefits. */
 	String requirementDisplayString;
+	
+	/* A hash identifier for the DestinySandboxPerkDefinition being provided on the item. */
 	int perkHash;
+	
+	/* Indicates whether this perk should be shown, or if it should be shown disabled. */
 	int perkVisibility;
 	DestinyItemPerkEntryDefinition(
 		this.requirementDisplayString,

@@ -1,5 +1,11 @@
+
+/*  */
 class DestinyGearArtArrangementReference{
+	
+	/*  */
 	int classHash;
+	
+	/*  */
 	int artArrangementHash;
 	DestinyGearArtArrangementReference(
 		this.classHash,

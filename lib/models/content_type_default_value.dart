@@ -1,6 +1,14 @@
+
+/*  */
 class ContentTypeDefaultValue{
+	
+	/*  */
 	String whenClause;
+	
+	/*  */
 	String whenValue;
+	
+	/*  */
 	String defaultValue;
 	ContentTypeDefaultValue(
 		this.whenClause,

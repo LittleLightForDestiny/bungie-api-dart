@@ -1,7 +1,17 @@
+
+/*  */
 class DestinyItemStateRequest{
+	
+	/*  */
 	bool state;
+	
+	/*  */
 	String itemId;
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyItemStateRequest(
 		this.state,

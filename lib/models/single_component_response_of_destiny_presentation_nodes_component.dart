@@ -1,6 +1,12 @@
 import 'destiny_presentation_nodes_component.dart';
+
+/*  */
 class SingleComponentResponseOfDestinyPresentationNodesComponent{
+	
+	/*  */
 	DestinyPresentationNodesComponent data;
+	
+	/*  */
 	int privacy;
 	SingleComponentResponseOfDestinyPresentationNodesComponent(
 		this.data,

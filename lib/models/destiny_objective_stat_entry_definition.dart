@@ -1,6 +1,12 @@
 import 'destiny_item_investment_stat_definition.dart';
+
+/* Defines the conditions under which stat modifications will be applied to a Character while participating in an objective. */
 class DestinyObjectiveStatEntryDefinition{
+	
+	/* The stat being modified, and the value used. */
 	DestinyItemInvestmentStatDefinition stat;
+	
+	/* Whether it will be applied as long as the objective is active, when it's completed, or until it's completed. */
 	int style;
 	DestinyObjectiveStatEntryDefinition(
 		this.stat,

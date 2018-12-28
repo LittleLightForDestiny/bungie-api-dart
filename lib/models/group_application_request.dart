@@ -1,4 +1,8 @@
+
+/*  */
 class GroupApplicationRequest{
+	
+	/*  */
 	String message;
 	GroupApplicationRequest(
 		this.message,

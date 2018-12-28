@@ -1,26 +1,72 @@
 import 'user_info_card.dart';
+
+/*  */
 class CommunityLiveStatus{
+	
+	/*  */
 	String dateStatusUpdated;
+	
+	/*  */
 	String url;
+	
+	/*  */
 	String partnershipIdentifier;
+	
+	/*  */
 	int partnershipType;
+	
+	/*  */
 	String thumbnail;
+	
+	/*  */
 	String thumbnailSmall;
+	
+	/*  */
 	String thumbnailLarge;
+	
+	/*  */
 	String destinyCharacterId;
+	
+	/*  */
 	UserInfoCard userInfo;
+	
+	/*  */
 	int currentActivityHash;
+	
+	/*  */
 	String dateLastPlayed;
+	
+	/*  */
 	String dateStreamStarted;
+	
+	/*  */
 	String locale;
+	
+	/*  */
 	int currentViewers;
+	
+	/*  */
 	int followers;
+	
+	/*  */
 	int overallViewers;
+	
+	/*  */
 	bool isFeatured;
+	
+	/*  */
 	String title;
+	
+	/*  */
 	int activityModeHash;
+	
+	/*  */
 	String dateFeatured;
+	
+	/*  */
 	double trendingValue;
+	
+	/*  */
 	bool isSubscribable;
 	CommunityLiveStatus(
 		this.dateStatusUpdated,

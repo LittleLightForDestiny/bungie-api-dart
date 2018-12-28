@@ -6,14 +6,32 @@ import 'dictionary_component_response_ofint64_and_destiny_item_sockets_component
 import 'dictionary_component_response_ofint64_and_destiny_item_talent_grid_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_item_plug_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
+
+/*  */
 class DestinyItemComponentSetOfint64{
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent instances;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent perks;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent renderData;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemStatsComponent stats;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent sockets;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent talentGrids;
+	
+	/*  */
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
+	
+	/*  */
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
 	DestinyItemComponentSetOfint64(
 		this.instances,

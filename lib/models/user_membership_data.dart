@@ -1,7 +1,13 @@
 import 'user_info_card.dart';
 import 'general_user.dart';
+
+/*  */
 class UserMembershipData{
+	
+	/* this allows you to see destiny memberships that are visible and linked to this account (regardless of whether or not they have characters on the world server) */
 	List<UserInfoCard> destinyMemberships;
+	
+	/*  */
 	GeneralUser bungieNetUser;
 	UserMembershipData(
 		this.destinyMemberships,

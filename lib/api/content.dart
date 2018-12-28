@@ -4,7 +4,7 @@ import '../responses/content_item_public_contract_response.dart';
 import '../responses/search_result_of_content_item_public_contract_response.dart';
 class Content{
     
-    //Gets an object describing a particular variant of content.
+    /* Gets an object describing a particular variant of content. */
     static Future<ContentTypeDescriptionResponse> getContentType (
         HttpClient client,
         String type,
@@ -17,7 +17,7 @@ class Content{
         });
     }
     
-    //Returns a content item referenced by id
+    /* Returns a content item referenced by id */
     static Future<ContentItemPublicContractResponse> getContentById (
         HttpClient client,
         bool head,
@@ -33,7 +33,7 @@ class Content{
         });
     }
     
-    //Returns the newest item that matches a given tag and Content Type.
+    /* Returns the newest item that matches a given tag and Content Type. */
     static Future<ContentItemPublicContractResponse> getContentByTagAndType (
         HttpClient client,
         bool head,
@@ -50,7 +50,7 @@ class Content{
         });
     }
     
-    //Gets content based on querystring information passed in. Provides basic search and text search capabilities.
+    /* Gets content based on querystring information passed in. Provides basic search and text search capabilities. */
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentWithText (
         HttpClient client,
         String ctype,
@@ -75,7 +75,7 @@ class Content{
         });
     }
     
-    //Searches for Content Items that match the given Tag and Content Type.
+    /* Searches for Content Items that match the given Tag and Content Type. */
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentByTagAndType (
         HttpClient client,
         int currentpage,

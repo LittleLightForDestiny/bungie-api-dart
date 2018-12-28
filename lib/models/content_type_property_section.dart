@@ -1,6 +1,14 @@
+
+/*  */
 class ContentTypePropertySection{
+	
+	/*  */
 	String name;
+	
+	/*  */
 	String readableName;
+	
+	/*  */
 	bool collapsed;
 	ContentTypePropertySection(
 		this.name,

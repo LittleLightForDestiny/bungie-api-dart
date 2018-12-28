@@ -1,6 +1,12 @@
 import 'destiny_display_properties_definition.dart';
+
+/* Basic identifying data about the bubble. Combine with DestinyDestinationBubbleSettingDefinition - see DestinyDestinationDefinition.bubbleSettings for more information. */
 class DestinyBubbleDefinition{
+	
+	/* The identifier for the bubble: only guaranteed to be unique within the Destination. */
 	int hash;
+	
+	/* The display properties of this bubble, so you don't have to look them up in a separate list anymore. */
 	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyBubbleDefinition(
 		this.hash,

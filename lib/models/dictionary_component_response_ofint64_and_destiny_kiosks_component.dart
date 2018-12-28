@@ -1,6 +1,12 @@
 import 'destiny_kiosks_component.dart';
+
+/*  */
 class DictionaryComponentResponseOfint64AndDestinyKiosksComponent{
+	
+	/*  */
 	Map<String, DestinyKiosksComponent> data;
+	
+	/*  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyKiosksComponent(
 		this.data,

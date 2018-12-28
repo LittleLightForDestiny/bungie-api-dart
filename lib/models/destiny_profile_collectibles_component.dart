@@ -1,7 +1,16 @@
 import 'destiny_collectible_component.dart';
+
+/*  */
 class DestinyProfileCollectiblesComponent{
+	
+	/* The list of collectibles determined by the game as having been "recently" acquired. */
 	List<int> recentCollectibleHashes;
+	
+	/* The list of collectibles determined by the game as having been "recently" acquired.
+The game client itself actually controls this data, so I personally question whether anyone will get much use out of this: because we can't edit this value through the API. But in case anyone finds it useful, here it is. */
 	List<int> newnessFlaggedCollectibleHashes;
+	
+	/*  */
 	Map<String, DestinyCollectibleComponent> collectibles;
 	DestinyProfileCollectiblesComponent(
 		this.recentCollectibleHashes,

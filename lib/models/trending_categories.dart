@@ -1,5 +1,9 @@
 import 'trending_category.dart';
+
+/*  */
 class TrendingCategories{
+	
+	/*  */
 	List<TrendingCategory> categories;
 	TrendingCategories(
 		this.categories,

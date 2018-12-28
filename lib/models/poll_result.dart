@@ -1,8 +1,20 @@
+
+/*  */
 class PollResult{
+	
+	/*  */
 	String answerText;
+	
+	/*  */
 	int answerSlot;
+	
+	/*  */
 	String lastVoteDate;
+	
+	/*  */
 	int votes;
+	
+	/*  */
 	bool requestingUserVoted;
 	PollResult(
 		this.answerText,

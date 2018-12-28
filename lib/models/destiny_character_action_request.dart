@@ -1,5 +1,11 @@
+
+/*  */
 class DestinyCharacterActionRequest{
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyCharacterActionRequest(
 		this.characterId,

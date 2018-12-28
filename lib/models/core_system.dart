@@ -1,5 +1,11 @@
+
+/*  */
 class CoreSystem{
+	
+	/*  */
 	bool enabled;
+	
+	/*  */
 	Map<String, String> parameters;
 	CoreSystem(
 		this.enabled,

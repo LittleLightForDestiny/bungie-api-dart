@@ -1,8 +1,18 @@
 import 'user_info_card.dart';
+
+/*  */
 class GroupUserBase{
+	
+	/*  */
 	String groupId;
+	
+	/*  */
 	UserInfoCard destinyUserInfo;
+	
+	/*  */
 	UserInfoCard bungieNetUserInfo;
+	
+	/*  */
 	String joinDate;
 	GroupUserBase(
 		this.groupId,

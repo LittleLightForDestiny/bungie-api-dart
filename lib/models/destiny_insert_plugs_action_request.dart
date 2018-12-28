@@ -1,9 +1,21 @@
 import 'destiny_insert_plugs_request_entry.dart';
+
+/*  */
 class DestinyInsertPlugsActionRequest{
+	
+	/* Action token provided by the AwaGetActionToken API call. */
 	String actionToken;
+	
+	/* The instance ID of the item having a plug inserted. Only instanced items can have sockets. */
 	String itemInstanceId;
+	
+	/* The plugs being inserted. */
 	DestinyInsertPlugsRequestEntry plug;
+	
+	/*  */
 	String characterId;
+	
+	/*  */
 	int membershipType;
 	DestinyInsertPlugsActionRequest(
 		this.actionToken,

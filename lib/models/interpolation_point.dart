@@ -1,5 +1,11 @@
+
+/*  */
 class InterpolationPoint{
+	
+	/*  */
 	int value;
+	
+	/*  */
 	int weight;
 	InterpolationPoint(
 		this.value,

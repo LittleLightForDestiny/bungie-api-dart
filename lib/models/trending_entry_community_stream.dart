@@ -1,7 +1,17 @@
+
+/*  */
 class TrendingEntryCommunityStream{
+	
+	/*  */
 	String image;
+	
+	/*  */
 	String title;
+	
+	/*  */
 	String partnershipIdentifier;
+	
+	/*  */
 	int partnershipType;
 	TrendingEntryCommunityStream(
 		this.image,

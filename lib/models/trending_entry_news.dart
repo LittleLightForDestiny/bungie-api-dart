@@ -1,5 +1,9 @@
 import 'content_item_public_contract.dart';
+
+/*  */
 class TrendingEntryNews{
+	
+	/*  */
 	ContentItemPublicContract article;
 	TrendingEntryNews(
 		this.article,
