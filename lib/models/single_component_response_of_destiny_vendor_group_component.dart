@@ -1,12 +1,12 @@
 import 'destiny_vendor_group_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyVendorGroupComponent{
 	
-	/*  */
+	/** This component returns references to all of the Vendors in the response, grouped by categorizations that Bungie has deemed to be interesting, in the order in which both the groups and the vendors within that group should be rendered. */
 	DestinyVendorGroupComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyVendorGroupComponent(
 		this.data,

@@ -1,20 +1,20 @@
 
-/* Information about matchmaking and party size for the activity. */
+/** Information about matchmaking and party size for the activity. */
 class DestinyActivityMatchmakingBlockDefinition{
 	
-	/* If TRUE, the activity is matchmade. Otherwise, it requires explicit forming of a party. */
+	/** If TRUE, the activity is matchmade. Otherwise, it requires explicit forming of a party. */
 	bool isMatchmade;
 	
-	/* The minimum # of people in the fireteam for the activity to launch. */
+	/** The minimum # of people in the fireteam for the activity to launch. */
 	int minParty;
 	
-	/* The maximum # of people allowed in a Fireteam. */
+	/** The maximum # of people allowed in a Fireteam. */
 	int maxParty;
 	
-	/* The maximum # of people allowed across all teams in the activity. */
+	/** The maximum # of people allowed across all teams in the activity. */
 	int maxPlayers;
 	
-	/* If true, you have to Solemnly Swear to be up to Nothing But Good(tm) to play. */
+	/** If true, you have to Solemnly Swear to be up to Nothing But Good(tm) to play. */
 	bool requiresGuardianOath;
 	DestinyActivityMatchmakingBlockDefinition(
 		this.isMatchmade,

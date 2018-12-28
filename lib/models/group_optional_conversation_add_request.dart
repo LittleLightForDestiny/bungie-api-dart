@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class GroupOptionalConversationAddRequest{
 	
-	/*  */
+	/**  */
 	String chatName;
 	
-	/*  */
+	/**  */
 	int chatSecurity;
 	GroupOptionalConversationAddRequest(
 		this.chatName,

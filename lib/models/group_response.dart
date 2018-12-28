@@ -2,31 +2,31 @@ import 'group_v2.dart';
 import 'group_member.dart';
 import 'group_potential_member.dart';
 
-/*  */
+/**  */
 class GroupResponse{
 	
-	/*  */
+	/**  */
 	GroupV2 detail;
 	
-	/*  */
+	/**  */
 	GroupMember founder;
 	
-	/*  */
+	/**  */
 	List<String> alliedIds;
 	
-	/*  */
+	/**  */
 	GroupV2 parentGroup;
 	
-	/*  */
+	/**  */
 	int allianceStatus;
 	
-	/*  */
+	/**  */
 	int groupJoinInviteCount;
 	
-	/* This property will be populated if the authenticated user is a member of the group. Note that because of account linking, a user can sometimes be part of a clan more than once. As such, this returns the highest member type available. */
+	/** This property will be populated if the authenticated user is a member of the group. Note that because of account linking, a user can sometimes be part of a clan more than once. As such, this returns the highest member type available. */
 	Map<String, GroupMember> currentUserMemberMap;
 	
-	/* This property will be populated if the authenticated user is an applicant or has an outstanding invitation to join. Note that because of account linking, a user can sometimes be part of a clan more than once. */
+	/** This property will be populated if the authenticated user is an applicant or has an outstanding invitation to join. Note that because of account linking, a user can sometimes be part of a clan more than once. */
 	Map<String, GroupPotentialMember> currentUserPotentialMemberMap;
 	GroupResponse(
 		this.detail,

@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyPresentationNodeChildEntry{
 	
-	/*  */
+	/**  */
 	int presentationNodeHash;
 	DestinyPresentationNodeChildEntry(
 		this.presentationNodeHash,

@@ -1,49 +1,49 @@
 import 'destiny_item_action_required_item_definition.dart';
 import 'destiny_progression_reward_definition.dart';
 
-/* If an item can have an action performed on it (like "Dismantle"), it will be defined here if you care. */
+/** If an item can have an action performed on it (like "Dismantle"), it will be defined here if you care. */
 class DestinyItemActionBlockDefinition{
 	
-	/* Localized text for the verb of the action being performed. */
+	/** Localized text for the verb of the action being performed. */
 	String verbName;
 	
-	/* Localized text describing the action being performed. */
+	/** Localized text describing the action being performed. */
 	String verbDescription;
 	
-	/* The content has this property, however it's not entirely clear how it is used. */
+	/** The content has this property, however it's not entirely clear how it is used. */
 	bool isPositive;
 	
-	/* If the action has an overlay screen associated with it, this is the name of that screen. Unfortunately, we cannot return the screen's data itself. */
+	/** If the action has an overlay screen associated with it, this is the name of that screen. Unfortunately, we cannot return the screen's data itself. */
 	String overlayScreenName;
 	
-	/* The icon associated with the overlay screen for the action, if any. */
+	/** The icon associated with the overlay screen for the action, if any. */
 	String overlayIcon;
 	
-	/* The number of seconds to delay before allowing this action to be performed again. */
+	/** The number of seconds to delay before allowing this action to be performed again. */
 	int requiredCooldownSeconds;
 	
-	/* If the action requires other items to exist or be destroyed, this is the list of those items and requirements. */
+	/** If the action requires other items to exist or be destroyed, this is the list of those items and requirements. */
 	List<DestinyItemActionRequiredItemDefinition> requiredItems;
 	
-	/* If performing this action earns you Progression, this is the list of progressions and values granted for those progressions by performing this action. */
+	/** If performing this action earns you Progression, this is the list of progressions and values granted for those progressions by performing this action. */
 	List<DestinyProgressionRewardDefinition> progressionRewards;
 	
-	/* The internal identifier for the action. */
+	/** The internal identifier for the action. */
 	String actionTypeLabel;
 	
-	/* Theoretically, an item could have a localized string for a hint about the location in which the action should be performed. In practice, no items yet have this property. */
+	/** Theoretically, an item could have a localized string for a hint about the location in which the action should be performed. In practice, no items yet have this property. */
 	String requiredLocation;
 	
-	/* The identifier hash for the Cooldown associated with this action. We have not pulled this data yet for you to have more data to use for cooldowns. */
+	/** The identifier hash for the Cooldown associated with this action. We have not pulled this data yet for you to have more data to use for cooldowns. */
 	int requiredCooldownHash;
 	
-	/* If true, the item is deleted when the action completes. */
+	/** If true, the item is deleted when the action completes. */
 	bool deleteOnAction;
 	
-	/* If true, the entire stack is deleted when the action completes. */
+	/** If true, the entire stack is deleted when the action completes. */
 	bool consumeEntireStack;
 	
-	/* If true, this action will be performed as soon as you earn this item. Some rewards work this way, providing you a single item to pick up from a reward-granting vendor in-game and then immediately consuming itself to provide you multiple items. */
+	/** If true, this action will be performed as soon as you earn this item. Some rewards work this way, providing you a single item to pick up from a reward-granting vendor in-game and then immediately consuming itself to provide you multiple items. */
 	bool useOnAcquire;
 	DestinyItemActionBlockDefinition(
 		this.verbName,

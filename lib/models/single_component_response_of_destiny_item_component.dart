@@ -1,12 +1,12 @@
 import 'destiny_item_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyItemComponent{
 	
-	/*  */
+	/** The base item component, filled with properties that are generally useful to know in any item request or that don't feel worthwhile to put in their own component. */
 	DestinyItemComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyItemComponent(
 		this.data,

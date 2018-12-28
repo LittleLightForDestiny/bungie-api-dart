@@ -1,12 +1,12 @@
 import 'destiny_item_perks_component.dart';
 
-/*  */
+/**  */
 class DictionaryComponentResponseOfint64AndDestinyItemPerksComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyItemPerksComponent> data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent(
 		this.data,

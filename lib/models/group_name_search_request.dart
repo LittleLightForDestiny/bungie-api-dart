@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class GroupNameSearchRequest{
 	
-	/*  */
+	/**  */
 	String groupName;
 	
-	/*  */
+	/**  */
 	int groupType;
 	GroupNameSearchRequest(
 		this.groupName,

@@ -1,53 +1,53 @@
 
-/*  */
+/**  */
 class GroupEditAction{
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String about;
 	
-	/*  */
+	/**  */
 	String motto;
 	
-	/*  */
+	/**  */
 	String theme;
 	
-	/*  */
+	/**  */
 	int avatarImageIndex;
 	
-	/*  */
+	/**  */
 	String tags;
 	
-	/*  */
+	/**  */
 	bool isPublic;
 	
-	/*  */
+	/**  */
 	int membershipOption;
 	
-	/*  */
+	/**  */
 	bool isPublicTopicAdminOnly;
 	
-	/*  */
+	/**  */
 	bool allowChat;
 	
-	/*  */
+	/**  */
 	int chatSecurity;
 	
-	/*  */
+	/**  */
 	String callsign;
 	
-	/*  */
+	/**  */
 	String locale;
 	
-	/*  */
+	/**  */
 	int homepage;
 	
-	/*  */
+	/**  */
 	bool enableInvitationMessagingForAdmins;
 	
-	/*  */
+	/**  */
 	int defaultPublicity;
 	GroupEditAction(
 		this.name,

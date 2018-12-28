@@ -1,9 +1,9 @@
 import 'content_item_public_contract.dart';
 
-/*  */
+/**  */
 class TrendingEntrySupportArticle{
 	
-	/*  */
+	/**  */
 	ContentItemPublicContract article;
 	TrendingEntrySupportArticle(
 		this.article,

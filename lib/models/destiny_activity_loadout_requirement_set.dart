@@ -1,9 +1,9 @@
 import 'destiny_activity_loadout_requirement.dart';
 
-/*  */
+/**  */
 class DestinyActivityLoadoutRequirementSet{
 	
-	/* The set of requirements that will be applied on the activity if this requirement set is active. */
+	/** The set of requirements that will be applied on the activity if this requirement set is active. */
 	List<DestinyActivityLoadoutRequirement> requirements;
 	DestinyActivityLoadoutRequirementSet(
 		this.requirements,

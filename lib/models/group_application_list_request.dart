@@ -1,12 +1,12 @@
 import 'user_membership.dart';
 
-/*  */
+/**  */
 class GroupApplicationListRequest{
 	
-	/*  */
+	/**  */
 	List<UserMembership> memberships;
 	
-	/*  */
+	/**  */
 	String message;
 	GroupApplicationListRequest(
 		this.memberships,

@@ -1,9 +1,9 @@
 import 'destiny_historical_stats_period_group.dart';
 
-/*  */
+/**  */
 class DestinyActivityHistoryResults{
 	
-	/* List of activities, the most recent activity first. */
+	/** List of activities, the most recent activity first. */
 	List<DestinyHistoricalStatsPeriodGroup> activities;
 	DestinyActivityHistoryResults(
 		this.activities,

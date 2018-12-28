@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class TrendingEntryDestinyItem{
 	
-	/*  */
+	/**  */
 	int itemHash;
 	TrendingEntryDestinyItem(
 		this.itemHash,

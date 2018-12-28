@@ -1,32 +1,32 @@
 
-/*  */
+/**  */
 class Destiny2CoreSettings{
 	
-	/*  */
+	/**  */
 	int collectionRootNode;
 	
-	/*  */
+	/**  */
 	int badgesRootNode;
 	
-	/*  */
+	/**  */
 	int recordsRootNode;
 	
-	/*  */
+	/**  */
 	int medalsRootNode;
 	
-	/*  */
+	/**  */
 	List<int> currentRankProgressionHashes;
 	
-	/*  */
+	/**  */
 	String undiscoveredCollectibleImage;
 	
-	/*  */
+	/**  */
 	String ammoTypeHeavyIcon;
 	
-	/*  */
+	/**  */
 	String ammoTypeSpecialIcon;
 	
-	/*  */
+	/**  */
 	String ammoTypePrimaryIcon;
 	Destiny2CoreSettings(
 		this.collectionRootNode,

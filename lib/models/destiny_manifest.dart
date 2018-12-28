@@ -1,27 +1,27 @@
 import 'gear_asset_data_base_definition.dart';
 
-/* DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform. */
+/** DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform. */
 class DestinyManifest{
 	
-	/*  */
+	/**  */
 	String version;
 	
-	/*  */
+	/**  */
 	String mobileAssetContentPath;
 	
-	/*  */
+	/**  */
 	List<GearAssetDataBaseDefinition> mobileGearAssetDataBases;
 	
-	/*  */
+	/**  */
 	Map<String, String> mobileWorldContentPaths;
 	
-	/*  */
+	/**  */
 	Map<String, String> jsonWorldContentPaths;
 	
-	/*  */
+	/**  */
 	String mobileClanBannerDatabasePath;
 	
-	/*  */
+	/**  */
 	Map<String, String> mobileGearCdn;
 	DestinyManifest(
 		this.version,

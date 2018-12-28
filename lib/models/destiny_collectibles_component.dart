@@ -1,9 +1,9 @@
 import 'destiny_collectible_component.dart';
 
-/*  */
+/**  */
 class DestinyCollectiblesComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyCollectibleComponent> collectibles;
 	DestinyCollectiblesComponent(
 		this.collectibles,

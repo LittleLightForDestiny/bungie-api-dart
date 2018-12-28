@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class ContentRepresentation{
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String path;
 	
-	/*  */
+	/**  */
 	String validationString;
 	ContentRepresentation(
 		this.name,

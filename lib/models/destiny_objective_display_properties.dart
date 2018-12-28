@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class DestinyObjectiveDisplayProperties{
 	
-	/* The activity associated with this objective in the context of this item, if any. */
+	/** The activity associated with this objective in the context of this item, if any. */
 	int activityHash;
 	
-	/* If true, the game shows this objective on item preview screens. */
+	/** If true, the game shows this objective on item preview screens. */
 	bool displayOnItemPreviewScreen;
 	DestinyObjectiveDisplayProperties(
 		this.activityHash,

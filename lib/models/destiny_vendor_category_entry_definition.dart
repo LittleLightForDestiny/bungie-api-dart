@@ -1,57 +1,57 @@
 import 'destiny_vendor_category_overlay_definition.dart';
 
-/* This is the definition for a single Vendor Category, into which Sale Items are grouped. */
+/** This is the definition for a single Vendor Category, into which Sale Items are grouped. */
 class DestinyVendorCategoryEntryDefinition{
 	
-	/* The index of the category in the original category definitions for the vendor. */
+	/** The index of the category in the original category definitions for the vendor. */
 	int categoryIndex;
 	
-	/* The string identifier of the category. */
+	/** The string identifier of the category. */
 	String categoryId;
 	
-	/* Used in sorting items in vendors... but there's a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself. */
+	/** Used in sorting items in vendors... but there's a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself. */
 	int sortValue;
 	
-	/* The hashed identifier for the category. */
+	/** The hashed identifier for the category. */
 	int categoryHash;
 	
-	/* The amount of items that will be available when this category is shown. */
+	/** The amount of items that will be available when this category is shown. */
 	int quantityAvailable;
 	
-	/* If items aren't up for sale in this category, should we still show them (greyed out)? */
+	/** If items aren't up for sale in this category, should we still show them (greyed out)? */
 	bool showUnavailableItems;
 	
-	/* If you don't have the currency required to buy items from this category, should the items be hidden? */
+	/** If you don't have the currency required to buy items from this category, should the items be hidden? */
 	bool hideIfNoCurrency;
 	
-	/* True if this category doesn't allow purchases. */
+	/** True if this category doesn't allow purchases. */
 	bool hideFromRegularPurchase;
 	
-	/* The localized string for making purchases from this category, if it is different from the vendor's string for purchasing. */
+	/** The localized string for making purchases from this category, if it is different from the vendor's string for purchasing. */
 	String buyStringOverride;
 	
-	/* If the category is disabled, this is the localized description to show. */
+	/** If the category is disabled, this is the localized description to show. */
 	String disabledDescription;
 	
-	/* The localized title of the category. */
+	/** The localized title of the category. */
 	String displayTitle;
 	
-	/* If this category has an overlay prompt that should appear, this contains the details of that prompt. */
+	/** If this category has an overlay prompt that should appear, this contains the details of that prompt. */
 	DestinyVendorCategoryOverlayDefinition overlay;
 	
-	/* A shortcut for the vendor item indexes sold under this category. Saves us from some expensive reorganization at runtime. */
+	/** A shortcut for the vendor item indexes sold under this category. Saves us from some expensive reorganization at runtime. */
 	List<int> vendorItemIndexes;
 	
-	/* Sometimes a category isn't actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment. */
+	/** Sometimes a category isn't actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment. */
 	bool isPreview;
 	
-	/* If true, this category only displays items: you can't purchase anything in them. */
+	/** If true, this category only displays items: you can't purchase anything in them. */
 	bool isDisplayOnly;
 	
-	/*  */
+	/**  */
 	int resetIntervalMinutesOverride;
 	
-	/*  */
+	/**  */
 	int resetOffsetMinutesOverride;
 	DestinyVendorCategoryEntryDefinition(
 		this.categoryIndex,

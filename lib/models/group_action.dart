@@ -1,59 +1,59 @@
 
-/*  */
+/**  */
 class GroupAction{
 	
-	/* Type of group, either Bungie.net hosted group, or a game services hosted clan. */
+	/** Type of group, either Bungie.net hosted group, or a game services hosted clan. */
 	int groupType;
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String about;
 	
-	/*  */
+	/**  */
 	String motto;
 	
-	/*  */
+	/**  */
 	String theme;
 	
-	/*  */
+	/**  */
 	int avatarImageIndex;
 	
-	/*  */
+	/**  */
 	String tags;
 	
-	/*  */
+	/**  */
 	bool isPublic;
 	
-	/*  */
+	/**  */
 	int membershipOption;
 	
-	/*  */
+	/**  */
 	bool isPublicTopicAdminOnly;
 	
-	/*  */
+	/**  */
 	bool isDefaultPostPublic;
 	
-	/*  */
+	/**  */
 	bool allowChat;
 	
-	/*  */
+	/**  */
 	bool isDefaultPostAlliance;
 	
-	/*  */
+	/**  */
 	int chatSecurity;
 	
-	/*  */
+	/**  */
 	String callsign;
 	
-	/*  */
+	/**  */
 	String locale;
 	
-	/*  */
+	/**  */
 	int homepage;
 	
-	/* When operation needs a platform specific account ID for the present user, use this property. In particular, groupType of Clan requires this value to be set. */
+	/** When operation needs a platform specific account ID for the present user, use this property. In particular, groupType of Clan requires this value to be set. */
 	int platformMembershipType;
 	GroupAction(
 		this.groupType,

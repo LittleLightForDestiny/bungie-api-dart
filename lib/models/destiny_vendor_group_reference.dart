@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyVendorGroupReference{
 	
-	/* The DestinyVendorGroupDefinition to which this Vendor can belong. */
+	/** The DestinyVendorGroupDefinition to which this Vendor can belong. */
 	int vendorGroupHash;
 	DestinyVendorGroupReference(
 		this.vendorGroupHash,

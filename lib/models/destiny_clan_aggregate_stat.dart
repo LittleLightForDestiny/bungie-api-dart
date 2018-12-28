@@ -1,15 +1,15 @@
 import 'destiny_historical_stats_value.dart';
 
-/*  */
+/**  */
 class DestinyClanAggregateStat{
 	
-	/* The id of the mode of stats (allPvp, allPvE, etc) */
+	/** The id of the mode of stats (allPvp, allPvE, etc) */
 	int mode;
 	
-	/* The id of the stat */
+	/** The id of the stat */
 	String statId;
 	
-	/* Value of the stat for this player */
+	/** Value of the stat for this player */
 	DestinyHistoricalStatsValue value;
 	DestinyClanAggregateStat(
 		this.mode,

@@ -1,17 +1,17 @@
 
-/*  */
+/**  */
 class DestinyRecordCompletionBlock{
 	
-	/* The number of objectives that must be completed before the objective is considered "complete" */
+	/** The number of objectives that must be completed before the objective is considered "complete" */
 	int partialCompletionObjectiveCountThreshold;
 	
-	/*  */
+	/**  */
 	int scoreValue;
 	
-	/*  */
+	/**  */
 	bool shouldFireToast;
 	
-	/*  */
+	/**  */
 	int toastStyle;
 	DestinyRecordCompletionBlock(
 		this.partialCompletionObjectiveCountThreshold,

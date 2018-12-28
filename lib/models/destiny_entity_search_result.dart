@@ -1,12 +1,12 @@
 import 'search_result_of_destiny_entity_search_result_item.dart';
 
-/* The results of a search for Destiny content. This will be improved on over time, I've been doing some experimenting to see what might be useful. */
+/** The results of a search for Destiny content. This will be improved on over time, I've been doing some experimenting to see what might be useful. */
 class DestinyEntitySearchResult{
 	
-	/* A list of suggested words that might make for better search results, based on the text searched for. */
+	/** A list of suggested words that might make for better search results, based on the text searched for. */
 	List<String> suggestedWords;
 	
-	/* The items found that are matches/near matches for the searched-for term, sorted by something vaguely resembling "relevance". Hopefully this will get better in the future. */
+	/** The items found that are matches/near matches for the searched-for term, sorted by something vaguely resembling "relevance". Hopefully this will get better in the future. */
 	SearchResultOfDestinyEntitySearchResultItem results;
 	DestinyEntitySearchResult(
 		this.suggestedWords,

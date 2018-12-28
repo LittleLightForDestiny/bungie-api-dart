@@ -1,12 +1,12 @@
 import 'destiny_milestone_reward_entry.dart';
 
-/* Represents a category of "summary" rewards that can be earned for the Milestone regardless of specific quest rewards that can be earned. */
+/** Represents a category of "summary" rewards that can be earned for the Milestone regardless of specific quest rewards that can be earned. */
 class DestinyMilestoneRewardCategory{
 	
-	/* Look up the relevant DestinyMilestoneDefinition, and then use rewardCategoryHash to look up the category info in DestinyMilestoneDefinition.rewards. */
+	/** Look up the relevant DestinyMilestoneDefinition, and then use rewardCategoryHash to look up the category info in DestinyMilestoneDefinition.rewards. */
 	int rewardCategoryHash;
 	
-	/* The individual reward entries for this category, and their status. */
+	/** The individual reward entries for this category, and their status. */
 	List<DestinyMilestoneRewardEntry> entries;
 	DestinyMilestoneRewardCategory(
 		this.rewardCategoryHash,

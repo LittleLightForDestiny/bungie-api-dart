@@ -1,16 +1,16 @@
 import 'destiny_historical_stats_with_merged.dart';
 import 'destiny_historical_stats_per_character.dart';
 
-/*  */
+/**  */
 class DestinyHistoricalStatsAccountResult{
 	
-	/*  */
+	/**  */
 	DestinyHistoricalStatsWithMerged mergedDeletedCharacters;
 	
-	/*  */
+	/**  */
 	DestinyHistoricalStatsWithMerged mergedAllCharacters;
 	
-	/*  */
+	/**  */
 	List<DestinyHistoricalStatsPerCharacter> characters;
 	DestinyHistoricalStatsAccountResult(
 		this.mergedDeletedCharacters,

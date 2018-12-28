@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class DestinyItemSetActionRequest{
 	
-	/*  */
+	/**  */
 	List<String> itemIds;
 	
-	/*  */
+	/**  */
 	String characterId;
 	
-	/*  */
+	/** The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType. */
 	int membershipType;
 	DestinyItemSetActionRequest(
 		this.itemIds,

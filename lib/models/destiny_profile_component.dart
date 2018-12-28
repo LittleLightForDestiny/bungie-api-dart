@@ -1,18 +1,18 @@
 import 'user_info_card.dart';
 
-/* The most essential summary information about a Profile (in Destiny 1, we called these "Accounts"). */
+/** The most essential summary information about a Profile (in Destiny 1, we called these "Accounts"). */
 class DestinyProfileComponent{
 	
-	/* If you need to render the Profile (their platform name, icon, etc...) somewhere, this property contains that information. */
+	/** If you need to render the Profile (their platform name, icon, etc...) somewhere, this property contains that information. */
 	UserInfoCard userInfo;
 	
-	/* The last time the user played with any character on this Profile. */
+	/** The last time the user played with any character on this Profile. */
 	String dateLastPlayed;
 	
-	/* If you want to know what expansions they own, this will contain that data. */
+	/** If you want to know what expansions they own, this will contain that data. */
 	int versionsOwned;
 	
-	/* A list of the character IDs, for further querying on your part. */
+	/** A list of the character IDs, for further querying on your part. */
 	List<String> characterIds;
 	DestinyProfileComponent(
 		this.userInfo,

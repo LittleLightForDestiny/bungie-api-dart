@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class GroupApplicationResponse{
 	
-	/*  */
+	/**  */
 	int resolution;
 	GroupApplicationResponse(
 		this.resolution,

@@ -1,12 +1,12 @@
 import 'destiny_item_quantity.dart';
 
-/* Represents a reference to a Challenge, which for now is just an Objective. */
+/** Represents a reference to a Challenge, which for now is just an Objective. */
 class DestinyActivityChallengeDefinition{
 	
-	/* The hash for the Objective that matches this challenge. Use it to look up the DestinyObjectiveDefinition. */
+	/** The hash for the Objective that matches this challenge. Use it to look up the DestinyObjectiveDefinition. */
 	int objectiveHash;
 	
-	/* The rewards as they're represented in the UI. Note that they generally link to "dummy" items that give a summary of rewards rather than direct, real items themselves.
+	/** The rewards as they're represented in the UI. Note that they generally link to "dummy" items that give a summary of rewards rather than direct, real items themselves.
 If the quantity is 0, don't show the quantity. */
 	List<DestinyItemQuantity> dummyRewards;
 	DestinyActivityChallengeDefinition(

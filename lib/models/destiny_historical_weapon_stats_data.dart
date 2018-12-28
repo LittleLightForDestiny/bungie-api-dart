@@ -1,9 +1,9 @@
 import 'destiny_historical_weapon_stats.dart';
 
-/*  */
+/**  */
 class DestinyHistoricalWeaponStatsData{
 	
-	/* List of weapons and their perspective values. */
+	/** List of weapons and their perspective values. */
 	List<DestinyHistoricalWeaponStats> weapons;
 	DestinyHistoricalWeaponStatsData(
 		this.weapons,

@@ -1,19 +1,19 @@
 import 'destiny_display_properties_definition.dart';
 
-/* An artificial construct provided by Bungie.Net, where we attempt to group talent nodes by functionality.
+/** An artificial construct provided by Bungie.Net, where we attempt to group talent nodes by functionality.
 This is a single set of references to Talent Nodes that share a common trait or purpose. */
 class DestinyTalentNodeCategory{
 	
-	/* Mostly just for debug purposes, but if you find it useful you can have it. This is BNet's manually created identifier for this category. */
+	/** Mostly just for debug purposes, but if you find it useful you can have it. This is BNet's manually created identifier for this category. */
 	String identifier;
 	
-	/* If true, we found the localized content in a related DestinyLoreDefinition instead of local BNet localization files. This is mostly for ease of my own future investigations. */
+	/** If true, we found the localized content in a related DestinyLoreDefinition instead of local BNet localization files. This is mostly for ease of my own future investigations. */
 	bool isLoreDriven;
 	
-	/* Will contain at least the "name", which will be the title of the category. We will likely not have description and an icon yet, but I'm going to keep my options open. */
+	/** Will contain at least the "name", which will be the title of the category. We will likely not have description and an icon yet, but I'm going to keep my options open. */
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
-	/* The set of all hash identifiers for Talent Nodes (DestinyTalentNodeDefinition) in this Talent Grid that are part of this Category. */
+	/** The set of all hash identifiers for Talent Nodes (DestinyTalentNodeDefinition) in this Talent Grid that are part of this Category. */
 	List<int> nodeHashes;
 	DestinyTalentNodeCategory(
 		this.identifier,

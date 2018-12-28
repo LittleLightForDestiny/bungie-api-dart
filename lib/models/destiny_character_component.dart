@@ -1,77 +1,77 @@
 import 'destiny_color.dart';
 import 'destiny_progression.dart';
 
-/* This component contains base properties of the character. You'll probably want to always request this component, but hey you do you. */
+/** This component contains base properties of the character. You'll probably want to always request this component, but hey you do you. */
 class DestinyCharacterComponent{
 	
-	/* Every Destiny Profile has a membershipId. This is provided on the character as well for convenience. */
+	/** Every Destiny Profile has a membershipId. This is provided on the character as well for convenience. */
 	String membershipId;
 	
-	/* membershipType tells you the platform on which the character plays. Examine the BungieMembershipType enumeration for possible values. */
+	/** membershipType tells you the platform on which the character plays. Examine the BungieMembershipType enumeration for possible values. */
 	int membershipType;
 	
-	/* The unique identifier for the character. */
+	/** The unique identifier for the character. */
 	String characterId;
 	
-	/* The last date that the user played Destiny. */
+	/** The last date that the user played Destiny. */
 	String dateLastPlayed;
 	
-	/* If the user is currently playing, this is how long they've been playing. */
+	/** If the user is currently playing, this is how long they've been playing. */
 	String minutesPlayedThisSession;
 	
-	/* If this value is 525,600, then they played Destiny for a year. Or they're a very dedicated Rent fan. Note that this includes idle time, not just time spent actually in activities shooting things. */
+	/** If this value is 525,600, then they played Destiny for a year. Or they're a very dedicated Rent fan. Note that this includes idle time, not just time spent actually in activities shooting things. */
 	String minutesPlayedTotal;
 	
-	/* The user's calculated "Light Level". Light level is an indicator of your power that mostly matters in the end game, once you've reached the maximum character level: it's a level that's dependent on the average Attack/Defense power of your items. */
+	/** The user's calculated "Light Level". Light level is an indicator of your power that mostly matters in the end game, once you've reached the maximum character level: it's a level that's dependent on the average Attack/Defense power of your items. */
 	int light;
 	
-	/* Your character's stats, such as Agility, Resilience, etc... *not* historical stats.
+	/** Your character's stats, such as Agility, Resilience, etc... *not* historical stats.
 You'll have to call a different endpoint for those. */
 	Map<String, int> stats;
 	
-	/* Use this hash to look up the character's DestinyRaceDefinition. */
+	/** Use this hash to look up the character's DestinyRaceDefinition. */
 	int raceHash;
 	
-	/* Use this hash to look up the character's DestinyGenderDefinition. */
+	/** Use this hash to look up the character's DestinyGenderDefinition. */
 	int genderHash;
 	
-	/* Use this hash to look up the character's DestinyClassDefinition. */
+	/** Use this hash to look up the character's DestinyClassDefinition. */
 	int classHash;
 	
-	/* Mostly for historical purposes at this point, this is an enumeration for the character's race.
+	/** Mostly for historical purposes at this point, this is an enumeration for the character's race.
 It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove. */
 	int raceType;
 	
-	/* Mostly for historical purposes at this point, this is an enumeration for the character's class.
+	/** Mostly for historical purposes at this point, this is an enumeration for the character's class.
 It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove. */
 	int classType;
 	
-	/* Mostly for historical purposes at this point, this is an enumeration for the character's Gender.
+	/** Mostly for historical purposes at this point, this is an enumeration for the character's Gender.
 It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove. And yeah, it's an enumeration and not a boolean. Fight me. */
 	int genderType;
 	
-	/* A shortcut path to the user's currently equipped emblem image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition. */
+	/** A shortcut path to the user's currently equipped emblem image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition. */
 	String emblemPath;
 	
-	/* A shortcut path to the user's currently equipped emblem background image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition. */
+	/** A shortcut path to the user's currently equipped emblem background image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition. */
 	String emblemBackgroundPath;
 	
-	/* The hash of the currently equipped emblem for the user. Can be used to look up the DestinyInventoryItemDefinition. */
+	/** The hash of the currently equipped emblem for the user. Can be used to look up the DestinyInventoryItemDefinition. */
 	int emblemHash;
 	
-	/* A shortcut for getting the background color of the user's currently equipped emblem without having to do a DestinyInventoryItemDefinition lookup. */
+	/** A shortcut for getting the background color of the user's currently equipped emblem without having to do a DestinyInventoryItemDefinition lookup. */
 	DestinyColor emblemColor;
 	
-	/* The progression that indicates your character's level. Not their light level, but their character level: you know, the thing you max out a couple hours in and then ignore for the sake of light level. */
+	/** The progression that indicates your character's level. Not their light level, but their character level: you know, the thing you max out a couple hours in and then ignore for the sake of light level. */
 	DestinyProgression levelProgression;
 	
-	/* The "base" level of your character, not accounting for any light level. */
+	/** The "base" level of your character, not accounting for any light level. */
 	int baseCharacterLevel;
 	
-	/* A number between 0 and 100, indicating the whole and fractional % remaining to get to the next character level. */
+	/** A number between 0 and 100, indicating the whole and fractional % remaining to get to the next character level. */
 	double percentToNextLevel;
 	
-	/* If this Character has a title assigned to it, this is the identifier of the DestinyRecordDefinition that has that title information. */
+	/** If this Character has a title assigned to it, this is the identifier of the DestinyRecordDefinition that has that title information. */
 	int titleRecordHash;
 	DestinyCharacterComponent(
 		this.membershipId,

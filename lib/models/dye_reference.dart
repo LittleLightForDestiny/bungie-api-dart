@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class DyeReference{
 	
-	/*  */
+	/**  */
 	int channelHash;
 	
-	/*  */
+	/**  */
 	int dyeHash;
 	DyeReference(
 		this.channelHash,

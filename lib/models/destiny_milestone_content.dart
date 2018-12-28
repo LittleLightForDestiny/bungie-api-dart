@@ -1,18 +1,18 @@
 import 'destiny_milestone_content_item_category.dart';
 
-/* Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint. */
+/** Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint. */
 class DestinyMilestoneContent{
 	
-	/* The "About this Milestone" text from the Firehose. */
+	/** The "About this Milestone" text from the Firehose. */
 	String about;
 	
-	/* The Current Status of the Milestone, as driven by the Firehose. */
+	/** The Current Status of the Milestone, as driven by the Firehose. */
 	String status;
 	
-	/* A list of tips, provided by the Firehose. */
+	/** A list of tips, provided by the Firehose. */
 	List<String> tips;
 	
-	/* If DPS has defined items related to this Milestone, they can categorize those items in the Firehose. That data will then be returned as item categories here. */
+	/** If DPS has defined items related to this Milestone, they can categorize those items in the Firehose. That data will then be returned as item categories here. */
 	List<DestinyMilestoneContentItemCategory> itemCategories;
 	DestinyMilestoneContent(
 		this.about,

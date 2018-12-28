@@ -1,23 +1,23 @@
 import 'destiny_display_properties_definition.dart';
 
-/* These are definitions for in-game "Lore," meant to be narrative enhancements of the game experience.
+/** These are definitions for in-game "Lore," meant to be narrative enhancements of the game experience.
 DestinyInventoryItemDefinitions for interesting items point to these definitions, but nothing's stopping you from scraping all of these and doing something cool with them. If they end up having cool data. */
 class DestinyLoreDefinition{
 	
-	/*  */
+	/** Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information. */
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
-	/*  */
+	/**  */
 	String subtitle;
 	
-	/* The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
+	/** The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 When entities refer to each other in Destiny content, it is this hash that they are referring to. */
 	int hash;
 	
-	/* The index of the entity as it was found in the investment tables. */
+	/** The index of the entity as it was found in the investment tables. */
 	int index;
 	
-	/* If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
+	/** If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
 	bool redacted;
 	DestinyLoreDefinition(
 		this.displayProperties,

@@ -1,26 +1,26 @@
 
-/*  */
+/**  */
 class ClanBanner{
 	
-	/*  */
+	/**  */
 	int decalId;
 	
-	/*  */
+	/**  */
 	int decalColorId;
 	
-	/*  */
+	/**  */
 	int decalBackgroundColorId;
 	
-	/*  */
+	/**  */
 	int gonfalonId;
 	
-	/*  */
+	/**  */
 	int gonfalonColorId;
 	
-	/*  */
+	/**  */
 	int gonfalonDetailId;
 	
-	/*  */
+	/**  */
 	int gonfalonDetailColorId;
 	ClanBanner(
 		this.decalId,

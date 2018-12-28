@@ -4,7 +4,7 @@ import '../responses/search_result_of_community_live_status_response.dart';
 import '../responses/community_live_status_response.dart';
 class CommunityContent{
     
-    /* Returns community content. */
+    /** Returns community content. */
     static Future<PostSearchResponseResponse> getCommunityContent (
         HttpClient client,
         int mediaFilter,
@@ -19,7 +19,7 @@ class CommunityContent{
         });
     }
     
-    /* Returns info about community members who are live streaming. */
+    /** Returns info about community members who are live streaming. */
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatuses (
         HttpClient client,
         int modeHash,
@@ -38,7 +38,7 @@ class CommunityContent{
         });
     }
     
-    /* Returns info about community members who are live streaming in your clans. */
+    /** Returns info about community members who are live streaming in your clans. */
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForClanmates (
         HttpClient client,
         int page,
@@ -53,7 +53,7 @@ class CommunityContent{
         });
     }
     
-    /* Returns info about community members who are live streaming among your friends. */
+    /** Returns info about community members who are live streaming among your friends. */
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForFriends (
         HttpClient client,
         int page,
@@ -68,7 +68,7 @@ class CommunityContent{
         });
     }
     
-    /* Returns info about Featured live streams. */
+    /** Returns info about Featured live streams. */
     static Future<SearchResultOfCommunityLiveStatusResponse> getFeaturedCommunityLiveStatuses (
         HttpClient client,
         int page,
@@ -85,7 +85,7 @@ class CommunityContent{
         });
     }
     
-    /* Gets the Live Streaming status of a particular Account and Membership Type. */
+    /** Gets the Live Streaming status of a particular Account and Membership Type. */
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,
         String membershipId,

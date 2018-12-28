@@ -1,12 +1,12 @@
 import 'destiny_character_activities_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyCharacterActivitiesComponent{
 	
-	/*  */
+	/** This component holds activity data for a character. It will tell you about the character's current activity status, as well as activities that are available to the user. */
 	DestinyCharacterActivitiesComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterActivitiesComponent(
 		this.data,

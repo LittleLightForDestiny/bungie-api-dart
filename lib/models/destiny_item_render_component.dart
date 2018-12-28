@@ -1,11 +1,11 @@
 
-/* Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item. */
+/** Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item. */
 class DestinyItemRenderComponent{
 	
-	/* If you should use custom dyes on this item, it will be indicated here. */
+	/** If you should use custom dyes on this item, it will be indicated here. */
 	bool useCustomDyes;
 	
-	/* A dictionary for rendering gear components, with:
+	/** A dictionary for rendering gear components, with:
 key = Art Arrangement Region Index
 value = The chosen Arrangement Index for the Region, based on the value of a stat on the item used for making the choice. */
 	Map<String, int> artRegions;

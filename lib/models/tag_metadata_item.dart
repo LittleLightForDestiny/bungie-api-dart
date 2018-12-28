@@ -1,20 +1,20 @@
 
-/*  */
+/**  */
 class TagMetadataItem{
 	
-	/*  */
+	/**  */
 	String description;
 	
-	/*  */
+	/**  */
 	String tagText;
 	
-	/*  */
+	/**  */
 	List<String> groups;
 	
-	/*  */
+	/**  */
 	bool isDefault;
 	
-	/*  */
+	/**  */
 	String name;
 	TagMetadataItem(
 		this.description,

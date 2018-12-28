@@ -1,15 +1,15 @@
 import 'search_result_of_trending_entry.dart';
 
-/*  */
+/**  */
 class TrendingCategory{
 	
-	/*  */
+	/**  */
 	String categoryName;
 	
-	/*  */
+	/**  */
 	SearchResultOfTrendingEntry entries;
 	
-	/*  */
+	/**  */
 	String categoryId;
 	TrendingCategory(
 		this.categoryName,

@@ -1,9 +1,9 @@
 import 'group_v2.dart';
 
-/*  */
+/**  */
 class GroupMembershipBase{
 	
-	/*  */
+	/**  */
 	GroupV2 group;
 	GroupMembershipBase(
 		this.group,

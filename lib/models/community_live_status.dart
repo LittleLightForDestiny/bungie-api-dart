@@ -1,72 +1,72 @@
 import 'user_info_card.dart';
 
-/*  */
+/**  */
 class CommunityLiveStatus{
 	
-	/*  */
+	/**  */
 	String dateStatusUpdated;
 	
-	/*  */
+	/**  */
 	String url;
 	
-	/*  */
+	/**  */
 	String partnershipIdentifier;
 	
-	/*  */
+	/** Representing external partners to which BNet users can link accounts, but that are not Account System credentials: partnerships that BNet uses exclusively for data. */
 	int partnershipType;
 	
-	/*  */
+	/**  */
 	String thumbnail;
 	
-	/*  */
+	/**  */
 	String thumbnailSmall;
 	
-	/*  */
+	/**  */
 	String thumbnailLarge;
 	
-	/*  */
+	/**  */
 	String destinyCharacterId;
 	
-	/*  */
+	/** This contract supplies basic information commonly used to display a minimal amount of information about a user. Take care to not add more properties here unless the property applies in all (or at least the majority) of the situations where UserInfoCard is used. Avoid adding game specific or platform specific details here. In cases where UserInfoCard is a subset of the data needed in a contract, use UserInfoCard as a property of other contracts. */
 	UserInfoCard userInfo;
 	
-	/*  */
+	/**  */
 	int currentActivityHash;
 	
-	/*  */
+	/**  */
 	String dateLastPlayed;
 	
-	/*  */
+	/**  */
 	String dateStreamStarted;
 	
-	/*  */
+	/**  */
 	String locale;
 	
-	/*  */
+	/**  */
 	int currentViewers;
 	
-	/*  */
+	/**  */
 	int followers;
 	
-	/*  */
+	/**  */
 	int overallViewers;
 	
-	/*  */
+	/**  */
 	bool isFeatured;
 	
-	/*  */
+	/**  */
 	String title;
 	
-	/*  */
+	/**  */
 	int activityModeHash;
 	
-	/*  */
+	/**  */
 	String dateFeatured;
 	
-	/*  */
+	/**  */
 	double trendingValue;
 	
-	/*  */
+	/**  */
 	bool isSubscribable;
 	CommunityLiveStatus(
 		this.dateStatusUpdated,

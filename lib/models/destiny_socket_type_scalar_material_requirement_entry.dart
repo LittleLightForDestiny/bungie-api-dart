@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class DestinySocketTypeScalarMaterialRequirementEntry{
 	
-	/*  */
+	/**  */
 	int currencyItemHash;
 	
-	/*  */
+	/**  */
 	int scalarValue;
 	DestinySocketTypeScalarMaterialRequirementEntry(
 		this.currencyItemHash,

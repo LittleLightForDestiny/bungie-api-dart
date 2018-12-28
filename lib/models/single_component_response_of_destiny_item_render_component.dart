@@ -1,12 +1,12 @@
 import 'destiny_item_render_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyItemRenderComponent{
 	
-	/*  */
+	/** Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item. */
 	DestinyItemRenderComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyItemRenderComponent(
 		this.data,

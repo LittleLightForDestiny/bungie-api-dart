@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class DestinyAnimationReference{
 	
-	/*  */
+	/**  */
 	String animName;
 	
-	/*  */
+	/**  */
 	String animIdentifier;
 	
-	/*  */
+	/**  */
 	String path;
 	DestinyAnimationReference(
 		this.animName,

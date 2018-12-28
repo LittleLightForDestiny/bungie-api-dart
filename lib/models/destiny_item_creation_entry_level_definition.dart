@@ -1,8 +1,8 @@
 
-/* An overly complicated wrapper for the item level at which the item should spawn. */
+/** An overly complicated wrapper for the item level at which the item should spawn. */
 class DestinyItemCreationEntryLevelDefinition{
 	
-	/*  */
+	/**  */
 	int level;
 	DestinyItemCreationEntryLevelDefinition(
 		this.level,

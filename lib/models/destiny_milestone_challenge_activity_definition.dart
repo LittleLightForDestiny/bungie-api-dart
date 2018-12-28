@@ -2,19 +2,19 @@ import 'destiny_milestone_challenge_definition.dart';
 import 'destiny_milestone_challenge_activity_graph_node_entry.dart';
 import 'destiny_milestone_challenge_activity_phase.dart';
 
-/*  */
+/**  */
 class DestinyMilestoneChallengeActivityDefinition{
 	
-	/* The activity for which this challenge is active. */
+	/** The activity for which this challenge is active. */
 	int activityHash;
 	
-	/*  */
+	/**  */
 	List<DestinyMilestoneChallengeDefinition> challenges;
 	
-	/* If the activity and its challenge is visible on any of these nodes, it will be returned. */
+	/** If the activity and its challenge is visible on any of these nodes, it will be returned. */
 	List<DestinyMilestoneChallengeActivityGraphNodeEntry> activityGraphNodes;
 	
-	/* Phases related to this activity, if there are any.
+	/** Phases related to this activity, if there are any.
 These will be listed in the order in which they will appear in the actual activity. */
 	List<DestinyMilestoneChallengeActivityPhase> phases;
 	DestinyMilestoneChallengeActivityDefinition(

@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyLinkedGraphEntryDefinition{
 	
-	/*  */
+	/**  */
 	int activityGraphHash;
 	DestinyLinkedGraphEntryDefinition(
 		this.activityGraphHash,

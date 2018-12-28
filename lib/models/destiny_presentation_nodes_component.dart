@@ -1,9 +1,9 @@
 import 'destiny_presentation_node_component.dart';
 
-/*  */
+/**  */
 class DestinyPresentationNodesComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyPresentationNodeComponent> nodes;
 	DestinyPresentationNodesComponent(
 		this.nodes,

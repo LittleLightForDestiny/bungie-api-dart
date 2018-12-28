@@ -1,12 +1,12 @@
 import 'destiny_item_stats_component.dart';
 
-/*  */
+/**  */
 class DictionaryComponentResponseOfint32AndDestinyItemStatsComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyItemStatsComponent> data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	DictionaryComponentResponseOfint32AndDestinyItemStatsComponent(
 		this.data,

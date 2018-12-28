@@ -1,12 +1,12 @@
 import 'destiny_character_progression_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyCharacterProgressionComponent{
 	
-	/*  */
+	/** This component returns anything that could be considered "Progression" on a user: data where the user is gaining levels, reputation, completions, rewards, etc... */
 	DestinyCharacterProgressionComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterProgressionComponent(
 		this.data,

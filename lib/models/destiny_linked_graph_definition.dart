@@ -1,25 +1,26 @@
 import 'destiny_unlock_expression_definition.dart';
 import 'destiny_linked_graph_entry_definition.dart';
 
-/* This describes links between the current graph and others, as well as when that link is relevant. */
+/** This describes links between the current graph and others, as well as when that link is relevant. */
 class DestinyLinkedGraphDefinition{
 	
-	/*  */
+	/**  */
 	String description;
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/** Where the sausage gets made. Unlock Expressions are the foundation of the game's gating mechanics and investment-related restrictions. They can test Unlock Flags and Unlock Values for certain states, using a sufficient amount of logical operators such that unlock expressions are effectively Turing complete.
+Use UnlockExpressionParser to evaluate expressions using an IUnlockContext parsed from Babel. */
 	DestinyUnlockExpressionDefinition unlockExpression;
 	
-	/*  */
+	/**  */
 	int linkedGraphId;
 	
-	/*  */
+	/**  */
 	List<DestinyLinkedGraphEntryDefinition> linkedGraphs;
 	
-	/*  */
+	/**  */
 	String overview;
 	DestinyLinkedGraphDefinition(
 		this.description,

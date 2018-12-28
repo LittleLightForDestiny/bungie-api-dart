@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class DestinyLeaderboardResults{
 	
-	/* Indicate the membership ID of the account that is the focal point of the provided leaderboards. */
+	/** Indicate the membership ID of the account that is the focal point of the provided leaderboards. */
 	String focusMembershipId;
 	
-	/* Indicate the character ID of the character that is the focal point of the provided leaderboards. May be null, in which case any character from the focus membership can appear in the provided leaderboards. */
+	/** Indicate the character ID of the character that is the focal point of the provided leaderboards. May be null, in which case any character from the focus membership can appear in the provided leaderboards. */
 	String focusCharacterId;
 	DestinyLeaderboardResults(
 		this.focusMembershipId,

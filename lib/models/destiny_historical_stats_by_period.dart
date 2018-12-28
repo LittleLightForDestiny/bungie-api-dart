@@ -1,25 +1,25 @@
 import 'destiny_historical_stats_value.dart';
 import 'destiny_historical_stats_period_group.dart';
 
-/*  */
+/**  */
 class DestinyHistoricalStatsByPeriod{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyHistoricalStatsValue> allTime;
 	
-	/*  */
+	/**  */
 	Map<String, DestinyHistoricalStatsValue> allTimeTier1;
 	
-	/*  */
+	/**  */
 	Map<String, DestinyHistoricalStatsValue> allTimeTier2;
 	
-	/*  */
+	/**  */
 	Map<String, DestinyHistoricalStatsValue> allTimeTier3;
 	
-	/*  */
+	/**  */
 	List<DestinyHistoricalStatsPeriodGroup> daily;
 	
-	/*  */
+	/**  */
 	List<DestinyHistoricalStatsPeriodGroup> monthly;
 	DestinyHistoricalStatsByPeriod(
 		this.allTime,

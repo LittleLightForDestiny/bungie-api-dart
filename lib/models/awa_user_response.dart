@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class AwaUserResponse{
 	
-	/* Indication of the selection the user has made (Approving or rejecting the action) */
+	/** Indication of the selection the user has made (Approving or rejecting the action) */
 	int selection;
 	
-	/* Correlation ID of the request */
+	/** Correlation ID of the request */
 	String correlationId;
 	
-	/* Secret nonce received via the PUSH notification. */
+	/** Secret nonce received via the PUSH notification. */
 	List<int> nonce;
 	AwaUserResponse(
 		this.selection,

@@ -1,13 +1,13 @@
 import 'group_potential_member.dart';
 import 'group_v2.dart';
 
-/*  */
+/**  */
 class GroupPotentialMembership{
 	
-	/*  */
+	/**  */
 	GroupPotentialMember member;
 	
-	/*  */
+	/**  */
 	GroupV2 group;
 	GroupPotentialMembership(
 		this.member,

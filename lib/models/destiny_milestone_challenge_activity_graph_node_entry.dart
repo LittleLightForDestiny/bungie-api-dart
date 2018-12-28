@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class DestinyMilestoneChallengeActivityGraphNodeEntry{
 	
-	/*  */
+	/**  */
 	int activityGraphHash;
 	
-	/*  */
+	/**  */
 	int activityGraphNodeHash;
 	DestinyMilestoneChallengeActivityGraphNodeEntry(
 		this.activityGraphHash,

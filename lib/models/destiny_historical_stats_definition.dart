@@ -1,47 +1,47 @@
 
-/*  */
+/**  */
 class DestinyHistoricalStatsDefinition{
 	
-	/* Unique programmer friendly ID for this stat */
+	/** Unique programmer friendly ID for this stat */
 	String statId;
 	
-	/* Statistic group */
+	/** Statistic group */
 	int group;
 	
-	/* Time periods the statistic covers */
+	/** Time periods the statistic covers */
 	List<int> periodTypes;
 	
-	/* Game modes where this statistic can be reported. */
+	/** Game modes where this statistic can be reported. */
 	List<int> modes;
 	
-	/* Category for the stat. */
+	/** Category for the stat. */
 	int category;
 	
-	/* Display name */
+	/** Display name */
 	String statName;
 	
-	/* Display name abbreviated */
+	/** Display name abbreviated */
 	String statNameAbbr;
 	
-	/* Description of a stat if applicable. */
+	/** Description of a stat if applicable. */
 	String statDescription;
 	
-	/* Unit, if any, for the statistic */
+	/** Unit, if any, for the statistic */
 	int unitType;
 	
-	/* Optional URI to an icon for the statistic */
+	/** Optional URI to an icon for the statistic */
 	String iconImage;
 	
-	/* Optional icon for the statistic */
+	/** Optional icon for the statistic */
 	int mergeMethod;
 	
-	/* Localized Unit Name for the stat. */
+	/** Localized Unit Name for the stat. */
 	String unitLabel;
 	
-	/* Weight assigned to this stat indicating its relative impressiveness. */
+	/** Weight assigned to this stat indicating its relative impressiveness. */
 	int weight;
 	
-	/* The tier associated with this medal - be it implicitly or explicitly. */
+	/** The tier associated with this medal - be it implicitly or explicitly. */
 	int medalTierHash;
 	DestinyHistoricalStatsDefinition(
 		this.statId,

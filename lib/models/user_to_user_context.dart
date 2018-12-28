@@ -1,15 +1,15 @@
 import 'ignore_response.dart';
 
-/*  */
+/**  */
 class UserToUserContext{
 	
-	/*  */
+	/**  */
 	bool isFollowing;
 	
-	/*  */
+	/**  */
 	IgnoreResponse ignoreStatus;
 	
-	/*  */
+	/**  */
 	String globalIgnoreEndDate;
 	UserToUserContext(
 		this.isFollowing,

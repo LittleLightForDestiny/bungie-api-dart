@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class UserTheme{
 	
-	/*  */
+	/**  */
 	int userThemeId;
 	
-	/*  */
+	/**  */
 	String userThemeName;
 	
-	/*  */
+	/**  */
 	String userThemeDescription;
 	UserTheme(
 		this.userThemeId,

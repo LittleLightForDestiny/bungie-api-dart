@@ -1,17 +1,17 @@
 
-/* All the partnership info that's fit to expose externally, if we care to do so. */
+/** All the partnership info that's fit to expose externally, if we care to do so. */
 class PublicPartnershipDetail{
 	
-	/*  */
+	/** Representing external partners to which BNet users can link accounts, but that are not Account System credentials: partnerships that BNet uses exclusively for data. */
 	int partnerType;
 	
-	/*  */
+	/**  */
 	String identifier;
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String icon;
 	PublicPartnershipDetail(
 		this.partnerType,

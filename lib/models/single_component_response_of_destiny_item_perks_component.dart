@@ -1,12 +1,14 @@
 import 'destiny_item_perks_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyItemPerksComponent{
 	
-	/*  */
+	/** Instanced items can have perks: benefits that the item bestows.
+These are related to DestinySandboxPerkDefinition, and sometimes - but not always - have human readable info. When they do, they are the icons and text that you see in an item's tooltip.
+Talent Grids, Sockets, and the item itself can apply Perks, which are then summarized here for your convenience. */
 	DestinyItemPerksComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyItemPerksComponent(
 		this.data,

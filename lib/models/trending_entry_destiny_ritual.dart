@@ -1,31 +1,31 @@
 import 'destiny_public_milestone.dart';
 import 'destiny_milestone_content.dart';
 
-/*  */
+/**  */
 class TrendingEntryDestinyRitual{
 	
-	/*  */
+	/**  */
 	String image;
 	
-	/*  */
+	/**  */
 	String icon;
 	
-	/*  */
+	/**  */
 	String title;
 	
-	/*  */
+	/**  */
 	String subtitle;
 	
-	/*  */
+	/**  */
 	String dateStart;
 	
-	/*  */
+	/**  */
 	String dateEnd;
 	
-	/* A destiny event does not necessarily have a related Milestone, but if it does the details will be returned here. */
+	/** A destiny event does not necessarily have a related Milestone, but if it does the details will be returned here. */
 	DestinyPublicMilestone milestoneDetails;
 	
-	/* A destiny event will not necessarily have milestone "custom content", but if it does the details will be here. */
+	/** A destiny event will not necessarily have milestone "custom content", but if it does the details will be here. */
 	DestinyMilestoneContent eventContent;
 	TrendingEntryDestinyRitual(
 		this.image,

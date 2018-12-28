@@ -1,12 +1,12 @@
 import 'destiny_item_sockets_component.dart';
 
-/*  */
+/**  */
 class DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyItemSocketsComponent> data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent(
 		this.data,

@@ -1,12 +1,12 @@
 import 'destiny_item_talent_grid_component.dart';
 
-/*  */
+/**  */
 class DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyItemTalentGridComponent> data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent(
 		this.data,

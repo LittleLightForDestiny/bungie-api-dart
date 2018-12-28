@@ -1,12 +1,12 @@
 import 'destiny_profile_collectibles_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyProfileCollectiblesComponent{
 	
-	/*  */
+	/**  */
 	DestinyProfileCollectiblesComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyProfileCollectiblesComponent(
 		this.data,

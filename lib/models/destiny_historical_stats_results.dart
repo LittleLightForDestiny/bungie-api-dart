@@ -1,5 +1,5 @@
 
-/*  */
+/**  */
 class DestinyHistoricalStatsResults{
 	DestinyHistoricalStatsResults(
 	);

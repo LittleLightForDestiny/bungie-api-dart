@@ -1,9 +1,9 @@
 import 'dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
 
-/*  */
+/**  */
 class DestinyBaseItemComponentSetOfint64{
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
 	DestinyBaseItemComponentSetOfint64(
 		this.objectives,

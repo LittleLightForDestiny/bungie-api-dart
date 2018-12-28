@@ -1,12 +1,12 @@
 import 'destiny_character_records_component.dart';
 
-/*  */
+/**  */
 class SingleComponentResponseOfDestinyCharacterRecordsComponent{
 	
-	/*  */
+	/**  */
 	DestinyCharacterRecordsComponent data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterRecordsComponent(
 		this.data,

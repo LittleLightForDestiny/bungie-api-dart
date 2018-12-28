@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class GroupBanRequest{
 	
-	/*  */
+	/**  */
 	String comment;
 	
-	/*  */
+	/**  */
 	int length;
 	GroupBanRequest(
 		this.comment,

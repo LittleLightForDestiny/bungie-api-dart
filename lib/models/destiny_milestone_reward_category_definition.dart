@@ -1,22 +1,22 @@
 import 'destiny_display_properties_definition.dart';
 import 'destiny_milestone_reward_entry_definition.dart';
 
-/* The definition of a category of rewards, that contains many individual rewards. */
+/** The definition of a category of rewards, that contains many individual rewards. */
 class DestinyMilestoneRewardCategoryDefinition{
 	
-	/* Identifies the reward category. Only guaranteed unique within this specific component! */
+	/** Identifies the reward category. Only guaranteed unique within this specific component! */
 	int categoryHash;
 	
-	/* The string identifier for the category, if you want to use it for some end. Guaranteed unique within the specific component. */
+	/** The string identifier for the category, if you want to use it for some end. Guaranteed unique within the specific component. */
 	String categoryIdentifier;
 	
-	/* Hopefully this is obvious by now. */
+	/** Hopefully this is obvious by now. */
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
-	/* If this milestone can provide rewards, this will define the sets of rewards that can be earned, the conditions under which they can be acquired, internal data that we'll use at runtime to determine whether you've already earned or redeemed this set of rewards, and the category that this reward should be placed under. */
+	/** If this milestone can provide rewards, this will define the sets of rewards that can be earned, the conditions under which they can be acquired, internal data that we'll use at runtime to determine whether you've already earned or redeemed this set of rewards, and the category that this reward should be placed under. */
 	Map<String, DestinyMilestoneRewardEntryDefinition> rewardEntries;
 	
-	/* If you want to use BNet's recommended order for rendering categories programmatically, use this value and compare it to other categories to determine the order in which they should be rendered. I don't feel great about putting this here, I won't lie. */
+	/** If you want to use BNet's recommended order for rendering categories programmatically, use this value and compare it to other categories to determine the order in which they should be rendered. I don't feel great about putting this here, I won't lie. */
 	int order;
 	DestinyMilestoneRewardCategoryDefinition(
 		this.categoryHash,

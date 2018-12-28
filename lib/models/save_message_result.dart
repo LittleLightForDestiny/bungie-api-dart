@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class SaveMessageResult{
 	
-	/*  */
+	/**  */
 	String conversationId;
 	
-	/*  */
+	/**  */
 	String messageId;
 	SaveMessageResult(
 		this.conversationId,

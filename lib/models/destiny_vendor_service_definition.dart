@@ -1,8 +1,8 @@
 
-/* When a vendor provides services, this is the localized name of those services. */
+/** When a vendor provides services, this is the localized name of those services. */
 class DestinyVendorServiceDefinition{
 	
-	/* The localized name of a service provided. */
+	/** The localized name of a service provided. */
 	String name;
 	DestinyVendorServiceDefinition(
 		this.name,

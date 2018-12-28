@@ -1,9 +1,9 @@
 import 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.dart';
 
-/*  */
+/**  */
 class DestinyBaseItemComponentSetOfuint32{
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent objectives;
 	DestinyBaseItemComponentSetOfuint32(
 		this.objectives,

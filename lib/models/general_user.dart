@@ -1,96 +1,96 @@
 import 'user_to_user_context.dart';
 
-/*  */
+/**  */
 class GeneralUser{
 	
-	/*  */
+	/**  */
 	String membershipId;
 	
-	/*  */
+	/**  */
 	String uniqueName;
 	
-	/*  */
+	/**  */
 	String normalizedName;
 	
-	/*  */
+	/**  */
 	String displayName;
 	
-	/*  */
+	/**  */
 	int profilePicture;
 	
-	/*  */
+	/**  */
 	int profileTheme;
 	
-	/*  */
+	/**  */
 	int userTitle;
 	
-	/*  */
+	/**  */
 	String successMessageFlags;
 	
-	/*  */
+	/**  */
 	bool isDeleted;
 	
-	/*  */
+	/**  */
 	String about;
 	
-	/*  */
+	/**  */
 	String firstAccess;
 	
-	/*  */
+	/**  */
 	String lastUpdate;
 	
-	/*  */
+	/**  */
 	String legacyPortalUid;
 	
-	/*  */
+	/**  */
 	UserToUserContext context;
 	
-	/*  */
+	/**  */
 	String psnDisplayName;
 	
-	/*  */
+	/**  */
 	String xboxDisplayName;
 	
-	/*  */
+	/**  */
 	String fbDisplayName;
 	
-	/*  */
+	/**  */
 	bool showActivity;
 	
-	/*  */
+	/**  */
 	String locale;
 	
-	/*  */
+	/**  */
 	bool localeInheritDefault;
 	
-	/*  */
+	/**  */
 	String lastBanReportId;
 	
-	/*  */
+	/**  */
 	bool showGroupMessaging;
 	
-	/*  */
+	/**  */
 	String profilePicturePath;
 	
-	/*  */
+	/**  */
 	String profilePictureWidePath;
 	
-	/*  */
+	/**  */
 	String profileThemeName;
 	
-	/*  */
+	/**  */
 	String userTitleDisplay;
 	
-	/*  */
+	/**  */
 	String statusText;
 	
-	/*  */
+	/**  */
 	String statusDate;
 	
-	/*  */
+	/**  */
 	String profileBanExpire;
 	
-	/*  */
+	/**  */
 	String blizzardDisplayName;
 	GeneralUser(
 		this.membershipId,

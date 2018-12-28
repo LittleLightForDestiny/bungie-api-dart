@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyArtDyeReference{
 	
-	/*  */
+	/**  */
 	int artDyeChannelHash;
 	DestinyArtDyeReference(
 		this.artDyeChannelHash,

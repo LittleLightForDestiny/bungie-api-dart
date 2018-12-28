@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class EntityActionResult{
 	
-	/*  */
+	/**  */
 	String entityId;
 	
-	/*  */
+	/**  */
 	int result;
 	EntityActionResult(
 		this.entityId,

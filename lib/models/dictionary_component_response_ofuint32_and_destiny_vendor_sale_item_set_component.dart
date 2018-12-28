@@ -1,12 +1,12 @@
 import 'destiny_vendor_sale_item_set_component.dart';
 
-/*  */
+/**  */
 class DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyVendorSaleItemSetComponent> data;
 	
-	/*  */
+	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent(
 		this.data,

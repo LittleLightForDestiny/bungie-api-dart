@@ -1,21 +1,21 @@
 import 'destiny_historical_stats_value_pair.dart';
 
-/*  */
+/**  */
 class DestinyHistoricalStatsValue{
 	
-	/* Unique ID for this stat */
+	/** Unique ID for this stat */
 	String statId;
 	
-	/* Basic stat value. */
+	/** Basic stat value. */
 	DestinyHistoricalStatsValuePair basic;
 	
-	/* Per game average for the statistic, if applicable */
+	/** Per game average for the statistic, if applicable */
 	DestinyHistoricalStatsValuePair pga;
 	
-	/* Weighted value of the stat if a weight greater than 1 has been assigned. */
+	/** Weighted value of the stat if a weight greater than 1 has been assigned. */
 	DestinyHistoricalStatsValuePair weighted;
 	
-	/* When a stat represents the best, most, longest, fastest or some other personal best, the actual activity ID where that personal best was established is available on this property. */
+	/** When a stat represents the best, most, longest, fastest or some other personal best, the actual activity ID where that personal best was established is available on this property. */
 	String activityId;
 	DestinyHistoricalStatsValue(
 		this.statId,

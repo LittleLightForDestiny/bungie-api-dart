@@ -4,70 +4,70 @@ import 'tag_metadata_item.dart';
 import 'content_preview.dart';
 import 'content_type_property_section.dart';
 
-/*  */
+/**  */
 class ContentTypeDescription{
 	
-	/*  */
+	/**  */
 	String cType;
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String contentDescription;
 	
-	/*  */
+	/**  */
 	String previewImage;
 	
-	/*  */
+	/**  */
 	int priority;
 	
-	/*  */
+	/**  */
 	String reminder;
 	
-	/*  */
+	/**  */
 	List<ContentTypeProperty> properties;
 	
-	/*  */
+	/**  */
 	List<TagMetadataDefinition> tagMetadata;
 	
-	/*  */
+	/**  */
 	Map<String, TagMetadataItem> tagMetadataItems;
 	
-	/*  */
+	/**  */
 	List<String> usageExamples;
 	
-	/*  */
+	/**  */
 	bool showInContentEditor;
 	
-	/*  */
+	/**  */
 	String typeOf;
 	
-	/*  */
+	/**  */
 	String bindIdentifierToProperty;
 	
-	/*  */
+	/**  */
 	String boundRegex;
 	
-	/*  */
+	/**  */
 	bool forceIdentifierBinding;
 	
-	/*  */
+	/**  */
 	bool allowComments;
 	
-	/*  */
+	/**  */
 	bool autoEnglishPropertyFallback;
 	
-	/*  */
+	/**  */
 	bool bulkUploadable;
 	
-	/*  */
+	/**  */
 	List<ContentPreview> previews;
 	
-	/*  */
+	/**  */
 	bool suppressCmsPath;
 	
-	/*  */
+	/**  */
 	List<ContentTypePropertySection> propertySections;
 	ContentTypeDescription(
 		this.cType,

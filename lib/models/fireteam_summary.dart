@@ -1,59 +1,59 @@
 
-/*  */
+/**  */
 class FireteamSummary{
 	
-	/*  */
+	/**  */
 	String fireteamId;
 	
-	/*  */
+	/**  */
 	String groupId;
 	
-	/*  */
+	/**  */
 	int platform;
 	
-	/*  */
+	/**  */
 	int activityType;
 	
-	/*  */
+	/**  */
 	bool isImmediate;
 	
-	/*  */
+	/**  */
 	String scheduledTime;
 	
-	/*  */
+	/**  */
 	String ownerMembershipId;
 	
-	/*  */
+	/**  */
 	int playerSlotCount;
 	
-	/*  */
+	/**  */
 	int alternateSlotCount;
 	
-	/*  */
+	/**  */
 	int availablePlayerSlotCount;
 	
-	/*  */
+	/**  */
 	int availableAlternateSlotCount;
 	
-	/*  */
+	/**  */
 	String title;
 	
-	/*  */
+	/**  */
 	String dateCreated;
 	
-	/*  */
+	/**  */
 	String dateModified;
 	
-	/*  */
+	/**  */
 	bool isPublic;
 	
-	/*  */
+	/**  */
 	String locale;
 	
-	/*  */
+	/**  */
 	bool isValid;
 	
-	/*  */
+	/**  */
 	String datePlayerModified;
 	FireteamSummary(
 		this.fireteamId,

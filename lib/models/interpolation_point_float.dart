@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class InterpolationPointFloat{
 	
-	/*  */
+	/**  */
 	double value;
 	
-	/*  */
+	/**  */
 	double weight;
 	InterpolationPointFloat(
 		this.value,

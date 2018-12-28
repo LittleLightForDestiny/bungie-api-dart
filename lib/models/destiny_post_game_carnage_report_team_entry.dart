@@ -1,18 +1,18 @@
 import 'destiny_historical_stats_value.dart';
 
-/*  */
+/**  */
 class DestinyPostGameCarnageReportTeamEntry{
 	
-	/* Integer ID for the team. */
+	/** Integer ID for the team. */
 	int teamId;
 	
-	/* Team's standing relative to other teams. */
+	/** Team's standing relative to other teams. */
 	DestinyHistoricalStatsValue standing;
 	
-	/* Score earned by the team */
+	/** Score earned by the team */
 	DestinyHistoricalStatsValue score;
 	
-	/* Alpha or Bravo */
+	/** Alpha or Bravo */
 	String teamName;
 	DestinyPostGameCarnageReportTeamEntry(
 		this.teamId,

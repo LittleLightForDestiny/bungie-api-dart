@@ -1,15 +1,15 @@
 import 'poll_result.dart';
 
-/*  */
+/**  */
 class PollResponse{
 	
-	/*  */
+	/**  */
 	String topicId;
 	
-	/*  */
+	/**  */
 	List<PollResult> results;
 	
-	/*  */
+	/**  */
 	int totalVotes;
 	PollResponse(
 		this.topicId,

@@ -1,12 +1,12 @@
 import 'destiny_historical_stats_value.dart';
 
-/*  */
+/**  */
 class DestinyAggregateActivityStats{
 	
-	/* Hash ID that can be looked up in the DestinyActivityTable. */
+	/** Hash ID that can be looked up in the DestinyActivityTable. */
 	int activityHash;
 	
-	/* Collection of stats for the player in this activity. */
+	/** Collection of stats for the player in this activity. */
 	Map<String, DestinyHistoricalStatsValue> values;
 	DestinyAggregateActivityStats(
 		this.activityHash,

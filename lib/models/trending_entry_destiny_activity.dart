@@ -1,12 +1,12 @@
 import 'destiny_public_activity_status.dart';
 
-/*  */
+/**  */
 class TrendingEntryDestinyActivity{
 	
-	/*  */
+	/**  */
 	int activityHash;
 	
-	/*  */
+	/** Represents the public-facing status of an activity: any data about what is currently active in the Activity, regardless of an individual character's progress in it. */
 	DestinyPublicActivityStatus status;
 	TrendingEntryDestinyActivity(
 		this.activityHash,

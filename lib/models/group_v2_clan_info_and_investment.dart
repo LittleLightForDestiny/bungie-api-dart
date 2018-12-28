@@ -1,16 +1,16 @@
 import 'destiny_progression.dart';
 import 'clan_banner.dart';
 
-/* The same as GroupV2ClanInfo, but includes any investment data. */
+/** The same as GroupV2ClanInfo, but includes any investment data. */
 class GroupV2ClanInfoAndInvestment{
 	
-	/*  */
+	/**  */
 	Map<String, DestinyProgression> d2ClanProgressions;
 	
-	/*  */
+	/**  */
 	String clanCallsign;
 	
-	/*  */
+	/**  */
 	ClanBanner clanBannerData;
 	GroupV2ClanInfoAndInvestment(
 		this.d2ClanProgressions,

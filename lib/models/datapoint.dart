@@ -1,11 +1,11 @@
 
-/*  */
+/**  */
 class Datapoint{
 	
-	/* Timestamp for the related count. */
+	/** Timestamp for the related count. */
 	String time;
 	
-	/* Count associated with timestamp */
+	/** Count associated with timestamp */
 	int count;
 	Datapoint(
 		this.time,

@@ -1,29 +1,29 @@
 
-/*  */
+/**  */
 class AwaAuthorizationResult{
 	
-	/* Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action. */
+	/** Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action. */
 	int userSelection;
 	
-	/*  */
+	/**  */
 	int responseReason;
 	
-	/* Message to the app developer to help understand the response. */
+	/** Message to the app developer to help understand the response. */
 	String developerNote;
 	
-	/* Credential used to prove the user authorized an advanced write action. */
+	/** Credential used to prove the user authorized an advanced write action. */
 	String actionToken;
 	
-	/* This token may be used to perform the requested action this number of times, at a maximum. If this value is 0, then there is no limit. */
+	/** This token may be used to perform the requested action this number of times, at a maximum. If this value is 0, then there is no limit. */
 	int maximumNumberOfUses;
 	
-	/* Time, UTC, when token expires. */
+	/** Time, UTC, when token expires. */
 	String validUntil;
 	
-	/* Advanced Write Action Type from the permission request. */
+	/** Advanced Write Action Type from the permission request. */
 	int type;
 	
-	/* MembershipType from the permission request. */
+	/** MembershipType from the permission request. */
 	int membershipType;
 	AwaAuthorizationResult(
 		this.userSelection,

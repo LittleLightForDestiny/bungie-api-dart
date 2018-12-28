@@ -1,23 +1,23 @@
 
-/*  */
+/**  */
 class DestinyItemTransferRequest{
 	
-	/*  */
+	/**  */
 	int itemReferenceHash;
 	
-	/*  */
+	/**  */
 	int stackSize;
 	
-	/*  */
+	/**  */
 	bool transferToVault;
 	
-	/*  */
+	/**  */
 	String itemId;
 	
-	/*  */
+	/**  */
 	String characterId;
 	
-	/*  */
+	/** The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType. */
 	int membershipType;
 	DestinyItemTransferRequest(
 		this.itemReferenceHash,

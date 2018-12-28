@@ -1,23 +1,23 @@
 
-/*  */
+/**  */
 class ContentPreview{
 	
-	/*  */
+	/**  */
 	String name;
 	
-	/*  */
+	/**  */
 	String path;
 	
-	/*  */
+	/**  */
 	bool itemInSet;
 	
-	/*  */
+	/**  */
 	String setTag;
 	
-	/*  */
+	/**  */
 	int setNesting;
 	
-	/*  */
+	/**  */
 	int useSetId;
 	ContentPreview(
 		this.name,

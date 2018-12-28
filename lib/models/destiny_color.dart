@@ -1,17 +1,17 @@
 
-/* Represents a color whose RGBA values are all represented as values between 0 and 255. */
+/** Represents a color whose RGBA values are all represented as values between 0 and 255. */
 class DestinyColor{
 	
-	/*  */
+	/**  */
 	int red;
 	
-	/*  */
+	/**  */
 	int green;
 	
-	/*  */
+	/**  */
 	int blue;
 	
-	/*  */
+	/**  */
 	int alpha;
 	DestinyColor(
 		this.red,

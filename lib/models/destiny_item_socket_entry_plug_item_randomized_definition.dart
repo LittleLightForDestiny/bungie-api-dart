@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 	
-	/* The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted. */
+	/** The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted. */
 	int plugItemHash;
 	DestinyItemSocketEntryPlugItemRandomizedDefinition(
 		this.plugItemHash,

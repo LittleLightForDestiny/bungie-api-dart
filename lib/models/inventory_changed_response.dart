@@ -1,12 +1,12 @@
 import 'destiny_item_component.dart';
 
-/* A response containing all of the components for all requested vendors. */
+/** A response containing all of the components for all requested vendors. */
 class InventoryChangedResponse{
 	
-	/* Items that appeared in the inventory possibly as a result of an action. */
+	/** Items that appeared in the inventory possibly as a result of an action. */
 	List<DestinyItemComponent> addedInventoryItems;
 	
-	/* Items that disappeared from the inventory possibly as a result of an action. */
+	/** Items that disappeared from the inventory possibly as a result of an action. */
 	List<DestinyItemComponent> removedInventoryItems;
 	InventoryChangedResponse(
 		this.addedInventoryItems,

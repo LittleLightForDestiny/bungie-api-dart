@@ -7,31 +7,31 @@ import 'dictionary_component_response_ofint32_and_destiny_item_talent_grid_compo
 import 'dictionary_component_response_ofuint32_and_destiny_item_plug_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_item_objectives_component.dart';
 
-/*  */
+/**  */
 class DestinyItemComponentSetOfint32{
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent instances;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemPerksComponent perks;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemRenderComponent renderData;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemStatsComponent stats;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent sockets;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent talentGrids;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
 	
-	/*  */
+	/**  */
 	DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent objectives;
 	DestinyItemComponentSetOfint32(
 		this.instances,

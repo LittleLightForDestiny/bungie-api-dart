@@ -1,8 +1,8 @@
 
-/*  */
+/**  */
 class DestinyMilestoneChallengeActivityPhase{
 	
-	/* The hash identifier of the activity's phase. */
+	/** The hash identifier of the activity's phase. */
 	int phaseHash;
 	DestinyMilestoneChallengeActivityPhase(
 		this.phaseHash,

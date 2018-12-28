@@ -39,6 +39,11 @@ export class ModelProperty{
     }
 
     description():string{
+        if(this.info.$ref){
+            let ref = ApiDocHelper.getRef(this.info.$ref);
+            if(ref.description) return ref.description;
+        }
+
         if(this.info['description']){
             return this.info['description'];
         }

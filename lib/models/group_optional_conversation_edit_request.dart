@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class GroupOptionalConversationEditRequest{
 	
-	/*  */
+	/**  */
 	bool chatEnabled;
 	
-	/*  */
+	/**  */
 	String chatName;
 	
-	/*  */
+	/**  */
 	int chatSecurity;
 	GroupOptionalConversationEditRequest(
 		this.chatEnabled,

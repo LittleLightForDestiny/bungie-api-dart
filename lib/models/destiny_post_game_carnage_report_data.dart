@@ -2,22 +2,22 @@ import 'destiny_historical_stats_activity.dart';
 import 'destiny_post_game_carnage_report_entry.dart';
 import 'destiny_post_game_carnage_report_team_entry.dart';
 
-/*  */
+/**  */
 class DestinyPostGameCarnageReportData{
 	
-	/* Date and time for the activity. */
+	/** Date and time for the activity. */
 	String period;
 	
-	/* If this activity has "phases", this is the phase at which the activity was started. */
+	/** If this activity has "phases", this is the phase at which the activity was started. */
 	int startingPhaseIndex;
 	
-	/* Details about the activity. */
+	/** Details about the activity. */
 	DestinyHistoricalStatsActivity activityDetails;
 	
-	/* Collection of players and their data for this activity. */
+	/** Collection of players and their data for this activity. */
 	List<DestinyPostGameCarnageReportEntry> entries;
 	
-	/* Collection of stats for the player in this activity. */
+	/** Collection of stats for the player in this activity. */
 	List<DestinyPostGameCarnageReportTeamEntry> teams;
 	DestinyPostGameCarnageReportData(
 		this.period,

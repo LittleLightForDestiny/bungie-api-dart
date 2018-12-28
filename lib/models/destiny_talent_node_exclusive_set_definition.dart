@@ -1,8 +1,8 @@
 
-/* The list of indexes into the Talent Grid's "nodes" property for nodes in this exclusive set. (See DestinyTalentNodeDefinition.nodeIndex) */
+/** The list of indexes into the Talent Grid's "nodes" property for nodes in this exclusive set. (See DestinyTalentNodeDefinition.nodeIndex) */
 class DestinyTalentNodeExclusiveSetDefinition{
 	
-	/* The list of node indexes for the exclusive set. Historically, these were indexes. I would have liked to replace this with nodeHashes for consistency, but it's way too late for that. (9:09 PM, he's right!) */
+	/** The list of node indexes for the exclusive set. Historically, these were indexes. I would have liked to replace this with nodeHashes for consistency, but it's way too late for that. (9:09 PM, he's right!) */
 	List<int> nodeIndexes;
 	DestinyTalentNodeExclusiveSetDefinition(
 		this.nodeIndexes,

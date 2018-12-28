@@ -1,14 +1,14 @@
 
-/*  */
+/**  */
 class PagedQuery{
 	
-	/*  */
+	/**  */
 	int itemsPerPage;
 	
-	/*  */
+	/**  */
 	int currentPage;
 	
-	/*  */
+	/**  */
 	String requestContinuationToken;
 	PagedQuery(
 		this.itemsPerPage,
