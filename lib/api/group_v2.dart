@@ -102,7 +102,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Search/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupSearchResponseResponse.fromMap(response);
@@ -143,7 +143,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/NameV2/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupResponseResponse.fromMap(response);
@@ -170,7 +170,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Create/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupCreationResponseResponse.fromMap(response);
@@ -185,7 +185,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Edit/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -200,7 +200,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/EditClanBanner/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -215,7 +215,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/EditFounderOptions/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -230,7 +230,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/OptionalConversations/Add/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int64Response.fromMap(response);
@@ -246,7 +246,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/OptionalConversations/Edit/${conversationId}/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int64Response.fromMap(response);
@@ -326,7 +326,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Ban/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -386,7 +386,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Apply/${membershipType}/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupApplicationResponseResponse.fromMap(response);
@@ -443,7 +443,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/ApproveAll/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return ListOfEntityActionResultResponse.fromMap(response);
@@ -458,7 +458,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/DenyAll/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return ListOfEntityActionResultResponse.fromMap(response);
@@ -473,7 +473,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/ApproveList/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return ListOfEntityActionResultResponse.fromMap(response);
@@ -490,7 +490,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Approve/${membershipType}/${membershipId}/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return booleanResponse.fromMap(response);
@@ -505,7 +505,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/DenyList/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return ListOfEntityActionResultResponse.fromMap(response);
@@ -554,7 +554,7 @@ class GroupV2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInvite/${membershipType}/${membershipId}/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return GroupApplicationResponseResponse.fromMap(response);

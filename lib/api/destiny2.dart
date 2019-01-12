@@ -215,7 +215,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/TransferItem/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -229,7 +229,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/PullFromPostmaster/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -243,7 +243,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItem/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -257,7 +257,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/EquipItems/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return DestinyEquipItemResultsResponse.fromMap(response);
@@ -271,7 +271,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/SetLockState/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -285,7 +285,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Actions/Items/InsertSocketPlug/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return DestinyItemChangeResponseResponse.fromMap(response);
@@ -313,7 +313,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/Report/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);
@@ -547,7 +547,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/Initialize/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return AwaInitializeResponseResponse.fromMap(response);
@@ -561,7 +561,7 @@ class Destiny2{
     ) {
         Map<String, dynamic> params = new Map();
         HttpClientConfig config = HttpClientConfig('POST', "/Destiny2/Awa/AwaProvideAuthorizationResult/", params);
-        config.body = body;
+        config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             return int32Response.fromMap(response);

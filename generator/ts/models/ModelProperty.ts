@@ -4,7 +4,7 @@ import {camelCase} from 'lodash';
 export class ModelProperty{
     constructor(
         public name:string,
-        public info:ParameterObject|ReferenceObject
+        public info:ParameterObject|ReferenceObject,
     ){
     }
 
@@ -23,6 +23,15 @@ export class ModelProperty{
             return `data['${this.name}'] != null ? ${fn} : null`;
         }
         return `data['${this.name}']`;
+    }
+
+    bodySerializeFunction(){
+        let fn = ApiDocHelper.getSerializeFunction(this.info, camelCase(this.name));
+        
+        if(fn){
+            return `config.${this.name} = ${fn.replace('this.', '')};`;
+        }
+        return `config.${this.name} = ${camelCase(this.name)};`;
     }
 
     serializationFunction(){

@@ -21,7 +21,7 @@ class {{className}}{
         {{/queryParameters}}
         HttpClientConfig config = HttpClientConfig('{{method}}', "{{{url}}}", params);
         {{#requestBody}}
-        config.body = body;
+        {{{bodySerializeFunction}}}
         {{/requestBody}}
         config.bodyContentType = {{{requestBodyContentType}}};
         return client.request(config).then((response){
