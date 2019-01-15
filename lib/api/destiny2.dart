@@ -46,7 +46,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyManifestResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyManifestResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -60,7 +63,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Manifest/${entityType}/${hashIdentifier}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyDefinitionResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyDefinitionResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -74,7 +80,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return IEnumerableOfUserInfoCardResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return IEnumerableOfUserInfoCardResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -88,7 +97,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLinkedProfilesResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyLinkedProfilesResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -104,7 +116,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyProfileResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyProfileResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -121,7 +136,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyCharacterResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyCharacterResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -134,7 +152,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Clan/${groupId}/WeeklyRewardState/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyMilestoneResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyMilestoneResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -151,7 +172,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Item/${itemInstanceId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyItemResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyItemResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -168,7 +192,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyVendorsResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyVendorsResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -186,7 +213,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Vendors/${vendorHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyVendorResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyVendorResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -204,7 +234,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${destinyMembershipId}/Character/${characterId}/Collectibles/${collectiblePresentationNodeHash}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyCollectibleNodeDetailResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyCollectibleNodeDetailResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -218,7 +251,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -232,7 +268,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -246,7 +285,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -260,7 +302,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return DestinyEquipItemResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyEquipItemResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -274,7 +319,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -288,7 +336,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return DestinyItemChangeResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyItemChangeResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -301,7 +352,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/PostGameCarnageReport/${activityId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyPostGameCarnageReportDataResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyPostGameCarnageReportDataResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -316,7 +370,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -328,7 +385,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Definition/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -347,7 +407,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/Clans/${groupId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyLeaderboardResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -362,7 +425,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/AggregateClanStats/${groupId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfDestinyClanAggregateStatResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfDestinyClanAggregateStatResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -382,7 +448,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/Leaderboards/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyLeaderboardResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -403,7 +472,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Stats/Leaderboards/${membershipType}/${destinyMembershipId}/${characterId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyLeaderboardResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyLeaderboardResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -419,7 +491,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Armory/Search/${type}/${searchTerm}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyEntitySearchResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyEntitySearchResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -444,7 +519,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalStatsResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyHistoricalStatsResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -460,7 +538,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Stats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalStatsAccountResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyHistoricalStatsAccountResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -481,7 +562,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/Activities/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyActivityHistoryResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyActivityHistoryResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -496,7 +580,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/UniqueWeapons/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyHistoricalWeaponStatsDataResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyHistoricalWeaponStatsDataResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -511,7 +598,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Stats/AggregateActivityStats/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyAggregateActivityResultsResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyAggregateActivityResultsResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -524,7 +614,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/${milestoneHash}/Content/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DestinyMilestoneContentResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DestinyMilestoneContentResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -536,7 +629,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Milestones/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -550,7 +646,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return AwaInitializeResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return AwaInitializeResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -564,7 +663,10 @@ class Destiny2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -577,7 +679,10 @@ class Destiny2{
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/Awa/GetActionToken/${correlationId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return AwaAuthorizationResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return AwaAuthorizationResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

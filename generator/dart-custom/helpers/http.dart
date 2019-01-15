@@ -14,5 +14,11 @@ class HttpClientConfig {
  * helper functions will use this to return the right type.
  */
 abstract class HttpClient{
-  Future<dynamic> request(HttpClientConfig config);
+  Future<HttpResponse> request(HttpClientConfig config);
+}
+
+class HttpResponse{  
+  final dynamic mappedBody;
+  final int statusCode;
+  HttpResponse(this.mappedBody, this.statusCode);
 }

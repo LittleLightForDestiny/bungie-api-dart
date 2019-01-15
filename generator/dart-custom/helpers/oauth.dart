@@ -1,7 +1,7 @@
 /**
  * Bungie.net Oauth methods
  */
-import '../helpers/http.dart';
+import './http.dart';
 
 class OAuth{
   static openOAuth(OAuthBrowser browser, String clientId, [String languageCode = "en", bool reauth=false]){
@@ -16,7 +16,10 @@ class OAuth{
     config.bodyContentType = "application/x-www-form-urlencoded";
     config.body = "client_id=$clientId&client_secret=$clientSecret&code=$code&grant_type=authorization_code";
     return client.request(config).then((response){
-      return BungieNetToken.fromMap(response);
+      if(response.statusCode == 200){
+        return BungieNetToken.fromMap(response.mappedBody);
+      }
+      throw OAuthException(response.mappedBody['error'], response.mappedBody['error_description']);
     });
   }
   static Future<BungieNetToken> refreshToken(HttpClient client, String clientId, String clientSecret, String refreshToken){
@@ -24,7 +27,10 @@ class OAuth{
     config.bodyContentType = "application/x-www-form-urlencoded";
     config.body = "client_id=$clientId&client_secret=$clientSecret&refresh_token=$refreshToken&grant_type=refresh_token";
     return client.request(config).then((response){
-      return BungieNetToken.fromMap(response);
+      if(response.statusCode == 200){
+        return BungieNetToken.fromMap(response.mappedBody);
+      }
+      throw OAuthException(response.mappedBody['error'], response.mappedBody['error_description']);
     });
   }
 }
@@ -68,4 +74,14 @@ class BungieNetToken{
     data["membership_id"] = this.membershipId;
     return data;
   }
+}
+
+class OAuthException implements Exception{
+  final String error;
+  final String errorDescription;
+  OAuthException(this.error, [this.errorDescription]);
+  @override
+    String toString() {
+      return "$error - $errorDescription";
+    }
 }

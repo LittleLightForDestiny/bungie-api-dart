@@ -25,7 +25,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicsPaged/${page}/${pageSize}/${group}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -43,7 +46,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetCoreTopicsPaged/${page}/${sort}/${quickDate}/${categoryFilter}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -64,7 +70,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPaged/${parentPostId}/${page}/${pageSize}/${replySize}/${getParentPost}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -84,7 +93,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostsThreadedPagedFromChild/${childPostId}/${page}/${pageSize}/${replySize}/${rootThreadMode}/${sortMode}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -99,7 +111,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostAndParent/${childPostId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -114,7 +129,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetPostAndParentAwaitingApproval/${childPostId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -127,7 +145,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetTopicForContent/${contentId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int64Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int64Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -141,7 +162,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/GetForumTagSuggestions/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfTagResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfTagResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -154,7 +178,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('GET', "/Forum/Poll/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -167,7 +194,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Join/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -180,7 +210,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Leave/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -194,7 +227,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/${targetMembershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ForumRecruitmentDetailResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -207,7 +243,10 @@ class Forum{
         HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Approve/${topicId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SaveMessageResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SaveMessageResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -221,7 +260,10 @@ class Forum{
         config.body = body;
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return CEListOfForumRecruitmentDetailResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return CEListOfForumRecruitmentDetailResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

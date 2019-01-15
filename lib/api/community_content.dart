@@ -15,7 +15,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Get/${sort}/${mediaFilter}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return PostSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return PostSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -34,7 +37,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/All/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfCommunityLiveStatusResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -49,7 +55,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Clan/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfCommunityLiveStatusResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -64,7 +73,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Friends/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfCommunityLiveStatusResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -81,7 +93,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Featured/${partnershipType}/${sort}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfCommunityLiveStatusResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -96,7 +111,10 @@ class CommunityContent{
         HttpClientConfig config = HttpClientConfig('GET', "/CommunityContent/Live/Users/${partnershipType}/${membershipType}/${membershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CommunityLiveStatusResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return CommunityLiveStatusResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

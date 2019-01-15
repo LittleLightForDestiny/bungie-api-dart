@@ -16,7 +16,10 @@ class App{
         HttpClientConfig config = HttpClientConfig('GET', "/App/ApiUsage/${applicationId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ApiUsageResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ApiUsageResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -28,7 +31,10 @@ class App{
         HttpClientConfig config = HttpClientConfig('GET', "/App/FirstParty/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return IEnumerableOfApplicationResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return IEnumerableOfApplicationResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

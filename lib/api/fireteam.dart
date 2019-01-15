@@ -14,7 +14,10 @@ class Fireteam{
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/ActiveCount/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -35,7 +38,10 @@ class Fireteam{
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/Available/${platform}/${activityType}/${dateRange}/${slotFilter}/${publicOnly}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamSummaryResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfFireteamSummaryResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -54,7 +60,10 @@ class Fireteam{
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Search/Available/${platform}/${activityType}/${dateRange}/${slotFilter}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamSummaryResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfFireteamSummaryResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -74,7 +83,10 @@ class Fireteam{
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/My/${platform}/${includeClosed}/${page}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfFireteamResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfFireteamResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -88,7 +100,10 @@ class Fireteam{
         HttpClientConfig config = HttpClientConfig('GET', "/Fireteam/Clan/${groupId}/Summary/${fireteamId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return FireteamResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return FireteamResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

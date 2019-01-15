@@ -15,7 +15,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetBungieNetUserById/${id}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GeneralUserResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GeneralUserResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -29,7 +32,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/SearchUsers/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfGeneralUserResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfGeneralUserResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -41,7 +47,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetAvailableThemes/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfUserThemeResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfUserThemeResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -55,7 +64,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsById/${membershipId}/${membershipType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return UserMembershipDataResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return UserMembershipDataResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -67,7 +79,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipsForCurrentUser/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return UserMembershipDataResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return UserMembershipDataResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -80,7 +95,10 @@ class User{
         HttpClientConfig config = HttpClientConfig('GET', "/User/${membershipId}/Partnerships/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CEListOfPublicPartnershipDetailResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return CEListOfPublicPartnershipDetailResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

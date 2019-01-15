@@ -13,7 +13,10 @@ class Content{
         HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentType/${type}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ContentTypeDescriptionResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ContentTypeDescriptionResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -29,7 +32,10 @@ class Content{
         HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentById/${id}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ContentItemPublicContractResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ContentItemPublicContractResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -46,7 +52,10 @@ class Content{
         HttpClientConfig config = HttpClientConfig('GET', "/Content/GetContentByTagAndType/${tag}/${type}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ContentItemPublicContractResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ContentItemPublicContractResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -71,7 +80,10 @@ class Content{
         HttpClientConfig config = HttpClientConfig('GET', "/Content/Search/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfContentItemPublicContractResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfContentItemPublicContractResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -92,7 +104,10 @@ class Content{
         HttpClientConfig config = HttpClientConfig('GET', "/Content/SearchContentByTagAndType/${tag}/${type}/${locale}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfContentItemPublicContractResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfContentItemPublicContractResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

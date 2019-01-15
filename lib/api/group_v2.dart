@@ -38,7 +38,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/GetAvailableAvatars/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return DictionaryOfint32AndstringResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return DictionaryOfint32AndstringResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -50,7 +53,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/GetAvailableThemes/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfGroupThemeResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfGroupThemeResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -63,7 +69,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/GetUserClanInviteSetting/${mType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return booleanResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return booleanResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -77,7 +86,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/SetUserClanInviteSetting/${mType}/${allowInvites}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -91,7 +103,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Recommended/${groupType}/${createDateRange}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return ListOfGroupV2CardResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfGroupV2CardResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -105,7 +120,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return GroupSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -118,7 +136,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -132,7 +153,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/Name/${groupName}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -146,7 +170,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return GroupResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -159,7 +186,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/OptionalConversations/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CEListOfGroupOptionalConversationResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return CEListOfGroupOptionalConversationResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -173,7 +203,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return GroupCreationResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupCreationResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -188,7 +221,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -203,7 +239,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -218,7 +257,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -233,7 +275,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int64Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int64Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -249,7 +294,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int64Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int64Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -267,7 +315,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Members/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfGroupMemberResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfGroupMemberResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -281,7 +332,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/AdminsAndFounder/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfGroupMemberResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfGroupMemberResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -297,7 +351,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/SetMembershipType/${memberType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -312,7 +369,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Kick/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupMemberLeaveResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupMemberLeaveResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -329,7 +389,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -344,7 +407,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/${membershipType}/${membershipId}/Unban/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return int32Response.fromMap(response);
+            if(response.statusCode == 200){
+                return int32Response.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -358,7 +424,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Banned/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfGroupBanResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfGroupBanResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -373,7 +442,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Admin/AbdicateFoundership/${membershipType}/${founderIdNew}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return booleanResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return booleanResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -389,7 +461,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return GroupApplicationResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupApplicationResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -403,7 +478,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Members/Pending/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfGroupMemberApplicationResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfGroupMemberApplicationResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -417,7 +495,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/${groupId}/Members/InvitedIndividuals/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return SearchResultOfGroupMemberApplicationResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return SearchResultOfGroupMemberApplicationResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -431,7 +512,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Rescind/${membershipType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupMemberLeaveResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupMemberLeaveResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -446,7 +530,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return ListOfEntityActionResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfEntityActionResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -461,7 +548,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return ListOfEntityActionResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfEntityActionResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -476,7 +566,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return ListOfEntityActionResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfEntityActionResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -493,7 +586,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return booleanResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return booleanResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -508,7 +604,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return ListOfEntityActionResultResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return ListOfEntityActionResultResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -524,7 +623,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/${membershipType}/${membershipId}/${filter}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupMembershipSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupMembershipSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -540,7 +642,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('GET', "/GroupV2/User/Potential/${membershipType}/${membershipId}/${filter}/${groupType}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupPotentialMembershipSearchResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupPotentialMembershipSearchResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -557,7 +662,10 @@ class GroupV2{
         config.body = body.toMap();
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
-            return GroupApplicationResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupApplicationResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
     
@@ -572,7 +680,10 @@ class GroupV2{
         HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/IndividualInviteCancel/${membershipType}/${membershipId}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return GroupApplicationResponseResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return GroupApplicationResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }

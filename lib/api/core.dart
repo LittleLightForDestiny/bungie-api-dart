@@ -12,7 +12,10 @@ class Core{
         HttpClientConfig config = HttpClientConfig('GET', "/GlobalAlerts/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
-            return CEListOfGlobalAlertResponse.fromMap(response);
+            if(response.statusCode == 200){
+                return CEListOfGlobalAlertResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
         });
     }
 }
