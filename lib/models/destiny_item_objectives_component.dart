@@ -42,8 +42,8 @@ Objectives are our standard way to describe a series of tasks that have to be co
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objectives'] = this.objectives.map((item)=>item.toMap()).toList();
-			data['flavorObjective'] = this.flavorObjective;
+			data['objectives'] = this.objectives != null? this.objectives.map((item)=>item.toMap()).toList() : null;
+			data['flavorObjective'] = this.flavorObjective != null? this.flavorObjective.toMap() : null;
 			data['dateCompleted'] = this.dateCompleted;
 		return data;
 	}

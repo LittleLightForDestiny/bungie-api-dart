@@ -43,7 +43,7 @@ class ApplicationDeveloper{
 		Map<String, dynamic> data = new Map();
 			data['role'] = this.role;
 			data['apiEulaVersion'] = this.apiEulaVersion;
-			data['user'] = this.user.toMap();
+			data['user'] = this.user != null? this.user.toMap() : null;
 		return data;
 	}
 }

@@ -59,7 +59,7 @@ This list will be empty if the plug is enabled. */
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['plugItemHash'] = this.plugItemHash;
-			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap()).toList();
+			data['plugObjectives'] = this.plugObjectives != null? this.plugObjectives.map((item)=>item.toMap()).toList() : null;
 			data['canInsert'] = this.canInsert;
 			data['enabled'] = this.enabled;
 			data['insertFailIndexes'] = this.insertFailIndexes;

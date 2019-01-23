@@ -59,7 +59,7 @@ Use this hash to look up the stat's value using DestinyInventoryItemDefinition.s
 		Map<String, dynamic> data = new Map();
 			data['disablePrimaryStatDisplay'] = this.disablePrimaryStatDisplay;
 			data['statGroupHash'] = this.statGroupHash;
-			data['stats'] = this.stats;
+			data['stats'] = this.stats != null? this.stats.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['hasDisplayableStats'] = this.hasDisplayableStats;
 			data['primaryBaseStatHash'] = this.primaryBaseStatHash;
 		return data;

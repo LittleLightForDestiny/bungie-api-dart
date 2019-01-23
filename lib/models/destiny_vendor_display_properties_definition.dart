@@ -85,7 +85,7 @@ But usually, it will be a small square image that you can use as... well, an ico
 			data['largeIcon'] = this.largeIcon;
 			data['subtitle'] = this.subtitle;
 			data['originalIcon'] = this.originalIcon;
-			data['requirementsDisplay'] = this.requirementsDisplay.map((item)=>item.toMap()).toList();
+			data['requirementsDisplay'] = this.requirementsDisplay != null? this.requirementsDisplay.map((item)=>item.toMap()).toList() : null;
 			data['smallTransparentIcon'] = this.smallTransparentIcon;
 			data['mapIcon'] = this.mapIcon;
 			data['largeTransparentIcon'] = this.largeTransparentIcon;

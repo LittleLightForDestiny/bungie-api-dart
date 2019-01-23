@@ -32,7 +32,7 @@ For each checklist returned, its value is itself a Dictionary keyed by the check
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['checklists'] = this.checklists;
+			data['checklists'] = this.checklists != null? this.checklists.map((i, v)=>MapEntry(i, v.map((i, v)=>MapEntry(i, v)))) : null;
 		return data;
 	}
 }

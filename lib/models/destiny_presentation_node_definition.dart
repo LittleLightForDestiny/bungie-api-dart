@@ -113,17 +113,17 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['originalIcon'] = this.originalIcon;
 			data['rootViewIcon'] = this.rootViewIcon;
 			data['nodeType'] = this.nodeType;
 			data['scope'] = this.scope;
 			data['objectiveHash'] = this.objectiveHash;
 			data['completionRecordHash'] = this.completionRecordHash;
-			data['children'] = this.children;
+			data['children'] = this.children != null? this.children.toMap() : null;
 			data['displayStyle'] = this.displayStyle;
 			data['screenStyle'] = this.screenStyle;
-			data['requirements'] = this.requirements;
+			data['requirements'] = this.requirements != null? this.requirements.toMap() : null;
 			data['disableChildSubscreenNavigation'] = this.disableChildSubscreenNavigation;
 			data['parentNodeHashes'] = this.parentNodeHashes;
 			data['hash'] = this.hash;

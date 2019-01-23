@@ -47,8 +47,8 @@ class DestinyPostGameCarnageReportTeamEntry{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['teamId'] = this.teamId;
-			data['standing'] = this.standing;
-			data['score'] = this.score;
+			data['standing'] = this.standing != null? this.standing.toMap() : null;
+			data['score'] = this.score != null? this.score.toMap() : null;
 			data['teamName'] = this.teamName;
 		return data;
 	}

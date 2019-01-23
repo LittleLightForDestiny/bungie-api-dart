@@ -37,7 +37,7 @@ class DestinyRecordComponent{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['state'] = this.state;
-			data['objectives'] = this.objectives.map((item)=>item.toMap()).toList();
+			data['objectives'] = this.objectives != null? this.objectives.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

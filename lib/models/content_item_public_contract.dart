@@ -113,12 +113,12 @@ As Cole Porter would have crooned, "Anything Goes" with Firehose properties. The
 			data['hasAgeGate'] = this.hasAgeGate;
 			data['minimumAge'] = this.minimumAge;
 			data['ratingImagePath'] = this.ratingImagePath;
-			data['author'] = this.author.toMap();
+			data['author'] = this.author != null? this.author.toMap() : null;
 			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
-			data['properties'] = this.properties;
-			data['representations'] = this.representations.map((item)=>item.toMap()).toList();
+			data['properties'] = this.properties != null? this.properties.map((i, v)=>MapEntry(i, v)) : null;
+			data['representations'] = this.representations != null? this.representations.map((item)=>item.toMap()).toList() : null;
 			data['tags'] = this.tags;
-			data['commentSummary'] = this.commentSummary.toMap();
+			data['commentSummary'] = this.commentSummary != null? this.commentSummary.toMap() : null;
 		return data;
 	}
 }

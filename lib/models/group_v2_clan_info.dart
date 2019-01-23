@@ -37,7 +37,7 @@ class GroupV2ClanInfo{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['clanCallsign'] = this.clanCallsign;
-			data['clanBannerData'] = this.clanBannerData.toMap();
+			data['clanBannerData'] = this.clanBannerData != null? this.clanBannerData.toMap() : null;
 		return data;
 	}
 }

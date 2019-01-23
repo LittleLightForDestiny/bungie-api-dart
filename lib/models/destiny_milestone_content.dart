@@ -49,7 +49,7 @@ class DestinyMilestoneContent{
 			data['about'] = this.about;
 			data['status'] = this.status;
 			data['tips'] = this.tips;
-			data['itemCategories'] = this.itemCategories.map((item)=>item.toMap()).toList();
+			data['itemCategories'] = this.itemCategories != null? this.itemCategories.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

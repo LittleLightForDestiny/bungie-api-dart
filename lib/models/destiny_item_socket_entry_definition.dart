@@ -76,12 +76,12 @@ Remember that Vendors are much more than conceptual vendors: they include "Colle
 		Map<String, dynamic> data = new Map();
 			data['socketTypeHash'] = this.socketTypeHash;
 			data['singleInitialItemHash'] = this.singleInitialItemHash;
-			data['reusablePlugItems'] = this.reusablePlugItems.map((item)=>item.toMap()).toList();
+			data['reusablePlugItems'] = this.reusablePlugItems != null? this.reusablePlugItems.map((item)=>item.toMap()).toList() : null;
 			data['preventInitializationOnVendorPurchase'] = this.preventInitializationOnVendorPurchase;
 			data['hidePerksInItemTooltip'] = this.hidePerksInItemTooltip;
 			data['plugSources'] = this.plugSources;
 			data['reusablePlugSetHash'] = this.reusablePlugSetHash;
-			data['randomizedPlugItems'] = this.randomizedPlugItems.map((item)=>item.toMap()).toList();
+			data['randomizedPlugItems'] = this.randomizedPlugItems != null? this.randomizedPlugItems.map((item)=>item.toMap()).toList() : null;
 			data['defaultVisible'] = this.defaultVisible;
 		return data;
 	}

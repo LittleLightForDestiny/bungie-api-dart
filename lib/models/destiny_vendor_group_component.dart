@@ -31,7 +31,7 @@ class DestinyVendorGroupComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['groups'] = this.groups.map((item)=>item.toMap()).toList();
+			data['groups'] = this.groups != null? this.groups.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

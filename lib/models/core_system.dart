@@ -36,7 +36,7 @@ class CoreSystem{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['enabled'] = this.enabled;
-			data['parameters'] = this.parameters;
+			data['parameters'] = this.parameters != null? this.parameters.map((i, v)=>MapEntry(i, v)) : null;
 		return data;
 	}
 }

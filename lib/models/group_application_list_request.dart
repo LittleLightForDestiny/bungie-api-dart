@@ -36,7 +36,7 @@ class GroupApplicationListRequest{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['memberships'] = this.memberships.map((item)=>item.toMap()).toList();
+			data['memberships'] = this.memberships != null? this.memberships.map((item)=>item.toMap()).toList() : null;
 			data['message'] = this.message;
 		return data;
 	}

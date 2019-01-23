@@ -37,7 +37,7 @@ class DestinyBubbleDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['hash'] = this.hash;
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 		return data;
 	}
 }

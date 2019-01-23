@@ -82,12 +82,12 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['milestoneHash'] = this.milestoneHash;
-			data['availableQuests'] = this.availableQuests.map((item)=>item.toMap()).toList();
-			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
-			data['values'] = this.values;
+			data['availableQuests'] = this.availableQuests != null? this.availableQuests.map((item)=>item.toMap()).toList() : null;
+			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
+			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v)) : null;
 			data['vendorHashes'] = this.vendorHashes;
-			data['vendors'] = this.vendors.map((item)=>item.toMap()).toList();
-			data['rewards'] = this.rewards.map((item)=>item.toMap()).toList();
+			data['vendors'] = this.vendors != null? this.vendors.map((item)=>item.toMap()).toList() : null;
+			data['rewards'] = this.rewards != null? this.rewards.map((item)=>item.toMap()).toList() : null;
 			data['startDate'] = this.startDate;
 			data['endDate'] = this.endDate;
 			data['order'] = this.order;

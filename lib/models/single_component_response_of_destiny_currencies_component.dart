@@ -38,7 +38,7 @@ You *could* figure this out yourself by doing a GetCharacter or GetProfile reque
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data.toMap();
+			data['data'] = this.data != null? this.data.toMap() : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

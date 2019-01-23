@@ -47,7 +47,7 @@ class DestinyPresentationNodeComponent{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['state'] = this.state;
-			data['objective'] = this.objective;
+			data['objective'] = this.objective != null? this.objective.toMap() : null;
 			data['progressValue'] = this.progressValue;
 			data['completionValue'] = this.completionValue;
 		return data;

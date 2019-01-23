@@ -113,7 +113,7 @@ class TrendingEntry{
 			data['webmVideo'] = this.webmVideo;
 			data['mp4Video'] = this.mp4Video;
 			data['featureImage'] = this.featureImage;
-			data['items'] = this.items.map((item)=>item.toMap()).toList();
+			data['items'] = this.items != null? this.items.map((item)=>item.toMap()).toList() : null;
 			data['creationDate'] = this.creationDate;
 		return data;
 	}

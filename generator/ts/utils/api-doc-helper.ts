@@ -1,7 +1,7 @@
 import { OpenAPIObject, ReferenceObject, ParameterObject, SchemaObject } from "openapi3-ts";
 import { readFileSync } from "fs";
 import { ImportInfo } from "../models/ImportInfo";
-import { camelCase } from "lodash";
+import { camelCase, get as _get } from "lodash";
 
 export class ApiDocHelper{
     static doc:OpenAPIObject;
@@ -62,6 +62,17 @@ export class ApiDocHelper{
             }
         }
         let param:ParameterObject = obj as ParameterObject;
+        if(param.type == 'object'){
+            let ref = _get(param, 'allOf[0]');
+            if(ref){
+                return this.getSerializeFunction(ref, name);
+            }
+        }
+        if(param.additionalProperties && param['x-dictionary-key']){
+            let value = this.getSerializeFunction(param.additionalProperties, 'v') || 'v';
+            value = value.replace('this.', '');
+            return `this.${name}.map((i, v)=>MapEntry(i, ${value}))`;
+        }
         if(param.schema){
             return this.getSerializeFunction(param.schema, name);
         }

@@ -118,24 +118,24 @@ class CoreSettingsConfiguration{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['systems'] = this.systems;
-			data['ignoreReasons'] = this.ignoreReasons.map((item)=>item.toMap()).toList();
-			data['forumCategories'] = this.forumCategories.map((item)=>item.toMap()).toList();
-			data['groupAvatars'] = this.groupAvatars.map((item)=>item.toMap()).toList();
-			data['destinyMembershipTypes'] = this.destinyMembershipTypes.map((item)=>item.toMap()).toList();
-			data['recruitmentPlatformTags'] = this.recruitmentPlatformTags.map((item)=>item.toMap()).toList();
-			data['recruitmentMiscTags'] = this.recruitmentMiscTags.map((item)=>item.toMap()).toList();
-			data['recruitmentActivities'] = this.recruitmentActivities.map((item)=>item.toMap()).toList();
-			data['userContentLocales'] = this.userContentLocales.map((item)=>item.toMap()).toList();
-			data['systemContentLocales'] = this.systemContentLocales.map((item)=>item.toMap()).toList();
-			data['clanBannerDecals'] = this.clanBannerDecals.map((item)=>item.toMap()).toList();
-			data['clanBannerDecalColors'] = this.clanBannerDecalColors.map((item)=>item.toMap()).toList();
-			data['clanBannerGonfalons'] = this.clanBannerGonfalons.map((item)=>item.toMap()).toList();
-			data['clanBannerGonfalonColors'] = this.clanBannerGonfalonColors.map((item)=>item.toMap()).toList();
-			data['clanBannerGonfalonDetails'] = this.clanBannerGonfalonDetails.map((item)=>item.toMap()).toList();
-			data['clanBannerGonfalonDetailColors'] = this.clanBannerGonfalonDetailColors.map((item)=>item.toMap()).toList();
-			data['clanBannerStandards'] = this.clanBannerStandards.map((item)=>item.toMap()).toList();
-			data['destiny2CoreSettings'] = this.destiny2CoreSettings.toMap();
+			data['systems'] = this.systems != null? this.systems.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['ignoreReasons'] = this.ignoreReasons != null? this.ignoreReasons.map((item)=>item.toMap()).toList() : null;
+			data['forumCategories'] = this.forumCategories != null? this.forumCategories.map((item)=>item.toMap()).toList() : null;
+			data['groupAvatars'] = this.groupAvatars != null? this.groupAvatars.map((item)=>item.toMap()).toList() : null;
+			data['destinyMembershipTypes'] = this.destinyMembershipTypes != null? this.destinyMembershipTypes.map((item)=>item.toMap()).toList() : null;
+			data['recruitmentPlatformTags'] = this.recruitmentPlatformTags != null? this.recruitmentPlatformTags.map((item)=>item.toMap()).toList() : null;
+			data['recruitmentMiscTags'] = this.recruitmentMiscTags != null? this.recruitmentMiscTags.map((item)=>item.toMap()).toList() : null;
+			data['recruitmentActivities'] = this.recruitmentActivities != null? this.recruitmentActivities.map((item)=>item.toMap()).toList() : null;
+			data['userContentLocales'] = this.userContentLocales != null? this.userContentLocales.map((item)=>item.toMap()).toList() : null;
+			data['systemContentLocales'] = this.systemContentLocales != null? this.systemContentLocales.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerDecals'] = this.clanBannerDecals != null? this.clanBannerDecals.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerDecalColors'] = this.clanBannerDecalColors != null? this.clanBannerDecalColors.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerGonfalons'] = this.clanBannerGonfalons != null? this.clanBannerGonfalons.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerGonfalonColors'] = this.clanBannerGonfalonColors != null? this.clanBannerGonfalonColors.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerGonfalonDetails'] = this.clanBannerGonfalonDetails != null? this.clanBannerGonfalonDetails.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerGonfalonDetailColors'] = this.clanBannerGonfalonDetailColors != null? this.clanBannerGonfalonDetailColors.map((item)=>item.toMap()).toList() : null;
+			data['clanBannerStandards'] = this.clanBannerStandards != null? this.clanBannerStandards.map((item)=>item.toMap()).toList() : null;
+			data['destiny2CoreSettings'] = this.destiny2CoreSettings != null? this.destiny2CoreSettings.toMap() : null;
 		return data;
 	}
 }

@@ -43,8 +43,8 @@ class DestinyHistoricalStatsPeriodGroup{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['period'] = this.period;
-			data['activityDetails'] = this.activityDetails;
-			data['values'] = this.values;
+			data['activityDetails'] = this.activityDetails != null? this.activityDetails.toMap() : null;
+			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

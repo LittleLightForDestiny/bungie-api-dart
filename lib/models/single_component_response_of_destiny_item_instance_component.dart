@@ -38,7 +38,7 @@ You can tell from an item's definition whether it will be instanced or not by lo
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data.toMap();
+			data['data'] = this.data != null? this.data.toMap() : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

@@ -32,7 +32,7 @@ class DestinyPlugSetsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['plugs'] = this.plugs;
+			data['plugs'] = this.plugs != null? this.plugs.map((i, v)=>MapEntry(i, v.map((item)=>item.toMap()).toList())) : null;
 		return data;
 	}
 }

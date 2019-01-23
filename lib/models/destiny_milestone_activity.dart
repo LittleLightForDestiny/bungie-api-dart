@@ -55,7 +55,7 @@ class DestinyMilestoneActivity{
 			data['activityModeHash'] = this.activityModeHash;
 			data['activityModeType'] = this.activityModeType;
 			data['modifierHashes'] = this.modifierHashes;
-			data['variants'] = this.variants.map((item)=>item.toMap()).toList();
+			data['variants'] = this.variants != null? this.variants.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

@@ -31,7 +31,7 @@ class DestinyActivityLoadoutRequirementSet{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['requirements'] = this.requirements.map((item)=>item.toMap()).toList();
+			data['requirements'] = this.requirements != null? this.requirements.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

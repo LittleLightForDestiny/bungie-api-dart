@@ -67,13 +67,13 @@ class GroupBan{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['groupId'] = this.groupId;
-			data['lastModifiedBy'] = this.lastModifiedBy.toMap();
-			data['createdBy'] = this.createdBy.toMap();
+			data['lastModifiedBy'] = this.lastModifiedBy != null? this.lastModifiedBy.toMap() : null;
+			data['createdBy'] = this.createdBy != null? this.createdBy.toMap() : null;
 			data['dateBanned'] = this.dateBanned;
 			data['dateExpires'] = this.dateExpires;
 			data['comment'] = this.comment;
-			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
-			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;
+			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
 		return data;
 	}
 }

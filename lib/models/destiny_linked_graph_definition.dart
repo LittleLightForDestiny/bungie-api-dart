@@ -60,9 +60,9 @@ Use UnlockExpressionParser to evaluate expressions using an IUnlockContext parse
 		Map<String, dynamic> data = new Map();
 			data['description'] = this.description;
 			data['name'] = this.name;
-			data['unlockExpression'] = this.unlockExpression.toMap();
+			data['unlockExpression'] = this.unlockExpression != null? this.unlockExpression.toMap() : null;
 			data['linkedGraphId'] = this.linkedGraphId;
-			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap()).toList();
+			data['linkedGraphs'] = this.linkedGraphs != null? this.linkedGraphs.map((item)=>item.toMap()).toList() : null;
 			data['overview'] = this.overview;
 		return data;
 	}

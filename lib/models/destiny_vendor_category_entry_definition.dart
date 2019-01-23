@@ -122,7 +122,7 @@ class DestinyVendorCategoryEntryDefinition{
 			data['buyStringOverride'] = this.buyStringOverride;
 			data['disabledDescription'] = this.disabledDescription;
 			data['displayTitle'] = this.displayTitle;
-			data['overlay'] = this.overlay;
+			data['overlay'] = this.overlay != null? this.overlay.toMap() : null;
 			data['vendorItemIndexes'] = this.vendorItemIndexes;
 			data['isPreview'] = this.isPreview;
 			data['isDisplayOnly'] = this.isDisplayOnly;

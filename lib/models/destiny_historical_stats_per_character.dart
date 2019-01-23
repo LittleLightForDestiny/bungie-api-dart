@@ -48,8 +48,8 @@ class DestinyHistoricalStatsPerCharacter{
 		Map<String, dynamic> data = new Map();
 			data['characterId'] = this.characterId;
 			data['deleted'] = this.deleted;
-			data['results'] = this.results;
-			data['merged'] = this.merged.toMap();
+			data['results'] = this.results != null? this.results.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['merged'] = this.merged != null? this.merged.toMap() : null;
 		return data;
 	}
 }

@@ -48,7 +48,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['materials'] = this.materials.map((item)=>item.toMap()).toList();
+			data['materials'] = this.materials != null? this.materials.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

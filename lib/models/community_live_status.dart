@@ -144,7 +144,7 @@ class CommunityLiveStatus{
 			data['thumbnailSmall'] = this.thumbnailSmall;
 			data['thumbnailLarge'] = this.thumbnailLarge;
 			data['destinyCharacterId'] = this.destinyCharacterId;
-			data['userInfo'] = this.userInfo.toMap();
+			data['userInfo'] = this.userInfo != null? this.userInfo.toMap() : null;
 			data['currentActivityHash'] = this.currentActivityHash;
 			data['dateLastPlayed'] = this.dateLastPlayed;
 			data['dateStreamStarted'] = this.dateStreamStarted;

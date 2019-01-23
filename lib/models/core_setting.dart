@@ -60,7 +60,7 @@ class CoreSetting{
 			data['displayName'] = this.displayName;
 			data['summary'] = this.summary;
 			data['imagePath'] = this.imagePath;
-			data['childSettings'] = this.childSettings.map((item)=>item.toMap()).toList();
+			data['childSettings'] = this.childSettings != null? this.childSettings.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

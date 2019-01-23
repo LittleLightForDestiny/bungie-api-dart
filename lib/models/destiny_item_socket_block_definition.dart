@@ -49,9 +49,9 @@ class DestinyItemSocketBlockDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['detail'] = this.detail;
-			data['socketEntries'] = this.socketEntries.map((item)=>item.toMap()).toList();
-			data['intrinsicSockets'] = this.intrinsicSockets.map((item)=>item.toMap()).toList();
-			data['socketCategories'] = this.socketCategories.map((item)=>item.toMap()).toList();
+			data['socketEntries'] = this.socketEntries != null? this.socketEntries.map((item)=>item.toMap()).toList() : null;
+			data['intrinsicSockets'] = this.intrinsicSockets != null? this.intrinsicSockets.map((item)=>item.toMap()).toList() : null;
+			data['socketCategories'] = this.socketCategories != null? this.socketCategories.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

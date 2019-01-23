@@ -189,7 +189,7 @@ class GeneralUser{
 			data['firstAccess'] = this.firstAccess;
 			data['lastUpdate'] = this.lastUpdate;
 			data['legacyPortalUID'] = this.legacyPortalUid;
-			data['context'] = this.context.toMap();
+			data['context'] = this.context != null? this.context.toMap() : null;
 			data['psnDisplayName'] = this.psnDisplayName;
 			data['xboxDisplayName'] = this.xboxDisplayName;
 			data['fbDisplayName'] = this.fbDisplayName;

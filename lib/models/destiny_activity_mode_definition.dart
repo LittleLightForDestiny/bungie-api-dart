@@ -99,7 +99,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['pgcrImage'] = this.pgcrImage;
 			data['modeType'] = this.modeType;
 			data['activityModeCategory'] = this.activityModeCategory;
@@ -107,7 +107,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['isAggregateMode'] = this.isAggregateMode;
 			data['parentHashes'] = this.parentHashes;
 			data['friendlyName'] = this.friendlyName;
-			data['activityModeMappings'] = this.activityModeMappings;
+			data['activityModeMappings'] = this.activityModeMappings != null? this.activityModeMappings.map((i, v)=>MapEntry(i, v)) : null;
 			data['display'] = this.display;
 			data['order'] = this.order;
 			data['hash'] = this.hash;

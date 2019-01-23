@@ -53,7 +53,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['displayUnits'] = this.displayUnits;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

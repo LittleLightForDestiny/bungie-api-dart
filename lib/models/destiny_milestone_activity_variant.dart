@@ -47,7 +47,7 @@ class DestinyMilestoneActivityVariant{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
-			data['completionStatus'] = this.completionStatus;
+			data['completionStatus'] = this.completionStatus != null? this.completionStatus.toMap() : null;
 			data['activityModeHash'] = this.activityModeHash;
 			data['activityModeType'] = this.activityModeType;
 		return data;

@@ -73,8 +73,8 @@ In practice, a socket will *either* have reusable plugs *or* it will allow for p
 			data['isVisible'] = this.isVisible;
 			data['enableFailIndexes'] = this.enableFailIndexes;
 			data['reusablePlugHashes'] = this.reusablePlugHashes;
-			data['plugObjectives'] = this.plugObjectives.map((item)=>item.toMap()).toList();
-			data['reusablePlugs'] = this.reusablePlugs.map((item)=>item.toMap()).toList();
+			data['plugObjectives'] = this.plugObjectives != null? this.plugObjectives.map((item)=>item.toMap()).toList() : null;
+			data['reusablePlugs'] = this.reusablePlugs != null? this.reusablePlugs.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

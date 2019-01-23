@@ -100,17 +100,17 @@ This is a long-held historical throwback to when we used to do paging with known
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['relatedPosts'] = this.relatedPosts.map((item)=>item.toMap()).toList();
-			data['authors'] = this.authors.map((item)=>item.toMap()).toList();
-			data['groups'] = this.groups.map((item)=>item.toMap()).toList();
-			data['searchedTags'] = this.searchedTags.map((item)=>item.toMap()).toList();
-			data['polls'] = this.polls.map((item)=>item.toMap()).toList();
-			data['recruitmentDetails'] = this.recruitmentDetails.map((item)=>item.toMap()).toList();
+			data['relatedPosts'] = this.relatedPosts != null? this.relatedPosts.map((item)=>item.toMap()).toList() : null;
+			data['authors'] = this.authors != null? this.authors.map((item)=>item.toMap()).toList() : null;
+			data['groups'] = this.groups != null? this.groups.map((item)=>item.toMap()).toList() : null;
+			data['searchedTags'] = this.searchedTags != null? this.searchedTags.map((item)=>item.toMap()).toList() : null;
+			data['polls'] = this.polls != null? this.polls.map((item)=>item.toMap()).toList() : null;
+			data['recruitmentDetails'] = this.recruitmentDetails != null? this.recruitmentDetails.map((item)=>item.toMap()).toList() : null;
 			data['availablePages'] = this.availablePages;
-			data['results'] = this.results.map((item)=>item.toMap()).toList();
+			data['results'] = this.results != null? this.results.map((item)=>item.toMap()).toList() : null;
 			data['totalResults'] = this.totalResults;
 			data['hasMore'] = this.hasMore;
-			data['query'] = this.query.toMap();
+			data['query'] = this.query != null? this.query.toMap() : null;
 			data['replacementContinuationToken'] = this.replacementContinuationToken;
 			data['useTotalResults'] = this.useTotalResults;
 		return data;

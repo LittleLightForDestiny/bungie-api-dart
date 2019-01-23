@@ -142,9 +142,9 @@ See DestinyTalentExclusiveGroup for more information on the details. This is an 
 			data['autoUnlocks'] = this.autoUnlocks;
 			data['lastStepRepeats'] = this.lastStepRepeats;
 			data['isRandom'] = this.isRandom;
-			data['randomActivationRequirement'] = this.randomActivationRequirement;
+			data['randomActivationRequirement'] = this.randomActivationRequirement != null? this.randomActivationRequirement.toMap() : null;
 			data['isRandomRepurchasable'] = this.isRandomRepurchasable;
-			data['steps'] = this.steps.map((item)=>item.toMap()).toList();
+			data['steps'] = this.steps != null? this.steps.map((item)=>item.toMap()).toList() : null;
 			data['exclusiveWithNodeHashes'] = this.exclusiveWithNodeHashes;
 			data['randomStartProgressionBarAtProgression'] = this.randomStartProgressionBarAtProgression;
 			data['layoutIdentifier'] = this.layoutIdentifier;

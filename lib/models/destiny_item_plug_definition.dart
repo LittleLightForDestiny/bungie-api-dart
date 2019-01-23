@@ -112,14 +112,14 @@ If this is populated, it will have the override data to be applied when this plu
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['insertionRules'] = this.insertionRules.map((item)=>item.toMap()).toList();
+			data['insertionRules'] = this.insertionRules != null? this.insertionRules.map((item)=>item.toMap()).toList() : null;
 			data['plugCategoryIdentifier'] = this.plugCategoryIdentifier;
 			data['plugCategoryHash'] = this.plugCategoryHash;
 			data['onActionRecreateSelf'] = this.onActionRecreateSelf;
 			data['insertionMaterialRequirementHash'] = this.insertionMaterialRequirementHash;
 			data['previewItemOverrideHash'] = this.previewItemOverrideHash;
 			data['enabledMaterialRequirementHash'] = this.enabledMaterialRequirementHash;
-			data['enabledRules'] = this.enabledRules.map((item)=>item.toMap()).toList();
+			data['enabledRules'] = this.enabledRules != null? this.enabledRules.map((item)=>item.toMap()).toList() : null;
 			data['uiPlugLabel'] = this.uiPlugLabel;
 			data['plugStyle'] = this.plugStyle;
 			data['isPseudoPlug'] = this.isPseudoPlug;
@@ -127,7 +127,7 @@ If this is populated, it will have the override data to be applied when this plu
 			data['alternateUiPlugLabel'] = this.alternateUiPlugLabel;
 			data['alternatePlugStyle'] = this.alternatePlugStyle;
 			data['isDummyPlug'] = this.isDummyPlug;
-			data['parentItemOverride'] = this.parentItemOverride;
+			data['parentItemOverride'] = this.parentItemOverride != null? this.parentItemOverride.toMap() : null;
 		return data;
 	}
 }

@@ -145,7 +145,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['image'] = this.image;
 			data['milestoneType'] = this.milestoneType;
 			data['recruitable'] = this.recruitable;
@@ -154,13 +154,13 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['showInMilestones'] = this.showInMilestones;
 			data['explorePrioritizesActivityImage'] = this.explorePrioritizesActivityImage;
 			data['hasPredictableDates'] = this.hasPredictableDates;
-			data['quests'] = this.quests;
-			data['rewards'] = this.rewards;
+			data['quests'] = this.quests != null? this.quests.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['rewards'] = this.rewards != null? this.rewards.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['vendorsDisplayTitle'] = this.vendorsDisplayTitle;
-			data['vendors'] = this.vendors.map((item)=>item.toMap()).toList();
-			data['values'] = this.values;
+			data['vendors'] = this.vendors != null? this.vendors.map((item)=>item.toMap()).toList() : null;
+			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['isInGameMilestone'] = this.isInGameMilestone;
-			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
+			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
 			data['defaultOrder'] = this.defaultOrder;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

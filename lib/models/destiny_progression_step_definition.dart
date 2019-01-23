@@ -54,7 +54,7 @@ class DestinyProgressionStepDefinition{
 			data['stepName'] = this.stepName;
 			data['displayEffectType'] = this.displayEffectType;
 			data['progressTotal'] = this.progressTotal;
-			data['rewardItems'] = this.rewardItems.map((item)=>item.toMap()).toList();
+			data['rewardItems'] = this.rewardItems != null? this.rewardItems.map((item)=>item.toMap()).toList() : null;
 			data['icon'] = this.icon;
 		return data;
 	}

@@ -63,7 +63,7 @@ We have no human readable information for this data, so it's up to you if you wa
 			data['modifierHashes'] = this.modifierHashes;
 			data['loadoutRequirementIndex'] = this.loadoutRequirementIndex;
 			data['phaseHashes'] = this.phaseHashes;
-			data['booleanActivityOptions'] = this.booleanActivityOptions;
+			data['booleanActivityOptions'] = this.booleanActivityOptions != null? this.booleanActivityOptions.map((i, v)=>MapEntry(i, v)) : null;
 		return data;
 	}
 }

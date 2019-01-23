@@ -162,16 +162,16 @@ See DestinyGatingScope's documentation for more information. */
 			data['itemHash'] = this.itemHash;
 			data['quantity'] = this.quantity;
 			data['failureIndexes'] = this.failureIndexes;
-			data['currencies'] = this.currencies.map((item)=>item.toMap()).toList();
+			data['currencies'] = this.currencies != null? this.currencies.map((item)=>item.toMap()).toList() : null;
 			data['refundPolicy'] = this.refundPolicy;
 			data['refundTimeLimit'] = this.refundTimeLimit;
-			data['creationLevels'] = this.creationLevels.map((item)=>item.toMap()).toList();
+			data['creationLevels'] = this.creationLevels != null? this.creationLevels.map((item)=>item.toMap()).toList() : null;
 			data['displayCategoryIndex'] = this.displayCategoryIndex;
 			data['categoryIndex'] = this.categoryIndex;
 			data['originalCategoryIndex'] = this.originalCategoryIndex;
 			data['minimumLevel'] = this.minimumLevel;
 			data['maximumLevel'] = this.maximumLevel;
-			data['action'] = this.action;
+			data['action'] = this.action != null? this.action.toMap() : null;
 			data['displayCategory'] = this.displayCategory;
 			data['inventoryBucketHash'] = this.inventoryBucketHash;
 			data['visibilityScope'] = this.visibilityScope;
@@ -182,7 +182,7 @@ See DestinyGatingScope's documentation for more information. */
 			data['sortValue'] = this.sortValue;
 			data['expirationTooltip'] = this.expirationTooltip;
 			data['redirectToSaleIndexes'] = this.redirectToSaleIndexes;
-			data['socketOverrides'] = this.socketOverrides.map((item)=>item.toMap()).toList();
+			data['socketOverrides'] = this.socketOverrides != null? this.socketOverrides.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

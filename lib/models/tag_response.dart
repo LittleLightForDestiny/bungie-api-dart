@@ -37,7 +37,7 @@ class TagResponse{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['tagText'] = this.tagText;
-			data['ignoreStatus'] = this.ignoreStatus.toMap();
+			data['ignoreStatus'] = this.ignoreStatus != null? this.ignoreStatus.toMap() : null;
 		return data;
 	}
 }

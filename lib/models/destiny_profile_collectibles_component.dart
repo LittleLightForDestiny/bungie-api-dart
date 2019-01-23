@@ -44,7 +44,7 @@ The game client itself actually controls this data, so I personally question whe
 		Map<String, dynamic> data = new Map();
 			data['recentCollectibleHashes'] = this.recentCollectibleHashes;
 			data['newnessFlaggedCollectibleHashes'] = this.newnessFlaggedCollectibleHashes;
-			data['collectibles'] = this.collectibles;
+			data['collectibles'] = this.collectibles != null? this.collectibles.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

@@ -46,7 +46,7 @@ class DestinyProfileComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['userInfo'] = this.userInfo;
+			data['userInfo'] = this.userInfo != null? this.userInfo.toMap() : null;
 			data['dateLastPlayed'] = this.dateLastPlayed;
 			data['versionsOwned'] = this.versionsOwned;
 			data['characterIds'] = this.characterIds;

@@ -37,7 +37,7 @@ class TrendingEntryDestinyActivity{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
-			data['status'] = this.status.toMap();
+			data['status'] = this.status != null? this.status.toMap() : null;
 		return data;
 	}
 }

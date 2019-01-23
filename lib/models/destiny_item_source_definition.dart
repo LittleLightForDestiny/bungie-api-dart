@@ -67,7 +67,7 @@ class DestinyItemSourceDefinition{
 			data['maxQuality'] = this.maxQuality;
 			data['minLevelRequired'] = this.minLevelRequired;
 			data['maxLevelRequired'] = this.maxLevelRequired;
-			data['computedStats'] = this.computedStats;
+			data['computedStats'] = this.computedStats != null? this.computedStats.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['sourceHashes'] = this.sourceHashes;
 		return data;
 	}

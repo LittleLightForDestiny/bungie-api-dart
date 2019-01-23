@@ -141,9 +141,9 @@ class ContentTypeDescription{
 			data['previewImage'] = this.previewImage;
 			data['priority'] = this.priority;
 			data['reminder'] = this.reminder;
-			data['properties'] = this.properties.map((item)=>item.toMap()).toList();
-			data['tagMetadata'] = this.tagMetadata.map((item)=>item.toMap()).toList();
-			data['tagMetadataItems'] = this.tagMetadataItems;
+			data['properties'] = this.properties != null? this.properties.map((item)=>item.toMap()).toList() : null;
+			data['tagMetadata'] = this.tagMetadata != null? this.tagMetadata.map((item)=>item.toMap()).toList() : null;
+			data['tagMetadataItems'] = this.tagMetadataItems != null? this.tagMetadataItems.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['usageExamples'] = this.usageExamples;
 			data['showInContentEditor'] = this.showInContentEditor;
 			data['typeOf'] = this.typeOf;
@@ -153,9 +153,9 @@ class ContentTypeDescription{
 			data['allowComments'] = this.allowComments;
 			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
 			data['bulkUploadable'] = this.bulkUploadable;
-			data['previews'] = this.previews.map((item)=>item.toMap()).toList();
+			data['previews'] = this.previews != null? this.previews.map((item)=>item.toMap()).toList() : null;
 			data['suppressCmsPath'] = this.suppressCmsPath;
-			data['propertySections'] = this.propertySections.map((item)=>item.toMap()).toList();
+			data['propertySections'] = this.propertySections != null? this.propertySections.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

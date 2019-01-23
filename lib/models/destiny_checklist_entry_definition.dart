@@ -79,7 +79,7 @@ You can use this property if it is populated to look up the DestinyLocationDefin
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['hash'] = this.hash;
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['destinationHash'] = this.destinationHash;
 			data['locationHash'] = this.locationHash;
 			data['bubbleHash'] = this.bubbleHash;

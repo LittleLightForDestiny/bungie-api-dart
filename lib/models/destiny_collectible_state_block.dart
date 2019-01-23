@@ -37,7 +37,7 @@ class DestinyCollectibleStateBlock{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['obscuredOverrideItemHash'] = this.obscuredOverrideItemHash;
-			data['requirements'] = this.requirements.toMap();
+			data['requirements'] = this.requirements != null? this.requirements.toMap() : null;
 		return data;
 	}
 }

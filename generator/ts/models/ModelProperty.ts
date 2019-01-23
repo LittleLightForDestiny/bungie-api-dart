@@ -38,7 +38,7 @@ export class ModelProperty{
         let fn = ApiDocHelper.getSerializeFunction(this.info, camelCase(this.name));
         
         if(fn){
-            return `data['${this.name}'] = ${fn}`;
+            return `data['${this.name}'] = this.${camelCase(this.name)} != null? ${fn} : null`;
         }
         return `data['${this.name}'] = this.${camelCase(this.name)}`;
     }

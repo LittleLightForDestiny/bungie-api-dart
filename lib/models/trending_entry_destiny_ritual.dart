@@ -73,8 +73,8 @@ class TrendingEntryDestinyRitual{
 			data['subtitle'] = this.subtitle;
 			data['dateStart'] = this.dateStart;
 			data['dateEnd'] = this.dateEnd;
-			data['milestoneDetails'] = this.milestoneDetails;
-			data['eventContent'] = this.eventContent;
+			data['milestoneDetails'] = this.milestoneDetails != null? this.milestoneDetails.toMap() : null;
+			data['eventContent'] = this.eventContent != null? this.eventContent.toMap() : null;
 		return data;
 	}
 }

@@ -37,7 +37,7 @@ This is the set of those plugs that we came across in the users' inventory, alon
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data.toMap();
+			data['data'] = this.data != null? this.data.toMap() : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

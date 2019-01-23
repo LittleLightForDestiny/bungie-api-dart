@@ -59,8 +59,8 @@ class GroupMember{
 			data['memberType'] = this.memberType;
 			data['isOnline'] = this.isOnline;
 			data['groupId'] = this.groupId;
-			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;
 			data['joinDate'] = this.joinDate;
 		return data;
 	}

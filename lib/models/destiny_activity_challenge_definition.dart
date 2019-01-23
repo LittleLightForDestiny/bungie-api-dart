@@ -38,7 +38,7 @@ If the quantity is 0, don't show the quantity. */
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['objectiveHash'] = this.objectiveHash;
-			data['dummyRewards'] = this.dummyRewards.map((item)=>item.toMap()).toList();
+			data['dummyRewards'] = this.dummyRewards != null? this.dummyRewards.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

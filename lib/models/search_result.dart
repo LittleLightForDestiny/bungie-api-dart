@@ -56,7 +56,7 @@ This is a long-held historical throwback to when we used to do paging with known
 		Map<String, dynamic> data = new Map();
 			data['totalResults'] = this.totalResults;
 			data['hasMore'] = this.hasMore;
-			data['query'] = this.query.toMap();
+			data['query'] = this.query != null? this.query.toMap() : null;
 			data['replacementContinuationToken'] = this.replacementContinuationToken;
 			data['useTotalResults'] = this.useTotalResults;
 		return data;

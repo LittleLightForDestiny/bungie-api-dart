@@ -121,13 +121,13 @@ This also indicates the lower bound of said progress bar, with the upper bound b
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['stepIndex'] = this.stepIndex;
 			data['nodeStepHash'] = this.nodeStepHash;
 			data['interactionDescription'] = this.interactionDescription;
 			data['damageType'] = this.damageType;
 			data['damageTypeHash'] = this.damageTypeHash;
-			data['activationRequirement'] = this.activationRequirement;
+			data['activationRequirement'] = this.activationRequirement != null? this.activationRequirement.toMap() : null;
 			data['canActivateNextStep'] = this.canActivateNextStep;
 			data['nextStepIndex'] = this.nextStepIndex;
 			data['isNextStepRandom'] = this.isNextStepRandom;
@@ -135,9 +135,9 @@ This also indicates the lower bound of said progress bar, with the upper bound b
 			data['startProgressionBarAtProgress'] = this.startProgressionBarAtProgress;
 			data['statHashes'] = this.statHashes;
 			data['affectsQuality'] = this.affectsQuality;
-			data['stepGroups'] = this.stepGroups;
+			data['stepGroups'] = this.stepGroups != null? this.stepGroups.toMap() : null;
 			data['affectsLevel'] = this.affectsLevel;
-			data['socketReplacements'] = this.socketReplacements.map((item)=>item.toMap()).toList();
+			data['socketReplacements'] = this.socketReplacements != null? this.socketReplacements.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

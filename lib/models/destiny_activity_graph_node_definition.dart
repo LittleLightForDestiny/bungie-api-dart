@@ -61,11 +61,11 @@ class DestinyActivityGraphNodeDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['nodeId'] = this.nodeId;
-			data['overrideDisplay'] = this.overrideDisplay;
-			data['position'] = this.position;
-			data['featuringStates'] = this.featuringStates.map((item)=>item.toMap()).toList();
-			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
-			data['states'] = this.states.map((item)=>item.toMap()).toList();
+			data['overrideDisplay'] = this.overrideDisplay != null? this.overrideDisplay.toMap() : null;
+			data['position'] = this.position != null? this.position.toMap() : null;
+			data['featuringStates'] = this.featuringStates != null? this.featuringStates.map((item)=>item.toMap()).toList() : null;
+			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
+			data['states'] = this.states != null? this.states.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

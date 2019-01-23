@@ -33,7 +33,7 @@ class DestinyItemStatsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stats'] = this.stats;
+			data['stats'] = this.stats != null? this.stats.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

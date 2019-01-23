@@ -31,7 +31,7 @@ class DestinyActivityHistoryResults{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['activities'] = this.activities.map((item)=>item.toMap()).toList();
+			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

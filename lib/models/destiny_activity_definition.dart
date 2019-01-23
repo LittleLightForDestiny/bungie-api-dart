@@ -203,9 +203,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
-			data['originalDisplayProperties'] = this.originalDisplayProperties;
-			data['selectionScreenDisplayProperties'] = this.selectionScreenDisplayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
+			data['originalDisplayProperties'] = this.originalDisplayProperties != null? this.originalDisplayProperties.toMap() : null;
+			data['selectionScreenDisplayProperties'] = this.selectionScreenDisplayProperties != null? this.selectionScreenDisplayProperties.toMap() : null;
 			data['releaseIcon'] = this.releaseIcon;
 			data['releaseTime'] = this.releaseTime;
 			data['activityLevel'] = this.activityLevel;
@@ -215,23 +215,23 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['activityTypeHash'] = this.activityTypeHash;
 			data['tier'] = this.tier;
 			data['pgcrImage'] = this.pgcrImage;
-			data['rewards'] = this.rewards.map((item)=>item.toMap()).toList();
-			data['modifiers'] = this.modifiers.map((item)=>item.toMap()).toList();
+			data['rewards'] = this.rewards != null? this.rewards.map((item)=>item.toMap()).toList() : null;
+			data['modifiers'] = this.modifiers != null? this.modifiers.map((item)=>item.toMap()).toList() : null;
 			data['isPlaylist'] = this.isPlaylist;
-			data['challenges'] = this.challenges.map((item)=>item.toMap()).toList();
-			data['optionalUnlockStrings'] = this.optionalUnlockStrings.map((item)=>item.toMap()).toList();
-			data['playlistItems'] = this.playlistItems.map((item)=>item.toMap()).toList();
-			data['activityGraphList'] = this.activityGraphList.map((item)=>item.toMap()).toList();
-			data['matchmaking'] = this.matchmaking;
-			data['guidedGame'] = this.guidedGame;
+			data['challenges'] = this.challenges != null? this.challenges.map((item)=>item.toMap()).toList() : null;
+			data['optionalUnlockStrings'] = this.optionalUnlockStrings != null? this.optionalUnlockStrings.map((item)=>item.toMap()).toList() : null;
+			data['playlistItems'] = this.playlistItems != null? this.playlistItems.map((item)=>item.toMap()).toList() : null;
+			data['activityGraphList'] = this.activityGraphList != null? this.activityGraphList.map((item)=>item.toMap()).toList() : null;
+			data['matchmaking'] = this.matchmaking != null? this.matchmaking.toMap() : null;
+			data['guidedGame'] = this.guidedGame != null? this.guidedGame.toMap() : null;
 			data['directActivityModeHash'] = this.directActivityModeHash;
 			data['directActivityModeType'] = this.directActivityModeType;
-			data['loadouts'] = this.loadouts.map((item)=>item.toMap()).toList();
+			data['loadouts'] = this.loadouts != null? this.loadouts.map((item)=>item.toMap()).toList() : null;
 			data['activityModeHashes'] = this.activityModeHashes;
 			data['activityModeTypes'] = this.activityModeTypes;
 			data['isPvP'] = this.isPvP;
-			data['insertionPoints'] = this.insertionPoints.map((item)=>item.toMap()).toList();
-			data['activityLocationMappings'] = this.activityLocationMappings.map((item)=>item.toMap()).toList();
+			data['insertionPoints'] = this.insertionPoints != null? this.insertionPoints.map((item)=>item.toMap()).toList() : null;
+			data['activityLocationMappings'] = this.activityLocationMappings != null? this.activityLocationMappings.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

@@ -224,7 +224,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['buyString'] = this.buyString;
 			data['sellString'] = this.sellString;
 			data['displayItemHash'] = this.displayItemHash;
@@ -234,7 +234,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['resetIntervalMinutes'] = this.resetIntervalMinutes;
 			data['resetOffsetMinutes'] = this.resetOffsetMinutes;
 			data['failureStrings'] = this.failureStrings;
-			data['unlockRanges'] = this.unlockRanges.map((item)=>item.toMap()).toList();
+			data['unlockRanges'] = this.unlockRanges != null? this.unlockRanges.map((item)=>item.toMap()).toList() : null;
 			data['vendorIdentifier'] = this.vendorIdentifier;
 			data['vendorPortrait'] = this.vendorPortrait;
 			data['vendorBanner'] = this.vendorBanner;
@@ -242,18 +242,18 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['visible'] = this.visible;
 			data['vendorSubcategoryIdentifier'] = this.vendorSubcategoryIdentifier;
 			data['consolidateCategories'] = this.consolidateCategories;
-			data['actions'] = this.actions.map((item)=>item.toMap()).toList();
-			data['categories'] = this.categories.map((item)=>item.toMap()).toList();
-			data['originalCategories'] = this.originalCategories.map((item)=>item.toMap()).toList();
-			data['displayCategories'] = this.displayCategories.map((item)=>item.toMap()).toList();
-			data['interactions'] = this.interactions.map((item)=>item.toMap()).toList();
-			data['inventoryFlyouts'] = this.inventoryFlyouts.map((item)=>item.toMap()).toList();
-			data['itemList'] = this.itemList.map((item)=>item.toMap()).toList();
-			data['services'] = this.services.map((item)=>item.toMap()).toList();
-			data['acceptedItems'] = this.acceptedItems.map((item)=>item.toMap()).toList();
+			data['actions'] = this.actions != null? this.actions.map((item)=>item.toMap()).toList() : null;
+			data['categories'] = this.categories != null? this.categories.map((item)=>item.toMap()).toList() : null;
+			data['originalCategories'] = this.originalCategories != null? this.originalCategories.map((item)=>item.toMap()).toList() : null;
+			data['displayCategories'] = this.displayCategories != null? this.displayCategories.map((item)=>item.toMap()).toList() : null;
+			data['interactions'] = this.interactions != null? this.interactions.map((item)=>item.toMap()).toList() : null;
+			data['inventoryFlyouts'] = this.inventoryFlyouts != null? this.inventoryFlyouts.map((item)=>item.toMap()).toList() : null;
+			data['itemList'] = this.itemList != null? this.itemList.map((item)=>item.toMap()).toList() : null;
+			data['services'] = this.services != null? this.services.map((item)=>item.toMap()).toList() : null;
+			data['acceptedItems'] = this.acceptedItems != null? this.acceptedItems.map((item)=>item.toMap()).toList() : null;
 			data['returnWithVendorRequest'] = this.returnWithVendorRequest;
-			data['locations'] = this.locations.map((item)=>item.toMap()).toList();
-			data['groups'] = this.groups.map((item)=>item.toMap()).toList();
+			data['locations'] = this.locations != null? this.locations.map((item)=>item.toMap()).toList() : null;
+			data['groups'] = this.groups != null? this.groups.map((item)=>item.toMap()).toList() : null;
 			data['ignoreSaleItemHashes'] = this.ignoreSaleItemHashes;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

@@ -81,7 +81,7 @@ Rendered somewhat obsolete by perObjectiveDisplayProperties, which currently has
 			data['objectiveVerbName'] = this.objectiveVerbName;
 			data['questTypeIdentifier'] = this.questTypeIdentifier;
 			data['questTypeHash'] = this.questTypeHash;
-			data['perObjectiveDisplayProperties'] = this.perObjectiveDisplayProperties.map((item)=>item.toMap()).toList();
+			data['perObjectiveDisplayProperties'] = this.perObjectiveDisplayProperties != null? this.perObjectiveDisplayProperties.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

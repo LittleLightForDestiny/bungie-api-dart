@@ -87,14 +87,14 @@ COMPONENT TYPE: ItemSockets */
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['characterId'] = this.characterId;
-			data['item'] = this.item;
-			data['instance'] = this.instance;
-			data['objectives'] = this.objectives;
-			data['perks'] = this.perks;
-			data['renderData'] = this.renderData;
-			data['stats'] = this.stats;
-			data['talentGrid'] = this.talentGrid;
-			data['sockets'] = this.sockets;
+			data['item'] = this.item != null? this.item.toMap() : null;
+			data['instance'] = this.instance != null? this.instance.toMap() : null;
+			data['objectives'] = this.objectives != null? this.objectives.toMap() : null;
+			data['perks'] = this.perks != null? this.perks.toMap() : null;
+			data['renderData'] = this.renderData != null? this.renderData.toMap() : null;
+			data['stats'] = this.stats != null? this.stats.toMap() : null;
+			data['talentGrid'] = this.talentGrid != null? this.talentGrid.toMap() : null;
+			data['sockets'] = this.sockets != null? this.sockets.toMap() : null;
 		return data;
 	}
 }

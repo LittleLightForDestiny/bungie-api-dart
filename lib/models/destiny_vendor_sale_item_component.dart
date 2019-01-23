@@ -95,9 +95,9 @@ Note that there's not actually any guarantee that it will go away: it could be c
 			data['overrideStyleItemHash'] = this.overrideStyleItemHash;
 			data['quantity'] = this.quantity;
 			data['saleStatus'] = this.saleStatus;
-			data['costs'] = this.costs.map((item)=>item.toMap()).toList();
+			data['costs'] = this.costs != null? this.costs.map((item)=>item.toMap()).toList() : null;
 			data['requiredUnlocks'] = this.requiredUnlocks;
-			data['unlockStatuses'] = this.unlockStatuses.map((item)=>item.toMap()).toList();
+			data['unlockStatuses'] = this.unlockStatuses != null? this.unlockStatuses.map((item)=>item.toMap()).toList() : null;
 			data['failureIndexes'] = this.failureIndexes;
 			data['augments'] = this.augments;
 			data['overrideNextRefreshDate'] = this.overrideNextRefreshDate;

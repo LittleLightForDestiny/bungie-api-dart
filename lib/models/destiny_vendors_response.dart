@@ -68,12 +68,12 @@ COMPONENT TYPE: CurrencyLookups */
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorGroups'] = this.vendorGroups;
-			data['vendors'] = this.vendors;
-			data['categories'] = this.categories;
-			data['sales'] = this.sales;
-			data['itemComponents'] = this.itemComponents;
-			data['currencyLookups'] = this.currencyLookups;
+			data['vendorGroups'] = this.vendorGroups != null? this.vendorGroups.toMap() : null;
+			data['vendors'] = this.vendors != null? this.vendors.toMap() : null;
+			data['categories'] = this.categories != null? this.categories.toMap() : null;
+			data['sales'] = this.sales != null? this.sales.toMap() : null;
+			data['itemComponents'] = this.itemComponents != null? this.itemComponents.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['currencyLookups'] = this.currencyLookups != null? this.currencyLookups.toMap() : null;
 		return data;
 	}
 }

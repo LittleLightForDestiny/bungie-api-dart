@@ -31,7 +31,7 @@ class DestinyVendorReceiptsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['receipts'] = this.receipts.map((item)=>item.toMap()).toList();
+			data['receipts'] = this.receipts != null? this.receipts.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

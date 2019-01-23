@@ -55,7 +55,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['requirementCurve'] = this.requirementCurve.map((item)=>item.toMap()).toList();
+			data['requirementCurve'] = this.requirementCurve != null? this.requirementCurve.map((item)=>item.toMap()).toList() : null;
 			data['progressionHash'] = this.progressionHash;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

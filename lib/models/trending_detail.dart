@@ -79,13 +79,13 @@ class TrendingDetail{
 		Map<String, dynamic> data = new Map();
 			data['identifier'] = this.identifier;
 			data['entityType'] = this.entityType;
-			data['news'] = this.news.toMap();
-			data['support'] = this.support.toMap();
-			data['destinyItem'] = this.destinyItem.toMap();
-			data['destinyActivity'] = this.destinyActivity.toMap();
-			data['destinyRitual'] = this.destinyRitual.toMap();
-			data['creation'] = this.creation.toMap();
-			data['stream'] = this.stream.toMap();
+			data['news'] = this.news != null? this.news.toMap() : null;
+			data['support'] = this.support != null? this.support.toMap() : null;
+			data['destinyItem'] = this.destinyItem != null? this.destinyItem.toMap() : null;
+			data['destinyActivity'] = this.destinyActivity != null? this.destinyActivity.toMap() : null;
+			data['destinyRitual'] = this.destinyRitual != null? this.destinyRitual.toMap() : null;
+			data['creation'] = this.creation != null? this.creation.toMap() : null;
+			data['stream'] = this.stream != null? this.stream.toMap() : null;
 		return data;
 	}
 }

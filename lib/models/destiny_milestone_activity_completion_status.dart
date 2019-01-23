@@ -37,7 +37,7 @@ class DestinyMilestoneActivityCompletionStatus{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['completed'] = this.completed;
-			data['phases'] = this.phases.map((item)=>item.toMap()).toList();
+			data['phases'] = this.phases != null? this.phases.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

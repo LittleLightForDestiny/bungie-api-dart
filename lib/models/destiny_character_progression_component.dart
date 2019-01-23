@@ -64,12 +64,12 @@ For each checklist returned, its value is itself a Dictionary keyed by the check
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['progressions'] = this.progressions;
-			data['factions'] = this.factions;
-			data['milestones'] = this.milestones;
-			data['quests'] = this.quests.map((item)=>item.toMap()).toList();
-			data['uninstancedItemObjectives'] = this.uninstancedItemObjectives;
-			data['checklists'] = this.checklists;
+			data['progressions'] = this.progressions != null? this.progressions.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['factions'] = this.factions != null? this.factions.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['milestones'] = this.milestones != null? this.milestones.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['quests'] = this.quests != null? this.quests.map((item)=>item.toMap()).toList() : null;
+			data['uninstancedItemObjectives'] = this.uninstancedItemObjectives != null? this.uninstancedItemObjectives.map((i, v)=>MapEntry(i, v.map((item)=>item.toMap()).toList())) : null;
+			data['checklists'] = this.checklists != null? this.checklists.map((i, v)=>MapEntry(i, v.map((i, v)=>MapEntry(i, v)))) : null;
 		return data;
 	}
 }

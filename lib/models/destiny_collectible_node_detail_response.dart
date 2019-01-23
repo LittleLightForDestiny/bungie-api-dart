@@ -40,8 +40,8 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collectibles'] = this.collectibles;
-			data['collectibleItemComponents'] = this.collectibleItemComponents;
+			data['collectibles'] = this.collectibles != null? this.collectibles.toMap() : null;
+			data['collectibleItemComponents'] = this.collectibleItemComponents != null? this.collectibleItemComponents.toMap() : null;
 		return data;
 	}
 }

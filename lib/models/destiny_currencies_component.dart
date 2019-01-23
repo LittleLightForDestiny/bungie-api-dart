@@ -33,7 +33,7 @@ This allows you to see whether the requesting character can afford any given pur
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['itemQuantities'] = this.itemQuantities;
+			data['itemQuantities'] = this.itemQuantities != null? this.itemQuantities.map((i, v)=>MapEntry(i, v)) : null;
 		return data;
 	}
 }

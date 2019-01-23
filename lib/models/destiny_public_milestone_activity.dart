@@ -53,7 +53,7 @@ class DestinyPublicMilestoneActivity{
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
 			data['modifierHashes'] = this.modifierHashes;
-			data['variants'] = this.variants.map((item)=>item.toMap()).toList();
+			data['variants'] = this.variants != null? this.variants.map((item)=>item.toMap()).toList() : null;
 			data['activityModeHash'] = this.activityModeHash;
 			data['activityModeType'] = this.activityModeType;
 		return data;

@@ -38,7 +38,7 @@ Interesting trivia: you actually *do* earn these items when you complete the act
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['rewardText'] = this.rewardText;
-			data['rewardItems'] = this.rewardItems.map((item)=>item.toMap()).toList();
+			data['rewardItems'] = this.rewardItems != null? this.rewardItems.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

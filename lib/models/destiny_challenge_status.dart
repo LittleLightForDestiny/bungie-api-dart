@@ -32,7 +32,7 @@ class DestinyChallengeStatus{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['objective'] = this.objective;
+			data['objective'] = this.objective != null? this.objective.toMap() : null;
 		return data;
 	}
 }

@@ -31,7 +31,7 @@ class DestinyCollectiblesComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['collectibles'] = this.collectibles;
+			data['collectibles'] = this.collectibles != null? this.collectibles.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

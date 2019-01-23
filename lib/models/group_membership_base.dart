@@ -31,7 +31,7 @@ class GroupMembershipBase{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['group'] = this.group.toMap();
+			data['group'] = this.group != null? this.group.toMap() : null;
 		return data;
 	}
 }

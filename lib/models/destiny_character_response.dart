@@ -120,20 +120,20 @@ COMPONENT TYPE: CurrencyLookups */
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['inventory'] = this.inventory;
-			data['character'] = this.character;
-			data['progressions'] = this.progressions;
-			data['renderData'] = this.renderData;
-			data['activities'] = this.activities;
-			data['equipment'] = this.equipment;
-			data['kiosks'] = this.kiosks;
-			data['plugSets'] = this.plugSets;
-			data['presentationNodes'] = this.presentationNodes;
-			data['records'] = this.records;
-			data['collectibles'] = this.collectibles;
-			data['itemComponents'] = this.itemComponents;
-			data['uninstancedItemComponents'] = this.uninstancedItemComponents;
-			data['currencyLookups'] = this.currencyLookups;
+			data['inventory'] = this.inventory != null? this.inventory.toMap() : null;
+			data['character'] = this.character != null? this.character.toMap() : null;
+			data['progressions'] = this.progressions != null? this.progressions.toMap() : null;
+			data['renderData'] = this.renderData != null? this.renderData.toMap() : null;
+			data['activities'] = this.activities != null? this.activities.toMap() : null;
+			data['equipment'] = this.equipment != null? this.equipment.toMap() : null;
+			data['kiosks'] = this.kiosks != null? this.kiosks.toMap() : null;
+			data['plugSets'] = this.plugSets != null? this.plugSets.toMap() : null;
+			data['presentationNodes'] = this.presentationNodes != null? this.presentationNodes.toMap() : null;
+			data['records'] = this.records != null? this.records.toMap() : null;
+			data['collectibles'] = this.collectibles != null? this.collectibles.toMap() : null;
+			data['itemComponents'] = this.itemComponents != null? this.itemComponents.toMap() : null;
+			data['uninstancedItemComponents'] = this.uninstancedItemComponents != null? this.uninstancedItemComponents.toMap() : null;
+			data['currencyLookups'] = this.currencyLookups != null? this.currencyLookups.toMap() : null;
 		return data;
 	}
 }

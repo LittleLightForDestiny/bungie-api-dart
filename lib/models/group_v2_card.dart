@@ -101,7 +101,7 @@ class GroupV2Card{
 			data['locale'] = this.locale;
 			data['membershipOption'] = this.membershipOption;
 			data['capabilities'] = this.capabilities;
-			data['clanInfo'] = this.clanInfo.toMap();
+			data['clanInfo'] = this.clanInfo != null? this.clanInfo.toMap() : null;
 			data['avatarPath'] = this.avatarPath;
 			data['theme'] = this.theme;
 		return data;

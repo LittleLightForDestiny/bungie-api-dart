@@ -79,12 +79,12 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['placeHash'] = this.placeHash;
 			data['defaultFreeroamActivityHash'] = this.defaultFreeroamActivityHash;
-			data['activityGraphEntries'] = this.activityGraphEntries.map((item)=>item.toMap()).toList();
-			data['bubbleSettings'] = this.bubbleSettings.map((item)=>item.toMap()).toList();
-			data['bubbles'] = this.bubbles.map((item)=>item.toMap()).toList();
+			data['activityGraphEntries'] = this.activityGraphEntries != null? this.activityGraphEntries.map((item)=>item.toMap()).toList() : null;
+			data['bubbleSettings'] = this.bubbleSettings != null? this.bubbleSettings.map((item)=>item.toMap()).toList() : null;
+			data['bubbles'] = this.bubbles != null? this.bubbles.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

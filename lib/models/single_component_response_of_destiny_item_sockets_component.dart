@@ -37,7 +37,7 @@ Sockets are a bit complex: be sure to examine the documentation on the DestinyIn
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data.toMap();
+			data['data'] = this.data != null? this.data.toMap() : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

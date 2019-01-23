@@ -193,8 +193,8 @@ class GroupV2{
 			data['conversationId'] = this.conversationId;
 			data['enableInvitationMessagingForAdmins'] = this.enableInvitationMessagingForAdmins;
 			data['banExpireDate'] = this.banExpireDate;
-			data['features'] = this.features.toMap();
-			data['clanInfo'] = this.clanInfo.toMap();
+			data['features'] = this.features != null? this.features.toMap() : null;
+			data['clanInfo'] = this.clanInfo != null? this.clanInfo.toMap() : null;
 		return data;
 	}
 }

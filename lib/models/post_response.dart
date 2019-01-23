@@ -108,7 +108,7 @@ class PostResponse{
 			data['userHasMutedPost'] = this.userHasMutedPost;
 			data['latestReplyPostId'] = this.latestReplyPostId;
 			data['latestReplyAuthorId'] = this.latestReplyAuthorId;
-			data['ignoreStatus'] = this.ignoreStatus.toMap();
+			data['ignoreStatus'] = this.ignoreStatus != null? this.ignoreStatus.toMap() : null;
 			data['locale'] = this.locale;
 		return data;
 	}

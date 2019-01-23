@@ -63,11 +63,11 @@ class DestinyManifest{
 		Map<String, dynamic> data = new Map();
 			data['version'] = this.version;
 			data['mobileAssetContentPath'] = this.mobileAssetContentPath;
-			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases.map((item)=>item.toMap()).toList();
-			data['mobileWorldContentPaths'] = this.mobileWorldContentPaths;
-			data['jsonWorldContentPaths'] = this.jsonWorldContentPaths;
+			data['mobileGearAssetDataBases'] = this.mobileGearAssetDataBases != null? this.mobileGearAssetDataBases.map((item)=>item.toMap()).toList() : null;
+			data['mobileWorldContentPaths'] = this.mobileWorldContentPaths != null? this.mobileWorldContentPaths.map((i, v)=>MapEntry(i, v)) : null;
+			data['jsonWorldContentPaths'] = this.jsonWorldContentPaths != null? this.jsonWorldContentPaths.map((i, v)=>MapEntry(i, v)) : null;
 			data['mobileClanBannerDatabasePath'] = this.mobileClanBannerDatabasePath;
-			data['mobileGearCDN'] = this.mobileGearCdn;
+			data['mobileGearCDN'] = this.mobileGearCdn != null? this.mobileGearCdn.map((i, v)=>MapEntry(i, v)) : null;
 		return data;
 	}
 }

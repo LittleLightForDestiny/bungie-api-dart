@@ -68,14 +68,14 @@ class GroupResponse{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['detail'] = this.detail.toMap();
-			data['founder'] = this.founder.toMap();
+			data['detail'] = this.detail != null? this.detail.toMap() : null;
+			data['founder'] = this.founder != null? this.founder.toMap() : null;
 			data['alliedIds'] = this.alliedIds;
-			data['parentGroup'] = this.parentGroup.toMap();
+			data['parentGroup'] = this.parentGroup != null? this.parentGroup.toMap() : null;
 			data['allianceStatus'] = this.allianceStatus;
 			data['groupJoinInviteCount'] = this.groupJoinInviteCount;
-			data['currentUserMemberMap'] = this.currentUserMemberMap;
-			data['currentUserPotentialMemberMap'] = this.currentUserPotentialMemberMap;
+			data['currentUserMemberMap'] = this.currentUserMemberMap != null? this.currentUserMemberMap.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['currentUserPotentialMemberMap'] = this.currentUserPotentialMemberMap != null? this.currentUserPotentialMemberMap.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

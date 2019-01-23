@@ -37,7 +37,7 @@ Inventory Items returned here are in a flat list, but importantly they have a bu
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data.toMap();
+			data['data'] = this.data != null? this.data.toMap() : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

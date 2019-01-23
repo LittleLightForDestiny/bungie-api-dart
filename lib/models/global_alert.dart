@@ -67,7 +67,7 @@ class GlobalAlert{
 			data['AlertLink'] = this.alertLink;
 			data['AlertLevel'] = this.alertLevel;
 			data['AlertType'] = this.alertType;
-			data['StreamInfo'] = this.streamInfo.toMap();
+			data['StreamInfo'] = this.streamInfo != null? this.streamInfo.toMap() : null;
 		return data;
 	}
 }

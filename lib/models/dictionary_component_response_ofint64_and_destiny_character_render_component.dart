@@ -36,7 +36,7 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterRenderComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['data'] = this.data;
+			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['privacy'] = this.privacy;
 		return data;
 	}

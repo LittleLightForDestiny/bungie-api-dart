@@ -37,7 +37,7 @@ class DestinyAggregateActivityStats{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
-			data['values'] = this.values;
+			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

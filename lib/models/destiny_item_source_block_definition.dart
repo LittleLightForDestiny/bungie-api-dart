@@ -42,7 +42,7 @@ class DestinyItemSourceBlockDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['sourceHashes'] = this.sourceHashes;
-			data['sources'] = this.sources.map((item)=>item.toMap()).toList();
+			data['sources'] = this.sources != null? this.sources.map((item)=>item.toMap()).toList() : null;
 			data['exclusive'] = this.exclusive;
 		return data;
 	}

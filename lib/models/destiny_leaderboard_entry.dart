@@ -48,9 +48,9 @@ class DestinyLeaderboardEntry{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['rank'] = this.rank;
-			data['player'] = this.player;
+			data['player'] = this.player != null? this.player.toMap() : null;
 			data['characterId'] = this.characterId;
-			data['value'] = this.value;
+			data['value'] = this.value != null? this.value.toMap() : null;
 		return data;
 	}
 }

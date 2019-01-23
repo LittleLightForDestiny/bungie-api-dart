@@ -55,9 +55,9 @@ class DestinyPostGameCarnageReportData{
 		Map<String, dynamic> data = new Map();
 			data['period'] = this.period;
 			data['startingPhaseIndex'] = this.startingPhaseIndex;
-			data['activityDetails'] = this.activityDetails;
-			data['entries'] = this.entries.map((item)=>item.toMap()).toList();
-			data['teams'] = this.teams.map((item)=>item.toMap()).toList();
+			data['activityDetails'] = this.activityDetails != null? this.activityDetails.toMap() : null;
+			data['entries'] = this.entries != null? this.entries.map((item)=>item.toMap()).toList() : null;
+			data['teams'] = this.teams != null? this.teams.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

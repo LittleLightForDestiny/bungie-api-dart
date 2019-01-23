@@ -68,9 +68,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['classType'] = this.classType;
-			data['displayProperties'] = this.displayProperties.toMap();
-			data['genderedClassNames'] = this.genderedClassNames;
-			data['genderedClassNamesByGenderHash'] = this.genderedClassNamesByGenderHash;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
+			data['genderedClassNames'] = this.genderedClassNames != null? this.genderedClassNames.map((i, v)=>MapEntry(i, v)) : null;
+			data['genderedClassNamesByGenderHash'] = this.genderedClassNamesByGenderHash != null? this.genderedClassNamesByGenderHash.map((i, v)=>MapEntry(i, v)) : null;
 			data['mentorVendorHash'] = this.mentorVendorHash;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

@@ -31,7 +31,7 @@ class DestinyActivityGraphArtElementDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['position'] = this.position;
+			data['position'] = this.position != null? this.position.toMap() : null;
 		return data;
 	}
 }

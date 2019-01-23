@@ -49,7 +49,7 @@ class DestinyKioskItem{
 			data['index'] = this.index;
 			data['canAcquire'] = this.canAcquire;
 			data['failureIndexes'] = this.failureIndexes;
-			data['flavorObjective'] = this.flavorObjective;
+			data['flavorObjective'] = this.flavorObjective != null? this.flavorObjective.toMap() : null;
 		return data;
 	}
 }

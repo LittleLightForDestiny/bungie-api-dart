@@ -69,7 +69,7 @@ Theoretically, Vendors can be restricted from selling items. In practice, none d
 			data['nextRefreshDate'] = this.nextRefreshDate;
 			data['enabled'] = this.enabled;
 			data['canPurchase'] = this.canPurchase;
-			data['progression'] = this.progression;
+			data['progression'] = this.progression != null? this.progression.toMap() : null;
 			data['vendorLocationIndex'] = this.vendorLocationIndex;
 			data['seasonalRank'] = this.seasonalRank;
 		return data;

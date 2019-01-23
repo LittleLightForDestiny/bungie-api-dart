@@ -78,8 +78,8 @@ class GroupMemberApplication{
 			data['resolvedByMembershipId'] = this.resolvedByMembershipId;
 			data['requestMessage'] = this.requestMessage;
 			data['resolveMessage'] = this.resolveMessage;
-			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;
 		return data;
 	}
 }

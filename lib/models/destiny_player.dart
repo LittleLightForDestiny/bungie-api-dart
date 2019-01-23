@@ -81,14 +81,14 @@ class DestinyPlayer{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyUserInfo'] = this.destinyUserInfo;
+			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
 			data['characterClass'] = this.characterClass;
 			data['classHash'] = this.classHash;
 			data['raceHash'] = this.raceHash;
 			data['genderHash'] = this.genderHash;
 			data['characterLevel'] = this.characterLevel;
 			data['lightLevel'] = this.lightLevel;
-			data['bungieNetUserInfo'] = this.bungieNetUserInfo;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;
 			data['clanName'] = this.clanName;
 			data['clanTag'] = this.clanTag;
 			data['emblemHash'] = this.emblemHash;

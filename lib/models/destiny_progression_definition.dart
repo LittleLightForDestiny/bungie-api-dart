@@ -97,14 +97,14 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['scope'] = this.scope;
 			data['repeatLastStep'] = this.repeatLastStep;
 			data['source'] = this.source;
-			data['steps'] = this.steps.map((item)=>item.toMap()).toList();
+			data['steps'] = this.steps != null? this.steps.map((item)=>item.toMap()).toList() : null;
 			data['visible'] = this.visible;
 			data['factionHash'] = this.factionHash;
-			data['color'] = this.color;
+			data['color'] = this.color != null? this.color.toMap() : null;
 			data['rankIcon'] = this.rankIcon;
 			data['hash'] = this.hash;
 			data['index'] = this.index;

@@ -45,7 +45,7 @@ These are often pointers to fake items that look good in a tooltip, but represen
 		Map<String, dynamic> data = new Map();
 			data['challengeObjectiveHashes'] = this.challengeObjectiveHashes;
 			data['modifierHashes'] = this.modifierHashes;
-			data['rewardTooltipItems'] = this.rewardTooltipItems.map((item)=>item.toMap()).toList();
+			data['rewardTooltipItems'] = this.rewardTooltipItems != null? this.rewardTooltipItems.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

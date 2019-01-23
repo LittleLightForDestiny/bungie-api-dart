@@ -36,7 +36,7 @@ class DestinyObjectiveStatEntryDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['stat'] = this.stat;
+			data['stat'] = this.stat != null? this.stat.toMap() : null;
 			data['style'] = this.style;
 		return data;
 	}

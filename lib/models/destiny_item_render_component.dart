@@ -38,7 +38,7 @@ value = The chosen Arrangement Index for the Region, based on the value of a sta
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['useCustomDyes'] = this.useCustomDyes;
-			data['artRegions'] = this.artRegions;
+			data['artRegions'] = this.artRegions != null? this.artRegions.map((i, v)=>MapEntry(i, v)) : null;
 		return data;
 	}
 }

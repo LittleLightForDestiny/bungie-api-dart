@@ -50,9 +50,9 @@ These will be listed in the order in which they will appear in the actual activi
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
-			data['challenges'] = this.challenges.map((item)=>item.toMap()).toList();
-			data['activityGraphNodes'] = this.activityGraphNodes.map((item)=>item.toMap()).toList();
-			data['phases'] = this.phases.map((item)=>item.toMap()).toList();
+			data['challenges'] = this.challenges != null? this.challenges.map((item)=>item.toMap()).toList() : null;
+			data['activityGraphNodes'] = this.activityGraphNodes != null? this.activityGraphNodes.map((item)=>item.toMap()).toList() : null;
+			data['phases'] = this.phases != null? this.phases.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

@@ -59,11 +59,11 @@ class DestinyPostGameCarnageReportEntry{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['standing'] = this.standing;
-			data['score'] = this.score;
-			data['player'] = this.player;
+			data['score'] = this.score != null? this.score.toMap() : null;
+			data['player'] = this.player != null? this.player.toMap() : null;
 			data['characterId'] = this.characterId;
-			data['values'] = this.values;
-			data['extended'] = this.extended;
+			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['extended'] = this.extended != null? this.extended.toMap() : null;
 		return data;
 	}
 }

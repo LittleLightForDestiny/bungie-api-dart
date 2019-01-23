@@ -42,7 +42,7 @@ If a Milestone could ever split the variants' active status conditionally, they 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['conceptualActivityHash'] = this.conceptualActivityHash;
-			data['variants'] = this.variants;
+			data['variants'] = this.variants != null? this.variants.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

@@ -96,7 +96,7 @@ class DestinyLocationReleaseDefinition{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['smallTransparentIcon'] = this.smallTransparentIcon;
 			data['mapIcon'] = this.mapIcon;
 			data['largeTransparentIcon'] = this.largeTransparentIcon;

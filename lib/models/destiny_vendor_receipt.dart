@@ -66,8 +66,8 @@ class DestinyVendorReceipt{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['currencyPaid'] = this.currencyPaid.map((item)=>item.toMap()).toList();
-			data['itemReceived'] = this.itemReceived;
+			data['currencyPaid'] = this.currencyPaid != null? this.currencyPaid.map((item)=>item.toMap()).toList() : null;
+			data['itemReceived'] = this.itemReceived != null? this.itemReceived.toMap() : null;
 			data['licenseUnlockHash'] = this.licenseUnlockHash;
 			data['purchasedByCharacterId'] = this.purchasedByCharacterId;
 			data['refundPolicy'] = this.refundPolicy;

@@ -37,8 +37,8 @@ class UserMembershipData{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyMemberships'] = this.destinyMemberships.map((item)=>item.toMap()).toList();
-			data['bungieNetUser'] = this.bungieNetUser.toMap();
+			data['destinyMemberships'] = this.destinyMemberships != null? this.destinyMemberships.map((item)=>item.toMap()).toList() : null;
+			data['bungieNetUser'] = this.bungieNetUser != null? this.bungieNetUser.toMap() : null;
 		return data;
 	}
 }

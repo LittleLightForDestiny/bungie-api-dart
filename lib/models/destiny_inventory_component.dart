@@ -32,7 +32,7 @@ class DestinyInventoryComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['items'] = this.items.map((item)=>item.toMap()).toList();
+			data['items'] = this.items != null? this.items.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

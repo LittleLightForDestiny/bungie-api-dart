@@ -52,7 +52,7 @@ See DestinyStatDefinition for a description of the stages of stat transformation
 			data['statHash'] = this.statHash;
 			data['maximumValue'] = this.maximumValue;
 			data['displayAsNumeric'] = this.displayAsNumeric;
-			data['displayInterpolation'] = this.displayInterpolation.map((item)=>item.toMap()).toList();
+			data['displayInterpolation'] = this.displayInterpolation != null? this.displayInterpolation.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

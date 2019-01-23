@@ -37,7 +37,7 @@ class DestinyReportReasonDefinition{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['reasonHash'] = this.reasonHash;
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 		return data;
 	}
 }

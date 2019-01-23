@@ -60,10 +60,10 @@ This is a long-held historical throwback to when we used to do paging with known
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['results'] = this.results.map((item)=>item.toMap()).toList();
+			data['results'] = this.results != null? this.results.map((item)=>item.toMap()).toList() : null;
 			data['totalResults'] = this.totalResults;
 			data['hasMore'] = this.hasMore;
-			data['query'] = this.query.toMap();
+			data['query'] = this.query != null? this.query.toMap() : null;
 			data['replacementContinuationToken'] = this.replacementContinuationToken;
 			data['useTotalResults'] = this.useTotalResults;
 		return data;

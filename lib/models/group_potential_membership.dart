@@ -37,8 +37,8 @@ class GroupPotentialMembership{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['member'] = this.member.toMap();
-			data['group'] = this.group.toMap();
+			data['member'] = this.member != null? this.member.toMap() : null;
+			data['group'] = this.group != null? this.group.toMap() : null;
 		return data;
 	}
 }

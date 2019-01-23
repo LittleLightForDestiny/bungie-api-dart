@@ -42,9 +42,9 @@ class ApiUsage{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['range'] = this.range;
-			data['apiCalls'] = this.apiCalls.map((item)=>item.toMap()).toList();
-			data['throttledRequests'] = this.throttledRequests.map((item)=>item.toMap()).toList();
+			data['range'] = this.range != null? this.range.toMap() : null;
+			data['apiCalls'] = this.apiCalls != null? this.apiCalls.map((item)=>item.toMap()).toList() : null;
+			data['throttledRequests'] = this.throttledRequests != null? this.throttledRequests.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

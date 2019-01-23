@@ -57,9 +57,9 @@ Only will be true if the item actually *has* a talent grid, and only then if it 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['talentGridHash'] = this.talentGridHash;
-			data['nodes'] = this.nodes.map((item)=>item.toMap()).toList();
+			data['nodes'] = this.nodes != null? this.nodes.map((item)=>item.toMap()).toList() : null;
 			data['isGridComplete'] = this.isGridComplete;
-			data['gridProgression'] = this.gridProgression;
+			data['gridProgression'] = this.gridProgression != null? this.gridProgression.toMap() : null;
 		return data;
 	}
 }

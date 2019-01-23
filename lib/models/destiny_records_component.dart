@@ -31,7 +31,7 @@ class DestinyRecordsComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['records'] = this.records;
+			data['records'] = this.records != null? this.records.map((i, v)=>MapEntry(i, v.toMap())) : null;
 		return data;
 	}
 }

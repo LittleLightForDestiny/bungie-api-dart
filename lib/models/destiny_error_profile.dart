@@ -38,7 +38,7 @@ class DestinyErrorProfile{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['errorCode'] = this.errorCode;
-			data['infoCard'] = this.infoCard;
+			data['infoCard'] = this.infoCard != null? this.infoCard.toMap() : null;
 		return data;
 	}
 }

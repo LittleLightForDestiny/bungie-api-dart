@@ -61,8 +61,8 @@ class FireteamMember{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['destinyUserInfo'] = this.destinyUserInfo.toMap();
-			data['bungieNetUserInfo'] = this.bungieNetUserInfo.toMap();
+			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
+			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;
 			data['characterId'] = this.characterId;
 			data['dateJoined'] = this.dateJoined;
 			data['hasMicrophone'] = this.hasMicrophone;

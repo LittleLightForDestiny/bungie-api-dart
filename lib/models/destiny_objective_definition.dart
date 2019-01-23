@@ -132,7 +132,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['completionValue'] = this.completionValue;
 			data['scope'] = this.scope;
 			data['locationHash'] = this.locationHash;
@@ -141,8 +141,8 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['isCountingDownward'] = this.isCountingDownward;
 			data['valueStyle'] = this.valueStyle;
 			data['progressDescription'] = this.progressDescription;
-			data['perks'] = this.perks;
-			data['stats'] = this.stats;
+			data['perks'] = this.perks != null? this.perks.toMap() : null;
+			data['stats'] = this.stats != null? this.stats.toMap() : null;
 			data['minimumVisibilityThreshold'] = this.minimumVisibilityThreshold;
 			data['allowOvercompletion'] = this.allowOvercompletion;
 			data['showValueOnComplete'] = this.showValueOnComplete;

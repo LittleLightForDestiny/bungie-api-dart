@@ -37,7 +37,7 @@ class DestinyMilestoneRewardCategory{
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['rewardCategoryHash'] = this.rewardCategoryHash;
-			data['entries'] = this.entries.map((item)=>item.toMap()).toList();
+			data['entries'] = this.entries != null? this.entries.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

@@ -57,12 +57,12 @@ class DestinyHistoricalStatsByPeriod{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['allTime'] = this.allTime;
-			data['allTimeTier1'] = this.allTimeTier1;
-			data['allTimeTier2'] = this.allTimeTier2;
-			data['allTimeTier3'] = this.allTimeTier3;
-			data['daily'] = this.daily.map((item)=>item.toMap()).toList();
-			data['monthly'] = this.monthly.map((item)=>item.toMap()).toList();
+			data['allTime'] = this.allTime != null? this.allTime.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['allTimeTier1'] = this.allTimeTier1 != null? this.allTimeTier1.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['allTimeTier2'] = this.allTimeTier2 != null? this.allTimeTier2.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['allTimeTier3'] = this.allTimeTier3 != null? this.allTimeTier3.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['daily'] = this.daily != null? this.daily.map((item)=>item.toMap()).toList() : null;
+			data['monthly'] = this.monthly != null? this.monthly.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

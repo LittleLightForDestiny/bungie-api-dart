@@ -81,7 +81,7 @@ This is a list of flags that they need in order to equip the item that the chara
 		Map<String, dynamic> data = new Map();
 			data['damageType'] = this.damageType;
 			data['damageTypeHash'] = this.damageTypeHash;
-			data['primaryStat'] = this.primaryStat;
+			data['primaryStat'] = this.primaryStat != null? this.primaryStat.toMap() : null;
 			data['itemLevel'] = this.itemLevel;
 			data['quality'] = this.quality;
 			data['isEquipped'] = this.isEquipped;

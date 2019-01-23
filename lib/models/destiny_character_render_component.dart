@@ -47,9 +47,9 @@ Combined, that should be enough to render all of the items on the equipped chara
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['customDyes'] = this.customDyes.map((item)=>item.toMap()).toList();
-			data['customization'] = this.customization;
-			data['peerView'] = this.peerView;
+			data['customDyes'] = this.customDyes != null? this.customDyes.map((item)=>item.toMap()).toList() : null;
+			data['customization'] = this.customization != null? this.customization.toMap() : null;
+			data['peerView'] = this.peerView != null? this.peerView.toMap() : null;
 		return data;
 	}
 }

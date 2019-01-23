@@ -70,11 +70,11 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['equipmentCategoryHash'] = this.equipmentCategoryHash;
 			data['bucketTypeHash'] = this.bucketTypeHash;
 			data['applyCustomArtDyes'] = this.applyCustomArtDyes;
-			data['artDyeChannels'] = this.artDyeChannels.map((item)=>item.toMap()).toList();
+			data['artDyeChannels'] = this.artDyeChannels != null? this.artDyeChannels.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

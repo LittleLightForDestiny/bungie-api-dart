@@ -148,7 +148,7 @@ It'll be preferable in the general case to look up the related definition: but f
 			data['minutesPlayedThisSession'] = this.minutesPlayedThisSession;
 			data['minutesPlayedTotal'] = this.minutesPlayedTotal;
 			data['light'] = this.light;
-			data['stats'] = this.stats;
+			data['stats'] = this.stats != null? this.stats.map((i, v)=>MapEntry(i, v)) : null;
 			data['raceHash'] = this.raceHash;
 			data['genderHash'] = this.genderHash;
 			data['classHash'] = this.classHash;
@@ -158,8 +158,8 @@ It'll be preferable in the general case to look up the related definition: but f
 			data['emblemPath'] = this.emblemPath;
 			data['emblemBackgroundPath'] = this.emblemBackgroundPath;
 			data['emblemHash'] = this.emblemHash;
-			data['emblemColor'] = this.emblemColor;
-			data['levelProgression'] = this.levelProgression;
+			data['emblemColor'] = this.emblemColor != null? this.emblemColor.toMap() : null;
+			data['levelProgression'] = this.levelProgression != null? this.levelProgression.toMap() : null;
 			data['baseCharacterLevel'] = this.baseCharacterLevel;
 			data['percentToNextLevel'] = this.percentToNextLevel;
 			data['titleRecordHash'] = this.titleRecordHash;

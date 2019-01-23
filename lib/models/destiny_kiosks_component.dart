@@ -33,7 +33,7 @@ class DestinyKiosksComponent{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['kioskItems'] = this.kioskItems;
+			data['kioskItems'] = this.kioskItems != null? this.kioskItems.map((i, v)=>MapEntry(i, v.map((item)=>item.toMap()).toList())) : null;
 		return data;
 	}
 }

@@ -70,8 +70,8 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		Map<String, dynamic> data = new Map();
 			data['maximumValue'] = this.maximumValue;
 			data['uiPosition'] = this.uiPosition;
-			data['scaledStats'] = this.scaledStats.map((item)=>item.toMap()).toList();
-			data['overrides'] = this.overrides;
+			data['scaledStats'] = this.scaledStats != null? this.scaledStats.map((item)=>item.toMap()).toList() : null;
+			data['overrides'] = this.overrides != null? this.overrides.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

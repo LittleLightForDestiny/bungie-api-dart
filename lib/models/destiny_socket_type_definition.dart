@@ -103,9 +103,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties;
-			data['insertAction'] = this.insertAction;
-			data['plugWhitelist'] = this.plugWhitelist.map((item)=>item.toMap()).toList();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
+			data['insertAction'] = this.insertAction != null? this.insertAction.toMap() : null;
+			data['plugWhitelist'] = this.plugWhitelist != null? this.plugWhitelist.map((item)=>item.toMap()).toList() : null;
 			data['socketCategoryHash'] = this.socketCategoryHash;
 			data['visibility'] = this.visibility;
 			data['alwaysRandomizeSockets'] = this.alwaysRandomizeSockets;
@@ -113,7 +113,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['hideDuplicateReusablePlugs'] = this.hideDuplicateReusablePlugs;
 			data['overridesUiAppearance'] = this.overridesUiAppearance;
 			data['avoidDuplicatesOnInitialization'] = this.avoidDuplicatesOnInitialization;
-			data['currencyScalars'] = this.currencyScalars.map((item)=>item.toMap()).toList();
+			data['currencyScalars'] = this.currencyScalars != null? this.currencyScalars.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

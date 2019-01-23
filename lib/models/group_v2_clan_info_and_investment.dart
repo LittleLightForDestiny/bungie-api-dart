@@ -42,9 +42,9 @@ class GroupV2ClanInfoAndInvestment{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['d2ClanProgressions'] = this.d2ClanProgressions;
+			data['d2ClanProgressions'] = this.d2ClanProgressions != null? this.d2ClanProgressions.map((i, v)=>MapEntry(i, v.toMap())) : null;
 			data['clanCallsign'] = this.clanCallsign;
-			data['clanBannerData'] = this.clanBannerData.toMap();
+			data['clanBannerData'] = this.clanBannerData != null? this.clanBannerData.toMap() : null;
 		return data;
 	}
 }

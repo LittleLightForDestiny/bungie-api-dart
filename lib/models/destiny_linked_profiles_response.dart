@@ -45,9 +45,9 @@ I know, Tetron; I know this is mixing UserServices concerns with DestinyServices
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['profiles'] = this.profiles.map((item)=>item.toMap()).toList();
-			data['bnetMembership'] = this.bnetMembership;
-			data['profilesWithErrors'] = this.profilesWithErrors.map((item)=>item.toMap()).toList();
+			data['profiles'] = this.profiles != null? this.profiles.map((item)=>item.toMap()).toList() : null;
+			data['bnetMembership'] = this.bnetMembership != null? this.bnetMembership.toMap() : null;
+			data['profilesWithErrors'] = this.profilesWithErrors != null? this.profilesWithErrors.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

@@ -69,7 +69,7 @@ Specific categories can now have thier own distinct progression, apparently. So 
 		Map<String, dynamic> data = new Map();
 			data['identifier'] = this.identifier;
 			data['displayCategoryHash'] = this.displayCategoryHash;
-			data['displayProperties'] = this.displayProperties.toMap();
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['displayInBanner'] = this.displayInBanner;
 			data['progressionHash'] = this.progressionHash;
 			data['sortOrder'] = this.sortOrder;

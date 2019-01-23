@@ -81,12 +81,12 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['nodes'] = this.nodes.map((item)=>item.toMap()).toList();
-			data['artElements'] = this.artElements.map((item)=>item.toMap()).toList();
-			data['connections'] = this.connections.map((item)=>item.toMap()).toList();
-			data['displayObjectives'] = this.displayObjectives.map((item)=>item.toMap()).toList();
-			data['displayProgressions'] = this.displayProgressions.map((item)=>item.toMap()).toList();
-			data['linkedGraphs'] = this.linkedGraphs.map((item)=>item.toMap()).toList();
+			data['nodes'] = this.nodes != null? this.nodes.map((item)=>item.toMap()).toList() : null;
+			data['artElements'] = this.artElements != null? this.artElements.map((item)=>item.toMap()).toList() : null;
+			data['connections'] = this.connections != null? this.connections.map((item)=>item.toMap()).toList() : null;
+			data['displayObjectives'] = this.displayObjectives != null? this.displayObjectives.map((item)=>item.toMap()).toList() : null;
+			data['displayProgressions'] = this.displayProgressions != null? this.displayProgressions.map((item)=>item.toMap()).toList() : null;
+			data['linkedGraphs'] = this.linkedGraphs != null? this.linkedGraphs.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

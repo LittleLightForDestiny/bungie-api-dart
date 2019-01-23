@@ -62,11 +62,11 @@ On our side, we don't necessarily even know what these are used for (the game de
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
 			data['activityHash'] = this.activityHash;
-			data['challenges'] = this.challenges.map((item)=>item.toMap()).toList();
+			data['challenges'] = this.challenges != null? this.challenges.map((item)=>item.toMap()).toList() : null;
 			data['modifierHashes'] = this.modifierHashes;
-			data['booleanActivityOptions'] = this.booleanActivityOptions;
+			data['booleanActivityOptions'] = this.booleanActivityOptions != null? this.booleanActivityOptions.map((i, v)=>MapEntry(i, v)) : null;
 			data['loadoutRequirementIndex'] = this.loadoutRequirementIndex;
-			data['phases'] = this.phases.map((item)=>item.toMap()).toList();
+			data['phases'] = this.phases != null? this.phases.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

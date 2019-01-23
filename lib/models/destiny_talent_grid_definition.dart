@@ -97,11 +97,11 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['maxGridLevel'] = this.maxGridLevel;
 			data['gridLevelPerColumn'] = this.gridLevelPerColumn;
 			data['progressionHash'] = this.progressionHash;
-			data['nodes'] = this.nodes.map((item)=>item.toMap()).toList();
-			data['exclusiveSets'] = this.exclusiveSets.map((item)=>item.toMap()).toList();
+			data['nodes'] = this.nodes != null? this.nodes.map((item)=>item.toMap()).toList() : null;
+			data['exclusiveSets'] = this.exclusiveSets != null? this.exclusiveSets.map((item)=>item.toMap()).toList() : null;
 			data['independentNodeIndexes'] = this.independentNodeIndexes;
-			data['groups'] = this.groups;
-			data['nodeCategories'] = this.nodeCategories.map((item)=>item.toMap()).toList();
+			data['groups'] = this.groups != null? this.groups.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['nodeCategories'] = this.nodeCategories != null? this.nodeCategories.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

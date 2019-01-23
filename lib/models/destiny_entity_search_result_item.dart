@@ -48,7 +48,7 @@ class DestinyEntitySearchResultItem{
 		Map<String, dynamic> data = new Map();
 			data['hash'] = this.hash;
 			data['entityType'] = this.entityType;
-			data['displayProperties'] = this.displayProperties;
+			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
 			data['weight'] = this.weight;
 		return data;
 	}

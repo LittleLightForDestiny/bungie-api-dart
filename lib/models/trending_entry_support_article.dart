@@ -31,7 +31,7 @@ class TrendingEntrySupportArticle{
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['article'] = this.article.toMap();
+			data['article'] = this.article != null? this.article.toMap() : null;
 		return data;
 	}
 }

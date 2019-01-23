@@ -194,30 +194,30 @@ COMPONENT TYPE: CurrencyLookups */
 
 	Map<String, dynamic> toMap(){
 		Map<String, dynamic> data = new Map();
-			data['vendorReceipts'] = this.vendorReceipts;
-			data['profileInventory'] = this.profileInventory;
-			data['profileCurrencies'] = this.profileCurrencies;
-			data['profile'] = this.profile;
-			data['profileKiosks'] = this.profileKiosks;
-			data['profilePlugSets'] = this.profilePlugSets;
-			data['profileProgression'] = this.profileProgression;
-			data['profilePresentationNodes'] = this.profilePresentationNodes;
-			data['profileRecords'] = this.profileRecords;
-			data['profileCollectibles'] = this.profileCollectibles;
-			data['characters'] = this.characters;
-			data['characterInventories'] = this.characterInventories;
-			data['characterProgressions'] = this.characterProgressions;
-			data['characterRenderData'] = this.characterRenderData;
-			data['characterActivities'] = this.characterActivities;
-			data['characterEquipment'] = this.characterEquipment;
-			data['characterKiosks'] = this.characterKiosks;
-			data['characterPlugSets'] = this.characterPlugSets;
-			data['characterUninstancedItemComponents'] = this.characterUninstancedItemComponents;
-			data['characterPresentationNodes'] = this.characterPresentationNodes;
-			data['characterRecords'] = this.characterRecords;
-			data['characterCollectibles'] = this.characterCollectibles;
-			data['itemComponents'] = this.itemComponents;
-			data['characterCurrencyLookups'] = this.characterCurrencyLookups;
+			data['vendorReceipts'] = this.vendorReceipts != null? this.vendorReceipts.toMap() : null;
+			data['profileInventory'] = this.profileInventory != null? this.profileInventory.toMap() : null;
+			data['profileCurrencies'] = this.profileCurrencies != null? this.profileCurrencies.toMap() : null;
+			data['profile'] = this.profile != null? this.profile.toMap() : null;
+			data['profileKiosks'] = this.profileKiosks != null? this.profileKiosks.toMap() : null;
+			data['profilePlugSets'] = this.profilePlugSets != null? this.profilePlugSets.toMap() : null;
+			data['profileProgression'] = this.profileProgression != null? this.profileProgression.toMap() : null;
+			data['profilePresentationNodes'] = this.profilePresentationNodes != null? this.profilePresentationNodes.toMap() : null;
+			data['profileRecords'] = this.profileRecords != null? this.profileRecords.toMap() : null;
+			data['profileCollectibles'] = this.profileCollectibles != null? this.profileCollectibles.toMap() : null;
+			data['characters'] = this.characters != null? this.characters.toMap() : null;
+			data['characterInventories'] = this.characterInventories != null? this.characterInventories.toMap() : null;
+			data['characterProgressions'] = this.characterProgressions != null? this.characterProgressions.toMap() : null;
+			data['characterRenderData'] = this.characterRenderData != null? this.characterRenderData.toMap() : null;
+			data['characterActivities'] = this.characterActivities != null? this.characterActivities.toMap() : null;
+			data['characterEquipment'] = this.characterEquipment != null? this.characterEquipment.toMap() : null;
+			data['characterKiosks'] = this.characterKiosks != null? this.characterKiosks.toMap() : null;
+			data['characterPlugSets'] = this.characterPlugSets != null? this.characterPlugSets.toMap() : null;
+			data['characterUninstancedItemComponents'] = this.characterUninstancedItemComponents != null? this.characterUninstancedItemComponents.map((i, v)=>MapEntry(i, v.toMap())) : null;
+			data['characterPresentationNodes'] = this.characterPresentationNodes != null? this.characterPresentationNodes.toMap() : null;
+			data['characterRecords'] = this.characterRecords != null? this.characterRecords.toMap() : null;
+			data['characterCollectibles'] = this.characterCollectibles != null? this.characterCollectibles.toMap() : null;
+			data['itemComponents'] = this.itemComponents != null? this.itemComponents.toMap() : null;
+			data['characterCurrencyLookups'] = this.characterCurrencyLookups != null? this.characterCurrencyLookups.toMap() : null;
 		return data;
 	}
 }

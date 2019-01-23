@@ -43,7 +43,7 @@ class DestinyClanAggregateStat{
 		Map<String, dynamic> data = new Map();
 			data['mode'] = this.mode;
 			data['statId'] = this.statId;
-			data['value'] = this.value;
+			data['value'] = this.value != null? this.value.toMap() : null;
 		return data;
 	}
 }
