@@ -6,7 +6,7 @@ class SingleComponentResponseOfDestinyProfileComponent{
 	/** The most essential summary information about a Profile (in Destiny 1, we called these "Accounts"). */
 	DestinyProfileComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyProfileComponent(
 		this.data,

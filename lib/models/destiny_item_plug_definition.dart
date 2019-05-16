@@ -34,7 +34,7 @@ The live data DestinyItemPlugComponent.enableFailIndexes will be an index into t
 	/** Plugs can have arbitrary, UI-defined identifiers that the UI designers use to determine the style applied to plugs. Unfortunately, we have neither a definitive list of these labels nor advance warning of when new labels might be applied or how that relates to how they get rendered. If you want to, you can refer to known labels to change your own styles: but know that new ones can be created arbitrarily, and we have no way of associating the labels with any specific UI style guidance... you'll have to piece that together on your end. Or do what we do, and just show plugs more generically, without specialized styles. */
 	String uiPlugLabel;
 	
-	/** If the plug has a specific custom style, this enumeration will represent that style/those styles. */
+	/**  */
 	int plugStyle;
 	
 	/** If TRUE, the plug doesn't actually convey any benefit: it only exists to show information in the UI. */

@@ -6,7 +6,7 @@ class SingleComponentResponseOfDestinyVendorReceiptsComponent{
 	/** For now, this isn't used for much: it's a record of the recent refundable purchases that the user has made. In the future, it could be used for providing refunds/buyback via the API. Wouldn't that be fun? */
 	DestinyVendorReceiptsComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyVendorReceiptsComponent(
 		this.data,

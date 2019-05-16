@@ -168,6 +168,9 @@ class PlatformErrorCodes {
   static const int UserAcknowledgmentTableFull = 225;
   static const int UserCreationDestinyMembershipRequired = 226;
   static const int UserFriendsTokenNeedsRefresh = 227;
+  static const int UserEmailValidationUnknown = 228;
+  static const int UserEmailValidationLimit = 229;
+  static const int TransactionEmailSendFailure = 230;
   static const int MessagingUnknownError = 300;
   static const int MessagingSelfError = 301;
   static const int MessagingSendThrottle = 302;
@@ -374,6 +377,7 @@ class PlatformErrorCodes {
   static const int ShareAlreadyShared = 706;
   static const int ActivityLoggingDisabled = 707;
   static const int ClanRequiresExistingDestinyAccount = 750;
+  static const int ClanNameRestricted = 751;
   static const int ItemAlreadyFollowed = 801;
   static const int ItemNotFollowed = 802;
   static const int CannotFollowSelf = 803;
@@ -677,4 +681,5 @@ class PlatformErrorCodes {
   static const int ClanFireteamAlreadyJoined = 3023;
   static const int ClanFireteamScheduledFireteamsRange = 3024;
   static const int ClanFireteamPublicCreationRestrictionExtended = 3025;
+  static const int ClanFireteamExpired = 3026;
 }

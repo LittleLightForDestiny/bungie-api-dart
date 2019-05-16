@@ -10,4 +10,5 @@ class FireteamActivityType {
   static const int BlindWell = 7;
   static const int EscalationProtocol = 8;
   static const int Forge = 9;
+  static const int Reckoning = 10;
 }

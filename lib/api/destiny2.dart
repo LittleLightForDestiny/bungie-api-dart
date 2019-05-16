@@ -9,6 +9,7 @@ import '../responses/destiny_milestone_response.dart';
 import '../responses/destiny_item_response_response.dart';
 import '../responses/destiny_vendors_response_response.dart';
 import '../responses/destiny_vendor_response_response.dart';
+import '../responses/destiny_public_vendors_response_response.dart';
 import '../responses/destiny_collectible_node_detail_response_response.dart';
 import '../responses/int32_response.dart';
 import '../responses/destiny_equip_item_results_response.dart';
@@ -215,6 +216,23 @@ class Destiny2{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return DestinyVendorResponseResponse.fromMap(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
+        });
+    }
+    
+    /** Get items available from vendors where the vendors have items for sale that are common for everyone. If any portion of the Vendor's available inventory is character or account specific, we will be unable to return their data from this endpoint due to the way that available inventory is computed. As I am often guilty of saying: 'It's a long story...' */
+    static Future<DestinyPublicVendorsResponseResponse> getPublicVendors (
+        HttpClient client,
+        List<int> components,
+    ) {
+        Map<String, dynamic> params = new Map();
+        params['components'] = components;
+        HttpClientConfig config = HttpClientConfig('GET', "/Destiny2//Vendors/", params);
+        config.bodyContentType = null;
+        return client.request(config).then((response){
+            if(response.statusCode == 200){
+                return DestinyPublicVendorsResponseResponse.fromMap(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

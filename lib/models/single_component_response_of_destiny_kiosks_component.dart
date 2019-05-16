@@ -8,7 +8,7 @@ This component returns information about what Kiosk items are available to you o
 Note that, because this component returns vendorItemIndexes (that is to say, indexes into the Kiosk Vendor's itemList property), these results are necessarily content version dependent. Make sure that you have the latest version of the content manifest databases before using this data. */
 	DestinyKiosksComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyKiosksComponent(
 		this.data,

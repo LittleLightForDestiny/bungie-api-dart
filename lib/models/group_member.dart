@@ -3,11 +3,14 @@ import 'user_info_card.dart';
 /**  */
 class GroupMember{
 	
-	/** The member levels used by all V2 Groups API. Individual group types use their own mappings in their native storage (general uses BnetDbGroupMemberType and D2 clans use ClanMemberLevel), but they are all translated to this in the runtime api. These runtime values should NEVER be stored anywhere, so the values can be changed as necessary. */
+	/**  */
 	int memberType;
 	
 	/**  */
 	bool isOnline;
+	
+	/**  */
+	String lastOnlineStatusChange;
 	
 	/**  */
 	String groupId;
@@ -23,6 +26,7 @@ class GroupMember{
 	GroupMember(
 		this.memberType,
 		this.isOnline,
+		this.lastOnlineStatusChange,
 		this.groupId,
 		this.destinyUserInfo,
 		this.bungieNetUserInfo,
@@ -36,6 +40,7 @@ class GroupMember{
 		return new GroupMember(
 				data['memberType'],
 				data['isOnline'],
+				data['lastOnlineStatusChange'],
 				data['groupId'],
 				data['destinyUserInfo'] != null ? UserInfoCard.fromMap(data['destinyUserInfo']) : null,
 				data['bungieNetUserInfo'] != null ? UserInfoCard.fromMap(data['bungieNetUserInfo']) : null,
@@ -58,6 +63,7 @@ class GroupMember{
 		Map<String, dynamic> data = new Map();
 			data['memberType'] = this.memberType;
 			data['isOnline'] = this.isOnline;
+			data['lastOnlineStatusChange'] = this.lastOnlineStatusChange;
 			data['groupId'] = this.groupId;
 			data['destinyUserInfo'] = this.destinyUserInfo != null? this.destinyUserInfo.toMap() : null;
 			data['bungieNetUserInfo'] = this.bungieNetUserInfo != null? this.bungieNetUserInfo.toMap() : null;

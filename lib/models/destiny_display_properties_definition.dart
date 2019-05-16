@@ -9,7 +9,8 @@ class DestinyDisplayPropertiesDefinition{
 	String name;
 	
 	/** Note that "icon" is sometimes misleading, and should be interpreted in the context of the entity. For instance, in Destiny 1 the DestinyRecordBookDefinition's icon was a big picture of a book.
-But usually, it will be a small square image that you can use as... well, an icon. */
+But usually, it will be a small square image that you can use as... well, an icon.
+They are currently represented as 96px x 96px images. */
 	String icon;
 	
 	/**  */

@@ -7,7 +7,7 @@ description: Dart mappings for the Bungie.net API.
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 1.13.0
+version: 2.3.5
 authors:
   - João Paulo Marquesini
   - Ben Hollis

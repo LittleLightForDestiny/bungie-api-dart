@@ -2,7 +2,7 @@
 /** The base class for any component-returning object that may need to indicate information about the state of the component being returned. */
 class ComponentResponse{
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	ComponentResponse(
 		this.privacy,

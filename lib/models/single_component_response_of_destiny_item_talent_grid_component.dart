@@ -12,7 +12,7 @@ Nodes can be grouped into exclusivity sets *and* as of D2, exclusivity groups (w
 See DestinyTalentGridDefinition for more information. Brace yourself, the water's cold out there in the deep end. */
 	DestinyItemTalentGridComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemTalentGridComponent(
 		this.data,

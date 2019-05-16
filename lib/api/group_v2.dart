@@ -2,24 +2,22 @@ import '../helpers/http.dart';
 import '../responses/dictionary_ofint32_andstring_response.dart';
 import '../responses/list_of_group_theme_response.dart';
 import '../responses/boolean_response.dart';
-import '../responses/int32_response.dart';
 import '../responses/list_of_group_v2_card_response.dart';
 import '../responses/group_search_response_response.dart';
 import '../responses/group_response_response.dart';
 import '../responses/celist_of_group_optional_conversation_response.dart';
-import '../responses/group_creation_response_response.dart';
+import '../responses/int32_response.dart';
 import '../responses/int64_response.dart';
 import '../responses/search_result_of_group_member_response.dart';
 import '../responses/group_member_leave_result_response.dart';
 import '../responses/search_result_of_group_ban_response.dart';
-import '../responses/group_application_response_response.dart';
 import '../responses/search_result_of_group_member_application_response.dart';
 import '../responses/list_of_entity_action_result_response.dart';
 import '../responses/group_membership_search_response_response.dart';
 import '../responses/group_potential_membership_search_response_response.dart';
+import '../responses/group_application_response_response.dart';
 import '../models/group_query.dart';
 import '../models/group_name_search_request.dart';
-import '../models/group_action.dart';
 import '../models/group_edit_action.dart';
 import '../models/clan_banner.dart';
 import '../models/group_options_edit_action.dart';
@@ -71,23 +69,6 @@ class GroupV2{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return booleanResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Sets the state of the user's clan invite preferences - true if they wish to be invited to clans, false otherwise. */
-    static Future<int32Response> setUserClanInviteSetting (
-        HttpClient client,
-        bool allowInvites,
-        int mType,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/SetUserClanInviteSetting/${mType}/${allowInvites}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return int32Response.fromMap(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -188,23 +169,6 @@ class GroupV2{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return CEListOfGroupOptionalConversationResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Create a new group. */
-    static Future<GroupCreationResponseResponse> createGroup (
-        HttpClient client,
-        GroupAction body
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/Create/", params);
-        config.body = body.toMap();
-        config.bodyContentType = 'application/json';
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return GroupCreationResponseResponse.fromMap(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -449,25 +413,6 @@ class GroupV2{
         });
     }
     
-    /** Request permission to join the given group. */
-    static Future<GroupApplicationResponseResponse> requestGroupMembership (
-        HttpClient client,
-        String groupId,
-        int membershipType,
-        GroupApplicationRequest body
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Apply/${membershipType}/", params);
-        config.body = body.toMap();
-        config.bodyContentType = 'application/json';
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return GroupApplicationResponseResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
     /** Get the list of users who are awaiting a decision on their application to join a given group. Modified to include application info. */
     static Future<SearchResultOfGroupMemberApplicationResponse> getPendingMemberships (
         HttpClient client,
@@ -497,23 +442,6 @@ class GroupV2{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return SearchResultOfGroupMemberApplicationResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Rescind your application to join the given group or leave the group if you are already a member.. */
-    static Future<GroupMemberLeaveResultResponse> rescindGroupMembership (
-        HttpClient client,
-        String groupId,
-        int membershipType,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/GroupV2/${groupId}/Members/Rescind/${membershipType}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return GroupMemberLeaveResultResponse.fromMap(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

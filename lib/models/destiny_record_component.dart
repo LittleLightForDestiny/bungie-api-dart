@@ -3,7 +3,7 @@ import 'destiny_objective_progress.dart';
 /**  */
 class DestinyRecordComponent{
 	
-	/** A Flags enumeration where each bit represents a possible state that a Record/Triumph can be in. */
+	/**  */
 	int state;
 	
 	/**  */

@@ -12,7 +12,7 @@ class TrendingDetail{
 	/**  */
 	String identifier;
 	
-	/** The known entity types that you can have returned from Trending. */
+	/**  */
 	int entityType;
 	
 	/**  */

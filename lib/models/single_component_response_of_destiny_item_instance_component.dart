@@ -8,7 +8,7 @@ Items are instanced if they require information or state that can vary. For inst
 You can tell from an item's definition whether it will be instanced or not by looking at the DestinyInventoryItemDefinition's definition.inventory.isInstanceItem property. */
 	DestinyItemInstanceComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemInstanceComponent(
 		this.data,

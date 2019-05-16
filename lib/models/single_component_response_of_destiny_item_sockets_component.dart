@@ -7,7 +7,7 @@ class SingleComponentResponseOfDestinyItemSocketsComponent{
 Sockets are a bit complex: be sure to examine the documentation on the DestinyInventoryItemDefinition's "socket" block and elsewhere on these objects for more details. */
 	DestinyItemSocketsComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemSocketsComponent(
 		this.data,

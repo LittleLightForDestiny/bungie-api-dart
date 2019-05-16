@@ -6,7 +6,7 @@ class SingleComponentResponseOfDestinyCharacterComponent{
 	/** This component contains base properties of the character. You'll probably want to always request this component, but hey you do you. */
 	DestinyCharacterComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterComponent(
 		this.data,

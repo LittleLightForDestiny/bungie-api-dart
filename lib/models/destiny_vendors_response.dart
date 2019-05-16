@@ -1,7 +1,7 @@
 import 'single_component_response_of_destiny_vendor_group_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_vendor_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_vendor_categories_component.dart';
-import 'dictionary_component_response_ofuint32_and_destiny_vendor_sale_item_set_component.dart';
+import 'dictionary_component_response_ofuint32_and_personal_destiny_vendor_sale_item_set_component.dart';
 import 'destiny_item_component_set_ofint32.dart';
 import 'single_component_response_of_destiny_currencies_component.dart';
 
@@ -23,7 +23,7 @@ COMPONENT TYPE: VendorCategories */
 	/** Sales, keyed by the vendorItemIndex of the item being sold. These are keyed by the Vendor Hash, so you will get one Sale Item Set Component per vendor returned.
 Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor's definition.
 COMPONENT TYPE: VendorSales */
-	DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent sales;
+	DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent sales;
 	
 	/** The set of item detail components, one set of item components per Vendor. These are keyed by the Vendor Hash, so you will get one Item Component Set per vendor returned.
 The components contained inside are themselves keyed by the vendorSaleIndex, and will have whatever item-level components you requested (Sockets, Stats, Instance data etc...) per item being sold by the vendor. */
@@ -49,7 +49,7 @@ COMPONENT TYPE: CurrencyLookups */
 				data['vendorGroups'] != null ? SingleComponentResponseOfDestinyVendorGroupComponent.fromMap(data['vendorGroups']) : null,
 				data['vendors'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorComponent.fromMap(data['vendors']) : null,
 				data['categories'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent.fromMap(data['categories']) : null,
-				data['sales'] != null ? DictionaryComponentResponseOfuint32AndDestinyVendorSaleItemSetComponent.fromMap(data['sales']) : null,
+				data['sales'] != null ? DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent.fromMap(data['sales']) : null,
 				data['itemComponents'] != null ? Map<String, DestinyItemComponentSetOfint32>.from(data['itemComponents'].map((k, v)=>MapEntry(k, DestinyItemComponentSetOfint32.fromMap(v)))) : null,
 				data['currencyLookups'] != null ? SingleComponentResponseOfDestinyCurrenciesComponent.fromMap(data['currencyLookups']) : null,
 		);

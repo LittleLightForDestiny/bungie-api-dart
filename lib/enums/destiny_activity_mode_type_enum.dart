@@ -61,4 +61,12 @@ class DestinyActivityModeType {
   static const int BlackArmoryRun = 66;
   static const int Salvage = 67;
   static const int IronBannerSalvage = 68;
+  static const int PvPCompetitive = 69;
+  static const int PvPQuickplay = 70;
+  static const int ClashQuickplay = 71;
+  static const int ClashCompetitive = 72;
+  static const int ControlQuickplay = 73;
+  static const int ControlCompetitive = 74;
+  static const int GambitPrime = 75;
+  static const int Reckoning = 76;
 }

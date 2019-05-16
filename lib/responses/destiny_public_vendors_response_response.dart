@@ -1,6 +1,6 @@
-import '../models/group_creation_response.dart';
-class GroupCreationResponseResponse{
-    GroupCreationResponse response;
+import '../models/destiny_public_vendors_response.dart';
+class DestinyPublicVendorsResponseResponse{
+    DestinyPublicVendorsResponse response;
     int errorCode;
     int throttleSeconds;
     String errorStatus;
@@ -8,8 +8,8 @@ class GroupCreationResponseResponse{
     Map<String, String> messageData;
     String detailedErrorTrace;
 
-    GroupCreationResponseResponse(
-		GroupCreationResponse this.response,
+    DestinyPublicVendorsResponseResponse(
+		DestinyPublicVendorsResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
 		String this.errorStatus,
@@ -18,12 +18,12 @@ class GroupCreationResponseResponse{
 		String this.detailedErrorTrace,
 	);
 
-    static GroupCreationResponseResponse fromMap(Map<String, dynamic> data){
+    static DestinyPublicVendorsResponseResponse fromMap(Map<String, dynamic> data){
 		if(data == null) {
 			return null;
 		};
-		return new GroupCreationResponseResponse(
-				data['Response'] != null ? GroupCreationResponse.fromMap(data['Response']) : null,
+		return new DestinyPublicVendorsResponseResponse(
+				data['Response'] != null ? DestinyPublicVendorsResponse.fromMap(data['Response']) : null,
 				data['ErrorCode'],
 				data['ThrottleSeconds'],
 				data['ErrorStatus'],
@@ -33,13 +33,13 @@ class GroupCreationResponseResponse{
 		);
 	}
 
-	static List<GroupCreationResponseResponse> fromList(List<dynamic> data){
+	static List<DestinyPublicVendorsResponseResponse> fromList(List<dynamic> data){
 		if(data == null) {
 			return null;
 		};
-		List<GroupCreationResponseResponse> list = new List();
+		List<DestinyPublicVendorsResponseResponse> list = new List();
     data.forEach((item) {
-      list.add(GroupCreationResponseResponse.fromMap(item));
+      list.add(DestinyPublicVendorsResponseResponse.fromMap(item));
     });
     return list;
 	}

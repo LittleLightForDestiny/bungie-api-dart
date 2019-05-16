@@ -1,4 +1,5 @@
 import 'destiny_item_source_definition.dart';
+import 'destiny_item_vendor_source_reference.dart';
 
 /** Data about an item's "sources": ways that the item can be obtained. */
 class DestinyItemSourceBlockDefinition{
@@ -11,10 +12,14 @@ class DestinyItemSourceBlockDefinition{
 	
 	/** If we found that this item is exclusive to a specific platform, this will be set to the BungieMembershipType enumeration that matches that platform. */
 	int exclusive;
+	
+	/** A denormalized reference back to vendors that potentially sell this item. */
+	List<DestinyItemVendorSourceReference> vendorSources;
 	DestinyItemSourceBlockDefinition(
 		this.sourceHashes,
 		this.sources,
 		this.exclusive,
+		this.vendorSources,
 	);
 
 	static DestinyItemSourceBlockDefinition fromMap(Map<String, dynamic> data){
@@ -25,6 +30,7 @@ class DestinyItemSourceBlockDefinition{
 				data['sourceHashes'] != null ? data['sourceHashes']?.cast<int>() ?? null : null,
 				data['sources'] != null ? DestinyItemSourceDefinition.fromList(data['sources']) : null,
 				data['exclusive'],
+				data['vendorSources'] != null ? DestinyItemVendorSourceReference.fromList(data['vendorSources']) : null,
 		);
 	}
 
@@ -44,6 +50,7 @@ class DestinyItemSourceBlockDefinition{
 			data['sourceHashes'] = this.sourceHashes;
 			data['sources'] = this.sources != null? this.sources.map((item)=>item.toMap()).toList() : null;
 			data['exclusive'] = this.exclusive;
+			data['vendorSources'] = this.vendorSources != null? this.vendorSources.map((item)=>item.toMap()).toList() : null;
 		return data;
 	}
 }

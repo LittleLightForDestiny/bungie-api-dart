@@ -8,7 +8,7 @@ These are stats like Attack, Defense etc... and *not* historical stats.
 Note that some stats have additional computation in-game at runtime - for instance, Magazine Size - and thus these stats might not be 100% accurate compared to what you see in-game for some stats. I know, it sucks. I hate it too. */
 	DestinyItemStatsComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemStatsComponent(
 		this.data,

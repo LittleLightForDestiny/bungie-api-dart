@@ -6,7 +6,7 @@ class DictionaryComponentResponseOfint64AndDestinyItemRenderComponent{
 	/**  */
 	Map<String, DestinyItemRenderComponent> data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent(
 		this.data,

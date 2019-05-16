@@ -2,8 +2,6 @@ import '../helpers/http.dart';
 import '../responses/post_search_response_response.dart';
 import '../responses/int64_response.dart';
 import '../responses/list_of_tag_response_response.dart';
-import '../responses/forum_recruitment_detail_response.dart';
-import '../responses/save_message_result_response.dart';
 import '../responses/celist_of_forum_recruitment_detail_response.dart';
 class Forum{
     
@@ -180,71 +178,6 @@ class Forum{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return PostSearchResponseResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Allows a user to slot themselves into a recruitment thread fireteam slot. Returns the new state of the fireteam. */
-    static Future<ForumRecruitmentDetailResponse> joinFireteamThread (
-        HttpClient client,
-        String topicId,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Join/${topicId}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Allows a user to remove themselves from a recruitment thread fireteam slot. Returns the new state of the fireteam. */
-    static Future<ForumRecruitmentDetailResponse> leaveFireteamThread (
-        HttpClient client,
-        String topicId,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Leave/${topicId}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Allows a recruitment thread owner to kick a join user from the fireteam. Returns the new state of the fireteam. */
-    static Future<ForumRecruitmentDetailResponse> kickBanFireteamApplicant (
-        HttpClient client,
-        String targetMembershipId,
-        String topicId,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/KickBan/${topicId}/${targetMembershipId}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return ForumRecruitmentDetailResponse.fromMap(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    
-    /** Allows the owner of a fireteam thread to approve all joined members and start a private message conversation with them. */
-    static Future<SaveMessageResultResponse> approveFireteamThread (
-        HttpClient client,
-        String topicId,
-    ) {
-        Map<String, dynamic> params = new Map();
-        HttpClientConfig config = HttpClientConfig('POST', "/Forum/Recruit/Approve/${topicId}/", params);
-        config.bodyContentType = null;
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return SaveMessageResultResponse.fromMap(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

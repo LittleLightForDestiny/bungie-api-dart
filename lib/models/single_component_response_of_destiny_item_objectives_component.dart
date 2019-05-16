@@ -6,7 +6,7 @@ class SingleComponentResponseOfDestinyItemObjectivesComponent{
 	/** Items can have objectives and progression. When you request this block, you will obtain information about any Objectives and progression tied to this item. */
 	DestinyItemObjectivesComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyItemObjectivesComponent(
 		this.data,

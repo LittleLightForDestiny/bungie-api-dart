@@ -7,7 +7,7 @@ class SingleComponentResponseOfDestinyCharacterRenderComponent{
 Examine the Javascript returned by https://bungie.net/sharedbundle/spasm to see how we use this data, but be warned: the rabbit hole goes pretty deep. */
 	DestinyCharacterRenderComponent data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	SingleComponentResponseOfDestinyCharacterRenderComponent(
 		this.data,

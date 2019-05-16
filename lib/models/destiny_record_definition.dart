@@ -4,6 +4,8 @@ import 'destiny_record_title_block.dart';
 import 'destiny_record_completion_block.dart';
 import 'schema_record_state_block.dart';
 import 'destiny_presentation_node_requirements_block.dart';
+import 'destiny_record_expiration_block.dart';
+import 'destiny_item_quantity.dart';
 
 /**  */
 class DestinyRecordDefinition{
@@ -38,6 +40,13 @@ class DestinyRecordDefinition{
 	/** Presentation nodes can be restricted by various requirements. This defines the rules of those requirements, and the message(s) to be shown if these requirements aren't met. */
 	DestinyPresentationNodeRequirementsBlock requirements;
 	
+	/** If this record has an expiration after which it cannot be earned, this is some information about that expiration. */
+	DestinyRecordExpirationBlock expirationInfo;
+	
+	/** If there is any publicly available information about rewards earned for achieving this record, this is the list of those items.
+ However, note that some records intentionally have "hidden" rewards. These will not be returned in this list. */
+	List<DestinyItemQuantity> rewardItems;
+	
 	/** The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 When entities refer to each other in Destiny content, it is this hash that they are referring to. */
 	int hash;
@@ -58,6 +67,8 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		this.completionInfo,
 		this.stateInfo,
 		this.requirements,
+		this.expirationInfo,
+		this.rewardItems,
 		this.hash,
 		this.index,
 		this.redacted,
@@ -78,6 +89,8 @@ When entities refer to each other in Destiny content, it is this hash that they 
 				data['completionInfo'] != null ? DestinyRecordCompletionBlock.fromMap(data['completionInfo']) : null,
 				data['stateInfo'] != null ? SchemaRecordStateBlock.fromMap(data['stateInfo']) : null,
 				data['requirements'] != null ? DestinyPresentationNodeRequirementsBlock.fromMap(data['requirements']) : null,
+				data['expirationInfo'] != null ? DestinyRecordExpirationBlock.fromMap(data['expirationInfo']) : null,
+				data['rewardItems'] != null ? DestinyItemQuantity.fromList(data['rewardItems']) : null,
 				data['hash'],
 				data['index'],
 				data['redacted'],
@@ -107,6 +120,8 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			data['completionInfo'] = this.completionInfo != null? this.completionInfo.toMap() : null;
 			data['stateInfo'] = this.stateInfo != null? this.stateInfo.toMap() : null;
 			data['requirements'] = this.requirements != null? this.requirements.toMap() : null;
+			data['expirationInfo'] = this.expirationInfo != null? this.expirationInfo.toMap() : null;
+			data['rewardItems'] = this.rewardItems != null? this.rewardItems.map((item)=>item.toMap()).toList() : null;
 			data['hash'] = this.hash;
 			data['index'] = this.index;
 			data['redacted'] = this.redacted;

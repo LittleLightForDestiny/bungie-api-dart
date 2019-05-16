@@ -6,7 +6,7 @@ class DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent{
 	/**  */
 	Map<String, DestinyItemPerksComponent> data;
 	
-	/** A set of flags for reason(s) why the component populated in the way that it did. Inspect the individual flags for the reasons. */
+	/**  */
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent(
 		this.data,

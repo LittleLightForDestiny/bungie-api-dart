@@ -12,7 +12,7 @@ class CommunityLiveStatus{
 	/**  */
 	String partnershipIdentifier;
 	
-	/** Representing external partners to which BNet users can link accounts, but that are not Account System credentials: partnerships that BNet uses exclusively for data. */
+	/**  */
 	int partnershipType;
 	
 	/**  */
