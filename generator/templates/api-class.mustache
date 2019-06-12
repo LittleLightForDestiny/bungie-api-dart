@@ -4,8 +4,9 @@ import '../{{type}}/{{filename}}.dart';
 {{/imports}}
 class {{className}}{
     {{#methods}}
-    
-    /// {{{description}}}
+    {{#description}}
+    /// {{.}}
+    {{/description}}
     static Future<{{returnType}}> {{methodName}} (
         HttpClient client,
         {{#parameters}}

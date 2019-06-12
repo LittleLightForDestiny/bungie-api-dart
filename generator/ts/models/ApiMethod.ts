@@ -26,8 +26,9 @@ export class ApiMethod{
         return this.methodUrl.split('{').join('${');
     }
 
-    description():string{
-        return this.pathInfo.description!;
+    description():string[]|null{
+        if(!this.pathInfo.description) return null;
+        return this.pathInfo.description.split('\n\r');
     }
 
     requestBody():ModelProperty|null{
