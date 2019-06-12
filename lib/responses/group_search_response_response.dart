@@ -1,14 +1,40 @@
 import '../models/group_search_response.dart';
-class GroupSearchResponseResponse{
-    GroupSearchResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    GroupSearchResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'group_search_response_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class GroupSearchResponseResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	GroupSearchResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	GroupSearchResponseResponse({
 		GroupSearchResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class GroupSearchResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static GroupSearchResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupSearchResponseResponse(
-				data['Response'] != null ? GroupSearchResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory GroupSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupSearchResponseResponseFromJson(json);
+	
 
-	static List<GroupSearchResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupSearchResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(GroupSearchResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$GroupSearchResponseResponseToJson(this);
 }

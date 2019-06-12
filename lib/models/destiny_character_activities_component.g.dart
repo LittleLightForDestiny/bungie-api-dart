@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'destiny_character_activities_component.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyCharacterActivitiesComponent
+    _$DestinyCharacterActivitiesComponentFromJson(Map<String, dynamic> json) {
+  return DestinyCharacterActivitiesComponent()
+    ..dateActivityStarted = json['dateActivityStarted'] as String
+    ..availableActivities = (json['availableActivities'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyActivity.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..currentActivityHash = json['currentActivityHash'] as int
+    ..currentActivityModeHash = json['currentActivityModeHash'] as int
+    ..currentActivityModeType = json['currentActivityModeType'] as int
+    ..currentActivityModeHashes = (json['currentActivityModeHashes'] as List)
+        ?.map((e) => e as int)
+        ?.toList()
+    ..currentActivityModeTypes = (json['currentActivityModeTypes'] as List)
+        ?.map((e) => e as int)
+        ?.toList()
+    ..currentPlaylistActivityHash = json['currentPlaylistActivityHash'] as int
+    ..lastCompletedStoryHash = json['lastCompletedStoryHash'] as int;
+}
+
+Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
+        DestinyCharacterActivitiesComponent instance) =>
+    <String, dynamic>{
+      'dateActivityStarted': instance.dateActivityStarted,
+      'availableActivities': instance.availableActivities,
+      'currentActivityHash': instance.currentActivityHash,
+      'currentActivityModeHash': instance.currentActivityModeHash,
+      'currentActivityModeType': instance.currentActivityModeType,
+      'currentActivityModeHashes': instance.currentActivityModeHashes,
+      'currentActivityModeTypes': instance.currentActivityModeTypes,
+      'currentPlaylistActivityHash': instance.currentPlaylistActivityHash,
+      'lastCompletedStoryHash': instance.lastCompletedStoryHash
+    };

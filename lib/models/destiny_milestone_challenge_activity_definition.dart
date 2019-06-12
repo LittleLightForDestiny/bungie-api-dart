@@ -2,57 +2,32 @@ import 'destiny_milestone_challenge_definition.dart';
 import 'destiny_milestone_challenge_activity_graph_node_entry.dart';
 import 'destiny_milestone_challenge_activity_phase.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_milestone_challenge_activity_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyMilestoneChallengeActivityDefinition{
 	
 	/** The activity for which this challenge is active. */
+	@JsonKey(name:'activityHash')
 	int activityHash;
 	
 	/**  */
+	@JsonKey(name:'challenges')
 	List<DestinyMilestoneChallengeDefinition> challenges;
 	
 	/** If the activity and its challenge is visible on any of these nodes, it will be returned. */
+	@JsonKey(name:'activityGraphNodes')
 	List<DestinyMilestoneChallengeActivityGraphNodeEntry> activityGraphNodes;
 	
 	/** Phases related to this activity, if there are any.
 These will be listed in the order in which they will appear in the actual activity. */
+	@JsonKey(name:'phases')
 	List<DestinyMilestoneChallengeActivityPhase> phases;
-	DestinyMilestoneChallengeActivityDefinition(
-		this.activityHash,
-		this.challenges,
-		this.activityGraphNodes,
-		this.phases,
-	);
+	DestinyMilestoneChallengeActivityDefinition();
 
-	static DestinyMilestoneChallengeActivityDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyMilestoneChallengeActivityDefinition(
-				data['activityHash'],
-				data['challenges'] != null ? DestinyMilestoneChallengeDefinition.fromList(data['challenges']) : null,
-				data['activityGraphNodes'] != null ? DestinyMilestoneChallengeActivityGraphNodeEntry.fromList(data['activityGraphNodes']) : null,
-				data['phases'] != null ? DestinyMilestoneChallengeActivityPhase.fromList(data['phases']) : null,
-		);
-	}
-
-	static List<DestinyMilestoneChallengeActivityDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyMilestoneChallengeActivityDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyMilestoneChallengeActivityDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activityHash'] = this.activityHash;
-			data['challenges'] = this.challenges != null? this.challenges.map((item)=>item.toMap()).toList() : null;
-			data['activityGraphNodes'] = this.activityGraphNodes != null? this.activityGraphNodes.map((item)=>item.toMap()).toList() : null;
-			data['phases'] = this.phases != null? this.phases.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyMilestoneChallengeActivityDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneChallengeActivityDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneChallengeActivityDefinitionToJson(this);
 }

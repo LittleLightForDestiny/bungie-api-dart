@@ -1,14 +1,42 @@
 import '../models/destiny_linked_profiles_response.dart';
-class DestinyLinkedProfilesResponseResponse{
-    DestinyLinkedProfilesResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyLinkedProfilesResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_linked_profiles_response_response.g.dart';
+
+/** I know what you seek. You seek linked accounts. Found them, you have.
+This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose */
+@JsonSerializable()
+class DestinyLinkedProfilesResponseResponse{
+	
+	/** I know what you seek. You seek linked accounts. Found them, you have.
+This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose */
+	@JsonKey(name:'Response')
+	DestinyLinkedProfilesResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyLinkedProfilesResponseResponse({
 		DestinyLinkedProfilesResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +44,10 @@ class DestinyLinkedProfilesResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyLinkedProfilesResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyLinkedProfilesResponseResponse(
-				data['Response'] != null ? DestinyLinkedProfilesResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyLinkedProfilesResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyLinkedProfilesResponseResponseFromJson(json);
+	
 
-	static List<DestinyLinkedProfilesResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyLinkedProfilesResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyLinkedProfilesResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyLinkedProfilesResponseResponseToJson(this);
 }

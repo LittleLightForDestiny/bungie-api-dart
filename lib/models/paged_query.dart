@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'paged_query.g.dart';
+
 /**  */
+@JsonSerializable()
 class PagedQuery{
 	
 	/**  */
+	@JsonKey(name:'itemsPerPage')
 	int itemsPerPage;
 	
 	/**  */
+	@JsonKey(name:'currentPage')
 	int currentPage;
 	
 	/**  */
+	@JsonKey(name:'requestContinuationToken')
 	String requestContinuationToken;
-	PagedQuery(
-		this.itemsPerPage,
-		this.currentPage,
-		this.requestContinuationToken,
-	);
+	PagedQuery();
 
-	static PagedQuery fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PagedQuery(
-				data['itemsPerPage'],
-				data['currentPage'],
-				data['requestContinuationToken'],
-		);
-	}
-
-	static List<PagedQuery> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PagedQuery> list = new List();
-    data.forEach((item) {
-      list.add(PagedQuery.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['itemsPerPage'] = this.itemsPerPage;
-			data['currentPage'] = this.currentPage;
-			data['requestContinuationToken'] = this.requestContinuationToken;
-		return data;
-	}
+	factory PagedQuery.fromJson(Map<String, dynamic> json) => _$PagedQueryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$PagedQueryToJson(this);
 }

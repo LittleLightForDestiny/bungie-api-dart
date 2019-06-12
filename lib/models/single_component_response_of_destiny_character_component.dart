@@ -1,43 +1,22 @@
 import 'destiny_character_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_character_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyCharacterComponent{
 	
 	/** This component contains base properties of the character. You'll probably want to always request this component, but hey you do you. */
+	@JsonKey(name:'data')
 	DestinyCharacterComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyCharacterComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyCharacterComponent();
 
-	static SingleComponentResponseOfDestinyCharacterComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyCharacterComponent(
-				data['data'] != null ? DestinyCharacterComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyCharacterComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyCharacterComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyCharacterComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyCharacterComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyCharacterComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyCharacterComponentToJson(this);
 }

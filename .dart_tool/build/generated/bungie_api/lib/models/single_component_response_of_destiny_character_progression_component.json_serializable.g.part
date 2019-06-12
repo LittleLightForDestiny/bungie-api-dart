@@ -1,0 +1,20 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+SingleComponentResponseOfDestinyCharacterProgressionComponent
+    _$SingleComponentResponseOfDestinyCharacterProgressionComponentFromJson(
+        Map<String, dynamic> json) {
+  return SingleComponentResponseOfDestinyCharacterProgressionComponent()
+    ..data = json['data'] == null
+        ? null
+        : DestinyCharacterProgressionComponent.fromJson(
+            json['data'] as Map<String, dynamic>)
+    ..privacy = json['privacy'] as int;
+}
+
+Map<String, dynamic>
+    _$SingleComponentResponseOfDestinyCharacterProgressionComponentToJson(
+            SingleComponentResponseOfDestinyCharacterProgressionComponent
+                instance) =>
+        <String, dynamic>{'data': instance.data, 'privacy': instance.privacy};

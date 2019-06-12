@@ -1,60 +1,33 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_optional_conversation.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupOptionalConversation{
 	
 	/**  */
+	@JsonKey(name:'groupId')
 	String groupId;
 	
 	/**  */
+	@JsonKey(name:'conversationId')
 	String conversationId;
 	
 	/**  */
+	@JsonKey(name:'chatEnabled')
 	bool chatEnabled;
 	
 	/**  */
+	@JsonKey(name:'chatName')
 	String chatName;
 	
 	/**  */
+	@JsonKey(name:'chatSecurity')
 	int chatSecurity;
-	GroupOptionalConversation(
-		this.groupId,
-		this.conversationId,
-		this.chatEnabled,
-		this.chatName,
-		this.chatSecurity,
-	);
+	GroupOptionalConversation();
 
-	static GroupOptionalConversation fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupOptionalConversation(
-				data['groupId'],
-				data['conversationId'],
-				data['chatEnabled'],
-				data['chatName'],
-				data['chatSecurity'],
-		);
-	}
-
-	static List<GroupOptionalConversation> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupOptionalConversation> list = new List();
-    data.forEach((item) {
-      list.add(GroupOptionalConversation.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['groupId'] = this.groupId;
-			data['conversationId'] = this.conversationId;
-			data['chatEnabled'] = this.chatEnabled;
-			data['chatName'] = this.chatName;
-			data['chatSecurity'] = this.chatSecurity;
-		return data;
-	}
+	factory GroupOptionalConversation.fromJson(Map<String, dynamic> json) => _$GroupOptionalConversationFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupOptionalConversationToJson(this);
 }

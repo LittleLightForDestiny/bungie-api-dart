@@ -1,43 +1,22 @@
 import 'group_v2.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_member_leave_result.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupMemberLeaveResult{
 	
 	/**  */
+	@JsonKey(name:'group')
 	GroupV2 group;
 	
 	/**  */
+	@JsonKey(name:'groupDeleted')
 	bool groupDeleted;
-	GroupMemberLeaveResult(
-		this.group,
-		this.groupDeleted,
-	);
+	GroupMemberLeaveResult();
 
-	static GroupMemberLeaveResult fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupMemberLeaveResult(
-				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
-				data['groupDeleted'],
-		);
-	}
-
-	static List<GroupMemberLeaveResult> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupMemberLeaveResult> list = new List();
-    data.forEach((item) {
-      list.add(GroupMemberLeaveResult.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['group'] = this.group != null? this.group.toMap() : null;
-			data['groupDeleted'] = this.groupDeleted;
-		return data;
-	}
+	factory GroupMemberLeaveResult.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupMemberLeaveResultToJson(this);
 }

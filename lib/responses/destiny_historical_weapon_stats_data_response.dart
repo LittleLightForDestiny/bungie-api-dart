@@ -1,14 +1,40 @@
 import '../models/destiny_historical_weapon_stats_data.dart';
-class DestinyHistoricalWeaponStatsDataResponse{
-    DestinyHistoricalWeaponStatsData response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyHistoricalWeaponStatsDataResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_weapon_stats_data_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class DestinyHistoricalWeaponStatsDataResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	DestinyHistoricalWeaponStatsData response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyHistoricalWeaponStatsDataResponse({
 		DestinyHistoricalWeaponStatsData this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyHistoricalWeaponStatsDataResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyHistoricalWeaponStatsDataResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalWeaponStatsDataResponse(
-				data['Response'] != null ? DestinyHistoricalWeaponStatsData.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyHistoricalWeaponStatsDataResponse.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalWeaponStatsDataResponseFromJson(json);
+	
 
-	static List<DestinyHistoricalWeaponStatsDataResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalWeaponStatsDataResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalWeaponStatsDataResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyHistoricalWeaponStatsDataResponseToJson(this);
 }

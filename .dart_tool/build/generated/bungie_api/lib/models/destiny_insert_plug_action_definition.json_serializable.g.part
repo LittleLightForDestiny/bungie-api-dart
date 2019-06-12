@@ -1,0 +1,17 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyInsertPlugActionDefinition _$DestinyInsertPlugActionDefinitionFromJson(
+    Map<String, dynamic> json) {
+  return DestinyInsertPlugActionDefinition()
+    ..actionExecuteSeconds = json['actionExecuteSeconds'] as int
+    ..actionType = json['actionType'] as int;
+}
+
+Map<String, dynamic> _$DestinyInsertPlugActionDefinitionToJson(
+        DestinyInsertPlugActionDefinition instance) =>
+    <String, dynamic>{
+      'actionExecuteSeconds': instance.actionExecuteSeconds,
+      'actionType': instance.actionType
+    };

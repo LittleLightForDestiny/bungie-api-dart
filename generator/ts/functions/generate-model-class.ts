@@ -5,17 +5,15 @@
 
 import * as shell from 'shelljs';
 import * as mustache from 'mustache';
-import { readFileSync, writeFileSync } from 'fs';
-import { camelcaseToUnderscore } from '../utils/camelcase-to-underscore';
+import { readFileSync, writeFileSync } from 'fs-extra';
 import { ModelClass } from '../models/ModelClass';
 
-export function generateModelClass(ModelClass:ModelClass){
+export function generateModelClass(model:ModelClass){
   if(!shell.test('-d', '../lib/models')){
     shell.mkdir('-p', '../lib/models');
   }
   let template = readFileSync('templates/model-class.mustache').toString();
-  let rendered = mustache.render(template, ModelClass);
-  let underscored = camelcaseToUnderscore(ModelClass.className);
-  writeFileSync(`../lib/models/${underscored}.dart`, rendered);
+  let rendered = mustache.render(template, model);
+  writeFileSync(`../lib/models/${model.filename}.dart`, rendered);
 }
 

@@ -1,49 +1,26 @@
 import 'search_result_of_trending_entry.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_category.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingCategory{
 	
 	/**  */
+	@JsonKey(name:'categoryName')
 	String categoryName;
 	
 	/**  */
+	@JsonKey(name:'entries')
 	SearchResultOfTrendingEntry entries;
 	
 	/**  */
+	@JsonKey(name:'categoryId')
 	String categoryId;
-	TrendingCategory(
-		this.categoryName,
-		this.entries,
-		this.categoryId,
-	);
+	TrendingCategory();
 
-	static TrendingCategory fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingCategory(
-				data['categoryName'],
-				data['entries'] != null ? SearchResultOfTrendingEntry.fromMap(data['entries']) : null,
-				data['categoryId'],
-		);
-	}
-
-	static List<TrendingCategory> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingCategory> list = new List();
-    data.forEach((item) {
-      list.add(TrendingCategory.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['categoryName'] = this.categoryName;
-			data['entries'] = this.entries != null? this.entries.toMap() : null;
-			data['categoryId'] = this.categoryId;
-		return data;
-	}
+	factory TrendingCategory.fromJson(Map<String, dynamic> json) => _$TrendingCategoryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingCategoryToJson(this);
 }

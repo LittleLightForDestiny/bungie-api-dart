@@ -1,14 +1,40 @@
 import '../models/fireteam_response.dart';
-class FireteamResponseResponse{
-    FireteamResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    FireteamResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'fireteam_response_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class FireteamResponseResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	FireteamResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	FireteamResponseResponse({
 		FireteamResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class FireteamResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static FireteamResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new FireteamResponseResponse(
-				data['Response'] != null ? FireteamResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory FireteamResponseResponse.fromJson(Map<String, dynamic> json) => _$FireteamResponseResponseFromJson(json);
+	
 
-	static List<FireteamResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<FireteamResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(FireteamResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$FireteamResponseResponseToJson(this);
 }

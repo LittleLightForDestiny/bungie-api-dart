@@ -1,37 +1,18 @@
 import 'destiny_vendor_sale_item_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_sale_item_set_component_of_destiny_vendor_sale_item_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent{
 	
 	/**  */
+	@JsonKey(name:'saleItems')
 	Map<String, DestinyVendorSaleItemComponent> saleItems;
-	DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent(
-		this.saleItems,
-	);
+	DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent();
 
-	static DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent(
-				data['saleItems'] != null ? Map<String, DestinyVendorSaleItemComponent>.from(data['saleItems'].map((k, v)=>MapEntry(k, DestinyVendorSaleItemComponent.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['saleItems'] = this.saleItems != null? this.saleItems.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentToJson(this);
 }

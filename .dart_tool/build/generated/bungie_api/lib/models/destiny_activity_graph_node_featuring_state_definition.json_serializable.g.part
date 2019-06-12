@@ -1,0 +1,14 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyActivityGraphNodeFeaturingStateDefinition
+    _$DestinyActivityGraphNodeFeaturingStateDefinitionFromJson(
+        Map<String, dynamic> json) {
+  return DestinyActivityGraphNodeFeaturingStateDefinition()
+    ..highlightType = json['highlightType'] as int;
+}
+
+Map<String, dynamic> _$DestinyActivityGraphNodeFeaturingStateDefinitionToJson(
+        DestinyActivityGraphNodeFeaturingStateDefinition instance) =>
+    <String, dynamic>{'highlightType': instance.highlightType};

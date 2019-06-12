@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dye_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class DyeReference{
 	
 	/**  */
+	@JsonKey(name:'channelHash')
 	int channelHash;
 	
 	/**  */
+	@JsonKey(name:'dyeHash')
 	int dyeHash;
-	DyeReference(
-		this.channelHash,
-		this.dyeHash,
-	);
+	DyeReference();
 
-	static DyeReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DyeReference(
-				data['channelHash'],
-				data['dyeHash'],
-		);
-	}
-
-	static List<DyeReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DyeReference> list = new List();
-    data.forEach((item) {
-      list.add(DyeReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['channelHash'] = this.channelHash;
-			data['dyeHash'] = this.dyeHash;
-		return data;
-	}
+	factory DyeReference.fromJson(Map<String, dynamic> json) => _$DyeReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DyeReferenceToJson(this);
 }

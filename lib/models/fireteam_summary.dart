@@ -1,138 +1,85 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'fireteam_summary.g.dart';
+
 /**  */
+@JsonSerializable()
 class FireteamSummary{
 	
 	/**  */
+	@JsonKey(name:'fireteamId')
 	String fireteamId;
 	
 	/**  */
+	@JsonKey(name:'groupId')
 	String groupId;
 	
 	/**  */
+	@JsonKey(name:'platform')
 	int platform;
 	
 	/**  */
+	@JsonKey(name:'activityType')
 	int activityType;
 	
 	/**  */
+	@JsonKey(name:'isImmediate')
 	bool isImmediate;
 	
 	/**  */
+	@JsonKey(name:'scheduledTime')
 	String scheduledTime;
 	
 	/**  */
+	@JsonKey(name:'ownerMembershipId')
 	String ownerMembershipId;
 	
 	/**  */
+	@JsonKey(name:'playerSlotCount')
 	int playerSlotCount;
 	
 	/**  */
+	@JsonKey(name:'alternateSlotCount')
 	int alternateSlotCount;
 	
 	/**  */
+	@JsonKey(name:'availablePlayerSlotCount')
 	int availablePlayerSlotCount;
 	
 	/**  */
+	@JsonKey(name:'availableAlternateSlotCount')
 	int availableAlternateSlotCount;
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'dateCreated')
 	String dateCreated;
 	
 	/**  */
+	@JsonKey(name:'dateModified')
 	String dateModified;
 	
 	/**  */
+	@JsonKey(name:'isPublic')
 	bool isPublic;
 	
 	/**  */
+	@JsonKey(name:'locale')
 	String locale;
 	
 	/**  */
+	@JsonKey(name:'isValid')
 	bool isValid;
 	
 	/**  */
+	@JsonKey(name:'datePlayerModified')
 	String datePlayerModified;
-	FireteamSummary(
-		this.fireteamId,
-		this.groupId,
-		this.platform,
-		this.activityType,
-		this.isImmediate,
-		this.scheduledTime,
-		this.ownerMembershipId,
-		this.playerSlotCount,
-		this.alternateSlotCount,
-		this.availablePlayerSlotCount,
-		this.availableAlternateSlotCount,
-		this.title,
-		this.dateCreated,
-		this.dateModified,
-		this.isPublic,
-		this.locale,
-		this.isValid,
-		this.datePlayerModified,
-	);
+	FireteamSummary();
 
-	static FireteamSummary fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new FireteamSummary(
-				data['fireteamId'],
-				data['groupId'],
-				data['platform'],
-				data['activityType'],
-				data['isImmediate'],
-				data['scheduledTime'],
-				data['ownerMembershipId'],
-				data['playerSlotCount'],
-				data['alternateSlotCount'],
-				data['availablePlayerSlotCount'],
-				data['availableAlternateSlotCount'],
-				data['title'],
-				data['dateCreated'],
-				data['dateModified'],
-				data['isPublic'],
-				data['locale'],
-				data['isValid'],
-				data['datePlayerModified'],
-		);
-	}
-
-	static List<FireteamSummary> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<FireteamSummary> list = new List();
-    data.forEach((item) {
-      list.add(FireteamSummary.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['fireteamId'] = this.fireteamId;
-			data['groupId'] = this.groupId;
-			data['platform'] = this.platform;
-			data['activityType'] = this.activityType;
-			data['isImmediate'] = this.isImmediate;
-			data['scheduledTime'] = this.scheduledTime;
-			data['ownerMembershipId'] = this.ownerMembershipId;
-			data['playerSlotCount'] = this.playerSlotCount;
-			data['alternateSlotCount'] = this.alternateSlotCount;
-			data['availablePlayerSlotCount'] = this.availablePlayerSlotCount;
-			data['availableAlternateSlotCount'] = this.availableAlternateSlotCount;
-			data['title'] = this.title;
-			data['dateCreated'] = this.dateCreated;
-			data['dateModified'] = this.dateModified;
-			data['isPublic'] = this.isPublic;
-			data['locale'] = this.locale;
-			data['isValid'] = this.isValid;
-			data['datePlayerModified'] = this.datePlayerModified;
-		return data;
-	}
+	factory FireteamSummary.fromJson(Map<String, dynamic> json) => _$FireteamSummaryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$FireteamSummaryToJson(this);
 }

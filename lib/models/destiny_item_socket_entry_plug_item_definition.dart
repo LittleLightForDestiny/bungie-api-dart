@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_socket_entry_plug_item_definition.g.dart';
+
 /** The definition of a known, reusable plug that can be applied to a socket. */
+@JsonSerializable()
 class DestinyItemSocketEntryPlugItemDefinition{
 	
 	/** The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted. */
+	@JsonKey(name:'plugItemHash')
 	int plugItemHash;
-	DestinyItemSocketEntryPlugItemDefinition(
-		this.plugItemHash,
-	);
+	DestinyItemSocketEntryPlugItemDefinition();
 
-	static DestinyItemSocketEntryPlugItemDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemSocketEntryPlugItemDefinition(
-				data['plugItemHash'],
-		);
-	}
-
-	static List<DestinyItemSocketEntryPlugItemDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemSocketEntryPlugItemDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemSocketEntryPlugItemDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['plugItemHash'] = this.plugItemHash;
-		return data;
-	}
+	factory DestinyItemSocketEntryPlugItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketEntryPlugItemDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSocketEntryPlugItemDefinitionToJson(this);
 }

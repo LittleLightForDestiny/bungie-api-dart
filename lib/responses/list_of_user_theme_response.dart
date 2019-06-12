@@ -1,14 +1,40 @@
 import '../models/user_theme.dart';
-class ListOfUserThemeResponse{
-    List<UserTheme> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    ListOfUserThemeResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'list_of_user_theme_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class ListOfUserThemeResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<UserTheme> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	ListOfUserThemeResponse({
 		List<UserTheme> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class ListOfUserThemeResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static ListOfUserThemeResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ListOfUserThemeResponse(
-				data['Response'] != null ? UserTheme.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory ListOfUserThemeResponse.fromJson(Map<String, dynamic> json) => _$ListOfUserThemeResponseFromJson(json);
+	
 
-	static List<ListOfUserThemeResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ListOfUserThemeResponse> list = new List();
-    data.forEach((item) {
-      list.add(ListOfUserThemeResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$ListOfUserThemeResponseToJson(this);
 }

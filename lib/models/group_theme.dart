@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_theme.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupTheme{
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'folder')
 	String folder;
 	
 	/**  */
+	@JsonKey(name:'description')
 	String description;
-	GroupTheme(
-		this.name,
-		this.folder,
-		this.description,
-	);
+	GroupTheme();
 
-	static GroupTheme fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupTheme(
-				data['name'],
-				data['folder'],
-				data['description'],
-		);
-	}
-
-	static List<GroupTheme> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupTheme> list = new List();
-    data.forEach((item) {
-      list.add(GroupTheme.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['name'] = this.name;
-			data['folder'] = this.folder;
-			data['description'] = this.description;
-		return data;
-	}
+	factory GroupTheme.fromJson(Map<String, dynamic> json) => _$GroupThemeFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupThemeToJson(this);
 }

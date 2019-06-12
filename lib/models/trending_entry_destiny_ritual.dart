@@ -1,80 +1,47 @@
 import 'destiny_public_milestone.dart';
 import 'destiny_milestone_content.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_entry_destiny_ritual.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingEntryDestinyRitual{
 	
 	/**  */
+	@JsonKey(name:'image')
 	String image;
 	
 	/**  */
+	@JsonKey(name:'icon')
 	String icon;
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'subtitle')
 	String subtitle;
 	
 	/**  */
+	@JsonKey(name:'dateStart')
 	String dateStart;
 	
 	/**  */
+	@JsonKey(name:'dateEnd')
 	String dateEnd;
 	
 	/** A destiny event does not necessarily have a related Milestone, but if it does the details will be returned here. */
+	@JsonKey(name:'milestoneDetails')
 	DestinyPublicMilestone milestoneDetails;
 	
 	/** A destiny event will not necessarily have milestone "custom content", but if it does the details will be here. */
+	@JsonKey(name:'eventContent')
 	DestinyMilestoneContent eventContent;
-	TrendingEntryDestinyRitual(
-		this.image,
-		this.icon,
-		this.title,
-		this.subtitle,
-		this.dateStart,
-		this.dateEnd,
-		this.milestoneDetails,
-		this.eventContent,
-	);
+	TrendingEntryDestinyRitual();
 
-	static TrendingEntryDestinyRitual fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingEntryDestinyRitual(
-				data['image'],
-				data['icon'],
-				data['title'],
-				data['subtitle'],
-				data['dateStart'],
-				data['dateEnd'],
-				data['milestoneDetails'] != null ? DestinyPublicMilestone.fromMap(data['milestoneDetails']) : null,
-				data['eventContent'] != null ? DestinyMilestoneContent.fromMap(data['eventContent']) : null,
-		);
-	}
-
-	static List<TrendingEntryDestinyRitual> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingEntryDestinyRitual> list = new List();
-    data.forEach((item) {
-      list.add(TrendingEntryDestinyRitual.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['image'] = this.image;
-			data['icon'] = this.icon;
-			data['title'] = this.title;
-			data['subtitle'] = this.subtitle;
-			data['dateStart'] = this.dateStart;
-			data['dateEnd'] = this.dateEnd;
-			data['milestoneDetails'] = this.milestoneDetails != null? this.milestoneDetails.toMap() : null;
-			data['eventContent'] = this.eventContent != null? this.eventContent.toMap() : null;
-		return data;
-	}
+	factory TrendingEntryDestinyRitual.fromJson(Map<String, dynamic> json) => _$TrendingEntryDestinyRitualFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingEntryDestinyRitualToJson(this);
 }

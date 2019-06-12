@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'ignore_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class IgnoreResponse{
 	
 	/**  */
+	@JsonKey(name:'isIgnored')
 	bool isIgnored;
 	
 	/**  */
+	@JsonKey(name:'ignoreFlags')
 	int ignoreFlags;
-	IgnoreResponse(
-		this.isIgnored,
-		this.ignoreFlags,
-	);
+	IgnoreResponse();
 
-	static IgnoreResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new IgnoreResponse(
-				data['isIgnored'],
-				data['ignoreFlags'],
-		);
-	}
-
-	static List<IgnoreResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<IgnoreResponse> list = new List();
-    data.forEach((item) {
-      list.add(IgnoreResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['isIgnored'] = this.isIgnored;
-			data['ignoreFlags'] = this.ignoreFlags;
-		return data;
-	}
+	factory IgnoreResponse.fromJson(Map<String, dynamic> json) => _$IgnoreResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$IgnoreResponseToJson(this);
 }

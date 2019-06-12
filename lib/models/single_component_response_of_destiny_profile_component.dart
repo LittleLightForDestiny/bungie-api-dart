@@ -1,43 +1,22 @@
 import 'destiny_profile_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_profile_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyProfileComponent{
 	
 	/** The most essential summary information about a Profile (in Destiny 1, we called these "Accounts"). */
+	@JsonKey(name:'data')
 	DestinyProfileComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyProfileComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyProfileComponent();
 
-	static SingleComponentResponseOfDestinyProfileComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyProfileComponent(
-				data['data'] != null ? DestinyProfileComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyProfileComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyProfileComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyProfileComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyProfileComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyProfileComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyProfileComponentToJson(this);
 }

@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'date_range.g.dart';
+
 /**  */
+@JsonSerializable()
 class DateRange{
 	
 	/**  */
+	@JsonKey(name:'start')
 	String start;
 	
 	/**  */
+	@JsonKey(name:'end')
 	String end;
-	DateRange(
-		this.start,
-		this.end,
-	);
+	DateRange();
 
-	static DateRange fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DateRange(
-				data['start'],
-				data['end'],
-		);
-	}
-
-	static List<DateRange> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DateRange> list = new List();
-    data.forEach((item) {
-      list.add(DateRange.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['start'] = this.start;
-			data['end'] = this.end;
-		return data;
-	}
+	factory DateRange.fromJson(Map<String, dynamic> json) => _$DateRangeFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DateRangeToJson(this);
 }

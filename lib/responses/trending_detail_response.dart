@@ -1,14 +1,40 @@
 import '../models/trending_detail.dart';
-class TrendingDetailResponse{
-    TrendingDetail response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    TrendingDetailResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_detail_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class TrendingDetailResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	TrendingDetail response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	TrendingDetailResponse({
 		TrendingDetail this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class TrendingDetailResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static TrendingDetailResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingDetailResponse(
-				data['Response'] != null ? TrendingDetail.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory TrendingDetailResponse.fromJson(Map<String, dynamic> json) => _$TrendingDetailResponseFromJson(json);
+	
 
-	static List<TrendingDetailResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingDetailResponse> list = new List();
-    data.forEach((item) {
-      list.add(TrendingDetailResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$TrendingDetailResponseToJson(this);
 }

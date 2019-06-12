@@ -24,7 +24,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -45,7 +45,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -69,7 +69,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -92,7 +92,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -110,7 +110,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -128,7 +128,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -144,7 +144,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return int64Response.fromMap(response.mappedBody);
+                return int64Response.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -161,7 +161,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ListOfTagResponseResponse.fromMap(response.mappedBody);
+                return ListOfTagResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -177,7 +177,7 @@ class Forum{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -194,7 +194,7 @@ class Forum{
         config.bodyContentType = 'application/json';
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return CEListOfForumRecruitmentDetailResponse.fromMap(response.mappedBody);
+                return CEListOfForumRecruitmentDetailResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

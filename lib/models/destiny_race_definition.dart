@@ -1,74 +1,43 @@
 import 'destiny_display_properties_definition.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_race_definition.g.dart';
+
 /** In Destiny, "Races" are really more like "Species". Sort of. I mean, are the Awoken a separate species from humans? I'm not sure. But either way, they're defined here. You'll see Exo, Awoken, and Human as examples of these Species. Players will choose one for their character. */
+@JsonSerializable()
 class DestinyRaceDefinition{
 	
 	/** Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information. */
+	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
 	/** An enumeration defining the existing, known Races/Species for player characters. This value will be the enum value matching this definition. */
+	@JsonKey(name:'raceType')
 	int raceType;
 	
 	/** A localized string referring to the singular form of the Race's name when referred to in gendered form. Keyed by the DestinyGender. */
+	@JsonKey(name:'genderedRaceNames')
 	Map<String, String> genderedRaceNames;
 	
 	/**  */
+	@JsonKey(name:'genderedRaceNamesByGenderHash')
 	Map<String, String> genderedRaceNamesByGenderHash;
 	
 	/** The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 When entities refer to each other in Destiny content, it is this hash that they are referring to. */
+	@JsonKey(name:'hash')
 	int hash;
 	
 	/** The index of the entity as it was found in the investment tables. */
+	@JsonKey(name:'index')
 	int index;
 	
 	/** If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
+	@JsonKey(name:'redacted')
 	bool redacted;
-	DestinyRaceDefinition(
-		this.displayProperties,
-		this.raceType,
-		this.genderedRaceNames,
-		this.genderedRaceNamesByGenderHash,
-		this.hash,
-		this.index,
-		this.redacted,
-	);
+	DestinyRaceDefinition();
 
-	static DestinyRaceDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyRaceDefinition(
-				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
-				data['raceType'],
-				data['genderedRaceNames'] != null ? Map<String, String>.from(data['genderedRaceNames'].map((k, v)=>MapEntry(k, v))) : null,
-				data['genderedRaceNamesByGenderHash'] != null ? Map<String, String>.from(data['genderedRaceNamesByGenderHash'].map((k, v)=>MapEntry(k, v))) : null,
-				data['hash'],
-				data['index'],
-				data['redacted'],
-		);
-	}
-
-	static List<DestinyRaceDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyRaceDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyRaceDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
-			data['raceType'] = this.raceType;
-			data['genderedRaceNames'] = this.genderedRaceNames != null? this.genderedRaceNames.map((i, v)=>MapEntry(i, v)) : null;
-			data['genderedRaceNamesByGenderHash'] = this.genderedRaceNamesByGenderHash != null? this.genderedRaceNamesByGenderHash.map((i, v)=>MapEntry(i, v)) : null;
-			data['hash'] = this.hash;
-			data['index'] = this.index;
-			data['redacted'] = this.redacted;
-		return data;
-	}
+	factory DestinyRaceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyRaceDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyRaceDefinitionToJson(this);
 }

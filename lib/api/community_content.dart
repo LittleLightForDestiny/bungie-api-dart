@@ -16,7 +16,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return PostSearchResponseResponse.fromMap(response.mappedBody);
+                return PostSearchResponseResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -38,7 +38,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+                return SearchResultOfCommunityLiveStatusResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -56,7 +56,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+                return SearchResultOfCommunityLiveStatusResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -74,7 +74,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+                return SearchResultOfCommunityLiveStatusResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -94,7 +94,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfCommunityLiveStatusResponse.fromMap(response.mappedBody);
+                return SearchResultOfCommunityLiveStatusResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -112,7 +112,7 @@ class CommunityContent{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return CommunityLiveStatusResponse.fromMap(response.mappedBody);
+                return CommunityLiveStatusResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

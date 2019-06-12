@@ -1,60 +1,33 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_postmaster_transfer_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPostmasterTransferRequest{
 	
 	/**  */
+	@JsonKey(name:'itemReferenceHash')
 	int itemReferenceHash;
 	
 	/**  */
+	@JsonKey(name:'stackSize')
 	int stackSize;
 	
 	/**  */
+	@JsonKey(name:'itemId')
 	String itemId;
 	
 	/**  */
+	@JsonKey(name:'characterId')
 	String characterId;
 	
 	/**  */
+	@JsonKey(name:'membershipType')
 	int membershipType;
-	DestinyPostmasterTransferRequest(
-		this.itemReferenceHash,
-		this.stackSize,
-		this.itemId,
-		this.characterId,
-		this.membershipType,
-	);
+	DestinyPostmasterTransferRequest();
 
-	static DestinyPostmasterTransferRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPostmasterTransferRequest(
-				data['itemReferenceHash'],
-				data['stackSize'],
-				data['itemId'],
-				data['characterId'],
-				data['membershipType'],
-		);
-	}
-
-	static List<DestinyPostmasterTransferRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPostmasterTransferRequest> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPostmasterTransferRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['itemReferenceHash'] = this.itemReferenceHash;
-			data['stackSize'] = this.stackSize;
-			data['itemId'] = this.itemId;
-			data['characterId'] = this.characterId;
-			data['membershipType'] = this.membershipType;
-		return data;
-	}
+	factory DestinyPostmasterTransferRequest.fromJson(Map<String, dynamic> json) => _$DestinyPostmasterTransferRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPostmasterTransferRequestToJson(this);
 }

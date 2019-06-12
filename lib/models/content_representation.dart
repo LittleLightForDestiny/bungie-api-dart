@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'content_representation.g.dart';
+
 /**  */
+@JsonSerializable()
 class ContentRepresentation{
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'path')
 	String path;
 	
 	/**  */
+	@JsonKey(name:'validationString')
 	String validationString;
-	ContentRepresentation(
-		this.name,
-		this.path,
-		this.validationString,
-	);
+	ContentRepresentation();
 
-	static ContentRepresentation fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ContentRepresentation(
-				data['name'],
-				data['path'],
-				data['validationString'],
-		);
-	}
-
-	static List<ContentRepresentation> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ContentRepresentation> list = new List();
-    data.forEach((item) {
-      list.add(ContentRepresentation.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['name'] = this.name;
-			data['path'] = this.path;
-			data['validationString'] = this.validationString;
-		return data;
-	}
+	factory ContentRepresentation.fromJson(Map<String, dynamic> json) => _$ContentRepresentationFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$ContentRepresentationToJson(this);
 }

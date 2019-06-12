@@ -1,43 +1,22 @@
 import 'destiny_item_objectives_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyItemObjectivesComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent();
 
-	static DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent(
-				data['data'] != null ? Map<String, DestinyItemObjectivesComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemObjectivesComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponentToJson(this);
 }

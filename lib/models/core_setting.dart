@@ -1,66 +1,37 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'core_setting.g.dart';
+
 /**  */
+@JsonSerializable()
 class CoreSetting{
 	
 	/**  */
+	@JsonKey(name:'identifier')
 	String identifier;
 	
 	/**  */
+	@JsonKey(name:'isDefault')
 	bool isDefault;
 	
 	/**  */
+	@JsonKey(name:'displayName')
 	String displayName;
 	
 	/**  */
+	@JsonKey(name:'summary')
 	String summary;
 	
 	/**  */
+	@JsonKey(name:'imagePath')
 	String imagePath;
 	
 	/**  */
+	@JsonKey(name:'childSettings')
 	List<CoreSetting> childSettings;
-	CoreSetting(
-		this.identifier,
-		this.isDefault,
-		this.displayName,
-		this.summary,
-		this.imagePath,
-		this.childSettings,
-	);
+	CoreSetting();
 
-	static CoreSetting fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CoreSetting(
-				data['identifier'],
-				data['isDefault'],
-				data['displayName'],
-				data['summary'],
-				data['imagePath'],
-				data['childSettings'] != null ? CoreSetting.fromList(data['childSettings']) : null,
-		);
-	}
-
-	static List<CoreSetting> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CoreSetting> list = new List();
-    data.forEach((item) {
-      list.add(CoreSetting.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['identifier'] = this.identifier;
-			data['isDefault'] = this.isDefault;
-			data['displayName'] = this.displayName;
-			data['summary'] = this.summary;
-			data['imagePath'] = this.imagePath;
-			data['childSettings'] = this.childSettings != null? this.childSettings.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory CoreSetting.fromJson(Map<String, dynamic> json) => _$CoreSettingFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$CoreSettingToJson(this);
 }

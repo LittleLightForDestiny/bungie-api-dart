@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_stats_value_pair.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalStatsValuePair{
 	
 	/** Raw value of the statistic */
+	@JsonKey(name:'value')
 	int value;
 	
 	/** Localized formated version of the value. */
+	@JsonKey(name:'displayValue')
 	String displayValue;
-	DestinyHistoricalStatsValuePair(
-		this.value,
-		this.displayValue,
-	);
+	DestinyHistoricalStatsValuePair();
 
-	static DestinyHistoricalStatsValuePair fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalStatsValuePair(
-				data['value'],
-				data['displayValue'],
-		);
-	}
-
-	static List<DestinyHistoricalStatsValuePair> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalStatsValuePair> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalStatsValuePair.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['value'] = this.value;
-			data['displayValue'] = this.displayValue;
-		return data;
-	}
+	factory DestinyHistoricalStatsValuePair.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsValuePairFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsValuePairToJson(this);
 }

@@ -1,14 +1,40 @@
 import '../models/user_membership_data.dart';
-class UserMembershipDataResponse{
-    UserMembershipData response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    UserMembershipDataResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'user_membership_data_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class UserMembershipDataResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	UserMembershipData response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	UserMembershipDataResponse({
 		UserMembershipData this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class UserMembershipDataResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static UserMembershipDataResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new UserMembershipDataResponse(
-				data['Response'] != null ? UserMembershipData.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory UserMembershipDataResponse.fromJson(Map<String, dynamic> json) => _$UserMembershipDataResponseFromJson(json);
+	
 
-	static List<UserMembershipDataResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<UserMembershipDataResponse> list = new List();
-    data.forEach((item) {
-      list.add(UserMembershipDataResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$UserMembershipDataResponseToJson(this);
 }

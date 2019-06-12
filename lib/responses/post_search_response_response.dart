@@ -1,14 +1,40 @@
 import '../models/post_search_response.dart';
-class PostSearchResponseResponse{
-    PostSearchResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    PostSearchResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'post_search_response_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class PostSearchResponseResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	PostSearchResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	PostSearchResponseResponse({
 		PostSearchResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class PostSearchResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static PostSearchResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PostSearchResponseResponse(
-				data['Response'] != null ? PostSearchResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory PostSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$PostSearchResponseResponseFromJson(json);
+	
 
-	static List<PostSearchResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PostSearchResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(PostSearchResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$PostSearchResponseResponseToJson(this);
 }

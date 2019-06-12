@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_socket_entry_plug_item_randomized_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 	
 	/** The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted. */
+	@JsonKey(name:'plugItemHash')
 	int plugItemHash;
-	DestinyItemSocketEntryPlugItemRandomizedDefinition(
-		this.plugItemHash,
-	);
+	DestinyItemSocketEntryPlugItemRandomizedDefinition();
 
-	static DestinyItemSocketEntryPlugItemRandomizedDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemSocketEntryPlugItemRandomizedDefinition(
-				data['plugItemHash'],
-		);
-	}
-
-	static List<DestinyItemSocketEntryPlugItemRandomizedDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemSocketEntryPlugItemRandomizedDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemSocketEntryPlugItemRandomizedDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['plugItemHash'] = this.plugItemHash;
-		return data;
-	}
+	factory DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketEntryPlugItemRandomizedDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(this);
 }

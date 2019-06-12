@@ -1,0 +1,32 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'destiny_item_quality_block_definition.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyItemQualityBlockDefinition _$DestinyItemQualityBlockDefinitionFromJson(
+    Map<String, dynamic> json) {
+  return DestinyItemQualityBlockDefinition()
+    ..itemLevels = (json['itemLevels'] as List)?.map((e) => e as int)?.toList()
+    ..qualityLevel = json['qualityLevel'] as int
+    ..infusionCategoryName = json['infusionCategoryName'] as String
+    ..infusionCategoryHash = json['infusionCategoryHash'] as int
+    ..infusionCategoryHashes =
+        (json['infusionCategoryHashes'] as List)?.map((e) => e as int)?.toList()
+    ..progressionLevelRequirementHash =
+        json['progressionLevelRequirementHash'] as int;
+}
+
+Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
+        DestinyItemQualityBlockDefinition instance) =>
+    <String, dynamic>{
+      'itemLevels': instance.itemLevels,
+      'qualityLevel': instance.qualityLevel,
+      'infusionCategoryName': instance.infusionCategoryName,
+      'infusionCategoryHash': instance.infusionCategoryHash,
+      'infusionCategoryHashes': instance.infusionCategoryHashes,
+      'progressionLevelRequirementHash':
+          instance.progressionLevelRequirementHash
+    };

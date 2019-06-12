@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'schema_record_state_block.g.dart';
+
 /**  */
+@JsonSerializable()
 class SchemaRecordStateBlock{
 	
 	/**  */
+	@JsonKey(name:'featuredPriority')
 	int featuredPriority;
 	
 	/**  */
+	@JsonKey(name:'obscuredString')
 	String obscuredString;
-	SchemaRecordStateBlock(
-		this.featuredPriority,
-		this.obscuredString,
-	);
+	SchemaRecordStateBlock();
 
-	static SchemaRecordStateBlock fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SchemaRecordStateBlock(
-				data['featuredPriority'],
-				data['obscuredString'],
-		);
-	}
-
-	static List<SchemaRecordStateBlock> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SchemaRecordStateBlock> list = new List();
-    data.forEach((item) {
-      list.add(SchemaRecordStateBlock.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['featuredPriority'] = this.featuredPriority;
-			data['obscuredString'] = this.obscuredString;
-		return data;
-	}
+	factory SchemaRecordStateBlock.fromJson(Map<String, dynamic> json) => _$SchemaRecordStateBlockFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SchemaRecordStateBlockToJson(this);
 }

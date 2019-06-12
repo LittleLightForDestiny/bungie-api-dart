@@ -1,115 +1,70 @@
 import 'ignore_response.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'post_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class PostResponse{
 	
 	/**  */
+	@JsonKey(name:'lastReplyTimestamp')
 	String lastReplyTimestamp;
 	
 	/**  */
+	@JsonKey(name:'IsPinned')
 	bool isPinned;
 	
 	/**  */
+	@JsonKey(name:'urlMediaType')
 	int urlMediaType;
 	
 	/**  */
+	@JsonKey(name:'thumbnail')
 	String thumbnail;
 	
 	/**  */
+	@JsonKey(name:'popularity')
 	int popularity;
 	
 	/**  */
+	@JsonKey(name:'isActive')
 	bool isActive;
 	
 	/**  */
+	@JsonKey(name:'isAnnouncement')
 	bool isAnnouncement;
 	
 	/**  */
+	@JsonKey(name:'userRating')
 	int userRating;
 	
 	/**  */
+	@JsonKey(name:'userHasRated')
 	bool userHasRated;
 	
 	/**  */
+	@JsonKey(name:'userHasMutedPost')
 	bool userHasMutedPost;
 	
 	/**  */
+	@JsonKey(name:'latestReplyPostId')
 	String latestReplyPostId;
 	
 	/**  */
+	@JsonKey(name:'latestReplyAuthorId')
 	String latestReplyAuthorId;
 	
 	/**  */
+	@JsonKey(name:'ignoreStatus')
 	IgnoreResponse ignoreStatus;
 	
 	/**  */
+	@JsonKey(name:'locale')
 	String locale;
-	PostResponse(
-		this.lastReplyTimestamp,
-		this.isPinned,
-		this.urlMediaType,
-		this.thumbnail,
-		this.popularity,
-		this.isActive,
-		this.isAnnouncement,
-		this.userRating,
-		this.userHasRated,
-		this.userHasMutedPost,
-		this.latestReplyPostId,
-		this.latestReplyAuthorId,
-		this.ignoreStatus,
-		this.locale,
-	);
+	PostResponse();
 
-	static PostResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PostResponse(
-				data['lastReplyTimestamp'],
-				data['IsPinned'],
-				data['urlMediaType'],
-				data['thumbnail'],
-				data['popularity'],
-				data['isActive'],
-				data['isAnnouncement'],
-				data['userRating'],
-				data['userHasRated'],
-				data['userHasMutedPost'],
-				data['latestReplyPostId'],
-				data['latestReplyAuthorId'],
-				data['ignoreStatus'] != null ? IgnoreResponse.fromMap(data['ignoreStatus']) : null,
-				data['locale'],
-		);
-	}
-
-	static List<PostResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PostResponse> list = new List();
-    data.forEach((item) {
-      list.add(PostResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['lastReplyTimestamp'] = this.lastReplyTimestamp;
-			data['IsPinned'] = this.isPinned;
-			data['urlMediaType'] = this.urlMediaType;
-			data['thumbnail'] = this.thumbnail;
-			data['popularity'] = this.popularity;
-			data['isActive'] = this.isActive;
-			data['isAnnouncement'] = this.isAnnouncement;
-			data['userRating'] = this.userRating;
-			data['userHasRated'] = this.userHasRated;
-			data['userHasMutedPost'] = this.userHasMutedPost;
-			data['latestReplyPostId'] = this.latestReplyPostId;
-			data['latestReplyAuthorId'] = this.latestReplyAuthorId;
-			data['ignoreStatus'] = this.ignoreStatus != null? this.ignoreStatus.toMap() : null;
-			data['locale'] = this.locale;
-		return data;
-	}
+	factory PostResponse.fromJson(Map<String, dynamic> json) => _$PostResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$PostResponseToJson(this);
 }

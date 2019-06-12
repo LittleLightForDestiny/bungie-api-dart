@@ -1,43 +1,22 @@
 import 'destiny_historical_stats_by_period.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_stats_with_merged.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalStatsWithMerged{
 	
 	/**  */
+	@JsonKey(name:'results')
 	Map<String, DestinyHistoricalStatsByPeriod> results;
 	
 	/**  */
+	@JsonKey(name:'merged')
 	DestinyHistoricalStatsByPeriod merged;
-	DestinyHistoricalStatsWithMerged(
-		this.results,
-		this.merged,
-	);
+	DestinyHistoricalStatsWithMerged();
 
-	static DestinyHistoricalStatsWithMerged fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalStatsWithMerged(
-				data['results'] != null ? Map<String, DestinyHistoricalStatsByPeriod>.from(data['results'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsByPeriod.fromMap(v)))) : null,
-				data['merged'] != null ? DestinyHistoricalStatsByPeriod.fromMap(data['merged']) : null,
-		);
-	}
-
-	static List<DestinyHistoricalStatsWithMerged> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalStatsWithMerged> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalStatsWithMerged.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['results'] = this.results != null? this.results.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['merged'] = this.merged != null? this.merged.toMap() : null;
-		return data;
-	}
+	factory DestinyHistoricalStatsWithMerged.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsWithMergedFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsWithMergedToJson(this);
 }

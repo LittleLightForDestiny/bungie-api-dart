@@ -1,43 +1,22 @@
 import 'destiny_item_talent_grid_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofint64_and_destiny_item_talent_grid_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyItemTalentGridComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent();
 
-	static DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent(
-				data['data'] != null ? Map<String, DestinyItemTalentGridComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemTalentGridComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponentToJson(this);
 }

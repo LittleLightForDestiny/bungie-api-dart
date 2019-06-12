@@ -1,37 +1,18 @@
 import 'dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_base_item_component_set_ofint64.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyBaseItemComponentSetOfint64{
 	
 	/**  */
+	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
-	DestinyBaseItemComponentSetOfint64(
-		this.objectives,
-	);
+	DestinyBaseItemComponentSetOfint64();
 
-	static DestinyBaseItemComponentSetOfint64 fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyBaseItemComponentSetOfint64(
-				data['objectives'] != null ? DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
-		);
-	}
-
-	static List<DestinyBaseItemComponentSetOfint64> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyBaseItemComponentSetOfint64> list = new List();
-    data.forEach((item) {
-      list.add(DestinyBaseItemComponentSetOfint64.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['objectives'] = this.objectives != null? this.objectives.toMap() : null;
-		return data;
-	}
+	factory DestinyBaseItemComponentSetOfint64.fromJson(Map<String, dynamic> json) => _$DestinyBaseItemComponentSetOfint64FromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyBaseItemComponentSetOfint64ToJson(this);
 }

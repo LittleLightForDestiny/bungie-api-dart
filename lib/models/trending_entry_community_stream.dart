@@ -1,54 +1,29 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_entry_community_stream.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingEntryCommunityStream{
 	
 	/**  */
+	@JsonKey(name:'image')
 	String image;
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'partnershipIdentifier')
 	String partnershipIdentifier;
 	
 	/**  */
+	@JsonKey(name:'partnershipType')
 	int partnershipType;
-	TrendingEntryCommunityStream(
-		this.image,
-		this.title,
-		this.partnershipIdentifier,
-		this.partnershipType,
-	);
+	TrendingEntryCommunityStream();
 
-	static TrendingEntryCommunityStream fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingEntryCommunityStream(
-				data['image'],
-				data['title'],
-				data['partnershipIdentifier'],
-				data['partnershipType'],
-		);
-	}
-
-	static List<TrendingEntryCommunityStream> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingEntryCommunityStream> list = new List();
-    data.forEach((item) {
-      list.add(TrendingEntryCommunityStream.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['image'] = this.image;
-			data['title'] = this.title;
-			data['partnershipIdentifier'] = this.partnershipIdentifier;
-			data['partnershipType'] = this.partnershipType;
-		return data;
-	}
+	factory TrendingEntryCommunityStream.fromJson(Map<String, dynamic> json) => _$TrendingEntryCommunityStreamFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingEntryCommunityStreamToJson(this);
 }

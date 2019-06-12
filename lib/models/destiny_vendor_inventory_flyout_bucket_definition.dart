@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_inventory_flyout_bucket_definition.g.dart';
+
 /** Information about a single inventory bucket in a vendor flyout UI and how it is shown. */
+@JsonSerializable()
 class DestinyVendorInventoryFlyoutBucketDefinition{
 	
 	/** If true, the inventory bucket should be able to be collapsed visually. */
+	@JsonKey(name:'collapsible')
 	bool collapsible;
 	
 	/** The inventory bucket whose contents should be shown. */
+	@JsonKey(name:'inventoryBucketHash')
 	int inventoryBucketHash;
 	
 	/** The methodology to use for sorting items from the flyout. */
+	@JsonKey(name:'sortItemsBy')
 	int sortItemsBy;
-	DestinyVendorInventoryFlyoutBucketDefinition(
-		this.collapsible,
-		this.inventoryBucketHash,
-		this.sortItemsBy,
-	);
+	DestinyVendorInventoryFlyoutBucketDefinition();
 
-	static DestinyVendorInventoryFlyoutBucketDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorInventoryFlyoutBucketDefinition(
-				data['collapsible'],
-				data['inventoryBucketHash'],
-				data['sortItemsBy'],
-		);
-	}
-
-	static List<DestinyVendorInventoryFlyoutBucketDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorInventoryFlyoutBucketDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorInventoryFlyoutBucketDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['collapsible'] = this.collapsible;
-			data['inventoryBucketHash'] = this.inventoryBucketHash;
-			data['sortItemsBy'] = this.sortItemsBy;
-		return data;
-	}
+	factory DestinyVendorInventoryFlyoutBucketDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInventoryFlyoutBucketDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorInventoryFlyoutBucketDefinitionToJson(this);
 }

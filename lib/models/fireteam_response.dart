@@ -1,50 +1,27 @@
 import 'fireteam_summary.dart';
 import 'fireteam_member.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'fireteam_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class FireteamResponse{
 	
 	/**  */
+	@JsonKey(name:'Summary')
 	FireteamSummary summary;
 	
 	/**  */
+	@JsonKey(name:'Members')
 	List<FireteamMember> members;
 	
 	/**  */
+	@JsonKey(name:'Alternates')
 	List<FireteamMember> alternates;
-	FireteamResponse(
-		this.summary,
-		this.members,
-		this.alternates,
-	);
+	FireteamResponse();
 
-	static FireteamResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new FireteamResponse(
-				data['Summary'] != null ? FireteamSummary.fromMap(data['Summary']) : null,
-				data['Members'] != null ? FireteamMember.fromList(data['Members']) : null,
-				data['Alternates'] != null ? FireteamMember.fromList(data['Alternates']) : null,
-		);
-	}
-
-	static List<FireteamResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<FireteamResponse> list = new List();
-    data.forEach((item) {
-      list.add(FireteamResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['Summary'] = this.summary != null? this.summary.toMap() : null;
-			data['Members'] = this.members != null? this.members.map((item)=>item.toMap()).toList() : null;
-			data['Alternates'] = this.alternates != null? this.alternates.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory FireteamResponse.fromJson(Map<String, dynamic> json) => _$FireteamResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$FireteamResponseToJson(this);
 }

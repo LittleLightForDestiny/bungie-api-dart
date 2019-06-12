@@ -1,43 +1,22 @@
 import 'destiny_item_perks_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofuint32_and_destiny_item_perks_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyItemPerksComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent();
 
-	static DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent(
-				data['data'] != null ? Map<String, DestinyItemPerksComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemPerksComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfuint32AndDestinyItemPerksComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfuint32AndDestinyItemPerksComponentToJson(this);
 }

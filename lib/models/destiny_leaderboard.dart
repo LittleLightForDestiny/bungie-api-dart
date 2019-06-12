@@ -1,43 +1,22 @@
 import 'destiny_leaderboard_entry.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_leaderboard.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyLeaderboard{
 	
 	/**  */
+	@JsonKey(name:'statId')
 	String statId;
 	
 	/**  */
+	@JsonKey(name:'entries')
 	List<DestinyLeaderboardEntry> entries;
-	DestinyLeaderboard(
-		this.statId,
-		this.entries,
-	);
+	DestinyLeaderboard();
 
-	static DestinyLeaderboard fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyLeaderboard(
-				data['statId'],
-				data['entries'] != null ? DestinyLeaderboardEntry.fromList(data['entries']) : null,
-		);
-	}
-
-	static List<DestinyLeaderboard> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyLeaderboard> list = new List();
-    data.forEach((item) {
-      list.add(DestinyLeaderboard.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['statId'] = this.statId;
-			data['entries'] = this.entries != null? this.entries.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyLeaderboard.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyLeaderboardToJson(this);
 }

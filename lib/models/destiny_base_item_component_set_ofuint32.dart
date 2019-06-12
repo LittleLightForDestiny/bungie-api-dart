@@ -1,37 +1,18 @@
 import 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_base_item_component_set_ofuint32.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyBaseItemComponentSetOfuint32{
 	
 	/**  */
+	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent objectives;
-	DestinyBaseItemComponentSetOfuint32(
-		this.objectives,
-	);
+	DestinyBaseItemComponentSetOfuint32();
 
-	static DestinyBaseItemComponentSetOfuint32 fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyBaseItemComponentSetOfuint32(
-				data['objectives'] != null ? DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
-		);
-	}
-
-	static List<DestinyBaseItemComponentSetOfuint32> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyBaseItemComponentSetOfuint32> list = new List();
-    data.forEach((item) {
-      list.add(DestinyBaseItemComponentSetOfuint32.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['objectives'] = this.objectives != null? this.objectives.toMap() : null;
-		return data;
-	}
+	factory DestinyBaseItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) => _$DestinyBaseItemComponentSetOfuint32FromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyBaseItemComponentSetOfuint32ToJson(this);
 }

@@ -1,43 +1,22 @@
 import 'destiny_vendor_group_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_vendor_group_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyVendorGroupComponent{
 	
 	/** This component returns references to all of the Vendors in the response, grouped by categorizations that Bungie has deemed to be interesting, in the order in which both the groups and the vendors within that group should be rendered. */
+	@JsonKey(name:'data')
 	DestinyVendorGroupComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyVendorGroupComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyVendorGroupComponent();
 
-	static SingleComponentResponseOfDestinyVendorGroupComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyVendorGroupComponent(
-				data['data'] != null ? DestinyVendorGroupComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyVendorGroupComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyVendorGroupComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyVendorGroupComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyVendorGroupComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyVendorGroupComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyVendorGroupComponentToJson(this);
 }

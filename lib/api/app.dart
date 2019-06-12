@@ -17,7 +17,7 @@ class App{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ApiUsageResponse.fromMap(response.mappedBody);
+                return ApiUsageResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -32,7 +32,7 @@ class App{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return IEnumerableOfApplicationResponse.fromMap(response.mappedBody);
+                return IEnumerableOfApplicationResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

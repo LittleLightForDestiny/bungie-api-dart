@@ -1,14 +1,40 @@
 import '../models/destiny_collectible_node_detail_response.dart';
-class DestinyCollectibleNodeDetailResponseResponse{
-    DestinyCollectibleNodeDetailResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyCollectibleNodeDetailResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_collectible_node_detail_response_response.g.dart';
+
+/** Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants. */
+@JsonSerializable()
+class DestinyCollectibleNodeDetailResponseResponse{
+	
+	/** Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants. */
+	@JsonKey(name:'Response')
+	DestinyCollectibleNodeDetailResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyCollectibleNodeDetailResponseResponse({
 		DestinyCollectibleNodeDetailResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyCollectibleNodeDetailResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyCollectibleNodeDetailResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCollectibleNodeDetailResponseResponse(
-				data['Response'] != null ? DestinyCollectibleNodeDetailResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyCollectibleNodeDetailResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleNodeDetailResponseResponseFromJson(json);
+	
 
-	static List<DestinyCollectibleNodeDetailResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCollectibleNodeDetailResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCollectibleNodeDetailResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyCollectibleNodeDetailResponseResponseToJson(this);
 }

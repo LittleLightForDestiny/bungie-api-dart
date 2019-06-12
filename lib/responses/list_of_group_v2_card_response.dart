@@ -1,14 +1,40 @@
 import '../models/group_v2_card.dart';
-class ListOfGroupV2CardResponse{
-    List<GroupV2Card> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    ListOfGroupV2CardResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'list_of_group_v2_card_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class ListOfGroupV2CardResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<GroupV2Card> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	ListOfGroupV2CardResponse({
 		List<GroupV2Card> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class ListOfGroupV2CardResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static ListOfGroupV2CardResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ListOfGroupV2CardResponse(
-				data['Response'] != null ? GroupV2Card.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory ListOfGroupV2CardResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupV2CardResponseFromJson(json);
+	
 
-	static List<ListOfGroupV2CardResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ListOfGroupV2CardResponse> list = new List();
-    data.forEach((item) {
-      list.add(ListOfGroupV2CardResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$ListOfGroupV2CardResponseToJson(this);
 }

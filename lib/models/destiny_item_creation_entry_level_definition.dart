@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_creation_entry_level_definition.g.dart';
+
 /** An overly complicated wrapper for the item level at which the item should spawn. */
+@JsonSerializable()
 class DestinyItemCreationEntryLevelDefinition{
 	
 	/**  */
+	@JsonKey(name:'level')
 	int level;
-	DestinyItemCreationEntryLevelDefinition(
-		this.level,
-	);
+	DestinyItemCreationEntryLevelDefinition();
 
-	static DestinyItemCreationEntryLevelDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemCreationEntryLevelDefinition(
-				data['level'],
-		);
-	}
-
-	static List<DestinyItemCreationEntryLevelDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemCreationEntryLevelDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemCreationEntryLevelDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['level'] = this.level;
-		return data;
-	}
+	factory DestinyItemCreationEntryLevelDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemCreationEntryLevelDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemCreationEntryLevelDefinitionToJson(this);
 }

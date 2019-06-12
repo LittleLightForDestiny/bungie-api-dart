@@ -1,39 +1,20 @@
 import 'destiny_perk_reference.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_perks_component.g.dart';
+
 /** Instanced items can have perks: benefits that the item bestows.
 These are related to DestinySandboxPerkDefinition, and sometimes - but not always - have human readable info. When they do, they are the icons and text that you see in an item's tooltip.
 Talent Grids, Sockets, and the item itself can apply Perks, which are then summarized here for your convenience. */
+@JsonSerializable()
 class DestinyItemPerksComponent{
 	
 	/** The list of perks to display in an item tooltip - and whether or not they have been activated. */
+	@JsonKey(name:'perks')
 	List<DestinyPerkReference> perks;
-	DestinyItemPerksComponent(
-		this.perks,
-	);
+	DestinyItemPerksComponent();
 
-	static DestinyItemPerksComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemPerksComponent(
-				data['perks'] != null ? DestinyPerkReference.fromList(data['perks']) : null,
-		);
-	}
-
-	static List<DestinyItemPerksComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemPerksComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemPerksComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['perks'] = this.perks != null? this.perks.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyItemPerksComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemPerksComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemPerksComponentToJson(this);
 }

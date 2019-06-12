@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'hyperlink_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class HyperlinkReference{
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'url')
 	String url;
-	HyperlinkReference(
-		this.title,
-		this.url,
-	);
+	HyperlinkReference();
 
-	static HyperlinkReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new HyperlinkReference(
-				data['title'],
-				data['url'],
-		);
-	}
-
-	static List<HyperlinkReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<HyperlinkReference> list = new List();
-    data.forEach((item) {
-      list.add(HyperlinkReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['title'] = this.title;
-			data['url'] = this.url;
-		return data;
-	}
+	factory HyperlinkReference.fromJson(Map<String, dynamic> json) => _$HyperlinkReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$HyperlinkReferenceToJson(this);
 }

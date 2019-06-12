@@ -1,49 +1,26 @@
 import 'poll_result.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'poll_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class PollResponse{
 	
 	/**  */
+	@JsonKey(name:'topicId')
 	String topicId;
 	
 	/**  */
+	@JsonKey(name:'results')
 	List<PollResult> results;
 	
 	/**  */
+	@JsonKey(name:'totalVotes')
 	int totalVotes;
-	PollResponse(
-		this.topicId,
-		this.results,
-		this.totalVotes,
-	);
+	PollResponse();
 
-	static PollResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PollResponse(
-				data['topicId'],
-				data['results'] != null ? PollResult.fromList(data['results']) : null,
-				data['totalVotes'],
-		);
-	}
-
-	static List<PollResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PollResponse> list = new List();
-    data.forEach((item) {
-      list.add(PollResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['topicId'] = this.topicId;
-			data['results'] = this.results != null? this.results.map((item)=>item.toMap()).toList() : null;
-			data['totalVotes'] = this.totalVotes;
-		return data;
-	}
+	factory PollResponse.fromJson(Map<String, dynamic> json) => _$PollResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$PollResponseToJson(this);
 }

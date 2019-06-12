@@ -14,7 +14,7 @@ class Content{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ContentTypeDescriptionResponse.fromMap(response.mappedBody);
+                return ContentTypeDescriptionResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -33,7 +33,7 @@ class Content{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ContentItemPublicContractResponse.fromMap(response.mappedBody);
+                return ContentItemPublicContractResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -53,7 +53,7 @@ class Content{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ContentItemPublicContractResponse.fromMap(response.mappedBody);
+                return ContentItemPublicContractResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -81,7 +81,7 @@ class Content{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfContentItemPublicContractResponse.fromMap(response.mappedBody);
+                return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -105,7 +105,7 @@ class Content{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return SearchResultOfContentItemPublicContractResponse.fromMap(response.mappedBody);
+                return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

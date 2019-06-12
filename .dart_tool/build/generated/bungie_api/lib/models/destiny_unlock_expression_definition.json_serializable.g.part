@@ -1,0 +1,12 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyUnlockExpressionDefinition _$DestinyUnlockExpressionDefinitionFromJson(
+    Map<String, dynamic> json) {
+  return DestinyUnlockExpressionDefinition()..scope = json['scope'] as int;
+}
+
+Map<String, dynamic> _$DestinyUnlockExpressionDefinitionToJson(
+        DestinyUnlockExpressionDefinition instance) =>
+    <String, dynamic>{'scope': instance.scope};

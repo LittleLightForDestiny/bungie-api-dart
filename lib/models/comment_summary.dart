@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'comment_summary.g.dart';
+
 /**  */
+@JsonSerializable()
 class CommentSummary{
 	
 	/**  */
+	@JsonKey(name:'topicId')
 	String topicId;
 	
 	/**  */
+	@JsonKey(name:'commentCount')
 	int commentCount;
-	CommentSummary(
-		this.topicId,
-		this.commentCount,
-	);
+	CommentSummary();
 
-	static CommentSummary fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CommentSummary(
-				data['topicId'],
-				data['commentCount'],
-		);
-	}
-
-	static List<CommentSummary> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CommentSummary> list = new List();
-    data.forEach((item) {
-      list.add(CommentSummary.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['topicId'] = this.topicId;
-			data['commentCount'] = this.commentCount;
-		return data;
-	}
+	factory CommentSummary.fromJson(Map<String, dynamic> json) => _$CommentSummaryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$CommentSummaryToJson(this);
 }

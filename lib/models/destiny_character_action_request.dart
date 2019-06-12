@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_character_action_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyCharacterActionRequest{
 	
 	/**  */
+	@JsonKey(name:'characterId')
 	String characterId;
 	
 	/**  */
+	@JsonKey(name:'membershipType')
 	int membershipType;
-	DestinyCharacterActionRequest(
-		this.characterId,
-		this.membershipType,
-	);
+	DestinyCharacterActionRequest();
 
-	static DestinyCharacterActionRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCharacterActionRequest(
-				data['characterId'],
-				data['membershipType'],
-		);
-	}
-
-	static List<DestinyCharacterActionRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCharacterActionRequest> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCharacterActionRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['characterId'] = this.characterId;
-			data['membershipType'] = this.membershipType;
-		return data;
-	}
+	factory DestinyCharacterActionRequest.fromJson(Map<String, dynamic> json) => _$DestinyCharacterActionRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterActionRequestToJson(this);
 }

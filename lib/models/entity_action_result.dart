@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'entity_action_result.g.dart';
+
 /**  */
+@JsonSerializable()
 class EntityActionResult{
 	
 	/**  */
+	@JsonKey(name:'entityId')
 	String entityId;
 	
 	/**  */
+	@JsonKey(name:'result')
 	int result;
-	EntityActionResult(
-		this.entityId,
-		this.result,
-	);
+	EntityActionResult();
 
-	static EntityActionResult fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new EntityActionResult(
-				data['entityId'],
-				data['result'],
-		);
-	}
-
-	static List<EntityActionResult> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<EntityActionResult> list = new List();
-    data.forEach((item) {
-      list.add(EntityActionResult.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['entityId'] = this.entityId;
-			data['result'] = this.result;
-		return data;
-	}
+	factory EntityActionResult.fromJson(Map<String, dynamic> json) => _$EntityActionResultFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$EntityActionResultToJson(this);
 }

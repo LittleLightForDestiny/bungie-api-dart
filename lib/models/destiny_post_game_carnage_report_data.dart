@@ -2,62 +2,35 @@ import 'destiny_historical_stats_activity.dart';
 import 'destiny_post_game_carnage_report_entry.dart';
 import 'destiny_post_game_carnage_report_team_entry.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_post_game_carnage_report_data.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPostGameCarnageReportData{
 	
 	/** Date and time for the activity. */
+	@JsonKey(name:'period')
 	String period;
 	
 	/** If this activity has "phases", this is the phase at which the activity was started. */
+	@JsonKey(name:'startingPhaseIndex')
 	int startingPhaseIndex;
 	
 	/** Details about the activity. */
+	@JsonKey(name:'activityDetails')
 	DestinyHistoricalStatsActivity activityDetails;
 	
 	/** Collection of players and their data for this activity. */
+	@JsonKey(name:'entries')
 	List<DestinyPostGameCarnageReportEntry> entries;
 	
 	/** Collection of stats for the player in this activity. */
+	@JsonKey(name:'teams')
 	List<DestinyPostGameCarnageReportTeamEntry> teams;
-	DestinyPostGameCarnageReportData(
-		this.period,
-		this.startingPhaseIndex,
-		this.activityDetails,
-		this.entries,
-		this.teams,
-	);
+	DestinyPostGameCarnageReportData();
 
-	static DestinyPostGameCarnageReportData fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPostGameCarnageReportData(
-				data['period'],
-				data['startingPhaseIndex'],
-				data['activityDetails'] != null ? DestinyHistoricalStatsActivity.fromMap(data['activityDetails']) : null,
-				data['entries'] != null ? DestinyPostGameCarnageReportEntry.fromList(data['entries']) : null,
-				data['teams'] != null ? DestinyPostGameCarnageReportTeamEntry.fromList(data['teams']) : null,
-		);
-	}
-
-	static List<DestinyPostGameCarnageReportData> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPostGameCarnageReportData> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportData.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['period'] = this.period;
-			data['startingPhaseIndex'] = this.startingPhaseIndex;
-			data['activityDetails'] = this.activityDetails != null? this.activityDetails.toMap() : null;
-			data['entries'] = this.entries != null? this.entries.map((item)=>item.toMap()).toList() : null;
-			data['teams'] = this.teams != null? this.teams.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportDataFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportDataToJson(this);
 }

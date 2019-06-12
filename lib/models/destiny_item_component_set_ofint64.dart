@@ -7,80 +7,47 @@ import 'dictionary_component_response_ofint64_and_destiny_item_talent_grid_compo
 import 'dictionary_component_response_ofuint32_and_destiny_item_plug_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_component_set_ofint64.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyItemComponentSetOfint64{
 	
 	/**  */
+	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent instances;
 	
 	/**  */
+	@JsonKey(name:'perks')
 	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent perks;
 	
 	/**  */
+	@JsonKey(name:'renderData')
 	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent renderData;
 	
 	/**  */
+	@JsonKey(name:'stats')
 	DictionaryComponentResponseOfint64AndDestinyItemStatsComponent stats;
 	
 	/**  */
+	@JsonKey(name:'sockets')
 	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent sockets;
 	
 	/**  */
+	@JsonKey(name:'talentGrids')
 	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent talentGrids;
 	
 	/**  */
+	@JsonKey(name:'plugStates')
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
 	
 	/**  */
+	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
-	DestinyItemComponentSetOfint64(
-		this.instances,
-		this.perks,
-		this.renderData,
-		this.stats,
-		this.sockets,
-		this.talentGrids,
-		this.plugStates,
-		this.objectives,
-	);
+	DestinyItemComponentSetOfint64();
 
-	static DestinyItemComponentSetOfint64 fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemComponentSetOfint64(
-				data['instances'] != null ? DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent.fromMap(data['instances']) : null,
-				data['perks'] != null ? DictionaryComponentResponseOfint64AndDestinyItemPerksComponent.fromMap(data['perks']) : null,
-				data['renderData'] != null ? DictionaryComponentResponseOfint64AndDestinyItemRenderComponent.fromMap(data['renderData']) : null,
-				data['stats'] != null ? DictionaryComponentResponseOfint64AndDestinyItemStatsComponent.fromMap(data['stats']) : null,
-				data['sockets'] != null ? DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent.fromMap(data['sockets']) : null,
-				data['talentGrids'] != null ? DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent.fromMap(data['talentGrids']) : null,
-				data['plugStates'] != null ? DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromMap(data['plugStates']) : null,
-				data['objectives'] != null ? DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromMap(data['objectives']) : null,
-		);
-	}
-
-	static List<DestinyItemComponentSetOfint64> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemComponentSetOfint64> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemComponentSetOfint64.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['instances'] = this.instances != null? this.instances.toMap() : null;
-			data['perks'] = this.perks != null? this.perks.toMap() : null;
-			data['renderData'] = this.renderData != null? this.renderData.toMap() : null;
-			data['stats'] = this.stats != null? this.stats.toMap() : null;
-			data['sockets'] = this.sockets != null? this.sockets.toMap() : null;
-			data['talentGrids'] = this.talentGrids != null? this.talentGrids.toMap() : null;
-			data['plugStates'] = this.plugStates != null? this.plugStates.toMap() : null;
-			data['objectives'] = this.objectives != null? this.objectives.toMap() : null;
-		return data;
-	}
+	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) => _$DestinyItemComponentSetOfint64FromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfint64ToJson(this);
 }

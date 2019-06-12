@@ -1,43 +1,22 @@
 import 'clan_banner.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_v2_clan_info.g.dart';
+
 /** This contract contains clan-specific group information. It does not include any investment data. */
+@JsonSerializable()
 class GroupV2ClanInfo{
 	
 	/**  */
+	@JsonKey(name:'clanCallsign')
 	String clanCallsign;
 	
 	/**  */
+	@JsonKey(name:'clanBannerData')
 	ClanBanner clanBannerData;
-	GroupV2ClanInfo(
-		this.clanCallsign,
-		this.clanBannerData,
-	);
+	GroupV2ClanInfo();
 
-	static GroupV2ClanInfo fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupV2ClanInfo(
-				data['clanCallsign'],
-				data['clanBannerData'] != null ? ClanBanner.fromMap(data['clanBannerData']) : null,
-		);
-	}
-
-	static List<GroupV2ClanInfo> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupV2ClanInfo> list = new List();
-    data.forEach((item) {
-      list.add(GroupV2ClanInfo.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['clanCallsign'] = this.clanCallsign;
-			data['clanBannerData'] = this.clanBannerData != null? this.clanBannerData.toMap() : null;
-		return data;
-	}
+	factory GroupV2ClanInfo.fromJson(Map<String, dynamic> json) => _$GroupV2ClanInfoFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupV2ClanInfoToJson(this);
 }

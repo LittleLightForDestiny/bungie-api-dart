@@ -1,14 +1,40 @@
 import '../models/application.dart';
-class IEnumerableOfApplicationResponse{
-    List<Application> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    IEnumerableOfApplicationResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'ienumerable_of_application_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class IEnumerableOfApplicationResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<Application> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	IEnumerableOfApplicationResponse({
 		List<Application> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class IEnumerableOfApplicationResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static IEnumerableOfApplicationResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new IEnumerableOfApplicationResponse(
-				data['Response'] != null ? Application.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory IEnumerableOfApplicationResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfApplicationResponseFromJson(json);
+	
 
-	static List<IEnumerableOfApplicationResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<IEnumerableOfApplicationResponse> list = new List();
-    data.forEach((item) {
-      list.add(IEnumerableOfApplicationResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$IEnumerableOfApplicationResponseToJson(this);
 }

@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_animation_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyAnimationReference{
 	
 	/**  */
+	@JsonKey(name:'animName')
 	String animName;
 	
 	/**  */
+	@JsonKey(name:'animIdentifier')
 	String animIdentifier;
 	
 	/**  */
+	@JsonKey(name:'path')
 	String path;
-	DestinyAnimationReference(
-		this.animName,
-		this.animIdentifier,
-		this.path,
-	);
+	DestinyAnimationReference();
 
-	static DestinyAnimationReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyAnimationReference(
-				data['animName'],
-				data['animIdentifier'],
-				data['path'],
-		);
-	}
-
-	static List<DestinyAnimationReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyAnimationReference> list = new List();
-    data.forEach((item) {
-      list.add(DestinyAnimationReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['animName'] = this.animName;
-			data['animIdentifier'] = this.animIdentifier;
-			data['path'] = this.path;
-		return data;
-	}
+	factory DestinyAnimationReference.fromJson(Map<String, dynamic> json) => _$DestinyAnimationReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyAnimationReferenceToJson(this);
 }

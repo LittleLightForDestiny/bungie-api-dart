@@ -1,14 +1,40 @@
 import '../models/group_optional_conversation.dart';
-class CEListOfGroupOptionalConversationResponse{
-    List<GroupOptionalConversation> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    CEListOfGroupOptionalConversationResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'celist_of_group_optional_conversation_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class CEListOfGroupOptionalConversationResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<GroupOptionalConversation> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	CEListOfGroupOptionalConversationResponse({
 		List<GroupOptionalConversation> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class CEListOfGroupOptionalConversationResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static CEListOfGroupOptionalConversationResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CEListOfGroupOptionalConversationResponse(
-				data['Response'] != null ? GroupOptionalConversation.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory CEListOfGroupOptionalConversationResponse.fromJson(Map<String, dynamic> json) => _$CEListOfGroupOptionalConversationResponseFromJson(json);
+	
 
-	static List<CEListOfGroupOptionalConversationResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CEListOfGroupOptionalConversationResponse> list = new List();
-    data.forEach((item) {
-      list.add(CEListOfGroupOptionalConversationResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$CEListOfGroupOptionalConversationResponseToJson(this);
 }

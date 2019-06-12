@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_optional_conversation_add_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupOptionalConversationAddRequest{
 	
 	/**  */
+	@JsonKey(name:'chatName')
 	String chatName;
 	
 	/**  */
+	@JsonKey(name:'chatSecurity')
 	int chatSecurity;
-	GroupOptionalConversationAddRequest(
-		this.chatName,
-		this.chatSecurity,
-	);
+	GroupOptionalConversationAddRequest();
 
-	static GroupOptionalConversationAddRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupOptionalConversationAddRequest(
-				data['chatName'],
-				data['chatSecurity'],
-		);
-	}
-
-	static List<GroupOptionalConversationAddRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupOptionalConversationAddRequest> list = new List();
-    data.forEach((item) {
-      list.add(GroupOptionalConversationAddRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['chatName'] = this.chatName;
-			data['chatSecurity'] = this.chatSecurity;
-		return data;
-	}
+	factory GroupOptionalConversationAddRequest.fromJson(Map<String, dynamic> json) => _$GroupOptionalConversationAddRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupOptionalConversationAddRequestToJson(this);
 }

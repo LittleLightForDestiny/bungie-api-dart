@@ -1,43 +1,22 @@
 import 'destiny_historical_stats_value.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_aggregate_activity_stats.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyAggregateActivityStats{
 	
 	/** Hash ID that can be looked up in the DestinyActivityTable. */
+	@JsonKey(name:'activityHash')
 	int activityHash;
 	
 	/** Collection of stats for the player in this activity. */
+	@JsonKey(name:'values')
 	Map<String, DestinyHistoricalStatsValue> values;
-	DestinyAggregateActivityStats(
-		this.activityHash,
-		this.values,
-	);
+	DestinyAggregateActivityStats();
 
-	static DestinyAggregateActivityStats fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyAggregateActivityStats(
-				data['activityHash'],
-				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyAggregateActivityStats> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyAggregateActivityStats> list = new List();
-    data.forEach((item) {
-      list.add(DestinyAggregateActivityStats.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activityHash'] = this.activityHash;
-			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyAggregateActivityStats.fromJson(Map<String, dynamic> json) => _$DestinyAggregateActivityStatsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyAggregateActivityStatsToJson(this);
 }

@@ -1,37 +1,18 @@
 import 'group_v2.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_membership_base.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupMembershipBase{
 	
 	/**  */
+	@JsonKey(name:'group')
 	GroupV2 group;
-	GroupMembershipBase(
-		this.group,
-	);
+	GroupMembershipBase();
 
-	static GroupMembershipBase fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupMembershipBase(
-				data['group'] != null ? GroupV2.fromMap(data['group']) : null,
-		);
-	}
-
-	static List<GroupMembershipBase> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupMembershipBase> list = new List();
-    data.forEach((item) {
-      list.add(GroupMembershipBase.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['group'] = this.group != null? this.group.toMap() : null;
-		return data;
-	}
+	factory GroupMembershipBase.fromJson(Map<String, dynamic> json) => _$GroupMembershipBaseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupMembershipBaseToJson(this);
 }

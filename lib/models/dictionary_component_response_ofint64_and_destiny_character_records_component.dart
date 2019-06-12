@@ -1,43 +1,22 @@
 import 'destiny_character_records_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofint64_and_destiny_character_records_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyCharacterRecordsComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent();
 
-	static DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent(
-				data['data'] != null ? Map<String, DestinyCharacterRecordsComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCharacterRecordsComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponentToJson(this);
 }

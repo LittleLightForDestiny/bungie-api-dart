@@ -58,7 +58,7 @@ export class ApiDocHelper{
         if(obj.$ref){
             let ref = this.getRef(obj.$ref);
             if(ref.type == 'object'){
-                return `this.${name}.toMap()`;
+                return `this.${name}.toJson()`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;
@@ -79,13 +79,13 @@ export class ApiDocHelper{
         if(param.type == 'array' && param.items && param.items.$ref){
             let ref = this.getRef(param.items.$ref);
             if(ref.type == 'object'){
-                return `this.${name}.map((item)=>item.toMap()).toList()`;
+                return `this.${name}.map((item)=>item.toJson()).toList()`;
             }
         }
         if(param.type == 'array' && param.allOf){
             let ref = this.getRef(param.allOf[0].$ref);
             if(ref.type == 'object'){
-                return `this.${name}.map((item)=>item.toMap()).toList()`;
+                return `this.${name}.map((item)=>item.toJson()).toList()`;
             }
         }
         return null;

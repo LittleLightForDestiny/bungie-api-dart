@@ -1,14 +1,40 @@
 import '../models/search_result_of_content_item_public_contract.dart';
-class SearchResultOfContentItemPublicContractResponse{
-    SearchResultOfContentItemPublicContract response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    SearchResultOfContentItemPublicContractResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'search_result_of_content_item_public_contract_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class SearchResultOfContentItemPublicContractResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	SearchResultOfContentItemPublicContract response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	SearchResultOfContentItemPublicContractResponse({
 		SearchResultOfContentItemPublicContract this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class SearchResultOfContentItemPublicContractResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static SearchResultOfContentItemPublicContractResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SearchResultOfContentItemPublicContractResponse(
-				data['Response'] != null ? SearchResultOfContentItemPublicContract.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory SearchResultOfContentItemPublicContractResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfContentItemPublicContractResponseFromJson(json);
+	
 
-	static List<SearchResultOfContentItemPublicContractResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SearchResultOfContentItemPublicContractResponse> list = new List();
-    data.forEach((item) {
-      list.add(SearchResultOfContentItemPublicContractResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$SearchResultOfContentItemPublicContractResponseToJson(this);
 }

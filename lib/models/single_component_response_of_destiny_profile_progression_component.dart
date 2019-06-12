@@ -1,44 +1,23 @@
 import 'destiny_profile_progression_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_profile_progression_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyProfileProgressionComponent{
 	
 	/** The set of progression-related information that applies at a Profile-wide level for your Destiny experience. This differs from the Jimi Hendrix Experience because there's less guitars on fire. Yet. #spoileralert?
 This will include information such as Checklist info. */
+	@JsonKey(name:'data')
 	DestinyProfileProgressionComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyProfileProgressionComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyProfileProgressionComponent();
 
-	static SingleComponentResponseOfDestinyProfileProgressionComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyProfileProgressionComponent(
-				data['data'] != null ? DestinyProfileProgressionComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyProfileProgressionComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyProfileProgressionComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyProfileProgressionComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyProfileProgressionComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyProfileProgressionComponentToJson(this);
 }

@@ -1,14 +1,40 @@
 import '../models/group_member_leave_result.dart';
-class GroupMemberLeaveResultResponse{
-    GroupMemberLeaveResult response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    GroupMemberLeaveResultResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'group_member_leave_result_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class GroupMemberLeaveResultResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	GroupMemberLeaveResult response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	GroupMemberLeaveResultResponse({
 		GroupMemberLeaveResult this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class GroupMemberLeaveResultResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static GroupMemberLeaveResultResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupMemberLeaveResultResponse(
-				data['Response'] != null ? GroupMemberLeaveResult.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory GroupMemberLeaveResultResponse.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultResponseFromJson(json);
+	
 
-	static List<GroupMemberLeaveResultResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupMemberLeaveResultResponse> list = new List();
-    data.forEach((item) {
-      list.add(GroupMemberLeaveResultResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$GroupMemberLeaveResultResponseToJson(this);
 }

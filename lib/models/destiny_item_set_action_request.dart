@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_set_action_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyItemSetActionRequest{
 	
 	/**  */
+	@JsonKey(name:'itemIds')
 	List<String> itemIds;
 	
 	/**  */
+	@JsonKey(name:'characterId')
 	String characterId;
 	
 	/**  */
+	@JsonKey(name:'membershipType')
 	int membershipType;
-	DestinyItemSetActionRequest(
-		this.itemIds,
-		this.characterId,
-		this.membershipType,
-	);
+	DestinyItemSetActionRequest();
 
-	static DestinyItemSetActionRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemSetActionRequest(
-				data['itemIds'] != null ? data['itemIds']?.cast<String>() ?? null : null,
-				data['characterId'],
-				data['membershipType'],
-		);
-	}
-
-	static List<DestinyItemSetActionRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemSetActionRequest> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemSetActionRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['itemIds'] = this.itemIds;
-			data['characterId'] = this.characterId;
-			data['membershipType'] = this.membershipType;
-		return data;
-	}
+	factory DestinyItemSetActionRequest.fromJson(Map<String, dynamic> json) => _$DestinyItemSetActionRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSetActionRequestToJson(this);
 }

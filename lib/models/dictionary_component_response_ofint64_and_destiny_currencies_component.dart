@@ -1,43 +1,22 @@
 import 'destiny_currencies_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofint64_and_destiny_currencies_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyCurrenciesComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent();
 
-	static DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent(
-				data['data'] != null ? Map<String, DestinyCurrenciesComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyCurrenciesComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyCurrenciesComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfint64AndDestinyCurrenciesComponentToJson(this);
 }

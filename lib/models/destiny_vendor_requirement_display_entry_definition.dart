@@ -1,54 +1,29 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_requirement_display_entry_definition.g.dart';
+
 /** The localized properties of the requirementsDisplay, allowing information about the requirement or item being featured to be seen. */
+@JsonSerializable()
 class DestinyVendorRequirementDisplayEntryDefinition{
 	
 	/**  */
+	@JsonKey(name:'icon')
 	String icon;
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'source')
 	String source;
 	
 	/**  */
+	@JsonKey(name:'type')
 	String type;
-	DestinyVendorRequirementDisplayEntryDefinition(
-		this.icon,
-		this.name,
-		this.source,
-		this.type,
-	);
+	DestinyVendorRequirementDisplayEntryDefinition();
 
-	static DestinyVendorRequirementDisplayEntryDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorRequirementDisplayEntryDefinition(
-				data['icon'],
-				data['name'],
-				data['source'],
-				data['type'],
-		);
-	}
-
-	static List<DestinyVendorRequirementDisplayEntryDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorRequirementDisplayEntryDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorRequirementDisplayEntryDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['icon'] = this.icon;
-			data['name'] = this.name;
-			data['source'] = this.source;
-			data['type'] = this.type;
-		return data;
-	}
+	factory DestinyVendorRequirementDisplayEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorRequirementDisplayEntryDefinitionToJson(this);
 }

@@ -1,14 +1,40 @@
 import '../models/search_result_of_group_member_application.dart';
-class SearchResultOfGroupMemberApplicationResponse{
-    SearchResultOfGroupMemberApplication response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    SearchResultOfGroupMemberApplicationResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'search_result_of_group_member_application_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class SearchResultOfGroupMemberApplicationResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	SearchResultOfGroupMemberApplication response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	SearchResultOfGroupMemberApplicationResponse({
 		SearchResultOfGroupMemberApplication this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class SearchResultOfGroupMemberApplicationResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static SearchResultOfGroupMemberApplicationResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SearchResultOfGroupMemberApplicationResponse(
-				data['Response'] != null ? SearchResultOfGroupMemberApplication.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory SearchResultOfGroupMemberApplicationResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupMemberApplicationResponseFromJson(json);
+	
 
-	static List<SearchResultOfGroupMemberApplicationResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SearchResultOfGroupMemberApplicationResponse> list = new List();
-    data.forEach((item) {
-      list.add(SearchResultOfGroupMemberApplicationResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$SearchResultOfGroupMemberApplicationResponseToJson(this);
 }

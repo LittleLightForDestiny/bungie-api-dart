@@ -1,14 +1,40 @@
 import '../models/group_potential_membership_search_response.dart';
-class GroupPotentialMembershipSearchResponseResponse{
-    GroupPotentialMembershipSearchResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    GroupPotentialMembershipSearchResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'group_potential_membership_search_response_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class GroupPotentialMembershipSearchResponseResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	GroupPotentialMembershipSearchResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	GroupPotentialMembershipSearchResponseResponse({
 		GroupPotentialMembershipSearchResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class GroupPotentialMembershipSearchResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static GroupPotentialMembershipSearchResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupPotentialMembershipSearchResponseResponse(
-				data['Response'] != null ? GroupPotentialMembershipSearchResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory GroupPotentialMembershipSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupPotentialMembershipSearchResponseResponseFromJson(json);
+	
 
-	static List<GroupPotentialMembershipSearchResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupPotentialMembershipSearchResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(GroupPotentialMembershipSearchResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$GroupPotentialMembershipSearchResponseResponseToJson(this);
 }

@@ -1,72 +1,41 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_entry_community_creation.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingEntryCommunityCreation{
 	
 	/**  */
+	@JsonKey(name:'media')
 	String media;
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'author')
 	String author;
 	
 	/**  */
+	@JsonKey(name:'authorMembershipId')
 	String authorMembershipId;
 	
 	/**  */
+	@JsonKey(name:'postId')
 	String postId;
 	
 	/**  */
+	@JsonKey(name:'body')
 	String body;
 	
 	/**  */
+	@JsonKey(name:'upvotes')
 	int upvotes;
-	TrendingEntryCommunityCreation(
-		this.media,
-		this.title,
-		this.author,
-		this.authorMembershipId,
-		this.postId,
-		this.body,
-		this.upvotes,
-	);
+	TrendingEntryCommunityCreation();
 
-	static TrendingEntryCommunityCreation fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingEntryCommunityCreation(
-				data['media'],
-				data['title'],
-				data['author'],
-				data['authorMembershipId'],
-				data['postId'],
-				data['body'],
-				data['upvotes'],
-		);
-	}
-
-	static List<TrendingEntryCommunityCreation> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingEntryCommunityCreation> list = new List();
-    data.forEach((item) {
-      list.add(TrendingEntryCommunityCreation.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['media'] = this.media;
-			data['title'] = this.title;
-			data['author'] = this.author;
-			data['authorMembershipId'] = this.authorMembershipId;
-			data['postId'] = this.postId;
-			data['body'] = this.body;
-			data['upvotes'] = this.upvotes;
-		return data;
-	}
+	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) => _$TrendingEntryCommunityCreationFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingEntryCommunityCreationToJson(this);
 }

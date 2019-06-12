@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_sale_item_action_block_definition.g.dart';
+
 /** Not terribly useful, some basic cooldown interaction info. */
+@JsonSerializable()
 class DestinyVendorSaleItemActionBlockDefinition{
 	
 	/**  */
+	@JsonKey(name:'executeSeconds')
 	double executeSeconds;
 	
 	/**  */
+	@JsonKey(name:'isPositive')
 	bool isPositive;
-	DestinyVendorSaleItemActionBlockDefinition(
-		this.executeSeconds,
-		this.isPositive,
-	);
+	DestinyVendorSaleItemActionBlockDefinition();
 
-	static DestinyVendorSaleItemActionBlockDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorSaleItemActionBlockDefinition(
-				data['executeSeconds'],
-				data['isPositive'],
-		);
-	}
-
-	static List<DestinyVendorSaleItemActionBlockDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorSaleItemActionBlockDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorSaleItemActionBlockDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['executeSeconds'] = this.executeSeconds;
-			data['isPositive'] = this.isPositive;
-		return data;
-	}
+	factory DestinyVendorSaleItemActionBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorSaleItemActionBlockDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemActionBlockDefinitionToJson(this);
 }

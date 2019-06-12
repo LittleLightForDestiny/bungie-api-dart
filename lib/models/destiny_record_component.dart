@@ -1,43 +1,22 @@
 import 'destiny_objective_progress.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_record_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyRecordComponent{
 	
 	/**  */
+	@JsonKey(name:'state')
 	int state;
 	
 	/**  */
+	@JsonKey(name:'objectives')
 	List<DestinyObjectiveProgress> objectives;
-	DestinyRecordComponent(
-		this.state,
-		this.objectives,
-	);
+	DestinyRecordComponent();
 
-	static DestinyRecordComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyRecordComponent(
-				data['state'],
-				data['objectives'] != null ? DestinyObjectiveProgress.fromList(data['objectives']) : null,
-		);
-	}
-
-	static List<DestinyRecordComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyRecordComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyRecordComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['state'] = this.state;
-			data['objectives'] = this.objectives != null? this.objectives.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) => _$DestinyRecordComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyRecordComponentToJson(this);
 }

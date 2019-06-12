@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_gear_art_arrangement_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyGearArtArrangementReference{
 	
 	/**  */
+	@JsonKey(name:'classHash')
 	int classHash;
 	
 	/**  */
+	@JsonKey(name:'artArrangementHash')
 	int artArrangementHash;
-	DestinyGearArtArrangementReference(
-		this.classHash,
-		this.artArrangementHash,
-	);
+	DestinyGearArtArrangementReference();
 
-	static DestinyGearArtArrangementReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyGearArtArrangementReference(
-				data['classHash'],
-				data['artArrangementHash'],
-		);
-	}
-
-	static List<DestinyGearArtArrangementReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyGearArtArrangementReference> list = new List();
-    data.forEach((item) {
-      list.add(DestinyGearArtArrangementReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['classHash'] = this.classHash;
-			data['artArrangementHash'] = this.artArrangementHash;
-		return data;
-	}
+	factory DestinyGearArtArrangementReference.fromJson(Map<String, dynamic> json) => _$DestinyGearArtArrangementReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyGearArtArrangementReferenceToJson(this);
 }

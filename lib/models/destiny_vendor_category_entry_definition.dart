@@ -1,133 +1,82 @@
 import 'destiny_vendor_category_overlay_definition.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_category_entry_definition.g.dart';
+
 /** This is the definition for a single Vendor Category, into which Sale Items are grouped. */
+@JsonSerializable()
 class DestinyVendorCategoryEntryDefinition{
 	
 	/** The index of the category in the original category definitions for the vendor. */
+	@JsonKey(name:'categoryIndex')
 	int categoryIndex;
 	
 	/** The string identifier of the category. */
+	@JsonKey(name:'categoryId')
 	String categoryId;
 	
 	/** Used in sorting items in vendors... but there's a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself. */
+	@JsonKey(name:'sortValue')
 	int sortValue;
 	
 	/** The hashed identifier for the category. */
+	@JsonKey(name:'categoryHash')
 	int categoryHash;
 	
 	/** The amount of items that will be available when this category is shown. */
+	@JsonKey(name:'quantityAvailable')
 	int quantityAvailable;
 	
 	/** If items aren't up for sale in this category, should we still show them (greyed out)? */
+	@JsonKey(name:'showUnavailableItems')
 	bool showUnavailableItems;
 	
 	/** If you don't have the currency required to buy items from this category, should the items be hidden? */
+	@JsonKey(name:'hideIfNoCurrency')
 	bool hideIfNoCurrency;
 	
 	/** True if this category doesn't allow purchases. */
+	@JsonKey(name:'hideFromRegularPurchase')
 	bool hideFromRegularPurchase;
 	
 	/** The localized string for making purchases from this category, if it is different from the vendor's string for purchasing. */
+	@JsonKey(name:'buyStringOverride')
 	String buyStringOverride;
 	
 	/** If the category is disabled, this is the localized description to show. */
+	@JsonKey(name:'disabledDescription')
 	String disabledDescription;
 	
 	/** The localized title of the category. */
+	@JsonKey(name:'displayTitle')
 	String displayTitle;
 	
 	/** If this category has an overlay prompt that should appear, this contains the details of that prompt. */
+	@JsonKey(name:'overlay')
 	DestinyVendorCategoryOverlayDefinition overlay;
 	
 	/** A shortcut for the vendor item indexes sold under this category. Saves us from some expensive reorganization at runtime. */
+	@JsonKey(name:'vendorItemIndexes')
 	List<int> vendorItemIndexes;
 	
 	/** Sometimes a category isn't actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment. */
+	@JsonKey(name:'isPreview')
 	bool isPreview;
 	
 	/** If true, this category only displays items: you can't purchase anything in them. */
+	@JsonKey(name:'isDisplayOnly')
 	bool isDisplayOnly;
 	
 	/**  */
+	@JsonKey(name:'resetIntervalMinutesOverride')
 	int resetIntervalMinutesOverride;
 	
 	/**  */
+	@JsonKey(name:'resetOffsetMinutesOverride')
 	int resetOffsetMinutesOverride;
-	DestinyVendorCategoryEntryDefinition(
-		this.categoryIndex,
-		this.categoryId,
-		this.sortValue,
-		this.categoryHash,
-		this.quantityAvailable,
-		this.showUnavailableItems,
-		this.hideIfNoCurrency,
-		this.hideFromRegularPurchase,
-		this.buyStringOverride,
-		this.disabledDescription,
-		this.displayTitle,
-		this.overlay,
-		this.vendorItemIndexes,
-		this.isPreview,
-		this.isDisplayOnly,
-		this.resetIntervalMinutesOverride,
-		this.resetOffsetMinutesOverride,
-	);
+	DestinyVendorCategoryEntryDefinition();
 
-	static DestinyVendorCategoryEntryDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorCategoryEntryDefinition(
-				data['categoryIndex'],
-				data['categoryId'],
-				data['sortValue'],
-				data['categoryHash'],
-				data['quantityAvailable'],
-				data['showUnavailableItems'],
-				data['hideIfNoCurrency'],
-				data['hideFromRegularPurchase'],
-				data['buyStringOverride'],
-				data['disabledDescription'],
-				data['displayTitle'],
-				data['overlay'] != null ? DestinyVendorCategoryOverlayDefinition.fromMap(data['overlay']) : null,
-				data['vendorItemIndexes'] != null ? data['vendorItemIndexes']?.cast<int>() ?? null : null,
-				data['isPreview'],
-				data['isDisplayOnly'],
-				data['resetIntervalMinutesOverride'],
-				data['resetOffsetMinutesOverride'],
-		);
-	}
-
-	static List<DestinyVendorCategoryEntryDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorCategoryEntryDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorCategoryEntryDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['categoryIndex'] = this.categoryIndex;
-			data['categoryId'] = this.categoryId;
-			data['sortValue'] = this.sortValue;
-			data['categoryHash'] = this.categoryHash;
-			data['quantityAvailable'] = this.quantityAvailable;
-			data['showUnavailableItems'] = this.showUnavailableItems;
-			data['hideIfNoCurrency'] = this.hideIfNoCurrency;
-			data['hideFromRegularPurchase'] = this.hideFromRegularPurchase;
-			data['buyStringOverride'] = this.buyStringOverride;
-			data['disabledDescription'] = this.disabledDescription;
-			data['displayTitle'] = this.displayTitle;
-			data['overlay'] = this.overlay != null? this.overlay.toMap() : null;
-			data['vendorItemIndexes'] = this.vendorItemIndexes;
-			data['isPreview'] = this.isPreview;
-			data['isDisplayOnly'] = this.isDisplayOnly;
-			data['resetIntervalMinutesOverride'] = this.resetIntervalMinutesOverride;
-			data['resetOffsetMinutesOverride'] = this.resetOffsetMinutesOverride;
-		return data;
-	}
+	factory DestinyVendorCategoryEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoryEntryDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorCategoryEntryDefinitionToJson(this);
 }

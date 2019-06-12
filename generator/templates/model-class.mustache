@@ -2,46 +2,25 @@
 import '{{filename}}.dart';
 {{/imports}}
 
+import 'package:json_annotation/json_annotation.dart';
+part '{{filename}}.g.dart';
+
 /** {{{description}}} */
+@JsonSerializable()
 class {{className}}{
 	{{#properties}}
 	
 	/** {{{description}}} */
+	@JsonKey(name:'{{name}}')
 	{{{typeName}}} {{propertyName}};
 	{{/properties}}
-	{{className}}(
+	{{className}}({{#hasProperties}}{{{/hasProperties}}
 		{{#properties}}
 		this.{{propertyName}},
 		{{/properties}}
-	);
+	{{#hasProperties}}}{{/hasProperties}});
 
-	static {{className}} fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new {{className}}(
-			{{#properties}}
-				{{{deserializationFunction}}},
-			{{/properties}}
-		);
-	}
-
-	static List<{{className}}> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<{{className}}> list = new List();
-    data.forEach((item) {
-      list.add({{className}}.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-		{{#properties}}
-			{{{serializationFunction}}};
-		{{/properties}}
-		return data;
-	}
+	factory {{className}}.fromJson(Map<String, dynamic> json) => _${{className}}FromJson(json);
+	
+	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
 }

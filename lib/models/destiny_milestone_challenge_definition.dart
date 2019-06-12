@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_milestone_challenge_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyMilestoneChallengeDefinition{
 	
 	/** The challenge related to this milestone. */
+	@JsonKey(name:'challengeObjectiveHash')
 	int challengeObjectiveHash;
-	DestinyMilestoneChallengeDefinition(
-		this.challengeObjectiveHash,
-	);
+	DestinyMilestoneChallengeDefinition();
 
-	static DestinyMilestoneChallengeDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyMilestoneChallengeDefinition(
-				data['challengeObjectiveHash'],
-		);
-	}
-
-	static List<DestinyMilestoneChallengeDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyMilestoneChallengeDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyMilestoneChallengeDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['challengeObjectiveHash'] = this.challengeObjectiveHash;
-		return data;
-	}
+	factory DestinyMilestoneChallengeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneChallengeDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneChallengeDefinitionToJson(this);
 }

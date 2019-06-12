@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_art_dye_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyArtDyeReference{
 	
 	/**  */
+	@JsonKey(name:'artDyeChannelHash')
 	int artDyeChannelHash;
-	DestinyArtDyeReference(
-		this.artDyeChannelHash,
-	);
+	DestinyArtDyeReference();
 
-	static DestinyArtDyeReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyArtDyeReference(
-				data['artDyeChannelHash'],
-		);
-	}
-
-	static List<DestinyArtDyeReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyArtDyeReference> list = new List();
-    data.forEach((item) {
-      list.add(DestinyArtDyeReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['artDyeChannelHash'] = this.artDyeChannelHash;
-		return data;
-	}
+	factory DestinyArtDyeReference.fromJson(Map<String, dynamic> json) => _$DestinyArtDyeReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyArtDyeReferenceToJson(this);
 }

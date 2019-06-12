@@ -1,14 +1,40 @@
 import '../models/destiny_definition.dart';
-class DestinyDefinitionResponse{
-    DestinyDefinition response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyDefinitionResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_definition_response.g.dart';
+
+/** Provides common properties for destiny definitions. */
+@JsonSerializable()
+class DestinyDefinitionResponse{
+	
+	/** Provides common properties for destiny definitions. */
+	@JsonKey(name:'Response')
+	DestinyDefinition response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyDefinitionResponse({
 		DestinyDefinition this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyDefinitionResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyDefinitionResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyDefinitionResponse(
-				data['Response'] != null ? DestinyDefinition.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyDefinitionResponse.fromJson(Map<String, dynamic> json) => _$DestinyDefinitionResponseFromJson(json);
+	
 
-	static List<DestinyDefinitionResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyDefinitionResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyDefinitionResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyDefinitionResponseToJson(this);
 }

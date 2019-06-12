@@ -1,14 +1,40 @@
 import '../models/core_settings_configuration.dart';
-class CoreSettingsConfigurationResponse{
-    CoreSettingsConfiguration response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    CoreSettingsConfigurationResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'core_settings_configuration_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class CoreSettingsConfigurationResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	CoreSettingsConfiguration response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	CoreSettingsConfigurationResponse({
 		CoreSettingsConfiguration this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class CoreSettingsConfigurationResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static CoreSettingsConfigurationResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CoreSettingsConfigurationResponse(
-				data['Response'] != null ? CoreSettingsConfiguration.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory CoreSettingsConfigurationResponse.fromJson(Map<String, dynamic> json) => _$CoreSettingsConfigurationResponseFromJson(json);
+	
 
-	static List<CoreSettingsConfigurationResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CoreSettingsConfigurationResponse> list = new List();
-    data.forEach((item) {
-      list.add(CoreSettingsConfigurationResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$CoreSettingsConfigurationResponseToJson(this);
 }

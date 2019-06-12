@@ -1,54 +1,29 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'public_partnership_detail.g.dart';
+
 /** All the partnership info that's fit to expose externally, if we care to do so. */
+@JsonSerializable()
 class PublicPartnershipDetail{
 	
 	/**  */
+	@JsonKey(name:'partnerType')
 	int partnerType;
 	
 	/**  */
+	@JsonKey(name:'identifier')
 	String identifier;
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'icon')
 	String icon;
-	PublicPartnershipDetail(
-		this.partnerType,
-		this.identifier,
-		this.name,
-		this.icon,
-	);
+	PublicPartnershipDetail();
 
-	static PublicPartnershipDetail fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PublicPartnershipDetail(
-				data['partnerType'],
-				data['identifier'],
-				data['name'],
-				data['icon'],
-		);
-	}
-
-	static List<PublicPartnershipDetail> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PublicPartnershipDetail> list = new List();
-    data.forEach((item) {
-      list.add(PublicPartnershipDetail.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['partnerType'] = this.partnerType;
-			data['identifier'] = this.identifier;
-			data['name'] = this.name;
-			data['icon'] = this.icon;
-		return data;
-	}
+	factory PublicPartnershipDetail.fromJson(Map<String, dynamic> json) => _$PublicPartnershipDetailFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$PublicPartnershipDetailToJson(this);
 }

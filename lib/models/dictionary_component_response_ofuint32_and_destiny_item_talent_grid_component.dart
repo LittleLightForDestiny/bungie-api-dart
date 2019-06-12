@@ -1,43 +1,22 @@
 import 'destiny_item_talent_grid_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofuint32_and_destiny_item_talent_grid_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, DestinyItemTalentGridComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent();
 
-	static DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent(
-				data['data'] != null ? Map<String, DestinyItemTalentGridComponent>.from(data['data'].map((k, v)=>MapEntry(k, DestinyItemTalentGridComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponentToJson(this);
 }

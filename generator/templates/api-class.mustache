@@ -26,7 +26,7 @@ class {{className}}{
         config.bodyContentType = {{{requestBodyContentType}}};
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return {{returnType}}.fromMap(response.mappedBody);
+                return {{returnType}}.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

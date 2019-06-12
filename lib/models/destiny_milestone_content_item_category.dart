@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_milestone_content_item_category.g.dart';
+
 /** Part of our dynamic, localized Milestone content is arbitrary categories of items. These are built in our content management system, and thus aren't the same as programmatically generated rewards. */
+@JsonSerializable()
 class DestinyMilestoneContentItemCategory{
 	
 	/**  */
+	@JsonKey(name:'title')
 	String title;
 	
 	/**  */
+	@JsonKey(name:'itemHashes')
 	List<int> itemHashes;
-	DestinyMilestoneContentItemCategory(
-		this.title,
-		this.itemHashes,
-	);
+	DestinyMilestoneContentItemCategory();
 
-	static DestinyMilestoneContentItemCategory fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyMilestoneContentItemCategory(
-				data['title'],
-				data['itemHashes'] != null ? data['itemHashes']?.cast<int>() ?? null : null,
-		);
-	}
-
-	static List<DestinyMilestoneContentItemCategory> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyMilestoneContentItemCategory> list = new List();
-    data.forEach((item) {
-      list.add(DestinyMilestoneContentItemCategory.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['title'] = this.title;
-			data['itemHashes'] = this.itemHashes;
-		return data;
-	}
+	factory DestinyMilestoneContentItemCategory.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneContentItemCategoryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneContentItemCategoryToJson(this);
 }

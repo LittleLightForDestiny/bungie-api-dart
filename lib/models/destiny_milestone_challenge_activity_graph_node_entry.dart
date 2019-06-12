@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_milestone_challenge_activity_graph_node_entry.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyMilestoneChallengeActivityGraphNodeEntry{
 	
 	/**  */
+	@JsonKey(name:'activityGraphHash')
 	int activityGraphHash;
 	
 	/**  */
+	@JsonKey(name:'activityGraphNodeHash')
 	int activityGraphNodeHash;
-	DestinyMilestoneChallengeActivityGraphNodeEntry(
-		this.activityGraphHash,
-		this.activityGraphNodeHash,
-	);
+	DestinyMilestoneChallengeActivityGraphNodeEntry();
 
-	static DestinyMilestoneChallengeActivityGraphNodeEntry fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyMilestoneChallengeActivityGraphNodeEntry(
-				data['activityGraphHash'],
-				data['activityGraphNodeHash'],
-		);
-	}
-
-	static List<DestinyMilestoneChallengeActivityGraphNodeEntry> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyMilestoneChallengeActivityGraphNodeEntry> list = new List();
-    data.forEach((item) {
-      list.add(DestinyMilestoneChallengeActivityGraphNodeEntry.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activityGraphHash'] = this.activityGraphHash;
-			data['activityGraphNodeHash'] = this.activityGraphNodeHash;
-		return data;
-	}
+	factory DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneChallengeActivityGraphNodeEntryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneChallengeActivityGraphNodeEntryToJson(this);
 }

@@ -1,0 +1,18 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyVendorAcceptedItemDefinition
+    _$DestinyVendorAcceptedItemDefinitionFromJson(Map<String, dynamic> json) {
+  return DestinyVendorAcceptedItemDefinition()
+    ..acceptedInventoryBucketHash = json['acceptedInventoryBucketHash'] as int
+    ..destinationInventoryBucketHash =
+        json['destinationInventoryBucketHash'] as int;
+}
+
+Map<String, dynamic> _$DestinyVendorAcceptedItemDefinitionToJson(
+        DestinyVendorAcceptedItemDefinition instance) =>
+    <String, dynamic>{
+      'acceptedInventoryBucketHash': instance.acceptedInventoryBucketHash,
+      'destinationInventoryBucketHash': instance.destinationInventoryBucketHash
+    };

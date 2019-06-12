@@ -1,14 +1,40 @@
 import '../models/entity_action_result.dart';
-class ListOfEntityActionResultResponse{
-    List<EntityActionResult> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    ListOfEntityActionResultResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'list_of_entity_action_result_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class ListOfEntityActionResultResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<EntityActionResult> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	ListOfEntityActionResultResponse({
 		List<EntityActionResult> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class ListOfEntityActionResultResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static ListOfEntityActionResultResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ListOfEntityActionResultResponse(
-				data['Response'] != null ? EntityActionResult.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory ListOfEntityActionResultResponse.fromJson(Map<String, dynamic> json) => _$ListOfEntityActionResultResponseFromJson(json);
+	
 
-	static List<ListOfEntityActionResultResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ListOfEntityActionResultResponse> list = new List();
-    data.forEach((item) {
-      list.add(ListOfEntityActionResultResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$ListOfEntityActionResultResponseToJson(this);
 }

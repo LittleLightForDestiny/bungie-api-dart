@@ -1,43 +1,22 @@
 import 'user_membership.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_application_list_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupApplicationListRequest{
 	
 	/**  */
+	@JsonKey(name:'memberships')
 	List<UserMembership> memberships;
 	
 	/**  */
+	@JsonKey(name:'message')
 	String message;
-	GroupApplicationListRequest(
-		this.memberships,
-		this.message,
-	);
+	GroupApplicationListRequest();
 
-	static GroupApplicationListRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupApplicationListRequest(
-				data['memberships'] != null ? UserMembership.fromList(data['memberships']) : null,
-				data['message'],
-		);
-	}
-
-	static List<GroupApplicationListRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupApplicationListRequest> list = new List();
-    data.forEach((item) {
-      list.add(GroupApplicationListRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['memberships'] = this.memberships != null? this.memberships.map((item)=>item.toMap()).toList() : null;
-			data['message'] = this.message;
-		return data;
-	}
+	factory GroupApplicationListRequest.fromJson(Map<String, dynamic> json) => _$GroupApplicationListRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupApplicationListRequestToJson(this);
 }

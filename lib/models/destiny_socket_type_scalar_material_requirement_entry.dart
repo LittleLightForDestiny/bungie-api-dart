@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_socket_type_scalar_material_requirement_entry.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinySocketTypeScalarMaterialRequirementEntry{
 	
 	/**  */
+	@JsonKey(name:'currencyItemHash')
 	int currencyItemHash;
 	
 	/**  */
+	@JsonKey(name:'scalarValue')
 	int scalarValue;
-	DestinySocketTypeScalarMaterialRequirementEntry(
-		this.currencyItemHash,
-		this.scalarValue,
-	);
+	DestinySocketTypeScalarMaterialRequirementEntry();
 
-	static DestinySocketTypeScalarMaterialRequirementEntry fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinySocketTypeScalarMaterialRequirementEntry(
-				data['currencyItemHash'],
-				data['scalarValue'],
-		);
-	}
-
-	static List<DestinySocketTypeScalarMaterialRequirementEntry> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinySocketTypeScalarMaterialRequirementEntry> list = new List();
-    data.forEach((item) {
-      list.add(DestinySocketTypeScalarMaterialRequirementEntry.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['currencyItemHash'] = this.currencyItemHash;
-			data['scalarValue'] = this.scalarValue;
-		return data;
-	}
+	factory DestinySocketTypeScalarMaterialRequirementEntry.fromJson(Map<String, dynamic> json) => _$DestinySocketTypeScalarMaterialRequirementEntryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinySocketTypeScalarMaterialRequirementEntryToJson(this);
 }

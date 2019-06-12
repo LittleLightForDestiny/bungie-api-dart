@@ -1,14 +1,40 @@
 import '../models/general_user.dart';
-class GeneralUserResponse{
-    GeneralUser response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    GeneralUserResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'general_user_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class GeneralUserResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	GeneralUser response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	GeneralUserResponse({
 		GeneralUser this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class GeneralUserResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static GeneralUserResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GeneralUserResponse(
-				data['Response'] != null ? GeneralUser.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory GeneralUserResponse.fromJson(Map<String, dynamic> json) => _$GeneralUserResponseFromJson(json);
+	
 
-	static List<GeneralUserResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GeneralUserResponse> list = new List();
-    data.forEach((item) {
-      list.add(GeneralUserResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$GeneralUserResponseToJson(this);
 }

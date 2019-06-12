@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'datapoint.g.dart';
+
 /**  */
+@JsonSerializable()
 class Datapoint{
 	
 	/** Timestamp for the related count. */
+	@JsonKey(name:'time')
 	String time;
 	
 	/** Count associated with timestamp */
+	@JsonKey(name:'count')
 	int count;
-	Datapoint(
-		this.time,
-		this.count,
-	);
+	Datapoint();
 
-	static Datapoint fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new Datapoint(
-				data['time'],
-				data['count'],
-		);
-	}
-
-	static List<Datapoint> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<Datapoint> list = new List();
-    data.forEach((item) {
-      list.add(Datapoint.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['time'] = this.time;
-			data['count'] = this.count;
-		return data;
-	}
+	factory Datapoint.fromJson(Map<String, dynamic> json) => _$DatapointFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DatapointToJson(this);
 }

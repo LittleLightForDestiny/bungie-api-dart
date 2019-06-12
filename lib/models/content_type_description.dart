@@ -4,158 +4,99 @@ import 'tag_metadata_item.dart';
 import 'content_preview.dart';
 import 'content_type_property_section.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'content_type_description.g.dart';
+
 /**  */
+@JsonSerializable()
 class ContentTypeDescription{
 	
 	/**  */
+	@JsonKey(name:'cType')
 	String cType;
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'contentDescription')
 	String contentDescription;
 	
 	/**  */
+	@JsonKey(name:'previewImage')
 	String previewImage;
 	
 	/**  */
+	@JsonKey(name:'priority')
 	int priority;
 	
 	/**  */
+	@JsonKey(name:'reminder')
 	String reminder;
 	
 	/**  */
+	@JsonKey(name:'properties')
 	List<ContentTypeProperty> properties;
 	
 	/**  */
+	@JsonKey(name:'tagMetadata')
 	List<TagMetadataDefinition> tagMetadata;
 	
 	/**  */
+	@JsonKey(name:'tagMetadataItems')
 	Map<String, TagMetadataItem> tagMetadataItems;
 	
 	/**  */
+	@JsonKey(name:'usageExamples')
 	List<String> usageExamples;
 	
 	/**  */
+	@JsonKey(name:'showInContentEditor')
 	bool showInContentEditor;
 	
 	/**  */
+	@JsonKey(name:'typeOf')
 	String typeOf;
 	
 	/**  */
+	@JsonKey(name:'bindIdentifierToProperty')
 	String bindIdentifierToProperty;
 	
 	/**  */
+	@JsonKey(name:'boundRegex')
 	String boundRegex;
 	
 	/**  */
+	@JsonKey(name:'forceIdentifierBinding')
 	bool forceIdentifierBinding;
 	
 	/**  */
+	@JsonKey(name:'allowComments')
 	bool allowComments;
 	
 	/**  */
+	@JsonKey(name:'autoEnglishPropertyFallback')
 	bool autoEnglishPropertyFallback;
 	
 	/**  */
+	@JsonKey(name:'bulkUploadable')
 	bool bulkUploadable;
 	
 	/**  */
+	@JsonKey(name:'previews')
 	List<ContentPreview> previews;
 	
 	/**  */
+	@JsonKey(name:'suppressCmsPath')
 	bool suppressCmsPath;
 	
 	/**  */
+	@JsonKey(name:'propertySections')
 	List<ContentTypePropertySection> propertySections;
-	ContentTypeDescription(
-		this.cType,
-		this.name,
-		this.contentDescription,
-		this.previewImage,
-		this.priority,
-		this.reminder,
-		this.properties,
-		this.tagMetadata,
-		this.tagMetadataItems,
-		this.usageExamples,
-		this.showInContentEditor,
-		this.typeOf,
-		this.bindIdentifierToProperty,
-		this.boundRegex,
-		this.forceIdentifierBinding,
-		this.allowComments,
-		this.autoEnglishPropertyFallback,
-		this.bulkUploadable,
-		this.previews,
-		this.suppressCmsPath,
-		this.propertySections,
-	);
+	ContentTypeDescription();
 
-	static ContentTypeDescription fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ContentTypeDescription(
-				data['cType'],
-				data['name'],
-				data['contentDescription'],
-				data['previewImage'],
-				data['priority'],
-				data['reminder'],
-				data['properties'] != null ? ContentTypeProperty.fromList(data['properties']) : null,
-				data['tagMetadata'] != null ? TagMetadataDefinition.fromList(data['tagMetadata']) : null,
-				data['tagMetadataItems'] != null ? Map<String, TagMetadataItem>.from(data['tagMetadataItems'].map((k, v)=>MapEntry(k, TagMetadataItem.fromMap(v)))) : null,
-				data['usageExamples'] != null ? data['usageExamples']?.cast<String>() ?? null : null,
-				data['showInContentEditor'],
-				data['typeOf'],
-				data['bindIdentifierToProperty'],
-				data['boundRegex'],
-				data['forceIdentifierBinding'],
-				data['allowComments'],
-				data['autoEnglishPropertyFallback'],
-				data['bulkUploadable'],
-				data['previews'] != null ? ContentPreview.fromList(data['previews']) : null,
-				data['suppressCmsPath'],
-				data['propertySections'] != null ? ContentTypePropertySection.fromList(data['propertySections']) : null,
-		);
-	}
-
-	static List<ContentTypeDescription> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ContentTypeDescription> list = new List();
-    data.forEach((item) {
-      list.add(ContentTypeDescription.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['cType'] = this.cType;
-			data['name'] = this.name;
-			data['contentDescription'] = this.contentDescription;
-			data['previewImage'] = this.previewImage;
-			data['priority'] = this.priority;
-			data['reminder'] = this.reminder;
-			data['properties'] = this.properties != null? this.properties.map((item)=>item.toMap()).toList() : null;
-			data['tagMetadata'] = this.tagMetadata != null? this.tagMetadata.map((item)=>item.toMap()).toList() : null;
-			data['tagMetadataItems'] = this.tagMetadataItems != null? this.tagMetadataItems.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['usageExamples'] = this.usageExamples;
-			data['showInContentEditor'] = this.showInContentEditor;
-			data['typeOf'] = this.typeOf;
-			data['bindIdentifierToProperty'] = this.bindIdentifierToProperty;
-			data['boundRegex'] = this.boundRegex;
-			data['forceIdentifierBinding'] = this.forceIdentifierBinding;
-			data['allowComments'] = this.allowComments;
-			data['autoEnglishPropertyFallback'] = this.autoEnglishPropertyFallback;
-			data['bulkUploadable'] = this.bulkUploadable;
-			data['previews'] = this.previews != null? this.previews.map((item)=>item.toMap()).toList() : null;
-			data['suppressCmsPath'] = this.suppressCmsPath;
-			data['propertySections'] = this.propertySections != null? this.propertySections.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) => _$ContentTypeDescriptionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$ContentTypeDescriptionToJson(this);
 }

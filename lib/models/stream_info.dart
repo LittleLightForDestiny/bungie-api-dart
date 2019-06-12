@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'stream_info.g.dart';
+
 /**  */
+@JsonSerializable()
 class StreamInfo{
 	
 	/**  */
+	@JsonKey(name:'ChannelName')
 	String channelName;
-	StreamInfo(
-		this.channelName,
-	);
+	StreamInfo();
 
-	static StreamInfo fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new StreamInfo(
-				data['ChannelName'],
-		);
-	}
-
-	static List<StreamInfo> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<StreamInfo> list = new List();
-    data.forEach((item) {
-      list.add(StreamInfo.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['ChannelName'] = this.channelName;
-		return data;
-	}
+	factory StreamInfo.fromJson(Map<String, dynamic> json) => _$StreamInfoFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$StreamInfoToJson(this);
 }

@@ -1,14 +1,40 @@
 import '../models/destiny_leaderboard.dart';
-class DestinyLeaderboardResultsResponse{
-    Map<String, Map<String, DestinyLeaderboard>> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyLeaderboardResultsResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_leaderboard_results_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class DestinyLeaderboardResultsResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	Map<String, Map<String, DestinyLeaderboard>> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyLeaderboardResultsResponse({
 		Map<String, Map<String, DestinyLeaderboard>> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyLeaderboardResultsResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyLeaderboardResultsResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyLeaderboardResultsResponse(
-				data['Response'] != null ? Map<String, Map<String, DestinyLeaderboard>>.from(data['Response'].map((k, v)=>MapEntry(k, Map<String, DestinyLeaderboard>.from(v.map((k, v)=>MapEntry(k, DestinyLeaderboard.fromMap(v))))))) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyLeaderboardResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardResultsResponseFromJson(json);
+	
 
-	static List<DestinyLeaderboardResultsResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyLeaderboardResultsResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyLeaderboardResultsResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyLeaderboardResultsResponseToJson(this);
 }

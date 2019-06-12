@@ -11,3 +11,5 @@ node ./build/generate.js
 rm -rf build
 cd ..
 cp generator/dart-custom/http.dart ./lib/
+
+flutter pub run build_runner build

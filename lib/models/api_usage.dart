@@ -1,50 +1,27 @@
 import 'date_range.dart';
 import 'series.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'api_usage.g.dart';
+
 /**  */
+@JsonSerializable()
 class ApiUsage{
 	
 	/** The date range for the data being reported. */
+	@JsonKey(name:'range')
 	DateRange range;
 	
 	/** Counts for on API calls made for the time range. */
+	@JsonKey(name:'apiCalls')
 	List<Series> apiCalls;
 	
 	/** Instances of blocked requests or requests that crossed the warn threshold during the time range. */
+	@JsonKey(name:'throttledRequests')
 	List<Series> throttledRequests;
-	ApiUsage(
-		this.range,
-		this.apiCalls,
-		this.throttledRequests,
-	);
+	ApiUsage();
 
-	static ApiUsage fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ApiUsage(
-				data['range'] != null ? DateRange.fromMap(data['range']) : null,
-				data['apiCalls'] != null ? Series.fromList(data['apiCalls']) : null,
-				data['throttledRequests'] != null ? Series.fromList(data['throttledRequests']) : null,
-		);
-	}
-
-	static List<ApiUsage> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ApiUsage> list = new List();
-    data.forEach((item) {
-      list.add(ApiUsage.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['range'] = this.range != null? this.range.toMap() : null;
-			data['apiCalls'] = this.apiCalls != null? this.apiCalls.map((item)=>item.toMap()).toList() : null;
-			data['throttledRequests'] = this.throttledRequests != null? this.throttledRequests.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory ApiUsage.fromJson(Map<String, dynamic> json) => _$ApiUsageFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$ApiUsageToJson(this);
 }

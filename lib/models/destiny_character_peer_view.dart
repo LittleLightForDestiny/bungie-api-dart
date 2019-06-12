@@ -1,37 +1,18 @@
 import 'destiny_item_peer_view.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_character_peer_view.g.dart';
+
 /** A minimal view of a character's equipped items, for the purpose of rendering a summary screen or showing the character in 3D. */
+@JsonSerializable()
 class DestinyCharacterPeerView{
 	
 	/**  */
+	@JsonKey(name:'equipment')
 	List<DestinyItemPeerView> equipment;
-	DestinyCharacterPeerView(
-		this.equipment,
-	);
+	DestinyCharacterPeerView();
 
-	static DestinyCharacterPeerView fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCharacterPeerView(
-				data['equipment'] != null ? DestinyItemPeerView.fromList(data['equipment']) : null,
-		);
-	}
-
-	static List<DestinyCharacterPeerView> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCharacterPeerView> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCharacterPeerView.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['equipment'] = this.equipment != null? this.equipment.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyCharacterPeerView.fromJson(Map<String, dynamic> json) => _$DestinyCharacterPeerViewFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterPeerViewToJson(this);
 }

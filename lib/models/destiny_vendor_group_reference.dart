@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_group_reference.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyVendorGroupReference{
 	
 	/** The DestinyVendorGroupDefinition to which this Vendor can belong. */
+	@JsonKey(name:'vendorGroupHash')
 	int vendorGroupHash;
-	DestinyVendorGroupReference(
-		this.vendorGroupHash,
-	);
+	DestinyVendorGroupReference();
 
-	static DestinyVendorGroupReference fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorGroupReference(
-				data['vendorGroupHash'],
-		);
-	}
-
-	static List<DestinyVendorGroupReference> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorGroupReference> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorGroupReference.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['vendorGroupHash'] = this.vendorGroupHash;
-		return data;
-	}
+	factory DestinyVendorGroupReference.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupReferenceFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorGroupReferenceToJson(this);
 }

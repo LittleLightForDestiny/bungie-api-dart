@@ -1,37 +1,18 @@
 import 'trending_category.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_categories.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingCategories{
 	
 	/**  */
+	@JsonKey(name:'categories')
 	List<TrendingCategory> categories;
-	TrendingCategories(
-		this.categories,
-	);
+	TrendingCategories();
 
-	static TrendingCategories fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingCategories(
-				data['categories'] != null ? TrendingCategory.fromList(data['categories']) : null,
-		);
-	}
-
-	static List<TrendingCategories> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingCategories> list = new List();
-    data.forEach((item) {
-      list.add(TrendingCategories.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['categories'] = this.categories != null? this.categories.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory TrendingCategories.fromJson(Map<String, dynamic> json) => _$TrendingCategoriesFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingCategoriesToJson(this);
 }

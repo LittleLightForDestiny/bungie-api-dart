@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'interpolation_point_float.g.dart';
+
 /**  */
+@JsonSerializable()
 class InterpolationPointFloat{
 	
 	/**  */
+	@JsonKey(name:'value')
 	double value;
 	
 	/**  */
+	@JsonKey(name:'weight')
 	double weight;
-	InterpolationPointFloat(
-		this.value,
-		this.weight,
-	);
+	InterpolationPointFloat();
 
-	static InterpolationPointFloat fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new InterpolationPointFloat(
-				data['value'],
-				data['weight'],
-		);
-	}
-
-	static List<InterpolationPointFloat> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<InterpolationPointFloat> list = new List();
-    data.forEach((item) {
-      list.add(InterpolationPointFloat.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['value'] = this.value;
-			data['weight'] = this.weight;
-		return data;
-	}
+	factory InterpolationPointFloat.fromJson(Map<String, dynamic> json) => _$InterpolationPointFloatFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$InterpolationPointFloatToJson(this);
 }

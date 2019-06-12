@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'core_system.g.dart';
+
 /**  */
+@JsonSerializable()
 class CoreSystem{
 	
 	/**  */
+	@JsonKey(name:'enabled')
 	bool enabled;
 	
 	/**  */
+	@JsonKey(name:'parameters')
 	Map<String, String> parameters;
-	CoreSystem(
-		this.enabled,
-		this.parameters,
-	);
+	CoreSystem();
 
-	static CoreSystem fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CoreSystem(
-				data['enabled'],
-				data['parameters'] != null ? Map<String, String>.from(data['parameters'].map((k, v)=>MapEntry(k, v))) : null,
-		);
-	}
-
-	static List<CoreSystem> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CoreSystem> list = new List();
-    data.forEach((item) {
-      list.add(CoreSystem.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['enabled'] = this.enabled;
-			data['parameters'] = this.parameters != null? this.parameters.map((i, v)=>MapEntry(i, v)) : null;
-		return data;
-	}
+	factory CoreSystem.fromJson(Map<String, dynamic> json) => _$CoreSystemFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$CoreSystemToJson(this);
 }

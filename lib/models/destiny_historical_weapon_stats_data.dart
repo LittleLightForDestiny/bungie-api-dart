@@ -1,37 +1,18 @@
 import 'destiny_historical_weapon_stats.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_weapon_stats_data.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalWeaponStatsData{
 	
 	/** List of weapons and their perspective values. */
+	@JsonKey(name:'weapons')
 	List<DestinyHistoricalWeaponStats> weapons;
-	DestinyHistoricalWeaponStatsData(
-		this.weapons,
-	);
+	DestinyHistoricalWeaponStatsData();
 
-	static DestinyHistoricalWeaponStatsData fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalWeaponStatsData(
-				data['weapons'] != null ? DestinyHistoricalWeaponStats.fromList(data['weapons']) : null,
-		);
-	}
-
-	static List<DestinyHistoricalWeaponStatsData> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalWeaponStatsData> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalWeaponStatsData.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['weapons'] = this.weapons != null? this.weapons.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyHistoricalWeaponStatsData.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalWeaponStatsDataFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalWeaponStatsDataToJson(this);
 }

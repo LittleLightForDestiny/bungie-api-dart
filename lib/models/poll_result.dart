@@ -1,60 +1,33 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'poll_result.g.dart';
+
 /**  */
+@JsonSerializable()
 class PollResult{
 	
 	/**  */
+	@JsonKey(name:'answerText')
 	String answerText;
 	
 	/**  */
+	@JsonKey(name:'answerSlot')
 	int answerSlot;
 	
 	/**  */
+	@JsonKey(name:'lastVoteDate')
 	String lastVoteDate;
 	
 	/**  */
+	@JsonKey(name:'votes')
 	int votes;
 	
 	/**  */
+	@JsonKey(name:'requestingUserVoted')
 	bool requestingUserVoted;
-	PollResult(
-		this.answerText,
-		this.answerSlot,
-		this.lastVoteDate,
-		this.votes,
-		this.requestingUserVoted,
-	);
+	PollResult();
 
-	static PollResult fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new PollResult(
-				data['answerText'],
-				data['answerSlot'],
-				data['lastVoteDate'],
-				data['votes'],
-				data['requestingUserVoted'],
-		);
-	}
-
-	static List<PollResult> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<PollResult> list = new List();
-    data.forEach((item) {
-      list.add(PollResult.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['answerText'] = this.answerText;
-			data['answerSlot'] = this.answerSlot;
-			data['lastVoteDate'] = this.lastVoteDate;
-			data['votes'] = this.votes;
-			data['requestingUserVoted'] = this.requestingUserVoted;
-		return data;
-	}
+	factory PollResult.fromJson(Map<String, dynamic> json) => _$PollResultFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$PollResultToJson(this);
 }

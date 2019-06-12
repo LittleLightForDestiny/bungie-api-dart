@@ -1,14 +1,40 @@
 import '../models/destiny_public_milestone.dart';
-class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
-    Map<String, DestinyPublicMilestone> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DictionaryOfuint32AndDestinyPublicMilestoneResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_ofuint32_and_destiny_public_milestone_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	Map<String, DestinyPublicMilestone> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DictionaryOfuint32AndDestinyPublicMilestoneResponse({
 		Map<String, DestinyPublicMilestone> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DictionaryOfuint32AndDestinyPublicMilestoneResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryOfuint32AndDestinyPublicMilestoneResponse(
-				data['Response'] != null ? Map<String, DestinyPublicMilestone>.from(data['Response'].map((k, v)=>MapEntry(k, DestinyPublicMilestone.fromMap(v)))) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseFromJson(json);
+	
 
-	static List<DictionaryOfuint32AndDestinyPublicMilestoneResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryOfuint32AndDestinyPublicMilestoneResponse> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseToJson(this);
 }

@@ -1,43 +1,22 @@
 import 'destiny_item_render_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_item_render_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyItemRenderComponent{
 	
 	/** Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item. */
+	@JsonKey(name:'data')
 	DestinyItemRenderComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyItemRenderComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyItemRenderComponent();
 
-	static SingleComponentResponseOfDestinyItemRenderComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyItemRenderComponent(
-				data['data'] != null ? DestinyItemRenderComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyItemRenderComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyItemRenderComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyItemRenderComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyItemRenderComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyItemRenderComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyItemRenderComponentToJson(this);
 }

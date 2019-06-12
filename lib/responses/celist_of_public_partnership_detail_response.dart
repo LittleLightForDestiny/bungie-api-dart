@@ -1,14 +1,40 @@
 import '../models/public_partnership_detail.dart';
-class CEListOfPublicPartnershipDetailResponse{
-    List<PublicPartnershipDetail> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    CEListOfPublicPartnershipDetailResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'celist_of_public_partnership_detail_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class CEListOfPublicPartnershipDetailResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<PublicPartnershipDetail> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	CEListOfPublicPartnershipDetailResponse({
 		List<PublicPartnershipDetail> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class CEListOfPublicPartnershipDetailResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static CEListOfPublicPartnershipDetailResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CEListOfPublicPartnershipDetailResponse(
-				data['Response'] != null ? PublicPartnershipDetail.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory CEListOfPublicPartnershipDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfPublicPartnershipDetailResponseFromJson(json);
+	
 
-	static List<CEListOfPublicPartnershipDetailResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CEListOfPublicPartnershipDetailResponse> list = new List();
-    data.forEach((item) {
-      list.add(CEListOfPublicPartnershipDetailResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$CEListOfPublicPartnershipDetailResponseToJson(this);
 }

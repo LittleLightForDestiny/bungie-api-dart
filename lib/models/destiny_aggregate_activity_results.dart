@@ -1,37 +1,18 @@
 import 'destiny_aggregate_activity_stats.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_aggregate_activity_results.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyAggregateActivityResults{
 	
 	/** List of all activities the player has participated in. */
+	@JsonKey(name:'activities')
 	List<DestinyAggregateActivityStats> activities;
-	DestinyAggregateActivityResults(
-		this.activities,
-	);
+	DestinyAggregateActivityResults();
 
-	static DestinyAggregateActivityResults fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyAggregateActivityResults(
-				data['activities'] != null ? DestinyAggregateActivityStats.fromList(data['activities']) : null,
-		);
-	}
-
-	static List<DestinyAggregateActivityResults> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyAggregateActivityResults> list = new List();
-    data.forEach((item) {
-      list.add(DestinyAggregateActivityResults.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyAggregateActivityResults.fromJson(Map<String, dynamic> json) => _$DestinyAggregateActivityResultsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyAggregateActivityResultsToJson(this);
 }

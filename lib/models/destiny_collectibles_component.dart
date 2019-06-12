@@ -1,37 +1,18 @@
 import 'destiny_collectible_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_collectibles_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyCollectiblesComponent{
 	
 	/**  */
+	@JsonKey(name:'collectibles')
 	Map<String, DestinyCollectibleComponent> collectibles;
-	DestinyCollectiblesComponent(
-		this.collectibles,
-	);
+	DestinyCollectiblesComponent();
 
-	static DestinyCollectiblesComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCollectiblesComponent(
-				data['collectibles'] != null ? Map<String, DestinyCollectibleComponent>.from(data['collectibles'].map((k, v)=>MapEntry(k, DestinyCollectibleComponent.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyCollectiblesComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCollectiblesComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCollectiblesComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['collectibles'] = this.collectibles != null? this.collectibles.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyCollectiblesComponent.fromJson(Map<String, dynamic> json) => _$DestinyCollectiblesComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyCollectiblesComponentToJson(this);
 }

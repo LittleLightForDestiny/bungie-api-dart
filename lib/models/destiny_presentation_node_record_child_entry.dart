@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_presentation_node_record_child_entry.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPresentationNodeRecordChildEntry{
 	
 	/**  */
+	@JsonKey(name:'recordHash')
 	int recordHash;
-	DestinyPresentationNodeRecordChildEntry(
-		this.recordHash,
-	);
+	DestinyPresentationNodeRecordChildEntry();
 
-	static DestinyPresentationNodeRecordChildEntry fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPresentationNodeRecordChildEntry(
-				data['recordHash'],
-		);
-	}
-
-	static List<DestinyPresentationNodeRecordChildEntry> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPresentationNodeRecordChildEntry> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPresentationNodeRecordChildEntry.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['recordHash'] = this.recordHash;
-		return data;
-	}
+	factory DestinyPresentationNodeRecordChildEntry.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeRecordChildEntryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPresentationNodeRecordChildEntryToJson(this);
 }

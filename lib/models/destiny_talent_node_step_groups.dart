@@ -1,60 +1,33 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_talent_node_step_groups.g.dart';
+
 /** These properties are an attempt to categorize talent node steps by certain common properties. See the related enumerations for the type of properties being categorized. */
+@JsonSerializable()
 class DestinyTalentNodeStepGroups{
 	
 	/**  */
+	@JsonKey(name:'weaponPerformance')
 	int weaponPerformance;
 	
 	/**  */
+	@JsonKey(name:'impactEffects')
 	int impactEffects;
 	
 	/**  */
+	@JsonKey(name:'guardianAttributes')
 	int guardianAttributes;
 	
 	/**  */
+	@JsonKey(name:'lightAbilities')
 	int lightAbilities;
 	
 	/**  */
+	@JsonKey(name:'damageTypes')
 	int damageTypes;
-	DestinyTalentNodeStepGroups(
-		this.weaponPerformance,
-		this.impactEffects,
-		this.guardianAttributes,
-		this.lightAbilities,
-		this.damageTypes,
-	);
+	DestinyTalentNodeStepGroups();
 
-	static DestinyTalentNodeStepGroups fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyTalentNodeStepGroups(
-				data['weaponPerformance'],
-				data['impactEffects'],
-				data['guardianAttributes'],
-				data['lightAbilities'],
-				data['damageTypes'],
-		);
-	}
-
-	static List<DestinyTalentNodeStepGroups> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyTalentNodeStepGroups> list = new List();
-    data.forEach((item) {
-      list.add(DestinyTalentNodeStepGroups.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['weaponPerformance'] = this.weaponPerformance;
-			data['impactEffects'] = this.impactEffects;
-			data['guardianAttributes'] = this.guardianAttributes;
-			data['lightAbilities'] = this.lightAbilities;
-			data['damageTypes'] = this.damageTypes;
-		return data;
-	}
+	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeStepGroupsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentNodeStepGroupsToJson(this);
 }

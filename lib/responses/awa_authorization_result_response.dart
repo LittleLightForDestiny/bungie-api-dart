@@ -1,14 +1,40 @@
 import '../models/awa_authorization_result.dart';
-class AwaAuthorizationResultResponse{
-    AwaAuthorizationResult response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    AwaAuthorizationResultResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'awa_authorization_result_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class AwaAuthorizationResultResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	AwaAuthorizationResult response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	AwaAuthorizationResultResponse({
 		AwaAuthorizationResult this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class AwaAuthorizationResultResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static AwaAuthorizationResultResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new AwaAuthorizationResultResponse(
-				data['Response'] != null ? AwaAuthorizationResult.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory AwaAuthorizationResultResponse.fromJson(Map<String, dynamic> json) => _$AwaAuthorizationResultResponseFromJson(json);
+	
 
-	static List<AwaAuthorizationResultResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<AwaAuthorizationResultResponse> list = new List();
-    data.forEach((item) {
-      list.add(AwaAuthorizationResultResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$AwaAuthorizationResultResponseToJson(this);
 }

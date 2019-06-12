@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'awa_initialize_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class AwaInitializeResponse{
 	
 	/** ID used to get the token. Present this ID to the user as it will identify this specific request on their device. */
+	@JsonKey(name:'correlationId')
 	String correlationId;
 	
 	/** True if the PUSH message will only be sent to the device that made this request. */
+	@JsonKey(name:'sentToSelf')
 	bool sentToSelf;
-	AwaInitializeResponse(
-		this.correlationId,
-		this.sentToSelf,
-	);
+	AwaInitializeResponse();
 
-	static AwaInitializeResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new AwaInitializeResponse(
-				data['correlationId'],
-				data['sentToSelf'],
-		);
-	}
-
-	static List<AwaInitializeResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<AwaInitializeResponse> list = new List();
-    data.forEach((item) {
-      list.add(AwaInitializeResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['correlationId'] = this.correlationId;
-			data['sentToSelf'] = this.sentToSelf;
-		return data;
-	}
+	factory AwaInitializeResponse.fromJson(Map<String, dynamic> json) => _$AwaInitializeResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$AwaInitializeResponseToJson(this);
 }

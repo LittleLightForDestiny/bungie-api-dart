@@ -1,14 +1,40 @@
 import '../models/destiny_entity_search_result.dart';
-class DestinyEntitySearchResultResponse{
-    DestinyEntitySearchResult response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyEntitySearchResultResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_entity_search_result_response.g.dart';
+
+/** The results of a search for Destiny content. This will be improved on over time, I've been doing some experimenting to see what might be useful. */
+@JsonSerializable()
+class DestinyEntitySearchResultResponse{
+	
+	/** The results of a search for Destiny content. This will be improved on over time, I've been doing some experimenting to see what might be useful. */
+	@JsonKey(name:'Response')
+	DestinyEntitySearchResult response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyEntitySearchResultResponse({
 		DestinyEntitySearchResult this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyEntitySearchResultResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyEntitySearchResultResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyEntitySearchResultResponse(
-				data['Response'] != null ? DestinyEntitySearchResult.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyEntitySearchResultResponse.fromJson(Map<String, dynamic> json) => _$DestinyEntitySearchResultResponseFromJson(json);
+	
 
-	static List<DestinyEntitySearchResultResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyEntitySearchResultResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyEntitySearchResultResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyEntitySearchResultResponseToJson(this);
 }

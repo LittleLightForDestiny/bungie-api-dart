@@ -1,44 +1,23 @@
 import 'destiny_vendor_categories_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_vendor_categories_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyVendorCategoriesComponent{
 	
 	/** A vendor can have many categories of items that they sell. This component will return the category information for available items, as well as the index into those items in the user's sale item list.
 Note that, since both the category and items are indexes, this data is Content Version dependent. Be sure to check that your content is up to date before using this data. This is an unfortunate, but permanent, limitation of Vendor data. */
+	@JsonKey(name:'data')
 	DestinyVendorCategoriesComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyVendorCategoriesComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyVendorCategoriesComponent();
 
-	static SingleComponentResponseOfDestinyVendorCategoriesComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyVendorCategoriesComponent(
-				data['data'] != null ? DestinyVendorCategoriesComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyVendorCategoriesComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyVendorCategoriesComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyVendorCategoriesComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyVendorCategoriesComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyVendorCategoriesComponentToJson(this);
 }

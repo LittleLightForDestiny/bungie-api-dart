@@ -13,7 +13,7 @@ class Core{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return CEListOfGlobalAlertResponse.fromMap(response.mappedBody);
+                return CEListOfGlobalAlertResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

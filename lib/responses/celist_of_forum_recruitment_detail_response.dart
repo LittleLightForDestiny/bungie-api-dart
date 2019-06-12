@@ -1,14 +1,40 @@
 import '../models/forum_recruitment_detail.dart';
-class CEListOfForumRecruitmentDetailResponse{
-    List<ForumRecruitmentDetail> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    CEListOfForumRecruitmentDetailResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'celist_of_forum_recruitment_detail_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class CEListOfForumRecruitmentDetailResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<ForumRecruitmentDetail> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	CEListOfForumRecruitmentDetailResponse({
 		List<ForumRecruitmentDetail> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class CEListOfForumRecruitmentDetailResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static CEListOfForumRecruitmentDetailResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CEListOfForumRecruitmentDetailResponse(
-				data['Response'] != null ? ForumRecruitmentDetail.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory CEListOfForumRecruitmentDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfForumRecruitmentDetailResponseFromJson(json);
+	
 
-	static List<CEListOfForumRecruitmentDetailResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CEListOfForumRecruitmentDetailResponse> list = new List();
-    data.forEach((item) {
-      list.add(CEListOfForumRecruitmentDetailResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$CEListOfForumRecruitmentDetailResponseToJson(this);
 }

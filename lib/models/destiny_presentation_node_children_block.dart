@@ -2,50 +2,27 @@ import 'destiny_presentation_node_child_entry.dart';
 import 'destiny_presentation_node_collectible_child_entry.dart';
 import 'destiny_presentation_node_record_child_entry.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_presentation_node_children_block.g.dart';
+
 /** As/if presentation nodes begin to host more entities as children, these lists will be added to. One list property exists per type of entity that can be treated as a child of this presentation node, and each holds the identifier of the entity and any associated information needed to display the UI for that entity (if anything) */
+@JsonSerializable()
 class DestinyPresentationNodeChildrenBlock{
 	
 	/**  */
+	@JsonKey(name:'presentationNodes')
 	List<DestinyPresentationNodeChildEntry> presentationNodes;
 	
 	/**  */
+	@JsonKey(name:'collectibles')
 	List<DestinyPresentationNodeCollectibleChildEntry> collectibles;
 	
 	/**  */
+	@JsonKey(name:'records')
 	List<DestinyPresentationNodeRecordChildEntry> records;
-	DestinyPresentationNodeChildrenBlock(
-		this.presentationNodes,
-		this.collectibles,
-		this.records,
-	);
+	DestinyPresentationNodeChildrenBlock();
 
-	static DestinyPresentationNodeChildrenBlock fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPresentationNodeChildrenBlock(
-				data['presentationNodes'] != null ? DestinyPresentationNodeChildEntry.fromList(data['presentationNodes']) : null,
-				data['collectibles'] != null ? DestinyPresentationNodeCollectibleChildEntry.fromList(data['collectibles']) : null,
-				data['records'] != null ? DestinyPresentationNodeRecordChildEntry.fromList(data['records']) : null,
-		);
-	}
-
-	static List<DestinyPresentationNodeChildrenBlock> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPresentationNodeChildrenBlock> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPresentationNodeChildrenBlock.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['presentationNodes'] = this.presentationNodes != null? this.presentationNodes.map((item)=>item.toMap()).toList() : null;
-			data['collectibles'] = this.collectibles != null? this.collectibles.map((item)=>item.toMap()).toList() : null;
-			data['records'] = this.records != null? this.records.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeChildrenBlockFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPresentationNodeChildrenBlockToJson(this);
 }

@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_activity_loadout_requirement.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyActivityLoadoutRequirement{
 	
 	/**  */
+	@JsonKey(name:'equipmentSlotHash')
 	int equipmentSlotHash;
 	
 	/**  */
+	@JsonKey(name:'allowedEquippedItemHashes')
 	List<int> allowedEquippedItemHashes;
 	
 	/**  */
+	@JsonKey(name:'allowedWeaponSubTypes')
 	List<int> allowedWeaponSubTypes;
-	DestinyActivityLoadoutRequirement(
-		this.equipmentSlotHash,
-		this.allowedEquippedItemHashes,
-		this.allowedWeaponSubTypes,
-	);
+	DestinyActivityLoadoutRequirement();
 
-	static DestinyActivityLoadoutRequirement fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyActivityLoadoutRequirement(
-				data['equipmentSlotHash'],
-				data['allowedEquippedItemHashes'] != null ? data['allowedEquippedItemHashes']?.cast<int>() ?? null : null,
-				data['allowedWeaponSubTypes'] != null ? data['allowedWeaponSubTypes']?.cast<int>() ?? null : null,
-		);
-	}
-
-	static List<DestinyActivityLoadoutRequirement> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyActivityLoadoutRequirement> list = new List();
-    data.forEach((item) {
-      list.add(DestinyActivityLoadoutRequirement.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['equipmentSlotHash'] = this.equipmentSlotHash;
-			data['allowedEquippedItemHashes'] = this.allowedEquippedItemHashes;
-			data['allowedWeaponSubTypes'] = this.allowedWeaponSubTypes;
-		return data;
-	}
+	factory DestinyActivityLoadoutRequirement.fromJson(Map<String, dynamic> json) => _$DestinyActivityLoadoutRequirementFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityLoadoutRequirementToJson(this);
 }

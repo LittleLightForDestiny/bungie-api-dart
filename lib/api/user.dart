@@ -16,7 +16,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return GeneralUserResponse.fromMap(response.mappedBody);
+                return GeneralUserResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -33,7 +33,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ListOfGeneralUserResponse.fromMap(response.mappedBody);
+                return ListOfGeneralUserResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -48,7 +48,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return ListOfUserThemeResponse.fromMap(response.mappedBody);
+                return ListOfUserThemeResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -65,7 +65,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return UserMembershipDataResponse.fromMap(response.mappedBody);
+                return UserMembershipDataResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -80,7 +80,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return UserMembershipDataResponse.fromMap(response.mappedBody);
+                return UserMembershipDataResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });
@@ -96,7 +96,7 @@ class User{
         config.bodyContentType = null;
         return client.request(config).then((response){
             if(response.statusCode == 200){
-                return CEListOfPublicPartnershipDetailResponse.fromMap(response.mappedBody);
+                return CEListOfPublicPartnershipDetailResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

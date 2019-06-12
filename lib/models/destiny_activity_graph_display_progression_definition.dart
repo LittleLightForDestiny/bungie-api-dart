@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_activity_graph_display_progression_definition.g.dart';
+
 /** When a Graph needs to show active Progressions, this defines those objectives as well as an identifier. */
+@JsonSerializable()
 class DestinyActivityGraphDisplayProgressionDefinition{
 	
 	/**  */
+	@JsonKey(name:'id')
 	int id;
 	
 	/**  */
+	@JsonKey(name:'progressionHash')
 	int progressionHash;
-	DestinyActivityGraphDisplayProgressionDefinition(
-		this.id,
-		this.progressionHash,
-	);
+	DestinyActivityGraphDisplayProgressionDefinition();
 
-	static DestinyActivityGraphDisplayProgressionDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyActivityGraphDisplayProgressionDefinition(
-				data['id'],
-				data['progressionHash'],
-		);
-	}
-
-	static List<DestinyActivityGraphDisplayProgressionDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyActivityGraphDisplayProgressionDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyActivityGraphDisplayProgressionDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['id'] = this.id;
-			data['progressionHash'] = this.progressionHash;
-		return data;
-	}
+	factory DestinyActivityGraphDisplayProgressionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDisplayProgressionDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphDisplayProgressionDefinitionToJson(this);
 }

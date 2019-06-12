@@ -1,64 +1,37 @@
 import 'destiny_display_properties_definition.dart';
 import 'destiny_report_reason_definition.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_report_reason_category_definition.g.dart';
+
 /** If you're going to report someone for a Terms of Service violation, you need to choose a category and reason for the report. This definition holds both the categories and the reasons within those categories, for simplicity and my own laziness' sake.
 Note tha this means that, to refer to a Reason by reasonHash, you need a combination of the reasonHash *and* the associated ReasonCategory's hash: there are some reasons defined under multiple categories. */
+@JsonSerializable()
 class DestinyReportReasonCategoryDefinition{
 	
 	/** Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information. */
+	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
 	/** The specific reasons for the report under this category. */
+	@JsonKey(name:'reasons')
 	Map<String, DestinyReportReasonDefinition> reasons;
 	
 	/** The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 When entities refer to each other in Destiny content, it is this hash that they are referring to. */
+	@JsonKey(name:'hash')
 	int hash;
 	
 	/** The index of the entity as it was found in the investment tables. */
+	@JsonKey(name:'index')
 	int index;
 	
 	/** If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
+	@JsonKey(name:'redacted')
 	bool redacted;
-	DestinyReportReasonCategoryDefinition(
-		this.displayProperties,
-		this.reasons,
-		this.hash,
-		this.index,
-		this.redacted,
-	);
+	DestinyReportReasonCategoryDefinition();
 
-	static DestinyReportReasonCategoryDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyReportReasonCategoryDefinition(
-				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
-				data['reasons'] != null ? Map<String, DestinyReportReasonDefinition>.from(data['reasons'].map((k, v)=>MapEntry(k, DestinyReportReasonDefinition.fromMap(v)))) : null,
-				data['hash'],
-				data['index'],
-				data['redacted'],
-		);
-	}
-
-	static List<DestinyReportReasonCategoryDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyReportReasonCategoryDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyReportReasonCategoryDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
-			data['reasons'] = this.reasons != null? this.reasons.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['hash'] = this.hash;
-			data['index'] = this.index;
-			data['redacted'] = this.redacted;
-		return data;
-	}
+	factory DestinyReportReasonCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyReportReasonCategoryDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyReportReasonCategoryDefinitionToJson(this);
 }

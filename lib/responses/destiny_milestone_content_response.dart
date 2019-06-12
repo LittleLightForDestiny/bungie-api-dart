@@ -1,14 +1,40 @@
 import '../models/destiny_milestone_content.dart';
-class DestinyMilestoneContentResponse{
-    DestinyMilestoneContent response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyMilestoneContentResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_milestone_content_response.g.dart';
+
+/** Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint. */
+@JsonSerializable()
+class DestinyMilestoneContentResponse{
+	
+	/** Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint. */
+	@JsonKey(name:'Response')
+	DestinyMilestoneContent response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyMilestoneContentResponse({
 		DestinyMilestoneContent this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyMilestoneContentResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyMilestoneContentResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyMilestoneContentResponse(
-				data['Response'] != null ? DestinyMilestoneContent.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyMilestoneContentResponse.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneContentResponseFromJson(json);
+	
 
-	static List<DestinyMilestoneContentResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyMilestoneContentResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyMilestoneContentResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyMilestoneContentResponseToJson(this);
 }

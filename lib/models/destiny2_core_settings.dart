@@ -1,84 +1,49 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny2_core_settings.g.dart';
+
 /**  */
+@JsonSerializable()
 class Destiny2CoreSettings{
 	
 	/**  */
+	@JsonKey(name:'collectionRootNode')
 	int collectionRootNode;
 	
 	/**  */
+	@JsonKey(name:'badgesRootNode')
 	int badgesRootNode;
 	
 	/**  */
+	@JsonKey(name:'recordsRootNode')
 	int recordsRootNode;
 	
 	/**  */
+	@JsonKey(name:'medalsRootNode')
 	int medalsRootNode;
 	
 	/**  */
+	@JsonKey(name:'currentRankProgressionHashes')
 	List<int> currentRankProgressionHashes;
 	
 	/**  */
+	@JsonKey(name:'undiscoveredCollectibleImage')
 	String undiscoveredCollectibleImage;
 	
 	/**  */
+	@JsonKey(name:'ammoTypeHeavyIcon')
 	String ammoTypeHeavyIcon;
 	
 	/**  */
+	@JsonKey(name:'ammoTypeSpecialIcon')
 	String ammoTypeSpecialIcon;
 	
 	/**  */
+	@JsonKey(name:'ammoTypePrimaryIcon')
 	String ammoTypePrimaryIcon;
-	Destiny2CoreSettings(
-		this.collectionRootNode,
-		this.badgesRootNode,
-		this.recordsRootNode,
-		this.medalsRootNode,
-		this.currentRankProgressionHashes,
-		this.undiscoveredCollectibleImage,
-		this.ammoTypeHeavyIcon,
-		this.ammoTypeSpecialIcon,
-		this.ammoTypePrimaryIcon,
-	);
+	Destiny2CoreSettings();
 
-	static Destiny2CoreSettings fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new Destiny2CoreSettings(
-				data['collectionRootNode'],
-				data['badgesRootNode'],
-				data['recordsRootNode'],
-				data['medalsRootNode'],
-				data['currentRankProgressionHashes'] != null ? data['currentRankProgressionHashes']?.cast<int>() ?? null : null,
-				data['undiscoveredCollectibleImage'],
-				data['ammoTypeHeavyIcon'],
-				data['ammoTypeSpecialIcon'],
-				data['ammoTypePrimaryIcon'],
-		);
-	}
-
-	static List<Destiny2CoreSettings> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<Destiny2CoreSettings> list = new List();
-    data.forEach((item) {
-      list.add(Destiny2CoreSettings.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['collectionRootNode'] = this.collectionRootNode;
-			data['badgesRootNode'] = this.badgesRootNode;
-			data['recordsRootNode'] = this.recordsRootNode;
-			data['medalsRootNode'] = this.medalsRootNode;
-			data['currentRankProgressionHashes'] = this.currentRankProgressionHashes;
-			data['undiscoveredCollectibleImage'] = this.undiscoveredCollectibleImage;
-			data['ammoTypeHeavyIcon'] = this.ammoTypeHeavyIcon;
-			data['ammoTypeSpecialIcon'] = this.ammoTypeSpecialIcon;
-			data['ammoTypePrimaryIcon'] = this.ammoTypePrimaryIcon;
-		return data;
-	}
+	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) => _$Destiny2CoreSettingsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$Destiny2CoreSettingsToJson(this);
 }

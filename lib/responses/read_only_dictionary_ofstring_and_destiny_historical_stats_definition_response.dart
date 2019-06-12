@@ -1,14 +1,40 @@
 import '../models/destiny_historical_stats_definition.dart';
-class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
-    Map<String, DestinyHistoricalStatsDefinition> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'read_only_dictionary_ofstring_and_destiny_historical_stats_definition_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	Map<String, DestinyHistoricalStatsDefinition> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse({
 		Map<String, DestinyHistoricalStatsDefinition> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse(
-				data['Response'] != null ? Map<String, DestinyHistoricalStatsDefinition>.from(data['Response'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsDefinition.fromMap(v)))) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(Map<String, dynamic> json) => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseFromJson(json);
+	
 
-	static List<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> list = new List();
-    data.forEach((item) {
-      list.add(ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseToJson(this);
 }

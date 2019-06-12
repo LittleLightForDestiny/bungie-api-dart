@@ -1,43 +1,22 @@
 import 'public_destiny_vendor_sale_item_set_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'dictionary_component_response_ofuint32_and_public_destiny_vendor_sale_item_set_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	Map<String, PublicDestinyVendorSaleItemSetComponent> data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent(
-		this.data,
-		this.privacy,
-	);
+	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent();
 
-	static DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent(
-				data['data'] != null ? Map<String, PublicDestinyVendorSaleItemSetComponent>.from(data['data'].map((k, v)=>MapEntry(k, PublicDestinyVendorSaleItemSetComponent.fromMap(v)))) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent> list = new List();
-    data.forEach((item) {
-      list.add(DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponentToJson(this);
 }

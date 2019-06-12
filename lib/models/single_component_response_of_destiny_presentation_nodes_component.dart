@@ -1,43 +1,22 @@
 import 'destiny_presentation_nodes_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'single_component_response_of_destiny_presentation_nodes_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class SingleComponentResponseOfDestinyPresentationNodesComponent{
 	
 	/**  */
+	@JsonKey(name:'data')
 	DestinyPresentationNodesComponent data;
 	
 	/**  */
+	@JsonKey(name:'privacy')
 	int privacy;
-	SingleComponentResponseOfDestinyPresentationNodesComponent(
-		this.data,
-		this.privacy,
-	);
+	SingleComponentResponseOfDestinyPresentationNodesComponent();
 
-	static SingleComponentResponseOfDestinyPresentationNodesComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new SingleComponentResponseOfDestinyPresentationNodesComponent(
-				data['data'] != null ? DestinyPresentationNodesComponent.fromMap(data['data']) : null,
-				data['privacy'],
-		);
-	}
-
-	static List<SingleComponentResponseOfDestinyPresentationNodesComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<SingleComponentResponseOfDestinyPresentationNodesComponent> list = new List();
-    data.forEach((item) {
-      list.add(SingleComponentResponseOfDestinyPresentationNodesComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['data'] = this.data != null? this.data.toMap() : null;
-			data['privacy'] = this.privacy;
-		return data;
-	}
+	factory SingleComponentResponseOfDestinyPresentationNodesComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyPresentationNodesComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyPresentationNodesComponentToJson(this);
 }

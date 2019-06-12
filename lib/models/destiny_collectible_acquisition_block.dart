@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_collectible_acquisition_block.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyCollectibleAcquisitionBlock{
 	
 	/**  */
+	@JsonKey(name:'acquireMaterialRequirementHash')
 	int acquireMaterialRequirementHash;
 	
 	/**  */
+	@JsonKey(name:'acquireTimestampUnlockValueHash')
 	int acquireTimestampUnlockValueHash;
-	DestinyCollectibleAcquisitionBlock(
-		this.acquireMaterialRequirementHash,
-		this.acquireTimestampUnlockValueHash,
-	);
+	DestinyCollectibleAcquisitionBlock();
 
-	static DestinyCollectibleAcquisitionBlock fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCollectibleAcquisitionBlock(
-				data['acquireMaterialRequirementHash'],
-				data['acquireTimestampUnlockValueHash'],
-		);
-	}
-
-	static List<DestinyCollectibleAcquisitionBlock> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCollectibleAcquisitionBlock> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCollectibleAcquisitionBlock.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['acquireMaterialRequirementHash'] = this.acquireMaterialRequirementHash;
-			data['acquireTimestampUnlockValueHash'] = this.acquireTimestampUnlockValueHash;
-		return data;
-	}
+	factory DestinyCollectibleAcquisitionBlock.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleAcquisitionBlockFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyCollectibleAcquisitionBlockToJson(this);
 }

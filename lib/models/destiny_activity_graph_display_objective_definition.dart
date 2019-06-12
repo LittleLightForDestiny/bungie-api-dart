@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_activity_graph_display_objective_definition.g.dart';
+
 /** When a Graph needs to show active Objectives, this defines those objectives as well as an identifier. */
+@JsonSerializable()
 class DestinyActivityGraphDisplayObjectiveDefinition{
 	
 	/** $NOTE $amola 2017-01-19 This field is apparently something that CUI uses to manually wire up objectives to display info. I am unsure how it works. */
+	@JsonKey(name:'id')
 	int id;
 	
 	/** The objective being shown on the map. */
+	@JsonKey(name:'objectiveHash')
 	int objectiveHash;
-	DestinyActivityGraphDisplayObjectiveDefinition(
-		this.id,
-		this.objectiveHash,
-	);
+	DestinyActivityGraphDisplayObjectiveDefinition();
 
-	static DestinyActivityGraphDisplayObjectiveDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyActivityGraphDisplayObjectiveDefinition(
-				data['id'],
-				data['objectiveHash'],
-		);
-	}
-
-	static List<DestinyActivityGraphDisplayObjectiveDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyActivityGraphDisplayObjectiveDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyActivityGraphDisplayObjectiveDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['id'] = this.id;
-			data['objectiveHash'] = this.objectiveHash;
-		return data;
-	}
+	factory DestinyActivityGraphDisplayObjectiveDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDisplayObjectiveDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphDisplayObjectiveDefinitionToJson(this);
 }

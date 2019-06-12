@@ -1,277 +1,178 @@
 import 'content_type_default_value.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'content_type_property.g.dart';
+
 /**  */
+@JsonSerializable()
 class ContentTypeProperty{
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'readableName')
 	String readableName;
 	
 	/**  */
+	@JsonKey(name:'value')
 	String value;
 	
 	/**  */
+	@JsonKey(name:'propertyDescription')
 	String propertyDescription;
 	
 	/**  */
+	@JsonKey(name:'localizable')
 	bool localizable;
 	
 	/**  */
+	@JsonKey(name:'fallback')
 	bool fallback;
 	
 	/**  */
+	@JsonKey(name:'enabled')
 	bool enabled;
 	
 	/**  */
+	@JsonKey(name:'order')
 	int order;
 	
 	/**  */
+	@JsonKey(name:'visible')
 	bool visible;
 	
 	/**  */
+	@JsonKey(name:'isTitle')
 	bool isTitle;
 	
 	/**  */
+	@JsonKey(name:'required')
 	bool required;
 	
 	/**  */
+	@JsonKey(name:'maxLength')
 	int maxLength;
 	
 	/**  */
+	@JsonKey(name:'maxByteLength')
 	int maxByteLength;
 	
 	/**  */
+	@JsonKey(name:'maxFileSize')
 	int maxFileSize;
 	
 	/**  */
+	@JsonKey(name:'regexp')
 	String regexp;
 	
 	/**  */
+	@JsonKey(name:'validateAs')
 	String validateAs;
 	
 	/**  */
+	@JsonKey(name:'rssAttribute')
 	String rssAttribute;
 	
 	/**  */
+	@JsonKey(name:'visibleDependency')
 	String visibleDependency;
 	
 	/**  */
+	@JsonKey(name:'visibleOn')
 	String visibleOn;
 	
 	/**  */
+	@JsonKey(name:'datatype')
 	int datatype;
 	
 	/**  */
+	@JsonKey(name:'attributes')
 	Map<String, String> attributes;
 	
 	/**  */
+	@JsonKey(name:'childProperties')
 	List<ContentTypeProperty> childProperties;
 	
 	/**  */
+	@JsonKey(name:'contentTypeAllowed')
 	String contentTypeAllowed;
 	
 	/**  */
+	@JsonKey(name:'bindToProperty')
 	String bindToProperty;
 	
 	/**  */
+	@JsonKey(name:'boundRegex')
 	String boundRegex;
 	
 	/**  */
+	@JsonKey(name:'representationSelection')
 	Map<String, String> representationSelection;
 	
 	/**  */
+	@JsonKey(name:'defaultValues')
 	List<ContentTypeDefaultValue> defaultValues;
 	
 	/**  */
+	@JsonKey(name:'isExternalAllowed')
 	bool isExternalAllowed;
 	
 	/**  */
+	@JsonKey(name:'propertySection')
 	String propertySection;
 	
 	/**  */
+	@JsonKey(name:'weight')
 	int weight;
 	
 	/**  */
+	@JsonKey(name:'entitytype')
 	String entitytype;
 	
 	/**  */
+	@JsonKey(name:'isCombo')
 	bool isCombo;
 	
 	/**  */
+	@JsonKey(name:'suppressProperty')
 	bool suppressProperty;
 	
 	/**  */
+	@JsonKey(name:'legalContentTypes')
 	List<String> legalContentTypes;
 	
 	/**  */
+	@JsonKey(name:'representationValidationString')
 	String representationValidationString;
 	
 	/**  */
+	@JsonKey(name:'minWidth')
 	int minWidth;
 	
 	/**  */
+	@JsonKey(name:'maxWidth')
 	int maxWidth;
 	
 	/**  */
+	@JsonKey(name:'minHeight')
 	int minHeight;
 	
 	/**  */
+	@JsonKey(name:'maxHeight')
 	int maxHeight;
 	
 	/**  */
+	@JsonKey(name:'isVideo')
 	bool isVideo;
 	
 	/**  */
+	@JsonKey(name:'isImage')
 	bool isImage;
-	ContentTypeProperty(
-		this.name,
-		this.readableName,
-		this.value,
-		this.propertyDescription,
-		this.localizable,
-		this.fallback,
-		this.enabled,
-		this.order,
-		this.visible,
-		this.isTitle,
-		this.required,
-		this.maxLength,
-		this.maxByteLength,
-		this.maxFileSize,
-		this.regexp,
-		this.validateAs,
-		this.rssAttribute,
-		this.visibleDependency,
-		this.visibleOn,
-		this.datatype,
-		this.attributes,
-		this.childProperties,
-		this.contentTypeAllowed,
-		this.bindToProperty,
-		this.boundRegex,
-		this.representationSelection,
-		this.defaultValues,
-		this.isExternalAllowed,
-		this.propertySection,
-		this.weight,
-		this.entitytype,
-		this.isCombo,
-		this.suppressProperty,
-		this.legalContentTypes,
-		this.representationValidationString,
-		this.minWidth,
-		this.maxWidth,
-		this.minHeight,
-		this.maxHeight,
-		this.isVideo,
-		this.isImage,
-	);
+	ContentTypeProperty();
 
-	static ContentTypeProperty fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new ContentTypeProperty(
-				data['name'],
-				data['readableName'],
-				data['value'],
-				data['propertyDescription'],
-				data['localizable'],
-				data['fallback'],
-				data['enabled'],
-				data['order'],
-				data['visible'],
-				data['isTitle'],
-				data['required'],
-				data['maxLength'],
-				data['maxByteLength'],
-				data['maxFileSize'],
-				data['regexp'],
-				data['validateAs'],
-				data['rssAttribute'],
-				data['visibleDependency'],
-				data['visibleOn'],
-				data['datatype'],
-				data['attributes'] != null ? Map<String, String>.from(data['attributes'].map((k, v)=>MapEntry(k, v))) : null,
-				data['childProperties'] != null ? ContentTypeProperty.fromList(data['childProperties']) : null,
-				data['contentTypeAllowed'],
-				data['bindToProperty'],
-				data['boundRegex'],
-				data['representationSelection'] != null ? Map<String, String>.from(data['representationSelection'].map((k, v)=>MapEntry(k, v))) : null,
-				data['defaultValues'] != null ? ContentTypeDefaultValue.fromList(data['defaultValues']) : null,
-				data['isExternalAllowed'],
-				data['propertySection'],
-				data['weight'],
-				data['entitytype'],
-				data['isCombo'],
-				data['suppressProperty'],
-				data['legalContentTypes'] != null ? data['legalContentTypes']?.cast<String>() ?? null : null,
-				data['representationValidationString'],
-				data['minWidth'],
-				data['maxWidth'],
-				data['minHeight'],
-				data['maxHeight'],
-				data['isVideo'],
-				data['isImage'],
-		);
-	}
-
-	static List<ContentTypeProperty> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<ContentTypeProperty> list = new List();
-    data.forEach((item) {
-      list.add(ContentTypeProperty.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['name'] = this.name;
-			data['readableName'] = this.readableName;
-			data['value'] = this.value;
-			data['propertyDescription'] = this.propertyDescription;
-			data['localizable'] = this.localizable;
-			data['fallback'] = this.fallback;
-			data['enabled'] = this.enabled;
-			data['order'] = this.order;
-			data['visible'] = this.visible;
-			data['isTitle'] = this.isTitle;
-			data['required'] = this.required;
-			data['maxLength'] = this.maxLength;
-			data['maxByteLength'] = this.maxByteLength;
-			data['maxFileSize'] = this.maxFileSize;
-			data['regexp'] = this.regexp;
-			data['validateAs'] = this.validateAs;
-			data['rssAttribute'] = this.rssAttribute;
-			data['visibleDependency'] = this.visibleDependency;
-			data['visibleOn'] = this.visibleOn;
-			data['datatype'] = this.datatype;
-			data['attributes'] = this.attributes != null? this.attributes.map((i, v)=>MapEntry(i, v)) : null;
-			data['childProperties'] = this.childProperties != null? this.childProperties.map((item)=>item.toMap()).toList() : null;
-			data['contentTypeAllowed'] = this.contentTypeAllowed;
-			data['bindToProperty'] = this.bindToProperty;
-			data['boundRegex'] = this.boundRegex;
-			data['representationSelection'] = this.representationSelection != null? this.representationSelection.map((i, v)=>MapEntry(i, v)) : null;
-			data['defaultValues'] = this.defaultValues != null? this.defaultValues.map((item)=>item.toMap()).toList() : null;
-			data['isExternalAllowed'] = this.isExternalAllowed;
-			data['propertySection'] = this.propertySection;
-			data['weight'] = this.weight;
-			data['entitytype'] = this.entitytype;
-			data['isCombo'] = this.isCombo;
-			data['suppressProperty'] = this.suppressProperty;
-			data['legalContentTypes'] = this.legalContentTypes;
-			data['representationValidationString'] = this.representationValidationString;
-			data['minWidth'] = this.minWidth;
-			data['maxWidth'] = this.maxWidth;
-			data['minHeight'] = this.minHeight;
-			data['maxHeight'] = this.maxHeight;
-			data['isVideo'] = this.isVideo;
-			data['isImage'] = this.isImage;
-		return data;
-	}
+	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) => _$ContentTypePropertyFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$ContentTypePropertyToJson(this);
 }

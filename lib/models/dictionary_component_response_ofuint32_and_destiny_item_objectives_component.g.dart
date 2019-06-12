@@ -1,0 +1,28 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent
+    _$DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponentFromJson(
+        Map<String, dynamic> json) {
+  return DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent()
+    ..data = (json['data'] as Map<String, dynamic>)?.map(
+      (k, e) => MapEntry(
+          k,
+          e == null
+              ? null
+              : DestinyItemObjectivesComponent.fromJson(
+                  e as Map<String, dynamic>)),
+    )
+    ..privacy = json['privacy'] as int;
+}
+
+Map<String, dynamic>
+    _$DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponentToJson(
+            DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent
+                instance) =>
+        <String, dynamic>{'data': instance.data, 'privacy': instance.privacy};

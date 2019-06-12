@@ -1,37 +1,18 @@
 import 'content_item_public_contract.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'trending_entry_support_article.g.dart';
+
 /**  */
+@JsonSerializable()
 class TrendingEntrySupportArticle{
 	
 	/**  */
+	@JsonKey(name:'article')
 	ContentItemPublicContract article;
-	TrendingEntrySupportArticle(
-		this.article,
-	);
+	TrendingEntrySupportArticle();
 
-	static TrendingEntrySupportArticle fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TrendingEntrySupportArticle(
-				data['article'] != null ? ContentItemPublicContract.fromMap(data['article']) : null,
-		);
-	}
-
-	static List<TrendingEntrySupportArticle> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TrendingEntrySupportArticle> list = new List();
-    data.forEach((item) {
-      list.add(TrendingEntrySupportArticle.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['article'] = this.article != null? this.article.toMap() : null;
-		return data;
-	}
+	factory TrendingEntrySupportArticle.fromJson(Map<String, dynamic> json) => _$TrendingEntrySupportArticleFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TrendingEntrySupportArticleToJson(this);
 }

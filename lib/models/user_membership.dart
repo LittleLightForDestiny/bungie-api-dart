@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'user_membership.g.dart';
+
 /** Very basic info about a user as returned by the Account server. */
+@JsonSerializable()
 class UserMembership{
 	
 	/** Type of the membership. */
+	@JsonKey(name:'membershipType')
 	int membershipType;
 	
 	/** Membership ID as they user is known in the Accounts service */
+	@JsonKey(name:'membershipId')
 	String membershipId;
 	
 	/** Display Name the player has chosen for themselves. The display name is optional when the data type is used as input to a platform API. */
+	@JsonKey(name:'displayName')
 	String displayName;
-	UserMembership(
-		this.membershipType,
-		this.membershipId,
-		this.displayName,
-	);
+	UserMembership();
 
-	static UserMembership fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new UserMembership(
-				data['membershipType'],
-				data['membershipId'],
-				data['displayName'],
-		);
-	}
-
-	static List<UserMembership> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<UserMembership> list = new List();
-    data.forEach((item) {
-      list.add(UserMembership.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['membershipType'] = this.membershipType;
-			data['membershipId'] = this.membershipId;
-			data['displayName'] = this.displayName;
-		return data;
-	}
+	factory UserMembership.fromJson(Map<String, dynamic> json) => _$UserMembershipFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$UserMembershipToJson(this);
 }

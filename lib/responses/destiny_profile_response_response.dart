@@ -1,14 +1,40 @@
 import '../models/destiny_profile_response.dart';
-class DestinyProfileResponseResponse{
-    DestinyProfileResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyProfileResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_profile_response_response.g.dart';
+
+/** The response for GetDestinyProfile, with components for character and item-level data. */
+@JsonSerializable()
+class DestinyProfileResponseResponse{
+	
+	/** The response for GetDestinyProfile, with components for character and item-level data. */
+	@JsonKey(name:'Response')
+	DestinyProfileResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyProfileResponseResponse({
 		DestinyProfileResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyProfileResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyProfileResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyProfileResponseResponse(
-				data['Response'] != null ? DestinyProfileResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyProfileResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyProfileResponseResponseFromJson(json);
+	
 
-	static List<DestinyProfileResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyProfileResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyProfileResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyProfileResponseResponseToJson(this);
 }

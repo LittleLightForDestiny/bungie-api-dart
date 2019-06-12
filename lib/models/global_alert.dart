@@ -1,73 +1,42 @@
 import 'stream_info.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'global_alert.g.dart';
+
 /**  */
+@JsonSerializable()
 class GlobalAlert{
 	
 	/**  */
+	@JsonKey(name:'AlertKey')
 	String alertKey;
 	
 	/**  */
+	@JsonKey(name:'AlertHtml')
 	String alertHtml;
 	
 	/**  */
+	@JsonKey(name:'AlertTimestamp')
 	String alertTimestamp;
 	
 	/**  */
+	@JsonKey(name:'AlertLink')
 	String alertLink;
 	
 	/**  */
+	@JsonKey(name:'AlertLevel')
 	int alertLevel;
 	
 	/**  */
+	@JsonKey(name:'AlertType')
 	int alertType;
 	
 	/**  */
+	@JsonKey(name:'StreamInfo')
 	StreamInfo streamInfo;
-	GlobalAlert(
-		this.alertKey,
-		this.alertHtml,
-		this.alertTimestamp,
-		this.alertLink,
-		this.alertLevel,
-		this.alertType,
-		this.streamInfo,
-	);
+	GlobalAlert();
 
-	static GlobalAlert fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GlobalAlert(
-				data['AlertKey'],
-				data['AlertHtml'],
-				data['AlertTimestamp'],
-				data['AlertLink'],
-				data['AlertLevel'],
-				data['AlertType'],
-				data['StreamInfo'] != null ? StreamInfo.fromMap(data['StreamInfo']) : null,
-		);
-	}
-
-	static List<GlobalAlert> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GlobalAlert> list = new List();
-    data.forEach((item) {
-      list.add(GlobalAlert.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['AlertKey'] = this.alertKey;
-			data['AlertHtml'] = this.alertHtml;
-			data['AlertTimestamp'] = this.alertTimestamp;
-			data['AlertLink'] = this.alertLink;
-			data['AlertLevel'] = this.alertLevel;
-			data['AlertType'] = this.alertType;
-			data['StreamInfo'] = this.streamInfo != null? this.streamInfo.toMap() : null;
-		return data;
-	}
+	factory GlobalAlert.fromJson(Map<String, dynamic> json) => _$GlobalAlertFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GlobalAlertToJson(this);
 }

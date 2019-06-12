@@ -1,14 +1,40 @@
 import '../models/global_alert.dart';
-class CEListOfGlobalAlertResponse{
-    List<GlobalAlert> response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    CEListOfGlobalAlertResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'celist_of_global_alert_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class CEListOfGlobalAlertResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	List<GlobalAlert> response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	CEListOfGlobalAlertResponse({
 		List<GlobalAlert> this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class CEListOfGlobalAlertResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static CEListOfGlobalAlertResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new CEListOfGlobalAlertResponse(
-				data['Response'] != null ? GlobalAlert.fromList(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory CEListOfGlobalAlertResponse.fromJson(Map<String, dynamic> json) => _$CEListOfGlobalAlertResponseFromJson(json);
+	
 
-	static List<CEListOfGlobalAlertResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<CEListOfGlobalAlertResponse> list = new List();
-    data.forEach((item) {
-      list.add(CEListOfGlobalAlertResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$CEListOfGlobalAlertResponseToJson(this);
 }

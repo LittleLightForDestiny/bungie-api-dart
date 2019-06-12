@@ -1,43 +1,22 @@
 import 'destiny_record_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_character_records_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyCharacterRecordsComponent{
 	
 	/**  */
+	@JsonKey(name:'featuredRecordHashes')
 	List<int> featuredRecordHashes;
 	
 	/**  */
+	@JsonKey(name:'records')
 	Map<String, DestinyRecordComponent> records;
-	DestinyCharacterRecordsComponent(
-		this.featuredRecordHashes,
-		this.records,
-	);
+	DestinyCharacterRecordsComponent();
 
-	static DestinyCharacterRecordsComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCharacterRecordsComponent(
-				data['featuredRecordHashes'] != null ? data['featuredRecordHashes']?.cast<int>() ?? null : null,
-				data['records'] != null ? Map<String, DestinyRecordComponent>.from(data['records'].map((k, v)=>MapEntry(k, DestinyRecordComponent.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyCharacterRecordsComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCharacterRecordsComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCharacterRecordsComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['featuredRecordHashes'] = this.featuredRecordHashes;
-			data['records'] = this.records != null? this.records.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterRecordsComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterRecordsComponentToJson(this);
 }

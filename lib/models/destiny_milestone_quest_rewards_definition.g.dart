@@ -1,0 +1,23 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'destiny_milestone_quest_rewards_definition.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyMilestoneQuestRewardsDefinition
+    _$DestinyMilestoneQuestRewardsDefinitionFromJson(
+        Map<String, dynamic> json) {
+  return DestinyMilestoneQuestRewardsDefinition()
+    ..items = (json['items'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyMilestoneQuestRewardItem.fromJson(
+                e as Map<String, dynamic>))
+        ?.toList();
+}
+
+Map<String, dynamic> _$DestinyMilestoneQuestRewardsDefinitionToJson(
+        DestinyMilestoneQuestRewardsDefinition instance) =>
+    <String, dynamic>{'items': instance.items};

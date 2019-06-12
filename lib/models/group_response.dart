@@ -2,80 +2,47 @@ import 'group_v2.dart';
 import 'group_member.dart';
 import 'group_potential_member.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupResponse{
 	
 	/**  */
+	@JsonKey(name:'detail')
 	GroupV2 detail;
 	
 	/**  */
+	@JsonKey(name:'founder')
 	GroupMember founder;
 	
 	/**  */
+	@JsonKey(name:'alliedIds')
 	List<String> alliedIds;
 	
 	/**  */
+	@JsonKey(name:'parentGroup')
 	GroupV2 parentGroup;
 	
 	/**  */
+	@JsonKey(name:'allianceStatus')
 	int allianceStatus;
 	
 	/**  */
+	@JsonKey(name:'groupJoinInviteCount')
 	int groupJoinInviteCount;
 	
 	/** This property will be populated if the authenticated user is a member of the group. Note that because of account linking, a user can sometimes be part of a clan more than once. As such, this returns the highest member type available. */
+	@JsonKey(name:'currentUserMemberMap')
 	Map<String, GroupMember> currentUserMemberMap;
 	
 	/** This property will be populated if the authenticated user is an applicant or has an outstanding invitation to join. Note that because of account linking, a user can sometimes be part of a clan more than once. */
+	@JsonKey(name:'currentUserPotentialMemberMap')
 	Map<String, GroupPotentialMember> currentUserPotentialMemberMap;
-	GroupResponse(
-		this.detail,
-		this.founder,
-		this.alliedIds,
-		this.parentGroup,
-		this.allianceStatus,
-		this.groupJoinInviteCount,
-		this.currentUserMemberMap,
-		this.currentUserPotentialMemberMap,
-	);
+	GroupResponse();
 
-	static GroupResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupResponse(
-				data['detail'] != null ? GroupV2.fromMap(data['detail']) : null,
-				data['founder'] != null ? GroupMember.fromMap(data['founder']) : null,
-				data['alliedIds'] != null ? data['alliedIds']?.cast<String>() ?? null : null,
-				data['parentGroup'] != null ? GroupV2.fromMap(data['parentGroup']) : null,
-				data['allianceStatus'],
-				data['groupJoinInviteCount'],
-				data['currentUserMemberMap'] != null ? Map<String, GroupMember>.from(data['currentUserMemberMap'].map((k, v)=>MapEntry(k, GroupMember.fromMap(v)))) : null,
-				data['currentUserPotentialMemberMap'] != null ? Map<String, GroupPotentialMember>.from(data['currentUserPotentialMemberMap'].map((k, v)=>MapEntry(k, GroupPotentialMember.fromMap(v)))) : null,
-		);
-	}
-
-	static List<GroupResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupResponse> list = new List();
-    data.forEach((item) {
-      list.add(GroupResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['detail'] = this.detail != null? this.detail.toMap() : null;
-			data['founder'] = this.founder != null? this.founder.toMap() : null;
-			data['alliedIds'] = this.alliedIds;
-			data['parentGroup'] = this.parentGroup != null? this.parentGroup.toMap() : null;
-			data['allianceStatus'] = this.allianceStatus;
-			data['groupJoinInviteCount'] = this.groupJoinInviteCount;
-			data['currentUserMemberMap'] = this.currentUserMemberMap != null? this.currentUserMemberMap.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['currentUserPotentialMemberMap'] = this.currentUserPotentialMemberMap != null? this.currentUserPotentialMemberMap.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory GroupResponse.fromJson(Map<String, dynamic> json) => _$GroupResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupResponseToJson(this);
 }

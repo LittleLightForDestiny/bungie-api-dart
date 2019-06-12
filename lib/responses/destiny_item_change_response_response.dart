@@ -1,14 +1,40 @@
 import '../models/destiny_item_change_response.dart';
-class DestinyItemChangeResponseResponse{
-    DestinyItemChangeResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyItemChangeResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_item_change_response_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class DestinyItemChangeResponseResponse{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	DestinyItemChangeResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyItemChangeResponseResponse({
 		DestinyItemChangeResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyItemChangeResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyItemChangeResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyItemChangeResponseResponse(
-				data['Response'] != null ? DestinyItemChangeResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyItemChangeResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemChangeResponseResponseFromJson(json);
+	
 
-	static List<DestinyItemChangeResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyItemChangeResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyItemChangeResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyItemChangeResponseResponseToJson(this);
 }

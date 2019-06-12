@@ -1,61 +1,34 @@
 import 'destiny_historical_stats_value_pair.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_stats_value.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalStatsValue{
 	
 	/** Unique ID for this stat */
+	@JsonKey(name:'statId')
 	String statId;
 	
 	/** Basic stat value. */
+	@JsonKey(name:'basic')
 	DestinyHistoricalStatsValuePair basic;
 	
 	/** Per game average for the statistic, if applicable */
+	@JsonKey(name:'pga')
 	DestinyHistoricalStatsValuePair pga;
 	
 	/** Weighted value of the stat if a weight greater than 1 has been assigned. */
+	@JsonKey(name:'weighted')
 	DestinyHistoricalStatsValuePair weighted;
 	
 	/** When a stat represents the best, most, longest, fastest or some other personal best, the actual activity ID where that personal best was established is available on this property. */
+	@JsonKey(name:'activityId')
 	String activityId;
-	DestinyHistoricalStatsValue(
-		this.statId,
-		this.basic,
-		this.pga,
-		this.weighted,
-		this.activityId,
-	);
+	DestinyHistoricalStatsValue();
 
-	static DestinyHistoricalStatsValue fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalStatsValue(
-				data['statId'],
-				data['basic'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['basic']) : null,
-				data['pga'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['pga']) : null,
-				data['weighted'] != null ? DestinyHistoricalStatsValuePair.fromMap(data['weighted']) : null,
-				data['activityId'],
-		);
-	}
-
-	static List<DestinyHistoricalStatsValue> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalStatsValue> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalStatsValue.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['statId'] = this.statId;
-			data['basic'] = this.basic != null? this.basic.toMap() : null;
-			data['pga'] = this.pga != null? this.pga.toMap() : null;
-			data['weighted'] = this.weighted != null? this.weighted.toMap() : null;
-			data['activityId'] = this.activityId;
-		return data;
-	}
+	factory DestinyHistoricalStatsValue.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsValueFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsValueToJson(this);
 }

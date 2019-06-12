@@ -1,55 +1,30 @@
 import 'destiny_historical_stats_value.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_post_game_carnage_report_team_entry.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPostGameCarnageReportTeamEntry{
 	
 	/** Integer ID for the team. */
+	@JsonKey(name:'teamId')
 	int teamId;
 	
 	/** Team's standing relative to other teams. */
+	@JsonKey(name:'standing')
 	DestinyHistoricalStatsValue standing;
 	
 	/** Score earned by the team */
+	@JsonKey(name:'score')
 	DestinyHistoricalStatsValue score;
 	
 	/** Alpha or Bravo */
+	@JsonKey(name:'teamName')
 	String teamName;
-	DestinyPostGameCarnageReportTeamEntry(
-		this.teamId,
-		this.standing,
-		this.score,
-		this.teamName,
-	);
+	DestinyPostGameCarnageReportTeamEntry();
 
-	static DestinyPostGameCarnageReportTeamEntry fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPostGameCarnageReportTeamEntry(
-				data['teamId'],
-				data['standing'] != null ? DestinyHistoricalStatsValue.fromMap(data['standing']) : null,
-				data['score'] != null ? DestinyHistoricalStatsValue.fromMap(data['score']) : null,
-				data['teamName'],
-		);
-	}
-
-	static List<DestinyPostGameCarnageReportTeamEntry> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPostGameCarnageReportTeamEntry> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportTeamEntry.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['teamId'] = this.teamId;
-			data['standing'] = this.standing != null? this.standing.toMap() : null;
-			data['score'] = this.score != null? this.score.toMap() : null;
-			data['teamName'] = this.teamName;
-		return data;
-	}
+	factory DestinyPostGameCarnageReportTeamEntry.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportTeamEntryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportTeamEntryToJson(this);
 }

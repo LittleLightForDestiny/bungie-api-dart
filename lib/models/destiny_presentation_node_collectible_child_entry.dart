@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_presentation_node_collectible_child_entry.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPresentationNodeCollectibleChildEntry{
 	
 	/**  */
+	@JsonKey(name:'collectibleHash')
 	int collectibleHash;
-	DestinyPresentationNodeCollectibleChildEntry(
-		this.collectibleHash,
-	);
+	DestinyPresentationNodeCollectibleChildEntry();
 
-	static DestinyPresentationNodeCollectibleChildEntry fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPresentationNodeCollectibleChildEntry(
-				data['collectibleHash'],
-		);
-	}
-
-	static List<DestinyPresentationNodeCollectibleChildEntry> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPresentationNodeCollectibleChildEntry> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPresentationNodeCollectibleChildEntry.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['collectibleHash'] = this.collectibleHash;
-		return data;
-	}
+	factory DestinyPresentationNodeCollectibleChildEntry.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeCollectibleChildEntryFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPresentationNodeCollectibleChildEntryToJson(this);
 }

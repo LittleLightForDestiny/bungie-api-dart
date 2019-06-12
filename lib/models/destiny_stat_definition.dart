@@ -1,5 +1,8 @@
 import 'destiny_display_properties_definition.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_stat_definition.g.dart';
+
 /** This represents a stat that's applied to a character or an item (such as a weapon, piece of armor, or a vehicle).
 An example of a stat might be Attack Power on a weapon.
 Stats go through a complex set of transformations before they end up being shown to the user as a number or a progress bar, and those transformations are fundamentally intertwined with the concept of a "Stat Group" (DestinyStatGroupDefinition). Items have both Stats and a reference to a Stat Group, and it is the Stat Group that takes the raw stat information and gives it both rendering metadata (such as whether to show it as a number or a progress bar) and the final transformation data (interpolation tables to turn the raw investment stat into a display stat). Please see DestinyStatGroupDefinition for more information on that transformational process.
@@ -10,75 +13,41 @@ Stats actually go through four transformations, for those interested:
 2) "Investment" stat (the stat's value after DestinyStatDefinition's interpolation tables and aggregation logic is applied to the "Sandbox" stat value)
 3) "Display" stat (the stat's base UI-visible value after DestinyStatGroupDefinition's interpolation tables are applied to the Investment Stat value. For most stats, this is what is displayed.)
 4) Underlying in-game stat (the stat's actual value according to the game, after the game runs dynamic scripts based on the game and character's state. This is the final transformation that BNet does not have access to. For most stats, this is not actually displayed to the user, with the exception of Magazine Size which is then piped back to the UI for display in-game, but not to BNet.) */
+@JsonSerializable()
 class DestinyStatDefinition{
 	
 	/** Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information. */
+	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
 	/** Stats can exist on a character or an item, and they may potentially be aggregated in different ways. The DestinyStatAggregationType enum value indicates the way that this stat is being aggregated. */
+	@JsonKey(name:'aggregationType')
 	int aggregationType;
 	
 	/** True if the stat is computed rather than being delivered as a raw value on items.
 For instance, the Light stat in Destiny 1 was a computed stat. */
+	@JsonKey(name:'hasComputedBlock')
 	bool hasComputedBlock;
 	
 	/** The category of the stat, according to the game. */
+	@JsonKey(name:'statCategory')
 	int statCategory;
 	
 	/** The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 When entities refer to each other in Destiny content, it is this hash that they are referring to. */
+	@JsonKey(name:'hash')
 	int hash;
 	
 	/** The index of the entity as it was found in the investment tables. */
+	@JsonKey(name:'index')
 	int index;
 	
 	/** If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry! */
+	@JsonKey(name:'redacted')
 	bool redacted;
-	DestinyStatDefinition(
-		this.displayProperties,
-		this.aggregationType,
-		this.hasComputedBlock,
-		this.statCategory,
-		this.hash,
-		this.index,
-		this.redacted,
-	);
+	DestinyStatDefinition();
 
-	static DestinyStatDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyStatDefinition(
-				data['displayProperties'] != null ? DestinyDisplayPropertiesDefinition.fromMap(data['displayProperties']) : null,
-				data['aggregationType'],
-				data['hasComputedBlock'],
-				data['statCategory'],
-				data['hash'],
-				data['index'],
-				data['redacted'],
-		);
-	}
-
-	static List<DestinyStatDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyStatDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyStatDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['displayProperties'] = this.displayProperties != null? this.displayProperties.toMap() : null;
-			data['aggregationType'] = this.aggregationType;
-			data['hasComputedBlock'] = this.hasComputedBlock;
-			data['statCategory'] = this.statCategory;
-			data['hash'] = this.hash;
-			data['index'] = this.index;
-			data['redacted'] = this.redacted;
-		return data;
-	}
+	factory DestinyStatDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyStatDefinitionToJson(this);
 }

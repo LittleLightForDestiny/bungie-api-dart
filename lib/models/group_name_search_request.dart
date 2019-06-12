@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_name_search_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupNameSearchRequest{
 	
 	/**  */
+	@JsonKey(name:'groupName')
 	String groupName;
 	
 	/**  */
+	@JsonKey(name:'groupType')
 	int groupType;
-	GroupNameSearchRequest(
-		this.groupName,
-		this.groupType,
-	);
+	GroupNameSearchRequest();
 
-	static GroupNameSearchRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupNameSearchRequest(
-				data['groupName'],
-				data['groupType'],
-		);
-	}
-
-	static List<GroupNameSearchRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupNameSearchRequest> list = new List();
-    data.forEach((item) {
-      list.add(GroupNameSearchRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['groupName'] = this.groupName;
-			data['groupType'] = this.groupType;
-		return data;
-	}
+	factory GroupNameSearchRequest.fromJson(Map<String, dynamic> json) => _$GroupNameSearchRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupNameSearchRequestToJson(this);
 }

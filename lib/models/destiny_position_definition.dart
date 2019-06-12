@@ -1,48 +1,25 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_position_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPositionDefinition{
 	
 	/**  */
+	@JsonKey(name:'x')
 	int x;
 	
 	/**  */
+	@JsonKey(name:'y')
 	int y;
 	
 	/**  */
+	@JsonKey(name:'z')
 	int z;
-	DestinyPositionDefinition(
-		this.x,
-		this.y,
-		this.z,
-	);
+	DestinyPositionDefinition();
 
-	static DestinyPositionDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPositionDefinition(
-				data['x'],
-				data['y'],
-				data['z'],
-		);
-	}
-
-	static List<DestinyPositionDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPositionDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPositionDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['x'] = this.x;
-			data['y'] = this.y;
-			data['z'] = this.z;
-		return data;
-	}
+	factory DestinyPositionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPositionDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPositionDefinitionToJson(this);
 }

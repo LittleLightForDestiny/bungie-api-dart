@@ -1,37 +1,18 @@
 import 'destiny_historical_stats_period_group.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_activity_history_results.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyActivityHistoryResults{
 	
 	/** List of activities, the most recent activity first. */
+	@JsonKey(name:'activities')
 	List<DestinyHistoricalStatsPeriodGroup> activities;
-	DestinyActivityHistoryResults(
-		this.activities,
-	);
+	DestinyActivityHistoryResults();
 
-	static DestinyActivityHistoryResults fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyActivityHistoryResults(
-				data['activities'] != null ? DestinyHistoricalStatsPeriodGroup.fromList(data['activities']) : null,
-		);
-	}
-
-	static List<DestinyActivityHistoryResults> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyActivityHistoryResults> list = new List();
-    data.forEach((item) {
-      list.add(DestinyActivityHistoryResults.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activities'] = this.activities != null? this.activities.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyActivityHistoryResults.fromJson(Map<String, dynamic> json) => _$DestinyActivityHistoryResultsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityHistoryResultsToJson(this);
 }

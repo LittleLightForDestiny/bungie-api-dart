@@ -15,6 +15,10 @@ export class ModelClass{
         ModelClass.all[this.className] = this;
     }
 
+    get hasProperties():boolean{
+        return this.properties.length > 0;
+    }
+
     properties():ModelProperty[]{
         let props = map(this.data.properties, (property:ParameterObject|ReferenceObject, index:string)=>{
            return new ModelProperty(index, property);
@@ -26,6 +30,10 @@ export class ModelClass{
         return this.data.description;
     }
 
+    get filename():String{
+        return camelcaseToUnderscore(this.className);
+    }
+
     imports(){
         let filename = camelcaseToUnderscore(this.className);
         let imports = chain(this.data.properties)
@@ -34,7 +42,7 @@ export class ModelClass{
             })
             .filter(Boolean)
             .filter((importInfo:ImportInfo)=>importInfo.filename() != filename)
-            .uniqBy((item)=>item.filename())
+            .uniqBy((item:any)=>item.filename())
             .value();
         return imports;
     }

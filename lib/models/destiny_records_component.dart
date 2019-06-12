@@ -1,37 +1,18 @@
 import 'destiny_record_component.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_records_component.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyRecordsComponent{
 	
 	/**  */
+	@JsonKey(name:'records')
 	Map<String, DestinyRecordComponent> records;
-	DestinyRecordsComponent(
-		this.records,
-	);
+	DestinyRecordsComponent();
 
-	static DestinyRecordsComponent fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyRecordsComponent(
-				data['records'] != null ? Map<String, DestinyRecordComponent>.from(data['records'].map((k, v)=>MapEntry(k, DestinyRecordComponent.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyRecordsComponent> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyRecordsComponent> list = new List();
-    data.forEach((item) {
-      list.add(DestinyRecordsComponent.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['records'] = this.records != null? this.records.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyRecordsComponent.fromJson(Map<String, dynamic> json) => _$DestinyRecordsComponentFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyRecordsComponentToJson(this);
 }

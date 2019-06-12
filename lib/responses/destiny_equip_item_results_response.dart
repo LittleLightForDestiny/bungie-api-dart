@@ -1,14 +1,40 @@
 import '../models/destiny_equip_item_results.dart';
-class DestinyEquipItemResultsResponse{
-    DestinyEquipItemResults response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyEquipItemResultsResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_equip_item_results_response.g.dart';
+
+/** The results of a bulk Equipping operation performed through the Destiny API. */
+@JsonSerializable()
+class DestinyEquipItemResultsResponse{
+	
+	/** The results of a bulk Equipping operation performed through the Destiny API. */
+	@JsonKey(name:'Response')
+	DestinyEquipItemResults response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyEquipItemResultsResponse({
 		DestinyEquipItemResults this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyEquipItemResultsResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyEquipItemResultsResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyEquipItemResultsResponse(
-				data['Response'] != null ? DestinyEquipItemResults.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyEquipItemResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyEquipItemResultsResponseFromJson(json);
+	
 
-	static List<DestinyEquipItemResultsResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyEquipItemResultsResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyEquipItemResultsResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyEquipItemResultsResponseToJson(this);
 }

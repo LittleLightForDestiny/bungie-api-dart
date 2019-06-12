@@ -1,13 +1,39 @@
-class int64Response{
-    String response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    int64Response(
+import 'package:json_annotation/json_annotation.dart';
+part 'int64_response.g.dart';
+
+/** Look at the Response property for more information about the nature of this response */
+@JsonSerializable()
+class int64Response{
+	
+	/**  */
+	@JsonKey(name:'Response')
+	String response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	int64Response({
 		String this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -15,31 +41,10 @@ class int64Response{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static int64Response fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new int64Response(
-				data['Response'],
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory int64Response.fromJson(Map<String, dynamic> json) => _$int64ResponseFromJson(json);
+	
 
-	static List<int64Response> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<int64Response> list = new List();
-    data.forEach((item) {
-      list.add(int64Response.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$int64ResponseToJson(this);
 }

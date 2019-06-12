@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_linked_graph_entry_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyLinkedGraphEntryDefinition{
 	
 	/**  */
+	@JsonKey(name:'activityGraphHash')
 	int activityGraphHash;
-	DestinyLinkedGraphEntryDefinition(
-		this.activityGraphHash,
-	);
+	DestinyLinkedGraphEntryDefinition();
 
-	static DestinyLinkedGraphEntryDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyLinkedGraphEntryDefinition(
-				data['activityGraphHash'],
-		);
-	}
-
-	static List<DestinyLinkedGraphEntryDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyLinkedGraphEntryDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyLinkedGraphEntryDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['activityGraphHash'] = this.activityGraphHash;
-		return data;
-	}
+	factory DestinyLinkedGraphEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyLinkedGraphEntryDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyLinkedGraphEntryDefinitionToJson(this);
 }

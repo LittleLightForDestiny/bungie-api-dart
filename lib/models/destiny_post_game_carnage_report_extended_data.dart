@@ -1,44 +1,23 @@
 import 'destiny_historical_weapon_stats.dart';
 import 'destiny_historical_stats_value.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_post_game_carnage_report_extended_data.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyPostGameCarnageReportExtendedData{
 	
 	/** List of weapons and their perspective values. */
+	@JsonKey(name:'weapons')
 	List<DestinyHistoricalWeaponStats> weapons;
 	
 	/** Collection of stats for the player in this activity. */
+	@JsonKey(name:'values')
 	Map<String, DestinyHistoricalStatsValue> values;
-	DestinyPostGameCarnageReportExtendedData(
-		this.weapons,
-		this.values,
-	);
+	DestinyPostGameCarnageReportExtendedData();
 
-	static DestinyPostGameCarnageReportExtendedData fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyPostGameCarnageReportExtendedData(
-				data['weapons'] != null ? DestinyHistoricalWeaponStats.fromList(data['weapons']) : null,
-				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyPostGameCarnageReportExtendedData> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyPostGameCarnageReportExtendedData> list = new List();
-    data.forEach((item) {
-      list.add(DestinyPostGameCarnageReportExtendedData.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['weapons'] = this.weapons != null? this.weapons.map((item)=>item.toMap()).toList() : null;
-			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyPostGameCarnageReportExtendedData.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportExtendedDataFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportExtendedDataToJson(this);
 }

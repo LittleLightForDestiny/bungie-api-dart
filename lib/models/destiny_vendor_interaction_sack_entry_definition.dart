@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_vendor_interaction_sack_entry_definition.g.dart';
+
 /** Compare this sackType to the sack identifier in the DestinyInventoryItemDefinition.vendorSackType property of items. If they match, show this sack with this interaction. */
+@JsonSerializable()
 class DestinyVendorInteractionSackEntryDefinition{
 	
 	/**  */
+	@JsonKey(name:'sackType')
 	int sackType;
-	DestinyVendorInteractionSackEntryDefinition(
-		this.sackType,
-	);
+	DestinyVendorInteractionSackEntryDefinition();
 
-	static DestinyVendorInteractionSackEntryDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyVendorInteractionSackEntryDefinition(
-				data['sackType'],
-		);
-	}
-
-	static List<DestinyVendorInteractionSackEntryDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyVendorInteractionSackEntryDefinition> list = new List();
-    data.forEach((item) {
-      list.add(DestinyVendorInteractionSackEntryDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['sackType'] = this.sackType;
-		return data;
-	}
+	factory DestinyVendorInteractionSackEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInteractionSackEntryDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorInteractionSackEntryDefinitionToJson(this);
 }

@@ -1,0 +1,66 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'destiny_node_step_definition.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyNodeStepDefinition _$DestinyNodeStepDefinitionFromJson(
+    Map<String, dynamic> json) {
+  return DestinyNodeStepDefinition()
+    ..displayProperties = json['displayProperties'] == null
+        ? null
+        : DestinyDisplayPropertiesDefinition.fromJson(
+            json['displayProperties'] as Map<String, dynamic>)
+    ..stepIndex = json['stepIndex'] as int
+    ..nodeStepHash = json['nodeStepHash'] as int
+    ..interactionDescription = json['interactionDescription'] as String
+    ..damageType = json['damageType'] as int
+    ..damageTypeHash = json['damageTypeHash'] as int
+    ..activationRequirement = json['activationRequirement'] == null
+        ? null
+        : DestinyNodeActivationRequirement.fromJson(
+            json['activationRequirement'] as Map<String, dynamic>)
+    ..canActivateNextStep = json['canActivateNextStep'] as bool
+    ..nextStepIndex = json['nextStepIndex'] as int
+    ..isNextStepRandom = json['isNextStepRandom'] as bool
+    ..perkHashes = (json['perkHashes'] as List)?.map((e) => e as int)?.toList()
+    ..startProgressionBarAtProgress =
+        json['startProgressionBarAtProgress'] as int
+    ..statHashes = (json['statHashes'] as List)?.map((e) => e as int)?.toList()
+    ..affectsQuality = json['affectsQuality'] as bool
+    ..stepGroups = json['stepGroups'] == null
+        ? null
+        : DestinyTalentNodeStepGroups.fromJson(
+            json['stepGroups'] as Map<String, dynamic>)
+    ..affectsLevel = json['affectsLevel'] as bool
+    ..socketReplacements = (json['socketReplacements'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyNodeSocketReplaceResponse.fromJson(
+                e as Map<String, dynamic>))
+        ?.toList();
+}
+
+Map<String, dynamic> _$DestinyNodeStepDefinitionToJson(
+        DestinyNodeStepDefinition instance) =>
+    <String, dynamic>{
+      'displayProperties': instance.displayProperties,
+      'stepIndex': instance.stepIndex,
+      'nodeStepHash': instance.nodeStepHash,
+      'interactionDescription': instance.interactionDescription,
+      'damageType': instance.damageType,
+      'damageTypeHash': instance.damageTypeHash,
+      'activationRequirement': instance.activationRequirement,
+      'canActivateNextStep': instance.canActivateNextStep,
+      'nextStepIndex': instance.nextStepIndex,
+      'isNextStepRandom': instance.isNextStepRandom,
+      'perkHashes': instance.perkHashes,
+      'startProgressionBarAtProgress': instance.startProgressionBarAtProgress,
+      'statHashes': instance.statHashes,
+      'affectsQuality': instance.affectsQuality,
+      'stepGroups': instance.stepGroups,
+      'affectsLevel': instance.affectsLevel,
+      'socketReplacements': instance.socketReplacements
+    };

@@ -26,6 +26,14 @@ export class ResponseClass{
         });
     }
 
+    get filename():String{
+        return camelcaseToUnderscore(this.className);
+    }
+
+    description(){
+        return this.data.description;
+    }
+
     imports(){
         let properties = get(this.data, 'content["application/json"].schema.properties');
         if(!properties){
@@ -38,7 +46,7 @@ export class ResponseClass{
             })
             .filter(Boolean)
             .filter((importInfo:ImportInfo)=>importInfo.filename() != filename)
-            .uniqBy((item)=>item.filename())
+            .uniqBy((item:ImportInfo)=>item.filename())
             .value();
         return imports;
     }

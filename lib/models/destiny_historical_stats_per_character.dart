@@ -1,55 +1,30 @@
 import 'destiny_historical_stats_by_period.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_stats_per_character.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalStatsPerCharacter{
 	
 	/**  */
+	@JsonKey(name:'characterId')
 	String characterId;
 	
 	/**  */
+	@JsonKey(name:'deleted')
 	bool deleted;
 	
 	/**  */
+	@JsonKey(name:'results')
 	Map<String, DestinyHistoricalStatsByPeriod> results;
 	
 	/**  */
+	@JsonKey(name:'merged')
 	DestinyHistoricalStatsByPeriod merged;
-	DestinyHistoricalStatsPerCharacter(
-		this.characterId,
-		this.deleted,
-		this.results,
-		this.merged,
-	);
+	DestinyHistoricalStatsPerCharacter();
 
-	static DestinyHistoricalStatsPerCharacter fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalStatsPerCharacter(
-				data['characterId'],
-				data['deleted'],
-				data['results'] != null ? Map<String, DestinyHistoricalStatsByPeriod>.from(data['results'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsByPeriod.fromMap(v)))) : null,
-				data['merged'] != null ? DestinyHistoricalStatsByPeriod.fromMap(data['merged']) : null,
-		);
-	}
-
-	static List<DestinyHistoricalStatsPerCharacter> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalStatsPerCharacter> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalStatsPerCharacter.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['characterId'] = this.characterId;
-			data['deleted'] = this.deleted;
-			data['results'] = this.results != null? this.results.map((i, v)=>MapEntry(i, v.toMap())) : null;
-			data['merged'] = this.merged != null? this.merged.toMap() : null;
-		return data;
-	}
+	factory DestinyHistoricalStatsPerCharacter.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsPerCharacterFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsPerCharacterToJson(this);
 }

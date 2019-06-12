@@ -1,67 +1,38 @@
 import 'tag_metadata_item.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'tag_metadata_definition.g.dart';
+
 /**  */
+@JsonSerializable()
 class TagMetadataDefinition{
 	
 	/**  */
+	@JsonKey(name:'description')
 	String description;
 	
 	/**  */
+	@JsonKey(name:'order')
 	int order;
 	
 	/**  */
+	@JsonKey(name:'items')
 	List<TagMetadataItem> items;
 	
 	/**  */
+	@JsonKey(name:'datatype')
 	String datatype;
 	
 	/**  */
+	@JsonKey(name:'name')
 	String name;
 	
 	/**  */
+	@JsonKey(name:'isRequired')
 	bool isRequired;
-	TagMetadataDefinition(
-		this.description,
-		this.order,
-		this.items,
-		this.datatype,
-		this.name,
-		this.isRequired,
-	);
+	TagMetadataDefinition();
 
-	static TagMetadataDefinition fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new TagMetadataDefinition(
-				data['description'],
-				data['order'],
-				data['items'] != null ? TagMetadataItem.fromList(data['items']) : null,
-				data['datatype'],
-				data['name'],
-				data['isRequired'],
-		);
-	}
-
-	static List<TagMetadataDefinition> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<TagMetadataDefinition> list = new List();
-    data.forEach((item) {
-      list.add(TagMetadataDefinition.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['description'] = this.description;
-			data['order'] = this.order;
-			data['items'] = this.items != null? this.items.map((item)=>item.toMap()).toList() : null;
-			data['datatype'] = this.datatype;
-			data['name'] = this.name;
-			data['isRequired'] = this.isRequired;
-		return data;
-	}
+	factory TagMetadataDefinition.fromJson(Map<String, dynamic> json) => _$TagMetadataDefinitionFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$TagMetadataDefinitionToJson(this);
 }

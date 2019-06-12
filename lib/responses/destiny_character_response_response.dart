@@ -1,14 +1,40 @@
 import '../models/destiny_character_response.dart';
-class DestinyCharacterResponseResponse{
-    DestinyCharacterResponse response;
-    int errorCode;
-    int throttleSeconds;
-    String errorStatus;
-    String message;
-    Map<String, String> messageData;
-    String detailedErrorTrace;
 
-    DestinyCharacterResponseResponse(
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_character_response_response.g.dart';
+
+/** The response contract for GetDestinyCharacter, with components that can be returned for character and item-level data. */
+@JsonSerializable()
+class DestinyCharacterResponseResponse{
+	
+	/** The response contract for GetDestinyCharacter, with components that can be returned for character and item-level data. */
+	@JsonKey(name:'Response')
+	DestinyCharacterResponse response;
+	
+	/**  */
+	@JsonKey(name:'ErrorCode')
+	int errorCode;
+	
+	/**  */
+	@JsonKey(name:'ThrottleSeconds')
+	int throttleSeconds;
+	
+	/**  */
+	@JsonKey(name:'ErrorStatus')
+	String errorStatus;
+	
+	/**  */
+	@JsonKey(name:'Message')
+	String message;
+	
+	/**  */
+	@JsonKey(name:'MessageData')
+	Map<String, String> messageData;
+	
+	/**  */
+	@JsonKey(name:'DetailedErrorTrace')
+	String detailedErrorTrace;
+	DestinyCharacterResponseResponse({
 		DestinyCharacterResponse this.response,
 		int this.errorCode,
 		int this.throttleSeconds,
@@ -16,31 +42,10 @@ class DestinyCharacterResponseResponse{
 		String this.message,
 		Map<String, String> this.messageData,
 		String this.detailedErrorTrace,
-	);
+	});
 
-    static DestinyCharacterResponseResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyCharacterResponseResponse(
-				data['Response'] != null ? DestinyCharacterResponse.fromMap(data['Response']) : null,
-				data['ErrorCode'],
-				data['ThrottleSeconds'],
-				data['ErrorStatus'],
-				data['Message'],
-				data['MessageData'] != null ? Map<String, String>.from(data['MessageData'].map((k, v)=>MapEntry(k, v))) : null,
-				data['DetailedErrorTrace'],
-		);
-	}
+	factory DestinyCharacterResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyCharacterResponseResponseFromJson(json);
+	
 
-	static List<DestinyCharacterResponseResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyCharacterResponseResponse> list = new List();
-    data.forEach((item) {
-      list.add(DestinyCharacterResponseResponse.fromMap(item));
-    });
-    return list;
-	}
+	Map<String, dynamic> toJson() => _$DestinyCharacterResponseResponseToJson(this);
 }

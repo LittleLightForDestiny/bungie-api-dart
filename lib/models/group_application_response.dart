@@ -1,36 +1,17 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_application_response.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupApplicationResponse{
 	
 	/**  */
+	@JsonKey(name:'resolution')
 	int resolution;
-	GroupApplicationResponse(
-		this.resolution,
-	);
+	GroupApplicationResponse();
 
-	static GroupApplicationResponse fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupApplicationResponse(
-				data['resolution'],
-		);
-	}
-
-	static List<GroupApplicationResponse> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupApplicationResponse> list = new List();
-    data.forEach((item) {
-      list.add(GroupApplicationResponse.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['resolution'] = this.resolution;
-		return data;
-	}
+	factory GroupApplicationResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupApplicationResponseToJson(this);
 }

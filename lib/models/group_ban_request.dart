@@ -1,42 +1,21 @@
 
+import 'package:json_annotation/json_annotation.dart';
+part 'group_ban_request.g.dart';
+
 /**  */
+@JsonSerializable()
 class GroupBanRequest{
 	
 	/**  */
+	@JsonKey(name:'comment')
 	String comment;
 	
 	/**  */
+	@JsonKey(name:'length')
 	int length;
-	GroupBanRequest(
-		this.comment,
-		this.length,
-	);
+	GroupBanRequest();
 
-	static GroupBanRequest fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new GroupBanRequest(
-				data['comment'],
-				data['length'],
-		);
-	}
-
-	static List<GroupBanRequest> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<GroupBanRequest> list = new List();
-    data.forEach((item) {
-      list.add(GroupBanRequest.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['comment'] = this.comment;
-			data['length'] = this.length;
-		return data;
-	}
+	factory GroupBanRequest.fromJson(Map<String, dynamic> json) => _$GroupBanRequestFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$GroupBanRequestToJson(this);
 }

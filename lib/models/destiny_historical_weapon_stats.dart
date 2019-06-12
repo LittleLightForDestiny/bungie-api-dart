@@ -1,43 +1,22 @@
 import 'destiny_historical_stats_value.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_historical_weapon_stats.g.dart';
+
 /**  */
+@JsonSerializable()
 class DestinyHistoricalWeaponStats{
 	
 	/** The hash ID of the item definition that describes the weapon. */
+	@JsonKey(name:'referenceId')
 	int referenceId;
 	
 	/** Collection of stats for the period. */
+	@JsonKey(name:'values')
 	Map<String, DestinyHistoricalStatsValue> values;
-	DestinyHistoricalWeaponStats(
-		this.referenceId,
-		this.values,
-	);
+	DestinyHistoricalWeaponStats();
 
-	static DestinyHistoricalWeaponStats fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyHistoricalWeaponStats(
-				data['referenceId'],
-				data['values'] != null ? Map<String, DestinyHistoricalStatsValue>.from(data['values'].map((k, v)=>MapEntry(k, DestinyHistoricalStatsValue.fromMap(v)))) : null,
-		);
-	}
-
-	static List<DestinyHistoricalWeaponStats> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyHistoricalWeaponStats> list = new List();
-    data.forEach((item) {
-      list.add(DestinyHistoricalWeaponStats.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['referenceId'] = this.referenceId;
-			data['values'] = this.values != null? this.values.map((i, v)=>MapEntry(i, v.toMap())) : null;
-		return data;
-	}
+	factory DestinyHistoricalWeaponStats.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalWeaponStatsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalWeaponStatsToJson(this);
 }

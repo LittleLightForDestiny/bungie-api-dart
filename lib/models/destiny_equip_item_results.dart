@@ -1,37 +1,18 @@
 import 'destiny_equip_item_result.dart';
 
+import 'package:json_annotation/json_annotation.dart';
+part 'destiny_equip_item_results.g.dart';
+
 /** The results of a bulk Equipping operation performed through the Destiny API. */
+@JsonSerializable()
 class DestinyEquipItemResults{
 	
 	/**  */
+	@JsonKey(name:'equipResults')
 	List<DestinyEquipItemResult> equipResults;
-	DestinyEquipItemResults(
-		this.equipResults,
-	);
+	DestinyEquipItemResults();
 
-	static DestinyEquipItemResults fromMap(Map<String, dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		return new DestinyEquipItemResults(
-				data['equipResults'] != null ? DestinyEquipItemResult.fromList(data['equipResults']) : null,
-		);
-	}
-
-	static List<DestinyEquipItemResults> fromList(List<dynamic> data){
-		if(data == null) {
-			return null;
-		};
-		List<DestinyEquipItemResults> list = new List();
-    data.forEach((item) {
-      list.add(DestinyEquipItemResults.fromMap(item));
-    });
-    return list;
-	}
-
-	Map<String, dynamic> toMap(){
-		Map<String, dynamic> data = new Map();
-			data['equipResults'] = this.equipResults != null? this.equipResults.map((item)=>item.toMap()).toList() : null;
-		return data;
-	}
+	factory DestinyEquipItemResults.fromJson(Map<String, dynamic> json) => _$DestinyEquipItemResultsFromJson(json);
+	
+	Map<String, dynamic> toJson() => _$DestinyEquipItemResultsToJson(this);
 }
