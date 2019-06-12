@@ -12,8 +12,12 @@ export function generateModelClass(model:ModelClass){
   if(!shell.test('-d', '../lib/models')){
     shell.mkdir('-p', '../lib/models');
   }
+  if(!shell.test('-d', '../lib/src/models')){
+    shell.mkdir('-p', '../lib/src/models');
+  }
   let template = readFileSync('templates/model-class.mustache').toString();
   let rendered = mustache.render(template, model);
-  writeFileSync(`../lib/models/${model.filename}.dart`, rendered);
+  writeFileSync(`../lib/src/models/${model.filename}.dart`, rendered);
+  writeFileSync(`../lib/models/${model.filename}.dart`, `export '../src/models/${model.filename}.dart';`);
 }
 

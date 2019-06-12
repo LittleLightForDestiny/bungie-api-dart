@@ -4,9 +4,14 @@
  */
 
 import * as fs from "fs-extra";
-export async function copyCustom(){
+import { writeFileSync } from "fs-extra";
+export async function copyCustom() {
     fs.mkdirpSync('../lib/helpers');
-    fs.copyFileSync('./dart-custom/helpers/bungie_net_token.dart', '../lib/helpers/bungie_net_token.dart');
-    fs.copyFileSync('./dart-custom/helpers/http.dart', '../lib/helpers/http.dart');
-    fs.copyFileSync('./dart-custom/helpers/oauth.dart', '../lib/helpers/oauth.dart');
+    fs.mkdirpSync('../lib/src/helpers');
+    var filenames = ['bungie_net_token', 'http', 'oauth'];
+    for (var i in filenames) {
+        var filename = filenames[i];
+        fs.copyFileSync(`./dart-custom/helpers/${filename}.dart`, `../lib/src/helpers/${filename}.dart`);
+        writeFileSync(`../lib/helpers/${filename}.dart`, `export '../src/helpers/${filename}.dart';`);
+    }
 }
