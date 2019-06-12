@@ -3,15 +3,12 @@ import 'destiny_item_objectives_component.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.g.dart';
 
-/**  */
 @JsonSerializable()
 class DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent{
 	
-	/**  */
 	@JsonKey(name:'data')
 	Map<String, DestinyItemObjectivesComponent> data;
 	
-	/**  */
 	@JsonKey(name:'privacy')
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent();

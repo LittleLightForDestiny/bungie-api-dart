@@ -31,7 +31,8 @@ export class ResponseClass{
     }
 
     description(){
-        return this.data.description;
+        if(!this.data.description) return null;
+        return this.data.description.split('\r\n');
     }
 
     imports(){

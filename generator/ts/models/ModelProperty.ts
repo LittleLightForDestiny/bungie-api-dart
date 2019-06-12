@@ -47,7 +47,13 @@ export class ModelProperty{
         return camelCase(this.name);
     }
 
-    description():string{
+    description():string[]|null{
+        var d = this._description();
+        if(!d) return null;
+        return d.split('\r\n');
+    }
+
+    _description():string|null{
         if(this.info.$ref){
             let ref = ApiDocHelper.getRef(this.info.$ref);
             if(ref.description) return ref.description;
@@ -57,6 +63,6 @@ export class ModelProperty{
             return this.info['description'];
         }
 
-        return "";
+        return null;
     }
 }

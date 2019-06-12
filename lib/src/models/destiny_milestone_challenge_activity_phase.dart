@@ -2,11 +2,10 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_milestone_challenge_activity_phase.g.dart';
 
-/**  */
 @JsonSerializable()
 class DestinyMilestoneChallengeActivityPhase{
 	
-	/** The hash identifier of the activity's phase. */
+	/// The hash identifier of the activity&#39;s phase.
 	@JsonKey(name:'phaseHash')
 	int phaseHash;
 	DestinyMilestoneChallengeActivityPhase();

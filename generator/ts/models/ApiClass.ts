@@ -27,7 +27,7 @@ export class ApiClass{
             if(!body || body.isNativeType()) return null;
             return new ImportInfo(body.typeName(), 'models');
         });
-        let imports =  chain(returnImports).concat(bodyImports)
+        let imports =  chain(returnImports).concat(bodyImports as ImportInfo[])
             .filter(Boolean)
             .uniqBy('className')
             .value();

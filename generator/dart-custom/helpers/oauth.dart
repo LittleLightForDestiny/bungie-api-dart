@@ -1,10 +1,8 @@
 import './http.dart';
 import 'bungie_net_token.dart';
 
-/**
- * Bungie.net Oauth methods
- */
 
+/// Bungie.net Oauth methods
 class OAuth{
   static openOAuth(OAuthBrowser browser, String clientId, [String languageCode = "en", bool reauth=false]){
     String url = "https://www.bungie.net/$languageCode/OAuth/Authorize?client_id=$clientId&response_type=code";

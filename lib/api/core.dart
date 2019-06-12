@@ -2,7 +2,7 @@ import '../helpers/http.dart';
 import '../responses/celist_of_global_alert_response.dart';
 class Core{
     
-    /** Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts. */
+    /// Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts.
     static Future<CEListOfGlobalAlertResponse> getGlobalAlerts (
         HttpClient client,
         bool includestreaming,

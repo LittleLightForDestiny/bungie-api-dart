@@ -27,7 +27,8 @@ export class ModelClass{
     }
 
     description(){
-        return this.data.description;
+        if(!this.data.description) return null;
+        return this.data.description.split('\r\n');
     }
 
     get filename():String{

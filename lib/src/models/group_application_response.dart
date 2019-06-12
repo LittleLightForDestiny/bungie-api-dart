@@ -2,11 +2,9 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'group_application_response.g.dart';
 
-/**  */
 @JsonSerializable()
 class GroupApplicationResponse{
 	
-	/**  */
 	@JsonKey(name:'resolution')
 	int resolution;
 	GroupApplicationResponse();

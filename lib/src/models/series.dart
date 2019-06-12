@@ -3,15 +3,14 @@ import 'datapoint.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'series.g.dart';
 
-/**  */
 @JsonSerializable()
 class Series{
 	
-	/** Collection of samples with time and value. */
+	/// Collection of samples with time and value.
 	@JsonKey(name:'datapoints')
 	List<Datapoint> datapoints;
 	
-	/** Target to which to datapoints apply. */
+	/// Target to which to datapoints apply.
 	@JsonKey(name:'target')
 	String target;
 	Series();

@@ -5,12 +5,16 @@ import '{{filename}}.dart';
 import 'package:json_annotation/json_annotation.dart';
 part '{{filename}}.g.dart';
 
-/** {{{description}}} */
+{{#description}}
+/// {{.}}
+{{/description}}
 @JsonSerializable()
 class {{className}}{
 	{{#properties}}
 	
-	/** {{{description}}} */
+	{{#description}}
+	/// {{.}}
+	{{/description}}
 	@JsonKey(name:'{{name}}')
 	{{{typeName}}} {{propertyName}};
 	{{/properties}}

@@ -3,15 +3,13 @@ import 'destiny_vendor_component.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'single_component_response_of_destiny_vendor_component.g.dart';
 
-/**  */
 @JsonSerializable()
 class SingleComponentResponseOfDestinyVendorComponent{
 	
-	/** This component contains essential/summary information about the vendor. */
+	/// This component contains essential&#x2F;summary information about the vendor.
 	@JsonKey(name:'data')
 	DestinyVendorComponent data;
 	
-	/**  */
 	@JsonKey(name:'privacy')
 	int privacy;
 	SingleComponentResponseOfDestinyVendorComponent();

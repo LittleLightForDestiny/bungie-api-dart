@@ -9,43 +9,33 @@ import 'trending_entry_community_stream.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'trending_detail.g.dart';
 
-/**  */
 @JsonSerializable()
 class TrendingDetail{
 	
-	/**  */
 	@JsonKey(name:'identifier')
 	String identifier;
 	
-	/**  */
 	@JsonKey(name:'entityType')
 	int entityType;
 	
-	/**  */
 	@JsonKey(name:'news')
 	TrendingEntryNews news;
 	
-	/**  */
 	@JsonKey(name:'support')
 	TrendingEntrySupportArticle support;
 	
-	/**  */
 	@JsonKey(name:'destinyItem')
 	TrendingEntryDestinyItem destinyItem;
 	
-	/**  */
 	@JsonKey(name:'destinyActivity')
 	TrendingEntryDestinyActivity destinyActivity;
 	
-	/**  */
 	@JsonKey(name:'destinyRitual')
 	TrendingEntryDestinyRitual destinyRitual;
 	
-	/**  */
 	@JsonKey(name:'creation')
 	TrendingEntryCommunityCreation creation;
 	
-	/**  */
 	@JsonKey(name:'stream')
 	TrendingEntryCommunityStream stream;
 	TrendingDetail();

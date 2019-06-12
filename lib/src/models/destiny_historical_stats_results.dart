@@ -2,7 +2,6 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_historical_stats_results.g.dart';
 
-/**  */
 @JsonSerializable()
 class DestinyHistoricalStatsResults{
 	DestinyHistoricalStatsResults();
