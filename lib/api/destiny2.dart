@@ -151,7 +151,6 @@ class Destiny2 {
     config.bodyContentType = null;
     return client.request(config).then((response) {
       if (response.statusCode == 200) {
-        print(response.mappedBody['Response']['inventory']);
         return DestinyCharacterResponseResponse.fromJson(response.mappedBody);
       }
       throw Exception(response.mappedBody);
