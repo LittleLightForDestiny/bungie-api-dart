@@ -9,9 +9,9 @@ class HttpClientConfig {
     this.method,
     this.url,
     this.params, [
-    this.headers,
     this.body,
     this.bodyContentType,
+    this.headers,
   ]);
 }
 
