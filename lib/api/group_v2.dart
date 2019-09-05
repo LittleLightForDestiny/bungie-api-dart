@@ -27,7 +27,6 @@ import '../models/group_ban_request.dart';
 import '../models/group_application_request.dart';
 import '../models/group_application_list_request.dart';
 class GroupV2{
-    
     /// Returns a list of all available group avatars for the signed-in user.
     static Future<DictionaryOfint32AndstringResponse> getAvailableAvatars (
         HttpClient client,
@@ -42,7 +41,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns a list of all available group themes.
     static Future<ListOfGroupThemeResponse> getAvailableThemes (
         HttpClient client,
@@ -57,8 +55,7 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Gets the state of the user's clan invite preferences for a particular membership type - true if they wish to be invited to clans, false otherwise.
+    /// Gets the state of the user&#39;s clan invite preferences for a particular membership type - true if they wish to be invited to clans, false otherwise.
     static Future<booleanResponse> getUserClanInviteSetting (
         HttpClient client,
         int mType,
@@ -73,7 +70,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets groups recommended for you based on the groups to whom those you follow belong.
     static Future<ListOfGroupV2CardResponse> getRecommendedGroups (
         HttpClient client,
@@ -90,7 +86,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Search for Groups.
     static Future<GroupSearchResponseResponse> groupSearch (
         HttpClient client,
@@ -107,7 +102,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get information about a specific group of the given ID.
     static Future<GroupResponseResponse> getGroup (
         HttpClient client,
@@ -123,7 +117,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get information about a specific group with the given name and type.
     static Future<GroupResponseResponse> getGroupByName (
         HttpClient client,
@@ -140,7 +133,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get information about a specific group with the given name and type. The POST version.
     static Future<GroupResponseResponse> getGroupByNameV2 (
         HttpClient client,
@@ -157,7 +149,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets a list of available optional conversation channels and their settings.
     static Future<CEListOfGroupOptionalConversationResponse> getGroupOptionalConversations (
         HttpClient client,
@@ -173,7 +164,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Edit an existing group. You must have suitable permissions in the group to perform this operation. This latest revision will only edit the fields you pass in - pass null for properties you want to leave unaltered.
     static Future<int32Response> editGroup (
         HttpClient client,
@@ -191,8 +181,7 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Edit an existing group's clan banner. You must have suitable permissions in the group to perform this operation. All fields are required.
+    /// Edit an existing group&#39;s clan banner. You must have suitable permissions in the group to perform this operation. All fields are required.
     static Future<int32Response> editClanBanner (
         HttpClient client,
         String groupId,
@@ -209,7 +198,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Edit group options only available to a founder. You must have suitable permissions in the group to perform this operation.
     static Future<int32Response> editFounderOptions (
         HttpClient client,
@@ -227,8 +215,7 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Add a new optional conversation/chat channel. Requires admin permissions to the group.
+    /// Add a new optional conversation&#x2F;chat channel. Requires admin permissions to the group.
     static Future<int64Response> addOptionalConversation (
         HttpClient client,
         String groupId,
@@ -245,8 +232,7 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Edit the settings of an optional conversation/chat channel. Requires admin permissions to the group.
+    /// Edit the settings of an optional conversation&#x2F;chat channel. Requires admin permissions to the group.
     static Future<int64Response> editOptionalConversation (
         HttpClient client,
         String conversationId,
@@ -264,7 +250,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the list of members in a given group.
     static Future<SearchResultOfGroupMemberResponse> getMembersOfGroup (
         HttpClient client,
@@ -285,7 +270,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the list of members in a given group who are of admin level or higher.
     static Future<SearchResultOfGroupMemberResponse> getAdminsAndFounderOfGroup (
         HttpClient client,
@@ -302,7 +286,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Edit the membership type of a given member. You must have suitable permissions in the group to perform this operation.
     static Future<int32Response> editGroupMembership (
         HttpClient client,
@@ -321,7 +304,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Kick a member from the given group, forcing them to reapply if they wish to re-join the group. You must have suitable permissions in the group to perform this operation.
     static Future<GroupMemberLeaveResultResponse> kickMember (
         HttpClient client,
@@ -339,7 +321,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Bans the requested member from the requested group for the specified period of time.
     static Future<int32Response> banMember (
         HttpClient client,
@@ -359,7 +340,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Unbans the requested member, allowing them to re-apply for membership.
     static Future<int32Response> unbanMember (
         HttpClient client,
@@ -377,7 +357,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the list of banned members in a given group. Only accessible to group Admins and above. Not applicable to all groups. Check group features.
     static Future<SearchResultOfGroupBanResponse> getBannedMembersOfGroup (
         HttpClient client,
@@ -394,7 +373,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// An administrative method to allow the founder of a group or clan to give up their position to another admin permanently.
     static Future<booleanResponse> abdicateFoundership (
         HttpClient client,
@@ -412,7 +390,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the list of users who are awaiting a decision on their application to join a given group. Modified to include application info.
     static Future<SearchResultOfGroupMemberApplicationResponse> getPendingMemberships (
         HttpClient client,
@@ -429,7 +406,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the list of users who have been invited into the group.
     static Future<SearchResultOfGroupMemberApplicationResponse> getInvitedIndividuals (
         HttpClient client,
@@ -446,7 +422,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Approve all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> approveAllPending (
         HttpClient client,
@@ -464,7 +439,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Deny all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> denyAllPending (
         HttpClient client,
@@ -482,7 +456,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Approve all of the pending users for the given group.
     static Future<ListOfEntityActionResultResponse> approvePendingForList (
         HttpClient client,
@@ -500,8 +473,7 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Approve the given membershipId to join the group/clan as long as they have applied.
+    /// Approve the given membershipId to join the group&#x2F;clan as long as they have applied.
     static Future<booleanResponse> approvePending (
         HttpClient client,
         String groupId,
@@ -520,7 +492,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Deny all of the pending users for the given group that match the passed-in .
     static Future<ListOfEntityActionResultResponse> denyPendingForList (
         HttpClient client,
@@ -538,7 +509,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get information about the groups that a given member has joined.
     static Future<GroupMembershipSearchResponseResponse> getGroupsForMember (
         HttpClient client,
@@ -557,7 +527,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get information about the groups that a given member has applied to or been invited to.
     static Future<GroupPotentialMembershipSearchResponseResponse> getPotentialGroupsForMember (
         HttpClient client,
@@ -576,7 +545,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Invite a user to join this group.
     static Future<GroupApplicationResponseResponse> individualGroupInvite (
         HttpClient client,
@@ -596,7 +564,6 @@ class GroupV2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Cancels a pending invitation to join a group.
     static Future<GroupApplicationResponseResponse> individualGroupInviteCancel (
         HttpClient client,
