@@ -7,12 +7,11 @@ description: This project implements Dart definitions and API helpers for the [B
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 2.3.5+3
+version: 2.3.5+4
 authors:
   - João Paulo Marquesini <jao@markezine.me>
 
-homepage:
-  https://github.com/LittleLightForDestiny/bungie-api-dart.git
+homepage: https://github.com/LittleLightForDestiny/bungie-api-dart.git
 
 dependencies:
   json_annotation: ^2.0.0
