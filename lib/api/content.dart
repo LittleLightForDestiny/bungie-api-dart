@@ -3,7 +3,6 @@ import '../responses/content_type_description_response.dart';
 import '../responses/content_item_public_contract_response.dart';
 import '../responses/search_result_of_content_item_public_contract_response.dart';
 class Content{
-    
     /// Gets an object describing a particular variant of content.
     static Future<ContentTypeDescriptionResponse> getContentType (
         HttpClient client,
@@ -19,7 +18,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns a content item referenced by id
     static Future<ContentItemPublicContractResponse> getContentById (
         HttpClient client,
@@ -38,7 +36,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns the newest item that matches a given tag and Content Type.
     static Future<ContentItemPublicContractResponse> getContentByTagAndType (
         HttpClient client,
@@ -58,7 +55,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets content based on querystring information passed in. Provides basic search and text search capabilities.
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentWithText (
         HttpClient client,
@@ -86,7 +82,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Searches for Content Items that match the given Tag and Content Type.
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentByTagAndType (
         HttpClient client,

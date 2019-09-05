@@ -4,7 +4,6 @@ import '../responses/int64_response.dart';
 import '../responses/list_of_tag_response_response.dart';
 import '../responses/celist_of_forum_recruitment_detail_response.dart';
 class Forum{
-    
     /// Get topics from any forum.
     static Future<PostSearchResponseResponse> getTopicsPaged (
         HttpClient client,
@@ -29,7 +28,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets a listing of all topics marked as part of the core group.
     static Future<PostSearchResponseResponse> getCoreTopicsPaged (
         HttpClient client,
@@ -50,7 +48,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns a thread of posts at the given parent, optionally returning replies to those posts as well as the original parent.
     static Future<PostSearchResponseResponse> getPostsThreadedPaged (
         HttpClient client,
@@ -74,7 +71,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns a thread of posts starting at the topicId of the input childPostId, optionally returning replies to those posts as well as the original parent.
     static Future<PostSearchResponseResponse> getPostsThreadedPagedFromChild (
         HttpClient client,
@@ -97,7 +93,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns the post specified and its immediate parent.
     static Future<PostSearchResponseResponse> getPostAndParent (
         HttpClient client,
@@ -115,7 +110,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns the post specified and its immediate parent of posts that are awaiting approval.
     static Future<PostSearchResponseResponse> getPostAndParentAwaitingApproval (
         HttpClient client,
@@ -133,8 +127,7 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Gets the post Id for the given content item's comments, if it exists.
+    /// Gets the post Id for the given content item&#39;s comments, if it exists.
     static Future<int64Response> getTopicForContent (
         HttpClient client,
         String contentId,
@@ -149,7 +142,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets tag suggestions based on partial text entry, matching them with other tags previously used in the forums.
     static Future<ListOfTagResponseResponse> getForumTagSuggestions (
         HttpClient client,
@@ -166,7 +158,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets the specified forum poll.
     static Future<PostSearchResponseResponse> getPoll (
         HttpClient client,
@@ -182,7 +173,6 @@ class Forum{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Allows the caller to get a list of to 25 recruitment thread summary information objects.
     static Future<CEListOfForumRecruitmentDetailResponse> getRecruitmentThreadSummaries (
         HttpClient client,

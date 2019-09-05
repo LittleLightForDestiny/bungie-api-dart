@@ -10,6 +10,8 @@ tsc -p tsconfig.json
 node ./build/generate.js
 rm -rf build
 cd ..
-cp generator/dart-custom/http.dart ./lib/
+cp generator/dart-custom/helpers/bungie_net_token.dart ./lib/src/helpers
+cp generator/dart-custom/helpers/http.dart ./lib/src/helpers
+cp generator/dart-custom/helpers/oauth.dart ./lib/src/helpers
 
 flutter pub run build_runner build
