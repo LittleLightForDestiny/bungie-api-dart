@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'group_name_search_request.g.dart';
 
 @JsonSerializable()
-class GroupNameSearchRequest{
-	
+class GroupNameSearchRequest {
+
 	@JsonKey(name:'groupName')
 	String groupName;
-	
+
 	@JsonKey(name:'groupType')
 	int groupType;
 	GroupNameSearchRequest();

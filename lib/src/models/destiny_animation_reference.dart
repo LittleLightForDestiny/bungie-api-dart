@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_animation_reference.g.dart';
 
 @JsonSerializable()
-class DestinyAnimationReference{
-	
+class DestinyAnimationReference {
+
 	@JsonKey(name:'animName')
 	String animName;
-	
+
 	@JsonKey(name:'animIdentifier')
 	String animIdentifier;
-	
+
 	@JsonKey(name:'path')
 	String path;
 	DestinyAnimationReference();

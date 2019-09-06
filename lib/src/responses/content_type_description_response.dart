@@ -5,7 +5,7 @@ part 'content_type_description_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ContentTypeDescriptionResponse{
+class ContentTypeDescriptionResponse {
 	
 	@JsonKey(name:'Response')
 	ContentTypeDescription response;

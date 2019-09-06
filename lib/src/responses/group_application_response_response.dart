@@ -5,7 +5,7 @@ part 'group_application_response_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class GroupApplicationResponseResponse{
+class GroupApplicationResponseResponse {
 	
 	@JsonKey(name:'Response')
 	GroupApplicationResponse response;

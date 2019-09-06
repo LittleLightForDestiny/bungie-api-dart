@@ -5,7 +5,7 @@ part 'destiny_milestone_content_response.g.dart';
 
 /// Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint.
 @JsonSerializable()
-class DestinyMilestoneContentResponse{
+class DestinyMilestoneContentResponse {
 	
 	/// Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint.
 	@JsonKey(name:'Response')

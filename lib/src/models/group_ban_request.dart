@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'group_ban_request.g.dart';
 
 @JsonSerializable()
-class GroupBanRequest{
-	
+class GroupBanRequest {
+
 	@JsonKey(name:'comment')
 	String comment;
-	
+
 	@JsonKey(name:'length')
 	int length;
 	GroupBanRequest();

@@ -5,7 +5,7 @@ part 'fireteam_response_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class FireteamResponseResponse{
+class FireteamResponseResponse {
 	
 	@JsonKey(name:'Response')
 	FireteamResponse response;

@@ -5,7 +5,7 @@ part 'awa_authorization_result_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class AwaAuthorizationResultResponse{
+class AwaAuthorizationResultResponse {
 	
 	@JsonKey(name:'Response')
 	AwaAuthorizationResult response;

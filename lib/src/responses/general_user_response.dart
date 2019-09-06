@@ -5,7 +5,7 @@ part 'general_user_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class GeneralUserResponse{
+class GeneralUserResponse {
 	
 	@JsonKey(name:'Response')
 	GeneralUser response;

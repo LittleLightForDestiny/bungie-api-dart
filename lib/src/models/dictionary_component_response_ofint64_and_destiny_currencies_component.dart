@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'dictionary_component_response_ofint64_and_destiny_currencies_component.g.dart';
 
 @JsonSerializable()
-class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent{
-	
+class DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent {
+
 	@JsonKey(name:'data')
 	Map<String, DestinyCurrenciesComponent> data;
-	
+
 	@JsonKey(name:'privacy')
 	int privacy;
 	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent();

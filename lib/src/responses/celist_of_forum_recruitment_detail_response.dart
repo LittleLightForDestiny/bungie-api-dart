@@ -5,7 +5,7 @@ part 'celist_of_forum_recruitment_detail_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class CEListOfForumRecruitmentDetailResponse{
+class CEListOfForumRecruitmentDetailResponse {
 	
 	@JsonKey(name:'Response')
 	List<ForumRecruitmentDetail> response;

@@ -11,29 +11,29 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_component_set_ofint32.g.dart';
 
 @JsonSerializable()
-class DestinyItemComponentSetOfint32{
-	
+class DestinyItemComponentSetOfint32 {
+
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent instances;
-	
+
 	@JsonKey(name:'perks')
 	DictionaryComponentResponseOfint32AndDestinyItemPerksComponent perks;
-	
+
 	@JsonKey(name:'renderData')
 	DictionaryComponentResponseOfint32AndDestinyItemRenderComponent renderData;
-	
+
 	@JsonKey(name:'stats')
 	DictionaryComponentResponseOfint32AndDestinyItemStatsComponent stats;
-	
+
 	@JsonKey(name:'sockets')
 	DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent sockets;
-	
+
 	@JsonKey(name:'talentGrids')
 	DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent talentGrids;
-	
+
 	@JsonKey(name:'plugStates')
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
-	
+
 	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent objectives;
 	DestinyItemComponentSetOfint32();

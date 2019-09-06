@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'content_representation.g.dart';
 
 @JsonSerializable()
-class ContentRepresentation{
-	
+class ContentRepresentation {
+
 	@JsonKey(name:'name')
 	String name;
-	
+
 	@JsonKey(name:'path')
 	String path;
-	
+
 	@JsonKey(name:'validationString')
 	String validationString;
 	ContentRepresentation();

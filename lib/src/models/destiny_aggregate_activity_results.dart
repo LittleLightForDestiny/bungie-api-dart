@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_aggregate_activity_results.g.dart';
 
 @JsonSerializable()
-class DestinyAggregateActivityResults{
-	
+class DestinyAggregateActivityResults {
+
 	/// List of all activities the player has participated in.
 	@JsonKey(name:'activities')
 	List<DestinyAggregateActivityStats> activities;

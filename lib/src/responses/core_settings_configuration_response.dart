@@ -5,7 +5,7 @@ part 'core_settings_configuration_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class CoreSettingsConfigurationResponse{
+class CoreSettingsConfigurationResponse {
 	
 	@JsonKey(name:'Response')
 	CoreSettingsConfiguration response;

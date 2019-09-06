@@ -5,7 +5,7 @@ part 'api_usage_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ApiUsageResponse{
+class ApiUsageResponse {
 	
 	@JsonKey(name:'Response')
 	ApiUsage response;

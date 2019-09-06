@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'entity_action_result.g.dart';
 
 @JsonSerializable()
-class EntityActionResult{
-	
+class EntityActionResult {
+
 	@JsonKey(name:'entityId')
 	String entityId;
-	
+
 	@JsonKey(name:'result')
 	int result;
 	EntityActionResult();

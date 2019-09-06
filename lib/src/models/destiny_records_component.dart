@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_records_component.g.dart';
 
 @JsonSerializable()
-class DestinyRecordsComponent{
-	
+class DestinyRecordsComponent {
+
 	@JsonKey(name:'records')
 	Map<String, DestinyRecordComponent> records;
 	DestinyRecordsComponent();

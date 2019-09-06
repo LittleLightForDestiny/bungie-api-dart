@@ -6,7 +6,7 @@ part 'destiny_linked_profiles_response_response.g.dart';
 /// I know what you seek. You seek linked accounts. Found them, you have.
 /// This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose
 @JsonSerializable()
-class DestinyLinkedProfilesResponseResponse{
+class DestinyLinkedProfilesResponseResponse {
 	
 	/// I know what you seek. You seek linked accounts. Found them, you have.
 	/// This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose

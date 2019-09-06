@@ -5,7 +5,7 @@ part 'destiny_equip_item_results_response.g.dart';
 
 /// The results of a bulk Equipping operation performed through the Destiny API.
 @JsonSerializable()
-class DestinyEquipItemResultsResponse{
+class DestinyEquipItemResultsResponse {
 	
 	/// The results of a bulk Equipping operation performed through the Destiny API.
 	@JsonKey(name:'Response')

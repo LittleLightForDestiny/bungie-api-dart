@@ -5,11 +5,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'group_potential_membership.g.dart';
 
 @JsonSerializable()
-class GroupPotentialMembership{
-	
+class GroupPotentialMembership {
+
 	@JsonKey(name:'member')
 	GroupPotentialMember member;
-	
+
 	@JsonKey(name:'group')
 	GroupV2 group;
 	GroupPotentialMembership();

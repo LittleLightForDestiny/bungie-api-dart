@@ -5,23 +5,23 @@ import 'package:json_annotation/json_annotation.dart';
 part 'search_result_of_group_member_application.g.dart';
 
 @JsonSerializable()
-class SearchResultOfGroupMemberApplication{
-	
+class SearchResultOfGroupMemberApplication {
+
 	@JsonKey(name:'results')
 	List<GroupMemberApplication> results;
-	
+
 	@JsonKey(name:'totalResults')
 	int totalResults;
-	
+
 	@JsonKey(name:'hasMore')
 	bool hasMore;
-	
+
 	@JsonKey(name:'query')
 	PagedQuery query;
-	
+
 	@JsonKey(name:'replacementContinuationToken')
 	String replacementContinuationToken;
-	
+
 	/// If useTotalResults is true, then totalResults represents an accurate count.
 	/// If False, it does not, and may be estimated&#x2F;only the size of the current page.
 	/// Either way, you should probably always only trust hasMore.

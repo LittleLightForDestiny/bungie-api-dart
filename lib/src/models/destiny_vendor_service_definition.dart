@@ -4,8 +4,8 @@ part 'destiny_vendor_service_definition.g.dart';
 
 /// When a vendor provides services, this is the localized name of those services.
 @JsonSerializable()
-class DestinyVendorServiceDefinition{
-	
+class DestinyVendorServiceDefinition {
+
 	/// The localized name of a service provided.
 	@JsonKey(name:'name')
 	String name;

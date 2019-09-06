@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'trending_entry_news.g.dart';
 
 @JsonSerializable()
-class TrendingEntryNews{
-	
+class TrendingEntryNews {
+
 	@JsonKey(name:'article')
 	ContentItemPublicContract article;
 	TrendingEntryNews();

@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_collectibles_component.g.dart';
 
 @JsonSerializable()
-class DestinyCollectiblesComponent{
-	
+class DestinyCollectiblesComponent {
+
 	@JsonKey(name:'collectibles')
 	Map<String, DestinyCollectibleComponent> collectibles;
 	DestinyCollectiblesComponent();

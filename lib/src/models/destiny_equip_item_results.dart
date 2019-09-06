@@ -5,8 +5,8 @@ part 'destiny_equip_item_results.g.dart';
 
 /// The results of a bulk Equipping operation performed through the Destiny API.
 @JsonSerializable()
-class DestinyEquipItemResults{
-	
+class DestinyEquipItemResults {
+
 	@JsonKey(name:'equipResults')
 	List<DestinyEquipItemResult> equipResults;
 	DestinyEquipItemResults();

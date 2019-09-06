@@ -6,14 +6,14 @@ part 'group_v2_clan_info_and_investment.g.dart';
 
 /// The same as GroupV2ClanInfo, but includes any investment data.
 @JsonSerializable()
-class GroupV2ClanInfoAndInvestment{
-	
+class GroupV2ClanInfoAndInvestment {
+
 	@JsonKey(name:'d2ClanProgressions')
 	Map<String, DestinyProgression> d2ClanProgressions;
-	
+
 	@JsonKey(name:'clanCallsign')
 	String clanCallsign;
-	
+
 	@JsonKey(name:'clanBannerData')
 	ClanBanner clanBannerData;
 	GroupV2ClanInfoAndInvestment();

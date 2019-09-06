@@ -5,7 +5,7 @@ part 'celist_of_group_optional_conversation_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class CEListOfGroupOptionalConversationResponse{
+class CEListOfGroupOptionalConversationResponse {
 	
 	@JsonKey(name:'Response')
 	List<GroupOptionalConversation> response;

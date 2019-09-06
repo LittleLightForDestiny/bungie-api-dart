@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_activity_history_results.g.dart';
 
 @JsonSerializable()
-class DestinyActivityHistoryResults{
-	
+class DestinyActivityHistoryResults {
+
 	/// List of activities, the most recent activity first.
 	@JsonKey(name:'activities')
 	List<DestinyHistoricalStatsPeriodGroup> activities;

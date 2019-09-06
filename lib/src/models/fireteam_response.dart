@@ -5,14 +5,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'fireteam_response.g.dart';
 
 @JsonSerializable()
-class FireteamResponse{
-	
+class FireteamResponse {
+
 	@JsonKey(name:'Summary')
 	FireteamSummary summary;
-	
+
 	@JsonKey(name:'Members')
 	List<FireteamMember> members;
-	
+
 	@JsonKey(name:'Alternates')
 	List<FireteamMember> alternates;
 	FireteamResponse();

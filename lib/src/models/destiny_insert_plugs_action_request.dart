@@ -4,23 +4,23 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_insert_plugs_action_request.g.dart';
 
 @JsonSerializable()
-class DestinyInsertPlugsActionRequest{
-	
+class DestinyInsertPlugsActionRequest {
+
 	/// Action token provided by the AwaGetActionToken API call.
 	@JsonKey(name:'actionToken')
 	String actionToken;
-	
+
 	/// The instance ID of the item having a plug inserted. Only instanced items can have sockets.
 	@JsonKey(name:'itemInstanceId')
 	String itemInstanceId;
-	
+
 	/// The plugs being inserted.
 	@JsonKey(name:'plug')
 	DestinyInsertPlugsRequestEntry plug;
-	
+
 	@JsonKey(name:'characterId')
 	String characterId;
-	
+
 	@JsonKey(name:'membershipType')
 	int membershipType;
 	DestinyInsertPlugsActionRequest();

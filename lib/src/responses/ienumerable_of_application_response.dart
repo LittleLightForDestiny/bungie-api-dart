@@ -5,7 +5,7 @@ part 'ienumerable_of_application_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class IEnumerableOfApplicationResponse{
+class IEnumerableOfApplicationResponse {
 	
 	@JsonKey(name:'Response')
 	List<Application> response;

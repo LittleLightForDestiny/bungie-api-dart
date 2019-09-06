@@ -4,7 +4,7 @@ part 'int64_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class int64Response{
+class int64Response {
 	
 	@JsonKey(name:'Response')
 	String response;

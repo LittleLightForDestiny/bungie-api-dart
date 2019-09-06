@@ -5,14 +5,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_historical_stats_account_result.g.dart';
 
 @JsonSerializable()
-class DestinyHistoricalStatsAccountResult{
-	
+class DestinyHistoricalStatsAccountResult {
+
 	@JsonKey(name:'mergedDeletedCharacters')
 	DestinyHistoricalStatsWithMerged mergedDeletedCharacters;
-	
+
 	@JsonKey(name:'mergedAllCharacters')
 	DestinyHistoricalStatsWithMerged mergedAllCharacters;
-	
+
 	@JsonKey(name:'characters')
 	List<DestinyHistoricalStatsPerCharacter> characters;
 	DestinyHistoricalStatsAccountResult();

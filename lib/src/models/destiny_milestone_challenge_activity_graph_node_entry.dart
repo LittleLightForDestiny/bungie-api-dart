@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_milestone_challenge_activity_graph_node_entry.g.dart';
 
 @JsonSerializable()
-class DestinyMilestoneChallengeActivityGraphNodeEntry{
-	
+class DestinyMilestoneChallengeActivityGraphNodeEntry {
+
 	@JsonKey(name:'activityGraphHash')
 	int activityGraphHash;
-	
+
 	@JsonKey(name:'activityGraphNodeHash')
 	int activityGraphNodeHash;
 	DestinyMilestoneChallengeActivityGraphNodeEntry();

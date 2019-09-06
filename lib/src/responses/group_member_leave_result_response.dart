@@ -5,7 +5,7 @@ part 'group_member_leave_result_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class GroupMemberLeaveResultResponse{
+class GroupMemberLeaveResultResponse {
 	
 	@JsonKey(name:'Response')
 	GroupMemberLeaveResult response;

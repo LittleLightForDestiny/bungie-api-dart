@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_base_item_component_set_ofint64.g.dart';
 
 @JsonSerializable()
-class DestinyBaseItemComponentSetOfint64{
-	
+class DestinyBaseItemComponentSetOfint64 {
+
 	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
 	DestinyBaseItemComponentSetOfint64();

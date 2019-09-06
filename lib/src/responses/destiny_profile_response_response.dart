@@ -5,7 +5,7 @@ part 'destiny_profile_response_response.g.dart';
 
 /// The response for GetDestinyProfile, with components for character and item-level data.
 @JsonSerializable()
-class DestinyProfileResponseResponse{
+class DestinyProfileResponseResponse {
 	
 	/// The response for GetDestinyProfile, with components for character and item-level data.
 	@JsonKey(name:'Response')

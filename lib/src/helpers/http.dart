@@ -7,12 +7,12 @@ class HttpClientConfig {
   Map<String, String> headers;
   HttpClientConfig(
     this.method,
-    this.url,
-    this.params, [
+    this.url, {
+    this.params,
     this.body,
     this.bodyContentType,
     this.headers,
-  ]);
+  });
 }
 
 /// A generic, minimal type for providing an HTTP client function.

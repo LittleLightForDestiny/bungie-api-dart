@@ -7,8 +7,8 @@ part 'destiny_item_perks_component.g.dart';
 /// These are related to DestinySandboxPerkDefinition, and sometimes - but not always - have human readable info. When they do, they are the icons and text that you see in an item&#39;s tooltip.
 /// Talent Grids, Sockets, and the item itself can apply Perks, which are then summarized here for your convenience.
 @JsonSerializable()
-class DestinyItemPerksComponent{
-	
+class DestinyItemPerksComponent {
+
 	/// The list of perks to display in an item tooltip - and whether or not they have been activated.
 	@JsonKey(name:'perks')
 	List<DestinyPerkReference> perks;

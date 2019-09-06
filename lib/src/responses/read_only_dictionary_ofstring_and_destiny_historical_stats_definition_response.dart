@@ -5,7 +5,7 @@ part 'read_only_dictionary_ofstring_and_destiny_historical_stats_definition_resp
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
+class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse {
 	
 	@JsonKey(name:'Response')
 	Map<String, DestinyHistoricalStatsDefinition> response;

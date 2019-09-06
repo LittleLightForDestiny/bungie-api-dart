@@ -5,7 +5,7 @@ part 'destiny_item_response_response.g.dart';
 
 /// The response object for retrieving an individual instanced item. None of these components are relevant for an item that doesn't have an "itemInstanceId": for those, get your information from the DestinyInventoryDefinition.
 @JsonSerializable()
-class DestinyItemResponseResponse{
+class DestinyItemResponseResponse {
 	
 	/// The response object for retrieving an individual instanced item. None of these components are relevant for an item that doesn't have an "itemInstanceId": for those, get your information from the DestinyInventoryDefinition.
 	@JsonKey(name:'Response')

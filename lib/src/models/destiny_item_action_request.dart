@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_action_request.g.dart';
 
 @JsonSerializable()
-class DestinyItemActionRequest{
-	
+class DestinyItemActionRequest {
+
 	@JsonKey(name:'itemId')
 	String itemId;
-	
+
 	@JsonKey(name:'characterId')
 	String characterId;
-	
+
 	@JsonKey(name:'membershipType')
 	int membershipType;
 	DestinyItemActionRequest();

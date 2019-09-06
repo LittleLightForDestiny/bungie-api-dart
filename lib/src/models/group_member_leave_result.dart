@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'group_member_leave_result.g.dart';
 
 @JsonSerializable()
-class GroupMemberLeaveResult{
-	
+class GroupMemberLeaveResult {
+
 	@JsonKey(name:'group')
 	GroupV2 group;
-	
+
 	@JsonKey(name:'groupDeleted')
 	bool groupDeleted;
 	GroupMemberLeaveResult();

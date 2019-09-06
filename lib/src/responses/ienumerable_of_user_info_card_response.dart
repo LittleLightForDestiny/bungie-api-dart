@@ -5,7 +5,7 @@ part 'ienumerable_of_user_info_card_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class IEnumerableOfUserInfoCardResponse{
+class IEnumerableOfUserInfoCardResponse {
 	
 	@JsonKey(name:'Response')
 	List<UserInfoCard> response;

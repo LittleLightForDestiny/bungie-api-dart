@@ -5,7 +5,7 @@ part 'destiny_leaderboard_results_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DestinyLeaderboardResultsResponse{
+class DestinyLeaderboardResultsResponse {
 	
 	@JsonKey(name:'Response')
 	Map<String, Map<String, DestinyLeaderboard>> response;

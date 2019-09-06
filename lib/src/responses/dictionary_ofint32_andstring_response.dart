@@ -4,7 +4,7 @@ part 'dictionary_ofint32_andstring_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DictionaryOfint32AndstringResponse{
+class DictionaryOfint32AndstringResponse {
 	
 	@JsonKey(name:'Response')
 	Map<String, String> response;

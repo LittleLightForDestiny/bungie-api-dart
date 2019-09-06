@@ -5,7 +5,7 @@ part 'dictionary_ofuint32_and_destiny_public_milestone_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
+class DictionaryOfuint32AndDestinyPublicMilestoneResponse {
 	
 	@JsonKey(name:'Response')
 	Map<String, DestinyPublicMilestone> response;

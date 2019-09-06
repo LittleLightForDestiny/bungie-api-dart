@@ -5,7 +5,7 @@ part 'list_of_destiny_clan_aggregate_stat_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ListOfDestinyClanAggregateStatResponse{
+class ListOfDestinyClanAggregateStatResponse {
 	
 	@JsonKey(name:'Response')
 	List<DestinyClanAggregateStat> response;

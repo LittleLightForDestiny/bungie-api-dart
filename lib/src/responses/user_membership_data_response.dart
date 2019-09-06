@@ -5,7 +5,7 @@ part 'user_membership_data_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class UserMembershipDataResponse{
+class UserMembershipDataResponse {
 	
 	@JsonKey(name:'Response')
 	UserMembershipData response;

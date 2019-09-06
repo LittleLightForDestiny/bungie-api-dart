@@ -5,7 +5,7 @@ part 'destiny_manifest_response.g.dart';
 
 /// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
 @JsonSerializable()
-class DestinyManifestResponse{
+class DestinyManifestResponse {
 	
 	/// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
 	@JsonKey(name:'Response')

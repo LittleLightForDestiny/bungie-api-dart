@@ -5,7 +5,7 @@ part 'destiny_item_change_response_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DestinyItemChangeResponseResponse{
+class DestinyItemChangeResponseResponse {
 	
 	@JsonKey(name:'Response')
 	DestinyItemChangeResponse response;

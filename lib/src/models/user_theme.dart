@@ -3,14 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'user_theme.g.dart';
 
 @JsonSerializable()
-class UserTheme{
-	
+class UserTheme {
+
 	@JsonKey(name:'userThemeId')
 	int userThemeId;
-	
+
 	@JsonKey(name:'userThemeName')
 	String userThemeName;
-	
+
 	@JsonKey(name:'userThemeDescription')
 	String userThemeDescription;
 	UserTheme();

@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'stream_info.g.dart';
 
 @JsonSerializable()
-class StreamInfo{
-	
+class StreamInfo {
+
 	@JsonKey(name:'ChannelName')
 	String channelName;
 	StreamInfo();

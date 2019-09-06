@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_presentation_nodes_component.g.dart';
 
 @JsonSerializable()
-class DestinyPresentationNodesComponent{
-	
+class DestinyPresentationNodesComponent {
+
 	@JsonKey(name:'nodes')
 	Map<String, DestinyPresentationNodeComponent> nodes;
 	DestinyPresentationNodesComponent();

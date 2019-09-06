@@ -4,7 +4,7 @@ part 'boolean_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class booleanResponse{
+class booleanResponse {
 	
 	@JsonKey(name:'Response')
 	bool response;

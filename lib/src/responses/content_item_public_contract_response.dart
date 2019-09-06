@@ -5,7 +5,7 @@ part 'content_item_public_contract_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ContentItemPublicContractResponse{
+class ContentItemPublicContractResponse {
 	
 	@JsonKey(name:'Response')
 	ContentItemPublicContract response;

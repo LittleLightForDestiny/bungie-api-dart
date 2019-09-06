@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'trending_entry_destiny_item.g.dart';
 
 @JsonSerializable()
-class TrendingEntryDestinyItem{
-	
+class TrendingEntryDestinyItem {
+
 	@JsonKey(name:'itemHash')
 	int itemHash;
 	TrendingEntryDestinyItem();

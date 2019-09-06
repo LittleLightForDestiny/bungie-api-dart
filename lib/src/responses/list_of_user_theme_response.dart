@@ -5,7 +5,7 @@ part 'list_of_user_theme_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ListOfUserThemeResponse{
+class ListOfUserThemeResponse {
 	
 	@JsonKey(name:'Response')
 	List<UserTheme> response;

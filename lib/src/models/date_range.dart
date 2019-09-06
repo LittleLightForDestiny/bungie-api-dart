@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'date_range.g.dart';
 
 @JsonSerializable()
-class DateRange{
-	
+class DateRange {
+
 	@JsonKey(name:'start')
 	String start;
-	
+
 	@JsonKey(name:'end')
 	String end;
 	DateRange();

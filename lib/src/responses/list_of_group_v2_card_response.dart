@@ -5,7 +5,7 @@ part 'list_of_group_v2_card_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ListOfGroupV2CardResponse{
+class ListOfGroupV2CardResponse {
 	
 	@JsonKey(name:'Response')
 	List<GroupV2Card> response;

@@ -5,7 +5,7 @@ part 'destiny_collectible_node_detail_response_response.g.dart';
 
 /// Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants.
 @JsonSerializable()
-class DestinyCollectibleNodeDetailResponseResponse{
+class DestinyCollectibleNodeDetailResponseResponse {
 	
 	/// Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants.
 	@JsonKey(name:'Response')

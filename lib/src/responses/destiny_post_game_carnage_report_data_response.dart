@@ -5,7 +5,7 @@ part 'destiny_post_game_carnage_report_data_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DestinyPostGameCarnageReportDataResponse{
+class DestinyPostGameCarnageReportDataResponse {
 	
 	@JsonKey(name:'Response')
 	DestinyPostGameCarnageReportData response;

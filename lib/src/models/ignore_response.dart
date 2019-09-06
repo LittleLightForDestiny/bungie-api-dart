@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'ignore_response.g.dart';
 
 @JsonSerializable()
-class IgnoreResponse{
-	
+class IgnoreResponse {
+
 	@JsonKey(name:'isIgnored')
 	bool isIgnored;
-	
+
 	@JsonKey(name:'ignoreFlags')
 	int ignoreFlags;
 	IgnoreResponse();

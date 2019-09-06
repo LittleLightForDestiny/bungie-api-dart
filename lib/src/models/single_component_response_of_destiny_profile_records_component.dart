@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'single_component_response_of_destiny_profile_records_component.g.dart';
 
 @JsonSerializable()
-class SingleComponentResponseOfDestinyProfileRecordsComponent{
-	
+class SingleComponentResponseOfDestinyProfileRecordsComponent {
+
 	@JsonKey(name:'data')
 	DestinyProfileRecordsComponent data;
-	
+
 	@JsonKey(name:'privacy')
 	int privacy;
 	SingleComponentResponseOfDestinyProfileRecordsComponent();

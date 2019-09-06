@@ -2,35 +2,42 @@ import '../helpers/http.dart';
 {{#imports}}
 import '../{{type}}/{{filename}}.dart';
 {{/imports}}
-class {{className}}{
-    {{#methods}}
-    {{#description}}
-    /// {{.}}
-    {{/description}}
-    static Future<{{returnType}}> {{methodName}} (
-        HttpClient client,
-        {{#parameters}}
-        {{{typeName}}} {{name}},
-        {{/parameters}}
-        {{#requestBody}}
-        {{{typeName}}} body
-        {{/requestBody}}
-    ) {
-        Map<String, dynamic> params = new Map();
-        {{#queryParameters}}
-        params['{{name}}'] = {{name}};
-        {{/queryParameters}}
-        HttpClientConfig config = HttpClientConfig('{{method}}', "{{{url}}}", params);
-        {{#requestBody}}
-        {{{bodySerializeFunction}}}
-        {{/requestBody}}
-        config.bodyContentType = {{{requestBodyContentType}}};
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return {{returnType}}.fromJson(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
-    }
-    {{/methods}}
+
+class {{className}} {
+  {{#methods}}
+  {{#description}}
+  /// {{.}}
+  {{/description}}
+  static Future<{{returnType}}> {{methodName}}(
+    HttpClient client,
+    {{#parameters}}
+    {{{typeName}}} {{name}},
+    {{/parameters}}
+    {{#requestBody}}
+    {{{typeName}}} body,
+    {{/requestBody}}
+    Map<String, String> headers,
+  ) {
+    Map<String, dynamic> params = new Map();
+    {{#queryParameters}}
+    params['{{name}}'] = {{name}};
+    {{/queryParameters}}
+    HttpClientConfig config = HttpClientConfig(
+      '{{method}}', 
+      "{{{url}}}",
+    );
+    {{#requestBody}}
+    {{{bodySerializeFunction}}}
+    {{/requestBody}}
+    config.bodyContentType = {{{requestBodyContentType}}};
+    config.params = params;
+    config.headers = headers;
+    return client.request(config).then((response) {
+      if (response.statusCode == 200) {
+        return {{returnType}}.fromJson(response.mappedBody);
+      }
+      throw Exception(response.mappedBody);
+    });
+  }
+  {{/methods}}
 }

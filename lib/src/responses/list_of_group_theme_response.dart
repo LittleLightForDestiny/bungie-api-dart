@@ -5,7 +5,7 @@ part 'list_of_group_theme_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ListOfGroupThemeResponse{
+class ListOfGroupThemeResponse {
 	
 	@JsonKey(name:'Response')
 	List<GroupTheme> response;

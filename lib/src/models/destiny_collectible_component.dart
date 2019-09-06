@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_collectible_component.g.dart';
 
 @JsonSerializable()
-class DestinyCollectibleComponent{
-	
+class DestinyCollectibleComponent {
+
 	@JsonKey(name:'state')
 	int state;
 	DestinyCollectibleComponent();

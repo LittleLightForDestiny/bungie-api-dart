@@ -5,7 +5,7 @@ part 'destiny_character_response_response.g.dart';
 
 /// The response contract for GetDestinyCharacter, with components that can be returned for character and item-level data.
 @JsonSerializable()
-class DestinyCharacterResponseResponse{
+class DestinyCharacterResponseResponse {
 	
 	/// The response contract for GetDestinyCharacter, with components that can be returned for character and item-level data.
 	@JsonKey(name:'Response')

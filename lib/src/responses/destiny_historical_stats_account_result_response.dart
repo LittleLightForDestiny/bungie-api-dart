@@ -5,7 +5,7 @@ part 'destiny_historical_stats_account_result_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DestinyHistoricalStatsAccountResultResponse{
+class DestinyHistoricalStatsAccountResultResponse {
 	
 	@JsonKey(name:'Response')
 	DestinyHistoricalStatsAccountResult response;

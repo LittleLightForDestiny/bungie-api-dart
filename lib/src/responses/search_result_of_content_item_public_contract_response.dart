@@ -5,7 +5,7 @@ part 'search_result_of_content_item_public_contract_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class SearchResultOfContentItemPublicContractResponse{
+class SearchResultOfContentItemPublicContractResponse {
 	
 	@JsonKey(name:'Response')
 	SearchResultOfContentItemPublicContract response;

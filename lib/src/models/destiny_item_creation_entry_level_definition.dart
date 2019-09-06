@@ -4,8 +4,8 @@ part 'destiny_item_creation_entry_level_definition.g.dart';
 
 /// An overly complicated wrapper for the item level at which the item should spawn.
 @JsonSerializable()
-class DestinyItemCreationEntryLevelDefinition{
-	
+class DestinyItemCreationEntryLevelDefinition {
+
 	@JsonKey(name:'level')
 	int level;
 	DestinyItemCreationEntryLevelDefinition();

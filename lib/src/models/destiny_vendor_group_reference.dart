@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_vendor_group_reference.g.dart';
 
 @JsonSerializable()
-class DestinyVendorGroupReference{
-	
+class DestinyVendorGroupReference {
+
 	/// The DestinyVendorGroupDefinition to which this Vendor can belong.
 	@JsonKey(name:'vendorGroupHash')
 	int vendorGroupHash;

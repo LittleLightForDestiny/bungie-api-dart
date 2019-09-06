@@ -8,35 +8,35 @@ part 'group_query.g.dart';
 /// - groupMemberCountFilter - localeFilter - tagText
 /// If you pass these, you will get a useless InvalidParameters error.
 @JsonSerializable()
-class GroupQuery{
-	
+class GroupQuery {
+
 	@JsonKey(name:'name')
 	String name;
-	
+
 	@JsonKey(name:'groupType')
 	int groupType;
-	
+
 	@JsonKey(name:'creationDate')
 	int creationDate;
-	
+
 	@JsonKey(name:'sortBy')
 	int sortBy;
-	
+
 	@JsonKey(name:'groupMemberCountFilter')
 	int groupMemberCountFilter;
-	
+
 	@JsonKey(name:'localeFilter')
 	String localeFilter;
-	
+
 	@JsonKey(name:'tagText')
 	String tagText;
-	
+
 	@JsonKey(name:'itemsPerPage')
 	int itemsPerPage;
-	
+
 	@JsonKey(name:'currentPage')
 	int currentPage;
-	
+
 	@JsonKey(name:'requestContinuationToken')
 	String requestContinuationToken;
 	GroupQuery();

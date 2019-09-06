@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'interpolation_point.g.dart';
 
 @JsonSerializable()
-class InterpolationPoint{
-	
+class InterpolationPoint {
+
 	@JsonKey(name:'value')
 	int value;
-	
+
 	@JsonKey(name:'weight')
 	int weight;
 	InterpolationPoint();

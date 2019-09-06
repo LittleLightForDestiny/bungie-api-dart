@@ -5,7 +5,7 @@ part 'trending_detail_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class TrendingDetailResponse{
+class TrendingDetailResponse {
 	
 	@JsonKey(name:'Response')
 	TrendingDetail response;

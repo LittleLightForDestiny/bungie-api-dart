@@ -5,7 +5,7 @@ part 'destiny_definition_response.g.dart';
 
 /// Provides common properties for destiny definitions.
 @JsonSerializable()
-class DestinyDefinitionResponse{
+class DestinyDefinitionResponse {
 	
 	/// Provides common properties for destiny definitions.
 	@JsonKey(name:'Response')

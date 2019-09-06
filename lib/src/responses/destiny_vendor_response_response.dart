@@ -5,7 +5,7 @@ part 'destiny_vendor_response_response.g.dart';
 
 /// A response containing all of the components for a vendor.
 @JsonSerializable()
-class DestinyVendorResponseResponse{
+class DestinyVendorResponseResponse {
 	
 	/// A response containing all of the components for a vendor.
 	@JsonKey(name:'Response')

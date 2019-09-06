@@ -5,7 +5,7 @@ part 'community_live_status_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class CommunityLiveStatusResponse{
+class CommunityLiveStatusResponse {
 	
 	@JsonKey(name:'Response')
 	CommunityLiveStatus response;

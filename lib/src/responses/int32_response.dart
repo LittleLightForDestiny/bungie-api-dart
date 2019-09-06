@@ -4,7 +4,7 @@ part 'int32_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class int32Response{
+class int32Response {
 	
 	@JsonKey(name:'Response')
 	int response;

@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_collectible_acquisition_block.g.dart';
 
 @JsonSerializable()
-class DestinyCollectibleAcquisitionBlock{
-	
+class DestinyCollectibleAcquisitionBlock {
+
 	@JsonKey(name:'acquireMaterialRequirementHash')
 	int acquireMaterialRequirementHash;
-	
+
 	@JsonKey(name:'acquireTimestampUnlockValueHash')
 	int acquireTimestampUnlockValueHash;
 	DestinyCollectibleAcquisitionBlock();

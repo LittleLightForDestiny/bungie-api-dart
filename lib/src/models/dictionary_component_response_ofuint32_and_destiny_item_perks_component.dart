@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'dictionary_component_response_ofuint32_and_destiny_item_perks_component.g.dart';
 
 @JsonSerializable()
-class DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent{
-	
+class DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent {
+
 	@JsonKey(name:'data')
 	Map<String, DestinyItemPerksComponent> data;
-	
+
 	@JsonKey(name:'privacy')
 	int privacy;
 	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent();

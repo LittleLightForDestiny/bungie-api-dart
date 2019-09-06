@@ -5,7 +5,7 @@ part 'list_of_entity_action_result_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ListOfEntityActionResultResponse{
+class ListOfEntityActionResultResponse {
 	
 	@JsonKey(name:'Response')
 	List<EntityActionResult> response;

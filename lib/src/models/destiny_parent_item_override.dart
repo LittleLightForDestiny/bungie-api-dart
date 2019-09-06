@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_parent_item_override.g.dart';
 
 @JsonSerializable()
-class DestinyParentItemOverride{
-	
+class DestinyParentItemOverride {
+
 	@JsonKey(name:'additionalEquipRequirementsDisplayStrings')
 	List<String> additionalEquipRequirementsDisplayStrings;
-	
+
 	@JsonKey(name:'pipIcon')
 	String pipIcon;
 	DestinyParentItemOverride();

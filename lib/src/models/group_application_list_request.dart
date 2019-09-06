@@ -4,11 +4,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'group_application_list_request.g.dart';
 
 @JsonSerializable()
-class GroupApplicationListRequest{
-	
+class GroupApplicationListRequest {
+
 	@JsonKey(name:'memberships')
 	List<UserMembership> memberships;
-	
+
 	@JsonKey(name:'message')
 	String message;
 	GroupApplicationListRequest();

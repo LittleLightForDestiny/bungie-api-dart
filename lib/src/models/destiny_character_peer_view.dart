@@ -5,8 +5,8 @@ part 'destiny_character_peer_view.g.dart';
 
 /// A minimal view of a character&#39;s equipped items, for the purpose of rendering a summary screen or showing the character in 3D.
 @JsonSerializable()
-class DestinyCharacterPeerView{
-	
+class DestinyCharacterPeerView {
+
 	@JsonKey(name:'equipment')
 	List<DestinyItemPeerView> equipment;
 	DestinyCharacterPeerView();

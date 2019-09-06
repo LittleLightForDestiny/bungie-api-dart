@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'destiny_presentation_node_collectible_child_entry.g.dart';
 
 @JsonSerializable()
-class DestinyPresentationNodeCollectibleChildEntry{
-	
+class DestinyPresentationNodeCollectibleChildEntry {
+
 	@JsonKey(name:'collectibleHash')
 	int collectibleHash;
 	DestinyPresentationNodeCollectibleChildEntry();

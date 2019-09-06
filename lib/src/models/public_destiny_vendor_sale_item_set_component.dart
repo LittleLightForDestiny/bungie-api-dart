@@ -4,8 +4,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'public_destiny_vendor_sale_item_set_component.g.dart';
 
 @JsonSerializable()
-class PublicDestinyVendorSaleItemSetComponent{
-	
+class PublicDestinyVendorSaleItemSetComponent {
+
 	@JsonKey(name:'saleItems')
 	Map<String, DestinyPublicVendorSaleItemComponent> saleItems;
 	PublicDestinyVendorSaleItemSetComponent();

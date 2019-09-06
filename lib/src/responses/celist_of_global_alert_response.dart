@@ -5,7 +5,7 @@ part 'celist_of_global_alert_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class CEListOfGlobalAlertResponse{
+class CEListOfGlobalAlertResponse {
 	
 	@JsonKey(name:'Response')
 	List<GlobalAlert> response;
