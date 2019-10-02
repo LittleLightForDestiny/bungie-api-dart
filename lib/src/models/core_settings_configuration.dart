@@ -1,12 +1,16 @@
 import 'core_system.dart';
 import 'core_setting.dart';
 import 'destiny2_core_settings.dart';
+import 'email_settings.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'core_settings_configuration.g.dart';
 
 @JsonSerializable()
 class CoreSettingsConfiguration{
+	
+	@JsonKey(name:'environment')
+	String environment;
 	
 	@JsonKey(name:'systems')
 	Map<String, CoreSystem> systems;
@@ -61,6 +65,10 @@ class CoreSettingsConfiguration{
 	
 	@JsonKey(name:'destiny2CoreSettings')
 	Destiny2CoreSettings destiny2CoreSettings;
+	
+	/// The set of all email subscription&#x2F;opt-in settings and definitions.
+	@JsonKey(name:'emailSettings')
+	EmailSettings emailSettings;
 	CoreSettingsConfiguration();
 
 	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) => _$CoreSettingsConfigurationFromJson(json);

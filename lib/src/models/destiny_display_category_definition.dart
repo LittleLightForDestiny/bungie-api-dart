@@ -7,6 +7,9 @@ part 'destiny_display_category_definition.g.dart';
 @JsonSerializable()
 class DestinyDisplayCategoryDefinition{
 	
+	@JsonKey(name:'index')
+	int index;
+	
 	/// A string identifier for the display category.
 	@JsonKey(name:'identifier')
 	String identifier;

@@ -11,10 +11,6 @@ class DestinyVendorCategoryEntryDefinition{
 	@JsonKey(name:'categoryIndex')
 	int categoryIndex;
 	
-	/// The string identifier of the category.
-	@JsonKey(name:'categoryId')
-	String categoryId;
-	
 	/// Used in sorting items in vendors... but there&#39;s a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself.
 	@JsonKey(name:'sortValue')
 	int sortValue;

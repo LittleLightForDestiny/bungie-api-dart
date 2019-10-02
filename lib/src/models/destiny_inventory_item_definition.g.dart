@@ -13,6 +13,12 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
+    ..tooltipNotifications = (json['tooltipNotifications'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyItemTooltipNotification.fromJson(
+                e as Map<String, dynamic>))
+        ?.toList()
     ..collectibleHash = json['collectibleHash'] as int
     ..secondaryIcon = json['secondaryIcon'] as String
     ..secondaryOverlay = json['secondaryOverlay'] as String
@@ -45,11 +51,8 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..emblemObjectiveHash = json['emblemObjectiveHash'] as int
     ..equippingBlock = json['equippingBlock'] == null
         ? null
-        : DestinyEquippingBlockDefinition.fromJson(
-            json['equippingBlock'] as Map<String, dynamic>)
-    ..translationBlock = json['translationBlock'] == null
-        ? null
-        : DestinyItemTranslationBlockDefinition.fromJson(json['translationBlock'] as Map<String, dynamic>)
+        : DestinyEquippingBlockDefinition.fromJson(json['equippingBlock'] as Map<String, dynamic>)
+    ..translationBlock = json['translationBlock'] == null ? null : DestinyItemTranslationBlockDefinition.fromJson(json['translationBlock'] as Map<String, dynamic>)
     ..preview = json['preview'] == null ? null : DestinyItemPreviewBlockDefinition.fromJson(json['preview'] as Map<String, dynamic>)
     ..quality = json['quality'] == null ? null : DestinyItemQualityBlockDefinition.fromJson(json['quality'] as Map<String, dynamic>)
     ..value = json['value'] == null ? null : DestinyItemValueBlockDefinition.fromJson(json['value'] as Map<String, dynamic>)
@@ -75,11 +78,15 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..itemType = json['itemType'] as int
     ..itemSubType = json['itemSubType'] as int
     ..classType = json['classType'] as int
+    ..breakerType = json['breakerType'] as int
+    ..breakerTypeHash = json['breakerTypeHash'] as int
     ..equippable = json['equippable'] as bool
     ..damageTypeHashes = (json['damageTypeHashes'] as List)?.map((e) => e as int)?.toList()
     ..damageTypes = (json['damageTypes'] as List)?.map((e) => e as int)?.toList()
     ..defaultDamageType = json['defaultDamageType'] as int
     ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int
+    ..seasonHash = json['seasonHash'] as int
+    ..isWrapper = json['isWrapper'] as bool
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -89,6 +96,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
         DestinyInventoryItemDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
+      'tooltipNotifications': instance.tooltipNotifications,
       'collectibleHash': instance.collectibleHash,
       'secondaryIcon': instance.secondaryIcon,
       'secondaryOverlay': instance.secondaryOverlay,
@@ -133,11 +141,15 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'itemType': instance.itemType,
       'itemSubType': instance.itemSubType,
       'classType': instance.classType,
+      'breakerType': instance.breakerType,
+      'breakerTypeHash': instance.breakerTypeHash,
       'equippable': instance.equippable,
       'damageTypeHashes': instance.damageTypeHashes,
       'damageTypes': instance.damageTypes,
       'defaultDamageType': instance.defaultDamageType,
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
+      'seasonHash': instance.seasonHash,
+      'isWrapper': instance.isWrapper,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted

@@ -18,6 +18,10 @@ class DestinyDisplayPropertiesDefinition{
 	@JsonKey(name:'icon')
 	String icon;
 	
+	/// If this item has a high-res icon (at least for now, many things won&#39;t), then the path to that icon will be here.
+	@JsonKey(name:'highResIcon')
+	String highResIcon;
+	
 	@JsonKey(name:'hasIcon')
 	bool hasIcon;
 	DestinyDisplayPropertiesDefinition();

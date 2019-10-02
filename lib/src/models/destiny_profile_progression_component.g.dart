@@ -15,9 +15,16 @@ DestinyProfileProgressionComponent _$DestinyProfileProgressionComponentFromJson(
           (e as Map<String, dynamic>)?.map(
             (k, e) => MapEntry(k, e as bool),
           )),
-    );
+    )
+    ..seasonalArtifact = json['seasonalArtifact'] == null
+        ? null
+        : DestinyArtifactProfileScoped.fromJson(
+            json['seasonalArtifact'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyProfileProgressionComponentToJson(
         DestinyProfileProgressionComponent instance) =>
-    <String, dynamic>{'checklists': instance.checklists};
+    <String, dynamic>{
+      'checklists': instance.checklists,
+      'seasonalArtifact': instance.seasonalArtifact
+    };

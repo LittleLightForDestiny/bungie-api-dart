@@ -17,6 +17,7 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
     ..deprecated = json['deprecated'] as bool
     ..shortTitle = json['shortTitle'] as String
     ..itemTypeRegex = json['itemTypeRegex'] as String
+    ..grantDestinyBreakerType = json['grantDestinyBreakerType'] as int
     ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String
     ..itemTypeRegexNot = json['itemTypeRegexNot'] as String
     ..originBucketIdentifier = json['originBucketIdentifier'] as String
@@ -41,6 +42,7 @@ Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
       'deprecated': instance.deprecated,
       'shortTitle': instance.shortTitle,
       'itemTypeRegex': instance.itemTypeRegex,
+      'grantDestinyBreakerType': instance.grantDestinyBreakerType,
       'plugCategoryIdentifier': instance.plugCategoryIdentifier,
       'itemTypeRegexNot': instance.itemTypeRegexNot,
       'originBucketIdentifier': instance.originBucketIdentifier,

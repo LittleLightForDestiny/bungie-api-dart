@@ -1,5 +1,4 @@
 import 'destiny_item_socket_entry_plug_item_definition.dart';
-import 'destiny_item_socket_entry_plug_item_randomized_definition.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_socket_entry_definition.g.dart';
@@ -35,12 +34,14 @@ class DestinyItemSocketEntryDefinition{
 	int plugSources;
 	
 	/// If this socket&#39;s plugs come from a reusable DestinyPlugSetDefinition, this is the identifier for that set. We added this concept to reduce some major duplication that&#39;s going to come from sockets as replacements for what was once implemented as large sets of items and kiosks (like Emotes).
+	///  As of Shadowkeep, these will come up much more frequently and be driven by game content rather than custom curation.
 	@JsonKey(name:'reusablePlugSetHash')
 	int reusablePlugSetHash;
 	
-	/// As of Forsaken, item sockets can have randomized plugs. If this is populated, the live data will return a subset of plugs from this list that are active and able to be inserted into the socket just like a reusable plug.
-	@JsonKey(name:'randomizedPlugItems')
-	List<DestinyItemSocketEntryPlugItemRandomizedDefinition> randomizedPlugItems;
+	/// This field replaces &quot;randomizedPlugItems&quot; as of Shadowkeep launch. If a socket has randomized plugs, this is a pointer to the set of plugs that could be used, as defined in DestinyPlugSetDefinition.
+	///  If null, the item has no randomized plugs.
+	@JsonKey(name:'randomizedPlugSetHash')
+	int randomizedPlugSetHash;
 	
 	/// If true, then this socket is visible in the item&#39;s &quot;default&quot; state. If you have an instance, you should always check the runtime state, as that can override this visibility setting: but if you&#39;re looking at the item on a conceptual level, this property can be useful for hiding data such as legacy sockets - which remain defined on items for infrastructure purposes, but can be confusing for users to see.
 	@JsonKey(name:'defaultVisible')

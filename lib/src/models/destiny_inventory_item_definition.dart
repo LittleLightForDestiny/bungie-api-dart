@@ -1,4 +1,5 @@
 import 'destiny_display_properties_definition.dart';
+import 'destiny_item_tooltip_notification.dart';
 import 'destiny_color.dart';
 import 'destiny_item_action_block_definition.dart';
 import 'destiny_item_inventory_block_definition.dart';
@@ -33,6 +34,10 @@ class DestinyInventoryItemDefinition{
 	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
+	
+	/// Tooltips that only come up conditionally for the item. Check the live data DestinyItemComponent.tooltipNotificationIndexes property for which of these should be shown at runtime.
+	@JsonKey(name:'tooltipNotifications')
+	List<DestinyItemTooltipNotification> tooltipNotifications;
 	
 	/// If this item has a collectible related to it, this is the hash identifier of that collectible entry.
 	@JsonKey(name:'collectibleHash')
@@ -214,6 +219,14 @@ class DestinyInventoryItemDefinition{
 	@JsonKey(name:'classType')
 	int classType;
 	
+	/// Some weapons and plugs can have a &quot;Breaker Type&quot;: a special ability that works sort of like damage type vulnerabilities. This is (almost?) always set on items by plugs.
+	@JsonKey(name:'breakerType')
+	int breakerType;
+	
+	/// Since we also have a breaker type definition, this is the hash for that breaker type for your convenience. Whether you use the enum or hash and look up the definition depends on what&#39;s cleanest for your code.
+	@JsonKey(name:'breakerTypeHash')
+	int breakerTypeHash;
+	
 	/// If true, then you will be allowed to equip the item if you pass its other requirements.
 	/// This being false means that you cannot equip the item under any circumstances.
 	@JsonKey(name:'equippable')
@@ -240,6 +253,14 @@ class DestinyInventoryItemDefinition{
 	/// I will likely regret leaving in the enumeration versions of these properties, but for now they&#39;re very convenient.
 	@JsonKey(name:'defaultDamageTypeHash')
 	int defaultDamageTypeHash;
+	
+	/// If this item is related directly to a Season of Destiny, this is the hash identifier for that season.
+	@JsonKey(name:'seasonHash')
+	int seasonHash;
+	
+	/// If true, this is a dummy vendor-wrapped item template. Items purchased from Eververse will be &quot;wrapped&quot; by one of these items so that we can safely provide refund capabilities before the item is &quot;unwrapped&quot;.
+	@JsonKey(name:'isWrapper')
+	bool isWrapper;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

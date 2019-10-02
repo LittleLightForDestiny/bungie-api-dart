@@ -1,4 +1,5 @@
 import 'destiny_stat.dart';
+import 'destiny_item_instance_energy.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_instance_component.g.dart';
@@ -49,6 +50,18 @@ class DestinyItemInstanceComponent{
 	/// If you cannot equip the item, this is a flags enum that enumerates all of the reasons why you couldn&#39;t equip the item. You may need to refine your UI further by using unlockHashesRequiredToEquip and equipRequiredLevel.
 	@JsonKey(name:'cannotEquipReason')
 	int cannotEquipReason;
+	
+	/// If populated, this item has a breaker type corresponding to the given value. See DestinyBreakerTypeDefinition for more details.
+	@JsonKey(name:'breakerType')
+	int breakerType;
+	
+	/// If populated, this is the hash identifier for the item&#39;s breaker type. See DestinyBreakerTypeDefinition for more details.
+	@JsonKey(name:'breakerTypeHash')
+	int breakerTypeHash;
+	
+	/// IF populated, this item supports Energy mechanics (i.e. Armor 2.0), and these are the current details of its energy type and available capacity to spend energy points.
+	@JsonKey(name:'energy')
+	DestinyItemInstanceEnergy energy;
 	DestinyItemInstanceComponent();
 
 	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemInstanceComponentFromJson(json);

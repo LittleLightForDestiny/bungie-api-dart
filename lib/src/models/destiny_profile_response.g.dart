@@ -25,19 +25,21 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
         ? null
         : SingleComponentResponseOfDestinyProfileComponent.fromJson(
             json['profile'] as Map<String, dynamic>)
+    ..platformSilver = json['platformSilver'] == null
+        ? null
+        : SingleComponentResponseOfDestinyPlatformSilverComponent.fromJson(
+            json['platformSilver'] as Map<String, dynamic>)
     ..profileKiosks = json['profileKiosks'] == null
         ? null
         : SingleComponentResponseOfDestinyKiosksComponent.fromJson(
             json['profileKiosks'] as Map<String, dynamic>)
-    ..profilePlugSets = json['profilePlugSets'] == null
-        ? null
-        : SingleComponentResponseOfDestinyPlugSetsComponent.fromJson(
-            json['profilePlugSets'] as Map<String, dynamic>)
-    ..profileProgression =
-        json['profileProgression'] == null ? null : SingleComponentResponseOfDestinyProfileProgressionComponent.fromJson(json['profileProgression'] as Map<String, dynamic>)
+    ..profilePlugSets =
+        json['profilePlugSets'] == null ? null : SingleComponentResponseOfDestinyPlugSetsComponent.fromJson(json['profilePlugSets'] as Map<String, dynamic>)
+    ..profileProgression = json['profileProgression'] == null ? null : SingleComponentResponseOfDestinyProfileProgressionComponent.fromJson(json['profileProgression'] as Map<String, dynamic>)
     ..profilePresentationNodes = json['profilePresentationNodes'] == null ? null : SingleComponentResponseOfDestinyPresentationNodesComponent.fromJson(json['profilePresentationNodes'] as Map<String, dynamic>)
     ..profileRecords = json['profileRecords'] == null ? null : SingleComponentResponseOfDestinyProfileRecordsComponent.fromJson(json['profileRecords'] as Map<String, dynamic>)
     ..profileCollectibles = json['profileCollectibles'] == null ? null : SingleComponentResponseOfDestinyProfileCollectiblesComponent.fromJson(json['profileCollectibles'] as Map<String, dynamic>)
+    ..profileTransitoryData = json['profileTransitoryData'] == null ? null : SingleComponentResponseOfDestinyProfileTransitoryComponent.fromJson(json['profileTransitoryData'] as Map<String, dynamic>)
     ..characters = json['characters'] == null ? null : DictionaryComponentResponseOfint64AndDestinyCharacterComponent.fromJson(json['characters'] as Map<String, dynamic>)
     ..characterInventories = json['characterInventories'] == null ? null : DictionaryComponentResponseOfint64AndDestinyInventoryComponent.fromJson(json['characterInventories'] as Map<String, dynamic>)
     ..characterProgressions = json['characterProgressions'] == null ? null : DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent.fromJson(json['characterProgressions'] as Map<String, dynamic>)
@@ -68,12 +70,14 @@ Map<String, dynamic> _$DestinyProfileResponseToJson(
       'profileInventory': instance.profileInventory,
       'profileCurrencies': instance.profileCurrencies,
       'profile': instance.profile,
+      'platformSilver': instance.platformSilver,
       'profileKiosks': instance.profileKiosks,
       'profilePlugSets': instance.profilePlugSets,
       'profileProgression': instance.profileProgression,
       'profilePresentationNodes': instance.profilePresentationNodes,
       'profileRecords': instance.profileRecords,
       'profileCollectibles': instance.profileCollectibles,
+      'profileTransitoryData': instance.profileTransitoryData,
       'characters': instance.characters,
       'characterInventories': instance.characterInventories,
       'characterProgressions': instance.characterProgressions,

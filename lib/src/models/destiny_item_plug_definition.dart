@@ -1,5 +1,7 @@
 import 'destiny_plug_rule_definition.dart';
 import 'destiny_parent_item_override.dart';
+import 'destiny_energy_capacity_entry.dart';
+import 'destiny_energy_cost_entry.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_plug_definition.g.dart';
@@ -50,10 +52,6 @@ class DestinyItemPlugDefinition{
 	@JsonKey(name:'plugStyle')
 	int plugStyle;
 	
-	/// If TRUE, the plug doesn&#39;t actually convey any benefit: it only exists to show information in the UI.
-	@JsonKey(name:'isPseudoPlug')
-	bool isPseudoPlug;
-	
 	/// Indicates the rules about when this plug can be used. See the PlugAvailabilityMode enumeration for more information!
 	@JsonKey(name:'plugAvailability')
 	int plugAvailability;
@@ -75,6 +73,14 @@ class DestinyItemPlugDefinition{
 	/// If this is populated, it will have the override data to be applied when this plug is applied to an item.
 	@JsonKey(name:'parentItemOverride')
 	DestinyParentItemOverride parentItemOverride;
+	
+	/// IF not null, this plug provides Energy capacity to the item in which it is socketed. In Armor 2.0 for example, is implemented in a similar way to Masterworks, where visually it&#39;s a single area of the UI being clicked on to &quot;Upgrade&quot; to higher energy levels, but it&#39;s actually socketing new plugs.
+	@JsonKey(name:'energyCapacity')
+	DestinyEnergyCapacityEntry energyCapacity;
+	
+	/// IF not null, this plug has an energy cost. This contains the details of that cost.
+	@JsonKey(name:'energyCost')
+	DestinyEnergyCostEntry energyCost;
 	DestinyItemPlugDefinition();
 
 	factory DestinyItemPlugDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemPlugDefinitionFromJson(json);

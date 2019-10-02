@@ -1,0 +1,1 @@
+export '../src/models/email_setting_subscription_localization.dart';

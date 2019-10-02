@@ -41,6 +41,7 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
     ..expirationInfo = json['expirationInfo'] == null
         ? null
         : DestinyRecordExpirationBlock.fromJson(json['expirationInfo'] as Map<String, dynamic>)
+    ..intervalInfo = json['intervalInfo'] == null ? null : DestinyRecordIntervalBlock.fromJson(json['intervalInfo'] as Map<String, dynamic>)
     ..rewardItems = (json['rewardItems'] as List)?.map((e) => e == null ? null : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))?.toList()
     ..hash = json['hash'] as int
     ..index = json['index'] as int
@@ -61,6 +62,7 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
       'stateInfo': instance.stateInfo,
       'requirements': instance.requirements,
       'expirationInfo': instance.expirationInfo,
+      'intervalInfo': instance.intervalInfo,
       'rewardItems': instance.rewardItems,
       'hash': instance.hash,
       'index': instance.index,

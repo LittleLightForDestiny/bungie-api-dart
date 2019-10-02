@@ -54,8 +54,9 @@ export class ModelProperty{
     }
 
     _description():string|null{
-        if(this.info.$ref){
-            let ref = ApiDocHelper.getRef(this.info.$ref);
+        if('$ref' in this.info){
+            let info = this.info as ReferenceObject;
+            let ref = ApiDocHelper.getRef(info.$ref);
             if(ref.description) return ref.description;
         }
 

@@ -30,6 +30,10 @@ class DestinyHistoricalStatsActivity{
 	/// Whether or not the match was a private match. There&#39;s no private matches in Destiny 2... yet... DUN DUN DUNNNN
 	@JsonKey(name:'isPrivate')
 	bool isPrivate;
+	
+	/// The Membership Type indicating the platform on which this match was played.
+	@JsonKey(name:'membershipType')
+	int membershipType;
 	DestinyHistoricalStatsActivity();
 
 	factory DestinyHistoricalStatsActivity.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsActivityFromJson(json);

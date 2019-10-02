@@ -1,0 +1,1 @@
+export '../src/models/destiny_item_tooltip_notification.dart';

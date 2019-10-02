@@ -11,6 +11,12 @@ class DestinyRecordComponent{
 	
 	@JsonKey(name:'objectives')
 	List<DestinyObjectiveProgress> objectives;
+	
+	@JsonKey(name:'intervalObjectives')
+	List<DestinyObjectiveProgress> intervalObjectives;
+	
+	@JsonKey(name:'intervalsRedeemedCount')
+	int intervalsRedeemedCount;
 	DestinyRecordComponent();
 
 	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) => _$DestinyRecordComponentFromJson(json);

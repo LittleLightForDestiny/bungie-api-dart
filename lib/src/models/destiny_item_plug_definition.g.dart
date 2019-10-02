@@ -29,7 +29,6 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
         ?.toList()
     ..uiPlugLabel = json['uiPlugLabel'] as String
     ..plugStyle = json['plugStyle'] as int
-    ..isPseudoPlug = json['isPseudoPlug'] as bool
     ..plugAvailability = json['plugAvailability'] as int
     ..alternateUiPlugLabel = json['alternateUiPlugLabel'] as String
     ..alternatePlugStyle = json['alternatePlugStyle'] as int
@@ -37,7 +36,15 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
     ..parentItemOverride = json['parentItemOverride'] == null
         ? null
         : DestinyParentItemOverride.fromJson(
-            json['parentItemOverride'] as Map<String, dynamic>);
+            json['parentItemOverride'] as Map<String, dynamic>)
+    ..energyCapacity = json['energyCapacity'] == null
+        ? null
+        : DestinyEnergyCapacityEntry.fromJson(
+            json['energyCapacity'] as Map<String, dynamic>)
+    ..energyCost = json['energyCost'] == null
+        ? null
+        : DestinyEnergyCostEntry.fromJson(
+            json['energyCost'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyItemPlugDefinitionToJson(
@@ -54,10 +61,11 @@ Map<String, dynamic> _$DestinyItemPlugDefinitionToJson(
       'enabledRules': instance.enabledRules,
       'uiPlugLabel': instance.uiPlugLabel,
       'plugStyle': instance.plugStyle,
-      'isPseudoPlug': instance.isPseudoPlug,
       'plugAvailability': instance.plugAvailability,
       'alternateUiPlugLabel': instance.alternateUiPlugLabel,
       'alternatePlugStyle': instance.alternatePlugStyle,
       'isDummyPlug': instance.isDummyPlug,
-      'parentItemOverride': instance.parentItemOverride
+      'parentItemOverride': instance.parentItemOverride,
+      'energyCapacity': instance.energyCapacity,
+      'energyCost': instance.energyCost
     };

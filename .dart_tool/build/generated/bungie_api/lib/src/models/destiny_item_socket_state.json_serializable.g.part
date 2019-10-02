@@ -21,7 +21,9 @@ DestinyItemSocketState _$DestinyItemSocketStateFromJson(
         ?.map((e) => e == null
             ? null
             : DestinyItemPlug.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+        ?.toList()
+    ..plugSetHash = json['plugSetHash'] as int
+    ..plugSources = json['plugSources'] as int;
 }
 
 Map<String, dynamic> _$DestinyItemSocketStateToJson(
@@ -33,5 +35,7 @@ Map<String, dynamic> _$DestinyItemSocketStateToJson(
       'enableFailIndexes': instance.enableFailIndexes,
       'reusablePlugHashes': instance.reusablePlugHashes,
       'plugObjectives': instance.plugObjectives,
-      'reusablePlugs': instance.reusablePlugs
+      'reusablePlugs': instance.reusablePlugs,
+      'plugSetHash': instance.plugSetHash,
+      'plugSources': instance.plugSources
     };

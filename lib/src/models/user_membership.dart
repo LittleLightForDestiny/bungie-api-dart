@@ -6,7 +6,7 @@ part 'user_membership.g.dart';
 @JsonSerializable()
 class UserMembership{
 	
-	/// Type of the membership.
+	/// Type of the membership. Not necessarily the native type.
 	@JsonKey(name:'membershipType')
 	int membershipType;
 	

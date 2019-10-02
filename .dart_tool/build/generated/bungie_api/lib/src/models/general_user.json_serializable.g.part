@@ -35,7 +35,8 @@ GeneralUser _$GeneralUserFromJson(Map<String, dynamic> json) {
     ..statusText = json['statusText'] as String
     ..statusDate = json['statusDate'] as String
     ..profileBanExpire = json['profileBanExpire'] as String
-    ..blizzardDisplayName = json['blizzardDisplayName'] as String;
+    ..blizzardDisplayName = json['blizzardDisplayName'] as String
+    ..steamDisplayName = json['steamDisplayName'] as String;
 }
 
 Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
@@ -69,5 +70,6 @@ Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
       'statusText': instance.statusText,
       'statusDate': instance.statusDate,
       'profileBanExpire': instance.profileBanExpire,
-      'blizzardDisplayName': instance.blizzardDisplayName
+      'blizzardDisplayName': instance.blizzardDisplayName,
+      'steamDisplayName': instance.steamDisplayName
     };

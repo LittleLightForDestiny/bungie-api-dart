@@ -29,6 +29,10 @@ class DestinyItemCategoryDefinition{
 	@JsonKey(name:'itemTypeRegex')
 	String itemTypeRegex;
 	
+	/// If the item in question has this category, it also should have this breaker type.
+	@JsonKey(name:'grantDestinyBreakerType')
+	int grantDestinyBreakerType;
+	
 	/// If the item is a plug, this is the identifier we expect to find associated with it if it is in this category.
 	@JsonKey(name:'plugCategoryIdentifier')
 	String plugCategoryIdentifier;

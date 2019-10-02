@@ -3,7 +3,6 @@ import '../responses/post_search_response_response.dart';
 import '../responses/search_result_of_community_live_status_response.dart';
 import '../responses/community_live_status_response.dart';
 class CommunityContent{
-    
     /// Returns community content.
     static Future<PostSearchResponseResponse> getCommunityContent (
         HttpClient client,
@@ -21,7 +20,6 @@ class CommunityContent{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns info about community members who are live streaming.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatuses (
         HttpClient client,
@@ -43,7 +41,6 @@ class CommunityContent{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns info about community members who are live streaming in your clans.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForClanmates (
         HttpClient client,
@@ -61,7 +58,6 @@ class CommunityContent{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns info about community members who are live streaming among your friends.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForFriends (
         HttpClient client,
@@ -79,7 +75,6 @@ class CommunityContent{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns info about Featured live streams.
     static Future<SearchResultOfCommunityLiveStatusResponse> getFeaturedCommunityLiveStatuses (
         HttpClient client,
@@ -99,7 +94,6 @@ class CommunityContent{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets the Live Streaming status of a particular Account and Membership Type.
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,

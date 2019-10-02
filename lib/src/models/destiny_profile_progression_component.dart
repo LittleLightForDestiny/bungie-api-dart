@@ -1,3 +1,4 @@
+import 'destiny_artifact_profile_scoped.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_profile_progression_component.g.dart';
@@ -11,6 +12,10 @@ class DestinyProfileProgressionComponent{
 	/// For each checklist returned, its value is itself a Dictionary keyed by the checklist&#39;s hash identifier with the value being a boolean indicating if it&#39;s been discovered yet.
 	@JsonKey(name:'checklists')
 	Map<String, Map<String, bool>> checklists;
+	
+	/// Data related to your progress on the current season&#39;s artifact that is the same across characters.
+	@JsonKey(name:'seasonalArtifact')
+	DestinyArtifactProfileScoped seasonalArtifact;
 	DestinyProfileProgressionComponent();
 
 	factory DestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileProgressionComponentFromJson(json);

@@ -24,7 +24,7 @@ GroupBan _$GroupBanFromJson(Map<String, dynamic> json) {
             json['bungieNetUserInfo'] as Map<String, dynamic>)
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
-        : UserInfoCard.fromJson(
+        : GroupUserInfoCard.fromJson(
             json['destinyUserInfo'] as Map<String, dynamic>);
 }
 

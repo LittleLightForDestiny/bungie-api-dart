@@ -1,12 +1,14 @@
 import 'single_component_response_of_destiny_vendor_receipts_component.dart';
 import 'single_component_response_of_destiny_inventory_component.dart';
 import 'single_component_response_of_destiny_profile_component.dart';
+import 'single_component_response_of_destiny_platform_silver_component.dart';
 import 'single_component_response_of_destiny_kiosks_component.dart';
 import 'single_component_response_of_destiny_plug_sets_component.dart';
 import 'single_component_response_of_destiny_profile_progression_component.dart';
 import 'single_component_response_of_destiny_presentation_nodes_component.dart';
 import 'single_component_response_of_destiny_profile_records_component.dart';
 import 'single_component_response_of_destiny_profile_collectibles_component.dart';
+import 'single_component_response_of_destiny_profile_transitory_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_inventory_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_progression_component.dart';
@@ -48,6 +50,11 @@ class DestinyProfileResponse{
 	@JsonKey(name:'profile')
 	SingleComponentResponseOfDestinyProfileComponent profile;
 	
+	/// Silver quantities for any platform on which this Profile plays destiny.
+	///  COMPONENT TYPE: PlatformSilver
+	@JsonKey(name:'platformSilver')
+	SingleComponentResponseOfDestinyPlatformSilverComponent platformSilver;
+	
 	/// Items available from Kiosks that are available Profile-wide (i.e. across all characters)
 	/// This component returns information about what Kiosk items are available to you on a *Profile* level. It is theoretically possible for Kiosks to have items gated by specific Character as well. If you ever have those, you will find them on the characterKiosks property.
 	/// COMPONENT TYPE: Kiosks
@@ -76,6 +83,10 @@ class DestinyProfileResponse{
 	/// COMPONENT TYPE: Collectibles
 	@JsonKey(name:'profileCollectibles')
 	SingleComponentResponseOfDestinyProfileCollectiblesComponent profileCollectibles;
+	
+	/// COMPONENT TYPE: Transitory
+	@JsonKey(name:'profileTransitoryData')
+	SingleComponentResponseOfDestinyProfileTransitoryComponent profileTransitoryData;
 	
 	/// Basic information about each character, keyed by the CharacterId.
 	/// COMPONENT TYPE: Characters

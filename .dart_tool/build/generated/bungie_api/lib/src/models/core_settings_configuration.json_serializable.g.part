@@ -5,6 +5,7 @@
 CoreSettingsConfiguration _$CoreSettingsConfigurationFromJson(
     Map<String, dynamic> json) {
   return CoreSettingsConfiguration()
+    ..environment = json['environment'] as String
     ..systems = (json['systems'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(
           k, e == null ? null : CoreSystem.fromJson(e as Map<String, dynamic>)),
@@ -68,12 +69,14 @@ CoreSettingsConfiguration _$CoreSettingsConfigurationFromJson(
     ..clanBannerGonfalonDetailColors =
         (json['clanBannerGonfalonDetailColors'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
     ..clanBannerStandards = (json['clanBannerStandards'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
-    ..destiny2CoreSettings = json['destiny2CoreSettings'] == null ? null : Destiny2CoreSettings.fromJson(json['destiny2CoreSettings'] as Map<String, dynamic>);
+    ..destiny2CoreSettings = json['destiny2CoreSettings'] == null ? null : Destiny2CoreSettings.fromJson(json['destiny2CoreSettings'] as Map<String, dynamic>)
+    ..emailSettings = json['emailSettings'] == null ? null : EmailSettings.fromJson(json['emailSettings'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$CoreSettingsConfigurationToJson(
         CoreSettingsConfiguration instance) =>
     <String, dynamic>{
+      'environment': instance.environment,
       'systems': instance.systems,
       'ignoreReasons': instance.ignoreReasons,
       'forumCategories': instance.forumCategories,
@@ -91,5 +94,6 @@ Map<String, dynamic> _$CoreSettingsConfigurationToJson(
       'clanBannerGonfalonDetails': instance.clanBannerGonfalonDetails,
       'clanBannerGonfalonDetailColors': instance.clanBannerGonfalonDetailColors,
       'clanBannerStandards': instance.clanBannerStandards,
-      'destiny2CoreSettings': instance.destiny2CoreSettings
+      'destiny2CoreSettings': instance.destiny2CoreSettings,
+      'emailSettings': instance.emailSettings
     };

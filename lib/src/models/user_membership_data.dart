@@ -1,4 +1,4 @@
-import 'user_info_card.dart';
+import 'group_user_info_card.dart';
 import 'general_user.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -9,7 +9,7 @@ class UserMembershipData{
 	
 	/// this allows you to see destiny memberships that are visible and linked to this account (regardless of whether or not they have characters on the world server)
 	@JsonKey(name:'destinyMemberships')
-	List<UserInfoCard> destinyMemberships;
+	List<GroupUserInfoCard> destinyMemberships;
 	
 	@JsonKey(name:'bungieNetUser')
 	GeneralUser bungieNetUser;

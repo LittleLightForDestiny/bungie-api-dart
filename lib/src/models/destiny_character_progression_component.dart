@@ -3,6 +3,7 @@ import 'destiny_faction_progression.dart';
 import 'destiny_milestone.dart';
 import 'destiny_quest_status.dart';
 import 'destiny_objective_progress.dart';
+import 'destiny_artifact_character_scoped.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_character_progression_component.g.dart';
@@ -25,7 +26,8 @@ class DestinyCharacterProgressionComponent{
 	Map<String, DestinyMilestone> milestones;
 	
 	/// If the user has any active quests, the quests&#39; statuses will be returned here.
-	/// Note that quests have been largely supplanted by Milestones, but that doesn&#39;t mean that they won&#39;t make a comeback independent of milestones at some point.
+	///  Note that quests have been largely supplanted by Milestones, but that doesn&#39;t mean that they won&#39;t make a comeback independent of milestones at some point.
+	///  (Fun fact: quests came back as I feared they would, but we never looped back to populate this... I&#39;m going to put that in the backlog.)
 	@JsonKey(name:'quests')
 	List<DestinyQuestStatus> quests;
 	
@@ -38,6 +40,10 @@ class DestinyCharacterProgressionComponent{
 	/// For each checklist returned, its value is itself a Dictionary keyed by the checklist&#39;s hash identifier with the value being a boolean indicating if it&#39;s been discovered yet.
 	@JsonKey(name:'checklists')
 	Map<String, Map<String, bool>> checklists;
+	
+	/// Data related to your progress on the current season&#39;s artifact that can vary per character.
+	@JsonKey(name:'seasonalArtifact')
+	DestinyArtifactCharacterScoped seasonalArtifact;
 	DestinyCharacterProgressionComponent();
 
 	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterProgressionComponentFromJson(json);

@@ -49,6 +49,7 @@ class ContentItemPublicContract{
 	@JsonKey(name:'representations')
 	List<ContentRepresentation> representations;
 	
+	/// NOTE: Tags will always be lower case.
 	@JsonKey(name:'tags')
 	List<String> tags;
 	

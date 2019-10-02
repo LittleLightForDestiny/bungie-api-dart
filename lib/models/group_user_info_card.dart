@@ -1,0 +1,1 @@
+export '../src/models/group_user_info_card.dart';

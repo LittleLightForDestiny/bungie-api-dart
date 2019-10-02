@@ -5,4 +5,6 @@ class DestinySocketCategoryStyle {
   static const int Consumable = 2;
   static const int Unlockable = 3;
   static const int Intrinsic = 4;
+  static const int EnergyMeter = 5;
+  static const int LargePerk = 6;
 }

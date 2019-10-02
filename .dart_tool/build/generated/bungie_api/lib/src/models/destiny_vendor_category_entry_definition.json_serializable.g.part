@@ -6,7 +6,6 @@ DestinyVendorCategoryEntryDefinition
     _$DestinyVendorCategoryEntryDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyVendorCategoryEntryDefinition()
     ..categoryIndex = json['categoryIndex'] as int
-    ..categoryId = json['categoryId'] as String
     ..sortValue = json['sortValue'] as int
     ..categoryHash = json['categoryHash'] as int
     ..quantityAvailable = json['quantityAvailable'] as int
@@ -32,7 +31,6 @@ Map<String, dynamic> _$DestinyVendorCategoryEntryDefinitionToJson(
         DestinyVendorCategoryEntryDefinition instance) =>
     <String, dynamic>{
       'categoryIndex': instance.categoryIndex,
-      'categoryId': instance.categoryId,
       'sortValue': instance.sortValue,
       'categoryHash': instance.categoryHash,
       'quantityAvailable': instance.quantityAvailable,

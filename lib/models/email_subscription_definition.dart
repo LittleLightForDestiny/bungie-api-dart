@@ -1,0 +1,1 @@
+export '../src/models/email_subscription_definition.dart';

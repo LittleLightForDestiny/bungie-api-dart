@@ -6,6 +6,7 @@ class DestinyComponentType {
   static const int ProfileInventories = 102;
   static const int ProfileCurrencies = 103;
   static const int ProfileProgression = 104;
+  static const int PlatformSilver = 105;
   static const int Characters = 200;
   static const int CharacterInventories = 201;
   static const int CharacterProgressions = 202;
@@ -29,4 +30,5 @@ class DestinyComponentType {
   static const int PresentationNodes = 700;
   static const int Collectibles = 800;
   static const int Records = 900;
+  static const int Transitory = 1000;
 }

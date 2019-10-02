@@ -11,7 +11,9 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
     ..dateLastPlayed = json['dateLastPlayed'] as String
     ..versionsOwned = json['versionsOwned'] as int
     ..characterIds =
-        (json['characterIds'] as List)?.map((e) => e as String)?.toList();
+        (json['characterIds'] as List)?.map((e) => e as String)?.toList()
+    ..seasonHashes =
+        (json['seasonHashes'] as List)?.map((e) => e as int)?.toList();
 }
 
 Map<String, dynamic> _$DestinyProfileComponentToJson(
@@ -20,5 +22,6 @@ Map<String, dynamic> _$DestinyProfileComponentToJson(
       'userInfo': instance.userInfo,
       'dateLastPlayed': instance.dateLastPlayed,
       'versionsOwned': instance.versionsOwned,
-      'characterIds': instance.characterIds
+      'characterIds': instance.characterIds,
+      'seasonHashes': instance.seasonHashes
     };

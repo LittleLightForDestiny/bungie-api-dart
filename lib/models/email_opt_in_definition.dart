@@ -1,0 +1,1 @@
+export '../src/models/email_opt_in_definition.dart';

@@ -23,7 +23,13 @@ DestinyItemInstanceComponent _$DestinyItemInstanceComponentFromJson(
         (json['unlockHashesRequiredToEquip'] as List)
             ?.map((e) => e as int)
             ?.toList()
-    ..cannotEquipReason = json['cannotEquipReason'] as int;
+    ..cannotEquipReason = json['cannotEquipReason'] as int
+    ..breakerType = json['breakerType'] as int
+    ..breakerTypeHash = json['breakerTypeHash'] as int
+    ..energy = json['energy'] == null
+        ? null
+        : DestinyItemInstanceEnergy.fromJson(
+            json['energy'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyItemInstanceComponentToJson(
@@ -38,5 +44,8 @@ Map<String, dynamic> _$DestinyItemInstanceComponentToJson(
       'canEquip': instance.canEquip,
       'equipRequiredLevel': instance.equipRequiredLevel,
       'unlockHashesRequiredToEquip': instance.unlockHashesRequiredToEquip,
-      'cannotEquipReason': instance.cannotEquipReason
+      'cannotEquipReason': instance.cannotEquipReason,
+      'breakerType': instance.breakerType,
+      'breakerTypeHash': instance.breakerTypeHash,
+      'energy': instance.energy
     };

@@ -1,6 +1,7 @@
 import 'destiny_progression_display_properties_definition.dart';
 import 'destiny_progression_step_definition.dart';
 import 'destiny_color.dart';
+import 'destiny_progression_reward_item_quantity.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_progression_definition.g.dart';
@@ -51,6 +52,9 @@ class DestinyProgressionDefinition{
 	/// For progressions that have it, this is the rank icon we use in the Companion, displayed above the progressions&#39; rank value.
 	@JsonKey(name:'rankIcon')
 	String rankIcon;
+	
+	@JsonKey(name:'rewardItems')
+	List<DestinyProgressionRewardItemQuantity> rewardItems;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

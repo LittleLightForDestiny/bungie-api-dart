@@ -38,7 +38,6 @@ import '../models/destiny_report_offense_pgcr_request.dart';
 import '../models/awa_permission_requested.dart';
 import '../models/awa_user_response.dart';
 class Destiny2{
-    
     /// Returns the current version of the manifest as a json object.
     static Future<DestinyManifestResponse> getDestinyManifest (
         HttpClient client,
@@ -53,8 +52,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions. Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found. Please don't use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
+    /// Returns the static definition of an entity of the given Type and hash identifier. Examine the API Documentation for the Type Names of entities that have their own definitions. Note that the return type will always *inherit from* DestinyDefinition, but the specific type returned will be the requested entity type if it can be found. Please don&#39;t use this as a chatty alternative to the Manifest database if you require large sets of data, but for simple and one-off accesses this should be handy.
     static Future<DestinyDefinitionResponse> getDestinyEntityDefinition (
         HttpClient client,
         String entityType,
@@ -70,14 +68,15 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Returns a list of Destiny memberships given a full Gamertag or PSN ID.
+    /// Returns a list of Destiny memberships given a full Gamertag or PSN ID. Unless you pass returnOriginalProfile&#x3D;true, this will return membership information for the users&#39; Primary Cross Save Profile if they are engaged in cross save rather than any original Destiny profile that is now being overridden.
     static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayer (
         HttpClient client,
         String displayName,
         int membershipType,
+        bool returnOriginalProfile,
     ) {
         Map<String, dynamic> params = new Map();
+        params['returnOriginalProfile'] = returnOriginalProfile;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/SearchDestinyPlayer/${membershipType}/${displayName}/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
@@ -87,14 +86,15 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Returns a summary information about all profiles linked to the requesting membership type/membership ID that have valid Destiny information. The passed-in Membership Type/Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
+    /// Returns a summary information about all profiles linked to the requesting membership type&#x2F;membership ID that have valid Destiny information. The passed-in Membership Type&#x2F;Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
     static Future<DestinyLinkedProfilesResponseResponse> getLinkedProfiles (
         HttpClient client,
+        bool getAllMemberships,
         String membershipId,
         int membershipType,
     ) {
         Map<String, dynamic> params = new Map();
+        params['getAllMemberships'] = getAllMemberships;
         HttpClientConfig config = HttpClientConfig('GET', "/Destiny2/${membershipType}/Profile/${membershipId}/LinkedProfiles/", params);
         config.bodyContentType = null;
         return client.request(config).then((response){
@@ -104,7 +104,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns Destiny Profile information for the supplied membership.
     static Future<DestinyProfileResponseResponse> getProfile (
         HttpClient client,
@@ -123,7 +122,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns character information for the supplied character.
     static Future<DestinyCharacterResponseResponse> getCharacter (
         HttpClient client,
@@ -143,7 +141,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns information on the weekly clan rewards and if the clan has earned them or not. Note that this will always report rewards as not redeemed.
     static Future<DestinyMilestoneResponse> getClanWeeklyRewardState (
         HttpClient client,
@@ -159,7 +156,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Retrieve the details of an instanced Destiny Item. An instanced Destiny item is one with an ItemInstanceId. Non-instanced items, such as materials, have no useful instance-specific details and thus are not queryable here.
     static Future<DestinyItemResponseResponse> getItem (
         HttpClient client,
@@ -179,8 +175,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating/dynamic inventories. Use their definitions as-is for those.
+    /// Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating&#x2F;dynamic inventories. Use their definitions as-is for those.
     static Future<DestinyVendorsResponseResponse> getVendors (
         HttpClient client,
         String characterId,
@@ -199,7 +194,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Get the details of a specific Vendor.
     static Future<DestinyVendorResponseResponse> getVendor (
         HttpClient client,
@@ -220,8 +214,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Get items available from vendors where the vendors have items for sale that are common for everyone. If any portion of the Vendor's available inventory is character or account specific, we will be unable to return their data from this endpoint due to the way that available inventory is computed. As I am often guilty of saying: 'It's a long story...'
+    /// Get items available from vendors where the vendors have items for sale that are common for everyone. If any portion of the Vendor&#39;s available inventory is character or account specific, we will be unable to return their data from this endpoint due to the way that available inventory is computed. As I am often guilty of saying: &#39;It&#39;s a long story...&#39;
     static Future<DestinyPublicVendorsResponseResponse> getPublicVendors (
         HttpClient client,
         List<int> components,
@@ -237,7 +230,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Given a Presentation Node that has Collectibles as direct descendants, this will return item details about those descendants in the context of the requesting character.
     static Future<DestinyCollectibleNodeDetailResponseResponse> getCollectibleNodeDetails (
         HttpClient client,
@@ -258,8 +250,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Transfer an item to/from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item. itshappening.gif
+    /// Transfer an item to&#x2F;from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item. itshappening.gif
     static Future<int32Response> transferItem (
         HttpClient client,
         DestinyItemTransferRequest body
@@ -275,8 +266,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Extract an item from the Postmaster, with whatever implications that may entail. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it's an instanced item.
+    /// Extract an item from the Postmaster, with whatever implications that may entail. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item.
     static Future<int32Response> pullFromPostmaster (
         HttpClient client,
         DestinyPostmasterTransferRequest body
@@ -292,7 +282,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Equip an item. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
     static Future<int32Response> equipItem (
         HttpClient client,
@@ -309,7 +298,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Equip a list of items by itemInstanceIds. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Any items not found on your character will be ignored.
     static Future<DestinyEquipItemResultsResponse> equipItems (
         HttpClient client,
@@ -326,7 +314,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Set the Lock State for an instanced item. You must have a valid Destiny Account.
     static Future<int32Response> setItemLockState (
         HttpClient client,
@@ -343,8 +330,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Insert a plug into a socketed item. I know how it sounds, but I assure you it's much more G-rated than you might be guessing. We haven't decided yet whether this will be able to insert plugs that have side effects, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Request must include proof of permission for 'InsertPlugs' from the account owner.
+    /// Insert a plug into a socketed item. I know how it sounds, but I assure you it&#39;s much more G-rated than you might be guessing. We haven&#39;t decided yet whether this will be able to insert plugs that have side effects, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Request must include proof of permission for &#39;InsertPlugs&#39; from the account owner.
     static Future<DestinyItemChangeResponseResponse> insertSocketPlug (
         HttpClient client,
         DestinyInsertPlugsActionRequest body
@@ -360,7 +346,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets the available post game carnage report for the activity ID.
     static Future<DestinyPostGameCarnageReportDataResponse> getPostGameCarnageReport (
         HttpClient client,
@@ -376,7 +361,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Report a player that you met in an activity that was engaging in ToS-violating activities. Both you and the offending player must have played in the activityId passed in. Please use this judiciously and only when you have strong suspicions of violation, pretty please.
     static Future<int32Response> reportOffensivePostGameCarnageReportPlayer (
         HttpClient client,
@@ -394,7 +378,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets historical stats definitions.
     static Future<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> getHistoricalStatsDefinition (
         HttpClient client,
@@ -409,8 +392,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Gets leaderboards with the signed in user's friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
+    /// Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getClanLeaderboards (
         HttpClient client,
         String groupId,
@@ -431,7 +413,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets aggregated stats for a clan using the same categories as the clan leaderboards. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<ListOfDestinyClanAggregateStatResponse> getClanAggregateStats (
         HttpClient client,
@@ -449,8 +430,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Gets leaderboards with the signed in user's friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint has not yet been implemented. It is being returned for a preview of future functionality, and for public comment/suggestion/preparation.
+    /// Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint has not yet been implemented. It is being returned for a preview of future functionality, and for public comment&#x2F;suggestion&#x2F;preparation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboards (
         HttpClient client,
         String destinyMembershipId,
@@ -472,8 +452,7 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
-    /// Gets leaderboards with the signed in user's friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
+    /// Gets leaderboards with the signed in user&#39;s friends and the supplied destinyMembershipId as the focus. PREVIEW: This endpoint is still in beta, and may experience rough edges. The schema is in final form, but there may be bugs that prevent desirable operation.
     static Future<DestinyLeaderboardResultsResponse> getLeaderboardsForCharacter (
         HttpClient client,
         String characterId,
@@ -496,7 +475,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets a page list of Destiny items.
     static Future<DestinyEntitySearchResultResponse> searchDestinyEntities (
         HttpClient client,
@@ -515,7 +493,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets historical stats for indicated character.
     static Future<DestinyHistoricalStatsResultsResponse> getHistoricalStats (
         HttpClient client,
@@ -543,7 +520,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets aggregate historical stats organized around each character for a given account.
     static Future<DestinyHistoricalStatsAccountResultResponse> getHistoricalStatsForAccount (
         HttpClient client,
@@ -562,7 +538,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets activity history stats for indicated character.
     static Future<DestinyActivityHistoryResultsResponse> getActivityHistory (
         HttpClient client,
@@ -586,7 +561,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets details about unique weapon usage, including all exotic weapons.
     static Future<DestinyHistoricalWeaponStatsDataResponse> getUniqueWeaponHistory (
         HttpClient client,
@@ -604,7 +578,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets all activities the character has participated in together with aggregate statistics for those activities.
     static Future<DestinyAggregateActivityResultsResponse> getDestinyAggregateActivityStats (
         HttpClient client,
@@ -622,7 +595,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets custom localized content for the milestone of the given hash, if it exists.
     static Future<DestinyMilestoneContentResponse> getPublicMilestoneContent (
         HttpClient client,
@@ -638,7 +610,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets public information about currently available Milestones.
     static Future<DictionaryOfuint32AndDestinyPublicMilestoneResponse> getPublicMilestones (
         HttpClient client,
@@ -653,7 +624,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Initialize a request to perform an advanced write action.
     static Future<AwaInitializeResponseResponse> awaInitializeRequest (
         HttpClient client,
@@ -670,7 +640,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.
     static Future<int32Response> awaProvideAuthorizationResult (
         HttpClient client,
@@ -687,7 +656,6 @@ class Destiny2{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns the action token if user approves the request.
     static Future<AwaAuthorizationResultResponse> awaGetActionToken (
         HttpClient client,

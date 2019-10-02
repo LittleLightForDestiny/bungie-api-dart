@@ -1,0 +1,1 @@
+export '../src/models/email_view_definition.dart';

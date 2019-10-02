@@ -1,0 +1,1 @@
+export '../src/models/cross_save_user_membership.dart';

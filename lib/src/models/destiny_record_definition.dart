@@ -5,6 +5,7 @@ import 'destiny_record_completion_block.dart';
 import 'schema_record_state_block.dart';
 import 'destiny_presentation_node_requirements_block.dart';
 import 'destiny_record_expiration_block.dart';
+import 'destiny_record_interval_block.dart';
 import 'destiny_item_quantity.dart';
 
 import 'package:json_annotation/json_annotation.dart';
@@ -49,6 +50,10 @@ class DestinyRecordDefinition{
 	/// If this record has an expiration after which it cannot be earned, this is some information about that expiration.
 	@JsonKey(name:'expirationInfo')
 	DestinyRecordExpirationBlock expirationInfo;
+	
+	/// Some records have multiple &#39;interval&#39; objectives, and the record may be claimed at each completed interval
+	@JsonKey(name:'intervalInfo')
+	DestinyRecordIntervalBlock intervalInfo;
 	
 	/// If there is any publicly available information about rewards earned for achieving this record, this is the list of those items.
 	///  However, note that some records intentionally have &quot;hidden&quot; rewards. These will not be returned in this list.

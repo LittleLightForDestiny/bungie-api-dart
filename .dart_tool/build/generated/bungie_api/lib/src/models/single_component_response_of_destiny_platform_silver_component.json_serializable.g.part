@@ -1,0 +1,19 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+SingleComponentResponseOfDestinyPlatformSilverComponent
+    _$SingleComponentResponseOfDestinyPlatformSilverComponentFromJson(
+        Map<String, dynamic> json) {
+  return SingleComponentResponseOfDestinyPlatformSilverComponent()
+    ..data = json['data'] == null
+        ? null
+        : DestinyPlatformSilverComponent.fromJson(
+            json['data'] as Map<String, dynamic>)
+    ..privacy = json['privacy'] as int;
+}
+
+Map<String, dynamic>
+    _$SingleComponentResponseOfDestinyPlatformSilverComponentToJson(
+            SingleComponentResponseOfDestinyPlatformSilverComponent instance) =>
+        <String, dynamic>{'data': instance.data, 'privacy': instance.privacy};

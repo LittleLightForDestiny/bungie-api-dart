@@ -12,10 +12,11 @@ export class ApiDocHelper{
     }
 
     static getParseFunction(obj:ReferenceObject|ParameterObject|SchemaObject, fieldName:String, source:String):string|null{
-        if(obj.$ref){
-            let ref = this.getRef(obj.$ref);
+        if('$ref' in obj){
+            let objInfo = obj as ReferenceObject;
+            let ref = this.getRef(objInfo.$ref);
             if(ref.type == 'object'){
-                return `${this.getRefClassName(obj.$ref)}.fromMap(${source})`;
+                return `${this.getRefClassName(objInfo.$ref)}.fromMap(${source})`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;
@@ -30,7 +31,8 @@ export class ApiDocHelper{
         }
 
         if(param.type == 'array' && param.allOf){
-            let ref = this.getRef(param.allOf[0].$ref);
+            let paramInfo = param.allOf[0] as ReferenceObject;
+            let ref = this.getRef(paramInfo.$ref);
             if(ref.type == 'object'){
                 return `${this.getObjectType(param.allOf[0])}.fromList(${source})`;
             }
@@ -55,8 +57,9 @@ export class ApiDocHelper{
     }
 
     static getSerializeFunction(obj:ReferenceObject|ParameterObject|SchemaObject, name:String):string|null{
-        if(obj.$ref){
-            let ref = this.getRef(obj.$ref);
+        if('$ref' in obj){
+            let refObject = obj as ReferenceObject;
+            let ref = this.getRef(refObject.$ref);
             if(ref.type == 'object'){
                 return `this.${name}.toJson()`;
             }
@@ -92,17 +95,16 @@ export class ApiDocHelper{
     }
 
     static isNativeType(obj:ReferenceObject|ParameterObject|SchemaObject):boolean{
-        let param:ParameterObject = obj as ParameterObject;
-
-        if(obj.$ref){
-            let ref = this.getRef(obj.$ref);
+        let refObj = obj as ReferenceObject;
+        if(refObj.$ref){
+            let ref = this.getRef(refObj.$ref);
             if(ref.type == 'object'){
                 return false;
             }else{
                 return this.isNativeType(ref);
             }
         }
-        
+        let param:ParameterObject = obj as ParameterObject;
         if(param.schema){
             return this.isNativeType(param.schema);
         }
@@ -121,17 +123,17 @@ export class ApiDocHelper{
     }
 
     static getObjectType(obj:ReferenceObject|ParameterObject|SchemaObject):string{
-        let param:ParameterObject = obj as ParameterObject;
-
-        if(obj.$ref){
-            let ref = this.getRef(obj.$ref);
+        let refObj:ReferenceObject = obj as ReferenceObject;
+        if("$ref" in obj){
+            let ref = this.getRef(refObj.$ref);
             if(ref.type == 'object'){
-                return this.getRefClassName(obj.$ref);
+                return this.getRefClassName(refObj.$ref);
             }else{
                 return this.getObjectType(ref);
             }
         }
         
+        let param:ParameterObject = obj as ParameterObject;
         if(param.schema){
             return this.getObjectType(param.schema);
         }
@@ -160,12 +162,12 @@ export class ApiDocHelper{
 
     static getImportInfo(obj:ReferenceObject|ParameterObject|SchemaObject):ImportInfo|null{
         let schema = obj as SchemaObject;
-
-        if(obj.$ref){
-            let ref = this.getRef(obj.$ref);
+        let refObj = obj as ReferenceObject;
+        if('$ref' in obj){
+            let ref = this.getRef(refObj.$ref);
             if(ref.type == 'object'){
                 return new ImportInfo(
-                    this.getRefClassName(obj.$ref),
+                    this.getRefClassName(refObj.$ref),
                     'model'
                 );
             };

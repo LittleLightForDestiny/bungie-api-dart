@@ -14,7 +14,8 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
     ..groupId = json['groupId'] as String
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
-        : UserInfoCard.fromJson(json['destinyUserInfo'] as Map<String, dynamic>)
+        : GroupUserInfoCard.fromJson(
+            json['destinyUserInfo'] as Map<String, dynamic>)
     ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
         ? null
         : UserInfoCard.fromJson(

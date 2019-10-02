@@ -1,3 +1,4 @@
+import 'destiny_progression_reset_entry.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_progression.g.dart';
@@ -49,6 +50,18 @@ class DestinyProgression{
 	/// The total amount of progression (i.e. &quot;Experience&quot;) needed in order to reach the next level.
 	@JsonKey(name:'nextLevelAt')
 	int nextLevelAt;
+	
+	/// The number of resets of this progression you&#39;ve executed this season, if applicable to this progression.
+	@JsonKey(name:'currentResetCount')
+	int currentResetCount;
+	
+	/// Information about historical resets of this progression, if there is any data for it.
+	@JsonKey(name:'seasonResets')
+	List<DestinyProgressionResetEntry> seasonResets;
+	
+	/// Information about historical resets of this progression, if there is any data for it.
+	@JsonKey(name:'rewardItemStates')
+	List<int> rewardItemStates;
 	DestinyProgression();
 
 	factory DestinyProgression.fromJson(Map<String, dynamic> json) => _$DestinyProgressionFromJson(json);

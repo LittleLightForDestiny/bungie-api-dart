@@ -24,6 +24,12 @@ DestinyProgressionDefinition _$DestinyProgressionDefinitionFromJson(
         ? null
         : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
     ..rankIcon = json['rankIcon'] as String
+    ..rewardItems = (json['rewardItems'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyProgressionRewardItemQuantity.fromJson(
+                e as Map<String, dynamic>))
+        ?.toList()
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -41,6 +47,7 @@ Map<String, dynamic> _$DestinyProgressionDefinitionToJson(
       'factionHash': instance.factionHash,
       'color': instance.color,
       'rankIcon': instance.rankIcon,
+      'rewardItems': instance.rewardItems,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted

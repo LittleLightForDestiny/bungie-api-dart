@@ -9,6 +9,7 @@ part of 'destiny_display_category_definition.dart';
 DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyDisplayCategoryDefinition()
+    ..index = json['index'] as int
     ..identifier = json['identifier'] as String
     ..displayCategoryHash = json['displayCategoryHash'] as int
     ..displayProperties = json['displayProperties'] == null
@@ -25,6 +26,7 @@ DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
 Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(
         DestinyDisplayCategoryDefinition instance) =>
     <String, dynamic>{
+      'index': instance.index,
       'identifier': instance.identifier,
       'displayCategoryHash': instance.displayCategoryHash,
       'displayProperties': instance.displayProperties,

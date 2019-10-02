@@ -26,6 +26,10 @@ class GroupResponse{
 	@JsonKey(name:'groupJoinInviteCount')
 	int groupJoinInviteCount;
 	
+	/// A convenience property that indicates if every membership you (the current user) have that is a part of this group are part of an account that is considered inactive - for example, overridden accounts in Cross Save.
+	@JsonKey(name:'currentUserMembershipsInactiveForDestiny')
+	bool currentUserMembershipsInactiveForDestiny;
+	
 	/// This property will be populated if the authenticated user is a member of the group. Note that because of account linking, a user can sometimes be part of a clan more than once. As such, this returns the highest member type available.
 	@JsonKey(name:'currentUserMemberMap')
 	Map<String, GroupMember> currentUserMemberMap;

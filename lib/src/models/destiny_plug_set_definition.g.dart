@@ -16,7 +16,7 @@ DestinyPlugSetDefinition _$DestinyPlugSetDefinitionFromJson(
     ..reusablePlugItems = (json['reusablePlugItems'] as List)
         ?.map((e) => e == null
             ? null
-            : DestinyItemSocketEntryPlugItemDefinition.fromJson(
+            : DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(
                 e as Map<String, dynamic>))
         ?.toList()
     ..hash = json['hash'] as int

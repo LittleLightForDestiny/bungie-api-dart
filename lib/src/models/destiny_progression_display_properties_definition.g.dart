@@ -14,6 +14,7 @@ DestinyProgressionDisplayPropertiesDefinition
     ..description = json['description'] as String
     ..name = json['name'] as String
     ..icon = json['icon'] as String
+    ..highResIcon = json['highResIcon'] as String
     ..hasIcon = json['hasIcon'] as bool;
 }
 
@@ -24,5 +25,6 @@ Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(
       'description': instance.description,
       'name': instance.name,
       'icon': instance.icon,
+      'highResIcon': instance.highResIcon,
       'hasIcon': instance.hasIcon
     };

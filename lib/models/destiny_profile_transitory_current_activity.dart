@@ -1,0 +1,1 @@
+export '../src/models/destiny_profile_transitory_current_activity.dart';

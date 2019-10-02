@@ -20,7 +20,11 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(Map<String, dynamic> json) {
         json['undiscoveredCollectibleImage'] as String
     ..ammoTypeHeavyIcon = json['ammoTypeHeavyIcon'] as String
     ..ammoTypeSpecialIcon = json['ammoTypeSpecialIcon'] as String
-    ..ammoTypePrimaryIcon = json['ammoTypePrimaryIcon'] as String;
+    ..ammoTypePrimaryIcon = json['ammoTypePrimaryIcon'] as String
+    ..currentSeasonalArtifactHash = json['currentSeasonalArtifactHash'] as int
+    ..currentSeasonHash = json['currentSeasonHash'] as int
+    ..futureSeasonHashes =
+        (json['futureSeasonHashes'] as List)?.map((e) => e as int)?.toList();
 }
 
 Map<String, dynamic> _$Destiny2CoreSettingsToJson(
@@ -34,5 +38,8 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
       'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,
       'ammoTypeSpecialIcon': instance.ammoTypeSpecialIcon,
-      'ammoTypePrimaryIcon': instance.ammoTypePrimaryIcon
+      'ammoTypePrimaryIcon': instance.ammoTypePrimaryIcon,
+      'currentSeasonalArtifactHash': instance.currentSeasonalArtifactHash,
+      'currentSeasonHash': instance.currentSeasonHash,
+      'futureSeasonHashes': instance.futureSeasonHashes
     };

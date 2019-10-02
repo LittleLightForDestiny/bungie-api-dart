@@ -6,7 +6,8 @@ FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) {
   return FireteamMember()
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
-        : UserInfoCard.fromJson(json['destinyUserInfo'] as Map<String, dynamic>)
+        : FireteamUserInfoCard.fromJson(
+            json['destinyUserInfo'] as Map<String, dynamic>)
     ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
         ? null
         : UserInfoCard.fromJson(

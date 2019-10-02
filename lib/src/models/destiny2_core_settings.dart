@@ -31,6 +31,15 @@ class Destiny2CoreSettings{
 	
 	@JsonKey(name:'ammoTypePrimaryIcon')
 	String ammoTypePrimaryIcon;
+	
+	@JsonKey(name:'currentSeasonalArtifactHash')
+	int currentSeasonalArtifactHash;
+	
+	@JsonKey(name:'currentSeasonHash')
+	int currentSeasonHash;
+	
+	@JsonKey(name:'futureSeasonHashes')
+	List<int> futureSeasonHashes;
 	Destiny2CoreSettings();
 
 	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) => _$Destiny2CoreSettingsFromJson(json);

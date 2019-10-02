@@ -10,9 +10,11 @@ export class ApiMethodParameter{
         return ApiDocHelper.getObjectType(this.info);
     }
 
+
     in():string{
-        if(this.info.$ref){
-            let ref = ApiDocHelper.getRef(this.info.$ref);
+        if('$ref' in this.info){
+            let info = this.info as ReferenceObject;
+            let ref = ApiDocHelper.getRef(info.$ref);
             return ref.in;
         }
         return (this.info as ParameterObject).in;

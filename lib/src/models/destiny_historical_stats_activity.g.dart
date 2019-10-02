@@ -14,7 +14,8 @@ DestinyHistoricalStatsActivity _$DestinyHistoricalStatsActivityFromJson(
     ..instanceId = json['instanceId'] as String
     ..mode = json['mode'] as int
     ..modes = (json['modes'] as List)?.map((e) => e as int)?.toList()
-    ..isPrivate = json['isPrivate'] as bool;
+    ..isPrivate = json['isPrivate'] as bool
+    ..membershipType = json['membershipType'] as int;
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
@@ -25,5 +26,6 @@ Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
       'instanceId': instance.instanceId,
       'mode': instance.mode,
       'modes': instance.modes,
-      'isPrivate': instance.isPrivate
+      'isPrivate': instance.isPrivate,
+      'membershipType': instance.membershipType
     };

@@ -6,4 +6,5 @@ class DestinyGameVersions {
   static const int DLC2 = 4;
   static const int Forsaken = 8;
   static const int YearTwoAnnualPass = 16;
+  static const int Shadowkeep = 32;
 }

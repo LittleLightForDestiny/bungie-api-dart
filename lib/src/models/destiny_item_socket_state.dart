@@ -41,6 +41,16 @@ class DestinyItemSocketState{
 	/// In practice, a socket will *either* have reusable plugs *or* it will allow for plugs in your inventory to be inserted. See DestinyInventoryItemDefinition.socket for more info.
 	@JsonKey(name:'reusablePlugs')
 	List<DestinyItemPlug> reusablePlugs;
+	
+	/// If this socket has a plug set to be checked for plugs (either Character or Profile scoped), this is the hash identifier for that plug set to be checked.
+	///  Use this to lookup the additional plugs in ProfilePlugSets (DestinyProfileResponse.profilePlugSets) or CharacterPlugSets (DestinyProfileResponse.characterPlugSets). To determine which to check (one or both), check the plugSources property for their respective source flags.
+	@JsonKey(name:'plugSetHash')
+	int plugSetHash;
+	
+	/// A Flags Enumeration convenience property that indicates the different locations at which this socket may have plugs.
+	///  Each possible flag indicates somewhere in the Profile&#x2F;Character data that needs to be checked for valid plugs. See the definition of this enumeration for more details.
+	@JsonKey(name:'plugSources')
+	int plugSources;
 	DestinyItemSocketState();
 
 	factory DestinyItemSocketState.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketStateFromJson(json);

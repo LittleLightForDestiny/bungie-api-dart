@@ -1,11 +1,13 @@
 import 'destiny_display_properties_definition.dart';
-import 'destiny_item_socket_entry_plug_item_definition.dart';
+import 'destiny_item_socket_entry_plug_item_randomized_definition.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_plug_set_definition.g.dart';
 
 /// Sometimes, we have large sets of reusable plugs that are defined identically and thus can (and in some cases, are so large that they *must*) be shared across the places where they are used. These are the definitions for those reusable sets of plugs. 
-/// See DestinyItemSocketEntryDefinition.plugSource and reusablePlugSetHash for the relationship between these reusable plug sets and the sockets that leverage them (for starters, Emotes).
+///  See DestinyItemSocketEntryDefinition.plugSource and reusablePlugSetHash for the relationship between these reusable plug sets and the sockets that leverage them (for starters, Emotes).
+///  As of the release of Shadowkeep (Late 2019), these will begin to be sourced from game content directly - which means there will be many more of them, but it also means we may not get all data that we used to get for them.
+///  DisplayProperties, in particular, will no longer be guaranteed to contain valid information. We will make a best effort to guess what ought to be populated there where possible, but it will be invalid for many&#x2F;most plug sets.
 @JsonSerializable()
 class DestinyPlugSetDefinition{
 	
@@ -16,7 +18,7 @@ class DestinyPlugSetDefinition{
 	/// This is a list of pre-determined plugs that can be plugged into this socket, without the character having the plug in their inventory.
 	/// If this list is populated, you will not be allowed to plug an arbitrary item in the socket: you will only be able to choose from one of these reusable plugs.
 	@JsonKey(name:'reusablePlugItems')
-	List<DestinyItemSocketEntryPlugItemDefinition> reusablePlugItems;
+	List<DestinyItemSocketEntryPlugItemRandomizedDefinition> reusablePlugItems;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

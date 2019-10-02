@@ -14,7 +14,20 @@ class UserInfoCard{
 	@JsonKey(name:'iconPath')
 	String iconPath;
 	
-	/// Type of the membership.
+	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
+	@JsonKey(name:'crossSaveOverride')
+	int crossSaveOverride;
+	
+	/// The list of Membership Types indicating the platforms on which this Membership can be used.
+	///  Not in Cross Save &#x3D; its original membership type. Cross Save Primary &#x3D; Any membership types it is overridding, and its original membership type Cross Save Overridden &#x3D; Empty list
+	@JsonKey(name:'applicableMembershipTypes')
+	List<int> applicableMembershipTypes;
+	
+	/// If True, this is a public user membership.
+	@JsonKey(name:'isPublic')
+	bool isPublic;
+	
+	/// Type of the membership. Not necessarily the native type.
 	@JsonKey(name:'membershipType')
 	int membershipType;
 	

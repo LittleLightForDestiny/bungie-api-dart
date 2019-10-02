@@ -20,6 +20,8 @@ GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) {
         : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
     ..allianceStatus = json['allianceStatus'] as int
     ..groupJoinInviteCount = json['groupJoinInviteCount'] as int
+    ..currentUserMembershipsInactiveForDestiny =
+        json['currentUserMembershipsInactiveForDestiny'] as bool
     ..currentUserMemberMap =
         (json['currentUserMemberMap'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k,
@@ -43,6 +45,8 @@ Map<String, dynamic> _$GroupResponseToJson(GroupResponse instance) =>
       'parentGroup': instance.parentGroup,
       'allianceStatus': instance.allianceStatus,
       'groupJoinInviteCount': instance.groupJoinInviteCount,
+      'currentUserMembershipsInactiveForDestiny':
+          instance.currentUserMembershipsInactiveForDestiny,
       'currentUserMemberMap': instance.currentUserMemberMap,
       'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap
     };

@@ -16,6 +16,10 @@ class DestinyItemPreviewBlockDefinition{
 	@JsonKey(name:'previewVendorHash')
 	int previewVendorHash;
 	
+	/// If this item should show you Artifact information when you preview it, this is the hash identifier of the DestinyArtifactDefinition for the artifact whose data should be shown.
+	@JsonKey(name:'artifactHash')
+	int artifactHash;
+	
 	/// If the preview has an associated action (like &quot;Open&quot;), this will be the localized string for that action.
 	@JsonKey(name:'previewActionString')
 	String previewActionString;

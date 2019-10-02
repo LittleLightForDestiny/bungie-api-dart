@@ -16,12 +16,18 @@ class DestinyProfileComponent{
 	String dateLastPlayed;
 	
 	/// If you want to know what expansions they own, this will contain that data.
+	///  IMPORTANT: This field may not return the data you&#39;re interested in for Cross-Saved users. It returns the last ownership data we saw for this account - which is to say, what they&#39;ve purchased on the platform on which they last played, which now could be a different platform.
+	///  If you don&#39;t care about per-platform ownership and only care about whatever platform it seems they are playing on most recently, then this should be &quot;good enough.&quot; Otherwise, this should be considered deprecated. We do not have a good alternative to provide at this time with platform specific ownership data for DLC.
 	@JsonKey(name:'versionsOwned')
 	int versionsOwned;
 	
 	/// A list of the character IDs, for further querying on your part.
 	@JsonKey(name:'characterIds')
 	List<String> characterIds;
+	
+	/// A list of seasons that this profile owns. Unlike versionsOwned, these stay with the profile across Platforms, and thus will be valid.
+	@JsonKey(name:'seasonHashes')
+	List<int> seasonHashes;
 	DestinyProfileComponent();
 
 	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileComponentFromJson(json);

@@ -2,8 +2,8 @@ import '../helpers/http.dart';
 import '../responses/content_type_description_response.dart';
 import '../responses/content_item_public_contract_response.dart';
 import '../responses/search_result_of_content_item_public_contract_response.dart';
+import '../responses/iread_only_collection_of_content_item_public_contract_response.dart';
 class Content{
-    
     /// Gets an object describing a particular variant of content.
     static Future<ContentTypeDescriptionResponse> getContentType (
         HttpClient client,
@@ -19,7 +19,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns a content item referenced by id
     static Future<ContentItemPublicContractResponse> getContentById (
         HttpClient client,
@@ -38,7 +37,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Returns the newest item that matches a given tag and Content Type.
     static Future<ContentItemPublicContractResponse> getContentByTagAndType (
         HttpClient client,
@@ -58,7 +56,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Gets content based on querystring information passed in. Provides basic search and text search capabilities.
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentWithText (
         HttpClient client,
@@ -86,7 +83,6 @@ class Content{
             throw Exception(response.mappedBody);
         });
     }
-    
     /// Searches for Content Items that match the given Tag and Content Type.
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentByTagAndType (
         HttpClient client,
@@ -106,6 +102,22 @@ class Content{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
+        });
+    }
+    /// Search for Help Articles.
+    static Future<IReadOnlyCollectionOfContentItemPublicContractResponse> searchHelpArticles (
+        HttpClient client,
+        String searchtext,
+        String size,
+    ) {
+        Map<String, dynamic> params = new Map();
+        HttpClientConfig config = HttpClientConfig('GET', "/Content/SearchHelpArticles/${searchtext}/${size}", params);
+        config.bodyContentType = null;
+        return client.request(config).then((response){
+            if(response.statusCode == 200){
+                return IReadOnlyCollectionOfContentItemPublicContractResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

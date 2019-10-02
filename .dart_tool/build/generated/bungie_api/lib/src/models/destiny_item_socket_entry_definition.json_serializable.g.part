@@ -18,12 +18,7 @@ DestinyItemSocketEntryDefinition _$DestinyItemSocketEntryDefinitionFromJson(
     ..hidePerksInItemTooltip = json['hidePerksInItemTooltip'] as bool
     ..plugSources = json['plugSources'] as int
     ..reusablePlugSetHash = json['reusablePlugSetHash'] as int
-    ..randomizedPlugItems = (json['randomizedPlugItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
+    ..randomizedPlugSetHash = json['randomizedPlugSetHash'] as int
     ..defaultVisible = json['defaultVisible'] as bool;
 }
 
@@ -38,6 +33,6 @@ Map<String, dynamic> _$DestinyItemSocketEntryDefinitionToJson(
       'hidePerksInItemTooltip': instance.hidePerksInItemTooltip,
       'plugSources': instance.plugSources,
       'reusablePlugSetHash': instance.reusablePlugSetHash,
-      'randomizedPlugItems': instance.randomizedPlugItems,
+      'randomizedPlugSetHash': instance.randomizedPlugSetHash,
       'defaultVisible': instance.defaultVisible
     };
