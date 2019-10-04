@@ -6,7 +6,7 @@ This project implements Dart definitions and API helpers for the [Bungie.net API
 add this to your dependencies block in pubspec.yaml
 ```
 dependencies:
-  bungie_api: ^2.3.5+3
+  bungie_api: ^12.2.4
 ```
 
 # Interfaces and Enums
