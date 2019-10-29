@@ -13,6 +13,7 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
+    ..displayPreference = json['displayPreference'] as int
     ..image = json['image'] as String
     ..milestoneType = json['milestoneType'] as int
     ..recruitable = json['recruitable'] as bool
@@ -70,6 +71,7 @@ Map<String, dynamic> _$DestinyMilestoneDefinitionToJson(
         DestinyMilestoneDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
+      'displayPreference': instance.displayPreference,
       'image': instance.image,
       'milestoneType': instance.milestoneType,
       'recruitable': instance.recruitable,

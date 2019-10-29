@@ -26,4 +26,5 @@ class DestinyItemType {
   static const int Bounty = 26;
   static const int Wrapper = 27;
   static const int SeasonalArtifact = 28;
+  static const int Finisher = 29;
 }

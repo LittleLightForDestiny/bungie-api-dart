@@ -10,6 +10,7 @@ DestinySeasonPassDefinition _$DestinySeasonPassDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..rewardProgressionHash = json['rewardProgressionHash'] as int
+    ..prestigeProgressionHash = json['prestigeProgressionHash'] as int
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -20,6 +21,7 @@ Map<String, dynamic> _$DestinySeasonPassDefinitionToJson(
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
       'rewardProgressionHash': instance.rewardProgressionHash,
+      'prestigeProgressionHash': instance.prestigeProgressionHash,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted

@@ -6,6 +6,8 @@ import 'single_component_response_of_destiny_item_render_component.dart';
 import 'single_component_response_of_destiny_item_stats_component.dart';
 import 'single_component_response_of_destiny_item_talent_grid_component.dart';
 import 'single_component_response_of_destiny_item_sockets_component.dart';
+import 'single_component_response_of_destiny_item_reusable_plugs_component.dart';
+import 'single_component_response_of_destiny_item_plug_objectives_component.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_response.g.dart';
@@ -57,6 +59,17 @@ class DestinyItemResponse{
 	/// COMPONENT TYPE: ItemSockets
 	@JsonKey(name:'sockets')
 	SingleComponentResponseOfDestinyItemSocketsComponent sockets;
+	
+	/// Information about the Reusable Plugs for sockets on an item. These are plugs that you can insert into the given socket regardless of if you actually own an instance of that plug: they are logic-driven plugs rather than inventory-driven.
+	///  These may need to be combined with Plug Set component data to get a full picture of available plugs on a given socket.
+	///  COMPONENT TYPE: ItemReusablePlugs
+	@JsonKey(name:'reusablePlugs')
+	SingleComponentResponseOfDestinyItemReusablePlugsComponent reusablePlugs;
+	
+	/// Information about objectives on Plugs for a given item. See the component&#39;s documentation for more info.
+	/// COMPONENT TYPE: ItemPlugObjectives
+	@JsonKey(name:'plugObjectives')
+	SingleComponentResponseOfDestinyItemPlugObjectivesComponent plugObjectives;
 	DestinyItemResponse();
 
 	factory DestinyItemResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemResponseFromJson(json);

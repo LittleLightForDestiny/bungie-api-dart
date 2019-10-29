@@ -4,6 +4,7 @@ import '../responses/list_of_general_user_response.dart';
 import '../responses/list_of_user_theme_response.dart';
 import '../responses/user_membership_data_response.dart';
 import '../responses/celist_of_public_partnership_detail_response.dart';
+import '../responses/hard_linked_user_membership_response.dart';
 class User{
     /// Loads a bungienet user by membership id.
     static Future<GeneralUserResponse> getBungieNetUserById (
@@ -91,6 +92,22 @@ class User{
         return client.request(config).then((response){
             if(response.statusCode == 200){
                 return CEListOfPublicPartnershipDetailResponse.fromJson(response.mappedBody);
+            }
+            throw Exception(response.mappedBody);
+        });
+    }
+    /// Gets any hard linked membership given a credential. Only works for credentials that are public (just SteamID64 right now). Cross Save aware.
+    static Future<HardLinkedUserMembershipResponse> getMembershipFromHardLinkedCredential (
+        HttpClient client,
+        String credential,
+        int crType,
+    ) {
+        Map<String, dynamic> params = new Map();
+        HttpClientConfig config = HttpClientConfig('GET', "/User/GetMembershipFromHardLinkedCredential/${crType}/${credential}/", params);
+        config.bodyContentType = null;
+        return client.request(config).then((response){
+            if(response.statusCode == 200){
+                return HardLinkedUserMembershipResponse.fromJson(response.mappedBody);
             }
             throw Exception(response.mappedBody);
         });

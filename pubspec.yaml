@@ -7,7 +7,7 @@ description: This project implements Dart definitions and API helpers for the [B
 # Both the version and the builder number may be overridden in flutter
 # build by specifying --build-name and --build-number, respectively.
 # Read more about versioning at semver.org.
-version: 12.4.0
+version: 12.4.1
 authors:
   - João Paulo Marquesini <jao@markezine.me>
 

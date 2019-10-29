@@ -59,7 +59,7 @@ class DestinyProgression{
 	@JsonKey(name:'seasonResets')
 	List<DestinyProgressionResetEntry> seasonResets;
 	
-	/// Information about historical resets of this progression, if there is any data for it.
+	/// Information about historical rewards for this progression, if there is any data for it.
 	@JsonKey(name:'rewardItemStates')
 	List<int> rewardItemStates;
 	DestinyProgression();

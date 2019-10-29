@@ -22,6 +22,8 @@ class DestinyComponentType {
   static const int ItemTalentGrids = 306;
   static const int ItemCommonData = 307;
   static const int ItemPlugStates = 308;
+  static const int ItemPlugObjectives = 309;
+  static const int ItemReusablePlugs = 310;
   static const int Vendors = 400;
   static const int VendorCategories = 401;
   static const int VendorSales = 402;

@@ -9,13 +9,8 @@ part of 'destiny_stat.dart';
 DestinyStat _$DestinyStatFromJson(Map<String, dynamic> json) {
   return DestinyStat()
     ..statHash = json['statHash'] as int
-    ..value = json['value'] as int
-    ..maximumValue = json['maximumValue'] as int;
+    ..value = json['value'] as int;
 }
 
 Map<String, dynamic> _$DestinyStatToJson(DestinyStat instance) =>
-    <String, dynamic>{
-      'statHash': instance.statHash,
-      'value': instance.value,
-      'maximumValue': instance.maximumValue
-    };
+    <String, dynamic>{'statHash': instance.statHash, 'value': instance.value};

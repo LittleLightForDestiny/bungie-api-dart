@@ -8,12 +8,12 @@ part of 'destiny_item_plug.dart';
 
 DestinyItemPlug _$DestinyItemPlugFromJson(Map<String, dynamic> json) {
   return DestinyItemPlug()
-    ..plugItemHash = json['plugItemHash'] as int
     ..plugObjectives = (json['plugObjectives'] as List)
         ?.map((e) => e == null
             ? null
             : DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
         ?.toList()
+    ..plugItemHash = json['plugItemHash'] as int
     ..canInsert = json['canInsert'] as bool
     ..enabled = json['enabled'] as bool
     ..insertFailIndexes =
@@ -24,8 +24,8 @@ DestinyItemPlug _$DestinyItemPlugFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$DestinyItemPlugToJson(DestinyItemPlug instance) =>
     <String, dynamic>{
-      'plugItemHash': instance.plugItemHash,
       'plugObjectives': instance.plugObjectives,
+      'plugItemHash': instance.plugItemHash,
       'canInsert': instance.canInsert,
       'enabled': instance.enabled,
       'insertFailIndexes': instance.insertFailIndexes,

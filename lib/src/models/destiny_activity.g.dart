@@ -16,7 +16,19 @@ DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) {
     ..isVisible = json['isVisible'] as bool
     ..displayLevel = json['displayLevel'] as int
     ..recommendedLight = json['recommendedLight'] as int
-    ..difficultyTier = json['difficultyTier'] as int;
+    ..difficultyTier = json['difficultyTier'] as int
+    ..challenges = (json['challenges'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..modifierHashes =
+        (json['modifierHashes'] as List)?.map((e) => e as int)?.toList()
+    ..booleanActivityOptions =
+        (json['booleanActivityOptions'] as Map<String, dynamic>)?.map(
+      (k, e) => MapEntry(k, e as bool),
+    )
+    ..loadoutRequirementIndex = json['loadoutRequirementIndex'] as int;
 }
 
 Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
@@ -29,5 +41,9 @@ Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
       'isVisible': instance.isVisible,
       'displayLevel': instance.displayLevel,
       'recommendedLight': instance.recommendedLight,
-      'difficultyTier': instance.difficultyTier
+      'difficultyTier': instance.difficultyTier,
+      'challenges': instance.challenges,
+      'modifierHashes': instance.modifierHashes,
+      'booleanActivityOptions': instance.booleanActivityOptions,
+      'loadoutRequirementIndex': instance.loadoutRequirementIndex
     };

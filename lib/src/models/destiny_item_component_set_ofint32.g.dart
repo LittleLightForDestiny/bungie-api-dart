@@ -29,9 +29,11 @@ DestinyItemComponentSetOfint32 _$DestinyItemComponentSetOfint32FromJson(
         ? null
         : DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent.fromJson(
             json['sockets'] as Map<String, dynamic>)
-    ..talentGrids = json['talentGrids'] == null
+    ..reusablePlugs = json['reusablePlugs'] == null
         ? null
-        : DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent.fromJson(json['talentGrids'] as Map<String, dynamic>)
+        : DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent.fromJson(json['reusablePlugs'] as Map<String, dynamic>)
+    ..plugObjectives = json['plugObjectives'] == null ? null : DictionaryComponentResponseOfint32AndDestinyItemPlugObjectivesComponent.fromJson(json['plugObjectives'] as Map<String, dynamic>)
+    ..talentGrids = json['talentGrids'] == null ? null : DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent.fromJson(json['talentGrids'] as Map<String, dynamic>)
     ..plugStates = json['plugStates'] == null ? null : DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent.fromJson(json['plugStates'] as Map<String, dynamic>)
     ..objectives = json['objectives'] == null ? null : DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent.fromJson(json['objectives'] as Map<String, dynamic>);
 }
@@ -44,6 +46,8 @@ Map<String, dynamic> _$DestinyItemComponentSetOfint32ToJson(
       'renderData': instance.renderData,
       'stats': instance.stats,
       'sockets': instance.sockets,
+      'reusablePlugs': instance.reusablePlugs,
+      'plugObjectives': instance.plugObjectives,
       'talentGrids': instance.talentGrids,
       'plugStates': instance.plugStates,
       'objectives': instance.objectives

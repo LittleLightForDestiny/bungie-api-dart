@@ -98,6 +98,9 @@ class GeneralUser{
 	
 	@JsonKey(name:'steamDisplayName')
 	String steamDisplayName;
+	
+	@JsonKey(name:'stadiaDisplayName')
+	String stadiaDisplayName;
 	GeneralUser();
 
 	factory GeneralUser.fromJson(Map<String, dynamic> json) => _$GeneralUserFromJson(json);

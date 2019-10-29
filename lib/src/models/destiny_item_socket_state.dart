@@ -1,5 +1,3 @@
-import 'destiny_objective_progress.dart';
-import 'destiny_item_plug.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_socket_state.g.dart';
@@ -27,30 +25,6 @@ class DestinyItemSocketState{
 	/// If a plug is inserted but not enabled, this will be populated with indexes into the plug item definition&#39;s plug.enabledRules property, so that you can show the reasons why it is not enabled.
 	@JsonKey(name:'enableFailIndexes')
 	List<int> enableFailIndexes;
-	
-	/// If the item supports reusable plugs, this is the list of plug item hashes that are currently allowed to be used for this socket. See the &quot;reusablePlugs&quot; property, which has rendered this obsolete, for more information.
-	@JsonKey(name:'reusablePlugHashes')
-	List<int> reusablePlugHashes;
-	
-	/// Sometimes, Plugs may have objectives: generally, these are used for flavor and display purposes. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item&#39;s data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition&#39;s progressDescription property. Refer to the plug&#39;s itemHash and objective property for more information if you would like to display even more data.
-	@JsonKey(name:'plugObjectives')
-	List<DestinyObjectiveProgress> plugObjectives;
-	
-	/// If the item supports reusable plugs, this is the list of plugs that are allowed to be used for the socket, and any relevant information about whether they are &quot;enabled&quot;, whether they are allowed to be inserted, and any other information such as objectives.
-	/// A Reusable Plug is a plug that you can always insert into this socket as long as its insertion rules are passed, regardless of whether or not you have the plug in your inventory. An example of it failing an insertion rule would be if it has an Objective that needs to be completed before it can be inserted, and that objective hasn&#39;t been completed yet.
-	/// In practice, a socket will *either* have reusable plugs *or* it will allow for plugs in your inventory to be inserted. See DestinyInventoryItemDefinition.socket for more info.
-	@JsonKey(name:'reusablePlugs')
-	List<DestinyItemPlug> reusablePlugs;
-	
-	/// If this socket has a plug set to be checked for plugs (either Character or Profile scoped), this is the hash identifier for that plug set to be checked.
-	///  Use this to lookup the additional plugs in ProfilePlugSets (DestinyProfileResponse.profilePlugSets) or CharacterPlugSets (DestinyProfileResponse.characterPlugSets). To determine which to check (one or both), check the plugSources property for their respective source flags.
-	@JsonKey(name:'plugSetHash')
-	int plugSetHash;
-	
-	/// A Flags Enumeration convenience property that indicates the different locations at which this socket may have plugs.
-	///  Each possible flag indicates somewhere in the Profile&#x2F;Character data that needs to be checked for valid plugs. See the definition of this enumeration for more details.
-	@JsonKey(name:'plugSources')
-	int plugSources;
 	DestinyItemSocketState();
 
 	factory DestinyItemSocketState.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketStateFromJson(json);

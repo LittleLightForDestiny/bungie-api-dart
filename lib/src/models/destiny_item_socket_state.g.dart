@@ -13,21 +13,7 @@ DestinyItemSocketState _$DestinyItemSocketStateFromJson(
     ..isEnabled = json['isEnabled'] as bool
     ..isVisible = json['isVisible'] as bool
     ..enableFailIndexes =
-        (json['enableFailIndexes'] as List)?.map((e) => e as int)?.toList()
-    ..reusablePlugHashes =
-        (json['reusablePlugHashes'] as List)?.map((e) => e as int)?.toList()
-    ..plugObjectives = (json['plugObjectives'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..reusablePlugs = (json['reusablePlugs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemPlug.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..plugSetHash = json['plugSetHash'] as int
-    ..plugSources = json['plugSources'] as int;
+        (json['enableFailIndexes'] as List)?.map((e) => e as int)?.toList();
 }
 
 Map<String, dynamic> _$DestinyItemSocketStateToJson(
@@ -36,10 +22,5 @@ Map<String, dynamic> _$DestinyItemSocketStateToJson(
       'plugHash': instance.plugHash,
       'isEnabled': instance.isEnabled,
       'isVisible': instance.isVisible,
-      'enableFailIndexes': instance.enableFailIndexes,
-      'reusablePlugHashes': instance.reusablePlugHashes,
-      'plugObjectives': instance.plugObjectives,
-      'reusablePlugs': instance.reusablePlugs,
-      'plugSetHash': instance.plugSetHash,
-      'plugSources': instance.plugSources
+      'enableFailIndexes': instance.enableFailIndexes
     };

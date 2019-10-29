@@ -3,6 +3,8 @@ import 'dictionary_component_response_ofint32_and_destiny_item_perks_component.d
 import 'dictionary_component_response_ofint32_and_destiny_item_render_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_item_stats_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_item_sockets_component.dart';
+import 'dictionary_component_response_ofint32_and_destiny_item_reusable_plugs_component.dart';
+import 'dictionary_component_response_ofint32_and_destiny_item_plug_objectives_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_item_talent_grid_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_item_plug_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_item_objectives_component.dart';
@@ -27,6 +29,12 @@ class DestinyItemComponentSetOfint32{
 	
 	@JsonKey(name:'sockets')
 	DictionaryComponentResponseOfint32AndDestinyItemSocketsComponent sockets;
+	
+	@JsonKey(name:'reusablePlugs')
+	DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent reusablePlugs;
+	
+	@JsonKey(name:'plugObjectives')
+	DictionaryComponentResponseOfint32AndDestinyItemPlugObjectivesComponent plugObjectives;
 	
 	@JsonKey(name:'talentGrids')
 	DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent talentGrids;

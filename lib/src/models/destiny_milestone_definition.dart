@@ -27,6 +27,10 @@ class DestinyMilestoneDefinition{
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	
+	/// A hint to the UI to indicate what to show as the display properties for this Milestone when showing &quot;Live&quot; milestone data. Feel free to show more than this if desired: this hint is meant to simplify our own UI, but it may prove useful to you as well.
+	@JsonKey(name:'displayPreference')
+	int displayPreference;
+	
 	/// A custom image someone made just for the milestone. Isn&#39;t that special?
 	@JsonKey(name:'image')
 	String image;

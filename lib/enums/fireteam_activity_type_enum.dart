@@ -14,4 +14,6 @@ class FireteamActivityType {
   static const int Menagerie = 11;
   static const int NightmareHunts = 12;
   static const int VexOffensive = 13;
+  static const int AltarsOfSorrow = 14;
+  static const int Dungeon = 15;
 }

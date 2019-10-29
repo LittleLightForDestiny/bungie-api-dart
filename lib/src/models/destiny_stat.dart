@@ -13,10 +13,6 @@ class DestinyStat{
 	/// The current value of the Stat.
 	@JsonKey(name:'value')
 	int value;
-	
-	/// The highest possible value for the stat, if we were able to compute it. (I wouldn&#39;t necessarily trust this value right now. I would like to improve its calculation in later iterations of the API. Consider this a placeholder for desired future functionality)
-	@JsonKey(name:'maximumValue')
-	int maximumValue;
 	DestinyStat();
 
 	factory DestinyStat.fromJson(Map<String, dynamic> json) => _$DestinyStatFromJson(json);

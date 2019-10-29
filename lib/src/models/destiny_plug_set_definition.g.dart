@@ -19,6 +19,7 @@ DestinyPlugSetDefinition _$DestinyPlugSetDefinitionFromJson(
             : DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(
                 e as Map<String, dynamic>))
         ?.toList()
+    ..isFakePlugSet = json['isFakePlugSet'] as bool
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -29,6 +30,7 @@ Map<String, dynamic> _$DestinyPlugSetDefinitionToJson(
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
       'reusablePlugItems': instance.reusablePlugItems,
+      'isFakePlugSet': instance.isFakePlugSet,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted
