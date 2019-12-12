@@ -4,7 +4,7 @@ class GlobalAlerts{
     /// Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts.
     static Future<CEListOfGlobalAlertResponse> getGlobalAlerts (
         HttpClient client,
-        Bool includestreaming,
+        bool includestreaming,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['includestreaming'] = includestreaming;

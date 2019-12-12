@@ -21,7 +21,7 @@ class Content{
     /// Returns a content item referenced by id
     static Future<ContentItemPublicContractResponse> getContentById (
         HttpClient client,
-        Bool head,
+        bool head,
         String id,
         String locale,
     ) async {
@@ -38,7 +38,7 @@ class Content{
     /// Returns the newest item that matches a given tag and Content Type.
     static Future<ContentItemPublicContractResponse> getContentByTagAndType (
         HttpClient client,
-        Bool head,
+        bool head,
         String locale,
         String tag,
         String type,
@@ -57,8 +57,8 @@ class Content{
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentWithText (
         HttpClient client,
         String ctype,
-        Int currentpage,
-        Bool head,
+        int currentpage,
+        bool head,
         String locale,
         String searchtext,
         String source,
@@ -82,9 +82,9 @@ class Content{
     /// Searches for Content Items that match the given Tag and Content Type.
     static Future<SearchResultOfContentItemPublicContractResponse> searchContentByTagAndType (
         HttpClient client,
-        Int currentpage,
-        Bool head,
-        Int itemsperpage,
+        int currentpage,
+        bool head,
+        int itemsperpage,
         String locale,
         String tag,
         String type,

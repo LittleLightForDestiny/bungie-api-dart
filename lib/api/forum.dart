@@ -7,13 +7,13 @@ class Forum{
     /// Get topics from any forum.
     static Future<PostSearchResponseResponse> getTopicsPaged (
         HttpClient client,
-        Int categoryFilter,
+        int categoryFilter,
         String group,
         String locales,
-        Int page,
-        Int pageSize,
-        Int quickDate,
-        Int sort,
+        int page,
+        int pageSize,
+        int quickDate,
+        int sort,
         String tagstring,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -30,11 +30,11 @@ class Forum{
     /// Gets a listing of all topics marked as part of the core group.
     static Future<PostSearchResponseResponse> getCoreTopicsPaged (
         HttpClient client,
-        Int categoryFilter,
+        int categoryFilter,
         String locales,
-        Int page,
-        Int quickDate,
-        Int sort,
+        int page,
+        int quickDate,
+        int sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['locales'] = locales;
@@ -49,14 +49,14 @@ class Forum{
     /// Returns a thread of posts at the given parent, optionally returning replies to those posts as well as the original parent.
     static Future<PostSearchResponseResponse> getPostsThreadedPaged (
         HttpClient client,
-        Bool getParentPost,
-        Int page,
-        Int pageSize,
+        bool getParentPost,
+        int page,
+        int pageSize,
         String parentPostId,
-        Int replySize,
-        Bool rootThreadMode,
+        int replySize,
+        bool rootThreadMode,
         String showbanned,
-        Int sortMode,
+        int sortMode,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['showbanned'] = showbanned;
@@ -72,12 +72,12 @@ class Forum{
     static Future<PostSearchResponseResponse> getPostsThreadedPagedFromChild (
         HttpClient client,
         String childPostId,
-        Int page,
-        Int pageSize,
-        Int replySize,
-        Bool rootThreadMode,
+        int page,
+        int pageSize,
+        int replySize,
+        bool rootThreadMode,
         String showbanned,
-        Int sortMode,
+        int sortMode,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['showbanned'] = showbanned;
@@ -122,7 +122,7 @@ class Forum{
         throw Exception(response.mappedBody);
     }
     /// Gets the post Id for the given content item&#39;s comments, if it exists.
-    static Future<int64Response> getTopicForContent (
+    static Future<Int64Response> getTopicForContent (
         HttpClient client,
         String contentId,
     ) async {
@@ -131,7 +131,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int64Response.fromJson(response.mappedBody);
+            return Int64Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

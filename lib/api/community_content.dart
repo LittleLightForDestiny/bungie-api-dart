@@ -6,9 +6,9 @@ class CommunityContent{
     /// Returns community content.
     static Future<PostSearchResponseResponse> getCommunityContent (
         HttpClient client,
-        Int mediaFilter,
-        Int page,
-        Int sort,
+        int mediaFilter,
+        int page,
+        int sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Get/$sort/$mediaFilter/$page/', params);
@@ -22,10 +22,10 @@ class CommunityContent{
     /// Returns info about community members who are live streaming.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatuses (
         HttpClient client,
-        Int modeHash,
-        Int page,
-        Int partnershipType,
-        Int sort,
+        int modeHash,
+        int page,
+        int partnershipType,
+        int sort,
         String streamLocale,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -42,9 +42,9 @@ class CommunityContent{
     /// Returns info about community members who are live streaming in your clans.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForClanmates (
         HttpClient client,
-        Int page,
-        Int partnershipType,
-        Int sort,
+        int page,
+        int partnershipType,
+        int sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Clan/$partnershipType/$sort/$page/', params);
@@ -58,9 +58,9 @@ class CommunityContent{
     /// Returns info about community members who are live streaming among your friends.
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForFriends (
         HttpClient client,
-        Int page,
-        Int partnershipType,
-        Int sort,
+        int page,
+        int partnershipType,
+        int sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Friends/$partnershipType/$sort/$page/', params);
@@ -74,9 +74,9 @@ class CommunityContent{
     /// Returns info about Featured live streams.
     static Future<SearchResultOfCommunityLiveStatusResponse> getFeaturedCommunityLiveStatuses (
         HttpClient client,
-        Int page,
-        Int partnershipType,
-        Int sort,
+        int page,
+        int partnershipType,
+        int sort,
         String streamLocale,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -93,8 +93,8 @@ class CommunityContent{
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,
         String membershipId,
-        Int membershipType,
-        Int partnershipType,
+        int membershipType,
+        int partnershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Users/$partnershipType/$membershipType/$membershipId/', params);

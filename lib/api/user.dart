@@ -52,7 +52,7 @@ class User{
     static Future<UserMembershipDataResponse> getMembershipDataById (
         HttpClient client,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipsById/$membershipId/$membershipType/', params);
@@ -94,7 +94,7 @@ class User{
     static Future<HardLinkedUserMembershipResponse> getMembershipFromHardLinkedCredential (
         HttpClient client,
         String credential,
-        Int crType,
+        int crType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipFromHardLinkedCredential/$crType/$credential/', params);

@@ -11,7 +11,6 @@ export class ApiMethodParameter{
         return ApiDocHelper.getObjectType(this.info);
     }
 
-
     in():string{
         if('$ref' in this.info){
             let info = this.info as ReferenceObject;

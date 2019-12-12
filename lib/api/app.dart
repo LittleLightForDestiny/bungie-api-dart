@@ -5,7 +5,7 @@ class App{
     /// Get API usage by application for time frame specified. You can go as far back as 30 days ago, and can ask for up to a 48 hour window of time in a single request. You must be authenticated with at least the ReadUserData permission to access this endpoint.
     static Future<ApiUsageResponse> getApplicationApiUsage (
         HttpClient client,
-        Int applicationId,
+        int applicationId,
         String end,
         String start,
     ) async {

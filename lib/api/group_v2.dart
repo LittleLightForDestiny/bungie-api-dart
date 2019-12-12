@@ -55,24 +55,24 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// Gets the state of the user&#39;s clan invite preferences for a particular membership type - true if they wish to be invited to clans, false otherwise.
-    static Future<booleanResponse> getUserClanInviteSetting (
+    static Future<BooleanResponse> getUserClanInviteSetting (
         HttpClient client,
-        Int mType,
+        int mType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/GetUserClanInviteSetting/$mType/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return booleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Gets groups recommended for you based on the groups to whom those you follow belong.
     static Future<ListOfGroupV2CardResponse> getRecommendedGroups (
         HttpClient client,
-        Int createDateRange,
-        Int groupType,
+        int createDateRange,
+        int groupType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/Recommended/$groupType/$createDateRange/', params);
@@ -116,7 +116,7 @@ class GroupV2{
     static Future<GroupResponseResponse> getGroupByName (
         HttpClient client,
         String groupName,
-        Int groupType,
+        int groupType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/Name/$groupName/$groupType/', params);
@@ -157,7 +157,7 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// Edit an existing group. You must have suitable permissions in the group to perform this operation. This latest revision will only edit the fields you pass in - pass null for properties you want to leave unaltered.
-    static Future<int32Response> editGroup (
+    static Future<Int32Response> editGroup (
         HttpClient client,
         String groupId,
         GroupEditAction body
@@ -168,12 +168,12 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Edit an existing group&#39;s clan banner. You must have suitable permissions in the group to perform this operation. All fields are required.
-    static Future<int32Response> editClanBanner (
+    static Future<Int32Response> editClanBanner (
         HttpClient client,
         String groupId,
         ClanBanner body
@@ -184,12 +184,12 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Edit group options only available to a founder. You must have suitable permissions in the group to perform this operation.
-    static Future<int32Response> editFounderOptions (
+    static Future<Int32Response> editFounderOptions (
         HttpClient client,
         String groupId,
         GroupOptionsEditAction body
@@ -200,12 +200,12 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Add a new optional conversation&#x2F;chat channel. Requires admin permissions to the group.
-    static Future<int64Response> addOptionalConversation (
+    static Future<Int64Response> addOptionalConversation (
         HttpClient client,
         String groupId,
         GroupOptionalConversationAddRequest body
@@ -216,12 +216,12 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int64Response.fromJson(response.mappedBody);
+            return Int64Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Edit the settings of an optional conversation&#x2F;chat channel. Requires admin permissions to the group.
-    static Future<int64Response> editOptionalConversation (
+    static Future<Int64Response> editOptionalConversation (
         HttpClient client,
         String conversationId,
         String groupId,
@@ -233,16 +233,16 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int64Response.fromJson(response.mappedBody);
+            return Int64Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Get the list of members in a given group.
     static Future<SearchResultOfGroupMemberResponse> getMembersOfGroup (
         HttpClient client,
-        Int currentpage,
+        int currentpage,
         String groupId,
-        Int memberType,
+        int memberType,
         String nameSearch,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -259,7 +259,7 @@ class GroupV2{
     /// Get the list of members in a given group who are of admin level or higher.
     static Future<SearchResultOfGroupMemberResponse> getAdminsAndFounderOfGroup (
         HttpClient client,
-        Int currentpage,
+        int currentpage,
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -272,19 +272,19 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// Edit the membership type of a given member. You must have suitable permissions in the group to perform this operation.
-    static Future<int32Response> editGroupMembership (
+    static Future<Int32Response> editGroupMembership (
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
-        Int memberType,
+        int membershipType,
+        int memberType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$groupId/Members/$membershipType/$membershipId/SetMembershipType/$memberType/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -293,7 +293,7 @@ class GroupV2{
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$groupId/Members/$membershipType/$membershipId/Kick/', params);
@@ -305,11 +305,11 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// Bans the requested member from the requested group for the specified period of time.
-    static Future<int32Response> banMember (
+    static Future<Int32Response> banMember (
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
         GroupBanRequest body
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -318,30 +318,30 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Unbans the requested member, allowing them to re-apply for membership.
-    static Future<int32Response> unbanMember (
+    static Future<Int32Response> unbanMember (
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$groupId/Members/$membershipType/$membershipId/Unban/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Get the list of banned members in a given group. Only accessible to group Admins and above. Not applicable to all groups. Check group features.
     static Future<SearchResultOfGroupBanResponse> getBannedMembersOfGroup (
         HttpClient client,
-        Int currentpage,
+        int currentpage,
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -354,25 +354,25 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// An administrative method to allow the founder of a group or clan to give up their position to another admin permanently.
-    static Future<booleanResponse> abdicateFoundership (
+    static Future<BooleanResponse> abdicateFoundership (
         HttpClient client,
         String founderIdNew,
         String groupId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$groupId/Admin/AbdicateFoundership/$membershipType/$founderIdNew/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return booleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Get the list of users who are awaiting a decision on their application to join a given group. Modified to include application info.
     static Future<SearchResultOfGroupMemberApplicationResponse> getPendingMemberships (
         HttpClient client,
-        Int currentpage,
+        int currentpage,
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -387,7 +387,7 @@ class GroupV2{
     /// Get the list of users who have been invited into the group.
     static Future<SearchResultOfGroupMemberApplicationResponse> getInvitedIndividuals (
         HttpClient client,
-        Int currentpage,
+        int currentpage,
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -448,11 +448,11 @@ class GroupV2{
         throw Exception(response.mappedBody);
     }
     /// Approve the given membershipId to join the group&#x2F;clan as long as they have applied.
-    static Future<booleanResponse> approvePending (
+    static Future<BooleanResponse> approvePending (
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
         GroupApplicationRequest body
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -461,7 +461,7 @@ class GroupV2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return booleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -484,10 +484,10 @@ class GroupV2{
     /// Get information about the groups that a given member has joined.
     static Future<GetGroupsForMemberResponseResponse> getGroupsForMember (
         HttpClient client,
-        Int filter,
-        Int groupType,
+        int filter,
+        int groupType,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/User/$membershipType/$membershipId/$filter/$groupType/', params);
@@ -501,9 +501,9 @@ class GroupV2{
     /// Allows a founder to manually recover a group they can see in game but not on bungie.net
     static Future<GroupMembershipSearchResponseResponse> recoverGroupForFounder (
         HttpClient client,
-        Int groupType,
+        int groupType,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/Recover/$membershipType/$membershipId/$groupType/', params);
@@ -517,10 +517,10 @@ class GroupV2{
     /// Get information about the groups that a given member has applied to or been invited to.
     static Future<GroupPotentialMembershipSearchResponseResponse> getPotentialGroupsForMember (
         HttpClient client,
-        Int filter,
-        Int groupType,
+        int filter,
+        int groupType,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/User/Potential/$membershipType/$membershipId/$filter/$groupType/', params);
@@ -536,7 +536,7 @@ class GroupV2{
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
         GroupApplicationRequest body
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -554,7 +554,7 @@ class GroupV2{
         HttpClient client,
         String groupId,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$groupId/Members/IndividualInviteCancel/$membershipType/$membershipId/', params);

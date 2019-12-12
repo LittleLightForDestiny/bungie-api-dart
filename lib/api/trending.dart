@@ -20,7 +20,7 @@ class Trending{
     static Future<SearchResultOfTrendingEntryResponse> getTrendingCategory (
         HttpClient client,
         String categoryId,
-        Int pageNumber,
+        int pageNumber,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Categories/$categoryId/$pageNumber/', params);
@@ -35,7 +35,7 @@ class Trending{
     static Future<TrendingDetailResponse> getTrendingEntryDetail (
         HttpClient client,
         String identifier,
-        Int trendingEntryType,
+        int trendingEntryType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Details/$trendingEntryType/$identifier/', params);

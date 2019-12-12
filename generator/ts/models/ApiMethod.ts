@@ -1,5 +1,5 @@
 import { PathItemObject, OperationObject, RequestBodyObject, ContentObject } from "openapi3-ts";
-import {camelCase, map, get} from 'lodash';
+import {camelCase, map, get, upperFirst} from 'lodash';
 import { ApiMethodParameter } from "./ApiMethodParameter";
 import { ModelProperty } from "./ModelProperty";
 export class ApiMethod{
@@ -56,7 +56,7 @@ export class ApiMethod{
     returnType():string{
         let type = this.operation().responses[200].$ref;
         let fullClassName = type.split('/').pop();
-        let className = fullClassName.split('.').pop();
+        let className = upperFirst(fullClassName.split('.').pop());
         return `${className}Response`;
     }
 

@@ -55,7 +55,7 @@ class Destiny2{
     static Future<DestinyDefinitionResponse> getDestinyEntityDefinition (
         HttpClient client,
         String entityType,
-        Int hashIdentifier,
+        int hashIdentifier,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/Manifest/$entityType/$hashIdentifier/', params);
@@ -70,8 +70,8 @@ class Destiny2{
     static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayer (
         HttpClient client,
         String displayName,
-        Int membershipType,
-        Bool returnOriginalProfile,
+        int membershipType,
+        bool returnOriginalProfile,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['returnOriginalProfile'] = returnOriginalProfile;
@@ -86,9 +86,9 @@ class Destiny2{
     /// Returns a summary information about all profiles linked to the requesting membership type&#x2F;membership ID that have valid Destiny information. The passed-in Membership Type&#x2F;Membership ID may be a Bungie.Net membership or a Destiny membership. It only returns the minimal amount of data to begin making more substantive requests, but will hopefully serve as a useful alternative to UserServices for people who just care about Destiny data. Note that it will only return linked accounts whose linkages you are allowed to view.
     static Future<DestinyLinkedProfilesResponseResponse> getLinkedProfiles (
         HttpClient client,
-        Bool getAllMemberships,
+        bool getAllMemberships,
         String membershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['getAllMemberships'] = getAllMemberships;
@@ -105,7 +105,7 @@ class Destiny2{
         HttpClient client,
         List<int> components,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -123,7 +123,7 @@ class Destiny2{
         String characterId,
         List<int> components,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -155,7 +155,7 @@ class Destiny2{
         List<int> components,
         String destinyMembershipId,
         String itemInstanceId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -173,7 +173,7 @@ class Destiny2{
         String characterId,
         List<int> components,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -191,8 +191,8 @@ class Destiny2{
         String characterId,
         List<int> components,
         String destinyMembershipId,
-        Int membershipType,
-        Int vendorHash,
+        int membershipType,
+        int vendorHash,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -223,10 +223,10 @@ class Destiny2{
     static Future<DestinyCollectibleNodeDetailResponseResponse> getCollectibleNodeDetails (
         HttpClient client,
         String characterId,
-        Int collectiblePresentationNodeHash,
+        int collectiblePresentationNodeHash,
         List<int> components,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components;
@@ -239,7 +239,7 @@ class Destiny2{
         throw Exception(response.mappedBody);
     }
     /// Transfer an item to&#x2F;from your vault. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item. itshappening.gif
-    static Future<int32Response> transferItem (
+    static Future<Int32Response> transferItem (
         HttpClient client,
         DestinyItemTransferRequest body
     ) async {
@@ -249,12 +249,12 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Extract an item from the Postmaster, with whatever implications that may entail. You must have a valid Destiny account. You must also pass BOTH a reference AND an instance ID if it&#39;s an instanced item.
-    static Future<int32Response> pullFromPostmaster (
+    static Future<Int32Response> pullFromPostmaster (
         HttpClient client,
         DestinyPostmasterTransferRequest body
     ) async {
@@ -264,12 +264,12 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
     /// Equip an item. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
-    static Future<int32Response> equipItem (
+    static Future<Int32Response> equipItem (
         HttpClient client,
         DestinyItemActionRequest body
     ) async {
@@ -279,7 +279,7 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -299,7 +299,7 @@ class Destiny2{
         throw Exception(response.mappedBody);
     }
     /// Set the Lock State for an instanced item. You must have a valid Destiny Account.
-    static Future<int32Response> setItemLockState (
+    static Future<Int32Response> setItemLockState (
         HttpClient client,
         DestinyItemStateRequest body
     ) async {
@@ -309,7 +309,7 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -343,7 +343,7 @@ class Destiny2{
         throw Exception(response.mappedBody);
     }
     /// Report a player that you met in an activity that was engaging in ToS-violating activities. Both you and the offending player must have played in the activityId passed in. Please use this judiciously and only when you have strong suspicions of violation, pretty please.
-    static Future<int32Response> reportOffensivePostGameCarnageReportPlayer (
+    static Future<Int32Response> reportOffensivePostGameCarnageReportPlayer (
         HttpClient client,
         String activityId,
         DestinyReportOffensePgcrRequest body
@@ -354,7 +354,7 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -375,7 +375,7 @@ class Destiny2{
     static Future<DestinyLeaderboardResultsResponse> getClanLeaderboards (
         HttpClient client,
         String groupId,
-        Int maxtop,
+        int maxtop,
         String modes,
         String statid,
     ) async {
@@ -411,8 +411,8 @@ class Destiny2{
     static Future<DestinyLeaderboardResultsResponse> getLeaderboards (
         HttpClient client,
         String destinyMembershipId,
-        Int maxtop,
-        Int membershipType,
+        int maxtop,
+        int membershipType,
         String modes,
         String statid,
     ) async {
@@ -433,8 +433,8 @@ class Destiny2{
         HttpClient client,
         String characterId,
         String destinyMembershipId,
-        Int maxtop,
-        Int membershipType,
+        int maxtop,
+        int membershipType,
         String modes,
         String statid,
     ) async {
@@ -453,7 +453,7 @@ class Destiny2{
     /// Gets a page list of Destiny items.
     static Future<DestinyEntitySearchResultResponse> searchDestinyEntities (
         HttpClient client,
-        Int page,
+        int page,
         String searchTerm,
         String type,
     ) async {
@@ -475,9 +475,9 @@ class Destiny2{
         String daystart,
         String destinyMembershipId,
         List<int> groups,
-        Int membershipType,
+        int membershipType,
         List<int> modes,
-        Int periodType,
+        int periodType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['dayend'] = dayend;
@@ -498,7 +498,7 @@ class Destiny2{
         HttpClient client,
         String destinyMembershipId,
         List<int> groups,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['groups'] = groups;
@@ -514,11 +514,11 @@ class Destiny2{
     static Future<DestinyActivityHistoryResultsResponse> getActivityHistory (
         HttpClient client,
         String characterId,
-        Int count,
+        int count,
         String destinyMembershipId,
-        Int membershipType,
-        Int mode,
-        Int page,
+        int membershipType,
+        int mode,
+        int page,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['count'] = count;
@@ -537,7 +537,7 @@ class Destiny2{
         HttpClient client,
         String characterId,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/$membershipType/Account/$destinyMembershipId/Character/$characterId/Stats/UniqueWeapons/', params);
@@ -553,7 +553,7 @@ class Destiny2{
         HttpClient client,
         String characterId,
         String destinyMembershipId,
-        Int membershipType,
+        int membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/$membershipType/Account/$destinyMembershipId/Character/$characterId/Stats/AggregateActivityStats/', params);
@@ -567,7 +567,7 @@ class Destiny2{
     /// Gets custom localized content for the milestone of the given hash, if it exists.
     static Future<DestinyMilestoneContentResponse> getPublicMilestoneContent (
         HttpClient client,
-        Int milestoneHash,
+        int milestoneHash,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/Milestones/$milestoneHash/Content/', params);
@@ -607,7 +607,7 @@ class Destiny2{
         throw Exception(response.mappedBody);
     }
     /// Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.
-    static Future<int32Response> awaProvideAuthorizationResult (
+    static Future<Int32Response> awaProvideAuthorizationResult (
         HttpClient client,
         AwaUserResponse body
     ) async {
@@ -617,7 +617,7 @@ class Destiny2{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return int32Response.fromJson(response.mappedBody);
+            return Int32Response.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
