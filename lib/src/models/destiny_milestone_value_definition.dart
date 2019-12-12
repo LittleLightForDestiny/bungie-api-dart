@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_display_properties_definition.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_milestone_value_definition.g.dart';
 
 /// The definition for information related to a key&#x2F;value pair that is relevant for a particular Milestone or component within the Milestone. 
@@ -8,15 +9,17 @@ part 'destiny_milestone_value_definition.g.dart';
 @JsonSerializable()
 class DestinyMilestoneValueDefinition{
 	
-	@JsonKey(name:'key')
-	String key;
-	
-	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
-	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyMilestoneValueDefinition();
 
 	factory DestinyMilestoneValueDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneValueDefinitionFromJson(json);
+
+	@JsonKey(name:'key')
+	String key;
+	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
+	@JsonKey(name:'displayProperties')
+	DestinyDisplayPropertiesDefinition displayProperties;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyMilestoneValueDefinitionToJson(this);
 }

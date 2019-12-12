@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_display_properties_definition.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_socket_category_definition.g.dart';
 
 /// Sockets on an item are organized into Categories visually.
@@ -11,34 +12,32 @@ part 'destiny_socket_category_definition.g.dart';
 @JsonSerializable()
 class DestinySocketCategoryDefinition{
 	
+	DestinySocketCategoryDefinition();
+
+	factory DestinySocketCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinySocketCategoryDefinitionFromJson(json);
+
 	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	
 	/// A string hinting to the game&#39;s UI system about how the sockets in this category should be displayed.
 	/// BNet doesn&#39;t use it: it&#39;s up to you to find valid values and make your own special UI if you want to honor this category style.
 	@JsonKey(name:'uiCategoryStyle')
 	int uiCategoryStyle;
-	
 	/// Same as uiCategoryStyle, but in a more usable enumeration form.
 	@JsonKey(name:'categoryStyle')
 	int categoryStyle;
-	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
 	int hash;
-	
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	
 	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
-	DestinySocketCategoryDefinition();
 
-	factory DestinySocketCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinySocketCategoryDefinitionFromJson(json);
+	
 	
 	Map<String, dynamic> toJson() => _$DestinySocketCategoryDefinitionToJson(this);
 }

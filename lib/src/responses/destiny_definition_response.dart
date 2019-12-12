@@ -6,6 +6,18 @@ part 'destiny_definition_response.g.dart';
 /// Provides common properties for destiny definitions.
 @JsonSerializable()
 class DestinyDefinitionResponse{
+	DestinyDefinitionResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyDefinitionResponse.fromJson(Map<String, dynamic> json) => _$DestinyDefinitionResponseFromJson(json);
+	
 	
 	/// Provides common properties for destiny definitions.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyDefinitionResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyDefinitionResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyDefinitionResponse.fromJson(Map<String, dynamic> json) => _$DestinyDefinitionResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyDefinitionResponseToJson(this);
 }

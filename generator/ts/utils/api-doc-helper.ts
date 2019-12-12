@@ -1,7 +1,7 @@
 import { OpenAPIObject, ReferenceObject, ParameterObject, SchemaObject } from "openapi3-ts";
 import { readFileSync } from "fs";
 import { ImportInfo } from "../models/ImportInfo";
-import { camelCase, get as _get } from "lodash";
+import { upperFirst, get as _get } from "lodash";
 
 export class ApiDocHelper{
     static doc:OpenAPIObject;
@@ -127,7 +127,7 @@ export class ApiDocHelper{
         if("$ref" in obj){
             let ref = this.getRef(refObj.$ref);
             if(ref.type == 'object'){
-                return this.getRefClassName(refObj.$ref);
+                return upperFirst(this.getRefClassName(refObj.$ref));
             }else{
                 return this.getObjectType(ref);
             }

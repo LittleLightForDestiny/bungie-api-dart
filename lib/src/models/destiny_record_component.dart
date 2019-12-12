@@ -1,25 +1,26 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_objective_progress.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_record_component.g.dart';
 
 @JsonSerializable()
 class DestinyRecordComponent{
 	
-	@JsonKey(name:'state')
-	int state;
-	
-	@JsonKey(name:'objectives')
-	List<DestinyObjectiveProgress> objectives;
-	
-	@JsonKey(name:'intervalObjectives')
-	List<DestinyObjectiveProgress> intervalObjectives;
-	
-	@JsonKey(name:'intervalsRedeemedCount')
-	int intervalsRedeemedCount;
 	DestinyRecordComponent();
 
 	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) => _$DestinyRecordComponentFromJson(json);
+
+	@JsonKey(name:'state')
+	int state;
+	@JsonKey(name:'objectives')
+	List<DestinyObjectiveProgress> objectives;
+	@JsonKey(name:'intervalObjectives')
+	List<DestinyObjectiveProgress> intervalObjectives;
+	@JsonKey(name:'intervalsRedeemedCount')
+	int intervalsRedeemedCount;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyRecordComponentToJson(this);
 }

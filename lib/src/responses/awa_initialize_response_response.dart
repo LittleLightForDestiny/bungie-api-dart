@@ -6,6 +6,18 @@ part 'awa_initialize_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class AwaInitializeResponseResponse{
+	AwaInitializeResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory AwaInitializeResponseResponse.fromJson(Map<String, dynamic> json) => _$AwaInitializeResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	AwaInitializeResponse response;
@@ -27,18 +39,6 @@ class AwaInitializeResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	AwaInitializeResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory AwaInitializeResponseResponse.fromJson(Map<String, dynamic> json) => _$AwaInitializeResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$AwaInitializeResponseResponseToJson(this);
 }

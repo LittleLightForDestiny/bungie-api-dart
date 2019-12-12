@@ -6,6 +6,18 @@ part 'post_search_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class PostSearchResponseResponse{
+	PostSearchResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory PostSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$PostSearchResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	PostSearchResponse response;
@@ -27,18 +39,6 @@ class PostSearchResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	PostSearchResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory PostSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$PostSearchResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$PostSearchResponseResponseToJson(this);
 }

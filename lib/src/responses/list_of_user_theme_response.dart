@@ -6,6 +6,18 @@ part 'list_of_user_theme_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfUserThemeResponse{
+	ListOfUserThemeResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfUserThemeResponse.fromJson(Map<String, dynamic> json) => _$ListOfUserThemeResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<UserTheme> response;
@@ -27,18 +39,6 @@ class ListOfUserThemeResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfUserThemeResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfUserThemeResponse.fromJson(Map<String, dynamic> json) => _$ListOfUserThemeResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfUserThemeResponseToJson(this);
 }

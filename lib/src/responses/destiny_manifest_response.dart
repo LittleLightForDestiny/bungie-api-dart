@@ -6,6 +6,18 @@ part 'destiny_manifest_response.g.dart';
 /// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
 @JsonSerializable()
 class DestinyManifestResponse{
+	DestinyManifestResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyManifestResponse.fromJson(Map<String, dynamic> json) => _$DestinyManifestResponseFromJson(json);
+	
 	
 	/// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyManifestResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyManifestResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyManifestResponse.fromJson(Map<String, dynamic> json) => _$DestinyManifestResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyManifestResponseToJson(this);
 }

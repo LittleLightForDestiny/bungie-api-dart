@@ -6,6 +6,18 @@ part 'destiny_activity_history_results_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class DestinyActivityHistoryResultsResponse{
+	DestinyActivityHistoryResultsResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyActivityHistoryResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyActivityHistoryResultsResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	DestinyActivityHistoryResults response;
@@ -27,18 +39,6 @@ class DestinyActivityHistoryResultsResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyActivityHistoryResultsResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyActivityHistoryResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyActivityHistoryResultsResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyActivityHistoryResultsResponseToJson(this);
 }

@@ -6,6 +6,18 @@ part 'list_of_group_v2_card_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfGroupV2CardResponse{
+	ListOfGroupV2CardResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfGroupV2CardResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupV2CardResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<GroupV2Card> response;
@@ -27,18 +39,6 @@ class ListOfGroupV2CardResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfGroupV2CardResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfGroupV2CardResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupV2CardResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfGroupV2CardResponseToJson(this);
 }

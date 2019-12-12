@@ -6,6 +6,18 @@ part 'list_of_group_theme_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfGroupThemeResponse{
+	ListOfGroupThemeResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfGroupThemeResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupThemeResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<GroupTheme> response;
@@ -27,18 +39,6 @@ class ListOfGroupThemeResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfGroupThemeResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfGroupThemeResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupThemeResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfGroupThemeResponseToJson(this);
 }

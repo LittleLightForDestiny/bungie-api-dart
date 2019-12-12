@@ -15,22 +15,21 @@ class {{className}}{
         {{#requestBody}}
         {{{typeName}}} body
         {{/requestBody}}
-    ) {
-        Map<String, dynamic> params = new Map();
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
         {{#queryParameters}}
         params['{{name}}'] = {{name}};
         {{/queryParameters}}
-        HttpClientConfig config = HttpClientConfig('{{method}}', "{{{url}}}", params);
+        final HttpClientConfig config = HttpClientConfig('{{method}}', '{{{url}}}', params);
         {{#requestBody}}
         {{{bodySerializeFunction}}}
         {{/requestBody}}
         config.bodyContentType = {{{requestBodyContentType}}};
-        return client.request(config).then((response){
-            if(response.statusCode == 200){
-                return {{returnType}}.fromJson(response.mappedBody);
-            }
-            throw Exception(response.mappedBody);
-        });
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return {{returnType}}.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
     }
     {{/methods}}
 }

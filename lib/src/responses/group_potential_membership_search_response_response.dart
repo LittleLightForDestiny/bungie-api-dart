@@ -6,6 +6,18 @@ part 'group_potential_membership_search_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class GroupPotentialMembershipSearchResponseResponse{
+	GroupPotentialMembershipSearchResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory GroupPotentialMembershipSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupPotentialMembershipSearchResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	GroupPotentialMembershipSearchResponse response;
@@ -27,18 +39,6 @@ class GroupPotentialMembershipSearchResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	GroupPotentialMembershipSearchResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory GroupPotentialMembershipSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupPotentialMembershipSearchResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$GroupPotentialMembershipSearchResponseResponseToJson(this);
 }

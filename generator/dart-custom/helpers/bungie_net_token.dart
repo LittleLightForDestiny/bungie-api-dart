@@ -4,6 +4,16 @@ part 'bungie_net_token.g.dart';
 
 @JsonSerializable()
 class BungieNetToken{
+
+  BungieNetToken({
+		this.accessToken,
+    this.expiresIn,
+    this.refreshToken,
+    this.refreshExpiresIn,
+    this.membershipId
+  });
+  factory BungieNetToken.fromJson(Map<String, dynamic> json) => _$BungieNetTokenFromJson(json);
+
   @JsonKey(name:'access_token')
   String accessToken;
   
@@ -18,14 +28,7 @@ class BungieNetToken{
 
   @JsonKey(name:'membership_id')
   String membershipId;
-  BungieNetToken({
-		this.accessToken,
-    this.expiresIn,
-    this.refreshToken,
-    this.refreshExpiresIn,
-    this.membershipId
-  });
-  factory BungieNetToken.fromJson(Map<String, dynamic> json) => _$BungieNetTokenFromJson(json);
+  
 	
 	Map<String, dynamic> toJson() => _$BungieNetTokenToJson(this); 
 }

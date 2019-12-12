@@ -7,6 +7,18 @@ part 'destiny_linked_profiles_response_response.g.dart';
 /// This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose
 @JsonSerializable()
 class DestinyLinkedProfilesResponseResponse{
+	DestinyLinkedProfilesResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyLinkedProfilesResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyLinkedProfilesResponseResponseFromJson(json);
+	
 	
 	/// I know what you seek. You seek linked accounts. Found them, you have.
 	/// This contract returns a minimal amount of data about Destiny Accounts that are linked through your Bungie.Net account. We will not return accounts in this response whose
@@ -30,18 +42,6 @@ class DestinyLinkedProfilesResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyLinkedProfilesResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyLinkedProfilesResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyLinkedProfilesResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyLinkedProfilesResponseResponseToJson(this);
 }

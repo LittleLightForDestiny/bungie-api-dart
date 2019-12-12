@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_kiosk_item.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_kiosks_component.g.dart';
 
 /// A Kiosk is a Vendor (DestinyVendorDefinition) that sells items based on whether you have already acquired that item before.
@@ -9,12 +10,15 @@ part 'destiny_kiosks_component.g.dart';
 @JsonSerializable()
 class DestinyKiosksComponent{
 	
-	/// A dictionary keyed by the Kiosk Vendor&#39;s hash identifier (use it to look up the DestinyVendorDefinition for the relevant kiosk vendor), and whose value is a list of all the items that the user can &quot;see&quot; in the Kiosk, and any other interesting metadata.
-	@JsonKey(name:'kioskItems')
-	Map<String, List<DestinyKioskItem>> kioskItems;
 	DestinyKiosksComponent();
 
 	factory DestinyKiosksComponent.fromJson(Map<String, dynamic> json) => _$DestinyKiosksComponentFromJson(json);
+
+	/// A dictionary keyed by the Kiosk Vendor&#39;s hash identifier (use it to look up the DestinyVendorDefinition for the relevant kiosk vendor), and whose value is a list of all the items that the user can &quot;see&quot; in the Kiosk, and any other interesting metadata.
+	@JsonKey(name:'kioskItems')
+	Map<String, List<DestinyKioskItem>> kioskItems;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyKiosksComponentToJson(this);
 }

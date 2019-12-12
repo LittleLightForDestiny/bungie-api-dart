@@ -6,6 +6,18 @@ part 'dictionary_ofuint32_and_destiny_public_milestone_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
+	DictionaryOfuint32AndDestinyPublicMilestoneResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	Map<String, DestinyPublicMilestone> response;
@@ -27,18 +39,6 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DictionaryOfuint32AndDestinyPublicMilestoneResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseToJson(this);
 }

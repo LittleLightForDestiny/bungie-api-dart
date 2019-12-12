@@ -1,10 +1,11 @@
 class HttpClientConfig {
+  HttpClientConfig(this.method,this.url, this.params, [this.body, this.bodyContentType]);
+
   String method;
   String url;
   Map<String, dynamic> params;
   dynamic body;
   String bodyContentType;
-  HttpClientConfig(this.method,this.url, this.params, [this.body, this.bodyContentType]);
 }
 
 
@@ -17,7 +18,8 @@ abstract class HttpClient{
 }
 
 class HttpResponse{  
+  HttpResponse(this.mappedBody, this.statusCode);
+  
   final dynamic mappedBody;
   final int statusCode;
-  HttpResponse(this.mappedBody, this.statusCode);
 }

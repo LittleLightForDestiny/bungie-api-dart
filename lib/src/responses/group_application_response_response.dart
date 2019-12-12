@@ -6,6 +6,18 @@ part 'group_application_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class GroupApplicationResponseResponse{
+	GroupApplicationResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory GroupApplicationResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	GroupApplicationResponse response;
@@ -27,18 +39,6 @@ class GroupApplicationResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	GroupApplicationResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory GroupApplicationResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$GroupApplicationResponseResponseToJson(this);
 }

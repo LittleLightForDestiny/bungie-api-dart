@@ -30,6 +30,7 @@ export class ApiClass{
         let imports =  chain(returnImports).concat(bodyImports as ImportInfo[])
             .filter(Boolean)
             .uniqBy('className')
+            .sortBy((o)=>`${o.type}/${o.filename()}`)
             .value();
         return imports;
     }

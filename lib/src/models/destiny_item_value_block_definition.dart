@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_item_quantity.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_value_block_definition.g.dart';
 
 /// This defines an item&#39;s &quot;Value&quot;. Unfortunately, this appears to be used in different ways depending on the way that the item itself is used.
@@ -9,16 +10,18 @@ part 'destiny_item_value_block_definition.g.dart';
 @JsonSerializable()
 class DestinyItemValueBlockDefinition{
 	
-	/// References to the items that make up this item&#39;s &quot;value&quot;, and the quantity.
-	@JsonKey(name:'itemValue')
-	List<DestinyItemQuantity> itemValue;
-	
-	/// If there&#39;s a localized text description of the value provided, this will be said description.
-	@JsonKey(name:'valueDescription')
-	String valueDescription;
 	DestinyItemValueBlockDefinition();
 
 	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemValueBlockDefinitionFromJson(json);
+
+	/// References to the items that make up this item&#39;s &quot;value&quot;, and the quantity.
+	@JsonKey(name:'itemValue')
+	List<DestinyItemQuantity> itemValue;
+	/// If there&#39;s a localized text description of the value provided, this will be said description.
+	@JsonKey(name:'valueDescription')
+	String valueDescription;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyItemValueBlockDefinitionToJson(this);
 }

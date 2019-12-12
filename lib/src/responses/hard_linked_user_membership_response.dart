@@ -6,6 +6,18 @@ part 'hard_linked_user_membership_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class HardLinkedUserMembershipResponse{
+	HardLinkedUserMembershipResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory HardLinkedUserMembershipResponse.fromJson(Map<String, dynamic> json) => _$HardLinkedUserMembershipResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	HardLinkedUserMembership response;
@@ -27,18 +39,6 @@ class HardLinkedUserMembershipResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	HardLinkedUserMembershipResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory HardLinkedUserMembershipResponse.fromJson(Map<String, dynamic> json) => _$HardLinkedUserMembershipResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$HardLinkedUserMembershipResponseToJson(this);
 }

@@ -5,6 +5,18 @@ part 'cedictionary_ofstring_andstring_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CEDictionaryOfstringAndstringResponse{
+	CEDictionaryOfstringAndstringResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CEDictionaryOfstringAndstringResponse.fromJson(Map<String, dynamic> json) => _$CEDictionaryOfstringAndstringResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	Map<String, String> response;
@@ -26,18 +38,6 @@ class CEDictionaryOfstringAndstringResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CEDictionaryOfstringAndstringResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CEDictionaryOfstringAndstringResponse.fromJson(Map<String, dynamic> json) => _$CEDictionaryOfstringAndstringResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CEDictionaryOfstringAndstringResponseToJson(this);
 }

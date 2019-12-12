@@ -6,6 +6,18 @@ part 'content_item_public_contract_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ContentItemPublicContractResponse{
+	ContentItemPublicContractResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ContentItemPublicContractResponse.fromJson(Map<String, dynamic> json) => _$ContentItemPublicContractResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	ContentItemPublicContract response;
@@ -27,18 +39,6 @@ class ContentItemPublicContractResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ContentItemPublicContractResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ContentItemPublicContractResponse.fromJson(Map<String, dynamic> json) => _$ContentItemPublicContractResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ContentItemPublicContractResponseToJson(this);
 }

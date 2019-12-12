@@ -6,6 +6,18 @@ part 'api_usage_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ApiUsageResponse{
+	ApiUsageResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ApiUsageResponse.fromJson(Map<String, dynamic> json) => _$ApiUsageResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	ApiUsage response;
@@ -27,18 +39,6 @@ class ApiUsageResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ApiUsageResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ApiUsageResponse.fromJson(Map<String, dynamic> json) => _$ApiUsageResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ApiUsageResponseToJson(this);
 }

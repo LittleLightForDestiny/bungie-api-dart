@@ -6,6 +6,18 @@ part 'community_live_status_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CommunityLiveStatusResponse{
+	CommunityLiveStatusResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CommunityLiveStatusResponse.fromJson(Map<String, dynamic> json) => _$CommunityLiveStatusResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	CommunityLiveStatus response;
@@ -27,18 +39,6 @@ class CommunityLiveStatusResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CommunityLiveStatusResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CommunityLiveStatusResponse.fromJson(Map<String, dynamic> json) => _$CommunityLiveStatusResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CommunityLiveStatusResponseToJson(this);
 }

@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_item_socket_state.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_sockets_component.g.dart';
 
 /// Instanced items can have sockets, which are slots on the item where plugs can be inserted.
@@ -8,12 +9,15 @@ part 'destiny_item_sockets_component.g.dart';
 @JsonSerializable()
 class DestinyItemSocketsComponent{
 	
-	/// The list of all sockets on the item, and their status information.
-	@JsonKey(name:'sockets')
-	List<DestinyItemSocketState> sockets;
 	DestinyItemSocketsComponent();
 
 	factory DestinyItemSocketsComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketsComponentFromJson(json);
+
+	/// The list of all sockets on the item, and their status information.
+	@JsonKey(name:'sockets')
+	List<DestinyItemSocketState> sockets;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyItemSocketsComponentToJson(this);
 }

@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_item_plug.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_plug_sets_component.g.dart';
 
 /// Sockets may refer to a &quot;Plug Set&quot;: a set of reusable plugs that may be shared across multiple sockets (or even, in theory, multiple sockets over multiple items).
@@ -8,12 +9,15 @@ part 'destiny_plug_sets_component.g.dart';
 @JsonSerializable()
 class DestinyPlugSetsComponent{
 	
-	/// The shared list of plugs for each relevant PlugSet, keyed by the hash identifier of the PlugSet (DestinyPlugSetDefinition).
-	@JsonKey(name:'plugs')
-	Map<String, List<DestinyItemPlug>> plugs;
 	DestinyPlugSetsComponent();
 
 	factory DestinyPlugSetsComponent.fromJson(Map<String, dynamic> json) => _$DestinyPlugSetsComponentFromJson(json);
+
+	/// The shared list of plugs for each relevant PlugSet, keyed by the hash identifier of the PlugSet (DestinyPlugSetDefinition).
+	@JsonKey(name:'plugs')
+	Map<String, List<DestinyItemPlug>> plugs;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyPlugSetsComponentToJson(this);
 }

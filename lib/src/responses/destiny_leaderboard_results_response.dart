@@ -6,6 +6,18 @@ part 'destiny_leaderboard_results_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class DestinyLeaderboardResultsResponse{
+	DestinyLeaderboardResultsResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyLeaderboardResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardResultsResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	Map<String, Map<String, DestinyLeaderboard>> response;
@@ -27,18 +39,6 @@ class DestinyLeaderboardResultsResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyLeaderboardResultsResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyLeaderboardResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardResultsResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyLeaderboardResultsResponseToJson(this);
 }

@@ -6,6 +6,18 @@ part 'trending_detail_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class TrendingDetailResponse{
+	TrendingDetailResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory TrendingDetailResponse.fromJson(Map<String, dynamic> json) => _$TrendingDetailResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	TrendingDetail response;
@@ -27,18 +39,6 @@ class TrendingDetailResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	TrendingDetailResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory TrendingDetailResponse.fromJson(Map<String, dynamic> json) => _$TrendingDetailResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$TrendingDetailResponseToJson(this);
 }

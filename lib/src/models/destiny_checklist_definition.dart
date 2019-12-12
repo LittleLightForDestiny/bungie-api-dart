@@ -1,7 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_display_properties_definition.dart';
 import 'destiny_checklist_entry_definition.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_checklist_definition.g.dart';
 
 /// By public demand, Checklists are loose sets of &quot;things to do&#x2F;things you have done&quot; in Destiny that we were actually able to track. They include easter eggs you find in the world, unique chests you unlock, and other such data where the first time you do it is significant enough to be tracked, and you have the potential to &quot;get them all&quot;.
@@ -11,37 +12,34 @@ part 'destiny_checklist_definition.g.dart';
 @JsonSerializable()
 class DestinyChecklistDefinition{
 	
+	DestinyChecklistDefinition();
+
+	factory DestinyChecklistDefinition.fromJson(Map<String, dynamic> json) => _$DestinyChecklistDefinitionFromJson(json);
+
 	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	
 	/// A localized string prompting you to view the checklist.
 	@JsonKey(name:'viewActionString')
 	String viewActionString;
-	
 	/// Indicates whether you will find this checklist on the Profile or Character components.
 	@JsonKey(name:'scope')
 	int scope;
-	
 	/// The individual checklist items. Gotta catch &#39;em all.
 	@JsonKey(name:'entries')
 	List<DestinyChecklistEntryDefinition> entries;
-	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
 	int hash;
-	
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	
 	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
-	DestinyChecklistDefinition();
 
-	factory DestinyChecklistDefinition.fromJson(Map<String, dynamic> json) => _$DestinyChecklistDefinitionFromJson(json);
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyChecklistDefinitionToJson(this);
 }

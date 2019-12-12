@@ -6,6 +6,18 @@ part 'destiny_profile_response_response.g.dart';
 /// The response for GetDestinyProfile, with components for character and item-level data.
 @JsonSerializable()
 class DestinyProfileResponseResponse{
+	DestinyProfileResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyProfileResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyProfileResponseResponseFromJson(json);
+	
 	
 	/// The response for GetDestinyProfile, with components for character and item-level data.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyProfileResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyProfileResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyProfileResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyProfileResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyProfileResponseResponseToJson(this);
 }

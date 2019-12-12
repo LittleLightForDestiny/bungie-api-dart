@@ -1,5 +1,6 @@
-
 import 'package:json_annotation/json_annotation.dart';
+
+
 part 'group_query.g.dart';
 
 /// NOTE: GroupQuery, as of Destiny 2, has essentially two totally different and incompatible &quot;modes&quot;.
@@ -10,38 +11,32 @@ part 'group_query.g.dart';
 @JsonSerializable()
 class GroupQuery{
 	
-	@JsonKey(name:'name')
-	String name;
-	
-	@JsonKey(name:'groupType')
-	int groupType;
-	
-	@JsonKey(name:'creationDate')
-	int creationDate;
-	
-	@JsonKey(name:'sortBy')
-	int sortBy;
-	
-	@JsonKey(name:'groupMemberCountFilter')
-	int groupMemberCountFilter;
-	
-	@JsonKey(name:'localeFilter')
-	String localeFilter;
-	
-	@JsonKey(name:'tagText')
-	String tagText;
-	
-	@JsonKey(name:'itemsPerPage')
-	int itemsPerPage;
-	
-	@JsonKey(name:'currentPage')
-	int currentPage;
-	
-	@JsonKey(name:'requestContinuationToken')
-	String requestContinuationToken;
 	GroupQuery();
 
 	factory GroupQuery.fromJson(Map<String, dynamic> json) => _$GroupQueryFromJson(json);
+
+	@JsonKey(name:'name')
+	String name;
+	@JsonKey(name:'groupType')
+	int groupType;
+	@JsonKey(name:'creationDate')
+	int creationDate;
+	@JsonKey(name:'sortBy')
+	int sortBy;
+	@JsonKey(name:'groupMemberCountFilter')
+	int groupMemberCountFilter;
+	@JsonKey(name:'localeFilter')
+	String localeFilter;
+	@JsonKey(name:'tagText')
+	String tagText;
+	@JsonKey(name:'itemsPerPage')
+	int itemsPerPage;
+	@JsonKey(name:'currentPage')
+	int currentPage;
+	@JsonKey(name:'requestContinuationToken')
+	String requestContinuationToken;
+
+	
 	
 	Map<String, dynamic> toJson() => _$GroupQueryToJson(this);
 }

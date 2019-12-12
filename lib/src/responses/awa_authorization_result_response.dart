@@ -6,6 +6,18 @@ part 'awa_authorization_result_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class AwaAuthorizationResultResponse{
+	AwaAuthorizationResultResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory AwaAuthorizationResultResponse.fromJson(Map<String, dynamic> json) => _$AwaAuthorizationResultResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	AwaAuthorizationResult response;
@@ -27,18 +39,6 @@ class AwaAuthorizationResultResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	AwaAuthorizationResultResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory AwaAuthorizationResultResponse.fromJson(Map<String, dynamic> json) => _$AwaAuthorizationResultResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$AwaAuthorizationResultResponseToJson(this);
 }

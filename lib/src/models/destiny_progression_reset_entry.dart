@@ -1,5 +1,6 @@
-
 import 'package:json_annotation/json_annotation.dart';
+
+
 part 'destiny_progression_reset_entry.g.dart';
 
 /// Represents a season and the number of resets you had in that season.
@@ -7,14 +8,16 @@ part 'destiny_progression_reset_entry.g.dart';
 @JsonSerializable()
 class DestinyProgressionResetEntry{
 	
-	@JsonKey(name:'season')
-	int season;
-	
-	@JsonKey(name:'resets')
-	int resets;
 	DestinyProgressionResetEntry();
 
 	factory DestinyProgressionResetEntry.fromJson(Map<String, dynamic> json) => _$DestinyProgressionResetEntryFromJson(json);
+
+	@JsonKey(name:'season')
+	int season;
+	@JsonKey(name:'resets')
+	int resets;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyProgressionResetEntryToJson(this);
 }

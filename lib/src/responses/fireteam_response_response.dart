@@ -6,6 +6,18 @@ part 'fireteam_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class FireteamResponseResponse{
+	FireteamResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory FireteamResponseResponse.fromJson(Map<String, dynamic> json) => _$FireteamResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	FireteamResponse response;
@@ -27,18 +39,6 @@ class FireteamResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	FireteamResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory FireteamResponseResponse.fromJson(Map<String, dynamic> json) => _$FireteamResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$FireteamResponseResponseToJson(this);
 }

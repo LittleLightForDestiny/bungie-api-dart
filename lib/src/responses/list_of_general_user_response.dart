@@ -6,6 +6,18 @@ part 'list_of_general_user_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfGeneralUserResponse{
+	ListOfGeneralUserResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfGeneralUserResponse.fromJson(Map<String, dynamic> json) => _$ListOfGeneralUserResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<GeneralUser> response;
@@ -27,18 +39,6 @@ class ListOfGeneralUserResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfGeneralUserResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfGeneralUserResponse.fromJson(Map<String, dynamic> json) => _$ListOfGeneralUserResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfGeneralUserResponseToJson(this);
 }

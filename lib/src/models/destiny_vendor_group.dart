@@ -1,5 +1,6 @@
-
 import 'package:json_annotation/json_annotation.dart';
+
+
 part 'destiny_vendor_group.g.dart';
 
 /// Represents a specific group of vendors that can be rendered in the recommended order.
@@ -7,15 +8,17 @@ part 'destiny_vendor_group.g.dart';
 @JsonSerializable()
 class DestinyVendorGroup{
 	
-	@JsonKey(name:'vendorGroupHash')
-	int vendorGroupHash;
-	
-	/// The ordered list of vendors within a particular group.
-	@JsonKey(name:'vendorHashes')
-	List<int> vendorHashes;
 	DestinyVendorGroup();
 
 	factory DestinyVendorGroup.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupFromJson(json);
+
+	@JsonKey(name:'vendorGroupHash')
+	int vendorGroupHash;
+	/// The ordered list of vendors within a particular group.
+	@JsonKey(name:'vendorHashes')
+	List<int> vendorHashes;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyVendorGroupToJson(this);
 }

@@ -1,8 +1,9 @@
+import 'package:json_annotation/json_annotation.dart';
+
 {{#imports}}
 import '{{filename}}.dart';
 {{/imports}}
 
-import 'package:json_annotation/json_annotation.dart';
 part '{{filename}}.g.dart';
 
 {{#description}}
@@ -10,14 +11,7 @@ part '{{filename}}.g.dart';
 {{/description}}
 @JsonSerializable()
 class {{className}}{
-	{{#properties}}
 	
-	{{#description}}
-	/// {{.}}
-	{{/description}}
-	@JsonKey(name:'{{name}}')
-	{{{typeName}}} {{propertyName}};
-	{{/properties}}
 	{{className}}({{#hasProperties}}{{{/hasProperties}}
 		{{#properties}}
 		this.{{propertyName}},
@@ -25,6 +19,16 @@ class {{className}}{
 	{{#hasProperties}}}{{/hasProperties}});
 
 	factory {{className}}.fromJson(Map<String, dynamic> json) => _${{className}}FromJson(json);
+
+	{{#properties}}
+	{{#description}}
+	/// {{.}}
+	{{/description}}
+	@JsonKey(name:'{{name}}')
+	{{{typeName}}} {{propertyName}};
+	{{/properties}}
+
+	
 	
 	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
 }

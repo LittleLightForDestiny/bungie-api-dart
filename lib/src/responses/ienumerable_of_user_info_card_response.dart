@@ -6,6 +6,18 @@ part 'ienumerable_of_user_info_card_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class IEnumerableOfUserInfoCardResponse{
+	IEnumerableOfUserInfoCardResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory IEnumerableOfUserInfoCardResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfUserInfoCardResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<UserInfoCard> response;
@@ -27,18 +39,6 @@ class IEnumerableOfUserInfoCardResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	IEnumerableOfUserInfoCardResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory IEnumerableOfUserInfoCardResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfUserInfoCardResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$IEnumerableOfUserInfoCardResponseToJson(this);
 }

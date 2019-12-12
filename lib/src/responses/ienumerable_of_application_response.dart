@@ -6,6 +6,18 @@ part 'ienumerable_of_application_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class IEnumerableOfApplicationResponse{
+	IEnumerableOfApplicationResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory IEnumerableOfApplicationResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfApplicationResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<Application> response;
@@ -27,18 +39,6 @@ class IEnumerableOfApplicationResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	IEnumerableOfApplicationResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory IEnumerableOfApplicationResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfApplicationResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$IEnumerableOfApplicationResponseToJson(this);
 }

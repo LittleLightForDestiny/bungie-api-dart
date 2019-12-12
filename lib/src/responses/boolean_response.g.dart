@@ -6,8 +6,8 @@ part of 'boolean_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-booleanResponse _$booleanResponseFromJson(Map<String, dynamic> json) {
-  return booleanResponse(
+BooleanResponse _$BooleanResponseFromJson(Map<String, dynamic> json) {
+  return BooleanResponse(
       response: json['Response'] as bool,
       errorCode: json['ErrorCode'] as int,
       throttleSeconds: json['ThrottleSeconds'] as int,
@@ -19,7 +19,7 @@ booleanResponse _$booleanResponseFromJson(Map<String, dynamic> json) {
       detailedErrorTrace: json['DetailedErrorTrace'] as String);
 }
 
-Map<String, dynamic> _$booleanResponseToJson(booleanResponse instance) =>
+Map<String, dynamic> _$BooleanResponseToJson(BooleanResponse instance) =>
     <String, dynamic>{
       'Response': instance.response,
       'ErrorCode': instance.errorCode,

@@ -6,6 +6,18 @@ part 'search_result_of_group_member_application_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class SearchResultOfGroupMemberApplicationResponse{
+	SearchResultOfGroupMemberApplicationResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory SearchResultOfGroupMemberApplicationResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupMemberApplicationResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	SearchResultOfGroupMemberApplication response;
@@ -27,18 +39,6 @@ class SearchResultOfGroupMemberApplicationResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	SearchResultOfGroupMemberApplicationResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory SearchResultOfGroupMemberApplicationResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupMemberApplicationResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$SearchResultOfGroupMemberApplicationResponseToJson(this);
 }

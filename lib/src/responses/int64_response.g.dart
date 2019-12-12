@@ -6,8 +6,8 @@ part of 'int64_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-int64Response _$int64ResponseFromJson(Map<String, dynamic> json) {
-  return int64Response(
+Int64Response _$Int64ResponseFromJson(Map<String, dynamic> json) {
+  return Int64Response(
       response: json['Response'] as String,
       errorCode: json['ErrorCode'] as int,
       throttleSeconds: json['ThrottleSeconds'] as int,
@@ -19,7 +19,7 @@ int64Response _$int64ResponseFromJson(Map<String, dynamic> json) {
       detailedErrorTrace: json['DetailedErrorTrace'] as String);
 }
 
-Map<String, dynamic> _$int64ResponseToJson(int64Response instance) =>
+Map<String, dynamic> _$Int64ResponseToJson(Int64Response instance) =>
     <String, dynamic>{
       'Response': instance.response,
       'ErrorCode': instance.errorCode,

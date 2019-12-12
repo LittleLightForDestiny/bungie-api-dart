@@ -6,6 +6,18 @@ part 'celist_of_global_alert_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CEListOfGlobalAlertResponse{
+	CEListOfGlobalAlertResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CEListOfGlobalAlertResponse.fromJson(Map<String, dynamic> json) => _$CEListOfGlobalAlertResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<GlobalAlert> response;
@@ -27,18 +39,6 @@ class CEListOfGlobalAlertResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CEListOfGlobalAlertResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CEListOfGlobalAlertResponse.fromJson(Map<String, dynamic> json) => _$CEListOfGlobalAlertResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CEListOfGlobalAlertResponseToJson(this);
 }

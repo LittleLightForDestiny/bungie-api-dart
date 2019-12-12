@@ -6,6 +6,18 @@ part 'list_of_entity_action_result_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfEntityActionResultResponse{
+	ListOfEntityActionResultResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfEntityActionResultResponse.fromJson(Map<String, dynamic> json) => _$ListOfEntityActionResultResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<EntityActionResult> response;
@@ -27,18 +39,6 @@ class ListOfEntityActionResultResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfEntityActionResultResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfEntityActionResultResponse.fromJson(Map<String, dynamic> json) => _$ListOfEntityActionResultResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfEntityActionResultResponseToJson(this);
 }

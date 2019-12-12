@@ -4,7 +4,19 @@ part 'int64_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class int64Response{
+class Int64Response{
+	Int64Response({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory Int64Response.fromJson(Map<String, dynamic> json) => _$Int64ResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	String response;
@@ -26,18 +38,6 @@ class int64Response{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	int64Response({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
 
-	factory int64Response.fromJson(Map<String, dynamic> json) => _$int64ResponseFromJson(json);
-	
-
-	Map<String, dynamic> toJson() => _$int64ResponseToJson(this);
+	Map<String, dynamic> toJson() => _$Int64ResponseToJson(this);
 }

@@ -4,3 +4,5 @@ ts-api/
 generator/build/
 lib/package-lock.json
 .npm-debug.log
+.dart_tool
+.vscode

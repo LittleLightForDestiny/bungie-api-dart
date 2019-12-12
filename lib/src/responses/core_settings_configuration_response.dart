@@ -6,6 +6,18 @@ part 'core_settings_configuration_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CoreSettingsConfigurationResponse{
+	CoreSettingsConfigurationResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CoreSettingsConfigurationResponse.fromJson(Map<String, dynamic> json) => _$CoreSettingsConfigurationResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	CoreSettingsConfiguration response;
@@ -27,18 +39,6 @@ class CoreSettingsConfigurationResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CoreSettingsConfigurationResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CoreSettingsConfigurationResponse.fromJson(Map<String, dynamic> json) => _$CoreSettingsConfigurationResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CoreSettingsConfigurationResponseToJson(this);
 }

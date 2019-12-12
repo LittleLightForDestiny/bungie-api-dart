@@ -6,6 +6,18 @@ part 'destiny_item_change_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class DestinyItemChangeResponseResponse{
+	DestinyItemChangeResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyItemChangeResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemChangeResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	DestinyItemChangeResponse response;
@@ -27,18 +39,6 @@ class DestinyItemChangeResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyItemChangeResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyItemChangeResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemChangeResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyItemChangeResponseResponseToJson(this);
 }

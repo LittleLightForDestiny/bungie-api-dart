@@ -6,6 +6,18 @@ part 'user_membership_data_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class UserMembershipDataResponse{
+	UserMembershipDataResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory UserMembershipDataResponse.fromJson(Map<String, dynamic> json) => _$UserMembershipDataResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	UserMembershipData response;
@@ -27,18 +39,6 @@ class UserMembershipDataResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	UserMembershipDataResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory UserMembershipDataResponse.fromJson(Map<String, dynamic> json) => _$UserMembershipDataResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$UserMembershipDataResponseToJson(this);
 }

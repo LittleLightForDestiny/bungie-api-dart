@@ -1,7 +1,7 @@
 import { ApiMethod } from "./ApiMethod";
 import { ResponseObject, ReferenceObject, ParameterObject } from "openapi3-ts";
 import { ModelProperty } from "./ModelProperty";
-import {get, map, chain} from 'lodash';
+import {get, map, chain, upperFirst} from 'lodash';
 import { camelcaseToUnderscore } from "../utils/camelcase-to-underscore";
 import { ApiDocHelper } from "../utils/api-doc-helper";
 import { ImportInfo } from "./ImportInfo";
@@ -12,7 +12,7 @@ export class ResponseClass{
         public pathName:string,
         public data:ResponseObject
     ){
-        this.className = pathName.split('.').pop()! + 'Response';
+        this.className = upperFirst(pathName.split('.').pop()!) + 'Response';
         ResponseClass.all[this.className] = this;
     }
 

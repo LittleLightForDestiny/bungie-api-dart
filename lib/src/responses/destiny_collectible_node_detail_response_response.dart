@@ -6,6 +6,18 @@ part 'destiny_collectible_node_detail_response_response.g.dart';
 /// Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants.
 @JsonSerializable()
 class DestinyCollectibleNodeDetailResponseResponse{
+	DestinyCollectibleNodeDetailResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyCollectibleNodeDetailResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleNodeDetailResponseResponseFromJson(json);
+	
 	
 	/// Returns the detailed information about a Collectible Presentation Node and any Collectibles that are direct descendants.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyCollectibleNodeDetailResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyCollectibleNodeDetailResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyCollectibleNodeDetailResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleNodeDetailResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyCollectibleNodeDetailResponseResponseToJson(this);
 }

@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_vendor_category.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_vendor_categories_component.g.dart';
 
 /// A vendor can have many categories of items that they sell. This component will return the category information for available items, as well as the index into those items in the user&#39;s sale item list.
@@ -8,13 +9,16 @@ part 'destiny_vendor_categories_component.g.dart';
 @JsonSerializable()
 class DestinyVendorCategoriesComponent{
 	
+	DestinyVendorCategoriesComponent();
+
+	factory DestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoriesComponentFromJson(json);
+
 	/// The list of categories for items that the vendor sells, in rendering order.
 	/// These categories each point to a &quot;display category&quot; in the displayCategories property of the DestinyVendorDefinition, as opposed to the other categories.
 	@JsonKey(name:'categories')
 	List<DestinyVendorCategory> categories;
-	DestinyVendorCategoriesComponent();
 
-	factory DestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoriesComponentFromJson(json);
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyVendorCategoriesComponentToJson(this);
 }

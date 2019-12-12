@@ -6,6 +6,18 @@ part 'list_of_tag_response_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfTagResponseResponse{
+	ListOfTagResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfTagResponseResponse.fromJson(Map<String, dynamic> json) => _$ListOfTagResponseResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<TagResponse> response;
@@ -27,18 +39,6 @@ class ListOfTagResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfTagResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfTagResponseResponse.fromJson(Map<String, dynamic> json) => _$ListOfTagResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfTagResponseResponseToJson(this);
 }

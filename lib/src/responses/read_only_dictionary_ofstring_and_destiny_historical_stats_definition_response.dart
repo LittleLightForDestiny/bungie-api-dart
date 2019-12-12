@@ -6,6 +6,18 @@ part 'read_only_dictionary_ofstring_and_destiny_historical_stats_definition_resp
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
+	ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(Map<String, dynamic> json) => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	Map<String, DestinyHistoricalStatsDefinition> response;
@@ -27,18 +39,6 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(Map<String, dynamic> json) => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseToJson(this);
 }

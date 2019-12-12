@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_display_properties_definition.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_stat_override_definition.g.dart';
 
 /// Stat Groups (DestinyStatGroupDefinition) has the ability to override the localized text associated with stats that are to be shown on the items with which they are associated.
@@ -10,16 +11,18 @@ part 'destiny_stat_override_definition.g.dart';
 @JsonSerializable()
 class DestinyStatOverrideDefinition{
 	
-	/// The hash identifier of the stat whose display properties are being overridden.
-	@JsonKey(name:'statHash')
-	int statHash;
-	
-	/// The display properties to show instead of the base DestinyStatDefinition display properties.
-	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
 	DestinyStatOverrideDefinition();
 
 	factory DestinyStatOverrideDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatOverrideDefinitionFromJson(json);
+
+	/// The hash identifier of the stat whose display properties are being overridden.
+	@JsonKey(name:'statHash')
+	int statHash;
+	/// The display properties to show instead of the base DestinyStatDefinition display properties.
+	@JsonKey(name:'displayProperties')
+	DestinyDisplayPropertiesDefinition displayProperties;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyStatOverrideDefinitionToJson(this);
 }

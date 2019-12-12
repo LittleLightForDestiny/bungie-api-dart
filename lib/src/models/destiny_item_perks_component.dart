@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_perk_reference.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_perks_component.g.dart';
 
 /// Instanced items can have perks: benefits that the item bestows.
@@ -9,12 +10,15 @@ part 'destiny_item_perks_component.g.dart';
 @JsonSerializable()
 class DestinyItemPerksComponent{
 	
-	/// The list of perks to display in an item tooltip - and whether or not they have been activated.
-	@JsonKey(name:'perks')
-	List<DestinyPerkReference> perks;
 	DestinyItemPerksComponent();
 
 	factory DestinyItemPerksComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemPerksComponentFromJson(json);
+
+	/// The list of perks to display in an item tooltip - and whether or not they have been activated.
+	@JsonKey(name:'perks')
+	List<DestinyPerkReference> perks;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyItemPerksComponentToJson(this);
 }

@@ -8,6 +8,18 @@ part 'destiny_public_vendors_response_response.g.dart';
 ///  If you want any of the other data - item details, whether or not you can buy it, etc... you'll have to call in the context of a character. I know, sad but true.
 @JsonSerializable()
 class DestinyPublicVendorsResponseResponse{
+	DestinyPublicVendorsResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyPublicVendorsResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyPublicVendorsResponseResponseFromJson(json);
+	
 	
 	/// A response containing all valid components for the public Vendors endpoint.
 	///  It is a decisively smaller subset of data compared to what we can get when we know the specific user making the request.
@@ -32,18 +44,6 @@ class DestinyPublicVendorsResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyPublicVendorsResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyPublicVendorsResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyPublicVendorsResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyPublicVendorsResponseResponseToJson(this);
 }

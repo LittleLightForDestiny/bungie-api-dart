@@ -6,6 +6,18 @@ part 'destiny_post_game_carnage_report_data_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class DestinyPostGameCarnageReportDataResponse{
+	DestinyPostGameCarnageReportDataResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyPostGameCarnageReportDataResponse.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportDataResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	DestinyPostGameCarnageReportData response;
@@ -27,18 +39,6 @@ class DestinyPostGameCarnageReportDataResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyPostGameCarnageReportDataResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyPostGameCarnageReportDataResponse.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportDataResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportDataResponseToJson(this);
 }

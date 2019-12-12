@@ -1,5 +1,6 @@
-
 import 'package:json_annotation/json_annotation.dart';
+
+
 part 'destiny_plug_rule_definition.g.dart';
 
 /// Dictates a rule around whether the plug is enabled or insertable.
@@ -7,12 +8,15 @@ part 'destiny_plug_rule_definition.g.dart';
 @JsonSerializable()
 class DestinyPlugRuleDefinition{
 	
-	/// The localized string to show if this rule fails.
-	@JsonKey(name:'failureMessage')
-	String failureMessage;
 	DestinyPlugRuleDefinition();
 
 	factory DestinyPlugRuleDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPlugRuleDefinitionFromJson(json);
+
+	/// The localized string to show if this rule fails.
+	@JsonKey(name:'failureMessage')
+	String failureMessage;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyPlugRuleDefinitionToJson(this);
 }

@@ -21,6 +21,8 @@ let doc = ApiDocHelper.load();
 
 _.each(doc.paths, (path: PathItemObject, index:string)=>{
   let [className, functionName] = path.summary!.split('.');
+  let urlPath = index.split('/').filter((i)=>i.length > 0);
+  className = className || urlPath[0];
   let apiClass = ApiClass.all[className] || new ApiClass(className);
   apiClass.addMethod(functionName, index, path);
 });

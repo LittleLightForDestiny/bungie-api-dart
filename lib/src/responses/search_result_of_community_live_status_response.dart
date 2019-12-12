@@ -6,6 +6,18 @@ part 'search_result_of_community_live_status_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class SearchResultOfCommunityLiveStatusResponse{
+	SearchResultOfCommunityLiveStatusResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory SearchResultOfCommunityLiveStatusResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfCommunityLiveStatusResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	SearchResultOfCommunityLiveStatus response;
@@ -27,18 +39,6 @@ class SearchResultOfCommunityLiveStatusResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	SearchResultOfCommunityLiveStatusResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory SearchResultOfCommunityLiveStatusResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfCommunityLiveStatusResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$SearchResultOfCommunityLiveStatusResponseToJson(this);
 }

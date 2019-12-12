@@ -1,3 +1,4 @@
+import {upperFirst} from 'lodash';
 import { ParameterObject, ReferenceObject } from "openapi3-ts";
 import { ApiDocHelper } from "../utils/api-doc-helper";
 export class ApiMethodParameter{

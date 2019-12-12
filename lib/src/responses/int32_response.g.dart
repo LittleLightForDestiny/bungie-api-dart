@@ -6,8 +6,8 @@ part of 'int32_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-int32Response _$int32ResponseFromJson(Map<String, dynamic> json) {
-  return int32Response(
+Int32Response _$Int32ResponseFromJson(Map<String, dynamic> json) {
+  return Int32Response(
       response: json['Response'] as int,
       errorCode: json['ErrorCode'] as int,
       throttleSeconds: json['ThrottleSeconds'] as int,
@@ -19,7 +19,7 @@ int32Response _$int32ResponseFromJson(Map<String, dynamic> json) {
       detailedErrorTrace: json['DetailedErrorTrace'] as String);
 }
 
-Map<String, dynamic> _$int32ResponseToJson(int32Response instance) =>
+Map<String, dynamic> _$Int32ResponseToJson(Int32Response instance) =>
     <String, dynamic>{
       'Response': instance.response,
       'ErrorCode': instance.errorCode,

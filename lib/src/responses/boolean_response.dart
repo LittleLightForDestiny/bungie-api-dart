@@ -4,7 +4,19 @@ part 'boolean_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class booleanResponse{
+class BooleanResponse{
+	BooleanResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory BooleanResponse.fromJson(Map<String, dynamic> json) => _$BooleanResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	bool response;
@@ -26,18 +38,6 @@ class booleanResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	booleanResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
 
-	factory booleanResponse.fromJson(Map<String, dynamic> json) => _$booleanResponseFromJson(json);
-	
-
-	Map<String, dynamic> toJson() => _$booleanResponseToJson(this);
+	Map<String, dynamic> toJson() => _$BooleanResponseToJson(this);
 }

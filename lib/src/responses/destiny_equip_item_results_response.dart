@@ -6,6 +6,18 @@ part 'destiny_equip_item_results_response.g.dart';
 /// The results of a bulk Equipping operation performed through the Destiny API.
 @JsonSerializable()
 class DestinyEquipItemResultsResponse{
+	DestinyEquipItemResultsResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyEquipItemResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyEquipItemResultsResponseFromJson(json);
+	
 	
 	/// The results of a bulk Equipping operation performed through the Destiny API.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyEquipItemResultsResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyEquipItemResultsResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyEquipItemResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyEquipItemResultsResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyEquipItemResultsResponseToJson(this);
 }

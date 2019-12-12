@@ -6,6 +6,18 @@ part 'celist_of_forum_recruitment_detail_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CEListOfForumRecruitmentDetailResponse{
+	CEListOfForumRecruitmentDetailResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CEListOfForumRecruitmentDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfForumRecruitmentDetailResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<ForumRecruitmentDetail> response;
@@ -27,18 +39,6 @@ class CEListOfForumRecruitmentDetailResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CEListOfForumRecruitmentDetailResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CEListOfForumRecruitmentDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfForumRecruitmentDetailResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CEListOfForumRecruitmentDetailResponseToJson(this);
 }

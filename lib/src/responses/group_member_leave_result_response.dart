@@ -6,6 +6,18 @@ part 'group_member_leave_result_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class GroupMemberLeaveResultResponse{
+	GroupMemberLeaveResultResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory GroupMemberLeaveResultResponse.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	GroupMemberLeaveResult response;
@@ -27,18 +39,6 @@ class GroupMemberLeaveResultResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	GroupMemberLeaveResultResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory GroupMemberLeaveResultResponse.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$GroupMemberLeaveResultResponseToJson(this);
 }

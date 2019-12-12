@@ -6,6 +6,18 @@ part 'celist_of_public_partnership_detail_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class CEListOfPublicPartnershipDetailResponse{
+	CEListOfPublicPartnershipDetailResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory CEListOfPublicPartnershipDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfPublicPartnershipDetailResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<PublicPartnershipDetail> response;
@@ -27,18 +39,6 @@ class CEListOfPublicPartnershipDetailResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	CEListOfPublicPartnershipDetailResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory CEListOfPublicPartnershipDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfPublicPartnershipDetailResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$CEListOfPublicPartnershipDetailResponseToJson(this);
 }

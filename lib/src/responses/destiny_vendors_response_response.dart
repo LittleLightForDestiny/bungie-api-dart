@@ -6,6 +6,18 @@ part 'destiny_vendors_response_response.g.dart';
 /// A response containing all of the components for all requested vendors.
 @JsonSerializable()
 class DestinyVendorsResponseResponse{
+	DestinyVendorsResponseResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory DestinyVendorsResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyVendorsResponseResponseFromJson(json);
+	
 	
 	/// A response containing all of the components for all requested vendors.
 	@JsonKey(name:'Response')
@@ -28,18 +40,6 @@ class DestinyVendorsResponseResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	DestinyVendorsResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory DestinyVendorsResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyVendorsResponseResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$DestinyVendorsResponseResponseToJson(this);
 }

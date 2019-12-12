@@ -6,6 +6,18 @@ part 'list_of_destiny_clan_aggregate_stat_response.g.dart';
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
 class ListOfDestinyClanAggregateStatResponse{
+	ListOfDestinyClanAggregateStatResponse({
+		this.response,
+		this.errorCode,
+		this.throttleSeconds,
+		this.errorStatus,
+		this.message,
+		this.messageData,
+		this.detailedErrorTrace,
+	});
+
+	factory ListOfDestinyClanAggregateStatResponse.fromJson(Map<String, dynamic> json) => _$ListOfDestinyClanAggregateStatResponseFromJson(json);
+	
 	
 	@JsonKey(name:'Response')
 	List<DestinyClanAggregateStat> response;
@@ -27,18 +39,6 @@ class ListOfDestinyClanAggregateStatResponse{
 	
 	@JsonKey(name:'DetailedErrorTrace')
 	String detailedErrorTrace;
-	ListOfDestinyClanAggregateStatResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
-
-	factory ListOfDestinyClanAggregateStatResponse.fromJson(Map<String, dynamic> json) => _$ListOfDestinyClanAggregateStatResponseFromJson(json);
-	
 
 	Map<String, dynamic> toJson() => _$ListOfDestinyClanAggregateStatResponseToJson(this);
 }

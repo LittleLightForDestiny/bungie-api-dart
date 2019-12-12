@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'destiny_stat.dart';
 
-import 'package:json_annotation/json_annotation.dart';
 part 'destiny_item_stats_component.g.dart';
 
 /// If you want the stats on an item&#39;s instanced data, get this component.
@@ -9,12 +10,15 @@ part 'destiny_item_stats_component.g.dart';
 @JsonSerializable()
 class DestinyItemStatsComponent{
 	
-	/// If the item has stats that it provides (damage, defense, etc...), it will be given here.
-	@JsonKey(name:'stats')
-	Map<String, DestinyStat> stats;
 	DestinyItemStatsComponent();
 
 	factory DestinyItemStatsComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemStatsComponentFromJson(json);
+
+	/// If the item has stats that it provides (damage, defense, etc...), it will be given here.
+	@JsonKey(name:'stats')
+	Map<String, DestinyStat> stats;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyItemStatsComponentToJson(this);
 }

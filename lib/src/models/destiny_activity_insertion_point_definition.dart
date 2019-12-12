@@ -1,5 +1,6 @@
-
 import 'package:json_annotation/json_annotation.dart';
+
+
 part 'destiny_activity_insertion_point_definition.g.dart';
 
 /// A point of entry into an activity, gated by an unlock flag and with some more-or-less useless (for our purposes) phase information. I&#39;m including it in case we end up being able to bolt more useful information onto it in the future.
@@ -7,12 +8,15 @@ part 'destiny_activity_insertion_point_definition.g.dart';
 @JsonSerializable()
 class DestinyActivityInsertionPointDefinition{
 	
-	/// A unique hash value representing the phase. This can be useful for, for example, comparing how different instances of Raids have phases in different orders!
-	@JsonKey(name:'phaseHash')
-	int phaseHash;
 	DestinyActivityInsertionPointDefinition();
 
 	factory DestinyActivityInsertionPointDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityInsertionPointDefinitionFromJson(json);
+
+	/// A unique hash value representing the phase. This can be useful for, for example, comparing how different instances of Raids have phases in different orders!
+	@JsonKey(name:'phaseHash')
+	int phaseHash;
+
+	
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityInsertionPointDefinitionToJson(this);
 }
