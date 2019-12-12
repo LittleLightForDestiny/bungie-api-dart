@@ -14,7 +14,7 @@ EmailViewDefinitionSetting _$EmailViewDefinitionSettingFromJson(
               : EMailSettingLocalization.fromJson(e as Map<String, dynamic>)),
     )
     ..setByDefault = json['setByDefault'] as bool
-    ..optInAggregateValue = json['optInAggregateValue'] as String
+    ..optInAggregateValue = json['optInAggregateValue'] as int
     ..subscriptions = (json['subscriptions'] as List)
         ?.map((e) => e == null
             ? null

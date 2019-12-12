@@ -9,7 +9,7 @@ part of 'email_opt_in_definition.dart';
 EmailOptInDefinition _$EmailOptInDefinitionFromJson(Map<String, dynamic> json) {
   return EmailOptInDefinition()
     ..name = json['name'] as String
-    ..value = json['value'] as String
+    ..value = json['value'] as int
     ..setByDefault = json['setByDefault'] as bool
     ..dependentSubscriptions = (json['dependentSubscriptions'] as List)
         ?.map((e) => e == null

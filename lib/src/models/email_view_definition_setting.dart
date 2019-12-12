@@ -23,7 +23,7 @@ class EmailViewDefinitionSetting{
 	bool setByDefault;
 	/// The OptInFlags value to set or clear if this setting is set or cleared in the UI. It is the aggregate of all underlying opt-in flags related to this setting.
 	@JsonKey(name:'optInAggregateValue')
-	String optInAggregateValue;
+	int optInAggregateValue;
 	/// The subscriptions to show as children of this setting, if any.
 	@JsonKey(name:'subscriptions')
 	List<EmailSubscriptionDefinition> subscriptions;

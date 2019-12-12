@@ -17,7 +17,7 @@ class EmailOptInDefinition{
 	String name;
 	/// The flag value for this opt-in category. For historical reasons, this is defined as a flags enum.
 	@JsonKey(name:'value')
-	String value;
+	int value;
 	/// If true, this opt-in setting should be set by default in situations where accounts are created without explicit choices about what they&#39;re opting into.
 	@JsonKey(name:'setByDefault')
 	bool setByDefault;
