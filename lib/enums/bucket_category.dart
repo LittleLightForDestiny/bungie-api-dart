@@ -1,0 +1,1 @@
+export '../src/enums/bucket_category.dart';

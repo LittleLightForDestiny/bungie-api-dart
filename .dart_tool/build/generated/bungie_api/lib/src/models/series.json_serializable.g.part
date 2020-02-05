@@ -13,5 +13,5 @@ Series _$SeriesFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$SeriesToJson(Series instance) => <String, dynamic>{
       'datapoints': instance.datapoints,
-      'target': instance.target
+      'target': instance.target,
     };

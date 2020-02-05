@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_item_investment_stat_definition.dart';
+import '../enums/destiny_objective_grant_style.dart';
 
 part 'destiny_objective_stat_entry_definition.g.dart';
 
@@ -15,9 +16,9 @@ class DestinyObjectiveStatEntryDefinition{
 	/// The stat being modified, and the value used.
 	@JsonKey(name:'stat')
 	DestinyItemInvestmentStatDefinition stat;
-	/// Whether it will be applied as long as the objective is active, when it&#39;s completed, or until it&#39;s completed.
-	@JsonKey(name:'style')
-	int style;
+	/// Whether it will be applied as long as the objective is active, when it's completed, or until it's completed.
+	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.WhenIncomplete)
+	DestinyObjectiveGrantStyle style;
 
 	
 	

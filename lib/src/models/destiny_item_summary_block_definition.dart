@@ -11,7 +11,7 @@ class DestinyItemSummaryBlockDefinition{
 
 	factory DestinyItemSummaryBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSummaryBlockDefinitionFromJson(json);
 
-	/// Apparently when rendering an item in a reward, this should be used as a sort priority. We&#39;re not doing it presently.
+	/// Apparently when rendering an item in a reward, this should be used as a sort priority. We're not doing it presently.
 	@JsonKey(name:'sortPriority')
 	int sortPriority;
 

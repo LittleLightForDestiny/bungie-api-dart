@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/partnership_type.dart';
 
 part 'public_partnership_detail.g.dart';
 
@@ -11,8 +12,8 @@ class PublicPartnershipDetail{
 
 	factory PublicPartnershipDetail.fromJson(Map<String, dynamic> json) => _$PublicPartnershipDetailFromJson(json);
 
-	@JsonKey(name:'partnerType')
-	int partnerType;
+	@JsonKey(name:'partnerType',unknownEnumValue:PartnershipType.None)
+	PartnershipType partnerType;
 	@JsonKey(name:'identifier')
 	String identifier;
 	@JsonKey(name:'name')

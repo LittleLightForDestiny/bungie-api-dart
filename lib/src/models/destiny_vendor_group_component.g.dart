@@ -18,4 +18,6 @@ DestinyVendorGroupComponent _$DestinyVendorGroupComponentFromJson(
 
 Map<String, dynamic> _$DestinyVendorGroupComponentToJson(
         DestinyVendorGroupComponent instance) =>
-    <String, dynamic>{'groups': instance.groups};
+    <String, dynamic>{
+      'groups': instance.groups,
+    };

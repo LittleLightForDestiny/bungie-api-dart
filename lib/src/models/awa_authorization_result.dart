@@ -1,5 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/awa_user_selection.dart';
+import '../enums/awa_response_reason.dart';
+import '../enums/awa_type.dart';
+import '../enums/bungie_membership_type.dart';
 
 part 'awa_authorization_result.g.dart';
 
@@ -10,11 +14,11 @@ class AwaAuthorizationResult{
 
 	factory AwaAuthorizationResult.fromJson(Map<String, dynamic> json) => _$AwaAuthorizationResultFromJson(json);
 
-	/// Indication of how the user responded to the request. If the value is &quot;Approved&quot; the actionToken will contain the token that can be presented when performing the advanced write action.
-	@JsonKey(name:'userSelection')
-	int userSelection;
-	@JsonKey(name:'responseReason')
-	int responseReason;
+	/// Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action.
+	@JsonKey(name:'userSelection',unknownEnumValue:AwaUserSelection.None)
+	AwaUserSelection userSelection;
+	@JsonKey(name:'responseReason',unknownEnumValue:AwaResponseReason.None)
+	AwaResponseReason responseReason;
 	/// Message to the app developer to help understand the response.
 	@JsonKey(name:'developerNote')
 	String developerNote;
@@ -28,11 +32,11 @@ class AwaAuthorizationResult{
 	@JsonKey(name:'validUntil')
 	String validUntil;
 	/// Advanced Write Action Type from the permission request.
-	@JsonKey(name:'type')
-	int type;
+	@JsonKey(name:'type',unknownEnumValue:AwaType.None)
+	AwaType type;
 	/// MembershipType from the permission request.
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 
 	
 	

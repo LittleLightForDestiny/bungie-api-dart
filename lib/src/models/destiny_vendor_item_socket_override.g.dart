@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyVendorItemSocketOverrideToJson(
     <String, dynamic>{
       'singleItemHash': instance.singleItemHash,
       'randomizedOptionsCount': instance.randomizedOptionsCount,
-      'socketTypeHash': instance.socketTypeHash
+      'socketTypeHash': instance.socketTypeHash,
     };

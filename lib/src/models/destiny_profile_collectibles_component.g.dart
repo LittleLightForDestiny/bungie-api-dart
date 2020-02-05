@@ -32,5 +32,5 @@ Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
       'recentCollectibleHashes': instance.recentCollectibleHashes,
       'newnessFlaggedCollectibleHashes':
           instance.newnessFlaggedCollectibleHashes,
-      'collectibles': instance.collectibles
+      'collectibles': instance.collectibles,
     };

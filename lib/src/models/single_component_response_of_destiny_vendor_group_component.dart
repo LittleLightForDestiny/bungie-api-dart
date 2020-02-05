@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_vendor_group_component.dart';
+import '../enums/component_privacy_setting.dart';
 
 part 'single_component_response_of_destiny_vendor_group_component.g.dart';
 
@@ -14,8 +15,8 @@ class SingleComponentResponseOfDestinyVendorGroupComponent{
 	/// This component returns references to all of the Vendors in the response, grouped by categorizations that Bungie has deemed to be interesting, in the order in which both the groups and the vendors within that group should be rendered.
 	@JsonKey(name:'data')
 	DestinyVendorGroupComponent data;
-	@JsonKey(name:'privacy')
-	int privacy;
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	ComponentPrivacySetting privacy;
 
 	
 	

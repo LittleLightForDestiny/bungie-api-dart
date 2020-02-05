@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/bungie_membership_type.dart';
 
 part 'user_membership.g.dart';
 
@@ -12,8 +13,8 @@ class UserMembership{
 	factory UserMembership.fromJson(Map<String, dynamic> json) => _$UserMembershipFromJson(json);
 
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')
 	String membershipId;

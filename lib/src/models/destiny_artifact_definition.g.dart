@@ -35,5 +35,5 @@ Map<String, dynamic> _$DestinyArtifactDefinitionToJson(
       'tiers': instance.tiers,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

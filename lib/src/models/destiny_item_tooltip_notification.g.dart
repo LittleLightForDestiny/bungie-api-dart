@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyItemTooltipNotificationToJson(
         DestinyItemTooltipNotification instance) =>
     <String, dynamic>{
       'displayString': instance.displayString,
-      'displayStyle': instance.displayStyle
+      'displayStyle': instance.displayStyle,
     };

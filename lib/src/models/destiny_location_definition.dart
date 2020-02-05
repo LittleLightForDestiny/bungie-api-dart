@@ -16,7 +16,7 @@ class DestinyLocationDefinition{
 	/// If the location has a Vendor on it, this is the hash identifier for that Vendor. Look them up with DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')
 	int vendorHash;
-	/// A Location may refer to different specific spots in the world based on the world&#39;s current state. This is a list of those potential spots, and the data we can use at runtime to determine which one of the spots is the currently valid one.
+	/// A Location may refer to different specific spots in the world based on the world's current state. This is a list of those potential spots, and the data we can use at runtime to determine which one of the spots is the currently valid one.
 	@JsonKey(name:'locationReleases')
 	List<DestinyLocationReleaseDefinition> locationReleases;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
@@ -26,7 +26,7 @@ class DestinyLocationDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

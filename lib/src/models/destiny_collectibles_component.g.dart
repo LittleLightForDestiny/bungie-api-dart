@@ -21,4 +21,6 @@ DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
 
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(
         DestinyCollectiblesComponent instance) =>
-    <String, dynamic>{'collectibles': instance.collectibles};
+    <String, dynamic>{
+      'collectibles': instance.collectibles,
+    };

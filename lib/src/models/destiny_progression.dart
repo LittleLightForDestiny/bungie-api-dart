@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_progression_reset_entry.dart';
+import '../enums/destiny_progression_reward_item_state.dart';
 
 part 'destiny_progression.g.dart';
 
@@ -36,16 +37,16 @@ class DestinyProgression{
 	/// This is the maximum possible level you can achieve for this progression (for example, the maximum character level obtainable)
 	@JsonKey(name:'levelCap')
 	int levelCap;
-	/// Progressions define their levels in &quot;steps&quot;. Since the last step may be repeatable, the user may be at a higher level than the actual Step achieved in the progression. Not necessarily useful, but potentially interesting for those cruising the API. Relate this to the &quot;steps&quot; property of the DestinyProgression to see which step the user is on, if you care about that. (Note that this is Content Version dependent since it refers to indexes.)
+	/// Progressions define their levels in "steps". Since the last step may be repeatable, the user may be at a higher level than the actual Step achieved in the progression. Not necessarily useful, but potentially interesting for those cruising the API. Relate this to the "steps" property of the DestinyProgression to see which step the user is on, if you care about that. (Note that this is Content Version dependent since it refers to indexes.)
 	@JsonKey(name:'stepIndex')
 	int stepIndex;
-	/// The amount of progression (i.e. &quot;Experience&quot;) needed to reach the next level of this Progression. Jeez, progression is such an overloaded word.
+	/// The amount of progression (i.e. "Experience") needed to reach the next level of this Progression. Jeez, progression is such an overloaded word.
 	@JsonKey(name:'progressToNextLevel')
 	int progressToNextLevel;
-	/// The total amount of progression (i.e. &quot;Experience&quot;) needed in order to reach the next level.
+	/// The total amount of progression (i.e. "Experience") needed in order to reach the next level.
 	@JsonKey(name:'nextLevelAt')
 	int nextLevelAt;
-	/// The number of resets of this progression you&#39;ve executed this season, if applicable to this progression.
+	/// The number of resets of this progression you've executed this season, if applicable to this progression.
 	@JsonKey(name:'currentResetCount')
 	int currentResetCount;
 	/// Information about historical resets of this progression, if there is any data for it.
@@ -53,7 +54,7 @@ class DestinyProgression{
 	List<DestinyProgressionResetEntry> seasonResets;
 	/// Information about historical rewards for this progression, if there is any data for it.
 	@JsonKey(name:'rewardItemStates')
-	List<int> rewardItemStates;
+	List<DestinyProgressionRewardItemState> rewardItemStates;
 
 	
 	

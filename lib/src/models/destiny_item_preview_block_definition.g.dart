@@ -28,5 +28,5 @@ Map<String, dynamic> _$DestinyItemPreviewBlockDefinitionToJson(
       'previewVendorHash': instance.previewVendorHash,
       'artifactHash': instance.artifactHash,
       'previewActionString': instance.previewActionString,
-      'derivedItemCategories': instance.derivedItemCategories
+      'derivedItemCategories': instance.derivedItemCategories,
     };

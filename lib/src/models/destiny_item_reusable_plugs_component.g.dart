@@ -22,4 +22,6 @@ DestinyItemReusablePlugsComponent _$DestinyItemReusablePlugsComponentFromJson(
 
 Map<String, dynamic> _$DestinyItemReusablePlugsComponentToJson(
         DestinyItemReusablePlugsComponent instance) =>
-    <String, dynamic>{'plugs': instance.plugs};
+    <String, dynamic>{
+      'plugs': instance.plugs,
+    };

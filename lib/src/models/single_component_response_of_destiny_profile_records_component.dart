@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_profile_records_component.dart';
+import '../enums/component_privacy_setting.dart';
 
 part 'single_component_response_of_destiny_profile_records_component.g.dart';
 
@@ -13,8 +14,8 @@ class SingleComponentResponseOfDestinyProfileRecordsComponent{
 
 	@JsonKey(name:'data')
 	DestinyProfileRecordsComponent data;
-	@JsonKey(name:'privacy')
-	int privacy;
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	ComponentPrivacySetting privacy;
 
 	
 	

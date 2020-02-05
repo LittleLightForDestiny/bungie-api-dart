@@ -15,5 +15,5 @@ CommentSummary _$CommentSummaryFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$CommentSummaryToJson(CommentSummary instance) =>
     <String, dynamic>{
       'topicId': instance.topicId,
-      'commentCount': instance.commentCount
+      'commentCount': instance.commentCount,
     };

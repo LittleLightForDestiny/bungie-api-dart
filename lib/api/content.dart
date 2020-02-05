@@ -10,7 +10,8 @@ class Content{
         String type,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentType/$type/', params);
+        final String _type = '$type';
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentType/$_type/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -26,8 +27,10 @@ class Content{
         String locale,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _id = '$id';
+        final String _locale = '$locale';
         params['head'] = head;
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentById/$id/$locale/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentById/$_id/$_locale/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -44,8 +47,11 @@ class Content{
         String type,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _locale = '$locale';
+        final String _tag = '$tag';
+        final String _type = '$type';
         params['head'] = head;
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentByTagAndType/$tag/$type/$locale/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/GetContentByTagAndType/$_tag/$_type/$_locale/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -65,13 +71,14 @@ class Content{
         String tag,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _locale = '$locale';
         params['ctype'] = ctype;
         params['currentpage'] = currentpage;
         params['head'] = head;
         params['searchtext'] = searchtext;
         params['source'] = source;
         params['tag'] = tag;
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/Search/$locale/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/Search/$_locale/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -90,10 +97,13 @@ class Content{
         String type,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _locale = '$locale';
+        final String _tag = '$tag';
+        final String _type = '$type';
         params['currentpage'] = currentpage;
         params['head'] = head;
         params['itemsperpage'] = itemsperpage;
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchContentByTagAndType/$tag/$type/$locale/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchContentByTagAndType/$_tag/$_type/$_locale/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -108,7 +118,9 @@ class Content{
         String size,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchHelpArticles/$searchtext/$size', params);
+        final String _searchtext = '$searchtext';
+        final String _size = '$size';
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchHelpArticles/$_searchtext/$_size', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

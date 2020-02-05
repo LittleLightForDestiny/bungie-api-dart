@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyVendorLocationDefinitionToJson(
         DestinyVendorLocationDefinition instance) =>
     <String, dynamic>{
       'destinationHash': instance.destinationHash,
-      'backgroundImagePath': instance.backgroundImagePath
+      'backgroundImagePath': instance.backgroundImagePath,
     };

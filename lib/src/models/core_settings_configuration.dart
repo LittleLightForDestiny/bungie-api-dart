@@ -52,7 +52,7 @@ class CoreSettingsConfiguration{
 	List<CoreSetting> clanBannerStandards;
 	@JsonKey(name:'destiny2CoreSettings')
 	Destiny2CoreSettings destiny2CoreSettings;
-	/// The set of all email subscription&#x2F;opt-in settings and definitions.
+	/// The set of all email subscription/opt-in settings and definitions.
 	@JsonKey(name:'emailSettings')
 	EmailSettings emailSettings;
 

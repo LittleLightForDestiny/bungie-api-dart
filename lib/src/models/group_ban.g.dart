@@ -36,5 +36,5 @@ Map<String, dynamic> _$GroupBanToJson(GroupBan instance) => <String, dynamic>{
       'dateExpires': instance.dateExpires,
       'comment': instance.comment,
       'bungieNetUserInfo': instance.bungieNetUserInfo,
-      'destinyUserInfo': instance.destinyUserInfo
+      'destinyUserInfo': instance.destinyUserInfo,
     };

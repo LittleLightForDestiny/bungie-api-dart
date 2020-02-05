@@ -1,4 +1,5 @@
 import '../models/group_theme.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'list_of_group_theme_response.g.dart';
@@ -23,7 +24,7 @@ class ListOfGroupThemeResponse{
 	List<GroupTheme> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

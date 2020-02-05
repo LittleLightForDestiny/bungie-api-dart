@@ -15,12 +15,12 @@ class DestinyArtifactProfileScoped{
 
 	@JsonKey(name:'artifactHash')
 	int artifactHash;
-	/// Information about a current character&#39;s status with a Progression. A progression is a value that can increase with activity and has levels. Think Character Level and Reputation Levels. Combine this &quot;live&quot; data with the related DestinyProgressionDefinition for a full picture of the Progression.
+	/// Information about a current character's status with a Progression. A progression is a value that can increase with activity and has levels. Think Character Level and Reputation Levels. Combine this "live" data with the related DestinyProgressionDefinition for a full picture of the Progression.
 	@JsonKey(name:'pointProgression')
 	DestinyProgression pointProgression;
 	@JsonKey(name:'pointsAcquired')
 	int pointsAcquired;
-	/// Information about a current character&#39;s status with a Progression. A progression is a value that can increase with activity and has levels. Think Character Level and Reputation Levels. Combine this &quot;live&quot; data with the related DestinyProgressionDefinition for a full picture of the Progression.
+	/// Information about a current character's status with a Progression. A progression is a value that can increase with activity and has levels. Think Character Level and Reputation Levels. Combine this "live" data with the related DestinyProgressionDefinition for a full picture of the Progression.
 	@JsonKey(name:'powerBonusProgression')
 	DestinyProgression powerBonusProgression;
 	@JsonKey(name:'powerBonus')

@@ -27,5 +27,5 @@ Map<String, dynamic> _$TrendingEntryCommunityCreationToJson(
       'authorMembershipId': instance.authorMembershipId,
       'postId': instance.postId,
       'body': instance.body,
-      'upvotes': instance.upvotes
+      'upvotes': instance.upvotes,
     };

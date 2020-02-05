@@ -1,5 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_talent_node_step_weapon_performances.dart';
+import '../enums/destiny_talent_node_step_impact_effects.dart';
+import '../enums/destiny_talent_node_step_guardian_attributes.dart';
+import '../enums/destiny_talent_node_step_light_abilities.dart';
+import '../enums/destiny_talent_node_step_damage_types.dart';
 
 part 'destiny_talent_node_step_groups.g.dart';
 
@@ -12,15 +17,15 @@ class DestinyTalentNodeStepGroups{
 	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeStepGroupsFromJson(json);
 
 	@JsonKey(name:'weaponPerformance')
-	int weaponPerformance;
+	DestinyTalentNodeStepWeaponPerformances weaponPerformance;
 	@JsonKey(name:'impactEffects')
-	int impactEffects;
+	DestinyTalentNodeStepImpactEffects impactEffects;
 	@JsonKey(name:'guardianAttributes')
-	int guardianAttributes;
+	DestinyTalentNodeStepGuardianAttributes guardianAttributes;
 	@JsonKey(name:'lightAbilities')
-	int lightAbilities;
+	DestinyTalentNodeStepLightAbilities lightAbilities;
 	@JsonKey(name:'damageTypes')
-	int damageTypes;
+	DestinyTalentNodeStepDamageTypes damageTypes;
 
 	
 	

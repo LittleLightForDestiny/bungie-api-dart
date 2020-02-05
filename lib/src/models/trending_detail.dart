@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/trending_entry_type.dart';
 import 'trending_entry_news.dart';
 import 'trending_entry_support_article.dart';
 import 'trending_entry_destiny_item.dart';
@@ -19,8 +20,8 @@ class TrendingDetail{
 
 	@JsonKey(name:'identifier')
 	String identifier;
-	@JsonKey(name:'entityType')
-	int entityType;
+	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.News)
+	TrendingEntryType entityType;
 	@JsonKey(name:'news')
 	TrendingEntryNews news;
 	@JsonKey(name:'support')

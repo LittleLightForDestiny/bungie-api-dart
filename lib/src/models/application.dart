@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/oauth_application_type.dart';
+import '../enums/application_status.dart';
 import 'application_developer.dart';
 
 part 'application.g.dart';
@@ -11,15 +13,15 @@ class Application{
 
 	factory Application.fromJson(Map<String, dynamic> json) => _$ApplicationFromJson(json);
 
-	@JsonKey(name:'applicationType')
-	int applicationType;
+	@JsonKey(name:'applicationType',unknownEnumValue:OAuthApplicationType.None)
+	OAuthApplicationType applicationType;
 	/// Unique ID assigned to the application
 	@JsonKey(name:'applicationId')
 	int applicationId;
 	/// Name of the application
 	@JsonKey(name:'name')
 	String name;
-	/// URL used to pass the user&#39;s authorization code to the application
+	/// URL used to pass the user's authorization code to the application
 	@JsonKey(name:'redirectUrl')
 	String redirectUrl;
 	/// Link to website for the application where a user can learn more about the app.
@@ -32,15 +34,15 @@ class Application{
 	@JsonKey(name:'origin')
 	String origin;
 	/// Current status of the application.
-	@JsonKey(name:'status')
-	int status;
+	@JsonKey(name:'status',unknownEnumValue:ApplicationStatus.None)
+	ApplicationStatus status;
 	/// Date the application was first added to our database.
 	@JsonKey(name:'creationDate')
 	String creationDate;
 	/// Date the application status last changed.
 	@JsonKey(name:'statusChanged')
 	String statusChanged;
-	/// Date the first time the application status entered the &#39;Public&#39; status.
+	/// Date the first time the application status entered the 'Public' status.
 	@JsonKey(name:'firstPublished')
 	String firstPublished;
 	/// List of team members who manage this application on Bungie.net. Will always consist of at least the application owner.

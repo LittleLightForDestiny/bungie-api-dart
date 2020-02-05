@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyItemVendorSourceReferenceToJson(
         DestinyItemVendorSourceReference instance) =>
     <String, dynamic>{
       'vendorHash': instance.vendorHash,
-      'vendorItemIndexes': instance.vendorItemIndexes
+      'vendorItemIndexes': instance.vendorItemIndexes,
     };

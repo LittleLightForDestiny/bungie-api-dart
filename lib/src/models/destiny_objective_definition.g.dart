@@ -14,13 +14,16 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..completionValue = json['completionValue'] as int
-    ..scope = json['scope'] as int
+    ..scope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['scope'],
+        unknownValue: DestinyGatingScope.None)
     ..locationHash = json['locationHash'] as int
     ..allowNegativeValue = json['allowNegativeValue'] as bool
     ..allowValueChangeWhenCompleted =
         json['allowValueChangeWhenCompleted'] as bool
     ..isCountingDownward = json['isCountingDownward'] as bool
-    ..valueStyle = json['valueStyle'] as int
+    ..valueStyle = _$enumDecodeNullable(
+        _$DestinyUnlockValueUIStyleEnumMap, json['valueStyle'],
+        unknownValue: DestinyUnlockValueUIStyle.Automatic)
     ..progressDescription = json['progressDescription'] as String
     ..perks = json['perks'] == null
         ? null
@@ -33,8 +36,12 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
     ..minimumVisibilityThreshold = json['minimumVisibilityThreshold'] as int
     ..allowOvercompletion = json['allowOvercompletion'] as bool
     ..showValueOnComplete = json['showValueOnComplete'] as bool
-    ..completedValueStyle = json['completedValueStyle'] as int
-    ..inProgressValueStyle = json['inProgressValueStyle'] as int
+    ..completedValueStyle = _$enumDecodeNullable(
+        _$DestinyUnlockValueUIStyleEnumMap, json['completedValueStyle'],
+        unknownValue: DestinyUnlockValueUIStyle.Automatic)
+    ..inProgressValueStyle = _$enumDecodeNullable(
+        _$DestinyUnlockValueUIStyleEnumMap, json['inProgressValueStyle'],
+        unknownValue: DestinyUnlockValueUIStyle.Automatic)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -45,21 +52,78 @@ Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
       'completionValue': instance.completionValue,
-      'scope': instance.scope,
+      'scope': _$DestinyGatingScopeEnumMap[instance.scope],
       'locationHash': instance.locationHash,
       'allowNegativeValue': instance.allowNegativeValue,
       'allowValueChangeWhenCompleted': instance.allowValueChangeWhenCompleted,
       'isCountingDownward': instance.isCountingDownward,
-      'valueStyle': instance.valueStyle,
+      'valueStyle': _$DestinyUnlockValueUIStyleEnumMap[instance.valueStyle],
       'progressDescription': instance.progressDescription,
       'perks': instance.perks,
       'stats': instance.stats,
       'minimumVisibilityThreshold': instance.minimumVisibilityThreshold,
       'allowOvercompletion': instance.allowOvercompletion,
       'showValueOnComplete': instance.showValueOnComplete,
-      'completedValueStyle': instance.completedValueStyle,
-      'inProgressValueStyle': instance.inProgressValueStyle,
+      'completedValueStyle':
+          _$DestinyUnlockValueUIStyleEnumMap[instance.completedValueStyle],
+      'inProgressValueStyle':
+          _$DestinyUnlockValueUIStyleEnumMap[instance.inProgressValueStyle],
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyGatingScopeEnumMap = {
+  DestinyGatingScope.None: 0,
+  DestinyGatingScope.Global: 1,
+  DestinyGatingScope.Clan: 2,
+  DestinyGatingScope.Profile: 3,
+  DestinyGatingScope.Character: 4,
+  DestinyGatingScope.Item: 5,
+  DestinyGatingScope.AssumedWorstCase: 6,
+};
+
+const _$DestinyUnlockValueUIStyleEnumMap = {
+  DestinyUnlockValueUIStyle.Automatic: 0,
+  DestinyUnlockValueUIStyle.Fraction: 1,
+  DestinyUnlockValueUIStyle.Checkbox: 2,
+  DestinyUnlockValueUIStyle.Percentage: 3,
+  DestinyUnlockValueUIStyle.DateTime: 4,
+  DestinyUnlockValueUIStyle.FractionFloat: 5,
+  DestinyUnlockValueUIStyle.Integer: 6,
+  DestinyUnlockValueUIStyle.TimeDuration: 7,
+  DestinyUnlockValueUIStyle.Hidden: 8,
+  DestinyUnlockValueUIStyle.Multiplier: 9,
+};

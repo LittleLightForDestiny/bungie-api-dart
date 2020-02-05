@@ -1,4 +1,9 @@
 import '../helpers/http.dart';
+import '../enums/bungie_membership_type.dart';
+import '../enums/community_content_sort_mode.dart';
+import '../enums/community_status_sort.dart';
+import '../enums/forum_topics_category_filters_enum.dart';
+import '../enums/partnership_type.dart';
 import '../responses/community_live_status_response.dart';
 import '../responses/post_search_response_response.dart';
 import '../responses/search_result_of_community_live_status_response.dart';
@@ -6,12 +11,15 @@ class CommunityContent{
     /// Returns community content.
     static Future<PostSearchResponseResponse> getCommunityContent (
         HttpClient client,
-        int mediaFilter,
+        ForumTopicsCategoryFiltersEnum mediaFilter,
         int page,
-        int sort,
+        CommunityContentSortMode sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Get/$sort/$mediaFilter/$page/', params);
+        final String _mediaFilter = '${mediaFilter.value}';
+        final String _page = '$page';
+        final String _sort = '${sort.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Get/$_sort/$_mediaFilter/$_page/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -24,14 +32,17 @@ class CommunityContent{
         HttpClient client,
         int modeHash,
         int page,
-        int partnershipType,
-        int sort,
+        PartnershipType partnershipType,
+        CommunityStatusSort sort,
         String streamLocale,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _page = '$page';
+        final String _partnershipType = '${partnershipType.value}';
+        final String _sort = '${sort.value}';
         params['modeHash'] = modeHash;
         params['streamLocale'] = streamLocale;
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/All/$partnershipType/$sort/$page/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/All/$_partnershipType/$_sort/$_page/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -43,11 +54,14 @@ class CommunityContent{
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForClanmates (
         HttpClient client,
         int page,
-        int partnershipType,
-        int sort,
+        PartnershipType partnershipType,
+        CommunityStatusSort sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Clan/$partnershipType/$sort/$page/', params);
+        final String _page = '$page';
+        final String _partnershipType = '${partnershipType.value}';
+        final String _sort = '${sort.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Clan/$_partnershipType/$_sort/$_page/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -59,11 +73,14 @@ class CommunityContent{
     static Future<SearchResultOfCommunityLiveStatusResponse> getCommunityLiveStatusesForFriends (
         HttpClient client,
         int page,
-        int partnershipType,
-        int sort,
+        PartnershipType partnershipType,
+        CommunityStatusSort sort,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Friends/$partnershipType/$sort/$page/', params);
+        final String _page = '$page';
+        final String _partnershipType = '${partnershipType.value}';
+        final String _sort = '${sort.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Friends/$_partnershipType/$_sort/$_page/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -75,13 +92,16 @@ class CommunityContent{
     static Future<SearchResultOfCommunityLiveStatusResponse> getFeaturedCommunityLiveStatuses (
         HttpClient client,
         int page,
-        int partnershipType,
-        int sort,
+        PartnershipType partnershipType,
+        CommunityStatusSort sort,
         String streamLocale,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _page = '$page';
+        final String _partnershipType = '${partnershipType.value}';
+        final String _sort = '${sort.value}';
         params['streamLocale'] = streamLocale;
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Featured/$partnershipType/$sort/$page/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Featured/$_partnershipType/$_sort/$_page/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -93,11 +113,14 @@ class CommunityContent{
     static Future<CommunityLiveStatusResponse> getStreamingStatusForMember (
         HttpClient client,
         String membershipId,
-        int membershipType,
-        int partnershipType,
+        BungieMembershipType membershipType,
+        PartnershipType partnershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Users/$partnershipType/$membershipType/$membershipId/', params);
+        final String _membershipId = '$membershipId';
+        final String _membershipType = '${membershipType.value}';
+        final String _partnershipType = '${partnershipType.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/CommunityContent/Live/Users/$_partnershipType/$_membershipType/$_membershipId/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

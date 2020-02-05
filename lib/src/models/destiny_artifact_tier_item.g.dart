@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyArtifactTierItemToJson(
         DestinyArtifactTierItem instance) =>
     <String, dynamic>{
       'itemHash': instance.itemHash,
-      'isActive': instance.isActive
+      'isActive': instance.isActive,
     };

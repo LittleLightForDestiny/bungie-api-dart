@@ -11,7 +11,7 @@ class DestinyProfileRecordsComponent{
 
 	factory DestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileRecordsComponentFromJson(json);
 
-	/// Your &quot;Triumphs&quot; score.
+	/// Your "Triumphs" score.
 	@JsonKey(name:'score')
 	int score;
 	/// If this profile is tracking a record, this is the hash identifier of the record it is tracking.

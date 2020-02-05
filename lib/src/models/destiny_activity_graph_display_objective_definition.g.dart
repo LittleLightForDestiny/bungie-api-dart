@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyActivityGraphDisplayObjectiveDefinitionToJson(
         DestinyActivityGraphDisplayObjectiveDefinition instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'objectiveHash': instance.objectiveHash
+      'objectiveHash': instance.objectiveHash,
     };

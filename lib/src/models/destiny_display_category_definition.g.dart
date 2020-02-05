@@ -18,7 +18,9 @@ DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..displayInBanner = json['displayInBanner'] as bool
     ..progressionHash = json['progressionHash'] as int
-    ..sortOrder = json['sortOrder'] as int
+    ..sortOrder = _$enumDecodeNullable(
+        _$VendorDisplayCategorySortOrderEnumMap, json['sortOrder'],
+        unknownValue: VendorDisplayCategorySortOrder.Default)
     ..displayStyleHash = json['displayStyleHash'] as int
     ..displayStyleIdentifier = json['displayStyleIdentifier'] as String;
 }
@@ -32,7 +34,44 @@ Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'displayInBanner': instance.displayInBanner,
       'progressionHash': instance.progressionHash,
-      'sortOrder': instance.sortOrder,
+      'sortOrder': _$VendorDisplayCategorySortOrderEnumMap[instance.sortOrder],
       'displayStyleHash': instance.displayStyleHash,
-      'displayStyleIdentifier': instance.displayStyleIdentifier
+      'displayStyleIdentifier': instance.displayStyleIdentifier,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$VendorDisplayCategorySortOrderEnumMap = {
+  VendorDisplayCategorySortOrder.Default: 0,
+  VendorDisplayCategorySortOrder.SortByTier: 1,
+};

@@ -8,7 +8,9 @@ part of 'group_potential_member.dart';
 
 GroupPotentialMember _$GroupPotentialMemberFromJson(Map<String, dynamic> json) {
   return GroupPotentialMember()
-    ..potentialStatus = json['potentialStatus'] as int
+    ..potentialStatus = _$enumDecodeNullable(
+        _$GroupPotentialMemberStatusEnumMap, json['potentialStatus'],
+        unknownValue: GroupPotentialMemberStatus.None)
     ..groupId = json['groupId'] as String
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
@@ -24,9 +26,48 @@ GroupPotentialMember _$GroupPotentialMemberFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GroupPotentialMemberToJson(
         GroupPotentialMember instance) =>
     <String, dynamic>{
-      'potentialStatus': instance.potentialStatus,
+      'potentialStatus':
+          _$GroupPotentialMemberStatusEnumMap[instance.potentialStatus],
       'groupId': instance.groupId,
       'destinyUserInfo': instance.destinyUserInfo,
       'bungieNetUserInfo': instance.bungieNetUserInfo,
-      'joinDate': instance.joinDate
+      'joinDate': instance.joinDate,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$GroupPotentialMemberStatusEnumMap = {
+  GroupPotentialMemberStatus.None: 0,
+  GroupPotentialMemberStatus.Applicant: 1,
+  GroupPotentialMemberStatus.Invitee: 2,
+};

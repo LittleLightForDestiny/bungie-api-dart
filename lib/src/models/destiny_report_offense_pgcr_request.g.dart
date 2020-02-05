@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyReportOffensePgcrRequestToJson(
     <String, dynamic>{
       'reasonCategoryHashes': instance.reasonCategoryHashes,
       'reasonHashes': instance.reasonHashes,
-      'offendingCharacterId': instance.offendingCharacterId
+      'offendingCharacterId': instance.offendingCharacterId,
     };

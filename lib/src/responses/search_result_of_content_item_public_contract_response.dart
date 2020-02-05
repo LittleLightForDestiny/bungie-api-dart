@@ -1,4 +1,5 @@
 import '../models/search_result_of_content_item_public_contract.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'search_result_of_content_item_public_contract_response.g.dart';
@@ -23,7 +24,7 @@ class SearchResultOfContentItemPublicContractResponse{
 	SearchResultOfContentItemPublicContract response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

@@ -13,7 +13,8 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..scope = json['scope'] as int
+    ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
+        unknownValue: DestinyScope.Profile)
     ..presentationInfo = json['presentationInfo'] == null
         ? null
         : DestinyPresentationChildBlock.fromJson(
@@ -21,7 +22,9 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
     ..loreHash = json['loreHash'] as int
     ..objectiveHashes =
         (json['objectiveHashes'] as List)?.map((e) => e as int)?.toList()
-    ..recordValueStyle = json['recordValueStyle'] as int
+    ..recordValueStyle = _$enumDecodeNullable(
+        _$DestinyRecordValueStyleEnumMap, json['recordValueStyle'],
+        unknownValue: DestinyRecordValueStyle.Integer)
     ..titleInfo = json['titleInfo'] == null
         ? null
         : DestinyRecordTitleBlock.fromJson(
@@ -32,15 +35,9 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
             json['completionInfo'] as Map<String, dynamic>)
     ..stateInfo = json['stateInfo'] == null
         ? null
-        : SchemaRecordStateBlock.fromJson(
-            json['stateInfo'] as Map<String, dynamic>)
-    ..requirements = json['requirements'] == null
-        ? null
-        : DestinyPresentationNodeRequirementsBlock.fromJson(
-            json['requirements'] as Map<String, dynamic>)
-    ..expirationInfo = json['expirationInfo'] == null
-        ? null
-        : DestinyRecordExpirationBlock.fromJson(json['expirationInfo'] as Map<String, dynamic>)
+        : SchemaRecordStateBlock.fromJson(json['stateInfo'] as Map<String, dynamic>)
+    ..requirements = json['requirements'] == null ? null : DestinyPresentationNodeRequirementsBlock.fromJson(json['requirements'] as Map<String, dynamic>)
+    ..expirationInfo = json['expirationInfo'] == null ? null : DestinyRecordExpirationBlock.fromJson(json['expirationInfo'] as Map<String, dynamic>)
     ..intervalInfo = json['intervalInfo'] == null ? null : DestinyRecordIntervalBlock.fromJson(json['intervalInfo'] as Map<String, dynamic>)
     ..rewardItems = (json['rewardItems'] as List)?.map((e) => e == null ? null : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))?.toList()
     ..hash = json['hash'] as int
@@ -52,11 +49,12 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
         DestinyRecordDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
-      'scope': instance.scope,
+      'scope': _$DestinyScopeEnumMap[instance.scope],
       'presentationInfo': instance.presentationInfo,
       'loreHash': instance.loreHash,
       'objectiveHashes': instance.objectiveHashes,
-      'recordValueStyle': instance.recordValueStyle,
+      'recordValueStyle':
+          _$DestinyRecordValueStyleEnumMap[instance.recordValueStyle],
       'titleInfo': instance.titleInfo,
       'completionInfo': instance.completionInfo,
       'stateInfo': instance.stateInfo,
@@ -66,5 +64,50 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
       'rewardItems': instance.rewardItems,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyScopeEnumMap = {
+  DestinyScope.Profile: 0,
+  DestinyScope.Character: 1,
+};
+
+const _$DestinyRecordValueStyleEnumMap = {
+  DestinyRecordValueStyle.Integer: 0,
+  DestinyRecordValueStyle.Percentage: 1,
+  DestinyRecordValueStyle.Milliseconds: 2,
+  DestinyRecordValueStyle.Boolean: 3,
+  DestinyRecordValueStyle.Decimal: 4,
+};

@@ -28,5 +28,5 @@ Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
       'infusionCategoryHash': instance.infusionCategoryHash,
       'infusionCategoryHashes': instance.infusionCategoryHashes,
       'progressionLevelRequirementHash':
-          instance.progressionLevelRequirementHash
+          instance.progressionLevelRequirementHash,
     };

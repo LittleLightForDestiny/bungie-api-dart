@@ -1,8 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_vendor_item_quantity.dart';
+import '../enums/destiny_vendor_item_refund_policy.dart';
 import 'destiny_item_creation_entry_level_definition.dart';
 import 'destiny_vendor_sale_item_action_block_definition.dart';
+import '../enums/destiny_gating_scope.dart';
+import '../enums/bungie_membership_type.dart';
 import 'destiny_vendor_item_socket_override.dart';
 
 part 'destiny_vendor_item_definition.g.dart';
@@ -19,7 +22,7 @@ class DestinyVendorItemDefinition{
 	@JsonKey(name:'vendorItemIndex')
 	int vendorItemIndex;
 	/// The hash identifier of the item being sold (DestinyInventoryItemDefinition).
-	/// Note that a vendor can sell the same item in multiple ways, so don&#39;t assume that itemHash is a unique identifier for this entity.
+	/// Note that a vendor can sell the same item in multiple ways, so don't assume that itemHash is a unique identifier for this entity.
 	@JsonKey(name:'itemHash')
 	int itemHash;
 	/// The amount you will recieve of the item described in itemHash if you make the purchase.
@@ -33,12 +36,12 @@ class DestinyVendorItemDefinition{
 	@JsonKey(name:'currencies')
 	List<DestinyVendorItemQuantity> currencies;
 	/// If this item can be refunded, this is the policy for what will be refundd, how, and in what time period.
-	@JsonKey(name:'refundPolicy')
-	int refundPolicy;
+	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.NotRefundable)
+	DestinyVendorItemRefundPolicy refundPolicy;
 	/// The amount of time before refundability of the newly purchased item will expire.
 	@JsonKey(name:'refundTimeLimit')
 	int refundTimeLimit;
-	/// The Default level at which the item will spawn. Almost always driven by an adjusto these days. Ideally should be singular. It&#39;s a long story how this ended up as a list, but there is always either going to be 0:1 of these entities.
+	/// The Default level at which the item will spawn. Almost always driven by an adjusto these days. Ideally should be singular. It's a long story how this ended up as a list, but there is always either going to be 0:1 of these entities.
 	@JsonKey(name:'creationLevels')
 	List<DestinyItemCreationEntryLevelDefinition> creationLevels;
 	/// This is an index specifically into the display category, as opposed to the server-side Categories (which do not need to match or pair with each other in any way: server side categories are really just structures for common validation. Display Category will let us more easily categorize items visually)
@@ -56,7 +59,7 @@ class DestinyVendorItemDefinition{
 	/// The maximum character level at which this item is available for sale.
 	@JsonKey(name:'maximumLevel')
 	int maximumLevel;
-	/// The action to be performed when purchasing the item, if it&#39;s not just &quot;buy&quot;.
+	/// The action to be performed when purchasing the item, if it's not just "buy".
 	@JsonKey(name:'action')
 	DestinyVendorSaleItemActionBlockDefinition action;
 	/// The string identifier for the category selling this item.
@@ -65,17 +68,17 @@ class DestinyVendorItemDefinition{
 	/// The inventory bucket into which this item will be placed upon purchase.
 	@JsonKey(name:'inventoryBucketHash')
 	int inventoryBucketHash;
-	/// The most restrictive scope that determines whether the item is available in the Vendor&#39;s inventory. See DestinyGatingScope&#39;s documentation for more information.
+	/// The most restrictive scope that determines whether the item is available in the Vendor's inventory. See DestinyGatingScope's documentation for more information.
 	/// This can be determined by Unlock gating, or by whether or not the item has purchase level requirements (minimumLevel and maximumLevel properties).
-	@JsonKey(name:'visibilityScope')
-	int visibilityScope;
+	@JsonKey(name:'visibilityScope',unknownEnumValue:DestinyGatingScope.None)
+	DestinyGatingScope visibilityScope;
 	/// Similar to visibilityScope, it represents the most restrictive scope that determines whether the item can be purchased. It will at least be as restrictive as visibilityScope, but could be more restrictive if the item has additional purchase requirements beyond whether it is merely visible or not.
-	/// See DestinyGatingScope&#39;s documentation for more information.
-	@JsonKey(name:'purchasableScope')
-	int purchasableScope;
+	/// See DestinyGatingScope's documentation for more information.
+	@JsonKey(name:'purchasableScope',unknownEnumValue:DestinyGatingScope.None)
+	DestinyGatingScope purchasableScope;
 	/// If this item can only be purchased by a given platform, this indicates the platform to which it is restricted.
-	@JsonKey(name:'exclusivity')
-	int exclusivity;
+	@JsonKey(name:'exclusivity',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType exclusivity;
 	/// If this sale can only be performed as the result of an offer check, this is true.
 	@JsonKey(name:'isOffer')
 	bool isOffer;

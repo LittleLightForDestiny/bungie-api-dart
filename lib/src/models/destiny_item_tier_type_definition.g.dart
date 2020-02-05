@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyItemTierTypeDefinitionToJson(
       'infusionProcess': instance.infusionProcess,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

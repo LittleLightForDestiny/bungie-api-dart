@@ -18,4 +18,6 @@ DestinyVendorReceiptsComponent _$DestinyVendorReceiptsComponentFromJson(
 
 Map<String, dynamic> _$DestinyVendorReceiptsComponentToJson(
         DestinyVendorReceiptsComponent instance) =>
-    <String, dynamic>{'receipts': instance.receipts};
+    <String, dynamic>{
+      'receipts': instance.receipts,
+    };

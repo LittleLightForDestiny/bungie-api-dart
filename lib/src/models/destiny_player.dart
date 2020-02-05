@@ -38,7 +38,7 @@ class DestinyPlayer{
 	/// Current clan tag for the player. This value may be null or an empty string if the user does not have a clan.
 	@JsonKey(name:'clanTag')
 	String clanTag;
-	/// If we know the emblem&#39;s hash, this can be used to look up the player&#39;s emblem at the time of a match when receiving PGCR data, or otherwise their currently equipped emblem (if we are able to obtain it).
+	/// If we know the emblem's hash, this can be used to look up the player's emblem at the time of a match when receiving PGCR data, or otherwise their currently equipped emblem (if we are able to obtain it).
 	@JsonKey(name:'emblemHash')
 	int emblemHash;
 

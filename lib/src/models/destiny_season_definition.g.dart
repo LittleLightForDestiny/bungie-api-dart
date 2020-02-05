@@ -36,5 +36,5 @@ Map<String, dynamic> _$DestinySeasonDefinitionToJson(
       'seasonPassProgressionHash': instance.seasonPassProgressionHash,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

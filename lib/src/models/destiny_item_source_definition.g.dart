@@ -35,5 +35,5 @@ Map<String, dynamic> _$DestinyItemSourceDefinitionToJson(
       'minLevelRequired': instance.minLevelRequired,
       'maxLevelRequired': instance.maxLevelRequired,
       'computedStats': instance.computedStats,
-      'sourceHashes': instance.sourceHashes
+      'sourceHashes': instance.sourceHashes,
     };

@@ -1,4 +1,5 @@
 import '../models/destiny_historical_stats_definition.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'read_only_dictionary_ofstring_and_destiny_historical_stats_definition_response.g.dart';
@@ -23,7 +24,7 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse{
 	Map<String, DestinyHistoricalStatsDefinition> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

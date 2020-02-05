@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyItemGearsetBlockDefinitionToJson(
         DestinyItemGearsetBlockDefinition instance) =>
     <String, dynamic>{
       'trackingValueMax': instance.trackingValueMax,
-      'itemList': instance.itemList
+      'itemList': instance.itemList,
     };

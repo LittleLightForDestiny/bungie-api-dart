@@ -45,5 +45,5 @@ Map<String, dynamic> _$DestinyVendorCategoryEntryDefinitionToJson(
       'isPreview': instance.isPreview,
       'isDisplayOnly': instance.isDisplayOnly,
       'resetIntervalMinutesOverride': instance.resetIntervalMinutesOverride,
-      'resetOffsetMinutesOverride': instance.resetOffsetMinutesOverride
+      'resetOffsetMinutesOverride': instance.resetOffsetMinutesOverride,
     };

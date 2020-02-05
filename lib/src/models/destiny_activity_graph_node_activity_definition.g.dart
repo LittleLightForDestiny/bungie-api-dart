@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyActivityGraphNodeActivityDefinitionToJson(
         DestinyActivityGraphNodeActivityDefinition instance) =>
     <String, dynamic>{
       'nodeActivityId': instance.nodeActivityId,
-      'activityHash': instance.activityHash
+      'activityHash': instance.activityHash,
     };

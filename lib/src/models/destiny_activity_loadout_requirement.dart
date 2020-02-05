@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_item_sub_type.dart';
 
 part 'destiny_activity_loadout_requirement.g.dart';
 
@@ -15,7 +16,7 @@ class DestinyActivityLoadoutRequirement{
 	@JsonKey(name:'allowedEquippedItemHashes')
 	List<int> allowedEquippedItemHashes;
 	@JsonKey(name:'allowedWeaponSubTypes')
-	List<int> allowedWeaponSubTypes;
+	List<DestinyItemSubType> allowedWeaponSubTypes;
 
 	
 	

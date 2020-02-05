@@ -14,10 +14,10 @@ class DestinyItemValueBlockDefinition{
 
 	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemValueBlockDefinitionFromJson(json);
 
-	/// References to the items that make up this item&#39;s &quot;value&quot;, and the quantity.
+	/// References to the items that make up this item's "value", and the quantity.
 	@JsonKey(name:'itemValue')
 	List<DestinyItemQuantity> itemValue;
-	/// If there&#39;s a localized text description of the value provided, this will be said description.
+	/// If there's a localized text description of the value provided, this will be said description.
 	@JsonKey(name:'valueDescription')
 	String valueDescription;
 

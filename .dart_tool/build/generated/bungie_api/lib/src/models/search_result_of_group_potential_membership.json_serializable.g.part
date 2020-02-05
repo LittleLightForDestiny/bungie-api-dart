@@ -29,5 +29,5 @@ Map<String, dynamic> _$SearchResultOfGroupPotentialMembershipToJson(
       'hasMore': instance.hasMore,
       'query': instance.query,
       'replacementContinuationToken': instance.replacementContinuationToken,
-      'useTotalResults': instance.useTotalResults
+      'useTotalResults': instance.useTotalResults,
     };

@@ -23,16 +23,16 @@ class DestinyPublicMilestone{
 	@JsonKey(name:'activities')
 	List<DestinyPublicMilestoneChallengeActivity> activities;
 	/// Sometimes milestones - or activities active in milestones - will have relevant vendors. These are the vendors that are currently relevant.
-	/// Deprecated, already, for the sake of the new &quot;vendors&quot; property that has more data. What was I thinking.
+	/// Deprecated, already, for the sake of the new "vendors" property that has more data. What was I thinking.
 	@JsonKey(name:'vendorHashes')
 	List<int> vendorHashes;
-	/// This is why we can&#39;t have nice things. This is the ordered list of vendors to be shown that relate to this milestone, potentially along with other interesting data.
+	/// This is why we can't have nice things. This is the ordered list of vendors to be shown that relate to this milestone, potentially along with other interesting data.
 	@JsonKey(name:'vendors')
 	List<DestinyPublicMilestoneVendor> vendors;
-	/// If known, this is the date when the Milestone started&#x2F;became active.
+	/// If known, this is the date when the Milestone started/became active.
 	@JsonKey(name:'startDate')
 	String startDate;
-	/// If known, this is the date when the Milestone will expire&#x2F;recycle&#x2F;end.
+	/// If known, this is the date when the Milestone will expire/recycle/end.
 	@JsonKey(name:'endDate')
 	String endDate;
 	/// Used for ordering milestones in a display to match how we order them in BNet. May pull from static data, or possibly in the future from dynamic information.

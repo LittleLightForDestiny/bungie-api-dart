@@ -10,7 +10,7 @@ class DestinyMilestoneChallengeActivityPhase{
 
 	factory DestinyMilestoneChallengeActivityPhase.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneChallengeActivityPhaseFromJson(json);
 
-	/// The hash identifier of the activity&#39;s phase.
+	/// The hash identifier of the activity's phase.
 	@JsonKey(name:'phaseHash')
 	int phaseHash;
 

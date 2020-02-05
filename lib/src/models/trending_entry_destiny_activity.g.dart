@@ -20,5 +20,5 @@ Map<String, dynamic> _$TrendingEntryDestinyActivityToJson(
         TrendingEntryDestinyActivity instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'status': instance.status
+      'status': instance.status,
     };

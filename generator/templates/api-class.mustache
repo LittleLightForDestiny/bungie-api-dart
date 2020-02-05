@@ -1,11 +1,14 @@
 import '../helpers/http.dart';
 {{#imports}}
-import '../{{type}}/{{filename}}.dart';
+import '{{{.}}}.dart';
 {{/imports}}
+{{#description}}
+/// {{{.}}}
+{{/description}}
 class {{className}}{
     {{#methods}}
     {{#description}}
-    /// {{.}}
+    /// {{{.}}}
     {{/description}}
     static Future<{{returnType}}> {{methodName}} (
         HttpClient client,
@@ -17,8 +20,11 @@ class {{className}}{
         {{/requestBody}}
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        {{#urlParameters}}
+        final String _{{name}} = {{{parameterParseToString}}};
+        {{/urlParameters}}
         {{#queryParameters}}
-        params['{{name}}'] = {{name}};
+        params['{{name}}'] = {{{parameterParseString}}};
         {{/queryParameters}}
         final HttpClientConfig config = HttpClientConfig('{{method}}', '{{{url}}}', params);
         {{#requestBody}}

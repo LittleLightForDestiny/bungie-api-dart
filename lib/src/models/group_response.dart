@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'group_v2.dart';
 import 'group_member.dart';
+import '../enums/group_alliance_status.dart';
 import 'group_potential_member.dart';
 
 part 'group_response.g.dart';
@@ -21,8 +22,8 @@ class GroupResponse{
 	List<String> alliedIds;
 	@JsonKey(name:'parentGroup')
 	GroupV2 parentGroup;
-	@JsonKey(name:'allianceStatus')
-	int allianceStatus;
+	@JsonKey(name:'allianceStatus',unknownEnumValue:GroupAllianceStatus.Unallied)
+	GroupAllianceStatus allianceStatus;
 	@JsonKey(name:'groupJoinInviteCount')
 	int groupJoinInviteCount;
 	/// A convenience property that indicates if every membership you (the current user) have that is a part of this group are part of an account that is considered inactive - for example, overridden accounts in Cross Save.

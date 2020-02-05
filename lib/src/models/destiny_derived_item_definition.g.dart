@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyDerivedItemDefinitionToJson(
       'itemDetail': instance.itemDetail,
       'itemDescription': instance.itemDescription,
       'iconPath': instance.iconPath,
-      'vendorItemIndex': instance.vendorItemIndex
+      'vendorItemIndex': instance.vendorItemIndex,
     };

@@ -14,4 +14,6 @@ DestinyVendorGroupReference _$DestinyVendorGroupReferenceFromJson(
 
 Map<String, dynamic> _$DestinyVendorGroupReferenceToJson(
         DestinyVendorGroupReference instance) =>
-    <String, dynamic>{'vendorGroupHash': instance.vendorGroupHash};
+    <String, dynamic>{
+      'vendorGroupHash': instance.vendorGroupHash,
+    };

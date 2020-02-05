@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyStatDisplayDefinitionToJson(
       'statHash': instance.statHash,
       'maximumValue': instance.maximumValue,
       'displayAsNumeric': instance.displayAsNumeric,
-      'displayInterpolation': instance.displayInterpolation
+      'displayInterpolation': instance.displayInterpolation,
     };

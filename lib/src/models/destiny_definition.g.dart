@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyDefinitionToJson(DestinyDefinition instance) =>
     <String, dynamic>{
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

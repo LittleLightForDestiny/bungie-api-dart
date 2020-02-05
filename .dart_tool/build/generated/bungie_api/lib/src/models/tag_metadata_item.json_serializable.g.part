@@ -17,5 +17,5 @@ Map<String, dynamic> _$TagMetadataItemToJson(TagMetadataItem instance) =>
       'tagText': instance.tagText,
       'groups': instance.groups,
       'isDefault': instance.isDefault,
-      'name': instance.name
+      'name': instance.name,
     };

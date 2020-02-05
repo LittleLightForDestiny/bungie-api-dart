@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyItemPlugBaseToJson(
       'canInsert': instance.canInsert,
       'enabled': instance.enabled,
       'insertFailIndexes': instance.insertFailIndexes,
-      'enableFailIndexes': instance.enableFailIndexes
+      'enableFailIndexes': instance.enableFailIndexes,
     };

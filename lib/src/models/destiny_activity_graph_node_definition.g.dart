@@ -46,5 +46,5 @@ Map<String, dynamic> _$DestinyActivityGraphNodeDefinitionToJson(
       'position': instance.position,
       'featuringStates': instance.featuringStates,
       'activities': instance.activities,
-      'states': instance.states
+      'states': instance.states,
     };

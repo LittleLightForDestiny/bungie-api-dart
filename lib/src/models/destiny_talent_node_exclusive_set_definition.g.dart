@@ -16,4 +16,6 @@ DestinyTalentNodeExclusiveSetDefinition
 
 Map<String, dynamic> _$DestinyTalentNodeExclusiveSetDefinitionToJson(
         DestinyTalentNodeExclusiveSetDefinition instance) =>
-    <String, dynamic>{'nodeIndexes': instance.nodeIndexes};
+    <String, dynamic>{
+      'nodeIndexes': instance.nodeIndexes,
+    };

@@ -13,5 +13,5 @@ Map<String, dynamic> _$DestinyMilestoneVendorToJson(
         DestinyMilestoneVendor instance) =>
     <String, dynamic>{
       'vendorHash': instance.vendorHash,
-      'previewItemHash': instance.previewItemHash
+      'previewItemHash': instance.previewItemHash,
     };

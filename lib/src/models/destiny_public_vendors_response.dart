@@ -30,7 +30,7 @@ class DestinyPublicVendorsResponse{
 	@JsonKey(name:'categories')
 	DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent categories;
 	/// Sales, keyed by the vendorItemIndex of the item being sold. These are keyed by the Vendor Hash, so you will get one Sale Item Set Component per vendor returned.
-	/// Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor&#39;s definition.
+	/// Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor's definition.
 	/// COMPONENT TYPE: VendorSales
 	@JsonKey(name:'sales')
 	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent sales;

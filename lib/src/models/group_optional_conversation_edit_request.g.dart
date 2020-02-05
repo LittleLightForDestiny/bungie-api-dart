@@ -19,5 +19,5 @@ Map<String, dynamic> _$GroupOptionalConversationEditRequestToJson(
     <String, dynamic>{
       'chatEnabled': instance.chatEnabled,
       'chatName': instance.chatName,
-      'chatSecurity': instance.chatSecurity
+      'chatSecurity': instance.chatSecurity,
     };

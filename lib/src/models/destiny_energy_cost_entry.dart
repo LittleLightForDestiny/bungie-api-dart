@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_energy_type.dart';
 
 part 'destiny_energy_cost_entry.g.dart';
 
@@ -18,8 +19,8 @@ class DestinyEnergyCostEntry{
 	@JsonKey(name:'energyTypeHash')
 	int energyTypeHash;
 	/// The type of energy that this plug costs, in enum form.
-	@JsonKey(name:'energyType')
-	int energyType;
+	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.Any)
+	DestinyEnergyType energyType;
 
 	
 	

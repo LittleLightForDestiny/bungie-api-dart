@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyItemSetBlockEntryDefinitionToJson(
         DestinyItemSetBlockEntryDefinition instance) =>
     <String, dynamic>{
       'trackingValue': instance.trackingValue,
-      'itemHash': instance.itemHash
+      'itemHash': instance.itemHash,
     };

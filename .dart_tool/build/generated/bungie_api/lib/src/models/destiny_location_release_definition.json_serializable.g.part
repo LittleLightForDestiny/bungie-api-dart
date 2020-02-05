@@ -20,7 +20,9 @@ DestinyLocationReleaseDefinition _$DestinyLocationReleaseDefinitionFromJson(
     ..activityBubbleName = json['activityBubbleName'] as int
     ..activityPathBundle = json['activityPathBundle'] as int
     ..activityPathDestination = json['activityPathDestination'] as int
-    ..navPointType = json['navPointType'] as int
+    ..navPointType = _$enumDecodeNullable(
+        _$DestinyActivityNavPointTypeEnumMap, json['navPointType'],
+        unknownValue: DestinyActivityNavPointType.Inactive)
     ..worldPosition =
         (json['worldPosition'] as List)?.map((e) => e as int)?.toList();
 }
@@ -40,6 +42,59 @@ Map<String, dynamic> _$DestinyLocationReleaseDefinitionToJson(
       'activityBubbleName': instance.activityBubbleName,
       'activityPathBundle': instance.activityPathBundle,
       'activityPathDestination': instance.activityPathDestination,
-      'navPointType': instance.navPointType,
-      'worldPosition': instance.worldPosition
+      'navPointType':
+          _$DestinyActivityNavPointTypeEnumMap[instance.navPointType],
+      'worldPosition': instance.worldPosition,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyActivityNavPointTypeEnumMap = {
+  DestinyActivityNavPointType.Inactive: 0,
+  DestinyActivityNavPointType.PrimaryObjective: 1,
+  DestinyActivityNavPointType.SecondaryObjective: 2,
+  DestinyActivityNavPointType.TravelObjective: 3,
+  DestinyActivityNavPointType.PublicEventObjective: 4,
+  DestinyActivityNavPointType.AmmoCache: 5,
+  DestinyActivityNavPointType.PointTypeFlag: 6,
+  DestinyActivityNavPointType.CapturePoint: 7,
+  DestinyActivityNavPointType.DefensiveEncounter: 8,
+  DestinyActivityNavPointType.GhostInteraction: 9,
+  DestinyActivityNavPointType.KillAi: 10,
+  DestinyActivityNavPointType.QuestItem: 11,
+  DestinyActivityNavPointType.PatrolMission: 12,
+  DestinyActivityNavPointType.Incoming: 13,
+  DestinyActivityNavPointType.ArenaObjective: 14,
+  DestinyActivityNavPointType.AutomationHint: 15,
+  DestinyActivityNavPointType.TrackedQuest: 16,
+};

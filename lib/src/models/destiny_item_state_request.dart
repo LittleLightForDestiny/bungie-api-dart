@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/bungie_membership_type.dart';
 
 part 'destiny_item_state_request.g.dart';
 
@@ -16,8 +17,8 @@ class DestinyItemStateRequest{
 	String itemId;
 	@JsonKey(name:'characterId')
 	String characterId;
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 
 	
 	

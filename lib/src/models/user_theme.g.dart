@@ -16,5 +16,5 @@ UserTheme _$UserThemeFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$UserThemeToJson(UserTheme instance) => <String, dynamic>{
       'userThemeId': instance.userThemeId,
       'userThemeName': instance.userThemeName,
-      'userThemeDescription': instance.userThemeDescription
+      'userThemeDescription': instance.userThemeDescription,
     };

@@ -23,7 +23,9 @@ ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) {
     ..rssAttribute = json['rssAttribute'] as String
     ..visibleDependency = json['visibleDependency'] as String
     ..visibleOn = json['visibleOn'] as String
-    ..datatype = json['datatype'] as int
+    ..datatype = _$enumDecodeNullable(
+        _$ContentPropertyDataTypeEnumEnumMap, json['datatype'],
+        unknownValue: ContentPropertyDataTypeEnum.None)
     ..attributes = (json['attributes'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
     )
@@ -84,7 +86,7 @@ Map<String, dynamic> _$ContentTypePropertyToJson(
       'rssAttribute': instance.rssAttribute,
       'visibleDependency': instance.visibleDependency,
       'visibleOn': instance.visibleOn,
-      'datatype': instance.datatype,
+      'datatype': _$ContentPropertyDataTypeEnumEnumMap[instance.datatype],
       'attributes': instance.attributes,
       'childProperties': instance.childProperties,
       'contentTypeAllowed': instance.contentTypeAllowed,
@@ -105,5 +107,55 @@ Map<String, dynamic> _$ContentTypePropertyToJson(
       'minHeight': instance.minHeight,
       'maxHeight': instance.maxHeight,
       'isVideo': instance.isVideo,
-      'isImage': instance.isImage
+      'isImage': instance.isImage,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$ContentPropertyDataTypeEnumEnumMap = {
+  ContentPropertyDataTypeEnum.None: 0,
+  ContentPropertyDataTypeEnum.Plaintext: 1,
+  ContentPropertyDataTypeEnum.Html: 2,
+  ContentPropertyDataTypeEnum.Dropdown: 3,
+  ContentPropertyDataTypeEnum.List: 4,
+  ContentPropertyDataTypeEnum.Json: 5,
+  ContentPropertyDataTypeEnum.Content: 6,
+  ContentPropertyDataTypeEnum.Representation: 7,
+  ContentPropertyDataTypeEnum.Set: 8,
+  ContentPropertyDataTypeEnum.File: 9,
+  ContentPropertyDataTypeEnum.FolderSet: 10,
+  ContentPropertyDataTypeEnum.Date: 11,
+  ContentPropertyDataTypeEnum.MultilinePlaintext: 12,
+  ContentPropertyDataTypeEnum.DestinyContent: 13,
+  ContentPropertyDataTypeEnum.Color: 14,
+};

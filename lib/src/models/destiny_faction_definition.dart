@@ -14,10 +14,10 @@ class DestinyFactionDefinition{
 
 	factory DestinyFactionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyFactionDefinitionFromJson(json);
 
-	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
+	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	/// The hash identifier for the DestinyProgressionDefinition that indicates the character&#39;s relationship with this faction in terms of experience and levels.
+	/// The hash identifier for the DestinyProgressionDefinition that indicates the character's relationship with this faction in terms of experience and levels.
 	@JsonKey(name:'progressionHash')
 	int progressionHash;
 	/// The faction token item hashes, and their respective progression values.
@@ -39,7 +39,7 @@ class DestinyFactionDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

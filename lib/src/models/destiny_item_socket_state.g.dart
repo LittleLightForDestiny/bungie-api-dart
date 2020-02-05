@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyItemSocketStateToJson(
       'plugHash': instance.plugHash,
       'isEnabled': instance.isEnabled,
       'isVisible': instance.isVisible,
-      'enableFailIndexes': instance.enableFailIndexes
+      'enableFailIndexes': instance.enableFailIndexes,
     };

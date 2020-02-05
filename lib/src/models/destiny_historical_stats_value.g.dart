@@ -32,5 +32,5 @@ Map<String, dynamic> _$DestinyHistoricalStatsValueToJson(
       'basic': instance.basic,
       'pga': instance.pga,
       'weighted': instance.weighted,
-      'activityId': instance.activityId
+      'activityId': instance.activityId,
     };

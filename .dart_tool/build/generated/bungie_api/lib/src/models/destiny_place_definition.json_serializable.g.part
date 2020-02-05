@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyPlaceDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

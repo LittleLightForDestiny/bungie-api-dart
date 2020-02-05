@@ -12,10 +12,10 @@ class DestinyMilestoneActivityCompletionStatus{
 
 	factory DestinyMilestoneActivityCompletionStatus.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityCompletionStatusFromJson(json);
 
-	/// If the activity has been &quot;completed&quot;, that information will be returned here.
+	/// If the activity has been "completed", that information will be returned here.
 	@JsonKey(name:'completed')
 	bool completed;
-	/// If the Activity has discrete &quot;phases&quot; that we can track, that info will be here. Otherwise, this value will be NULL. Note that this is a list and not a dictionary: the order implies the ascending order of phases or progression in this activity.
+	/// If the Activity has discrete "phases" that we can track, that info will be here. Otherwise, this value will be NULL. Note that this is a list and not a dictionary: the order implies the ascending order of phases or progression in this activity.
 	@JsonKey(name:'phases')
 	List<DestinyMilestoneActivityPhase> phases;
 

@@ -45,5 +45,5 @@ Map<String, dynamic> _$GroupEditActionToJson(GroupEditAction instance) =>
       'homepage': instance.homepage,
       'enableInvitationMessagingForAdmins':
           instance.enableInvitationMessagingForAdmins,
-      'defaultPublicity': instance.defaultPublicity
+      'defaultPublicity': instance.defaultPublicity,
     };

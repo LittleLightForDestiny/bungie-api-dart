@@ -9,7 +9,9 @@ GroupOptionalConversation _$GroupOptionalConversationFromJson(
     ..conversationId = json['conversationId'] as String
     ..chatEnabled = json['chatEnabled'] as bool
     ..chatName = json['chatName'] as String
-    ..chatSecurity = json['chatSecurity'] as int;
+    ..chatSecurity = _$enumDecodeNullable(
+        _$ChatSecuritySettingEnumMap, json['chatSecurity'],
+        unknownValue: ChatSecuritySetting.Group);
 }
 
 Map<String, dynamic> _$GroupOptionalConversationToJson(
@@ -19,5 +21,42 @@ Map<String, dynamic> _$GroupOptionalConversationToJson(
       'conversationId': instance.conversationId,
       'chatEnabled': instance.chatEnabled,
       'chatName': instance.chatName,
-      'chatSecurity': instance.chatSecurity
+      'chatSecurity': _$ChatSecuritySettingEnumMap[instance.chatSecurity],
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$ChatSecuritySettingEnumMap = {
+  ChatSecuritySetting.Group: 0,
+  ChatSecuritySetting.Admins: 1,
+};

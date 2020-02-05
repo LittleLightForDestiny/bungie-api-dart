@@ -1,4 +1,5 @@
 import '../models/awa_authorization_result.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'awa_authorization_result_response.g.dart';
@@ -23,7 +24,7 @@ class AwaAuthorizationResultResponse{
 	AwaAuthorizationResult response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

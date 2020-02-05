@@ -1,4 +1,5 @@
 import '../models/general_user.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'general_user_response.g.dart';
@@ -23,7 +24,7 @@ class GeneralUserResponse{
 	GeneralUser response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

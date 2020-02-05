@@ -1,4 +1,5 @@
 import '../models/user_membership_data.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'user_membership_data_response.g.dart';
@@ -23,7 +24,7 @@ class UserMembershipDataResponse{
 	UserMembershipData response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

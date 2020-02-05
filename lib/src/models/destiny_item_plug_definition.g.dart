@@ -28,10 +28,16 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
             : DestinyPlugRuleDefinition.fromJson(e as Map<String, dynamic>))
         ?.toList()
     ..uiPlugLabel = json['uiPlugLabel'] as String
-    ..plugStyle = json['plugStyle'] as int
-    ..plugAvailability = json['plugAvailability'] as int
+    ..plugStyle = json['plugStyle'] == null
+        ? null
+        : PlugUiStyles.fromJson(json['plugStyle'] as int)
+    ..plugAvailability = _$enumDecodeNullable(
+        _$PlugAvailabilityModeEnumMap, json['plugAvailability'],
+        unknownValue: PlugAvailabilityMode.Normal)
     ..alternateUiPlugLabel = json['alternateUiPlugLabel'] as String
-    ..alternatePlugStyle = json['alternatePlugStyle'] as int
+    ..alternatePlugStyle = json['alternatePlugStyle'] == null
+        ? null
+        : PlugUiStyles.fromJson(json['alternatePlugStyle'] as int)
     ..isDummyPlug = json['isDummyPlug'] as bool
     ..parentItemOverride = json['parentItemOverride'] == null
         ? null
@@ -61,11 +67,50 @@ Map<String, dynamic> _$DestinyItemPlugDefinitionToJson(
       'enabledRules': instance.enabledRules,
       'uiPlugLabel': instance.uiPlugLabel,
       'plugStyle': instance.plugStyle,
-      'plugAvailability': instance.plugAvailability,
+      'plugAvailability':
+          _$PlugAvailabilityModeEnumMap[instance.plugAvailability],
       'alternateUiPlugLabel': instance.alternateUiPlugLabel,
       'alternatePlugStyle': instance.alternatePlugStyle,
       'isDummyPlug': instance.isDummyPlug,
       'parentItemOverride': instance.parentItemOverride,
       'energyCapacity': instance.energyCapacity,
-      'energyCost': instance.energyCost
+      'energyCost': instance.energyCost,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$PlugAvailabilityModeEnumMap = {
+  PlugAvailabilityMode.Normal: 0,
+  PlugAvailabilityMode.UnavailableIfSocketContainsMatchingPlugCategory: 1,
+  PlugAvailabilityMode.AvailableIfSocketContainsMatchingPlugCategory: 2,
+};

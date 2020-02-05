@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyTalentExclusiveGroupToJson(
       'loreHash': instance.loreHash,
       'nodeHashes': instance.nodeHashes,
       'opposingGroupHashes': instance.opposingGroupHashes,
-      'opposingNodeHashes': instance.opposingNodeHashes
+      'opposingNodeHashes': instance.opposingNodeHashes,
     };

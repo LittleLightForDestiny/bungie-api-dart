@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_application_resolve_state.dart';
 import 'group_user_info_card.dart';
 import 'user_info_card.dart';
 
@@ -16,8 +17,8 @@ class GroupMemberApplication{
 	String groupId;
 	@JsonKey(name:'creationDate')
 	String creationDate;
-	@JsonKey(name:'resolveState')
-	int resolveState;
+	@JsonKey(name:'resolveState',unknownEnumValue:GroupApplicationResolveState.Unresolved)
+	GroupApplicationResolveState resolveState;
 	@JsonKey(name:'resolveDate')
 	String resolveDate;
 	@JsonKey(name:'resolvedByMembershipId')

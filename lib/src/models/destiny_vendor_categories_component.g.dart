@@ -18,4 +18,6 @@ DestinyVendorCategoriesComponent _$DestinyVendorCategoriesComponentFromJson(
 
 Map<String, dynamic> _$DestinyVendorCategoriesComponentToJson(
         DestinyVendorCategoriesComponent instance) =>
-    <String, dynamic>{'categories': instance.categories};
+    <String, dynamic>{
+      'categories': instance.categories,
+    };

@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_game_privacy_setting.dart';
+import '../enums/destiny_join_closed_reasons.dart';
 
 part 'destiny_profile_transitory_joinability.g.dart';
 
@@ -11,15 +13,15 @@ class DestinyProfileTransitoryJoinability{
 
 	factory DestinyProfileTransitoryJoinability.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryJoinabilityFromJson(json);
 
-	/// The number of slots still available on this person&#39;s fireteam.
+	/// The number of slots still available on this person's fireteam.
 	@JsonKey(name:'openSlots')
 	int openSlots;
 	/// Who the person is currently allowing invites from.
-	@JsonKey(name:'privacySetting')
-	int privacySetting;
-	/// Reasons why a person can&#39;t join this person&#39;s fireteam.
+	@JsonKey(name:'privacySetting',unknownEnumValue:DestinyGamePrivacySetting.Open)
+	DestinyGamePrivacySetting privacySetting;
+	/// Reasons why a person can't join this person's fireteam.
 	@JsonKey(name:'closedReasons')
-	int closedReasons;
+	DestinyJoinClosedReasons closedReasons;
 
 	
 	

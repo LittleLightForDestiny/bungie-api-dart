@@ -28,5 +28,5 @@ Map<String, dynamic> _$SearchResultOfFireteamResponseToJson(
       'hasMore': instance.hasMore,
       'query': instance.query,
       'replacementContinuationToken': instance.replacementContinuationToken,
-      'useTotalResults': instance.useTotalResults
+      'useTotalResults': instance.useTotalResults,
     };

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/ignore_length.dart';
 
 part 'group_ban_request.g.dart';
 
@@ -12,8 +13,8 @@ class GroupBanRequest{
 
 	@JsonKey(name:'comment')
 	String comment;
-	@JsonKey(name:'length')
-	int length;
+	@JsonKey(name:'length',unknownEnumValue:IgnoreLength.None)
+	IgnoreLength length;
 
 	
 	

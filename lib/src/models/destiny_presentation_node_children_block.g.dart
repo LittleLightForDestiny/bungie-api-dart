@@ -34,5 +34,5 @@ Map<String, dynamic> _$DestinyPresentationNodeChildrenBlockToJson(
     <String, dynamic>{
       'presentationNodes': instance.presentationNodes,
       'collectibles': instance.collectibles,
-      'records': instance.records
+      'records': instance.records,
     };

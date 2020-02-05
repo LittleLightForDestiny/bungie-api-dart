@@ -26,5 +26,5 @@ Map<String, dynamic> _$DestinyProfileProgressionComponentToJson(
         DestinyProfileProgressionComponent instance) =>
     <String, dynamic>{
       'checklists': instance.checklists,
-      'seasonalArtifact': instance.seasonalArtifact
+      'seasonalArtifact': instance.seasonalArtifact,
     };

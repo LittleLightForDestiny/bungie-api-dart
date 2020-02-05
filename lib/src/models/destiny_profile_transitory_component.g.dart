@@ -39,5 +39,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryComponentToJson(
       'currentActivity': instance.currentActivity,
       'joinability': instance.joinability,
       'tracking': instance.tracking,
-      'lastOrbitedDestinationHash': instance.lastOrbitedDestinationHash
+      'lastOrbitedDestinationHash': instance.lastOrbitedDestinationHash,
     };

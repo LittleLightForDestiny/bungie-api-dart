@@ -25,5 +25,5 @@ Map<String, dynamic> _$GroupUserBaseToJson(GroupUserBase instance) =>
       'groupId': instance.groupId,
       'destinyUserInfo': instance.destinyUserInfo,
       'bungieNetUserInfo': instance.bungieNetUserInfo,
-      'joinDate': instance.joinDate
+      'joinDate': instance.joinDate,
     };

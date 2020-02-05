@@ -19,10 +19,10 @@ class DestinyItemActionBlockDefinition{
 	/// Localized text describing the action being performed.
 	@JsonKey(name:'verbDescription')
 	String verbDescription;
-	/// The content has this property, however it&#39;s not entirely clear how it is used.
+	/// The content has this property, however it's not entirely clear how it is used.
 	@JsonKey(name:'isPositive')
 	bool isPositive;
-	/// If the action has an overlay screen associated with it, this is the name of that screen. Unfortunately, we cannot return the screen&#39;s data itself.
+	/// If the action has an overlay screen associated with it, this is the name of that screen. Unfortunately, we cannot return the screen's data itself.
 	@JsonKey(name:'overlayScreenName')
 	String overlayScreenName;
 	/// The icon associated with the overlay screen for the action, if any.

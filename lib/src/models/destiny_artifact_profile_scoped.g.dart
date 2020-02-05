@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyArtifactProfileScopedToJson(
       'pointProgression': instance.pointProgression,
       'pointsAcquired': instance.pointsAcquired,
       'powerBonusProgression': instance.powerBonusProgression,
-      'powerBonus': instance.powerBonus
+      'powerBonus': instance.powerBonus,
     };

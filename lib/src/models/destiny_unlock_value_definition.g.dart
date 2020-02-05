@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyUnlockValueDefinitionToJson(
     <String, dynamic>{
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

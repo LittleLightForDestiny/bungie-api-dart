@@ -27,5 +27,5 @@ Map<String, dynamic> _$FireteamResponseToJson(FireteamResponse instance) =>
     <String, dynamic>{
       'Summary': instance.summary,
       'Members': instance.members,
-      'Alternates': instance.alternates
+      'Alternates': instance.alternates,
     };

@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyActivityMatchmakingBlockDefinitionToJson(
       'minParty': instance.minParty,
       'maxParty': instance.maxParty,
       'maxPlayers': instance.maxPlayers,
-      'requiresGuardianOath': instance.requiresGuardianOath
+      'requiresGuardianOath': instance.requiresGuardianOath,
     };

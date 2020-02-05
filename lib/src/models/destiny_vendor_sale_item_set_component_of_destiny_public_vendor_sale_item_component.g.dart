@@ -24,4 +24,6 @@ Map<String, dynamic>
     _$DestinyVendorSaleItemSetComponentOfDestinyPublicVendorSaleItemComponentToJson(
             DestinyVendorSaleItemSetComponentOfDestinyPublicVendorSaleItemComponent
                 instance) =>
-        <String, dynamic>{'saleItems': instance.saleItems};
+        <String, dynamic>{
+          'saleItems': instance.saleItems,
+        };

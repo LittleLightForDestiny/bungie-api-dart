@@ -14,7 +14,8 @@ DestinyChecklistDefinition _$DestinyChecklistDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..viewActionString = json['viewActionString'] as String
-    ..scope = json['scope'] as int
+    ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
+        unknownValue: DestinyScope.Profile)
     ..entries = (json['entries'] as List)
         ?.map((e) => e == null
             ? null
@@ -31,9 +32,46 @@ Map<String, dynamic> _$DestinyChecklistDefinitionToJson(
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
       'viewActionString': instance.viewActionString,
-      'scope': instance.scope,
+      'scope': _$DestinyScopeEnumMap[instance.scope],
       'entries': instance.entries,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyScopeEnumMap = {
+  DestinyScope.Profile: 0,
+  DestinyScope.Character: 1,
+};

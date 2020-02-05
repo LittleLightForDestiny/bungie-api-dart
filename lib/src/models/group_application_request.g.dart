@@ -13,4 +13,6 @@ GroupApplicationRequest _$GroupApplicationRequestFromJson(
 
 Map<String, dynamic> _$GroupApplicationRequestToJson(
         GroupApplicationRequest instance) =>
-    <String, dynamic>{'message': instance.message};
+    <String, dynamic>{
+      'message': instance.message,
+    };

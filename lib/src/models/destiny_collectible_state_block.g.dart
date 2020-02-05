@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyCollectibleStateBlockToJson(
         DestinyCollectibleStateBlock instance) =>
     <String, dynamic>{
       'obscuredOverrideItemHash': instance.obscuredOverrideItemHash,
-      'requirements': instance.requirements
+      'requirements': instance.requirements,
     };

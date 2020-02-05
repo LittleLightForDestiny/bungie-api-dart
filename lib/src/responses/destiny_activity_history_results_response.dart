@@ -1,4 +1,5 @@
 import '../models/destiny_activity_history_results.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_activity_history_results_response.g.dart';
@@ -23,7 +24,7 @@ class DestinyActivityHistoryResultsResponse{
 	DestinyActivityHistoryResults response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

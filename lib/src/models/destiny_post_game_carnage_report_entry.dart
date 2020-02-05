@@ -22,7 +22,7 @@ class DestinyPostGameCarnageReportEntry{
 	/// Identity details of the player
 	@JsonKey(name:'player')
 	DestinyPlayer player;
-	/// ID of the player&#39;s character used in the activity.
+	/// ID of the player's character used in the activity.
 	@JsonKey(name:'characterId')
 	String characterId;
 	/// Collection of stats for the player in this activity.

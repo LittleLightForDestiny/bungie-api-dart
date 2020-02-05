@@ -27,4 +27,7 @@ DestinyPostGameCarnageReportExtendedData
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportExtendedDataToJson(
         DestinyPostGameCarnageReportExtendedData instance) =>
-    <String, dynamic>{'weapons': instance.weapons, 'values': instance.values};
+    <String, dynamic>{
+      'weapons': instance.weapons,
+      'values': instance.values,
+    };

@@ -74,16 +74,16 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..doesPostmasterPullHaveSideEffects = json['doesPostmasterPullHaveSideEffects'] as bool
     ..nonTransferrable = json['nonTransferrable'] as bool
     ..itemCategoryHashes = (json['itemCategoryHashes'] as List)?.map((e) => e as int)?.toList()
-    ..specialItemType = json['specialItemType'] as int
-    ..itemType = json['itemType'] as int
-    ..itemSubType = json['itemSubType'] as int
-    ..classType = json['classType'] as int
-    ..breakerType = json['breakerType'] as int
+    ..specialItemType = _$enumDecodeNullable(_$SpecialItemTypeEnumMap, json['specialItemType'], unknownValue: SpecialItemType.None)
+    ..itemType = _$enumDecodeNullable(_$DestinyItemTypeEnumMap, json['itemType'], unknownValue: DestinyItemType.None)
+    ..itemSubType = _$enumDecodeNullable(_$DestinyItemSubTypeEnumMap, json['itemSubType'], unknownValue: DestinyItemSubType.None)
+    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'], unknownValue: DestinyClass.Titan)
+    ..breakerType = _$enumDecodeNullable(_$DestinyBreakerTypeEnumMap, json['breakerType'], unknownValue: DestinyBreakerType.None)
     ..breakerTypeHash = json['breakerTypeHash'] as int
     ..equippable = json['equippable'] as bool
     ..damageTypeHashes = (json['damageTypeHashes'] as List)?.map((e) => e as int)?.toList()
-    ..damageTypes = (json['damageTypes'] as List)?.map((e) => e as int)?.toList()
-    ..defaultDamageType = json['defaultDamageType'] as int
+    ..damageTypes = (json['damageTypes'] as List)?.map((e) => _$enumDecodeNullable(_$DamageTypeEnumMap, e))?.toList()
+    ..defaultDamageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['defaultDamageType'], unknownValue: DamageType.None)
     ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int
     ..seasonHash = json['seasonHash'] as int
     ..isWrapper = json['isWrapper'] as bool
@@ -137,20 +137,150 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
           instance.doesPostmasterPullHaveSideEffects,
       'nonTransferrable': instance.nonTransferrable,
       'itemCategoryHashes': instance.itemCategoryHashes,
-      'specialItemType': instance.specialItemType,
-      'itemType': instance.itemType,
-      'itemSubType': instance.itemSubType,
-      'classType': instance.classType,
-      'breakerType': instance.breakerType,
+      'specialItemType': _$SpecialItemTypeEnumMap[instance.specialItemType],
+      'itemType': _$DestinyItemTypeEnumMap[instance.itemType],
+      'itemSubType': _$DestinyItemSubTypeEnumMap[instance.itemSubType],
+      'classType': _$DestinyClassEnumMap[instance.classType],
+      'breakerType': _$DestinyBreakerTypeEnumMap[instance.breakerType],
       'breakerTypeHash': instance.breakerTypeHash,
       'equippable': instance.equippable,
       'damageTypeHashes': instance.damageTypeHashes,
-      'damageTypes': instance.damageTypes,
-      'defaultDamageType': instance.defaultDamageType,
+      'damageTypes':
+          instance.damageTypes?.map((e) => _$DamageTypeEnumMap[e])?.toList(),
+      'defaultDamageType': _$DamageTypeEnumMap[instance.defaultDamageType],
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
       'seasonHash': instance.seasonHash,
       'isWrapper': instance.isWrapper,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$SpecialItemTypeEnumMap = {
+  SpecialItemType.None: 0,
+  SpecialItemType.SpecialCurrency: 1,
+  SpecialItemType.Armor: 8,
+  SpecialItemType.Weapon: 9,
+  SpecialItemType.Engram: 23,
+  SpecialItemType.Consumable: 24,
+  SpecialItemType.ExchangeMaterial: 25,
+  SpecialItemType.MissionReward: 27,
+  SpecialItemType.Currency: 29,
+};
+
+const _$DestinyItemTypeEnumMap = {
+  DestinyItemType.None: 0,
+  DestinyItemType.Currency: 1,
+  DestinyItemType.Armor: 2,
+  DestinyItemType.Weapon: 3,
+  DestinyItemType.Message: 7,
+  DestinyItemType.Engram: 8,
+  DestinyItemType.Consumable: 9,
+  DestinyItemType.ExchangeMaterial: 10,
+  DestinyItemType.MissionReward: 11,
+  DestinyItemType.QuestStep: 12,
+  DestinyItemType.QuestStepComplete: 13,
+  DestinyItemType.Emblem: 14,
+  DestinyItemType.Quest: 15,
+  DestinyItemType.Subclass: 16,
+  DestinyItemType.ClanBanner: 17,
+  DestinyItemType.Aura: 18,
+  DestinyItemType.Mod: 19,
+  DestinyItemType.Dummy: 20,
+  DestinyItemType.Ship: 21,
+  DestinyItemType.Vehicle: 22,
+  DestinyItemType.Emote: 23,
+  DestinyItemType.Ghost: 24,
+  DestinyItemType.Package: 25,
+  DestinyItemType.Bounty: 26,
+  DestinyItemType.Wrapper: 27,
+  DestinyItemType.SeasonalArtifact: 28,
+  DestinyItemType.Finisher: 29,
+};
+
+const _$DestinyItemSubTypeEnumMap = {
+  DestinyItemSubType.None: 0,
+  DestinyItemSubType.Crucible: 1,
+  DestinyItemSubType.Vanguard: 2,
+  DestinyItemSubType.Exotic: 5,
+  DestinyItemSubType.AutoRifle: 6,
+  DestinyItemSubType.Shotgun: 7,
+  DestinyItemSubType.Machinegun: 8,
+  DestinyItemSubType.HandCannon: 9,
+  DestinyItemSubType.RocketLauncher: 10,
+  DestinyItemSubType.FusionRifle: 11,
+  DestinyItemSubType.SniperRifle: 12,
+  DestinyItemSubType.PulseRifle: 13,
+  DestinyItemSubType.ScoutRifle: 14,
+  DestinyItemSubType.Crm: 16,
+  DestinyItemSubType.Sidearm: 17,
+  DestinyItemSubType.Sword: 18,
+  DestinyItemSubType.Mask: 19,
+  DestinyItemSubType.Shader: 20,
+  DestinyItemSubType.Ornament: 21,
+  DestinyItemSubType.FusionRifleLine: 22,
+  DestinyItemSubType.GrenadeLauncher: 23,
+  DestinyItemSubType.SubmachineGun: 24,
+  DestinyItemSubType.TraceRifle: 25,
+  DestinyItemSubType.HelmetArmor: 26,
+  DestinyItemSubType.GauntletsArmor: 27,
+  DestinyItemSubType.ChestArmor: 28,
+  DestinyItemSubType.LegArmor: 29,
+  DestinyItemSubType.ClassArmor: 30,
+  DestinyItemSubType.Bow: 31,
+};
+
+const _$DestinyClassEnumMap = {
+  DestinyClass.Titan: 0,
+  DestinyClass.Hunter: 1,
+  DestinyClass.Warlock: 2,
+  DestinyClass.Unknown: 3,
+};
+
+const _$DestinyBreakerTypeEnumMap = {
+  DestinyBreakerType.None: 0,
+  DestinyBreakerType.ShieldPiercing: 1,
+  DestinyBreakerType.Disruption: 2,
+  DestinyBreakerType.Stagger: 3,
+};
+
+const _$DamageTypeEnumMap = {
+  DamageType.None: 0,
+  DamageType.Kinetic: 1,
+  DamageType.Arc: 2,
+  DamageType.Thermal: 3,
+  DamageType.Void: 4,
+  DamageType.Raid: 5,
+};

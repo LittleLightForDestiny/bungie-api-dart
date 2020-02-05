@@ -17,4 +17,6 @@ DestinyItemStatsComponent _$DestinyItemStatsComponentFromJson(
 
 Map<String, dynamic> _$DestinyItemStatsComponentToJson(
         DestinyItemStatsComponent instance) =>
-    <String, dynamic>{'stats': instance.stats};
+    <String, dynamic>{
+      'stats': instance.stats,
+    };

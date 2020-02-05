@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyEntitySearchResultItemToJson(
       'hash': instance.hash,
       'entityType': instance.entityType,
       'displayProperties': instance.displayProperties,
-      'weight': instance.weight
+      'weight': instance.weight,
     };

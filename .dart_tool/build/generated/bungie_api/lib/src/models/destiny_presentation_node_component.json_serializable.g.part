@@ -5,7 +5,9 @@
 DestinyPresentationNodeComponent _$DestinyPresentationNodeComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyPresentationNodeComponent()
-    ..state = json['state'] as int
+    ..state = json['state'] == null
+        ? null
+        : DestinyPresentationNodeState.fromJson(json['state'] as int)
     ..objective = json['objective'] == null
         ? null
         : DestinyObjectiveProgress.fromJson(
@@ -20,5 +22,5 @@ Map<String, dynamic> _$DestinyPresentationNodeComponentToJson(
       'state': instance.state,
       'objective': instance.objective,
       'progressValue': instance.progressValue,
-      'completionValue': instance.completionValue
+      'completionValue': instance.completionValue,
     };

@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyParentItemOverrideToJson(
     <String, dynamic>{
       'additionalEquipRequirementsDisplayStrings':
           instance.additionalEquipRequirementsDisplayStrings,
-      'pipIcon': instance.pipIcon
+      'pipIcon': instance.pipIcon,
     };

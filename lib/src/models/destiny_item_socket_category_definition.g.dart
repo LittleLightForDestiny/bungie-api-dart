@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyItemSocketCategoryDefinitionToJson(
         DestinyItemSocketCategoryDefinition instance) =>
     <String, dynamic>{
       'socketCategoryHash': instance.socketCategoryHash,
-      'socketIndexes': instance.socketIndexes
+      'socketIndexes': instance.socketIndexes,
     };

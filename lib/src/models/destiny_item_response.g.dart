@@ -53,5 +53,5 @@ Map<String, dynamic> _$DestinyItemResponseToJson(
       'talentGrid': instance.talentGrid,
       'sockets': instance.sockets,
       'reusablePlugs': instance.reusablePlugs,
-      'plugObjectives': instance.plugObjectives
+      'plugObjectives': instance.plugObjectives,
     };

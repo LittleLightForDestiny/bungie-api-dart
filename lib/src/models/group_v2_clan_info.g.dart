@@ -17,5 +17,5 @@ GroupV2ClanInfo _$GroupV2ClanInfoFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GroupV2ClanInfoToJson(GroupV2ClanInfo instance) =>
     <String, dynamic>{
       'clanCallsign': instance.clanCallsign,
-      'clanBannerData': instance.clanBannerData
+      'clanBannerData': instance.clanBannerData,
     };

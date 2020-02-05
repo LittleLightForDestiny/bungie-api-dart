@@ -16,7 +16,9 @@ DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) {
     ..isVisible = json['isVisible'] as bool
     ..displayLevel = json['displayLevel'] as int
     ..recommendedLight = json['recommendedLight'] as int
-    ..difficultyTier = json['difficultyTier'] as int
+    ..difficultyTier = _$enumDecodeNullable(
+        _$DestinyActivityDifficultyTierEnumMap, json['difficultyTier'],
+        unknownValue: DestinyActivityDifficultyTier.Trivial)
     ..challenges = (json['challenges'] as List)
         ?.map((e) => e == null
             ? null
@@ -41,9 +43,53 @@ Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
       'isVisible': instance.isVisible,
       'displayLevel': instance.displayLevel,
       'recommendedLight': instance.recommendedLight,
-      'difficultyTier': instance.difficultyTier,
+      'difficultyTier':
+          _$DestinyActivityDifficultyTierEnumMap[instance.difficultyTier],
       'challenges': instance.challenges,
       'modifierHashes': instance.modifierHashes,
       'booleanActivityOptions': instance.booleanActivityOptions,
-      'loadoutRequirementIndex': instance.loadoutRequirementIndex
+      'loadoutRequirementIndex': instance.loadoutRequirementIndex,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyActivityDifficultyTierEnumMap = {
+  DestinyActivityDifficultyTier.Trivial: 0,
+  DestinyActivityDifficultyTier.Easy: 1,
+  DestinyActivityDifficultyTier.Normal: 2,
+  DestinyActivityDifficultyTier.Challenging: 3,
+  DestinyActivityDifficultyTier.Hard: 4,
+  DestinyActivityDifficultyTier.Brave: 5,
+  DestinyActivityDifficultyTier.AlmostImpossible: 6,
+  DestinyActivityDifficultyTier.Impossible: 7,
+};

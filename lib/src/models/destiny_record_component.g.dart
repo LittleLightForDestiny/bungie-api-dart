@@ -9,7 +9,9 @@ part of 'destiny_record_component.dart';
 DestinyRecordComponent _$DestinyRecordComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordComponent()
-    ..state = json['state'] as int
+    ..state = json['state'] == null
+        ? null
+        : DestinyRecordState.fromJson(json['state'] as int)
     ..objectives = (json['objectives'] as List)
         ?.map((e) => e == null
             ? null
@@ -29,5 +31,5 @@ Map<String, dynamic> _$DestinyRecordComponentToJson(
       'state': instance.state,
       'objectives': instance.objectives,
       'intervalObjectives': instance.intervalObjectives,
-      'intervalsRedeemedCount': instance.intervalsRedeemedCount
+      'intervalsRedeemedCount': instance.intervalsRedeemedCount,
     };

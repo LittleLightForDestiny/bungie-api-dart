@@ -17,5 +17,5 @@ DestinyPresentationNodeRequirementsBlock
 Map<String, dynamic> _$DestinyPresentationNodeRequirementsBlockToJson(
         DestinyPresentationNodeRequirementsBlock instance) =>
     <String, dynamic>{
-      'entitlementUnavailableMessage': instance.entitlementUnavailableMessage
+      'entitlementUnavailableMessage': instance.entitlementUnavailableMessage,
     };

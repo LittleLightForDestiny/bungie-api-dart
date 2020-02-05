@@ -27,5 +27,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryCurrentActivityToJson(
       'score': instance.score,
       'highestOpposingFactionScore': instance.highestOpposingFactionScore,
       'numberOfOpponents': instance.numberOfOpponents,
-      'numberOfPlayers': instance.numberOfPlayers
+      'numberOfPlayers': instance.numberOfPlayers,
     };

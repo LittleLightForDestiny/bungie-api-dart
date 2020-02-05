@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyMilestoneActivityVariantDefinitionToJson(
         DestinyMilestoneActivityVariantDefinition instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'order': instance.order
+      'order': instance.order,
     };

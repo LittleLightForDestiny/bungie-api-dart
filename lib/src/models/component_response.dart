@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/component_privacy_setting.dart';
 
 part 'component_response.g.dart';
 
@@ -11,8 +12,8 @@ class ComponentResponse{
 
 	factory ComponentResponse.fromJson(Map<String, dynamic> json) => _$ComponentResponseFromJson(json);
 
-	@JsonKey(name:'privacy')
-	int privacy;
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	ComponentPrivacySetting privacy;
 
 	
 	

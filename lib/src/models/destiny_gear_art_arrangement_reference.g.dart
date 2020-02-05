@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyGearArtArrangementReferenceToJson(
         DestinyGearArtArrangementReference instance) =>
     <String, dynamic>{
       'classHash': instance.classHash,
-      'artArrangementHash': instance.artArrangementHash
+      'artArrangementHash': instance.artArrangementHash,
     };

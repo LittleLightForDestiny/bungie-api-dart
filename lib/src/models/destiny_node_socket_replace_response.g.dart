@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyNodeSocketReplaceResponseToJson(
         DestinyNodeSocketReplaceResponse instance) =>
     <String, dynamic>{
       'socketTypeHash': instance.socketTypeHash,
-      'plugItemHash': instance.plugItemHash
+      'plugItemHash': instance.plugItemHash,
     };

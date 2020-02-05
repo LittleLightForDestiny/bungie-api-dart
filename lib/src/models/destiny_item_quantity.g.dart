@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyItemQuantityToJson(
     <String, dynamic>{
       'itemHash': instance.itemHash,
       'itemInstanceId': instance.itemInstanceId,
-      'quantity': instance.quantity
+      'quantity': instance.quantity,
     };

@@ -11,16 +11,16 @@ class DestinyMaterialRequirement{
 
 	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) => _$DestinyMaterialRequirementFromJson(json);
 
-	/// The hash identifier of the material required. Use it to look up the material&#39;s DestinyInventoryItemDefinition.
+	/// The hash identifier of the material required. Use it to look up the material's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')
 	int itemHash;
-	/// If True, the material will be removed from the character&#39;s inventory when the action is performed.
+	/// If True, the material will be removed from the character's inventory when the action is performed.
 	@JsonKey(name:'deleteOnAction')
 	bool deleteOnAction;
 	/// The amount of the material required.
 	@JsonKey(name:'count')
 	int count;
-	/// If True, this requirement is &quot;silent&quot;: don&#39;t bother showing it in a material requirements display. I mean, I&#39;m not your mom: I&#39;m not going to tell you you *can&#39;t* show it. But we won&#39;t show it in our UI.
+	/// If True, this requirement is "silent": don't bother showing it in a material requirements display. I mean, I'm not your mom: I'm not going to tell you you *can't* show it. But we won't show it in our UI.
 	@JsonKey(name:'omitFromRequirements')
 	bool omitFromRequirements;
 

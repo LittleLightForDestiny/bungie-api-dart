@@ -64,5 +64,5 @@ Map<String, dynamic> _$DestinyTalentNodeDefinitionToJson(
       'groupHash': instance.groupHash,
       'loreHash': instance.loreHash,
       'nodeStyleIdentifier': instance.nodeStyleIdentifier,
-      'ignoreForCompletion': instance.ignoreForCompletion
+      'ignoreForCompletion': instance.ignoreForCompletion,
     };

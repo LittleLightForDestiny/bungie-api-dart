@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyInventoryItemStatDefinitionToJson(
       'statHash': instance.statHash,
       'value': instance.value,
       'minimum': instance.minimum,
-      'maximum': instance.maximum
+      'maximum': instance.maximum,
     };

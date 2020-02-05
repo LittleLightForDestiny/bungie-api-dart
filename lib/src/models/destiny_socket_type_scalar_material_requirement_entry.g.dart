@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinySocketTypeScalarMaterialRequirementEntryToJson(
         DestinySocketTypeScalarMaterialRequirementEntry instance) =>
     <String, dynamic>{
       'currencyItemHash': instance.currencyItemHash,
-      'scalarValue': instance.scalarValue
+      'scalarValue': instance.scalarValue,
     };

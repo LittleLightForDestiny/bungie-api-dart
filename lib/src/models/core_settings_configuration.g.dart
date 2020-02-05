@@ -99,5 +99,5 @@ Map<String, dynamic> _$CoreSettingsConfigurationToJson(
       'clanBannerGonfalonDetailColors': instance.clanBannerGonfalonDetailColors,
       'clanBannerStandards': instance.clanBannerStandards,
       'destiny2CoreSettings': instance.destiny2CoreSettings,
-      'emailSettings': instance.emailSettings
+      'emailSettings': instance.emailSettings,
     };

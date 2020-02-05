@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'fireteam_user_info_card.dart';
 import 'user_info_card.dart';
+import '../enums/fireteam_platform_invite_result.dart';
 
 part 'fireteam_member.g.dart';
 
@@ -25,8 +26,8 @@ class FireteamMember{
 	bool hasMicrophone;
 	@JsonKey(name:'lastPlatformInviteAttemptDate')
 	String lastPlatformInviteAttemptDate;
-	@JsonKey(name:'lastPlatformInviteAttemptResult')
-	int lastPlatformInviteAttemptResult;
+	@JsonKey(name:'lastPlatformInviteAttemptResult',unknownEnumValue:FireteamPlatformInviteResult.None)
+	FireteamPlatformInviteResult lastPlatformInviteAttemptResult;
 
 	
 	

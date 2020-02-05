@@ -15,4 +15,7 @@ GearAssetDataBaseDefinition _$GearAssetDataBaseDefinitionFromJson(
 
 Map<String, dynamic> _$GearAssetDataBaseDefinitionToJson(
         GearAssetDataBaseDefinition instance) =>
-    <String, dynamic>{'version': instance.version, 'path': instance.path};
+    <String, dynamic>{
+      'version': instance.version,
+      'path': instance.path,
+    };

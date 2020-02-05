@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyRecordTitleBlockToJson(
     <String, dynamic>{
       'hasTitle': instance.hasTitle,
       'titlesByGender': instance.titlesByGender,
-      'titlesByGenderHash': instance.titlesByGenderHash
+      'titlesByGenderHash': instance.titlesByGenderHash,
     };

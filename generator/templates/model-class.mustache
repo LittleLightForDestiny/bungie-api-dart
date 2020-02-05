@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 {{#imports}}
-import '{{filename}}.dart';
+import '{{{.}}}.dart';
 {{/imports}}
 
 part '{{filename}}.g.dart';
@@ -22,9 +22,9 @@ class {{className}}{
 
 	{{#properties}}
 	{{#description}}
-	/// {{.}}
+	/// {{{.}}}
 	{{/description}}
-	@JsonKey(name:'{{name}}')
+	{{{jsonKey}}}
 	{{{typeName}}} {{propertyName}};
 	{{/properties}}
 

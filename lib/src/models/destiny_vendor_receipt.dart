@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_item_quantity.dart';
+import '../enums/destiny_vendor_item_refund_policy.dart';
 
 part 'destiny_vendor_receipt.g.dart';
 
@@ -25,8 +26,8 @@ class DestinyVendorReceipt{
 	@JsonKey(name:'purchasedByCharacterId')
 	String purchasedByCharacterId;
 	/// Whether you can get a refund, and what happens in order for the refund to be received. See the DestinyVendorItemRefundPolicy enum for details.
-	@JsonKey(name:'refundPolicy')
-	int refundPolicy;
+	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.NotRefundable)
+	DestinyVendorItemRefundPolicy refundPolicy;
 	/// The identifier of this receipt.
 	@JsonKey(name:'sequenceNumber')
 	int sequenceNumber;

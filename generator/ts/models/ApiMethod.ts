@@ -22,8 +22,14 @@ export class ApiMethod{
         });
     }
 
+    urlParameters(){
+        return this.parameters().filter((param)=>{
+            return param.in() == "path";
+        });
+    }
+
     url(){
-        return this.methodUrl.split('{').join('$').split('}').join('');
+        return this.methodUrl.split('{').join('$_').split('}').join('');
     }
 
     description():string[]|null{

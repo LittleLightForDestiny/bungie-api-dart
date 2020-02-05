@@ -15,7 +15,7 @@ class DestinyVendorCategoryEntryDefinition{
 	/// The index of the category in the original category definitions for the vendor.
 	@JsonKey(name:'categoryIndex')
 	int categoryIndex;
-	/// Used in sorting items in vendors... but there&#39;s a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself.
+	/// Used in sorting items in vendors... but there's a lot more to it. Just go with the order provided in the itemIndexes property on the DestinyVendorCategoryComponent instead, it should be more reliable than trying to recalculate it yourself.
 	@JsonKey(name:'sortValue')
 	int sortValue;
 	/// The hashed identifier for the category.
@@ -24,16 +24,16 @@ class DestinyVendorCategoryEntryDefinition{
 	/// The amount of items that will be available when this category is shown.
 	@JsonKey(name:'quantityAvailable')
 	int quantityAvailable;
-	/// If items aren&#39;t up for sale in this category, should we still show them (greyed out)?
+	/// If items aren't up for sale in this category, should we still show them (greyed out)?
 	@JsonKey(name:'showUnavailableItems')
 	bool showUnavailableItems;
-	/// If you don&#39;t have the currency required to buy items from this category, should the items be hidden?
+	/// If you don't have the currency required to buy items from this category, should the items be hidden?
 	@JsonKey(name:'hideIfNoCurrency')
 	bool hideIfNoCurrency;
-	/// True if this category doesn&#39;t allow purchases.
+	/// True if this category doesn't allow purchases.
 	@JsonKey(name:'hideFromRegularPurchase')
 	bool hideFromRegularPurchase;
-	/// The localized string for making purchases from this category, if it is different from the vendor&#39;s string for purchasing.
+	/// The localized string for making purchases from this category, if it is different from the vendor's string for purchasing.
 	@JsonKey(name:'buyStringOverride')
 	String buyStringOverride;
 	/// If the category is disabled, this is the localized description to show.
@@ -48,10 +48,10 @@ class DestinyVendorCategoryEntryDefinition{
 	/// A shortcut for the vendor item indexes sold under this category. Saves us from some expensive reorganization at runtime.
 	@JsonKey(name:'vendorItemIndexes')
 	List<int> vendorItemIndexes;
-	/// Sometimes a category isn&#39;t actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment.
+	/// Sometimes a category isn't actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment.
 	@JsonKey(name:'isPreview')
 	bool isPreview;
-	/// If true, this category only displays items: you can&#39;t purchase anything in them.
+	/// If true, this category only displays items: you can't purchase anything in them.
 	@JsonKey(name:'isDisplayOnly')
 	bool isDisplayOnly;
 	@JsonKey(name:'resetIntervalMinutesOverride')

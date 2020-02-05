@@ -48,6 +48,13 @@ export class ResponseClass{
             .filter(Boolean)
             .filter((importInfo:ImportInfo)=>importInfo.filename() != filename)
             .uniqBy((item:ImportInfo)=>item.filename())
+            .map((item:ImportInfo)=>{
+                if(item.type == "responses"){
+                    return item.filename();
+                }else{
+                    return `../${item.type}/${item.filename()}`;
+                }
+            })
             .value();
         return imports;
     }

@@ -1,4 +1,5 @@
 import '../models/destiny_leaderboard.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_leaderboard_results_response.g.dart';
@@ -23,7 +24,7 @@ class DestinyLeaderboardResultsResponse{
 	Map<String, Map<String, DestinyLeaderboard>> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

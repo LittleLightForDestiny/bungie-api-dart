@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyAnimationReferenceToJson(
     <String, dynamic>{
       'animName': instance.animName,
       'animIdentifier': instance.animIdentifier,
-      'path': instance.path
+      'path': instance.path,
     };

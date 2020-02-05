@@ -15,5 +15,5 @@ DestinyMilestoneChallengeDefinition
 Map<String, dynamic> _$DestinyMilestoneChallengeDefinitionToJson(
         DestinyMilestoneChallengeDefinition instance) =>
     <String, dynamic>{
-      'challengeObjectiveHash': instance.challengeObjectiveHash
+      'challengeObjectiveHash': instance.challengeObjectiveHash,
     };

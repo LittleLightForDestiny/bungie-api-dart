@@ -25,8 +25,11 @@ DestinyProgression _$DestinyProgressionFromJson(Map<String, dynamic> json) {
             ? null
             : DestinyProgressionResetEntry.fromJson(e as Map<String, dynamic>))
         ?.toList()
-    ..rewardItemStates =
-        (json['rewardItemStates'] as List)?.map((e) => e as int)?.toList();
+    ..rewardItemStates = (json['rewardItemStates'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyProgressionRewardItemState.fromJson(e as int))
+        ?.toList();
 }
 
 Map<String, dynamic> _$DestinyProgressionToJson(DestinyProgression instance) =>
@@ -44,5 +47,5 @@ Map<String, dynamic> _$DestinyProgressionToJson(DestinyProgression instance) =>
       'nextLevelAt': instance.nextLevelAt,
       'currentResetCount': instance.currentResetCount,
       'seasonResets': instance.seasonResets,
-      'rewardItemStates': instance.rewardItemStates
+      'rewardItemStates': instance.rewardItemStates,
     };

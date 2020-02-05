@@ -8,8 +8,12 @@ GlobalAlert _$GlobalAlertFromJson(Map<String, dynamic> json) {
     ..alertHtml = json['AlertHtml'] as String
     ..alertTimestamp = json['AlertTimestamp'] as String
     ..alertLink = json['AlertLink'] as String
-    ..alertLevel = json['AlertLevel'] as int
-    ..alertType = json['AlertType'] as int
+    ..alertLevel = _$enumDecodeNullable(
+        _$GlobalAlertLevelEnumMap, json['AlertLevel'],
+        unknownValue: GlobalAlertLevel.Unknown)
+    ..alertType = _$enumDecodeNullable(
+        _$GlobalAlertTypeEnumMap, json['AlertType'],
+        unknownValue: GlobalAlertType.GlobalAlert)
     ..streamInfo = json['StreamInfo'] == null
         ? null
         : StreamInfo.fromJson(json['StreamInfo'] as Map<String, dynamic>);
@@ -21,7 +25,51 @@ Map<String, dynamic> _$GlobalAlertToJson(GlobalAlert instance) =>
       'AlertHtml': instance.alertHtml,
       'AlertTimestamp': instance.alertTimestamp,
       'AlertLink': instance.alertLink,
-      'AlertLevel': instance.alertLevel,
-      'AlertType': instance.alertType,
-      'StreamInfo': instance.streamInfo
+      'AlertLevel': _$GlobalAlertLevelEnumMap[instance.alertLevel],
+      'AlertType': _$GlobalAlertTypeEnumMap[instance.alertType],
+      'StreamInfo': instance.streamInfo,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$GlobalAlertLevelEnumMap = {
+  GlobalAlertLevel.Unknown: 0,
+  GlobalAlertLevel.Blue: 1,
+  GlobalAlertLevel.Yellow: 2,
+  GlobalAlertLevel.Red: 3,
+};
+
+const _$GlobalAlertTypeEnumMap = {
+  GlobalAlertType.GlobalAlert: 0,
+  GlobalAlertType.StreamingAlert: 1,
+};

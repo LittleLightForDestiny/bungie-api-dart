@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyDerivedItemCategoryDefinitionToJson(
         DestinyDerivedItemCategoryDefinition instance) =>
     <String, dynamic>{
       'categoryDescription': instance.categoryDescription,
-      'items': instance.items
+      'items': instance.items,
     };

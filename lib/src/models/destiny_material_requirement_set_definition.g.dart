@@ -26,5 +26,5 @@ Map<String, dynamic> _$DestinyMaterialRequirementSetDefinitionToJson(
       'materials': instance.materials,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

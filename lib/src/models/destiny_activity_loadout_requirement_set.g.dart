@@ -19,4 +19,6 @@ DestinyActivityLoadoutRequirementSet
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementSetToJson(
         DestinyActivityLoadoutRequirementSet instance) =>
-    <String, dynamic>{'requirements': instance.requirements};
+    <String, dynamic>{
+      'requirements': instance.requirements,
+    };

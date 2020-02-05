@@ -4,14 +4,17 @@
 
 Application _$ApplicationFromJson(Map<String, dynamic> json) {
   return Application()
-    ..applicationType = json['applicationType'] as int
+    ..applicationType = _$enumDecodeNullable(
+        _$OAuthApplicationTypeEnumMap, json['applicationType'],
+        unknownValue: OAuthApplicationType.None)
     ..applicationId = json['applicationId'] as int
     ..name = json['name'] as String
     ..redirectUrl = json['redirectUrl'] as String
     ..link = json['link'] as String
     ..scope = json['scope'] as String
     ..origin = json['origin'] as String
-    ..status = json['status'] as int
+    ..status = _$enumDecodeNullable(_$ApplicationStatusEnumMap, json['status'],
+        unknownValue: ApplicationStatus.None)
     ..creationDate = json['creationDate'] as String
     ..statusChanged = json['statusChanged'] as String
     ..firstPublished = json['firstPublished'] as String
@@ -24,16 +27,63 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$ApplicationToJson(Application instance) =>
     <String, dynamic>{
-      'applicationType': instance.applicationType,
+      'applicationType':
+          _$OAuthApplicationTypeEnumMap[instance.applicationType],
       'applicationId': instance.applicationId,
       'name': instance.name,
       'redirectUrl': instance.redirectUrl,
       'link': instance.link,
       'scope': instance.scope,
       'origin': instance.origin,
-      'status': instance.status,
+      'status': _$ApplicationStatusEnumMap[instance.status],
       'creationDate': instance.creationDate,
       'statusChanged': instance.statusChanged,
       'firstPublished': instance.firstPublished,
-      'team': instance.team
+      'team': instance.team,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$OAuthApplicationTypeEnumMap = {
+  OAuthApplicationType.None: 0,
+  OAuthApplicationType.Confidential: 1,
+  OAuthApplicationType.Public: 2,
+};
+
+const _$ApplicationStatusEnumMap = {
+  ApplicationStatus.None: 0,
+  ApplicationStatus.Private: 1,
+  ApplicationStatus.Public: 2,
+  ApplicationStatus.Disabled: 3,
+  ApplicationStatus.Blocked: 4,
+};

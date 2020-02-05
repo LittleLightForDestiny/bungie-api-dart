@@ -30,5 +30,5 @@ Map<String, dynamic> _$DestinyMilestoneQuestToJson(
       'questItemHash': instance.questItemHash,
       'status': instance.status,
       'activity': instance.activity,
-      'challenges': instance.challenges
+      'challenges': instance.challenges,
     };

@@ -6,7 +6,8 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) {
   return GroupV2()
     ..groupId = json['groupId'] as String
     ..name = json['name'] as String
-    ..groupType = json['groupType'] as int
+    ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
+        unknownValue: GroupType.General)
     ..membershipIdCreated = json['membershipIdCreated'] as String
     ..creationDate = json['creationDate'] as String
     ..modificationDate = json['modificationDate'] as String
@@ -18,12 +19,19 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) {
     ..motto = json['motto'] as String
     ..allowChat = json['allowChat'] as bool
     ..isDefaultPostPublic = json['isDefaultPostPublic'] as bool
-    ..chatSecurity = json['chatSecurity'] as int
+    ..chatSecurity = _$enumDecodeNullable(
+        _$ChatSecuritySettingEnumMap, json['chatSecurity'],
+        unknownValue: ChatSecuritySetting.Group)
     ..locale = json['locale'] as String
     ..avatarImageIndex = json['avatarImageIndex'] as int
-    ..homepage = json['homepage'] as int
-    ..membershipOption = json['membershipOption'] as int
-    ..defaultPublicity = json['defaultPublicity'] as int
+    ..homepage = _$enumDecodeNullable(_$GroupHomepageEnumMap, json['homepage'],
+        unknownValue: GroupHomepage.Wall)
+    ..membershipOption = _$enumDecodeNullable(
+        _$MembershipOptionEnumMap, json['membershipOption'],
+        unknownValue: MembershipOption.Reviewed)
+    ..defaultPublicity = _$enumDecodeNullable(
+        _$GroupPostPublicityEnumMap, json['defaultPublicity'],
+        unknownValue: GroupPostPublicity.Public)
     ..theme = json['theme'] as String
     ..bannerPath = json['bannerPath'] as String
     ..avatarPath = json['avatarPath'] as String
@@ -43,7 +51,7 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GroupV2ToJson(GroupV2 instance) => <String, dynamic>{
       'groupId': instance.groupId,
       'name': instance.name,
-      'groupType': instance.groupType,
+      'groupType': _$GroupTypeEnumMap[instance.groupType],
       'membershipIdCreated': instance.membershipIdCreated,
       'creationDate': instance.creationDate,
       'modificationDate': instance.modificationDate,
@@ -55,12 +63,13 @@ Map<String, dynamic> _$GroupV2ToJson(GroupV2 instance) => <String, dynamic>{
       'motto': instance.motto,
       'allowChat': instance.allowChat,
       'isDefaultPostPublic': instance.isDefaultPostPublic,
-      'chatSecurity': instance.chatSecurity,
+      'chatSecurity': _$ChatSecuritySettingEnumMap[instance.chatSecurity],
       'locale': instance.locale,
       'avatarImageIndex': instance.avatarImageIndex,
-      'homepage': instance.homepage,
-      'membershipOption': instance.membershipOption,
-      'defaultPublicity': instance.defaultPublicity,
+      'homepage': _$GroupHomepageEnumMap[instance.homepage],
+      'membershipOption': _$MembershipOptionEnumMap[instance.membershipOption],
+      'defaultPublicity':
+          _$GroupPostPublicityEnumMap[instance.defaultPublicity],
       'theme': instance.theme,
       'bannerPath': instance.bannerPath,
       'avatarPath': instance.avatarPath,
@@ -69,5 +78,65 @@ Map<String, dynamic> _$GroupV2ToJson(GroupV2 instance) => <String, dynamic>{
           instance.enableInvitationMessagingForAdmins,
       'banExpireDate': instance.banExpireDate,
       'features': instance.features,
-      'clanInfo': instance.clanInfo
+      'clanInfo': instance.clanInfo,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$GroupTypeEnumMap = {
+  GroupType.General: 0,
+  GroupType.Clan: 1,
+};
+
+const _$ChatSecuritySettingEnumMap = {
+  ChatSecuritySetting.Group: 0,
+  ChatSecuritySetting.Admins: 1,
+};
+
+const _$GroupHomepageEnumMap = {
+  GroupHomepage.Wall: 0,
+  GroupHomepage.Forum: 1,
+  GroupHomepage.AllianceForum: 2,
+};
+
+const _$MembershipOptionEnumMap = {
+  MembershipOption.Reviewed: 0,
+  MembershipOption.Open: 1,
+  MembershipOption.Closed: 2,
+};
+
+const _$GroupPostPublicityEnumMap = {
+  GroupPostPublicity.Public: 0,
+  GroupPostPublicity.Alliance: 1,
+  GroupPostPublicity.Private: 2,
+};

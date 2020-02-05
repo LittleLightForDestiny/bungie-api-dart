@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyProgressionRewardDefinitionToJson(
     <String, dynamic>{
       'progressionMappingHash': instance.progressionMappingHash,
       'amount': instance.amount,
-      'applyThrottles': instance.applyThrottles
+      'applyThrottles': instance.applyThrottles,
     };

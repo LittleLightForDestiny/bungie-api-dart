@@ -48,5 +48,5 @@ Map<String, dynamic> _$DestinyDestinationDefinitionToJson(
       'bubbles': instance.bubbles,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

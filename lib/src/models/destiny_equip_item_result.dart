@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/platform_error_codes.dart';
 
 part 'destiny_equip_item_result.g.dart';
 
@@ -15,8 +16,8 @@ class DestinyEquipItemResult{
 	@JsonKey(name:'itemInstanceId')
 	String itemInstanceId;
 	/// A PlatformErrorCodes enum indicating whether it succeeded, and if it failed why.
-	@JsonKey(name:'equipStatus')
-	int equipStatus;
+	@JsonKey(name:'equipStatus',unknownEnumValue:PlatformErrorCodes.None)
+	PlatformErrorCodes equipStatus;
 
 	
 	

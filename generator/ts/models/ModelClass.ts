@@ -44,6 +44,13 @@ export class ModelClass{
             .filter(Boolean)
             .filter((importInfo:ImportInfo)=>importInfo.filename() != filename)
             .uniqBy((item:any)=>item.filename())
+            .map((item:ImportInfo)=>{
+                if(item.type == "models"){
+                    return item.filename();
+                }else{
+                    return `../${item.type}/${item.filename()}`;
+                }
+            })
             .value();
         return imports;
     }

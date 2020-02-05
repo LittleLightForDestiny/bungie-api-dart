@@ -12,13 +12,13 @@ class GroupOptionsEditAction{
 
 	/// Minimum Member Level allowed to invite new members to group
 	/// Always Allowed: Founder, Acting Founder
-	/// True means admins have this power, false means they don&#39;t
+	/// True means admins have this power, false means they don't
 	/// Default is false for clans, true for groups.
 	@JsonKey(name:'InvitePermissionOverride')
 	bool invitePermissionOverride;
 	/// Minimum Member Level allowed to update group culture
 	/// Always Allowed: Founder, Acting Founder
-	/// True means admins have this power, false means they don&#39;t
+	/// True means admins have this power, false means they don't
 	/// Default is false for clans, true for groups.
 	@JsonKey(name:'UpdateCulturePermissionOverride')
 	bool updateCulturePermissionOverride;
@@ -30,7 +30,7 @@ class GroupOptionsEditAction{
 	int hostGuidedGamePermissionOverride;
 	/// Minimum Member Level allowed to update banner
 	/// Always Allowed: Founder, Acting Founder
-	/// True means admins have this power, false means they don&#39;t
+	/// True means admins have this power, false means they don't
 	/// Default is false for clans, true for groups.
 	@JsonKey(name:'UpdateBannerPermissionOverride')
 	bool updateBannerPermissionOverride;

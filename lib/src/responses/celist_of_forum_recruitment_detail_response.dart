@@ -1,4 +1,5 @@
 import '../models/forum_recruitment_detail.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'celist_of_forum_recruitment_detail_response.g.dart';
@@ -23,7 +24,7 @@ class CEListOfForumRecruitmentDetailResponse{
 	List<ForumRecruitmentDetail> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

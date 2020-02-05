@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_activity_mode_type.dart';
+import '../enums/bungie_membership_type.dart';
 
 part 'destiny_historical_stats_activity.g.dart';
 
@@ -11,7 +13,7 @@ class DestinyHistoricalStatsActivity{
 
 	factory DestinyHistoricalStatsActivity.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsActivityFromJson(json);
 
-	/// The unique hash identifier of the DestinyActivityDefinition that was played. If I had this to do over, it&#39;d be named activityHash. Too late now.
+	/// The unique hash identifier of the DestinyActivityDefinition that was played. If I had this to do over, it'd be named activityHash. Too late now.
 	@JsonKey(name:'referenceId')
 	int referenceId;
 	/// The unique hash identifier of the DestinyActivityDefinition that was played.
@@ -22,17 +24,17 @@ class DestinyHistoricalStatsActivity{
 	@JsonKey(name:'instanceId')
 	String instanceId;
 	/// Indicates the most specific game mode of the activity that we could find.
-	@JsonKey(name:'mode')
-	int mode;
+	@JsonKey(name:'mode',unknownEnumValue:DestinyActivityModeType.None)
+	DestinyActivityModeType mode;
 	/// The list of all Activity Modes to which this activity applies, including aggregates. This will let you see, for example, whether the activity was both Clash and part of the Trials of the Nine event.
 	@JsonKey(name:'modes')
-	List<int> modes;
-	/// Whether or not the match was a private match. There&#39;s no private matches in Destiny 2... yet... DUN DUN DUNNNN
+	List<DestinyActivityModeType> modes;
+	/// Whether or not the match was a private match. There's no private matches in Destiny 2... yet... DUN DUN DUNNNN
 	@JsonKey(name:'isPrivate')
 	bool isPrivate;
 	/// The Membership Type indicating the platform on which this match was played.
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 
 	
 	

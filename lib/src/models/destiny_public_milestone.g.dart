@@ -43,5 +43,5 @@ Map<String, dynamic> _$DestinyPublicMilestoneToJson(
       'vendors': instance.vendors,
       'startDate': instance.startDate,
       'endDate': instance.endDate,
-      'order': instance.order
+      'order': instance.order,
     };

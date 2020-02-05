@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/chat_security_setting.dart';
 
 part 'group_optional_conversation.g.dart';
 
@@ -18,8 +19,8 @@ class GroupOptionalConversation{
 	bool chatEnabled;
 	@JsonKey(name:'chatName')
 	String chatName;
-	@JsonKey(name:'chatSecurity')
-	int chatSecurity;
+	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.Group)
+	ChatSecuritySetting chatSecurity;
 
 	
 	

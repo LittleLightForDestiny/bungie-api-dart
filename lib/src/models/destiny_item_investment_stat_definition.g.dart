@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyItemInvestmentStatDefinitionToJson(
     <String, dynamic>{
       'statTypeHash': instance.statTypeHash,
       'value': instance.value,
-      'isConditionallyActive': instance.isConditionallyActive
+      'isConditionallyActive': instance.isConditionallyActive,
     };

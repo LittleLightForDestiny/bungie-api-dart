@@ -66,15 +66,15 @@ class DestinyCharacterResponse{
 	/// COMPONENT TYPE: Collectibles
 	@JsonKey(name:'collectibles')
 	SingleComponentResponseOfDestinyCollectiblesComponent collectibles;
-	/// The set of components belonging to the player&#39;s instanced items.
+	/// The set of components belonging to the player's instanced items.
 	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]
 	@JsonKey(name:'itemComponents')
 	DestinyItemComponentSetOfint64 itemComponents;
-	/// The set of components belonging to the player&#39;s UNinstanced items. Because apparently now those too can have information relevant to the character&#39;s state.
+	/// The set of components belonging to the player's UNinstanced items. Because apparently now those too can have information relevant to the character's state.
 	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]
 	@JsonKey(name:'uninstancedItemComponents')
 	DestinyBaseItemComponentSetOfuint32 uninstancedItemComponents;
-	/// A &quot;lookup&quot; convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+	/// A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
 	/// COMPONENT TYPE: CurrencyLookups
 	@JsonKey(name:'currencyLookups')
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;

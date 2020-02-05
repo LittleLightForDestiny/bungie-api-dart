@@ -35,8 +35,8 @@ class ContentItemPublicContract{
 	GeneralUser author;
 	@JsonKey(name:'autoEnglishPropertyFallback')
 	bool autoEnglishPropertyFallback;
-	/// Firehose content is really a collection of metadata and &quot;properties&quot;, which are the potentially-but-not-strictly localizable data that comprises the meat of whatever content is being shown.
-	/// As Cole Porter would have crooned, &quot;Anything Goes&quot; with Firehose properties. They are most often strings, but they can theoretically be anything. They are JSON encoded, and could be JSON structures, simple strings, numbers etc... The Content Type of the item (cType) will describe the properties, and thus how they ought to be deserialized.
+	/// Firehose content is really a collection of metadata and "properties", which are the potentially-but-not-strictly localizable data that comprises the meat of whatever content is being shown.
+	/// As Cole Porter would have crooned, "Anything Goes" with Firehose properties. They are most often strings, but they can theoretically be anything. They are JSON encoded, and could be JSON structures, simple strings, numbers etc... The Content Type of the item (cType) will describe the properties, and thus how they ought to be deserialized.
 	@JsonKey(name:'properties')
 	Map<String, Map<String, String>> properties;
 	@JsonKey(name:'representations')

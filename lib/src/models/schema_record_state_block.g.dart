@@ -17,5 +17,5 @@ Map<String, dynamic> _$SchemaRecordStateBlockToJson(
         SchemaRecordStateBlock instance) =>
     <String, dynamic>{
       'featuredPriority': instance.featuredPriority,
-      'obscuredString': instance.obscuredString
+      'obscuredString': instance.obscuredString,
     };

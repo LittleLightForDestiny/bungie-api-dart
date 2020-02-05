@@ -1,5 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_type.dart';
+import '../enums/membership_option.dart';
+import '../enums/capabilities.dart';
 import 'group_v2_clan_info.dart';
 
 part 'group_v2_card.g.dart';
@@ -16,8 +19,8 @@ class GroupV2Card{
 	String groupId;
 	@JsonKey(name:'name')
 	String name;
-	@JsonKey(name:'groupType')
-	int groupType;
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	GroupType groupType;
 	@JsonKey(name:'creationDate')
 	String creationDate;
 	@JsonKey(name:'about')
@@ -28,10 +31,10 @@ class GroupV2Card{
 	int memberCount;
 	@JsonKey(name:'locale')
 	String locale;
-	@JsonKey(name:'membershipOption')
-	int membershipOption;
+	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.Reviewed)
+	MembershipOption membershipOption;
 	@JsonKey(name:'capabilities')
-	int capabilities;
+	Capabilities capabilities;
 	/// This contract contains clan-specific group information. It does not include any investment data.
 	@JsonKey(name:'clanInfo')
 	GroupV2ClanInfo clanInfo;

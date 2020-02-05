@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyEnvironmentLocationMappingToJson(
       'activationSource': instance.activationSource,
       'itemHash': instance.itemHash,
       'objectiveHash': instance.objectiveHash,
-      'activityHash': instance.activityHash
+      'activityHash': instance.activityHash,
     };

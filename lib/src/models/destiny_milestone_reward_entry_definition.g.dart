@@ -32,5 +32,5 @@ Map<String, dynamic> _$DestinyMilestoneRewardEntryDefinitionToJson(
       'items': instance.items,
       'vendorHash': instance.vendorHash,
       'displayProperties': instance.displayProperties,
-      'order': instance.order
+      'order': instance.order,
     };

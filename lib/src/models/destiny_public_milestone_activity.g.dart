@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyPublicMilestoneActivityToJson(
       'modifierHashes': instance.modifierHashes,
       'variants': instance.variants,
       'activityModeHash': instance.activityModeHash,
-      'activityModeType': instance.activityModeType
+      'activityModeType': instance.activityModeType,
     };

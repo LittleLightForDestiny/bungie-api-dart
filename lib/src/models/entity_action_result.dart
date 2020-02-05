@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/platform_error_codes.dart';
 
 part 'entity_action_result.g.dart';
 
@@ -12,8 +13,8 @@ class EntityActionResult{
 
 	@JsonKey(name:'entityId')
 	String entityId;
-	@JsonKey(name:'result')
-	int result;
+	@JsonKey(name:'result',unknownEnumValue:PlatformErrorCodes.None)
+	PlatformErrorCodes result;
 
 	
 	

@@ -68,5 +68,5 @@ Map<String, dynamic> _$DestinyCharacterProgressionComponentToJson(
       'quests': instance.quests,
       'uninstancedItemObjectives': instance.uninstancedItemObjectives,
       'checklists': instance.checklists,
-      'seasonalArtifact': instance.seasonalArtifact
+      'seasonalArtifact': instance.seasonalArtifact,
     };

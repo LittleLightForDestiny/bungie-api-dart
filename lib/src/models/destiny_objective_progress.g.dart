@@ -27,5 +27,5 @@ Map<String, dynamic> _$DestinyObjectiveProgressToJson(
       'progress': instance.progress,
       'completionValue': instance.completionValue,
       'complete': instance.complete,
-      'visible': instance.visible
+      'visible': instance.visible,
     };

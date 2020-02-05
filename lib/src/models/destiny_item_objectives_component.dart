@@ -16,10 +16,10 @@ class DestinyItemObjectivesComponent{
 	/// Objectives are our standard way to describe a series of tasks that have to be completed for a reward.
 	@JsonKey(name:'objectives')
 	List<DestinyObjectiveProgress> objectives;
-	/// I may regret naming it this way - but this represents when an item has an objective that doesn&#39;t serve a beneficial purpose, but rather is used for &quot;flavor&quot; or additional information. For instance, when Emblems track specific stats, those stats are represented as Objectives on the item.
+	/// I may regret naming it this way - but this represents when an item has an objective that doesn't serve a beneficial purpose, but rather is used for "flavor" or additional information. For instance, when Emblems track specific stats, those stats are represented as Objectives on the item.
 	@JsonKey(name:'flavorObjective')
 	DestinyObjectiveProgress flavorObjective;
-	/// If we have any information on when these objectives were completed, this will be the date of that completion. This won&#39;t be on many items, but could be interesting for some items that do store this information.
+	/// If we have any information on when these objectives were completed, this will be the date of that completion. This won't be on many items, but could be interesting for some items that do store this information.
 	@JsonKey(name:'dateCompleted')
 	String dateCompleted;
 

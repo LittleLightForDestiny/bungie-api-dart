@@ -9,7 +9,8 @@ part of 'destiny_item_instance_component.dart';
 DestinyItemInstanceComponent _$DestinyItemInstanceComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemInstanceComponent()
-    ..damageType = json['damageType'] as int
+    ..damageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['damageType'],
+        unknownValue: DamageType.None)
     ..damageTypeHash = json['damageTypeHash'] as int
     ..primaryStat = json['primaryStat'] == null
         ? null
@@ -23,7 +24,9 @@ DestinyItemInstanceComponent _$DestinyItemInstanceComponentFromJson(
         (json['unlockHashesRequiredToEquip'] as List)
             ?.map((e) => e as int)
             ?.toList()
-    ..cannotEquipReason = json['cannotEquipReason'] as int
+    ..cannotEquipReason = json['cannotEquipReason'] == null
+        ? null
+        : EquipFailureReason.fromJson(json['cannotEquipReason'] as int)
     ..breakerType = json['breakerType'] as int
     ..breakerTypeHash = json['breakerTypeHash'] as int
     ..energy = json['energy'] == null
@@ -35,7 +38,7 @@ DestinyItemInstanceComponent _$DestinyItemInstanceComponentFromJson(
 Map<String, dynamic> _$DestinyItemInstanceComponentToJson(
         DestinyItemInstanceComponent instance) =>
     <String, dynamic>{
-      'damageType': instance.damageType,
+      'damageType': _$DamageTypeEnumMap[instance.damageType],
       'damageTypeHash': instance.damageTypeHash,
       'primaryStat': instance.primaryStat,
       'itemLevel': instance.itemLevel,
@@ -47,5 +50,46 @@ Map<String, dynamic> _$DestinyItemInstanceComponentToJson(
       'cannotEquipReason': instance.cannotEquipReason,
       'breakerType': instance.breakerType,
       'breakerTypeHash': instance.breakerTypeHash,
-      'energy': instance.energy
+      'energy': instance.energy,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DamageTypeEnumMap = {
+  DamageType.None: 0,
+  DamageType.Kinetic: 1,
+  DamageType.Arc: 2,
+  DamageType.Thermal: 3,
+  DamageType.Void: 4,
+  DamageType.Raid: 5,
+};

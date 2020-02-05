@@ -1,5 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_type.dart';
+import '../enums/chat_security_setting.dart';
+import '../enums/group_homepage.dart';
+import '../enums/membership_option.dart';
+import '../enums/group_post_publicity.dart';
 import 'group_features.dart';
 import 'group_v2_clan_info_and_investment.dart';
 
@@ -16,8 +21,8 @@ class GroupV2{
 	String groupId;
 	@JsonKey(name:'name')
 	String name;
-	@JsonKey(name:'groupType')
-	int groupType;
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	GroupType groupType;
 	@JsonKey(name:'membershipIdCreated')
 	String membershipIdCreated;
 	@JsonKey(name:'creationDate')
@@ -40,18 +45,18 @@ class GroupV2{
 	bool allowChat;
 	@JsonKey(name:'isDefaultPostPublic')
 	bool isDefaultPostPublic;
-	@JsonKey(name:'chatSecurity')
-	int chatSecurity;
+	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.Group)
+	ChatSecuritySetting chatSecurity;
 	@JsonKey(name:'locale')
 	String locale;
 	@JsonKey(name:'avatarImageIndex')
 	int avatarImageIndex;
-	@JsonKey(name:'homepage')
-	int homepage;
-	@JsonKey(name:'membershipOption')
-	int membershipOption;
-	@JsonKey(name:'defaultPublicity')
-	int defaultPublicity;
+	@JsonKey(name:'homepage',unknownEnumValue:GroupHomepage.Wall)
+	GroupHomepage homepage;
+	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.Reviewed)
+	MembershipOption membershipOption;
+	@JsonKey(name:'defaultPublicity',unknownEnumValue:GroupPostPublicity.Public)
+	GroupPostPublicity defaultPublicity;
 	@JsonKey(name:'theme')
 	String theme;
 	@JsonKey(name:'bannerPath')

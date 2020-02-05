@@ -1,4 +1,5 @@
 import '../models/group_application_response.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'group_application_response_response.g.dart';
@@ -23,7 +24,7 @@ class GroupApplicationResponseResponse{
 	GroupApplicationResponse response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

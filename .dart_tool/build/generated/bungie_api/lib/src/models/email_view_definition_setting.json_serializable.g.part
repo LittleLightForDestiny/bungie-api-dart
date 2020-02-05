@@ -14,7 +14,9 @@ EmailViewDefinitionSetting _$EmailViewDefinitionSettingFromJson(
               : EMailSettingLocalization.fromJson(e as Map<String, dynamic>)),
     )
     ..setByDefault = json['setByDefault'] as bool
-    ..optInAggregateValue = json['optInAggregateValue'] as int
+    ..optInAggregateValue = json['optInAggregateValue'] == null
+        ? null
+        : OptInFlags.fromJson(json['optInAggregateValue'] as int)
     ..subscriptions = (json['subscriptions'] as List)
         ?.map((e) => e == null
             ? null
@@ -29,5 +31,5 @@ Map<String, dynamic> _$EmailViewDefinitionSettingToJson(
       'localization': instance.localization,
       'setByDefault': instance.setByDefault,
       'optInAggregateValue': instance.optInAggregateValue,
-      'subscriptions': instance.subscriptions
+      'subscriptions': instance.subscriptions,
     };

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_item_sort_type.dart';
 
 part 'destiny_vendor_inventory_flyout_bucket_definition.g.dart';
 
@@ -18,8 +19,8 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 	@JsonKey(name:'inventoryBucketHash')
 	int inventoryBucketHash;
 	/// The methodology to use for sorting items from the flyout.
-	@JsonKey(name:'sortItemsBy')
-	int sortItemsBy;
+	@JsonKey(name:'sortItemsBy',unknownEnumValue:DestinyItemSortType.ItemId)
+	DestinyItemSortType sortItemsBy;
 
 	
 	

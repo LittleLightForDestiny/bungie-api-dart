@@ -15,4 +15,7 @@ InterpolationPointFloat _$InterpolationPointFloatFromJson(
 
 Map<String, dynamic> _$InterpolationPointFloatToJson(
         InterpolationPointFloat instance) =>
-    <String, dynamic>{'value': instance.value, 'weight': instance.weight};
+    <String, dynamic>{
+      'value': instance.value,
+      'weight': instance.weight,
+    };

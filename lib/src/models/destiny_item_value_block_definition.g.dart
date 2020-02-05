@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyItemValueBlockDefinitionToJson(
         DestinyItemValueBlockDefinition instance) =>
     <String, dynamic>{
       'itemValue': instance.itemValue,
-      'valueDescription': instance.valueDescription
+      'valueDescription': instance.valueDescription,
     };

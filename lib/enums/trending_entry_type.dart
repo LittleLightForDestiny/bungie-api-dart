@@ -1,0 +1,1 @@
+export '../src/enums/trending_entry_type.dart';

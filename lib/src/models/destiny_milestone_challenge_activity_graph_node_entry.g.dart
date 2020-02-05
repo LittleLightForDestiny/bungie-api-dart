@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyMilestoneChallengeActivityGraphNodeEntryToJson(
         DestinyMilestoneChallengeActivityGraphNodeEntry instance) =>
     <String, dynamic>{
       'activityGraphHash': instance.activityGraphHash,
-      'activityGraphNodeHash': instance.activityGraphNodeHash
+      'activityGraphNodeHash': instance.activityGraphNodeHash,
     };

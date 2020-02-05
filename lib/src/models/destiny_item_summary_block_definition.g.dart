@@ -14,4 +14,6 @@ DestinyItemSummaryBlockDefinition _$DestinyItemSummaryBlockDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyItemSummaryBlockDefinitionToJson(
         DestinyItemSummaryBlockDefinition instance) =>
-    <String, dynamic>{'sortPriority': instance.sortPriority};
+    <String, dynamic>{
+      'sortPriority': instance.sortPriority,
+    };

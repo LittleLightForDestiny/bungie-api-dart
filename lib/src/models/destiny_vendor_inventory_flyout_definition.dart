@@ -25,10 +25,10 @@ class DestinyVendorInventoryFlyoutDefinition{
 	/// An identifier for the flyout, in case anything else needs to refer to them.
 	@JsonKey(name:'flyoutId')
 	int flyoutId;
-	/// If this is true, don&#39;t show any of the glistening &quot;this is a new item&quot; UI elements, like we show on the inventory items themselves in in-game UI.
+	/// If this is true, don't show any of the glistening "this is a new item" UI elements, like we show on the inventory items themselves in in-game UI.
 	@JsonKey(name:'suppressNewness')
 	bool suppressNewness;
-	/// If this flyout is meant to show you the contents of the player&#39;s equipment slot, this is the slot to show.
+	/// If this flyout is meant to show you the contents of the player's equipment slot, this is the slot to show.
 	@JsonKey(name:'equipmentSlotHash')
 	int equipmentSlotHash;
 

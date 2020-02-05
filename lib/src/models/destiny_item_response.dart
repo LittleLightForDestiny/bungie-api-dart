@@ -32,7 +32,7 @@ class DestinyItemResponse{
 	/// COMPONENT TYPE: ItemInstances
 	@JsonKey(name:'instance')
 	SingleComponentResponseOfDestinyItemInstanceComponent instance;
-	/// Information specifically about the item&#39;s objectives.
+	/// Information specifically about the item's objectives.
 	/// COMPONENT TYPE: ItemObjectives
 	@JsonKey(name:'objectives')
 	SingleComponentResponseOfDestinyItemObjectivesComponent objectives;
@@ -48,11 +48,11 @@ class DestinyItemResponse{
 	/// COMPONENT TYPE: ItemStats
 	@JsonKey(name:'stats')
 	SingleComponentResponseOfDestinyItemStatsComponent stats;
-	/// Information about the talent grid attached to the item. Talent nodes can provide a variety of benefits and abilities, and in Destiny 2 are used almost exclusively for the character&#39;s &quot;Builds&quot;.
+	/// Information about the talent grid attached to the item. Talent nodes can provide a variety of benefits and abilities, and in Destiny 2 are used almost exclusively for the character's "Builds".
 	/// COMPONENT TYPE: ItemTalentGrids
 	@JsonKey(name:'talentGrid')
 	SingleComponentResponseOfDestinyItemTalentGridComponent talentGrid;
-	/// Information about the sockets of the item: which are currently active, what potential sockets you could have and the stats&#x2F;abilities&#x2F;perks you can gain from them.
+	/// Information about the sockets of the item: which are currently active, what potential sockets you could have and the stats/abilities/perks you can gain from them.
 	/// COMPONENT TYPE: ItemSockets
 	@JsonKey(name:'sockets')
 	SingleComponentResponseOfDestinyItemSocketsComponent sockets;
@@ -61,7 +61,7 @@ class DestinyItemResponse{
 	///  COMPONENT TYPE: ItemReusablePlugs
 	@JsonKey(name:'reusablePlugs')
 	SingleComponentResponseOfDestinyItemReusablePlugsComponent reusablePlugs;
-	/// Information about objectives on Plugs for a given item. See the component&#39;s documentation for more info.
+	/// Information about objectives on Plugs for a given item. See the component's documentation for more info.
 	/// COMPONENT TYPE: ItemPlugObjectives
 	@JsonKey(name:'plugObjectives')
 	SingleComponentResponseOfDestinyItemPlugObjectivesComponent plugObjectives;

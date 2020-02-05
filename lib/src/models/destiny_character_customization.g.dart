@@ -38,5 +38,5 @@ Map<String, dynamic> _$DestinyCharacterCustomizationToJson(
       'wearHelmet': instance.wearHelmet,
       'hairIndex': instance.hairIndex,
       'featureIndex': instance.featureIndex,
-      'decalIndex': instance.decalIndex
+      'decalIndex': instance.decalIndex,
     };

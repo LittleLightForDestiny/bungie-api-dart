@@ -24,7 +24,9 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
                 e as Map<String, dynamic>))
         ?.toList()
     ..socketCategoryHash = json['socketCategoryHash'] as int
-    ..visibility = json['visibility'] as int
+    ..visibility = _$enumDecodeNullable(
+        _$DestinySocketVisibilityEnumMap, json['visibility'],
+        unknownValue: DestinySocketVisibility.Visible)
     ..alwaysRandomizeSockets = json['alwaysRandomizeSockets'] as bool
     ..isPreviewEnabled = json['isPreviewEnabled'] as bool
     ..hideDuplicateReusablePlugs = json['hideDuplicateReusablePlugs'] as bool
@@ -49,7 +51,7 @@ Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
       'insertAction': instance.insertAction,
       'plugWhitelist': instance.plugWhitelist,
       'socketCategoryHash': instance.socketCategoryHash,
-      'visibility': instance.visibility,
+      'visibility': _$DestinySocketVisibilityEnumMap[instance.visibility],
       'alwaysRandomizeSockets': instance.alwaysRandomizeSockets,
       'isPreviewEnabled': instance.isPreviewEnabled,
       'hideDuplicateReusablePlugs': instance.hideDuplicateReusablePlugs,
@@ -59,5 +61,44 @@ Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
       'currencyScalars': instance.currencyScalars,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinySocketVisibilityEnumMap = {
+  DestinySocketVisibility.Visible: 0,
+  DestinySocketVisibility.Hidden: 1,
+  DestinySocketVisibility.HiddenWhenEmpty: 2,
+  DestinySocketVisibility.HiddenIfNoPlugsAvailable: 3,
+};

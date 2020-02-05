@@ -19,5 +19,5 @@ Map<String, dynamic> _$ContentTypePropertySectionToJson(
     <String, dynamic>{
       'name': instance.name,
       'readableName': instance.readableName,
-      'collapsed': instance.collapsed
+      'collapsed': instance.collapsed,
     };

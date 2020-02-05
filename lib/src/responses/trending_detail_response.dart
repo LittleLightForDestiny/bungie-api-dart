@@ -1,4 +1,5 @@
 import '../models/trending_detail.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'trending_detail_response.g.dart';
@@ -23,7 +24,7 @@ class TrendingDetailResponse{
 	TrendingDetail response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

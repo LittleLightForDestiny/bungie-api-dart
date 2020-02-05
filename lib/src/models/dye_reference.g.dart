@@ -15,5 +15,5 @@ DyeReference _$DyeReferenceFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$DyeReferenceToJson(DyeReference instance) =>
     <String, dynamic>{
       'channelHash': instance.channelHash,
-      'dyeHash': instance.dyeHash
+      'dyeHash': instance.dyeHash,
     };

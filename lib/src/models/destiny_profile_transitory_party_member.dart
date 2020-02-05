@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_party_member_states.dart';
 
 part 'destiny_profile_transitory_party_member.g.dart';
 
@@ -15,15 +16,15 @@ class DestinyProfileTransitoryPartyMember{
 	/// The Membership ID that matches the party member.
 	@JsonKey(name:'membershipId')
 	String membershipId;
-	/// The identifier for the DestinyInventoryItemDefinition of the player&#39;s emblem.
+	/// The identifier for the DestinyInventoryItemDefinition of the player's emblem.
 	@JsonKey(name:'emblemHash')
 	int emblemHash;
-	/// The player&#39;s last known display name.
+	/// The player's last known display name.
 	@JsonKey(name:'displayName')
 	String displayName;
 	/// A Flags Enumeration value indicating the states that the player is in relevant to being on a fireteam.
 	@JsonKey(name:'status')
-	int status;
+	DestinyPartyMemberStates status;
 
 	
 	

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_type.dart';
 
 part 'group_name_search_request.g.dart';
 
@@ -12,8 +13,8 @@ class GroupNameSearchRequest{
 
 	@JsonKey(name:'groupName')
 	String groupName;
-	@JsonKey(name:'groupType')
-	int groupType;
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	GroupType groupType;
 
 	
 	

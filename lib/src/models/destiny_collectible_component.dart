@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_collectible_state.dart';
 
 part 'destiny_collectible_component.g.dart';
 
@@ -11,7 +12,7 @@ class DestinyCollectibleComponent{
 	factory DestinyCollectibleComponent.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleComponentFromJson(json);
 
 	@JsonKey(name:'state')
-	int state;
+	DestinyCollectibleState state;
 
 	
 	

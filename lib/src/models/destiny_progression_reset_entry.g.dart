@@ -15,4 +15,7 @@ DestinyProgressionResetEntry _$DestinyProgressionResetEntryFromJson(
 
 Map<String, dynamic> _$DestinyProgressionResetEntryToJson(
         DestinyProgressionResetEntry instance) =>
-    <String, dynamic>{'season': instance.season, 'resets': instance.resets};
+    <String, dynamic>{
+      'season': instance.season,
+      'resets': instance.resets,
+    };

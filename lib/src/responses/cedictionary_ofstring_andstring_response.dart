@@ -1,3 +1,4 @@
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'cedictionary_ofstring_andstring_response.g.dart';
@@ -22,7 +23,7 @@ class CEDictionaryOfstringAndstringResponse{
 	Map<String, String> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

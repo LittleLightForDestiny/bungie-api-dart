@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyProgressionMappingDefinitionToJson(
       'displayUnits': instance.displayUnits,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

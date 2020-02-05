@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyVendorCategoryOverlayDefinitionToJson(
       'description': instance.description,
       'icon': instance.icon,
       'title': instance.title,
-      'currencyItemHash': instance.currencyItemHash
+      'currencyItemHash': instance.currencyItemHash,
     };

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_application_resolve_state.dart';
 
 part 'group_application_response.g.dart';
 
@@ -10,8 +11,8 @@ class GroupApplicationResponse{
 
 	factory GroupApplicationResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseFromJson(json);
 
-	@JsonKey(name:'resolution')
-	int resolution;
+	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.Unresolved)
+	GroupApplicationResolveState resolution;
 
 	
 	

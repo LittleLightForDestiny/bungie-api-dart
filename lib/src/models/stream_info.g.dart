@@ -11,4 +11,6 @@ StreamInfo _$StreamInfoFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$StreamInfoToJson(StreamInfo instance) =>
-    <String, dynamic>{'ChannelName': instance.channelName};
+    <String, dynamic>{
+      'ChannelName': instance.channelName,
+    };

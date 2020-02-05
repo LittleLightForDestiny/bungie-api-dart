@@ -30,5 +30,5 @@ Map<String, dynamic> _$DestinyVendorComponentToJson(
       'seasonalRank': instance.seasonalRank,
       'vendorHash': instance.vendorHash,
       'nextRefreshDate': instance.nextRefreshDate,
-      'enabled': instance.enabled
+      'enabled': instance.enabled,
     };

@@ -33,5 +33,5 @@ Map<String, dynamic> _$DestinyPlugSetDefinitionToJson(
       'isFakePlugSet': instance.isFakePlugSet,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

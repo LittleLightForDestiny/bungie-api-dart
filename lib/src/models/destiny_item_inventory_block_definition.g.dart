@@ -16,7 +16,8 @@ DestinyItemInventoryBlockDefinition
     ..tierTypeHash = json['tierTypeHash'] as int
     ..isInstanceItem = json['isInstanceItem'] as bool
     ..tierTypeName = json['tierTypeName'] as String
-    ..tierType = json['tierType'] as int
+    ..tierType = _$enumDecodeNullable(_$TierTypeEnumMap, json['tierType'],
+        unknownValue: TierType.Unknown)
     ..expirationTooltip = json['expirationTooltip'] as String
     ..expiredInActivityMessage = json['expiredInActivityMessage'] as String
     ..expiredInOrbitMessage = json['expiredInOrbitMessage'] as String
@@ -34,10 +35,52 @@ Map<String, dynamic> _$DestinyItemInventoryBlockDefinitionToJson(
       'tierTypeHash': instance.tierTypeHash,
       'isInstanceItem': instance.isInstanceItem,
       'tierTypeName': instance.tierTypeName,
-      'tierType': instance.tierType,
+      'tierType': _$TierTypeEnumMap[instance.tierType],
       'expirationTooltip': instance.expirationTooltip,
       'expiredInActivityMessage': instance.expiredInActivityMessage,
       'expiredInOrbitMessage': instance.expiredInOrbitMessage,
       'suppressExpirationWhenObjectivesComplete':
-          instance.suppressExpirationWhenObjectivesComplete
+          instance.suppressExpirationWhenObjectivesComplete,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$TierTypeEnumMap = {
+  TierType.Unknown: 0,
+  TierType.Currency: 1,
+  TierType.Basic: 2,
+  TierType.Common: 3,
+  TierType.Rare: 4,
+  TierType.Superior: 5,
+  TierType.Exotic: 6,
+};

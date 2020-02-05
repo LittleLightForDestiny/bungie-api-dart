@@ -14,4 +14,6 @@ DestinyMilestoneVendorDefinition _$DestinyMilestoneVendorDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyMilestoneVendorDefinitionToJson(
         DestinyMilestoneVendorDefinition instance) =>
-    <String, dynamic>{'vendorHash': instance.vendorHash};
+    <String, dynamic>{
+      'vendorHash': instance.vendorHash,
+    };

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/ignore_status.dart';
 
 part 'ignore_response.g.dart';
 
@@ -13,7 +14,7 @@ class IgnoreResponse{
 	@JsonKey(name:'isIgnored')
 	bool isIgnored;
 	@JsonKey(name:'ignoreFlags')
-	int ignoreFlags;
+	IgnoreStatus ignoreFlags;
 
 	
 	

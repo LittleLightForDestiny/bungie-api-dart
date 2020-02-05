@@ -1,5 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_type.dart';
+import '../enums/group_date_range.dart';
+import '../enums/group_sort_by.dart';
 
 part 'group_query.g.dart';
 
@@ -17,12 +20,12 @@ class GroupQuery{
 
 	@JsonKey(name:'name')
 	String name;
-	@JsonKey(name:'groupType')
-	int groupType;
-	@JsonKey(name:'creationDate')
-	int creationDate;
-	@JsonKey(name:'sortBy')
-	int sortBy;
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	GroupType groupType;
+	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.All)
+	GroupDateRange creationDate;
+	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.Name)
+	GroupSortBy sortBy;
 	@JsonKey(name:'groupMemberCountFilter')
 	int groupMemberCountFilter;
 	@JsonKey(name:'localeFilter')

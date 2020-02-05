@@ -11,7 +11,9 @@ TrendingEntry _$TrendingEntryFromJson(Map<String, dynamic> json) {
     ..weight = json['weight'] as int
     ..isFeatured = json['isFeatured'] as bool
     ..identifier = json['identifier'] as String
-    ..entityType = json['entityType'] as int
+    ..entityType = _$enumDecodeNullable(
+        _$TrendingEntryTypeEnumMap, json['entityType'],
+        unknownValue: TrendingEntryType.News)
     ..displayName = json['displayName'] as String
     ..tagline = json['tagline'] as String
     ..image = json['image'] as String
@@ -34,7 +36,7 @@ Map<String, dynamic> _$TrendingEntryToJson(TrendingEntry instance) =>
       'weight': instance.weight,
       'isFeatured': instance.isFeatured,
       'identifier': instance.identifier,
-      'entityType': instance.entityType,
+      'entityType': _$TrendingEntryTypeEnumMap[instance.entityType],
       'displayName': instance.displayName,
       'tagline': instance.tagline,
       'image': instance.image,
@@ -45,5 +47,52 @@ Map<String, dynamic> _$TrendingEntryToJson(TrendingEntry instance) =>
       'mp4Video': instance.mp4Video,
       'featureImage': instance.featureImage,
       'items': instance.items,
-      'creationDate': instance.creationDate
+      'creationDate': instance.creationDate,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$TrendingEntryTypeEnumMap = {
+  TrendingEntryType.News: 0,
+  TrendingEntryType.DestinyItem: 1,
+  TrendingEntryType.DestinyActivity: 2,
+  TrendingEntryType.DestinyRitual: 3,
+  TrendingEntryType.SupportArticle: 4,
+  TrendingEntryType.Creation: 5,
+  TrendingEntryType.Stream: 6,
+  TrendingEntryType.Update: 7,
+  TrendingEntryType.Link: 8,
+  TrendingEntryType.ForumTag: 9,
+  TrendingEntryType.Container: 10,
+  TrendingEntryType.Release: 11,
+};

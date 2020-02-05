@@ -26,5 +26,5 @@ Map<String, dynamic> _$DestinyItemSetBlockDefinitionToJson(
       'itemList': instance.itemList,
       'requireOrderedSetItemAdd': instance.requireOrderedSetItemAdd,
       'setIsFeatured': instance.setIsFeatured,
-      'setType': instance.setType
+      'setType': instance.setType,
     };

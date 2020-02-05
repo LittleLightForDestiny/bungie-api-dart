@@ -20,4 +20,6 @@ DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
 
 Map<String, dynamic> _$DestinyRecordsComponentToJson(
         DestinyRecordsComponent instance) =>
-    <String, dynamic>{'records': instance.records};
+    <String, dynamic>{
+      'records': instance.records,
+    };

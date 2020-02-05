@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyVendorRequirementDisplayEntryDefinitionToJson(
       'icon': instance.icon,
       'name': instance.name,
       'source': instance.source,
-      'type': instance.type
+      'type': instance.type,
     };

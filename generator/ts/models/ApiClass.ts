@@ -1,7 +1,7 @@
 import { ApiMethod } from "./ApiMethod";
-import { PathItemObject } from "openapi3-ts";
+import { PathItemObject, ParameterObject } from "openapi3-ts";
 import { ImportInfo } from "./ImportInfo";
-import {map, chain} from 'lodash';
+import {map, chain, each} from 'lodash';
 export class ApiClass{
     static all:{[id:string]:ApiClass} = {};
     methods:ApiMethod[] = [];
@@ -27,10 +27,29 @@ export class ApiClass{
             if(!body || body.isNativeType()) return null;
             return new ImportInfo(body.typeName(), 'models');
         });
-        let imports =  chain(returnImports).concat(bodyImports as ImportInfo[])
+        let enumImports:ImportInfo[] = []; 
+        each(this.methods, (method)=>{
+            let params = method.parameters;
+            each(method.parameters(), (param)=>{
+                let importName = param.importTypeName();
+                if(importName){
+                    enumImports.push(new ImportInfo(importName, 'enums'));
+                }
+            });
+        });
+        let imports =  chain(returnImports)
+            .concat(bodyImports as ImportInfo[])
+            .concat(enumImports as ImportInfo[])
             .filter(Boolean)
             .uniqBy('className')
             .sortBy((o)=>`${o.type}/${o.filename()}`)
+            .map((item:ImportInfo)=>{
+                if(item.type == "api"){
+                    return item.filename();
+                }else{
+                    return `../${item.type}/${item.filename()}`;
+                }
+            })
             .value();
         return imports;
     }

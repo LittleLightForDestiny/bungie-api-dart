@@ -15,13 +15,13 @@ class DestinyProfileTransitoryCurrentActivity{
 	/// When the activity started.
 	@JsonKey(name:'startTime')
 	String startTime;
-	/// If you&#39;re still in it but it &quot;ended&quot; (like when folks are dancing around the loot after they beat a boss), this is when the activity ended.
+	/// If you're still in it but it "ended" (like when folks are dancing around the loot after they beat a boss), this is when the activity ended.
 	@JsonKey(name:'endTime')
 	String endTime;
 	/// This is what our non-authoritative source thought the score was.
 	@JsonKey(name:'score')
 	double score;
-	/// If you have human opponents, this is the highest opposing team&#39;s score.
+	/// If you have human opponents, this is the highest opposing team's score.
 	@JsonKey(name:'highestOpposingFactionScore')
 	double highestOpposingFactionScore;
 	/// This is how many human or poorly crafted aimbot opponents you have.

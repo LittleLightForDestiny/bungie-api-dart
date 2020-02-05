@@ -1,4 +1,5 @@
 import '../models/group_v2_card.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'list_of_group_v2_card_response.g.dart';
@@ -23,7 +24,7 @@ class ListOfGroupV2CardResponse{
 	List<GroupV2Card> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

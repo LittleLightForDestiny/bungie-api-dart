@@ -18,4 +18,6 @@ DestinyDestinationBubbleSettingDefinition
 
 Map<String, dynamic> _$DestinyDestinationBubbleSettingDefinitionToJson(
         DestinyDestinationBubbleSettingDefinition instance) =>
-    <String, dynamic>{'displayProperties': instance.displayProperties};
+    <String, dynamic>{
+      'displayProperties': instance.displayProperties,
+    };

@@ -33,5 +33,5 @@ Map<String, dynamic> _$DestinyQuestStatusToJson(DestinyQuestStatus instance) =>
       'completed': instance.completed,
       'redeemed': instance.redeemed,
       'started': instance.started,
-      'vendorHash': instance.vendorHash
+      'vendorHash': instance.vendorHash,
     };

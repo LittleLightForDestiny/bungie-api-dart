@@ -17,5 +17,5 @@ Map<String, dynamic> _$EMailSettingLocalizationToJson(
         EMailSettingLocalization instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'description': instance.description
+      'description': instance.description,
     };

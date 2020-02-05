@@ -5,7 +5,8 @@
 DestinyClassDefinition _$DestinyClassDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyClassDefinition()
-    ..classType = json['classType'] as int
+    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'],
+        unknownValue: DestinyClass.Titan)
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
@@ -27,12 +28,51 @@ DestinyClassDefinition _$DestinyClassDefinitionFromJson(
 Map<String, dynamic> _$DestinyClassDefinitionToJson(
         DestinyClassDefinition instance) =>
     <String, dynamic>{
-      'classType': instance.classType,
+      'classType': _$DestinyClassEnumMap[instance.classType],
       'displayProperties': instance.displayProperties,
       'genderedClassNames': instance.genderedClassNames,
       'genderedClassNamesByGenderHash': instance.genderedClassNamesByGenderHash,
       'mentorVendorHash': instance.mentorVendorHash,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyClassEnumMap = {
+  DestinyClass.Titan: 0,
+  DestinyClass.Hunter: 1,
+  DestinyClass.Warlock: 2,
+  DestinyClass.Unknown: 3,
+};

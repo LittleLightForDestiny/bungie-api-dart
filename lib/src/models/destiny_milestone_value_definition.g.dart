@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyMilestoneValueDefinitionToJson(
         DestinyMilestoneValueDefinition instance) =>
     <String, dynamic>{
       'key': instance.key,
-      'displayProperties': instance.displayProperties
+      'displayProperties': instance.displayProperties,
     };

@@ -37,5 +37,5 @@ Map<String, dynamic> _$DestinyMilestoneChallengeActivityDefinitionToJson(
       'activityHash': instance.activityHash,
       'challenges': instance.challenges,
       'activityGraphNodes': instance.activityGraphNodes,
-      'phases': instance.phases
+      'phases': instance.phases,
     };

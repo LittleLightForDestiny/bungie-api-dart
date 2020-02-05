@@ -18,4 +18,6 @@ DestinyItemPerksComponent _$DestinyItemPerksComponentFromJson(
 
 Map<String, dynamic> _$DestinyItemPerksComponentToJson(
         DestinyItemPerksComponent instance) =>
-    <String, dynamic>{'perks': instance.perks};
+    <String, dynamic>{
+      'perks': instance.perks,
+    };

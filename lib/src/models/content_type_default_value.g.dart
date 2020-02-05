@@ -19,5 +19,5 @@ Map<String, dynamic> _$ContentTypeDefaultValueToJson(
     <String, dynamic>{
       'whenClause': instance.whenClause,
       'whenValue': instance.whenValue,
-      'defaultValue': instance.defaultValue
+      'defaultValue': instance.defaultValue,
     };

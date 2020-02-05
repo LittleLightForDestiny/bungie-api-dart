@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/bungie_membership_type.dart';
 
 part 'group_user_info_card.g.dart';
 
@@ -14,8 +15,8 @@ class GroupUserInfoCard{
 	@JsonKey(name:'LastSeenDisplayName')
 	String lastSeenDisplayName;
 	/// The platform of the LastSeenDisplayName
-	@JsonKey(name:'LastSeenDisplayNameType')
-	int lastSeenDisplayNameType;
+	@JsonKey(name:'LastSeenDisplayNameType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType lastSeenDisplayNameType;
 	/// A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
 	@JsonKey(name:'supplementalDisplayName')
 	String supplementalDisplayName;
@@ -23,18 +24,18 @@ class GroupUserInfoCard{
 	@JsonKey(name:'iconPath')
 	String iconPath;
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
-	@JsonKey(name:'crossSaveOverride')
-	int crossSaveOverride;
+	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType crossSaveOverride;
 	/// The list of Membership Types indicating the platforms on which this Membership can be used.
-	///  Not in Cross Save &#x3D; its original membership type. Cross Save Primary &#x3D; Any membership types it is overridding, and its original membership type Cross Save Overridden &#x3D; Empty list
+	///  Not in Cross Save = its original membership type. Cross Save Primary = Any membership types it is overridding, and its original membership type Cross Save Overridden = Empty list
 	@JsonKey(name:'applicableMembershipTypes')
-	List<int> applicableMembershipTypes;
+	List<BungieMembershipType> applicableMembershipTypes;
 	/// If True, this is a public user membership.
 	@JsonKey(name:'isPublic')
 	bool isPublic;
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')
 	String membershipId;

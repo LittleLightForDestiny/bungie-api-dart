@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyNodeActivationRequirementToJson(
         DestinyNodeActivationRequirement instance) =>
     <String, dynamic>{
       'gridLevel': instance.gridLevel,
-      'materialRequirementHashes': instance.materialRequirementHashes
+      'materialRequirementHashes': instance.materialRequirementHashes,
     };

@@ -18,4 +18,6 @@ DestinyEquipItemResults _$DestinyEquipItemResultsFromJson(
 
 Map<String, dynamic> _$DestinyEquipItemResultsToJson(
         DestinyEquipItemResults instance) =>
-    <String, dynamic>{'equipResults': instance.equipResults};
+    <String, dynamic>{
+      'equipResults': instance.equipResults,
+    };

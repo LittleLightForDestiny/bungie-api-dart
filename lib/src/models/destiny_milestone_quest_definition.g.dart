@@ -38,5 +38,5 @@ Map<String, dynamic> _$DestinyMilestoneQuestDefinitionToJson(
       'overrideImage': instance.overrideImage,
       'questRewards': instance.questRewards,
       'activities': instance.activities,
-      'destinationHash': instance.destinationHash
+      'destinationHash': instance.destinationHash,
     };

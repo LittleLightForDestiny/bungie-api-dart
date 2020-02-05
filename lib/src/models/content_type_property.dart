@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/content_property_data_type_enum.dart';
 import 'content_type_default_value.dart';
 
 part 'content_type_property.g.dart';
@@ -49,8 +50,8 @@ class ContentTypeProperty{
 	String visibleDependency;
 	@JsonKey(name:'visibleOn')
 	String visibleOn;
-	@JsonKey(name:'datatype')
-	int datatype;
+	@JsonKey(name:'datatype',unknownEnumValue:ContentPropertyDataTypeEnum.None)
+	ContentPropertyDataTypeEnum datatype;
 	@JsonKey(name:'attributes')
 	Map<String, String> attributes;
 	@JsonKey(name:'childProperties')

@@ -29,5 +29,5 @@ Map<String, dynamic> _$TagMetadataDefinitionToJson(
       'items': instance.items,
       'datatype': instance.datatype,
       'name': instance.name,
-      'isRequired': instance.isRequired
+      'isRequired': instance.isRequired,
     };

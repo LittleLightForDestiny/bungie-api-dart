@@ -14,4 +14,6 @@ DestinyPresentationNodeChildEntry _$DestinyPresentationNodeChildEntryFromJson(
 
 Map<String, dynamic> _$DestinyPresentationNodeChildEntryToJson(
         DestinyPresentationNodeChildEntry instance) =>
-    <String, dynamic>{'presentationNodeHash': instance.presentationNodeHash};
+    <String, dynamic>{
+      'presentationNodeHash': instance.presentationNodeHash,
+    };

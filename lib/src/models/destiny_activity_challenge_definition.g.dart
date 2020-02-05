@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyActivityChallengeDefinitionToJson(
         DestinyActivityChallengeDefinition instance) =>
     <String, dynamic>{
       'objectiveHash': instance.objectiveHash,
-      'dummyRewards': instance.dummyRewards
+      'dummyRewards': instance.dummyRewards,
     };

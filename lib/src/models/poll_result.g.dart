@@ -21,5 +21,5 @@ Map<String, dynamic> _$PollResultToJson(PollResult instance) =>
       'answerSlot': instance.answerSlot,
       'lastVoteDate': instance.lastVoteDate,
       'votes': instance.votes,
-      'requestingUserVoted': instance.requestingUserVoted
+      'requestingUserVoted': instance.requestingUserVoted,
     };

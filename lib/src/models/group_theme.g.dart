@@ -17,5 +17,5 @@ Map<String, dynamic> _$GroupThemeToJson(GroupTheme instance) =>
     <String, dynamic>{
       'name': instance.name,
       'folder': instance.folder,
-      'description': instance.description
+      'description': instance.description,
     };

@@ -10,7 +10,9 @@ DestinyItemInstanceEnergy _$DestinyItemInstanceEnergyFromJson(
     Map<String, dynamic> json) {
   return DestinyItemInstanceEnergy()
     ..energyTypeHash = json['energyTypeHash'] as int
-    ..energyType = json['energyType'] as int
+    ..energyType = _$enumDecodeNullable(
+        _$DestinyEnergyTypeEnumMap, json['energyType'],
+        unknownValue: DestinyEnergyType.Any)
     ..energyCapacity = json['energyCapacity'] as int
     ..energyUsed = json['energyUsed'] as int
     ..energyUnused = json['energyUnused'] as int;
@@ -20,8 +22,47 @@ Map<String, dynamic> _$DestinyItemInstanceEnergyToJson(
         DestinyItemInstanceEnergy instance) =>
     <String, dynamic>{
       'energyTypeHash': instance.energyTypeHash,
-      'energyType': instance.energyType,
+      'energyType': _$DestinyEnergyTypeEnumMap[instance.energyType],
       'energyCapacity': instance.energyCapacity,
       'energyUsed': instance.energyUsed,
-      'energyUnused': instance.energyUnused
+      'energyUnused': instance.energyUnused,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyEnergyTypeEnumMap = {
+  DestinyEnergyType.Any: 0,
+  DestinyEnergyType.Arc: 1,
+  DestinyEnergyType.Thermal: 2,
+  DestinyEnergyType.Void: 3,
+};

@@ -1,0 +1,39 @@
+{{#description}}
+/// {{{.}}}
+{{/description}}
+class {{className}} {
+    const {{className}}(this._value);
+    factory {{className}}.fromJson(int numValue) => {{className}}(numValue);
+    
+    final int _value;
+    
+    {{#values}}
+    ///{{name}} = {{value}}
+    {{#description}}
+    /// {{{.}}}
+    {{/description}}
+    static const {{className}} {{name}} = {{className}}({{value}});
+    {{/values}}
+
+    int get value {
+        return _value;
+    }
+
+    bool contains({{className}} childValue){
+        return value & childValue.value == childValue.value;
+    }
+
+    int operator & ({{className}} item){
+      return value & item.value;
+    }
+
+    @override
+    bool operator == (dynamic other) {
+        return other.value == value || other == value;
+    }
+
+    @override
+    int get hashCode => value;
+    
+    int toJson() => value;
+}

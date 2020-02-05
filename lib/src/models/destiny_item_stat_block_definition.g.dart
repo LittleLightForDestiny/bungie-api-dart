@@ -30,5 +30,5 @@ Map<String, dynamic> _$DestinyItemStatBlockDefinitionToJson(
       'statGroupHash': instance.statGroupHash,
       'stats': instance.stats,
       'hasDisplayableStats': instance.hasDisplayableStats,
-      'primaryBaseStatHash': instance.primaryBaseStatHash
+      'primaryBaseStatHash': instance.primaryBaseStatHash,
     };

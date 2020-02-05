@@ -17,5 +17,5 @@ Map<String, dynamic> _$PagedQueryToJson(PagedQuery instance) =>
     <String, dynamic>{
       'itemsPerPage': instance.itemsPerPage,
       'currentPage': instance.currentPage,
-      'requestContinuationToken': instance.requestContinuationToken
+      'requestContinuationToken': instance.requestContinuationToken,
     };

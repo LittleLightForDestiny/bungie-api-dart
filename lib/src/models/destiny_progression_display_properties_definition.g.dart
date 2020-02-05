@@ -26,5 +26,5 @@ Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(
       'name': instance.name,
       'icon': instance.icon,
       'highResIcon': instance.highResIcon,
-      'hasIcon': instance.hasIcon
+      'hasIcon': instance.hasIcon,
     };

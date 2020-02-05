@@ -16,4 +16,6 @@ TrendingCategories _$TrendingCategoriesFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$TrendingCategoriesToJson(TrendingCategories instance) =>
-    <String, dynamic>{'categories': instance.categories};
+    <String, dynamic>{
+      'categories': instance.categories,
+    };

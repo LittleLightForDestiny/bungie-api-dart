@@ -1,4 +1,5 @@
 import '../models/public_partnership_detail.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'celist_of_public_partnership_detail_response.g.dart';
@@ -23,7 +24,7 @@ class CEListOfPublicPartnershipDetailResponse{
 	List<PublicPartnershipDetail> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

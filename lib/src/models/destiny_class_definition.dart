@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_class.dart';
 import 'destiny_display_properties_definition.dart';
 
 part 'destiny_class_definition.g.dart';
@@ -12,18 +13,18 @@ class DestinyClassDefinition{
 
 	factory DestinyClassDefinition.fromJson(Map<String, dynamic> json) => _$DestinyClassDefinitionFromJson(json);
 
-	/// In Destiny 1, we added a convenience Enumeration for referring to classes. We&#39;ve kept it, though mostly for posterity. This is the enum value for this definition&#39;s class.
-	@JsonKey(name:'classType')
-	int classType;
-	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
+	/// In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
+	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.Titan)
+	DestinyClass classType;
+	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	/// A localized string referring to the singular form of the Class&#39;s name when referred to in gendered form. Keyed by the DestinyGender.
+	/// A localized string referring to the singular form of the Class's name when referred to in gendered form. Keyed by the DestinyGender.
 	@JsonKey(name:'genderedClassNames')
 	Map<String, String> genderedClassNames;
 	@JsonKey(name:'genderedClassNamesByGenderHash')
 	Map<String, String> genderedClassNamesByGenderHash;
-	/// Mentors don&#39;t really mean anything anymore. Don&#39;t expect this to be populated.
+	/// Mentors don't really mean anything anymore. Don't expect this to be populated.
 	@JsonKey(name:'mentorVendorHash')
 	int mentorVendorHash;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
@@ -33,7 +34,7 @@ class DestinyClassDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyRecordIntervalBlockToJson(
     <String, dynamic>{
       'intervalObjectives': instance.intervalObjectives,
       'originalObjectiveArrayInsertionIndex':
-          instance.originalObjectiveArrayInsertionIndex
+          instance.originalObjectiveArrayInsertionIndex,
     };

@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyArtifactCharacterScopedToJson(
       'artifactHash': instance.artifactHash,
       'pointsUsed': instance.pointsUsed,
       'resetCount': instance.resetCount,
-      'tiers': instance.tiers
+      'tiers': instance.tiers,
     };

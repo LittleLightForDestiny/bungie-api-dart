@@ -37,5 +37,5 @@ Map<String, dynamic> _$DestinyMilestoneChallengeActivityToJson(
       'modifierHashes': instance.modifierHashes,
       'booleanActivityOptions': instance.booleanActivityOptions,
       'loadoutRequirementIndex': instance.loadoutRequirementIndex,
-      'phases': instance.phases
+      'phases': instance.phases,
     };

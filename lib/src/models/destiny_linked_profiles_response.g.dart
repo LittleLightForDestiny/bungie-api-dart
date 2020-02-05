@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyLinkedProfilesResponseToJson(
     <String, dynamic>{
       'profiles': instance.profiles,
       'bnetMembership': instance.bnetMembership,
-      'profilesWithErrors': instance.profilesWithErrors
+      'profilesWithErrors': instance.profilesWithErrors,
     };

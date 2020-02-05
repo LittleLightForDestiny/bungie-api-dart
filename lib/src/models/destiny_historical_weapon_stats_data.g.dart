@@ -18,4 +18,6 @@ DestinyHistoricalWeaponStatsData _$DestinyHistoricalWeaponStatsDataFromJson(
 
 Map<String, dynamic> _$DestinyHistoricalWeaponStatsDataToJson(
         DestinyHistoricalWeaponStatsData instance) =>
-    <String, dynamic>{'weapons': instance.weapons};
+    <String, dynamic>{
+      'weapons': instance.weapons,
+    };

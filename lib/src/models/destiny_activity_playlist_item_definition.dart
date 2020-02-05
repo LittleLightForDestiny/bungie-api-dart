@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_activity_mode_type.dart';
 
 part 'destiny_activity_playlist_item_definition.g.dart';
 
@@ -23,9 +24,9 @@ class DestinyActivityPlaylistItemDefinition{
 	/// The hash identifiers for Activity Modes relevant to this entry.
 	@JsonKey(name:'activityModeHashes')
 	List<int> activityModeHashes;
-	/// The activity modes - if any - in enum form. Because we can&#39;t seem to escape the enums.
+	/// The activity modes - if any - in enum form. Because we can't seem to escape the enums.
 	@JsonKey(name:'activityModeTypes')
-	List<int> activityModeTypes;
+	List<DestinyActivityModeType> activityModeTypes;
 
 	
 	

@@ -63,5 +63,5 @@ Map<String, dynamic> _$DestinyHistoricalStatsByPeriodToJson(
       'allTimeTier2': instance.allTimeTier2,
       'allTimeTier3': instance.allTimeTier3,
       'daily': instance.daily,
-      'monthly': instance.monthly
+      'monthly': instance.monthly,
     };

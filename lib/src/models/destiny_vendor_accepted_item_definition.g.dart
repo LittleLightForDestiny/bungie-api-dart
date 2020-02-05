@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyVendorAcceptedItemDefinitionToJson(
         DestinyVendorAcceptedItemDefinition instance) =>
     <String, dynamic>{
       'acceptedInventoryBucketHash': instance.acceptedInventoryBucketHash,
-      'destinationInventoryBucketHash': instance.destinationInventoryBucketHash
+      'destinationInventoryBucketHash': instance.destinationInventoryBucketHash,
     };

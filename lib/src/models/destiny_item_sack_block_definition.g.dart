@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyItemSackBlockDefinitionToJson(
       'openAction': instance.openAction,
       'selectItemCount': instance.selectItemCount,
       'vendorSackType': instance.vendorSackType,
-      'openOnAcquire': instance.openOnAcquire
+      'openOnAcquire': instance.openOnAcquire,
     };

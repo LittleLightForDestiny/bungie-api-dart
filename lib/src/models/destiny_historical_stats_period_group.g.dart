@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyHistoricalStatsPeriodGroupToJson(
     <String, dynamic>{
       'period': instance.period,
       'activityDetails': instance.activityDetails,
-      'values': instance.values
+      'values': instance.values,
     };

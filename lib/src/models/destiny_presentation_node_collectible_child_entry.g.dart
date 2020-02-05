@@ -15,4 +15,6 @@ DestinyPresentationNodeCollectibleChildEntry
 
 Map<String, dynamic> _$DestinyPresentationNodeCollectibleChildEntryToJson(
         DestinyPresentationNodeCollectibleChildEntry instance) =>
-    <String, dynamic>{'collectibleHash': instance.collectibleHash};
+    <String, dynamic>{
+      'collectibleHash': instance.collectibleHash,
+    };

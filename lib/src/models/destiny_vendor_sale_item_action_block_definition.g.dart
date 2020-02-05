@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyVendorSaleItemActionBlockDefinitionToJson(
         DestinyVendorSaleItemActionBlockDefinition instance) =>
     <String, dynamic>{
       'executeSeconds': instance.executeSeconds,
-      'isPositive': instance.isPositive
+      'isPositive': instance.isPositive,
     };

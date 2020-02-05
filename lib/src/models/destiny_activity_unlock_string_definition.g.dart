@@ -14,4 +14,6 @@ DestinyActivityUnlockStringDefinition
 
 Map<String, dynamic> _$DestinyActivityUnlockStringDefinitionToJson(
         DestinyActivityUnlockStringDefinition instance) =>
-    <String, dynamic>{'displayString': instance.displayString};
+    <String, dynamic>{
+      'displayString': instance.displayString,
+    };

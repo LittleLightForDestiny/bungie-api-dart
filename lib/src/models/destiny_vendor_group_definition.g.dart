@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyVendorGroupDefinitionToJson(
       'categoryName': instance.categoryName,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

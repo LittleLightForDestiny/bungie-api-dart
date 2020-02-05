@@ -1,4 +1,5 @@
 import '../models/core_settings_configuration.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'core_settings_configuration_response.g.dart';
@@ -23,7 +24,7 @@ class CoreSettingsConfigurationResponse{
 	CoreSettingsConfiguration response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

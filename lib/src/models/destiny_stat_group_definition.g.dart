@@ -38,5 +38,5 @@ Map<String, dynamic> _$DestinyStatGroupDefinitionToJson(
       'overrides': instance.overrides,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

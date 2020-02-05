@@ -13,7 +13,9 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
         ? null
         : UserInfoCard.fromJson(json['userInfo'] as Map<String, dynamic>)
     ..dateLastPlayed = json['dateLastPlayed'] as String
-    ..versionsOwned = json['versionsOwned'] as int
+    ..versionsOwned = json['versionsOwned'] == null
+        ? null
+        : DestinyGameVersions.fromJson(json['versionsOwned'] as int)
     ..characterIds =
         (json['characterIds'] as List)?.map((e) => e as String)?.toList()
     ..seasonHashes =
@@ -27,5 +29,5 @@ Map<String, dynamic> _$DestinyProfileComponentToJson(
       'dateLastPlayed': instance.dateLastPlayed,
       'versionsOwned': instance.versionsOwned,
       'characterIds': instance.characterIds,
-      'seasonHashes': instance.seasonHashes
+      'seasonHashes': instance.seasonHashes,
     };

@@ -58,5 +58,5 @@ Map<String, dynamic> _$ContentItemPublicContractToJson(
       'properties': instance.properties,
       'representations': instance.representations,
       'tags': instance.tags,
-      'commentSummary': instance.commentSummary
+      'commentSummary': instance.commentSummary,
     };

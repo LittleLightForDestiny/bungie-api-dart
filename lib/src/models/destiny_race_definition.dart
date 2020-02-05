@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_display_properties_definition.dart';
+import '../enums/destiny_race.dart';
 
 part 'destiny_race_definition.g.dart';
 
@@ -12,13 +13,13 @@ class DestinyRaceDefinition{
 
 	factory DestinyRaceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyRaceDefinitionFromJson(json);
 
-	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
+	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	/// An enumeration defining the existing, known Races&#x2F;Species for player characters. This value will be the enum value matching this definition.
-	@JsonKey(name:'raceType')
-	int raceType;
-	/// A localized string referring to the singular form of the Race&#39;s name when referred to in gendered form. Keyed by the DestinyGender.
+	/// An enumeration defining the existing, known Races/Species for player characters. This value will be the enum value matching this definition.
+	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.Human)
+	DestinyRace raceType;
+	/// A localized string referring to the singular form of the Race's name when referred to in gendered form. Keyed by the DestinyGender.
 	@JsonKey(name:'genderedRaceNames')
 	Map<String, String> genderedRaceNames;
 	@JsonKey(name:'genderedRaceNamesByGenderHash')
@@ -30,7 +31,7 @@ class DestinyRaceDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

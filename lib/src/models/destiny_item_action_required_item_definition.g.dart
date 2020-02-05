@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyItemActionRequiredItemDefinitionToJson(
     <String, dynamic>{
       'count': instance.count,
       'itemHash': instance.itemHash,
-      'deleteOnAction': instance.deleteOnAction
+      'deleteOnAction': instance.deleteOnAction,
     };

@@ -19,4 +19,6 @@ DestinyActivityHistoryResults _$DestinyActivityHistoryResultsFromJson(
 
 Map<String, dynamic> _$DestinyActivityHistoryResultsToJson(
         DestinyActivityHistoryResults instance) =>
-    <String, dynamic>{'activities': instance.activities};
+    <String, dynamic>{
+      'activities': instance.activities,
+    };

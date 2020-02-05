@@ -18,4 +18,6 @@ DestinyCharacterPeerView _$DestinyCharacterPeerViewFromJson(
 
 Map<String, dynamic> _$DestinyCharacterPeerViewToJson(
         DestinyCharacterPeerView instance) =>
-    <String, dynamic>{'equipment': instance.equipment};
+    <String, dynamic>{
+      'equipment': instance.equipment,
+    };

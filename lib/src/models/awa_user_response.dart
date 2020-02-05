@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/awa_user_selection.dart';
 
 part 'awa_user_response.g.dart';
 
@@ -11,8 +12,8 @@ class AwaUserResponse{
 	factory AwaUserResponse.fromJson(Map<String, dynamic> json) => _$AwaUserResponseFromJson(json);
 
 	/// Indication of the selection the user has made (Approving or rejecting the action)
-	@JsonKey(name:'selection')
-	int selection;
+	@JsonKey(name:'selection',unknownEnumValue:AwaUserSelection.None)
+	AwaUserSelection selection;
 	/// Correlation ID of the request
 	@JsonKey(name:'correlationId')
 	String correlationId;

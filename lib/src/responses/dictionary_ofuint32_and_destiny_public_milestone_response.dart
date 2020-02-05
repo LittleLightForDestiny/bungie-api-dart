@@ -1,4 +1,5 @@
 import '../models/destiny_public_milestone.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'dictionary_ofuint32_and_destiny_public_milestone_response.g.dart';
@@ -23,7 +24,7 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse{
 	Map<String, DestinyPublicMilestone> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

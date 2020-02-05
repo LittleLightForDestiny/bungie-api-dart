@@ -9,4 +9,7 @@ DestinyStat _$DestinyStatFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$DestinyStatToJson(DestinyStat instance) =>
-    <String, dynamic>{'statHash': instance.statHash, 'value': instance.value};
+    <String, dynamic>{
+      'statHash': instance.statHash,
+      'value': instance.value,
+    };

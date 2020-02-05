@@ -41,5 +41,5 @@ Map<String, dynamic> _$DestinyFactionDefinitionToJson(
       'vendors': instance.vendors,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

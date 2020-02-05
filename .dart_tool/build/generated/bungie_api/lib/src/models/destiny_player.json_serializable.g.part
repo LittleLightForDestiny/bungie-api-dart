@@ -34,5 +34,5 @@ Map<String, dynamic> _$DestinyPlayerToJson(DestinyPlayer instance) =>
       'bungieNetUserInfo': instance.bungieNetUserInfo,
       'clanName': instance.clanName,
       'clanTag': instance.clanTag,
-      'emblemHash': instance.emblemHash
+      'emblemHash': instance.emblemHash,
     };

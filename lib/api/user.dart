@@ -1,4 +1,6 @@
 import '../helpers/http.dart';
+import '../enums/bungie_credential_type.dart';
+import '../enums/bungie_membership_type.dart';
 import '../responses/celist_of_public_partnership_detail_response.dart';
 import '../responses/general_user_response.dart';
 import '../responses/hard_linked_user_membership_response.dart';
@@ -12,7 +14,8 @@ class User{
         String id,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetBungieNetUserById/$id/', params);
+        final String _id = '$id';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetBungieNetUserById/$_id/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -52,10 +55,12 @@ class User{
     static Future<UserMembershipDataResponse> getMembershipDataById (
         HttpClient client,
         String membershipId,
-        int membershipType,
+        BungieMembershipType membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipsById/$membershipId/$membershipType/', params);
+        final String _membershipId = '$membershipId';
+        final String _membershipType = '${membershipType.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipsById/$_membershipId/$_membershipType/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -76,13 +81,14 @@ class User{
         }
         throw Exception(response.mappedBody);
     }
-    /// Returns a user&#39;s linked Partnerships.
+    /// Returns a user's linked Partnerships.
     static Future<CEListOfPublicPartnershipDetailResponse> getPartnerships (
         HttpClient client,
         String membershipId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/$membershipId/Partnerships/', params);
+        final String _membershipId = '$membershipId';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/$_membershipId/Partnerships/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -94,10 +100,12 @@ class User{
     static Future<HardLinkedUserMembershipResponse> getMembershipFromHardLinkedCredential (
         HttpClient client,
         String credential,
-        int crType,
+        BungieCredentialType crType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipFromHardLinkedCredential/$crType/$credential/', params);
+        final String _credential = '$credential';
+        final String _crType = '${crType.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetMembershipFromHardLinkedCredential/$_crType/$_credential/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

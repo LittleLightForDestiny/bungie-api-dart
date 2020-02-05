@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyRecordExpirationBlockToJson(
     <String, dynamic>{
       'hasExpiration': instance.hasExpiration,
       'description': instance.description,
-      'icon': instance.icon
+      'icon': instance.icon,
     };

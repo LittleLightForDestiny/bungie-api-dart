@@ -30,5 +30,5 @@ Map<String, dynamic> _$DestinyHistoricalStatsAccountResultToJson(
     <String, dynamic>{
       'mergedDeletedCharacters': instance.mergedDeletedCharacters,
       'mergedAllCharacters': instance.mergedAllCharacters,
-      'characters': instance.characters
+      'characters': instance.characters,
     };

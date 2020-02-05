@@ -31,5 +31,5 @@ Map<String, dynamic> _$SearchResultOfGroupV2CardToJson(
       'hasMore': instance.hasMore,
       'query': instance.query,
       'replacementContinuationToken': instance.replacementContinuationToken,
-      'useTotalResults': instance.useTotalResults
+      'useTotalResults': instance.useTotalResults,
     };

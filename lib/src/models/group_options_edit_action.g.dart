@@ -28,5 +28,5 @@ Map<String, dynamic> _$GroupOptionsEditActionToJson(
       'HostGuidedGamePermissionOverride':
           instance.hostGuidedGamePermissionOverride,
       'UpdateBannerPermissionOverride': instance.updateBannerPermissionOverride,
-      'JoinLevel': instance.joinLevel
+      'JoinLevel': instance.joinLevel,
     };

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/bungie_membership_type.dart';
 
 part 'destiny_character_action_request.g.dart';
 
@@ -12,8 +13,8 @@ class DestinyCharacterActionRequest{
 
 	@JsonKey(name:'characterId')
 	String characterId;
-	@JsonKey(name:'membershipType')
-	int membershipType;
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType membershipType;
 
 	
 	

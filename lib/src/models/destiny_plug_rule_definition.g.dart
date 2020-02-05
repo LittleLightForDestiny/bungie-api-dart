@@ -14,4 +14,6 @@ DestinyPlugRuleDefinition _$DestinyPlugRuleDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyPlugRuleDefinitionToJson(
         DestinyPlugRuleDefinition instance) =>
-    <String, dynamic>{'failureMessage': instance.failureMessage};
+    <String, dynamic>{
+      'failureMessage': instance.failureMessage,
+    };

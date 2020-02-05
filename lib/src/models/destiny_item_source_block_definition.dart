@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_item_source_definition.dart';
+import '../enums/bungie_membership_type.dart';
 import 'destiny_item_vendor_source_reference.dart';
 
 part 'destiny_item_source_block_definition.g.dart';
@@ -20,8 +21,8 @@ class DestinyItemSourceBlockDefinition{
 	@JsonKey(name:'sources')
 	List<DestinyItemSourceDefinition> sources;
 	/// If we found that this item is exclusive to a specific platform, this will be set to the BungieMembershipType enumeration that matches that platform.
-	@JsonKey(name:'exclusive')
-	int exclusive;
+	@JsonKey(name:'exclusive',unknownEnumValue:BungieMembershipType.None)
+	BungieMembershipType exclusive;
 	/// A denormalized reference back to vendors that potentially sell this item.
 	@JsonKey(name:'vendorSources')
 	List<DestinyItemVendorSourceReference> vendorSources;

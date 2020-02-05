@@ -11,12 +11,18 @@ DestinyItemComponent _$DestinyItemComponentFromJson(Map<String, dynamic> json) {
     ..itemHash = json['itemHash'] as int
     ..itemInstanceId = json['itemInstanceId'] as String
     ..quantity = json['quantity'] as int
-    ..bindStatus = json['bindStatus'] as int
-    ..location = json['location'] as int
+    ..bindStatus = _$enumDecodeNullable(
+        _$ItemBindStatusEnumMap, json['bindStatus'],
+        unknownValue: ItemBindStatus.NotBound)
+    ..location = _$enumDecodeNullable(_$ItemLocationEnumMap, json['location'],
+        unknownValue: ItemLocation.Unknown)
     ..bucketHash = json['bucketHash'] as int
-    ..transferStatus = json['transferStatus'] as int
+    ..transferStatus = json['transferStatus'] == null
+        ? null
+        : TransferStatuses.fromJson(json['transferStatus'] as int)
     ..lockable = json['lockable'] as bool
-    ..state = json['state'] as int
+    ..state =
+        json['state'] == null ? null : ItemState.fromJson(json['state'] as int)
     ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
     ..expirationDate = json['expirationDate'] as String
     ..isWrapper = json['isWrapper'] as bool
@@ -31,8 +37,8 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'itemHash': instance.itemHash,
       'itemInstanceId': instance.itemInstanceId,
       'quantity': instance.quantity,
-      'bindStatus': instance.bindStatus,
-      'location': instance.location,
+      'bindStatus': _$ItemBindStatusEnumMap[instance.bindStatus],
+      'location': _$ItemLocationEnumMap[instance.location],
       'bucketHash': instance.bucketHash,
       'transferStatus': instance.transferStatus,
       'lockable': instance.lockable,
@@ -40,5 +46,52 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'overrideStyleItemHash': instance.overrideStyleItemHash,
       'expirationDate': instance.expirationDate,
       'isWrapper': instance.isWrapper,
-      'tooltipNotificationIndexes': instance.tooltipNotificationIndexes
+      'tooltipNotificationIndexes': instance.tooltipNotificationIndexes,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$ItemBindStatusEnumMap = {
+  ItemBindStatus.NotBound: 0,
+  ItemBindStatus.BoundToCharacter: 1,
+  ItemBindStatus.BoundToAccount: 2,
+  ItemBindStatus.BoundToGuild: 3,
+};
+
+const _$ItemLocationEnumMap = {
+  ItemLocation.Unknown: 0,
+  ItemLocation.Inventory: 1,
+  ItemLocation.Vault: 2,
+  ItemLocation.Vendor: 3,
+  ItemLocation.Postmaster: 4,
+};

@@ -9,7 +9,9 @@ part of 'destiny_vendor_sale_item_component.dart';
 DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyVendorSaleItemComponent()
-    ..saleStatus = json['saleStatus'] as int
+    ..saleStatus = json['saleStatus'] == null
+        ? null
+        : VendorItemStatus.fromJson(json['saleStatus'] as int)
     ..requiredUnlocks =
         (json['requiredUnlocks'] as List)?.map((e) => e as int)?.toList()
     ..unlockStatuses = (json['unlockStatuses'] as List)
@@ -19,7 +21,9 @@ DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
         ?.toList()
     ..failureIndexes =
         (json['failureIndexes'] as List)?.map((e) => e as int)?.toList()
-    ..augments = json['augments'] as int
+    ..augments = json['augments'] == null
+        ? null
+        : DestinyVendorItemState.fromJson(json['augments'] as int)
     ..vendorItemIndex = json['vendorItemIndex'] as int
     ..itemHash = json['itemHash'] as int
     ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
@@ -45,5 +49,5 @@ Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
       'overrideStyleItemHash': instance.overrideStyleItemHash,
       'quantity': instance.quantity,
       'costs': instance.costs,
-      'overrideNextRefreshDate': instance.overrideNextRefreshDate
+      'overrideNextRefreshDate': instance.overrideNextRefreshDate,
     };

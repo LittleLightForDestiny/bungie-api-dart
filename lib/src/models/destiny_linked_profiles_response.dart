@@ -19,7 +19,7 @@ class DestinyLinkedProfilesResponse{
 	@JsonKey(name:'profiles')
 	List<DestinyProfileUserInfoCard> profiles;
 	/// If the requested membership had a linked Bungie.Net membership ID, this is the basic information about that BNet account.
-	/// I know, Tetron; I know this is mixing UserServices concerns with DestinyServices concerns. But it&#39;s so damn convenient! https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;X5R-bB-gKVI
+	/// I know, Tetron; I know this is mixing UserServices concerns with DestinyServices concerns. But it's so damn convenient! https://www.youtube.com/watch?v=X5R-bB-gKVI
 	@JsonKey(name:'bnetMembership')
 	UserInfoCard bnetMembership;
 	/// This is brief summary info for profiles that we believe have valid Destiny info, but who failed to return data for some other reason and thus we know that subsequent calls for their info will also fail.

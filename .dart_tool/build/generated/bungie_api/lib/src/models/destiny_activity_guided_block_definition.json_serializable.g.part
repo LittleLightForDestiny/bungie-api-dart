@@ -15,5 +15,5 @@ Map<String, dynamic> _$DestinyActivityGuidedBlockDefinitionToJson(
     <String, dynamic>{
       'guidedMaxLobbySize': instance.guidedMaxLobbySize,
       'guidedMinLobbySize': instance.guidedMinLobbySize,
-      'guidedDisbandCount': instance.guidedDisbandCount
+      'guidedDisbandCount': instance.guidedDisbandCount,
     };

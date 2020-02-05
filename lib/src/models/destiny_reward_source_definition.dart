@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_display_properties_definition.dart';
+import '../enums/destiny_reward_source_category.dart';
 
 part 'destiny_reward_source_definition.g.dart';
 
@@ -14,12 +15,12 @@ class DestinyRewardSourceDefinition{
 
 	factory DestinyRewardSourceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyRewardSourceDefinitionFromJson(json);
 
-	/// Many Destiny*Definition contracts - the &quot;first order&quot; entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
+	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// Sources are grouped into categories: common ways that items are provided. I hope to see this expand in Destiny 2 once we have time to generate accurate reward source data.
-	@JsonKey(name:'category')
-	int category;
+	@JsonKey(name:'category',unknownEnumValue:DestinyRewardSourceCategory.None)
+	DestinyRewardSourceCategory category;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
@@ -27,7 +28,7 @@ class DestinyRewardSourceDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

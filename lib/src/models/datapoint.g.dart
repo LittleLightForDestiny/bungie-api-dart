@@ -12,5 +12,7 @@ Datapoint _$DatapointFromJson(Map<String, dynamic> json) {
     ..count = json['count'] as int;
 }
 
-Map<String, dynamic> _$DatapointToJson(Datapoint instance) =>
-    <String, dynamic>{'time': instance.time, 'count': instance.count};
+Map<String, dynamic> _$DatapointToJson(Datapoint instance) => <String, dynamic>{
+      'time': instance.time,
+      'count': instance.count,
+    };

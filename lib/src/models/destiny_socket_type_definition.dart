@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'destiny_display_properties_definition.dart';
 import 'destiny_insert_plug_action_definition.dart';
 import 'destiny_plug_whitelist_entry_definition.dart';
+import '../enums/destiny_socket_visibility.dart';
 import 'destiny_socket_type_scalar_material_requirement_entry.dart';
 
 part 'destiny_socket_type_definition.g.dart';
@@ -22,23 +23,23 @@ class DestinySocketTypeDefinition{
 	/// Defines what happens when a plug is inserted into sockets of this type.
 	@JsonKey(name:'insertAction')
 	DestinyInsertPlugActionDefinition insertAction;
-	/// A list of Plug &quot;Categories&quot; that are allowed to be plugged into sockets of this type.
-	/// These should be compared against a given plug item&#39;s DestinyInventoryItemDefinition.plug.plugCategoryHash, which indicates the plug item&#39;s category.
-	/// If the plug&#39;s category matches any whitelisted plug, or if the whitelist is empty, it is allowed to be inserted.
+	/// A list of Plug "Categories" that are allowed to be plugged into sockets of this type.
+	/// These should be compared against a given plug item's DestinyInventoryItemDefinition.plug.plugCategoryHash, which indicates the plug item's category.
+	/// If the plug's category matches any whitelisted plug, or if the whitelist is empty, it is allowed to be inserted.
 	@JsonKey(name:'plugWhitelist')
 	List<DestinyPlugWhitelistEntryDefinition> plugWhitelist;
 	@JsonKey(name:'socketCategoryHash')
 	int socketCategoryHash;
-	/// Sometimes a socket isn&#39;t visible. These are some of the conditions under which sockets of this type are not visible. Unfortunately, the truth of visibility is much, much more complex. Best to rely on the live data for whether the socket is visible and enabled.
-	@JsonKey(name:'visibility')
-	int visibility;
+	/// Sometimes a socket isn't visible. These are some of the conditions under which sockets of this type are not visible. Unfortunately, the truth of visibility is much, much more complex. Best to rely on the live data for whether the socket is visible and enabled.
+	@JsonKey(name:'visibility',unknownEnumValue:DestinySocketVisibility.Visible)
+	DestinySocketVisibility visibility;
 	@JsonKey(name:'alwaysRandomizeSockets')
 	bool alwaysRandomizeSockets;
 	@JsonKey(name:'isPreviewEnabled')
 	bool isPreviewEnabled;
 	@JsonKey(name:'hideDuplicateReusablePlugs')
 	bool hideDuplicateReusablePlugs;
-	/// This property indicates if the socket type determines whether Emblem icons and nameplates should be overridden by the inserted plug item&#39;s icon and nameplate.
+	/// This property indicates if the socket type determines whether Emblem icons and nameplates should be overridden by the inserted plug item's icon and nameplate.
 	@JsonKey(name:'overridesUiAppearance')
 	bool overridesUiAppearance;
 	@JsonKey(name:'avoidDuplicatesOnInitialization')
@@ -52,7 +53,7 @@ class DestinySocketTypeDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

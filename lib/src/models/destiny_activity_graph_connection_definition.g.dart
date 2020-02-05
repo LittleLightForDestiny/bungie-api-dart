@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyActivityGraphConnectionDefinitionToJson(
         DestinyActivityGraphConnectionDefinition instance) =>
     <String, dynamic>{
       'sourceNodeHash': instance.sourceNodeHash,
-      'destNodeHash': instance.destNodeHash
+      'destNodeHash': instance.destNodeHash,
     };

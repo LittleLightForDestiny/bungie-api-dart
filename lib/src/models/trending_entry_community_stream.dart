@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/partnership_type.dart';
 
 part 'trending_entry_community_stream.g.dart';
 
@@ -16,8 +17,8 @@ class TrendingEntryCommunityStream{
 	String title;
 	@JsonKey(name:'partnershipIdentifier')
 	String partnershipIdentifier;
-	@JsonKey(name:'partnershipType')
-	int partnershipType;
+	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.None)
+	PartnershipType partnershipType;
 
 	
 	

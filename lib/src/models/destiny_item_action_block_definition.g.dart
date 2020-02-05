@@ -51,5 +51,5 @@ Map<String, dynamic> _$DestinyItemActionBlockDefinitionToJson(
       'requiredCooldownHash': instance.requiredCooldownHash,
       'deleteOnAction': instance.deleteOnAction,
       'consumeEntireStack': instance.consumeEntireStack,
-      'useOnAcquire': instance.useOnAcquire
+      'useOnAcquire': instance.useOnAcquire,
     };

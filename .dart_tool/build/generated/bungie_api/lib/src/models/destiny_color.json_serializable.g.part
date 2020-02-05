@@ -15,5 +15,5 @@ Map<String, dynamic> _$DestinyColorToJson(DestinyColor instance) =>
       'red': instance.red,
       'green': instance.green,
       'blue': instance.blue,
-      'alpha': instance.alpha
+      'alpha': instance.alpha,
     };

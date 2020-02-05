@@ -47,6 +47,16 @@ export class ModelProperty{
         return camelCase(this.name);
     }
 
+    jsonKey():string{
+        let params = [`name:'${this.name}'`];
+        if(this.info["x-enum-reference"] && !this.info['x-enum-is-bitmask']){
+            let ref = ApiDocHelper.getRef(this.info["x-enum-reference"].$ref);
+            let firstValue = ref['x-enum-values'][0].identifier;
+            params.push(`unknownEnumValue:${this.typeName()}.${firstValue}`);
+        }
+        return `@JsonKey(${params.join(',')})`;
+    }
+
     description():string[]|null{
         var d = this._description();
         if(!d) return null;

@@ -1,4 +1,5 @@
 import '../models/destiny_post_game_carnage_report_data.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_post_game_carnage_report_data_response.g.dart';
@@ -23,7 +24,7 @@ class DestinyPostGameCarnageReportDataResponse{
 	DestinyPostGameCarnageReportData response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

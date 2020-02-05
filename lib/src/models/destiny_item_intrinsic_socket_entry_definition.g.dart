@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyItemIntrinsicSocketEntryDefinitionToJson(
     <String, dynamic>{
       'plugItemHash': instance.plugItemHash,
       'socketTypeHash': instance.socketTypeHash,
-      'defaultVisible': instance.defaultVisible
+      'defaultVisible': instance.defaultVisible,
     };

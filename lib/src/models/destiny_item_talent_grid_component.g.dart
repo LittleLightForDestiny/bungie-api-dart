@@ -28,5 +28,5 @@ Map<String, dynamic> _$DestinyItemTalentGridComponentToJson(
       'talentGridHash': instance.talentGridHash,
       'nodes': instance.nodes,
       'isGridComplete': instance.isGridComplete,
-      'gridProgression': instance.gridProgression
+      'gridProgression': instance.gridProgression,
     };

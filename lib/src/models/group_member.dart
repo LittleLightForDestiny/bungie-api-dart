@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/runtime_group_member_type.dart';
 import 'group_user_info_card.dart';
 import 'user_info_card.dart';
 
@@ -12,8 +13,8 @@ class GroupMember{
 
 	factory GroupMember.fromJson(Map<String, dynamic> json) => _$GroupMemberFromJson(json);
 
-	@JsonKey(name:'memberType')
-	int memberType;
+	@JsonKey(name:'memberType',unknownEnumValue:RuntimeGroupMemberType.None)
+	RuntimeGroupMemberType memberType;
 	@JsonKey(name:'isOnline')
 	bool isOnline;
 	@JsonKey(name:'lastOnlineStatusChange')

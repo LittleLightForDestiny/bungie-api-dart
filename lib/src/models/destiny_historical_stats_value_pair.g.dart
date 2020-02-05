@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyHistoricalStatsValuePairToJson(
         DestinyHistoricalStatsValuePair instance) =>
     <String, dynamic>{
       'value': instance.value,
-      'displayValue': instance.displayValue
+      'displayValue': instance.displayValue,
     };

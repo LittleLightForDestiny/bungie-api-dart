@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryTrackingEntryToJson(
       'objectiveHash': instance.objectiveHash,
       'activityHash': instance.activityHash,
       'questlineItemHash': instance.questlineItemHash,
-      'trackedDate': instance.trackedDate
+      'trackedDate': instance.trackedDate,
     };

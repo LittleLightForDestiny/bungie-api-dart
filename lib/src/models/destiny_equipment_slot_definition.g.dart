@@ -36,5 +36,5 @@ Map<String, dynamic> _$DestinyEquipmentSlotDefinitionToJson(
       'artDyeChannels': instance.artDyeChannels,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

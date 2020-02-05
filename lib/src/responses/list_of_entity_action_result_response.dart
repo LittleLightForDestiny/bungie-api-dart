@@ -1,4 +1,5 @@
 import '../models/entity_action_result.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'list_of_entity_action_result_response.g.dart';
@@ -23,7 +24,7 @@ class ListOfEntityActionResultResponse{
 	List<EntityActionResult> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

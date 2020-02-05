@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyMilestoneRewardEntryToJson(
     <String, dynamic>{
       'rewardEntryHash': instance.rewardEntryHash,
       'earned': instance.earned,
-      'redeemed': instance.redeemed
+      'redeemed': instance.redeemed,
     };

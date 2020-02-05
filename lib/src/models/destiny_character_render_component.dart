@@ -15,10 +15,10 @@ class DestinyCharacterRenderComponent{
 
 	factory DestinyCharacterRenderComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterRenderComponentFromJson(json);
 
-	/// Custom dyes, calculated by iterating over the character&#39;s equipped items. Useful for pre-fetching all of the dye data needed from our server.
+	/// Custom dyes, calculated by iterating over the character's equipped items. Useful for pre-fetching all of the dye data needed from our server.
 	@JsonKey(name:'customDyes')
 	List<DyeReference> customDyes;
-	/// This is actually something that Spasm.js *doesn&#39;t* do right now, and that we don&#39;t return assets for yet. This is the data about what character customization options you picked. You can combine this with DestinyCharacterCustomizationOptionDefinition to show some cool info, and hopefully someday to actually render a user&#39;s face in 3D. We&#39;ll see if we ever end up with time for that.
+	/// This is actually something that Spasm.js *doesn't* do right now, and that we don't return assets for yet. This is the data about what character customization options you picked. You can combine this with DestinyCharacterCustomizationOptionDefinition to show some cool info, and hopefully someday to actually render a user's face in 3D. We'll see if we ever end up with time for that.
 	@JsonKey(name:'customization')
 	DestinyCharacterCustomization customization;
 	/// A minimal view of:

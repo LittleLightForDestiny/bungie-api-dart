@@ -33,5 +33,5 @@ Map<String, dynamic> _$DestinyLinkedGraphDefinitionToJson(
       'unlockExpression': instance.unlockExpression,
       'linkedGraphId': instance.linkedGraphId,
       'linkedGraphs': instance.linkedGraphs,
-      'overview': instance.overview
+      'overview': instance.overview,
     };

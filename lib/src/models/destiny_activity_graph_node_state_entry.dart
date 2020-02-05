@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_graph_node_state.dart';
 
 part 'destiny_activity_graph_node_state_entry.g.dart';
 
@@ -11,8 +12,8 @@ class DestinyActivityGraphNodeStateEntry{
 
 	factory DestinyActivityGraphNodeStateEntry.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphNodeStateEntryFromJson(json);
 
-	@JsonKey(name:'state')
-	int state;
+	@JsonKey(name:'state',unknownEnumValue:DestinyGraphNodeState.Hidden)
+	DestinyGraphNodeState state;
 
 	
 	

@@ -15,4 +15,6 @@ GroupMembershipBase _$GroupMembershipBaseFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$GroupMembershipBaseToJson(
         GroupMembershipBase instance) =>
-    <String, dynamic>{'group': instance.group};
+    <String, dynamic>{
+      'group': instance.group,
+    };

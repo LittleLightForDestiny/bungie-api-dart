@@ -15,4 +15,6 @@ DestinyPresentationNodeRecordChildEntry
 
 Map<String, dynamic> _$DestinyPresentationNodeRecordChildEntryToJson(
         DestinyPresentationNodeRecordChildEntry instance) =>
-    <String, dynamic>{'recordHash': instance.recordHash};
+    <String, dynamic>{
+      'recordHash': instance.recordHash,
+    };

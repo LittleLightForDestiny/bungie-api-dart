@@ -14,4 +14,6 @@ DestinyArtifactTierItemDefinition _$DestinyArtifactTierItemDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyArtifactTierItemDefinitionToJson(
         DestinyArtifactTierItemDefinition instance) =>
-    <String, dynamic>{'itemHash': instance.itemHash};
+    <String, dynamic>{
+      'itemHash': instance.itemHash,
+    };

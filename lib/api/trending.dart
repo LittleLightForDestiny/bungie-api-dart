@@ -1,4 +1,5 @@
 import '../helpers/http.dart';
+import '../enums/trending_entry_type.dart';
 import '../responses/search_result_of_trending_entry_response.dart';
 import '../responses/trending_categories_response.dart';
 import '../responses/trending_detail_response.dart';
@@ -23,7 +24,9 @@ class Trending{
         int pageNumber,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Categories/$categoryId/$pageNumber/', params);
+        final String _categoryId = '$categoryId';
+        final String _pageNumber = '$pageNumber';
+        final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Categories/$_categoryId/$_pageNumber/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -35,10 +38,12 @@ class Trending{
     static Future<TrendingDetailResponse> getTrendingEntryDetail (
         HttpClient client,
         String identifier,
-        int trendingEntryType,
+        TrendingEntryType trendingEntryType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Details/$trendingEntryType/$identifier/', params);
+        final String _identifier = '$identifier';
+        final String _trendingEntryType = '${trendingEntryType.value}';
+        final HttpClientConfig config = HttpClientConfig('GET', '/Trending/Details/$_trendingEntryType/$_identifier/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

@@ -18,7 +18,9 @@ GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) {
     ..parentGroup = json['parentGroup'] == null
         ? null
         : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
-    ..allianceStatus = json['allianceStatus'] as int
+    ..allianceStatus = _$enumDecodeNullable(
+        _$GroupAllianceStatusEnumMap, json['allianceStatus'],
+        unknownValue: GroupAllianceStatus.Unallied)
     ..groupJoinInviteCount = json['groupJoinInviteCount'] as int
     ..currentUserMembershipsInactiveForDestiny =
         json['currentUserMembershipsInactiveForDestiny'] as bool
@@ -43,10 +45,48 @@ Map<String, dynamic> _$GroupResponseToJson(GroupResponse instance) =>
       'founder': instance.founder,
       'alliedIds': instance.alliedIds,
       'parentGroup': instance.parentGroup,
-      'allianceStatus': instance.allianceStatus,
+      'allianceStatus': _$GroupAllianceStatusEnumMap[instance.allianceStatus],
       'groupJoinInviteCount': instance.groupJoinInviteCount,
       'currentUserMembershipsInactiveForDestiny':
           instance.currentUserMembershipsInactiveForDestiny,
       'currentUserMemberMap': instance.currentUserMemberMap,
-      'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap
+      'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$GroupAllianceStatusEnumMap = {
+  GroupAllianceStatus.Unallied: 0,
+  GroupAllianceStatus.Parent: 1,
+  GroupAllianceStatus.Child: 2,
+};

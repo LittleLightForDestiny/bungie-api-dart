@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyPublicMilestoneChallengeToJson(
         DestinyPublicMilestoneChallenge instance) =>
     <String, dynamic>{
       'objectiveHash': instance.objectiveHash,
-      'activityHash': instance.activityHash
+      'activityHash': instance.activityHash,
     };

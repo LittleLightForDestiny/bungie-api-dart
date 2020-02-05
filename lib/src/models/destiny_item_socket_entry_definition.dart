@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_item_socket_entry_plug_item_definition.dart';
+import '../enums/socket_plug_sources.dart';
 
 part 'destiny_item_socket_entry_definition.g.dart';
 
@@ -23,24 +24,24 @@ class DestinyItemSocketEntryDefinition{
 	@JsonKey(name:'reusablePlugItems')
 	List<DestinyItemSocketEntryPlugItemDefinition> reusablePlugItems;
 	/// If this is true, then the socket will not be initialized with a plug if the item is purchased from a Vendor.
-	/// Remember that Vendors are much more than conceptual vendors: they include &quot;Collection Kiosks&quot; and other entities. See DestinyVendorDefinition for more information.
+	/// Remember that Vendors are much more than conceptual vendors: they include "Collection Kiosks" and other entities. See DestinyVendorDefinition for more information.
 	@JsonKey(name:'preventInitializationOnVendorPurchase')
 	bool preventInitializationOnVendorPurchase;
-	/// If this is true, the perks provided by this socket shouldn&#39;t be shown in the item&#39;s tooltip. This might be useful if it&#39;s providing a hidden bonus, or if the bonus is less important than other benefits on the item.
+	/// If this is true, the perks provided by this socket shouldn't be shown in the item's tooltip. This might be useful if it's providing a hidden bonus, or if the bonus is less important than other benefits on the item.
 	@JsonKey(name:'hidePerksInItemTooltip')
 	bool hidePerksInItemTooltip;
-	/// Indicates where you should go to get plugs for this socket. This will affect how you populate your UI, as well as what plugs are valid for this socket. It&#39;s an alternative to having to check for the existence of certain properties (reusablePlugItems for example) to infer where plugs should come from.
+	/// Indicates where you should go to get plugs for this socket. This will affect how you populate your UI, as well as what plugs are valid for this socket. It's an alternative to having to check for the existence of certain properties (reusablePlugItems for example) to infer where plugs should come from.
 	@JsonKey(name:'plugSources')
-	int plugSources;
-	/// If this socket&#39;s plugs come from a reusable DestinyPlugSetDefinition, this is the identifier for that set. We added this concept to reduce some major duplication that&#39;s going to come from sockets as replacements for what was once implemented as large sets of items and kiosks (like Emotes).
+	SocketPlugSources plugSources;
+	/// If this socket's plugs come from a reusable DestinyPlugSetDefinition, this is the identifier for that set. We added this concept to reduce some major duplication that's going to come from sockets as replacements for what was once implemented as large sets of items and kiosks (like Emotes).
 	///  As of Shadowkeep, these will come up much more frequently and be driven by game content rather than custom curation.
 	@JsonKey(name:'reusablePlugSetHash')
 	int reusablePlugSetHash;
-	/// This field replaces &quot;randomizedPlugItems&quot; as of Shadowkeep launch. If a socket has randomized plugs, this is a pointer to the set of plugs that could be used, as defined in DestinyPlugSetDefinition.
+	/// This field replaces "randomizedPlugItems" as of Shadowkeep launch. If a socket has randomized plugs, this is a pointer to the set of plugs that could be used, as defined in DestinyPlugSetDefinition.
 	///  If null, the item has no randomized plugs.
 	@JsonKey(name:'randomizedPlugSetHash')
 	int randomizedPlugSetHash;
-	/// If true, then this socket is visible in the item&#39;s &quot;default&quot; state. If you have an instance, you should always check the runtime state, as that can override this visibility setting: but if you&#39;re looking at the item on a conceptual level, this property can be useful for hiding data such as legacy sockets - which remain defined on items for infrastructure purposes, but can be confusing for users to see.
+	/// If true, then this socket is visible in the item's "default" state. If you have an instance, you should always check the runtime state, as that can override this visibility setting: but if you're looking at the item on a conceptual level, this property can be useful for hiding data such as legacy sockets - which remain defined on items for infrastructure purposes, but can be confusing for users to see.
 	@JsonKey(name:'defaultVisible')
 	bool defaultVisible;
 

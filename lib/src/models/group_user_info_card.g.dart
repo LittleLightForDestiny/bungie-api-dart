@@ -9,15 +9,21 @@ part of 'group_user_info_card.dart';
 GroupUserInfoCard _$GroupUserInfoCardFromJson(Map<String, dynamic> json) {
   return GroupUserInfoCard()
     ..lastSeenDisplayName = json['LastSeenDisplayName'] as String
-    ..lastSeenDisplayNameType = json['LastSeenDisplayNameType'] as int
+    ..lastSeenDisplayNameType = _$enumDecodeNullable(
+        _$BungieMembershipTypeEnumMap, json['LastSeenDisplayNameType'],
+        unknownValue: BungieMembershipType.None)
     ..supplementalDisplayName = json['supplementalDisplayName'] as String
     ..iconPath = json['iconPath'] as String
-    ..crossSaveOverride = json['crossSaveOverride'] as int
+    ..crossSaveOverride = _$enumDecodeNullable(
+        _$BungieMembershipTypeEnumMap, json['crossSaveOverride'],
+        unknownValue: BungieMembershipType.None)
     ..applicableMembershipTypes = (json['applicableMembershipTypes'] as List)
-        ?.map((e) => e as int)
+        ?.map((e) => _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, e))
         ?.toList()
     ..isPublic = json['isPublic'] as bool
-    ..membershipType = json['membershipType'] as int
+    ..membershipType = _$enumDecodeNullable(
+        _$BungieMembershipTypeEnumMap, json['membershipType'],
+        unknownValue: BungieMembershipType.None)
     ..membershipId = json['membershipId'] as String
     ..displayName = json['displayName'] as String;
 }
@@ -25,13 +31,61 @@ GroupUserInfoCard _$GroupUserInfoCardFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$GroupUserInfoCardToJson(GroupUserInfoCard instance) =>
     <String, dynamic>{
       'LastSeenDisplayName': instance.lastSeenDisplayName,
-      'LastSeenDisplayNameType': instance.lastSeenDisplayNameType,
+      'LastSeenDisplayNameType':
+          _$BungieMembershipTypeEnumMap[instance.lastSeenDisplayNameType],
       'supplementalDisplayName': instance.supplementalDisplayName,
       'iconPath': instance.iconPath,
-      'crossSaveOverride': instance.crossSaveOverride,
-      'applicableMembershipTypes': instance.applicableMembershipTypes,
+      'crossSaveOverride':
+          _$BungieMembershipTypeEnumMap[instance.crossSaveOverride],
+      'applicableMembershipTypes': instance.applicableMembershipTypes
+          ?.map((e) => _$BungieMembershipTypeEnumMap[e])
+          ?.toList(),
       'isPublic': instance.isPublic,
-      'membershipType': instance.membershipType,
+      'membershipType': _$BungieMembershipTypeEnumMap[instance.membershipType],
       'membershipId': instance.membershipId,
-      'displayName': instance.displayName
+      'displayName': instance.displayName,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$BungieMembershipTypeEnumMap = {
+  BungieMembershipType.None: 0,
+  BungieMembershipType.TigerXbox: 1,
+  BungieMembershipType.TigerPsn: 2,
+  BungieMembershipType.TigerSteam: 3,
+  BungieMembershipType.TigerBlizzard: 4,
+  BungieMembershipType.TigerStadia: 5,
+  BungieMembershipType.TigerDemon: 10,
+  BungieMembershipType.BungieNext: 254,
+  BungieMembershipType.All: -1,
+};

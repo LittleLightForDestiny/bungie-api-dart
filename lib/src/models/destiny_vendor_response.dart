@@ -32,7 +32,7 @@ class DestinyVendorResponse{
 	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]
 	@JsonKey(name:'itemComponents')
 	DestinyItemComponentSetOfint32 itemComponents;
-	/// A &quot;lookup&quot; convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+	/// A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
 	/// COMPONENT TYPE: CurrencyLookups
 	@JsonKey(name:'currencyLookups')
 	SingleComponentResponseOfDestinyCurrenciesComponent currencyLookups;

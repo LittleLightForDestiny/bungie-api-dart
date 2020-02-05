@@ -30,5 +30,5 @@ Map<String, dynamic> _$DestinyArtifactTierDefinitionToJson(
       'progressRequirementMessage': instance.progressRequirementMessage,
       'items': instance.items,
       'minimumUnlockPointsUsedRequirement':
-          instance.minimumUnlockPointsUsedRequirement
+          instance.minimumUnlockPointsUsedRequirement,
     };

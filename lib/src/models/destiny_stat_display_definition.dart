@@ -14,13 +14,13 @@ class DestinyStatDisplayDefinition{
 	factory DestinyStatDisplayDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatDisplayDefinitionFromJson(json);
 
 	/// The hash identifier for the stat being transformed into a Display stat.
-	/// Use it to look up the DestinyStatDefinition, or key into a DestinyInventoryItemDefinition&#39;s stats property.
+	/// Use it to look up the DestinyStatDefinition, or key into a DestinyInventoryItemDefinition's stats property.
 	@JsonKey(name:'statHash')
 	int statHash;
 	/// Regardless of the output of interpolation, this is the maximum possible value that the stat can be. It should also be used as the upper bound for displaying the stat as a progress bar (the minimum always being 0)
 	@JsonKey(name:'maximumValue')
 	int maximumValue;
-	/// If this is true, the stat should be displayed as a number. Otherwise, display it as a progress bar. Or, you know, do whatever you want. There&#39;s no displayAsNumeric police.
+	/// If this is true, the stat should be displayed as a number. Otherwise, display it as a progress bar. Or, you know, do whatever you want. There's no displayAsNumeric police.
 	@JsonKey(name:'displayAsNumeric')
 	bool displayAsNumeric;
 	/// The interpolation table representing how the Investment Stat is transformed into a Display Stat. 

@@ -75,5 +75,5 @@ Map<String, dynamic> _$ContentTypeDescriptionToJson(
       'bulkUploadable': instance.bulkUploadable,
       'previews': instance.previews,
       'suppressCmsPath': instance.suppressCmsPath,
-      'propertySections': instance.propertySections
+      'propertySections': instance.propertySections,
     };

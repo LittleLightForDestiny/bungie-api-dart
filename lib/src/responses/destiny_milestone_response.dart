@@ -1,4 +1,5 @@
 import '../models/destiny_milestone.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_milestone_response.g.dart';
@@ -24,7 +25,7 @@ class DestinyMilestoneResponse{
 	DestinyMilestone response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

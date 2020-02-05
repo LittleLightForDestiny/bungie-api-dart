@@ -8,7 +8,9 @@ DestinyProfileTransitoryPartyMember
     ..membershipId = json['membershipId'] as String
     ..emblemHash = json['emblemHash'] as int
     ..displayName = json['displayName'] as String
-    ..status = json['status'] as int;
+    ..status = json['status'] == null
+        ? null
+        : DestinyPartyMemberStates.fromJson(json['status'] as int);
 }
 
 Map<String, dynamic> _$DestinyProfileTransitoryPartyMemberToJson(
@@ -17,5 +19,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryPartyMemberToJson(
       'membershipId': instance.membershipId,
       'emblemHash': instance.emblemHash,
       'displayName': instance.displayName,
-      'status': instance.status
+      'status': instance.status,
     };

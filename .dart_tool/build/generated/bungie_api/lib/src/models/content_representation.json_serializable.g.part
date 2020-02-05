@@ -15,5 +15,5 @@ Map<String, dynamic> _$ContentRepresentationToJson(
     <String, dynamic>{
       'name': instance.name,
       'path': instance.path,
-      'validationString': instance.validationString
+      'validationString': instance.validationString,
     };

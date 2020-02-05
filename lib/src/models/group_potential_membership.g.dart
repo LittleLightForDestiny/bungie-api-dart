@@ -19,4 +19,7 @@ GroupPotentialMembership _$GroupPotentialMembershipFromJson(
 
 Map<String, dynamic> _$GroupPotentialMembershipToJson(
         GroupPotentialMembership instance) =>
-    <String, dynamic>{'member': instance.member, 'group': instance.group};
+    <String, dynamic>{
+      'member': instance.member,
+      'group': instance.group,
+    };

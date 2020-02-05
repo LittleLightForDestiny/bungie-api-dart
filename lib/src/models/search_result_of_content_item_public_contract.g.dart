@@ -33,5 +33,5 @@ Map<String, dynamic> _$SearchResultOfContentItemPublicContractToJson(
       'hasMore': instance.hasMore,
       'query': instance.query,
       'replacementContinuationToken': instance.replacementContinuationToken,
-      'useTotalResults': instance.useTotalResults
+      'useTotalResults': instance.useTotalResults,
     };

@@ -17,13 +17,21 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
     ..deprecated = json['deprecated'] as bool
     ..shortTitle = json['shortTitle'] as String
     ..itemTypeRegex = json['itemTypeRegex'] as String
-    ..grantDestinyBreakerType = json['grantDestinyBreakerType'] as int
+    ..grantDestinyBreakerType = _$enumDecodeNullable(
+        _$DestinyBreakerTypeEnumMap, json['grantDestinyBreakerType'],
+        unknownValue: DestinyBreakerType.None)
     ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String
     ..itemTypeRegexNot = json['itemTypeRegexNot'] as String
     ..originBucketIdentifier = json['originBucketIdentifier'] as String
-    ..grantDestinyItemType = json['grantDestinyItemType'] as int
-    ..grantDestinySubType = json['grantDestinySubType'] as int
-    ..grantDestinyClass = json['grantDestinyClass'] as int
+    ..grantDestinyItemType = _$enumDecodeNullable(
+        _$DestinyItemTypeEnumMap, json['grantDestinyItemType'],
+        unknownValue: DestinyItemType.None)
+    ..grantDestinySubType = _$enumDecodeNullable(
+        _$DestinyItemSubTypeEnumMap, json['grantDestinySubType'],
+        unknownValue: DestinyItemSubType.None)
+    ..grantDestinyClass = _$enumDecodeNullable(
+        _$DestinyClassEnumMap, json['grantDestinyClass'],
+        unknownValue: DestinyClass.Titan)
     ..groupedCategoryHashes =
         (json['groupedCategoryHashes'] as List)?.map((e) => e as int)?.toList()
     ..parentCategoryHashes =
@@ -42,17 +50,128 @@ Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
       'deprecated': instance.deprecated,
       'shortTitle': instance.shortTitle,
       'itemTypeRegex': instance.itemTypeRegex,
-      'grantDestinyBreakerType': instance.grantDestinyBreakerType,
+      'grantDestinyBreakerType':
+          _$DestinyBreakerTypeEnumMap[instance.grantDestinyBreakerType],
       'plugCategoryIdentifier': instance.plugCategoryIdentifier,
       'itemTypeRegexNot': instance.itemTypeRegexNot,
       'originBucketIdentifier': instance.originBucketIdentifier,
-      'grantDestinyItemType': instance.grantDestinyItemType,
-      'grantDestinySubType': instance.grantDestinySubType,
-      'grantDestinyClass': instance.grantDestinyClass,
+      'grantDestinyItemType':
+          _$DestinyItemTypeEnumMap[instance.grantDestinyItemType],
+      'grantDestinySubType':
+          _$DestinyItemSubTypeEnumMap[instance.grantDestinySubType],
+      'grantDestinyClass': _$DestinyClassEnumMap[instance.grantDestinyClass],
       'groupedCategoryHashes': instance.groupedCategoryHashes,
       'parentCategoryHashes': instance.parentCategoryHashes,
       'groupCategoryOnly': instance.groupCategoryOnly,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyBreakerTypeEnumMap = {
+  DestinyBreakerType.None: 0,
+  DestinyBreakerType.ShieldPiercing: 1,
+  DestinyBreakerType.Disruption: 2,
+  DestinyBreakerType.Stagger: 3,
+};
+
+const _$DestinyItemTypeEnumMap = {
+  DestinyItemType.None: 0,
+  DestinyItemType.Currency: 1,
+  DestinyItemType.Armor: 2,
+  DestinyItemType.Weapon: 3,
+  DestinyItemType.Message: 7,
+  DestinyItemType.Engram: 8,
+  DestinyItemType.Consumable: 9,
+  DestinyItemType.ExchangeMaterial: 10,
+  DestinyItemType.MissionReward: 11,
+  DestinyItemType.QuestStep: 12,
+  DestinyItemType.QuestStepComplete: 13,
+  DestinyItemType.Emblem: 14,
+  DestinyItemType.Quest: 15,
+  DestinyItemType.Subclass: 16,
+  DestinyItemType.ClanBanner: 17,
+  DestinyItemType.Aura: 18,
+  DestinyItemType.Mod: 19,
+  DestinyItemType.Dummy: 20,
+  DestinyItemType.Ship: 21,
+  DestinyItemType.Vehicle: 22,
+  DestinyItemType.Emote: 23,
+  DestinyItemType.Ghost: 24,
+  DestinyItemType.Package: 25,
+  DestinyItemType.Bounty: 26,
+  DestinyItemType.Wrapper: 27,
+  DestinyItemType.SeasonalArtifact: 28,
+  DestinyItemType.Finisher: 29,
+};
+
+const _$DestinyItemSubTypeEnumMap = {
+  DestinyItemSubType.None: 0,
+  DestinyItemSubType.Crucible: 1,
+  DestinyItemSubType.Vanguard: 2,
+  DestinyItemSubType.Exotic: 5,
+  DestinyItemSubType.AutoRifle: 6,
+  DestinyItemSubType.Shotgun: 7,
+  DestinyItemSubType.Machinegun: 8,
+  DestinyItemSubType.HandCannon: 9,
+  DestinyItemSubType.RocketLauncher: 10,
+  DestinyItemSubType.FusionRifle: 11,
+  DestinyItemSubType.SniperRifle: 12,
+  DestinyItemSubType.PulseRifle: 13,
+  DestinyItemSubType.ScoutRifle: 14,
+  DestinyItemSubType.Crm: 16,
+  DestinyItemSubType.Sidearm: 17,
+  DestinyItemSubType.Sword: 18,
+  DestinyItemSubType.Mask: 19,
+  DestinyItemSubType.Shader: 20,
+  DestinyItemSubType.Ornament: 21,
+  DestinyItemSubType.FusionRifleLine: 22,
+  DestinyItemSubType.GrenadeLauncher: 23,
+  DestinyItemSubType.SubmachineGun: 24,
+  DestinyItemSubType.TraceRifle: 25,
+  DestinyItemSubType.HelmetArmor: 26,
+  DestinyItemSubType.GauntletsArmor: 27,
+  DestinyItemSubType.ChestArmor: 28,
+  DestinyItemSubType.LegArmor: 29,
+  DestinyItemSubType.ClassArmor: 30,
+  DestinyItemSubType.Bow: 31,
+};
+
+const _$DestinyClassEnumMap = {
+  DestinyClass.Titan: 0,
+  DestinyClass.Hunter: 1,
+  DestinyClass.Warlock: 2,
+  DestinyClass.Unknown: 3,
+};

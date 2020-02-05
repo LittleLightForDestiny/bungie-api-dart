@@ -40,5 +40,5 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportEntryToJson(
       'player': instance.player,
       'characterId': instance.characterId,
       'values': instance.values,
-      'extended': instance.extended
+      'extended': instance.extended,
     };

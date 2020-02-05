@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyMilestoneContentItemCategoryToJson(
         DestinyMilestoneContentItemCategory instance) =>
     <String, dynamic>{
       'title': instance.title,
-      'itemHashes': instance.itemHashes
+      'itemHashes': instance.itemHashes,
     };

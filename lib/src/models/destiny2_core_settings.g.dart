@@ -41,5 +41,5 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'ammoTypePrimaryIcon': instance.ammoTypePrimaryIcon,
       'currentSeasonalArtifactHash': instance.currentSeasonalArtifactHash,
       'currentSeasonHash': instance.currentSeasonHash,
-      'futureSeasonHashes': instance.futureSeasonHashes
+      'futureSeasonHashes': instance.futureSeasonHashes,
     };

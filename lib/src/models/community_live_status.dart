@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/partnership_type.dart';
 import 'user_info_card.dart';
 
 part 'community_live_status.g.dart';
@@ -17,8 +18,8 @@ class CommunityLiveStatus{
 	String url;
 	@JsonKey(name:'partnershipIdentifier')
 	String partnershipIdentifier;
-	@JsonKey(name:'partnershipType')
-	int partnershipType;
+	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.None)
+	PartnershipType partnershipType;
 	@JsonKey(name:'thumbnail')
 	String thumbnail;
 	@JsonKey(name:'thumbnailSmall')

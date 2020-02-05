@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/fireteam_platform.dart';
+import '../enums/fireteam_activity_type.dart';
 
 part 'fireteam_summary.g.dart';
 
@@ -14,10 +16,10 @@ class FireteamSummary{
 	String fireteamId;
 	@JsonKey(name:'groupId')
 	String groupId;
-	@JsonKey(name:'platform')
-	int platform;
-	@JsonKey(name:'activityType')
-	int activityType;
+	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.Unknown)
+	FireteamPlatform platform;
+	@JsonKey(name:'activityType',unknownEnumValue:FireteamActivityType.All)
+	FireteamActivityType activityType;
 	@JsonKey(name:'isImmediate')
 	bool isImmediate;
 	@JsonKey(name:'scheduledTime')

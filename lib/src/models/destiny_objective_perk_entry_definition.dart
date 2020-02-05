@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_objective_grant_style.dart';
 
 part 'destiny_objective_perk_entry_definition.g.dart';
 
@@ -15,9 +16,9 @@ class DestinyObjectivePerkEntryDefinition{
 	/// The hash identifier of the DestinySandboxPerkDefinition that will be applied to the character.
 	@JsonKey(name:'perkHash')
 	int perkHash;
-	/// An enumeration indicating whether it will be applied as long as the Objective is active, when it&#39;s completed, or until it&#39;s completed.
-	@JsonKey(name:'style')
-	int style;
+	/// An enumeration indicating whether it will be applied as long as the Objective is active, when it's completed, or until it's completed.
+	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.WhenIncomplete)
+	DestinyObjectiveGrantStyle style;
 
 	
 	

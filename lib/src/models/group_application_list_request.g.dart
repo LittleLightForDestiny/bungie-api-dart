@@ -21,5 +21,5 @@ Map<String, dynamic> _$GroupApplicationListRequestToJson(
         GroupApplicationListRequest instance) =>
     <String, dynamic>{
       'memberships': instance.memberships,
-      'message': instance.message
+      'message': instance.message,
     };

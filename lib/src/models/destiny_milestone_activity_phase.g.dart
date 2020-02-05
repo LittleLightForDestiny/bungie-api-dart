@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyMilestoneActivityPhaseToJson(
         DestinyMilestoneActivityPhase instance) =>
     <String, dynamic>{
       'complete': instance.complete,
-      'phaseHash': instance.phaseHash
+      'phaseHash': instance.phaseHash,
     };

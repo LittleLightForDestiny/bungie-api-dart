@@ -13,8 +13,8 @@ class DestinyProgressionLevelRequirementDefinition{
 
 	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
 
-	/// A curve of level requirements, weighted by the related progressions&#39; level.
-	/// Interpolate against this curve with the character&#39;s progression level to determine what the level requirement of the generated item that is using this data will be.
+	/// A curve of level requirements, weighted by the related progressions' level.
+	/// Interpolate against this curve with the character's progression level to determine what the level requirement of the generated item that is using this data will be.
 	@JsonKey(name:'requirementCurve')
 	List<InterpolationPointFloat> requirementCurve;
 	/// The progression whose level should be used to determine the level requirement.
@@ -28,7 +28,7 @@ class DestinyProgressionLevelRequirementDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

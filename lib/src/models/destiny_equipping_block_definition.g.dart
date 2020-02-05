@@ -13,8 +13,12 @@ DestinyEquippingBlockDefinition _$DestinyEquippingBlockDefinitionFromJson(
     ..uniqueLabel = json['uniqueLabel'] as String
     ..uniqueLabelHash = json['uniqueLabelHash'] as int
     ..equipmentSlotTypeHash = json['equipmentSlotTypeHash'] as int
-    ..attributes = json['attributes'] as int
-    ..ammoType = json['ammoType'] as int
+    ..attributes = json['attributes'] == null
+        ? null
+        : EquippingItemBlockAttributes.fromJson(json['attributes'] as int)
+    ..ammoType = _$enumDecodeNullable(
+        _$DestinyAmmunitionTypeEnumMap, json['ammoType'],
+        unknownValue: DestinyAmmunitionType.None)
     ..displayStrings =
         (json['displayStrings'] as List)?.map((e) => e as String)?.toList();
 }
@@ -27,6 +31,46 @@ Map<String, dynamic> _$DestinyEquippingBlockDefinitionToJson(
       'uniqueLabelHash': instance.uniqueLabelHash,
       'equipmentSlotTypeHash': instance.equipmentSlotTypeHash,
       'attributes': instance.attributes,
-      'ammoType': instance.ammoType,
-      'displayStrings': instance.displayStrings
+      'ammoType': _$DestinyAmmunitionTypeEnumMap[instance.ammoType],
+      'displayStrings': instance.displayStrings,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyAmmunitionTypeEnumMap = {
+  DestinyAmmunitionType.None: 0,
+  DestinyAmmunitionType.Primary: 1,
+  DestinyAmmunitionType.Special: 2,
+  DestinyAmmunitionType.Heavy: 3,
+  DestinyAmmunitionType.Unknown: 4,
+};

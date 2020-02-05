@@ -33,5 +33,5 @@ Map<String, dynamic> _$DestinyReportReasonCategoryDefinitionToJson(
       'reasons': instance.reasons,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

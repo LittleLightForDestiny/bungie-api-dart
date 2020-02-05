@@ -27,5 +27,5 @@ Map<String, dynamic> _$DestinyVendorActionDefinitionToJson(
       'isPositive': instance.isPositive,
       'actionId': instance.actionId,
       'actionHash': instance.actionHash,
-      'autoPerformAction': instance.autoPerformAction
+      'autoPerformAction': instance.autoPerformAction,
     };

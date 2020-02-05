@@ -50,5 +50,5 @@ Map<String, dynamic> _$DestinyItemComponentSetOfuint32ToJson(
       'plugObjectives': instance.plugObjectives,
       'talentGrids': instance.talentGrids,
       'plugStates': instance.plugStates,
-      'objectives': instance.objectives
+      'objectives': instance.objectives,
     };

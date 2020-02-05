@@ -13,5 +13,5 @@ Map<String, dynamic> _$DestinyObjectiveDisplayPropertiesToJson(
         DestinyObjectiveDisplayProperties instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'displayOnItemPreviewScreen': instance.displayOnItemPreviewScreen
+      'displayOnItemPreviewScreen': instance.displayOnItemPreviewScreen,
     };

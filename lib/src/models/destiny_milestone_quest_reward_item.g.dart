@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyMilestoneQuestRewardItemToJson(
       'vendorItemIndex': instance.vendorItemIndex,
       'itemHash': instance.itemHash,
       'itemInstanceId': instance.itemInstanceId,
-      'quantity': instance.quantity
+      'quantity': instance.quantity,
     };

@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_item_stats_component.dart';
+import '../enums/component_privacy_setting.dart';
 
 part 'dictionary_component_response_ofint32_and_destiny_item_stats_component.g.dart';
 
@@ -13,8 +14,8 @@ class DictionaryComponentResponseOfint32AndDestinyItemStatsComponent{
 
 	@JsonKey(name:'data')
 	Map<String, DestinyItemStatsComponent> data;
-	@JsonKey(name:'privacy')
-	int privacy;
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	ComponentPrivacySetting privacy;
 
 	
 	

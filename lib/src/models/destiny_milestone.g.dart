@@ -52,5 +52,5 @@ Map<String, dynamic> _$DestinyMilestoneToJson(DestinyMilestone instance) =>
       'rewards': instance.rewards,
       'startDate': instance.startDate,
       'endDate': instance.endDate,
-      'order': instance.order
+      'order': instance.order,
     };

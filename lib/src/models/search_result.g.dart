@@ -24,5 +24,5 @@ Map<String, dynamic> _$SearchResultToJson(SearchResult instance) =>
       'hasMore': instance.hasMore,
       'query': instance.query,
       'replacementContinuationToken': instance.replacementContinuationToken,
-      'useTotalResults': instance.useTotalResults
+      'useTotalResults': instance.useTotalResults,
     };

@@ -34,5 +34,5 @@ Map<String, dynamic> _$DestinyVendorInventoryFlyoutDefinitionToJson(
       'buckets': instance.buckets,
       'flyoutId': instance.flyoutId,
       'suppressNewness': instance.suppressNewness,
-      'equipmentSlotHash': instance.equipmentSlotHash
+      'equipmentSlotHash': instance.equipmentSlotHash,
     };

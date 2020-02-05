@@ -14,7 +14,7 @@ class DestinyPostGameCarnageReportTeamEntry{
 	/// Integer ID for the team.
 	@JsonKey(name:'teamId')
 	int teamId;
-	/// Team&#39;s standing relative to other teams.
+	/// Team's standing relative to other teams.
 	@JsonKey(name:'standing')
 	DestinyHistoricalStatsValue standing;
 	/// Score earned by the team

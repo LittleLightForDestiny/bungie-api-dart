@@ -60,5 +60,5 @@ Map<String, dynamic> _$DestinyCharacterResponseToJson(
       'collectibles': instance.collectibles,
       'itemComponents': instance.itemComponents,
       'uninstancedItemComponents': instance.uninstancedItemComponents,
-      'currencyLookups': instance.currencyLookups
+      'currencyLookups': instance.currencyLookups,
     };

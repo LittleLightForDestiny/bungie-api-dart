@@ -13,4 +13,6 @@ DestinyVendorServiceDefinition _$DestinyVendorServiceDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyVendorServiceDefinitionToJson(
         DestinyVendorServiceDefinition instance) =>
-    <String, dynamic>{'name': instance.name};
+    <String, dynamic>{
+      'name': instance.name,
+    };

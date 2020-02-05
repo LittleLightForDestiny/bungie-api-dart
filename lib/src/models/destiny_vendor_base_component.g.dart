@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyVendorBaseComponentToJson(
     <String, dynamic>{
       'vendorHash': instance.vendorHash,
       'nextRefreshDate': instance.nextRefreshDate,
-      'enabled': instance.enabled
+      'enabled': instance.enabled,
     };

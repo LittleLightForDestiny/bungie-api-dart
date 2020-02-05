@@ -16,4 +16,6 @@ DestinyCurrenciesComponent _$DestinyCurrenciesComponentFromJson(
 
 Map<String, dynamic> _$DestinyCurrenciesComponentToJson(
         DestinyCurrenciesComponent instance) =>
-    <String, dynamic>{'itemQuantities': instance.itemQuantities};
+    <String, dynamic>{
+      'itemQuantities': instance.itemQuantities,
+    };

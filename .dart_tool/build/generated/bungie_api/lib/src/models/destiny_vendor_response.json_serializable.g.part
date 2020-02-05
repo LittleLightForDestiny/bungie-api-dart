@@ -34,5 +34,5 @@ Map<String, dynamic> _$DestinyVendorResponseToJson(
       'categories': instance.categories,
       'sales': instance.sales,
       'itemComponents': instance.itemComponents,
-      'currencyLookups': instance.currencyLookups
+      'currencyLookups': instance.currencyLookups,
     };

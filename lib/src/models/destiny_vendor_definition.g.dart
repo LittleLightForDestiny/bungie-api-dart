@@ -103,5 +103,5 @@ Map<String, dynamic> _$DestinyVendorDefinitionToJson(
       'ignoreSaleItemHashes': instance.ignoreSaleItemHashes,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

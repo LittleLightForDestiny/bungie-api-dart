@@ -28,5 +28,5 @@ Map<String, dynamic> _$GroupV2ClanInfoAndInvestmentToJson(
     <String, dynamic>{
       'd2ClanProgressions': instance.d2ClanProgressions,
       'clanCallsign': instance.clanCallsign,
-      'clanBannerData': instance.clanBannerData
+      'clanBannerData': instance.clanBannerData,
     };

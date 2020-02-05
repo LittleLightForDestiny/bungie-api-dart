@@ -44,5 +44,5 @@ Map<String, dynamic> _$DestinyManifestToJson(DestinyManifest instance) =>
       'jsonWorldContentPaths': instance.jsonWorldContentPaths,
       'mobileClanBannerDatabasePath': instance.mobileClanBannerDatabasePath,
       'mobileGearCDN': instance.mobileGearCdn,
-      'iconImagePyramidInfo': instance.iconImagePyramidInfo
+      'iconImagePyramidInfo': instance.iconImagePyramidInfo,
     };

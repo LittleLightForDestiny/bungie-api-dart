@@ -12,5 +12,7 @@ DateRange _$DateRangeFromJson(Map<String, dynamic> json) {
     ..end = json['end'] as String;
 }
 
-Map<String, dynamic> _$DateRangeToJson(DateRange instance) =>
-    <String, dynamic>{'start': instance.start, 'end': instance.end};
+Map<String, dynamic> _$DateRangeToJson(DateRange instance) => <String, dynamic>{
+      'start': instance.start,
+      'end': instance.end,
+    };

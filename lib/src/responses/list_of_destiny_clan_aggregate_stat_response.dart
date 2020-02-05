@@ -1,4 +1,5 @@
 import '../models/destiny_clan_aggregate_stat.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'list_of_destiny_clan_aggregate_stat_response.g.dart';
@@ -23,7 +24,7 @@ class ListOfDestinyClanAggregateStatResponse{
 	List<DestinyClanAggregateStat> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

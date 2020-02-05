@@ -28,8 +28,8 @@ class DestinyProfileTransitoryTrackingEntry{
 	/// OPTIONAL - If this is tracking the status of a quest, this is the identifier for the DestinyInventoryItemDefinition that containst that questline data.
 	@JsonKey(name:'questlineItemHash')
 	int questlineItemHash;
-	/// OPTIONAL - I&#39;ve got to level with you, I don&#39;t really know what this is. Is it when you started tracking it? Is it only populated for tracked items that have time limits?
-	/// I don&#39;t know, but we can get at it - when I get time to actually test what it is, I&#39;ll update this. In the meantime, bask in the mysterious data.
+	/// OPTIONAL - I've got to level with you, I don't really know what this is. Is it when you started tracking it? Is it only populated for tracked items that have time limits?
+	/// I don't know, but we can get at it - when I get time to actually test what it is, I'll update this. In the meantime, bask in the mysterious data.
 	@JsonKey(name:'trackedDate')
 	String trackedDate;
 

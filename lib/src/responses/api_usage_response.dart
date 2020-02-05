@@ -1,4 +1,5 @@
 import '../models/api_usage.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'api_usage_response.g.dart';
@@ -23,7 +24,7 @@ class ApiUsageResponse{
 	ApiUsage response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

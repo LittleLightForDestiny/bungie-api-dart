@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyLeaderboardResultsToJson(
         DestinyLeaderboardResults instance) =>
     <String, dynamic>{
       'focusMembershipId': instance.focusMembershipId,
-      'focusCharacterId': instance.focusCharacterId
+      'focusCharacterId': instance.focusCharacterId,
     };

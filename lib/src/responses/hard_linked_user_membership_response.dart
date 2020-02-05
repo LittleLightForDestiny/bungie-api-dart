@@ -1,4 +1,5 @@
 import '../models/hard_linked_user_membership.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'hard_linked_user_membership_response.g.dart';
@@ -23,7 +24,7 @@ class HardLinkedUserMembershipResponse{
 	HardLinkedUserMembership response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

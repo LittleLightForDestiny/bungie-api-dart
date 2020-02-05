@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyItemRenderComponentToJson(
         DestinyItemRenderComponent instance) =>
     <String, dynamic>{
       'useCustomDyes': instance.useCustomDyes,
-      'artRegions': instance.artRegions
+      'artRegions': instance.artRegions,
     };

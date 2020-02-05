@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyActivityGraphDisplayProgressionDefinitionToJson(
         DestinyActivityGraphDisplayProgressionDefinition instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'progressionHash': instance.progressionHash
+      'progressionHash': instance.progressionHash,
     };

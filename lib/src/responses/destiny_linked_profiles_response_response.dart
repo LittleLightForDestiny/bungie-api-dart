@@ -1,4 +1,5 @@
 import '../models/destiny_linked_profiles_response.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'destiny_linked_profiles_response_response.g.dart';
@@ -26,7 +27,7 @@ class DestinyLinkedProfilesResponseResponse{
 	DestinyLinkedProfilesResponse response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

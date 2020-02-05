@@ -14,7 +14,7 @@ class DestinyMilestoneActivityPhase{
 	/// Indicates if the phase has been completed.
 	@JsonKey(name:'complete')
 	bool complete;
-	/// In DestinyActivityDefinition, if the activity has phases, there will be a set of phases defined in the &quot;insertionPoints&quot; property. This is the hash that maps to that phase.
+	/// In DestinyActivityDefinition, if the activity has phases, there will be a set of phases defined in the "insertionPoints" property. This is the hash that maps to that phase.
 	@JsonKey(name:'phaseHash')
 	int phaseHash;
 

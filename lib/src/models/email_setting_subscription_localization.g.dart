@@ -28,5 +28,5 @@ Map<String, dynamic> _$EMailSettingSubscriptionLocalizationToJson(
       'unknownUserActionText': instance.unknownUserActionText,
       'knownUserActionText': instance.knownUserActionText,
       'title': instance.title,
-      'description': instance.description
+      'description': instance.description,
     };

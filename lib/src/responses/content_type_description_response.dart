@@ -1,4 +1,5 @@
 import '../models/content_type_description.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'content_type_description_response.g.dart';
@@ -23,7 +24,7 @@ class ContentTypeDescriptionResponse{
 	ContentTypeDescription response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/group_potential_member_status.dart';
 import 'group_user_info_card.dart';
 import 'user_info_card.dart';
 
@@ -12,8 +13,8 @@ class GroupPotentialMember{
 
 	factory GroupPotentialMember.fromJson(Map<String, dynamic> json) => _$GroupPotentialMemberFromJson(json);
 
-	@JsonKey(name:'potentialStatus')
-	int potentialStatus;
+	@JsonKey(name:'potentialStatus',unknownEnumValue:GroupPotentialMemberStatus.None)
+	GroupPotentialMemberStatus potentialStatus;
 	@JsonKey(name:'groupId')
 	String groupId;
 	@JsonKey(name:'destinyUserInfo')

@@ -1,4 +1,5 @@
 import '../models/user_info_card.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'ienumerable_of_user_info_card_response.g.dart';
@@ -23,7 +24,7 @@ class IEnumerableOfUserInfoCardResponse{
 	List<UserInfoCard> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

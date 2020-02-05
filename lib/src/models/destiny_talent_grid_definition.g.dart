@@ -56,5 +56,5 @@ Map<String, dynamic> _$DestinyTalentGridDefinitionToJson(
       'nodeCategories': instance.nodeCategories,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

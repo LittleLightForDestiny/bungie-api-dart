@@ -11,7 +11,7 @@ class DestinyDerivedItemDefinition{
 
 	factory DestinyDerivedItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDerivedItemDefinitionFromJson(json);
 
-	/// The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won&#39;t be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
+	/// The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won't be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
 	@JsonKey(name:'itemHash')
 	int itemHash;
 	/// The name of the derived item.
@@ -26,7 +26,7 @@ class DestinyDerivedItemDefinition{
 	/// An icon for the item.
 	@JsonKey(name:'iconPath')
 	String iconPath;
-	/// If the item was derived from a &quot;Preview Vendor&quot;, this will be an index into the DestinyVendorDefinition&#39;s itemList property. Otherwise, -1.
+	/// If the item was derived from a "Preview Vendor", this will be an index into the DestinyVendorDefinition's itemList property. Otherwise, -1.
 	@JsonKey(name:'vendorItemIndex')
 	int vendorItemIndex;
 

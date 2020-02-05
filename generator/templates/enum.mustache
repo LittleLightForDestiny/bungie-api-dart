@@ -1,6 +1,25 @@
-class {{className}} {
-  {{className}}._();
+import 'package:json_annotation/json_annotation.dart';
+
+enum {{className}} {
   {{#values}}
-  static const {{type}} {{name}} = {{value}};
+  ///{{name}} = {{value}}
+  {{#description}}
+  /// {{.}}
+  {{/description}}
+  @JsonValue({{value}})
+  {{name}},
   {{/values}}
+}
+
+extension {{className}}Extension on {{className}}{
+  int get value {
+    switch(this){
+      {{#values}}
+      case {{className}}.{{name}}:
+        return {{value}};
+      {{/values}}
+      default:
+        return null;
+    }
+  }
 }

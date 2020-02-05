@@ -21,5 +21,5 @@ UserMembershipData _$UserMembershipDataFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$UserMembershipDataToJson(UserMembershipData instance) =>
     <String, dynamic>{
       'destinyMemberships': instance.destinyMemberships,
-      'bungieNetUser': instance.bungieNetUser
+      'bungieNetUser': instance.bungieNetUser,
     };

@@ -11,7 +11,9 @@ CommunityLiveStatus _$CommunityLiveStatusFromJson(Map<String, dynamic> json) {
     ..dateStatusUpdated = json['dateStatusUpdated'] as String
     ..url = json['url'] as String
     ..partnershipIdentifier = json['partnershipIdentifier'] as String
-    ..partnershipType = json['partnershipType'] as int
+    ..partnershipType = _$enumDecodeNullable(
+        _$PartnershipTypeEnumMap, json['partnershipType'],
+        unknownValue: PartnershipType.None)
     ..thumbnail = json['thumbnail'] as String
     ..thumbnailSmall = json['thumbnailSmall'] as String
     ..thumbnailLarge = json['thumbnailLarge'] as String
@@ -40,7 +42,7 @@ Map<String, dynamic> _$CommunityLiveStatusToJson(
       'dateStatusUpdated': instance.dateStatusUpdated,
       'url': instance.url,
       'partnershipIdentifier': instance.partnershipIdentifier,
-      'partnershipType': instance.partnershipType,
+      'partnershipType': _$PartnershipTypeEnumMap[instance.partnershipType],
       'thumbnail': instance.thumbnail,
       'thumbnailSmall': instance.thumbnailSmall,
       'thumbnailLarge': instance.thumbnailLarge,
@@ -58,5 +60,42 @@ Map<String, dynamic> _$CommunityLiveStatusToJson(
       'activityModeHash': instance.activityModeHash,
       'dateFeatured': instance.dateFeatured,
       'trendingValue': instance.trendingValue,
-      'isSubscribable': instance.isSubscribable
+      'isSubscribable': instance.isSubscribable,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$PartnershipTypeEnumMap = {
+  PartnershipType.None: 0,
+  PartnershipType.Twitch: 1,
+};

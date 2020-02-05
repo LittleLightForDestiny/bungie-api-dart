@@ -13,4 +13,6 @@ TrendingEntryDestinyItem _$TrendingEntryDestinyItemFromJson(
 
 Map<String, dynamic> _$TrendingEntryDestinyItemToJson(
         TrendingEntryDestinyItem instance) =>
-    <String, dynamic>{'itemHash': instance.itemHash};
+    <String, dynamic>{
+      'itemHash': instance.itemHash,
+    };

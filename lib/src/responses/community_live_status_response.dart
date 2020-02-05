@@ -1,4 +1,5 @@
 import '../models/community_live_status.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'community_live_status_response.g.dart';
@@ -23,7 +24,7 @@ class CommunityLiveStatusResponse{
 	CommunityLiveStatus response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

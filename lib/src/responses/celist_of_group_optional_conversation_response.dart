@@ -1,4 +1,5 @@
 import '../models/group_optional_conversation.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'celist_of_group_optional_conversation_response.g.dart';
@@ -23,7 +24,7 @@ class CEListOfGroupOptionalConversationResponse{
 	List<GroupOptionalConversation> response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

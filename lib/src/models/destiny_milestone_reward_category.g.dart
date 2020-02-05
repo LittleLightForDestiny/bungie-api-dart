@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyMilestoneRewardCategoryToJson(
         DestinyMilestoneRewardCategory instance) =>
     <String, dynamic>{
       'rewardCategoryHash': instance.rewardCategoryHash,
-      'entries': instance.entries
+      'entries': instance.entries,
     };

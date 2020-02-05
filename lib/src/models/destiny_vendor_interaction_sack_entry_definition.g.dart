@@ -15,4 +15,6 @@ DestinyVendorInteractionSackEntryDefinition
 
 Map<String, dynamic> _$DestinyVendorInteractionSackEntryDefinitionToJson(
         DestinyVendorInteractionSackEntryDefinition instance) =>
-    <String, dynamic>{'sackType': instance.sackType};
+    <String, dynamic>{
+      'sackType': instance.sackType,
+    };

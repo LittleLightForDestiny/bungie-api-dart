@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyVendorCategoryToJson(
         DestinyVendorCategory instance) =>
     <String, dynamic>{
       'displayCategoryIndex': instance.displayCategoryIndex,
-      'itemIndexes': instance.itemIndexes
+      'itemIndexes': instance.itemIndexes,
     };

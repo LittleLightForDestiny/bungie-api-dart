@@ -27,7 +27,7 @@ class DestinyManifest{
 	String mobileClanBannerDatabasePath;
 	@JsonKey(name:'mobileGearCDN')
 	Map<String, String> mobileGearCdn;
-	/// Information about the &quot;Image Pyramid&quot; for Destiny icons. Where possible, we create smaller versions of Destiny icons. These are found as subfolders under the location of the &quot;original&#x2F;full size&quot; Destiny images, with the same file name and extension as the original image itself. (this lets us avoid sending largely redundant path info with every entity, at the expense of the smaller versions of the image being less discoverable)
+	/// Information about the "Image Pyramid" for Destiny icons. Where possible, we create smaller versions of Destiny icons. These are found as subfolders under the location of the "original/full size" Destiny images, with the same file name and extension as the original image itself. (this lets us avoid sending largely redundant path info with every entity, at the expense of the smaller versions of the image being less discoverable)
 	@JsonKey(name:'iconImagePyramidInfo')
 	List<ImagePyramidEntry> iconImagePyramidInfo;
 

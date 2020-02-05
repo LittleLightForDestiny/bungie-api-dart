@@ -12,4 +12,8 @@ DestinyPositionDefinition _$DestinyPositionDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyPositionDefinitionToJson(
         DestinyPositionDefinition instance) =>
-    <String, dynamic>{'x': instance.x, 'y': instance.y, 'z': instance.z};
+    <String, dynamic>{
+      'x': instance.x,
+      'y': instance.y,
+      'z': instance.z,
+    };

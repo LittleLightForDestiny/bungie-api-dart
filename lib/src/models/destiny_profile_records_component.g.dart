@@ -25,5 +25,5 @@ Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(
     <String, dynamic>{
       'score': instance.score,
       'trackedRecordHash': instance.trackedRecordHash,
-      'records': instance.records
+      'records': instance.records,
     };

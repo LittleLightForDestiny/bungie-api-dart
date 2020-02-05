@@ -22,4 +22,6 @@ DestinyPlugSetsComponent _$DestinyPlugSetsComponentFromJson(
 
 Map<String, dynamic> _$DestinyPlugSetsComponentToJson(
         DestinyPlugSetsComponent instance) =>
-    <String, dynamic>{'plugs': instance.plugs};
+    <String, dynamic>{
+      'plugs': instance.plugs,
+    };

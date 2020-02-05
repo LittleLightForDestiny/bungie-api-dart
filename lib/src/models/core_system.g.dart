@@ -17,5 +17,5 @@ CoreSystem _$CoreSystemFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$CoreSystemToJson(CoreSystem instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
-      'parameters': instance.parameters
+      'parameters': instance.parameters,
     };

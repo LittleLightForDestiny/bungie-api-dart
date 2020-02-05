@@ -10,9 +10,10 @@ class App{
         String start,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _applicationId = '$applicationId';
         params['end'] = end;
         params['start'] = start;
-        final HttpClientConfig config = HttpClientConfig('GET', '/App/ApiUsage/$applicationId/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/App/ApiUsage/$_applicationId/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_gating_scope.dart';
 
 part 'destiny_unlock_expression_definition.g.dart';
 
@@ -12,9 +13,9 @@ class DestinyUnlockExpressionDefinition{
 
 	factory DestinyUnlockExpressionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyUnlockExpressionDefinitionFromJson(json);
 
-	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum&#39;s documentation for more details.
-	@JsonKey(name:'scope')
-	int scope;
+	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum's documentation for more details.
+	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.None)
+	DestinyGatingScope scope;
 
 	
 	

@@ -28,5 +28,5 @@ Map<String, dynamic> _$DestinyProgressionLevelRequirementDefinitionToJson(
       'progressionHash': instance.progressionHash,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

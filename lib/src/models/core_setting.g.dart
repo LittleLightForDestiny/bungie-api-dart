@@ -26,5 +26,5 @@ Map<String, dynamic> _$CoreSettingToJson(CoreSetting instance) =>
       'displayName': instance.displayName,
       'summary': instance.summary,
       'imagePath': instance.imagePath,
-      'childSettings': instance.childSettings
+      'childSettings': instance.childSettings,
     };

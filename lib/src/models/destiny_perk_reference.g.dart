@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyPerkReferenceToJson(
       'perkHash': instance.perkHash,
       'iconPath': instance.iconPath,
       'isActive': instance.isActive,
-      'visible': instance.visible
+      'visible': instance.visible,
     };

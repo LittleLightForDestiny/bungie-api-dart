@@ -18,7 +18,7 @@ class DestinyProgressionRewardDefinition{
 	/// The amount of experience to give to each of the mapped progressions.
 	@JsonKey(name:'amount')
 	int amount;
-	/// If true, the game&#39;s internal mechanisms to throttle progression should be applied.
+	/// If true, the game's internal mechanisms to throttle progression should be applied.
 	@JsonKey(name:'applyThrottles')
 	bool applyThrottles;
 

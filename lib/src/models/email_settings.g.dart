@@ -38,5 +38,5 @@ Map<String, dynamic> _$EmailSettingsToJson(EmailSettings instance) =>
     <String, dynamic>{
       'optInDefinitions': instance.optInDefinitions,
       'subscriptionDefinitions': instance.subscriptionDefinitions,
-      'views': instance.views
+      'views': instance.views,
     };

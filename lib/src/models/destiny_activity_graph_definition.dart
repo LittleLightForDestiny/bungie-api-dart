@@ -21,13 +21,13 @@ class DestinyActivityGraphDefinition{
 
 	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDefinitionFromJson(json);
 
-	/// These represent the visual &quot;nodes&quot; on the map&#39;s view. These are the activities you can click on in the map.
+	/// These represent the visual "nodes" on the map's view. These are the activities you can click on in the map.
 	@JsonKey(name:'nodes')
 	List<DestinyActivityGraphNodeDefinition> nodes;
-	/// Represents one-off&#x2F;special UI elements that appear on the map.
+	/// Represents one-off/special UI elements that appear on the map.
 	@JsonKey(name:'artElements')
 	List<DestinyActivityGraphArtElementDefinition> artElements;
-	/// Represents connections between graph nodes. However, it lacks context that we&#39;d need to make good use of it.
+	/// Represents connections between graph nodes. However, it lacks context that we'd need to make good use of it.
 	@JsonKey(name:'connections')
 	List<DestinyActivityGraphConnectionDefinition> connections;
 	/// Objectives can display on maps, and this is supposedly metadata for that. I have not had the time to analyze the details of what is useful within however: we could be missing important data to make this work. Expect this property to be expanded on later if possible.
@@ -46,7 +46,7 @@ class DestinyActivityGraphDefinition{
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
 	int index;
-	/// If this is true, then there is an entity with this identifier&#x2F;type combination, but BNet is not yet allowed to show it. Sorry!
+	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool redacted;
 

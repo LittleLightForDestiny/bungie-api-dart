@@ -17,4 +17,6 @@ DestinyChallengeStatus _$DestinyChallengeStatusFromJson(
 
 Map<String, dynamic> _$DestinyChallengeStatusToJson(
         DestinyChallengeStatus instance) =>
-    <String, dynamic>{'objective': instance.objective};
+    <String, dynamic>{
+      'objective': instance.objective,
+    };

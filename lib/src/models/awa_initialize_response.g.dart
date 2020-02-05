@@ -17,5 +17,5 @@ Map<String, dynamic> _$AwaInitializeResponseToJson(
         AwaInitializeResponse instance) =>
     <String, dynamic>{
       'correlationId': instance.correlationId,
-      'sentToSelf': instance.sentToSelf
+      'sentToSelf': instance.sentToSelf,
     };

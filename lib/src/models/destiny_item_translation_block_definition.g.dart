@@ -41,5 +41,5 @@ Map<String, dynamic> _$DestinyItemTranslationBlockDefinitionToJson(
       'lockedDyes': instance.lockedDyes,
       'customDyes': instance.customDyes,
       'arrangements': instance.arrangements,
-      'hasGeometry': instance.hasGeometry
+      'hasGeometry': instance.hasGeometry,
     };

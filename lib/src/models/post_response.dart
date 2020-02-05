@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/forum_media_type.dart';
+import '../enums/forum_post_popularity.dart';
 import 'ignore_response.dart';
 
 part 'post_response.g.dart';
@@ -15,12 +17,12 @@ class PostResponse{
 	String lastReplyTimestamp;
 	@JsonKey(name:'IsPinned')
 	bool isPinned;
-	@JsonKey(name:'urlMediaType')
-	int urlMediaType;
+	@JsonKey(name:'urlMediaType',unknownEnumValue:ForumMediaType.None)
+	ForumMediaType urlMediaType;
 	@JsonKey(name:'thumbnail')
 	String thumbnail;
-	@JsonKey(name:'popularity')
-	int popularity;
+	@JsonKey(name:'popularity',unknownEnumValue:ForumPostPopularity.Empty)
+	ForumPostPopularity popularity;
 	@JsonKey(name:'isActive')
 	bool isActive;
 	@JsonKey(name:'isAnnouncement')

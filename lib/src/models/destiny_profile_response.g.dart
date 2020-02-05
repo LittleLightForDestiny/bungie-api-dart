@@ -92,5 +92,5 @@ Map<String, dynamic> _$DestinyProfileResponseToJson(
       'characterRecords': instance.characterRecords,
       'characterCollectibles': instance.characterCollectibles,
       'itemComponents': instance.itemComponents,
-      'characterCurrencyLookups': instance.characterCurrencyLookups
+      'characterCurrencyLookups': instance.characterCurrencyLookups,
     };

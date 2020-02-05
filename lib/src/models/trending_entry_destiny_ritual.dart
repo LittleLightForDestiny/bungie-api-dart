@@ -27,7 +27,7 @@ class TrendingEntryDestinyRitual{
 	/// A destiny event does not necessarily have a related Milestone, but if it does the details will be returned here.
 	@JsonKey(name:'milestoneDetails')
 	DestinyPublicMilestone milestoneDetails;
-	/// A destiny event will not necessarily have milestone &quot;custom content&quot;, but if it does the details will be here.
+	/// A destiny event will not necessarily have milestone "custom content", but if it does the details will be here.
 	@JsonKey(name:'eventContent')
 	DestinyMilestoneContent eventContent;
 

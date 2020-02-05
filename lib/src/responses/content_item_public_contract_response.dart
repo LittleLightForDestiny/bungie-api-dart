@@ -1,4 +1,5 @@
 import '../models/content_item_public_contract.dart';
+import '../enums/platform_error_codes.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 part 'content_item_public_contract_response.g.dart';
@@ -23,7 +24,7 @@ class ContentItemPublicContractResponse{
 	ContentItemPublicContract response;
 	
 	@JsonKey(name:'ErrorCode')
-	int errorCode;
+	PlatformErrorCodes errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
 	int throttleSeconds;

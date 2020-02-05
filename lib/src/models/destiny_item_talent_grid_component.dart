@@ -19,12 +19,12 @@ class DestinyItemTalentGridComponent{
 
 	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemTalentGridComponentFromJson(json);
 
-	/// Most items don&#39;t have useful talent grids anymore, but Builds in particular still do.
+	/// Most items don't have useful talent grids anymore, but Builds in particular still do.
 	/// You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.
 	@JsonKey(name:'talentGridHash')
 	int talentGridHash;
 	/// Detailed information about the individual nodes in the talent grid.
-	/// A node represents a single visual &quot;pip&quot; in the talent grid or Build detail view, though each node may have multiple &quot;steps&quot; which indicate the actual bonuses and visual representation of that node.
+	/// A node represents a single visual "pip" in the talent grid or Build detail view, though each node may have multiple "steps" which indicate the actual bonuses and visual representation of that node.
 	@JsonKey(name:'nodes')
 	List<DestinyTalentNode> nodes;
 	/// Indicates whether the talent grid on this item is completed, and thus whether it should have a gold border around it.

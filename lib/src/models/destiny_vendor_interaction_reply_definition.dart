@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_vendor_interaction_reward_selection.dart';
+import '../enums/destiny_vendor_reply_type.dart';
 
 part 'destiny_vendor_interaction_reply_definition.g.dart';
 
@@ -13,14 +15,14 @@ class DestinyVendorInteractionReplyDefinition{
 	factory DestinyVendorInteractionReplyDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInteractionReplyDefinitionFromJson(json);
 
 	/// The rewards granted upon responding to the vendor.
-	@JsonKey(name:'itemRewardsSelection')
-	int itemRewardsSelection;
+	@JsonKey(name:'itemRewardsSelection',unknownEnumValue:DestinyVendorInteractionRewardSelection.None)
+	DestinyVendorInteractionRewardSelection itemRewardsSelection;
 	/// The localized text for the reply.
 	@JsonKey(name:'reply')
 	String reply;
 	/// An enum indicating the type of reply being made.
-	@JsonKey(name:'replyType')
-	int replyType;
+	@JsonKey(name:'replyType',unknownEnumValue:DestinyVendorReplyType.Accept)
+	DestinyVendorReplyType replyType;
 
 	
 	

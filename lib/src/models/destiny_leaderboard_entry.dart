@@ -18,7 +18,7 @@ class DestinyLeaderboardEntry{
 	/// Identity details of the player
 	@JsonKey(name:'player')
 	DestinyPlayer player;
-	/// ID of the player&#39;s best character for the reported stat.
+	/// ID of the player's best character for the reported stat.
 	@JsonKey(name:'characterId')
 	String characterId;
 	/// Value of the stat for this player

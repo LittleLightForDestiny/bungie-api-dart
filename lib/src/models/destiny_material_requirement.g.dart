@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyMaterialRequirementToJson(
       'itemHash': instance.itemHash,
       'deleteOnAction': instance.deleteOnAction,
       'count': instance.count,
-      'omitFromRequirements': instance.omitFromRequirements
+      'omitFromRequirements': instance.omitFromRequirements,
     };

@@ -21,8 +21,10 @@ FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) {
     ..hasMicrophone = json['hasMicrophone'] as bool
     ..lastPlatformInviteAttemptDate =
         json['lastPlatformInviteAttemptDate'] as String
-    ..lastPlatformInviteAttemptResult =
-        json['lastPlatformInviteAttemptResult'] as int;
+    ..lastPlatformInviteAttemptResult = _$enumDecodeNullable(
+        _$FireteamPlatformInviteResultEnumMap,
+        json['lastPlatformInviteAttemptResult'],
+        unknownValue: FireteamPlatformInviteResult.None);
 }
 
 Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
@@ -33,6 +35,46 @@ Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
       'dateJoined': instance.dateJoined,
       'hasMicrophone': instance.hasMicrophone,
       'lastPlatformInviteAttemptDate': instance.lastPlatformInviteAttemptDate,
-      'lastPlatformInviteAttemptResult':
-          instance.lastPlatformInviteAttemptResult
+      'lastPlatformInviteAttemptResult': _$FireteamPlatformInviteResultEnumMap[
+          instance.lastPlatformInviteAttemptResult],
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$FireteamPlatformInviteResultEnumMap = {
+  FireteamPlatformInviteResult.None: 0,
+  FireteamPlatformInviteResult.Success: 1,
+  FireteamPlatformInviteResult.AlreadyInFireteam: 2,
+  FireteamPlatformInviteResult.Throttled: 3,
+  FireteamPlatformInviteResult.ServiceError: 4,
+};

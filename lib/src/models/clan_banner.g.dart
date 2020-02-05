@@ -25,5 +25,5 @@ Map<String, dynamic> _$ClanBannerToJson(ClanBanner instance) =>
       'gonfalonId': instance.gonfalonId,
       'gonfalonColorId': instance.gonfalonColorId,
       'gonfalonDetailId': instance.gonfalonDetailId,
-      'gonfalonDetailColorId': instance.gonfalonDetailColorId
+      'gonfalonDetailColorId': instance.gonfalonDetailColorId,
     };

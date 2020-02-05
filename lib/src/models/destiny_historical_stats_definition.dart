@@ -1,5 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/destiny_stats_group_type.dart';
+import '../enums/period_type.dart';
+import '../enums/destiny_activity_mode_type.dart';
+import '../enums/destiny_stats_category_type.dart';
+import '../enums/unit_type.dart';
 
 part 'destiny_historical_stats_definition.g.dart';
 
@@ -14,17 +19,17 @@ class DestinyHistoricalStatsDefinition{
 	@JsonKey(name:'statId')
 	String statId;
 	/// Statistic group
-	@JsonKey(name:'group')
-	int group;
+	@JsonKey(name:'group',unknownEnumValue:DestinyStatsGroupType.None)
+	DestinyStatsGroupType group;
 	/// Time periods the statistic covers
 	@JsonKey(name:'periodTypes')
-	List<int> periodTypes;
+	List<PeriodType> periodTypes;
 	/// Game modes where this statistic can be reported.
 	@JsonKey(name:'modes')
-	List<int> modes;
+	List<DestinyActivityModeType> modes;
 	/// Category for the stat.
-	@JsonKey(name:'category')
-	int category;
+	@JsonKey(name:'category',unknownEnumValue:DestinyStatsCategoryType.None)
+	DestinyStatsCategoryType category;
 	/// Display name
 	@JsonKey(name:'statName')
 	String statName;
@@ -35,8 +40,8 @@ class DestinyHistoricalStatsDefinition{
 	@JsonKey(name:'statDescription')
 	String statDescription;
 	/// Unit, if any, for the statistic
-	@JsonKey(name:'unitType')
-	int unitType;
+	@JsonKey(name:'unitType',unknownEnumValue:UnitType.None)
+	UnitType unitType;
 	/// Optional URI to an icon for the statistic
 	@JsonKey(name:'iconImage')
 	String iconImage;

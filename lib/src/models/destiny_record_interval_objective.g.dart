@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyRecordIntervalObjectiveToJson(
         DestinyRecordIntervalObjective instance) =>
     <String, dynamic>{
       'intervalObjectiveHash': instance.intervalObjectiveHash,
-      'intervalScoreValue': instance.intervalScoreValue
+      'intervalScoreValue': instance.intervalScoreValue,
     };

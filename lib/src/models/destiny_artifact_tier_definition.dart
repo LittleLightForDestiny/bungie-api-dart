@@ -23,7 +23,7 @@ class DestinyArtifactTierDefinition{
 	/// The items that can be earned within this tier.
 	@JsonKey(name:'items')
 	List<DestinyArtifactTierItemDefinition> items;
-	/// The minimum number of &quot;unlock points&quot; that you must have used before you can unlock items from this tier.
+	/// The minimum number of "unlock points" that you must have used before you can unlock items from this tier.
 	@JsonKey(name:'minimumUnlockPointsUsedRequirement')
 	int minimumUnlockPointsUsedRequirement;
 

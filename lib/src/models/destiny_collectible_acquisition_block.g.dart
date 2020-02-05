@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyCollectibleAcquisitionBlockToJson(
     <String, dynamic>{
       'acquireMaterialRequirementHash': instance.acquireMaterialRequirementHash,
       'acquireTimestampUnlockValueHash':
-          instance.acquireTimestampUnlockValueHash
+          instance.acquireTimestampUnlockValueHash,
     };

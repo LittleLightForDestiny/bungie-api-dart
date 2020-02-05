@@ -13,7 +13,8 @@ DestinyRaceDefinition _$DestinyRaceDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..raceType = json['raceType'] as int
+    ..raceType = _$enumDecodeNullable(_$DestinyRaceEnumMap, json['raceType'],
+        unknownValue: DestinyRace.Human)
     ..genderedRaceNames =
         (json['genderedRaceNames'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
@@ -31,10 +32,49 @@ Map<String, dynamic> _$DestinyRaceDefinitionToJson(
         DestinyRaceDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
-      'raceType': instance.raceType,
+      'raceType': _$DestinyRaceEnumMap[instance.raceType],
       'genderedRaceNames': instance.genderedRaceNames,
       'genderedRaceNamesByGenderHash': instance.genderedRaceNamesByGenderHash,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyRaceEnumMap = {
+  DestinyRace.Human: 0,
+  DestinyRace.Awoken: 1,
+  DestinyRace.Exo: 2,
+  DestinyRace.Unknown: 3,
+};

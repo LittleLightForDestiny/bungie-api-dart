@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyPlugWhitelistEntryDefinitionToJson(
       'categoryHash': instance.categoryHash,
       'categoryIdentifier': instance.categoryIdentifier,
       'reinitializationPossiblePlugHashes':
-          instance.reinitializationPossiblePlugHashes
+          instance.reinitializationPossiblePlugHashes,
     };

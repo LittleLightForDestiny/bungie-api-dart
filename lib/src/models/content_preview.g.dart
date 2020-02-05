@@ -23,5 +23,5 @@ Map<String, dynamic> _$ContentPreviewToJson(ContentPreview instance) =>
       'itemInSet': instance.itemInSet,
       'setTag': instance.setTag,
       'setNesting': instance.setNesting,
-      'useSetId': instance.useSetId
+      'useSetId': instance.useSetId,
     };

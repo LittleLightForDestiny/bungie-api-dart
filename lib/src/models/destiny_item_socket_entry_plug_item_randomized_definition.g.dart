@@ -15,4 +15,6 @@ DestinyItemSocketEntryPlugItemRandomizedDefinition
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(
         DestinyItemSocketEntryPlugItemRandomizedDefinition instance) =>
-    <String, dynamic>{'plugItemHash': instance.plugItemHash};
+    <String, dynamic>{
+      'plugItemHash': instance.plugItemHash,
+    };

@@ -16,4 +16,6 @@ DestinyPlatformSilverComponent _$DestinyPlatformSilverComponentFromJson(
 
 Map<String, dynamic> _$DestinyPlatformSilverComponentToJson(
         DestinyPlatformSilverComponent instance) =>
-    <String, dynamic>{'platformSilver': instance.platformSilver};
+    <String, dynamic>{
+      'platformSilver': instance.platformSilver,
+    };

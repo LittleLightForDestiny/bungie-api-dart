@@ -20,5 +20,5 @@ Map<String, dynamic> _$TrendingCategoryToJson(TrendingCategory instance) =>
     <String, dynamic>{
       'categoryName': instance.categoryName,
       'entries': instance.entries,
-      'categoryId': instance.categoryId
+      'categoryId': instance.categoryId,
     };

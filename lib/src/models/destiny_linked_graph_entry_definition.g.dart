@@ -14,4 +14,6 @@ DestinyLinkedGraphEntryDefinition _$DestinyLinkedGraphEntryDefinitionFromJson(
 
 Map<String, dynamic> _$DestinyLinkedGraphEntryDefinitionToJson(
         DestinyLinkedGraphEntryDefinition instance) =>
-    <String, dynamic>{'activityGraphHash': instance.activityGraphHash};
+    <String, dynamic>{
+      'activityGraphHash': instance.activityGraphHash,
+    };

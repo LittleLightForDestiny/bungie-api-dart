@@ -15,4 +15,6 @@ DestinyActivityModifierReferenceDefinition
 
 Map<String, dynamic> _$DestinyActivityModifierReferenceDefinitionToJson(
         DestinyActivityModifierReferenceDefinition instance) =>
-    <String, dynamic>{'activityModifierHash': instance.activityModifierHash};
+    <String, dynamic>{
+      'activityModifierHash': instance.activityModifierHash,
+    };

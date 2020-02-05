@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyVendorSaleItemBaseComponentToJson(
       'overrideStyleItemHash': instance.overrideStyleItemHash,
       'quantity': instance.quantity,
       'costs': instance.costs,
-      'overrideNextRefreshDate': instance.overrideNextRefreshDate
+      'overrideNextRefreshDate': instance.overrideNextRefreshDate,
     };

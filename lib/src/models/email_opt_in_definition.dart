@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../enums/opt_in_flags.dart';
 import 'email_subscription_definition.dart';
 
 part 'email_opt_in_definition.g.dart';
@@ -17,8 +18,8 @@ class EmailOptInDefinition{
 	String name;
 	/// The flag value for this opt-in category. For historical reasons, this is defined as a flags enum.
 	@JsonKey(name:'value')
-	int value;
-	/// If true, this opt-in setting should be set by default in situations where accounts are created without explicit choices about what they&#39;re opting into.
+	OptInFlags value;
+	/// If true, this opt-in setting should be set by default in situations where accounts are created without explicit choices about what they're opting into.
 	@JsonKey(name:'setByDefault')
 	bool setByDefault;
 	/// Information about the dependent subscriptions for this opt-in.

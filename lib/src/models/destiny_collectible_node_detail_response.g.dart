@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyCollectibleNodeDetailResponseToJson(
         DestinyCollectibleNodeDetailResponse instance) =>
     <String, dynamic>{
       'collectibles': instance.collectibles,
-      'collectibleItemComponents': instance.collectibleItemComponents
+      'collectibleItemComponents': instance.collectibleItemComponents,
     };

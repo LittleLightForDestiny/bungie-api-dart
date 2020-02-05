@@ -11,11 +11,11 @@ class DestinyProfileCollectiblesComponent{
 
 	factory DestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileCollectiblesComponentFromJson(json);
 
-	/// The list of collectibles determined by the game as having been &quot;recently&quot; acquired.
+	/// The list of collectibles determined by the game as having been "recently" acquired.
 	@JsonKey(name:'recentCollectibleHashes')
 	List<int> recentCollectibleHashes;
-	/// The list of collectibles determined by the game as having been &quot;recently&quot; acquired.
-	/// The game client itself actually controls this data, so I personally question whether anyone will get much use out of this: because we can&#39;t edit this value through the API. But in case anyone finds it useful, here it is.
+	/// The list of collectibles determined by the game as having been "recently" acquired.
+	/// The game client itself actually controls this data, so I personally question whether anyone will get much use out of this: because we can't edit this value through the API. But in case anyone finds it useful, here it is.
 	@JsonKey(name:'newnessFlaggedCollectibleHashes')
 	List<int> newnessFlaggedCollectibleHashes;
 	@JsonKey(name:'collectibles')

@@ -17,4 +17,7 @@ DestinyLeaderboard _$DestinyLeaderboardFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$DestinyLeaderboardToJson(DestinyLeaderboard instance) =>
-    <String, dynamic>{'statId': instance.statId, 'entries': instance.entries};
+    <String, dynamic>{
+      'statId': instance.statId,
+      'entries': instance.entries,
+    };

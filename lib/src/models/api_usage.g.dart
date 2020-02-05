@@ -24,5 +24,5 @@ ApiUsage _$ApiUsageFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$ApiUsageToJson(ApiUsage instance) => <String, dynamic>{
       'range': instance.range,
       'apiCalls': instance.apiCalls,
-      'throttledRequests': instance.throttledRequests
+      'throttledRequests': instance.throttledRequests,
     };

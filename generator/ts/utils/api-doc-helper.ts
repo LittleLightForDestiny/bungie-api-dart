@@ -155,22 +155,29 @@ export class ApiDocHelper{
             return `Map<String, String>`;
         }
         if(param.type){
-            return this.parseType(param.type, param.format);
+            return this.parseType(param);
         }
         return param.name;
     }
 
     static getImportInfo(obj:ReferenceObject|ParameterObject|SchemaObject):ImportInfo|null{
         let schema = obj as SchemaObject;
-        let refObj = obj as ReferenceObject;
+        let refObj = obj as ReferenceObject;        
         if('$ref' in obj){
             let ref = this.getRef(refObj.$ref);
             if(ref.type == 'object'){
                 return new ImportInfo(
                     this.getRefClassName(refObj.$ref),
-                    'model'
+                    'models'
                 );
             };
+        }
+
+        if(obj['x-enum-reference']){
+            return new ImportInfo(
+                this.getRefClassName(obj['x-enum-reference'].$ref),
+                'enums'
+            );
         }
         
         if(schema.type == 'array'){
@@ -185,7 +192,10 @@ export class ApiDocHelper{
         return null;
     }
 
-    static parseType(type:string, format:string){
+    static parseType(param:ParameterObject | SchemaObject){
+        let type = param.type;
+        let format = param.format;
+
         switch(type){
             case 'string':
                 if(format == 'byte'){
@@ -194,6 +204,12 @@ export class ApiDocHelper{
                 return 'String';
             case 'integer':
             case 'number':
+                if(param['x-enum-reference'] && param['x-enum-reference'].$ref){
+                    let typeArray = param['x-enum-reference'].$ref.split("/");
+                    typeArray = typeArray[typeArray.length - 1].split(".");
+                    let type = typeArray[typeArray.length - 1];
+                    return type;
+                }
                 if(format == 'int64'){
                     return 'String';
                 }

@@ -36,5 +36,5 @@ Map<String, dynamic> _$DestinyItemSocketBlockDefinitionToJson(
       'detail': instance.detail,
       'socketEntries': instance.socketEntries,
       'intrinsicSockets': instance.intrinsicSockets,
-      'socketCategories': instance.socketCategories
+      'socketCategories': instance.socketCategories,
     };

@@ -15,4 +15,6 @@ DestinyItemCreationEntryLevelDefinition
 
 Map<String, dynamic> _$DestinyItemCreationEntryLevelDefinitionToJson(
         DestinyItemCreationEntryLevelDefinition instance) =>
-    <String, dynamic>{'level': instance.level};
+    <String, dynamic>{
+      'level': instance.level,
+    };

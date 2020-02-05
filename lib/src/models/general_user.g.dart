@@ -77,5 +77,5 @@ Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
       'profileBanExpire': instance.profileBanExpire,
       'blizzardDisplayName': instance.blizzardDisplayName,
       'steamDisplayName': instance.steamDisplayName,
-      'stadiaDisplayName': instance.stadiaDisplayName
+      'stadiaDisplayName': instance.stadiaDisplayName,
     };

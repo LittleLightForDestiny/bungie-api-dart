@@ -15,4 +15,6 @@ DestinyActivityGraphListEntryDefinition
 
 Map<String, dynamic> _$DestinyActivityGraphListEntryDefinitionToJson(
         DestinyActivityGraphListEntryDefinition instance) =>
-    <String, dynamic>{'activityGraphHash': instance.activityGraphHash};
+    <String, dynamic>{
+      'activityGraphHash': instance.activityGraphHash,
+    };

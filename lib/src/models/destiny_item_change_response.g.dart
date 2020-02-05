@@ -29,5 +29,5 @@ Map<String, dynamic> _$DestinyItemChangeResponseToJson(
     <String, dynamic>{
       'item': instance.item,
       'addedInventoryItems': instance.addedInventoryItems,
-      'removedInventoryItems': instance.removedInventoryItems
+      'removedInventoryItems': instance.removedInventoryItems,
     };

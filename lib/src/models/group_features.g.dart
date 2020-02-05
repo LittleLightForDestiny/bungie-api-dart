@@ -11,17 +11,24 @@ GroupFeatures _$GroupFeaturesFromJson(Map<String, dynamic> json) {
     ..maximumMembers = json['maximumMembers'] as int
     ..maximumMembershipsOfGroupType =
         json['maximumMembershipsOfGroupType'] as int
-    ..capabilities = json['capabilities'] as int
-    ..membershipTypes =
-        (json['membershipTypes'] as List)?.map((e) => e as int)?.toList()
+    ..capabilities = json['capabilities'] == null
+        ? null
+        : Capabilities.fromJson(json['capabilities'] as int)
+    ..membershipTypes = (json['membershipTypes'] as List)
+        ?.map((e) => _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, e))
+        ?.toList()
     ..invitePermissionOverride = json['invitePermissionOverride'] as bool
     ..updateCulturePermissionOverride =
         json['updateCulturePermissionOverride'] as bool
-    ..hostGuidedGamePermissionOverride =
-        json['hostGuidedGamePermissionOverride'] as int
+    ..hostGuidedGamePermissionOverride = _$enumDecodeNullable(
+        _$HostGuidedGamesPermissionLevelEnumMap,
+        json['hostGuidedGamePermissionOverride'],
+        unknownValue: HostGuidedGamesPermissionLevel.None)
     ..updateBannerPermissionOverride =
         json['updateBannerPermissionOverride'] as bool
-    ..joinLevel = json['joinLevel'] as int;
+    ..joinLevel = _$enumDecodeNullable(
+        _$RuntimeGroupMemberTypeEnumMap, json['joinLevel'],
+        unknownValue: RuntimeGroupMemberType.None);
 }
 
 Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
@@ -29,12 +36,74 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
       'maximumMembers': instance.maximumMembers,
       'maximumMembershipsOfGroupType': instance.maximumMembershipsOfGroupType,
       'capabilities': instance.capabilities,
-      'membershipTypes': instance.membershipTypes,
+      'membershipTypes': instance.membershipTypes
+          ?.map((e) => _$BungieMembershipTypeEnumMap[e])
+          ?.toList(),
       'invitePermissionOverride': instance.invitePermissionOverride,
       'updateCulturePermissionOverride':
           instance.updateCulturePermissionOverride,
       'hostGuidedGamePermissionOverride':
-          instance.hostGuidedGamePermissionOverride,
+          _$HostGuidedGamesPermissionLevelEnumMap[
+              instance.hostGuidedGamePermissionOverride],
       'updateBannerPermissionOverride': instance.updateBannerPermissionOverride,
-      'joinLevel': instance.joinLevel
+      'joinLevel': _$RuntimeGroupMemberTypeEnumMap[instance.joinLevel],
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$BungieMembershipTypeEnumMap = {
+  BungieMembershipType.None: 0,
+  BungieMembershipType.TigerXbox: 1,
+  BungieMembershipType.TigerPsn: 2,
+  BungieMembershipType.TigerSteam: 3,
+  BungieMembershipType.TigerBlizzard: 4,
+  BungieMembershipType.TigerStadia: 5,
+  BungieMembershipType.TigerDemon: 10,
+  BungieMembershipType.BungieNext: 254,
+  BungieMembershipType.All: -1,
+};
+
+const _$HostGuidedGamesPermissionLevelEnumMap = {
+  HostGuidedGamesPermissionLevel.None: 0,
+  HostGuidedGamesPermissionLevel.Beginner: 1,
+  HostGuidedGamesPermissionLevel.Member: 2,
+};
+
+const _$RuntimeGroupMemberTypeEnumMap = {
+  RuntimeGroupMemberType.None: 0,
+  RuntimeGroupMemberType.Beginner: 1,
+  RuntimeGroupMemberType.Member: 2,
+  RuntimeGroupMemberType.Admin: 3,
+  RuntimeGroupMemberType.ActingFounder: 4,
+  RuntimeGroupMemberType.Founder: 5,
+};

@@ -33,5 +33,5 @@ Map<String, dynamic> _$DestinyPublicVendorsResponseToJson(
       'vendorGroups': instance.vendorGroups,
       'vendors': instance.vendors,
       'categories': instance.categories,
-      'sales': instance.sales
+      'sales': instance.sales,
     };

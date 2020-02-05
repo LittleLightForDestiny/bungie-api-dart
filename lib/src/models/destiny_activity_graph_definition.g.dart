@@ -55,5 +55,5 @@ Map<String, dynamic> _$DestinyActivityGraphDefinitionToJson(
       'linkedGraphs': instance.linkedGraphs,
       'hash': instance.hash,
       'index': instance.index,
-      'redacted': instance.redacted
+      'redacted': instance.redacted,
     };

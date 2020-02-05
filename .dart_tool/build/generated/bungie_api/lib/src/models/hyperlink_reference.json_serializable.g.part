@@ -9,4 +9,7 @@ HyperlinkReference _$HyperlinkReferenceFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$HyperlinkReferenceToJson(HyperlinkReference instance) =>
-    <String, dynamic>{'title': instance.title, 'url': instance.url};
+    <String, dynamic>{
+      'title': instance.title,
+      'url': instance.url,
+    };
