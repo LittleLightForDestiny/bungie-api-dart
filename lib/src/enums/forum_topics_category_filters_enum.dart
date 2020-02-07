@@ -36,8 +36,15 @@ class ForumTopicsCategoryFiltersEnum {
     }
 
     @override
-    bool operator == (dynamic other) {
-        return other.value == value || other == value;
+    bool operator ==(dynamic other) {
+        if(other is int){
+            return other == value;
+        }
+        try{
+        return value == other.value;
+        }catch(e){
+            return other == this;
+        }
     }
 
     @override
