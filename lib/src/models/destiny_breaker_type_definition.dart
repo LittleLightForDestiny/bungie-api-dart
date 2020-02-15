@@ -10,13 +10,20 @@ class DestinyBreakerTypeDefinition{
 	
 	DestinyBreakerTypeDefinition();
 
-	factory DestinyBreakerTypeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyBreakerTypeDefinitionFromJson(json);
+	factory DestinyBreakerTypeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyBreakerTypeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// We have an enumeration for Breaker types for quick reference. This is the current definition's breaker type enum value.
-	@JsonKey(name:'enumValue',unknownEnumValue:DestinyBreakerType.None)
+	@JsonKey(name:'enumValue',unknownEnumValue:DestinyBreakerType.ProtectedInvalidEnumValue)
 	DestinyBreakerType enumValue;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

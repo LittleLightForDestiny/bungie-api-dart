@@ -9,7 +9,14 @@ class DestinyActivityGraphDisplayObjectiveDefinition{
 	
 	DestinyActivityGraphDisplayObjectiveDefinition();
 
-	factory DestinyActivityGraphDisplayObjectiveDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDisplayObjectiveDefinitionFromJson(json);
+	factory DestinyActivityGraphDisplayObjectiveDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGraphDisplayObjectiveDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// $NOTE $amola 2017-01-19 This field is apparently something that CUI uses to manually wire up objectives to display info. I am unsure how it works.
 	@JsonKey(name:'id')

@@ -21,7 +21,7 @@ DestinyVendorItemDefinition _$DestinyVendorItemDefinitionFromJson(
         ?.toList()
     ..refundPolicy = _$enumDecodeNullable(
         _$DestinyVendorItemRefundPolicyEnumMap, json['refundPolicy'],
-        unknownValue: DestinyVendorItemRefundPolicy.NotRefundable)
+        unknownValue: DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
     ..refundTimeLimit = json['refundTimeLimit'] as int
     ..creationLevels = (json['creationLevels'] as List)
         ?.map((e) => e == null
@@ -41,12 +41,12 @@ DestinyVendorItemDefinition _$DestinyVendorItemDefinitionFromJson(
     ..displayCategory = json['displayCategory'] as String
     ..inventoryBucketHash = json['inventoryBucketHash'] as int
     ..visibilityScope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['visibilityScope'],
-        unknownValue: DestinyGatingScope.None)
+        unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
     ..purchasableScope = _$enumDecodeNullable(
         _$DestinyGatingScopeEnumMap, json['purchasableScope'],
-        unknownValue: DestinyGatingScope.None)
+        unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
     ..exclusivity = _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, json['exclusivity'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..isOffer = json['isOffer'] as bool
     ..isCrm = json['isCrm'] as bool
     ..sortValue = json['sortValue'] as int
@@ -124,6 +124,7 @@ const _$DestinyVendorItemRefundPolicyEnumMap = {
   DestinyVendorItemRefundPolicy.NotRefundable: 0,
   DestinyVendorItemRefundPolicy.DeletesItem: 1,
   DestinyVendorItemRefundPolicy.RevokesLicense: 2,
+  DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyGatingScopeEnumMap = {
@@ -134,6 +135,7 @@ const _$DestinyGatingScopeEnumMap = {
   DestinyGatingScope.Character: 4,
   DestinyGatingScope.Item: 5,
   DestinyGatingScope.AssumedWorstCase: 6,
+  DestinyGatingScope.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$BungieMembershipTypeEnumMap = {
@@ -146,4 +148,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

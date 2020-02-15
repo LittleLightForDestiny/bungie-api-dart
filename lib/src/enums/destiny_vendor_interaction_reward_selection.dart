@@ -10,6 +10,9 @@ enum DestinyVendorInteractionRewardSelection {
   ///All = 2
   @JsonValue(2)
   All,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyVendorInteractionRewardSelectionExtension on DestinyVendorInteractionRewardSelection{

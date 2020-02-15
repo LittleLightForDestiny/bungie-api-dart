@@ -28,6 +28,9 @@ enum DestinyProgressionScope {
   ///MappedUnlockValue = 8
   @JsonValue(8)
   MappedUnlockValue,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyProgressionScopeExtension on DestinyProgressionScope{

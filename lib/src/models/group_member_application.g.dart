@@ -13,7 +13,7 @@ GroupMemberApplication _$GroupMemberApplicationFromJson(
     ..creationDate = json['creationDate'] as String
     ..resolveState = _$enumDecodeNullable(
         _$GroupApplicationResolveStateEnumMap, json['resolveState'],
-        unknownValue: GroupApplicationResolveState.Unresolved)
+        unknownValue: GroupApplicationResolveState.ProtectedInvalidEnumValue)
     ..resolveDate = json['resolveDate'] as String
     ..resolvedByMembershipId = json['resolvedByMembershipId'] as String
     ..requestMessage = json['requestMessage'] as String
@@ -80,4 +80,5 @@ const _$GroupApplicationResolveStateEnumMap = {
   GroupApplicationResolveState.Accepted: 1,
   GroupApplicationResolveState.Denied: 2,
   GroupApplicationResolveState.Rescinded: 3,
+  GroupApplicationResolveState.ProtectedInvalidEnumValue: 999999999,
 };

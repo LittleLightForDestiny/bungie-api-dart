@@ -16,7 +16,7 @@ DestinySandboxPerkDefinition _$DestinySandboxPerkDefinitionFromJson(
     ..perkIdentifier = json['perkIdentifier'] as String
     ..isDisplayable = json['isDisplayable'] as bool
     ..damageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['damageType'],
-        unknownValue: DamageType.None)
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..damageTypeHash = json['damageTypeHash'] as int
     ..perkGroups = json['perkGroups'] == null
         ? null
@@ -80,4 +80,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

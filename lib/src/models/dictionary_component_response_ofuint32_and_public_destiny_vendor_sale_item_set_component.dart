@@ -10,12 +10,22 @@ class DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetCompon
 	
 	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent();
 
-	factory DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponentFromJson(json);
+	factory DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	Map<String, PublicDestinyVendorSaleItemSetComponent> data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

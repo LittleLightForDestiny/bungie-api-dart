@@ -8,7 +8,14 @@ class DestinyProgressionDisplayPropertiesDefinition{
 	
 	DestinyProgressionDisplayPropertiesDefinition();
 
-	factory DestinyProgressionDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionDisplayPropertiesDefinitionFromJson(json);
+	factory DestinyProgressionDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionDisplayPropertiesDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// When progressions show your "experience" gained, that bar has units (i.e. "Experience", "Bad Dudes Snuffed Out", whatever). This is the localized string for that unit of measurement.
 	@JsonKey(name:'displayUnitsName')

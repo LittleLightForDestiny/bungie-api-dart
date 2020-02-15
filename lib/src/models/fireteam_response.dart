@@ -10,7 +10,14 @@ class FireteamResponse{
 	
 	FireteamResponse();
 
-	factory FireteamResponse.fromJson(Map<String, dynamic> json) => _$FireteamResponseFromJson(json);
+	factory FireteamResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$FireteamResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'Summary')
 	FireteamSummary summary;

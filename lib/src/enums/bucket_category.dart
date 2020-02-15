@@ -16,6 +16,9 @@ enum BucketCategory {
   ///Ignored = 4
   @JsonValue(4)
   Ignored,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension BucketCategoryExtension on BucketCategory{

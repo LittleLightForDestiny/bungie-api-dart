@@ -13,6 +13,9 @@ enum GlobalAlertLevel {
   ///Red = 3
   @JsonValue(3)
   Red,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GlobalAlertLevelExtension on GlobalAlertLevel{

@@ -120,7 +120,7 @@ class Content{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _searchtext = '$searchtext';
         final String _size = '$size';
-        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchHelpArticles/$_searchtext/$_size', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/SearchHelpArticles/$_searchtext/$_size/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {

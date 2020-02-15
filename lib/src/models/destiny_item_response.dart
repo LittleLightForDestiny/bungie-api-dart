@@ -19,7 +19,14 @@ class DestinyItemResponse{
 	
 	DestinyItemResponse();
 
-	factory DestinyItemResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemResponseFromJson(json);
+	factory DestinyItemResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the item is on a character, this will return the ID of the character that is holding the item.
 	@JsonKey(name:'characterId')

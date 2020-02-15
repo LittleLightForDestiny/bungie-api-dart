@@ -9,7 +9,14 @@ class DestinyTalentExclusiveGroup{
 	
 	DestinyTalentExclusiveGroup();
 
-	factory DestinyTalentExclusiveGroup.fromJson(Map<String, dynamic> json) => _$DestinyTalentExclusiveGroupFromJson(json);
+	factory DestinyTalentExclusiveGroup.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentExclusiveGroupFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for this exclusive group. Only guaranteed unique within the talent grid, not globally.
 	@JsonKey(name:'groupHash')

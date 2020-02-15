@@ -9,11 +9,18 @@ class DestinyProgressionRewardItemQuantity{
 	
 	DestinyProgressionRewardItemQuantity();
 
-	factory DestinyProgressionRewardItemQuantity.fromJson(Map<String, dynamic> json) => _$DestinyProgressionRewardItemQuantityFromJson(json);
+	factory DestinyProgressionRewardItemQuantity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionRewardItemQuantityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'rewardedAtProgressionLevel')
 	int rewardedAtProgressionLevel;
-	@JsonKey(name:'acquisitionBehavior',unknownEnumValue:DestinyProgressionRewardItemAcquisitionBehavior.Instant)
+	@JsonKey(name:'acquisitionBehavior',unknownEnumValue:DestinyProgressionRewardItemAcquisitionBehavior.ProtectedInvalidEnumValue)
 	DestinyProgressionRewardItemAcquisitionBehavior acquisitionBehavior;
 	@JsonKey(name:'uiDisplayStyle')
 	String uiDisplayStyle;

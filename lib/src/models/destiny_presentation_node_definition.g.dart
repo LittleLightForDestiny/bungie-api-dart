@@ -16,9 +16,9 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
     ..originalIcon = json['originalIcon'] as String
     ..rootViewIcon = json['rootViewIcon'] as String
     ..nodeType = _$enumDecodeNullable(_$DestinyPresentationNodeTypeEnumMap, json['nodeType'],
-        unknownValue: DestinyPresentationNodeType.Default)
+        unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
-        unknownValue: DestinyScope.Profile)
+        unknownValue: DestinyScope.ProtectedInvalidEnumValue)
     ..objectiveHash = json['objectiveHash'] as int
     ..completionRecordHash = json['completionRecordHash'] as int
     ..children = json['children'] == null
@@ -27,10 +27,10 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
             json['children'] as Map<String, dynamic>)
     ..displayStyle = _$enumDecodeNullable(
         _$DestinyPresentationDisplayStyleEnumMap, json['displayStyle'],
-        unknownValue: DestinyPresentationDisplayStyle.Category)
+        unknownValue: DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
     ..screenStyle = _$enumDecodeNullable(
         _$DestinyPresentationScreenStyleEnumMap, json['screenStyle'],
-        unknownValue: DestinyPresentationScreenStyle.Default)
+        unknownValue: DestinyPresentationScreenStyle.ProtectedInvalidEnumValue)
     ..requirements = json['requirements'] == null
         ? null
         : DestinyPresentationNodeRequirementsBlock.fromJson(
@@ -103,11 +103,13 @@ const _$DestinyPresentationNodeTypeEnumMap = {
   DestinyPresentationNodeType.Category: 1,
   DestinyPresentationNodeType.Collectibles: 2,
   DestinyPresentationNodeType.Records: 3,
+  DestinyPresentationNodeType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
+  DestinyScope.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyPresentationDisplayStyleEnumMap = {
@@ -116,10 +118,12 @@ const _$DestinyPresentationDisplayStyleEnumMap = {
   DestinyPresentationDisplayStyle.Medals: 2,
   DestinyPresentationDisplayStyle.Collectible: 3,
   DestinyPresentationDisplayStyle.Record: 4,
+  DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyPresentationScreenStyleEnumMap = {
   DestinyPresentationScreenStyle.Default: 0,
   DestinyPresentationScreenStyle.CategorySets: 1,
   DestinyPresentationScreenStyle.Badge: 2,
+  DestinyPresentationScreenStyle.ProtectedInvalidEnumValue: 999999999,
 };

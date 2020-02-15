@@ -10,12 +10,22 @@ class DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent{
 	
 	DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent();
 
-	factory DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentFromJson(json);
+	factory DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	Map<String, DestinyPlugSetsComponent> data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

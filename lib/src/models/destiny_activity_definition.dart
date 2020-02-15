@@ -27,7 +27,14 @@ class DestinyActivityDefinition{
 	
 	DestinyActivityDefinition();
 
-	factory DestinyActivityDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityDefinitionFromJson(json);
+	factory DestinyActivityDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The title, subtitle, and icon for the activity. We do a little post-processing on this to try and account for Activities where the designers have left this data too minimal to determine what activity is actually being played.
 	@JsonKey(name:'displayProperties')

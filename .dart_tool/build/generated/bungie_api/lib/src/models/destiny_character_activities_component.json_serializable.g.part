@@ -147,4 +147,7 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.NightmareHunt: 79,
   DestinyActivityModeType.Elimination: 80,
   DestinyActivityModeType.Momentum: 81,
+  DestinyActivityModeType.Dungeon: 82,
+  DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

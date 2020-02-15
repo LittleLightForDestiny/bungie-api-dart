@@ -14,7 +14,14 @@ class DestinyProfileTransitoryComponent{
 	
 	DestinyProfileTransitoryComponent();
 
-	factory DestinyProfileTransitoryComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryComponentFromJson(json);
+	factory DestinyProfileTransitoryComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileTransitoryComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If you have any members currently in your party, this is some (very) bare-bones information about those members.
 	@JsonKey(name:'partyMembers')

@@ -10,7 +10,14 @@ class DestinyCharacterCustomization{
 	
 	DestinyCharacterCustomization();
 
-	factory DestinyCharacterCustomization.fromJson(Map<String, dynamic> json) => _$DestinyCharacterCustomizationFromJson(json);
+	factory DestinyCharacterCustomization.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterCustomizationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'personality')
 	int personality;

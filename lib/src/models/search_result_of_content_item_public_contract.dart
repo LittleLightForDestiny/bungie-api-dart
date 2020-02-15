@@ -10,7 +10,14 @@ class SearchResultOfContentItemPublicContract{
 	
 	SearchResultOfContentItemPublicContract();
 
-	factory SearchResultOfContentItemPublicContract.fromJson(Map<String, dynamic> json) => _$SearchResultOfContentItemPublicContractFromJson(json);
+	factory SearchResultOfContentItemPublicContract.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfContentItemPublicContractFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<ContentItemPublicContract> results;

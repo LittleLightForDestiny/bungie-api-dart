@@ -13,7 +13,14 @@ class DestinyItemComponent{
 	
 	DestinyItemComponent();
 
-	factory DestinyItemComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemComponentFromJson(json);
+	factory DestinyItemComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for the item's definition, which is where most of the useful static information for the item can be found.
 	@JsonKey(name:'itemHash')
@@ -25,10 +32,10 @@ class DestinyItemComponent{
 	@JsonKey(name:'quantity')
 	int quantity;
 	/// If the item is bound to a location, it will be specified in this enum.
-	@JsonKey(name:'bindStatus',unknownEnumValue:ItemBindStatus.NotBound)
+	@JsonKey(name:'bindStatus',unknownEnumValue:ItemBindStatus.ProtectedInvalidEnumValue)
 	ItemBindStatus bindStatus;
 	/// An easy reference for where the item is located. Redundant if you got the item from an Inventory, but useful when making detail calls on specific items.
-	@JsonKey(name:'location',unknownEnumValue:ItemLocation.Unknown)
+	@JsonKey(name:'location',unknownEnumValue:ItemLocation.ProtectedInvalidEnumValue)
 	ItemLocation location;
 	/// The hash identifier for the specific inventory bucket in which the item is located.
 	@JsonKey(name:'bucketHash')

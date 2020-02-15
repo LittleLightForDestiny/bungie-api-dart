@@ -12,7 +12,7 @@ DestinyTalentNode _$DestinyTalentNodeFromJson(Map<String, dynamic> json) {
     ..nodeHash = json['nodeHash'] as int
     ..state = _$enumDecodeNullable(
         _$DestinyTalentNodeStateEnumMap, json['state'],
-        unknownValue: DestinyTalentNodeState.Invalid)
+        unknownValue: DestinyTalentNodeState.ProtectedInvalidEnumValue)
     ..isActivated = json['isActivated'] as bool
     ..stepIndex = json['stepIndex'] as int
     ..materialsToUpgrade = (json['materialsToUpgrade'] as List)
@@ -90,4 +90,5 @@ const _$DestinyTalentNodeStateEnumMap = {
   DestinyTalentNodeState.Unknown: 11,
   DestinyTalentNodeState.CreationOnly: 12,
   DestinyTalentNodeState.Hidden: 13,
+  DestinyTalentNodeState.ProtectedInvalidEnumValue: 999999999,
 };

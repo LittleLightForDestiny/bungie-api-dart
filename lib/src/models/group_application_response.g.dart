@@ -11,7 +11,7 @@ GroupApplicationResponse _$GroupApplicationResponseFromJson(
   return GroupApplicationResponse()
     ..resolution = _$enumDecodeNullable(
         _$GroupApplicationResolveStateEnumMap, json['resolution'],
-        unknownValue: GroupApplicationResolveState.Unresolved);
+        unknownValue: GroupApplicationResolveState.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$GroupApplicationResponseToJson(
@@ -57,4 +57,5 @@ const _$GroupApplicationResolveStateEnumMap = {
   GroupApplicationResolveState.Accepted: 1,
   GroupApplicationResolveState.Denied: 2,
   GroupApplicationResolveState.Rescinded: 3,
+  GroupApplicationResolveState.ProtectedInvalidEnumValue: 999999999,
 };

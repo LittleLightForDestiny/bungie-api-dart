@@ -10,13 +10,23 @@ class SingleComponentResponseOfDestinyProfileComponent{
 	
 	SingleComponentResponseOfDestinyProfileComponent();
 
-	factory SingleComponentResponseOfDestinyProfileComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyProfileComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyProfileComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyProfileComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The most essential summary information about a Profile (in Destiny 1, we called these "Accounts").
 	@JsonKey(name:'data')
 	DestinyProfileComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

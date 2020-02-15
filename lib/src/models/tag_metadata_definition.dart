@@ -9,7 +9,14 @@ class TagMetadataDefinition{
 	
 	TagMetadataDefinition();
 
-	factory TagMetadataDefinition.fromJson(Map<String, dynamic> json) => _$TagMetadataDefinitionFromJson(json);
+	factory TagMetadataDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TagMetadataDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'description')
 	String description;

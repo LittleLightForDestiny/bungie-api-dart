@@ -10,7 +10,14 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	
 	SingleComponentResponseOfDestinyItemTalentGridComponent();
 
-	factory SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Well, we're here in Destiny 2, and Talent Grids are unfortunately still around.
 	/// The good news is that they're pretty much only being used for certain base information on items and for Builds/Subclasses. The bad news is that they still suck. If you really want this information, grab this component.
@@ -21,8 +28,11 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	/// See DestinyTalentGridDefinition for more information. Brace yourself, the water's cold out there in the deep end.
 	@JsonKey(name:'data')
 	DestinyItemTalentGridComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

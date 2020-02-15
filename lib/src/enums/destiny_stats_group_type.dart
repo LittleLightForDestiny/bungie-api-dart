@@ -32,6 +32,9 @@ enum DestinyStatsGroupType {
   ///Internal = 104
   @JsonValue(104)
   Internal,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyStatsGroupTypeExtension on DestinyStatsGroupType{

@@ -10,14 +10,24 @@ class SingleComponentResponseOfDestinyProfileProgressionComponent{
 	
 	SingleComponentResponseOfDestinyProfileProgressionComponent();
 
-	factory SingleComponentResponseOfDestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyProfileProgressionComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyProfileProgressionComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The set of progression-related information that applies at a Profile-wide level for your Destiny experience. This differs from the Jimi Hendrix Experience because there's less guitars on fire. Yet. #spoileralert?
 	/// This will include information such as Checklist info.
 	@JsonKey(name:'data')
 	DestinyProfileProgressionComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

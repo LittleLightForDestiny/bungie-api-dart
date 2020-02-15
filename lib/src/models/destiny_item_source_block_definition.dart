@@ -12,7 +12,14 @@ class DestinyItemSourceBlockDefinition{
 	
 	DestinyItemSourceBlockDefinition();
 
-	factory DestinyItemSourceBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSourceBlockDefinitionFromJson(json);
+	factory DestinyItemSourceBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSourceBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The list of hash identifiers for Reward Sources that hint where the item can be found (DestinyRewardSourceDefinition).
 	@JsonKey(name:'sourceHashes')
@@ -21,7 +28,7 @@ class DestinyItemSourceBlockDefinition{
 	@JsonKey(name:'sources')
 	List<DestinyItemSourceDefinition> sources;
 	/// If we found that this item is exclusive to a specific platform, this will be set to the BungieMembershipType enumeration that matches that platform.
-	@JsonKey(name:'exclusive',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'exclusive',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType exclusive;
 	/// A denormalized reference back to vendors that potentially sell this item.
 	@JsonKey(name:'vendorSources')

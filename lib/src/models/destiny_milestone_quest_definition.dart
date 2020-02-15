@@ -12,7 +12,14 @@ class DestinyMilestoneQuestDefinition{
 	
 	DestinyMilestoneQuestDefinition();
 
-	factory DestinyMilestoneQuestDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneQuestDefinitionFromJson(json);
+	factory DestinyMilestoneQuestDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneQuestDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The item representing this Milestone quest. Use this hash to look up the DestinyInventoryItemDefinition for the quest to find its steps and human readable data.
 	@JsonKey(name:'questItemHash')

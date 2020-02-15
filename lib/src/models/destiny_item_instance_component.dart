@@ -15,10 +15,17 @@ class DestinyItemInstanceComponent{
 	
 	DestinyItemInstanceComponent();
 
-	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemInstanceComponentFromJson(json);
+	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemInstanceComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the item has a damage type, this is the item's current damage type.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType damageType;
 	/// The current damage type's hash, so you can look up localized info and icons for it.
 	@JsonKey(name:'damageTypeHash')

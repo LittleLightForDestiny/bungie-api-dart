@@ -9,7 +9,14 @@ class DestinyPublicMilestoneActivityVariant{
 	
 	DestinyPublicMilestoneActivityVariant();
 
-	factory DestinyPublicMilestoneActivityVariant.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneActivityVariantFromJson(json);
+	factory DestinyPublicMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneActivityVariantFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of this activity variant. Examine the activity's definition in the Manifest database to determine what makes it a distinct variant. Usually it will be difficulty level or whether or not it is a guided game variant of the activity, but theoretically it could be distinguished in any arbitrary way.
 	@JsonKey(name:'activityHash')

@@ -11,7 +11,14 @@ class DestinyMilestoneValueDefinition{
 	
 	DestinyMilestoneValueDefinition();
 
-	factory DestinyMilestoneValueDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneValueDefinitionFromJson(json);
+	factory DestinyMilestoneValueDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneValueDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'key')
 	String key;

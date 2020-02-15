@@ -10,7 +10,14 @@ class DestinyHistoricalStatsPeriodGroup{
 	
 	DestinyHistoricalStatsPeriodGroup();
 
-	factory DestinyHistoricalStatsPeriodGroup.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsPeriodGroupFromJson(json);
+	factory DestinyHistoricalStatsPeriodGroup.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsPeriodGroupFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Period for the group. If the stat periodType is day, then this will have a specific day. If the type is monthly, then this value will be the first day of the applicable month. This value is not set when the periodType is 'all time'.
 	@JsonKey(name:'period')

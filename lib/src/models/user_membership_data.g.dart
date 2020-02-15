@@ -13,6 +13,7 @@ UserMembershipData _$UserMembershipDataFromJson(Map<String, dynamic> json) {
             ? null
             : GroupUserInfoCard.fromJson(e as Map<String, dynamic>))
         ?.toList()
+    ..primaryMembershipId = json['primaryMembershipId'] as String
     ..bungieNetUser = json['bungieNetUser'] == null
         ? null
         : GeneralUser.fromJson(json['bungieNetUser'] as Map<String, dynamic>);
@@ -21,5 +22,6 @@ UserMembershipData _$UserMembershipDataFromJson(Map<String, dynamic> json) {
 Map<String, dynamic> _$UserMembershipDataToJson(UserMembershipData instance) =>
     <String, dynamic>{
       'destinyMemberships': instance.destinyMemberships,
+      'primaryMembershipId': instance.primaryMembershipId,
       'bungieNetUser': instance.bungieNetUser,
     };

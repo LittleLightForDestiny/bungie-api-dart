@@ -10,7 +10,14 @@ class GroupUserBase{
 	
 	GroupUserBase();
 
-	factory GroupUserBase.fromJson(Map<String, dynamic> json) => _$GroupUserBaseFromJson(json);
+	factory GroupUserBase.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupUserBaseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'groupId')
 	String groupId;

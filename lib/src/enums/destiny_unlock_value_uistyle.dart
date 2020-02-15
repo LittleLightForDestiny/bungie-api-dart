@@ -40,6 +40,9 @@ enum DestinyUnlockValueUIStyle {
   ///Multiplier = 9
   @JsonValue(9)
   Multiplier,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyUnlockValueUIStyleExtension on DestinyUnlockValueUIStyle{

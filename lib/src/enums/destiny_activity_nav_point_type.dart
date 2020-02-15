@@ -52,6 +52,9 @@ enum DestinyActivityNavPointType {
   ///TrackedQuest = 16
   @JsonValue(16)
   TrackedQuest,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyActivityNavPointTypeExtension on DestinyActivityNavPointType{

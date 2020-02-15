@@ -10,7 +10,14 @@ class EmailSubscriptionDefinition{
 	
 	EmailSubscriptionDefinition();
 
-	factory EmailSubscriptionDefinition.fromJson(Map<String, dynamic> json) => _$EmailSubscriptionDefinitionFromJson(json);
+	factory EmailSubscriptionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EmailSubscriptionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier for this subscription.
 	@JsonKey(name:'name')

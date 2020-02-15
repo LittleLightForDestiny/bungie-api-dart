@@ -11,7 +11,14 @@ class DestinyManifest{
 	
 	DestinyManifest();
 
-	factory DestinyManifest.fromJson(Map<String, dynamic> json) => _$DestinyManifestFromJson(json);
+	factory DestinyManifest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyManifestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'version')
 	String version;
@@ -21,8 +28,12 @@ class DestinyManifest{
 	List<GearAssetDataBaseDefinition> mobileGearAssetDataBases;
 	@JsonKey(name:'mobileWorldContentPaths')
 	Map<String, String> mobileWorldContentPaths;
+	/// This points to the generated JSON that contains all the Definitions. Each key is a locale. The value is a path to the aggregated world definitions (warning: large file!)
 	@JsonKey(name:'jsonWorldContentPaths')
 	Map<String, String> jsonWorldContentPaths;
+	/// This points to the generated JSON that contains all the Definitions. Each key is a locale. The value is a dictionary, where the key is a definition type by name, and the value is the path to the file for that definition. WARNING: This is unsafe and subject to change - do not depend on data in these files staying around long-term.
+	@JsonKey(name:'jsonWorldComponentContentPaths')
+	Map<String, Map<String, String>> jsonWorldComponentContentPaths;
 	@JsonKey(name:'mobileClanBannerDatabasePath')
 	String mobileClanBannerDatabasePath;
 	@JsonKey(name:'mobileGearCDN')

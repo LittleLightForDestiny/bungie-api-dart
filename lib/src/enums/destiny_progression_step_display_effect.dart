@@ -10,6 +10,9 @@ enum DestinyProgressionStepDisplayEffect {
   ///Item = 2
   @JsonValue(2)
   Item,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyProgressionStepDisplayEffectExtension on DestinyProgressionStepDisplayEffect{

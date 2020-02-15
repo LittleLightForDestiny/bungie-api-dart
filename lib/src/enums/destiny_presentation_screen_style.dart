@@ -13,6 +13,9 @@ enum DestinyPresentationScreenStyle {
   /// Show sub-items as Badges. (I know, I know. We don&#39;t need no stinkin&#39; badges har har har)
   @JsonValue(2)
   Badge,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyPresentationScreenStyleExtension on DestinyPresentationScreenStyle{

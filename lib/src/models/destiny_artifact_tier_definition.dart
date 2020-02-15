@@ -9,7 +9,14 @@ class DestinyArtifactTierDefinition{
 	
 	DestinyArtifactTierDefinition();
 
-	factory DestinyArtifactTierDefinition.fromJson(Map<String, dynamic> json) => _$DestinyArtifactTierDefinitionFromJson(json);
+	factory DestinyArtifactTierDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyArtifactTierDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// An identifier, unique within the Artifact, for this specific tier.
 	@JsonKey(name:'tierHash')

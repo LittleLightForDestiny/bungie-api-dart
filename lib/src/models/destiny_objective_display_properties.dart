@@ -8,7 +8,14 @@ class DestinyObjectiveDisplayProperties{
 	
 	DestinyObjectiveDisplayProperties();
 
-	factory DestinyObjectiveDisplayProperties.fromJson(Map<String, dynamic> json) => _$DestinyObjectiveDisplayPropertiesFromJson(json);
+	factory DestinyObjectiveDisplayProperties.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyObjectiveDisplayPropertiesFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The activity associated with this objective in the context of this item, if any.
 	@JsonKey(name:'activityHash')

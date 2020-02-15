@@ -11,7 +11,7 @@ TrendingDetail _$TrendingDetailFromJson(Map<String, dynamic> json) {
     ..identifier = json['identifier'] as String
     ..entityType = _$enumDecodeNullable(
         _$TrendingEntryTypeEnumMap, json['entityType'],
-        unknownValue: TrendingEntryType.News)
+        unknownValue: TrendingEntryType.ProtectedInvalidEnumValue)
     ..news = json['news'] == null
         ? null
         : TrendingEntryNews.fromJson(json['news'] as Map<String, dynamic>)
@@ -99,4 +99,5 @@ const _$TrendingEntryTypeEnumMap = {
   TrendingEntryType.ForumTag: 9,
   TrendingEntryType.Container: 10,
   TrendingEntryType.Release: 11,
+  TrendingEntryType.ProtectedInvalidEnumValue: 999999999,
 };

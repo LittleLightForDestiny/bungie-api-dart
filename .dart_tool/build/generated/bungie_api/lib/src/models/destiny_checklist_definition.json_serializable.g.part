@@ -11,7 +11,7 @@ DestinyChecklistDefinition _$DestinyChecklistDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..viewActionString = json['viewActionString'] as String
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
-        unknownValue: DestinyScope.Profile)
+        unknownValue: DestinyScope.ProtectedInvalidEnumValue)
     ..entries = (json['entries'] as List)
         ?.map((e) => e == null
             ? null
@@ -70,4 +70,5 @@ T _$enumDecodeNullable<T>(
 const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
+  DestinyScope.ProtectedInvalidEnumValue: 999999999,
 };

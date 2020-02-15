@@ -9,7 +9,14 @@ class DestinyArtifactTier{
 	
 	DestinyArtifactTier();
 
-	factory DestinyArtifactTier.fromJson(Map<String, dynamic> json) => _$DestinyArtifactTierFromJson(json);
+	factory DestinyArtifactTier.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyArtifactTierFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'tierHash')
 	int tierHash;

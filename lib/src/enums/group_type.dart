@@ -7,6 +7,9 @@ enum GroupType {
   ///Clan = 1
   @JsonValue(1)
   Clan,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupTypeExtension on GroupType{

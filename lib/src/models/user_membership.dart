@@ -10,10 +10,17 @@ class UserMembership{
 	
 	UserMembership();
 
-	factory UserMembership.fromJson(Map<String, dynamic> json) => _$UserMembershipFromJson(json);
+	factory UserMembership.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$UserMembershipFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')

@@ -8,7 +8,14 @@ class CoreSetting{
 	
 	CoreSetting();
 
-	factory CoreSetting.fromJson(Map<String, dynamic> json) => _$CoreSettingFromJson(json);
+	factory CoreSetting.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$CoreSettingFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'identifier')
 	String identifier;

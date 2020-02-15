@@ -7,6 +7,9 @@ enum BucketScope {
   ///Account = 1
   @JsonValue(1)
   Account,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension BucketScopeExtension on BucketScope{

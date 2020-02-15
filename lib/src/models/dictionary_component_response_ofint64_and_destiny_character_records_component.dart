@@ -10,12 +10,22 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent{
 	
 	DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent();
 
-	factory DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponentFromJson(json);
+	factory DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	Map<String, DestinyCharacterRecordsComponent> data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

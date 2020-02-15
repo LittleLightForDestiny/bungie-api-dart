@@ -13,7 +13,14 @@ class DestinyArtifactDefinition{
 	
 	DestinyArtifactDefinition();
 
-	factory DestinyArtifactDefinition.fromJson(Map<String, dynamic> json) => _$DestinyArtifactDefinitionFromJson(json);
+	factory DestinyArtifactDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyArtifactDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Any basic display info we know about the Artifact. Currently sourced from a related inventory item, but the source of this data is subject to change.
 	@JsonKey(name:'displayProperties')

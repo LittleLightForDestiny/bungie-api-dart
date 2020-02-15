@@ -10,6 +10,9 @@ enum DestinyGender {
   ///Unknown = 2
   @JsonValue(2)
   Unknown,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyGenderExtension on DestinyGender{

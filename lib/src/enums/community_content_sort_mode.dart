@@ -10,6 +10,9 @@ enum CommunityContentSortMode {
   ///HighestRated = 2
   @JsonValue(2)
   HighestRated,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension CommunityContentSortModeExtension on CommunityContentSortMode{

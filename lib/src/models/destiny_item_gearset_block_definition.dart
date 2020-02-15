@@ -9,7 +9,14 @@ class DestinyItemGearsetBlockDefinition{
 	
 	DestinyItemGearsetBlockDefinition();
 
-	factory DestinyItemGearsetBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemGearsetBlockDefinitionFromJson(json);
+	factory DestinyItemGearsetBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemGearsetBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The maximum possible number of items that can be collected.
 	@JsonKey(name:'trackingValueMax')

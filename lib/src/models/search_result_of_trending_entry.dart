@@ -10,7 +10,14 @@ class SearchResultOfTrendingEntry{
 	
 	SearchResultOfTrendingEntry();
 
-	factory SearchResultOfTrendingEntry.fromJson(Map<String, dynamic> json) => _$SearchResultOfTrendingEntryFromJson(json);
+	factory SearchResultOfTrendingEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfTrendingEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<TrendingEntry> results;

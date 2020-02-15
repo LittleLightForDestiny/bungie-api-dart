@@ -15,7 +15,7 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..completionValue = json['completionValue'] as int
     ..scope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['scope'],
-        unknownValue: DestinyGatingScope.None)
+        unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
     ..locationHash = json['locationHash'] as int
     ..allowNegativeValue = json['allowNegativeValue'] as bool
     ..allowValueChangeWhenCompleted =
@@ -23,7 +23,7 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
     ..isCountingDownward = json['isCountingDownward'] as bool
     ..valueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['valueStyle'],
-        unknownValue: DestinyUnlockValueUIStyle.Automatic)
+        unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
     ..progressDescription = json['progressDescription'] as String
     ..perks = json['perks'] == null
         ? null
@@ -38,10 +38,10 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
     ..showValueOnComplete = json['showValueOnComplete'] as bool
     ..completedValueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['completedValueStyle'],
-        unknownValue: DestinyUnlockValueUIStyle.Automatic)
+        unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
     ..inProgressValueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['inProgressValueStyle'],
-        unknownValue: DestinyUnlockValueUIStyle.Automatic)
+        unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -113,6 +113,7 @@ const _$DestinyGatingScopeEnumMap = {
   DestinyGatingScope.Character: 4,
   DestinyGatingScope.Item: 5,
   DestinyGatingScope.AssumedWorstCase: 6,
+  DestinyGatingScope.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyUnlockValueUIStyleEnumMap = {
@@ -126,4 +127,5 @@ const _$DestinyUnlockValueUIStyleEnumMap = {
   DestinyUnlockValueUIStyle.TimeDuration: 7,
   DestinyUnlockValueUIStyle.Hidden: 8,
   DestinyUnlockValueUIStyle.Multiplier: 9,
+  DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue: 999999999,
 };

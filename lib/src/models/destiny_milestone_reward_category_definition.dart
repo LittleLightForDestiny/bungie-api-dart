@@ -11,7 +11,14 @@ class DestinyMilestoneRewardCategoryDefinition{
 	
 	DestinyMilestoneRewardCategoryDefinition();
 
-	factory DestinyMilestoneRewardCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneRewardCategoryDefinitionFromJson(json);
+	factory DestinyMilestoneRewardCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneRewardCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Identifies the reward category. Only guaranteed unique within this specific component!
 	@JsonKey(name:'categoryHash')

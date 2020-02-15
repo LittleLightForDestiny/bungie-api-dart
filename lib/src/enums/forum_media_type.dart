@@ -13,6 +13,9 @@ enum ForumMediaType {
   ///Youtube = 3
   @JsonValue(3)
   Youtube,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumMediaTypeExtension on ForumMediaType{

@@ -12,7 +12,14 @@ class CoreSettingsConfiguration{
 	
 	CoreSettingsConfiguration();
 
-	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) => _$CoreSettingsConfigurationFromJson(json);
+	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$CoreSettingsConfigurationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'environment')
 	String environment;

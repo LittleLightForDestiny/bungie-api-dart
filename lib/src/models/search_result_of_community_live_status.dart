@@ -10,7 +10,14 @@ class SearchResultOfCommunityLiveStatus{
 	
 	SearchResultOfCommunityLiveStatus();
 
-	factory SearchResultOfCommunityLiveStatus.fromJson(Map<String, dynamic> json) => _$SearchResultOfCommunityLiveStatusFromJson(json);
+	factory SearchResultOfCommunityLiveStatus.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfCommunityLiveStatusFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<CommunityLiveStatus> results;

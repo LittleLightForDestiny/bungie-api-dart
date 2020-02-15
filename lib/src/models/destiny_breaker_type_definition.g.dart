@@ -15,7 +15,7 @@ DestinyBreakerTypeDefinition _$DestinyBreakerTypeDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..enumValue = _$enumDecodeNullable(
         _$DestinyBreakerTypeEnumMap, json['enumValue'],
-        unknownValue: DestinyBreakerType.None)
+        unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -68,4 +68,5 @@ const _$DestinyBreakerTypeEnumMap = {
   DestinyBreakerType.ShieldPiercing: 1,
   DestinyBreakerType.Disruption: 2,
   DestinyBreakerType.Stagger: 3,
+  DestinyBreakerType.ProtectedInvalidEnumValue: 999999999,
 };

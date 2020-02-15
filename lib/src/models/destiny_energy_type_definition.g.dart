@@ -17,7 +17,7 @@ DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
     ..showIcon = json['showIcon'] as bool
     ..enumValue = _$enumDecodeNullable(
         _$DestinyEnergyTypeEnumMap, json['enumValue'],
-        unknownValue: DestinyEnergyType.Any)
+        unknownValue: DestinyEnergyType.ProtectedInvalidEnumValue)
     ..capacityStatHash = json['capacityStatHash'] as int
     ..costStatHash = json['costStatHash'] as int
     ..hash = json['hash'] as int
@@ -76,4 +76,5 @@ const _$DestinyEnergyTypeEnumMap = {
   DestinyEnergyType.Arc: 1,
   DestinyEnergyType.Thermal: 2,
   DestinyEnergyType.Void: 3,
+  DestinyEnergyType.ProtectedInvalidEnumValue: 999999999,
 };

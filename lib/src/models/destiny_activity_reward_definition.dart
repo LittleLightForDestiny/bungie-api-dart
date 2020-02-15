@@ -10,7 +10,14 @@ class DestinyActivityRewardDefinition{
 	
 	DestinyActivityRewardDefinition();
 
-	factory DestinyActivityRewardDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityRewardDefinitionFromJson(json);
+	factory DestinyActivityRewardDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityRewardDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The header for the reward set, if any.
 	@JsonKey(name:'rewardText')

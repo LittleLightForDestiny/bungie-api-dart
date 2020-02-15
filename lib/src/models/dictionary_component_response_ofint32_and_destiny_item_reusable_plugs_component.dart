@@ -10,12 +10,22 @@ class DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent{
 	
 	DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent();
 
-	factory DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponentFromJson(json);
+	factory DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DictionaryComponentResponseOfint32AndDestinyItemReusablePlugsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	Map<String, DestinyItemReusablePlugsComponent> data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

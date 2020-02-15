@@ -11,7 +11,14 @@ class DestinyProgressionMappingDefinition{
 	
 	DestinyProgressionMappingDefinition();
 
-	factory DestinyProgressionMappingDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionMappingDefinitionFromJson(json);
+	factory DestinyProgressionMappingDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionMappingDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Infrequently defined in practice. Defer to the individual progressions' display properties.
 	@JsonKey(name:'displayProperties')

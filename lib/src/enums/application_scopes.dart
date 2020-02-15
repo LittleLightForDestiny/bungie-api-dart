@@ -17,7 +17,7 @@ class ApplicationScopes {
     /// Administer Group/Clan Forums, Wall, and Members for groups and clans that the user is a founder or an administrator.
     static const ApplicationScopes AdminGroups = ApplicationScopes(8);
     ///BnetWrite = 16
-    /// Create new groups, clans, and forum posts.
+    /// Create new groups, clans, and forum posts, along with other actions that are reserved for Bungie.net elevated scope: not meant to be used by third party applications.
     static const ApplicationScopes BnetWrite = ApplicationScopes(16);
     ///MoveEquipDestinyItems = 32
     /// Move or equip Destiny items
@@ -40,6 +40,9 @@ class ApplicationScopes {
     ///AdvancedWriteActions = 2048
     /// Can perform actions that will result in a prompt to the user via the Destiny app.
     static const ApplicationScopes AdvancedWriteActions = ApplicationScopes(2048);
+    ///PartnerOfferGrant = 4096
+    /// Can user the partner offer api to claim rewards defined for a partner
+    static const ApplicationScopes PartnerOfferGrant = ApplicationScopes(4096);
 
     int get value {
         return _value;

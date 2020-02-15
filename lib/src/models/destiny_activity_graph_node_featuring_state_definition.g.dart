@@ -12,7 +12,7 @@ DestinyActivityGraphNodeFeaturingStateDefinition
   return DestinyActivityGraphNodeFeaturingStateDefinition()
     ..highlightType = _$enumDecodeNullable(
         _$ActivityGraphNodeHighlightTypeEnumMap, json['highlightType'],
-        unknownValue: ActivityGraphNodeHighlightType.None);
+        unknownValue: ActivityGraphNodeHighlightType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyActivityGraphNodeFeaturingStateDefinitionToJson(
@@ -60,4 +60,5 @@ const _$ActivityGraphNodeHighlightTypeEnumMap = {
   ActivityGraphNodeHighlightType.Hyper: 2,
   ActivityGraphNodeHighlightType.Comet: 3,
   ActivityGraphNodeHighlightType.RiseOfIron: 4,
+  ActivityGraphNodeHighlightType.ProtectedInvalidEnumValue: 999999999,
 };

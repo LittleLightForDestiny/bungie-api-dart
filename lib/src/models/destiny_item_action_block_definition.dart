@@ -11,7 +11,14 @@ class DestinyItemActionBlockDefinition{
 	
 	DestinyItemActionBlockDefinition();
 
-	factory DestinyItemActionBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemActionBlockDefinitionFromJson(json);
+	factory DestinyItemActionBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemActionBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Localized text for the verb of the action being performed.
 	@JsonKey(name:'verbName')

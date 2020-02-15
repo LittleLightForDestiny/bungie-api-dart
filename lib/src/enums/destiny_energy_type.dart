@@ -13,6 +13,9 @@ enum DestinyEnergyType {
   ///Void = 3
   @JsonValue(3)
   Void,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyEnergyTypeExtension on DestinyEnergyType{

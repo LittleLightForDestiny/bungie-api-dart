@@ -13,7 +13,14 @@ class ContentTypeDescription{
 	
 	ContentTypeDescription();
 
-	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) => _$ContentTypeDescriptionFromJson(json);
+	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentTypeDescriptionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'cType')
 	String cType;

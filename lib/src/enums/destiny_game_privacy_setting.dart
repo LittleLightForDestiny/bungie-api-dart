@@ -16,6 +16,9 @@ enum DestinyGamePrivacySetting {
   ///Closed = 4
   @JsonValue(4)
   Closed,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyGamePrivacySettingExtension on DestinyGamePrivacySetting{

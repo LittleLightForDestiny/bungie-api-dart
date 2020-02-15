@@ -11,7 +11,14 @@ class DestinyPostGameCarnageReportData{
 	
 	DestinyPostGameCarnageReportData();
 
-	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportDataFromJson(json);
+	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPostGameCarnageReportDataFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Date and time for the activity.
 	@JsonKey(name:'period')

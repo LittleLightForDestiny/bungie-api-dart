@@ -10,15 +10,22 @@ class FireteamSummary{
 	
 	FireteamSummary();
 
-	factory FireteamSummary.fromJson(Map<String, dynamic> json) => _$FireteamSummaryFromJson(json);
+	factory FireteamSummary.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$FireteamSummaryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'fireteamId')
 	String fireteamId;
 	@JsonKey(name:'groupId')
 	String groupId;
-	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.Unknown)
+	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.ProtectedInvalidEnumValue)
 	FireteamPlatform platform;
-	@JsonKey(name:'activityType',unknownEnumValue:FireteamActivityType.All)
+	@JsonKey(name:'activityType',unknownEnumValue:FireteamActivityType.ProtectedInvalidEnumValue)
 	FireteamActivityType activityType;
 	@JsonKey(name:'isImmediate')
 	bool isImmediate;
@@ -48,6 +55,8 @@ class FireteamSummary{
 	bool isValid;
 	@JsonKey(name:'datePlayerModified')
 	String datePlayerModified;
+	@JsonKey(name:'titleBeforeModeration')
+	String titleBeforeModeration;
 
 	
 	

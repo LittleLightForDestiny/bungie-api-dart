@@ -11,7 +11,14 @@ class DestinyReportOffensePgcrRequest{
 	
 	DestinyReportOffensePgcrRequest();
 
-	factory DestinyReportOffensePgcrRequest.fromJson(Map<String, dynamic> json) => _$DestinyReportOffensePgcrRequestFromJson(json);
+	factory DestinyReportOffensePgcrRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyReportOffensePgcrRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// So you've decided to report someone instead of cursing them and their descendants. Well, okay then. This is the category or categorie(s) of infractions for which you are reporting the user. These are hash identifiers that map to DestinyReportReasonCategoryDefinition entries.
 	@JsonKey(name:'reasonCategoryHashes')

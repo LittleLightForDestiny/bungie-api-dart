@@ -10,9 +10,16 @@ class PublicPartnershipDetail{
 	
 	PublicPartnershipDetail();
 
-	factory PublicPartnershipDetail.fromJson(Map<String, dynamic> json) => _$PublicPartnershipDetailFromJson(json);
+	factory PublicPartnershipDetail.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PublicPartnershipDetailFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'partnerType',unknownEnumValue:PartnershipType.None)
+	@JsonKey(name:'partnerType',unknownEnumValue:PartnershipType.ProtectedInvalidEnumValue)
 	PartnershipType partnerType;
 	@JsonKey(name:'identifier')
 	String identifier;

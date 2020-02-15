@@ -9,7 +9,14 @@ class DestinyProfileRecordsComponent{
 	
 	DestinyProfileRecordsComponent();
 
-	factory DestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileRecordsComponentFromJson(json);
+	factory DestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileRecordsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Your "Triumphs" score.
 	@JsonKey(name:'score')

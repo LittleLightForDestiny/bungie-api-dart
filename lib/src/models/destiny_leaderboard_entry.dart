@@ -10,7 +10,14 @@ class DestinyLeaderboardEntry{
 	
 	DestinyLeaderboardEntry();
 
-	factory DestinyLeaderboardEntry.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardEntryFromJson(json);
+	factory DestinyLeaderboardEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLeaderboardEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Where this player ranks on the leaderboard. A value of 1 is the top rank.
 	@JsonKey(name:'rank')

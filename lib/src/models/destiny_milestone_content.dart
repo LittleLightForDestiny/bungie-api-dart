@@ -10,7 +10,14 @@ class DestinyMilestoneContent{
 	
 	DestinyMilestoneContent();
 
-	factory DestinyMilestoneContent.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneContentFromJson(json);
+	factory DestinyMilestoneContent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneContentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The "About this Milestone" text from the Firehose.
 	@JsonKey(name:'about')

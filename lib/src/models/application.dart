@@ -11,9 +11,16 @@ class Application{
 	
 	Application();
 
-	factory Application.fromJson(Map<String, dynamic> json) => _$ApplicationFromJson(json);
+	factory Application.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ApplicationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'applicationType',unknownEnumValue:OAuthApplicationType.None)
+	@JsonKey(name:'applicationType',unknownEnumValue:OAuthApplicationType.ProtectedInvalidEnumValue)
 	OAuthApplicationType applicationType;
 	/// Unique ID assigned to the application
 	@JsonKey(name:'applicationId')
@@ -34,7 +41,7 @@ class Application{
 	@JsonKey(name:'origin')
 	String origin;
 	/// Current status of the application.
-	@JsonKey(name:'status',unknownEnumValue:ApplicationStatus.None)
+	@JsonKey(name:'status',unknownEnumValue:ApplicationStatus.ProtectedInvalidEnumValue)
 	ApplicationStatus status;
 	/// Date the application was first added to our database.
 	@JsonKey(name:'creationDate')

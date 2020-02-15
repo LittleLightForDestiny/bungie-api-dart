@@ -13,6 +13,9 @@ enum ItemBindStatus {
   ///BoundToGuild = 3
   @JsonValue(3)
   BoundToGuild,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ItemBindStatusExtension on ItemBindStatus{

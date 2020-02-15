@@ -11,15 +11,22 @@ class ForumRecruitmentDetail{
 	
 	ForumRecruitmentDetail();
 
-	factory ForumRecruitmentDetail.fromJson(Map<String, dynamic> json) => _$ForumRecruitmentDetailFromJson(json);
+	factory ForumRecruitmentDetail.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ForumRecruitmentDetailFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'topicId')
 	String topicId;
 	@JsonKey(name:'microphoneRequired')
 	bool microphoneRequired;
-	@JsonKey(name:'intensity',unknownEnumValue:ForumRecruitmentIntensityLabel.None)
+	@JsonKey(name:'intensity',unknownEnumValue:ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue)
 	ForumRecruitmentIntensityLabel intensity;
-	@JsonKey(name:'tone',unknownEnumValue:ForumRecruitmentToneLabel.None)
+	@JsonKey(name:'tone',unknownEnumValue:ForumRecruitmentToneLabel.ProtectedInvalidEnumValue)
 	ForumRecruitmentToneLabel tone;
 	@JsonKey(name:'approved')
 	bool approved;

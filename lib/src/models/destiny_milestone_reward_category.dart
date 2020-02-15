@@ -10,7 +10,14 @@ class DestinyMilestoneRewardCategory{
 	
 	DestinyMilestoneRewardCategory();
 
-	factory DestinyMilestoneRewardCategory.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneRewardCategoryFromJson(json);
+	factory DestinyMilestoneRewardCategory.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneRewardCategoryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Look up the relevant DestinyMilestoneDefinition, and then use rewardCategoryHash to look up the category info in DestinyMilestoneDefinition.rewards.
 	@JsonKey(name:'rewardCategoryHash')

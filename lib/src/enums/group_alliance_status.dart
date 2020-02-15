@@ -10,6 +10,9 @@ enum GroupAllianceStatus {
   ///Child = 2
   @JsonValue(2)
   Child,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupAllianceStatusExtension on GroupAllianceStatus{

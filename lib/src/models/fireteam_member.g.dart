@@ -24,7 +24,7 @@ FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) {
     ..lastPlatformInviteAttemptResult = _$enumDecodeNullable(
         _$FireteamPlatformInviteResultEnumMap,
         json['lastPlatformInviteAttemptResult'],
-        unknownValue: FireteamPlatformInviteResult.None);
+        unknownValue: FireteamPlatformInviteResult.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
@@ -77,4 +77,5 @@ const _$FireteamPlatformInviteResultEnumMap = {
   FireteamPlatformInviteResult.AlreadyInFireteam: 2,
   FireteamPlatformInviteResult.Throttled: 3,
   FireteamPlatformInviteResult.ServiceError: 4,
+  FireteamPlatformInviteResult.ProtectedInvalidEnumValue: 999999999,
 };

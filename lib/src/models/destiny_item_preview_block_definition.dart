@@ -11,7 +11,14 @@ class DestinyItemPreviewBlockDefinition{
 	
 	DestinyItemPreviewBlockDefinition();
 
-	factory DestinyItemPreviewBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemPreviewBlockDefinitionFromJson(json);
+	factory DestinyItemPreviewBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPreviewBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A string that the game UI uses as a hint for which detail screen to show for the item. You, too, can leverage this for your own custom screen detail views. Note, however, that these are arbitrarily defined by designers: there's no guarantees of a fixed, known number of these - so fall back to something reasonable if you don't recognize it.
 	@JsonKey(name:'screenStyle')

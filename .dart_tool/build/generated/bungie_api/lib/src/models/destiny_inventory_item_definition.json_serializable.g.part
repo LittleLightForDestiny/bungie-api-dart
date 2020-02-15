@@ -70,19 +70,20 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..doesPostmasterPullHaveSideEffects = json['doesPostmasterPullHaveSideEffects'] as bool
     ..nonTransferrable = json['nonTransferrable'] as bool
     ..itemCategoryHashes = (json['itemCategoryHashes'] as List)?.map((e) => e as int)?.toList()
-    ..specialItemType = _$enumDecodeNullable(_$SpecialItemTypeEnumMap, json['specialItemType'], unknownValue: SpecialItemType.None)
-    ..itemType = _$enumDecodeNullable(_$DestinyItemTypeEnumMap, json['itemType'], unknownValue: DestinyItemType.None)
-    ..itemSubType = _$enumDecodeNullable(_$DestinyItemSubTypeEnumMap, json['itemSubType'], unknownValue: DestinyItemSubType.None)
-    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'], unknownValue: DestinyClass.Titan)
-    ..breakerType = _$enumDecodeNullable(_$DestinyBreakerTypeEnumMap, json['breakerType'], unknownValue: DestinyBreakerType.None)
+    ..specialItemType = _$enumDecodeNullable(_$SpecialItemTypeEnumMap, json['specialItemType'], unknownValue: SpecialItemType.ProtectedInvalidEnumValue)
+    ..itemType = _$enumDecodeNullable(_$DestinyItemTypeEnumMap, json['itemType'], unknownValue: DestinyItemType.ProtectedInvalidEnumValue)
+    ..itemSubType = _$enumDecodeNullable(_$DestinyItemSubTypeEnumMap, json['itemSubType'], unknownValue: DestinyItemSubType.ProtectedInvalidEnumValue)
+    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'], unknownValue: DestinyClass.ProtectedInvalidEnumValue)
+    ..breakerType = _$enumDecodeNullable(_$DestinyBreakerTypeEnumMap, json['breakerType'], unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
     ..breakerTypeHash = json['breakerTypeHash'] as int
     ..equippable = json['equippable'] as bool
     ..damageTypeHashes = (json['damageTypeHashes'] as List)?.map((e) => e as int)?.toList()
     ..damageTypes = (json['damageTypes'] as List)?.map((e) => _$enumDecodeNullable(_$DamageTypeEnumMap, e))?.toList()
-    ..defaultDamageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['defaultDamageType'], unknownValue: DamageType.None)
+    ..defaultDamageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['defaultDamageType'], unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int
     ..seasonHash = json['seasonHash'] as int
     ..isWrapper = json['isWrapper'] as bool
+    ..traitIds = (json['traitIds'] as List)?.map((e) => e as String)?.toList()
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -147,6 +148,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
       'seasonHash': instance.seasonHash,
       'isWrapper': instance.isWrapper,
+      'traitIds': instance.traitIds,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,
@@ -194,6 +196,7 @@ const _$SpecialItemTypeEnumMap = {
   SpecialItemType.ExchangeMaterial: 25,
   SpecialItemType.MissionReward: 27,
   SpecialItemType.Currency: 29,
+  SpecialItemType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyItemTypeEnumMap = {
@@ -224,6 +227,7 @@ const _$DestinyItemTypeEnumMap = {
   DestinyItemType.Wrapper: 27,
   DestinyItemType.SeasonalArtifact: 28,
   DestinyItemType.Finisher: 29,
+  DestinyItemType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyItemSubTypeEnumMap = {
@@ -256,6 +260,7 @@ const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.LegArmor: 29,
   DestinyItemSubType.ClassArmor: 30,
   DestinyItemSubType.Bow: 31,
+  DestinyItemSubType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyClassEnumMap = {
@@ -263,6 +268,7 @@ const _$DestinyClassEnumMap = {
   DestinyClass.Hunter: 1,
   DestinyClass.Warlock: 2,
   DestinyClass.Unknown: 3,
+  DestinyClass.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyBreakerTypeEnumMap = {
@@ -270,6 +276,7 @@ const _$DestinyBreakerTypeEnumMap = {
   DestinyBreakerType.ShieldPiercing: 1,
   DestinyBreakerType.Disruption: 2,
   DestinyBreakerType.Stagger: 3,
+  DestinyBreakerType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DamageTypeEnumMap = {
@@ -279,4 +286,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

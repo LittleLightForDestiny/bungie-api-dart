@@ -11,7 +11,14 @@ class DestinyVendorGroupDefinition{
 	
 	DestinyVendorGroupDefinition();
 
-	factory DestinyVendorGroupDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupDefinitionFromJson(json);
+	factory DestinyVendorGroupDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorGroupDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The recommended order in which to render the groups, Ascending order.
 	@JsonKey(name:'order')

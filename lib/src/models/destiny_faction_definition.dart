@@ -12,7 +12,14 @@ class DestinyFactionDefinition{
 	
 	DestinyFactionDefinition();
 
-	factory DestinyFactionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyFactionDefinitionFromJson(json);
+	factory DestinyFactionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyFactionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

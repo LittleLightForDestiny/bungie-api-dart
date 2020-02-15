@@ -12,7 +12,14 @@ class GroupFeatures{
 	
 	GroupFeatures();
 
-	factory GroupFeatures.fromJson(Map<String, dynamic> json) => _$GroupFeaturesFromJson(json);
+	factory GroupFeatures.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupFeaturesFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'maximumMembers')
 	int maximumMembers;
@@ -39,7 +46,7 @@ class GroupFeatures{
 	/// Always Allowed: Founder, Acting Founder, Admin
 	/// Allowed Overrides: None, Member, Beginner
 	/// Default is Member for clans, None for groups, although this means nothing for groups.
-	@JsonKey(name:'hostGuidedGamePermissionOverride',unknownEnumValue:HostGuidedGamesPermissionLevel.None)
+	@JsonKey(name:'hostGuidedGamePermissionOverride',unknownEnumValue:HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue)
 	HostGuidedGamesPermissionLevel hostGuidedGamePermissionOverride;
 	/// Minimum Member Level allowed to update banner
 	/// Always Allowed: Founder, Acting Founder
@@ -49,7 +56,7 @@ class GroupFeatures{
 	bool updateBannerPermissionOverride;
 	/// Level to join a member at when accepting an invite, application, or joining an open clan
 	/// Default is Beginner.
-	@JsonKey(name:'joinLevel',unknownEnumValue:RuntimeGroupMemberType.None)
+	@JsonKey(name:'joinLevel',unknownEnumValue:RuntimeGroupMemberType.ProtectedInvalidEnumValue)
 	RuntimeGroupMemberType joinLevel;
 
 	

@@ -10,7 +10,7 @@ DestinyUnlockExpressionDefinition _$DestinyUnlockExpressionDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyUnlockExpressionDefinition()
     ..scope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['scope'],
-        unknownValue: DestinyGatingScope.None);
+        unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyUnlockExpressionDefinitionToJson(
@@ -59,4 +59,5 @@ const _$DestinyGatingScopeEnumMap = {
   DestinyGatingScope.Character: 4,
   DestinyGatingScope.Item: 5,
   DestinyGatingScope.AssumedWorstCase: 6,
+  DestinyGatingScope.ProtectedInvalidEnumValue: 999999999,
 };

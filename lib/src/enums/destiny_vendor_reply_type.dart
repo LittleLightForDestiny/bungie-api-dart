@@ -10,6 +10,9 @@ enum DestinyVendorReplyType {
   ///Complete = 2
   @JsonValue(2)
   Complete,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyVendorReplyTypeExtension on DestinyVendorReplyType{

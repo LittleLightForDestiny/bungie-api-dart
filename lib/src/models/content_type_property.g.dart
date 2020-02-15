@@ -9,6 +9,7 @@ part of 'content_type_property.dart';
 ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) {
   return ContentTypeProperty()
     ..name = json['name'] as String
+    ..rootPropertyName = json['rootPropertyName'] as String
     ..readableName = json['readableName'] as String
     ..value = json['value'] as String
     ..propertyDescription = json['propertyDescription'] as String
@@ -29,7 +30,7 @@ ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) {
     ..visibleOn = json['visibleOn'] as String
     ..datatype = _$enumDecodeNullable(
         _$ContentPropertyDataTypeEnumEnumMap, json['datatype'],
-        unknownValue: ContentPropertyDataTypeEnum.None)
+        unknownValue: ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue)
     ..attributes = (json['attributes'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
     )
@@ -72,6 +73,7 @@ Map<String, dynamic> _$ContentTypePropertyToJson(
         ContentTypeProperty instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'rootPropertyName': instance.rootPropertyName,
       'readableName': instance.readableName,
       'value': instance.value,
       'propertyDescription': instance.propertyDescription,
@@ -162,4 +164,5 @@ const _$ContentPropertyDataTypeEnumEnumMap = {
   ContentPropertyDataTypeEnum.MultilinePlaintext: 12,
   ContentPropertyDataTypeEnum.DestinyContent: 13,
   ContentPropertyDataTypeEnum.Color: 14,
+  ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue: 999999999,
 };

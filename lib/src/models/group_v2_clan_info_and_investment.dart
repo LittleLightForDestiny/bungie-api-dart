@@ -11,7 +11,14 @@ class GroupV2ClanInfoAndInvestment{
 	
 	GroupV2ClanInfoAndInvestment();
 
-	factory GroupV2ClanInfoAndInvestment.fromJson(Map<String, dynamic> json) => _$GroupV2ClanInfoAndInvestmentFromJson(json);
+	factory GroupV2ClanInfoAndInvestment.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupV2ClanInfoAndInvestmentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'d2ClanProgressions')
 	Map<String, DestinyProgression> d2ClanProgressions;

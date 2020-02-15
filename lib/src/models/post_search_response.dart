@@ -15,7 +15,14 @@ class PostSearchResponse{
 	
 	PostSearchResponse();
 
-	factory PostSearchResponse.fromJson(Map<String, dynamic> json) => _$PostSearchResponseFromJson(json);
+	factory PostSearchResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PostSearchResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'relatedPosts')
 	List<PostResponse> relatedPosts;

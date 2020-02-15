@@ -10,7 +10,14 @@ class DestinyItemPeerView{
 	
 	DestinyItemPeerView();
 
-	factory DestinyItemPeerView.fromJson(Map<String, dynamic> json) => _$DestinyItemPeerViewFromJson(json);
+	factory DestinyItemPeerView.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPeerViewFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the item in question. Use it to look up the DestinyInventoryItemDefinition of the item for static rendering data.
 	@JsonKey(name:'itemHash')

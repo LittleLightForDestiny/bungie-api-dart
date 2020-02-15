@@ -224,6 +224,15 @@ enum DestinyActivityModeType {
   ///Momentum = 81
   @JsonValue(81)
   Momentum,
+  ///Dungeon = 82
+  @JsonValue(82)
+  Dungeon,
+  ///Sundial = 83
+  @JsonValue(83)
+  Sundial,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyActivityModeTypeExtension on DestinyActivityModeType{
@@ -377,6 +386,10 @@ extension DestinyActivityModeTypeExtension on DestinyActivityModeType{
         return 80;
       case DestinyActivityModeType.Momentum:
         return 81;
+      case DestinyActivityModeType.Dungeon:
+        return 82;
+      case DestinyActivityModeType.Sundial:
+        return 83;
       default:
         return null;
     }

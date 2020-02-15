@@ -9,7 +9,14 @@ class DestinyRecordIntervalBlock{
 	
 	DestinyRecordIntervalBlock();
 
-	factory DestinyRecordIntervalBlock.fromJson(Map<String, dynamic> json) => _$DestinyRecordIntervalBlockFromJson(json);
+	factory DestinyRecordIntervalBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRecordIntervalBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'intervalObjectives')
 	List<DestinyRecordIntervalObjective> intervalObjectives;

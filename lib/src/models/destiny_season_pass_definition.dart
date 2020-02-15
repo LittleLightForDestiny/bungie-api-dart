@@ -9,7 +9,14 @@ class DestinySeasonPassDefinition{
 	
 	DestinySeasonPassDefinition();
 
-	factory DestinySeasonPassDefinition.fromJson(Map<String, dynamic> json) => _$DestinySeasonPassDefinitionFromJson(json);
+	factory DestinySeasonPassDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinySeasonPassDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

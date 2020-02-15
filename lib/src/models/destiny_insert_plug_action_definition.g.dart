@@ -12,7 +12,7 @@ DestinyInsertPlugActionDefinition _$DestinyInsertPlugActionDefinitionFromJson(
     ..actionExecuteSeconds = json['actionExecuteSeconds'] as int
     ..actionType = _$enumDecodeNullable(
         _$SocketTypeActionTypeEnumMap, json['actionType'],
-        unknownValue: SocketTypeActionType.InsertPlug);
+        unknownValue: SocketTypeActionType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyInsertPlugActionDefinitionToJson(
@@ -58,4 +58,5 @@ const _$SocketTypeActionTypeEnumMap = {
   SocketTypeActionType.InsertPlug: 0,
   SocketTypeActionType.InfuseItem: 1,
   SocketTypeActionType.ReinitializeSocket: 2,
+  SocketTypeActionType.ProtectedInvalidEnumValue: 999999999,
 };

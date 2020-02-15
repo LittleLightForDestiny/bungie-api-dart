@@ -22,7 +22,14 @@ class DestinyCharacterResponse{
 	
 	DestinyCharacterResponse();
 
-	factory DestinyCharacterResponse.fromJson(Map<String, dynamic> json) => _$DestinyCharacterResponseFromJson(json);
+	factory DestinyCharacterResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The character-level non-equipped inventory items.
 	/// COMPONENT TYPE: CharacterInventories

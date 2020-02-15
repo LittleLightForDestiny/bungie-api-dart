@@ -10,6 +10,9 @@ enum SocketTypeActionType {
   ///ReinitializeSocket = 2
   @JsonValue(2)
   ReinitializeSocket,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension SocketTypeActionTypeExtension on SocketTypeActionType{

@@ -9,7 +9,14 @@ class DestinyPlayer{
 	
 	DestinyPlayer();
 
-	factory DestinyPlayer.fromJson(Map<String, dynamic> json) => _$DestinyPlayerFromJson(json);
+	factory DestinyPlayer.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPlayerFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Details about the player as they are known in game (platform display name, Destiny emblem)
 	@JsonKey(name:'destinyUserInfo')

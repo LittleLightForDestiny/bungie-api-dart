@@ -8,7 +8,14 @@ class DestinyEnvironmentLocationMapping{
 	
 	DestinyEnvironmentLocationMapping();
 
-	factory DestinyEnvironmentLocationMapping.fromJson(Map<String, dynamic> json) => _$DestinyEnvironmentLocationMappingFromJson(json);
+	factory DestinyEnvironmentLocationMapping.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyEnvironmentLocationMappingFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The location that is revealed on the director by this mapping.
 	@JsonKey(name:'locationHash')

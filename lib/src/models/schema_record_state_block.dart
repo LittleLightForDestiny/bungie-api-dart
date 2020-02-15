@@ -8,7 +8,14 @@ class SchemaRecordStateBlock{
 	
 	SchemaRecordStateBlock();
 
-	factory SchemaRecordStateBlock.fromJson(Map<String, dynamic> json) => _$SchemaRecordStateBlockFromJson(json);
+	factory SchemaRecordStateBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SchemaRecordStateBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'featuredPriority')
 	int featuredPriority;

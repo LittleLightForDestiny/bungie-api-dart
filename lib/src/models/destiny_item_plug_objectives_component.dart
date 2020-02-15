@@ -9,7 +9,14 @@ class DestinyItemPlugObjectivesComponent{
 	
 	DestinyItemPlugObjectivesComponent();
 
-	factory DestinyItemPlugObjectivesComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemPlugObjectivesComponentFromJson(json);
+	factory DestinyItemPlugObjectivesComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPlugObjectivesComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// This set of data is keyed by the Item Hash (DestinyInventoryItemDefinition) of the plug whose objectives are being returned, with the value being the list of those objectives.
 	///  What if two plugs with the same hash are returned for an item, you ask?

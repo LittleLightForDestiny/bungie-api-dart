@@ -10,16 +10,23 @@ class AwaPermissionRequested{
 	
 	AwaPermissionRequested();
 
-	factory AwaPermissionRequested.fromJson(Map<String, dynamic> json) => _$AwaPermissionRequestedFromJson(json);
+	factory AwaPermissionRequested.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$AwaPermissionRequestedFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Type of advanced write action.
-	@JsonKey(name:'type',unknownEnumValue:AwaType.None)
+	@JsonKey(name:'type',unknownEnumValue:AwaType.ProtectedInvalidEnumValue)
 	AwaType type;
 	/// Item instance ID the action shall be applied to. This is optional for all but a new AwaType values. Rule of thumb is to provide the item instance ID if one is available.
 	@JsonKey(name:'affectedItemId')
 	String affectedItemId;
 	/// Destiny membership type of the account to modify.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	/// Destiny character ID, if applicable, that will be affected by the action.
 	@JsonKey(name:'characterId')

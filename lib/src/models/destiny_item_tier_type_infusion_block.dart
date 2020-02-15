@@ -8,7 +8,14 @@ class DestinyItemTierTypeInfusionBlock{
 	
 	DestinyItemTierTypeInfusionBlock();
 
-	factory DestinyItemTierTypeInfusionBlock.fromJson(Map<String, dynamic> json) => _$DestinyItemTierTypeInfusionBlockFromJson(json);
+	factory DestinyItemTierTypeInfusionBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemTierTypeInfusionBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The default portion of quality that will transfer from the infuser to the infusee item. (InfuserQuality - InfuseeQuality) * baseQualityTransferRatio = base quality transferred.
 	@JsonKey(name:'baseQualityTransferRatio')

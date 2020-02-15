@@ -10,7 +10,14 @@ class DestinyItemInventoryBlockDefinition{
 	
 	DestinyItemInventoryBlockDefinition();
 
-	factory DestinyItemInventoryBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemInventoryBlockDefinitionFromJson(json);
+	factory DestinyItemInventoryBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemInventoryBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If this string is populated, you can't have more than one stack with this label in a given inventory. Note that this is different from the equipping block's unique label, which is used for equipping uniqueness.
 	@JsonKey(name:'stackUniqueLabel')
@@ -34,7 +41,7 @@ class DestinyItemInventoryBlockDefinition{
 	@JsonKey(name:'tierTypeName')
 	String tierTypeName;
 	/// The enumeration matching the tier type of the item to known values, again for convenience sake.
-	@JsonKey(name:'tierType',unknownEnumValue:TierType.Unknown)
+	@JsonKey(name:'tierType',unknownEnumValue:TierType.ProtectedInvalidEnumValue)
 	TierType tierType;
 	/// The tooltip message to show, if any, when the item expires.
 	@JsonKey(name:'expirationTooltip')

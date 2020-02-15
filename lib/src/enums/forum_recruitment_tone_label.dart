@@ -10,6 +10,9 @@ enum ForumRecruitmentToneLabel {
   ///Rowdy = 2
   @JsonValue(2)
   Rowdy,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumRecruitmentToneLabelExtension on ForumRecruitmentToneLabel{

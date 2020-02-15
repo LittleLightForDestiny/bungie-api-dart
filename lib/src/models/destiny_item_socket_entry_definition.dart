@@ -11,7 +11,14 @@ class DestinyItemSocketEntryDefinition{
 	
 	DestinyItemSocketEntryDefinition();
 
-	factory DestinyItemSocketEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketEntryDefinitionFromJson(json);
+	factory DestinyItemSocketEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSocketEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// All sockets have a type, and this is the hash identifier for this particular type. Use it to look up the DestinySocketTypeDefinition: read there for more information on how socket types affect the behavior of the socket.
 	@JsonKey(name:'socketTypeHash')

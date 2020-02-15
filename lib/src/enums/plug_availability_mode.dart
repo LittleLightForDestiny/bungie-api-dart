@@ -10,6 +10,9 @@ enum PlugAvailabilityMode {
   ///AvailableIfSocketContainsMatchingPlugCategory = 2
   @JsonValue(2)
   AvailableIfSocketContainsMatchingPlugCategory,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension PlugAvailabilityModeExtension on PlugAvailabilityMode{

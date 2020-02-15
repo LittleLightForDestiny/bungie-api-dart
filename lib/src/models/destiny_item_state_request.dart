@@ -9,7 +9,14 @@ class DestinyItemStateRequest{
 	
 	DestinyItemStateRequest();
 
-	factory DestinyItemStateRequest.fromJson(Map<String, dynamic> json) => _$DestinyItemStateRequestFromJson(json);
+	factory DestinyItemStateRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemStateRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'state')
 	bool state;
@@ -17,7 +24,7 @@ class DestinyItemStateRequest{
 	String itemId;
 	@JsonKey(name:'characterId')
 	String characterId;
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 
 	

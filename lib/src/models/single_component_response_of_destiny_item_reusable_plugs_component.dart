@@ -10,12 +10,22 @@ class SingleComponentResponseOfDestinyItemReusablePlugsComponent{
 	
 	SingleComponentResponseOfDestinyItemReusablePlugsComponent();
 
-	factory SingleComponentResponseOfDestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyItemReusablePlugsComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyItemReusablePlugsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	DestinyItemReusablePlugsComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

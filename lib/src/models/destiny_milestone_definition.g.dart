@@ -15,11 +15,12 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..displayPreference = _$enumDecodeNullable(
         _$DestinyMilestoneDisplayPreferenceEnumMap, json['displayPreference'],
-        unknownValue: DestinyMilestoneDisplayPreference.MilestoneDefinition)
+        unknownValue:
+            DestinyMilestoneDisplayPreference.ProtectedInvalidEnumValue)
     ..image = json['image'] as String
     ..milestoneType = _$enumDecodeNullable(
         _$DestinyMilestoneTypeEnumMap, json['milestoneType'],
-        unknownValue: DestinyMilestoneType.Unknown)
+        unknownValue: DestinyMilestoneType.ProtectedInvalidEnumValue)
     ..recruitable = json['recruitable'] as bool
     ..friendlyName = json['friendlyName'] as String
     ..showInExplorer = json['showInExplorer'] as bool
@@ -47,8 +48,7 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
     ..vendors = (json['vendors'] as List)
         ?.map((e) => e == null
             ? null
-            : DestinyMilestoneVendorDefinition.fromJson(
-                e as Map<String, dynamic>))
+            : DestinyMilestoneVendorDefinition.fromJson(e as Map<String, dynamic>))
         ?.toList()
     ..values = (json['values'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(
@@ -59,8 +59,7 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
                   e as Map<String, dynamic>)),
     )
     ..isInGameMilestone = json['isInGameMilestone'] as bool
-    ..activities =
-        (json['activities'] as List)?.map((e) => e == null ? null : DestinyMilestoneChallengeActivityDefinition.fromJson(e as Map<String, dynamic>))?.toList()
+    ..activities = (json['activities'] as List)?.map((e) => e == null ? null : DestinyMilestoneChallengeActivityDefinition.fromJson(e as Map<String, dynamic>))?.toList()
     ..defaultOrder = json['defaultOrder'] as int
     ..hash = json['hash'] as int
     ..index = json['index'] as int
@@ -131,6 +130,7 @@ const _$DestinyMilestoneDisplayPreferenceEnumMap = {
   DestinyMilestoneDisplayPreference.MilestoneDefinition: 0,
   DestinyMilestoneDisplayPreference.CurrentQuestSteps: 1,
   DestinyMilestoneDisplayPreference.CurrentActivityChallenges: 2,
+  DestinyMilestoneDisplayPreference.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyMilestoneTypeEnumMap = {
@@ -140,4 +140,5 @@ const _$DestinyMilestoneTypeEnumMap = {
   DestinyMilestoneType.Weekly: 3,
   DestinyMilestoneType.Daily: 4,
   DestinyMilestoneType.Special: 5,
+  DestinyMilestoneType.ProtectedInvalidEnumValue: 999999999,
 };

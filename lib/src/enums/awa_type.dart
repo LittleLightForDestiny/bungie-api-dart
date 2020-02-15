@@ -8,6 +8,9 @@ enum AwaType {
   /// Insert plugs into sockets.
   @JsonValue(1)
   InsertPlugs,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension AwaTypeExtension on AwaType{

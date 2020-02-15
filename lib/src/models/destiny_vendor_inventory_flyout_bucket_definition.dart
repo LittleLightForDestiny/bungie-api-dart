@@ -10,7 +10,14 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 	
 	DestinyVendorInventoryFlyoutBucketDefinition();
 
-	factory DestinyVendorInventoryFlyoutBucketDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInventoryFlyoutBucketDefinitionFromJson(json);
+	factory DestinyVendorInventoryFlyoutBucketDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorInventoryFlyoutBucketDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If true, the inventory bucket should be able to be collapsed visually.
 	@JsonKey(name:'collapsible')
@@ -19,7 +26,7 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 	@JsonKey(name:'inventoryBucketHash')
 	int inventoryBucketHash;
 	/// The methodology to use for sorting items from the flyout.
-	@JsonKey(name:'sortItemsBy',unknownEnumValue:DestinyItemSortType.ItemId)
+	@JsonKey(name:'sortItemsBy',unknownEnumValue:DestinyItemSortType.ProtectedInvalidEnumValue)
 	DestinyItemSortType sortItemsBy;
 
 	

@@ -9,7 +9,14 @@ class DestinyDefinition{
 	
 	DestinyDefinition();
 
-	factory DestinyDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDefinitionFromJson(json);
+	factory DestinyDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

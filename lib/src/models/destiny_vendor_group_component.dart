@@ -10,7 +10,14 @@ class DestinyVendorGroupComponent{
 	
 	DestinyVendorGroupComponent();
 
-	factory DestinyVendorGroupComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupComponentFromJson(json);
+	factory DestinyVendorGroupComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorGroupComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The ordered list of groups being returned.
 	@JsonKey(name:'groups')

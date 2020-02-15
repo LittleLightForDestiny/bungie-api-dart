@@ -9,9 +9,16 @@ class DestinyActionRequest{
 	
 	DestinyActionRequest();
 
-	factory DestinyActionRequest.fromJson(Map<String, dynamic> json) => _$DestinyActionRequestFromJson(json);
+	factory DestinyActionRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActionRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 
 	

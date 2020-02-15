@@ -16,15 +16,22 @@ class GroupQuery{
 	
 	GroupQuery();
 
-	factory GroupQuery.fromJson(Map<String, dynamic> json) => _$GroupQueryFromJson(json);
+	factory GroupQuery.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupQueryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
 	GroupType groupType;
-	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.All)
+	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.ProtectedInvalidEnumValue)
 	GroupDateRange creationDate;
-	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.Name)
+	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.ProtectedInvalidEnumValue)
 	GroupSortBy sortBy;
 	@JsonKey(name:'groupMemberCountFilter')
 	int groupMemberCountFilter;

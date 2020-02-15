@@ -10,12 +10,22 @@ class SingleComponentResponseOfDestinyProfileRecordsComponent{
 	
 	SingleComponentResponseOfDestinyProfileRecordsComponent();
 
-	factory SingleComponentResponseOfDestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyProfileRecordsComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyProfileRecordsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	DestinyProfileRecordsComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

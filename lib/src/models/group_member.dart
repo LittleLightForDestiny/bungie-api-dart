@@ -11,9 +11,16 @@ class GroupMember{
 	
 	GroupMember();
 
-	factory GroupMember.fromJson(Map<String, dynamic> json) => _$GroupMemberFromJson(json);
+	factory GroupMember.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupMemberFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'memberType',unknownEnumValue:RuntimeGroupMemberType.None)
+	@JsonKey(name:'memberType',unknownEnumValue:RuntimeGroupMemberType.ProtectedInvalidEnumValue)
 	RuntimeGroupMemberType memberType;
 	@JsonKey(name:'isOnline')
 	bool isOnline;

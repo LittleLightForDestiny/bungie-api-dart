@@ -37,6 +37,9 @@ enum IgnoreLength {
   ///ThirtyDays = 11
   @JsonValue(11)
   ThirtyDays,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension IgnoreLengthExtension on IgnoreLength{

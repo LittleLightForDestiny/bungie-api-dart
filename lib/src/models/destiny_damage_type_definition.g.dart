@@ -16,7 +16,7 @@ DestinyDamageTypeDefinition _$DestinyDamageTypeDefinitionFromJson(
     ..transparentIconPath = json['transparentIconPath'] as String
     ..showIcon = json['showIcon'] as bool
     ..enumValue = _$enumDecodeNullable(_$DamageTypeEnumMap, json['enumValue'],
-        unknownValue: DamageType.None)
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -73,4 +73,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

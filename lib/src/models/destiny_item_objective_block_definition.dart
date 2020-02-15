@@ -11,7 +11,14 @@ class DestinyItemObjectiveBlockDefinition{
 	
 	DestinyItemObjectiveBlockDefinition();
 
-	factory DestinyItemObjectiveBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemObjectiveBlockDefinitionFromJson(json);
+	factory DestinyItemObjectiveBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemObjectiveBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hashes to Objectives (DestinyObjectiveDefinition) that are part of this Quest Step, in the order that they should be rendered.
 	@JsonKey(name:'objectiveHashes')

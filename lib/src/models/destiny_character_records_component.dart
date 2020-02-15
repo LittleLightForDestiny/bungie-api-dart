@@ -9,7 +9,14 @@ class DestinyCharacterRecordsComponent{
 	
 	DestinyCharacterRecordsComponent();
 
-	factory DestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterRecordsComponentFromJson(json);
+	factory DestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterRecordsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'featuredRecordHashes')
 	List<int> featuredRecordHashes;

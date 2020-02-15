@@ -9,7 +9,14 @@ class GroupMemberLeaveResult{
 	
 	GroupMemberLeaveResult();
 
-	factory GroupMemberLeaveResult.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultFromJson(json);
+	factory GroupMemberLeaveResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupMemberLeaveResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'group')
 	GroupV2 group;

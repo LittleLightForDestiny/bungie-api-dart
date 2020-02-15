@@ -11,7 +11,14 @@ class DestinyTalentNodeCategory{
 	
 	DestinyTalentNodeCategory();
 
-	factory DestinyTalentNodeCategory.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeCategoryFromJson(json);
+	factory DestinyTalentNodeCategory.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentNodeCategoryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Mostly just for debug purposes, but if you find it useful you can have it. This is BNet's manually created identifier for this category.
 	@JsonKey(name:'identifier')

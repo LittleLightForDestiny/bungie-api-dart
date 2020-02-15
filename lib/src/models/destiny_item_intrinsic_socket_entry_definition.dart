@@ -9,7 +9,14 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 	
 	DestinyItemIntrinsicSocketEntryDefinition();
 
-	factory DestinyItemIntrinsicSocketEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(json);
+	factory DestinyItemIntrinsicSocketEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Indicates the plug that is intrinsically inserted into this socket.
 	@JsonKey(name:'plugItemHash')

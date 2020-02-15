@@ -10,6 +10,9 @@ enum FireteamPublicSearchOption {
   ///PrivateOnly = 2
   @JsonValue(2)
   PrivateOnly,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension FireteamPublicSearchOptionExtension on FireteamPublicSearchOption{

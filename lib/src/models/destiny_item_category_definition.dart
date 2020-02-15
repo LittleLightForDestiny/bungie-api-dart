@@ -16,7 +16,14 @@ class DestinyItemCategoryDefinition{
 	
 	DestinyItemCategoryDefinition();
 
-	factory DestinyItemCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemCategoryDefinitionFromJson(json);
+	factory DestinyItemCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -34,7 +41,7 @@ class DestinyItemCategoryDefinition{
 	@JsonKey(name:'itemTypeRegex')
 	String itemTypeRegex;
 	/// If the item in question has this category, it also should have this breaker type.
-	@JsonKey(name:'grantDestinyBreakerType',unknownEnumValue:DestinyBreakerType.None)
+	@JsonKey(name:'grantDestinyBreakerType',unknownEnumValue:DestinyBreakerType.ProtectedInvalidEnumValue)
 	DestinyBreakerType grantDestinyBreakerType;
 	/// If the item is a plug, this is the identifier we expect to find associated with it if it is in this category.
 	@JsonKey(name:'plugCategoryIdentifier')
@@ -46,16 +53,16 @@ class DestinyItemCategoryDefinition{
 	@JsonKey(name:'originBucketIdentifier')
 	String originBucketIdentifier;
 	/// If an item belongs to this category, it will also receive this item type. This is now how DestinyItemType is populated for items: it used to be an even jankier process, but that's a story that requires more alcohol.
-	@JsonKey(name:'grantDestinyItemType',unknownEnumValue:DestinyItemType.None)
+	@JsonKey(name:'grantDestinyItemType',unknownEnumValue:DestinyItemType.ProtectedInvalidEnumValue)
 	DestinyItemType grantDestinyItemType;
 	/// If an item belongs to this category, it will also receive this subtype enum value.
 	/// I know what you're thinking - what if it belongs to multiple categories that provide sub-types?
 	/// The last one processed wins, as is the case with all of these "grant" enums. Now you can see one reason why we moved away from these enums... but they're so convenient when they work, aren't they?
-	@JsonKey(name:'grantDestinySubType',unknownEnumValue:DestinyItemSubType.None)
+	@JsonKey(name:'grantDestinySubType',unknownEnumValue:DestinyItemSubType.ProtectedInvalidEnumValue)
 	DestinyItemSubType grantDestinySubType;
 	/// If an item belongs to this category, it will also get this class restriction enum value.
 	/// See the other "grant"-prefixed properties on this definition for my color commentary.
-	@JsonKey(name:'grantDestinyClass',unknownEnumValue:DestinyClass.Titan)
+	@JsonKey(name:'grantDestinyClass',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
 	DestinyClass grantDestinyClass;
 	/// If this category is a "parent" category of other categories, those children will have their hashes listed in rendering order here, and can be looked up using these hashes against DestinyItemCategoryDefinition.
 	/// In this way, you can build up a visual hierarchy of item categories. That's what we did, and you can do it too. I believe in you. Yes, you, Carl.

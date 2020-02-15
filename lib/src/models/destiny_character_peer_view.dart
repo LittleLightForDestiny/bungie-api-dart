@@ -10,7 +10,14 @@ class DestinyCharacterPeerView{
 	
 	DestinyCharacterPeerView();
 
-	factory DestinyCharacterPeerView.fromJson(Map<String, dynamic> json) => _$DestinyCharacterPeerViewFromJson(json);
+	factory DestinyCharacterPeerView.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterPeerViewFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'equipment')
 	List<DestinyItemPeerView> equipment;

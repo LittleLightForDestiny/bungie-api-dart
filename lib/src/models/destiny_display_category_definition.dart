@@ -11,7 +11,14 @@ class DestinyDisplayCategoryDefinition{
 	
 	DestinyDisplayCategoryDefinition();
 
-	factory DestinyDisplayCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDisplayCategoryDefinitionFromJson(json);
+	factory DestinyDisplayCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDisplayCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'index')
 	int index;
@@ -31,7 +38,7 @@ class DestinyDisplayCategoryDefinition{
 	@JsonKey(name:'progressionHash')
 	int progressionHash;
 	/// If this category sorts items in a nonstandard way, this will be the way we sort.
-	@JsonKey(name:'sortOrder',unknownEnumValue:VendorDisplayCategorySortOrder.Default)
+	@JsonKey(name:'sortOrder',unknownEnumValue:VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue)
 	VendorDisplayCategorySortOrder sortOrder;
 	/// An indicator of how the category will be displayed in the UI. It's up to you to do something cool or interesting in response to this, or just to treat it as a normal category.
 	@JsonKey(name:'displayStyleHash')

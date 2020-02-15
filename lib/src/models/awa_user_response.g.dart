@@ -10,7 +10,7 @@ AwaUserResponse _$AwaUserResponseFromJson(Map<String, dynamic> json) {
   return AwaUserResponse()
     ..selection = _$enumDecodeNullable(
         _$AwaUserSelectionEnumMap, json['selection'],
-        unknownValue: AwaUserSelection.None)
+        unknownValue: AwaUserSelection.ProtectedInvalidEnumValue)
     ..correlationId = json['correlationId'] as String
     ..nonce = (json['nonce'] as List)?.map((e) => e as int)?.toList();
 }
@@ -58,4 +58,5 @@ const _$AwaUserSelectionEnumMap = {
   AwaUserSelection.None: 0,
   AwaUserSelection.Rejected: 1,
   AwaUserSelection.Approved: 2,
+  AwaUserSelection.ProtectedInvalidEnumValue: 999999999,
 };

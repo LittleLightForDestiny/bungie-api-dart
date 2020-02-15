@@ -9,7 +9,14 @@ class DestinyStat{
 	
 	DestinyStat();
 
-	factory DestinyStat.fromJson(Map<String, dynamic> json) => _$DestinyStatFromJson(json);
+	factory DestinyStat.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyStatFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the Stat. Use it to look up the DestinyStatDefinition for static data about the stat.
 	@JsonKey(name:'statHash')

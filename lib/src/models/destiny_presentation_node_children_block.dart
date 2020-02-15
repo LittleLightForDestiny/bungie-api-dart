@@ -12,7 +12,14 @@ class DestinyPresentationNodeChildrenBlock{
 	
 	DestinyPresentationNodeChildrenBlock();
 
-	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeChildrenBlockFromJson(json);
+	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPresentationNodeChildrenBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'presentationNodes')
 	List<DestinyPresentationNodeChildEntry> presentationNodes;

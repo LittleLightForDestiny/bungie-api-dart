@@ -14,13 +14,20 @@ class DestinyCollectibleDefinition{
 	
 	DestinyCollectibleDefinition();
 
-	factory DestinyCollectibleDefinition.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleDefinitionFromJson(json);
+	factory DestinyCollectibleDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCollectibleDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// Indicates whether this Collectible's state is determined on a per-character or on an account-wide basis.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.Profile)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 	/// A human readable string for a hint about how to acquire the item.
 	@JsonKey(name:'sourceString')

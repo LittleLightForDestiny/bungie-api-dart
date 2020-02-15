@@ -11,7 +11,14 @@ class DestinyLinkedGraphDefinition{
 	
 	DestinyLinkedGraphDefinition();
 
-	factory DestinyLinkedGraphDefinition.fromJson(Map<String, dynamic> json) => _$DestinyLinkedGraphDefinitionFromJson(json);
+	factory DestinyLinkedGraphDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLinkedGraphDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'description')
 	String description;

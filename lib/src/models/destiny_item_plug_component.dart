@@ -11,7 +11,14 @@ class DestinyItemPlugComponent{
 	
 	DestinyItemPlugComponent();
 
-	factory DestinyItemPlugComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemPlugComponentFromJson(json);
+	factory DestinyItemPlugComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPlugComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Sometimes, Plugs may have objectives: these are often used for flavor and display purposes, but they can be used for any arbitrary purpose (both fortunately and unfortunately). Recently (with Season 2) they were expanded in use to be used as the "gating" for whether the plug can be inserted at all. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item's data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition's progressDescription property. Refer to the plug's itemHash and objective property for more information if you would like to display even more data.
 	@JsonKey(name:'plugObjectives')

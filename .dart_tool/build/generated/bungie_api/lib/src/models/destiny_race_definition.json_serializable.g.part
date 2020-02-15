@@ -10,7 +10,7 @@ DestinyRaceDefinition _$DestinyRaceDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..raceType = _$enumDecodeNullable(_$DestinyRaceEnumMap, json['raceType'],
-        unknownValue: DestinyRace.Human)
+        unknownValue: DestinyRace.ProtectedInvalidEnumValue)
     ..genderedRaceNames =
         (json['genderedRaceNames'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
@@ -73,4 +73,5 @@ const _$DestinyRaceEnumMap = {
   DestinyRace.Awoken: 1,
   DestinyRace.Exo: 2,
   DestinyRace.Unknown: 3,
+  DestinyRace.ProtectedInvalidEnumValue: 999999999,
 };

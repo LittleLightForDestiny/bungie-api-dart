@@ -37,6 +37,9 @@ enum TrendingEntryType {
   ///Release = 11
   @JsonValue(11)
   Release,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension TrendingEntryTypeExtension on TrendingEntryType{

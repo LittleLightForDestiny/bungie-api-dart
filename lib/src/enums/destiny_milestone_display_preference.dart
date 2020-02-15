@@ -13,6 +13,9 @@ enum DestinyMilestoneDisplayPreference {
   /// Indicates you should show the displayProperties for any currently active Activities and their Challenges in DestinyMilestone.activities.
   @JsonValue(2)
   CurrentActivityChallenges,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyMilestoneDisplayPreferenceExtension on DestinyMilestoneDisplayPreference{

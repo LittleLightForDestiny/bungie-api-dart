@@ -8,7 +8,14 @@ class GroupApplicationRequest{
 	
 	GroupApplicationRequest();
 
-	factory GroupApplicationRequest.fromJson(Map<String, dynamic> json) => _$GroupApplicationRequestFromJson(json);
+	factory GroupApplicationRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupApplicationRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'message')
 	String message;

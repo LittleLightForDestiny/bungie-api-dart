@@ -10,7 +10,14 @@ class GroupPotentialMembership{
 	
 	GroupPotentialMembership();
 
-	factory GroupPotentialMembership.fromJson(Map<String, dynamic> json) => _$GroupPotentialMembershipFromJson(json);
+	factory GroupPotentialMembership.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupPotentialMembershipFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'member')
 	GroupPotentialMember member;

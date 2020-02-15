@@ -20,7 +20,7 @@ GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) {
         : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
     ..allianceStatus = _$enumDecodeNullable(
         _$GroupAllianceStatusEnumMap, json['allianceStatus'],
-        unknownValue: GroupAllianceStatus.Unallied)
+        unknownValue: GroupAllianceStatus.ProtectedInvalidEnumValue)
     ..groupJoinInviteCount = json['groupJoinInviteCount'] as int
     ..currentUserMembershipsInactiveForDestiny =
         json['currentUserMembershipsInactiveForDestiny'] as bool
@@ -89,4 +89,5 @@ const _$GroupAllianceStatusEnumMap = {
   GroupAllianceStatus.Unallied: 0,
   GroupAllianceStatus.Parent: 1,
   GroupAllianceStatus.Child: 2,
+  GroupAllianceStatus.ProtectedInvalidEnumValue: 999999999,
 };

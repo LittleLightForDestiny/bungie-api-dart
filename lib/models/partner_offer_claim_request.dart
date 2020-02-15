@@ -1,0 +1,1 @@
+export '../src/models/partner_offer_claim_request.dart';

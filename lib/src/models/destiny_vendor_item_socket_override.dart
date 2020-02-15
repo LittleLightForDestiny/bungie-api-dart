@@ -9,7 +9,14 @@ class DestinyVendorItemSocketOverride{
 	
 	DestinyVendorItemSocketOverride();
 
-	factory DestinyVendorItemSocketOverride.fromJson(Map<String, dynamic> json) => _$DestinyVendorItemSocketOverrideFromJson(json);
+	factory DestinyVendorItemSocketOverride.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorItemSocketOverrideFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If this is populated, the socket will be overridden with a specific plug.
 	/// If this isn't populated, it's being overridden by something more complicated that is only known by the Game Server and God, which means we can't tell you in advance what it'll be.

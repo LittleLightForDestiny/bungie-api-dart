@@ -13,7 +13,8 @@ DestinyProgressionRewardItemQuantity
     ..acquisitionBehavior = _$enumDecodeNullable(
         _$DestinyProgressionRewardItemAcquisitionBehaviorEnumMap,
         json['acquisitionBehavior'],
-        unknownValue: DestinyProgressionRewardItemAcquisitionBehavior.Instant)
+        unknownValue: DestinyProgressionRewardItemAcquisitionBehavior
+            .ProtectedInvalidEnumValue)
     ..uiDisplayStyle = json['uiDisplayStyle'] as String
     ..claimUnlockDisplayStrings = (json['claimUnlockDisplayStrings'] as List)
         ?.map((e) => e as String)
@@ -72,4 +73,6 @@ T _$enumDecodeNullable<T>(
 const _$DestinyProgressionRewardItemAcquisitionBehaviorEnumMap = {
   DestinyProgressionRewardItemAcquisitionBehavior.Instant: 0,
   DestinyProgressionRewardItemAcquisitionBehavior.PlayerClaimRequired: 1,
+  DestinyProgressionRewardItemAcquisitionBehavior.ProtectedInvalidEnumValue:
+      999999999,
 };

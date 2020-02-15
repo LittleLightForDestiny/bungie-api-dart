@@ -8,7 +8,14 @@ class DestinyPublicMilestoneChallengeActivity{
 	
 	DestinyPublicMilestoneChallengeActivity();
 
-	factory DestinyPublicMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneChallengeActivityFromJson(json);
+	factory DestinyPublicMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneChallengeActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'activityHash')
 	int activityHash;

@@ -10,13 +10,20 @@ class DestinyEquipItemResult{
 	
 	DestinyEquipItemResult();
 
-	factory DestinyEquipItemResult.fromJson(Map<String, dynamic> json) => _$DestinyEquipItemResultFromJson(json);
+	factory DestinyEquipItemResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyEquipItemResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The instance ID of the item in question (all items that can be equipped must, but definition, be Instanced and thus have an Instance ID that you can use to refer to them)
 	@JsonKey(name:'itemInstanceId')
 	String itemInstanceId;
 	/// A PlatformErrorCodes enum indicating whether it succeeded, and if it failed why.
-	@JsonKey(name:'equipStatus',unknownEnumValue:PlatformErrorCodes.None)
+	@JsonKey(name:'equipStatus',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
 	PlatformErrorCodes equipStatus;
 
 	

@@ -9,11 +9,18 @@ class FireteamUserInfoCard{
 	
 	FireteamUserInfoCard();
 
-	factory FireteamUserInfoCard.fromJson(Map<String, dynamic> json) => _$FireteamUserInfoCardFromJson(json);
+	factory FireteamUserInfoCard.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$FireteamUserInfoCardFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'FireteamDisplayName')
 	String fireteamDisplayName;
-	@JsonKey(name:'FireteamMembershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'FireteamMembershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType fireteamMembershipType;
 	@JsonKey(name:'FireteamPlatformProfileUrl')
 	String fireteamPlatformProfileUrl;
@@ -26,7 +33,7 @@ class FireteamUserInfoCard{
 	@JsonKey(name:'iconPath')
 	String iconPath;
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
-	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType crossSaveOverride;
 	/// The list of Membership Types indicating the platforms on which this Membership can be used.
 	///  Not in Cross Save = its original membership type. Cross Save Primary = Any membership types it is overridding, and its original membership type Cross Save Overridden = Empty list
@@ -36,7 +43,7 @@ class FireteamUserInfoCard{
 	@JsonKey(name:'isPublic')
 	bool isPublic;
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')

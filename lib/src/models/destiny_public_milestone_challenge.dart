@@ -9,7 +9,14 @@ class DestinyPublicMilestoneChallenge{
 	
 	DestinyPublicMilestoneChallenge();
 
-	factory DestinyPublicMilestoneChallenge.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneChallengeFromJson(json);
+	factory DestinyPublicMilestoneChallenge.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneChallengeFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The objective for the Challenge, which should have human-readable data about what needs to be done to accomplish the objective. Use this hash to look up the DestinyObjectiveDefinition.
 	@JsonKey(name:'objectiveHash')

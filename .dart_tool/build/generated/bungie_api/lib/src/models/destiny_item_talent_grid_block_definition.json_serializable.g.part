@@ -10,7 +10,7 @@ DestinyItemTalentGridBlockDefinition
     ..buildName = json['buildName'] as String
     ..hudDamageType = _$enumDecodeNullable(
         _$DamageTypeEnumMap, json['hudDamageType'],
-        unknownValue: DamageType.None)
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..hudIcon = json['hudIcon'] as String;
 }
 
@@ -63,4 +63,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

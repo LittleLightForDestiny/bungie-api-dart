@@ -22,6 +22,9 @@ enum TierType {
   ///Exotic = 6
   @JsonValue(6)
   Exotic,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension TierTypeExtension on TierType{

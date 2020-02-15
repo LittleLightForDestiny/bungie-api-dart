@@ -13,6 +13,9 @@ enum DestinyPresentationNodeType {
   ///Records = 3
   @JsonValue(3)
   Records,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyPresentationNodeTypeExtension on DestinyPresentationNodeType{

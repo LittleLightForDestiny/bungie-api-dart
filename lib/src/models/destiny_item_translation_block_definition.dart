@@ -11,7 +11,14 @@ class DestinyItemTranslationBlockDefinition{
 	
 	DestinyItemTranslationBlockDefinition();
 
-	factory DestinyItemTranslationBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemTranslationBlockDefinitionFromJson(json);
+	factory DestinyItemTranslationBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemTranslationBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'weaponPatternIdentifier')
 	String weaponPatternIdentifier;

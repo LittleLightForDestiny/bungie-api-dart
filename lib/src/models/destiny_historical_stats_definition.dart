@@ -13,13 +13,20 @@ class DestinyHistoricalStatsDefinition{
 	
 	DestinyHistoricalStatsDefinition();
 
-	factory DestinyHistoricalStatsDefinition.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsDefinitionFromJson(json);
+	factory DestinyHistoricalStatsDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Unique programmer friendly ID for this stat
 	@JsonKey(name:'statId')
 	String statId;
 	/// Statistic group
-	@JsonKey(name:'group',unknownEnumValue:DestinyStatsGroupType.None)
+	@JsonKey(name:'group',unknownEnumValue:DestinyStatsGroupType.ProtectedInvalidEnumValue)
 	DestinyStatsGroupType group;
 	/// Time periods the statistic covers
 	@JsonKey(name:'periodTypes')
@@ -28,7 +35,7 @@ class DestinyHistoricalStatsDefinition{
 	@JsonKey(name:'modes')
 	List<DestinyActivityModeType> modes;
 	/// Category for the stat.
-	@JsonKey(name:'category',unknownEnumValue:DestinyStatsCategoryType.None)
+	@JsonKey(name:'category',unknownEnumValue:DestinyStatsCategoryType.ProtectedInvalidEnumValue)
 	DestinyStatsCategoryType category;
 	/// Display name
 	@JsonKey(name:'statName')
@@ -40,7 +47,7 @@ class DestinyHistoricalStatsDefinition{
 	@JsonKey(name:'statDescription')
 	String statDescription;
 	/// Unit, if any, for the statistic
-	@JsonKey(name:'unitType',unknownEnumValue:UnitType.None)
+	@JsonKey(name:'unitType',unknownEnumValue:UnitType.ProtectedInvalidEnumValue)
 	UnitType unitType;
 	/// Optional URI to an icon for the statistic
 	@JsonKey(name:'iconImage')

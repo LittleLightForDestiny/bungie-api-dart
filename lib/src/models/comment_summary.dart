@@ -8,7 +8,14 @@ class CommentSummary{
 	
 	CommentSummary();
 
-	factory CommentSummary.fromJson(Map<String, dynamic> json) => _$CommentSummaryFromJson(json);
+	factory CommentSummary.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$CommentSummaryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'topicId')
 	String topicId;

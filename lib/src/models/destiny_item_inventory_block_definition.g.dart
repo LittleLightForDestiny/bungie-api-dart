@@ -17,7 +17,7 @@ DestinyItemInventoryBlockDefinition
     ..isInstanceItem = json['isInstanceItem'] as bool
     ..tierTypeName = json['tierTypeName'] as String
     ..tierType = _$enumDecodeNullable(_$TierTypeEnumMap, json['tierType'],
-        unknownValue: TierType.Unknown)
+        unknownValue: TierType.ProtectedInvalidEnumValue)
     ..expirationTooltip = json['expirationTooltip'] as String
     ..expiredInActivityMessage = json['expiredInActivityMessage'] as String
     ..expiredInOrbitMessage = json['expiredInOrbitMessage'] as String
@@ -83,4 +83,5 @@ const _$TierTypeEnumMap = {
   TierType.Rare: 4,
   TierType.Superior: 5,
   TierType.Exotic: 6,
+  TierType.ProtectedInvalidEnumValue: 999999999,
 };

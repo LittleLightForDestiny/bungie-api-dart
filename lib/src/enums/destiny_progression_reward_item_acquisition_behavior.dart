@@ -7,6 +7,9 @@ enum DestinyProgressionRewardItemAcquisitionBehavior {
   ///PlayerClaimRequired = 1
   @JsonValue(1)
   PlayerClaimRequired,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyProgressionRewardItemAcquisitionBehaviorExtension on DestinyProgressionRewardItemAcquisitionBehavior{

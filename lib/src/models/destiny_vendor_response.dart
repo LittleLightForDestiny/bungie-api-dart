@@ -14,7 +14,14 @@ class DestinyVendorResponse{
 	
 	DestinyVendorResponse();
 
-	factory DestinyVendorResponse.fromJson(Map<String, dynamic> json) => _$DestinyVendorResponseFromJson(json);
+	factory DestinyVendorResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The base properties of the vendor.
 	/// COMPONENT TYPE: Vendors

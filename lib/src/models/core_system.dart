@@ -8,7 +8,14 @@ class CoreSystem{
 	
 	CoreSystem();
 
-	factory CoreSystem.fromJson(Map<String, dynamic> json) => _$CoreSystemFromJson(json);
+	factory CoreSystem.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$CoreSystemFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'enabled')
 	bool enabled;

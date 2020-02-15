@@ -8,7 +8,14 @@ class DestinyMilestoneChallengeActivityGraphNodeEntry{
 	
 	DestinyMilestoneChallengeActivityGraphNodeEntry();
 
-	factory DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneChallengeActivityGraphNodeEntryFromJson(json);
+	factory DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneChallengeActivityGraphNodeEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'activityGraphHash')
 	int activityGraphHash;

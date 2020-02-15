@@ -11,7 +11,14 @@ class DestinyMilestoneRewardEntryDefinition{
 	
 	DestinyMilestoneRewardEntryDefinition();
 
-	factory DestinyMilestoneRewardEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneRewardEntryDefinitionFromJson(json);
+	factory DestinyMilestoneRewardEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneRewardEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for this reward entry. Runtime data will refer to reward entries by this hash. Only guaranteed unique within the specific Milestone.
 	@JsonKey(name:'rewardEntryHash')

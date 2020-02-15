@@ -8,7 +8,14 @@ class DestinyItemPlugBase{
 	
 	DestinyItemPlugBase();
 
-	factory DestinyItemPlugBase.fromJson(Map<String, dynamic> json) => _$DestinyItemPlugBaseFromJson(json);
+	factory DestinyItemPlugBase.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPlugBaseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the DestinyInventoryItemDefinition that represents this plug.
 	@JsonKey(name:'plugItemHash')

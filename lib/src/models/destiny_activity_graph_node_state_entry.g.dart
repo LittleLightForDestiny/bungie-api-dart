@@ -11,7 +11,7 @@ DestinyActivityGraphNodeStateEntry _$DestinyActivityGraphNodeStateEntryFromJson(
   return DestinyActivityGraphNodeStateEntry()
     ..state = _$enumDecodeNullable(
         _$DestinyGraphNodeStateEnumMap, json['state'],
-        unknownValue: DestinyGraphNodeState.Hidden);
+        unknownValue: DestinyGraphNodeState.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyActivityGraphNodeStateEntryToJson(
@@ -58,4 +58,5 @@ const _$DestinyGraphNodeStateEnumMap = {
   DestinyGraphNodeState.Teaser: 2,
   DestinyGraphNodeState.Incomplete: 3,
   DestinyGraphNodeState.Completed: 4,
+  DestinyGraphNodeState.ProtectedInvalidEnumValue: 999999999,
 };

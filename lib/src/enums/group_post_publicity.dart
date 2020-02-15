@@ -10,6 +10,9 @@ enum GroupPostPublicity {
   ///Private = 2
   @JsonValue(2)
   Private,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupPostPublicityExtension on GroupPostPublicity{

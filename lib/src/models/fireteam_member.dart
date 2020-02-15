@@ -11,7 +11,14 @@ class FireteamMember{
 	
 	FireteamMember();
 
-	factory FireteamMember.fromJson(Map<String, dynamic> json) => _$FireteamMemberFromJson(json);
+	factory FireteamMember.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$FireteamMemberFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'destinyUserInfo')
 	FireteamUserInfoCard destinyUserInfo;
@@ -26,7 +33,7 @@ class FireteamMember{
 	bool hasMicrophone;
 	@JsonKey(name:'lastPlatformInviteAttemptDate')
 	String lastPlatformInviteAttemptDate;
-	@JsonKey(name:'lastPlatformInviteAttemptResult',unknownEnumValue:FireteamPlatformInviteResult.None)
+	@JsonKey(name:'lastPlatformInviteAttemptResult',unknownEnumValue:FireteamPlatformInviteResult.ProtectedInvalidEnumValue)
 	FireteamPlatformInviteResult lastPlatformInviteAttemptResult;
 
 	

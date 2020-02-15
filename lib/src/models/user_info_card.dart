@@ -10,7 +10,14 @@ class UserInfoCard{
 	
 	UserInfoCard();
 
-	factory UserInfoCard.fromJson(Map<String, dynamic> json) => _$UserInfoCardFromJson(json);
+	factory UserInfoCard.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$UserInfoCardFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
 	@JsonKey(name:'supplementalDisplayName')
@@ -19,7 +26,7 @@ class UserInfoCard{
 	@JsonKey(name:'iconPath')
 	String iconPath;
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
-	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType crossSaveOverride;
 	/// The list of Membership Types indicating the platforms on which this Membership can be used.
 	///  Not in Cross Save = its original membership type. Cross Save Primary = Any membership types it is overridding, and its original membership type Cross Save Overridden = Empty list
@@ -29,7 +36,7 @@ class UserInfoCard{
 	@JsonKey(name:'isPublic')
 	bool isPublic;
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')

@@ -21,6 +21,9 @@ enum ApplicationStatus {
   /// Application has been blocked by Bungie. It cannot be transitioned out of this state by the owner. Authorizations are terminated when an application is in this state.
   @JsonValue(4)
   Blocked,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ApplicationStatusExtension on ApplicationStatus{

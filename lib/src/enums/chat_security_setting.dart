@@ -7,6 +7,9 @@ enum ChatSecuritySetting {
   ///Admins = 1
   @JsonValue(1)
   Admins,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ChatSecuritySettingExtension on ChatSecuritySetting{

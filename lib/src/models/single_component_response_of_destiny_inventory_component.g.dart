@@ -16,7 +16,8 @@ SingleComponentResponseOfDestinyInventoryComponent
             json['data'] as Map<String, dynamic>)
     ..privacy = _$enumDecodeNullable(
         _$ComponentPrivacySettingEnumMap, json['privacy'],
-        unknownValue: ComponentPrivacySetting.None);
+        unknownValue: ComponentPrivacySetting.ProtectedInvalidEnumValue)
+    ..disabled = json['disabled'] as bool;
 }
 
 Map<String, dynamic> _$SingleComponentResponseOfDestinyInventoryComponentToJson(
@@ -24,6 +25,7 @@ Map<String, dynamic> _$SingleComponentResponseOfDestinyInventoryComponentToJson(
     <String, dynamic>{
       'data': instance.data,
       'privacy': _$ComponentPrivacySettingEnumMap[instance.privacy],
+      'disabled': instance.disabled,
     };
 
 T _$enumDecode<T>(
@@ -62,4 +64,5 @@ const _$ComponentPrivacySettingEnumMap = {
   ComponentPrivacySetting.None: 0,
   ComponentPrivacySetting.Public: 1,
   ComponentPrivacySetting.Private: 2,
+  ComponentPrivacySetting.ProtectedInvalidEnumValue: 999999999,
 };

@@ -11,7 +11,14 @@ class DestinyMilestoneActivityDefinition{
 	
 	DestinyMilestoneActivityDefinition();
 
-	factory DestinyMilestoneActivityDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityDefinitionFromJson(json);
+	factory DestinyMilestoneActivityDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The "Conceptual" activity hash. Basically, we picked the lowest level activity and are treating it as the canonical definition of the activity for rendering purposes.
 	/// If you care about the specific difficulty modes and variations, use the activities under "Variants".

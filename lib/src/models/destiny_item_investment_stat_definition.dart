@@ -10,7 +10,14 @@ class DestinyItemInvestmentStatDefinition{
 	
 	DestinyItemInvestmentStatDefinition();
 
-	factory DestinyItemInvestmentStatDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemInvestmentStatDefinitionFromJson(json);
+	factory DestinyItemInvestmentStatDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemInvestmentStatDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the DestinyStatDefinition defining this stat.
 	@JsonKey(name:'statTypeHash')

@@ -18,13 +18,20 @@ class DestinyProgressionDefinition{
 	
 	DestinyProgressionDefinition();
 
-	factory DestinyProgressionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionDefinitionFromJson(json);
+	factory DestinyProgressionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'displayProperties')
 	DestinyProgressionDisplayPropertiesDefinition displayProperties;
 	/// The "Scope" of the progression indicates the source of the progression's live data.
 	/// See the DestinyProgressionScope enum for more info: but essentially, a Progression can either be backed by a stored value, or it can be a calculated derivative of other values.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyProgressionScope.Account)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyProgressionScope.ProtectedInvalidEnumValue)
 	DestinyProgressionScope scope;
 	/// If this is True, then the progression doesn't have a maximum level.
 	@JsonKey(name:'repeatLastStep')

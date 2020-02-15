@@ -10,10 +10,20 @@ class ComponentResponse{
 	
 	ComponentResponse();
 
-	factory ComponentResponse.fromJson(Map<String, dynamic> json) => _$ComponentResponseFromJson(json);
+	factory ComponentResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ComponentResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

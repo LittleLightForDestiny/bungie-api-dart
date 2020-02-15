@@ -10,7 +10,14 @@ class DestinyPlugWhitelistEntryDefinition{
 	
 	DestinyPlugWhitelistEntryDefinition();
 
-	factory DestinyPlugWhitelistEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPlugWhitelistEntryDefinitionFromJson(json);
+	factory DestinyPlugWhitelistEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPlugWhitelistEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Plug Category to compare against the plug item's plug.plugCategoryHash.
 	/// Note that this does NOT relate to any Definition in itself, it is only used for comparison purposes.

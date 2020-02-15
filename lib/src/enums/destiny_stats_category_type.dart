@@ -49,6 +49,9 @@ enum DestinyStatsCategoryType {
   ///MedalAbilities = 15
   @JsonValue(15)
   MedalAbilities,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyStatsCategoryTypeExtension on DestinyStatsCategoryType{

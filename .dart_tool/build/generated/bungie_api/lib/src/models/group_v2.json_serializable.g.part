@@ -7,7 +7,7 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) {
     ..groupId = json['groupId'] as String
     ..name = json['name'] as String
     ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
-        unknownValue: GroupType.General)
+        unknownValue: GroupType.ProtectedInvalidEnumValue)
     ..membershipIdCreated = json['membershipIdCreated'] as String
     ..creationDate = json['creationDate'] as String
     ..modificationDate = json['modificationDate'] as String
@@ -21,17 +21,17 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) {
     ..isDefaultPostPublic = json['isDefaultPostPublic'] as bool
     ..chatSecurity = _$enumDecodeNullable(
         _$ChatSecuritySettingEnumMap, json['chatSecurity'],
-        unknownValue: ChatSecuritySetting.Group)
+        unknownValue: ChatSecuritySetting.ProtectedInvalidEnumValue)
     ..locale = json['locale'] as String
     ..avatarImageIndex = json['avatarImageIndex'] as int
     ..homepage = _$enumDecodeNullable(_$GroupHomepageEnumMap, json['homepage'],
-        unknownValue: GroupHomepage.Wall)
+        unknownValue: GroupHomepage.ProtectedInvalidEnumValue)
     ..membershipOption = _$enumDecodeNullable(
         _$MembershipOptionEnumMap, json['membershipOption'],
-        unknownValue: MembershipOption.Reviewed)
+        unknownValue: MembershipOption.ProtectedInvalidEnumValue)
     ..defaultPublicity = _$enumDecodeNullable(
         _$GroupPostPublicityEnumMap, json['defaultPublicity'],
-        unknownValue: GroupPostPublicity.Public)
+        unknownValue: GroupPostPublicity.ProtectedInvalidEnumValue)
     ..theme = json['theme'] as String
     ..bannerPath = json['bannerPath'] as String
     ..avatarPath = json['avatarPath'] as String
@@ -116,27 +116,32 @@ T _$enumDecodeNullable<T>(
 const _$GroupTypeEnumMap = {
   GroupType.General: 0,
   GroupType.Clan: 1,
+  GroupType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$ChatSecuritySettingEnumMap = {
   ChatSecuritySetting.Group: 0,
   ChatSecuritySetting.Admins: 1,
+  ChatSecuritySetting.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$GroupHomepageEnumMap = {
   GroupHomepage.Wall: 0,
   GroupHomepage.Forum: 1,
   GroupHomepage.AllianceForum: 2,
+  GroupHomepage.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$MembershipOptionEnumMap = {
   MembershipOption.Reviewed: 0,
   MembershipOption.Open: 1,
   MembershipOption.Closed: 2,
+  MembershipOption.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$GroupPostPublicityEnumMap = {
   GroupPostPublicity.Public: 0,
   GroupPostPublicity.Alliance: 1,
   GroupPostPublicity.Private: 2,
+  GroupPostPublicity.ProtectedInvalidEnumValue: 999999999,
 };

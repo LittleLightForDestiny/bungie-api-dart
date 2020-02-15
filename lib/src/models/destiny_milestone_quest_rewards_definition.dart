@@ -10,7 +10,14 @@ class DestinyMilestoneQuestRewardsDefinition{
 	
 	DestinyMilestoneQuestRewardsDefinition();
 
-	factory DestinyMilestoneQuestRewardsDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneQuestRewardsDefinitionFromJson(json);
+	factory DestinyMilestoneQuestRewardsDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneQuestRewardsDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The items that represent your reward for completing the quest.
 	/// Be warned, these could be "dummy" items: items that are only used to render a good-looking in-game tooltip, but aren't the actual items themselves.

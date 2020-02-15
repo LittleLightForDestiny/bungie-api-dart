@@ -10,13 +10,20 @@ class DestinyPresentationChildBlock{
 	
 	DestinyPresentationChildBlock();
 
-	factory DestinyPresentationChildBlock.fromJson(Map<String, dynamic> json) => _$DestinyPresentationChildBlockFromJson(json);
+	factory DestinyPresentationChildBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPresentationChildBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.Default)
+	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
 	DestinyPresentationNodeType presentationNodeType;
 	@JsonKey(name:'parentPresentationNodeHashes')
 	List<int> parentPresentationNodeHashes;
-	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.Category)
+	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
 	DestinyPresentationDisplayStyle displayStyle;
 
 	

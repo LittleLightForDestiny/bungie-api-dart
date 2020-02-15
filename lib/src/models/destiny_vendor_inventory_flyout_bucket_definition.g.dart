@@ -14,7 +14,7 @@ DestinyVendorInventoryFlyoutBucketDefinition
     ..inventoryBucketHash = json['inventoryBucketHash'] as int
     ..sortItemsBy = _$enumDecodeNullable(
         _$DestinyItemSortTypeEnumMap, json['sortItemsBy'],
-        unknownValue: DestinyItemSortType.ItemId);
+        unknownValue: DestinyItemSortType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyVendorInventoryFlyoutBucketDefinitionToJson(
@@ -61,4 +61,5 @@ const _$DestinyItemSortTypeEnumMap = {
   DestinyItemSortType.ItemId: 0,
   DestinyItemSortType.Timestamp: 1,
   DestinyItemSortType.StackSize: 2,
+  DestinyItemSortType.ProtectedInvalidEnumValue: 999999999,
 };

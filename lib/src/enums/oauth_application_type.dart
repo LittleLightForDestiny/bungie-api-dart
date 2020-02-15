@@ -12,6 +12,9 @@ enum OAuthApplicationType {
   /// Indicates the application runs in a public place, and it can&#39;t be trusted to keep a secret.
   @JsonValue(2)
   Public,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension OAuthApplicationTypeExtension on OAuthApplicationType{

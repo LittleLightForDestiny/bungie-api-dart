@@ -18,7 +18,14 @@ class DestinyTalentGridDefinition{
 	
 	DestinyTalentGridDefinition();
 
-	factory DestinyTalentGridDefinition.fromJson(Map<String, dynamic> json) => _$DestinyTalentGridDefinitionFromJson(json);
+	factory DestinyTalentGridDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentGridDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The maximum possible level of the Talent Grid: at this level, any nodes are allowed to be activated.
 	@JsonKey(name:'maxGridLevel')

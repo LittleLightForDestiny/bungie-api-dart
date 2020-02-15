@@ -16,6 +16,9 @@ enum FireteamPlatformInviteResult {
   ///ServiceError = 4
   @JsonValue(4)
   ServiceError,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension FireteamPlatformInviteResultExtension on FireteamPlatformInviteResult{

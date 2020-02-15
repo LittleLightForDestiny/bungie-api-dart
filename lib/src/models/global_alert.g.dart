@@ -14,10 +14,10 @@ GlobalAlert _$GlobalAlertFromJson(Map<String, dynamic> json) {
     ..alertLink = json['AlertLink'] as String
     ..alertLevel = _$enumDecodeNullable(
         _$GlobalAlertLevelEnumMap, json['AlertLevel'],
-        unknownValue: GlobalAlertLevel.Unknown)
+        unknownValue: GlobalAlertLevel.ProtectedInvalidEnumValue)
     ..alertType = _$enumDecodeNullable(
         _$GlobalAlertTypeEnumMap, json['AlertType'],
-        unknownValue: GlobalAlertType.GlobalAlert)
+        unknownValue: GlobalAlertType.ProtectedInvalidEnumValue)
     ..streamInfo = json['StreamInfo'] == null
         ? null
         : StreamInfo.fromJson(json['StreamInfo'] as Map<String, dynamic>);
@@ -71,9 +71,11 @@ const _$GlobalAlertLevelEnumMap = {
   GlobalAlertLevel.Blue: 1,
   GlobalAlertLevel.Yellow: 2,
   GlobalAlertLevel.Red: 3,
+  GlobalAlertLevel.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$GlobalAlertTypeEnumMap = {
   GlobalAlertType.GlobalAlert: 0,
   GlobalAlertType.StreamingAlert: 1,
+  GlobalAlertType.ProtectedInvalidEnumValue: 999999999,
 };

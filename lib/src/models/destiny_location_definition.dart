@@ -11,7 +11,14 @@ class DestinyLocationDefinition{
 	
 	DestinyLocationDefinition();
 
-	factory DestinyLocationDefinition.fromJson(Map<String, dynamic> json) => _$DestinyLocationDefinitionFromJson(json);
+	factory DestinyLocationDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLocationDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the location has a Vendor on it, this is the hash identifier for that Vendor. Look them up with DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')

@@ -12,7 +12,14 @@ class DestinyActivity{
 	
 	DestinyActivity();
 
-	factory DestinyActivity.fromJson(Map<String, dynamic> json) => _$DestinyActivityFromJson(json);
+	factory DestinyActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Activity. Use this to look up the DestinyActivityDefinition of the activity.
 	@JsonKey(name:'activityHash')
@@ -39,7 +46,7 @@ class DestinyActivity{
 	@JsonKey(name:'recommendedLight')
 	int recommendedLight;
 	/// A DestinyActivityDifficultyTier enum value indicating the difficulty of the activity.
-	@JsonKey(name:'difficultyTier',unknownEnumValue:DestinyActivityDifficultyTier.Trivial)
+	@JsonKey(name:'difficultyTier',unknownEnumValue:DestinyActivityDifficultyTier.ProtectedInvalidEnumValue)
 	DestinyActivityDifficultyTier difficultyTier;
 	@JsonKey(name:'challenges')
 	List<DestinyChallengeStatus> challenges;

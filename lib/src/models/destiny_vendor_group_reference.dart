@@ -8,7 +8,14 @@ class DestinyVendorGroupReference{
 	
 	DestinyVendorGroupReference();
 
-	factory DestinyVendorGroupReference.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupReferenceFromJson(json);
+	factory DestinyVendorGroupReference.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorGroupReferenceFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The DestinyVendorGroupDefinition to which this Vendor can belong.
 	@JsonKey(name:'vendorGroupHash')

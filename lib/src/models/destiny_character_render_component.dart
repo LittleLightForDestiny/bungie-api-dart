@@ -13,7 +13,14 @@ class DestinyCharacterRenderComponent{
 	
 	DestinyCharacterRenderComponent();
 
-	factory DestinyCharacterRenderComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterRenderComponentFromJson(json);
+	factory DestinyCharacterRenderComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterRenderComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Custom dyes, calculated by iterating over the character's equipped items. Useful for pre-fetching all of the dye data needed from our server.
 	@JsonKey(name:'customDyes')

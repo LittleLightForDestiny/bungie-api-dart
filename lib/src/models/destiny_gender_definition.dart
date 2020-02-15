@@ -11,10 +11,17 @@ class DestinyGenderDefinition{
 	
 	DestinyGenderDefinition();
 
-	factory DestinyGenderDefinition.fromJson(Map<String, dynamic> json) => _$DestinyGenderDefinitionFromJson(json);
+	factory DestinyGenderDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyGenderDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
-	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.Male)
+	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.ProtectedInvalidEnumValue)
 	DestinyGender genderType;
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

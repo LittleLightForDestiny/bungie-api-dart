@@ -11,7 +11,14 @@ class DestinyDestinationBubbleSettingDefinition{
 	
 	DestinyDestinationBubbleSettingDefinition();
 
-	factory DestinyDestinationBubbleSettingDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDestinationBubbleSettingDefinitionFromJson(json);
+	factory DestinyDestinationBubbleSettingDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDestinationBubbleSettingDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

@@ -9,7 +9,14 @@ class DestinyItemSetBlockEntryDefinition{
 	
 	DestinyItemSetBlockEntryDefinition();
 
-	factory DestinyItemSetBlockEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSetBlockEntryDefinitionFromJson(json);
+	factory DestinyItemSetBlockEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSetBlockEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Used for tracking which step a user reached. These values will be populated in the user's internal state, which we expose externally as a more usable DestinyQuestStatus object. If this item has been obtained, this value will be set in trackingUnlockValueHash.
 	@JsonKey(name:'trackingValue')

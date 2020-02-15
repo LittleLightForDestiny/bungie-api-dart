@@ -9,7 +9,14 @@ class DestinyVendorDisplayPropertiesDefinition{
 	
 	DestinyVendorDisplayPropertiesDefinition();
 
-	factory DestinyVendorDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorDisplayPropertiesDefinitionFromJson(json);
+	factory DestinyVendorDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorDisplayPropertiesDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// I regret calling this a "large icon". It's more like a medium-sized image with a picture of the vendor's mug on it, trying their best to look cool. Not what one would call an icon.
 	@JsonKey(name:'largeIcon')

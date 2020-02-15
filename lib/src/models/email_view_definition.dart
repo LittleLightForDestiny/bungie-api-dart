@@ -10,7 +10,14 @@ class EmailViewDefinition{
 	
 	EmailViewDefinition();
 
-	factory EmailViewDefinition.fromJson(Map<String, dynamic> json) => _$EmailViewDefinitionFromJson(json);
+	factory EmailViewDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EmailViewDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for this view.
 	@JsonKey(name:'name')

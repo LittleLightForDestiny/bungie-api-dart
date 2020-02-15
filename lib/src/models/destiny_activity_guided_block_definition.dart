@@ -9,7 +9,14 @@ class DestinyActivityGuidedBlockDefinition{
 	
 	DestinyActivityGuidedBlockDefinition();
 
-	factory DestinyActivityGuidedBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGuidedBlockDefinitionFromJson(json);
+	factory DestinyActivityGuidedBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGuidedBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The maximum amount of people that can be in the waiting lobby.
 	@JsonKey(name:'guidedMaxLobbySize')

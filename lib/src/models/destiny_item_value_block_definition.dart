@@ -12,7 +12,14 @@ class DestinyItemValueBlockDefinition{
 	
 	DestinyItemValueBlockDefinition();
 
-	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemValueBlockDefinitionFromJson(json);
+	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemValueBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// References to the items that make up this item's "value", and the quantity.
 	@JsonKey(name:'itemValue')

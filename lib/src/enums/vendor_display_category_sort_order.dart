@@ -7,6 +7,9 @@ enum VendorDisplayCategorySortOrder {
   ///SortByTier = 1
   @JsonValue(1)
   SortByTier,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension VendorDisplayCategorySortOrderExtension on VendorDisplayCategorySortOrder{

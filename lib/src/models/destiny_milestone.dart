@@ -13,7 +13,14 @@ class DestinyMilestone{
 	
 	DestinyMilestone();
 
-	factory DestinyMilestone.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneFromJson(json);
+	factory DestinyMilestone.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier for the Milestone. Use it to look up the DestinyMilestoneDefinition, so you can combine the other data in this contract with static definition data.
 	@JsonKey(name:'milestoneHash')

@@ -16,6 +16,9 @@ enum FireteamDateRange {
   ///ThisWeek = 4
   @JsonValue(4)
   ThisWeek,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension FireteamDateRangeExtension on FireteamDateRange{

@@ -9,7 +9,14 @@ class DestinyActivityLoadoutRequirement{
 	
 	DestinyActivityLoadoutRequirement();
 
-	factory DestinyActivityLoadoutRequirement.fromJson(Map<String, dynamic> json) => _$DestinyActivityLoadoutRequirementFromJson(json);
+	factory DestinyActivityLoadoutRequirement.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityLoadoutRequirementFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'equipmentSlotHash')
 	int equipmentSlotHash;

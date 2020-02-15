@@ -11,7 +11,7 @@ DestinyRewardSourceDefinition _$DestinyRewardSourceDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..category = _$enumDecodeNullable(
         _$DestinyRewardSourceCategoryEnumMap, json['category'],
-        unknownValue: DestinyRewardSourceCategory.None)
+        unknownValue: DestinyRewardSourceCategory.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -64,4 +64,5 @@ const _$DestinyRewardSourceCategoryEnumMap = {
   DestinyRewardSourceCategory.Activity: 1,
   DestinyRewardSourceCategory.Vendor: 2,
   DestinyRewardSourceCategory.Aggregate: 3,
+  DestinyRewardSourceCategory.ProtectedInvalidEnumValue: 999999999,
 };

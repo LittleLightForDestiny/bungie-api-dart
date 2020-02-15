@@ -8,7 +8,14 @@ class ContentRepresentation{
 	
 	ContentRepresentation();
 
-	factory ContentRepresentation.fromJson(Map<String, dynamic> json) => _$ContentRepresentationFromJson(json);
+	factory ContentRepresentation.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentRepresentationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;

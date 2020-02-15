@@ -11,7 +11,14 @@ class DestinyArtifactProfileScoped{
 	
 	DestinyArtifactProfileScoped();
 
-	factory DestinyArtifactProfileScoped.fromJson(Map<String, dynamic> json) => _$DestinyArtifactProfileScopedFromJson(json);
+	factory DestinyArtifactProfileScoped.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyArtifactProfileScopedFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'artifactHash')
 	int artifactHash;

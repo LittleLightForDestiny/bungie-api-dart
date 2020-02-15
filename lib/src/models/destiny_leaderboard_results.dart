@@ -8,7 +8,14 @@ class DestinyLeaderboardResults{
 	
 	DestinyLeaderboardResults();
 
-	factory DestinyLeaderboardResults.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardResultsFromJson(json);
+	factory DestinyLeaderboardResults.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLeaderboardResultsFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Indicate the membership ID of the account that is the focal point of the provided leaderboards.
 	@JsonKey(name:'focusMembershipId')

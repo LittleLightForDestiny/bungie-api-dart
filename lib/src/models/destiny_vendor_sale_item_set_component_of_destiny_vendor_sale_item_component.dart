@@ -9,7 +9,14 @@ class DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent{
 	
 	DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent();
 
-	factory DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentFromJson(json);
+	factory DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'saleItems')
 	Map<String, DestinyVendorSaleItemComponent> saleItems;

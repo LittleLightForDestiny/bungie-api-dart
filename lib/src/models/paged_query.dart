@@ -8,7 +8,14 @@ class PagedQuery{
 	
 	PagedQuery();
 
-	factory PagedQuery.fromJson(Map<String, dynamic> json) => _$PagedQueryFromJson(json);
+	factory PagedQuery.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PagedQueryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'itemsPerPage')
 	int itemsPerPage;

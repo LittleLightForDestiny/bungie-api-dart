@@ -9,7 +9,14 @@ class GeneralUser{
 	
 	GeneralUser();
 
-	factory GeneralUser.fromJson(Map<String, dynamic> json) => _$GeneralUserFromJson(json);
+	factory GeneralUser.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GeneralUserFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'membershipId')
 	String membershipId;

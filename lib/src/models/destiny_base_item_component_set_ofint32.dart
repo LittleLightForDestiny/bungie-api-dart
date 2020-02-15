@@ -9,7 +9,14 @@ class DestinyBaseItemComponentSetOfint32{
 	
 	DestinyBaseItemComponentSetOfint32();
 
-	factory DestinyBaseItemComponentSetOfint32.fromJson(Map<String, dynamic> json) => _$DestinyBaseItemComponentSetOfint32FromJson(json);
+	factory DestinyBaseItemComponentSetOfint32.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyBaseItemComponentSetOfint32FromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent objectives;

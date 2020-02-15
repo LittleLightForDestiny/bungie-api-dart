@@ -9,7 +9,14 @@ class DestinyMilestoneContentItemCategory{
 	
 	DestinyMilestoneContentItemCategory();
 
-	factory DestinyMilestoneContentItemCategory.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneContentItemCategoryFromJson(json);
+	factory DestinyMilestoneContentItemCategory.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneContentItemCategoryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'title')
 	String title;

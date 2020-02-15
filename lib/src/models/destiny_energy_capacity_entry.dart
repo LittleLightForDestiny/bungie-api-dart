@@ -10,7 +10,14 @@ class DestinyEnergyCapacityEntry{
 	
 	DestinyEnergyCapacityEntry();
 
-	factory DestinyEnergyCapacityEntry.fromJson(Map<String, dynamic> json) => _$DestinyEnergyCapacityEntryFromJson(json);
+	factory DestinyEnergyCapacityEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyEnergyCapacityEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// How much energy capacity this plug provides.
 	@JsonKey(name:'capacityValue')
@@ -19,7 +26,7 @@ class DestinyEnergyCapacityEntry{
 	@JsonKey(name:'energyTypeHash')
 	int energyTypeHash;
 	/// The Energy Type for this energy capacity, in enum form for easy use.
-	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.Any)
+	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
 	DestinyEnergyType energyType;
 
 	

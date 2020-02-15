@@ -9,7 +9,14 @@ class UserToUserContext{
 	
 	UserToUserContext();
 
-	factory UserToUserContext.fromJson(Map<String, dynamic> json) => _$UserToUserContextFromJson(json);
+	factory UserToUserContext.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$UserToUserContextFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'isFollowing')
 	bool isFollowing;

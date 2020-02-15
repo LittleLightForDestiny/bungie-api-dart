@@ -19,6 +19,9 @@ enum DestinyRecordToastStyle {
   ///MedalComplete = 5
   @JsonValue(5)
   MedalComplete,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyRecordToastStyleExtension on DestinyRecordToastStyle{

@@ -12,7 +12,7 @@ DestinyInsertPlugsRequestEntry _$DestinyInsertPlugsRequestEntryFromJson(
     ..socketIndex = json['socketIndex'] as int
     ..socketArrayType = _$enumDecodeNullable(
         _$DestinySocketArrayTypeEnumMap, json['socketArrayType'],
-        unknownValue: DestinySocketArrayType.Default)
+        unknownValue: DestinySocketArrayType.ProtectedInvalidEnumValue)
     ..plugItemHash = json['plugItemHash'] as int;
 }
 
@@ -60,4 +60,5 @@ T _$enumDecodeNullable<T>(
 const _$DestinySocketArrayTypeEnumMap = {
   DestinySocketArrayType.Default: 0,
   DestinySocketArrayType.Intrinsic: 1,
+  DestinySocketArrayType.ProtectedInvalidEnumValue: 999999999,
 };

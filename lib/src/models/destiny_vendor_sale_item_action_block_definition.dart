@@ -9,7 +9,14 @@ class DestinyVendorSaleItemActionBlockDefinition{
 	
 	DestinyVendorSaleItemActionBlockDefinition();
 
-	factory DestinyVendorSaleItemActionBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorSaleItemActionBlockDefinitionFromJson(json);
+	factory DestinyVendorSaleItemActionBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorSaleItemActionBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'executeSeconds')
 	double executeSeconds;

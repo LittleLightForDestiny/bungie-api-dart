@@ -46,6 +46,9 @@ enum ContentPropertyDataTypeEnum {
   ///Color = 14
   @JsonValue(14)
   Color,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ContentPropertyDataTypeEnumExtension on ContentPropertyDataTypeEnum{

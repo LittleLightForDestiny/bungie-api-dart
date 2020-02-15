@@ -10,7 +10,14 @@ class DestinyTalentNodeStatBlock{
 	
 	DestinyTalentNodeStatBlock();
 
-	factory DestinyTalentNodeStatBlock.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeStatBlockFromJson(json);
+	factory DestinyTalentNodeStatBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentNodeStatBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The stat benefits conferred when this talent node is activated for the current Step that is active on the node.
 	@JsonKey(name:'currentStepStats')

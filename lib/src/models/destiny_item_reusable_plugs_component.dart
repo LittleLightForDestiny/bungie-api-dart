@@ -9,7 +9,14 @@ class DestinyItemReusablePlugsComponent{
 	
 	DestinyItemReusablePlugsComponent();
 
-	factory DestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemReusablePlugsComponentFromJson(json);
+	factory DestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemReusablePlugsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the item supports reusable plugs, this is the list of plugs that are allowed to be used for the socket, and any relevant information about whether they are "enabled", whether they are allowed to be inserted, and any other information such as objectives.
 	///  A Reusable Plug is a plug that you can always insert into this socket as long as its insertion rules are passed, regardless of whether or not you have the plug in your inventory. An example of it failing an insertion rule would be if it has an Objective that needs to be completed before it can be inserted, and that objective hasn't been completed yet.

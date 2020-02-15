@@ -9,11 +9,18 @@ class GroupOptionalConversationAddRequest{
 	
 	GroupOptionalConversationAddRequest();
 
-	factory GroupOptionalConversationAddRequest.fromJson(Map<String, dynamic> json) => _$GroupOptionalConversationAddRequestFromJson(json);
+	factory GroupOptionalConversationAddRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupOptionalConversationAddRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'chatName')
 	String chatName;
-	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.Group)
+	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
 	ChatSecuritySetting chatSecurity;
 
 	

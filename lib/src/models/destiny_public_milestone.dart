@@ -12,7 +12,14 @@ class DestinyPublicMilestone{
 	
 	DestinyPublicMilestone();
 
-	factory DestinyPublicMilestone.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneFromJson(json);
+	factory DestinyPublicMilestone.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the milestone. Use it to look up the DestinyMilestoneDefinition for static data about the Milestone.
 	@JsonKey(name:'milestoneHash')

@@ -8,7 +8,14 @@ class Datapoint{
 	
 	Datapoint();
 
-	factory Datapoint.fromJson(Map<String, dynamic> json) => _$DatapointFromJson(json);
+	factory Datapoint.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DatapointFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Timestamp for the related count.
 	@JsonKey(name:'time')

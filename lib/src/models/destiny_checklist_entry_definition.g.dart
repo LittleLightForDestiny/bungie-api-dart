@@ -22,7 +22,7 @@ DestinyChecklistEntryDefinition _$DestinyChecklistEntryDefinitionFromJson(
     ..vendorHash = json['vendorHash'] as int
     ..vendorInteractionIndex = json['vendorInteractionIndex'] as int
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
-        unknownValue: DestinyScope.Profile);
+        unknownValue: DestinyScope.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyChecklistEntryDefinitionToJson(
@@ -75,4 +75,5 @@ T _$enumDecodeNullable<T>(
 const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
+  DestinyScope.ProtectedInvalidEnumValue: 999999999,
 };

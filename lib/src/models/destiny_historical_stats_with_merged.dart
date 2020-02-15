@@ -9,7 +9,14 @@ class DestinyHistoricalStatsWithMerged{
 	
 	DestinyHistoricalStatsWithMerged();
 
-	factory DestinyHistoricalStatsWithMerged.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsWithMergedFromJson(json);
+	factory DestinyHistoricalStatsWithMerged.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsWithMergedFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	Map<String, DestinyHistoricalStatsByPeriod> results;

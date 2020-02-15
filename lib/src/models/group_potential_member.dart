@@ -11,9 +11,16 @@ class GroupPotentialMember{
 	
 	GroupPotentialMember();
 
-	factory GroupPotentialMember.fromJson(Map<String, dynamic> json) => _$GroupPotentialMemberFromJson(json);
+	factory GroupPotentialMember.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupPotentialMemberFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'potentialStatus',unknownEnumValue:GroupPotentialMemberStatus.None)
+	@JsonKey(name:'potentialStatus',unknownEnumValue:GroupPotentialMemberStatus.ProtectedInvalidEnumValue)
 	GroupPotentialMemberStatus potentialStatus;
 	@JsonKey(name:'groupId')
 	String groupId;

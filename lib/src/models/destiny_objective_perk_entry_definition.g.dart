@@ -12,7 +12,7 @@ DestinyObjectivePerkEntryDefinition
     ..perkHash = json['perkHash'] as int
     ..style = _$enumDecodeNullable(
         _$DestinyObjectiveGrantStyleEnumMap, json['style'],
-        unknownValue: DestinyObjectiveGrantStyle.WhenIncomplete);
+        unknownValue: DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyObjectivePerkEntryDefinitionToJson(
@@ -58,4 +58,5 @@ const _$DestinyObjectiveGrantStyleEnumMap = {
   DestinyObjectiveGrantStyle.WhenIncomplete: 0,
   DestinyObjectiveGrantStyle.WhenComplete: 1,
   DestinyObjectiveGrantStyle.Always: 2,
+  DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue: 999999999,
 };

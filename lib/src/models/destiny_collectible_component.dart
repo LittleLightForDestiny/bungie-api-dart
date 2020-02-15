@@ -9,7 +9,14 @@ class DestinyCollectibleComponent{
 	
 	DestinyCollectibleComponent();
 
-	factory DestinyCollectibleComponent.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleComponentFromJson(json);
+	factory DestinyCollectibleComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCollectibleComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'state')
 	DestinyCollectibleState state;

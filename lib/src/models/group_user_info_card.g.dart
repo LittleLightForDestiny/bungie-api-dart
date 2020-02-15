@@ -11,19 +11,19 @@ GroupUserInfoCard _$GroupUserInfoCardFromJson(Map<String, dynamic> json) {
     ..lastSeenDisplayName = json['LastSeenDisplayName'] as String
     ..lastSeenDisplayNameType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['LastSeenDisplayNameType'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..supplementalDisplayName = json['supplementalDisplayName'] as String
     ..iconPath = json['iconPath'] as String
     ..crossSaveOverride = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['crossSaveOverride'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..applicableMembershipTypes = (json['applicableMembershipTypes'] as List)
         ?.map((e) => _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, e))
         ?.toList()
     ..isPublic = json['isPublic'] as bool
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..membershipId = json['membershipId'] as String
     ..displayName = json['displayName'] as String;
 }
@@ -88,4 +88,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

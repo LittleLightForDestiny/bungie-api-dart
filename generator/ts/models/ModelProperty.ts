@@ -1,6 +1,6 @@
 import { ParameterObject, ReferenceObject } from "openapi3-ts";
 import { ApiDocHelper } from "../utils/api-doc-helper";
-import {camelCase} from 'lodash';
+import {camelCase, get as _get} from 'lodash';
 export class ModelProperty{
     constructor(
         public name:string,
@@ -49,10 +49,17 @@ export class ModelProperty{
 
     jsonKey():string{
         let params = [`name:'${this.name}'`];
-        if(this.info["x-enum-reference"] && !this.info['x-enum-is-bitmask']){
-            let ref = ApiDocHelper.getRef(this.info["x-enum-reference"].$ref);
-            let firstValue = ref['x-enum-values'][0].identifier;
-            params.push(`unknownEnumValue:${this.typeName()}.${firstValue}`);
+        // var arrayInfo = _get(this.info, 'items');
+        // if(_get(arrayInfo, "x-enum-reference") && !_get(arrayInfo, 'x-enum-is-bitmask')){
+        //     var type = ApiDocHelper.getObjectType(arrayInfo);
+        //     var fromJson = `(json)=>(json['${this.name}'] as List)`+
+        //     `?.map((e) => _$enumDecodeNullable(_$${type}EnumMap, e, ${type}.ProtectedInvalidEnumValue))`+
+        //     `?.toList()`;
+        //     params.push(`fromJson:${fromJson}`);
+        // }
+        var info = this.info;
+        if(info["x-enum-reference"] && !info['x-enum-is-bitmask']){
+            params.push(`unknownEnumValue:${this.typeName()}.ProtectedInvalidEnumValue`);
         }
         return `@JsonKey(${params.join(',')})`;
     }

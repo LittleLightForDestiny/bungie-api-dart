@@ -10,7 +10,14 @@ class DestinyActivityGraphListEntryDefinition{
 	
 	DestinyActivityGraphListEntryDefinition();
 
-	factory DestinyActivityGraphListEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphListEntryDefinitionFromJson(json);
+	factory DestinyActivityGraphListEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGraphListEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the DestinyActivityGraphDefinition that should be shown when opening the director.
 	@JsonKey(name:'activityGraphHash')

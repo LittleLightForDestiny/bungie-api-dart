@@ -20,7 +20,7 @@ DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
     ..progressionHash = json['progressionHash'] as int
     ..sortOrder = _$enumDecodeNullable(
         _$VendorDisplayCategorySortOrderEnumMap, json['sortOrder'],
-        unknownValue: VendorDisplayCategorySortOrder.Default)
+        unknownValue: VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue)
     ..displayStyleHash = json['displayStyleHash'] as int
     ..displayStyleIdentifier = json['displayStyleIdentifier'] as String;
 }
@@ -74,4 +74,5 @@ T _$enumDecodeNullable<T>(
 const _$VendorDisplayCategorySortOrderEnumMap = {
   VendorDisplayCategorySortOrder.Default: 0,
   VendorDisplayCategorySortOrder.SortByTier: 1,
+  VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue: 999999999,
 };

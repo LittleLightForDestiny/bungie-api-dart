@@ -11,7 +11,14 @@ class DestinyProfileTransitoryTrackingEntry{
 	
 	DestinyProfileTransitoryTrackingEntry();
 
-	factory DestinyProfileTransitoryTrackingEntry.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryTrackingEntryFromJson(json);
+	factory DestinyProfileTransitoryTrackingEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileTransitoryTrackingEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// OPTIONAL - If this is tracking a DestinyLocationDefinition, this is the identifier for that location.
 	@JsonKey(name:'locationHash')

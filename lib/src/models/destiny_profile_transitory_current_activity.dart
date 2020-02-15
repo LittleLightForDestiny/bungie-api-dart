@@ -10,7 +10,14 @@ class DestinyProfileTransitoryCurrentActivity{
 	
 	DestinyProfileTransitoryCurrentActivity();
 
-	factory DestinyProfileTransitoryCurrentActivity.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryCurrentActivityFromJson(json);
+	factory DestinyProfileTransitoryCurrentActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileTransitoryCurrentActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// When the activity started.
 	@JsonKey(name:'startTime')

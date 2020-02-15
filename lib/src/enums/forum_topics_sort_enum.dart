@@ -25,6 +25,9 @@ enum ForumTopicsSortEnum {
   ///MostUpvoted = 7
   @JsonValue(7)
   MostUpvoted,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumTopicsSortEnumExtension on ForumTopicsSortEnum{

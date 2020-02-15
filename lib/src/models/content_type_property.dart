@@ -10,10 +10,19 @@ class ContentTypeProperty{
 	
 	ContentTypeProperty();
 
-	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) => _$ContentTypePropertyFromJson(json);
+	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentTypePropertyFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;
+	@JsonKey(name:'rootPropertyName')
+	String rootPropertyName;
 	@JsonKey(name:'readableName')
 	String readableName;
 	@JsonKey(name:'value')
@@ -50,7 +59,7 @@ class ContentTypeProperty{
 	String visibleDependency;
 	@JsonKey(name:'visibleOn')
 	String visibleOn;
-	@JsonKey(name:'datatype',unknownEnumValue:ContentPropertyDataTypeEnum.None)
+	@JsonKey(name:'datatype',unknownEnumValue:ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue)
 	ContentPropertyDataTypeEnum datatype;
 	@JsonKey(name:'attributes')
 	Map<String, String> attributes;

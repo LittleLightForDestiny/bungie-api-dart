@@ -10,7 +10,14 @@ class SearchResultOfFireteamResponse{
 	
 	SearchResultOfFireteamResponse();
 
-	factory SearchResultOfFireteamResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfFireteamResponseFromJson(json);
+	factory SearchResultOfFireteamResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfFireteamResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<FireteamResponse> results;

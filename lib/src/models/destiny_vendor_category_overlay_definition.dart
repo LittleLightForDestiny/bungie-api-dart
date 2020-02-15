@@ -9,7 +9,14 @@ class DestinyVendorCategoryOverlayDefinition{
 	
 	DestinyVendorCategoryOverlayDefinition();
 
-	factory DestinyVendorCategoryOverlayDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
+	factory DestinyVendorCategoryOverlayDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'choiceDescription')
 	String choiceDescription;

@@ -10,7 +10,14 @@ class GetGroupsForMemberResponse{
 	
 	GetGroupsForMemberResponse();
 
-	factory GetGroupsForMemberResponse.fromJson(Map<String, dynamic> json) => _$GetGroupsForMemberResponseFromJson(json);
+	factory GetGroupsForMemberResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GetGroupsForMemberResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A convenience property that indicates if every membership this user has that is a part of this group are part of an account that is considered inactive - for example, overridden accounts in Cross Save.
 	///  The key is the Group ID for the group being checked, and the value is true if the users' memberships for that group are all inactive.

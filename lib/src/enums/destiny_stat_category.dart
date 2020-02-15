@@ -13,6 +13,9 @@ enum DestinyStatCategory {
   ///Primary = 3
   @JsonValue(3)
   Primary,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyStatCategoryExtension on DestinyStatCategory{

@@ -8,7 +8,14 @@ class DestinyAnimationReference{
 	
 	DestinyAnimationReference();
 
-	factory DestinyAnimationReference.fromJson(Map<String, dynamic> json) => _$DestinyAnimationReferenceFromJson(json);
+	factory DestinyAnimationReference.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyAnimationReferenceFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'animName')
 	String animName;

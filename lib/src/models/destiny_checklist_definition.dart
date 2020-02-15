@@ -15,7 +15,14 @@ class DestinyChecklistDefinition{
 	
 	DestinyChecklistDefinition();
 
-	factory DestinyChecklistDefinition.fromJson(Map<String, dynamic> json) => _$DestinyChecklistDefinitionFromJson(json);
+	factory DestinyChecklistDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyChecklistDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -24,7 +31,7 @@ class DestinyChecklistDefinition{
 	@JsonKey(name:'viewActionString')
 	String viewActionString;
 	/// Indicates whether you will find this checklist on the Profile or Character components.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.Profile)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 	/// The individual checklist items. Gotta catch 'em all.
 	@JsonKey(name:'entries')

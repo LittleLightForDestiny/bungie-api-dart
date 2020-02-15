@@ -9,7 +9,14 @@ class DestinyVendorItemQuantity{
 	
 	DestinyVendorItemQuantity();
 
-	factory DestinyVendorItemQuantity.fromJson(Map<String, dynamic> json) => _$DestinyVendorItemQuantityFromJson(json);
+	factory DestinyVendorItemQuantity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorItemQuantityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the item in question. Use it to look up the item's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')

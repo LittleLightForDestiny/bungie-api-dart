@@ -11,7 +11,14 @@ class DestinyFactionProgression{
 	
 	DestinyFactionProgression();
 
-	factory DestinyFactionProgression.fromJson(Map<String, dynamic> json) => _$DestinyFactionProgressionFromJson(json);
+	factory DestinyFactionProgression.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyFactionProgressionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Faction related to this progression. Use it to look up the DestinyFactionDefinition for more rendering info.
 	@JsonKey(name:'factionHash')

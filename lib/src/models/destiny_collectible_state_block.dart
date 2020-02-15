@@ -9,7 +9,14 @@ class DestinyCollectibleStateBlock{
 	
 	DestinyCollectibleStateBlock();
 
-	factory DestinyCollectibleStateBlock.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleStateBlockFromJson(json);
+	factory DestinyCollectibleStateBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCollectibleStateBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'obscuredOverrideItemHash')
 	int obscuredOverrideItemHash;

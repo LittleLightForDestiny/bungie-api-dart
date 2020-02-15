@@ -13,6 +13,9 @@ enum DestinyBreakerType {
   ///Stagger = 3
   @JsonValue(3)
   Stagger,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyBreakerTypeExtension on DestinyBreakerType{

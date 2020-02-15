@@ -13,6 +13,9 @@ enum PeriodType {
   ///Activity = 3
   @JsonValue(3)
   Activity,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension PeriodTypeExtension on PeriodType{

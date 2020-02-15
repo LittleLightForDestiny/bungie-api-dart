@@ -13,7 +13,14 @@ class DestinyStatOverrideDefinition{
 	
 	DestinyStatOverrideDefinition();
 
-	factory DestinyStatOverrideDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatOverrideDefinitionFromJson(json);
+	factory DestinyStatOverrideDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyStatOverrideDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the stat whose display properties are being overridden.
 	@JsonKey(name:'statHash')

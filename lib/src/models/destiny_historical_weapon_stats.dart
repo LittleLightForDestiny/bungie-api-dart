@@ -9,7 +9,14 @@ class DestinyHistoricalWeaponStats{
 	
 	DestinyHistoricalWeaponStats();
 
-	factory DestinyHistoricalWeaponStats.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalWeaponStatsFromJson(json);
+	factory DestinyHistoricalWeaponStats.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalWeaponStatsFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash ID of the item definition that describes the weapon.
 	@JsonKey(name:'referenceId')

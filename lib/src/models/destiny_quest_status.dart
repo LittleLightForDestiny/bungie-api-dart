@@ -10,7 +10,14 @@ class DestinyQuestStatus{
 	
 	DestinyQuestStatus();
 
-	factory DestinyQuestStatus.fromJson(Map<String, dynamic> json) => _$DestinyQuestStatusFromJson(json);
+	factory DestinyQuestStatus.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyQuestStatusFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the Quest Item. (Note: Quests are defined as Items, and thus you would use this to look up the quest's DestinyInventoryItemDefinition). For information on all steps in the quest, you can then examine its DestinyInventoryItemDefinition.setData property for Quest Steps (which are *also* items). You can use the Item Definition to display human readable data about the overall quest.
 	@JsonKey(name:'questHash')

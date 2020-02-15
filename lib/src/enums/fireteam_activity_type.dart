@@ -49,6 +49,12 @@ enum FireteamActivityType {
   ///Dungeon = 15
   @JsonValue(15)
   Dungeon,
+  ///Sundial = 16
+  @JsonValue(16)
+  Sundial,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension FireteamActivityTypeExtension on FireteamActivityType{
@@ -86,6 +92,8 @@ extension FireteamActivityTypeExtension on FireteamActivityType{
         return 14;
       case FireteamActivityType.Dungeon:
         return 15;
+      case FireteamActivityType.Sundial:
+        return 16;
       default:
         return null;
     }

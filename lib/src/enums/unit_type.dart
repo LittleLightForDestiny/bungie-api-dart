@@ -56,6 +56,9 @@ enum UnitType {
   /// The value is a enumeration of the Completion Reason type.
   @JsonValue(13)
   CompletionReason,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension UnitTypeExtension on UnitType{

@@ -10,7 +10,14 @@ class TrendingEntry{
 	
 	TrendingEntry();
 
-	factory TrendingEntry.fromJson(Map<String, dynamic> json) => _$TrendingEntryFromJson(json);
+	factory TrendingEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The weighted score of this trending item.
 	@JsonKey(name:'weight')
@@ -21,7 +28,7 @@ class TrendingEntry{
 	@JsonKey(name:'identifier')
 	String identifier;
 	/// An enum - unfortunately - dictating all of the possible kinds of trending items that you might get in your result set, in case you want to do custom rendering or call to get the details of the item.
-	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.News)
+	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
 	TrendingEntryType entityType;
 	/// The localized "display name/article title/'primary localized identifier'" of the entity.
 	@JsonKey(name:'displayName')

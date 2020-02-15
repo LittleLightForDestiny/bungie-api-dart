@@ -9,7 +9,14 @@ class DestinyItemSummaryBlockDefinition{
 	
 	DestinyItemSummaryBlockDefinition();
 
-	factory DestinyItemSummaryBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSummaryBlockDefinitionFromJson(json);
+	factory DestinyItemSummaryBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSummaryBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Apparently when rendering an item in a reward, this should be used as a sort priority. We're not doing it presently.
 	@JsonKey(name:'sortPriority')

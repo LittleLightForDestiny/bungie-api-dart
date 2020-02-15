@@ -11,7 +11,14 @@ class DestinyProfileTransitoryPartyMember{
 	
 	DestinyProfileTransitoryPartyMember();
 
-	factory DestinyProfileTransitoryPartyMember.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryPartyMemberFromJson(json);
+	factory DestinyProfileTransitoryPartyMember.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileTransitoryPartyMemberFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The Membership ID that matches the party member.
 	@JsonKey(name:'membershipId')

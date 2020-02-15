@@ -16,10 +16,10 @@ DestinyActivityModeDefinition _$DestinyActivityModeDefinitionFromJson(
     ..pgcrImage = json['pgcrImage'] as String
     ..modeType = _$enumDecodeNullable(
         _$DestinyActivityModeTypeEnumMap, json['modeType'],
-        unknownValue: DestinyActivityModeType.None)
+        unknownValue: DestinyActivityModeType.ProtectedInvalidEnumValue)
     ..activityModeCategory = _$enumDecodeNullable(
         _$DestinyActivityModeCategoryEnumMap, json['activityModeCategory'],
-        unknownValue: DestinyActivityModeCategory.None)
+        unknownValue: DestinyActivityModeCategory.ProtectedInvalidEnumValue)
     ..isTeamBased = json['isTeamBased'] as bool
     ..isAggregateMode = json['isAggregateMode'] as bool
     ..parentHashes =
@@ -165,6 +165,9 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.NightmareHunt: 79,
   DestinyActivityModeType.Elimination: 80,
   DestinyActivityModeType.Momentum: 81,
+  DestinyActivityModeType.Dungeon: 82,
+  DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyActivityModeCategoryEnumMap = {
@@ -172,4 +175,5 @@ const _$DestinyActivityModeCategoryEnumMap = {
   DestinyActivityModeCategory.PvE: 1,
   DestinyActivityModeCategory.PvP: 2,
   DestinyActivityModeCategory.PvECompetitive: 3,
+  DestinyActivityModeCategory.ProtectedInvalidEnumValue: 999999999,
 };

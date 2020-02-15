@@ -10,6 +10,9 @@ enum DestinyStatAggregationType {
   ///Item = 2
   @JsonValue(2)
   Item,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyStatAggregationTypeExtension on DestinyStatAggregationType{

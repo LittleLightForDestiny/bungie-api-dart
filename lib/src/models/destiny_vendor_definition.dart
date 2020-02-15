@@ -29,7 +29,14 @@ class DestinyVendorDefinition{
 	
 	DestinyVendorDefinition();
 
-	factory DestinyVendorDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorDefinitionFromJson(json);
+	factory DestinyVendorDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'displayProperties')
 	DestinyVendorDisplayPropertiesDefinition displayProperties;

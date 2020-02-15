@@ -10,7 +10,14 @@ class DestinyItemPerkEntryDefinition{
 	
 	DestinyItemPerkEntryDefinition();
 
-	factory DestinyItemPerkEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemPerkEntryDefinitionFromJson(json);
+	factory DestinyItemPerkEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPerkEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If this perk is not active, this is the string to show for why it's not providing its benefits.
 	@JsonKey(name:'requirementDisplayString')
@@ -19,7 +26,7 @@ class DestinyItemPerkEntryDefinition{
 	@JsonKey(name:'perkHash')
 	int perkHash;
 	/// Indicates whether this perk should be shown, or if it should be shown disabled.
-	@JsonKey(name:'perkVisibility',unknownEnumValue:ItemPerkVisibility.Visible)
+	@JsonKey(name:'perkVisibility',unknownEnumValue:ItemPerkVisibility.ProtectedInvalidEnumValue)
 	ItemPerkVisibility perkVisibility;
 
 	

@@ -18,7 +18,7 @@ DestinyEquippingBlockDefinition _$DestinyEquippingBlockDefinitionFromJson(
         : EquippingItemBlockAttributes.fromJson(json['attributes'] as int)
     ..ammoType = _$enumDecodeNullable(
         _$DestinyAmmunitionTypeEnumMap, json['ammoType'],
-        unknownValue: DestinyAmmunitionType.None)
+        unknownValue: DestinyAmmunitionType.ProtectedInvalidEnumValue)
     ..displayStrings =
         (json['displayStrings'] as List)?.map((e) => e as String)?.toList();
 }
@@ -73,4 +73,5 @@ const _$DestinyAmmunitionTypeEnumMap = {
   DestinyAmmunitionType.Special: 2,
   DestinyAmmunitionType.Heavy: 3,
   DestinyAmmunitionType.Unknown: 4,
+  DestinyAmmunitionType.ProtectedInvalidEnumValue: 999999999,
 };

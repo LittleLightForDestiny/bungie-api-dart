@@ -9,7 +9,14 @@ class DestinyActivityGraphDisplayProgressionDefinition{
 	
 	DestinyActivityGraphDisplayProgressionDefinition();
 
-	factory DestinyActivityGraphDisplayProgressionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDisplayProgressionDefinitionFromJson(json);
+	factory DestinyActivityGraphDisplayProgressionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGraphDisplayProgressionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'id')
 	int id;

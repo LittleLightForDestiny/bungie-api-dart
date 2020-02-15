@@ -9,7 +9,14 @@ class DestinyProfileCollectiblesComponent{
 	
 	DestinyProfileCollectiblesComponent();
 
-	factory DestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileCollectiblesComponentFromJson(json);
+	factory DestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileCollectiblesComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The list of collectibles determined by the game as having been "recently" acquired.
 	@JsonKey(name:'recentCollectibleHashes')

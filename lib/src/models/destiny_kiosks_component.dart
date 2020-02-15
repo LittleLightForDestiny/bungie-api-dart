@@ -12,7 +12,14 @@ class DestinyKiosksComponent{
 	
 	DestinyKiosksComponent();
 
-	factory DestinyKiosksComponent.fromJson(Map<String, dynamic> json) => _$DestinyKiosksComponentFromJson(json);
+	factory DestinyKiosksComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyKiosksComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A dictionary keyed by the Kiosk Vendor's hash identifier (use it to look up the DestinyVendorDefinition for the relevant kiosk vendor), and whose value is a list of all the items that the user can "see" in the Kiosk, and any other interesting metadata.
 	@JsonKey(name:'kioskItems')

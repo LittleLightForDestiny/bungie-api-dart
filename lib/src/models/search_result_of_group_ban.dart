@@ -10,7 +10,14 @@ class SearchResultOfGroupBan{
 	
 	SearchResultOfGroupBan();
 
-	factory SearchResultOfGroupBan.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupBanFromJson(json);
+	factory SearchResultOfGroupBan.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfGroupBanFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<GroupBan> results;

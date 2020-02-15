@@ -13,6 +13,9 @@ enum GroupSortBy {
   ///Id = 3
   @JsonValue(3)
   Id,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupSortByExtension on GroupSortBy{

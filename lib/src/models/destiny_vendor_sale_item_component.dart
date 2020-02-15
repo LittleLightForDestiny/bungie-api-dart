@@ -14,7 +14,14 @@ class DestinyVendorSaleItemComponent{
 	
 	DestinyVendorSaleItemComponent();
 
-	factory DestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorSaleItemComponentFromJson(json);
+	factory DestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorSaleItemComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A flag indicating whether the requesting character can buy the item, and if not the reasons why the character can't buy it.
 	@JsonKey(name:'saleStatus')

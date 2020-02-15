@@ -22,6 +22,9 @@ enum DestinySocketCategoryStyle {
   ///LargePerk = 6
   @JsonValue(6)
   LargePerk,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinySocketCategoryStyleExtension on DestinySocketCategoryStyle{

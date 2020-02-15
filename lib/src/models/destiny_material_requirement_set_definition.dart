@@ -11,7 +11,14 @@ class DestinyMaterialRequirementSetDefinition{
 	
 	DestinyMaterialRequirementSetDefinition();
 
-	factory DestinyMaterialRequirementSetDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMaterialRequirementSetDefinitionFromJson(json);
+	factory DestinyMaterialRequirementSetDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMaterialRequirementSetDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The list of all materials that are required.
 	@JsonKey(name:'materials')

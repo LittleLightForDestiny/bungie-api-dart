@@ -10,7 +10,7 @@ GroupPotentialMember _$GroupPotentialMemberFromJson(Map<String, dynamic> json) {
   return GroupPotentialMember()
     ..potentialStatus = _$enumDecodeNullable(
         _$GroupPotentialMemberStatusEnumMap, json['potentialStatus'],
-        unknownValue: GroupPotentialMemberStatus.None)
+        unknownValue: GroupPotentialMemberStatus.ProtectedInvalidEnumValue)
     ..groupId = json['groupId'] as String
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
@@ -70,4 +70,5 @@ const _$GroupPotentialMemberStatusEnumMap = {
   GroupPotentialMemberStatus.None: 0,
   GroupPotentialMemberStatus.Applicant: 1,
   GroupPotentialMemberStatus.Invitee: 2,
+  GroupPotentialMemberStatus.ProtectedInvalidEnumValue: 999999999,
 };

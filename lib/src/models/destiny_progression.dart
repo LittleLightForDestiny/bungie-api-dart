@@ -11,7 +11,14 @@ class DestinyProgression{
 	
 	DestinyProgression();
 
-	factory DestinyProgression.fromJson(Map<String, dynamic> json) => _$DestinyProgressionFromJson(json);
+	factory DestinyProgression.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Progression in question. Use it to look up the DestinyProgressionDefinition in static data.
 	@JsonKey(name:'progressionHash')

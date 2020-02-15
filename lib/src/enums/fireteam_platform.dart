@@ -16,6 +16,12 @@ enum FireteamPlatform {
   ///Steam = 4
   @JsonValue(4)
   Steam,
+  ///Stadia = 5
+  @JsonValue(5)
+  Stadia,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension FireteamPlatformExtension on FireteamPlatform{
@@ -31,6 +37,8 @@ extension FireteamPlatformExtension on FireteamPlatform{
         return 3;
       case FireteamPlatform.Steam:
         return 4;
+      case FireteamPlatform.Stadia:
+        return 5;
       default:
         return null;
     }

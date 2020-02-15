@@ -10,7 +10,14 @@ class DestinyActivityPlaylistItemDefinition{
 	
 	DestinyActivityPlaylistItemDefinition();
 
-	factory DestinyActivityPlaylistItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityPlaylistItemDefinitionFromJson(json);
+	factory DestinyActivityPlaylistItemDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityPlaylistItemDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Activity that can be played. Use it to look up the DestinyActivityDefinition.
 	@JsonKey(name:'activityHash')

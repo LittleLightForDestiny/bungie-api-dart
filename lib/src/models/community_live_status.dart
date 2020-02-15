@@ -10,7 +10,14 @@ class CommunityLiveStatus{
 	
 	CommunityLiveStatus();
 
-	factory CommunityLiveStatus.fromJson(Map<String, dynamic> json) => _$CommunityLiveStatusFromJson(json);
+	factory CommunityLiveStatus.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$CommunityLiveStatusFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'dateStatusUpdated')
 	String dateStatusUpdated;
@@ -18,7 +25,7 @@ class CommunityLiveStatus{
 	String url;
 	@JsonKey(name:'partnershipIdentifier')
 	String partnershipIdentifier;
-	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.None)
+	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.ProtectedInvalidEnumValue)
 	PartnershipType partnershipType;
 	@JsonKey(name:'thumbnail')
 	String thumbnail;

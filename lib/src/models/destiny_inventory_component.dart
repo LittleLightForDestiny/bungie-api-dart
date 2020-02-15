@@ -11,7 +11,14 @@ class DestinyInventoryComponent{
 	
 	DestinyInventoryComponent();
 
-	factory DestinyInventoryComponent.fromJson(Map<String, dynamic> json) => _$DestinyInventoryComponentFromJson(json);
+	factory DestinyInventoryComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyInventoryComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The items in this inventory. If you care to bucket them, use the item's bucketHash property to group them.
 	@JsonKey(name:'items')

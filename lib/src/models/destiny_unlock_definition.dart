@@ -10,7 +10,14 @@ class DestinyUnlockDefinition{
 	
 	DestinyUnlockDefinition();
 
-	factory DestinyUnlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyUnlockDefinitionFromJson(json);
+	factory DestinyUnlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyUnlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Sometimes, but not frequently, these unlock flags also have human readable information: usually when they are being directly tested for some requirement, in which case the string is a localized description of why the requirement check failed.
 	@JsonKey(name:'displayProperties')

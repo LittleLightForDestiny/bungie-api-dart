@@ -9,7 +9,14 @@ class DestinyPostGameCarnageReportTeamEntry{
 	
 	DestinyPostGameCarnageReportTeamEntry();
 
-	factory DestinyPostGameCarnageReportTeamEntry.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportTeamEntryFromJson(json);
+	factory DestinyPostGameCarnageReportTeamEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPostGameCarnageReportTeamEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Integer ID for the team.
 	@JsonKey(name:'teamId')

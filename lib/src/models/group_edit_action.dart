@@ -8,7 +8,14 @@ class GroupEditAction{
 	
 	GroupEditAction();
 
-	factory GroupEditAction.fromJson(Map<String, dynamic> json) => _$GroupEditActionFromJson(json);
+	factory GroupEditAction.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupEditActionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;

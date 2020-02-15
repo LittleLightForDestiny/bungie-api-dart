@@ -9,7 +9,14 @@ class EMailSettingSubscriptionLocalization{
 	
 	EMailSettingSubscriptionLocalization();
 
-	factory EMailSettingSubscriptionLocalization.fromJson(Map<String, dynamic> json) => _$EMailSettingSubscriptionLocalizationFromJson(json);
+	factory EMailSettingSubscriptionLocalization.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EMailSettingSubscriptionLocalizationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'unknownUserDescription')
 	String unknownUserDescription;

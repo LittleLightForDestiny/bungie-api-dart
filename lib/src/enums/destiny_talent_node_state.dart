@@ -43,6 +43,9 @@ enum DestinyTalentNodeState {
   ///Hidden = 13
   @JsonValue(13)
   Hidden,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyTalentNodeStateExtension on DestinyTalentNodeState{

@@ -9,7 +9,14 @@ class DestinyHistoricalStatsValue{
 	
 	DestinyHistoricalStatsValue();
 
-	factory DestinyHistoricalStatsValue.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsValueFromJson(json);
+	factory DestinyHistoricalStatsValue.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsValueFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Unique ID for this stat
 	@JsonKey(name:'statId')

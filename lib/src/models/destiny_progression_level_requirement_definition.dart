@@ -11,7 +11,14 @@ class DestinyProgressionLevelRequirementDefinition{
 	
 	DestinyProgressionLevelRequirementDefinition();
 
-	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
+	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A curve of level requirements, weighted by the related progressions' level.
 	/// Interpolate against this curve with the character's progression level to determine what the level requirement of the generated item that is using this data will be.

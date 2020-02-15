@@ -19,19 +19,19 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
     ..itemTypeRegex = json['itemTypeRegex'] as String
     ..grantDestinyBreakerType = _$enumDecodeNullable(
         _$DestinyBreakerTypeEnumMap, json['grantDestinyBreakerType'],
-        unknownValue: DestinyBreakerType.None)
+        unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
     ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String
     ..itemTypeRegexNot = json['itemTypeRegexNot'] as String
     ..originBucketIdentifier = json['originBucketIdentifier'] as String
     ..grantDestinyItemType = _$enumDecodeNullable(
         _$DestinyItemTypeEnumMap, json['grantDestinyItemType'],
-        unknownValue: DestinyItemType.None)
+        unknownValue: DestinyItemType.ProtectedInvalidEnumValue)
     ..grantDestinySubType = _$enumDecodeNullable(
         _$DestinyItemSubTypeEnumMap, json['grantDestinySubType'],
-        unknownValue: DestinyItemSubType.None)
+        unknownValue: DestinyItemSubType.ProtectedInvalidEnumValue)
     ..grantDestinyClass = _$enumDecodeNullable(
         _$DestinyClassEnumMap, json['grantDestinyClass'],
-        unknownValue: DestinyClass.Titan)
+        unknownValue: DestinyClass.ProtectedInvalidEnumValue)
     ..groupedCategoryHashes =
         (json['groupedCategoryHashes'] as List)?.map((e) => e as int)?.toList()
     ..parentCategoryHashes =
@@ -105,6 +105,7 @@ const _$DestinyBreakerTypeEnumMap = {
   DestinyBreakerType.ShieldPiercing: 1,
   DestinyBreakerType.Disruption: 2,
   DestinyBreakerType.Stagger: 3,
+  DestinyBreakerType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyItemTypeEnumMap = {
@@ -135,6 +136,7 @@ const _$DestinyItemTypeEnumMap = {
   DestinyItemType.Wrapper: 27,
   DestinyItemType.SeasonalArtifact: 28,
   DestinyItemType.Finisher: 29,
+  DestinyItemType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyItemSubTypeEnumMap = {
@@ -167,6 +169,7 @@ const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.LegArmor: 29,
   DestinyItemSubType.ClassArmor: 30,
   DestinyItemSubType.Bow: 31,
+  DestinyItemSubType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyClassEnumMap = {
@@ -174,4 +177,5 @@ const _$DestinyClassEnumMap = {
   DestinyClass.Hunter: 1,
   DestinyClass.Warlock: 2,
   DestinyClass.Unknown: 3,
+  DestinyClass.ProtectedInvalidEnumValue: 999999999,
 };

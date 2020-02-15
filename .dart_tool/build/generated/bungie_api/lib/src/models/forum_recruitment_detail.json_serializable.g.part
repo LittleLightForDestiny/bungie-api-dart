@@ -9,10 +9,10 @@ ForumRecruitmentDetail _$ForumRecruitmentDetailFromJson(
     ..microphoneRequired = json['microphoneRequired'] as bool
     ..intensity = _$enumDecodeNullable(
         _$ForumRecruitmentIntensityLabelEnumMap, json['intensity'],
-        unknownValue: ForumRecruitmentIntensityLabel.None)
+        unknownValue: ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue)
     ..tone = _$enumDecodeNullable(
         _$ForumRecruitmentToneLabelEnumMap, json['tone'],
-        unknownValue: ForumRecruitmentToneLabel.None)
+        unknownValue: ForumRecruitmentToneLabel.ProtectedInvalidEnumValue)
     ..approved = json['approved'] as bool
     ..conversationId = json['conversationId'] as String
     ..playerSlotsTotal = json['playerSlotsTotal'] as int
@@ -76,10 +76,12 @@ const _$ForumRecruitmentIntensityLabelEnumMap = {
   ForumRecruitmentIntensityLabel.None: 0,
   ForumRecruitmentIntensityLabel.Casual: 1,
   ForumRecruitmentIntensityLabel.Professional: 2,
+  ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$ForumRecruitmentToneLabelEnumMap = {
   ForumRecruitmentToneLabel.None: 0,
   ForumRecruitmentToneLabel.FamilyFriendly: 1,
   ForumRecruitmentToneLabel.Rowdy: 2,
+  ForumRecruitmentToneLabel.ProtectedInvalidEnumValue: 999999999,
 };

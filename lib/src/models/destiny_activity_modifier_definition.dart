@@ -10,7 +10,14 @@ class DestinyActivityModifierDefinition{
 	
 	DestinyActivityModifierDefinition();
 
-	factory DestinyActivityModifierDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityModifierDefinitionFromJson(json);
+	factory DestinyActivityModifierDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityModifierDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

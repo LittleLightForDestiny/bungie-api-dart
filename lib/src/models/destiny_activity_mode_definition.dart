@@ -13,7 +13,14 @@ class DestinyActivityModeDefinition{
 	
 	DestinyActivityModeDefinition();
 
-	factory DestinyActivityModeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityModeDefinitionFromJson(json);
+	factory DestinyActivityModeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityModeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -22,10 +29,10 @@ class DestinyActivityModeDefinition{
 	@JsonKey(name:'pgcrImage')
 	String pgcrImage;
 	/// The Enumeration value for this Activity Mode. Pass this identifier into Stats endpoints to get aggregate stats for this mode.
-	@JsonKey(name:'modeType',unknownEnumValue:DestinyActivityModeType.None)
+	@JsonKey(name:'modeType',unknownEnumValue:DestinyActivityModeType.ProtectedInvalidEnumValue)
 	DestinyActivityModeType modeType;
 	/// The type of play being performed in broad terms (PVP, PVE)
-	@JsonKey(name:'activityModeCategory',unknownEnumValue:DestinyActivityModeCategory.None)
+	@JsonKey(name:'activityModeCategory',unknownEnumValue:DestinyActivityModeCategory.ProtectedInvalidEnumValue)
 	DestinyActivityModeCategory activityModeCategory;
 	/// If True, this mode has oppositional teams fighting against each other rather than "Free-For-All" or Co-operative modes of play.
 	/// Note that Aggregate modes are never marked as team based, even if they happen to be team based at the moment. At any time, an aggregate whose subordinates are only team based could be changed so that one or more aren't team based, and then this boolean won't make much sense (the aggregation would become "sometimes team based"). Let's not deal with that right now.

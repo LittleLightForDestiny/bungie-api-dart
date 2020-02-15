@@ -20,7 +20,14 @@ class DestinyObjectiveDefinition{
 	
 	DestinyObjectiveDefinition();
 
-	factory DestinyObjectiveDefinition.fromJson(Map<String, dynamic> json) => _$DestinyObjectiveDefinitionFromJson(json);
+	factory DestinyObjectiveDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyObjectiveDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Ideally, this should tell you what your task is. I'm not going to lie to you though. Sometimes this doesn't have useful information at all. Which sucks, but there's nothing either of us can do about it.
 	@JsonKey(name:'displayProperties')
@@ -29,7 +36,7 @@ class DestinyObjectiveDefinition{
 	@JsonKey(name:'completionValue')
 	int completionValue;
 	/// A shortcut for determining the most restrictive gating that this Objective is set to use. This includes both the dynamic determination of progress and of completion values. See the DestinyGatingScope enum's documentation for more details.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.None)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
 	DestinyGatingScope scope;
 	/// OPTIONAL: a hash identifier for the location at which this objective must be accomplished, if there is a location defined. Look up the DestinyLocationDefinition for this hash for that additional location info.
 	@JsonKey(name:'locationHash')
@@ -46,7 +53,7 @@ class DestinyObjectiveDefinition{
 	@JsonKey(name:'isCountingDownward')
 	bool isCountingDownward;
 	/// The UI style applied to the objective. It's an enum, take a look at DestinyUnlockValueUIStyle for details of the possible styles. Use this info as you wish to customize your UI.
-	@JsonKey(name:'valueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.Automatic)
+	@JsonKey(name:'valueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
 	DestinyUnlockValueUIStyle valueStyle;
 	/// Text to describe the progress bar.
 	@JsonKey(name:'progressDescription')
@@ -67,10 +74,10 @@ class DestinyObjectiveDefinition{
 	@JsonKey(name:'showValueOnComplete')
 	bool showValueOnComplete;
 	/// The style to use when the objective is completed.
-	@JsonKey(name:'completedValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.Automatic)
+	@JsonKey(name:'completedValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
 	DestinyUnlockValueUIStyle completedValueStyle;
 	/// The style to use when the objective is still in progress.
-	@JsonKey(name:'inProgressValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.Automatic)
+	@JsonKey(name:'inProgressValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
 	DestinyUnlockValueUIStyle inProgressValueStyle;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

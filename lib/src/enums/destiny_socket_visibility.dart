@@ -13,6 +13,9 @@ enum DestinySocketVisibility {
   ///HiddenIfNoPlugsAvailable = 3
   @JsonValue(3)
   HiddenIfNoPlugsAvailable,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinySocketVisibilityExtension on DestinySocketVisibility{

@@ -13,7 +13,14 @@ class DestinyLinkedProfilesResponse{
 	
 	DestinyLinkedProfilesResponse();
 
-	factory DestinyLinkedProfilesResponse.fromJson(Map<String, dynamic> json) => _$DestinyLinkedProfilesResponseFromJson(json);
+	factory DestinyLinkedProfilesResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLinkedProfilesResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Any Destiny account for whom we could successfully pull characters will be returned here, as the Platform-level summary of user data. (no character data, no Destiny account data other than the Membership ID and Type so you can make further queries)
 	@JsonKey(name:'profiles')

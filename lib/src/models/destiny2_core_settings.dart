@@ -8,7 +8,14 @@ class Destiny2CoreSettings{
 	
 	Destiny2CoreSettings();
 
-	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) => _$Destiny2CoreSettingsFromJson(json);
+	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$Destiny2CoreSettingsFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'collectionRootNode')
 	int collectionRootNode;
@@ -34,6 +41,8 @@ class Destiny2CoreSettings{
 	int currentSeasonHash;
 	@JsonKey(name:'futureSeasonHashes')
 	List<int> futureSeasonHashes;
+	@JsonKey(name:'pastSeasonHashes')
+	List<int> pastSeasonHashes;
 
 	
 	

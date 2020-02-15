@@ -9,7 +9,14 @@ class DestinyDisplayPropertiesDefinition{
 	
 	DestinyDisplayPropertiesDefinition();
 
-	factory DestinyDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDisplayPropertiesDefinitionFromJson(json);
+	factory DestinyDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDisplayPropertiesDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'description')
 	String description;

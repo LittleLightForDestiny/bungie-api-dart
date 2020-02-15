@@ -10,6 +10,9 @@ enum GroupHomepage {
   ///AllianceForum = 2
   @JsonValue(2)
   AllianceForum,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupHomepageExtension on GroupHomepage{

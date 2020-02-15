@@ -12,7 +12,14 @@ class GroupResponse{
 	
 	GroupResponse();
 
-	factory GroupResponse.fromJson(Map<String, dynamic> json) => _$GroupResponseFromJson(json);
+	factory GroupResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'detail')
 	GroupV2 detail;
@@ -22,7 +29,7 @@ class GroupResponse{
 	List<String> alliedIds;
 	@JsonKey(name:'parentGroup')
 	GroupV2 parentGroup;
-	@JsonKey(name:'allianceStatus',unknownEnumValue:GroupAllianceStatus.Unallied)
+	@JsonKey(name:'allianceStatus',unknownEnumValue:GroupAllianceStatus.ProtectedInvalidEnumValue)
 	GroupAllianceStatus allianceStatus;
 	@JsonKey(name:'groupJoinInviteCount')
 	int groupJoinInviteCount;

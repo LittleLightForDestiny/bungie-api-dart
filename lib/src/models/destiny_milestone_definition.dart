@@ -28,19 +28,26 @@ class DestinyMilestoneDefinition{
 	
 	DestinyMilestoneDefinition();
 
-	factory DestinyMilestoneDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneDefinitionFromJson(json);
+	factory DestinyMilestoneDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// A hint to the UI to indicate what to show as the display properties for this Milestone when showing "Live" milestone data. Feel free to show more than this if desired: this hint is meant to simplify our own UI, but it may prove useful to you as well.
-	@JsonKey(name:'displayPreference',unknownEnumValue:DestinyMilestoneDisplayPreference.MilestoneDefinition)
+	@JsonKey(name:'displayPreference',unknownEnumValue:DestinyMilestoneDisplayPreference.ProtectedInvalidEnumValue)
 	DestinyMilestoneDisplayPreference displayPreference;
 	/// A custom image someone made just for the milestone. Isn't that special?
 	@JsonKey(name:'image')
 	String image;
 	/// An enumeration listing one of the possible types of milestones. Check out the DestinyMilestoneType enum for more info!
-	@JsonKey(name:'milestoneType',unknownEnumValue:DestinyMilestoneType.Unknown)
+	@JsonKey(name:'milestoneType',unknownEnumValue:DestinyMilestoneType.ProtectedInvalidEnumValue)
 	DestinyMilestoneType milestoneType;
 	/// If True, then the Milestone has been integrated with BNet's recruiting feature.
 	@JsonKey(name:'recruitable')

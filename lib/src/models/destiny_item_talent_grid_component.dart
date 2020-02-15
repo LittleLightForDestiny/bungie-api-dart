@@ -17,7 +17,14 @@ class DestinyItemTalentGridComponent{
 	
 	DestinyItemTalentGridComponent();
 
-	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemTalentGridComponentFromJson(json);
+	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemTalentGridComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Most items don't have useful talent grids anymore, but Builds in particular still do.
 	/// You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.

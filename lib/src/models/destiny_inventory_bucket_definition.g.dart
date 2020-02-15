@@ -14,13 +14,13 @@ DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..scope = _$enumDecodeNullable(_$BucketScopeEnumMap, json['scope'],
-        unknownValue: BucketScope.Character)
+        unknownValue: BucketScope.ProtectedInvalidEnumValue)
     ..category = _$enumDecodeNullable(_$BucketCategoryEnumMap, json['category'],
-        unknownValue: BucketCategory.Invisible)
+        unknownValue: BucketCategory.ProtectedInvalidEnumValue)
     ..bucketOrder = json['bucketOrder'] as int
     ..itemCount = json['itemCount'] as int
     ..location = _$enumDecodeNullable(_$ItemLocationEnumMap, json['location'],
-        unknownValue: ItemLocation.Unknown)
+        unknownValue: ItemLocation.ProtectedInvalidEnumValue)
     ..hasTransferDestination = json['hasTransferDestination'] as bool
     ..enabled = json['enabled'] as bool
     ..fifo = json['fifo'] as bool
@@ -81,6 +81,7 @@ T _$enumDecodeNullable<T>(
 const _$BucketScopeEnumMap = {
   BucketScope.Character: 0,
   BucketScope.Account: 1,
+  BucketScope.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$BucketCategoryEnumMap = {
@@ -89,6 +90,7 @@ const _$BucketCategoryEnumMap = {
   BucketCategory.Currency: 2,
   BucketCategory.Equippable: 3,
   BucketCategory.Ignored: 4,
+  BucketCategory.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$ItemLocationEnumMap = {
@@ -97,4 +99,5 @@ const _$ItemLocationEnumMap = {
   ItemLocation.Vault: 2,
   ItemLocation.Vendor: 3,
   ItemLocation.Postmaster: 4,
+  ItemLocation.ProtectedInvalidEnumValue: 999999999,
 };

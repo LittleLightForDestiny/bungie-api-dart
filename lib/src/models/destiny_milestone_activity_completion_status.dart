@@ -10,7 +10,14 @@ class DestinyMilestoneActivityCompletionStatus{
 	
 	DestinyMilestoneActivityCompletionStatus();
 
-	factory DestinyMilestoneActivityCompletionStatus.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityCompletionStatusFromJson(json);
+	factory DestinyMilestoneActivityCompletionStatus.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityCompletionStatusFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the activity has been "completed", that information will be returned here.
 	@JsonKey(name:'completed')

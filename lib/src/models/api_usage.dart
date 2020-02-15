@@ -10,7 +10,14 @@ class ApiUsage{
 	
 	ApiUsage();
 
-	factory ApiUsage.fromJson(Map<String, dynamic> json) => _$ApiUsageFromJson(json);
+	factory ApiUsage.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ApiUsageFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The date range for the data being reported.
 	@JsonKey(name:'range')

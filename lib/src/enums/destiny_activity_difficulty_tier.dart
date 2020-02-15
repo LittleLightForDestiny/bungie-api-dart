@@ -25,6 +25,9 @@ enum DestinyActivityDifficultyTier {
   ///Impossible = 7
   @JsonValue(7)
   Impossible,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyActivityDifficultyTierExtension on DestinyActivityDifficultyTier{

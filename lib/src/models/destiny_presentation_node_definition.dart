@@ -20,7 +20,14 @@ class DestinyPresentationNodeDefinition{
 	
 	DestinyPresentationNodeDefinition();
 
-	factory DestinyPresentationNodeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeDefinitionFromJson(json);
+	factory DestinyPresentationNodeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPresentationNodeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -31,10 +38,10 @@ class DestinyPresentationNodeDefinition{
 	/// Some presentation nodes are meant to be explicitly shown on the "root" or "entry" screens for the feature to which they are related. You should use this icon when showing them on such a view, if you have a similar "entry point" view in your UI. If you don't have a UI, then I guess it doesn't matter either way does it?
 	@JsonKey(name:'rootViewIcon')
 	String rootViewIcon;
-	@JsonKey(name:'nodeType',unknownEnumValue:DestinyPresentationNodeType.Default)
+	@JsonKey(name:'nodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
 	DestinyPresentationNodeType nodeType;
 	/// Indicates whether this presentation node's state is determined on a per-character or on an account-wide basis.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.Profile)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 	/// If this presentation node shows a related objective (for instance, if it tracks the progress of its children), the objective being tracked is indicated here.
 	@JsonKey(name:'objectiveHash')
@@ -46,10 +53,10 @@ class DestinyPresentationNodeDefinition{
 	@JsonKey(name:'children')
 	DestinyPresentationNodeChildrenBlock children;
 	/// A hint for how to display this presentation node when it's shown in a list.
-	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.Category)
+	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
 	DestinyPresentationDisplayStyle displayStyle;
 	/// A hint for how to display this presentation node when it's shown in its own detail screen.
-	@JsonKey(name:'screenStyle',unknownEnumValue:DestinyPresentationScreenStyle.Default)
+	@JsonKey(name:'screenStyle',unknownEnumValue:DestinyPresentationScreenStyle.ProtectedInvalidEnumValue)
 	DestinyPresentationScreenStyle screenStyle;
 	/// The requirements for being able to interact with this presentation node and its children.
 	@JsonKey(name:'requirements')

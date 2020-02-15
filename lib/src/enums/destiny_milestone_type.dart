@@ -24,6 +24,9 @@ enum DestinyMilestoneType {
   /// Special indicates that the event is not on a daily&#x2F;weekly cadence, but does occur more than once. For instance, Iron Banner in Destiny 1 or the Dawning were examples of what could be termed &quot;Special&quot; events.
   @JsonValue(5)
   Special,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyMilestoneTypeExtension on DestinyMilestoneType{

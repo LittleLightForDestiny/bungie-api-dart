@@ -12,7 +12,14 @@ class DestinyItemSocketBlockDefinition{
 	
 	DestinyItemSocketBlockDefinition();
 
-	factory DestinyItemSocketBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketBlockDefinitionFromJson(json);
+	factory DestinyItemSocketBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSocketBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// This was supposed to be a string that would give per-item details about sockets. In practice, it turns out that all this ever has is the localized word "details". ... that's lame, but perhaps it will become something cool in the future.
 	@JsonKey(name:'detail')

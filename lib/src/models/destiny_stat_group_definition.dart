@@ -13,7 +13,14 @@ class DestinyStatGroupDefinition{
 	
 	DestinyStatGroupDefinition();
 
-	factory DestinyStatGroupDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatGroupDefinitionFromJson(json);
+	factory DestinyStatGroupDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyStatGroupDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The maximum possible value that any stat in this group can be transformed into.
 	/// This is used by stats that *don't* have scaledStats entries below, but that still need to be displayed as a progress bar, in which case this is used as the upper bound for said progress bar. (the lower bound is always 0)

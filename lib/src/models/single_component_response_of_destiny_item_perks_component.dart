@@ -10,15 +10,25 @@ class SingleComponentResponseOfDestinyItemPerksComponent{
 	
 	SingleComponentResponseOfDestinyItemPerksComponent();
 
-	factory SingleComponentResponseOfDestinyItemPerksComponent.fromJson(Map<String, dynamic> json) => _$SingleComponentResponseOfDestinyItemPerksComponentFromJson(json);
+	factory SingleComponentResponseOfDestinyItemPerksComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SingleComponentResponseOfDestinyItemPerksComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Instanced items can have perks: benefits that the item bestows.
 	/// These are related to DestinySandboxPerkDefinition, and sometimes - but not always - have human readable info. When they do, they are the icons and text that you see in an item's tooltip.
 	/// Talent Grids, Sockets, and the item itself can apply Perks, which are then summarized here for your convenience.
 	@JsonKey(name:'data')
 	DestinyItemPerksComponent data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

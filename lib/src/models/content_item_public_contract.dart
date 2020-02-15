@@ -11,7 +11,14 @@ class ContentItemPublicContract{
 	
 	ContentItemPublicContract();
 
-	factory ContentItemPublicContract.fromJson(Map<String, dynamic> json) => _$ContentItemPublicContractFromJson(json);
+	factory ContentItemPublicContract.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentItemPublicContractFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'contentId')
 	String contentId;

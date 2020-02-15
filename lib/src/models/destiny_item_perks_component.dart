@@ -12,7 +12,14 @@ class DestinyItemPerksComponent{
 	
 	DestinyItemPerksComponent();
 
-	factory DestinyItemPerksComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemPerksComponentFromJson(json);
+	factory DestinyItemPerksComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPerksComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The list of perks to display in an item tooltip - and whether or not they have been activated.
 	@JsonKey(name:'perks')

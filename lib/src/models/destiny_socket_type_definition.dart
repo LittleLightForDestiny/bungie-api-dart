@@ -15,7 +15,14 @@ class DestinySocketTypeDefinition{
 	
 	DestinySocketTypeDefinition();
 
-	factory DestinySocketTypeDefinition.fromJson(Map<String, dynamic> json) => _$DestinySocketTypeDefinitionFromJson(json);
+	factory DestinySocketTypeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinySocketTypeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// There are fields for this display data, but they appear to be unpopulated as of now. I am not sure where in the UI these would show if they even were populated, but I will continue to return this data in case it becomes useful.
 	@JsonKey(name:'displayProperties')
@@ -31,7 +38,7 @@ class DestinySocketTypeDefinition{
 	@JsonKey(name:'socketCategoryHash')
 	int socketCategoryHash;
 	/// Sometimes a socket isn't visible. These are some of the conditions under which sockets of this type are not visible. Unfortunately, the truth of visibility is much, much more complex. Best to rely on the live data for whether the socket is visible and enabled.
-	@JsonKey(name:'visibility',unknownEnumValue:DestinySocketVisibility.Visible)
+	@JsonKey(name:'visibility',unknownEnumValue:DestinySocketVisibility.ProtectedInvalidEnumValue)
 	DestinySocketVisibility visibility;
 	@JsonKey(name:'alwaysRandomizeSockets')
 	bool alwaysRandomizeSockets;

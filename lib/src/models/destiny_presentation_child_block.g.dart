@@ -11,14 +11,15 @@ DestinyPresentationChildBlock _$DestinyPresentationChildBlockFromJson(
   return DestinyPresentationChildBlock()
     ..presentationNodeType = _$enumDecodeNullable(
         _$DestinyPresentationNodeTypeEnumMap, json['presentationNodeType'],
-        unknownValue: DestinyPresentationNodeType.Default)
+        unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
     ..parentPresentationNodeHashes =
         (json['parentPresentationNodeHashes'] as List)
             ?.map((e) => e as int)
             ?.toList()
     ..displayStyle = _$enumDecodeNullable(
         _$DestinyPresentationDisplayStyleEnumMap, json['displayStyle'],
-        unknownValue: DestinyPresentationDisplayStyle.Category);
+        unknownValue:
+            DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyPresentationChildBlockToJson(
@@ -68,6 +69,7 @@ const _$DestinyPresentationNodeTypeEnumMap = {
   DestinyPresentationNodeType.Category: 1,
   DestinyPresentationNodeType.Collectibles: 2,
   DestinyPresentationNodeType.Records: 3,
+  DestinyPresentationNodeType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyPresentationDisplayStyleEnumMap = {
@@ -76,4 +78,5 @@ const _$DestinyPresentationDisplayStyleEnumMap = {
   DestinyPresentationDisplayStyle.Medals: 2,
   DestinyPresentationDisplayStyle.Collectible: 3,
   DestinyPresentationDisplayStyle.Record: 4,
+  DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue: 999999999,
 };

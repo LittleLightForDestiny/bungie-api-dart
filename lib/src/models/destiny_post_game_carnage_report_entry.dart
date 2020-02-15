@@ -11,7 +11,14 @@ class DestinyPostGameCarnageReportEntry{
 	
 	DestinyPostGameCarnageReportEntry();
 
-	factory DestinyPostGameCarnageReportEntry.fromJson(Map<String, dynamic> json) => _$DestinyPostGameCarnageReportEntryFromJson(json);
+	factory DestinyPostGameCarnageReportEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPostGameCarnageReportEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Standing of the player
 	@JsonKey(name:'standing')

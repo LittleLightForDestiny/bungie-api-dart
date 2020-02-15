@@ -11,7 +11,14 @@ class DestinyCollectibleNodeDetailResponse{
 	
 	DestinyCollectibleNodeDetailResponse();
 
-	factory DestinyCollectibleNodeDetailResponse.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleNodeDetailResponseFromJson(json);
+	factory DestinyCollectibleNodeDetailResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCollectibleNodeDetailResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// COMPONENT TYPE: Collectibles
 	@JsonKey(name:'collectibles')

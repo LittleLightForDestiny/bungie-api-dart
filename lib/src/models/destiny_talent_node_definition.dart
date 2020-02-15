@@ -13,7 +13,14 @@ class DestinyTalentNodeDefinition{
 	
 	DestinyTalentNodeDefinition();
 
-	factory DestinyTalentNodeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeDefinitionFromJson(json);
+	factory DestinyTalentNodeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentNodeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The index into the DestinyTalentGridDefinition's "nodes" property where this node is located. Used to uniquely identify the node within the Talent Grid. Note that this is content version dependent: make sure you have the latest version of content before trying to use these properties.
 	@JsonKey(name:'nodeIndex')

@@ -13,7 +13,7 @@ DestinyItemSetActionRequest _$DestinyItemSetActionRequestFromJson(
     ..characterId = json['characterId'] as String
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None);
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyItemSetActionRequestToJson(
@@ -66,4 +66,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

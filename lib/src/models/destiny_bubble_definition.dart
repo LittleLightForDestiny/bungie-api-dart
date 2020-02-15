@@ -10,7 +10,14 @@ class DestinyBubbleDefinition{
 	
 	DestinyBubbleDefinition();
 
-	factory DestinyBubbleDefinition.fromJson(Map<String, dynamic> json) => _$DestinyBubbleDefinitionFromJson(json);
+	factory DestinyBubbleDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyBubbleDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for the bubble: only guaranteed to be unique within the Destination.
 	@JsonKey(name:'hash')

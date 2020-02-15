@@ -10,7 +10,14 @@ class SearchResultOfGroupPotentialMembership{
 	
 	SearchResultOfGroupPotentialMembership();
 
-	factory SearchResultOfGroupPotentialMembership.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupPotentialMembershipFromJson(json);
+	factory SearchResultOfGroupPotentialMembership.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfGroupPotentialMembershipFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<GroupPotentialMembership> results;

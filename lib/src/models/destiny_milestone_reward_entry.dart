@@ -9,7 +9,14 @@ class DestinyMilestoneRewardEntry{
 	
 	DestinyMilestoneRewardEntry();
 
-	factory DestinyMilestoneRewardEntry.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneRewardEntryFromJson(json);
+	factory DestinyMilestoneRewardEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneRewardEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for the reward entry in question. It is important to look up the related DestinyMilestoneRewardEntryDefinition to get the static details about the reward, which you can do by looking up the milestone's DestinyMilestoneDefinition and examining the DestinyMilestoneDefinition.rewards[rewardCategoryHash].rewardEntries[rewardEntryHash] data.
 	@JsonKey(name:'rewardEntryHash')

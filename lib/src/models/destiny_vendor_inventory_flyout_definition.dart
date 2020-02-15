@@ -11,7 +11,14 @@ class DestinyVendorInventoryFlyoutDefinition{
 	
 	DestinyVendorInventoryFlyoutDefinition();
 
-	factory DestinyVendorInventoryFlyoutDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInventoryFlyoutDefinitionFromJson(json);
+	factory DestinyVendorInventoryFlyoutDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorInventoryFlyoutDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the flyout is locked, this is the reason why.
 	@JsonKey(name:'lockedDescription')

@@ -29,6 +29,9 @@ enum BungieMembershipType {
   /// &quot;All&quot; is only valid for searching capabilities: you need to pass the actual matching BungieMembershipType for any query where you pass a known membershipId.
   @JsonValue(-1)
   All,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension BungieMembershipTypeExtension on BungieMembershipType{

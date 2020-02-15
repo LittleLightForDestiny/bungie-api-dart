@@ -9,7 +9,14 @@ class TrendingEntrySupportArticle{
 	
 	TrendingEntrySupportArticle();
 
-	factory TrendingEntrySupportArticle.fromJson(Map<String, dynamic> json) => _$TrendingEntrySupportArticleFromJson(json);
+	factory TrendingEntrySupportArticle.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntrySupportArticleFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'article')
 	ContentItemPublicContract article;

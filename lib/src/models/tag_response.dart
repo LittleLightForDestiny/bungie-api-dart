@@ -9,7 +9,14 @@ class TagResponse{
 	
 	TagResponse();
 
-	factory TagResponse.fromJson(Map<String, dynamic> json) => _$TagResponseFromJson(json);
+	factory TagResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TagResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'tagText')
 	String tagText;

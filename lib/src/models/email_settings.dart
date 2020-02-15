@@ -12,7 +12,14 @@ class EmailSettings{
 	
 	EmailSettings();
 
-	factory EmailSettings.fromJson(Map<String, dynamic> json) => _$EmailSettingsFromJson(json);
+	factory EmailSettings.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EmailSettingsFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Keyed by the name identifier of the opt-in definition.
 	@JsonKey(name:'optInDefinitions')

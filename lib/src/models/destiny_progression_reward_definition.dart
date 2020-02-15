@@ -10,7 +10,14 @@ class DestinyProgressionRewardDefinition{
 	
 	DestinyProgressionRewardDefinition();
 
-	factory DestinyProgressionRewardDefinition.fromJson(Map<String, dynamic> json) => _$DestinyProgressionRewardDefinitionFromJson(json);
+	factory DestinyProgressionRewardDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProgressionRewardDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the DestinyProgressionMappingDefinition that contains the progressions for which experience should be applied.
 	@JsonKey(name:'progressionMappingHash')

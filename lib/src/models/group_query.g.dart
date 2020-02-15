@@ -10,12 +10,12 @@ GroupQuery _$GroupQueryFromJson(Map<String, dynamic> json) {
   return GroupQuery()
     ..name = json['name'] as String
     ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
-        unknownValue: GroupType.General)
+        unknownValue: GroupType.ProtectedInvalidEnumValue)
     ..creationDate = _$enumDecodeNullable(
         _$GroupDateRangeEnumMap, json['creationDate'],
-        unknownValue: GroupDateRange.All)
+        unknownValue: GroupDateRange.ProtectedInvalidEnumValue)
     ..sortBy = _$enumDecodeNullable(_$GroupSortByEnumMap, json['sortBy'],
-        unknownValue: GroupSortBy.Name)
+        unknownValue: GroupSortBy.ProtectedInvalidEnumValue)
     ..groupMemberCountFilter = json['groupMemberCountFilter'] as int
     ..localeFilter = json['localeFilter'] as String
     ..tagText = json['tagText'] as String
@@ -73,6 +73,7 @@ T _$enumDecodeNullable<T>(
 const _$GroupTypeEnumMap = {
   GroupType.General: 0,
   GroupType.Clan: 1,
+  GroupType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$GroupDateRangeEnumMap = {
@@ -81,6 +82,7 @@ const _$GroupDateRangeEnumMap = {
   GroupDateRange.PastWeek: 2,
   GroupDateRange.PastMonth: 3,
   GroupDateRange.PastYear: 4,
+  GroupDateRange.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$GroupSortByEnumMap = {
@@ -88,4 +90,5 @@ const _$GroupSortByEnumMap = {
   GroupSortBy.Date: 1,
   GroupSortBy.Popularity: 2,
   GroupSortBy.Id: 3,
+  GroupSortBy.ProtectedInvalidEnumValue: 999999999,
 };

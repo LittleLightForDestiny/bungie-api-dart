@@ -44,6 +44,9 @@ enum VendorInteractionType {
   /// Also seem inconsistent. I also don&#39;t know what these are offhand.
   @JsonValue(10)
   Start,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension VendorInteractionTypeExtension on VendorInteractionType{

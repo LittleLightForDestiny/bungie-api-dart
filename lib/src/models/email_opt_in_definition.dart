@@ -11,7 +11,14 @@ class EmailOptInDefinition{
 	
 	EmailOptInDefinition();
 
-	factory EmailOptInDefinition.fromJson(Map<String, dynamic> json) => _$EmailOptInDefinitionFromJson(json);
+	factory EmailOptInDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EmailOptInDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier for this opt-in category.
 	@JsonKey(name:'name')

@@ -10,7 +10,14 @@ class DestinyHistoricalStatsByPeriod{
 	
 	DestinyHistoricalStatsByPeriod();
 
-	factory DestinyHistoricalStatsByPeriod.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsByPeriodFromJson(json);
+	factory DestinyHistoricalStatsByPeriod.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsByPeriodFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'allTime')
 	Map<String, DestinyHistoricalStatsValue> allTime;

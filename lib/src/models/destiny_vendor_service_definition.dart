@@ -9,7 +9,14 @@ class DestinyVendorServiceDefinition{
 	
 	DestinyVendorServiceDefinition();
 
-	factory DestinyVendorServiceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorServiceDefinitionFromJson(json);
+	factory DestinyVendorServiceDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorServiceDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The localized name of a service provided.
 	@JsonKey(name:'name')

@@ -12,7 +12,7 @@ GroupOptionalConversationAddRequest
     ..chatName = json['chatName'] as String
     ..chatSecurity = _$enumDecodeNullable(
         _$ChatSecuritySettingEnumMap, json['chatSecurity'],
-        unknownValue: ChatSecuritySetting.Group);
+        unknownValue: ChatSecuritySetting.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$GroupOptionalConversationAddRequestToJson(
@@ -57,4 +57,5 @@ T _$enumDecodeNullable<T>(
 const _$ChatSecuritySettingEnumMap = {
   ChatSecuritySetting.Group: 0,
   ChatSecuritySetting.Admins: 1,
+  ChatSecuritySetting.ProtectedInvalidEnumValue: 999999999,
 };

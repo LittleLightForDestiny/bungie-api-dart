@@ -8,7 +8,14 @@ class GroupOptionsEditAction{
 	
 	GroupOptionsEditAction();
 
-	factory GroupOptionsEditAction.fromJson(Map<String, dynamic> json) => _$GroupOptionsEditActionFromJson(json);
+	factory GroupOptionsEditAction.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupOptionsEditActionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Minimum Member Level allowed to invite new members to group
 	/// Always Allowed: Founder, Acting Founder

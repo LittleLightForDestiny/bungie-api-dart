@@ -8,7 +8,14 @@ class InterpolationPoint{
 	
 	InterpolationPoint();
 
-	factory InterpolationPoint.fromJson(Map<String, dynamic> json) => _$InterpolationPointFromJson(json);
+	factory InterpolationPoint.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$InterpolationPointFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'value')
 	int value;

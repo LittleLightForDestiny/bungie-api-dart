@@ -9,7 +9,14 @@ class DestinyObjectiveProgress{
 	
 	DestinyObjectiveProgress();
 
-	factory DestinyObjectiveProgress.fromJson(Map<String, dynamic> json) => _$DestinyObjectiveProgressFromJson(json);
+	factory DestinyObjectiveProgress.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyObjectiveProgressFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier of the Objective being referred to. Use to look up the DestinyObjectiveDefinition in static data.
 	@JsonKey(name:'objectiveHash')

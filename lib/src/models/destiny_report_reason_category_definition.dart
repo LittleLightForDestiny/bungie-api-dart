@@ -12,7 +12,14 @@ class DestinyReportReasonCategoryDefinition{
 	
 	DestinyReportReasonCategoryDefinition();
 
-	factory DestinyReportReasonCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyReportReasonCategoryDefinitionFromJson(json);
+	factory DestinyReportReasonCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyReportReasonCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

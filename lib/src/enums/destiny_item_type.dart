@@ -82,6 +82,9 @@ enum DestinyItemType {
   ///Finisher = 29
   @JsonValue(29)
   Finisher,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyItemTypeExtension on DestinyItemType{

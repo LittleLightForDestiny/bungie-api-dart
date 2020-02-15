@@ -13,7 +13,7 @@ DestinyEnergyCapacityEntry _$DestinyEnergyCapacityEntryFromJson(
     ..energyTypeHash = json['energyTypeHash'] as int
     ..energyType = _$enumDecodeNullable(
         _$DestinyEnergyTypeEnumMap, json['energyType'],
-        unknownValue: DestinyEnergyType.Any);
+        unknownValue: DestinyEnergyType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyEnergyCapacityEntryToJson(
@@ -61,4 +61,5 @@ const _$DestinyEnergyTypeEnumMap = {
   DestinyEnergyType.Arc: 1,
   DestinyEnergyType.Thermal: 2,
   DestinyEnergyType.Void: 3,
+  DestinyEnergyType.ProtectedInvalidEnumValue: 999999999,
 };

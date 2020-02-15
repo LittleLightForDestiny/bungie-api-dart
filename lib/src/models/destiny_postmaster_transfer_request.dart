@@ -9,7 +9,14 @@ class DestinyPostmasterTransferRequest{
 	
 	DestinyPostmasterTransferRequest();
 
-	factory DestinyPostmasterTransferRequest.fromJson(Map<String, dynamic> json) => _$DestinyPostmasterTransferRequestFromJson(json);
+	factory DestinyPostmasterTransferRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPostmasterTransferRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'itemReferenceHash')
 	int itemReferenceHash;
@@ -19,7 +26,7 @@ class DestinyPostmasterTransferRequest{
 	String itemId;
 	@JsonKey(name:'characterId')
 	String characterId;
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 
 	

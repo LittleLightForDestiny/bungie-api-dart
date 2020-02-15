@@ -8,7 +8,14 @@ class AwaInitializeResponse{
 	
 	AwaInitializeResponse();
 
-	factory AwaInitializeResponse.fromJson(Map<String, dynamic> json) => _$AwaInitializeResponseFromJson(json);
+	factory AwaInitializeResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$AwaInitializeResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// ID used to get the token. Present this ID to the user as it will identify this specific request on their device.
 	@JsonKey(name:'correlationId')

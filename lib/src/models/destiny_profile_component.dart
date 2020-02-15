@@ -11,7 +11,14 @@ class DestinyProfileComponent{
 	
 	DestinyProfileComponent();
 
-	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) => _$DestinyProfileComponentFromJson(json);
+	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If you need to render the Profile (their platform name, icon, etc...) somewhere, this property contains that information.
 	@JsonKey(name:'userInfo')
@@ -28,8 +35,12 @@ class DestinyProfileComponent{
 	@JsonKey(name:'characterIds')
 	List<String> characterIds;
 	/// A list of seasons that this profile owns. Unlike versionsOwned, these stay with the profile across Platforms, and thus will be valid.
+	///  It turns out that Stadia Pro subscriptions will give access to seasons but only while playing on Stadia and with an active subscription. So some users (users who have Stadia Pro but choose to play on some other platform) won't see these as available: it will be whatever seasons are available for the platform on which they last played.
 	@JsonKey(name:'seasonHashes')
 	List<int> seasonHashes;
+	/// If populated, this is a reference to the season that is currently active.
+	@JsonKey(name:'currentSeasonHash')
+	int currentSeasonHash;
 
 	
 	

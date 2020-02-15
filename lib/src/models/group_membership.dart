@@ -10,7 +10,14 @@ class GroupMembership{
 	
 	GroupMembership();
 
-	factory GroupMembership.fromJson(Map<String, dynamic> json) => _$GroupMembershipFromJson(json);
+	factory GroupMembership.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupMembershipFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'member')
 	GroupMember member;

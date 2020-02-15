@@ -26,7 +26,7 @@ DestinyLocationReleaseDefinition _$DestinyLocationReleaseDefinitionFromJson(
     ..activityPathDestination = json['activityPathDestination'] as int
     ..navPointType = _$enumDecodeNullable(
         _$DestinyActivityNavPointTypeEnumMap, json['navPointType'],
-        unknownValue: DestinyActivityNavPointType.Inactive)
+        unknownValue: DestinyActivityNavPointType.ProtectedInvalidEnumValue)
     ..worldPosition =
         (json['worldPosition'] as List)?.map((e) => e as int)?.toList();
 }
@@ -101,4 +101,5 @@ const _$DestinyActivityNavPointTypeEnumMap = {
   DestinyActivityNavPointType.ArenaObjective: 14,
   DestinyActivityNavPointType.AutomationHint: 15,
   DestinyActivityNavPointType.TrackedQuest: 16,
+  DestinyActivityNavPointType.ProtectedInvalidEnumValue: 999999999,
 };

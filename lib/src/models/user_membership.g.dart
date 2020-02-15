@@ -10,7 +10,7 @@ UserMembership _$UserMembershipFromJson(Map<String, dynamic> json) {
   return UserMembership()
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..membershipId = json['membershipId'] as String
     ..displayName = json['displayName'] as String;
 }
@@ -64,4 +64,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

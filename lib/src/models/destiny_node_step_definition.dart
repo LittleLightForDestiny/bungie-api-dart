@@ -17,7 +17,14 @@ class DestinyNodeStepDefinition{
 	
 	DestinyNodeStepDefinition();
 
-	factory DestinyNodeStepDefinition.fromJson(Map<String, dynamic> json) => _$DestinyNodeStepDefinitionFromJson(json);
+	factory DestinyNodeStepDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyNodeStepDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// These are the display properties actually used to render the Talent Node. The currently active step's displayProperties are shown.
 	@JsonKey(name:'displayProperties')
@@ -33,7 +40,7 @@ class DestinyNodeStepDefinition{
 	@JsonKey(name:'interactionDescription')
 	String interactionDescription;
 	/// An enum representing a damage type granted by activating this step, if any.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType damageType;
 	/// If the step provides a damage type, this will be the hash identifier used to look up the damage type's DestinyDamageTypeDefinition.
 	@JsonKey(name:'damageTypeHash')

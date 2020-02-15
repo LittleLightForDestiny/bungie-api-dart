@@ -18,7 +18,14 @@ class {{className}}{
 		{{/properties}}
 	{{#hasProperties}}}{{/hasProperties}});
 
-	factory {{className}}.fromJson(Map<String, dynamic> json) => _${{className}}FromJson(json);
+	factory {{className}}.fromJson(Map<String, dynamic> json) {
+		try{
+			return _${{className}}FromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	{{#properties}}
 	{{#description}}

@@ -9,7 +9,14 @@ class DestinyMaterialRequirement{
 	
 	DestinyMaterialRequirement();
 
-	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) => _$DestinyMaterialRequirementFromJson(json);
+	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMaterialRequirementFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the material required. Use it to look up the material's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')

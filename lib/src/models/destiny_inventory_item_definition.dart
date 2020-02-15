@@ -40,7 +40,14 @@ class DestinyInventoryItemDefinition{
 	
 	DestinyInventoryItemDefinition();
 
-	factory DestinyInventoryItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyInventoryItemDefinitionFromJson(json);
+	factory DestinyInventoryItemDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyInventoryItemDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -171,22 +178,22 @@ class DestinyInventoryItemDefinition{
 	@JsonKey(name:'itemCategoryHashes')
 	List<int> itemCategoryHashes;
 	/// In Destiny 1, we identified some items as having particular categories that we'd like to know about for various internal logic purposes. These are defined in SpecialItemType, and while these days the itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
-	@JsonKey(name:'specialItemType',unknownEnumValue:SpecialItemType.None)
+	@JsonKey(name:'specialItemType',unknownEnumValue:SpecialItemType.ProtectedInvalidEnumValue)
 	SpecialItemType specialItemType;
 	/// A value indicating the "base" the of the item. This enum is a useful but dramatic oversimplification of what it means for an item to have a "Type". Still, it's handy in many situations.
 	/// itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
-	@JsonKey(name:'itemType',unknownEnumValue:DestinyItemType.None)
+	@JsonKey(name:'itemType',unknownEnumValue:DestinyItemType.ProtectedInvalidEnumValue)
 	DestinyItemType itemType;
 	/// A value indicating the "sub-type" of the item. For instance, where an item might have an itemType value "Weapon", this will be something more specific like "Auto Rifle".
 	/// itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
-	@JsonKey(name:'itemSubType',unknownEnumValue:DestinyItemSubType.None)
+	@JsonKey(name:'itemSubType',unknownEnumValue:DestinyItemSubType.ProtectedInvalidEnumValue)
 	DestinyItemSubType itemSubType;
 	/// We run a similarly weak-sauce algorithm to try and determine whether an item is restricted to a specific class. If we find it to be restricted in such a way, we set this classType property to match the class' enumeration value so that users can easily identify class restricted items.
 	/// If you see a mis-classed item, please inform the developers in the Bungie API forum.
-	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.Titan)
+	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
 	DestinyClass classType;
 	/// Some weapons and plugs can have a "Breaker Type": a special ability that works sort of like damage type vulnerabilities. This is (almost?) always set on items by plugs.
-	@JsonKey(name:'breakerType',unknownEnumValue:DestinyBreakerType.None)
+	@JsonKey(name:'breakerType',unknownEnumValue:DestinyBreakerType.ProtectedInvalidEnumValue)
 	DestinyBreakerType breakerType;
 	/// Since we also have a breaker type definition, this is the hash for that breaker type for your convenience. Whether you use the enum or hash and look up the definition depends on what's cleanest for your code.
 	@JsonKey(name:'breakerTypeHash')
@@ -207,7 +214,7 @@ class DestinyInventoryItemDefinition{
 	List<DamageType> damageTypes;
 	/// If the item has a damage type that could be considered to be default, it will be populated here.
 	/// For various upsetting reasons, it's surprisingly cumbersome to figure this out. I hope you're happy.
-	@JsonKey(name:'defaultDamageType',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'defaultDamageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType defaultDamageType;
 	/// Similar to defaultDamageType, but represented as the hash identifier for a DestinyDamageTypeDefinition.
 	/// I will likely regret leaving in the enumeration versions of these properties, but for now they're very convenient.
@@ -219,6 +226,9 @@ class DestinyInventoryItemDefinition{
 	/// If true, this is a dummy vendor-wrapped item template. Items purchased from Eververse will be "wrapped" by one of these items so that we can safely provide refund capabilities before the item is "unwrapped".
 	@JsonKey(name:'isWrapper')
 	bool isWrapper;
+	/// Traits are metadata tags applied to this item. For example: armor slot, weapon type, foundry, faction, etc. These IDs come from the game and don't map to any content, but should still be useful.
+	@JsonKey(name:'traitIds')
+	List<String> traitIds;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

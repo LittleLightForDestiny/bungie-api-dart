@@ -8,7 +8,14 @@ class DestinyPositionDefinition{
 	
 	DestinyPositionDefinition();
 
-	factory DestinyPositionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPositionDefinitionFromJson(json);
+	factory DestinyPositionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPositionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'x')
 	int x;

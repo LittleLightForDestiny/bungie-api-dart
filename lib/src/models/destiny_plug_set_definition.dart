@@ -14,7 +14,14 @@ class DestinyPlugSetDefinition{
 	
 	DestinyPlugSetDefinition();
 
-	factory DestinyPlugSetDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPlugSetDefinitionFromJson(json);
+	factory DestinyPlugSetDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPlugSetDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If you want to show these plugs in isolation, these are the display properties for them.
 	@JsonKey(name:'displayProperties')

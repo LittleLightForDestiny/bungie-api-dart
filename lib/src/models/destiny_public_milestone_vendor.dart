@@ -8,7 +8,14 @@ class DestinyPublicMilestoneVendor{
 	
 	DestinyPublicMilestoneVendor();
 
-	factory DestinyPublicMilestoneVendor.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneVendorFromJson(json);
+	factory DestinyPublicMilestoneVendor.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneVendorFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the Vendor related to this Milestone. You can show useful things from this, such as thier Faction icon or whatever you might care about.
 	@JsonKey(name:'vendorHash')

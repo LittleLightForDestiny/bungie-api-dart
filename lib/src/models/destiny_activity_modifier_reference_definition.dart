@@ -10,7 +10,14 @@ class DestinyActivityModifierReferenceDefinition{
 	
 	DestinyActivityModifierReferenceDefinition();
 
-	factory DestinyActivityModifierReferenceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityModifierReferenceDefinitionFromJson(json);
+	factory DestinyActivityModifierReferenceDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityModifierReferenceDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the DestinyActivityModifierDefinition referenced by this activity.
 	@JsonKey(name:'activityModifierHash')

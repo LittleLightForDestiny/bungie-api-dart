@@ -10,7 +10,14 @@ class DestinyEntitySearchResult{
 	
 	DestinyEntitySearchResult();
 
-	factory DestinyEntitySearchResult.fromJson(Map<String, dynamic> json) => _$DestinyEntitySearchResultFromJson(json);
+	factory DestinyEntitySearchResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyEntitySearchResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A list of suggested words that might make for better search results, based on the text searched for.
 	@JsonKey(name:'suggestedWords')

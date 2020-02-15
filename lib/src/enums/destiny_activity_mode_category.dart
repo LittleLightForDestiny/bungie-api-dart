@@ -17,6 +17,9 @@ enum DestinyActivityModeCategory {
   /// PVE competitive activities, where you shoot whoever you want whenever you want. Or run around collecting small glowing triangles.
   @JsonValue(3)
   PvECompetitive,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyActivityModeCategoryExtension on DestinyActivityModeCategory{

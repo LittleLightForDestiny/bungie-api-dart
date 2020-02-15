@@ -10,7 +10,7 @@ DestinyItemInstanceComponent _$DestinyItemInstanceComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemInstanceComponent()
     ..damageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['damageType'],
-        unknownValue: DamageType.None)
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..damageTypeHash = json['damageTypeHash'] as int
     ..primaryStat = json['primaryStat'] == null
         ? null
@@ -92,4 +92,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

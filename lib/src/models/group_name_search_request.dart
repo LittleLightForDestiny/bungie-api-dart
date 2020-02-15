@@ -9,11 +9,18 @@ class GroupNameSearchRequest{
 	
 	GroupNameSearchRequest();
 
-	factory GroupNameSearchRequest.fromJson(Map<String, dynamic> json) => _$GroupNameSearchRequestFromJson(json);
+	factory GroupNameSearchRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupNameSearchRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'groupName')
 	String groupName;
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
 	GroupType groupType;
 
 	

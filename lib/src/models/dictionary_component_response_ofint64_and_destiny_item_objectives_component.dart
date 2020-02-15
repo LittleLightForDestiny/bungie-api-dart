@@ -10,12 +10,22 @@ class DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent{
 	
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent();
 
-	factory DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromJson(Map<String, dynamic> json) => _$DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponentFromJson(json);
+	factory DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'data')
 	Map<String, DestinyItemObjectivesComponent> data;
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.None)
+	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting privacy;
+	/// If true, this component is disabled.
+	@JsonKey(name:'disabled')
+	bool disabled;
 
 	
 	

@@ -17,6 +17,9 @@ enum DestinyRewardSourceCategory {
   /// This source is a custom aggregation of items that can be earned in many ways, but that share some other property in common that is useful to share. For instance, in Destiny 1 we would make &quot;Reward Sources&quot; for every game expansion: that way, you could search reward sources to see what items became available with any given Expansion.
   @JsonValue(3)
   Aggregate,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyRewardSourceCategoryExtension on DestinyRewardSourceCategory{

@@ -9,7 +9,7 @@ part of 'application_developer.dart';
 ApplicationDeveloper _$ApplicationDeveloperFromJson(Map<String, dynamic> json) {
   return ApplicationDeveloper()
     ..role = _$enumDecodeNullable(_$DeveloperRoleEnumMap, json['role'],
-        unknownValue: DeveloperRole.None)
+        unknownValue: DeveloperRole.ProtectedInvalidEnumValue)
     ..apiEulaVersion = json['apiEulaVersion'] as int
     ..user = json['user'] == null
         ? null
@@ -60,4 +60,5 @@ const _$DeveloperRoleEnumMap = {
   DeveloperRole.None: 0,
   DeveloperRole.Owner: 1,
   DeveloperRole.TeamMember: 2,
+  DeveloperRole.ProtectedInvalidEnumValue: 999999999,
 };

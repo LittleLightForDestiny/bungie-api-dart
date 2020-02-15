@@ -16,6 +16,9 @@ enum ActivityGraphNodeHighlightType {
   ///RiseOfIron = 4
   @JsonValue(4)
   RiseOfIron,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ActivityGraphNodeHighlightTypeExtension on ActivityGraphNodeHighlightType{

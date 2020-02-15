@@ -11,7 +11,14 @@ class DestinyDamageTypeDefinition{
 	
 	DestinyDamageTypeDefinition();
 
-	factory DestinyDamageTypeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDamageTypeDefinitionFromJson(json);
+	factory DestinyDamageTypeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDamageTypeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The description of the damage type, icon etc...
 	@JsonKey(name:'displayProperties')
@@ -23,7 +30,7 @@ class DestinyDamageTypeDefinition{
 	@JsonKey(name:'showIcon')
 	bool showIcon;
 	/// We have an enumeration for damage types for quick reference. This is the current definition's damage type enum value.
-	@JsonKey(name:'enumValue',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'enumValue',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType enumValue;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

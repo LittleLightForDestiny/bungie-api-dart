@@ -14,7 +14,7 @@ TrendingEntryCommunityStream _$TrendingEntryCommunityStreamFromJson(
     ..partnershipIdentifier = json['partnershipIdentifier'] as String
     ..partnershipType = _$enumDecodeNullable(
         _$PartnershipTypeEnumMap, json['partnershipType'],
-        unknownValue: PartnershipType.None);
+        unknownValue: PartnershipType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$TrendingEntryCommunityStreamToJson(
@@ -61,4 +61,5 @@ T _$enumDecodeNullable<T>(
 const _$PartnershipTypeEnumMap = {
   PartnershipType.None: 0,
   PartnershipType.Twitch: 1,
+  PartnershipType.ProtectedInvalidEnumValue: 999999999,
 };

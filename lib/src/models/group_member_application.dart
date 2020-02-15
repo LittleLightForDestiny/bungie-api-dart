@@ -11,13 +11,20 @@ class GroupMemberApplication{
 	
 	GroupMemberApplication();
 
-	factory GroupMemberApplication.fromJson(Map<String, dynamic> json) => _$GroupMemberApplicationFromJson(json);
+	factory GroupMemberApplication.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupMemberApplicationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'groupId')
 	String groupId;
 	@JsonKey(name:'creationDate')
 	String creationDate;
-	@JsonKey(name:'resolveState',unknownEnumValue:GroupApplicationResolveState.Unresolved)
+	@JsonKey(name:'resolveState',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
 	GroupApplicationResolveState resolveState;
 	@JsonKey(name:'resolveDate')
 	String resolveDate;

@@ -10,7 +10,14 @@ class TrendingEntryDestinyRitual{
 	
 	TrendingEntryDestinyRitual();
 
-	factory TrendingEntryDestinyRitual.fromJson(Map<String, dynamic> json) => _$TrendingEntryDestinyRitualFromJson(json);
+	factory TrendingEntryDestinyRitual.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntryDestinyRitualFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'image')
 	String image;

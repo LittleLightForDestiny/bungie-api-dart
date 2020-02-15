@@ -9,7 +9,14 @@ class DestinyItemRenderComponent{
 	
 	DestinyItemRenderComponent();
 
-	factory DestinyItemRenderComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemRenderComponentFromJson(json);
+	factory DestinyItemRenderComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemRenderComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If you should use custom dyes on this item, it will be indicated here.
 	@JsonKey(name:'useCustomDyes')

@@ -9,7 +9,14 @@ class DestinyDerivedItemDefinition{
 	
 	DestinyDerivedItemDefinition();
 
-	factory DestinyDerivedItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDerivedItemDefinitionFromJson(json);
+	factory DestinyDerivedItemDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDerivedItemDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won't be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
 	@JsonKey(name:'itemHash')

@@ -10,7 +10,14 @@ class DestinyMilestoneQuestRewardItem{
 	
 	DestinyMilestoneQuestRewardItem();
 
-	factory DestinyMilestoneQuestRewardItem.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneQuestRewardItemFromJson(json);
+	factory DestinyMilestoneQuestRewardItem.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneQuestRewardItemFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The quest reward item *may* be associated with a vendor. If so, this is that vendor. Use this hash to look up the DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')

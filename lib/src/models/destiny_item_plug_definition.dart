@@ -16,7 +16,14 @@ class DestinyItemPlugDefinition{
 	
 	DestinyItemPlugDefinition();
 
-	factory DestinyItemPlugDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemPlugDefinitionFromJson(json);
+	factory DestinyItemPlugDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemPlugDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The rules around when this plug can be inserted into a socket, aside from the socket's individual restrictions.
 	/// The live data DestinyItemPlugComponent.insertFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
@@ -50,7 +57,7 @@ class DestinyItemPlugDefinition{
 	@JsonKey(name:'plugStyle')
 	PlugUiStyles plugStyle;
 	/// Indicates the rules about when this plug can be used. See the PlugAvailabilityMode enumeration for more information!
-	@JsonKey(name:'plugAvailability',unknownEnumValue:PlugAvailabilityMode.Normal)
+	@JsonKey(name:'plugAvailability',unknownEnumValue:PlugAvailabilityMode.ProtectedInvalidEnumValue)
 	PlugAvailabilityMode plugAvailability;
 	/// If the plug meets certain state requirements, it may have an alternative label applied to it. This is the alternative label that will be applied in such a situation.
 	@JsonKey(name:'alternateUiPlugLabel')

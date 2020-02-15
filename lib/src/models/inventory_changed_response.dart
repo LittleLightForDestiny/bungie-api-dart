@@ -10,7 +10,14 @@ class InventoryChangedResponse{
 	
 	InventoryChangedResponse();
 
-	factory InventoryChangedResponse.fromJson(Map<String, dynamic> json) => _$InventoryChangedResponseFromJson(json);
+	factory InventoryChangedResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$InventoryChangedResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Items that appeared in the inventory possibly as a result of an action.
 	@JsonKey(name:'addedInventoryItems')

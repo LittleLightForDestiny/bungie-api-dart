@@ -12,7 +12,7 @@ DestinyProfileTransitoryJoinability
     ..openSlots = json['openSlots'] as int
     ..privacySetting = _$enumDecodeNullable(
         _$DestinyGamePrivacySettingEnumMap, json['privacySetting'],
-        unknownValue: DestinyGamePrivacySetting.Open)
+        unknownValue: DestinyGamePrivacySetting.ProtectedInvalidEnumValue)
     ..closedReasons = json['closedReasons'] == null
         ? null
         : DestinyJoinClosedReasons.fromJson(json['closedReasons'] as int);
@@ -65,4 +65,5 @@ const _$DestinyGamePrivacySettingEnumMap = {
   DestinyGamePrivacySetting.FriendsOnly: 2,
   DestinyGamePrivacySetting.InvitationOnly: 3,
   DestinyGamePrivacySetting.Closed: 4,
+  DestinyGamePrivacySetting.ProtectedInvalidEnumValue: 999999999,
 };

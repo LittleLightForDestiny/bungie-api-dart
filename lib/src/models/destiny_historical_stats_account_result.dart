@@ -10,7 +10,14 @@ class DestinyHistoricalStatsAccountResult{
 	
 	DestinyHistoricalStatsAccountResult();
 
-	factory DestinyHistoricalStatsAccountResult.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsAccountResultFromJson(json);
+	factory DestinyHistoricalStatsAccountResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsAccountResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'mergedDeletedCharacters')
 	DestinyHistoricalStatsWithMerged mergedDeletedCharacters;

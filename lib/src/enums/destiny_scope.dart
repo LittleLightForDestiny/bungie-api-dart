@@ -7,6 +7,9 @@ enum DestinyScope {
   ///Character = 1
   @JsonValue(1)
   Character,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyScopeExtension on DestinyScope{

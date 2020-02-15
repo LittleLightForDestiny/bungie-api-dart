@@ -10,7 +10,14 @@ class DestinyPresentationNodeComponent{
 	
 	DestinyPresentationNodeComponent();
 
-	factory DestinyPresentationNodeComponent.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeComponentFromJson(json);
+	factory DestinyPresentationNodeComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPresentationNodeComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'state')
 	DestinyPresentationNodeState state;
@@ -20,7 +27,7 @@ class DestinyPresentationNodeComponent{
 	/// How much of the presentation node is considered to be completed so far by the given character/profile.
 	@JsonKey(name:'progressValue')
 	int progressValue;
-	/// The value at which the presentation ode is considered to be completed.
+	/// The value at which the presentation node is considered to be completed.
 	@JsonKey(name:'completionValue')
 	int completionValue;
 

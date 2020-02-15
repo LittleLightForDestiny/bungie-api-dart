@@ -19,7 +19,14 @@ class DestinyActivityGraphDefinition{
 	
 	DestinyActivityGraphDefinition();
 
-	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphDefinitionFromJson(json);
+	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGraphDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// These represent the visual "nodes" on the map's view. These are the activities you can click on in the map.
 	@JsonKey(name:'nodes')

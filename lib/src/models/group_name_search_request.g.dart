@@ -11,7 +11,7 @@ GroupNameSearchRequest _$GroupNameSearchRequestFromJson(
   return GroupNameSearchRequest()
     ..groupName = json['groupName'] as String
     ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
-        unknownValue: GroupType.General);
+        unknownValue: GroupType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$GroupNameSearchRequestToJson(
@@ -56,4 +56,5 @@ T _$enumDecodeNullable<T>(
 const _$GroupTypeEnumMap = {
   GroupType.General: 0,
   GroupType.Clan: 1,
+  GroupType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -10,7 +10,14 @@ class GroupBan{
 	
 	GroupBan();
 
-	factory GroupBan.fromJson(Map<String, dynamic> json) => _$GroupBanFromJson(json);
+	factory GroupBan.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupBanFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'groupId')
 	String groupId;

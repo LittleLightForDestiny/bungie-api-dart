@@ -17,7 +17,7 @@ DestinyNodeStepDefinition _$DestinyNodeStepDefinitionFromJson(
     ..nodeStepHash = json['nodeStepHash'] as int
     ..interactionDescription = json['interactionDescription'] as String
     ..damageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['damageType'],
-        unknownValue: DamageType.None)
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
     ..damageTypeHash = json['damageTypeHash'] as int
     ..activationRequirement = json['activationRequirement'] == null
         ? null
@@ -105,4 +105,5 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.ProtectedInvalidEnumValue: 999999999,
 };

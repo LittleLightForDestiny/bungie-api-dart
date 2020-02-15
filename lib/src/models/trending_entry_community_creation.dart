@@ -8,7 +8,14 @@ class TrendingEntryCommunityCreation{
 	
 	TrendingEntryCommunityCreation();
 
-	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) => _$TrendingEntryCommunityCreationFromJson(json);
+	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntryCommunityCreationFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'media')
 	String media;

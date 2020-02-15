@@ -8,7 +8,14 @@ class ImagePyramidEntry{
 	
 	ImagePyramidEntry();
 
-	factory ImagePyramidEntry.fromJson(Map<String, dynamic> json) => _$ImagePyramidEntryFromJson(json);
+	factory ImagePyramidEntry.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ImagePyramidEntryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The name of the subfolder where these images are located.
 	@JsonKey(name:'name')

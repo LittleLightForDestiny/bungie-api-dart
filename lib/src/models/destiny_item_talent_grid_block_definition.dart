@@ -11,7 +11,14 @@ class DestinyItemTalentGridBlockDefinition{
 	
 	DestinyItemTalentGridBlockDefinition();
 
-	factory DestinyItemTalentGridBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemTalentGridBlockDefinitionFromJson(json);
+	factory DestinyItemTalentGridBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemTalentGridBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the DestinyTalentGridDefinition attached to this item.
 	@JsonKey(name:'talentGridHash')
@@ -23,7 +30,7 @@ class DestinyItemTalentGridBlockDefinition{
 	@JsonKey(name:'buildName')
 	String buildName;
 	/// If the talent grid implies a damage type, this is the enum value for that damage type.
-	@JsonKey(name:'hudDamageType',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'hudDamageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType hudDamageType;
 	/// If the talent grid has a special icon that's shown in the game UI (like builds, funny that), this is the identifier for that icon. Sadly, we don't actually get that icon right now. I'll be looking to replace this with a path to the actual icon itself.
 	@JsonKey(name:'hudIcon')

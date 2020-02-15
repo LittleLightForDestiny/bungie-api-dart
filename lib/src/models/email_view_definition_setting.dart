@@ -11,7 +11,14 @@ class EmailViewDefinitionSetting{
 	
 	EmailViewDefinitionSetting();
 
-	factory EmailViewDefinitionSetting.fromJson(Map<String, dynamic> json) => _$EmailViewDefinitionSettingFromJson(json);
+	factory EmailViewDefinitionSetting.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$EmailViewDefinitionSettingFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for this UI Setting, which can be used to relate it to custom strings or other data as desired.
 	@JsonKey(name:'name')

@@ -13,7 +13,14 @@ class DestinyVendorInteractionDefinition{
 	
 	DestinyVendorInteractionDefinition();
 
-	factory DestinyVendorInteractionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorInteractionDefinitionFromJson(json);
+	factory DestinyVendorInteractionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorInteractionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The position of this interaction in its parent array. Note that this is NOT content agnostic, and should not be used as such.
 	@JsonKey(name:'interactionIndex')
@@ -34,7 +41,7 @@ class DestinyVendorInteractionDefinition{
 	@JsonKey(name:'uiInteractionType')
 	int uiInteractionType;
 	/// The enumerated version of the possible UI hints for vendor interactions, which is a little easier to grok than the hash found in uiInteractionType.
-	@JsonKey(name:'interactionType',unknownEnumValue:VendorInteractionType.Unknown)
+	@JsonKey(name:'interactionType',unknownEnumValue:VendorInteractionType.ProtectedInvalidEnumValue)
 	VendorInteractionType interactionType;
 	/// If this interaction is displaying rewards, this is the text to use for the header of the reward-displaying section of the interaction.
 	@JsonKey(name:'rewardBlockLabel')

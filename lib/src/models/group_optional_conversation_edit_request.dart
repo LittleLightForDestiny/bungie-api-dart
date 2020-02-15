@@ -8,7 +8,14 @@ class GroupOptionalConversationEditRequest{
 	
 	GroupOptionalConversationEditRequest();
 
-	factory GroupOptionalConversationEditRequest.fromJson(Map<String, dynamic> json) => _$GroupOptionalConversationEditRequestFromJson(json);
+	factory GroupOptionalConversationEditRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupOptionalConversationEditRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'chatEnabled')
 	bool chatEnabled;

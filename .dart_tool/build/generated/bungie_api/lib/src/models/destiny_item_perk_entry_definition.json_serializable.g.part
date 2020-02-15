@@ -9,7 +9,7 @@ DestinyItemPerkEntryDefinition _$DestinyItemPerkEntryDefinitionFromJson(
     ..perkHash = json['perkHash'] as int
     ..perkVisibility = _$enumDecodeNullable(
         _$ItemPerkVisibilityEnumMap, json['perkVisibility'],
-        unknownValue: ItemPerkVisibility.Visible);
+        unknownValue: ItemPerkVisibility.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyItemPerkEntryDefinitionToJson(
@@ -56,4 +56,5 @@ const _$ItemPerkVisibilityEnumMap = {
   ItemPerkVisibility.Visible: 0,
   ItemPerkVisibility.Disabled: 1,
   ItemPerkVisibility.Hidden: 2,
+  ItemPerkVisibility.ProtectedInvalidEnumValue: 999999999,
 };

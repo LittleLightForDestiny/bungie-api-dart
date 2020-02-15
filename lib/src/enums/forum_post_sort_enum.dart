@@ -7,6 +7,9 @@ enum ForumPostSortEnum {
   ///OldestFirst = 1
   @JsonValue(1)
   OldestFirst,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumPostSortEnumExtension on ForumPostSortEnum{

@@ -10,7 +10,14 @@ class DestinyItemChangeResponse{
 	
 	DestinyItemChangeResponse();
 
-	factory DestinyItemChangeResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemChangeResponseFromJson(json);
+	factory DestinyItemChangeResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemChangeResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The response object for retrieving an individual instanced item. None of these components are relevant for an item that doesn't have an "itemInstanceId": for those, get your information from the DestinyInventoryDefinition.
 	@JsonKey(name:'item')

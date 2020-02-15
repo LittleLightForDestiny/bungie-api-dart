@@ -10,7 +10,14 @@ class DestinyPublicMilestoneActivity{
 	
 	DestinyPublicMilestoneActivity();
 
-	factory DestinyPublicMilestoneActivity.fromJson(Map<String, dynamic> json) => _$DestinyPublicMilestoneActivityFromJson(json);
+	factory DestinyPublicMilestoneActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicMilestoneActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the activity that's been chosen to be considered the canonical "conceptual" activity definition. This may have many variants, defined herein.
 	@JsonKey(name:'activityHash')

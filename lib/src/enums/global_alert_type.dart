@@ -7,6 +7,9 @@ enum GlobalAlertType {
   ///StreamingAlert = 1
   @JsonValue(1)
   StreamingAlert,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GlobalAlertTypeExtension on GlobalAlertType{

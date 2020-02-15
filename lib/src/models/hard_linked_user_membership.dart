@@ -9,13 +9,20 @@ class HardLinkedUserMembership{
 	
 	HardLinkedUserMembership();
 
-	factory HardLinkedUserMembership.fromJson(Map<String, dynamic> json) => _$HardLinkedUserMembershipFromJson(json);
+	factory HardLinkedUserMembership.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$HardLinkedUserMembershipFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	@JsonKey(name:'membershipId')
 	String membershipId;
-	@JsonKey(name:'CrossSaveOverriddenType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'CrossSaveOverriddenType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType crossSaveOverriddenType;
 	@JsonKey(name:'CrossSaveOverriddenMembershipId')
 	String crossSaveOverriddenMembershipId;

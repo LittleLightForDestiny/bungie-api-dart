@@ -9,7 +9,14 @@ class DestinyPresentationNodeRequirementsBlock{
 	
 	DestinyPresentationNodeRequirementsBlock();
 
-	factory DestinyPresentationNodeRequirementsBlock.fromJson(Map<String, dynamic> json) => _$DestinyPresentationNodeRequirementsBlockFromJson(json);
+	factory DestinyPresentationNodeRequirementsBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPresentationNodeRequirementsBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If this node is not accessible due to Entitlements (for instance, you don't own the required game expansion), this is the message to show.
 	@JsonKey(name:'entitlementUnavailableMessage')

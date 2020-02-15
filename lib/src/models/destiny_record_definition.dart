@@ -19,13 +19,20 @@ class DestinyRecordDefinition{
 	
 	DestinyRecordDefinition();
 
-	factory DestinyRecordDefinition.fromJson(Map<String, dynamic> json) => _$DestinyRecordDefinitionFromJson(json);
+	factory DestinyRecordDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRecordDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// Indicates whether this Record's state is determined on a per-character or on an account-wide basis.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.Profile)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 	@JsonKey(name:'presentationInfo')
 	DestinyPresentationChildBlock presentationInfo;
@@ -33,7 +40,7 @@ class DestinyRecordDefinition{
 	int loreHash;
 	@JsonKey(name:'objectiveHashes')
 	List<int> objectiveHashes;
-	@JsonKey(name:'recordValueStyle',unknownEnumValue:DestinyRecordValueStyle.Integer)
+	@JsonKey(name:'recordValueStyle',unknownEnumValue:DestinyRecordValueStyle.ProtectedInvalidEnumValue)
 	DestinyRecordValueStyle recordValueStyle;
 	@JsonKey(name:'titleInfo')
 	DestinyRecordTitleBlock titleInfo;

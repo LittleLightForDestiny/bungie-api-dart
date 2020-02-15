@@ -37,6 +37,9 @@ enum BungieCredentialType {
   ///StadiaId = 16
   @JsonValue(16)
   StadiaId,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension BungieCredentialTypeExtension on BungieCredentialType{

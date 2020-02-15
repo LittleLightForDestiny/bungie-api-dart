@@ -17,7 +17,14 @@ class DestinySandboxPerkDefinition{
 	
 	DestinySandboxPerkDefinition();
 
-	factory DestinySandboxPerkDefinition.fromJson(Map<String, dynamic> json) => _$DestinySandboxPerkDefinitionFromJson(json);
+	factory DestinySandboxPerkDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinySandboxPerkDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// These display properties are by no means guaranteed to be populated. Usually when it is, it's only because we back-filled them with the displayProperties of some Talent Node or Plug item that happened to be uniquely providing that perk.
 	@JsonKey(name:'displayProperties')
@@ -30,7 +37,7 @@ class DestinySandboxPerkDefinition{
 	bool isDisplayable;
 	/// If this perk grants a damage type to a weapon, the damage type will be defined here.
 	/// Unless you have a compelling reason to use this enum value, use the damageTypeHash instead to look up the actual DestinyDamageTypeDefinition.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.None)
+	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
 	DamageType damageType;
 	/// The hash identifier for looking up the DestinyDamageTypeDefinition, if this perk has a damage type.
 	/// This is preferred over using the damageType enumeration value, which has been left purely because it is occasionally convenient.

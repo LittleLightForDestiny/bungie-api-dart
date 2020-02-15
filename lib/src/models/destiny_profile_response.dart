@@ -33,7 +33,14 @@ class DestinyProfileResponse{
 	
 	DestinyProfileResponse();
 
-	factory DestinyProfileResponse.fromJson(Map<String, dynamic> json) => _$DestinyProfileResponseFromJson(json);
+	factory DestinyProfileResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Recent, refundable purchases you have made from vendors. When will you use it? Couldn't say...
 	/// COMPONENT TYPE: VendorReceipts

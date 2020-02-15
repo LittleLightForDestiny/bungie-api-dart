@@ -6,7 +6,7 @@ DestinyClassDefinition _$DestinyClassDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyClassDefinition()
     ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'],
-        unknownValue: DestinyClass.Titan)
+        unknownValue: DestinyClass.ProtectedInvalidEnumValue)
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
@@ -75,4 +75,5 @@ const _$DestinyClassEnumMap = {
   DestinyClass.Hunter: 1,
   DestinyClass.Warlock: 2,
   DestinyClass.Unknown: 3,
+  DestinyClass.ProtectedInvalidEnumValue: 999999999,
 };

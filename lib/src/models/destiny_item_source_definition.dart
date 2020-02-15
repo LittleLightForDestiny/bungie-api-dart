@@ -11,7 +11,14 @@ class DestinyItemSourceDefinition{
 	
 	DestinyItemSourceDefinition();
 
-	factory DestinyItemSourceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSourceDefinitionFromJson(json);
+	factory DestinyItemSourceDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSourceDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The level at which the item spawns. Essentially the Primary Key for this source data: there will be multiple of these source entries per item that has source data, grouped by the level at which the item spawns.
 	@JsonKey(name:'level')

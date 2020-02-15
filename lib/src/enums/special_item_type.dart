@@ -28,6 +28,9 @@ enum SpecialItemType {
   ///Currency = 29
   @JsonValue(29)
   Currency,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension SpecialItemTypeExtension on SpecialItemType{

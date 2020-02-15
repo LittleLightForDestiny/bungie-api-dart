@@ -8,7 +8,14 @@ class DestinyHistoricalStatsValuePair{
 	
 	DestinyHistoricalStatsValuePair();
 
-	factory DestinyHistoricalStatsValuePair.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsValuePairFromJson(json);
+	factory DestinyHistoricalStatsValuePair.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsValuePairFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Raw value of the statistic
 	@JsonKey(name:'value')

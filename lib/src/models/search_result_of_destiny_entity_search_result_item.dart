@@ -10,7 +10,14 @@ class SearchResultOfDestinyEntitySearchResultItem{
 	
 	SearchResultOfDestinyEntitySearchResultItem();
 
-	factory SearchResultOfDestinyEntitySearchResultItem.fromJson(Map<String, dynamic> json) => _$SearchResultOfDestinyEntitySearchResultItemFromJson(json);
+	factory SearchResultOfDestinyEntitySearchResultItem.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfDestinyEntitySearchResultItemFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<DestinyEntitySearchResultItem> results;

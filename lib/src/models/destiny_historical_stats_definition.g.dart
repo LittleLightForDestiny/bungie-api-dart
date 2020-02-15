@@ -12,7 +12,7 @@ DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
     ..statId = json['statId'] as String
     ..group = _$enumDecodeNullable(
         _$DestinyStatsGroupTypeEnumMap, json['group'],
-        unknownValue: DestinyStatsGroupType.None)
+        unknownValue: DestinyStatsGroupType.ProtectedInvalidEnumValue)
     ..periodTypes = (json['periodTypes'] as List)
         ?.map((e) => _$enumDecodeNullable(_$PeriodTypeEnumMap, e))
         ?.toList()
@@ -21,12 +21,12 @@ DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
         ?.toList()
     ..category = _$enumDecodeNullable(
         _$DestinyStatsCategoryTypeEnumMap, json['category'],
-        unknownValue: DestinyStatsCategoryType.None)
+        unknownValue: DestinyStatsCategoryType.ProtectedInvalidEnumValue)
     ..statName = json['statName'] as String
     ..statNameAbbr = json['statNameAbbr'] as String
     ..statDescription = json['statDescription'] as String
     ..unitType = _$enumDecodeNullable(_$UnitTypeEnumMap, json['unitType'],
-        unknownValue: UnitType.None)
+        unknownValue: UnitType.ProtectedInvalidEnumValue)
     ..iconImage = json['iconImage'] as String
     ..mergeMethod = json['mergeMethod'] as int
     ..unitLabel = json['unitLabel'] as String
@@ -98,6 +98,7 @@ const _$DestinyStatsGroupTypeEnumMap = {
   DestinyStatsGroupType.Activity: 102,
   DestinyStatsGroupType.UniqueWeapon: 103,
   DestinyStatsGroupType.Internal: 104,
+  DestinyStatsGroupType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$PeriodTypeEnumMap = {
@@ -105,6 +106,7 @@ const _$PeriodTypeEnumMap = {
   PeriodType.Daily: 1,
   PeriodType.AllTime: 2,
   PeriodType.Activity: 3,
+  PeriodType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyActivityModeTypeEnumMap = {
@@ -182,6 +184,9 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.NightmareHunt: 79,
   DestinyActivityModeType.Elimination: 80,
   DestinyActivityModeType.Momentum: 81,
+  DestinyActivityModeType.Dungeon: 82,
+  DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyStatsCategoryTypeEnumMap = {
@@ -201,6 +206,7 @@ const _$DestinyStatsCategoryTypeEnumMap = {
   DestinyStatsCategoryType.MedalSprees: 13,
   DestinyStatsCategoryType.MedalMultiKills: 14,
   DestinyStatsCategoryType.MedalAbilities: 15,
+  DestinyStatsCategoryType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$UnitTypeEnumMap = {
@@ -218,4 +224,5 @@ const _$UnitTypeEnumMap = {
   UnitType.Standing: 11,
   UnitType.Milliseconds: 12,
   UnitType.CompletionReason: 13,
+  UnitType.ProtectedInvalidEnumValue: 999999999,
 };

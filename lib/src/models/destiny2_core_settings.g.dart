@@ -24,7 +24,9 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(Map<String, dynamic> json) {
     ..currentSeasonalArtifactHash = json['currentSeasonalArtifactHash'] as int
     ..currentSeasonHash = json['currentSeasonHash'] as int
     ..futureSeasonHashes =
-        (json['futureSeasonHashes'] as List)?.map((e) => e as int)?.toList();
+        (json['futureSeasonHashes'] as List)?.map((e) => e as int)?.toList()
+    ..pastSeasonHashes =
+        (json['pastSeasonHashes'] as List)?.map((e) => e as int)?.toList();
 }
 
 Map<String, dynamic> _$Destiny2CoreSettingsToJson(
@@ -42,4 +44,5 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'currentSeasonalArtifactHash': instance.currentSeasonalArtifactHash,
       'currentSeasonHash': instance.currentSeasonHash,
       'futureSeasonHashes': instance.futureSeasonHashes,
+      'pastSeasonHashes': instance.pastSeasonHashes,
     };

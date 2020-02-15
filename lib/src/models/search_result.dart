@@ -9,7 +9,14 @@ class SearchResult{
 	
 	SearchResult();
 
-	factory SearchResult.fromJson(Map<String, dynamic> json) => _$SearchResultFromJson(json);
+	factory SearchResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'totalResults')
 	int totalResults;

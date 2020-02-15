@@ -10,7 +10,14 @@ class DestinyVendorComponent{
 	
 	DestinyVendorComponent();
 
-	factory DestinyVendorComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorComponentFromJson(json);
+	factory DestinyVendorComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If True, you can purchase from the Vendor.
 	/// Theoretically, Vendors can be restricted from selling items. In practice, none do that (yet?).

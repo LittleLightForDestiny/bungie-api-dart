@@ -16,6 +16,9 @@ enum DestinyAmmunitionType {
   ///Unknown = 4
   @JsonValue(4)
   Unknown,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyAmmunitionTypeExtension on DestinyAmmunitionType{

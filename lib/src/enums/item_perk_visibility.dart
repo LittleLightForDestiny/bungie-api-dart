@@ -10,6 +10,9 @@ enum ItemPerkVisibility {
   ///Hidden = 2
   @JsonValue(2)
   Hidden,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ItemPerkVisibilityExtension on ItemPerkVisibility{

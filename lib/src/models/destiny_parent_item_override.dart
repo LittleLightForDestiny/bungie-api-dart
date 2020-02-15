@@ -8,7 +8,14 @@ class DestinyParentItemOverride{
 	
 	DestinyParentItemOverride();
 
-	factory DestinyParentItemOverride.fromJson(Map<String, dynamic> json) => _$DestinyParentItemOverrideFromJson(json);
+	factory DestinyParentItemOverride.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyParentItemOverrideFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'additionalEquipRequirementsDisplayStrings')
 	List<String> additionalEquipRequirementsDisplayStrings;

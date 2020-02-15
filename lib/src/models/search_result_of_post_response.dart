@@ -10,7 +10,14 @@ class SearchResultOfPostResponse{
 	
 	SearchResultOfPostResponse();
 
-	factory SearchResultOfPostResponse.fromJson(Map<String, dynamic> json) => _$SearchResultOfPostResponseFromJson(json);
+	factory SearchResultOfPostResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfPostResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<PostResponse> results;

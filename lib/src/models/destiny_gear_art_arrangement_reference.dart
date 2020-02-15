@@ -8,7 +8,14 @@ class DestinyGearArtArrangementReference{
 	
 	DestinyGearArtArrangementReference();
 
-	factory DestinyGearArtArrangementReference.fromJson(Map<String, dynamic> json) => _$DestinyGearArtArrangementReferenceFromJson(json);
+	factory DestinyGearArtArrangementReference.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyGearArtArrangementReferenceFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'classHash')
 	int classHash;

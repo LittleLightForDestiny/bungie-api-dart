@@ -22,6 +22,9 @@ enum DestinyGatingScope {
   ///AssumedWorstCase = 6
   @JsonValue(6)
   AssumedWorstCase,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyGatingScopeExtension on DestinyGatingScope{

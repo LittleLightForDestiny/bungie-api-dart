@@ -9,9 +9,16 @@ class GroupApplicationResponse{
 	
 	GroupApplicationResponse();
 
-	factory GroupApplicationResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseFromJson(json);
+	factory GroupApplicationResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupApplicationResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.Unresolved)
+	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
 	GroupApplicationResolveState resolution;
 
 	

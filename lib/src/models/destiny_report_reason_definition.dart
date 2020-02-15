@@ -10,7 +10,14 @@ class DestinyReportReasonDefinition{
 	
 	DestinyReportReasonDefinition();
 
-	factory DestinyReportReasonDefinition.fromJson(Map<String, dynamic> json) => _$DestinyReportReasonDefinitionFromJson(json);
+	factory DestinyReportReasonDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyReportReasonDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for the reason: they are only guaranteed unique under the Category in which they are found.
 	@JsonKey(name:'reasonHash')

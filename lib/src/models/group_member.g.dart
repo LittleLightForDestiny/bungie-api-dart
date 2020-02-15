@@ -10,7 +10,7 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
   return GroupMember()
     ..memberType = _$enumDecodeNullable(
         _$RuntimeGroupMemberTypeEnumMap, json['memberType'],
-        unknownValue: RuntimeGroupMemberType.None)
+        unknownValue: RuntimeGroupMemberType.ProtectedInvalidEnumValue)
     ..isOnline = json['isOnline'] as bool
     ..lastOnlineStatusChange = json['lastOnlineStatusChange'] as String
     ..groupId = json['groupId'] as String
@@ -75,4 +75,5 @@ const _$RuntimeGroupMemberTypeEnumMap = {
   RuntimeGroupMemberType.Admin: 3,
   RuntimeGroupMemberType.ActingFounder: 4,
   RuntimeGroupMemberType.Founder: 5,
+  RuntimeGroupMemberType.ProtectedInvalidEnumValue: 999999999,
 };

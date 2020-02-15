@@ -10,7 +10,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) {
   return Application()
     ..applicationType = _$enumDecodeNullable(
         _$OAuthApplicationTypeEnumMap, json['applicationType'],
-        unknownValue: OAuthApplicationType.None)
+        unknownValue: OAuthApplicationType.ProtectedInvalidEnumValue)
     ..applicationId = json['applicationId'] as int
     ..name = json['name'] as String
     ..redirectUrl = json['redirectUrl'] as String
@@ -18,7 +18,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) {
     ..scope = json['scope'] as String
     ..origin = json['origin'] as String
     ..status = _$enumDecodeNullable(_$ApplicationStatusEnumMap, json['status'],
-        unknownValue: ApplicationStatus.None)
+        unknownValue: ApplicationStatus.ProtectedInvalidEnumValue)
     ..creationDate = json['creationDate'] as String
     ..statusChanged = json['statusChanged'] as String
     ..firstPublished = json['firstPublished'] as String
@@ -82,6 +82,7 @@ const _$OAuthApplicationTypeEnumMap = {
   OAuthApplicationType.None: 0,
   OAuthApplicationType.Confidential: 1,
   OAuthApplicationType.Public: 2,
+  OAuthApplicationType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$ApplicationStatusEnumMap = {
@@ -90,4 +91,5 @@ const _$ApplicationStatusEnumMap = {
   ApplicationStatus.Public: 2,
   ApplicationStatus.Disabled: 3,
   ApplicationStatus.Blocked: 4,
+  ApplicationStatus.ProtectedInvalidEnumValue: 999999999,
 };

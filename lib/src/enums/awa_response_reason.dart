@@ -16,6 +16,9 @@ enum AwaResponseReason {
   /// This request was replaced by another request.
   @JsonValue(3)
   Replaced,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension AwaResponseReasonExtension on AwaResponseReason{

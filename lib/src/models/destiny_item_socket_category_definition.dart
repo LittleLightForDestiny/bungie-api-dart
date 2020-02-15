@@ -9,7 +9,14 @@ class DestinyItemSocketCategoryDefinition{
 	
 	DestinyItemSocketCategoryDefinition();
 
-	factory DestinyItemSocketCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketCategoryDefinitionFromJson(json);
+	factory DestinyItemSocketCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSocketCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash for the Socket Category: a quick way to go get the header display information for the category. Use it to look up DestinySocketCategoryDefinition info.
 	@JsonKey(name:'socketCategoryHash')

@@ -15,7 +15,14 @@ class DestinyPublicVendorsResponse{
 	
 	DestinyPublicVendorsResponse();
 
-	factory DestinyPublicVendorsResponse.fromJson(Map<String, dynamic> json) => _$DestinyPublicVendorsResponseFromJson(json);
+	factory DestinyPublicVendorsResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicVendorsResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// For Vendors being returned, this will give you the information you need to group them and order them in the same way that the Bungie Companion app performs grouping. It will automatically be returned if you request the Vendors component.
 	/// COMPONENT TYPE: Vendors

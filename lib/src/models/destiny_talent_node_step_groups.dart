@@ -14,7 +14,14 @@ class DestinyTalentNodeStepGroups{
 	
 	DestinyTalentNodeStepGroups();
 
-	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeStepGroupsFromJson(json);
+	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentNodeStepGroupsFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'weaponPerformance')
 	DestinyTalentNodeStepWeaponPerformances weaponPerformance;

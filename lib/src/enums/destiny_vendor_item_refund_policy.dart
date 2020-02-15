@@ -10,6 +10,9 @@ enum DestinyVendorItemRefundPolicy {
   ///RevokesLicense = 2
   @JsonValue(2)
   RevokesLicense,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyVendorItemRefundPolicyExtension on DestinyVendorItemRefundPolicy{

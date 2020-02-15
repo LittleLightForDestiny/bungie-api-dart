@@ -9,7 +9,14 @@ class DestinyKioskItem{
 	
 	DestinyKioskItem();
 
-	factory DestinyKioskItem.fromJson(Map<String, dynamic> json) => _$DestinyKioskItemFromJson(json);
+	factory DestinyKioskItem.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyKioskItemFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The index of the item in the related DestinyVendorDefintion's itemList property, representing the sale.
 	@JsonKey(name:'index')

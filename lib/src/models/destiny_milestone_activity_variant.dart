@@ -10,7 +10,14 @@ class DestinyMilestoneActivityVariant{
 	
 	DestinyMilestoneActivityVariant();
 
-	factory DestinyMilestoneActivityVariant.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityVariantFromJson(json);
+	factory DestinyMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityVariantFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash for the specific variant of the activity related to this milestone. You can pull more detailed static info from the DestinyActivityDefinition, such as difficulty level.
 	@JsonKey(name:'activityHash')

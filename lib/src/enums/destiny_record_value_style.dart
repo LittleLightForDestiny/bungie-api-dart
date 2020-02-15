@@ -16,6 +16,9 @@ enum DestinyRecordValueStyle {
   ///Decimal = 4
   @JsonValue(4)
   Decimal,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyRecordValueStyleExtension on DestinyRecordValueStyle{

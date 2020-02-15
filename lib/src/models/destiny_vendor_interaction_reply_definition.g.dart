@@ -13,11 +13,12 @@ DestinyVendorInteractionReplyDefinition
     ..itemRewardsSelection = _$enumDecodeNullable(
         _$DestinyVendorInteractionRewardSelectionEnumMap,
         json['itemRewardsSelection'],
-        unknownValue: DestinyVendorInteractionRewardSelection.None)
+        unknownValue:
+            DestinyVendorInteractionRewardSelection.ProtectedInvalidEnumValue)
     ..reply = json['reply'] as String
     ..replyType = _$enumDecodeNullable(
         _$DestinyVendorReplyTypeEnumMap, json['replyType'],
-        unknownValue: DestinyVendorReplyType.Accept);
+        unknownValue: DestinyVendorReplyType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyVendorInteractionReplyDefinitionToJson(
@@ -65,10 +66,12 @@ const _$DestinyVendorInteractionRewardSelectionEnumMap = {
   DestinyVendorInteractionRewardSelection.None: 0,
   DestinyVendorInteractionRewardSelection.One: 1,
   DestinyVendorInteractionRewardSelection.All: 2,
+  DestinyVendorInteractionRewardSelection.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyVendorReplyTypeEnumMap = {
   DestinyVendorReplyType.Accept: 0,
   DestinyVendorReplyType.Decline: 1,
   DestinyVendorReplyType.Complete: 2,
+  DestinyVendorReplyType.ProtectedInvalidEnumValue: 999999999,
 };

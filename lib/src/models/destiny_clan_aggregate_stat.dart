@@ -10,10 +10,17 @@ class DestinyClanAggregateStat{
 	
 	DestinyClanAggregateStat();
 
-	factory DestinyClanAggregateStat.fromJson(Map<String, dynamic> json) => _$DestinyClanAggregateStatFromJson(json);
+	factory DestinyClanAggregateStat.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyClanAggregateStatFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The id of the mode of stats (allPvp, allPvE, etc)
-	@JsonKey(name:'mode',unknownEnumValue:DestinyActivityModeType.None)
+	@JsonKey(name:'mode',unknownEnumValue:DestinyActivityModeType.ProtectedInvalidEnumValue)
 	DestinyActivityModeType mode;
 	/// The id of the stat
 	@JsonKey(name:'statId')

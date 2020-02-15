@@ -10,7 +10,14 @@ class DestinyItemSetBlockDefinition{
 	
 	DestinyItemSetBlockDefinition();
 
-	factory DestinyItemSetBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSetBlockDefinitionFromJson(json);
+	factory DestinyItemSetBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSetBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A collection of hashes of set items, for items such as Quest Metadata items that possess this data.
 	@JsonKey(name:'itemList')
@@ -24,6 +31,9 @@ class DestinyItemSetBlockDefinition{
 	/// A string identifier we can use to attempt to identify the category of the Quest.
 	@JsonKey(name:'setType')
 	String setType;
+	/// The name of the quest line that this quest step is a part of.
+	@JsonKey(name:'questLineName')
+	String questLineName;
 
 	
 	

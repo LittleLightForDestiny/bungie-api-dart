@@ -9,13 +9,20 @@ class DestinyItemInstanceEnergy{
 	
 	DestinyItemInstanceEnergy();
 
-	factory DestinyItemInstanceEnergy.fromJson(Map<String, dynamic> json) => _$DestinyItemInstanceEnergyFromJson(json);
+	factory DestinyItemInstanceEnergy.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemInstanceEnergyFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The type of energy for this item. Plugs that require Energy can only be inserted if they have the "Any" Energy Type or the matching energy type of this item. This is a reference to the DestinyEnergyTypeDefinition for the energy type, where you can find extended info about it.
 	@JsonKey(name:'energyTypeHash')
 	int energyTypeHash;
 	/// This is the enum version of the Energy Type value, for convenience.
-	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.Any)
+	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
 	DestinyEnergyType energyType;
 	/// The total capacity of Energy that the item currently has, regardless of if it is currently being used.
 	@JsonKey(name:'energyCapacity')

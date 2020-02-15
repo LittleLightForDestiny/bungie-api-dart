@@ -9,7 +9,14 @@ class DestinyMilestoneActivityPhase{
 	
 	DestinyMilestoneActivityPhase();
 
-	factory DestinyMilestoneActivityPhase.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityPhaseFromJson(json);
+	factory DestinyMilestoneActivityPhase.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityPhaseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Indicates if the phase has been completed.
 	@JsonKey(name:'complete')

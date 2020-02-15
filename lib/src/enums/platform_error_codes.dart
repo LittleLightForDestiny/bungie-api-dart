@@ -176,6 +176,12 @@ enum PlatformErrorCodes {
   ///PerUserThrottleExceeded = 57
   @JsonValue(57)
   PerUserThrottleExceeded,
+  ///PayloadSignatureVerificationFailure = 58
+  @JsonValue(58)
+  PayloadSignatureVerificationFailure,
+  ///InvalidServiceAuthContext = 59
+  @JsonValue(59)
+  InvalidServiceAuthContext,
   ///ObsoleteCredentialType = 89
   @JsonValue(89)
   ObsoleteCredentialType,
@@ -1638,6 +1644,21 @@ enum PlatformErrorCodes {
   ///DestinyPublicAccountNotAccessible = 1682
   @JsonValue(1682)
   DestinyPublicAccountNotAccessible,
+  ///DestinyClaimsItemAlreadyClaimed = 1683
+  @JsonValue(1683)
+  DestinyClaimsItemAlreadyClaimed,
+  ///DestinyClaimsNoInventorySpace = 1684
+  @JsonValue(1684)
+  DestinyClaimsNoInventorySpace,
+  ///DestinyClaimsRequiredLevelNotMet = 1685
+  @JsonValue(1685)
+  DestinyClaimsRequiredLevelNotMet,
+  ///DestinyClaimsInvalidState = 1686
+  @JsonValue(1686)
+  DestinyClaimsInvalidState,
+  ///DestinyNotEnoughRoomForMultipleRewards = 1687
+  @JsonValue(1687)
+  DestinyNotEnoughRoomForMultipleRewards,
   ///FbInvalidRequest = 1800
   @JsonValue(1800)
   FbInvalidRequest,
@@ -1878,6 +1899,27 @@ enum PlatformErrorCodes {
   ///UnclaimedLoyaltyRewardEntryNotFound = 2058
   @JsonValue(2058)
   UnclaimedLoyaltyRewardEntryNotFound,
+  ///PartnerOfferPartialFailure = 2059
+  @JsonValue(2059)
+  PartnerOfferPartialFailure,
+  ///PartnerOfferAlreadyClaimed = 2060
+  @JsonValue(2060)
+  PartnerOfferAlreadyClaimed,
+  ///PartnerOfferSkuNotFound = 2061
+  @JsonValue(2061)
+  PartnerOfferSkuNotFound,
+  ///PartnerOfferSkuExpired = 2062
+  @JsonValue(2062)
+  PartnerOfferSkuExpired,
+  ///PartnerOfferPermissionFailure = 2063
+  @JsonValue(2063)
+  PartnerOfferPermissionFailure,
+  ///PartnerOfferNoDestinyAccount = 2064
+  @JsonValue(2064)
+  PartnerOfferNoDestinyAccount,
+  ///PartnerOfferApplyDataNotFound = 2065
+  @JsonValue(2065)
+  PartnerOfferApplyDataNotFound,
   ///ApiExceededMaxKeys = 2100
   @JsonValue(2100)
   ApiExceededMaxKeys,
@@ -1926,6 +1968,9 @@ enum PlatformErrorCodes {
   ///OAuthAccessTokenExpired = 2115
   @JsonValue(2115)
   OAuthAccessTokenExpired,
+  ///ApplicationTokenKeyIdDoesNotExist = 2116
+  @JsonValue(2116)
+  ApplicationTokenKeyIdDoesNotExist,
   ///PartnershipInvalidType = 2200
   @JsonValue(2200)
   PartnershipInvalidType,
@@ -2091,6 +2136,9 @@ enum PlatformErrorCodes {
   ///ClanFireteamInvalidAuthProvider = 3027
   @JsonValue(3027)
   ClanFireteamInvalidAuthProvider,
+  ///ClanFireteamInvalidAuthProviderXuid = 3028
+  @JsonValue(3028)
+  ClanFireteamInvalidAuthProviderXuid,
   ///CrossSaveOverriddenAccountNotFound = 3200
   @JsonValue(3200)
   CrossSaveOverriddenAccountNotFound,
@@ -2205,6 +2253,12 @@ enum PlatformErrorCodes {
   ///UnsupportedBrowser = 3500
   @JsonValue(3500)
   UnsupportedBrowser,
+  ///StadiaAccountRequired = 3600
+  @JsonValue(3600)
+  StadiaAccountRequired,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension PlatformErrorCodesExtension on PlatformErrorCodes{
@@ -2326,6 +2380,10 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 56;
       case PlatformErrorCodes.PerUserThrottleExceeded:
         return 57;
+      case PlatformErrorCodes.PayloadSignatureVerificationFailure:
+        return 58;
+      case PlatformErrorCodes.InvalidServiceAuthContext:
+        return 59;
       case PlatformErrorCodes.ObsoleteCredentialType:
         return 89;
       case PlatformErrorCodes.UnableToUnPairMobileApp:
@@ -3300,6 +3358,16 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 1681;
       case PlatformErrorCodes.DestinyPublicAccountNotAccessible:
         return 1682;
+      case PlatformErrorCodes.DestinyClaimsItemAlreadyClaimed:
+        return 1683;
+      case PlatformErrorCodes.DestinyClaimsNoInventorySpace:
+        return 1684;
+      case PlatformErrorCodes.DestinyClaimsRequiredLevelNotMet:
+        return 1685;
+      case PlatformErrorCodes.DestinyClaimsInvalidState:
+        return 1686;
+      case PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards:
+        return 1687;
       case PlatformErrorCodes.FbInvalidRequest:
         return 1800;
       case PlatformErrorCodes.FbRedirectMismatch:
@@ -3460,6 +3528,20 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2057;
       case PlatformErrorCodes.UnclaimedLoyaltyRewardEntryNotFound:
         return 2058;
+      case PlatformErrorCodes.PartnerOfferPartialFailure:
+        return 2059;
+      case PlatformErrorCodes.PartnerOfferAlreadyClaimed:
+        return 2060;
+      case PlatformErrorCodes.PartnerOfferSkuNotFound:
+        return 2061;
+      case PlatformErrorCodes.PartnerOfferSkuExpired:
+        return 2062;
+      case PlatformErrorCodes.PartnerOfferPermissionFailure:
+        return 2063;
+      case PlatformErrorCodes.PartnerOfferNoDestinyAccount:
+        return 2064;
+      case PlatformErrorCodes.PartnerOfferApplyDataNotFound:
+        return 2065;
       case PlatformErrorCodes.ApiExceededMaxKeys:
         return 2100;
       case PlatformErrorCodes.ApiInvalidOrExpiredKey:
@@ -3492,6 +3574,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2114;
       case PlatformErrorCodes.OAuthAccessTokenExpired:
         return 2115;
+      case PlatformErrorCodes.ApplicationTokenKeyIdDoesNotExist:
+        return 2116;
       case PlatformErrorCodes.PartnershipInvalidType:
         return 2200;
       case PlatformErrorCodes.PartnershipValidationError:
@@ -3602,6 +3686,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3026;
       case PlatformErrorCodes.ClanFireteamInvalidAuthProvider:
         return 3027;
+      case PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid:
+        return 3028;
       case PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:
         return 3200;
       case PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:
@@ -3678,6 +3764,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3413;
       case PlatformErrorCodes.UnsupportedBrowser:
         return 3500;
+      case PlatformErrorCodes.StadiaAccountRequired:
+        return 3600;
       default:
         return null;
     }

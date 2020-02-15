@@ -10,7 +10,14 @@ class DestinyRecordComponent{
 	
 	DestinyRecordComponent();
 
-	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) => _$DestinyRecordComponentFromJson(json);
+	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRecordComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'state')
 	DestinyRecordState state;

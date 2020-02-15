@@ -7,7 +7,7 @@ GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) {
     ..groupId = json['groupId'] as String
     ..name = json['name'] as String
     ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
-        unknownValue: GroupType.General)
+        unknownValue: GroupType.ProtectedInvalidEnumValue)
     ..creationDate = json['creationDate'] as String
     ..about = json['about'] as String
     ..motto = json['motto'] as String
@@ -15,7 +15,7 @@ GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) {
     ..locale = json['locale'] as String
     ..membershipOption = _$enumDecodeNullable(
         _$MembershipOptionEnumMap, json['membershipOption'],
-        unknownValue: MembershipOption.Reviewed)
+        unknownValue: MembershipOption.ProtectedInvalidEnumValue)
     ..capabilities = json['capabilities'] == null
         ? null
         : Capabilities.fromJson(json['capabilities'] as int)
@@ -78,10 +78,12 @@ T _$enumDecodeNullable<T>(
 const _$GroupTypeEnumMap = {
   GroupType.General: 0,
   GroupType.Clan: 1,
+  GroupType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$MembershipOptionEnumMap = {
   MembershipOption.Reviewed: 0,
   MembershipOption.Open: 1,
   MembershipOption.Closed: 2,
+  MembershipOption.ProtectedInvalidEnumValue: 999999999,
 };

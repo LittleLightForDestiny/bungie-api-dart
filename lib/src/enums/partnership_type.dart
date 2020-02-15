@@ -7,6 +7,9 @@ enum PartnershipType {
   ///Twitch = 1
   @JsonValue(1)
   Twitch,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension PartnershipTypeExtension on PartnershipType{

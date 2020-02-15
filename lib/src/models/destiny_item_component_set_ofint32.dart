@@ -18,7 +18,14 @@ class DestinyItemComponentSetOfint32{
 	
 	DestinyItemComponentSetOfint32();
 
-	factory DestinyItemComponentSetOfint32.fromJson(Map<String, dynamic> json) => _$DestinyItemComponentSetOfint32FromJson(json);
+	factory DestinyItemComponentSetOfint32.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemComponentSetOfint32FromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint32AndDestinyItemInstanceComponent instances;

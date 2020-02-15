@@ -10,7 +10,14 @@ class DestinyMilestoneActivity{
 	
 	DestinyMilestoneActivity();
 
-	factory DestinyMilestoneActivity.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityFromJson(json);
+	factory DestinyMilestoneActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash of an arbitrarily chosen variant of this activity. We'll go ahead and call that the "canonical" activity, because if you're using this value you should only use it for properties that are common across the variants: things like the name of the activity, it's location, etc... Use this hash to look up the DestinyActivityDefinition of this activity for rendering data.
 	@JsonKey(name:'activityHash')

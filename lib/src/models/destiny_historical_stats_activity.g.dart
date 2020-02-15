@@ -14,14 +14,14 @@ DestinyHistoricalStatsActivity _$DestinyHistoricalStatsActivityFromJson(
     ..instanceId = json['instanceId'] as String
     ..mode = _$enumDecodeNullable(
         _$DestinyActivityModeTypeEnumMap, json['mode'],
-        unknownValue: DestinyActivityModeType.None)
+        unknownValue: DestinyActivityModeType.ProtectedInvalidEnumValue)
     ..modes = (json['modes'] as List)
         ?.map((e) => _$enumDecodeNullable(_$DestinyActivityModeTypeEnumMap, e))
         ?.toList()
     ..isPrivate = json['isPrivate'] as bool
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None);
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
@@ -145,6 +145,9 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.NightmareHunt: 79,
   DestinyActivityModeType.Elimination: 80,
   DestinyActivityModeType.Momentum: 81,
+  DestinyActivityModeType.Dungeon: 82,
+  DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$BungieMembershipTypeEnumMap = {
@@ -157,4 +160,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

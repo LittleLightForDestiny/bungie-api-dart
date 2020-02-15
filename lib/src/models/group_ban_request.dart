@@ -9,11 +9,18 @@ class GroupBanRequest{
 	
 	GroupBanRequest();
 
-	factory GroupBanRequest.fromJson(Map<String, dynamic> json) => _$GroupBanRequestFromJson(json);
+	factory GroupBanRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupBanRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'comment')
 	String comment;
-	@JsonKey(name:'length',unknownEnumValue:IgnoreLength.None)
+	@JsonKey(name:'length',unknownEnumValue:IgnoreLength.ProtectedInvalidEnumValue)
 	IgnoreLength length;
 
 	

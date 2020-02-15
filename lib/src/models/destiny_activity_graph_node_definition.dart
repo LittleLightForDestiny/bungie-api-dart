@@ -14,7 +14,14 @@ class DestinyActivityGraphNodeDefinition{
 	
 	DestinyActivityGraphNodeDefinition();
 
-	factory DestinyActivityGraphNodeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityGraphNodeDefinitionFromJson(json);
+	factory DestinyActivityGraphNodeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityGraphNodeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// An identifier for the Activity Graph Node, only guaranteed to be unique within its parent Activity Graph.
 	@JsonKey(name:'nodeId')

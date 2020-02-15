@@ -12,7 +12,14 @@ class DestinyChecklistEntryDefinition{
 	
 	DestinyChecklistEntryDefinition();
 
-	factory DestinyChecklistEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyChecklistEntryDefinitionFromJson(json);
+	factory DestinyChecklistEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyChecklistEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for this Checklist entry. Guaranteed unique only within this Checklist Definition, and not globally/for all checklists.
 	@JsonKey(name:'hash')
@@ -37,7 +44,7 @@ class DestinyChecklistEntryDefinition{
 	@JsonKey(name:'vendorInteractionIndex')
 	int vendorInteractionIndex;
 	/// The scope at which this specific entry can be computed.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.Profile)
+	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 
 	

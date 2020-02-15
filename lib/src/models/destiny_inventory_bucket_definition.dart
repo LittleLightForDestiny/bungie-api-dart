@@ -15,16 +15,23 @@ class DestinyInventoryBucketDefinition{
 	
 	DestinyInventoryBucketDefinition();
 
-	factory DestinyInventoryBucketDefinition.fromJson(Map<String, dynamic> json) => _$DestinyInventoryBucketDefinitionFromJson(json);
+	factory DestinyInventoryBucketDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyInventoryBucketDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// Where the bucket is found. 0 = Character, 1 = Account
-	@JsonKey(name:'scope',unknownEnumValue:BucketScope.Character)
+	@JsonKey(name:'scope',unknownEnumValue:BucketScope.ProtectedInvalidEnumValue)
 	BucketScope scope;
 	/// An enum value for what items can be found in the bucket. See the BucketCategory enum for more details.
-	@JsonKey(name:'category',unknownEnumValue:BucketCategory.Invisible)
+	@JsonKey(name:'category',unknownEnumValue:BucketCategory.ProtectedInvalidEnumValue)
 	BucketCategory category;
 	/// Use this property to provide a quick-and-dirty recommended ordering for buckets in the UI. Most UIs will likely want to forsake this for something more custom and manual.
 	@JsonKey(name:'bucketOrder')
@@ -36,7 +43,7 @@ class DestinyInventoryBucketDefinition{
 	/// Sometimes, inventory buckets represent conceptual "locations" in the game that might not be expected. This value indicates the conceptual location of the bucket, regardless of where it is actually contained on the character/account. 
 	/// See ItemLocation for details. 
 	/// Note that location includes the Vault and the Postmaster (both of whom being just inventory buckets with additional actions that can be performed on them through a Vendor)
-	@JsonKey(name:'location',unknownEnumValue:ItemLocation.Unknown)
+	@JsonKey(name:'location',unknownEnumValue:ItemLocation.ProtectedInvalidEnumValue)
 	ItemLocation location;
 	/// If TRUE, there is at least one Vendor that can transfer items to/from this bucket. See the DestinyVendorDefinition's acceptedItems property for more information on how transferring works.
 	@JsonKey(name:'hasTransferDestination')

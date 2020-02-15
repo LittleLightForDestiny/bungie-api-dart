@@ -8,7 +8,14 @@ class ClanBanner{
 	
 	ClanBanner();
 
-	factory ClanBanner.fromJson(Map<String, dynamic> json) => _$ClanBannerFromJson(json);
+	factory ClanBanner.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ClanBannerFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'decalId')
 	int decalId;

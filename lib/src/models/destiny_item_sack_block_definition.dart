@@ -9,7 +9,14 @@ class DestinyItemSackBlockDefinition{
 	
 	DestinyItemSackBlockDefinition();
 
-	factory DestinyItemSackBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSackBlockDefinitionFromJson(json);
+	factory DestinyItemSackBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSackBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A description of what will happen when you open the sack. As far as I can tell, this is blank currently. Unknown whether it will eventually be populated with useful info.
 	@JsonKey(name:'detailAction')

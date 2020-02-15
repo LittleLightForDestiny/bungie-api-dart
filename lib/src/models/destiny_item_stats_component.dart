@@ -12,7 +12,14 @@ class DestinyItemStatsComponent{
 	
 	DestinyItemStatsComponent();
 
-	factory DestinyItemStatsComponent.fromJson(Map<String, dynamic> json) => _$DestinyItemStatsComponentFromJson(json);
+	factory DestinyItemStatsComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemStatsComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If the item has stats that it provides (damage, defense, etc...), it will be given here.
 	@JsonKey(name:'stats')

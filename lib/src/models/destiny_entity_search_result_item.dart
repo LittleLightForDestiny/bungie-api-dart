@@ -10,7 +10,14 @@ class DestinyEntitySearchResultItem{
 	
 	DestinyEntitySearchResultItem();
 
-	factory DestinyEntitySearchResultItem.fromJson(Map<String, dynamic> json) => _$DestinyEntitySearchResultItemFromJson(json);
+	factory DestinyEntitySearchResultItem.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyEntitySearchResultItemFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of the entity. You will use this to look up the DestinyDefinition relevant for the entity found.
 	@JsonKey(name:'hash')

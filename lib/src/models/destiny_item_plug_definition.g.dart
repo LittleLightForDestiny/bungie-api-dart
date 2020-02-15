@@ -33,7 +33,7 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
         : PlugUiStyles.fromJson(json['plugStyle'] as int)
     ..plugAvailability = _$enumDecodeNullable(
         _$PlugAvailabilityModeEnumMap, json['plugAvailability'],
-        unknownValue: PlugAvailabilityMode.Normal)
+        unknownValue: PlugAvailabilityMode.ProtectedInvalidEnumValue)
     ..alternateUiPlugLabel = json['alternateUiPlugLabel'] as String
     ..alternatePlugStyle = json['alternatePlugStyle'] == null
         ? null
@@ -113,4 +113,5 @@ const _$PlugAvailabilityModeEnumMap = {
   PlugAvailabilityMode.Normal: 0,
   PlugAvailabilityMode.UnavailableIfSocketContainsMatchingPlugCategory: 1,
   PlugAvailabilityMode.AvailableIfSocketContainsMatchingPlugCategory: 2,
+  PlugAvailabilityMode.ProtectedInvalidEnumValue: 999999999,
 };

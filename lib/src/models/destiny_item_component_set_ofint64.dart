@@ -18,7 +18,14 @@ class DestinyItemComponentSetOfint64{
 	
 	DestinyItemComponentSetOfint64();
 
-	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) => _$DestinyItemComponentSetOfint64FromJson(json);
+	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemComponentSetOfint64FromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent instances;

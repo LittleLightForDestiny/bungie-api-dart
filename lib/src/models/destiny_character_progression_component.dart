@@ -15,7 +15,14 @@ class DestinyCharacterProgressionComponent{
 	
 	DestinyCharacterProgressionComponent();
 
-	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterProgressionComponentFromJson(json);
+	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterProgressionComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// A Dictionary of all known progressions for the Character, keyed by the Progression's hash.
 	/// Not all progressions have user-facing data, but those who do will have that data contained in the DestinyProgressionDefinition.

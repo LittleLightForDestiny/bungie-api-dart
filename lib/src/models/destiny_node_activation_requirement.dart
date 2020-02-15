@@ -10,7 +10,14 @@ class DestinyNodeActivationRequirement{
 	
 	DestinyNodeActivationRequirement();
 
-	factory DestinyNodeActivationRequirement.fromJson(Map<String, dynamic> json) => _$DestinyNodeActivationRequirementFromJson(json);
+	factory DestinyNodeActivationRequirement.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyNodeActivationRequirementFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The Progression level on the Talent Grid required to activate this node.
 	/// See DestinyTalentGridDefinition.progressionHash for the related Progression, and read DestinyProgressionDefinition's documentation to learn more about Progressions.

@@ -13,7 +13,7 @@ CommunityLiveStatus _$CommunityLiveStatusFromJson(Map<String, dynamic> json) {
     ..partnershipIdentifier = json['partnershipIdentifier'] as String
     ..partnershipType = _$enumDecodeNullable(
         _$PartnershipTypeEnumMap, json['partnershipType'],
-        unknownValue: PartnershipType.None)
+        unknownValue: PartnershipType.ProtectedInvalidEnumValue)
     ..thumbnail = json['thumbnail'] as String
     ..thumbnailSmall = json['thumbnailSmall'] as String
     ..thumbnailLarge = json['thumbnailLarge'] as String
@@ -98,4 +98,5 @@ T _$enumDecodeNullable<T>(
 const _$PartnershipTypeEnumMap = {
   PartnershipType.None: 0,
   PartnershipType.Twitch: 1,
+  PartnershipType.ProtectedInvalidEnumValue: 999999999,
 };

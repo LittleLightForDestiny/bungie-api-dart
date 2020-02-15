@@ -10,7 +10,14 @@ class DestinyVendorGroup{
 	
 	DestinyVendorGroup();
 
-	factory DestinyVendorGroup.fromJson(Map<String, dynamic> json) => _$DestinyVendorGroupFromJson(json);
+	factory DestinyVendorGroup.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorGroupFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'vendorGroupHash')
 	int vendorGroupHash;

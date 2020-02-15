@@ -15,13 +15,20 @@ class DestinyCharacterComponent{
 	
 	DestinyCharacterComponent();
 
-	factory DestinyCharacterComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterComponentFromJson(json);
+	factory DestinyCharacterComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Every Destiny Profile has a membershipId. This is provided on the character as well for convenience.
 	@JsonKey(name:'membershipId')
 	String membershipId;
 	/// membershipType tells you the platform on which the character plays. Examine the BungieMembershipType enumeration for possible values.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 	/// The unique identifier for the character.
 	@JsonKey(name:'characterId')
@@ -53,15 +60,15 @@ class DestinyCharacterComponent{
 	int classHash;
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's race.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove.
-	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.Human)
+	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.ProtectedInvalidEnumValue)
 	DestinyRace raceType;
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's class.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove.
-	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.Titan)
+	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
 	DestinyClass classType;
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's Gender.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove. And yeah, it's an enumeration and not a boolean. Fight me.
-	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.Male)
+	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.ProtectedInvalidEnumValue)
 	DestinyGender genderType;
 	/// A shortcut path to the user's currently equipped emblem image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition.
 	@JsonKey(name:'emblemPath')

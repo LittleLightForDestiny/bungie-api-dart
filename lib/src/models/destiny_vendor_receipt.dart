@@ -11,7 +11,14 @@ class DestinyVendorReceipt{
 	
 	DestinyVendorReceipt();
 
-	factory DestinyVendorReceipt.fromJson(Map<String, dynamic> json) => _$DestinyVendorReceiptFromJson(json);
+	factory DestinyVendorReceipt.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorReceiptFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The amount paid for the item, in terms of items that were consumed in the purchase and their quantity.
 	@JsonKey(name:'currencyPaid')
@@ -26,7 +33,7 @@ class DestinyVendorReceipt{
 	@JsonKey(name:'purchasedByCharacterId')
 	String purchasedByCharacterId;
 	/// Whether you can get a refund, and what happens in order for the refund to be received. See the DestinyVendorItemRefundPolicy enum for details.
-	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.NotRefundable)
+	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
 	DestinyVendorItemRefundPolicy refundPolicy;
 	/// The identifier of this receipt.
 	@JsonKey(name:'sequenceNumber')

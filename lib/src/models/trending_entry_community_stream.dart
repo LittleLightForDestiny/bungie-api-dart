@@ -9,7 +9,14 @@ class TrendingEntryCommunityStream{
 	
 	TrendingEntryCommunityStream();
 
-	factory TrendingEntryCommunityStream.fromJson(Map<String, dynamic> json) => _$TrendingEntryCommunityStreamFromJson(json);
+	factory TrendingEntryCommunityStream.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntryCommunityStreamFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'image')
 	String image;
@@ -17,7 +24,7 @@ class TrendingEntryCommunityStream{
 	String title;
 	@JsonKey(name:'partnershipIdentifier')
 	String partnershipIdentifier;
-	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.None)
+	@JsonKey(name:'partnershipType',unknownEnumValue:PartnershipType.ProtectedInvalidEnumValue)
 	PartnershipType partnershipType;
 
 	

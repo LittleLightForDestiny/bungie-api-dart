@@ -11,7 +11,14 @@ class DestinyStatDisplayDefinition{
 	
 	DestinyStatDisplayDefinition();
 
-	factory DestinyStatDisplayDefinition.fromJson(Map<String, dynamic> json) => _$DestinyStatDisplayDefinitionFromJson(json);
+	factory DestinyStatDisplayDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyStatDisplayDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier for the stat being transformed into a Display stat.
 	/// Use it to look up the DestinyStatDefinition, or key into a DestinyInventoryItemDefinition's stats property.

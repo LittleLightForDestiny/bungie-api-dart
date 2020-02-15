@@ -9,7 +9,14 @@ class PollResponse{
 	
 	PollResponse();
 
-	factory PollResponse.fromJson(Map<String, dynamic> json) => _$PollResponseFromJson(json);
+	factory PollResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PollResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'topicId')
 	String topicId;

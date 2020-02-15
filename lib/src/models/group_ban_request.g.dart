@@ -10,7 +10,7 @@ GroupBanRequest _$GroupBanRequestFromJson(Map<String, dynamic> json) {
   return GroupBanRequest()
     ..comment = json['comment'] as String
     ..length = _$enumDecodeNullable(_$IgnoreLengthEnumMap, json['length'],
-        unknownValue: IgnoreLength.None);
+        unknownValue: IgnoreLength.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$GroupBanRequestToJson(GroupBanRequest instance) =>
@@ -64,4 +64,5 @@ const _$IgnoreLengthEnumMap = {
   IgnoreLength.ThreeMinutes: 9,
   IgnoreLength.Hour: 10,
   IgnoreLength.ThirtyDays: 11,
+  IgnoreLength.ProtectedInvalidEnumValue: 999999999,
 };

@@ -8,7 +8,14 @@ class DestinyRecordTitleBlock{
 	
 	DestinyRecordTitleBlock();
 
-	factory DestinyRecordTitleBlock.fromJson(Map<String, dynamic> json) => _$DestinyRecordTitleBlockFromJson(json);
+	factory DestinyRecordTitleBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRecordTitleBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'hasTitle')
 	bool hasTitle;

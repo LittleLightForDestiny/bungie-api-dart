@@ -10,7 +10,14 @@ class DestinyPublicActivityStatus{
 	
 	DestinyPublicActivityStatus();
 
-	factory DestinyPublicActivityStatus.fromJson(Map<String, dynamic> json) => _$DestinyPublicActivityStatusFromJson(json);
+	factory DestinyPublicActivityStatus.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPublicActivityStatusFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Active Challenges for the activity, if any - represented as hashes for DestinyObjectiveDefinitions.
 	@JsonKey(name:'challengeObjectiveHashes')

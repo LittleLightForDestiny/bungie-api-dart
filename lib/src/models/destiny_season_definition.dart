@@ -10,7 +10,14 @@ class DestinySeasonDefinition{
 	
 	DestinySeasonDefinition();
 
-	factory DestinySeasonDefinition.fromJson(Map<String, dynamic> json) => _$DestinySeasonDefinitionFromJson(json);
+	factory DestinySeasonDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinySeasonDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -27,6 +34,10 @@ class DestinySeasonDefinition{
 	int seasonPassHash;
 	@JsonKey(name:'seasonPassProgressionHash')
 	int seasonPassProgressionHash;
+	@JsonKey(name:'artifactItemHash')
+	int artifactItemHash;
+	@JsonKey(name:'sealPresentationNodeHash')
+	int sealPresentationNodeHash;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

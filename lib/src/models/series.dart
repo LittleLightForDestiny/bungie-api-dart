@@ -9,7 +9,14 @@ class Series{
 	
 	Series();
 
-	factory Series.fromJson(Map<String, dynamic> json) => _$SeriesFromJson(json);
+	factory Series.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SeriesFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Collection of samples with time and value.
 	@JsonKey(name:'datapoints')

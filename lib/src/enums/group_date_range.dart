@@ -16,6 +16,9 @@ enum GroupDateRange {
   ///PastYear = 4
   @JsonValue(4)
   PastYear,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupDateRangeExtension on GroupDateRange{

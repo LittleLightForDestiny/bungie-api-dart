@@ -14,7 +14,7 @@ DestinyCollectibleDefinition _$DestinyCollectibleDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
-        unknownValue: DestinyScope.Profile)
+        unknownValue: DestinyScope.ProtectedInvalidEnumValue)
     ..sourceString = json['sourceString'] as String
     ..sourceHash = json['sourceHash'] as int
     ..itemHash = json['itemHash'] as int
@@ -86,4 +86,5 @@ T _$enumDecodeNullable<T>(
 const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
+  DestinyScope.ProtectedInvalidEnumValue: 999999999,
 };

@@ -16,7 +16,7 @@ DestinySocketCategoryDefinition _$DestinySocketCategoryDefinitionFromJson(
     ..uiCategoryStyle = json['uiCategoryStyle'] as int
     ..categoryStyle = _$enumDecodeNullable(
         _$DestinySocketCategoryStyleEnumMap, json['categoryStyle'],
-        unknownValue: DestinySocketCategoryStyle.Unknown)
+        unknownValue: DestinySocketCategoryStyle.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -74,4 +74,5 @@ const _$DestinySocketCategoryStyleEnumMap = {
   DestinySocketCategoryStyle.Intrinsic: 4,
   DestinySocketCategoryStyle.EnergyMeter: 5,
   DestinySocketCategoryStyle.LargePerk: 6,
+  DestinySocketCategoryStyle.ProtectedInvalidEnumValue: 999999999,
 };

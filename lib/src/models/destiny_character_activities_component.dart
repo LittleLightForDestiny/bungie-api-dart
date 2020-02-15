@@ -11,7 +11,14 @@ class DestinyCharacterActivitiesComponent{
 	
 	DestinyCharacterActivitiesComponent();
 
-	factory DestinyCharacterActivitiesComponent.fromJson(Map<String, dynamic> json) => _$DestinyCharacterActivitiesComponentFromJson(json);
+	factory DestinyCharacterActivitiesComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCharacterActivitiesComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The last date that the user started playing an activity.
 	@JsonKey(name:'dateActivityStarted')

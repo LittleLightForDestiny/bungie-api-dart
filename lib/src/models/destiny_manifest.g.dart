@@ -23,6 +23,14 @@ DestinyManifest _$DestinyManifestFromJson(Map<String, dynamic> json) {
         (json['jsonWorldContentPaths'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
     )
+    ..jsonWorldComponentContentPaths =
+        (json['jsonWorldComponentContentPaths'] as Map<String, dynamic>)?.map(
+      (k, e) => MapEntry(
+          k,
+          (e as Map<String, dynamic>)?.map(
+            (k, e) => MapEntry(k, e as String),
+          )),
+    )
     ..mobileClanBannerDatabasePath =
         json['mobileClanBannerDatabasePath'] as String
     ..mobileGearCdn = (json['mobileGearCDN'] as Map<String, dynamic>)?.map(
@@ -42,6 +50,7 @@ Map<String, dynamic> _$DestinyManifestToJson(DestinyManifest instance) =>
       'mobileGearAssetDataBases': instance.mobileGearAssetDataBases,
       'mobileWorldContentPaths': instance.mobileWorldContentPaths,
       'jsonWorldContentPaths': instance.jsonWorldContentPaths,
+      'jsonWorldComponentContentPaths': instance.jsonWorldComponentContentPaths,
       'mobileClanBannerDatabasePath': instance.mobileClanBannerDatabasePath,
       'mobileGearCDN': instance.mobileGearCdn,
       'iconImagePyramidInfo': instance.iconImagePyramidInfo,

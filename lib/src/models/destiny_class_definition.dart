@@ -11,10 +11,17 @@ class DestinyClassDefinition{
 	
 	DestinyClassDefinition();
 
-	factory DestinyClassDefinition.fromJson(Map<String, dynamic> json) => _$DestinyClassDefinitionFromJson(json);
+	factory DestinyClassDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyClassDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
-	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.Titan)
+	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
 	DestinyClass classType;
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

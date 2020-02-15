@@ -8,7 +8,14 @@ class PollResult{
 	
 	PollResult();
 
-	factory PollResult.fromJson(Map<String, dynamic> json) => _$PollResultFromJson(json);
+	factory PollResult.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PollResultFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'answerText')
 	String answerText;

@@ -9,7 +9,14 @@ class DestinyItemSocketEntryPlugItemDefinition{
 	
 	DestinyItemSocketEntryPlugItemDefinition();
 
-	factory DestinyItemSocketEntryPlugItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketEntryPlugItemDefinitionFromJson(json);
+	factory DestinyItemSocketEntryPlugItemDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSocketEntryPlugItemDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted.
 	@JsonKey(name:'plugItemHash')

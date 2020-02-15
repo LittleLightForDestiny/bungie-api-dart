@@ -8,7 +8,8 @@ DestinyProgressionStepDefinition _$DestinyProgressionStepDefinitionFromJson(
     ..stepName = json['stepName'] as String
     ..displayEffectType = _$enumDecodeNullable(
         _$DestinyProgressionStepDisplayEffectEnumMap, json['displayEffectType'],
-        unknownValue: DestinyProgressionStepDisplayEffect.None)
+        unknownValue:
+            DestinyProgressionStepDisplayEffect.ProtectedInvalidEnumValue)
     ..progressTotal = json['progressTotal'] as int
     ..rewardItems = (json['rewardItems'] as List)
         ?.map((e) => e == null
@@ -65,4 +66,5 @@ const _$DestinyProgressionStepDisplayEffectEnumMap = {
   DestinyProgressionStepDisplayEffect.None: 0,
   DestinyProgressionStepDisplayEffect.Character: 1,
   DestinyProgressionStepDisplayEffect.Item: 2,
+  DestinyProgressionStepDisplayEffect.ProtectedInvalidEnumValue: 999999999,
 };

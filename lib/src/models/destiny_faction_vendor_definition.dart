@@ -10,7 +10,14 @@ class DestinyFactionVendorDefinition{
 	
 	DestinyFactionVendorDefinition();
 
-	factory DestinyFactionVendorDefinition.fromJson(Map<String, dynamic> json) => _$DestinyFactionVendorDefinitionFromJson(json);
+	factory DestinyFactionVendorDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyFactionVendorDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The faction vendor hash.
 	@JsonKey(name:'vendorHash')

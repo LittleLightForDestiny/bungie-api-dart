@@ -10,11 +10,11 @@ AwaPermissionRequested _$AwaPermissionRequestedFromJson(
     Map<String, dynamic> json) {
   return AwaPermissionRequested()
     ..type = _$enumDecodeNullable(_$AwaTypeEnumMap, json['type'],
-        unknownValue: AwaType.None)
+        unknownValue: AwaType.ProtectedInvalidEnumValue)
     ..affectedItemId = json['affectedItemId'] as String
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..characterId = json['characterId'] as String;
 }
 
@@ -62,6 +62,7 @@ T _$enumDecodeNullable<T>(
 const _$AwaTypeEnumMap = {
   AwaType.None: 0,
   AwaType.InsertPlugs: 1,
+  AwaType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$BungieMembershipTypeEnumMap = {
@@ -74,4 +75,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

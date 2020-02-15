@@ -8,7 +8,8 @@ DestinyInventoryItemStatDefinition _$DestinyInventoryItemStatDefinitionFromJson(
     ..statHash = json['statHash'] as int
     ..value = json['value'] as int
     ..minimum = json['minimum'] as int
-    ..maximum = json['maximum'] as int;
+    ..maximum = json['maximum'] as int
+    ..displayMaximum = json['displayMaximum'] as int;
 }
 
 Map<String, dynamic> _$DestinyInventoryItemStatDefinitionToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$DestinyInventoryItemStatDefinitionToJson(
       'value': instance.value,
       'minimum': instance.minimum,
       'maximum': instance.maximum,
+      'displayMaximum': instance.displayMaximum,
     };

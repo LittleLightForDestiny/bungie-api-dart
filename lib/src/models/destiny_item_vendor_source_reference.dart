@@ -11,7 +11,14 @@ class DestinyItemVendorSourceReference{
 	
 	DestinyItemVendorSourceReference();
 
-	factory DestinyItemVendorSourceReference.fromJson(Map<String, dynamic> json) => _$DestinyItemVendorSourceReferenceFromJson(json);
+	factory DestinyItemVendorSourceReference.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemVendorSourceReferenceFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The identifier for the vendor that may sell this item.
 	@JsonKey(name:'vendorHash')

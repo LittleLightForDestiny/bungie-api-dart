@@ -10,7 +10,14 @@ class SearchResultOfGroupV2Card{
 	
 	SearchResultOfGroupV2Card();
 
-	factory SearchResultOfGroupV2Card.fromJson(Map<String, dynamic> json) => _$SearchResultOfGroupV2CardFromJson(json);
+	factory SearchResultOfGroupV2Card.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$SearchResultOfGroupV2CardFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<GroupV2Card> results;

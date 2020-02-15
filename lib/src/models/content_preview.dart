@@ -8,7 +8,14 @@ class ContentPreview{
 	
 	ContentPreview();
 
-	factory ContentPreview.fromJson(Map<String, dynamic> json) => _$ContentPreviewFromJson(json);
+	factory ContentPreview.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentPreviewFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;

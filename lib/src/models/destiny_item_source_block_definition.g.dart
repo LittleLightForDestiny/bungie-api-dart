@@ -18,7 +18,7 @@ DestinyItemSourceBlockDefinition _$DestinyItemSourceBlockDefinitionFromJson(
         ?.toList()
     ..exclusive = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['exclusive'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..vendorSources = (json['vendorSources'] as List)
         ?.map((e) => e == null
             ? null
@@ -78,4 +78,5 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

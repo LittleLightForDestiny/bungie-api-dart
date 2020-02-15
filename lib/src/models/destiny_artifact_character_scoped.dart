@@ -9,7 +9,14 @@ class DestinyArtifactCharacterScoped{
 	
 	DestinyArtifactCharacterScoped();
 
-	factory DestinyArtifactCharacterScoped.fromJson(Map<String, dynamic> json) => _$DestinyArtifactCharacterScopedFromJson(json);
+	factory DestinyArtifactCharacterScoped.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyArtifactCharacterScopedFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'artifactHash')
 	int artifactHash;

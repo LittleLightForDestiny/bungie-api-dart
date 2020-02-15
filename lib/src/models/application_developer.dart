@@ -10,9 +10,16 @@ class ApplicationDeveloper{
 	
 	ApplicationDeveloper();
 
-	factory ApplicationDeveloper.fromJson(Map<String, dynamic> json) => _$ApplicationDeveloperFromJson(json);
+	factory ApplicationDeveloper.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ApplicationDeveloperFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
-	@JsonKey(name:'role',unknownEnumValue:DeveloperRole.None)
+	@JsonKey(name:'role',unknownEnumValue:DeveloperRole.ProtectedInvalidEnumValue)
 	DeveloperRole role;
 	@JsonKey(name:'apiEulaVersion')
 	int apiEulaVersion;

@@ -92,6 +92,9 @@ enum DestinyItemSubType {
   ///Bow = 31
   @JsonValue(31)
   Bow,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyItemSubTypeExtension on DestinyItemSubType{

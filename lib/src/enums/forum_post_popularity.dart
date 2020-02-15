@@ -19,6 +19,9 @@ enum ForumPostPopularity {
   ///Hot = 5
   @JsonValue(5)
   Hot,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumPostPopularityExtension on ForumPostPopularity{

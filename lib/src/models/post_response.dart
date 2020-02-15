@@ -11,17 +11,24 @@ class PostResponse{
 	
 	PostResponse();
 
-	factory PostResponse.fromJson(Map<String, dynamic> json) => _$PostResponseFromJson(json);
+	factory PostResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$PostResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'lastReplyTimestamp')
 	String lastReplyTimestamp;
 	@JsonKey(name:'IsPinned')
 	bool isPinned;
-	@JsonKey(name:'urlMediaType',unknownEnumValue:ForumMediaType.None)
+	@JsonKey(name:'urlMediaType',unknownEnumValue:ForumMediaType.ProtectedInvalidEnumValue)
 	ForumMediaType urlMediaType;
 	@JsonKey(name:'thumbnail')
 	String thumbnail;
-	@JsonKey(name:'popularity',unknownEnumValue:ForumPostPopularity.Empty)
+	@JsonKey(name:'popularity',unknownEnumValue:ForumPostPopularity.ProtectedInvalidEnumValue)
 	ForumPostPopularity popularity;
 	@JsonKey(name:'isActive')
 	bool isActive;

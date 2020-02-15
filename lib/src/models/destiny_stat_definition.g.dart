@@ -15,11 +15,11 @@ DestinyStatDefinition _$DestinyStatDefinitionFromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..aggregationType = _$enumDecodeNullable(
         _$DestinyStatAggregationTypeEnumMap, json['aggregationType'],
-        unknownValue: DestinyStatAggregationType.CharacterAverage)
+        unknownValue: DestinyStatAggregationType.ProtectedInvalidEnumValue)
     ..hasComputedBlock = json['hasComputedBlock'] as bool
     ..statCategory = _$enumDecodeNullable(
         _$DestinyStatCategoryEnumMap, json['statCategory'],
-        unknownValue: DestinyStatCategory.Gameplay)
+        unknownValue: DestinyStatCategory.ProtectedInvalidEnumValue)
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -74,6 +74,7 @@ const _$DestinyStatAggregationTypeEnumMap = {
   DestinyStatAggregationType.CharacterAverage: 0,
   DestinyStatAggregationType.Character: 1,
   DestinyStatAggregationType.Item: 2,
+  DestinyStatAggregationType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyStatCategoryEnumMap = {
@@ -81,4 +82,5 @@ const _$DestinyStatCategoryEnumMap = {
   DestinyStatCategory.Weapon: 1,
   DestinyStatCategory.Defense: 2,
   DestinyStatCategory.Primary: 3,
+  DestinyStatCategory.ProtectedInvalidEnumValue: 999999999,
 };

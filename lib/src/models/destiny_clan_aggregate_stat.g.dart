@@ -11,7 +11,7 @@ DestinyClanAggregateStat _$DestinyClanAggregateStatFromJson(
   return DestinyClanAggregateStat()
     ..mode = _$enumDecodeNullable(
         _$DestinyActivityModeTypeEnumMap, json['mode'],
-        unknownValue: DestinyActivityModeType.None)
+        unknownValue: DestinyActivityModeType.ProtectedInvalidEnumValue)
     ..statId = json['statId'] as String
     ..value = json['value'] == null
         ? null
@@ -134,4 +134,7 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.NightmareHunt: 79,
   DestinyActivityModeType.Elimination: 80,
   DestinyActivityModeType.Momentum: 81,
+  DestinyActivityModeType.Dungeon: 82,
+  DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

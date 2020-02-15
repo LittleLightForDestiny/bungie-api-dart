@@ -9,7 +9,14 @@ class IgnoreResponse{
 	
 	IgnoreResponse();
 
-	factory IgnoreResponse.fromJson(Map<String, dynamic> json) => _$IgnoreResponseFromJson(json);
+	factory IgnoreResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$IgnoreResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'isIgnored')
 	bool isIgnored;

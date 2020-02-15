@@ -8,7 +8,14 @@ class UserTheme{
 	
 	UserTheme();
 
-	factory UserTheme.fromJson(Map<String, dynamic> json) => _$UserThemeFromJson(json);
+	factory UserTheme.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$UserThemeFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'userThemeId')
 	int userThemeId;

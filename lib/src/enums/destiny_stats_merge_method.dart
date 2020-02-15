@@ -13,6 +13,9 @@ enum DestinyStatsMergeMethod {
   /// When collapsing multiple instances of the stat together, take the higher value.
   @JsonValue(2)
   Max,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyStatsMergeMethodExtension on DestinyStatsMergeMethod{

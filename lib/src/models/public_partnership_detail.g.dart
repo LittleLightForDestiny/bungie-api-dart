@@ -11,7 +11,7 @@ PublicPartnershipDetail _$PublicPartnershipDetailFromJson(
   return PublicPartnershipDetail()
     ..partnerType = _$enumDecodeNullable(
         _$PartnershipTypeEnumMap, json['partnerType'],
-        unknownValue: PartnershipType.None)
+        unknownValue: PartnershipType.ProtectedInvalidEnumValue)
     ..identifier = json['identifier'] as String
     ..name = json['name'] as String
     ..icon = json['icon'] as String;
@@ -61,4 +61,5 @@ T _$enumDecodeNullable<T>(
 const _$PartnershipTypeEnumMap = {
   PartnershipType.None: 0,
   PartnershipType.Twitch: 1,
+  PartnershipType.ProtectedInvalidEnumValue: 999999999,
 };

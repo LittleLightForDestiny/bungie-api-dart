@@ -11,7 +11,14 @@ class DestinyDerivedItemCategoryDefinition{
 	
 	DestinyDerivedItemCategoryDefinition();
 
-	factory DestinyDerivedItemCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyDerivedItemCategoryDefinitionFromJson(json);
+	factory DestinyDerivedItemCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyDerivedItemCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The localized string for the category title. This will be something describing the items you can get as a group, or your likelihood/the quantity you'll get.
 	@JsonKey(name:'categoryDescription')

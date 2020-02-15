@@ -18,7 +18,7 @@ DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) {
     ..recommendedLight = json['recommendedLight'] as int
     ..difficultyTier = _$enumDecodeNullable(
         _$DestinyActivityDifficultyTierEnumMap, json['difficultyTier'],
-        unknownValue: DestinyActivityDifficultyTier.Trivial)
+        unknownValue: DestinyActivityDifficultyTier.ProtectedInvalidEnumValue)
     ..challenges = (json['challenges'] as List)
         ?.map((e) => e == null
             ? null
@@ -92,4 +92,5 @@ const _$DestinyActivityDifficultyTierEnumMap = {
   DestinyActivityDifficultyTier.Brave: 5,
   DestinyActivityDifficultyTier.AlmostImpossible: 6,
   DestinyActivityDifficultyTier.Impossible: 7,
+  DestinyActivityDifficultyTier.ProtectedInvalidEnumValue: 999999999,
 };

@@ -9,7 +9,14 @@ class DestinyLeaderboard{
 	
 	DestinyLeaderboard();
 
-	factory DestinyLeaderboard.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardFromJson(json);
+	factory DestinyLeaderboard.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLeaderboardFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'statId')
 	String statId;

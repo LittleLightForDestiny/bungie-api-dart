@@ -8,7 +8,14 @@ class DestinyRecordIntervalObjective{
 	
 	DestinyRecordIntervalObjective();
 
-	factory DestinyRecordIntervalObjective.fromJson(Map<String, dynamic> json) => _$DestinyRecordIntervalObjectiveFromJson(json);
+	factory DestinyRecordIntervalObjective.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRecordIntervalObjectiveFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'intervalObjectiveHash')
 	int intervalObjectiveHash;

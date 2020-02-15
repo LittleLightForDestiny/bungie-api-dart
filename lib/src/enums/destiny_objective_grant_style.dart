@@ -10,6 +10,9 @@ enum DestinyObjectiveGrantStyle {
   ///Always = 2
   @JsonValue(2)
   Always,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyObjectiveGrantStyleExtension on DestinyObjectiveGrantStyle{

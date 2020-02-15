@@ -11,13 +11,20 @@ class DestinyRaceDefinition{
 	
 	DestinyRaceDefinition();
 
-	factory DestinyRaceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyRaceDefinitionFromJson(json);
+	factory DestinyRaceDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyRaceDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// An enumeration defining the existing, known Races/Species for player characters. This value will be the enum value matching this definition.
-	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.Human)
+	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.ProtectedInvalidEnumValue)
 	DestinyRace raceType;
 	/// A localized string referring to the singular form of the Race's name when referred to in gendered form. Keyed by the DestinyGender.
 	@JsonKey(name:'genderedRaceNames')

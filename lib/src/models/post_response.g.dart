@@ -12,11 +12,11 @@ PostResponse _$PostResponseFromJson(Map<String, dynamic> json) {
     ..isPinned = json['IsPinned'] as bool
     ..urlMediaType = _$enumDecodeNullable(
         _$ForumMediaTypeEnumMap, json['urlMediaType'],
-        unknownValue: ForumMediaType.None)
+        unknownValue: ForumMediaType.ProtectedInvalidEnumValue)
     ..thumbnail = json['thumbnail'] as String
     ..popularity = _$enumDecodeNullable(
         _$ForumPostPopularityEnumMap, json['popularity'],
-        unknownValue: ForumPostPopularity.Empty)
+        unknownValue: ForumPostPopularity.ProtectedInvalidEnumValue)
     ..isActive = json['isActive'] as bool
     ..isAnnouncement = json['isAnnouncement'] as bool
     ..userRating = json['userRating'] as int
@@ -85,6 +85,7 @@ const _$ForumMediaTypeEnumMap = {
   ForumMediaType.Image: 1,
   ForumMediaType.Video: 2,
   ForumMediaType.Youtube: 3,
+  ForumMediaType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$ForumPostPopularityEnumMap = {
@@ -94,4 +95,5 @@ const _$ForumPostPopularityEnumMap = {
   ForumPostPopularity.CoolStory: 3,
   ForumPostPopularity.HeatingUp: 4,
   ForumPostPopularity.Hot: 5,
+  ForumPostPopularity.ProtectedInvalidEnumValue: 999999999,
 };

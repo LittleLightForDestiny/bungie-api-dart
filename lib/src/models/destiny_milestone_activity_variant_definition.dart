@@ -10,7 +10,14 @@ class DestinyMilestoneActivityVariantDefinition{
 	
 	DestinyMilestoneActivityVariantDefinition();
 
-	factory DestinyMilestoneActivityVariantDefinition.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
+	factory DestinyMilestoneActivityVariantDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash to use for looking up the variant Activity's definition (DestinyActivityDefinition), where you can find its distinguishing characteristics such as difficulty level and recommended light level. 
 	/// Frequently, that will be the only distinguishing characteristics in practice, which is somewhat of a bummer.

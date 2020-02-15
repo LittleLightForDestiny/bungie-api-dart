@@ -14,7 +14,7 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
-        unknownValue: DestinyScope.Profile)
+        unknownValue: DestinyScope.ProtectedInvalidEnumValue)
     ..presentationInfo = json['presentationInfo'] == null
         ? null
         : DestinyPresentationChildBlock.fromJson(
@@ -24,7 +24,7 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
         (json['objectiveHashes'] as List)?.map((e) => e as int)?.toList()
     ..recordValueStyle = _$enumDecodeNullable(
         _$DestinyRecordValueStyleEnumMap, json['recordValueStyle'],
-        unknownValue: DestinyRecordValueStyle.Integer)
+        unknownValue: DestinyRecordValueStyle.ProtectedInvalidEnumValue)
     ..titleInfo = json['titleInfo'] == null
         ? null
         : DestinyRecordTitleBlock.fromJson(
@@ -102,6 +102,7 @@ T _$enumDecodeNullable<T>(
 const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
+  DestinyScope.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyRecordValueStyleEnumMap = {
@@ -110,4 +111,5 @@ const _$DestinyRecordValueStyleEnumMap = {
   DestinyRecordValueStyle.Milliseconds: 2,
   DestinyRecordValueStyle.Boolean: 3,
   DestinyRecordValueStyle.Decimal: 4,
+  DestinyRecordValueStyle.ProtectedInvalidEnumValue: 999999999,
 };

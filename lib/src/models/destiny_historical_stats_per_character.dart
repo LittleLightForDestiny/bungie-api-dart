@@ -9,7 +9,14 @@ class DestinyHistoricalStatsPerCharacter{
 	
 	DestinyHistoricalStatsPerCharacter();
 
-	factory DestinyHistoricalStatsPerCharacter.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsPerCharacterFromJson(json);
+	factory DestinyHistoricalStatsPerCharacter.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyHistoricalStatsPerCharacterFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'characterId')
 	String characterId;

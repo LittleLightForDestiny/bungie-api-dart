@@ -13,6 +13,9 @@ enum DestinyRace {
   ///Unknown = 3
   @JsonValue(3)
   Unknown,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyRaceExtension on DestinyRace{

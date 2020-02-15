@@ -7,6 +7,9 @@ enum DestinySocketArrayType {
   ///Intrinsic = 1
   @JsonValue(1)
   Intrinsic,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinySocketArrayTypeExtension on DestinySocketArrayType{

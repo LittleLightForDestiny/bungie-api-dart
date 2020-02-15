@@ -9,7 +9,14 @@ class TrendingEntryDestinyActivity{
 	
 	TrendingEntryDestinyActivity();
 
-	factory TrendingEntryDestinyActivity.fromJson(Map<String, dynamic> json) => _$TrendingEntryDestinyActivityFromJson(json);
+	factory TrendingEntryDestinyActivity.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingEntryDestinyActivityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'activityHash')
 	int activityHash;

@@ -9,7 +9,14 @@ class DestinyVendorActionDefinition{
 	
 	DestinyVendorActionDefinition();
 
-	factory DestinyVendorActionDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorActionDefinitionFromJson(json);
+	factory DestinyVendorActionDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorActionDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'description')
 	String description;

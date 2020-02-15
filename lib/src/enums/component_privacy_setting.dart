@@ -10,6 +10,9 @@ enum ComponentPrivacySetting {
   ///Private = 2
   @JsonValue(2)
   Private,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ComponentPrivacySettingExtension on ComponentPrivacySetting{

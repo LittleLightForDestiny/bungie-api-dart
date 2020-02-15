@@ -9,7 +9,14 @@ class DestinyVendorBaseComponent{
 	
 	DestinyVendorBaseComponent();
 
-	factory DestinyVendorBaseComponent.fromJson(Map<String, dynamic> json) => _$DestinyVendorBaseComponentFromJson(json);
+	factory DestinyVendorBaseComponent.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorBaseComponentFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The unique identifier for the vendor. Use it to look up their DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')

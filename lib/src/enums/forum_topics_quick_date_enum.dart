@@ -16,6 +16,9 @@ enum ForumTopicsQuickDateEnum {
   ///LastDay = 4
   @JsonValue(4)
   LastDay,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ForumTopicsQuickDateEnumExtension on ForumTopicsQuickDateEnum{

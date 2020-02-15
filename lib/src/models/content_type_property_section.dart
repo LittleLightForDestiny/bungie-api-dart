@@ -8,7 +8,14 @@ class ContentTypePropertySection{
 	
 	ContentTypePropertySection();
 
-	factory ContentTypePropertySection.fromJson(Map<String, dynamic> json) => _$ContentTypePropertySectionFromJson(json);
+	factory ContentTypePropertySection.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$ContentTypePropertySectionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'name')
 	String name;

@@ -11,7 +11,7 @@ DestinyGenderDefinition _$DestinyGenderDefinitionFromJson(
   return DestinyGenderDefinition()
     ..genderType = _$enumDecodeNullable(
         _$DestinyGenderEnumMap, json['genderType'],
-        unknownValue: DestinyGender.Male)
+        unknownValue: DestinyGender.ProtectedInvalidEnumValue)
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
@@ -67,4 +67,5 @@ const _$DestinyGenderEnumMap = {
   DestinyGender.Male: 0,
   DestinyGender.Female: 1,
   DestinyGender.Unknown: 2,
+  DestinyGender.ProtectedInvalidEnumValue: 999999999,
 };

@@ -10,6 +10,9 @@ enum DestinyItemSortType {
   ///StackSize = 2
   @JsonValue(2)
   StackSize,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyItemSortTypeExtension on DestinyItemSortType{

@@ -27,7 +27,7 @@ DestinyVendorInteractionDefinition _$DestinyVendorInteractionDefinitionFromJson(
     ..uiInteractionType = json['uiInteractionType'] as int
     ..interactionType = _$enumDecodeNullable(
         _$VendorInteractionTypeEnumMap, json['interactionType'],
-        unknownValue: VendorInteractionType.Unknown)
+        unknownValue: VendorInteractionType.ProtectedInvalidEnumValue)
     ..rewardBlockLabel = json['rewardBlockLabel'] as String
     ..rewardVendorCategoryIndex = json['rewardVendorCategoryIndex'] as int
     ..flavorLineOne = json['flavorLineOne'] as String
@@ -102,4 +102,5 @@ const _$VendorInteractionTypeEnumMap = {
   VendorInteractionType.ProgressTab: 8,
   VendorInteractionType.End: 9,
   VendorInteractionType.Start: 10,
+  VendorInteractionType.ProtectedInvalidEnumValue: 999999999,
 };

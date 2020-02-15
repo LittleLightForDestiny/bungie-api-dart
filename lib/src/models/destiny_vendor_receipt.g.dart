@@ -21,7 +21,7 @@ DestinyVendorReceipt _$DestinyVendorReceiptFromJson(Map<String, dynamic> json) {
     ..purchasedByCharacterId = json['purchasedByCharacterId'] as String
     ..refundPolicy = _$enumDecodeNullable(
         _$DestinyVendorItemRefundPolicyEnumMap, json['refundPolicy'],
-        unknownValue: DestinyVendorItemRefundPolicy.NotRefundable)
+        unknownValue: DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
     ..sequenceNumber = json['sequenceNumber'] as int
     ..timeToExpiration = json['timeToExpiration'] as String
     ..expiresOn = json['expiresOn'] as String;
@@ -77,4 +77,5 @@ const _$DestinyVendorItemRefundPolicyEnumMap = {
   DestinyVendorItemRefundPolicy.NotRefundable: 0,
   DestinyVendorItemRefundPolicy.DeletesItem: 1,
   DestinyVendorItemRefundPolicy.RevokesLicense: 2,
+  DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue: 999999999,
 };

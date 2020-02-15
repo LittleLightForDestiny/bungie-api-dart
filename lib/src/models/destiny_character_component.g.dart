@@ -12,7 +12,7 @@ DestinyCharacterComponent _$DestinyCharacterComponentFromJson(
     ..membershipId = json['membershipId'] as String
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.None)
+        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
     ..characterId = json['characterId'] as String
     ..dateLastPlayed = json['dateLastPlayed'] as String
     ..minutesPlayedThisSession = json['minutesPlayedThisSession'] as String
@@ -25,12 +25,12 @@ DestinyCharacterComponent _$DestinyCharacterComponentFromJson(
     ..genderHash = json['genderHash'] as int
     ..classHash = json['classHash'] as int
     ..raceType = _$enumDecodeNullable(_$DestinyRaceEnumMap, json['raceType'],
-        unknownValue: DestinyRace.Human)
+        unknownValue: DestinyRace.ProtectedInvalidEnumValue)
     ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'],
-        unknownValue: DestinyClass.Titan)
+        unknownValue: DestinyClass.ProtectedInvalidEnumValue)
     ..genderType = _$enumDecodeNullable(
         _$DestinyGenderEnumMap, json['genderType'],
-        unknownValue: DestinyGender.Male)
+        unknownValue: DestinyGender.ProtectedInvalidEnumValue)
     ..emblemPath = json['emblemPath'] as String
     ..emblemBackgroundPath = json['emblemBackgroundPath'] as String
     ..emblemHash = json['emblemHash'] as int
@@ -115,6 +115,7 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyRaceEnumMap = {
@@ -122,6 +123,7 @@ const _$DestinyRaceEnumMap = {
   DestinyRace.Awoken: 1,
   DestinyRace.Exo: 2,
   DestinyRace.Unknown: 3,
+  DestinyRace.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyClassEnumMap = {
@@ -129,10 +131,12 @@ const _$DestinyClassEnumMap = {
   DestinyClass.Hunter: 1,
   DestinyClass.Warlock: 2,
   DestinyClass.Unknown: 3,
+  DestinyClass.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$DestinyGenderEnumMap = {
   DestinyGender.Male: 0,
   DestinyGender.Female: 1,
   DestinyGender.Unknown: 2,
+  DestinyGender.ProtectedInvalidEnumValue: 999999999,
 };

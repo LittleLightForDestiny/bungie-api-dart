@@ -10,7 +10,14 @@ class DestinyInsertPlugsActionRequest{
 	
 	DestinyInsertPlugsActionRequest();
 
-	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) => _$DestinyInsertPlugsActionRequestFromJson(json);
+	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyInsertPlugsActionRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Action token provided by the AwaGetActionToken API call.
 	@JsonKey(name:'actionToken')
@@ -23,7 +30,7 @@ class DestinyInsertPlugsActionRequest{
 	DestinyInsertPlugsRequestEntry plug;
 	@JsonKey(name:'characterId')
 	String characterId;
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.None)
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType membershipType;
 
 	

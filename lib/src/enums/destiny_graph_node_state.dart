@@ -16,6 +16,9 @@ enum DestinyGraphNodeState {
   ///Completed = 4
   @JsonValue(4)
   Completed,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyGraphNodeStateExtension on DestinyGraphNodeState{

@@ -10,6 +10,9 @@ enum MembershipOption {
   ///Closed = 2
   @JsonValue(2)
   Closed,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension MembershipOptionExtension on MembershipOption{

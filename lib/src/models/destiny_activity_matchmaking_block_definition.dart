@@ -9,7 +9,14 @@ class DestinyActivityMatchmakingBlockDefinition{
 	
 	DestinyActivityMatchmakingBlockDefinition();
 
-	factory DestinyActivityMatchmakingBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityMatchmakingBlockDefinitionFromJson(json);
+	factory DestinyActivityMatchmakingBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityMatchmakingBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If TRUE, the activity is matchmade. Otherwise, it requires explicit forming of a party.
 	@JsonKey(name:'isMatchmade')

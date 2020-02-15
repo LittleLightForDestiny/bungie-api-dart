@@ -16,6 +16,9 @@ enum ItemLocation {
   ///Postmaster = 4
   @JsonValue(4)
   Postmaster,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension ItemLocationExtension on ItemLocation{

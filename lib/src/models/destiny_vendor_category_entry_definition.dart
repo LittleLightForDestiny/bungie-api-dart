@@ -10,7 +10,14 @@ class DestinyVendorCategoryEntryDefinition{
 	
 	DestinyVendorCategoryEntryDefinition();
 
-	factory DestinyVendorCategoryEntryDefinition.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoryEntryDefinitionFromJson(json);
+	factory DestinyVendorCategoryEntryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorCategoryEntryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The index of the category in the original category definitions for the vendor.
 	@JsonKey(name:'categoryIndex')

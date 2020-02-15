@@ -17,6 +17,9 @@ enum DestinyPresentationDisplayStyle {
   ///Record = 4
   @JsonValue(4)
   Record,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension DestinyPresentationDisplayStyleExtension on DestinyPresentationDisplayStyle{

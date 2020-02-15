@@ -8,7 +8,14 @@ class DestinyCollectibleAcquisitionBlock{
 	
 	DestinyCollectibleAcquisitionBlock();
 
-	factory DestinyCollectibleAcquisitionBlock.fromJson(Map<String, dynamic> json) => _$DestinyCollectibleAcquisitionBlockFromJson(json);
+	factory DestinyCollectibleAcquisitionBlock.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyCollectibleAcquisitionBlockFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'acquireMaterialRequirementHash')
 	int acquireMaterialRequirementHash;

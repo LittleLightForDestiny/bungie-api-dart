@@ -15,7 +15,7 @@ DestinyRecordCompletionBlock _$DestinyRecordCompletionBlockFromJson(
     ..shouldFireToast = json['shouldFireToast'] as bool
     ..toastStyle = _$enumDecodeNullable(
         _$DestinyRecordToastStyleEnumMap, json['toastStyle'],
-        unknownValue: DestinyRecordToastStyle.None);
+        unknownValue: DestinyRecordToastStyle.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$DestinyRecordCompletionBlockToJson(
@@ -67,4 +67,5 @@ const _$DestinyRecordToastStyleEnumMap = {
   DestinyRecordToastStyle.Badge: 3,
   DestinyRecordToastStyle.MetaRecord: 4,
   DestinyRecordToastStyle.MedalComplete: 5,
+  DestinyRecordToastStyle.ProtectedInvalidEnumValue: 999999999,
 };

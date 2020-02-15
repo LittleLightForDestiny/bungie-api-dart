@@ -26,7 +26,7 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
     ..socketCategoryHash = json['socketCategoryHash'] as int
     ..visibility = _$enumDecodeNullable(
         _$DestinySocketVisibilityEnumMap, json['visibility'],
-        unknownValue: DestinySocketVisibility.Visible)
+        unknownValue: DestinySocketVisibility.ProtectedInvalidEnumValue)
     ..alwaysRandomizeSockets = json['alwaysRandomizeSockets'] as bool
     ..isPreviewEnabled = json['isPreviewEnabled'] as bool
     ..hideDuplicateReusablePlugs = json['hideDuplicateReusablePlugs'] as bool
@@ -101,4 +101,5 @@ const _$DestinySocketVisibilityEnumMap = {
   DestinySocketVisibility.Hidden: 1,
   DestinySocketVisibility.HiddenWhenEmpty: 2,
   DestinySocketVisibility.HiddenIfNoPlugsAvailable: 3,
+  DestinySocketVisibility.ProtectedInvalidEnumValue: 999999999,
 };

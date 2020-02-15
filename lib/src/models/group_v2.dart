@@ -15,13 +15,20 @@ class GroupV2{
 	
 	GroupV2();
 
-	factory GroupV2.fromJson(Map<String, dynamic> json) => _$GroupV2FromJson(json);
+	factory GroupV2.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupV2FromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'groupId')
 	String groupId;
 	@JsonKey(name:'name')
 	String name;
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.General)
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
 	GroupType groupType;
 	@JsonKey(name:'membershipIdCreated')
 	String membershipIdCreated;
@@ -45,17 +52,17 @@ class GroupV2{
 	bool allowChat;
 	@JsonKey(name:'isDefaultPostPublic')
 	bool isDefaultPostPublic;
-	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.Group)
+	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
 	ChatSecuritySetting chatSecurity;
 	@JsonKey(name:'locale')
 	String locale;
 	@JsonKey(name:'avatarImageIndex')
 	int avatarImageIndex;
-	@JsonKey(name:'homepage',unknownEnumValue:GroupHomepage.Wall)
+	@JsonKey(name:'homepage',unknownEnumValue:GroupHomepage.ProtectedInvalidEnumValue)
 	GroupHomepage homepage;
-	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.Reviewed)
+	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.ProtectedInvalidEnumValue)
 	MembershipOption membershipOption;
-	@JsonKey(name:'defaultPublicity',unknownEnumValue:GroupPostPublicity.Public)
+	@JsonKey(name:'defaultPublicity',unknownEnumValue:GroupPostPublicity.ProtectedInvalidEnumValue)
 	GroupPostPublicity defaultPublicity;
 	@JsonKey(name:'theme')
 	String theme;

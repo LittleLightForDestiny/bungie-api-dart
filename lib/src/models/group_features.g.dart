@@ -23,12 +23,12 @@ GroupFeatures _$GroupFeaturesFromJson(Map<String, dynamic> json) {
     ..hostGuidedGamePermissionOverride = _$enumDecodeNullable(
         _$HostGuidedGamesPermissionLevelEnumMap,
         json['hostGuidedGamePermissionOverride'],
-        unknownValue: HostGuidedGamesPermissionLevel.None)
+        unknownValue: HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue)
     ..updateBannerPermissionOverride =
         json['updateBannerPermissionOverride'] as bool
     ..joinLevel = _$enumDecodeNullable(
         _$RuntimeGroupMemberTypeEnumMap, json['joinLevel'],
-        unknownValue: RuntimeGroupMemberType.None);
+        unknownValue: RuntimeGroupMemberType.ProtectedInvalidEnumValue);
 }
 
 Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
@@ -91,12 +91,14 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
+  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$HostGuidedGamesPermissionLevelEnumMap = {
   HostGuidedGamesPermissionLevel.None: 0,
   HostGuidedGamesPermissionLevel.Beginner: 1,
   HostGuidedGamesPermissionLevel.Member: 2,
+  HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$RuntimeGroupMemberTypeEnumMap = {
@@ -106,4 +108,5 @@ const _$RuntimeGroupMemberTypeEnumMap = {
   RuntimeGroupMemberType.Admin: 3,
   RuntimeGroupMemberType.ActingFounder: 4,
   RuntimeGroupMemberType.Founder: 5,
+  RuntimeGroupMemberType.ProtectedInvalidEnumValue: 999999999,
 };

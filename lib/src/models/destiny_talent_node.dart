@@ -12,7 +12,14 @@ class DestinyTalentNode{
 	
 	DestinyTalentNode();
 
-	factory DestinyTalentNode.fromJson(Map<String, dynamic> json) => _$DestinyTalentNodeFromJson(json);
+	factory DestinyTalentNode.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyTalentNodeFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The index of the Talent Node being referred to (an index into DestinyTalentGridDefinition.nodes[]). CONTENT VERSION DEPENDENT.
 	@JsonKey(name:'nodeIndex')
@@ -21,7 +28,7 @@ class DestinyTalentNode{
 	@JsonKey(name:'nodeHash')
 	int nodeHash;
 	/// An DestinyTalentNodeState enum value indicating the node's state: whether it can be activated or swapped, and why not if neither can be performed.
-	@JsonKey(name:'state',unknownEnumValue:DestinyTalentNodeState.Invalid)
+	@JsonKey(name:'state',unknownEnumValue:DestinyTalentNodeState.ProtectedInvalidEnumValue)
 	DestinyTalentNodeState state;
 	/// If true, the node is activated: it's current step then provides its benefits.
 	@JsonKey(name:'isActivated')

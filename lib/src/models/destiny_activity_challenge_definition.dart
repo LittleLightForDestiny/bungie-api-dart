@@ -10,7 +10,14 @@ class DestinyActivityChallengeDefinition{
 	
 	DestinyActivityChallengeDefinition();
 
-	factory DestinyActivityChallengeDefinition.fromJson(Map<String, dynamic> json) => _$DestinyActivityChallengeDefinitionFromJson(json);
+	factory DestinyActivityChallengeDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyActivityChallengeDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash for the Objective that matches this challenge. Use it to look up the DestinyObjectiveDefinition.
 	@JsonKey(name:'objectiveHash')

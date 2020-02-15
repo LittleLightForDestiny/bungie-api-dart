@@ -19,6 +19,9 @@ enum RuntimeGroupMemberType {
   ///Founder = 5
   @JsonValue(5)
   Founder,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension RuntimeGroupMemberTypeExtension on RuntimeGroupMemberType{

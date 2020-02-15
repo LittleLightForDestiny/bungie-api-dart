@@ -9,7 +9,14 @@ class DestinyVendorCategory{
 	
 	DestinyVendorCategory();
 
-	factory DestinyVendorCategory.fromJson(Map<String, dynamic> json) => _$DestinyVendorCategoryFromJson(json);
+	factory DestinyVendorCategory.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyVendorCategoryFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// An index into the DestinyVendorDefinition.displayCategories property, so you can grab the display data for this category.
 	@JsonKey(name:'displayCategoryIndex')

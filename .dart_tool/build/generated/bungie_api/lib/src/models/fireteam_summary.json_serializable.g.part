@@ -8,10 +8,10 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) {
     ..groupId = json['groupId'] as String
     ..platform = _$enumDecodeNullable(
         _$FireteamPlatformEnumMap, json['platform'],
-        unknownValue: FireteamPlatform.Unknown)
+        unknownValue: FireteamPlatform.ProtectedInvalidEnumValue)
     ..activityType = _$enumDecodeNullable(
         _$FireteamActivityTypeEnumMap, json['activityType'],
-        unknownValue: FireteamActivityType.All)
+        unknownValue: FireteamActivityType.ProtectedInvalidEnumValue)
     ..isImmediate = json['isImmediate'] as bool
     ..scheduledTime = json['scheduledTime'] as String
     ..ownerMembershipId = json['ownerMembershipId'] as String
@@ -25,7 +25,8 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) {
     ..isPublic = json['isPublic'] as bool
     ..locale = json['locale'] as String
     ..isValid = json['isValid'] as bool
-    ..datePlayerModified = json['datePlayerModified'] as String;
+    ..datePlayerModified = json['datePlayerModified'] as String
+    ..titleBeforeModeration = json['titleBeforeModeration'] as String;
 }
 
 Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
@@ -48,6 +49,7 @@ Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
       'locale': instance.locale,
       'isValid': instance.isValid,
       'datePlayerModified': instance.datePlayerModified,
+      'titleBeforeModeration': instance.titleBeforeModeration,
     };
 
 T _$enumDecode<T>(
@@ -88,6 +90,8 @@ const _$FireteamPlatformEnumMap = {
   FireteamPlatform.XboxOne: 2,
   FireteamPlatform.Blizzard: 3,
   FireteamPlatform.Steam: 4,
+  FireteamPlatform.Stadia: 5,
+  FireteamPlatform.ProtectedInvalidEnumValue: 999999999,
 };
 
 const _$FireteamActivityTypeEnumMap = {
@@ -107,4 +111,6 @@ const _$FireteamActivityTypeEnumMap = {
   FireteamActivityType.VexOffensive: 13,
   FireteamActivityType.AltarsOfSorrow: 14,
   FireteamActivityType.Dungeon: 15,
+  FireteamActivityType.Sundial: 16,
+  FireteamActivityType.ProtectedInvalidEnumValue: 999999999,
 };

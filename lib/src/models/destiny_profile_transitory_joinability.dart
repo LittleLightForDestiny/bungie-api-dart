@@ -11,13 +11,20 @@ class DestinyProfileTransitoryJoinability{
 	
 	DestinyProfileTransitoryJoinability();
 
-	factory DestinyProfileTransitoryJoinability.fromJson(Map<String, dynamic> json) => _$DestinyProfileTransitoryJoinabilityFromJson(json);
+	factory DestinyProfileTransitoryJoinability.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyProfileTransitoryJoinabilityFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The number of slots still available on this person's fireteam.
 	@JsonKey(name:'openSlots')
 	int openSlots;
 	/// Who the person is currently allowing invites from.
-	@JsonKey(name:'privacySetting',unknownEnumValue:DestinyGamePrivacySetting.Open)
+	@JsonKey(name:'privacySetting',unknownEnumValue:DestinyGamePrivacySetting.ProtectedInvalidEnumValue)
 	DestinyGamePrivacySetting privacySetting;
 	/// Reasons why a person can't join this person's fireteam.
 	@JsonKey(name:'closedReasons')

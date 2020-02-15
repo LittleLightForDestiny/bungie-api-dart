@@ -11,7 +11,14 @@ class DestinyPlaceDefinition{
 	
 	DestinyPlaceDefinition();
 
-	factory DestinyPlaceDefinition.fromJson(Map<String, dynamic> json) => _$DestinyPlaceDefinitionFromJson(json);
+	factory DestinyPlaceDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyPlaceDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')

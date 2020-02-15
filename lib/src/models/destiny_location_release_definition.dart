@@ -11,7 +11,14 @@ class DestinyLocationReleaseDefinition{
 	
 	DestinyLocationReleaseDefinition();
 
-	factory DestinyLocationReleaseDefinition.fromJson(Map<String, dynamic> json) => _$DestinyLocationReleaseDefinitionFromJson(json);
+	factory DestinyLocationReleaseDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyLocationReleaseDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Sadly, these don't appear to be populated anymore (ever?)
 	@JsonKey(name:'displayProperties')
@@ -47,7 +54,7 @@ class DestinyLocationReleaseDefinition{
 	@JsonKey(name:'activityPathDestination')
 	int activityPathDestination;
 	/// The type of Nav Point that this represents. See the enumeration for more info.
-	@JsonKey(name:'navPointType',unknownEnumValue:DestinyActivityNavPointType.Inactive)
+	@JsonKey(name:'navPointType',unknownEnumValue:DestinyActivityNavPointType.ProtectedInvalidEnumValue)
 	DestinyActivityNavPointType navPointType;
 	/// Looks like it should be the position on the map, but sadly it does not look populated... yet?
 	@JsonKey(name:'worldPosition')

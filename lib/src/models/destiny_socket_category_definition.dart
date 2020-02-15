@@ -15,7 +15,14 @@ class DestinySocketCategoryDefinition{
 	
 	DestinySocketCategoryDefinition();
 
-	factory DestinySocketCategoryDefinition.fromJson(Map<String, dynamic> json) => _$DestinySocketCategoryDefinitionFromJson(json);
+	factory DestinySocketCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinySocketCategoryDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -25,7 +32,7 @@ class DestinySocketCategoryDefinition{
 	@JsonKey(name:'uiCategoryStyle')
 	int uiCategoryStyle;
 	/// Same as uiCategoryStyle, but in a more usable enumeration form.
-	@JsonKey(name:'categoryStyle',unknownEnumValue:DestinySocketCategoryStyle.Unknown)
+	@JsonKey(name:'categoryStyle',unknownEnumValue:DestinySocketCategoryStyle.ProtectedInvalidEnumValue)
 	DestinySocketCategoryStyle categoryStyle;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

@@ -12,7 +12,14 @@ class DestinyItemStatBlockDefinition{
 	
 	DestinyItemStatBlockDefinition();
 
-	factory DestinyItemStatBlockDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemStatBlockDefinitionFromJson(json);
+	factory DestinyItemStatBlockDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemStatBlockDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// If true, the game won't show the "primary" stat on this item when you inspect it.
 	/// NOTE: This is being manually mapped, because I happen to want it in a block that isn't going to directly create this derivative block.

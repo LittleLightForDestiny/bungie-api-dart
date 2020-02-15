@@ -16,11 +16,18 @@ class TrendingDetail{
 	
 	TrendingDetail();
 
-	factory TrendingDetail.fromJson(Map<String, dynamic> json) => _$TrendingDetailFromJson(json);
+	factory TrendingDetail.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$TrendingDetailFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'identifier')
 	String identifier;
-	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.News)
+	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
 	TrendingEntryType entityType;
 	@JsonKey(name:'news')
 	TrendingEntryNews news;

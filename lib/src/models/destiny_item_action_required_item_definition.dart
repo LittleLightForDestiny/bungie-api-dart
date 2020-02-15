@@ -9,7 +9,14 @@ class DestinyItemActionRequiredItemDefinition{
 	
 	DestinyItemActionRequiredItemDefinition();
 
-	factory DestinyItemActionRequiredItemDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemActionRequiredItemDefinitionFromJson(json);
+	factory DestinyItemActionRequiredItemDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemActionRequiredItemDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The minimum quantity of the item you have to have.
 	@JsonKey(name:'count')

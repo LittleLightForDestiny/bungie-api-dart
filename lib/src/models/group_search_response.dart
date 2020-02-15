@@ -10,7 +10,14 @@ class GroupSearchResponse{
 	
 	GroupSearchResponse();
 
-	factory GroupSearchResponse.fromJson(Map<String, dynamic> json) => _$GroupSearchResponseFromJson(json);
+	factory GroupSearchResponse.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupSearchResponseFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'results')
 	List<GroupV2Card> results;

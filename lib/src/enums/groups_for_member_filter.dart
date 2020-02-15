@@ -10,6 +10,9 @@ enum GroupsForMemberFilter {
   ///NonFounded = 2
   @JsonValue(2)
   NonFounded,
+  ///value not found fallback
+  @JsonValue(999999999)
+  ProtectedInvalidEnumValue
 }
 
 extension GroupsForMemberFilterExtension on GroupsForMemberFilter{

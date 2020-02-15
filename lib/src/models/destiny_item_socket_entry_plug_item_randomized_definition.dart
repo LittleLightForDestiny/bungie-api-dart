@@ -8,7 +8,14 @@ class DestinyItemSocketEntryPlugItemRandomizedDefinition{
 	
 	DestinyItemSocketEntryPlugItemRandomizedDefinition();
 
-	factory DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(Map<String, dynamic> json) => _$DestinyItemSocketEntryPlugItemRandomizedDefinitionFromJson(json);
+	factory DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$DestinyItemSocketEntryPlugItemRandomizedDefinitionFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	/// The hash identifier of a DestinyInventoryItemDefinition representing the plug that can be inserted.
 	@JsonKey(name:'plugItemHash')

@@ -9,7 +9,14 @@ class GroupApplicationListRequest{
 	
 	GroupApplicationListRequest();
 
-	factory GroupApplicationListRequest.fromJson(Map<String, dynamic> json) => _$GroupApplicationListRequestFromJson(json);
+	factory GroupApplicationListRequest.fromJson(Map<String, dynamic> json) {
+		try{
+			return _$GroupApplicationListRequestFromJson(json);
+		}catch(e){
+			print(e);
+		}
+		return null;
+	}
 
 	@JsonKey(name:'memberships')
 	List<UserMembership> memberships;
