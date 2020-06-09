@@ -170,7 +170,7 @@ packages:
     source: hosted
     version: "0.14.0+3"
   http_multi_server:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: http_multi_server
       url: "https://pub.dartlang.org"
