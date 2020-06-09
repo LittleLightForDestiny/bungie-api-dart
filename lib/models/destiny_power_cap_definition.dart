@@ -1,0 +1,1 @@
+export '../src/models/destiny_power_cap_definition.dart';

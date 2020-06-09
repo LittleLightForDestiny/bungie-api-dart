@@ -49,7 +49,8 @@ DestinyVendorItemDefinition _$DestinyVendorItemDefinitionFromJson(
     ..expirationTooltip = json['expirationTooltip'] as String
     ..redirectToSaleIndexes =
         (json['redirectToSaleIndexes'] as List)?.map((e) => e as int)?.toList()
-    ..socketOverrides = (json['socketOverrides'] as List)?.map((e) => e == null ? null : DestinyVendorItemSocketOverride.fromJson(e as Map<String, dynamic>))?.toList();
+    ..socketOverrides = (json['socketOverrides'] as List)?.map((e) => e == null ? null : DestinyVendorItemSocketOverride.fromJson(e as Map<String, dynamic>))?.toList()
+    ..unpurchasable = json['unpurchasable'] as bool;
 }
 
 Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
@@ -82,6 +83,7 @@ Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
       'expirationTooltip': instance.expirationTooltip,
       'redirectToSaleIndexes': instance.redirectToSaleIndexes,
       'socketOverrides': instance.socketOverrides,
+      'unpurchasable': instance.unpurchasable,
     };
 
 T _$enumDecode<T>(

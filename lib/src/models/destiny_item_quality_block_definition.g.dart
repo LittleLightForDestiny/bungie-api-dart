@@ -16,7 +16,17 @@ DestinyItemQualityBlockDefinition _$DestinyItemQualityBlockDefinitionFromJson(
     ..infusionCategoryHashes =
         (json['infusionCategoryHashes'] as List)?.map((e) => e as int)?.toList()
     ..progressionLevelRequirementHash =
-        json['progressionLevelRequirementHash'] as int;
+        json['progressionLevelRequirementHash'] as int
+    ..currentVersion = json['currentVersion'] as int
+    ..versions = (json['versions'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyItemVersionDefinition.fromJson(e as Map<String, dynamic>))
+        ?.toList()
+    ..displayVersionWatermarkIcons =
+        (json['displayVersionWatermarkIcons'] as List)
+            ?.map((e) => e as String)
+            ?.toList();
 }
 
 Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
@@ -29,4 +39,7 @@ Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
       'infusionCategoryHashes': instance.infusionCategoryHashes,
       'progressionLevelRequirementHash':
           instance.progressionLevelRequirementHash,
+      'currentVersion': instance.currentVersion,
+      'versions': instance.versions,
+      'displayVersionWatermarkIcons': instance.displayVersionWatermarkIcons,
     };

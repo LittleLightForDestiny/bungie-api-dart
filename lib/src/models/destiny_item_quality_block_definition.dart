@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'destiny_item_version_definition.dart';
 
 part 'destiny_item_quality_block_definition.g.dart';
 
@@ -41,6 +42,15 @@ class DestinyItemQualityBlockDefinition{
 	/// An item can refer to pre-set level requirements. They are defined in DestinyProgressionLevelRequirementDefinition, and you can use this hash to find the appropriate definition.
 	@JsonKey(name:'progressionLevelRequirementHash')
 	int progressionLevelRequirementHash;
+	/// The latest version available for this item.
+	@JsonKey(name:'currentVersion')
+	int currentVersion;
+	/// The list of versions available for this item.
+	@JsonKey(name:'versions')
+	List<DestinyItemVersionDefinition> versions;
+	/// Icon overlays to denote the item version and power cap status.
+	@JsonKey(name:'displayVersionWatermarkIcons')
+	List<String> displayVersionWatermarkIcons;
 
 	
 	

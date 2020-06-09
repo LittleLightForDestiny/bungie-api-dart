@@ -33,7 +33,8 @@ DestinyItemComponent _$DestinyItemComponentFromJson(Map<String, dynamic> json) {
     ..metricObjective = json['metricObjective'] == null
         ? null
         : DestinyObjectiveProgress.fromJson(
-            json['metricObjective'] as Map<String, dynamic>);
+            json['metricObjective'] as Map<String, dynamic>)
+    ..versionNumber = json['versionNumber'] as int;
 }
 
 Map<String, dynamic> _$DestinyItemComponentToJson(
@@ -54,6 +55,7 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'tooltipNotificationIndexes': instance.tooltipNotificationIndexes,
       'metricHash': instance.metricHash,
       'metricObjective': instance.metricObjective,
+      'versionNumber': instance.versionNumber,
     };
 
 T _$enumDecode<T>(

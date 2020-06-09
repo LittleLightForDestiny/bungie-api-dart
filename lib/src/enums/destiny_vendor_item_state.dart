@@ -47,6 +47,9 @@ class DestinyVendorItemState {
     ///DailyOffer = 4096
     /// This indicates that the item is a daily offer.
     static const DestinyVendorItemState DailyOffer = DestinyVendorItemState(4096);
+    ///Charity = 8192
+    /// This indicates that the item is for charity.
+    static const DestinyVendorItemState Charity = DestinyVendorItemState(8192);
 
     int get value {
         return _value;

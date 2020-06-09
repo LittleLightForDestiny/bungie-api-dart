@@ -1971,6 +1971,36 @@ enum PlatformErrorCodes {
   ///ApplicationTokenKeyIdDoesNotExist = 2116
   @JsonValue(2116)
   ApplicationTokenKeyIdDoesNotExist,
+  ///ProvidedTokenNotValidRefreshToken = 2117
+  @JsonValue(2117)
+  ProvidedTokenNotValidRefreshToken,
+  ///RefreshTokenExpired = 2118
+  @JsonValue(2118)
+  RefreshTokenExpired,
+  ///AuthorizationRecordInvalid = 2119
+  @JsonValue(2119)
+  AuthorizationRecordInvalid,
+  ///TokenPreviouslyRevoked = 2120
+  @JsonValue(2120)
+  TokenPreviouslyRevoked,
+  ///TokenInvalidMembership = 2121
+  @JsonValue(2121)
+  TokenInvalidMembership,
+  ///AuthorizationCodeStale = 2122
+  @JsonValue(2122)
+  AuthorizationCodeStale,
+  ///AuthorizationRecordExpired = 2123
+  @JsonValue(2123)
+  AuthorizationRecordExpired,
+  ///AuthorizationRecordRevoked = 2124
+  @JsonValue(2124)
+  AuthorizationRecordRevoked,
+  ///AuthorizationRecordInactiveApiKey = 2125
+  @JsonValue(2125)
+  AuthorizationRecordInactiveApiKey,
+  ///AuthorizationRecordApiKeyMatching = 2126
+  @JsonValue(2126)
+  AuthorizationRecordApiKeyMatching,
   ///PartnershipInvalidType = 2200
   @JsonValue(2200)
   PartnershipInvalidType,
@@ -2013,6 +2043,12 @@ enum PlatformErrorCodes {
   ///TwitchCouldNotUnregisterUser = 2504
   @JsonValue(2504)
   TwitchCouldNotUnregisterUser,
+  ///TwitchRequiresRelinking = 2505
+  @JsonValue(2505)
+  TwitchRequiresRelinking,
+  ///TwitchNoPlatformChosen = 2506
+  @JsonValue(2506)
+  TwitchNoPlatformChosen,
   ///TrendingCategoryNotFound = 2600
   @JsonValue(2600)
   TrendingCategoryNotFound,
@@ -3585,6 +3621,26 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2115;
       case PlatformErrorCodes.ApplicationTokenKeyIdDoesNotExist:
         return 2116;
+      case PlatformErrorCodes.ProvidedTokenNotValidRefreshToken:
+        return 2117;
+      case PlatformErrorCodes.RefreshTokenExpired:
+        return 2118;
+      case PlatformErrorCodes.AuthorizationRecordInvalid:
+        return 2119;
+      case PlatformErrorCodes.TokenPreviouslyRevoked:
+        return 2120;
+      case PlatformErrorCodes.TokenInvalidMembership:
+        return 2121;
+      case PlatformErrorCodes.AuthorizationCodeStale:
+        return 2122;
+      case PlatformErrorCodes.AuthorizationRecordExpired:
+        return 2123;
+      case PlatformErrorCodes.AuthorizationRecordRevoked:
+        return 2124;
+      case PlatformErrorCodes.AuthorizationRecordInactiveApiKey:
+        return 2125;
+      case PlatformErrorCodes.AuthorizationRecordApiKeyMatching:
+        return 2126;
       case PlatformErrorCodes.PartnershipInvalidType:
         return 2200;
       case PlatformErrorCodes.PartnershipValidationError:
@@ -3613,6 +3669,10 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2503;
       case PlatformErrorCodes.TwitchCouldNotUnregisterUser:
         return 2504;
+      case PlatformErrorCodes.TwitchRequiresRelinking:
+        return 2505;
+      case PlatformErrorCodes.TwitchNoPlatformChosen:
+        return 2506;
       case PlatformErrorCodes.TrendingCategoryNotFound:
         return 2600;
       case PlatformErrorCodes.TrendingEntryTypeNotSupported:

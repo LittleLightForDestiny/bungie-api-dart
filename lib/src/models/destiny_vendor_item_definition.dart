@@ -103,6 +103,10 @@ class DestinyVendorItemDefinition{
 	List<int> redirectToSaleIndexes;
 	@JsonKey(name:'socketOverrides')
 	List<DestinyVendorItemSocketOverride> socketOverrides;
+	/// If true, this item is some sort of dummy sale item that cannot actually be purchased. It may be a display only item, or some fluff left by a content designer for testing purposes, or something that got disabled because it was a terrible idea. You get the picture. We won't know *why* it can't be purchased, only that it can't be. Sorry.
+	/// This is also only whether it's unpurchasable as a static property according to game content. There are other reasons why an item may or may not be purchasable at runtime, so even if this isn't set to True you should trust the runtime value for this sale item over the static definition if this is unset.
+	@JsonKey(name:'unpurchasable')
+	bool unpurchasable;
 
 	
 	

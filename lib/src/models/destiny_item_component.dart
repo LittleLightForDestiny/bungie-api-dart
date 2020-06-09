@@ -70,6 +70,9 @@ class DestinyItemComponent{
 	/// The objective progress for the currently-selected metric definition, to be displayed on the emblem nameplate.
 	@JsonKey(name:'metricObjective')
 	DestinyObjectiveProgress metricObjective;
+	/// The version of this item, used to index into the versions list in the item definition quality block.
+	@JsonKey(name:'versionNumber')
+	int versionNumber;
 
 	
 	

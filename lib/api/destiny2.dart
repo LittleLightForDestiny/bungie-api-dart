@@ -3,6 +3,7 @@ import '../enums/bungie_membership_type.dart';
 import '../enums/destiny_activity_mode_type.dart';
 import '../enums/destiny_component_type.dart';
 import '../enums/destiny_stats_group_type.dart';
+import '../enums/destiny_vendor_filter.dart';
 import '../enums/period_type.dart';
 import '../models/awa_permission_requested.dart';
 import '../models/awa_user_response.dart';
@@ -193,6 +194,7 @@ class Destiny2{
         String characterId,
         List<DestinyComponentType> components,
         String destinyMembershipId,
+        DestinyVendorFilter filter,
         BungieMembershipType membershipType,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
@@ -200,6 +202,7 @@ class Destiny2{
         final String _destinyMembershipId = '$destinyMembershipId';
         final String _membershipType = '${membershipType.value}';
         params['components'] = components.map((DestinyComponentType components)=>components.value).toList();
+        params['filter'] = filter.value;
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/$_membershipType/Profile/$_destinyMembershipId/Character/$_characterId/Vendors/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);

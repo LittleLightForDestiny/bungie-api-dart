@@ -20,7 +20,6 @@ class DestinyVendorComponent{
 	}
 
 	/// If True, you can purchase from the Vendor.
-	/// Theoretically, Vendors can be restricted from selling items. In practice, none do that (yet?).
 	@JsonKey(name:'canPurchase')
 	bool canPurchase;
 	/// If the Vendor has a related Reputation, this is the Progression data that represents the character's Reputation level with this Vendor.

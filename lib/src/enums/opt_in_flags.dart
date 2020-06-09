@@ -22,6 +22,8 @@ class OptInFlags {
     static const OptInFlags PlayTests = OptInFlags(64);
     ///PlayTestsLocal = 128
     static const OptInFlags PlayTestsLocal = OptInFlags(128);
+    ///Careers = 256
+    static const OptInFlags Careers = OptInFlags(256);
 
     int get value {
         return _value;
