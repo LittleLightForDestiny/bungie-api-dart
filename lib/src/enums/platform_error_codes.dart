@@ -2007,6 +2007,12 @@ enum PlatformErrorCodes {
   ///TwitchCouldNotLoadDestinyInfo = 2502
   @JsonValue(2502)
   TwitchCouldNotLoadDestinyInfo,
+  ///TwitchCouldNotRegisterUser = 2503
+  @JsonValue(2503)
+  TwitchCouldNotRegisterUser,
+  ///TwitchCouldNotUnregisterUser = 2504
+  @JsonValue(2504)
+  TwitchCouldNotUnregisterUser,
   ///TrendingCategoryNotFound = 2600
   @JsonValue(2600)
   TrendingCategoryNotFound,
@@ -2250,6 +2256,9 @@ enum PlatformErrorCodes {
   ///PCMigrationEntitlementTransferFailed = 3413
   @JsonValue(3413)
   PCMigrationEntitlementTransferFailed,
+  ///PCMigrationCannotStompClanFounder = 3414
+  @JsonValue(3414)
+  PCMigrationCannotStompClanFounder,
   ///UnsupportedBrowser = 3500
   @JsonValue(3500)
   UnsupportedBrowser,
@@ -3600,6 +3609,10 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2501;
       case PlatformErrorCodes.TwitchCouldNotLoadDestinyInfo:
         return 2502;
+      case PlatformErrorCodes.TwitchCouldNotRegisterUser:
+        return 2503;
+      case PlatformErrorCodes.TwitchCouldNotUnregisterUser:
+        return 2504;
       case PlatformErrorCodes.TrendingCategoryNotFound:
         return 2600;
       case PlatformErrorCodes.TrendingEntryTypeNotSupported:
@@ -3762,6 +3775,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3412;
       case PlatformErrorCodes.PCMigrationEntitlementTransferFailed:
         return 3413;
+      case PlatformErrorCodes.PCMigrationCannotStompClanFounder:
+        return 3414;
       case PlatformErrorCodes.UnsupportedBrowser:
         return 3500;
       case PlatformErrorCodes.StadiaAccountRequired:

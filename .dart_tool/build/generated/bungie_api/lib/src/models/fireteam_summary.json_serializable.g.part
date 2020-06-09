@@ -9,9 +9,7 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) {
     ..platform = _$enumDecodeNullable(
         _$FireteamPlatformEnumMap, json['platform'],
         unknownValue: FireteamPlatform.ProtectedInvalidEnumValue)
-    ..activityType = _$enumDecodeNullable(
-        _$FireteamActivityTypeEnumMap, json['activityType'],
-        unknownValue: FireteamActivityType.ProtectedInvalidEnumValue)
+    ..activityType = json['activityType'] as int
     ..isImmediate = json['isImmediate'] as bool
     ..scheduledTime = json['scheduledTime'] as String
     ..ownerMembershipId = json['ownerMembershipId'] as String
@@ -34,7 +32,7 @@ Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
       'fireteamId': instance.fireteamId,
       'groupId': instance.groupId,
       'platform': _$FireteamPlatformEnumMap[instance.platform],
-      'activityType': _$FireteamActivityTypeEnumMap[instance.activityType],
+      'activityType': instance.activityType,
       'isImmediate': instance.isImmediate,
       'scheduledTime': instance.scheduledTime,
       'ownerMembershipId': instance.ownerMembershipId,
@@ -92,25 +90,4 @@ const _$FireteamPlatformEnumMap = {
   FireteamPlatform.Steam: 4,
   FireteamPlatform.Stadia: 5,
   FireteamPlatform.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$FireteamActivityTypeEnumMap = {
-  FireteamActivityType.All: 0,
-  FireteamActivityType.Raid: 1,
-  FireteamActivityType.Crucible: 2,
-  FireteamActivityType.Trials: 3,
-  FireteamActivityType.Nightfall: 4,
-  FireteamActivityType.Anything: 5,
-  FireteamActivityType.Gambit: 6,
-  FireteamActivityType.BlindWell: 7,
-  FireteamActivityType.EscalationProtocol: 8,
-  FireteamActivityType.Forge: 9,
-  FireteamActivityType.Reckoning: 10,
-  FireteamActivityType.Menagerie: 11,
-  FireteamActivityType.NightmareHunts: 12,
-  FireteamActivityType.VexOffensive: 13,
-  FireteamActivityType.AltarsOfSorrow: 14,
-  FireteamActivityType.Dungeon: 15,
-  FireteamActivityType.Sundial: 16,
-  FireteamActivityType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -20,6 +20,8 @@ class OptInFlags {
     static const OptInFlags Social = OptInFlags(32);
     ///PlayTests = 64
     static const OptInFlags PlayTests = OptInFlags(64);
+    ///PlayTestsLocal = 128
+    static const OptInFlags PlayTestsLocal = OptInFlags(128);
 
     int get value {
         return _value;

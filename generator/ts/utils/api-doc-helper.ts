@@ -213,7 +213,7 @@ export class ApiDocHelper{
                 if(format == 'int64'){
                     return 'String';
                 }
-                if(format == 'float'){
+                if(format == 'float' || format == 'double'){
                     return 'double';
                 }
                 return 'int';

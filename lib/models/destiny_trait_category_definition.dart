@@ -1,0 +1,1 @@
+export '../src/models/destiny_trait_category_definition.dart';

@@ -11,6 +11,7 @@ import 'single_component_response_of_destiny_presentation_nodes_component.dart';
 import 'single_component_response_of_destiny_profile_records_component.dart';
 import 'single_component_response_of_destiny_profile_collectibles_component.dart';
 import 'single_component_response_of_destiny_profile_transitory_component.dart';
+import 'single_component_response_of_destiny_metrics_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_inventory_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_character_progression_component.dart';
@@ -88,6 +89,9 @@ class DestinyProfileResponse{
 	/// COMPONENT TYPE: Transitory
 	@JsonKey(name:'profileTransitoryData')
 	SingleComponentResponseOfDestinyProfileTransitoryComponent profileTransitoryData;
+	/// COMPONENT TYPE: Metrics
+	@JsonKey(name:'metrics')
+	SingleComponentResponseOfDestinyMetricsComponent metrics;
 	/// Basic information about each character, keyed by the CharacterId.
 	/// COMPONENT TYPE: Characters
 	@JsonKey(name:'characters')

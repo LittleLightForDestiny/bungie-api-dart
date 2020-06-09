@@ -58,6 +58,7 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
     ..value = json['value'] == null ? null : DestinyItemValueBlockDefinition.fromJson(json['value'] as Map<String, dynamic>)
     ..sourceData = json['sourceData'] == null ? null : DestinyItemSourceBlockDefinition.fromJson(json['sourceData'] as Map<String, dynamic>)
     ..objectives = json['objectives'] == null ? null : DestinyItemObjectiveBlockDefinition.fromJson(json['objectives'] as Map<String, dynamic>)
+    ..metrics = json['metrics'] == null ? null : DestinyItemMetricBlockDefinition.fromJson(json['metrics'] as Map<String, dynamic>)
     ..plug = json['plug'] == null ? null : DestinyItemPlugDefinition.fromJson(json['plug'] as Map<String, dynamic>)
     ..gearset = json['gearset'] == null ? null : DestinyItemGearsetBlockDefinition.fromJson(json['gearset'] as Map<String, dynamic>)
     ..sack = json['sack'] == null ? null : DestinyItemSackBlockDefinition.fromJson(json['sack'] as Map<String, dynamic>)
@@ -121,6 +122,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'value': instance.value,
       'sourceData': instance.sourceData,
       'objectives': instance.objectives,
+      'metrics': instance.metrics,
       'plug': instance.plug,
       'gearset': instance.gearset,
       'sack': instance.sack,

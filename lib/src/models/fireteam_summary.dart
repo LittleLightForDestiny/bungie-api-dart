@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import '../enums/fireteam_platform.dart';
-import '../enums/fireteam_activity_type.dart';
 
 part 'fireteam_summary.g.dart';
 
@@ -25,8 +24,8 @@ class FireteamSummary{
 	String groupId;
 	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.ProtectedInvalidEnumValue)
 	FireteamPlatform platform;
-	@JsonKey(name:'activityType',unknownEnumValue:FireteamActivityType.ProtectedInvalidEnumValue)
-	FireteamActivityType activityType;
+	@JsonKey(name:'activityType')
+	int activityType;
 	@JsonKey(name:'isImmediate')
 	bool isImmediate;
 	@JsonKey(name:'scheduledTime')

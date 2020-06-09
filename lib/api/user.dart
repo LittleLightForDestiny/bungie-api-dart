@@ -1,7 +1,6 @@
 import '../helpers/http.dart';
 import '../enums/bungie_credential_type.dart';
 import '../enums/bungie_membership_type.dart';
-import '../responses/celist_of_public_partnership_detail_response.dart';
 import '../responses/general_user_response.dart';
 import '../responses/hard_linked_user_membership_response.dart';
 import '../responses/list_of_general_user_response.dart';
@@ -78,21 +77,6 @@ class User{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return UserMembershipDataResponse.fromJson(response.mappedBody);
-        }
-        throw Exception(response.mappedBody);
-    }
-    /// Returns a user's linked Partnerships.
-    static Future<CEListOfPublicPartnershipDetailResponse> getPartnerships (
-        HttpClient client,
-        String membershipId,
-    ) async {
-        final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _membershipId = '$membershipId';
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/$_membershipId/Partnerships/', params);
-        config.bodyContentType = null;
-        final HttpResponse response = await client.request(config);
-        if(response.statusCode == 200) {
-            return CEListOfPublicPartnershipDetailResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

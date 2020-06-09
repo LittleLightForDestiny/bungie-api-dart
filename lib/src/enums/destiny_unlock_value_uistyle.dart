@@ -38,8 +38,25 @@ enum DestinyUnlockValueUIStyle {
   @JsonValue(8)
   Hidden,
   ///Multiplier = 9
+  /// Example: &quot;1.5x&quot;
   @JsonValue(9)
   Multiplier,
+  ///GreenPips = 10
+  /// Show the value as a series of green pips, like the wins in a Trials of Osiris score card.
+  @JsonValue(10)
+  GreenPips,
+  ///RedPips = 11
+  /// Show the value as a series of red pips, like the losses in a Trials of Osiris score card.
+  @JsonValue(11)
+  RedPips,
+  ///ExplicitPercentage = 12
+  /// Show the value as a percentage. For example: &quot;51%&quot; - Does no division, only appends &#39;%&#39;
+  @JsonValue(12)
+  ExplicitPercentage,
+  ///RawFloat = 13
+  /// Show the value as a floating-point number. For example: &quot;4.52&quot; NOTE: Passed along from Investment as whole number with last two digits as decimal values (452 -&gt; 4.52)
+  @JsonValue(13)
+  RawFloat,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -68,6 +85,14 @@ extension DestinyUnlockValueUIStyleExtension on DestinyUnlockValueUIStyle{
         return 8;
       case DestinyUnlockValueUIStyle.Multiplier:
         return 9;
+      case DestinyUnlockValueUIStyle.GreenPips:
+        return 10;
+      case DestinyUnlockValueUIStyle.RedPips:
+        return 11;
+      case DestinyUnlockValueUIStyle.ExplicitPercentage:
+        return 12;
+      case DestinyUnlockValueUIStyle.RawFloat:
+        return 13;
       default:
         return null;
     }

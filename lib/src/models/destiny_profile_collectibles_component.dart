@@ -27,6 +27,12 @@ class DestinyProfileCollectiblesComponent{
 	List<int> newnessFlaggedCollectibleHashes;
 	@JsonKey(name:'collectibles')
 	Map<String, DestinyCollectibleComponent> collectibles;
+	/// The hash for the root presentation node definition of Collection categories.
+	@JsonKey(name:'collectionCategoriesRootNodeHash')
+	int collectionCategoriesRootNodeHash;
+	/// The hash for the root presentation node definition of Collection Badges.
+	@JsonKey(name:'collectionBadgesRootNodeHash')
+	int collectionBadgesRootNodeHash;
 
 	
 	

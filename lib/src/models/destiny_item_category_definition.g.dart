@@ -32,6 +32,7 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
     ..grantDestinyClass = _$enumDecodeNullable(
         _$DestinyClassEnumMap, json['grantDestinyClass'],
         unknownValue: DestinyClass.ProtectedInvalidEnumValue)
+    ..traitId = json['traitId'] as String
     ..groupedCategoryHashes =
         (json['groupedCategoryHashes'] as List)?.map((e) => e as int)?.toList()
     ..parentCategoryHashes =
@@ -60,6 +61,7 @@ Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
       'grantDestinySubType':
           _$DestinyItemSubTypeEnumMap[instance.grantDestinySubType],
       'grantDestinyClass': _$DestinyClassEnumMap[instance.grantDestinyClass],
+      'traitId': instance.traitId,
       'groupedCategoryHashes': instance.groupedCategoryHashes,
       'parentCategoryHashes': instance.parentCategoryHashes,
       'groupCategoryOnly': instance.groupCategoryOnly,

@@ -82,6 +82,8 @@ class GeneralUser{
 	String steamDisplayName;
 	@JsonKey(name:'stadiaDisplayName')
 	String stadiaDisplayName;
+	@JsonKey(name:'twitchDisplayName')
+	String twitchDisplayName;
 
 	
 	

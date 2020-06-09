@@ -34,11 +34,7 @@ TrendingDetail _$TrendingDetailFromJson(Map<String, dynamic> json) {
     ..creation = json['creation'] == null
         ? null
         : TrendingEntryCommunityCreation.fromJson(
-            json['creation'] as Map<String, dynamic>)
-    ..stream = json['stream'] == null
-        ? null
-        : TrendingEntryCommunityStream.fromJson(
-            json['stream'] as Map<String, dynamic>);
+            json['creation'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$TrendingDetailToJson(TrendingDetail instance) =>
@@ -51,7 +47,6 @@ Map<String, dynamic> _$TrendingDetailToJson(TrendingDetail instance) =>
       'destinyActivity': instance.destinyActivity,
       'destinyRitual': instance.destinyRitual,
       'creation': instance.creation,
-      'stream': instance.stream,
     };
 
 T _$enumDecode<T>(

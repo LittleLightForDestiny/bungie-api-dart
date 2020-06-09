@@ -136,6 +136,10 @@ enum DestinyComponentType {
   /// Returns information that Bungie considers to be &quot;Transitory&quot;: data that may change too frequently or come from a non-authoritative source such that we don&#39;t consider the data to be fully trustworthy, but that might prove useful for some limited use cases. We can provide no guarantee of timeliness nor consistency for this data: buyer beware with the Transitory component.
   @JsonValue(1000)
   Transitory,
+  ///Metrics = 1100
+  /// Returns summary status information about all &quot;Metrics&quot; (also known in the game as &quot;Stat Trackers&quot;).
+  @JsonValue(1100)
+  Metrics,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -210,6 +214,8 @@ extension DestinyComponentTypeExtension on DestinyComponentType{
         return 900;
       case DestinyComponentType.Transitory:
         return 1000;
+      case DestinyComponentType.Metrics:
+        return 1100;
       default:
         return null;
     }

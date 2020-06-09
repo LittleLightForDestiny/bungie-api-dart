@@ -11,7 +11,7 @@ DestinyEntitySearchResultItem _$DestinyEntitySearchResultItemFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..weight = json['weight'] as int;
+    ..weight = (json['weight'] as num)?.toDouble();
 }
 
 Map<String, dynamic> _$DestinyEntitySearchResultItemToJson(

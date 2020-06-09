@@ -123,5 +123,9 @@ const _$DestinyUnlockValueUIStyleEnumMap = {
   DestinyUnlockValueUIStyle.TimeDuration: 7,
   DestinyUnlockValueUIStyle.Hidden: 8,
   DestinyUnlockValueUIStyle.Multiplier: 9,
+  DestinyUnlockValueUIStyle.GreenPips: 10,
+  DestinyUnlockValueUIStyle.RedPips: 11,
+  DestinyUnlockValueUIStyle.ExplicitPercentage: 12,
+  DestinyUnlockValueUIStyle.RawFloat: 13,
   DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue: 999999999,
 };

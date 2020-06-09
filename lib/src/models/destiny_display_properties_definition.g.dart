@@ -12,6 +12,11 @@ DestinyDisplayPropertiesDefinition _$DestinyDisplayPropertiesDefinitionFromJson(
     ..description = json['description'] as String
     ..name = json['name'] as String
     ..icon = json['icon'] as String
+    ..iconSequences = (json['iconSequences'] as List)
+        ?.map((e) => e == null
+            ? null
+            : DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>))
+        ?.toList()
     ..highResIcon = json['highResIcon'] as String
     ..hasIcon = json['hasIcon'] as bool;
 }
@@ -22,6 +27,7 @@ Map<String, dynamic> _$DestinyDisplayPropertiesDefinitionToJson(
       'description': instance.description,
       'name': instance.name,
       'icon': instance.icon,
+      'iconSequences': instance.iconSequences,
       'highResIcon': instance.highResIcon,
       'hasIcon': instance.hasIcon,
     };

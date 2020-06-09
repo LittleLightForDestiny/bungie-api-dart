@@ -30,6 +30,14 @@ DestinyCollectibleDefinition _$DestinyCollectibleDefinitionFromJson(
         ? null
         : DestinyPresentationChildBlock.fromJson(
             json['presentationInfo'] as Map<String, dynamic>)
+    ..presentationNodeType = _$enumDecodeNullable(
+        _$DestinyPresentationNodeTypeEnumMap, json['presentationNodeType'],
+        unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+    ..traitIds = (json['traitIds'] as List)?.map((e) => e as String)?.toList()
+    ..traitHashes =
+        (json['traitHashes'] as List)?.map((e) => e as int)?.toList()
+    ..parentNodeHashes =
+        (json['parentNodeHashes'] as List)?.map((e) => e as int)?.toList()
     ..hash = json['hash'] as int
     ..index = json['index'] as int
     ..redacted = json['redacted'] as bool;
@@ -46,6 +54,11 @@ Map<String, dynamic> _$DestinyCollectibleDefinitionToJson(
       'acquisitionInfo': instance.acquisitionInfo,
       'stateInfo': instance.stateInfo,
       'presentationInfo': instance.presentationInfo,
+      'presentationNodeType':
+          _$DestinyPresentationNodeTypeEnumMap[instance.presentationNodeType],
+      'traitIds': instance.traitIds,
+      'traitHashes': instance.traitHashes,
+      'parentNodeHashes': instance.parentNodeHashes,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,
@@ -87,4 +100,13 @@ const _$DestinyScopeEnumMap = {
   DestinyScope.Profile: 0,
   DestinyScope.Character: 1,
   DestinyScope.ProtectedInvalidEnumValue: 999999999,
+};
+
+const _$DestinyPresentationNodeTypeEnumMap = {
+  DestinyPresentationNodeType.Default: 0,
+  DestinyPresentationNodeType.Category: 1,
+  DestinyPresentationNodeType.Collectibles: 2,
+  DestinyPresentationNodeType.Records: 3,
+  DestinyPresentationNodeType.Metric: 4,
+  DestinyPresentationNodeType.ProtectedInvalidEnumValue: 999999999,
 };

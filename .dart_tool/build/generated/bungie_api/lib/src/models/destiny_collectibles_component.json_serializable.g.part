@@ -12,11 +12,18 @@ DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
               ? null
               : DestinyCollectibleComponent.fromJson(
                   e as Map<String, dynamic>)),
-    );
+    )
+    ..collectionCategoriesRootNodeHash =
+        json['collectionCategoriesRootNodeHash'] as int
+    ..collectionBadgesRootNodeHash =
+        json['collectionBadgesRootNodeHash'] as int;
 }
 
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(
         DestinyCollectiblesComponent instance) =>
     <String, dynamic>{
       'collectibles': instance.collectibles,
+      'collectionCategoriesRootNodeHash':
+          instance.collectionCategoriesRootNodeHash,
+      'collectionBadgesRootNodeHash': instance.collectionBadgesRootNodeHash,
     };

@@ -1,5 +1,4 @@
 import '../helpers/http.dart';
-import '../enums/fireteam_activity_type.dart';
 import '../enums/fireteam_date_range.dart';
 import '../enums/fireteam_platform.dart';
 import '../enums/fireteam_public_search_option.dart';
@@ -27,7 +26,7 @@ class Fireteam{
     /// Gets a listing of all of this clan's fireteams that are have available slots. Caller is not checked for join criteria so caching is maximized.
     static Future<SearchResultOfFireteamSummaryResponse> getAvailableClanFireteams (
         HttpClient client,
-        FireteamActivityType activityType,
+        int activityType,
         FireteamDateRange dateRange,
         String groupId,
         String langFilter,
@@ -37,7 +36,7 @@ class Fireteam{
         FireteamSlotSearch slotFilter,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _activityType = '${activityType.value}';
+        final String _activityType = '$activityType';
         final String _dateRange = '${dateRange.value}';
         final String _groupId = '$groupId';
         final String _page = '$page';
@@ -56,7 +55,7 @@ class Fireteam{
     /// Gets a listing of all public fireteams starting now with open slots. Caller is not checked for join criteria so caching is maximized.
     static Future<SearchResultOfFireteamSummaryResponse> searchPublicAvailableClanFireteams (
         HttpClient client,
-        FireteamActivityType activityType,
+        int activityType,
         FireteamDateRange dateRange,
         String langFilter,
         int page,
@@ -64,7 +63,7 @@ class Fireteam{
         FireteamSlotSearch slotFilter,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _activityType = '${activityType.value}';
+        final String _activityType = '$activityType';
         final String _dateRange = '${dateRange.value}';
         final String _page = '$page';
         final String _platform = '${platform.value}';

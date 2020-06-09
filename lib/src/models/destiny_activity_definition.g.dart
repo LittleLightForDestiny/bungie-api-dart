@@ -209,5 +209,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.Momentum: 81,
   DestinyActivityModeType.Dungeon: 82,
   DestinyActivityModeType.Sundial: 83,
+  DestinyActivityModeType.TrialsOfOsiris: 84,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

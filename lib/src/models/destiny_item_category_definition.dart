@@ -64,6 +64,9 @@ class DestinyItemCategoryDefinition{
 	/// See the other "grant"-prefixed properties on this definition for my color commentary.
 	@JsonKey(name:'grantDestinyClass',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
 	DestinyClass grantDestinyClass;
+	/// The traitId that can be found on items that belong to this category.
+	@JsonKey(name:'traitId')
+	String traitId;
 	/// If this category is a "parent" category of other categories, those children will have their hashes listed in rendering order here, and can be looked up using these hashes against DestinyItemCategoryDefinition.
 	/// In this way, you can build up a visual hierarchy of item categories. That's what we did, and you can do it too. I believe in you. Yes, you, Carl.
 	/// (I hope someone named Carl reads this someday)

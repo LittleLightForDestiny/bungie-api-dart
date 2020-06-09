@@ -1,1 +1,0 @@
-export '../src/responses/celist_of_public_partnership_detail_response.dart';

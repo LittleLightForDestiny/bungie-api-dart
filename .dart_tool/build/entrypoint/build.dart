@@ -18,7 +18,7 @@ final _builders = <_i1.BuilderApplication>[
   _i1.applyPostProcess('source_gen:part_cleanup', _i3.partCleanup,
       defaultGenerateFor: const _i4.InputSet())
 ];
-main(List<String> args, [_i5.SendPort sendPort]) async {
+void main(List<String> args, [_i5.SendPort sendPort]) async {
   var result = await _i6.run(args, _builders);
   sendPort?.send(result);
   _i7.exitCode = result;

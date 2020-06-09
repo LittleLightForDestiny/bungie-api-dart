@@ -23,7 +23,11 @@ DestinyProfileCollectiblesComponent
               ? null
               : DestinyCollectibleComponent.fromJson(
                   e as Map<String, dynamic>)),
-    );
+    )
+    ..collectionCategoriesRootNodeHash =
+        json['collectionCategoriesRootNodeHash'] as int
+    ..collectionBadgesRootNodeHash =
+        json['collectionBadgesRootNodeHash'] as int;
 }
 
 Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
@@ -33,4 +37,7 @@ Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
       'newnessFlaggedCollectibleHashes':
           instance.newnessFlaggedCollectibleHashes,
       'collectibles': instance.collectibles,
+      'collectionCategoriesRootNodeHash':
+          instance.collectionCategoriesRootNodeHash,
+      'collectionBadgesRootNodeHash': instance.collectionBadgesRootNodeHash,
     };

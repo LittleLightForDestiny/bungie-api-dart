@@ -1,1 +1,0 @@
-export '../src/models/public_partnership_detail.dart';

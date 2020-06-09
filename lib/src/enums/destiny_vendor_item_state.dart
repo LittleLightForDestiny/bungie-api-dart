@@ -38,6 +38,15 @@ class DestinyVendorItemState {
     ///NexusAttention = 512
     /// This indicates that you should show some kind of attention-requesting indicator on the item, in a similar manner to items in the nexus that have such notifications.
     static const DestinyVendorItemState NexusAttention = DestinyVendorItemState(512);
+    ///SetDiscount = 1024
+    /// This indicates that the item has some sort of a 'set' discount.
+    static const DestinyVendorItemState SetDiscount = DestinyVendorItemState(1024);
+    ///PriceDrop = 2048
+    /// This indicates that the item has a price drop.
+    static const DestinyVendorItemState PriceDrop = DestinyVendorItemState(2048);
+    ///DailyOffer = 4096
+    /// This indicates that the item is a daily offer.
+    static const DestinyVendorItemState DailyOffer = DestinyVendorItemState(4096);
 
     int get value {
         return _value;

@@ -74,7 +74,8 @@ CoreSettingsConfiguration _$CoreSettingsConfigurationFromJson(
         (json['clanBannerGonfalonDetailColors'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
     ..clanBannerStandards = (json['clanBannerStandards'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
     ..destiny2CoreSettings = json['destiny2CoreSettings'] == null ? null : Destiny2CoreSettings.fromJson(json['destiny2CoreSettings'] as Map<String, dynamic>)
-    ..emailSettings = json['emailSettings'] == null ? null : EmailSettings.fromJson(json['emailSettings'] as Map<String, dynamic>);
+    ..emailSettings = json['emailSettings'] == null ? null : EmailSettings.fromJson(json['emailSettings'] as Map<String, dynamic>)
+    ..fireteamActivities = (json['fireteamActivities'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList();
 }
 
 Map<String, dynamic> _$CoreSettingsConfigurationToJson(
@@ -100,4 +101,5 @@ Map<String, dynamic> _$CoreSettingsConfigurationToJson(
       'clanBannerStandards': instance.clanBannerStandards,
       'destiny2CoreSettings': instance.destiny2CoreSettings,
       'emailSettings': instance.emailSettings,
+      'fireteamActivities': instance.fireteamActivities,
     };

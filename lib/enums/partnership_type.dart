@@ -1,1 +1,0 @@
-export '../src/enums/partnership_type.dart';

@@ -36,6 +36,7 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
     ..profileRecords = json['profileRecords'] == null ? null : SingleComponentResponseOfDestinyProfileRecordsComponent.fromJson(json['profileRecords'] as Map<String, dynamic>)
     ..profileCollectibles = json['profileCollectibles'] == null ? null : SingleComponentResponseOfDestinyProfileCollectiblesComponent.fromJson(json['profileCollectibles'] as Map<String, dynamic>)
     ..profileTransitoryData = json['profileTransitoryData'] == null ? null : SingleComponentResponseOfDestinyProfileTransitoryComponent.fromJson(json['profileTransitoryData'] as Map<String, dynamic>)
+    ..metrics = json['metrics'] == null ? null : SingleComponentResponseOfDestinyMetricsComponent.fromJson(json['metrics'] as Map<String, dynamic>)
     ..characters = json['characters'] == null ? null : DictionaryComponentResponseOfint64AndDestinyCharacterComponent.fromJson(json['characters'] as Map<String, dynamic>)
     ..characterInventories = json['characterInventories'] == null ? null : DictionaryComponentResponseOfint64AndDestinyInventoryComponent.fromJson(json['characterInventories'] as Map<String, dynamic>)
     ..characterProgressions = json['characterProgressions'] == null ? null : DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent.fromJson(json['characterProgressions'] as Map<String, dynamic>)
@@ -74,6 +75,7 @@ Map<String, dynamic> _$DestinyProfileResponseToJson(
       'profileRecords': instance.profileRecords,
       'profileCollectibles': instance.profileCollectibles,
       'profileTransitoryData': instance.profileTransitoryData,
+      'metrics': instance.metrics,
       'characters': instance.characters,
       'characterInventories': instance.characterInventories,
       'characterProgressions': instance.characterProgressions,

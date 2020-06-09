@@ -13,6 +13,9 @@ enum DestinyPresentationNodeType {
   ///Records = 3
   @JsonValue(3)
   Records,
+  ///Metric = 4
+  @JsonValue(4)
+  Metric,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -29,6 +32,8 @@ extension DestinyPresentationNodeTypeExtension on DestinyPresentationNodeType{
         return 2;
       case DestinyPresentationNodeType.Records:
         return 3;
+      case DestinyPresentationNodeType.Metric:
+        return 4;
       default:
         return null;
     }

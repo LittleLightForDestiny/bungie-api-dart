@@ -17,7 +17,9 @@ DestinyProfileRecordsComponent _$DestinyProfileRecordsComponentFromJson(
           e == null
               ? null
               : DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
-    );
+    )
+    ..recordCategoriesRootNodeHash = json['recordCategoriesRootNodeHash'] as int
+    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int;
 }
 
 Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(
@@ -26,4 +28,6 @@ Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(
       'score': instance.score,
       'trackedRecordHash': instance.trackedRecordHash,
       'records': instance.records,
+      'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
+      'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
     };

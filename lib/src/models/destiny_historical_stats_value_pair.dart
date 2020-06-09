@@ -19,7 +19,7 @@ class DestinyHistoricalStatsValuePair{
 
 	/// Raw value of the statistic
 	@JsonKey(name:'value')
-	int value;
+	double value;
 	/// Localized formated version of the value.
 	@JsonKey(name:'displayValue')
 	String displayValue;

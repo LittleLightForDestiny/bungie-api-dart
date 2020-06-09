@@ -7,7 +7,6 @@ import 'trending_entry_destiny_item.dart';
 import 'trending_entry_destiny_activity.dart';
 import 'trending_entry_destiny_ritual.dart';
 import 'trending_entry_community_creation.dart';
-import 'trending_entry_community_stream.dart';
 
 part 'trending_detail.g.dart';
 
@@ -41,8 +40,6 @@ class TrendingDetail{
 	TrendingEntryDestinyRitual destinyRitual;
 	@JsonKey(name:'creation')
 	TrendingEntryCommunityCreation creation;
-	@JsonKey(name:'stream')
-	TrendingEntryCommunityStream stream;
 
 	
 	

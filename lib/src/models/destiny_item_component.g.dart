@@ -28,7 +28,12 @@ DestinyItemComponent _$DestinyItemComponentFromJson(Map<String, dynamic> json) {
     ..isWrapper = json['isWrapper'] as bool
     ..tooltipNotificationIndexes = (json['tooltipNotificationIndexes'] as List)
         ?.map((e) => e as int)
-        ?.toList();
+        ?.toList()
+    ..metricHash = json['metricHash'] as int
+    ..metricObjective = json['metricObjective'] == null
+        ? null
+        : DestinyObjectiveProgress.fromJson(
+            json['metricObjective'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyItemComponentToJson(
@@ -47,6 +52,8 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'expirationDate': instance.expirationDate,
       'isWrapper': instance.isWrapper,
       'tooltipNotificationIndexes': instance.tooltipNotificationIndexes,
+      'metricHash': instance.metricHash,
+      'metricObjective': instance.metricObjective,
     };
 
 T _$enumDecode<T>(

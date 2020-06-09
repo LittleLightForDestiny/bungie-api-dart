@@ -26,6 +26,12 @@ class DestinyProfileRecordsComponent{
 	int trackedRecordHash;
 	@JsonKey(name:'records')
 	Map<String, DestinyRecordComponent> records;
+	/// The hash for the root presentation node definition of Triumph categories.
+	@JsonKey(name:'recordCategoriesRootNodeHash')
+	int recordCategoriesRootNodeHash;
+	/// The hash for the root presentation node definition of Triumph Seals.
+	@JsonKey(name:'recordSealsRootNodeHash')
+	int recordSealsRootNodeHash;
 
 	
 	

@@ -25,6 +25,8 @@ class Destiny2CoreSettings{
 	int recordsRootNode;
 	@JsonKey(name:'medalsRootNode')
 	int medalsRootNode;
+	@JsonKey(name:'metricsRootNode')
+	int metricsRootNode;
 	@JsonKey(name:'currentRankProgressionHashes')
 	List<int> currentRankProgressionHashes;
 	@JsonKey(name:'undiscoveredCollectibleImage')

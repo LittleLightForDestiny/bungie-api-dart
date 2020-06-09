@@ -4,6 +4,7 @@ import '../enums/item_bind_status.dart';
 import '../enums/item_location.dart';
 import '../enums/transfer_statuses.dart';
 import '../enums/item_state.dart';
+import 'destiny_objective_progress.dart';
 
 part 'destiny_item_component.g.dart';
 
@@ -63,6 +64,12 @@ class DestinyItemComponent{
 	/// If this is populated, it is a list of indexes into DestinyInventoryItemDefinition.tooltipNotifications for any special tooltip messages that need to be shown for this item.
 	@JsonKey(name:'tooltipNotificationIndexes')
 	List<int> tooltipNotificationIndexes;
+	/// The identifier for the currently-selected metric definition, to be displayed on the emblem nameplate.
+	@JsonKey(name:'metricHash')
+	int metricHash;
+	/// The objective progress for the currently-selected metric definition, to be displayed on the emblem nameplate.
+	@JsonKey(name:'metricObjective')
+	DestinyObjectiveProgress metricObjective;
 
 	
 	

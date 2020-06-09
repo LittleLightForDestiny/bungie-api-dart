@@ -26,7 +26,8 @@ DestinyItemObjectiveBlockDefinition
                 ? null
                 : DestinyObjectiveDisplayProperties.fromJson(
                     e as Map<String, dynamic>))
-            ?.toList();
+            ?.toList()
+    ..displayAsStatTracker = json['displayAsStatTracker'] as bool;
 }
 
 Map<String, dynamic> _$DestinyItemObjectiveBlockDefinitionToJson(
@@ -41,4 +42,5 @@ Map<String, dynamic> _$DestinyItemObjectiveBlockDefinitionToJson(
       'questTypeIdentifier': instance.questTypeIdentifier,
       'questTypeHash': instance.questTypeHash,
       'perObjectiveDisplayProperties': instance.perObjectiveDisplayProperties,
+      'displayAsStatTracker': instance.displayAsStatTracker,
     };

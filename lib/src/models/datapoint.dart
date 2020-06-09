@@ -22,7 +22,7 @@ class Datapoint{
 	String time;
 	/// Count associated with timestamp
 	@JsonKey(name:'count')
-	int count;
+	double count;
 
 	
 	

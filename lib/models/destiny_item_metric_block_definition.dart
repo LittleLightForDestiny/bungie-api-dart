@@ -1,0 +1,1 @@
+export '../src/models/destiny_item_metric_block_definition.dart';

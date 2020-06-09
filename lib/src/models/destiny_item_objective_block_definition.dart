@@ -48,6 +48,8 @@ class DestinyItemObjectiveBlockDefinition{
 	/// One entry per Objective on the item, it will have related display information.
 	@JsonKey(name:'perObjectiveDisplayProperties')
 	List<DestinyObjectiveDisplayProperties> perObjectiveDisplayProperties;
+	@JsonKey(name:'displayAsStatTracker')
+	bool displayAsStatTracker;
 
 	
 	

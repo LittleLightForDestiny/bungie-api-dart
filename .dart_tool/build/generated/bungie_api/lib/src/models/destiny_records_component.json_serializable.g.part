@@ -11,11 +11,15 @@ DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
           e == null
               ? null
               : DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
-    );
+    )
+    ..recordCategoriesRootNodeHash = json['recordCategoriesRootNodeHash'] as int
+    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int;
 }
 
 Map<String, dynamic> _$DestinyRecordsComponentToJson(
         DestinyRecordsComponent instance) =>
     <String, dynamic>{
       'records': instance.records,
+      'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
+      'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
     };

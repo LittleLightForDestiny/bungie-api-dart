@@ -14,6 +14,7 @@ import 'destiny_item_quality_block_definition.dart';
 import 'destiny_item_value_block_definition.dart';
 import 'destiny_item_source_block_definition.dart';
 import 'destiny_item_objective_block_definition.dart';
+import 'destiny_item_metric_block_definition.dart';
 import 'destiny_item_plug_definition.dart';
 import 'destiny_item_gearset_block_definition.dart';
 import 'destiny_item_sack_block_definition.dart';
@@ -124,6 +125,9 @@ class DestinyInventoryItemDefinition{
 	/// If this item has Objectives (extra tasks that can be accomplished related to the item... most frequently when the item is a Quest Step and the Objectives need to be completed to move on to the next Quest Step), this block will be non-null and the objectives defined herein.
 	@JsonKey(name:'objectives')
 	DestinyItemObjectiveBlockDefinition objectives;
+	/// If this item has available metrics to be shown, this block will be non-null have the appropriate hashes defined.
+	@JsonKey(name:'metrics')
+	DestinyItemMetricBlockDefinition metrics;
 	/// If this item *is* a Plug, this will be non-null and the info defined herein. See DestinyItemPlugDefinition for more information.
 	@JsonKey(name:'plug')
 	DestinyItemPlugDefinition plug;

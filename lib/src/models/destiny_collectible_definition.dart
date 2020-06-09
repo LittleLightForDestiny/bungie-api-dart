@@ -5,6 +5,7 @@ import '../enums/destiny_scope.dart';
 import 'destiny_collectible_acquisition_block.dart';
 import 'destiny_collectible_state_block.dart';
 import 'destiny_presentation_child_block.dart';
+import '../enums/destiny_presentation_node_type.dart';
 
 part 'destiny_collectible_definition.g.dart';
 
@@ -26,7 +27,7 @@ class DestinyCollectibleDefinition{
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition displayProperties;
-	/// Indicates whether this Collectible's state is determined on a per-character or on an account-wide basis.
+	/// Indicates whether the state of this Collectible is determined on a per-character or on an account-wide basis.
 	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
 	DestinyScope scope;
 	/// A human readable string for a hint about how to acquire the item.
@@ -45,6 +46,15 @@ class DestinyCollectibleDefinition{
 	DestinyCollectibleStateBlock stateInfo;
 	@JsonKey(name:'presentationInfo')
 	DestinyPresentationChildBlock presentationInfo;
+	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	DestinyPresentationNodeType presentationNodeType;
+	@JsonKey(name:'traitIds')
+	List<String> traitIds;
+	@JsonKey(name:'traitHashes')
+	List<int> traitHashes;
+	/// A quick reference to presentation nodes that have this node as a child. Presentation nodes can be parented under multiple parents.
+	@JsonKey(name:'parentNodeHashes')
+	List<int> parentNodeHashes;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

@@ -62,6 +62,8 @@ class CoreSettingsConfiguration{
 	/// The set of all email subscription/opt-in settings and definitions.
 	@JsonKey(name:'emailSettings')
 	EmailSettings emailSettings;
+	@JsonKey(name:'fireteamActivities')
+	List<CoreSetting> fireteamActivities;
 
 	
 	

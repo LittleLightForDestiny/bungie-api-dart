@@ -30,7 +30,7 @@ class DestinyEntitySearchResultItem{
 	DestinyDisplayPropertiesDefinition displayProperties;
 	/// The ranking value for sorting that we calculated using our relevance formula. This will hopefully get better with time and iteration.
 	@JsonKey(name:'weight')
-	int weight;
+	double weight;
 
 	
 	

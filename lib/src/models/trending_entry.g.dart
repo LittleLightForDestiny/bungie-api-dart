@@ -8,7 +8,7 @@ part of 'trending_entry.dart';
 
 TrendingEntry _$TrendingEntryFromJson(Map<String, dynamic> json) {
   return TrendingEntry()
-    ..weight = json['weight'] as int
+    ..weight = (json['weight'] as num)?.toDouble()
     ..isFeatured = json['isFeatured'] as bool
     ..identifier = json['identifier'] as String
     ..entityType = _$enumDecodeNullable(

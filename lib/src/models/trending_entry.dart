@@ -21,7 +21,7 @@ class TrendingEntry{
 
 	/// The weighted score of this trending item.
 	@JsonKey(name:'weight')
-	int weight;
+	double weight;
 	@JsonKey(name:'isFeatured')
 	bool isFeatured;
 	/// We don't know whether the identifier will be a string, a uint, or a long... so we're going to cast it all to a string. But either way, we need any trending item created to have a single unique identifier for its type.

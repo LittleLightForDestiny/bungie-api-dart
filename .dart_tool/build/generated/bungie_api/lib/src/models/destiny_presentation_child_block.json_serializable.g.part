@@ -65,6 +65,7 @@ const _$DestinyPresentationNodeTypeEnumMap = {
   DestinyPresentationNodeType.Category: 1,
   DestinyPresentationNodeType.Collectibles: 2,
   DestinyPresentationNodeType.Records: 3,
+  DestinyPresentationNodeType.Metric: 4,
   DestinyPresentationNodeType.ProtectedInvalidEnumValue: 999999999,
 };
 

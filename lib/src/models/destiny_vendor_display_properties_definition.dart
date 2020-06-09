@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_vendor_requirement_display_entry_definition.dart';
+import 'destiny_icon_sequence_definition.dart';
 
 part 'destiny_vendor_display_properties_definition.g.dart';
 
@@ -47,6 +48,8 @@ class DestinyVendorDisplayPropertiesDefinition{
 	/// They are currently represented as 96px x 96px images.
 	@JsonKey(name:'icon')
 	String icon;
+	@JsonKey(name:'iconSequences')
+	List<DestinyIconSequenceDefinition> iconSequences;
 	/// If this item has a high-res icon (at least for now, many things won't), then the path to that icon will be here.
 	@JsonKey(name:'highResIcon')
 	String highResIcon;
