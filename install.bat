@@ -1,4 +1,5 @@
 call flutter pub get
+call flutter pub upgrade
 
 cd generator
 call npm install
