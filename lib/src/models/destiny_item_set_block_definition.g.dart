@@ -18,7 +18,9 @@ DestinyItemSetBlockDefinition _$DestinyItemSetBlockDefinitionFromJson(
     ..requireOrderedSetItemAdd = json['requireOrderedSetItemAdd'] as bool
     ..setIsFeatured = json['setIsFeatured'] as bool
     ..setType = json['setType'] as String
-    ..questLineName = json['questLineName'] as String;
+    ..questLineName = json['questLineName'] as String
+    ..questLineDescription = json['questLineDescription'] as String
+    ..questStepSummary = json['questStepSummary'] as String;
 }
 
 Map<String, dynamic> _$DestinyItemSetBlockDefinitionToJson(
@@ -29,4 +31,6 @@ Map<String, dynamic> _$DestinyItemSetBlockDefinitionToJson(
       'setIsFeatured': instance.setIsFeatured,
       'setType': instance.setType,
       'questLineName': instance.questLineName,
+      'questLineDescription': instance.questLineDescription,
+      'questStepSummary': instance.questStepSummary,
     };

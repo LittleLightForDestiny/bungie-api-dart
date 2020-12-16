@@ -41,6 +41,9 @@ class DestinyProfileComponent{
 	/// If populated, this is a reference to the season that is currently active.
 	@JsonKey(name:'currentSeasonHash')
 	int currentSeasonHash;
+	/// If populated, this is the reward power cap for the current season.
+	@JsonKey(name:'currentSeasonRewardPowerCap')
+	int currentSeasonRewardPowerCap;
 
 	
 	

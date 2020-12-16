@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import '../enums/oauth_application_type.dart';
 import '../enums/application_status.dart';
 import 'application_developer.dart';
 
@@ -20,8 +19,6 @@ class Application{
 		return null;
 	}
 
-	@JsonKey(name:'applicationType',unknownEnumValue:OAuthApplicationType.ProtectedInvalidEnumValue)
-	OAuthApplicationType applicationType;
 	/// Unique ID assigned to the application
 	@JsonKey(name:'applicationId')
 	int applicationId;

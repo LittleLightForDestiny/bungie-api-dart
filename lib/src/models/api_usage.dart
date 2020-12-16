@@ -1,6 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'date_range.dart';
 import 'series.dart';
 
 part 'api_usage.g.dart';
@@ -19,9 +18,6 @@ class ApiUsage{
 		return null;
 	}
 
-	/// The date range for the data being reported.
-	@JsonKey(name:'range')
-	DateRange range;
 	/// Counts for on API calls made for the time range.
 	@JsonKey(name:'apiCalls')
 	List<Series> apiCalls;

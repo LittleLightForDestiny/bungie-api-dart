@@ -27,6 +27,20 @@ class Destiny2CoreSettings{
 	int medalsRootNode;
 	@JsonKey(name:'metricsRootNode')
 	int metricsRootNode;
+	@JsonKey(name:'activeTriumphsRootNodeHash')
+	int activeTriumphsRootNodeHash;
+	@JsonKey(name:'activeSealsRootNodeHash')
+	int activeSealsRootNodeHash;
+	@JsonKey(name:'legacyTriumphsRootNodeHash')
+	int legacyTriumphsRootNodeHash;
+	@JsonKey(name:'legacySealsRootNodeHash')
+	int legacySealsRootNodeHash;
+	@JsonKey(name:'medalsRootNodeHash')
+	int medalsRootNodeHash;
+	@JsonKey(name:'exoticCatalystsRootNodeHash')
+	int exoticCatalystsRootNodeHash;
+	@JsonKey(name:'loreRootNodeHash')
+	int loreRootNodeHash;
 	@JsonKey(name:'currentRankProgressionHashes')
 	List<int> currentRankProgressionHashes;
 	@JsonKey(name:'undiscoveredCollectibleImage')

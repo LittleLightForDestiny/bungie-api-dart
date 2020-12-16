@@ -617,6 +617,7 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.DestinyClaimsRequiredLevelNotMet: 1685,
   PlatformErrorCodes.DestinyClaimsInvalidState: 1686,
   PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards: 1687,
+  PlatformErrorCodes.DestinyDirectBabelClientTimeout: 1688,
   PlatformErrorCodes.FbInvalidRequest: 1800,
   PlatformErrorCodes.FbRedirectMismatch: 1801,
   PlatformErrorCodes.FbAccessDenied: 1802,
@@ -834,5 +835,9 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.PCMigrationCannotStompClanFounder: 3414,
   PlatformErrorCodes.UnsupportedBrowser: 3500,
   PlatformErrorCodes.StadiaAccountRequired: 3600,
+  PlatformErrorCodes.ErrorPhoneValidationTooManyUses: 3702,
+  PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone: 3703,
+  PlatformErrorCodes.ErrorPhoneValidationCodeInvalid: 3705,
+  PlatformErrorCodes.ErrorPhoneValidationBanned: 3706,
   PlatformErrorCodes.ProtectedInvalidEnumValue: 999999999,
 };

@@ -1659,6 +1659,9 @@ enum PlatformErrorCodes {
   ///DestinyNotEnoughRoomForMultipleRewards = 1687
   @JsonValue(1687)
   DestinyNotEnoughRoomForMultipleRewards,
+  ///DestinyDirectBabelClientTimeout = 1688
+  @JsonValue(1688)
+  DestinyDirectBabelClientTimeout,
   ///FbInvalidRequest = 1800
   @JsonValue(1800)
   FbInvalidRequest,
@@ -2301,6 +2304,18 @@ enum PlatformErrorCodes {
   ///StadiaAccountRequired = 3600
   @JsonValue(3600)
   StadiaAccountRequired,
+  ///ErrorPhoneValidationTooManyUses = 3702
+  @JsonValue(3702)
+  ErrorPhoneValidationTooManyUses,
+  ///ErrorPhoneValidationNoAssociatedPhone = 3703
+  @JsonValue(3703)
+  ErrorPhoneValidationNoAssociatedPhone,
+  ///ErrorPhoneValidationCodeInvalid = 3705
+  @JsonValue(3705)
+  ErrorPhoneValidationCodeInvalid,
+  ///ErrorPhoneValidationBanned = 3706
+  @JsonValue(3706)
+  ErrorPhoneValidationBanned,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -3413,6 +3428,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 1686;
       case PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards:
         return 1687;
+      case PlatformErrorCodes.DestinyDirectBabelClientTimeout:
+        return 1688;
       case PlatformErrorCodes.FbInvalidRequest:
         return 1800;
       case PlatformErrorCodes.FbRedirectMismatch:
@@ -3841,6 +3858,14 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3500;
       case PlatformErrorCodes.StadiaAccountRequired:
         return 3600;
+      case PlatformErrorCodes.ErrorPhoneValidationTooManyUses:
+        return 3702;
+      case PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone:
+        return 3703;
+      case PlatformErrorCodes.ErrorPhoneValidationCodeInvalid:
+        return 3705;
+      case PlatformErrorCodes.ErrorPhoneValidationBanned:
+        return 3706;
       default:
         return null;
     }

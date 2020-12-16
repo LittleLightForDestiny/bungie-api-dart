@@ -13,6 +13,13 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(Map<String, dynamic> json) {
     ..recordsRootNode = json['recordsRootNode'] as int
     ..medalsRootNode = json['medalsRootNode'] as int
     ..metricsRootNode = json['metricsRootNode'] as int
+    ..activeTriumphsRootNodeHash = json['activeTriumphsRootNodeHash'] as int
+    ..activeSealsRootNodeHash = json['activeSealsRootNodeHash'] as int
+    ..legacyTriumphsRootNodeHash = json['legacyTriumphsRootNodeHash'] as int
+    ..legacySealsRootNodeHash = json['legacySealsRootNodeHash'] as int
+    ..medalsRootNodeHash = json['medalsRootNodeHash'] as int
+    ..exoticCatalystsRootNodeHash = json['exoticCatalystsRootNodeHash'] as int
+    ..loreRootNodeHash = json['loreRootNodeHash'] as int
     ..currentRankProgressionHashes =
         (json['currentRankProgressionHashes'] as List)
             ?.map((e) => e as int)
@@ -38,6 +45,13 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'recordsRootNode': instance.recordsRootNode,
       'medalsRootNode': instance.medalsRootNode,
       'metricsRootNode': instance.metricsRootNode,
+      'activeTriumphsRootNodeHash': instance.activeTriumphsRootNodeHash,
+      'activeSealsRootNodeHash': instance.activeSealsRootNodeHash,
+      'legacyTriumphsRootNodeHash': instance.legacyTriumphsRootNodeHash,
+      'legacySealsRootNodeHash': instance.legacySealsRootNodeHash,
+      'medalsRootNodeHash': instance.medalsRootNodeHash,
+      'exoticCatalystsRootNodeHash': instance.exoticCatalystsRootNodeHash,
+      'loreRootNodeHash': instance.loreRootNodeHash,
       'currentRankProgressionHashes': instance.currentRankProgressionHashes,
       'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
       'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,

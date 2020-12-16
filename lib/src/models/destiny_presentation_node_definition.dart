@@ -64,6 +64,8 @@ class DestinyPresentationNodeDefinition{
 	/// If this presentation node has children, but the game doesn't let you inspect the details of those children, that is indicated here.
 	@JsonKey(name:'disableChildSubscreenNavigation')
 	bool disableChildSubscreenNavigation;
+	@JsonKey(name:'maxCategoryRecordScore')
+	int maxCategoryRecordScore;
 	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
 	DestinyPresentationNodeType presentationNodeType;
 	@JsonKey(name:'traitIds')

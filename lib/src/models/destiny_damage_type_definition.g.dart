@@ -73,5 +73,6 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.Stasis: 6,
   DamageType.ProtectedInvalidEnumValue: 999999999,
 };

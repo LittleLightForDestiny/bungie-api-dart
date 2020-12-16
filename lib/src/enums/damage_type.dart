@@ -19,6 +19,9 @@ enum DamageType {
   ///Raid = 5
   @JsonValue(5)
   Raid,
+  ///Stasis = 6
+  @JsonValue(6)
+  Stasis,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -39,6 +42,8 @@ extension DamageTypeExtension on DamageType{
         return 4;
       case DamageType.Raid:
         return 5;
+      case DamageType.Stasis:
+        return 6;
       default:
         return null;
     }

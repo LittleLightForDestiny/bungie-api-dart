@@ -13,6 +13,12 @@ enum DestinyEnergyType {
   ///Void = 3
   @JsonValue(3)
   Void,
+  ///Ghost = 4
+  @JsonValue(4)
+  Ghost,
+  ///Subclass = 5
+  @JsonValue(5)
+  Subclass,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -29,6 +35,10 @@ extension DestinyEnergyTypeExtension on DestinyEnergyType{
         return 2;
       case DestinyEnergyType.Void:
         return 3;
+      case DestinyEnergyType.Ghost:
+        return 4;
+      case DestinyEnergyType.Subclass:
+        return 5;
       default:
         return null;
     }

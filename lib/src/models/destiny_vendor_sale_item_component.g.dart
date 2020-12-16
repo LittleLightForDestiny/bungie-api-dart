@@ -33,7 +33,8 @@ DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
             ? null
             : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
         ?.toList()
-    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String;
+    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String
+    ..apiPurchasable = json['apiPurchasable'] as bool;
 }
 
 Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
@@ -50,4 +51,5 @@ Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
       'quantity': instance.quantity,
       'costs': instance.costs,
       'overrideNextRefreshDate': instance.overrideNextRefreshDate,
+      'apiPurchasable': instance.apiPurchasable,
     };

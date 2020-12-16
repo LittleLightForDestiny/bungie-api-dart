@@ -34,6 +34,12 @@ class DestinyItemSetBlockDefinition{
 	/// The name of the quest line that this quest step is a part of.
 	@JsonKey(name:'questLineName')
 	String questLineName;
+	/// The description of the quest line that this quest step is a part of.
+	@JsonKey(name:'questLineDescription')
+	String questLineDescription;
+	/// An additional summary of this step in the quest line.
+	@JsonKey(name:'questStepSummary')
+	String questStepSummary;
 
 	
 	

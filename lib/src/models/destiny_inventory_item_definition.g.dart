@@ -20,6 +20,8 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
                 e as Map<String, dynamic>))
         ?.toList()
     ..collectibleHash = json['collectibleHash'] as int
+    ..iconWatermark = json['iconWatermark'] as String
+    ..iconWatermarkShelved = json['iconWatermarkShelved'] as String
     ..secondaryIcon = json['secondaryIcon'] as String
     ..secondaryOverlay = json['secondaryOverlay'] as String
     ..secondarySpecial = json['secondarySpecial'] as String
@@ -100,6 +102,8 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'tooltipNotifications': instance.tooltipNotifications,
       'collectibleHash': instance.collectibleHash,
+      'iconWatermark': instance.iconWatermark,
+      'iconWatermarkShelved': instance.iconWatermarkShelved,
       'secondaryIcon': instance.secondaryIcon,
       'secondaryOverlay': instance.secondaryOverlay,
       'secondarySpecial': instance.secondarySpecial,
@@ -266,6 +270,7 @@ const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.LegArmor: 29,
   DestinyItemSubType.ClassArmor: 30,
   DestinyItemSubType.Bow: 31,
+  DestinyItemSubType.DummyRepeatableBounty: 32,
   DestinyItemSubType.ProtectedInvalidEnumValue: 999999999,
 };
 
@@ -292,5 +297,6 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.Stasis: 6,
   DamageType.ProtectedInvalidEnumValue: 999999999,
 };

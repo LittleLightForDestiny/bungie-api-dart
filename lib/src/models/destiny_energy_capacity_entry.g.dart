@@ -61,5 +61,7 @@ const _$DestinyEnergyTypeEnumMap = {
   DestinyEnergyType.Arc: 1,
   DestinyEnergyType.Thermal: 2,
   DestinyEnergyType.Void: 3,
+  DestinyEnergyType.Ghost: 4,
+  DestinyEnergyType.Subclass: 5,
   DestinyEnergyType.ProtectedInvalidEnumValue: 999999999,
 };

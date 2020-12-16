@@ -8,9 +8,6 @@ part of 'application.dart';
 
 Application _$ApplicationFromJson(Map<String, dynamic> json) {
   return Application()
-    ..applicationType = _$enumDecodeNullable(
-        _$OAuthApplicationTypeEnumMap, json['applicationType'],
-        unknownValue: OAuthApplicationType.ProtectedInvalidEnumValue)
     ..applicationId = json['applicationId'] as int
     ..name = json['name'] as String
     ..redirectUrl = json['redirectUrl'] as String
@@ -31,8 +28,6 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$ApplicationToJson(Application instance) =>
     <String, dynamic>{
-      'applicationType':
-          _$OAuthApplicationTypeEnumMap[instance.applicationType],
       'applicationId': instance.applicationId,
       'name': instance.name,
       'redirectUrl': instance.redirectUrl,
@@ -77,13 +72,6 @@ T _$enumDecodeNullable<T>(
   }
   return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
 }
-
-const _$OAuthApplicationTypeEnumMap = {
-  OAuthApplicationType.None: 0,
-  OAuthApplicationType.Confidential: 1,
-  OAuthApplicationType.Public: 2,
-  OAuthApplicationType.ProtectedInvalidEnumValue: 999999999,
-};
 
 const _$ApplicationStatusEnumMap = {
   ApplicationStatus.None: 0,
