@@ -1,5 +1,5 @@
 :: Prepare the generated source directory
-del /S /Q .\lib > nul
+rmdir /S /Q .\lib > nul
 mkdir .\lib
 
 mkdir .\lib\src\helpers
@@ -10,7 +10,7 @@ copy .\generator\dart-custom\helpers\oauth.dart .\lib\src\helpers
 :: Compile and run the generator
 cd generator
 call node .\node_modules\.bin\ts-node .\ts\generate.ts
-del /S /Q build > nul
+rmdir /S /Q build > nul
 cd ..
 
 call flutter pub run build_runner build
