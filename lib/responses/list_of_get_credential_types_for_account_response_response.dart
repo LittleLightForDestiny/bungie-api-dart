@@ -1,0 +1,1 @@
+export '../src/responses/list_of_get_credential_types_for_account_response_response.dart';

@@ -30,6 +30,9 @@ class DestinyPresentationNodeComponent{
 	/// The value at which the presentation node is considered to be completed.
 	@JsonKey(name:'completionValue')
 	int completionValue;
+	/// If available, this is the current score for the record category that this node represents.
+	@JsonKey(name:'recordCategoryScore')
+	int recordCategoryScore;
 
 	
 	

@@ -41,6 +41,9 @@ class DestinyPublicVendorSaleItemComponent{
 	/// Note that there's not actually any guarantee that it will go away: it could be chosen again and end up still being in the Vendor's sale items! But this is the next date where that test will occur, and is also the date that the game shows for availability on things like Bounties being sold. So it's the best we can give.
 	@JsonKey(name:'overrideNextRefreshDate')
 	String overrideNextRefreshDate;
+	/// If true, this item can be purchased through the Bungie.net API.
+	@JsonKey(name:'apiPurchasable')
+	bool apiPurchasable;
 
 	
 	

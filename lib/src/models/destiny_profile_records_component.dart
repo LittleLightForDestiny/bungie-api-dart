@@ -18,9 +18,18 @@ class DestinyProfileRecordsComponent{
 		return null;
 	}
 
-	/// Your "Triumphs" score.
+	/// Your 'active' Triumphs score, maintained for backwards compatibility.
 	@JsonKey(name:'score')
 	int score;
+	/// Your 'active' Triumphs score.
+	@JsonKey(name:'activeScore')
+	int activeScore;
+	/// Your 'legacy' Triumphs score.
+	@JsonKey(name:'legacyScore')
+	int legacyScore;
+	/// Your 'lifetime' Triumphs score.
+	@JsonKey(name:'lifetimeScore')
+	int lifetimeScore;
 	/// If this profile is tracking a record, this is the hash identifier of the record it is tracking.
 	@JsonKey(name:'trackedRecordHash')
 	int trackedRecordHash;

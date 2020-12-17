@@ -241,7 +241,7 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         params['components'] = components.map((DestinyComponentType components)=>components.value).toList();
-        final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2//Vendors/', params);
+        final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/Vendors/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
@@ -339,6 +339,21 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/SetLockState/', params);
+        config.body = body.toJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return Int32Response.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Set the Tracking State for an instanced item, if that item is a Quest or Bounty. You must have a valid Destiny Account. Yeah, it's an item.
+    static Future<Int32Response> setQuestTrackedState (
+        HttpClient client,
+        DestinyItemStateRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/SetTrackedState/', params);
         config.body = body.toJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);

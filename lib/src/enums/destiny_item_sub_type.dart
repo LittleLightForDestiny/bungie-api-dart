@@ -92,6 +92,9 @@ enum DestinyItemSubType {
   ///Bow = 31
   @JsonValue(31)
   Bow,
+  ///DummyRepeatableBounty = 32
+  @JsonValue(32)
+  DummyRepeatableBounty,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -158,6 +161,8 @@ extension DestinyItemSubTypeExtension on DestinyItemSubType{
         return 30;
       case DestinyItemSubType.Bow:
         return 31;
+      case DestinyItemSubType.DummyRepeatableBounty:
+        return 32;
       default:
         return null;
     }

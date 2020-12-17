@@ -59,6 +59,12 @@ class DestinyInventoryItemDefinition{
 	/// If this item has a collectible related to it, this is the hash identifier of that collectible entry.
 	@JsonKey(name:'collectibleHash')
 	int collectibleHash;
+	/// If available, this is the original 'active' release watermark overlay for the icon. If the item has different versions, this can be overridden by the 'display version watermark icon' from the 'quality' block. Alternatively, if there is no watermark for the version, and the item version has a power cap below the current season power cap, this can be overridden by the iconWatermarkShelved property.
+	@JsonKey(name:'iconWatermark')
+	String iconWatermark;
+	/// If available, this is the 'shelved' release watermark overlay for the icon. If the item version has a power cap below the current season power cap, it can be treated as 'shelved', and should be shown with this 'shelved' watermark overlay.
+	@JsonKey(name:'iconWatermarkShelved')
+	String iconWatermarkShelved;
 	/// A secondary icon associated with the item. Currently this is used in very context specific applications, such as Emblem Nameplates.
 	@JsonKey(name:'secondaryIcon')
 	String secondaryIcon;
