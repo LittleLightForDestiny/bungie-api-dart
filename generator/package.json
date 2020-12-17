@@ -6,7 +6,7 @@
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "submodule": "git submodule init && git submodule update",
+    "submodule": "git submodule init && git submodule update --remote",
     "lint": "tslint --fix -p tsconfig.json",
     "start": "ts-node ts/generate.ts"
   },
@@ -38,7 +38,7 @@
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typedoc": "^0.12.0",
+    "typedoc": "^0.19.2",
     "typescript": "^3.1.6",
     "underscore": "^1.9.1"
   },
