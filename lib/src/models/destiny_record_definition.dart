@@ -43,6 +43,8 @@ class DestinyRecordDefinition{
 	List<int> objectiveHashes;
 	@JsonKey(name:'recordValueStyle',unknownEnumValue:DestinyRecordValueStyle.ProtectedInvalidEnumValue)
 	DestinyRecordValueStyle recordValueStyle;
+	@JsonKey(name:'forTitleGilding')
+	bool forTitleGilding;
 	@JsonKey(name:'titleInfo')
 	DestinyRecordTitleBlock titleInfo;
 	@JsonKey(name:'completionInfo')

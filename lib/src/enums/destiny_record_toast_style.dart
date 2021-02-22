@@ -19,6 +19,12 @@ enum DestinyRecordToastStyle {
   ///MedalComplete = 5
   @JsonValue(5)
   MedalComplete,
+  ///SeasonChallengeComplete = 6
+  @JsonValue(6)
+  SeasonChallengeComplete,
+  ///GildedTitleComplete = 7
+  @JsonValue(7)
+  GildedTitleComplete,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -39,6 +45,10 @@ extension DestinyRecordToastStyleExtension on DestinyRecordToastStyle{
         return 4;
       case DestinyRecordToastStyle.MedalComplete:
         return 5;
+      case DestinyRecordToastStyle.SeasonChallengeComplete:
+        return 6;
+      case DestinyRecordToastStyle.GildedTitleComplete:
+        return 7;
       default:
         return null;
     }

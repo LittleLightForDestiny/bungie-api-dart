@@ -24,7 +24,6 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
             json['selectionScreenDisplayProperties'] as Map<String, dynamic>)
     ..releaseIcon = json['releaseIcon'] as String
     ..releaseTime = json['releaseTime'] as int
-    ..activityLevel = json['activityLevel'] as int
     ..activityLightLevel = json['activityLightLevel'] as int
     ..destinationHash = json['destinationHash'] as int
     ..placeHash = json['placeHash'] as int
@@ -69,7 +68,6 @@ Map<String, dynamic> _$DestinyActivityDefinitionToJson(
           instance.selectionScreenDisplayProperties,
       'releaseIcon': instance.releaseIcon,
       'releaseTime': instance.releaseTime,
-      'activityLevel': instance.activityLevel,
       'activityLightLevel': instance.activityLightLevel,
       'destinationHash': instance.destinationHash,
       'placeHash': instance.placeHash,

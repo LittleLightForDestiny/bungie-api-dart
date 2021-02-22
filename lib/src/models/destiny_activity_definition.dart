@@ -51,9 +51,6 @@ class DestinyActivityDefinition{
 	/// If the activity will not be visible until a specific and known time, this will be the seconds since the Epoch when it will become visible.
 	@JsonKey(name:'releaseTime')
 	int releaseTime;
-	/// The difficulty level of the activity.
-	@JsonKey(name:'activityLevel')
-	int activityLevel;
 	/// The recommended light level for this activity.
 	@JsonKey(name:'activityLightLevel')
 	int activityLightLevel;

@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_vendor_display_properties_definition.dart';
+import '../enums/destiny_vendor_progression_type.dart';
 import 'date_range.dart';
 import 'destiny_vendor_action_definition.dart';
 import 'destiny_vendor_category_entry_definition.dart';
@@ -40,6 +41,9 @@ class DestinyVendorDefinition{
 
 	@JsonKey(name:'displayProperties')
 	DestinyVendorDisplayPropertiesDefinition displayProperties;
+	/// The type of reward progression that this vendor has. Default - The original rank progression from token redemption. Ritual - Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Battlegrounds (War Table).
+	@JsonKey(name:'vendorProgressionType',unknownEnumValue:DestinyVendorProgressionType.ProtectedInvalidEnumValue)
+	DestinyVendorProgressionType vendorProgressionType;
 	/// If the vendor has a custom localized string describing the "buy" action, that is returned here.
 	@JsonKey(name:'buyString')
 	String buyString;

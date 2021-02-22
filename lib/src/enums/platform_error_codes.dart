@@ -1169,6 +1169,9 @@ enum PlatformErrorCodes {
   ///ClanNameRestricted = 751
   @JsonValue(751)
   ClanNameRestricted,
+  ///ClanCreationBan = 752
+  @JsonValue(752)
+  ClanCreationBan,
   ///ItemAlreadyFollowed = 801
   @JsonValue(801)
   ItemAlreadyFollowed,
@@ -1310,6 +1313,15 @@ enum PlatformErrorCodes {
   ///PsnApiTargetUserBlocked = 1239
   @JsonValue(1239)
   PsnApiTargetUserBlocked,
+  ///PsnApiJwksMissing = 1240
+  @JsonValue(1240)
+  PsnApiJwksMissing,
+  ///PsnApiJwtMalformedHeader = 1241
+  @JsonValue(1241)
+  PsnApiJwtMalformedHeader,
+  ///PsnApiJwtMalformedPayload = 1242
+  @JsonValue(1242)
+  PsnApiJwtMalformedPayload,
   ///XblExSystemDisabled = 1300
   @JsonValue(1300)
   XblExSystemDisabled,
@@ -3102,6 +3114,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 750;
       case PlatformErrorCodes.ClanNameRestricted:
         return 751;
+      case PlatformErrorCodes.ClanCreationBan:
+        return 752;
       case PlatformErrorCodes.ItemAlreadyFollowed:
         return 801;
       case PlatformErrorCodes.ItemNotFollowed:
@@ -3196,6 +3210,12 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 1238;
       case PlatformErrorCodes.PsnApiTargetUserBlocked:
         return 1239;
+      case PlatformErrorCodes.PsnApiJwksMissing:
+        return 1240;
+      case PlatformErrorCodes.PsnApiJwtMalformedHeader:
+        return 1241;
+      case PlatformErrorCodes.PsnApiJwtMalformedPayload:
+        return 1242;
       case PlatformErrorCodes.XblExSystemDisabled:
         return 1300;
       case PlatformErrorCodes.XblExUnknownError:

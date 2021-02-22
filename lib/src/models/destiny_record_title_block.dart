@@ -24,6 +24,8 @@ class DestinyRecordTitleBlock{
 	/// For those who prefer to use the definitions.
 	@JsonKey(name:'titlesByGenderHash')
 	Map<String, String> titlesByGenderHash;
+	@JsonKey(name:'gildingTrackingRecordHash')
+	int gildingTrackingRecordHash;
 
 	
 	

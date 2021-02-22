@@ -55,6 +55,8 @@ class Destiny2CoreSettings{
 	int currentSeasonalArtifactHash;
 	@JsonKey(name:'currentSeasonHash')
 	int currentSeasonHash;
+	@JsonKey(name:'seasonalChallengesPresentationNodeHash')
+	int seasonalChallengesPresentationNodeHash;
 	@JsonKey(name:'futureSeasonHashes')
 	List<int> futureSeasonHashes;
 	@JsonKey(name:'pastSeasonHashes')

@@ -11,7 +11,7 @@ cp generator/dart-custom/helpers/oauth.dart ./lib/src/helpers
 
 # Compile and run the generator
 cd generator
-ts-node ./ts/generate.ts
+npm start
 rm -rf build
 cd ..
 

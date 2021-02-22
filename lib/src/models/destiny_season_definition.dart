@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_display_properties_definition.dart';
+import 'destiny_season_preview_definition.dart';
 
 part 'destiny_season_definition.g.dart';
 
@@ -38,6 +39,11 @@ class DestinySeasonDefinition{
 	int artifactItemHash;
 	@JsonKey(name:'sealPresentationNodeHash')
 	int sealPresentationNodeHash;
+	@JsonKey(name:'seasonalChallengesPresentationNodeHash')
+	int seasonalChallengesPresentationNodeHash;
+	/// Optional - Defines the promotional text, images, and links to preview this season.
+	@JsonKey(name:'preview')
+	DestinySeasonPreviewDefinition preview;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

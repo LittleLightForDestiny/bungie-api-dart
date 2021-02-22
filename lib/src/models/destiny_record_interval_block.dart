@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'destiny_record_interval_objective.dart';
+import 'destiny_record_interval_rewards.dart';
 
 part 'destiny_record_interval_block.g.dart';
 
@@ -20,6 +21,8 @@ class DestinyRecordIntervalBlock{
 
 	@JsonKey(name:'intervalObjectives')
 	List<DestinyRecordIntervalObjective> intervalObjectives;
+	@JsonKey(name:'intervalRewards')
+	List<DestinyRecordIntervalRewards> intervalRewards;
 	@JsonKey(name:'originalObjectiveArrayInsertionIndex')
 	int originalObjectiveArrayInsertionIndex;
 

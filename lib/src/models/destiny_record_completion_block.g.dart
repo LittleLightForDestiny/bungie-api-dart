@@ -67,5 +67,7 @@ const _$DestinyRecordToastStyleEnumMap = {
   DestinyRecordToastStyle.Badge: 3,
   DestinyRecordToastStyle.MetaRecord: 4,
   DestinyRecordToastStyle.MedalComplete: 5,
+  DestinyRecordToastStyle.SeasonChallengeComplete: 6,
+  DestinyRecordToastStyle.GildedTitleComplete: 7,
   DestinyRecordToastStyle.ProtectedInvalidEnumValue: 999999999,
 };

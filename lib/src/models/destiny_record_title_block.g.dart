@@ -16,7 +16,8 @@ DestinyRecordTitleBlock _$DestinyRecordTitleBlockFromJson(
     ..titlesByGenderHash =
         (json['titlesByGenderHash'] as Map<String, dynamic>)?.map(
       (k, e) => MapEntry(k, e as String),
-    );
+    )
+    ..gildingTrackingRecordHash = json['gildingTrackingRecordHash'] as int;
 }
 
 Map<String, dynamic> _$DestinyRecordTitleBlockToJson(
@@ -25,4 +26,5 @@ Map<String, dynamic> _$DestinyRecordTitleBlockToJson(
       'hasTitle': instance.hasTitle,
       'titlesByGender': instance.titlesByGender,
       'titlesByGenderHash': instance.titlesByGenderHash,
+      'gildingTrackingRecordHash': instance.gildingTrackingRecordHash,
     };

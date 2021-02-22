@@ -50,6 +50,9 @@ class DestinyVendorItemState {
     ///Charity = 8192
     /// This indicates that the item is for charity.
     static const DestinyVendorItemState Charity = DestinyVendorItemState(8192);
+    ///SeasonalRewardExpiration = 16384
+    /// This indicates that the item has a seasonal reward expiration.
+    static const DestinyVendorItemState SeasonalRewardExpiration = DestinyVendorItemState(16384);
 
     int get value {
         return _value;

@@ -83,6 +83,8 @@ class DestinyInventoryItemDefinition{
 	/// The localized title/name of the item's type. This can be whatever the designers want, and has no guarantee of consistency between items.
 	@JsonKey(name:'itemTypeDisplayName')
 	String itemTypeDisplayName;
+	@JsonKey(name:'flavorText')
+	String flavorText;
 	/// A string identifier that the game's UI uses to determine how the item should be rendered in inventory screens and the like. This could really be anything - at the moment, we don't have the time to really breakdown and maintain all the possible strings this could be, partly because new ones could be added ad hoc. But if you want to use it to dictate your own UI, or look for items with a certain display style, go for it!
 	@JsonKey(name:'uiItemDisplayStyle')
 	String uiItemDisplayStyle;

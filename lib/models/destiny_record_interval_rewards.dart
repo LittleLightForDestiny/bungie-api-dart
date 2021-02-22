@@ -1,0 +1,1 @@
+export '../src/models/destiny_record_interval_rewards.dart';

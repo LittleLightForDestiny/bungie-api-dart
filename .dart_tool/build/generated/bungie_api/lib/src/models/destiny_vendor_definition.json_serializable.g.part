@@ -9,6 +9,9 @@ DestinyVendorDefinition _$DestinyVendorDefinitionFromJson(
         ? null
         : DestinyVendorDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
+    ..vendorProgressionType = _$enumDecodeNullable(
+        _$DestinyVendorProgressionTypeEnumMap, json['vendorProgressionType'],
+        unknownValue: DestinyVendorProgressionType.ProtectedInvalidEnumValue)
     ..buyString = json['buyString'] as String
     ..sellString = json['sellString'] as String
     ..displayItemHash = json['displayItemHash'] as int
@@ -37,17 +40,9 @@ DestinyVendorDefinition _$DestinyVendorDefinitionFromJson(
             : DestinyVendorActionDefinition.fromJson(e as Map<String, dynamic>))
         ?.toList()
     ..categories = (json['categories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyVendorCategoryEntryDefinition.fromJson(
-                e as Map<String, dynamic>))
+        ?.map((e) => e == null ? null : DestinyVendorCategoryEntryDefinition.fromJson(e as Map<String, dynamic>))
         ?.toList()
-    ..originalCategories = (json['originalCategories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyVendorCategoryEntryDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
+    ..originalCategories = (json['originalCategories'] as List)?.map((e) => e == null ? null : DestinyVendorCategoryEntryDefinition.fromJson(e as Map<String, dynamic>))?.toList()
     ..displayCategories = (json['displayCategories'] as List)?.map((e) => e == null ? null : DestinyDisplayCategoryDefinition.fromJson(e as Map<String, dynamic>))?.toList()
     ..interactions = (json['interactions'] as List)?.map((e) => e == null ? null : DestinyVendorInteractionDefinition.fromJson(e as Map<String, dynamic>))?.toList()
     ..inventoryFlyouts = (json['inventoryFlyouts'] as List)?.map((e) => e == null ? null : DestinyVendorInventoryFlyoutDefinition.fromJson(e as Map<String, dynamic>))?.toList()
@@ -67,6 +62,8 @@ Map<String, dynamic> _$DestinyVendorDefinitionToJson(
         DestinyVendorDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
+      'vendorProgressionType':
+          _$DestinyVendorProgressionTypeEnumMap[instance.vendorProgressionType],
       'buyString': instance.buyString,
       'sellString': instance.sellString,
       'displayItemHash': instance.displayItemHash,
@@ -101,3 +98,41 @@ Map<String, dynamic> _$DestinyVendorDefinitionToJson(
       'index': instance.index,
       'redacted': instance.redacted,
     };
+
+T _$enumDecode<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError('A value must be provided. Supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+
+  final value = enumValues.entries
+      .singleWhere((e) => e.value == source, orElse: () => null)
+      ?.key;
+
+  if (value == null && unknownValue == null) {
+    throw ArgumentError('`$source` is not one of the supported values: '
+        '${enumValues.values.join(', ')}');
+  }
+  return value ?? unknownValue;
+}
+
+T _$enumDecodeNullable<T>(
+  Map<T, dynamic> enumValues,
+  dynamic source, {
+  T unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+}
+
+const _$DestinyVendorProgressionTypeEnumMap = {
+  DestinyVendorProgressionType.Default: 0,
+  DestinyVendorProgressionType.Ritual: 1,
+  DestinyVendorProgressionType.ProtectedInvalidEnumValue: 999999999,
+};

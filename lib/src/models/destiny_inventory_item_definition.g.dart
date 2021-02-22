@@ -30,6 +30,7 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
         : DestinyColor.fromJson(json['backgroundColor'] as Map<String, dynamic>)
     ..screenshot = json['screenshot'] as String
     ..itemTypeDisplayName = json['itemTypeDisplayName'] as String
+    ..flavorText = json['flavorText'] as String
     ..uiItemDisplayStyle = json['uiItemDisplayStyle'] as String
     ..itemTypeAndTierDisplayName = json['itemTypeAndTierDisplayName'] as String
     ..displaySource = json['displaySource'] as String
@@ -110,6 +111,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'backgroundColor': instance.backgroundColor,
       'screenshot': instance.screenshot,
       'itemTypeDisplayName': instance.itemTypeDisplayName,
+      'flavorText': instance.flavorText,
       'uiItemDisplayStyle': instance.uiItemDisplayStyle,
       'itemTypeAndTierDisplayName': instance.itemTypeAndTierDisplayName,
       'displaySource': instance.displaySource,

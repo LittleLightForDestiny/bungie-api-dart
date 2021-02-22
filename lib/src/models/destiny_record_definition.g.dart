@@ -25,6 +25,7 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
     ..recordValueStyle = _$enumDecodeNullable(
         _$DestinyRecordValueStyleEnumMap, json['recordValueStyle'],
         unknownValue: DestinyRecordValueStyle.ProtectedInvalidEnumValue)
+    ..forTitleGilding = json['forTitleGilding'] as bool
     ..titleInfo = json['titleInfo'] == null
         ? null
         : DestinyRecordTitleBlock.fromJson(
@@ -59,6 +60,7 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
       'objectiveHashes': instance.objectiveHashes,
       'recordValueStyle':
           _$DestinyRecordValueStyleEnumMap[instance.recordValueStyle],
+      'forTitleGilding': instance.forTitleGilding,
       'titleInfo': instance.titleInfo,
       'completionInfo': instance.completionInfo,
       'stateInfo': instance.stateInfo,

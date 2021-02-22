@@ -70,5 +70,7 @@ const _$DestinySocketCategoryStyleEnumMap = {
   DestinySocketCategoryStyle.Intrinsic: 4,
   DestinySocketCategoryStyle.EnergyMeter: 5,
   DestinySocketCategoryStyle.LargePerk: 6,
+  DestinySocketCategoryStyle.Abilities: 7,
+  DestinySocketCategoryStyle.Supers: 8,
   DestinySocketCategoryStyle.ProtectedInvalidEnumValue: 999999999,
 };

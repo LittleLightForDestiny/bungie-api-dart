@@ -16,6 +16,8 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
                 e as Map<String, dynamic>))
         ?.toList()
     ..collectibleHash = json['collectibleHash'] as int
+    ..iconWatermark = json['iconWatermark'] as String
+    ..iconWatermarkShelved = json['iconWatermarkShelved'] as String
     ..secondaryIcon = json['secondaryIcon'] as String
     ..secondaryOverlay = json['secondaryOverlay'] as String
     ..secondarySpecial = json['secondarySpecial'] as String
@@ -24,6 +26,7 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
         : DestinyColor.fromJson(json['backgroundColor'] as Map<String, dynamic>)
     ..screenshot = json['screenshot'] as String
     ..itemTypeDisplayName = json['itemTypeDisplayName'] as String
+    ..flavorText = json['flavorText'] as String
     ..uiItemDisplayStyle = json['uiItemDisplayStyle'] as String
     ..itemTypeAndTierDisplayName = json['itemTypeAndTierDisplayName'] as String
     ..displaySource = json['displaySource'] as String
@@ -96,12 +99,15 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'tooltipNotifications': instance.tooltipNotifications,
       'collectibleHash': instance.collectibleHash,
+      'iconWatermark': instance.iconWatermark,
+      'iconWatermarkShelved': instance.iconWatermarkShelved,
       'secondaryIcon': instance.secondaryIcon,
       'secondaryOverlay': instance.secondaryOverlay,
       'secondarySpecial': instance.secondarySpecial,
       'backgroundColor': instance.backgroundColor,
       'screenshot': instance.screenshot,
       'itemTypeDisplayName': instance.itemTypeDisplayName,
+      'flavorText': instance.flavorText,
       'uiItemDisplayStyle': instance.uiItemDisplayStyle,
       'itemTypeAndTierDisplayName': instance.itemTypeAndTierDisplayName,
       'displaySource': instance.displaySource,
@@ -262,6 +268,7 @@ const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.LegArmor: 29,
   DestinyItemSubType.ClassArmor: 30,
   DestinyItemSubType.Bow: 31,
+  DestinyItemSubType.DummyRepeatableBounty: 32,
   DestinyItemSubType.ProtectedInvalidEnumValue: 999999999,
 };
 
@@ -288,5 +295,6 @@ const _$DamageTypeEnumMap = {
   DamageType.Thermal: 3,
   DamageType.Void: 4,
   DamageType.Raid: 5,
+  DamageType.Stasis: 6,
   DamageType.ProtectedInvalidEnumValue: 999999999,
 };

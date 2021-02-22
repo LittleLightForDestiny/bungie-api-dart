@@ -32,6 +32,7 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
         : DestinyPresentationNodeRequirementsBlock.fromJson(
             json['requirements'] as Map<String, dynamic>)
     ..disableChildSubscreenNavigation = json['disableChildSubscreenNavigation'] as bool
+    ..maxCategoryRecordScore = json['maxCategoryRecordScore'] as int
     ..presentationNodeType = _$enumDecodeNullable(_$DestinyPresentationNodeTypeEnumMap, json['presentationNodeType'], unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
     ..traitIds = (json['traitIds'] as List)?.map((e) => e as String)?.toList()
     ..traitHashes = (json['traitHashes'] as List)?.map((e) => e as int)?.toList()
@@ -59,6 +60,7 @@ Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
       'requirements': instance.requirements,
       'disableChildSubscreenNavigation':
           instance.disableChildSubscreenNavigation,
+      'maxCategoryRecordScore': instance.maxCategoryRecordScore,
       'presentationNodeType':
           _$DestinyPresentationNodeTypeEnumMap[instance.presentationNodeType],
       'traitIds': instance.traitIds,
