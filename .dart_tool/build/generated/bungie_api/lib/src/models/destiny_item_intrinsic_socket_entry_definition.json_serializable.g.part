@@ -6,9 +6,9 @@ DestinyItemIntrinsicSocketEntryDefinition
     _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyItemIntrinsicSocketEntryDefinition()
-    ..plugItemHash = json['plugItemHash'] as int
-    ..socketTypeHash = json['socketTypeHash'] as int
-    ..defaultVisible = json['defaultVisible'] as bool;
+    ..plugItemHash = json['plugItemHash'] as int?
+    ..socketTypeHash = json['socketTypeHash'] as int?
+    ..defaultVisible = json['defaultVisible'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemIntrinsicSocketEntryDefinitionToJson(

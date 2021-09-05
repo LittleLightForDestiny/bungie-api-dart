@@ -11,17 +11,12 @@ class DestinyVendorReceiptsComponent{
 	DestinyVendorReceiptsComponent();
 
 	factory DestinyVendorReceiptsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorReceiptsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorReceiptsComponentFromJson(json);
 	}
 
 	/// The receipts for refundable purchases made at a vendor.
 	@JsonKey(name:'receipts')
-	List<DestinyVendorReceipt> receipts;
+	List<DestinyVendorReceipt>? receipts;
 
 	
 	

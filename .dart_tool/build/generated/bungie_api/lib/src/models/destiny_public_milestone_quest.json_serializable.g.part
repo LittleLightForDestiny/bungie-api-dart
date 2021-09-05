@@ -5,17 +5,15 @@
 DestinyPublicMilestoneQuest _$DestinyPublicMilestoneQuestFromJson(
     Map<String, dynamic> json) {
   return DestinyPublicMilestoneQuest()
-    ..questItemHash = json['questItemHash'] as int
+    ..questItemHash = json['questItemHash'] as int?
     ..activity = json['activity'] == null
         ? null
         : DestinyPublicMilestoneActivity.fromJson(
             json['activity'] as Map<String, dynamic>)
-    ..challenges = (json['challenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyPublicMilestoneChallenge.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..challenges = (json['challenges'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyPublicMilestoneChallenge.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyPublicMilestoneQuestToJson(

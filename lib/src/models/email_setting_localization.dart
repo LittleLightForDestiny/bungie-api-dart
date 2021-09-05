@@ -10,18 +10,13 @@ class EMailSettingLocalization{
 	EMailSettingLocalization();
 
 	factory EMailSettingLocalization.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EMailSettingLocalizationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EMailSettingLocalizationFromJson(json);
 	}
 
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 
 	
 	

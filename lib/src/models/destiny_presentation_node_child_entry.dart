@@ -9,16 +9,11 @@ class DestinyPresentationNodeChildEntry{
 	DestinyPresentationNodeChildEntry();
 
 	factory DestinyPresentationNodeChildEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPresentationNodeChildEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPresentationNodeChildEntryFromJson(json);
 	}
 
 	@JsonKey(name:'presentationNodeHash')
-	int presentationNodeHash;
+	int? presentationNodeHash;
 
 	
 	

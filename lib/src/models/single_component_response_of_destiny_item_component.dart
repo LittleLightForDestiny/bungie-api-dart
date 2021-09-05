@@ -11,22 +11,17 @@ class SingleComponentResponseOfDestinyItemComponent{
 	SingleComponentResponseOfDestinyItemComponent();
 
 	factory SingleComponentResponseOfDestinyItemComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyItemComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyItemComponentFromJson(json);
 	}
 
 	/// The base item component, filled with properties that are generally useful to know in any item request or that don't feel worthwhile to put in their own component.
 	@JsonKey(name:'data')
-	DestinyItemComponent data;
+	DestinyItemComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

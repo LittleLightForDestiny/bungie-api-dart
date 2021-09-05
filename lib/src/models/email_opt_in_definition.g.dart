@@ -8,15 +8,15 @@ part of 'email_opt_in_definition.dart';
 
 EmailOptInDefinition _$EmailOptInDefinitionFromJson(Map<String, dynamic> json) {
   return EmailOptInDefinition()
-    ..name = json['name'] as String
+    ..name = json['name'] as String?
     ..value =
         json['value'] == null ? null : OptInFlags.fromJson(json['value'] as int)
-    ..setByDefault = json['setByDefault'] as bool
-    ..dependentSubscriptions = (json['dependentSubscriptions'] as List)
-        ?.map((e) => e == null
-            ? null
-            : EmailSubscriptionDefinition.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..setByDefault = json['setByDefault'] as bool?
+    ..dependentSubscriptions =
+        (json['dependentSubscriptions'] as List<dynamic>?)
+            ?.map((e) =>
+                EmailSubscriptionDefinition.fromJson(e as Map<String, dynamic>))
+            .toList();
 }
 
 Map<String, dynamic> _$EmailOptInDefinitionToJson(

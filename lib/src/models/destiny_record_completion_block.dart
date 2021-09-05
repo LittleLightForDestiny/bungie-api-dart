@@ -10,23 +10,18 @@ class DestinyRecordCompletionBlock{
 	DestinyRecordCompletionBlock();
 
 	factory DestinyRecordCompletionBlock.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyRecordCompletionBlockFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyRecordCompletionBlockFromJson(json);
 	}
 
 	/// The number of objectives that must be completed before the objective is considered "complete"
 	@JsonKey(name:'partialCompletionObjectiveCountThreshold')
-	int partialCompletionObjectiveCountThreshold;
+	int? partialCompletionObjectiveCountThreshold;
 	@JsonKey(name:'ScoreValue')
-	int scoreValue;
+	int? scoreValue;
 	@JsonKey(name:'shouldFireToast')
-	bool shouldFireToast;
+	bool? shouldFireToast;
 	@JsonKey(name:'toastStyle',unknownEnumValue:DestinyRecordToastStyle.ProtectedInvalidEnumValue)
-	DestinyRecordToastStyle toastStyle;
+	DestinyRecordToastStyle? toastStyle;
 
 	
 	

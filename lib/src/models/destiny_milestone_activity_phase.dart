@@ -10,20 +10,15 @@ class DestinyMilestoneActivityPhase{
 	DestinyMilestoneActivityPhase();
 
 	factory DestinyMilestoneActivityPhase.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneActivityPhaseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneActivityPhaseFromJson(json);
 	}
 
 	/// Indicates if the phase has been completed.
 	@JsonKey(name:'complete')
-	bool complete;
+	bool? complete;
 	/// In DestinyActivityDefinition, if the activity has phases, there will be a set of phases defined in the "insertionPoints" property. This is the hash that maps to that phase.
 	@JsonKey(name:'phaseHash')
-	int phaseHash;
+	int? phaseHash;
 
 	
 	

@@ -4,24 +4,24 @@
 
 GroupFeatures _$GroupFeaturesFromJson(Map<String, dynamic> json) {
   return GroupFeatures()
-    ..maximumMembers = json['maximumMembers'] as int
+    ..maximumMembers = json['maximumMembers'] as int?
     ..maximumMembershipsOfGroupType =
-        json['maximumMembershipsOfGroupType'] as int
+        json['maximumMembershipsOfGroupType'] as int?
     ..capabilities = json['capabilities'] == null
         ? null
         : Capabilities.fromJson(json['capabilities'] as int)
-    ..membershipTypes = (json['membershipTypes'] as List)
-        ?.map((e) => _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, e))
-        ?.toList()
-    ..invitePermissionOverride = json['invitePermissionOverride'] as bool
+    ..membershipTypes = (json['membershipTypes'] as List<dynamic>?)
+        ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
+        .toList()
+    ..invitePermissionOverride = json['invitePermissionOverride'] as bool?
     ..updateCulturePermissionOverride =
-        json['updateCulturePermissionOverride'] as bool
+        json['updateCulturePermissionOverride'] as bool?
     ..hostGuidedGamePermissionOverride = _$enumDecodeNullable(
         _$HostGuidedGamesPermissionLevelEnumMap,
         json['hostGuidedGamePermissionOverride'],
         unknownValue: HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue)
     ..updateBannerPermissionOverride =
-        json['updateBannerPermissionOverride'] as bool
+        json['updateBannerPermissionOverride'] as bool?
     ..joinLevel = _$enumDecodeNullable(
         _$RuntimeGroupMemberTypeEnumMap, json['joinLevel'],
         unknownValue: RuntimeGroupMemberType.ProtectedInvalidEnumValue);
@@ -34,7 +34,7 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
       'capabilities': instance.capabilities,
       'membershipTypes': instance.membershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e])
-          ?.toList(),
+          .toList(),
       'invitePermissionOverride': instance.invitePermissionOverride,
       'updateCulturePermissionOverride':
           instance.updateCulturePermissionOverride,
@@ -45,36 +45,30 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
       'joinLevel': _$RuntimeGroupMemberTypeEnumMap[instance.joinLevel],
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
-}
-
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
 const _$BungieMembershipTypeEnumMap = {
@@ -89,6 +83,17 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.All: -1,
   BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };
+
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
+  dynamic source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    return null;
+  }
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
+}
 
 const _$HostGuidedGamesPermissionLevelEnumMap = {
   HostGuidedGamesPermissionLevel.None: 0,

@@ -16,7 +16,7 @@ enum MembershipOption {
 }
 
 extension MembershipOptionExtension on MembershipOption{
-  int get value {
+  int? get value {
     switch(this){
       case MembershipOption.Reviewed:
         return 0;

@@ -9,20 +9,15 @@ class ContentTypePropertySection{
 	ContentTypePropertySection();
 
 	factory ContentTypePropertySection.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentTypePropertySectionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentTypePropertySectionFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'readableName')
-	String readableName;
+	String? readableName;
 	@JsonKey(name:'collapsed')
-	bool collapsed;
+	bool? collapsed;
 
 	
 	

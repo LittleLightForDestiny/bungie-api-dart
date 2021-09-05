@@ -11,22 +11,17 @@ class SingleComponentResponseOfDestinyItemRenderComponent{
 	SingleComponentResponseOfDestinyItemRenderComponent();
 
 	factory SingleComponentResponseOfDestinyItemRenderComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyItemRenderComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyItemRenderComponentFromJson(json);
 	}
 
 	/// Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item.
 	@JsonKey(name:'data')
-	DestinyItemRenderComponent data;
+	DestinyItemRenderComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

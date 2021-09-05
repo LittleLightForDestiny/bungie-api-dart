@@ -8,11 +8,10 @@ part of 'destiny_item_peer_view.dart';
 
 DestinyItemPeerView _$DestinyItemPeerViewFromJson(Map<String, dynamic> json) {
   return DestinyItemPeerView()
-    ..itemHash = json['itemHash'] as int
-    ..dyes = (json['dyes'] as List)
-        ?.map((e) =>
-            e == null ? null : DyeReference.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..itemHash = json['itemHash'] as int?
+    ..dyes = (json['dyes'] as List<dynamic>?)
+        ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyItemPeerViewToJson(

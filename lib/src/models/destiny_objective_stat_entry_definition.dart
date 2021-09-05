@@ -12,20 +12,15 @@ class DestinyObjectiveStatEntryDefinition{
 	DestinyObjectiveStatEntryDefinition();
 
 	factory DestinyObjectiveStatEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyObjectiveStatEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyObjectiveStatEntryDefinitionFromJson(json);
 	}
 
 	/// The stat being modified, and the value used.
 	@JsonKey(name:'stat')
-	DestinyItemInvestmentStatDefinition stat;
+	DestinyItemInvestmentStatDefinition? stat;
 	/// Whether it will be applied as long as the objective is active, when it's completed, or until it's completed.
 	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue)
-	DestinyObjectiveGrantStyle style;
+	DestinyObjectiveGrantStyle? style;
 
 	
 	

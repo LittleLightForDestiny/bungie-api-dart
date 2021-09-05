@@ -28,7 +28,7 @@ enum DestinyGatingScope {
 }
 
 extension DestinyGatingScopeExtension on DestinyGatingScope{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyGatingScope.None:
         return 0;

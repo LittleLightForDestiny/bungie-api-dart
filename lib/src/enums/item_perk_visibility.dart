@@ -16,7 +16,7 @@ enum ItemPerkVisibility {
 }
 
 extension ItemPerkVisibilityExtension on ItemPerkVisibility{
-  int get value {
+  int? get value {
     switch(this){
       case ItemPerkVisibility.Visible:
         return 0;

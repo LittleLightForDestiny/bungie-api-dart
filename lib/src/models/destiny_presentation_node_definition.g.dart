@@ -13,14 +13,15 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..originalIcon = json['originalIcon'] as String
-    ..rootViewIcon = json['rootViewIcon'] as String
-    ..nodeType = _$enumDecodeNullable(_$DestinyPresentationNodeTypeEnumMap, json['nodeType'],
+    ..originalIcon = json['originalIcon'] as String?
+    ..rootViewIcon = json['rootViewIcon'] as String?
+    ..nodeType = _$enumDecodeNullable(
+        _$DestinyPresentationNodeTypeEnumMap, json['nodeType'],
         unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
     ..scope = _$enumDecodeNullable(_$DestinyScopeEnumMap, json['scope'],
         unknownValue: DestinyScope.ProtectedInvalidEnumValue)
-    ..objectiveHash = json['objectiveHash'] as int
-    ..completionRecordHash = json['completionRecordHash'] as int
+    ..objectiveHash = json['objectiveHash'] as int?
+    ..completionRecordHash = json['completionRecordHash'] as int?
     ..children = json['children'] == null
         ? null
         : DestinyPresentationNodeChildrenBlock.fromJson(
@@ -35,15 +36,22 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
         ? null
         : DestinyPresentationNodeRequirementsBlock.fromJson(
             json['requirements'] as Map<String, dynamic>)
-    ..disableChildSubscreenNavigation = json['disableChildSubscreenNavigation'] as bool
-    ..maxCategoryRecordScore = json['maxCategoryRecordScore'] as int
-    ..presentationNodeType = _$enumDecodeNullable(_$DestinyPresentationNodeTypeEnumMap, json['presentationNodeType'], unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
-    ..traitIds = (json['traitIds'] as List)?.map((e) => e as String)?.toList()
-    ..traitHashes = (json['traitHashes'] as List)?.map((e) => e as int)?.toList()
-    ..parentNodeHashes = (json['parentNodeHashes'] as List)?.map((e) => e as int)?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..disableChildSubscreenNavigation =
+        json['disableChildSubscreenNavigation'] as bool?
+    ..maxCategoryRecordScore = json['maxCategoryRecordScore'] as int?
+    ..presentationNodeType = _$enumDecodeNullable(
+        _$DestinyPresentationNodeTypeEnumMap, json['presentationNodeType'],
+        unknownValue: DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+    ..traitIds =
+        (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
+    ..traitHashes =
+        (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+    ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
@@ -75,36 +83,41 @@ Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyPresentationNodeTypeEnumMap = {

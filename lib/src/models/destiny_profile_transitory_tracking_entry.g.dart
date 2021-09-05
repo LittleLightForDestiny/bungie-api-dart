@@ -9,12 +9,12 @@ part of 'destiny_profile_transitory_tracking_entry.dart';
 DestinyProfileTransitoryTrackingEntry
     _$DestinyProfileTransitoryTrackingEntryFromJson(Map<String, dynamic> json) {
   return DestinyProfileTransitoryTrackingEntry()
-    ..locationHash = json['locationHash'] as int
-    ..itemHash = json['itemHash'] as int
-    ..objectiveHash = json['objectiveHash'] as int
-    ..activityHash = json['activityHash'] as int
-    ..questlineItemHash = json['questlineItemHash'] as int
-    ..trackedDate = json['trackedDate'] as String;
+    ..locationHash = json['locationHash'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..objectiveHash = json['objectiveHash'] as int?
+    ..activityHash = json['activityHash'] as int?
+    ..questlineItemHash = json['questlineItemHash'] as int?
+    ..trackedDate = json['trackedDate'] as String?;
 }
 
 Map<String, dynamic> _$DestinyProfileTransitoryTrackingEntryToJson(

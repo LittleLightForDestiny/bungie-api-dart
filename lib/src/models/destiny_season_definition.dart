@@ -12,48 +12,43 @@ class DestinySeasonDefinition{
 	DestinySeasonDefinition();
 
 	factory DestinySeasonDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinySeasonDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinySeasonDefinitionFromJson(json);
 	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	@JsonKey(name:'backgroundImagePath')
-	String backgroundImagePath;
+	String? backgroundImagePath;
 	@JsonKey(name:'seasonNumber')
-	int seasonNumber;
+	int? seasonNumber;
 	@JsonKey(name:'startDate')
-	String startDate;
+	String? startDate;
 	@JsonKey(name:'endDate')
-	String endDate;
+	String? endDate;
 	@JsonKey(name:'seasonPassHash')
-	int seasonPassHash;
+	int? seasonPassHash;
 	@JsonKey(name:'seasonPassProgressionHash')
-	int seasonPassProgressionHash;
+	int? seasonPassProgressionHash;
 	@JsonKey(name:'artifactItemHash')
-	int artifactItemHash;
+	int? artifactItemHash;
 	@JsonKey(name:'sealPresentationNodeHash')
-	int sealPresentationNodeHash;
+	int? sealPresentationNodeHash;
 	@JsonKey(name:'seasonalChallengesPresentationNodeHash')
-	int seasonalChallengesPresentationNodeHash;
+	int? seasonalChallengesPresentationNodeHash;
 	/// Optional - Defines the promotional text, images, and links to preview this season.
 	@JsonKey(name:'preview')
-	DestinySeasonPreviewDefinition preview;
+	DestinySeasonPreviewDefinition? preview;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

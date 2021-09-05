@@ -11,18 +11,13 @@ class GroupV2ClanInfo{
 	GroupV2ClanInfo();
 
 	factory GroupV2ClanInfo.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupV2ClanInfoFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupV2ClanInfoFromJson(json);
 	}
 
 	@JsonKey(name:'clanCallsign')
-	String clanCallsign;
+	String? clanCallsign;
 	@JsonKey(name:'clanBannerData')
-	ClanBanner clanBannerData;
+	ClanBanner? clanBannerData;
 
 	
 	

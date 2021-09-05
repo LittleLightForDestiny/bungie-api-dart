@@ -10,16 +10,11 @@ class DestinyPresentationNodesComponent{
 	DestinyPresentationNodesComponent();
 
 	factory DestinyPresentationNodesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPresentationNodesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPresentationNodesComponentFromJson(json);
 	}
 
 	@JsonKey(name:'nodes')
-	Map<String, DestinyPresentationNodeComponent> nodes;
+	Map<String, DestinyPresentationNodeComponent>? nodes;
 
 	
 	

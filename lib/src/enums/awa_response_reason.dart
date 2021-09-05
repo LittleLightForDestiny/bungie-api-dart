@@ -22,7 +22,7 @@ enum AwaResponseReason {
 }
 
 extension AwaResponseReasonExtension on AwaResponseReason{
-  int get value {
+  int? get value {
     switch(this){
       case AwaResponseReason.None:
         return 0;

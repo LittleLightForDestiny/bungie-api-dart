@@ -10,80 +10,79 @@ class GeneralUser{
 	GeneralUser();
 
 	factory GeneralUser.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GeneralUserFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GeneralUserFromJson(json);
 	}
 
 	@JsonKey(name:'membershipId')
-	String membershipId;
+	String? membershipId;
 	@JsonKey(name:'uniqueName')
-	String uniqueName;
+	String? uniqueName;
 	@JsonKey(name:'normalizedName')
-	String normalizedName;
+	String? normalizedName;
 	@JsonKey(name:'displayName')
-	String displayName;
+	String? displayName;
 	@JsonKey(name:'profilePicture')
-	int profilePicture;
+	int? profilePicture;
 	@JsonKey(name:'profileTheme')
-	int profileTheme;
+	int? profileTheme;
 	@JsonKey(name:'userTitle')
-	int userTitle;
+	int? userTitle;
 	@JsonKey(name:'successMessageFlags')
-	String successMessageFlags;
+	String? successMessageFlags;
 	@JsonKey(name:'isDeleted')
-	bool isDeleted;
+	bool? isDeleted;
 	@JsonKey(name:'about')
-	String about;
+	String? about;
 	@JsonKey(name:'firstAccess')
-	String firstAccess;
+	String? firstAccess;
 	@JsonKey(name:'lastUpdate')
-	String lastUpdate;
+	String? lastUpdate;
 	@JsonKey(name:'legacyPortalUID')
-	String legacyPortalUid;
+	String? legacyPortalUid;
 	@JsonKey(name:'context')
-	UserToUserContext context;
+	UserToUserContext? context;
 	@JsonKey(name:'psnDisplayName')
-	String psnDisplayName;
+	String? psnDisplayName;
 	@JsonKey(name:'xboxDisplayName')
-	String xboxDisplayName;
+	String? xboxDisplayName;
 	@JsonKey(name:'fbDisplayName')
-	String fbDisplayName;
+	String? fbDisplayName;
 	@JsonKey(name:'showActivity')
-	bool showActivity;
+	bool? showActivity;
 	@JsonKey(name:'locale')
-	String locale;
+	String? locale;
 	@JsonKey(name:'localeInheritDefault')
-	bool localeInheritDefault;
+	bool? localeInheritDefault;
 	@JsonKey(name:'lastBanReportId')
-	String lastBanReportId;
+	String? lastBanReportId;
 	@JsonKey(name:'showGroupMessaging')
-	bool showGroupMessaging;
+	bool? showGroupMessaging;
 	@JsonKey(name:'profilePicturePath')
-	String profilePicturePath;
+	String? profilePicturePath;
 	@JsonKey(name:'profilePictureWidePath')
-	String profilePictureWidePath;
+	String? profilePictureWidePath;
 	@JsonKey(name:'profileThemeName')
-	String profileThemeName;
+	String? profileThemeName;
 	@JsonKey(name:'userTitleDisplay')
-	String userTitleDisplay;
+	String? userTitleDisplay;
 	@JsonKey(name:'statusText')
-	String statusText;
+	String? statusText;
 	@JsonKey(name:'statusDate')
-	String statusDate;
+	String? statusDate;
 	@JsonKey(name:'profileBanExpire')
-	String profileBanExpire;
+	String? profileBanExpire;
 	@JsonKey(name:'blizzardDisplayName')
-	String blizzardDisplayName;
+	String? blizzardDisplayName;
 	@JsonKey(name:'steamDisplayName')
-	String steamDisplayName;
+	String? steamDisplayName;
 	@JsonKey(name:'stadiaDisplayName')
-	String stadiaDisplayName;
+	String? stadiaDisplayName;
 	@JsonKey(name:'twitchDisplayName')
-	String twitchDisplayName;
+	String? twitchDisplayName;
+	@JsonKey(name:'cachedBungieGlobalDisplayName')
+	String? cachedBungieGlobalDisplayName;
+	@JsonKey(name:'cachedBungieGlobalDisplayNameCode')
+	int? cachedBungieGlobalDisplayNameCode;
 
 	
 	

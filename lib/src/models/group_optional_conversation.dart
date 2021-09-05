@@ -10,24 +10,19 @@ class GroupOptionalConversation{
 	GroupOptionalConversation();
 
 	factory GroupOptionalConversation.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupOptionalConversationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupOptionalConversationFromJson(json);
 	}
 
 	@JsonKey(name:'groupId')
-	String groupId;
+	String? groupId;
 	@JsonKey(name:'conversationId')
-	String conversationId;
+	String? conversationId;
 	@JsonKey(name:'chatEnabled')
-	bool chatEnabled;
+	bool? chatEnabled;
 	@JsonKey(name:'chatName')
-	String chatName;
+	String? chatName;
 	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
-	ChatSecuritySetting chatSecurity;
+	ChatSecuritySetting? chatSecurity;
 
 	
 	

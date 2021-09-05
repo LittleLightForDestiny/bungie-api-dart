@@ -15,7 +15,7 @@ enum DestinyVendorProgressionType {
 }
 
 extension DestinyVendorProgressionTypeExtension on DestinyVendorProgressionType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyVendorProgressionType.Default:
         return 0;

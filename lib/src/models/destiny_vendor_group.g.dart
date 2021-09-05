@@ -8,9 +8,9 @@ part of 'destiny_vendor_group.dart';
 
 DestinyVendorGroup _$DestinyVendorGroupFromJson(Map<String, dynamic> json) {
   return DestinyVendorGroup()
-    ..vendorGroupHash = json['vendorGroupHash'] as int
+    ..vendorGroupHash = json['vendorGroupHash'] as int?
     ..vendorHashes =
-        (json['vendorHashes'] as List)?.map((e) => e as int)?.toList();
+        (json['vendorHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
 }
 
 Map<String, dynamic> _$DestinyVendorGroupToJson(DestinyVendorGroup instance) =>

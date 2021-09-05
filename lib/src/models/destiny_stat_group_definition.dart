@@ -14,39 +14,34 @@ class DestinyStatGroupDefinition{
 	DestinyStatGroupDefinition();
 
 	factory DestinyStatGroupDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyStatGroupDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyStatGroupDefinitionFromJson(json);
 	}
 
 	/// The maximum possible value that any stat in this group can be transformed into.
 	/// This is used by stats that *don't* have scaledStats entries below, but that still need to be displayed as a progress bar, in which case this is used as the upper bound for said progress bar. (the lower bound is always 0)
 	@JsonKey(name:'maximumValue')
-	int maximumValue;
+	int? maximumValue;
 	/// This apparently indicates the position of the stats in the UI? I've returned it in case anyone can use it, but it's not of any use to us on BNet. Something's being lost in translation with this value.
 	@JsonKey(name:'uiPosition')
-	int uiPosition;
+	int? uiPosition;
 	/// Any stat that requires scaling to be transformed from an "Investment" stat to a "Display" stat will have an entry in this list. For more information on what those types of stats mean and the transformation process, see DestinyStatDefinition.
 	/// In retrospect, I wouldn't mind if this was a dictionary keyed by the stat hash instead. But I'm going to leave it be because [[After Apple Picking]].
 	@JsonKey(name:'scaledStats')
-	List<DestinyStatDisplayDefinition> scaledStats;
+	List<DestinyStatDisplayDefinition>? scaledStats;
 	/// The game has the ability to override, based on the stat group, what the localized text is that is displayed for Stats being shown on the item.
 	/// Mercifully, no Stat Groups use this feature currently. If they start using them, we'll all need to start using them (and those of you who are more prudent than I am can go ahead and start pre-checking for this.)
 	@JsonKey(name:'overrides')
-	Map<String, DestinyStatOverrideDefinition> overrides;
+	Map<String, DestinyStatOverrideDefinition>? overrides;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

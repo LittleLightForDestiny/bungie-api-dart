@@ -17,31 +17,27 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
         ? null
         : DestinyInsertPlugActionDefinition.fromJson(
             json['insertAction'] as Map<String, dynamic>)
-    ..plugWhitelist = (json['plugWhitelist'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyPlugWhitelistEntryDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..socketCategoryHash = json['socketCategoryHash'] as int
+    ..plugWhitelist = (json['plugWhitelist'] as List<dynamic>?)
+        ?.map((e) => DestinyPlugWhitelistEntryDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..socketCategoryHash = json['socketCategoryHash'] as int?
     ..visibility = _$enumDecodeNullable(
         _$DestinySocketVisibilityEnumMap, json['visibility'],
         unknownValue: DestinySocketVisibility.ProtectedInvalidEnumValue)
-    ..alwaysRandomizeSockets = json['alwaysRandomizeSockets'] as bool
-    ..isPreviewEnabled = json['isPreviewEnabled'] as bool
-    ..hideDuplicateReusablePlugs = json['hideDuplicateReusablePlugs'] as bool
-    ..overridesUiAppearance = json['overridesUiAppearance'] as bool
+    ..alwaysRandomizeSockets = json['alwaysRandomizeSockets'] as bool?
+    ..isPreviewEnabled = json['isPreviewEnabled'] as bool?
+    ..hideDuplicateReusablePlugs = json['hideDuplicateReusablePlugs'] as bool?
+    ..overridesUiAppearance = json['overridesUiAppearance'] as bool?
     ..avoidDuplicatesOnInitialization =
-        json['avoidDuplicatesOnInitialization'] as bool
-    ..currencyScalars = (json['currencyScalars'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinySocketTypeScalarMaterialRequirementEntry.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+        json['avoidDuplicatesOnInitialization'] as bool?
+    ..currencyScalars = (json['currencyScalars'] as List<dynamic>?)
+        ?.map((e) => DestinySocketTypeScalarMaterialRequirementEntry.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
@@ -64,36 +60,41 @@ Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinySocketVisibilityEnumMap = {

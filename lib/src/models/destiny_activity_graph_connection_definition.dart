@@ -10,18 +10,13 @@ class DestinyActivityGraphConnectionDefinition{
 	DestinyActivityGraphConnectionDefinition();
 
 	factory DestinyActivityGraphConnectionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphConnectionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphConnectionDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'sourceNodeHash')
-	int sourceNodeHash;
+	int? sourceNodeHash;
 	@JsonKey(name:'destNodeHash')
-	int destNodeHash;
+	int? destNodeHash;
 
 	
 	

@@ -9,16 +9,11 @@ class DestinyArtDyeReference{
 	DestinyArtDyeReference();
 
 	factory DestinyArtDyeReference.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtDyeReferenceFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtDyeReferenceFromJson(json);
 	}
 
 	@JsonKey(name:'artDyeChannelHash')
-	int artDyeChannelHash;
+	int? artDyeChannelHash;
 
 	
 	

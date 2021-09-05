@@ -19,7 +19,7 @@ enum DestinyBreakerType {
 }
 
 extension DestinyBreakerTypeExtension on DestinyBreakerType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyBreakerType.None:
         return 0;

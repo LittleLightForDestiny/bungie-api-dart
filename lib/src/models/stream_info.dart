@@ -9,16 +9,11 @@ class StreamInfo{
 	StreamInfo();
 
 	factory StreamInfo.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$StreamInfoFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$StreamInfoFromJson(json);
 	}
 
 	@JsonKey(name:'ChannelName')
-	String channelName;
+	String? channelName;
 
 	
 	

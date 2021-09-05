@@ -16,7 +16,7 @@ enum DestinyItemSortType {
 }
 
 extension DestinyItemSortTypeExtension on DestinyItemSortType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyItemSortType.ItemId:
         return 0;

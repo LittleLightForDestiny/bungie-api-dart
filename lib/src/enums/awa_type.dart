@@ -14,7 +14,7 @@ enum AwaType {
 }
 
 extension AwaTypeExtension on AwaType{
-  int get value {
+  int? get value {
     switch(this){
       case AwaType.None:
         return 0;

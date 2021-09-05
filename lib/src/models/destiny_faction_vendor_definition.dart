@@ -11,23 +11,18 @@ class DestinyFactionVendorDefinition{
 	DestinyFactionVendorDefinition();
 
 	factory DestinyFactionVendorDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyFactionVendorDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyFactionVendorDefinitionFromJson(json);
 	}
 
 	/// The faction vendor hash.
 	@JsonKey(name:'vendorHash')
-	int vendorHash;
+	int? vendorHash;
 	/// The hash identifier for a Destination at which this vendor may be located. Each destination where a Vendor may exist will only ever have a single entry.
 	@JsonKey(name:'destinationHash')
-	int destinationHash;
+	int? destinationHash;
 	/// The relative path to the background image representing this Vendor at this location, for use in a banner.
 	@JsonKey(name:'backgroundImagePath')
-	String backgroundImagePath;
+	String? backgroundImagePath;
 
 	
 	

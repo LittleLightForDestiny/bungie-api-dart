@@ -16,44 +16,39 @@ class PostSearchResponse{
 	PostSearchResponse();
 
 	factory PostSearchResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PostSearchResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PostSearchResponseFromJson(json);
 	}
 
 	@JsonKey(name:'relatedPosts')
-	List<PostResponse> relatedPosts;
+	List<PostResponse>? relatedPosts;
 	@JsonKey(name:'authors')
-	List<GeneralUser> authors;
+	List<GeneralUser>? authors;
 	@JsonKey(name:'groups')
-	List<GroupResponse> groups;
+	List<GroupResponse>? groups;
 	@JsonKey(name:'searchedTags')
-	List<TagResponse> searchedTags;
+	List<TagResponse>? searchedTags;
 	@JsonKey(name:'polls')
-	List<PollResponse> polls;
+	List<PollResponse>? polls;
 	@JsonKey(name:'recruitmentDetails')
-	List<ForumRecruitmentDetail> recruitmentDetails;
+	List<ForumRecruitmentDetail>? recruitmentDetails;
 	@JsonKey(name:'availablePages')
-	int availablePages;
+	int? availablePages;
 	@JsonKey(name:'results')
-	List<PostResponse> results;
+	List<PostResponse>? results;
 	@JsonKey(name:'totalResults')
-	int totalResults;
+	int? totalResults;
 	@JsonKey(name:'hasMore')
-	bool hasMore;
+	bool? hasMore;
 	@JsonKey(name:'query')
-	PagedQuery query;
+	PagedQuery? query;
 	@JsonKey(name:'replacementContinuationToken')
-	String replacementContinuationToken;
+	String? replacementContinuationToken;
 	/// If useTotalResults is true, then totalResults represents an accurate count.
 	/// If False, it does not, and may be estimated/only the size of the current page.
 	/// Either way, you should probably always only trust hasMore.
 	/// This is a long-held historical throwback to when we used to do paging with known total results. Those queries toasted our database, and we were left to hastily alter our endpoints and create backward- compatible shims, of which useTotalResults is one.
 	@JsonKey(name:'useTotalResults')
-	bool useTotalResults;
+	bool? useTotalResults;
 
 	
 	

@@ -13,20 +13,15 @@ class DestinyErrorProfile{
 	DestinyErrorProfile();
 
 	factory DestinyErrorProfile.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyErrorProfileFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyErrorProfileFromJson(json);
 	}
 
 	/// The error that we encountered. You should be able to look up localized text to show to the user for these failures.
 	@JsonKey(name:'errorCode',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	/// Basic info about the account that failed. Don't expect anything other than membership ID, Membership Type, and displayName to be populated.
 	@JsonKey(name:'infoCard')
-	UserInfoCard infoCard;
+	UserInfoCard? infoCard;
 
 	
 	

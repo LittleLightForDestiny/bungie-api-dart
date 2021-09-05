@@ -4,6 +4,7 @@ import 'single_component_response_of_destiny_vendor_group_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_public_vendor_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_vendor_categories_component.dart';
 import 'dictionary_component_response_ofuint32_and_public_destiny_vendor_sale_item_set_component.dart';
+import 'single_component_response_of_destiny_string_variables_component.dart';
 
 part 'destiny_public_vendors_response.g.dart';
 
@@ -16,31 +17,30 @@ class DestinyPublicVendorsResponse{
 	DestinyPublicVendorsResponse();
 
 	factory DestinyPublicVendorsResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPublicVendorsResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPublicVendorsResponseFromJson(json);
 	}
 
 	/// For Vendors being returned, this will give you the information you need to group them and order them in the same way that the Bungie Companion app performs grouping. It will automatically be returned if you request the Vendors component.
 	/// COMPONENT TYPE: Vendors
 	@JsonKey(name:'vendorGroups')
-	SingleComponentResponseOfDestinyVendorGroupComponent vendorGroups;
+	SingleComponentResponseOfDestinyVendorGroupComponent? vendorGroups;
 	/// The base properties of the vendor. These are keyed by the Vendor Hash, so you will get one Vendor Component per vendor returned.
 	/// COMPONENT TYPE: Vendors
 	@JsonKey(name:'vendors')
-	DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponent vendors;
+	DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponent? vendors;
 	/// Categories that the vendor has available, and references to the sales therein. These are keyed by the Vendor Hash, so you will get one Categories Component per vendor returned.
 	/// COMPONENT TYPE: VendorCategories
 	@JsonKey(name:'categories')
-	DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent categories;
+	DictionaryComponentResponseOfuint32AndDestinyVendorCategoriesComponent? categories;
 	/// Sales, keyed by the vendorItemIndex of the item being sold. These are keyed by the Vendor Hash, so you will get one Sale Item Set Component per vendor returned.
 	/// Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor's definition.
 	/// COMPONENT TYPE: VendorSales
 	@JsonKey(name:'sales')
-	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent sales;
+	DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent? sales;
+	/// A set of string variable values by hash for a public vendors context.
+	/// COMPONENT TYPE: StringVariables
+	@JsonKey(name:'stringVariables')
+	SingleComponentResponseOfDestinyStringVariablesComponent? stringVariables;
 
 	
 	

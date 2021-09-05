@@ -13,14 +13,13 @@ DestinyArtifactDefinition _$DestinyArtifactDefinitionFromJson(
         ? null
         : DestinyItemTranslationBlockDefinition.fromJson(
             json['translationBlock'] as Map<String, dynamic>)
-    ..tiers = (json['tiers'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyArtifactTierDefinition.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..tiers = (json['tiers'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyArtifactTierDefinition.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyArtifactDefinitionToJson(

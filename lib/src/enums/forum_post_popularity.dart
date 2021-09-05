@@ -25,7 +25,7 @@ enum ForumPostPopularity {
 }
 
 extension ForumPostPopularityExtension on ForumPostPopularity{
-  int get value {
+  int? get value {
     switch(this){
       case ForumPostPopularity.Empty:
         return 0;

@@ -9,23 +9,21 @@ part of 'destiny_item_socket_entry_definition.dart';
 DestinyItemSocketEntryDefinition _$DestinyItemSocketEntryDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyItemSocketEntryDefinition()
-    ..socketTypeHash = json['socketTypeHash'] as int
-    ..singleInitialItemHash = json['singleInitialItemHash'] as int
-    ..reusablePlugItems = (json['reusablePlugItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemSocketEntryPlugItemDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
+    ..socketTypeHash = json['socketTypeHash'] as int?
+    ..singleInitialItemHash = json['singleInitialItemHash'] as int?
+    ..reusablePlugItems = (json['reusablePlugItems'] as List<dynamic>?)
+        ?.map((e) => DestinyItemSocketEntryPlugItemDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
     ..preventInitializationOnVendorPurchase =
-        json['preventInitializationOnVendorPurchase'] as bool
-    ..hidePerksInItemTooltip = json['hidePerksInItemTooltip'] as bool
+        json['preventInitializationOnVendorPurchase'] as bool?
+    ..hidePerksInItemTooltip = json['hidePerksInItemTooltip'] as bool?
     ..plugSources = json['plugSources'] == null
         ? null
         : SocketPlugSources.fromJson(json['plugSources'] as int)
-    ..reusablePlugSetHash = json['reusablePlugSetHash'] as int
-    ..randomizedPlugSetHash = json['randomizedPlugSetHash'] as int
-    ..defaultVisible = json['defaultVisible'] as bool;
+    ..reusablePlugSetHash = json['reusablePlugSetHash'] as int?
+    ..randomizedPlugSetHash = json['randomizedPlugSetHash'] as int?
+    ..defaultVisible = json['defaultVisible'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemSocketEntryDefinitionToJson(

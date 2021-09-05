@@ -24,7 +24,11 @@ DestinyVendorResponse _$DestinyVendorResponseFromJson(
     ..currencyLookups = json['currencyLookups'] == null
         ? null
         : SingleComponentResponseOfDestinyCurrenciesComponent.fromJson(
-            json['currencyLookups'] as Map<String, dynamic>);
+            json['currencyLookups'] as Map<String, dynamic>)
+    ..stringVariables = json['stringVariables'] == null
+        ? null
+        : SingleComponentResponseOfDestinyStringVariablesComponent.fromJson(
+            json['stringVariables'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyVendorResponseToJson(
@@ -35,4 +39,5 @@ Map<String, dynamic> _$DestinyVendorResponseToJson(
       'sales': instance.sales,
       'itemComponents': instance.itemComponents,
       'currencyLookups': instance.currencyLookups,
+      'stringVariables': instance.stringVariables,
     };

@@ -10,18 +10,13 @@ class TagResponse{
 	TagResponse();
 
 	factory TagResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TagResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TagResponseFromJson(json);
 	}
 
 	@JsonKey(name:'tagText')
-	String tagText;
+	String? tagText;
 	@JsonKey(name:'ignoreStatus')
-	IgnoreResponse ignoreStatus;
+	IgnoreResponse? ignoreStatus;
 
 	
 	

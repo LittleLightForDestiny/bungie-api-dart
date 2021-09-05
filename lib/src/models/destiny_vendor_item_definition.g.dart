@@ -9,52 +9,56 @@ part of 'destiny_vendor_item_definition.dart';
 DestinyVendorItemDefinition _$DestinyVendorItemDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyVendorItemDefinition()
-    ..vendorItemIndex = json['vendorItemIndex'] as int
-    ..itemHash = json['itemHash'] as int
-    ..quantity = json['quantity'] as int
-    ..failureIndexes =
-        (json['failureIndexes'] as List)?.map((e) => e as int)?.toList()
-    ..currencies = (json['currencies'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyVendorItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..vendorItemIndex = json['vendorItemIndex'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..quantity = json['quantity'] as int?
+    ..failureIndexes = (json['failureIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..currencies = (json['currencies'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyVendorItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..refundPolicy = _$enumDecodeNullable(
         _$DestinyVendorItemRefundPolicyEnumMap, json['refundPolicy'],
         unknownValue: DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
-    ..refundTimeLimit = json['refundTimeLimit'] as int
-    ..creationLevels = (json['creationLevels'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemCreationEntryLevelDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..displayCategoryIndex = json['displayCategoryIndex'] as int
-    ..categoryIndex = json['categoryIndex'] as int
-    ..originalCategoryIndex = json['originalCategoryIndex'] as int
-    ..minimumLevel = json['minimumLevel'] as int
-    ..maximumLevel = json['maximumLevel'] as int
+    ..refundTimeLimit = json['refundTimeLimit'] as int?
+    ..creationLevels = (json['creationLevels'] as List<dynamic>?)
+        ?.map((e) => DestinyItemCreationEntryLevelDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..displayCategoryIndex = json['displayCategoryIndex'] as int?
+    ..categoryIndex = json['categoryIndex'] as int?
+    ..originalCategoryIndex = json['originalCategoryIndex'] as int?
+    ..minimumLevel = json['minimumLevel'] as int?
+    ..maximumLevel = json['maximumLevel'] as int?
     ..action = json['action'] == null
         ? null
         : DestinyVendorSaleItemActionBlockDefinition.fromJson(
             json['action'] as Map<String, dynamic>)
-    ..displayCategory = json['displayCategory'] as String
-    ..inventoryBucketHash = json['inventoryBucketHash'] as int
-    ..visibilityScope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['visibilityScope'],
+    ..displayCategory = json['displayCategory'] as String?
+    ..inventoryBucketHash = json['inventoryBucketHash'] as int?
+    ..visibilityScope = _$enumDecodeNullable(
+        _$DestinyGatingScopeEnumMap, json['visibilityScope'],
         unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
     ..purchasableScope = _$enumDecodeNullable(
         _$DestinyGatingScopeEnumMap, json['purchasableScope'],
         unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
-    ..exclusivity = _$enumDecodeNullable(_$BungieMembershipTypeEnumMap, json['exclusivity'],
+    ..exclusivity = _$enumDecodeNullable(
+        _$BungieMembershipTypeEnumMap, json['exclusivity'],
         unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..isOffer = json['isOffer'] as bool
-    ..isCrm = json['isCrm'] as bool
-    ..sortValue = json['sortValue'] as int
-    ..expirationTooltip = json['expirationTooltip'] as String
-    ..redirectToSaleIndexes =
-        (json['redirectToSaleIndexes'] as List)?.map((e) => e as int)?.toList()
-    ..socketOverrides = (json['socketOverrides'] as List)?.map((e) => e == null ? null : DestinyVendorItemSocketOverride.fromJson(e as Map<String, dynamic>))?.toList()
-    ..unpurchasable = json['unpurchasable'] as bool;
+    ..isOffer = json['isOffer'] as bool?
+    ..isCrm = json['isCrm'] as bool?
+    ..sortValue = json['sortValue'] as int?
+    ..expirationTooltip = json['expirationTooltip'] as String?
+    ..redirectToSaleIndexes = (json['redirectToSaleIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..socketOverrides = (json['socketOverrides'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyVendorItemSocketOverride.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..unpurchasable = json['unpurchasable'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
@@ -90,36 +94,41 @@ Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
       'unpurchasable': instance.unpurchasable,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyVendorItemRefundPolicyEnumMap = {

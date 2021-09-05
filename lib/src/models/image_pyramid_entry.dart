@@ -9,20 +9,15 @@ class ImagePyramidEntry{
 	ImagePyramidEntry();
 
 	factory ImagePyramidEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ImagePyramidEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ImagePyramidEntryFromJson(json);
 	}
 
 	/// The name of the subfolder where these images are located.
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	/// The factor by which the original image size has been reduced.
 	@JsonKey(name:'factor')
-	double factor;
+	double? factor;
 
 	
 	

@@ -16,7 +16,7 @@ enum FireteamPublicSearchOption {
 }
 
 extension FireteamPublicSearchOptionExtension on FireteamPublicSearchOption{
-  int get value {
+  int? get value {
     switch(this){
       case FireteamPublicSearchOption.PublicAndPrivate:
         return 0;

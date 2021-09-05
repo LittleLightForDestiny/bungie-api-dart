@@ -11,22 +11,17 @@ class SingleComponentResponseOfDestinyVendorGroupComponent{
 	SingleComponentResponseOfDestinyVendorGroupComponent();
 
 	factory SingleComponentResponseOfDestinyVendorGroupComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyVendorGroupComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyVendorGroupComponentFromJson(json);
 	}
 
 	/// This component returns references to all of the Vendors in the response, grouped by categorizations that Bungie has deemed to be interesting, in the order in which both the groups and the vendors within that group should be rendered.
 	@JsonKey(name:'data')
-	DestinyVendorGroupComponent data;
+	DestinyVendorGroupComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

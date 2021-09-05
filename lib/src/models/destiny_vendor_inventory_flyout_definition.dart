@@ -12,32 +12,27 @@ class DestinyVendorInventoryFlyoutDefinition{
 	DestinyVendorInventoryFlyoutDefinition();
 
 	factory DestinyVendorInventoryFlyoutDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorInventoryFlyoutDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorInventoryFlyoutDefinitionFromJson(json);
 	}
 
 	/// If the flyout is locked, this is the reason why.
 	@JsonKey(name:'lockedDescription')
-	String lockedDescription;
+	String? lockedDescription;
 	/// The title and other common properties of the flyout.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// A list of inventory buckets and other metadata to show on the screen.
 	@JsonKey(name:'buckets')
-	List<DestinyVendorInventoryFlyoutBucketDefinition> buckets;
+	List<DestinyVendorInventoryFlyoutBucketDefinition>? buckets;
 	/// An identifier for the flyout, in case anything else needs to refer to them.
 	@JsonKey(name:'flyoutId')
-	int flyoutId;
+	int? flyoutId;
 	/// If this is true, don't show any of the glistening "this is a new item" UI elements, like we show on the inventory items themselves in in-game UI.
 	@JsonKey(name:'suppressNewness')
-	bool suppressNewness;
+	bool? suppressNewness;
 	/// If this flyout is meant to show you the contents of the player's equipment slot, this is the slot to show.
 	@JsonKey(name:'equipmentSlotHash')
-	int equipmentSlotHash;
+	int? equipmentSlotHash;
 
 	
 	

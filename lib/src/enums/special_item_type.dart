@@ -34,7 +34,7 @@ enum SpecialItemType {
 }
 
 extension SpecialItemTypeExtension on SpecialItemType{
-  int get value {
+  int? get value {
     switch(this){
       case SpecialItemType.None:
         return 0;

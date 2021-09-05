@@ -9,9 +9,9 @@ part of 'destiny_public_vendor_component.dart';
 DestinyPublicVendorComponent _$DestinyPublicVendorComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyPublicVendorComponent()
-    ..vendorHash = json['vendorHash'] as int
-    ..nextRefreshDate = json['nextRefreshDate'] as String
-    ..enabled = json['enabled'] as bool;
+    ..vendorHash = json['vendorHash'] as int?
+    ..nextRefreshDate = json['nextRefreshDate'] as String?
+    ..enabled = json['enabled'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPublicVendorComponentToJson(

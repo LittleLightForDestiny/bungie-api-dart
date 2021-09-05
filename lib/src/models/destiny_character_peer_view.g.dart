@@ -9,11 +9,9 @@ part of 'destiny_character_peer_view.dart';
 DestinyCharacterPeerView _$DestinyCharacterPeerViewFromJson(
     Map<String, dynamic> json) {
   return DestinyCharacterPeerView()
-    ..equipment = (json['equipment'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemPeerView.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..equipment = (json['equipment'] as List<dynamic>?)
+        ?.map((e) => DestinyItemPeerView.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyCharacterPeerViewToJson(

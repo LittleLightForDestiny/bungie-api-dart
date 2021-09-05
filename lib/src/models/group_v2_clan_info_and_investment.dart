@@ -12,20 +12,15 @@ class GroupV2ClanInfoAndInvestment{
 	GroupV2ClanInfoAndInvestment();
 
 	factory GroupV2ClanInfoAndInvestment.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupV2ClanInfoAndInvestmentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupV2ClanInfoAndInvestmentFromJson(json);
 	}
 
 	@JsonKey(name:'d2ClanProgressions')
-	Map<String, DestinyProgression> d2ClanProgressions;
+	Map<String, DestinyProgression>? d2ClanProgressions;
 	@JsonKey(name:'clanCallsign')
-	String clanCallsign;
+	String? clanCallsign;
 	@JsonKey(name:'clanBannerData')
-	ClanBanner clanBannerData;
+	ClanBanner? clanBannerData;
 
 	
 	

@@ -43,7 +43,7 @@ enum IgnoreLength {
 }
 
 extension IgnoreLengthExtension on IgnoreLength{
-  int get value {
+  int? get value {
     switch(this){
       case IgnoreLength.None:
         return 0;

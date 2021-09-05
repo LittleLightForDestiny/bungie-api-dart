@@ -22,7 +22,7 @@ enum DestinyGraphNodeState {
 }
 
 extension DestinyGraphNodeStateExtension on DestinyGraphNodeState{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyGraphNodeState.Hidden:
         return 0;

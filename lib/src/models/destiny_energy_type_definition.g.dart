@@ -13,16 +13,16 @@ DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..transparentIconPath = json['transparentIconPath'] as String
-    ..showIcon = json['showIcon'] as bool
+    ..transparentIconPath = json['transparentIconPath'] as String?
+    ..showIcon = json['showIcon'] as bool?
     ..enumValue = _$enumDecodeNullable(
         _$DestinyEnergyTypeEnumMap, json['enumValue'],
         unknownValue: DestinyEnergyType.ProtectedInvalidEnumValue)
-    ..capacityStatHash = json['capacityStatHash'] as int
-    ..costStatHash = json['costStatHash'] as int
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..capacityStatHash = json['capacityStatHash'] as int?
+    ..costStatHash = json['costStatHash'] as int?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyEnergyTypeDefinitionToJson(
@@ -39,36 +39,41 @@ Map<String, dynamic> _$DestinyEnergyTypeDefinitionToJson(
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyEnergyTypeEnumMap = {
@@ -78,5 +83,6 @@ const _$DestinyEnergyTypeEnumMap = {
   DestinyEnergyType.Void: 3,
   DestinyEnergyType.Ghost: 4,
   DestinyEnergyType.Subclass: 5,
+  DestinyEnergyType.Stasis: 6,
   DestinyEnergyType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -7,7 +7,7 @@ part of 'stream_info.dart';
 // **************************************************************************
 
 StreamInfo _$StreamInfoFromJson(Map<String, dynamic> json) {
-  return StreamInfo()..channelName = json['ChannelName'] as String;
+  return StreamInfo()..channelName = json['ChannelName'] as String?;
 }
 
 Map<String, dynamic> _$StreamInfoToJson(StreamInfo instance) =>

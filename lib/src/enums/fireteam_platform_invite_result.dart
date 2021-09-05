@@ -22,7 +22,7 @@ enum FireteamPlatformInviteResult {
 }
 
 extension FireteamPlatformInviteResultExtension on FireteamPlatformInviteResult{
-  int get value {
+  int? get value {
     switch(this){
       case FireteamPlatformInviteResult.None:
         return 0;

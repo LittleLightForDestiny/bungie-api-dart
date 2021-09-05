@@ -12,34 +12,29 @@ class ForumRecruitmentDetail{
 	ForumRecruitmentDetail();
 
 	factory ForumRecruitmentDetail.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ForumRecruitmentDetailFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ForumRecruitmentDetailFromJson(json);
 	}
 
 	@JsonKey(name:'topicId')
-	String topicId;
+	String? topicId;
 	@JsonKey(name:'microphoneRequired')
-	bool microphoneRequired;
+	bool? microphoneRequired;
 	@JsonKey(name:'intensity',unknownEnumValue:ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue)
-	ForumRecruitmentIntensityLabel intensity;
+	ForumRecruitmentIntensityLabel? intensity;
 	@JsonKey(name:'tone',unknownEnumValue:ForumRecruitmentToneLabel.ProtectedInvalidEnumValue)
-	ForumRecruitmentToneLabel tone;
+	ForumRecruitmentToneLabel? tone;
 	@JsonKey(name:'approved')
-	bool approved;
+	bool? approved;
 	@JsonKey(name:'conversationId')
-	String conversationId;
+	String? conversationId;
 	@JsonKey(name:'playerSlotsTotal')
-	int playerSlotsTotal;
+	int? playerSlotsTotal;
 	@JsonKey(name:'playerSlotsRemaining')
-	int playerSlotsRemaining;
+	int? playerSlotsRemaining;
 	@JsonKey(name:'Fireteam')
-	List<GeneralUser> fireteam;
+	List<GeneralUser>? fireteam;
 	@JsonKey(name:'kickedPlayerIds')
-	List<String> kickedPlayerIds;
+	List<String>? kickedPlayerIds;
 
 	
 	

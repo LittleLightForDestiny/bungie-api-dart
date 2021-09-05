@@ -9,18 +9,14 @@ part of 'destiny_historical_stats_period_group.dart';
 DestinyHistoricalStatsPeriodGroup _$DestinyHistoricalStatsPeriodGroupFromJson(
     Map<String, dynamic> json) {
   return DestinyHistoricalStatsPeriodGroup()
-    ..period = json['period'] as String
+    ..period = json['period'] as String?
     ..activityDetails = json['activityDetails'] == null
         ? null
         : DestinyHistoricalStatsActivity.fromJson(
             json['activityDetails'] as Map<String, dynamic>)
-    ..values = (json['values'] as Map<String, dynamic>)?.map(
+    ..values = (json['values'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyHistoricalStatsValue.fromJson(
-                  e as Map<String, dynamic>)),
+          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
     );
 }
 

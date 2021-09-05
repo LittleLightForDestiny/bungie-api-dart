@@ -9,8 +9,8 @@ part of 'destiny_item_render_component.dart';
 DestinyItemRenderComponent _$DestinyItemRenderComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemRenderComponent()
-    ..useCustomDyes = json['useCustomDyes'] as bool
-    ..artRegions = (json['artRegions'] as Map<String, dynamic>)?.map(
+    ..useCustomDyes = json['useCustomDyes'] as bool?
+    ..artRegions = (json['artRegions'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as int),
     );
 }

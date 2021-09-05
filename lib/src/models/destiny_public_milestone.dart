@@ -13,38 +13,33 @@ class DestinyPublicMilestone{
 	DestinyPublicMilestone();
 
 	factory DestinyPublicMilestone.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPublicMilestoneFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPublicMilestoneFromJson(json);
 	}
 
 	/// The hash identifier for the milestone. Use it to look up the DestinyMilestoneDefinition for static data about the Milestone.
 	@JsonKey(name:'milestoneHash')
-	int milestoneHash;
+	int? milestoneHash;
 	/// A milestone not need have even a single quest, but if there are active quests they will be returned here.
 	@JsonKey(name:'availableQuests')
-	List<DestinyPublicMilestoneQuest> availableQuests;
+	List<DestinyPublicMilestoneQuest>? availableQuests;
 	@JsonKey(name:'activities')
-	List<DestinyPublicMilestoneChallengeActivity> activities;
+	List<DestinyPublicMilestoneChallengeActivity>? activities;
 	/// Sometimes milestones - or activities active in milestones - will have relevant vendors. These are the vendors that are currently relevant.
 	/// Deprecated, already, for the sake of the new "vendors" property that has more data. What was I thinking.
 	@JsonKey(name:'vendorHashes')
-	List<int> vendorHashes;
+	List<int>? vendorHashes;
 	/// This is why we can't have nice things. This is the ordered list of vendors to be shown that relate to this milestone, potentially along with other interesting data.
 	@JsonKey(name:'vendors')
-	List<DestinyPublicMilestoneVendor> vendors;
+	List<DestinyPublicMilestoneVendor>? vendors;
 	/// If known, this is the date when the Milestone started/became active.
 	@JsonKey(name:'startDate')
-	String startDate;
+	String? startDate;
 	/// If known, this is the date when the Milestone will expire/recycle/end.
 	@JsonKey(name:'endDate')
-	String endDate;
+	String? endDate;
 	/// Used for ordering milestones in a display to match how we order them in BNet. May pull from static data, or possibly in the future from dynamic information.
 	@JsonKey(name:'order')
-	int order;
+	int? order;
 
 	
 	

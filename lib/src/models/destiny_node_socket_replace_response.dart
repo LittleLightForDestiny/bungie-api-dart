@@ -10,20 +10,15 @@ class DestinyNodeSocketReplaceResponse{
 	DestinyNodeSocketReplaceResponse();
 
 	factory DestinyNodeSocketReplaceResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyNodeSocketReplaceResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyNodeSocketReplaceResponseFromJson(json);
 	}
 
 	/// The hash identifier of the socket type to find amidst the item's sockets (the item to which this talent grid is attached). See DestinyInventoryItemDefinition.sockets.socketEntries to find the socket type of sockets on the item in question.
 	@JsonKey(name:'socketTypeHash')
-	int socketTypeHash;
+	int? socketTypeHash;
 	/// The hash identifier of the plug item that will be inserted into the socket found.
 	@JsonKey(name:'plugItemHash')
-	int plugItemHash;
+	int? plugItemHash;
 
 	
 	

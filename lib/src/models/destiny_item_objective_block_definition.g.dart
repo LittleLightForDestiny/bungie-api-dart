@@ -9,25 +9,25 @@ part of 'destiny_item_objective_block_definition.dart';
 DestinyItemObjectiveBlockDefinition
     _$DestinyItemObjectiveBlockDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyItemObjectiveBlockDefinition()
-    ..objectiveHashes =
-        (json['objectiveHashes'] as List)?.map((e) => e as int)?.toList()
-    ..displayActivityHashes =
-        (json['displayActivityHashes'] as List)?.map((e) => e as int)?.toList()
+    ..objectiveHashes = (json['objectiveHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..displayActivityHashes = (json['displayActivityHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
     ..requireFullObjectiveCompletion =
-        json['requireFullObjectiveCompletion'] as bool
-    ..questlineItemHash = json['questlineItemHash'] as int
-    ..narrative = json['narrative'] as String
-    ..objectiveVerbName = json['objectiveVerbName'] as String
-    ..questTypeIdentifier = json['questTypeIdentifier'] as String
-    ..questTypeHash = json['questTypeHash'] as int
+        json['requireFullObjectiveCompletion'] as bool?
+    ..questlineItemHash = json['questlineItemHash'] as int?
+    ..narrative = json['narrative'] as String?
+    ..objectiveVerbName = json['objectiveVerbName'] as String?
+    ..questTypeIdentifier = json['questTypeIdentifier'] as String?
+    ..questTypeHash = json['questTypeHash'] as int?
     ..perObjectiveDisplayProperties =
-        (json['perObjectiveDisplayProperties'] as List)
-            ?.map((e) => e == null
-                ? null
-                : DestinyObjectiveDisplayProperties.fromJson(
-                    e as Map<String, dynamic>))
-            ?.toList()
-    ..displayAsStatTracker = json['displayAsStatTracker'] as bool;
+        (json['perObjectiveDisplayProperties'] as List<dynamic>?)
+            ?.map((e) => DestinyObjectiveDisplayProperties.fromJson(
+                e as Map<String, dynamic>))
+            .toList()
+    ..displayAsStatTracker = json['displayAsStatTracker'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemObjectiveBlockDefinitionToJson(

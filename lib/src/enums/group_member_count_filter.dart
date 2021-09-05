@@ -19,7 +19,7 @@ enum GroupMemberCountFilter {
 }
 
 extension GroupMemberCountFilterExtension on GroupMemberCountFilter{
-  int get value {
+  int? get value {
     switch(this){
       case GroupMemberCountFilter.All:
         return 0;

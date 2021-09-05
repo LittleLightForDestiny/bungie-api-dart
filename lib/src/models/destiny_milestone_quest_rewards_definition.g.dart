@@ -10,12 +10,10 @@ DestinyMilestoneQuestRewardsDefinition
     _$DestinyMilestoneQuestRewardsDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyMilestoneQuestRewardsDefinition()
-    ..items = (json['items'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyMilestoneQuestRewardItem.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..items = (json['items'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyMilestoneQuestRewardItem.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyMilestoneQuestRewardsDefinitionToJson(

@@ -11,9 +11,9 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
     ..memberType = _$enumDecodeNullable(
         _$RuntimeGroupMemberTypeEnumMap, json['memberType'],
         unknownValue: RuntimeGroupMemberType.ProtectedInvalidEnumValue)
-    ..isOnline = json['isOnline'] as bool
-    ..lastOnlineStatusChange = json['lastOnlineStatusChange'] as String
-    ..groupId = json['groupId'] as String
+    ..isOnline = json['isOnline'] as bool?
+    ..lastOnlineStatusChange = json['lastOnlineStatusChange'] as String?
+    ..groupId = json['groupId'] as String?
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
         : GroupUserInfoCard.fromJson(
@@ -22,7 +22,7 @@ GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
         ? null
         : UserInfoCard.fromJson(
             json['bungieNetUserInfo'] as Map<String, dynamic>)
-    ..joinDate = json['joinDate'] as String;
+    ..joinDate = json['joinDate'] as String?;
 }
 
 Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) =>
@@ -36,36 +36,41 @@ Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) =>
       'joinDate': instance.joinDate,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$RuntimeGroupMemberTypeEnumMap = {

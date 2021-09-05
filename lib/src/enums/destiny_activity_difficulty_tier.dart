@@ -31,7 +31,7 @@ enum DestinyActivityDifficultyTier {
 }
 
 extension DestinyActivityDifficultyTierExtension on DestinyActivityDifficultyTier{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyActivityDifficultyTier.Trivial:
         return 0;

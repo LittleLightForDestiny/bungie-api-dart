@@ -11,20 +11,15 @@ class FireteamResponse{
 	FireteamResponse();
 
 	factory FireteamResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$FireteamResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$FireteamResponseFromJson(json);
 	}
 
 	@JsonKey(name:'Summary')
-	FireteamSummary summary;
+	FireteamSummary? summary;
 	@JsonKey(name:'Members')
-	List<FireteamMember> members;
+	List<FireteamMember>? members;
 	@JsonKey(name:'Alternates')
-	List<FireteamMember> alternates;
+	List<FireteamMember>? alternates;
 
 	
 	

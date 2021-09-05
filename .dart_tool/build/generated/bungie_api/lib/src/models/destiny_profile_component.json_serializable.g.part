@@ -8,16 +8,17 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
     ..userInfo = json['userInfo'] == null
         ? null
         : UserInfoCard.fromJson(json['userInfo'] as Map<String, dynamic>)
-    ..dateLastPlayed = json['dateLastPlayed'] as String
+    ..dateLastPlayed = json['dateLastPlayed'] as String?
     ..versionsOwned = json['versionsOwned'] == null
         ? null
         : DestinyGameVersions.fromJson(json['versionsOwned'] as int)
-    ..characterIds =
-        (json['characterIds'] as List)?.map((e) => e as String)?.toList()
+    ..characterIds = (json['characterIds'] as List<dynamic>?)
+        ?.map((e) => e as String)
+        .toList()
     ..seasonHashes =
-        (json['seasonHashes'] as List)?.map((e) => e as int)?.toList()
-    ..currentSeasonHash = json['currentSeasonHash'] as int
-    ..currentSeasonRewardPowerCap = json['currentSeasonRewardPowerCap'] as int;
+        (json['seasonHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+    ..currentSeasonHash = json['currentSeasonHash'] as int?
+    ..currentSeasonRewardPowerCap = json['currentSeasonRewardPowerCap'] as int?;
 }
 
 Map<String, dynamic> _$DestinyProfileComponentToJson(

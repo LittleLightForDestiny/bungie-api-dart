@@ -9,12 +9,10 @@ part of 'destiny_activity_loadout_requirement_set.dart';
 DestinyActivityLoadoutRequirementSet
     _$DestinyActivityLoadoutRequirementSetFromJson(Map<String, dynamic> json) {
   return DestinyActivityLoadoutRequirementSet()
-    ..requirements = (json['requirements'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyActivityLoadoutRequirement.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..requirements = (json['requirements'] as List<dynamic>?)
+        ?.map((e) => DestinyActivityLoadoutRequirement.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementSetToJson(

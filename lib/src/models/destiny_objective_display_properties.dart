@@ -9,20 +9,15 @@ class DestinyObjectiveDisplayProperties{
 	DestinyObjectiveDisplayProperties();
 
 	factory DestinyObjectiveDisplayProperties.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyObjectiveDisplayPropertiesFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyObjectiveDisplayPropertiesFromJson(json);
 	}
 
 	/// The activity associated with this objective in the context of this item, if any.
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	/// If true, the game shows this objective on item preview screens.
 	@JsonKey(name:'displayOnItemPreviewScreen')
-	bool displayOnItemPreviewScreen;
+	bool? displayOnItemPreviewScreen;
 
 	
 	

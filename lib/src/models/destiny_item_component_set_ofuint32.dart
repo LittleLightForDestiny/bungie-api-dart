@@ -19,34 +19,29 @@ class DestinyItemComponentSetOfuint32{
 	DestinyItemComponentSetOfuint32();
 
 	factory DestinyItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemComponentSetOfuint32FromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemComponentSetOfuint32FromJson(json);
 	}
 
 	@JsonKey(name:'instances')
-	DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent instances;
+	DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent? instances;
 	@JsonKey(name:'perks')
-	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent perks;
+	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
 	@JsonKey(name:'renderData')
-	DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent renderData;
+	DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent? renderData;
 	@JsonKey(name:'stats')
-	DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent stats;
+	DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent? stats;
 	@JsonKey(name:'sockets')
-	DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent sockets;
+	DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent? sockets;
 	@JsonKey(name:'reusablePlugs')
-	DictionaryComponentResponseOfuint32AndDestinyItemReusablePlugsComponent reusablePlugs;
+	DictionaryComponentResponseOfuint32AndDestinyItemReusablePlugsComponent? reusablePlugs;
 	@JsonKey(name:'plugObjectives')
-	DictionaryComponentResponseOfuint32AndDestinyItemPlugObjectivesComponent plugObjectives;
+	DictionaryComponentResponseOfuint32AndDestinyItemPlugObjectivesComponent? plugObjectives;
 	@JsonKey(name:'talentGrids')
-	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent talentGrids;
+	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent? talentGrids;
 	@JsonKey(name:'plugStates')
-	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
+	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent? plugStates;
 	@JsonKey(name:'objectives')
-	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent objectives;
+	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
 
 	
 	

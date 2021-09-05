@@ -8,8 +8,8 @@ part of 'image_pyramid_entry.dart';
 
 ImagePyramidEntry _$ImagePyramidEntryFromJson(Map<String, dynamic> json) {
   return ImagePyramidEntry()
-    ..name = json['name'] as String
-    ..factor = (json['factor'] as num)?.toDouble();
+    ..name = json['name'] as String?
+    ..factor = (json['factor'] as num?)?.toDouble();
 }
 
 Map<String, dynamic> _$ImagePyramidEntryToJson(ImagePyramidEntry instance) =>

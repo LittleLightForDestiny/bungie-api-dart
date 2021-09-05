@@ -12,42 +12,37 @@ class PostResponse{
 	PostResponse();
 
 	factory PostResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PostResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PostResponseFromJson(json);
 	}
 
 	@JsonKey(name:'lastReplyTimestamp')
-	String lastReplyTimestamp;
+	String? lastReplyTimestamp;
 	@JsonKey(name:'IsPinned')
-	bool isPinned;
+	bool? isPinned;
 	@JsonKey(name:'urlMediaType',unknownEnumValue:ForumMediaType.ProtectedInvalidEnumValue)
-	ForumMediaType urlMediaType;
+	ForumMediaType? urlMediaType;
 	@JsonKey(name:'thumbnail')
-	String thumbnail;
+	String? thumbnail;
 	@JsonKey(name:'popularity',unknownEnumValue:ForumPostPopularity.ProtectedInvalidEnumValue)
-	ForumPostPopularity popularity;
+	ForumPostPopularity? popularity;
 	@JsonKey(name:'isActive')
-	bool isActive;
+	bool? isActive;
 	@JsonKey(name:'isAnnouncement')
-	bool isAnnouncement;
+	bool? isAnnouncement;
 	@JsonKey(name:'userRating')
-	int userRating;
+	int? userRating;
 	@JsonKey(name:'userHasRated')
-	bool userHasRated;
+	bool? userHasRated;
 	@JsonKey(name:'userHasMutedPost')
-	bool userHasMutedPost;
+	bool? userHasMutedPost;
 	@JsonKey(name:'latestReplyPostId')
-	String latestReplyPostId;
+	String? latestReplyPostId;
 	@JsonKey(name:'latestReplyAuthorId')
-	String latestReplyAuthorId;
+	String? latestReplyAuthorId;
 	@JsonKey(name:'ignoreStatus')
-	IgnoreResponse ignoreStatus;
+	IgnoreResponse? ignoreStatus;
 	@JsonKey(name:'locale')
-	String locale;
+	String? locale;
 
 	
 	

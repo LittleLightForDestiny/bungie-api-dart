@@ -6,17 +6,19 @@ DestinyPublicMilestoneChallengeActivity
     _$DestinyPublicMilestoneChallengeActivityFromJson(
         Map<String, dynamic> json) {
   return DestinyPublicMilestoneChallengeActivity()
-    ..activityHash = json['activityHash'] as int
-    ..challengeObjectiveHashes = (json['challengeObjectiveHashes'] as List)
+    ..activityHash = json['activityHash'] as int?
+    ..challengeObjectiveHashes =
+        (json['challengeObjectiveHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
+    ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
         ?.map((e) => e as int)
-        ?.toList()
-    ..modifierHashes =
-        (json['modifierHashes'] as List)?.map((e) => e as int)?.toList()
-    ..loadoutRequirementIndex = json['loadoutRequirementIndex'] as int
+        .toList()
+    ..loadoutRequirementIndex = json['loadoutRequirementIndex'] as int?
     ..phaseHashes =
-        (json['phaseHashes'] as List)?.map((e) => e as int)?.toList()
+        (json['phaseHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
     ..booleanActivityOptions =
-        (json['booleanActivityOptions'] as Map<String, dynamic>)?.map(
+        (json['booleanActivityOptions'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as bool),
     );
 }

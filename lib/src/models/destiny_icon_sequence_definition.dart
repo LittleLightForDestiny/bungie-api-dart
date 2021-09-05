@@ -9,16 +9,11 @@ class DestinyIconSequenceDefinition{
 	DestinyIconSequenceDefinition();
 
 	factory DestinyIconSequenceDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyIconSequenceDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyIconSequenceDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'frames')
-	List<String> frames;
+	List<String>? frames;
 
 	
 	

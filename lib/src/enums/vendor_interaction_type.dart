@@ -50,7 +50,7 @@ enum VendorInteractionType {
 }
 
 extension VendorInteractionTypeExtension on VendorInteractionType{
-  int get value {
+  int? get value {
     switch(this){
       case VendorInteractionType.Unknown:
         return 0;

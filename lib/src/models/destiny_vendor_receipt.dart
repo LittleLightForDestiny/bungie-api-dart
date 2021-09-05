@@ -12,38 +12,33 @@ class DestinyVendorReceipt{
 	DestinyVendorReceipt();
 
 	factory DestinyVendorReceipt.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorReceiptFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorReceiptFromJson(json);
 	}
 
 	/// The amount paid for the item, in terms of items that were consumed in the purchase and their quantity.
 	@JsonKey(name:'currencyPaid')
-	List<DestinyItemQuantity> currencyPaid;
+	List<DestinyItemQuantity>? currencyPaid;
 	/// The item that was received, and its quantity.
 	@JsonKey(name:'itemReceived')
-	DestinyItemQuantity itemReceived;
+	DestinyItemQuantity? itemReceived;
 	/// The unlock flag used to determine whether you still have the purchased item.
 	@JsonKey(name:'licenseUnlockHash')
-	int licenseUnlockHash;
+	int? licenseUnlockHash;
 	/// The ID of the character who made the purchase.
 	@JsonKey(name:'purchasedByCharacterId')
-	String purchasedByCharacterId;
+	String? purchasedByCharacterId;
 	/// Whether you can get a refund, and what happens in order for the refund to be received. See the DestinyVendorItemRefundPolicy enum for details.
 	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
-	DestinyVendorItemRefundPolicy refundPolicy;
+	DestinyVendorItemRefundPolicy? refundPolicy;
 	/// The identifier of this receipt.
 	@JsonKey(name:'sequenceNumber')
-	int sequenceNumber;
+	int? sequenceNumber;
 	/// The seconds since epoch at which this receipt is rendered invalid.
 	@JsonKey(name:'timeToExpiration')
-	String timeToExpiration;
+	String? timeToExpiration;
 	/// The date at which this receipt is rendered invalid.
 	@JsonKey(name:'expiresOn')
-	String expiresOn;
+	String? expiresOn;
 
 	
 	

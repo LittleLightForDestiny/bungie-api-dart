@@ -9,15 +9,13 @@ part of 'destiny_milestone_content.dart';
 DestinyMilestoneContent _$DestinyMilestoneContentFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneContent()
-    ..about = json['about'] as String
-    ..status = json['status'] as String
-    ..tips = (json['tips'] as List)?.map((e) => e as String)?.toList()
-    ..itemCategories = (json['itemCategories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyMilestoneContentItemCategory.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..about = json['about'] as String?
+    ..status = json['status'] as String?
+    ..tips = (json['tips'] as List<dynamic>?)?.map((e) => e as String).toList()
+    ..itemCategories = (json['itemCategories'] as List<dynamic>?)
+        ?.map((e) => DestinyMilestoneContentItemCategory.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyMilestoneContentToJson(

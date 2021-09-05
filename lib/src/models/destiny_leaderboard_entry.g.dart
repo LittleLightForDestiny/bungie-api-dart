@@ -9,11 +9,11 @@ part of 'destiny_leaderboard_entry.dart';
 DestinyLeaderboardEntry _$DestinyLeaderboardEntryFromJson(
     Map<String, dynamic> json) {
   return DestinyLeaderboardEntry()
-    ..rank = json['rank'] as int
+    ..rank = json['rank'] as int?
     ..player = json['player'] == null
         ? null
         : DestinyPlayer.fromJson(json['player'] as Map<String, dynamic>)
-    ..characterId = json['characterId'] as String
+    ..characterId = json['characterId'] as String?
     ..value = json['value'] == null
         ? null
         : DestinyHistoricalStatsValue.fromJson(

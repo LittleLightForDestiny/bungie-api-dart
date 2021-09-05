@@ -12,26 +12,21 @@ class EmailOptInDefinition{
 	EmailOptInDefinition();
 
 	factory EmailOptInDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EmailOptInDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EmailOptInDefinitionFromJson(json);
 	}
 
 	/// The unique identifier for this opt-in category.
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	/// The flag value for this opt-in category. For historical reasons, this is defined as a flags enum.
 	@JsonKey(name:'value')
-	OptInFlags value;
+	OptInFlags? value;
 	/// If true, this opt-in setting should be set by default in situations where accounts are created without explicit choices about what they're opting into.
 	@JsonKey(name:'setByDefault')
-	bool setByDefault;
+	bool? setByDefault;
 	/// Information about the dependent subscriptions for this opt-in.
 	@JsonKey(name:'dependentSubscriptions')
-	List<EmailSubscriptionDefinition> dependentSubscriptions;
+	List<EmailSubscriptionDefinition>? dependentSubscriptions;
 
 	
 	

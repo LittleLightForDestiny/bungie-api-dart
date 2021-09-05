@@ -9,14 +9,12 @@ part of 'destiny_milestone_activity_definition.dart';
 DestinyMilestoneActivityDefinition _$DestinyMilestoneActivityDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneActivityDefinition()
-    ..conceptualActivityHash = json['conceptualActivityHash'] as int
-    ..variants = (json['variants'] as Map<String, dynamic>)?.map(
+    ..conceptualActivityHash = json['conceptualActivityHash'] as int?
+    ..variants = (json['variants'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
           k,
-          e == null
-              ? null
-              : DestinyMilestoneActivityVariantDefinition.fromJson(
-                  e as Map<String, dynamic>)),
+          DestinyMilestoneActivityVariantDefinition.fromJson(
+              e as Map<String, dynamic>)),
     );
 }
 

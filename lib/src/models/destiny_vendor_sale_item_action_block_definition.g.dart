@@ -10,8 +10,8 @@ DestinyVendorSaleItemActionBlockDefinition
     _$DestinyVendorSaleItemActionBlockDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyVendorSaleItemActionBlockDefinition()
-    ..executeSeconds = (json['executeSeconds'] as num)?.toDouble()
-    ..isPositive = json['isPositive'] as bool;
+    ..executeSeconds = (json['executeSeconds'] as num?)?.toDouble()
+    ..isPositive = json['isPositive'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyVendorSaleItemActionBlockDefinitionToJson(

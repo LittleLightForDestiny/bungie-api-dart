@@ -19,7 +19,7 @@ enum PeriodType {
 }
 
 extension PeriodTypeExtension on PeriodType{
-  int get value {
+  int? get value {
     switch(this){
       case PeriodType.None:
         return 0;

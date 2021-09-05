@@ -9,9 +9,9 @@ part of 'group_optional_conversation_edit_request.dart';
 GroupOptionalConversationEditRequest
     _$GroupOptionalConversationEditRequestFromJson(Map<String, dynamic> json) {
   return GroupOptionalConversationEditRequest()
-    ..chatEnabled = json['chatEnabled'] as bool
-    ..chatName = json['chatName'] as String
-    ..chatSecurity = json['chatSecurity'] as int;
+    ..chatEnabled = json['chatEnabled'] as bool?
+    ..chatName = json['chatName'] as String?
+    ..chatSecurity = json['chatSecurity'] as int?;
 }
 
 Map<String, dynamic> _$GroupOptionalConversationEditRequestToJson(

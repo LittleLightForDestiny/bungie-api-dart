@@ -5,12 +5,12 @@
 DestinyPlugWhitelistEntryDefinition
     _$DestinyPlugWhitelistEntryDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyPlugWhitelistEntryDefinition()
-    ..categoryHash = json['categoryHash'] as int
-    ..categoryIdentifier = json['categoryIdentifier'] as String
+    ..categoryHash = json['categoryHash'] as int?
+    ..categoryIdentifier = json['categoryIdentifier'] as String?
     ..reinitializationPossiblePlugHashes =
-        (json['reinitializationPossiblePlugHashes'] as List)
+        (json['reinitializationPossiblePlugHashes'] as List<dynamic>?)
             ?.map((e) => e as int)
-            ?.toList();
+            .toList();
 }
 
 Map<String, dynamic> _$DestinyPlugWhitelistEntryDefinitionToJson(

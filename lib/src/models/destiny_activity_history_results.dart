@@ -10,17 +10,12 @@ class DestinyActivityHistoryResults{
 	DestinyActivityHistoryResults();
 
 	factory DestinyActivityHistoryResults.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityHistoryResultsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityHistoryResultsFromJson(json);
 	}
 
 	/// List of activities, the most recent activity first.
 	@JsonKey(name:'activities')
-	List<DestinyHistoricalStatsPeriodGroup> activities;
+	List<DestinyHistoricalStatsPeriodGroup>? activities;
 
 	
 	

@@ -9,9 +9,9 @@ part of 'destiny_record_expiration_block.dart';
 DestinyRecordExpirationBlock _$DestinyRecordExpirationBlockFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordExpirationBlock()
-    ..hasExpiration = json['hasExpiration'] as bool
-    ..description = json['description'] as String
-    ..icon = json['icon'] as String;
+    ..hasExpiration = json['hasExpiration'] as bool?
+    ..description = json['description'] as String?
+    ..icon = json['icon'] as String?;
 }
 
 Map<String, dynamic> _$DestinyRecordExpirationBlockToJson(

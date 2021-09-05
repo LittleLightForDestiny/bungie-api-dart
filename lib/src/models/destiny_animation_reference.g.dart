@@ -9,9 +9,9 @@ part of 'destiny_animation_reference.dart';
 DestinyAnimationReference _$DestinyAnimationReferenceFromJson(
     Map<String, dynamic> json) {
   return DestinyAnimationReference()
-    ..animName = json['animName'] as String
-    ..animIdentifier = json['animIdentifier'] as String
-    ..path = json['path'] as String;
+    ..animName = json['animName'] as String?
+    ..animIdentifier = json['animIdentifier'] as String?
+    ..path = json['path'] as String?;
 }
 
 Map<String, dynamic> _$DestinyAnimationReferenceToJson(

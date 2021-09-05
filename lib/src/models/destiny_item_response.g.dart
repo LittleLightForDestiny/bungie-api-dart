@@ -8,7 +8,7 @@ part of 'destiny_item_response.dart';
 
 DestinyItemResponse _$DestinyItemResponseFromJson(Map<String, dynamic> json) {
   return DestinyItemResponse()
-    ..characterId = json['characterId'] as String
+    ..characterId = json['characterId'] as String?
     ..item = json['item'] == null
         ? null
         : SingleComponentResponseOfDestinyItemComponent.fromJson(
@@ -33,11 +33,22 @@ DestinyItemResponse _$DestinyItemResponseFromJson(Map<String, dynamic> json) {
         ? null
         : SingleComponentResponseOfDestinyItemStatsComponent.fromJson(
             json['stats'] as Map<String, dynamic>)
-    ..talentGrid =
-        json['talentGrid'] == null ? null : SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(json['talentGrid'] as Map<String, dynamic>)
-    ..sockets = json['sockets'] == null ? null : SingleComponentResponseOfDestinyItemSocketsComponent.fromJson(json['sockets'] as Map<String, dynamic>)
-    ..reusablePlugs = json['reusablePlugs'] == null ? null : SingleComponentResponseOfDestinyItemReusablePlugsComponent.fromJson(json['reusablePlugs'] as Map<String, dynamic>)
-    ..plugObjectives = json['plugObjectives'] == null ? null : SingleComponentResponseOfDestinyItemPlugObjectivesComponent.fromJson(json['plugObjectives'] as Map<String, dynamic>);
+    ..talentGrid = json['talentGrid'] == null
+        ? null
+        : SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(
+            json['talentGrid'] as Map<String, dynamic>)
+    ..sockets = json['sockets'] == null
+        ? null
+        : SingleComponentResponseOfDestinyItemSocketsComponent.fromJson(
+            json['sockets'] as Map<String, dynamic>)
+    ..reusablePlugs = json['reusablePlugs'] == null
+        ? null
+        : SingleComponentResponseOfDestinyItemReusablePlugsComponent.fromJson(
+            json['reusablePlugs'] as Map<String, dynamic>)
+    ..plugObjectives = json['plugObjectives'] == null
+        ? null
+        : SingleComponentResponseOfDestinyItemPlugObjectivesComponent.fromJson(
+            json['plugObjectives'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyItemResponseToJson(

@@ -10,20 +10,15 @@ class Series{
 	Series();
 
 	factory Series.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SeriesFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SeriesFromJson(json);
 	}
 
 	/// Collection of samples with time and value.
 	@JsonKey(name:'datapoints')
-	List<Datapoint> datapoints;
+	List<Datapoint>? datapoints;
 	/// Target to which to datapoints apply.
 	@JsonKey(name:'target')
-	String target;
+	String? target;
 
 	
 	

@@ -16,7 +16,7 @@ enum GroupsForMemberFilter {
 }
 
 extension GroupsForMemberFilterExtension on GroupsForMemberFilter{
-  int get value {
+  int? get value {
     switch(this){
       case GroupsForMemberFilter.All:
         return 0;

@@ -10,22 +10,17 @@ class GetCredentialTypesForAccountResponse{
 	GetCredentialTypesForAccountResponse();
 
 	factory GetCredentialTypesForAccountResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GetCredentialTypesForAccountResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GetCredentialTypesForAccountResponseFromJson(json);
 	}
 
 	@JsonKey(name:'credentialType',unknownEnumValue:BungieCredentialType.ProtectedInvalidEnumValue)
-	BungieCredentialType credentialType;
+	BungieCredentialType? credentialType;
 	@JsonKey(name:'credentialDisplayName')
-	String credentialDisplayName;
+	String? credentialDisplayName;
 	@JsonKey(name:'isPublic')
-	bool isPublic;
+	bool? isPublic;
 	@JsonKey(name:'credentialAsString')
-	String credentialAsString;
+	String? credentialAsString;
 
 	
 	

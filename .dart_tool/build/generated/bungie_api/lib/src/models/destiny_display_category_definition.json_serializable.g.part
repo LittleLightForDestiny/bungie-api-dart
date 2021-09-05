@@ -5,20 +5,20 @@
 DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyDisplayCategoryDefinition()
-    ..index = json['index'] as int
-    ..identifier = json['identifier'] as String
-    ..displayCategoryHash = json['displayCategoryHash'] as int
+    ..index = json['index'] as int?
+    ..identifier = json['identifier'] as String?
+    ..displayCategoryHash = json['displayCategoryHash'] as int?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..displayInBanner = json['displayInBanner'] as bool
-    ..progressionHash = json['progressionHash'] as int
+    ..displayInBanner = json['displayInBanner'] as bool?
+    ..progressionHash = json['progressionHash'] as int?
     ..sortOrder = _$enumDecodeNullable(
         _$VendorDisplayCategorySortOrderEnumMap, json['sortOrder'],
         unknownValue: VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue)
-    ..displayStyleHash = json['displayStyleHash'] as int
-    ..displayStyleIdentifier = json['displayStyleIdentifier'] as String;
+    ..displayStyleHash = json['displayStyleHash'] as int?
+    ..displayStyleIdentifier = json['displayStyleIdentifier'] as String?;
 }
 
 Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(
@@ -35,36 +35,41 @@ Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(
       'displayStyleIdentifier': instance.displayStyleIdentifier,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$VendorDisplayCategorySortOrderEnumMap = {

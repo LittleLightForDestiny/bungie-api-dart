@@ -10,22 +10,17 @@ class DestinyArtifactCharacterScoped{
 	DestinyArtifactCharacterScoped();
 
 	factory DestinyArtifactCharacterScoped.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtifactCharacterScopedFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtifactCharacterScopedFromJson(json);
 	}
 
 	@JsonKey(name:'artifactHash')
-	int artifactHash;
+	int? artifactHash;
 	@JsonKey(name:'pointsUsed')
-	int pointsUsed;
+	int? pointsUsed;
 	@JsonKey(name:'resetCount')
-	int resetCount;
+	int? resetCount;
 	@JsonKey(name:'tiers')
-	List<DestinyArtifactTier> tiers;
+	List<DestinyArtifactTier>? tiers;
 
 	
 	

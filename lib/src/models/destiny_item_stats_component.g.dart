@@ -9,9 +9,8 @@ part of 'destiny_item_stats_component.dart';
 DestinyItemStatsComponent _$DestinyItemStatsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemStatsComponent()
-    ..stats = (json['stats'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(k,
-          e == null ? null : DestinyStat.fromJson(e as Map<String, dynamic>)),
+    ..stats = (json['stats'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, DestinyStat.fromJson(e as Map<String, dynamic>)),
     );
 }
 

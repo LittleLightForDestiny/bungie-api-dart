@@ -15,45 +15,40 @@ class DestinyDestinationDefinition{
 	DestinyDestinationDefinition();
 
 	factory DestinyDestinationDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyDestinationDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyDestinationDefinitionFromJson(json);
 	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// The place that "owns" this Destination. Use this hash to look up the DestinyPlaceDefinition.
 	@JsonKey(name:'placeHash')
-	int placeHash;
+	int? placeHash;
 	/// If this Destination has a default Free-Roam activity, this is the hash for that Activity. Use it to look up the DestinyActivityDefintion.
 	@JsonKey(name:'defaultFreeroamActivityHash')
-	int defaultFreeroamActivityHash;
+	int? defaultFreeroamActivityHash;
 	/// If the Destination has default Activity Graphs (i.e. "Map") that should be shown in the director, this is the list of those Graphs. At most, only one should be active at any given time for a Destination: these would represent, for example, different variants on a Map if the Destination is changing on a macro level based on game state.
 	@JsonKey(name:'activityGraphEntries')
-	List<DestinyActivityGraphListEntryDefinition> activityGraphEntries;
+	List<DestinyActivityGraphListEntryDefinition>? activityGraphEntries;
 	/// A Destination may have many "Bubbles" zones with human readable properties.
 	/// We don't get as much info as I'd like about them - I'd love to return info like where on the map they are located - but at least this gives you the name of those bubbles. bubbleSettings and bubbles both have the identical number of entries, and you should match up their indexes to provide matching bubble and bubbleSettings data.
 	/// DEPRECATED - Just use bubbles, it now has this data.
 	@JsonKey(name:'bubbleSettings')
-	List<DestinyDestinationBubbleSettingDefinition> bubbleSettings;
+	List<DestinyDestinationBubbleSettingDefinition>? bubbleSettings;
 	/// This provides the unique identifiers for every bubble in the destination (only guaranteed unique within the destination), and any intrinsic properties of the bubble.
 	/// bubbleSettings and bubbles both have the identical number of entries, and you should match up their indexes to provide matching bubble and bubbleSettings data.
 	@JsonKey(name:'bubbles')
-	List<DestinyBubbleDefinition> bubbles;
+	List<DestinyBubbleDefinition>? bubbles;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

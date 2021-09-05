@@ -9,7 +9,8 @@ part of 'destiny_icon_sequence_definition.dart';
 DestinyIconSequenceDefinition _$DestinyIconSequenceDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyIconSequenceDefinition()
-    ..frames = (json['frames'] as List)?.map((e) => e as String)?.toList();
+    ..frames =
+        (json['frames'] as List<dynamic>?)?.map((e) => e as String).toList();
 }
 
 Map<String, dynamic> _$DestinyIconSequenceDefinitionToJson(

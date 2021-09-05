@@ -6,7 +6,7 @@ DestinyItemCreationEntryLevelDefinition
     _$DestinyItemCreationEntryLevelDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyItemCreationEntryLevelDefinition()
-    ..level = json['level'] as int;
+    ..level = json['level'] as int?;
 }
 
 Map<String, dynamic> _$DestinyItemCreationEntryLevelDefinitionToJson(

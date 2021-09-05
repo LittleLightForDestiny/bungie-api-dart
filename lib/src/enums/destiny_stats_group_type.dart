@@ -38,7 +38,7 @@ enum DestinyStatsGroupType {
 }
 
 extension DestinyStatsGroupTypeExtension on DestinyStatsGroupType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyStatsGroupType.None:
         return 0;

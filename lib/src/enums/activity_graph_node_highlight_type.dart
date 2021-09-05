@@ -22,7 +22,7 @@ enum ActivityGraphNodeHighlightType {
 }
 
 extension ActivityGraphNodeHighlightTypeExtension on ActivityGraphNodeHighlightType{
-  int get value {
+  int? get value {
     switch(this){
       case ActivityGraphNodeHighlightType.None:
         return 0;

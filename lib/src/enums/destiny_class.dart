@@ -19,7 +19,7 @@ enum DestinyClass {
 }
 
 extension DestinyClassExtension on DestinyClass{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyClass.Titan:
         return 0;

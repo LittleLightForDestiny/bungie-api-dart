@@ -10,12 +10,7 @@ class DestinyItemReusablePlugsComponent{
 	DestinyItemReusablePlugsComponent();
 
 	factory DestinyItemReusablePlugsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemReusablePlugsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemReusablePlugsComponentFromJson(json);
 	}
 
 	/// If the item supports reusable plugs, this is the list of plugs that are allowed to be used for the socket, and any relevant information about whether they are "enabled", whether they are allowed to be inserted, and any other information such as objectives.
@@ -24,7 +19,7 @@ class DestinyItemReusablePlugsComponent{
 	///  KEY = The INDEX into the item's list of sockets. VALUE = The set of plugs for that socket.
 	///  If a socket doesn't have any reusable plugs defined at the item scope, there will be no entry for that socket.
 	@JsonKey(name:'plugs')
-	Map<String, List<DestinyItemPlugBase>> plugs;
+	Map<String, List<DestinyItemPlugBase>>? plugs;
 
 	
 	

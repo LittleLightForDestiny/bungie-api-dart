@@ -13,57 +13,52 @@ class CoreSettingsConfiguration{
 	CoreSettingsConfiguration();
 
 	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$CoreSettingsConfigurationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$CoreSettingsConfigurationFromJson(json);
 	}
 
 	@JsonKey(name:'environment')
-	String environment;
+	String? environment;
 	@JsonKey(name:'systems')
-	Map<String, CoreSystem> systems;
+	Map<String, CoreSystem>? systems;
 	@JsonKey(name:'ignoreReasons')
-	List<CoreSetting> ignoreReasons;
+	List<CoreSetting>? ignoreReasons;
 	@JsonKey(name:'forumCategories')
-	List<CoreSetting> forumCategories;
+	List<CoreSetting>? forumCategories;
 	@JsonKey(name:'groupAvatars')
-	List<CoreSetting> groupAvatars;
+	List<CoreSetting>? groupAvatars;
 	@JsonKey(name:'destinyMembershipTypes')
-	List<CoreSetting> destinyMembershipTypes;
+	List<CoreSetting>? destinyMembershipTypes;
 	@JsonKey(name:'recruitmentPlatformTags')
-	List<CoreSetting> recruitmentPlatformTags;
+	List<CoreSetting>? recruitmentPlatformTags;
 	@JsonKey(name:'recruitmentMiscTags')
-	List<CoreSetting> recruitmentMiscTags;
+	List<CoreSetting>? recruitmentMiscTags;
 	@JsonKey(name:'recruitmentActivities')
-	List<CoreSetting> recruitmentActivities;
+	List<CoreSetting>? recruitmentActivities;
 	@JsonKey(name:'userContentLocales')
-	List<CoreSetting> userContentLocales;
+	List<CoreSetting>? userContentLocales;
 	@JsonKey(name:'systemContentLocales')
-	List<CoreSetting> systemContentLocales;
+	List<CoreSetting>? systemContentLocales;
 	@JsonKey(name:'clanBannerDecals')
-	List<CoreSetting> clanBannerDecals;
+	List<CoreSetting>? clanBannerDecals;
 	@JsonKey(name:'clanBannerDecalColors')
-	List<CoreSetting> clanBannerDecalColors;
+	List<CoreSetting>? clanBannerDecalColors;
 	@JsonKey(name:'clanBannerGonfalons')
-	List<CoreSetting> clanBannerGonfalons;
+	List<CoreSetting>? clanBannerGonfalons;
 	@JsonKey(name:'clanBannerGonfalonColors')
-	List<CoreSetting> clanBannerGonfalonColors;
+	List<CoreSetting>? clanBannerGonfalonColors;
 	@JsonKey(name:'clanBannerGonfalonDetails')
-	List<CoreSetting> clanBannerGonfalonDetails;
+	List<CoreSetting>? clanBannerGonfalonDetails;
 	@JsonKey(name:'clanBannerGonfalonDetailColors')
-	List<CoreSetting> clanBannerGonfalonDetailColors;
+	List<CoreSetting>? clanBannerGonfalonDetailColors;
 	@JsonKey(name:'clanBannerStandards')
-	List<CoreSetting> clanBannerStandards;
+	List<CoreSetting>? clanBannerStandards;
 	@JsonKey(name:'destiny2CoreSettings')
-	Destiny2CoreSettings destiny2CoreSettings;
+	Destiny2CoreSettings? destiny2CoreSettings;
 	/// The set of all email subscription/opt-in settings and definitions.
 	@JsonKey(name:'emailSettings')
-	EmailSettings emailSettings;
+	EmailSettings? emailSettings;
 	@JsonKey(name:'fireteamActivities')
-	List<CoreSetting> fireteamActivities;
+	List<CoreSetting>? fireteamActivities;
 
 	
 	

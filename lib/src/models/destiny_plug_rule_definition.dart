@@ -11,17 +11,12 @@ class DestinyPlugRuleDefinition{
 	DestinyPlugRuleDefinition();
 
 	factory DestinyPlugRuleDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPlugRuleDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPlugRuleDefinitionFromJson(json);
 	}
 
 	/// The localized string to show if this rule fails.
 	@JsonKey(name:'failureMessage')
-	String failureMessage;
+	String? failureMessage;
 
 	
 	

@@ -10,26 +10,21 @@ class DestinyItemSackBlockDefinition{
 	DestinyItemSackBlockDefinition();
 
 	factory DestinyItemSackBlockDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemSackBlockDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemSackBlockDefinitionFromJson(json);
 	}
 
 	/// A description of what will happen when you open the sack. As far as I can tell, this is blank currently. Unknown whether it will eventually be populated with useful info.
 	@JsonKey(name:'detailAction')
-	String detailAction;
+	String? detailAction;
 	/// The localized name of the action being performed when you open the sack.
 	@JsonKey(name:'openAction')
-	String openAction;
+	String? openAction;
 	@JsonKey(name:'selectItemCount')
-	int selectItemCount;
+	int? selectItemCount;
 	@JsonKey(name:'vendorSackType')
-	String vendorSackType;
+	String? vendorSackType;
 	@JsonKey(name:'openOnAcquire')
-	bool openOnAcquire;
+	bool? openOnAcquire;
 
 	
 	

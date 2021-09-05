@@ -43,6 +43,12 @@ class ApplicationScopes {
     ///PartnerOfferGrant = 4096
     /// Can user the partner offer api to claim rewards defined for a partner
     static const ApplicationScopes PartnerOfferGrant = ApplicationScopes(4096);
+    ///DestinyUnlockValueQuery = 8192
+    /// Allows an app to query sensitive information like unlock flags and values not available through normal methods.
+    static const ApplicationScopes DestinyUnlockValueQuery = ApplicationScopes(8192);
+    ///UserPiiRead = 16384
+    /// Allows an app to query sensitive user PII, most notably email information.
+    static const ApplicationScopes UserPiiRead = ApplicationScopes(16384);
 
     int get value {
         return _value;

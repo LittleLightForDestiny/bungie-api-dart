@@ -13,7 +13,7 @@ enum ForumPostSortEnum {
 }
 
 extension ForumPostSortEnumExtension on ForumPostSortEnum{
-  int get value {
+  int? get value {
     switch(this){
       case ForumPostSortEnum.Default:
         return 0;

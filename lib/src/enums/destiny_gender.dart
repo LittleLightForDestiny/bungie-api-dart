@@ -16,7 +16,7 @@ enum DestinyGender {
 }
 
 extension DestinyGenderExtension on DestinyGender{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyGender.Male:
         return 0;

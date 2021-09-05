@@ -8,10 +8,11 @@ part of 'destiny_kiosk_item.dart';
 
 DestinyKioskItem _$DestinyKioskItemFromJson(Map<String, dynamic> json) {
   return DestinyKioskItem()
-    ..index = json['index'] as int
-    ..canAcquire = json['canAcquire'] as bool
-    ..failureIndexes =
-        (json['failureIndexes'] as List)?.map((e) => e as int)?.toList()
+    ..index = json['index'] as int?
+    ..canAcquire = json['canAcquire'] as bool?
+    ..failureIndexes = (json['failureIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
     ..flavorObjective = json['flavorObjective'] == null
         ? null
         : DestinyObjectiveProgress.fromJson(

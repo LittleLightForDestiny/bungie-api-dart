@@ -6,17 +6,16 @@ DestinyProgressionDisplayPropertiesDefinition
     _$DestinyProgressionDisplayPropertiesDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyProgressionDisplayPropertiesDefinition()
-    ..displayUnitsName = json['displayUnitsName'] as String
-    ..description = json['description'] as String
-    ..name = json['name'] as String
-    ..icon = json['icon'] as String
-    ..iconSequences = (json['iconSequences'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..highResIcon = json['highResIcon'] as String
-    ..hasIcon = json['hasIcon'] as bool;
+    ..displayUnitsName = json['displayUnitsName'] as String?
+    ..description = json['description'] as String?
+    ..name = json['name'] as String?
+    ..icon = json['icon'] as String?
+    ..iconSequences = (json['iconSequences'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..highResIcon = json['highResIcon'] as String?
+    ..hasIcon = json['hasIcon'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(

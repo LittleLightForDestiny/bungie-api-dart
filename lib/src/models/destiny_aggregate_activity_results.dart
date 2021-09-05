@@ -10,17 +10,12 @@ class DestinyAggregateActivityResults{
 	DestinyAggregateActivityResults();
 
 	factory DestinyAggregateActivityResults.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyAggregateActivityResultsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyAggregateActivityResultsFromJson(json);
 	}
 
 	/// List of all activities the player has participated in.
 	@JsonKey(name:'activities')
-	List<DestinyAggregateActivityStats> activities;
+	List<DestinyAggregateActivityStats>? activities;
 
 	
 	

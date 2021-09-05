@@ -3,10 +3,10 @@ import '../enums/bungie_credential_type.dart';
 import '../enums/bungie_membership_type.dart';
 import '../responses/general_user_response.dart';
 import '../responses/hard_linked_user_membership_response.dart';
-import '../responses/list_of_general_user_response.dart';
 import '../responses/list_of_get_credential_types_for_account_response_response.dart';
 import '../responses/list_of_user_theme_response.dart';
 import '../responses/user_membership_data_response.dart';
+import '../responses/user_search_response_response.dart';
 class User{
     /// Loads a bungienet user by membership id.
     static Future<GeneralUserResponse> getBungieNetUserById (
@@ -20,21 +20,6 @@ class User{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return GeneralUserResponse.fromJson(response.mappedBody);
-        }
-        throw Exception(response.mappedBody);
-    }
-    /// Returns a list of possible users based on the search string
-    static Future<ListOfGeneralUserResponse> searchUsers (
-        HttpClient client,
-        String q,
-    ) async {
-        final Map<String, dynamic> params = Map<String, dynamic>();
-        params['q'] = q;
-        final HttpClientConfig config = HttpClientConfig('GET', '/User/SearchUsers/', params);
-        config.bodyContentType = null;
-        final HttpResponse response = await client.request(config);
-        if(response.statusCode == 200) {
-            return ListOfGeneralUserResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -110,6 +95,23 @@ class User{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return HardLinkedUserMembershipResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Given the prefix of a global display name, returns all users who share that name.
+    static Future<UserSearchResponseResponse> searchByGlobalNamePrefix (
+        HttpClient client,
+        String displayNamePrefix,
+        int page,
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _displayNamePrefix = '$displayNamePrefix';
+        final String _page = '$page';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/Search/Prefix/$_displayNamePrefix/$_page/', params);
+        config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return UserSearchResponseResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

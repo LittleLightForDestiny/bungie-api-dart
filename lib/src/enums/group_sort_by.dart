@@ -19,7 +19,7 @@ enum GroupSortBy {
 }
 
 extension GroupSortByExtension on GroupSortBy{
-  int get value {
+  int? get value {
     switch(this){
       case GroupSortBy.Name:
         return 0;

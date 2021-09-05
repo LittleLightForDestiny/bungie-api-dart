@@ -4,16 +4,16 @@
 
 GroupBan _$GroupBanFromJson(Map<String, dynamic> json) {
   return GroupBan()
-    ..groupId = json['groupId'] as String
+    ..groupId = json['groupId'] as String?
     ..lastModifiedBy = json['lastModifiedBy'] == null
         ? null
         : UserInfoCard.fromJson(json['lastModifiedBy'] as Map<String, dynamic>)
     ..createdBy = json['createdBy'] == null
         ? null
         : UserInfoCard.fromJson(json['createdBy'] as Map<String, dynamic>)
-    ..dateBanned = json['dateBanned'] as String
-    ..dateExpires = json['dateExpires'] as String
-    ..comment = json['comment'] as String
+    ..dateBanned = json['dateBanned'] as String?
+    ..dateExpires = json['dateExpires'] as String?
+    ..comment = json['comment'] as String?
     ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
         ? null
         : UserInfoCard.fromJson(

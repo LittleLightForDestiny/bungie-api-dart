@@ -9,17 +9,12 @@ class DestinyArtifactTierItemDefinition{
 	DestinyArtifactTierItemDefinition();
 
 	factory DestinyArtifactTierItemDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtifactTierItemDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtifactTierItemDefinitionFromJson(json);
 	}
 
 	/// The identifier of the Plug Item unlocked by activating this item in the Artifact.
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 
 	
 	

@@ -13,12 +13,10 @@ DestinyHistoricalStatsAccountResult
         ? null
         : DestinyHistoricalStatsWithMerged.fromJson(
             json['mergedAllCharacters'] as Map<String, dynamic>)
-    ..characters = (json['characters'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyHistoricalStatsPerCharacter.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..characters = (json['characters'] as List<dynamic>?)
+        ?.map((e) => DestinyHistoricalStatsPerCharacter.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsAccountResultToJson(

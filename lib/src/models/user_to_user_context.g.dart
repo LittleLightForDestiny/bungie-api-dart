@@ -8,11 +8,11 @@ part of 'user_to_user_context.dart';
 
 UserToUserContext _$UserToUserContextFromJson(Map<String, dynamic> json) {
   return UserToUserContext()
-    ..isFollowing = json['isFollowing'] as bool
+    ..isFollowing = json['isFollowing'] as bool?
     ..ignoreStatus = json['ignoreStatus'] == null
         ? null
         : IgnoreResponse.fromJson(json['ignoreStatus'] as Map<String, dynamic>)
-    ..globalIgnoreEndDate = json['globalIgnoreEndDate'] as String;
+    ..globalIgnoreEndDate = json['globalIgnoreEndDate'] as String?;
 }
 
 Map<String, dynamic> _$UserToUserContextToJson(UserToUserContext instance) =>

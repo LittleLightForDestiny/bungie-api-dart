@@ -9,11 +9,11 @@ part of 'destiny_vendor_group_definition.dart';
 DestinyVendorGroupDefinition _$DestinyVendorGroupDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyVendorGroupDefinition()
-    ..order = json['order'] as int
-    ..categoryName = json['categoryName'] as String
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..order = json['order'] as int?
+    ..categoryName = json['categoryName'] as String?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyVendorGroupDefinitionToJson(

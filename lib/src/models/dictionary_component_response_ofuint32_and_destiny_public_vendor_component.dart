@@ -11,21 +11,16 @@ class DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponent{
 	DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponent();
 
 	factory DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DictionaryComponentResponseOfuint32AndDestinyPublicVendorComponentFromJson(json);
 	}
 
 	@JsonKey(name:'data')
-	Map<String, DestinyPublicVendorComponent> data;
+	Map<String, DestinyPublicVendorComponent>? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

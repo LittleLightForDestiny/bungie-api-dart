@@ -8,9 +8,10 @@ part of 'destiny_item_quantity.dart';
 
 DestinyItemQuantity _$DestinyItemQuantityFromJson(Map<String, dynamic> json) {
   return DestinyItemQuantity()
-    ..itemHash = json['itemHash'] as int
-    ..itemInstanceId = json['itemInstanceId'] as String
-    ..quantity = json['quantity'] as int;
+    ..itemHash = json['itemHash'] as int?
+    ..itemInstanceId = json['itemInstanceId'] as String?
+    ..quantity = json['quantity'] as int?
+    ..hasConditionalVisibility = json['hasConditionalVisibility'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemQuantityToJson(
@@ -19,4 +20,5 @@ Map<String, dynamic> _$DestinyItemQuantityToJson(
       'itemHash': instance.itemHash,
       'itemInstanceId': instance.itemInstanceId,
       'quantity': instance.quantity,
+      'hasConditionalVisibility': instance.hasConditionalVisibility,
     };

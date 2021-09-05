@@ -12,26 +12,21 @@ class DestinyProfileTransitoryPartyMember{
 	DestinyProfileTransitoryPartyMember();
 
 	factory DestinyProfileTransitoryPartyMember.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProfileTransitoryPartyMemberFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProfileTransitoryPartyMemberFromJson(json);
 	}
 
 	/// The Membership ID that matches the party member.
 	@JsonKey(name:'membershipId')
-	String membershipId;
+	String? membershipId;
 	/// The identifier for the DestinyInventoryItemDefinition of the player's emblem.
 	@JsonKey(name:'emblemHash')
-	int emblemHash;
+	int? emblemHash;
 	/// The player's last known display name.
 	@JsonKey(name:'displayName')
-	String displayName;
+	String? displayName;
 	/// A Flags Enumeration value indicating the states that the player is in relevant to being on a fireteam.
 	@JsonKey(name:'status')
-	DestinyPartyMemberStates status;
+	DestinyPartyMemberStates? status;
 
 	
 	

@@ -27,7 +27,7 @@ enum ApplicationStatus {
 }
 
 extension ApplicationStatusExtension on ApplicationStatus{
-  int get value {
+  int? get value {
     switch(this){
       case ApplicationStatus.None:
         return 0;

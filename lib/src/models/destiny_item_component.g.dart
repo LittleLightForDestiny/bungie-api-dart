@@ -8,33 +8,37 @@ part of 'destiny_item_component.dart';
 
 DestinyItemComponent _$DestinyItemComponentFromJson(Map<String, dynamic> json) {
   return DestinyItemComponent()
-    ..itemHash = json['itemHash'] as int
-    ..itemInstanceId = json['itemInstanceId'] as String
-    ..quantity = json['quantity'] as int
+    ..itemHash = json['itemHash'] as int?
+    ..itemInstanceId = json['itemInstanceId'] as String?
+    ..quantity = json['quantity'] as int?
     ..bindStatus = _$enumDecodeNullable(
         _$ItemBindStatusEnumMap, json['bindStatus'],
         unknownValue: ItemBindStatus.ProtectedInvalidEnumValue)
     ..location = _$enumDecodeNullable(_$ItemLocationEnumMap, json['location'],
         unknownValue: ItemLocation.ProtectedInvalidEnumValue)
-    ..bucketHash = json['bucketHash'] as int
+    ..bucketHash = json['bucketHash'] as int?
     ..transferStatus = json['transferStatus'] == null
         ? null
         : TransferStatuses.fromJson(json['transferStatus'] as int)
-    ..lockable = json['lockable'] as bool
+    ..lockable = json['lockable'] as bool?
     ..state =
         json['state'] == null ? null : ItemState.fromJson(json['state'] as int)
-    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
-    ..expirationDate = json['expirationDate'] as String
-    ..isWrapper = json['isWrapper'] as bool
-    ..tooltipNotificationIndexes = (json['tooltipNotificationIndexes'] as List)
-        ?.map((e) => e as int)
-        ?.toList()
-    ..metricHash = json['metricHash'] as int
+    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int?
+    ..expirationDate = json['expirationDate'] as String?
+    ..isWrapper = json['isWrapper'] as bool?
+    ..tooltipNotificationIndexes =
+        (json['tooltipNotificationIndexes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
+    ..metricHash = json['metricHash'] as int?
     ..metricObjective = json['metricObjective'] == null
         ? null
         : DestinyObjectiveProgress.fromJson(
             json['metricObjective'] as Map<String, dynamic>)
-    ..versionNumber = json['versionNumber'] as int;
+    ..versionNumber = json['versionNumber'] as int?
+    ..itemValueVisibility = (json['itemValueVisibility'] as List<dynamic>?)
+        ?.map((e) => e as bool)
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyItemComponentToJson(
@@ -56,38 +60,44 @@ Map<String, dynamic> _$DestinyItemComponentToJson(
       'metricHash': instance.metricHash,
       'metricObjective': instance.metricObjective,
       'versionNumber': instance.versionNumber,
+      'itemValueVisibility': instance.itemValueVisibility,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$ItemBindStatusEnumMap = {

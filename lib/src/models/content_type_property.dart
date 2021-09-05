@@ -11,98 +11,93 @@ class ContentTypeProperty{
 	ContentTypeProperty();
 
 	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentTypePropertyFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentTypePropertyFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'rootPropertyName')
-	String rootPropertyName;
+	String? rootPropertyName;
 	@JsonKey(name:'readableName')
-	String readableName;
+	String? readableName;
 	@JsonKey(name:'value')
-	String value;
+	String? value;
 	@JsonKey(name:'propertyDescription')
-	String propertyDescription;
+	String? propertyDescription;
 	@JsonKey(name:'localizable')
-	bool localizable;
+	bool? localizable;
 	@JsonKey(name:'fallback')
-	bool fallback;
+	bool? fallback;
 	@JsonKey(name:'enabled')
-	bool enabled;
+	bool? enabled;
 	@JsonKey(name:'order')
-	int order;
+	int? order;
 	@JsonKey(name:'visible')
-	bool visible;
+	bool? visible;
 	@JsonKey(name:'isTitle')
-	bool isTitle;
+	bool? isTitle;
 	@JsonKey(name:'required')
-	bool required;
+	bool? required;
 	@JsonKey(name:'maxLength')
-	int maxLength;
+	int? maxLength;
 	@JsonKey(name:'maxByteLength')
-	int maxByteLength;
+	int? maxByteLength;
 	@JsonKey(name:'maxFileSize')
-	int maxFileSize;
+	int? maxFileSize;
 	@JsonKey(name:'regexp')
-	String regexp;
+	String? regexp;
 	@JsonKey(name:'validateAs')
-	String validateAs;
+	String? validateAs;
 	@JsonKey(name:'rssAttribute')
-	String rssAttribute;
+	String? rssAttribute;
 	@JsonKey(name:'visibleDependency')
-	String visibleDependency;
+	String? visibleDependency;
 	@JsonKey(name:'visibleOn')
-	String visibleOn;
+	String? visibleOn;
 	@JsonKey(name:'datatype',unknownEnumValue:ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue)
-	ContentPropertyDataTypeEnum datatype;
+	ContentPropertyDataTypeEnum? datatype;
 	@JsonKey(name:'attributes')
-	Map<String, String> attributes;
+	Map<String, String>? attributes;
 	@JsonKey(name:'childProperties')
-	List<ContentTypeProperty> childProperties;
+	List<ContentTypeProperty>? childProperties;
 	@JsonKey(name:'contentTypeAllowed')
-	String contentTypeAllowed;
+	String? contentTypeAllowed;
 	@JsonKey(name:'bindToProperty')
-	String bindToProperty;
+	String? bindToProperty;
 	@JsonKey(name:'boundRegex')
-	String boundRegex;
+	String? boundRegex;
 	@JsonKey(name:'representationSelection')
-	Map<String, String> representationSelection;
+	Map<String, String>? representationSelection;
 	@JsonKey(name:'defaultValues')
-	List<ContentTypeDefaultValue> defaultValues;
+	List<ContentTypeDefaultValue>? defaultValues;
 	@JsonKey(name:'isExternalAllowed')
-	bool isExternalAllowed;
+	bool? isExternalAllowed;
 	@JsonKey(name:'propertySection')
-	String propertySection;
+	String? propertySection;
 	@JsonKey(name:'weight')
-	int weight;
+	int? weight;
 	@JsonKey(name:'entitytype')
-	String entitytype;
+	String? entitytype;
 	@JsonKey(name:'isCombo')
-	bool isCombo;
+	bool? isCombo;
 	@JsonKey(name:'suppressProperty')
-	bool suppressProperty;
+	bool? suppressProperty;
 	@JsonKey(name:'legalContentTypes')
-	List<String> legalContentTypes;
+	List<String>? legalContentTypes;
 	@JsonKey(name:'representationValidationString')
-	String representationValidationString;
+	String? representationValidationString;
 	@JsonKey(name:'minWidth')
-	int minWidth;
+	int? minWidth;
 	@JsonKey(name:'maxWidth')
-	int maxWidth;
+	int? maxWidth;
 	@JsonKey(name:'minHeight')
-	int minHeight;
+	int? minHeight;
 	@JsonKey(name:'maxHeight')
-	int maxHeight;
+	int? maxHeight;
 	@JsonKey(name:'isVideo')
-	bool isVideo;
+	bool? isVideo;
 	@JsonKey(name:'isImage')
-	bool isImage;
+	bool? isImage;
 
 	
 	

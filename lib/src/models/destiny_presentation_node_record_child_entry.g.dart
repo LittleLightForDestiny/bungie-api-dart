@@ -10,7 +10,7 @@ DestinyPresentationNodeRecordChildEntry
     _$DestinyPresentationNodeRecordChildEntryFromJson(
         Map<String, dynamic> json) {
   return DestinyPresentationNodeRecordChildEntry()
-    ..recordHash = json['recordHash'] as int;
+    ..recordHash = json['recordHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyPresentationNodeRecordChildEntryToJson(

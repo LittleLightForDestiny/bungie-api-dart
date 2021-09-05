@@ -10,20 +10,15 @@ class DestinyItemSetActionRequest{
 	DestinyItemSetActionRequest();
 
 	factory DestinyItemSetActionRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemSetActionRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemSetActionRequestFromJson(json);
 	}
 
 	@JsonKey(name:'itemIds')
-	List<String> itemIds;
+	List<String>? itemIds;
 	@JsonKey(name:'characterId')
-	String characterId;
+	String? characterId;
 	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
-	BungieMembershipType membershipType;
+	BungieMembershipType? membershipType;
 
 	
 	

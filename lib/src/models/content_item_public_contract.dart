@@ -12,47 +12,42 @@ class ContentItemPublicContract{
 	ContentItemPublicContract();
 
 	factory ContentItemPublicContract.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentItemPublicContractFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentItemPublicContractFromJson(json);
 	}
 
 	@JsonKey(name:'contentId')
-	String contentId;
+	String? contentId;
 	@JsonKey(name:'cType')
-	String cType;
+	String? cType;
 	@JsonKey(name:'cmsPath')
-	String cmsPath;
+	String? cmsPath;
 	@JsonKey(name:'creationDate')
-	String creationDate;
+	String? creationDate;
 	@JsonKey(name:'modifyDate')
-	String modifyDate;
+	String? modifyDate;
 	@JsonKey(name:'allowComments')
-	bool allowComments;
+	bool? allowComments;
 	@JsonKey(name:'hasAgeGate')
-	bool hasAgeGate;
+	bool? hasAgeGate;
 	@JsonKey(name:'minimumAge')
-	int minimumAge;
+	int? minimumAge;
 	@JsonKey(name:'ratingImagePath')
-	String ratingImagePath;
+	String? ratingImagePath;
 	@JsonKey(name:'author')
-	GeneralUser author;
+	GeneralUser? author;
 	@JsonKey(name:'autoEnglishPropertyFallback')
-	bool autoEnglishPropertyFallback;
+	bool? autoEnglishPropertyFallback;
 	/// Firehose content is really a collection of metadata and "properties", which are the potentially-but-not-strictly localizable data that comprises the meat of whatever content is being shown.
 	/// As Cole Porter would have crooned, "Anything Goes" with Firehose properties. They are most often strings, but they can theoretically be anything. They are JSON encoded, and could be JSON structures, simple strings, numbers etc... The Content Type of the item (cType) will describe the properties, and thus how they ought to be deserialized.
 	@JsonKey(name:'properties')
-	Map<String, Map<String, String>> properties;
+	Map<String, Map<String, String>>? properties;
 	@JsonKey(name:'representations')
-	List<ContentRepresentation> representations;
+	List<ContentRepresentation>? representations;
 	/// NOTE: Tags will always be lower case.
 	@JsonKey(name:'tags')
-	List<String> tags;
+	List<String>? tags;
 	@JsonKey(name:'commentSummary')
-	CommentSummary commentSummary;
+	CommentSummary? commentSummary;
 
 	
 	

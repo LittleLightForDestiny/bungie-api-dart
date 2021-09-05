@@ -16,7 +16,7 @@ enum DestinyObjectiveGrantStyle {
 }
 
 extension DestinyObjectiveGrantStyleExtension on DestinyObjectiveGrantStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyObjectiveGrantStyle.WhenIncomplete:
         return 0;

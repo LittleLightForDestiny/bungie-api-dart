@@ -22,25 +22,25 @@ class DestinyMilestoneContentResponse{
 	
 	/// Represents localized, extended content related to Milestones. This is intentionally returned by a separate endpoint and not with Character-level Milestone data because we do not put localized data into standard Destiny responses, both for brevity of response and for caching purposes. If you really need this data, hit the Milestone Content endpoint.
 	@JsonKey(name:'Response')
-	DestinyMilestoneContent response;
+	DestinyMilestoneContent? response;
 	
 	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
-	int throttleSeconds;
+	int? throttleSeconds;
 	
 	@JsonKey(name:'ErrorStatus')
-	String errorStatus;
+	String? errorStatus;
 	
 	@JsonKey(name:'Message')
-	String message;
+	String? message;
 	
 	@JsonKey(name:'MessageData')
-	Map<String, String> messageData;
+	Map<String, String>? messageData;
 	
 	@JsonKey(name:'DetailedErrorTrace')
-	String detailedErrorTrace;
+	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyMilestoneContentResponseToJson(this);
 }

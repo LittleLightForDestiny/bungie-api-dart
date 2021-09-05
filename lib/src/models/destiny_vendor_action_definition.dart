@@ -10,32 +10,27 @@ class DestinyVendorActionDefinition{
 	DestinyVendorActionDefinition();
 
 	factory DestinyVendorActionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorActionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorActionDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 	@JsonKey(name:'executeSeconds')
-	int executeSeconds;
+	int? executeSeconds;
 	@JsonKey(name:'icon')
-	String icon;
+	String? icon;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'verb')
-	String verb;
+	String? verb;
 	@JsonKey(name:'isPositive')
-	bool isPositive;
+	bool? isPositive;
 	@JsonKey(name:'actionId')
-	String actionId;
+	String? actionId;
 	@JsonKey(name:'actionHash')
-	int actionHash;
+	int? actionHash;
 	@JsonKey(name:'autoPerformAction')
-	bool autoPerformAction;
+	bool? autoPerformAction;
 
 	
 	

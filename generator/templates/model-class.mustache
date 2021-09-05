@@ -19,12 +19,7 @@ class {{className}}{
 	{{#hasProperties}}}{{/hasProperties}});
 
 	factory {{className}}.fromJson(Map<String, dynamic> json) {
-		try{
-			return _${{className}}FromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _${{className}}FromJson(json);
 	}
 
 	{{#properties}}
@@ -32,7 +27,7 @@ class {{className}}{
 	/// {{{.}}}
 	{{/description}}
 	{{{jsonKey}}}
-	{{{typeName}}} {{propertyName}};
+	{{{typeName}}}? {{propertyName}};
 	{{/properties}}
 
 	

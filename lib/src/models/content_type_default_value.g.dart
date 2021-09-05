@@ -9,9 +9,9 @@ part of 'content_type_default_value.dart';
 ContentTypeDefaultValue _$ContentTypeDefaultValueFromJson(
     Map<String, dynamic> json) {
   return ContentTypeDefaultValue()
-    ..whenClause = json['whenClause'] as String
-    ..whenValue = json['whenValue'] as String
-    ..defaultValue = json['defaultValue'] as String;
+    ..whenClause = json['whenClause'] as String?
+    ..whenValue = json['whenValue'] as String?
+    ..defaultValue = json['defaultValue'] as String?;
 }
 
 Map<String, dynamic> _$ContentTypeDefaultValueToJson(

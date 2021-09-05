@@ -9,16 +9,16 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..visible = json['visible'] as bool
-    ..deprecated = json['deprecated'] as bool
-    ..shortTitle = json['shortTitle'] as String
-    ..itemTypeRegex = json['itemTypeRegex'] as String
+    ..visible = json['visible'] as bool?
+    ..deprecated = json['deprecated'] as bool?
+    ..shortTitle = json['shortTitle'] as String?
+    ..itemTypeRegex = json['itemTypeRegex'] as String?
     ..grantDestinyBreakerType = _$enumDecodeNullable(
         _$DestinyBreakerTypeEnumMap, json['grantDestinyBreakerType'],
         unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
-    ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String
-    ..itemTypeRegexNot = json['itemTypeRegexNot'] as String
-    ..originBucketIdentifier = json['originBucketIdentifier'] as String
+    ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String?
+    ..itemTypeRegexNot = json['itemTypeRegexNot'] as String?
+    ..originBucketIdentifier = json['originBucketIdentifier'] as String?
     ..grantDestinyItemType = _$enumDecodeNullable(
         _$DestinyItemTypeEnumMap, json['grantDestinyItemType'],
         unknownValue: DestinyItemType.ProtectedInvalidEnumValue)
@@ -28,15 +28,17 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
     ..grantDestinyClass = _$enumDecodeNullable(
         _$DestinyClassEnumMap, json['grantDestinyClass'],
         unknownValue: DestinyClass.ProtectedInvalidEnumValue)
-    ..traitId = json['traitId'] as String
-    ..groupedCategoryHashes =
-        (json['groupedCategoryHashes'] as List)?.map((e) => e as int)?.toList()
-    ..parentCategoryHashes =
-        (json['parentCategoryHashes'] as List)?.map((e) => e as int)?.toList()
-    ..groupCategoryOnly = json['groupCategoryOnly'] as bool
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..traitId = json['traitId'] as String?
+    ..groupedCategoryHashes = (json['groupedCategoryHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..parentCategoryHashes = (json['parentCategoryHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..groupCategoryOnly = json['groupCategoryOnly'] as bool?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
@@ -66,36 +68,41 @@ Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyBreakerTypeEnumMap = {

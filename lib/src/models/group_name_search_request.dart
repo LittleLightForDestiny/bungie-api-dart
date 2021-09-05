@@ -10,18 +10,13 @@ class GroupNameSearchRequest{
 	GroupNameSearchRequest();
 
 	factory GroupNameSearchRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupNameSearchRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupNameSearchRequestFromJson(json);
 	}
 
 	@JsonKey(name:'groupName')
-	String groupName;
+	String? groupName;
 	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
-	GroupType groupType;
+	GroupType? groupType;
 
 	
 	

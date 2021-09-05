@@ -10,20 +10,15 @@ class UserToUserContext{
 	UserToUserContext();
 
 	factory UserToUserContext.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$UserToUserContextFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$UserToUserContextFromJson(json);
 	}
 
 	@JsonKey(name:'isFollowing')
-	bool isFollowing;
+	bool? isFollowing;
 	@JsonKey(name:'ignoreStatus')
-	IgnoreResponse ignoreStatus;
+	IgnoreResponse? ignoreStatus;
 	@JsonKey(name:'globalIgnoreEndDate')
-	String globalIgnoreEndDate;
+	String? globalIgnoreEndDate;
 
 	
 	

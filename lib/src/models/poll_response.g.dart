@@ -8,12 +8,11 @@ part of 'poll_response.dart';
 
 PollResponse _$PollResponseFromJson(Map<String, dynamic> json) {
   return PollResponse()
-    ..topicId = json['topicId'] as String
-    ..results = (json['results'] as List)
-        ?.map((e) =>
-            e == null ? null : PollResult.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..totalVotes = json['totalVotes'] as int;
+    ..topicId = json['topicId'] as String?
+    ..results = (json['results'] as List<dynamic>?)
+        ?.map((e) => PollResult.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..totalVotes = json['totalVotes'] as int?;
 }
 
 Map<String, dynamic> _$PollResponseToJson(PollResponse instance) =>

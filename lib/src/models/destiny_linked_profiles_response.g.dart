@@ -9,19 +9,16 @@ part of 'destiny_linked_profiles_response.dart';
 DestinyLinkedProfilesResponse _$DestinyLinkedProfilesResponseFromJson(
     Map<String, dynamic> json) {
   return DestinyLinkedProfilesResponse()
-    ..profiles = (json['profiles'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyProfileUserInfoCard.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..profiles = (json['profiles'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyProfileUserInfoCard.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..bnetMembership = json['bnetMembership'] == null
         ? null
         : UserInfoCard.fromJson(json['bnetMembership'] as Map<String, dynamic>)
-    ..profilesWithErrors = (json['profilesWithErrors'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyErrorProfile.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..profilesWithErrors = (json['profilesWithErrors'] as List<dynamic>?)
+        ?.map((e) => DestinyErrorProfile.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyLinkedProfilesResponseToJson(

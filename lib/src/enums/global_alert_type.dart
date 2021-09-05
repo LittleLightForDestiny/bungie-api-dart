@@ -13,7 +13,7 @@ enum GlobalAlertType {
 }
 
 extension GlobalAlertTypeExtension on GlobalAlertType{
-  int get value {
+  int? get value {
     switch(this){
       case GlobalAlertType.GlobalAlert:
         return 0;

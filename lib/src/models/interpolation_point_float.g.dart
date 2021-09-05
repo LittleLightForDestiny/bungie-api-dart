@@ -9,8 +9,8 @@ part of 'interpolation_point_float.dart';
 InterpolationPointFloat _$InterpolationPointFloatFromJson(
     Map<String, dynamic> json) {
   return InterpolationPointFloat()
-    ..value = (json['value'] as num)?.toDouble()
-    ..weight = (json['weight'] as num)?.toDouble();
+    ..value = (json['value'] as num?)?.toDouble()
+    ..weight = (json['weight'] as num?)?.toDouble();
 }
 
 Map<String, dynamic> _$InterpolationPointFloatToJson(

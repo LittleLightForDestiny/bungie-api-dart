@@ -5,10 +5,11 @@
 DestinyNodeActivationRequirement _$DestinyNodeActivationRequirementFromJson(
     Map<String, dynamic> json) {
   return DestinyNodeActivationRequirement()
-    ..gridLevel = json['gridLevel'] as int
-    ..materialRequirementHashes = (json['materialRequirementHashes'] as List)
-        ?.map((e) => e as int)
-        ?.toList();
+    ..gridLevel = json['gridLevel'] as int?
+    ..materialRequirementHashes =
+        (json['materialRequirementHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList();
 }
 
 Map<String, dynamic> _$DestinyNodeActivationRequirementToJson(

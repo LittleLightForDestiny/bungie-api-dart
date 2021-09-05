@@ -13,10 +13,10 @@ DestinyProgressionMappingDefinition
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..displayUnits = json['displayUnits'] as String
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..displayUnits = json['displayUnits'] as String?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyProgressionMappingDefinitionToJson(

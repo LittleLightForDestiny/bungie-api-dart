@@ -9,24 +9,19 @@ class PollResult{
 	PollResult();
 
 	factory PollResult.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PollResultFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PollResultFromJson(json);
 	}
 
 	@JsonKey(name:'answerText')
-	String answerText;
+	String? answerText;
 	@JsonKey(name:'answerSlot')
-	int answerSlot;
+	int? answerSlot;
 	@JsonKey(name:'lastVoteDate')
-	String lastVoteDate;
+	String? lastVoteDate;
 	@JsonKey(name:'votes')
-	int votes;
+	int? votes;
 	@JsonKey(name:'requestingUserVoted')
-	bool requestingUserVoted;
+	bool? requestingUserVoted;
 
 	
 	

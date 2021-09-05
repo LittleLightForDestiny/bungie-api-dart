@@ -12,19 +12,14 @@ class DestinyMilestoneValueDefinition{
 	DestinyMilestoneValueDefinition();
 
 	factory DestinyMilestoneValueDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneValueDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneValueDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'key')
-	String key;
+	String? key;
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 
 	
 	

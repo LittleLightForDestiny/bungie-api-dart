@@ -10,20 +10,15 @@ class ApiUsage{
 	ApiUsage();
 
 	factory ApiUsage.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ApiUsageFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ApiUsageFromJson(json);
 	}
 
 	/// Counts for on API calls made for the time range.
 	@JsonKey(name:'apiCalls')
-	List<Series> apiCalls;
+	List<Series>? apiCalls;
 	/// Instances of blocked requests or requests that crossed the warn threshold during the time range.
 	@JsonKey(name:'throttledRequests')
-	List<Series> throttledRequests;
+	List<Series>? throttledRequests;
 
 	
 	

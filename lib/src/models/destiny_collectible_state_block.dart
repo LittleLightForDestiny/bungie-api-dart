@@ -10,19 +10,14 @@ class DestinyCollectibleStateBlock{
 	DestinyCollectibleStateBlock();
 
 	factory DestinyCollectibleStateBlock.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyCollectibleStateBlockFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyCollectibleStateBlockFromJson(json);
 	}
 
 	@JsonKey(name:'obscuredOverrideItemHash')
-	int obscuredOverrideItemHash;
+	int? obscuredOverrideItemHash;
 	/// Presentation nodes can be restricted by various requirements. This defines the rules of those requirements, and the message(s) to be shown if these requirements aren't met.
 	@JsonKey(name:'requirements')
-	DestinyPresentationNodeRequirementsBlock requirements;
+	DestinyPresentationNodeRequirementsBlock? requirements;
 
 	
 	

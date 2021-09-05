@@ -20,42 +20,37 @@ class DestinyActivityGraphDefinition{
 	DestinyActivityGraphDefinition();
 
 	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphDefinitionFromJson(json);
 	}
 
 	/// These represent the visual "nodes" on the map's view. These are the activities you can click on in the map.
 	@JsonKey(name:'nodes')
-	List<DestinyActivityGraphNodeDefinition> nodes;
+	List<DestinyActivityGraphNodeDefinition>? nodes;
 	/// Represents one-off/special UI elements that appear on the map.
 	@JsonKey(name:'artElements')
-	List<DestinyActivityGraphArtElementDefinition> artElements;
+	List<DestinyActivityGraphArtElementDefinition>? artElements;
 	/// Represents connections between graph nodes. However, it lacks context that we'd need to make good use of it.
 	@JsonKey(name:'connections')
-	List<DestinyActivityGraphConnectionDefinition> connections;
+	List<DestinyActivityGraphConnectionDefinition>? connections;
 	/// Objectives can display on maps, and this is supposedly metadata for that. I have not had the time to analyze the details of what is useful within however: we could be missing important data to make this work. Expect this property to be expanded on later if possible.
 	@JsonKey(name:'displayObjectives')
-	List<DestinyActivityGraphDisplayObjectiveDefinition> displayObjectives;
+	List<DestinyActivityGraphDisplayObjectiveDefinition>? displayObjectives;
 	/// Progressions can also display on maps, but similarly to displayObjectives we appear to lack some required information and context right now. We will have to look into it later and add more data if possible.
 	@JsonKey(name:'displayProgressions')
-	List<DestinyActivityGraphDisplayProgressionDefinition> displayProgressions;
+	List<DestinyActivityGraphDisplayProgressionDefinition>? displayProgressions;
 	/// Represents links between this Activity Graph and other ones.
 	@JsonKey(name:'linkedGraphs')
-	List<DestinyLinkedGraphDefinition> linkedGraphs;
+	List<DestinyLinkedGraphDefinition>? linkedGraphs;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

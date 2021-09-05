@@ -16,7 +16,7 @@ enum ComponentPrivacySetting {
 }
 
 extension ComponentPrivacySettingExtension on ComponentPrivacySetting{
-  int get value {
+  int? get value {
     switch(this){
       case ComponentPrivacySetting.None:
         return 0;

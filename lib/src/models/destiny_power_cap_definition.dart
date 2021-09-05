@@ -10,27 +10,22 @@ class DestinyPowerCapDefinition{
 	DestinyPowerCapDefinition();
 
 	factory DestinyPowerCapDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPowerCapDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPowerCapDefinitionFromJson(json);
 	}
 
 	/// The raw value for a power cap.
 	@JsonKey(name:'powerCap')
-	int powerCap;
+	int? powerCap;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

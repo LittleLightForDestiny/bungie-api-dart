@@ -12,35 +12,30 @@ class DestinyManifest{
 	DestinyManifest();
 
 	factory DestinyManifest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyManifestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyManifestFromJson(json);
 	}
 
 	@JsonKey(name:'version')
-	String version;
+	String? version;
 	@JsonKey(name:'mobileAssetContentPath')
-	String mobileAssetContentPath;
+	String? mobileAssetContentPath;
 	@JsonKey(name:'mobileGearAssetDataBases')
-	List<GearAssetDataBaseDefinition> mobileGearAssetDataBases;
+	List<GearAssetDataBaseDefinition>? mobileGearAssetDataBases;
 	@JsonKey(name:'mobileWorldContentPaths')
-	Map<String, String> mobileWorldContentPaths;
+	Map<String, String>? mobileWorldContentPaths;
 	/// This points to the generated JSON that contains all the Definitions. Each key is a locale. The value is a path to the aggregated world definitions (warning: large file!)
 	@JsonKey(name:'jsonWorldContentPaths')
-	Map<String, String> jsonWorldContentPaths;
+	Map<String, String>? jsonWorldContentPaths;
 	/// This points to the generated JSON that contains all the Definitions. Each key is a locale. The value is a dictionary, where the key is a definition type by name, and the value is the path to the file for that definition. WARNING: This is unsafe and subject to change - do not depend on data in these files staying around long-term.
 	@JsonKey(name:'jsonWorldComponentContentPaths')
-	Map<String, Map<String, String>> jsonWorldComponentContentPaths;
+	Map<String, Map<String, String>>? jsonWorldComponentContentPaths;
 	@JsonKey(name:'mobileClanBannerDatabasePath')
-	String mobileClanBannerDatabasePath;
+	String? mobileClanBannerDatabasePath;
 	@JsonKey(name:'mobileGearCDN')
-	Map<String, String> mobileGearCdn;
+	Map<String, String>? mobileGearCdn;
 	/// Information about the "Image Pyramid" for Destiny icons. Where possible, we create smaller versions of Destiny icons. These are found as subfolders under the location of the "original/full size" Destiny images, with the same file name and extension as the original image itself. (this lets us avoid sending largely redundant path info with every entity, at the expense of the smaller versions of the image being less discoverable)
 	@JsonKey(name:'iconImagePyramidInfo')
-	List<ImagePyramidEntry> iconImagePyramidInfo;
+	List<ImagePyramidEntry>? iconImagePyramidInfo;
 
 	
 	

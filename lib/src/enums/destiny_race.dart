@@ -19,7 +19,7 @@ enum DestinyRace {
 }
 
 extension DestinyRaceExtension on DestinyRace{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyRace.Human:
         return 0;

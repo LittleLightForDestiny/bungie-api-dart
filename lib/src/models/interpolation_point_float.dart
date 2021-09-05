@@ -9,18 +9,13 @@ class InterpolationPointFloat{
 	InterpolationPointFloat();
 
 	factory InterpolationPointFloat.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$InterpolationPointFloatFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$InterpolationPointFloatFromJson(json);
 	}
 
 	@JsonKey(name:'value')
-	double value;
+	double? value;
 	@JsonKey(name:'weight')
-	double weight;
+	double? weight;
 
 	
 	

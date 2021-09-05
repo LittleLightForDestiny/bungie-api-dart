@@ -10,23 +10,18 @@ class DestinyItemActionRequiredItemDefinition{
 	DestinyItemActionRequiredItemDefinition();
 
 	factory DestinyItemActionRequiredItemDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemActionRequiredItemDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemActionRequiredItemDefinitionFromJson(json);
 	}
 
 	/// The minimum quantity of the item you have to have.
 	@JsonKey(name:'count')
-	int count;
+	int? count;
 	/// The hash identifier of the item you need to have. Use it to look up the DestinyInventoryItemDefinition for more info.
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	/// If true, the item/quantity will be deleted from your inventory when the action is performed. Otherwise, you'll retain these required items after the action is complete.
 	@JsonKey(name:'deleteOnAction')
-	bool deleteOnAction;
+	bool? deleteOnAction;
 
 	
 	

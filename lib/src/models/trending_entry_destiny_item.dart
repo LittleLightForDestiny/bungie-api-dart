@@ -9,16 +9,11 @@ class TrendingEntryDestinyItem{
 	TrendingEntryDestinyItem();
 
 	factory TrendingEntryDestinyItem.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TrendingEntryDestinyItemFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TrendingEntryDestinyItemFromJson(json);
 	}
 
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 
 	
 	

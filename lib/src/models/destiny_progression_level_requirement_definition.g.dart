@@ -10,15 +10,14 @@ DestinyProgressionLevelRequirementDefinition
     _$DestinyProgressionLevelRequirementDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyProgressionLevelRequirementDefinition()
-    ..requirementCurve = (json['requirementCurve'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InterpolationPointFloat.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..progressionHash = json['progressionHash'] as int
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..requirementCurve = (json['requirementCurve'] as List<dynamic>?)
+        ?.map(
+            (e) => InterpolationPointFloat.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..progressionHash = json['progressionHash'] as int?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyProgressionLevelRequirementDefinitionToJson(

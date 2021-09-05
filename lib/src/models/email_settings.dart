@@ -13,23 +13,18 @@ class EmailSettings{
 	EmailSettings();
 
 	factory EmailSettings.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EmailSettingsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EmailSettingsFromJson(json);
 	}
 
 	/// Keyed by the name identifier of the opt-in definition.
 	@JsonKey(name:'optInDefinitions')
-	Map<String, EmailOptInDefinition> optInDefinitions;
+	Map<String, EmailOptInDefinition>? optInDefinitions;
 	/// Keyed by the name identifier of the Subscription definition.
 	@JsonKey(name:'subscriptionDefinitions')
-	Map<String, EmailSubscriptionDefinition> subscriptionDefinitions;
+	Map<String, EmailSubscriptionDefinition>? subscriptionDefinitions;
 	/// Keyed by the name identifier of the View definition.
 	@JsonKey(name:'views')
-	Map<String, EmailViewDefinition> views;
+	Map<String, EmailViewDefinition>? views;
 
 	
 	

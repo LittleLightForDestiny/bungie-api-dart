@@ -10,16 +10,11 @@ class DestinyVendorInteractionSackEntryDefinition{
 	DestinyVendorInteractionSackEntryDefinition();
 
 	factory DestinyVendorInteractionSackEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorInteractionSackEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorInteractionSackEntryDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'sackType')
-	int sackType;
+	int? sackType;
 
 	
 	

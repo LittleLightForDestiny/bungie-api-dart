@@ -35,7 +35,7 @@ enum BungieMembershipType {
 }
 
 extension BungieMembershipTypeExtension on BungieMembershipType{
-  int get value {
+  int? get value {
     switch(this){
       case BungieMembershipType.None:
         return 0;

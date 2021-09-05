@@ -9,29 +9,29 @@ part of 'destiny_historical_stats_definition.dart';
 DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyHistoricalStatsDefinition()
-    ..statId = json['statId'] as String
+    ..statId = json['statId'] as String?
     ..group = _$enumDecodeNullable(
         _$DestinyStatsGroupTypeEnumMap, json['group'],
         unknownValue: DestinyStatsGroupType.ProtectedInvalidEnumValue)
-    ..periodTypes = (json['periodTypes'] as List)
-        ?.map((e) => _$enumDecodeNullable(_$PeriodTypeEnumMap, e))
-        ?.toList()
-    ..modes = (json['modes'] as List)
-        ?.map((e) => _$enumDecodeNullable(_$DestinyActivityModeTypeEnumMap, e))
-        ?.toList()
+    ..periodTypes = (json['periodTypes'] as List<dynamic>?)
+        ?.map((e) => _$enumDecode(_$PeriodTypeEnumMap, e))
+        .toList()
+    ..modes = (json['modes'] as List<dynamic>?)
+        ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+        .toList()
     ..category = _$enumDecodeNullable(
         _$DestinyStatsCategoryTypeEnumMap, json['category'],
         unknownValue: DestinyStatsCategoryType.ProtectedInvalidEnumValue)
-    ..statName = json['statName'] as String
-    ..statNameAbbr = json['statNameAbbr'] as String
-    ..statDescription = json['statDescription'] as String
+    ..statName = json['statName'] as String?
+    ..statNameAbbr = json['statNameAbbr'] as String?
+    ..statDescription = json['statDescription'] as String?
     ..unitType = _$enumDecodeNullable(_$UnitTypeEnumMap, json['unitType'],
         unknownValue: UnitType.ProtectedInvalidEnumValue)
-    ..iconImage = json['iconImage'] as String
-    ..mergeMethod = json['mergeMethod'] as int
-    ..unitLabel = json['unitLabel'] as String
-    ..weight = json['weight'] as int
-    ..medalTierHash = json['medalTierHash'] as int;
+    ..iconImage = json['iconImage'] as String?
+    ..mergeMethod = json['mergeMethod'] as int?
+    ..unitLabel = json['unitLabel'] as String?
+    ..weight = json['weight'] as int?
+    ..medalTierHash = json['medalTierHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
@@ -40,10 +40,10 @@ Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
       'statId': instance.statId,
       'group': _$DestinyStatsGroupTypeEnumMap[instance.group],
       'periodTypes':
-          instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e])?.toList(),
+          instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]).toList(),
       'modes': instance.modes
           ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
-          ?.toList(),
+          .toList(),
       'category': _$DestinyStatsCategoryTypeEnumMap[instance.category],
       'statName': instance.statName,
       'statNameAbbr': instance.statNameAbbr,
@@ -56,36 +56,41 @@ Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
       'medalTierHash': instance.medalTierHash,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyStatsGroupTypeEnumMap = {

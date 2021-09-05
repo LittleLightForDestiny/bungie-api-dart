@@ -19,7 +19,7 @@ enum DestinyMilestoneDisplayPreference {
 }
 
 extension DestinyMilestoneDisplayPreferenceExtension on DestinyMilestoneDisplayPreference{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyMilestoneDisplayPreference.MilestoneDefinition:
         return 0;

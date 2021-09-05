@@ -10,20 +10,15 @@ class DestinyStat{
 	DestinyStat();
 
 	factory DestinyStat.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyStatFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyStatFromJson(json);
 	}
 
 	/// The hash identifier for the Stat. Use it to look up the DestinyStatDefinition for static data about the stat.
 	@JsonKey(name:'statHash')
-	int statHash;
+	int? statHash;
 	/// The current value of the Stat.
 	@JsonKey(name:'value')
-	int value;
+	int? value;
 
 	
 	

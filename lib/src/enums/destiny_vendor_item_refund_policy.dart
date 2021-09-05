@@ -16,7 +16,7 @@ enum DestinyVendorItemRefundPolicy {
 }
 
 extension DestinyVendorItemRefundPolicyExtension on DestinyVendorItemRefundPolicy{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyVendorItemRefundPolicy.NotRefundable:
         return 0;

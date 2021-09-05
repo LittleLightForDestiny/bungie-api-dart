@@ -9,26 +9,21 @@ class ContentPreview{
 	ContentPreview();
 
 	factory ContentPreview.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentPreviewFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentPreviewFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'path')
-	String path;
+	String? path;
 	@JsonKey(name:'itemInSet')
-	bool itemInSet;
+	bool? itemInSet;
 	@JsonKey(name:'setTag')
-	String setTag;
+	String? setTag;
 	@JsonKey(name:'setNesting')
-	int setNesting;
+	int? setNesting;
 	@JsonKey(name:'useSetId')
-	int useSetId;
+	int? useSetId;
 
 	
 	

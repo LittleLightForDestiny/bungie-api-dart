@@ -5,8 +5,8 @@
 DestinyRecordIntervalObjective _$DestinyRecordIntervalObjectiveFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordIntervalObjective()
-    ..intervalObjectiveHash = json['intervalObjectiveHash'] as int
-    ..intervalScoreValue = json['intervalScoreValue'] as int;
+    ..intervalObjectiveHash = json['intervalObjectiveHash'] as int?
+    ..intervalScoreValue = json['intervalScoreValue'] as int?;
 }
 
 Map<String, dynamic> _$DestinyRecordIntervalObjectiveToJson(

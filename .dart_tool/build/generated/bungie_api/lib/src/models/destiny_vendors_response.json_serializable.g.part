@@ -21,18 +21,18 @@ DestinyVendorsResponse _$DestinyVendorsResponseFromJson(
         ? null
         : DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent
             .fromJson(json['sales'] as Map<String, dynamic>)
-    ..itemComponents = (json['itemComponents'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyItemComponentSetOfint32.fromJson(
-                  e as Map<String, dynamic>)),
+    ..itemComponents = (json['itemComponents'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k,
+          DestinyItemComponentSetOfint32.fromJson(e as Map<String, dynamic>)),
     )
     ..currencyLookups = json['currencyLookups'] == null
         ? null
         : SingleComponentResponseOfDestinyCurrenciesComponent.fromJson(
-            json['currencyLookups'] as Map<String, dynamic>);
+            json['currencyLookups'] as Map<String, dynamic>)
+    ..stringVariables = json['stringVariables'] == null
+        ? null
+        : SingleComponentResponseOfDestinyStringVariablesComponent.fromJson(
+            json['stringVariables'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyVendorsResponseToJson(
@@ -44,4 +44,5 @@ Map<String, dynamic> _$DestinyVendorsResponseToJson(
       'sales': instance.sales,
       'itemComponents': instance.itemComponents,
       'currencyLookups': instance.currencyLookups,
+      'stringVariables': instance.stringVariables,
     };

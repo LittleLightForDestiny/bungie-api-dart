@@ -15,29 +15,24 @@ class DestinyProfileTransitoryComponent{
 	DestinyProfileTransitoryComponent();
 
 	factory DestinyProfileTransitoryComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProfileTransitoryComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProfileTransitoryComponentFromJson(json);
 	}
 
 	/// If you have any members currently in your party, this is some (very) bare-bones information about those members.
 	@JsonKey(name:'partyMembers')
-	List<DestinyProfileTransitoryPartyMember> partyMembers;
+	List<DestinyProfileTransitoryPartyMember>? partyMembers;
 	/// If you are in an activity, this is some transitory info about the activity currently being played.
 	@JsonKey(name:'currentActivity')
-	DestinyProfileTransitoryCurrentActivity currentActivity;
+	DestinyProfileTransitoryCurrentActivity? currentActivity;
 	/// Information about whether and what might prevent you from joining this person on a fireteam.
 	@JsonKey(name:'joinability')
-	DestinyProfileTransitoryJoinability joinability;
+	DestinyProfileTransitoryJoinability? joinability;
 	/// Information about tracked entities.
 	@JsonKey(name:'tracking')
-	List<DestinyProfileTransitoryTrackingEntry> tracking;
+	List<DestinyProfileTransitoryTrackingEntry>? tracking;
 	/// The hash identifier for the DestinyDestinationDefinition of the last location you were orbiting when in orbit.
 	@JsonKey(name:'lastOrbitedDestinationHash')
-	int lastOrbitedDestinationHash;
+	int? lastOrbitedDestinationHash;
 
 	
 	

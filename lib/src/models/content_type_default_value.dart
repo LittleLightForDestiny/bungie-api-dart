@@ -9,20 +9,15 @@ class ContentTypeDefaultValue{
 	ContentTypeDefaultValue();
 
 	factory ContentTypeDefaultValue.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentTypeDefaultValueFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentTypeDefaultValueFromJson(json);
 	}
 
 	@JsonKey(name:'whenClause')
-	String whenClause;
+	String? whenClause;
 	@JsonKey(name:'whenValue')
-	String whenValue;
+	String? whenValue;
 	@JsonKey(name:'defaultValue')
-	String defaultValue;
+	String? defaultValue;
 
 	
 	

@@ -11,16 +11,11 @@ class DestinyActivityGraphNodeStateEntry{
 	DestinyActivityGraphNodeStateEntry();
 
 	factory DestinyActivityGraphNodeStateEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphNodeStateEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphNodeStateEntryFromJson(json);
 	}
 
 	@JsonKey(name:'state',unknownEnumValue:DestinyGraphNodeState.ProtectedInvalidEnumValue)
-	DestinyGraphNodeState state;
+	DestinyGraphNodeState? state;
 
 	
 	

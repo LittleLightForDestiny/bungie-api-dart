@@ -11,20 +11,15 @@ class DestinyItemPeerView{
 	DestinyItemPeerView();
 
 	factory DestinyItemPeerView.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemPeerViewFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemPeerViewFromJson(json);
 	}
 
 	/// The hash identifier of the item in question. Use it to look up the DestinyInventoryItemDefinition of the item for static rendering data.
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	/// The list of dyes that have been applied to this item.
 	@JsonKey(name:'dyes')
-	List<DyeReference> dyes;
+	List<DyeReference>? dyes;
 
 	
 	

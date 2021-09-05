@@ -16,7 +16,7 @@ enum DeveloperRole {
 }
 
 extension DeveloperRoleExtension on DeveloperRole{
-  int get value {
+  int? get value {
     switch(this){
       case DeveloperRole.None:
         return 0;

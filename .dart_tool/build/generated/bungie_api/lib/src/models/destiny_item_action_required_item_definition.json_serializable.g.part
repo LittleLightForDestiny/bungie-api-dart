@@ -6,9 +6,9 @@ DestinyItemActionRequiredItemDefinition
     _$DestinyItemActionRequiredItemDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyItemActionRequiredItemDefinition()
-    ..count = json['count'] as int
-    ..itemHash = json['itemHash'] as int
-    ..deleteOnAction = json['deleteOnAction'] as bool;
+    ..count = json['count'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..deleteOnAction = json['deleteOnAction'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyItemActionRequiredItemDefinitionToJson(

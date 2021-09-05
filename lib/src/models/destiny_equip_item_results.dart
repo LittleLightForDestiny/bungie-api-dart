@@ -11,16 +11,11 @@ class DestinyEquipItemResults{
 	DestinyEquipItemResults();
 
 	factory DestinyEquipItemResults.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyEquipItemResultsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyEquipItemResultsFromJson(json);
 	}
 
 	@JsonKey(name:'equipResults')
-	List<DestinyEquipItemResult> equipResults;
+	List<DestinyEquipItemResult>? equipResults;
 
 	
 	

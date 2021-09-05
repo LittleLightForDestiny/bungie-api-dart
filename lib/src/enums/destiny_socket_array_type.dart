@@ -13,7 +13,7 @@ enum DestinySocketArrayType {
 }
 
 extension DestinySocketArrayTypeExtension on DestinySocketArrayType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinySocketArrayType.Default:
         return 0;

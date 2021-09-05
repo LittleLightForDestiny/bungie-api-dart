@@ -5,20 +5,18 @@
 DestinyLinkedGraphDefinition _$DestinyLinkedGraphDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyLinkedGraphDefinition()
-    ..description = json['description'] as String
-    ..name = json['name'] as String
+    ..description = json['description'] as String?
+    ..name = json['name'] as String?
     ..unlockExpression = json['unlockExpression'] == null
         ? null
         : DestinyUnlockExpressionDefinition.fromJson(
             json['unlockExpression'] as Map<String, dynamic>)
-    ..linkedGraphId = json['linkedGraphId'] as int
-    ..linkedGraphs = (json['linkedGraphs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyLinkedGraphEntryDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..overview = json['overview'] as String;
+    ..linkedGraphId = json['linkedGraphId'] as int?
+    ..linkedGraphs = (json['linkedGraphs'] as List<dynamic>?)
+        ?.map((e) => DestinyLinkedGraphEntryDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..overview = json['overview'] as String?;
 }
 
 Map<String, dynamic> _$DestinyLinkedGraphDefinitionToJson(

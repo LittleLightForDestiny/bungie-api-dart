@@ -9,19 +9,20 @@ part of 'destiny_character_customization.dart';
 DestinyCharacterCustomization _$DestinyCharacterCustomizationFromJson(
     Map<String, dynamic> json) {
   return DestinyCharacterCustomization()
-    ..personality = json['personality'] as int
-    ..face = json['face'] as int
-    ..skinColor = json['skinColor'] as int
-    ..lipColor = json['lipColor'] as int
-    ..eyeColor = json['eyeColor'] as int
-    ..hairColors = (json['hairColors'] as List)?.map((e) => e as int)?.toList()
+    ..personality = json['personality'] as int?
+    ..face = json['face'] as int?
+    ..skinColor = json['skinColor'] as int?
+    ..lipColor = json['lipColor'] as int?
+    ..eyeColor = json['eyeColor'] as int?
+    ..hairColors =
+        (json['hairColors'] as List<dynamic>?)?.map((e) => e as int).toList()
     ..featureColors =
-        (json['featureColors'] as List)?.map((e) => e as int)?.toList()
-    ..decalColor = json['decalColor'] as int
-    ..wearHelmet = json['wearHelmet'] as bool
-    ..hairIndex = json['hairIndex'] as int
-    ..featureIndex = json['featureIndex'] as int
-    ..decalIndex = json['decalIndex'] as int;
+        (json['featureColors'] as List<dynamic>?)?.map((e) => e as int).toList()
+    ..decalColor = json['decalColor'] as int?
+    ..wearHelmet = json['wearHelmet'] as bool?
+    ..hairIndex = json['hairIndex'] as int?
+    ..featureIndex = json['featureIndex'] as int?
+    ..decalIndex = json['decalIndex'] as int?;
 }
 
 Map<String, dynamic> _$DestinyCharacterCustomizationToJson(

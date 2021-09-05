@@ -9,12 +9,12 @@ part of 'trending_entry_destiny_ritual.dart';
 TrendingEntryDestinyRitual _$TrendingEntryDestinyRitualFromJson(
     Map<String, dynamic> json) {
   return TrendingEntryDestinyRitual()
-    ..image = json['image'] as String
-    ..icon = json['icon'] as String
-    ..title = json['title'] as String
-    ..subtitle = json['subtitle'] as String
-    ..dateStart = json['dateStart'] as String
-    ..dateEnd = json['dateEnd'] as String
+    ..image = json['image'] as String?
+    ..icon = json['icon'] as String?
+    ..title = json['title'] as String?
+    ..subtitle = json['subtitle'] as String?
+    ..dateStart = json['dateStart'] as String?
+    ..dateEnd = json['dateEnd'] as String?
     ..milestoneDetails = json['milestoneDetails'] == null
         ? null
         : DestinyPublicMilestone.fromJson(

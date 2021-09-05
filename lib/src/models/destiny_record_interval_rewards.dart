@@ -10,16 +10,11 @@ class DestinyRecordIntervalRewards{
 	DestinyRecordIntervalRewards();
 
 	factory DestinyRecordIntervalRewards.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyRecordIntervalRewardsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyRecordIntervalRewardsFromJson(json);
 	}
 
 	@JsonKey(name:'intervalRewardItems')
-	List<DestinyItemQuantity> intervalRewardItems;
+	List<DestinyItemQuantity>? intervalRewardItems;
 
 	
 	

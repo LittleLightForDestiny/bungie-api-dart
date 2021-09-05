@@ -9,9 +9,10 @@ part of 'destiny_item_socket_category_definition.dart';
 DestinyItemSocketCategoryDefinition
     _$DestinyItemSocketCategoryDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyItemSocketCategoryDefinition()
-    ..socketCategoryHash = json['socketCategoryHash'] as int
-    ..socketIndexes =
-        (json['socketIndexes'] as List)?.map((e) => e as int)?.toList();
+    ..socketCategoryHash = json['socketCategoryHash'] as int?
+    ..socketIndexes = (json['socketIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyItemSocketCategoryDefinitionToJson(

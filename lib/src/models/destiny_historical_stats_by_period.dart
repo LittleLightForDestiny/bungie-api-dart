@@ -11,26 +11,21 @@ class DestinyHistoricalStatsByPeriod{
 	DestinyHistoricalStatsByPeriod();
 
 	factory DestinyHistoricalStatsByPeriod.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyHistoricalStatsByPeriodFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyHistoricalStatsByPeriodFromJson(json);
 	}
 
 	@JsonKey(name:'allTime')
-	Map<String, DestinyHistoricalStatsValue> allTime;
+	Map<String, DestinyHistoricalStatsValue>? allTime;
 	@JsonKey(name:'allTimeTier1')
-	Map<String, DestinyHistoricalStatsValue> allTimeTier1;
+	Map<String, DestinyHistoricalStatsValue>? allTimeTier1;
 	@JsonKey(name:'allTimeTier2')
-	Map<String, DestinyHistoricalStatsValue> allTimeTier2;
+	Map<String, DestinyHistoricalStatsValue>? allTimeTier2;
 	@JsonKey(name:'allTimeTier3')
-	Map<String, DestinyHistoricalStatsValue> allTimeTier3;
+	Map<String, DestinyHistoricalStatsValue>? allTimeTier3;
 	@JsonKey(name:'daily')
-	List<DestinyHistoricalStatsPeriodGroup> daily;
+	List<DestinyHistoricalStatsPeriodGroup>? daily;
 	@JsonKey(name:'monthly')
-	List<DestinyHistoricalStatsPeriodGroup> monthly;
+	List<DestinyHistoricalStatsPeriodGroup>? monthly;
 
 	
 	

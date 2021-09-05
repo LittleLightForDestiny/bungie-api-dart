@@ -10,8 +10,8 @@ DestinyActivityGraphConnectionDefinition
     _$DestinyActivityGraphConnectionDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyActivityGraphConnectionDefinition()
-    ..sourceNodeHash = json['sourceNodeHash'] as int
-    ..destNodeHash = json['destNodeHash'] as int;
+    ..sourceNodeHash = json['sourceNodeHash'] as int?
+    ..destNodeHash = json['destNodeHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyActivityGraphConnectionDefinitionToJson(

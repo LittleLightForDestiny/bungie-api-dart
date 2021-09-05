@@ -14,56 +14,51 @@ class ContentTypeDescription{
 	ContentTypeDescription();
 
 	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentTypeDescriptionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentTypeDescriptionFromJson(json);
 	}
 
 	@JsonKey(name:'cType')
-	String cType;
+	String? cType;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'contentDescription')
-	String contentDescription;
+	String? contentDescription;
 	@JsonKey(name:'previewImage')
-	String previewImage;
+	String? previewImage;
 	@JsonKey(name:'priority')
-	int priority;
+	int? priority;
 	@JsonKey(name:'reminder')
-	String reminder;
+	String? reminder;
 	@JsonKey(name:'properties')
-	List<ContentTypeProperty> properties;
+	List<ContentTypeProperty>? properties;
 	@JsonKey(name:'tagMetadata')
-	List<TagMetadataDefinition> tagMetadata;
+	List<TagMetadataDefinition>? tagMetadata;
 	@JsonKey(name:'tagMetadataItems')
-	Map<String, TagMetadataItem> tagMetadataItems;
+	Map<String, TagMetadataItem>? tagMetadataItems;
 	@JsonKey(name:'usageExamples')
-	List<String> usageExamples;
+	List<String>? usageExamples;
 	@JsonKey(name:'showInContentEditor')
-	bool showInContentEditor;
+	bool? showInContentEditor;
 	@JsonKey(name:'typeOf')
-	String typeOf;
+	String? typeOf;
 	@JsonKey(name:'bindIdentifierToProperty')
-	String bindIdentifierToProperty;
+	String? bindIdentifierToProperty;
 	@JsonKey(name:'boundRegex')
-	String boundRegex;
+	String? boundRegex;
 	@JsonKey(name:'forceIdentifierBinding')
-	bool forceIdentifierBinding;
+	bool? forceIdentifierBinding;
 	@JsonKey(name:'allowComments')
-	bool allowComments;
+	bool? allowComments;
 	@JsonKey(name:'autoEnglishPropertyFallback')
-	bool autoEnglishPropertyFallback;
+	bool? autoEnglishPropertyFallback;
 	@JsonKey(name:'bulkUploadable')
-	bool bulkUploadable;
+	bool? bulkUploadable;
 	@JsonKey(name:'previews')
-	List<ContentPreview> previews;
+	List<ContentPreview>? previews;
 	@JsonKey(name:'suppressCmsPath')
-	bool suppressCmsPath;
+	bool? suppressCmsPath;
 	@JsonKey(name:'propertySections')
-	List<ContentTypePropertySection> propertySections;
+	List<ContentTypePropertySection>? propertySections;
 
 	
 	

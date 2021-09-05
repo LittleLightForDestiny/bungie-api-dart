@@ -25,7 +25,7 @@ enum RuntimeGroupMemberType {
 }
 
 extension RuntimeGroupMemberTypeExtension on RuntimeGroupMemberType{
-  int get value {
+  int? get value {
     switch(this){
       case RuntimeGroupMemberType.None:
         return 0;

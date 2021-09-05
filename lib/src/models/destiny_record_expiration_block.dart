@@ -10,20 +10,15 @@ class DestinyRecordExpirationBlock{
 	DestinyRecordExpirationBlock();
 
 	factory DestinyRecordExpirationBlock.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyRecordExpirationBlockFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyRecordExpirationBlockFromJson(json);
 	}
 
 	@JsonKey(name:'hasExpiration')
-	bool hasExpiration;
+	bool? hasExpiration;
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 	@JsonKey(name:'icon')
-	String icon;
+	String? icon;
 
 	
 	

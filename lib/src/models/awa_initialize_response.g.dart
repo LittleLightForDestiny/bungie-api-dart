@@ -9,8 +9,8 @@ part of 'awa_initialize_response.dart';
 AwaInitializeResponse _$AwaInitializeResponseFromJson(
     Map<String, dynamic> json) {
   return AwaInitializeResponse()
-    ..correlationId = json['correlationId'] as String
-    ..sentToSelf = json['sentToSelf'] as bool;
+    ..correlationId = json['correlationId'] as String?
+    ..sentToSelf = json['sentToSelf'] as bool?;
 }
 
 Map<String, dynamic> _$AwaInitializeResponseToJson(

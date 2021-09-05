@@ -13,39 +13,34 @@ class DestinyChecklistEntryDefinition{
 	DestinyChecklistEntryDefinition();
 
 	factory DestinyChecklistEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyChecklistEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyChecklistEntryDefinitionFromJson(json);
 	}
 
 	/// The identifier for this Checklist entry. Guaranteed unique only within this Checklist Definition, and not globally/for all checklists.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// Even if no other associations exist, we will give you *something* for display properties. In cases where we have no associated entities, it may be as simple as a numerical identifier.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	@JsonKey(name:'destinationHash')
-	int destinationHash;
+	int? destinationHash;
 	@JsonKey(name:'locationHash')
-	int locationHash;
+	int? locationHash;
 	/// Note that a Bubble's hash doesn't uniquely identify a "top level" entity in Destiny. Only the combination of location and bubble can uniquely identify a place in the world of Destiny: so if bubbleHash is populated, locationHash must too be populated for it to have any meaning.
 	/// You can use this property if it is populated to look up the DestinyLocationDefinition's associated .locationReleases[].activityBubbleName property.
 	@JsonKey(name:'bubbleHash')
-	int bubbleHash;
+	int? bubbleHash;
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	@JsonKey(name:'vendorHash')
-	int vendorHash;
+	int? vendorHash;
 	@JsonKey(name:'vendorInteractionIndex')
-	int vendorInteractionIndex;
+	int? vendorInteractionIndex;
 	/// The scope at which this specific entry can be computed.
 	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
-	DestinyScope scope;
+	DestinyScope? scope;
 
 	
 	

@@ -16,7 +16,7 @@ enum GroupAllianceStatus {
 }
 
 extension GroupAllianceStatusExtension on GroupAllianceStatus{
-  int get value {
+  int? get value {
     switch(this){
       case GroupAllianceStatus.Unallied:
         return 0;

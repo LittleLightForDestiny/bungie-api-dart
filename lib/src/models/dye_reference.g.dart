@@ -8,8 +8,8 @@ part of 'dye_reference.dart';
 
 DyeReference _$DyeReferenceFromJson(Map<String, dynamic> json) {
   return DyeReference()
-    ..channelHash = json['channelHash'] as int
-    ..dyeHash = json['dyeHash'] as int;
+    ..channelHash = json['channelHash'] as int?
+    ..dyeHash = json['dyeHash'] as int?;
 }
 
 Map<String, dynamic> _$DyeReferenceToJson(DyeReference instance) =>

@@ -10,17 +10,12 @@ class DestinyItemVersionDefinition{
 	DestinyItemVersionDefinition();
 
 	factory DestinyItemVersionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemVersionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemVersionDefinitionFromJson(json);
 	}
 
 	/// A reference to the power cap for this item version.
 	@JsonKey(name:'powerCapHash')
-	int powerCapHash;
+	int? powerCapHash;
 
 	
 	

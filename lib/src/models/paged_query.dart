@@ -9,20 +9,15 @@ class PagedQuery{
 	PagedQuery();
 
 	factory PagedQuery.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PagedQueryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PagedQueryFromJson(json);
 	}
 
 	@JsonKey(name:'itemsPerPage')
-	int itemsPerPage;
+	int? itemsPerPage;
 	@JsonKey(name:'currentPage')
-	int currentPage;
+	int? currentPage;
 	@JsonKey(name:'requestContinuationToken')
-	String requestContinuationToken;
+	String? requestContinuationToken;
 
 	
 	

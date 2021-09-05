@@ -10,13 +10,9 @@ PersonalDestinyVendorSaleItemSetComponent
     _$PersonalDestinyVendorSaleItemSetComponentFromJson(
         Map<String, dynamic> json) {
   return PersonalDestinyVendorSaleItemSetComponent()
-    ..saleItems = (json['saleItems'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyVendorSaleItemComponent.fromJson(
-                  e as Map<String, dynamic>)),
+    ..saleItems = (json['saleItems'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k,
+          DestinyVendorSaleItemComponent.fromJson(e as Map<String, dynamic>)),
     );
 }
 

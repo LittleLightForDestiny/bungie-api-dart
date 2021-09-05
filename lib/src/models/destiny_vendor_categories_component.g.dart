@@ -9,11 +9,9 @@ part of 'destiny_vendor_categories_component.dart';
 DestinyVendorCategoriesComponent _$DestinyVendorCategoriesComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyVendorCategoriesComponent()
-    ..categories = (json['categories'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyVendorCategory.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..categories = (json['categories'] as List<dynamic>?)
+        ?.map((e) => DestinyVendorCategory.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyVendorCategoriesComponentToJson(

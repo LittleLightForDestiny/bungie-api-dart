@@ -11,23 +11,18 @@ class DestinyEnergyCostEntry{
 	DestinyEnergyCostEntry();
 
 	factory DestinyEnergyCostEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyEnergyCostEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyEnergyCostEntryFromJson(json);
 	}
 
 	/// The Energy cost for inserting this plug.
 	@JsonKey(name:'energyCost')
-	int energyCost;
+	int? energyCost;
 	/// The type of energy that this plug costs, as a reference to the DestinyEnergyTypeDefinition of the energy type.
 	@JsonKey(name:'energyTypeHash')
-	int energyTypeHash;
+	int? energyTypeHash;
 	/// The type of energy that this plug costs, in enum form.
 	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
-	DestinyEnergyType energyType;
+	DestinyEnergyType? energyType;
 
 	
 	

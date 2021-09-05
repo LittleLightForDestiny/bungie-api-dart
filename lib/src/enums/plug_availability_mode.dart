@@ -16,7 +16,7 @@ enum PlugAvailabilityMode {
 }
 
 extension PlugAvailabilityModeExtension on PlugAvailabilityMode{
-  int get value {
+  int? get value {
     switch(this){
       case PlugAvailabilityMode.Normal:
         return 0;

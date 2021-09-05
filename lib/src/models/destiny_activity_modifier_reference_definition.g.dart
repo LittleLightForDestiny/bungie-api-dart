@@ -10,7 +10,7 @@ DestinyActivityModifierReferenceDefinition
     _$DestinyActivityModifierReferenceDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyActivityModifierReferenceDefinition()
-    ..activityModifierHash = json['activityModifierHash'] as int;
+    ..activityModifierHash = json['activityModifierHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyActivityModifierReferenceDefinitionToJson(

@@ -11,17 +11,12 @@ class DestinyActivityGraphArtElementDefinition{
 	DestinyActivityGraphArtElementDefinition();
 
 	factory DestinyActivityGraphArtElementDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphArtElementDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphArtElementDefinitionFromJson(json);
 	}
 
 	/// The position on the map of the art element.
 	@JsonKey(name:'position')
-	DestinyPositionDefinition position;
+	DestinyPositionDefinition? position;
 
 	
 	

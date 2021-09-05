@@ -9,15 +9,13 @@ part of 'destiny_records_component.dart';
 DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordsComponent()
-    ..records = (json['records'] as Map<String, dynamic>)?.map(
+    ..records = (json['records'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
+          k, DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
     )
-    ..recordCategoriesRootNodeHash = json['recordCategoriesRootNodeHash'] as int
-    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int;
+    ..recordCategoriesRootNodeHash =
+        json['recordCategoriesRootNodeHash'] as int?
+    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyRecordsComponentToJson(

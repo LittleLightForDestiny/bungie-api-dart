@@ -9,7 +9,7 @@ part of 'destiny_historical_stats_value.dart';
 DestinyHistoricalStatsValue _$DestinyHistoricalStatsValueFromJson(
     Map<String, dynamic> json) {
   return DestinyHistoricalStatsValue()
-    ..statId = json['statId'] as String
+    ..statId = json['statId'] as String?
     ..basic = json['basic'] == null
         ? null
         : DestinyHistoricalStatsValuePair.fromJson(
@@ -22,7 +22,7 @@ DestinyHistoricalStatsValue _$DestinyHistoricalStatsValueFromJson(
         ? null
         : DestinyHistoricalStatsValuePair.fromJson(
             json['weighted'] as Map<String, dynamic>)
-    ..activityId = json['activityId'] as String;
+    ..activityId = json['activityId'] as String?;
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsValueToJson(

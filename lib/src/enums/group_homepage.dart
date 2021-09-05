@@ -16,7 +16,7 @@ enum GroupHomepage {
 }
 
 extension GroupHomepageExtension on GroupHomepage{
-  int get value {
+  int? get value {
     switch(this){
       case GroupHomepage.Wall:
         return 0;

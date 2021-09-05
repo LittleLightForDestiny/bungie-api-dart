@@ -22,25 +22,25 @@ class DestinyMilestoneResponse{
 	
 	/// Represents a runtime instance of a user's milestone status. Live Milestone data should be combined with DestinyMilestoneDefinition data to show the user a picture of what is available for them to do in the game, and their status in regards to said "things to do." Consider it a big, wonky to-do list, or Advisors 3.0 for those who remember the Destiny 1 API.
 	@JsonKey(name:'Response')
-	DestinyMilestone response;
+	DestinyMilestone? response;
 	
 	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
-	int throttleSeconds;
+	int? throttleSeconds;
 	
 	@JsonKey(name:'ErrorStatus')
-	String errorStatus;
+	String? errorStatus;
 	
 	@JsonKey(name:'Message')
-	String message;
+	String? message;
 	
 	@JsonKey(name:'MessageData')
-	Map<String, String> messageData;
+	Map<String, String>? messageData;
 	
 	@JsonKey(name:'DetailedErrorTrace')
-	String detailedErrorTrace;
+	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyMilestoneResponseToJson(this);
 }

@@ -52,7 +52,7 @@ enum ContentPropertyDataTypeEnum {
 }
 
 extension ContentPropertyDataTypeEnumExtension on ContentPropertyDataTypeEnum{
-  int get value {
+  int? get value {
     switch(this){
       case ContentPropertyDataTypeEnum.None:
         return 0;

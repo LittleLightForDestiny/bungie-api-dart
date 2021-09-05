@@ -9,14 +9,14 @@ part of 'group_options_edit_action.dart';
 GroupOptionsEditAction _$GroupOptionsEditActionFromJson(
     Map<String, dynamic> json) {
   return GroupOptionsEditAction()
-    ..invitePermissionOverride = json['InvitePermissionOverride'] as bool
+    ..invitePermissionOverride = json['InvitePermissionOverride'] as bool?
     ..updateCulturePermissionOverride =
-        json['UpdateCulturePermissionOverride'] as bool
+        json['UpdateCulturePermissionOverride'] as bool?
     ..hostGuidedGamePermissionOverride =
-        json['HostGuidedGamePermissionOverride'] as int
+        json['HostGuidedGamePermissionOverride'] as int?
     ..updateBannerPermissionOverride =
-        json['UpdateBannerPermissionOverride'] as bool
-    ..joinLevel = json['JoinLevel'] as int;
+        json['UpdateBannerPermissionOverride'] as bool?
+    ..joinLevel = json['JoinLevel'] as int?;
 }
 
 Map<String, dynamic> _$GroupOptionsEditActionToJson(

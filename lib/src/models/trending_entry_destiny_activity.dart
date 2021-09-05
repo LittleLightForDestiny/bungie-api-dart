@@ -10,19 +10,14 @@ class TrendingEntryDestinyActivity{
 	TrendingEntryDestinyActivity();
 
 	factory TrendingEntryDestinyActivity.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TrendingEntryDestinyActivityFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TrendingEntryDestinyActivityFromJson(json);
 	}
 
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	/// Represents the public-facing status of an activity: any data about what is currently active in the Activity, regardless of an individual character's progress in it.
 	@JsonKey(name:'status')
-	DestinyPublicActivityStatus status;
+	DestinyPublicActivityStatus? status;
 
 	
 	

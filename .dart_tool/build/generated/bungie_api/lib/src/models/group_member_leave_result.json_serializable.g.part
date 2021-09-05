@@ -8,7 +8,7 @@ GroupMemberLeaveResult _$GroupMemberLeaveResultFromJson(
     ..group = json['group'] == null
         ? null
         : GroupV2.fromJson(json['group'] as Map<String, dynamic>)
-    ..groupDeleted = json['groupDeleted'] as bool;
+    ..groupDeleted = json['groupDeleted'] as bool?;
 }
 
 Map<String, dynamic> _$GroupMemberLeaveResultToJson(

@@ -9,14 +9,13 @@ part of 'destiny_item_reusable_plugs_component.dart';
 DestinyItemReusablePlugsComponent _$DestinyItemReusablePlugsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemReusablePlugsComponent()
-    ..plugs = (json['plugs'] as Map<String, dynamic>)?.map(
+    ..plugs = (json['plugs'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
           k,
-          (e as List)
-              ?.map((e) => e == null
-                  ? null
-                  : DestinyItemPlugBase.fromJson(e as Map<String, dynamic>))
-              ?.toList()),
+          (e as List<dynamic>)
+              .map((e) =>
+                  DestinyItemPlugBase.fromJson(e as Map<String, dynamic>))
+              .toList()),
     );
 }
 

@@ -13,35 +13,35 @@ DestinyNodeStepDefinition _$DestinyNodeStepDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..stepIndex = json['stepIndex'] as int
-    ..nodeStepHash = json['nodeStepHash'] as int
-    ..interactionDescription = json['interactionDescription'] as String
+    ..stepIndex = json['stepIndex'] as int?
+    ..nodeStepHash = json['nodeStepHash'] as int?
+    ..interactionDescription = json['interactionDescription'] as String?
     ..damageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['damageType'],
         unknownValue: DamageType.ProtectedInvalidEnumValue)
-    ..damageTypeHash = json['damageTypeHash'] as int
+    ..damageTypeHash = json['damageTypeHash'] as int?
     ..activationRequirement = json['activationRequirement'] == null
         ? null
         : DestinyNodeActivationRequirement.fromJson(
             json['activationRequirement'] as Map<String, dynamic>)
-    ..canActivateNextStep = json['canActivateNextStep'] as bool
-    ..nextStepIndex = json['nextStepIndex'] as int
-    ..isNextStepRandom = json['isNextStepRandom'] as bool
-    ..perkHashes = (json['perkHashes'] as List)?.map((e) => e as int)?.toList()
+    ..canActivateNextStep = json['canActivateNextStep'] as bool?
+    ..nextStepIndex = json['nextStepIndex'] as int?
+    ..isNextStepRandom = json['isNextStepRandom'] as bool?
+    ..perkHashes =
+        (json['perkHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
     ..startProgressionBarAtProgress =
-        json['startProgressionBarAtProgress'] as int
-    ..statHashes = (json['statHashes'] as List)?.map((e) => e as int)?.toList()
-    ..affectsQuality = json['affectsQuality'] as bool
+        json['startProgressionBarAtProgress'] as int?
+    ..statHashes =
+        (json['statHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+    ..affectsQuality = json['affectsQuality'] as bool?
     ..stepGroups = json['stepGroups'] == null
         ? null
         : DestinyTalentNodeStepGroups.fromJson(
             json['stepGroups'] as Map<String, dynamic>)
-    ..affectsLevel = json['affectsLevel'] as bool
-    ..socketReplacements = (json['socketReplacements'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyNodeSocketReplaceResponse.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..affectsLevel = json['affectsLevel'] as bool?
+    ..socketReplacements = (json['socketReplacements'] as List<dynamic>?)
+        ?.map((e) => DestinyNodeSocketReplaceResponse.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyNodeStepDefinitionToJson(
@@ -66,36 +66,41 @@ Map<String, dynamic> _$DestinyNodeStepDefinitionToJson(
       'socketReplacements': instance.socketReplacements,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DamageTypeEnumMap = {

@@ -13,7 +13,7 @@ enum ChatSecuritySetting {
 }
 
 extension ChatSecuritySettingExtension on ChatSecuritySetting{
-  int get value {
+  int? get value {
     switch(this){
       case ChatSecuritySetting.Group:
         return 0;

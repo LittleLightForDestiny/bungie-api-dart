@@ -9,26 +9,21 @@ class CoreSetting{
 	CoreSetting();
 
 	factory CoreSetting.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$CoreSettingFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$CoreSettingFromJson(json);
 	}
 
 	@JsonKey(name:'identifier')
-	String identifier;
+	String? identifier;
 	@JsonKey(name:'isDefault')
-	bool isDefault;
+	bool? isDefault;
 	@JsonKey(name:'displayName')
-	String displayName;
+	String? displayName;
 	@JsonKey(name:'summary')
-	String summary;
+	String? summary;
 	@JsonKey(name:'imagePath')
-	String imagePath;
+	String? imagePath;
 	@JsonKey(name:'childSettings')
-	List<CoreSetting> childSettings;
+	List<CoreSetting>? childSettings;
 
 	
 	

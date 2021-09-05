@@ -22,7 +22,7 @@ enum ForumTopicsQuickDateEnum {
 }
 
 extension ForumTopicsQuickDateEnumExtension on ForumTopicsQuickDateEnum{
-  int get value {
+  int? get value {
     switch(this){
       case ForumTopicsQuickDateEnum.All:
         return 0;

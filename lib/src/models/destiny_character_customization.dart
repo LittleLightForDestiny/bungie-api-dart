@@ -11,38 +11,33 @@ class DestinyCharacterCustomization{
 	DestinyCharacterCustomization();
 
 	factory DestinyCharacterCustomization.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyCharacterCustomizationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyCharacterCustomizationFromJson(json);
 	}
 
 	@JsonKey(name:'personality')
-	int personality;
+	int? personality;
 	@JsonKey(name:'face')
-	int face;
+	int? face;
 	@JsonKey(name:'skinColor')
-	int skinColor;
+	int? skinColor;
 	@JsonKey(name:'lipColor')
-	int lipColor;
+	int? lipColor;
 	@JsonKey(name:'eyeColor')
-	int eyeColor;
+	int? eyeColor;
 	@JsonKey(name:'hairColors')
-	List<int> hairColors;
+	List<int>? hairColors;
 	@JsonKey(name:'featureColors')
-	List<int> featureColors;
+	List<int>? featureColors;
 	@JsonKey(name:'decalColor')
-	int decalColor;
+	int? decalColor;
 	@JsonKey(name:'wearHelmet')
-	bool wearHelmet;
+	bool? wearHelmet;
 	@JsonKey(name:'hairIndex')
-	int hairIndex;
+	int? hairIndex;
 	@JsonKey(name:'featureIndex')
-	int featureIndex;
+	int? featureIndex;
 	@JsonKey(name:'decalIndex')
-	int decalIndex;
+	int? decalIndex;
 
 	
 	

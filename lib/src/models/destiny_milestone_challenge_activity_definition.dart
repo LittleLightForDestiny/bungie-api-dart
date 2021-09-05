@@ -12,26 +12,21 @@ class DestinyMilestoneChallengeActivityDefinition{
 	DestinyMilestoneChallengeActivityDefinition();
 
 	factory DestinyMilestoneChallengeActivityDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneChallengeActivityDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneChallengeActivityDefinitionFromJson(json);
 	}
 
 	/// The activity for which this challenge is active.
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	@JsonKey(name:'challenges')
-	List<DestinyMilestoneChallengeDefinition> challenges;
+	List<DestinyMilestoneChallengeDefinition>? challenges;
 	/// If the activity and its challenge is visible on any of these nodes, it will be returned.
 	@JsonKey(name:'activityGraphNodes')
-	List<DestinyMilestoneChallengeActivityGraphNodeEntry> activityGraphNodes;
+	List<DestinyMilestoneChallengeActivityGraphNodeEntry>? activityGraphNodes;
 	/// Phases related to this activity, if there are any.
 	/// These will be listed in the order in which they will appear in the actual activity.
 	@JsonKey(name:'phases')
-	List<DestinyMilestoneChallengeActivityPhase> phases;
+	List<DestinyMilestoneChallengeActivityPhase>? phases;
 
 	
 	

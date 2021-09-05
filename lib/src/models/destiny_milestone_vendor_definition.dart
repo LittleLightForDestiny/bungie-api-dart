@@ -11,17 +11,12 @@ class DestinyMilestoneVendorDefinition{
 	DestinyMilestoneVendorDefinition();
 
 	factory DestinyMilestoneVendorDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneVendorDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneVendorDefinitionFromJson(json);
 	}
 
 	/// The hash of the vendor whose wares should be shown as associated with the Milestone.
 	@JsonKey(name:'vendorHash')
-	int vendorHash;
+	int? vendorHash;
 
 	
 	

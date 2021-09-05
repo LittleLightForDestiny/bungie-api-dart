@@ -9,7 +9,7 @@ part of 'destiny_report_reason_definition.dart';
 DestinyReportReasonDefinition _$DestinyReportReasonDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyReportReasonDefinition()
-    ..reasonHash = json['reasonHash'] as int
+    ..reasonHash = json['reasonHash'] as int?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(

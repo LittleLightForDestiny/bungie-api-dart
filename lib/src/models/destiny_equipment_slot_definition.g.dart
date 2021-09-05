@@ -13,17 +13,15 @@ DestinyEquipmentSlotDefinition _$DestinyEquipmentSlotDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..equipmentCategoryHash = json['equipmentCategoryHash'] as int
-    ..bucketTypeHash = json['bucketTypeHash'] as int
-    ..applyCustomArtDyes = json['applyCustomArtDyes'] as bool
-    ..artDyeChannels = (json['artDyeChannels'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyArtDyeReference.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..equipmentCategoryHash = json['equipmentCategoryHash'] as int?
+    ..bucketTypeHash = json['bucketTypeHash'] as int?
+    ..applyCustomArtDyes = json['applyCustomArtDyes'] as bool?
+    ..artDyeChannels = (json['artDyeChannels'] as List<dynamic>?)
+        ?.map((e) => DestinyArtDyeReference.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyEquipmentSlotDefinitionToJson(

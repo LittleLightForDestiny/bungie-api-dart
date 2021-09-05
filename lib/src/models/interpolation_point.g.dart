@@ -8,8 +8,8 @@ part of 'interpolation_point.dart';
 
 InterpolationPoint _$InterpolationPointFromJson(Map<String, dynamic> json) {
   return InterpolationPoint()
-    ..value = json['value'] as int
-    ..weight = json['weight'] as int;
+    ..value = json['value'] as int?
+    ..weight = json['weight'] as int?;
 }
 
 Map<String, dynamic> _$InterpolationPointToJson(InterpolationPoint instance) =>

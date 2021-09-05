@@ -11,21 +11,16 @@ class DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent{
 	DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent();
 
 	factory DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DictionaryComponentResponseOfint32AndDestinyItemTalentGridComponentFromJson(json);
 	}
 
 	@JsonKey(name:'data')
-	Map<String, DestinyItemTalentGridComponent> data;
+	Map<String, DestinyItemTalentGridComponent>? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

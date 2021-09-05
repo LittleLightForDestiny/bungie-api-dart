@@ -11,20 +11,15 @@ class EmailViewDefinition{
 	EmailViewDefinition();
 
 	factory EmailViewDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EmailViewDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EmailViewDefinitionFromJson(json);
 	}
 
 	/// The identifier for this view.
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	/// The ordered list of settings to show in this view.
 	@JsonKey(name:'viewSettings')
-	List<EmailViewDefinitionSetting> viewSettings;
+	List<EmailViewDefinitionSetting>? viewSettings;
 
 	
 	

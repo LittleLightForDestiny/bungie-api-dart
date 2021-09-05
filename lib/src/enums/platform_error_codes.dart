@@ -548,6 +548,12 @@ enum PlatformErrorCodes {
   ///NonTransactionalEmailSendFailure = 235
   @JsonValue(235)
   NonTransactionalEmailSendFailure,
+  ///UnknownErrorSettingGlobalDisplayName = 236
+  @JsonValue(236)
+  UnknownErrorSettingGlobalDisplayName,
+  ///DuplicateGlobalDisplayName = 237
+  @JsonValue(237)
+  DuplicateGlobalDisplayName,
   ///MessagingUnknownError = 300
   @JsonValue(300)
   MessagingUnknownError,
@@ -1172,6 +1178,9 @@ enum PlatformErrorCodes {
   ///ClanCreationBan = 752
   @JsonValue(752)
   ClanCreationBan,
+  ///ClanCreationTenureRequirementsNotMet = 753
+  @JsonValue(753)
+  ClanCreationTenureRequirementsNotMet,
   ///ItemAlreadyFollowed = 801
   @JsonValue(801)
   ItemAlreadyFollowed,
@@ -2109,6 +2118,12 @@ enum PlatformErrorCodes {
   ///SteamWebNullResponseError = 2901
   @JsonValue(2901)
   SteamWebNullResponseError,
+  ///SteamAccountRequired = 2902
+  @JsonValue(2902)
+  SteamAccountRequired,
+  ///SteamNotAuthorized = 2903
+  @JsonValue(2903)
+  SteamNotAuthorized,
   ///ClanFireteamNotFound = 3000
   @JsonValue(3000)
   ClanFireteamNotFound,
@@ -2196,6 +2211,18 @@ enum PlatformErrorCodes {
   ///ClanFireteamInvalidAuthProviderXuid = 3028
   @JsonValue(3028)
   ClanFireteamInvalidAuthProviderXuid,
+  ///ClanFireteamThrottle = 3029
+  @JsonValue(3029)
+  ClanFireteamThrottle,
+  ///ClanFireteamTooManyOpenScheduledFireteams = 3030
+  @JsonValue(3030)
+  ClanFireteamTooManyOpenScheduledFireteams,
+  ///ClanFireteamCannotReopenScheduledFireteams = 3031
+  @JsonValue(3031)
+  ClanFireteamCannotReopenScheduledFireteams,
+  ///ClanFireteamJoinNoAccountSpecified = 3032
+  @JsonValue(3032)
+  ClanFireteamJoinNoAccountSpecified,
   ///CrossSaveOverriddenAccountNotFound = 3200
   @JsonValue(3200)
   CrossSaveOverriddenAccountNotFound,
@@ -2328,13 +2355,70 @@ enum PlatformErrorCodes {
   ///ErrorPhoneValidationBanned = 3706
   @JsonValue(3706)
   ErrorPhoneValidationBanned,
+  ///ErrorPhoneValidationCodeTooRecentlySent = 3707
+  @JsonValue(3707)
+  ErrorPhoneValidationCodeTooRecentlySent,
+  ///ErrorPhoneValidationCodeExpired = 3708
+  @JsonValue(3708)
+  ErrorPhoneValidationCodeExpired,
+  ///ErrorPhoneValidationInvalidNumberType = 3709
+  @JsonValue(3709)
+  ErrorPhoneValidationInvalidNumberType,
+  ///ErrorPhoneValidationCodeTooRecentlyChecked = 3710
+  @JsonValue(3710)
+  ErrorPhoneValidationCodeTooRecentlyChecked,
+  ///ApplePushErrorUnknown = 3800
+  @JsonValue(3800)
+  ApplePushErrorUnknown,
+  ///ApplePushErrorNull = 3801
+  @JsonValue(3801)
+  ApplePushErrorNull,
+  ///ApplePushErrorTimeout = 3802
+  @JsonValue(3802)
+  ApplePushErrorTimeout,
+  ///ApplePushBadRequest = 3803
+  @JsonValue(3803)
+  ApplePushBadRequest,
+  ///ApplePushFailedAuth = 3804
+  @JsonValue(3804)
+  ApplePushFailedAuth,
+  ///ApplePushThrottled = 3805
+  @JsonValue(3805)
+  ApplePushThrottled,
+  ///ApplePushServiceUnavailable = 3806
+  @JsonValue(3806)
+  ApplePushServiceUnavailable,
+  ///NotAnImageOrVideo = 3807
+  @JsonValue(3807)
+  NotAnImageOrVideo,
+  ///ErrorBungieFriendsBlockFailed = 3900
+  @JsonValue(3900)
+  ErrorBungieFriendsBlockFailed,
+  ///ErrorBungieFriendsAutoReject = 3901
+  @JsonValue(3901)
+  ErrorBungieFriendsAutoReject,
+  ///ErrorBungieFriendsNoRequestFound = 3902
+  @JsonValue(3902)
+  ErrorBungieFriendsNoRequestFound,
+  ///ErrorBungieFriendsAlreadyFriends = 3903
+  @JsonValue(3903)
+  ErrorBungieFriendsAlreadyFriends,
+  ///ErrorBungieFriendsUnableToRemoveRequest = 3904
+  @JsonValue(3904)
+  ErrorBungieFriendsUnableToRemoveRequest,
+  ///ErrorBungieFriendsUnableToRemove = 3905
+  @JsonValue(3905)
+  ErrorBungieFriendsUnableToRemove,
+  ///ErrorBungieFriendsIdenticalSourceTarget = 3906
+  @JsonValue(3906)
+  ErrorBungieFriendsIdenticalSourceTarget,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
 }
 
 extension PlatformErrorCodesExtension on PlatformErrorCodes{
-  int get value {
+  int? get value {
     switch(this){
       case PlatformErrorCodes.None:
         return 0;
@@ -2700,6 +2784,10 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 234;
       case PlatformErrorCodes.NonTransactionalEmailSendFailure:
         return 235;
+      case PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName:
+        return 236;
+      case PlatformErrorCodes.DuplicateGlobalDisplayName:
+        return 237;
       case PlatformErrorCodes.MessagingUnknownError:
         return 300;
       case PlatformErrorCodes.MessagingSelfError:
@@ -3116,6 +3204,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 751;
       case PlatformErrorCodes.ClanCreationBan:
         return 752;
+      case PlatformErrorCodes.ClanCreationTenureRequirementsNotMet:
+        return 753;
       case PlatformErrorCodes.ItemAlreadyFollowed:
         return 801;
       case PlatformErrorCodes.ItemNotFollowed:
@@ -3740,6 +3830,10 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 2900;
       case PlatformErrorCodes.SteamWebNullResponseError:
         return 2901;
+      case PlatformErrorCodes.SteamAccountRequired:
+        return 2902;
+      case PlatformErrorCodes.SteamNotAuthorized:
+        return 2903;
       case PlatformErrorCodes.ClanFireteamNotFound:
         return 3000;
       case PlatformErrorCodes.ClanFireteamAddNoAlternatesForImmediate:
@@ -3798,6 +3892,14 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3027;
       case PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid:
         return 3028;
+      case PlatformErrorCodes.ClanFireteamThrottle:
+        return 3029;
+      case PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams:
+        return 3030;
+      case PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams:
+        return 3031;
+      case PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified:
+        return 3032;
       case PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:
         return 3200;
       case PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:
@@ -3886,6 +3988,44 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3705;
       case PlatformErrorCodes.ErrorPhoneValidationBanned:
         return 3706;
+      case PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlySent:
+        return 3707;
+      case PlatformErrorCodes.ErrorPhoneValidationCodeExpired:
+        return 3708;
+      case PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType:
+        return 3709;
+      case PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked:
+        return 3710;
+      case PlatformErrorCodes.ApplePushErrorUnknown:
+        return 3800;
+      case PlatformErrorCodes.ApplePushErrorNull:
+        return 3801;
+      case PlatformErrorCodes.ApplePushErrorTimeout:
+        return 3802;
+      case PlatformErrorCodes.ApplePushBadRequest:
+        return 3803;
+      case PlatformErrorCodes.ApplePushFailedAuth:
+        return 3804;
+      case PlatformErrorCodes.ApplePushThrottled:
+        return 3805;
+      case PlatformErrorCodes.ApplePushServiceUnavailable:
+        return 3806;
+      case PlatformErrorCodes.NotAnImageOrVideo:
+        return 3807;
+      case PlatformErrorCodes.ErrorBungieFriendsBlockFailed:
+        return 3900;
+      case PlatformErrorCodes.ErrorBungieFriendsAutoReject:
+        return 3901;
+      case PlatformErrorCodes.ErrorBungieFriendsNoRequestFound:
+        return 3902;
+      case PlatformErrorCodes.ErrorBungieFriendsAlreadyFriends:
+        return 3903;
+      case PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest:
+        return 3904;
+      case PlatformErrorCodes.ErrorBungieFriendsUnableToRemove:
+        return 3905;
+      case PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget:
+        return 3906;
       default:
         return null;
     }

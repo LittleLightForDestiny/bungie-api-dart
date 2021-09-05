@@ -30,7 +30,7 @@ enum DestinyMilestoneType {
 }
 
 extension DestinyMilestoneTypeExtension on DestinyMilestoneType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyMilestoneType.Unknown:
         return 0;

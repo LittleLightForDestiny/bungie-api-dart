@@ -12,32 +12,27 @@ class DestinyProgressionLevelRequirementDefinition{
 	DestinyProgressionLevelRequirementDefinition();
 
 	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
 	}
 
 	/// A curve of level requirements, weighted by the related progressions' level.
 	/// Interpolate against this curve with the character's progression level to determine what the level requirement of the generated item that is using this data will be.
 	@JsonKey(name:'requirementCurve')
-	List<InterpolationPointFloat> requirementCurve;
+	List<InterpolationPointFloat>? requirementCurve;
 	/// The progression whose level should be used to determine the level requirement.
 	/// Look up the DestinyProgressionDefinition with this hash for more information about the progression in question.
 	@JsonKey(name:'progressionHash')
-	int progressionHash;
+	int? progressionHash;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

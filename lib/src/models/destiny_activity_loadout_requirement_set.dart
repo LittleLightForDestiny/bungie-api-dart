@@ -10,17 +10,12 @@ class DestinyActivityLoadoutRequirementSet{
 	DestinyActivityLoadoutRequirementSet();
 
 	factory DestinyActivityLoadoutRequirementSet.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityLoadoutRequirementSetFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityLoadoutRequirementSetFromJson(json);
 	}
 
 	/// The set of requirements that will be applied on the activity if this requirement set is active.
 	@JsonKey(name:'requirements')
-	List<DestinyActivityLoadoutRequirement> requirements;
+	List<DestinyActivityLoadoutRequirement>? requirements;
 
 	
 	

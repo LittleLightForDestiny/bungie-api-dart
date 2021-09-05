@@ -12,21 +12,16 @@ class DestinyProfileProgressionComponent{
 	DestinyProfileProgressionComponent();
 
 	factory DestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProfileProgressionComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProfileProgressionComponentFromJson(json);
 	}
 
 	/// The set of checklists that can be examined on a profile-wide basis, keyed by the hash identifier of the Checklist (DestinyChecklistDefinition)
 	/// For each checklist returned, its value is itself a Dictionary keyed by the checklist's hash identifier with the value being a boolean indicating if it's been discovered yet.
 	@JsonKey(name:'checklists')
-	Map<String, Map<String, bool>> checklists;
+	Map<String, Map<String, bool>>? checklists;
 	/// Data related to your progress on the current season's artifact that is the same across characters.
 	@JsonKey(name:'seasonalArtifact')
-	DestinyArtifactProfileScoped seasonalArtifact;
+	DestinyArtifactProfileScoped? seasonalArtifact;
 
 	
 	

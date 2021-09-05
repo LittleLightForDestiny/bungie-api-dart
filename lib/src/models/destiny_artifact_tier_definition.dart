@@ -10,29 +10,24 @@ class DestinyArtifactTierDefinition{
 	DestinyArtifactTierDefinition();
 
 	factory DestinyArtifactTierDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtifactTierDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtifactTierDefinitionFromJson(json);
 	}
 
 	/// An identifier, unique within the Artifact, for this specific tier.
 	@JsonKey(name:'tierHash')
-	int tierHash;
+	int? tierHash;
 	/// The human readable title of this tier, if any.
 	@JsonKey(name:'displayTitle')
-	String displayTitle;
+	String? displayTitle;
 	/// A string representing the localized minimum requirement text for this Tier, if any.
 	@JsonKey(name:'progressRequirementMessage')
-	String progressRequirementMessage;
+	String? progressRequirementMessage;
 	/// The items that can be earned within this tier.
 	@JsonKey(name:'items')
-	List<DestinyArtifactTierItemDefinition> items;
+	List<DestinyArtifactTierItemDefinition>? items;
 	/// The minimum number of "unlock points" that you must have used before you can unlock items from this tier.
 	@JsonKey(name:'minimumUnlockPointsUsedRequirement')
-	int minimumUnlockPointsUsedRequirement;
+	int? minimumUnlockPointsUsedRequirement;
 
 	
 	

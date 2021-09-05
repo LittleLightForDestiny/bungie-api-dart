@@ -19,7 +19,7 @@ enum DestinySocketVisibility {
 }
 
 extension DestinySocketVisibilityExtension on DestinySocketVisibility{
-  int get value {
+  int? get value {
     switch(this){
       case DestinySocketVisibility.Visible:
         return 0;

@@ -15,7 +15,7 @@ enum {{className}} {
 }
 
 extension {{className}}Extension on {{className}}{
-  int get value {
+  int? get value {
     switch(this){
       {{#values}}
       case {{className}}.{{name}}:

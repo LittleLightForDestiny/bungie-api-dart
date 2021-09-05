@@ -5,13 +5,14 @@
 DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
     Map<String, dynamic> json) {
   return DestinyActivityLoadoutRequirement()
-    ..equipmentSlotHash = json['equipmentSlotHash'] as int
-    ..allowedEquippedItemHashes = (json['allowedEquippedItemHashes'] as List)
-        ?.map((e) => e as int)
-        ?.toList()
-    ..allowedWeaponSubTypes = (json['allowedWeaponSubTypes'] as List)
-        ?.map((e) => _$enumDecodeNullable(_$DestinyItemSubTypeEnumMap, e))
-        ?.toList();
+    ..equipmentSlotHash = json['equipmentSlotHash'] as int?
+    ..allowedEquippedItemHashes =
+        (json['allowedEquippedItemHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
+    ..allowedWeaponSubTypes = (json['allowedWeaponSubTypes'] as List<dynamic>?)
+        ?.map((e) => _$enumDecode(_$DestinyItemSubTypeEnumMap, e))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
@@ -21,39 +22,33 @@ Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
       'allowedEquippedItemHashes': instance.allowedEquippedItemHashes,
       'allowedWeaponSubTypes': instance.allowedWeaponSubTypes
           ?.map((e) => _$DestinyItemSubTypeEnumMap[e])
-          ?.toList(),
+          .toList(),
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
-}
-
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
 const _$DestinyItemSubTypeEnumMap = {

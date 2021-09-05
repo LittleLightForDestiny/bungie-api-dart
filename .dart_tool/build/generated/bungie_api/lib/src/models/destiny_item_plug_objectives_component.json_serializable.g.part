@@ -6,15 +6,13 @@ DestinyItemPlugObjectivesComponent _$DestinyItemPlugObjectivesComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemPlugObjectivesComponent()
     ..objectivesPerPlug =
-        (json['objectivesPerPlug'] as Map<String, dynamic>)?.map(
+        (json['objectivesPerPlug'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
           k,
-          (e as List)
-              ?.map((e) => e == null
-                  ? null
-                  : DestinyObjectiveProgress.fromJson(
-                      e as Map<String, dynamic>))
-              ?.toList()),
+          (e as List<dynamic>)
+              .map((e) =>
+                  DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
+              .toList()),
     );
 }
 

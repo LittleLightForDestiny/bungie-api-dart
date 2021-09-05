@@ -9,7 +9,7 @@ part of 'destiny_milestone_quest.dart';
 DestinyMilestoneQuest _$DestinyMilestoneQuestFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneQuest()
-    ..questItemHash = json['questItemHash'] as int
+    ..questItemHash = json['questItemHash'] as int?
     ..status = json['status'] == null
         ? null
         : DestinyQuestStatus.fromJson(json['status'] as Map<String, dynamic>)
@@ -17,11 +17,9 @@ DestinyMilestoneQuest _$DestinyMilestoneQuestFromJson(
         ? null
         : DestinyMilestoneActivity.fromJson(
             json['activity'] as Map<String, dynamic>)
-    ..challenges = (json['challenges'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..challenges = (json['challenges'] as List<dynamic>?)
+        ?.map((e) => DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyMilestoneQuestToJson(

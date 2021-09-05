@@ -22,7 +22,7 @@ enum ItemLocation {
 }
 
 extension ItemLocationExtension on ItemLocation{
-  int get value {
+  int? get value {
     switch(this){
       case ItemLocation.Unknown:
         return 0;

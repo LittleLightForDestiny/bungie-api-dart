@@ -11,12 +11,7 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	SingleComponentResponseOfDestinyItemTalentGridComponent();
 
 	factory SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
 	}
 
 	/// Well, we're here in Destiny 2, and Talent Grids are unfortunately still around.
@@ -27,12 +22,12 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	/// Nodes can be grouped into exclusivity sets *and* as of D2, exclusivity groups (which are collections of exclusivity sets that affect each other).
 	/// See DestinyTalentGridDefinition for more information. Brace yourself, the water's cold out there in the deep end.
 	@JsonKey(name:'data')
-	DestinyItemTalentGridComponent data;
+	DestinyItemTalentGridComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

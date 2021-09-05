@@ -9,12 +9,9 @@ part of 'destiny_platform_silver_component.dart';
 DestinyPlatformSilverComponent _$DestinyPlatformSilverComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyPlatformSilverComponent()
-    ..platformSilver = (json['platformSilver'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyItemComponent.fromJson(e as Map<String, dynamic>)),
+    ..platformSilver = (json['platformSilver'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, DestinyItemComponent.fromJson(e as Map<String, dynamic>)),
     );
 }
 

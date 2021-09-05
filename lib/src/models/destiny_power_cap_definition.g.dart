@@ -9,10 +9,10 @@ part of 'destiny_power_cap_definition.dart';
 DestinyPowerCapDefinition _$DestinyPowerCapDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyPowerCapDefinition()
-    ..powerCap = json['powerCap'] as int
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..powerCap = json['powerCap'] as int?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPowerCapDefinitionToJson(

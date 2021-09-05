@@ -9,28 +9,26 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..tooltipNotifications = (json['tooltipNotifications'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemTooltipNotification.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..collectibleHash = json['collectibleHash'] as int
-    ..iconWatermark = json['iconWatermark'] as String
-    ..iconWatermarkShelved = json['iconWatermarkShelved'] as String
-    ..secondaryIcon = json['secondaryIcon'] as String
-    ..secondaryOverlay = json['secondaryOverlay'] as String
-    ..secondarySpecial = json['secondarySpecial'] as String
+    ..tooltipNotifications = (json['tooltipNotifications'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyItemTooltipNotification.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..collectibleHash = json['collectibleHash'] as int?
+    ..iconWatermark = json['iconWatermark'] as String?
+    ..iconWatermarkShelved = json['iconWatermarkShelved'] as String?
+    ..secondaryIcon = json['secondaryIcon'] as String?
+    ..secondaryOverlay = json['secondaryOverlay'] as String?
+    ..secondarySpecial = json['secondarySpecial'] as String?
     ..backgroundColor = json['backgroundColor'] == null
         ? null
         : DestinyColor.fromJson(json['backgroundColor'] as Map<String, dynamic>)
-    ..screenshot = json['screenshot'] as String
-    ..itemTypeDisplayName = json['itemTypeDisplayName'] as String
-    ..flavorText = json['flavorText'] as String
-    ..uiItemDisplayStyle = json['uiItemDisplayStyle'] as String
-    ..itemTypeAndTierDisplayName = json['itemTypeAndTierDisplayName'] as String
-    ..displaySource = json['displaySource'] as String
-    ..tooltipStyle = json['tooltipStyle'] as String
+    ..screenshot = json['screenshot'] as String?
+    ..itemTypeDisplayName = json['itemTypeDisplayName'] as String?
+    ..flavorText = json['flavorText'] as String?
+    ..uiItemDisplayStyle = json['uiItemDisplayStyle'] as String?
+    ..itemTypeAndTierDisplayName = json['itemTypeAndTierDisplayName'] as String?
+    ..displaySource = json['displaySource'] as String?
+    ..tooltipStyle = json['tooltipStyle'] as String?
     ..action = json['action'] == null
         ? null
         : DestinyItemActionBlockDefinition.fromJson(
@@ -47,50 +45,122 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
         ? null
         : DestinyItemStatBlockDefinition.fromJson(
             json['stats'] as Map<String, dynamic>)
-    ..emblemObjectiveHash = json['emblemObjectiveHash'] as int
+    ..emblemObjectiveHash = json['emblemObjectiveHash'] as int?
     ..equippingBlock = json['equippingBlock'] == null
         ? null
-        : DestinyEquippingBlockDefinition.fromJson(json['equippingBlock'] as Map<String, dynamic>)
-    ..translationBlock = json['translationBlock'] == null ? null : DestinyItemTranslationBlockDefinition.fromJson(json['translationBlock'] as Map<String, dynamic>)
-    ..preview = json['preview'] == null ? null : DestinyItemPreviewBlockDefinition.fromJson(json['preview'] as Map<String, dynamic>)
-    ..quality = json['quality'] == null ? null : DestinyItemQualityBlockDefinition.fromJson(json['quality'] as Map<String, dynamic>)
-    ..value = json['value'] == null ? null : DestinyItemValueBlockDefinition.fromJson(json['value'] as Map<String, dynamic>)
-    ..sourceData = json['sourceData'] == null ? null : DestinyItemSourceBlockDefinition.fromJson(json['sourceData'] as Map<String, dynamic>)
-    ..objectives = json['objectives'] == null ? null : DestinyItemObjectiveBlockDefinition.fromJson(json['objectives'] as Map<String, dynamic>)
-    ..metrics = json['metrics'] == null ? null : DestinyItemMetricBlockDefinition.fromJson(json['metrics'] as Map<String, dynamic>)
-    ..plug = json['plug'] == null ? null : DestinyItemPlugDefinition.fromJson(json['plug'] as Map<String, dynamic>)
-    ..gearset = json['gearset'] == null ? null : DestinyItemGearsetBlockDefinition.fromJson(json['gearset'] as Map<String, dynamic>)
-    ..sack = json['sack'] == null ? null : DestinyItemSackBlockDefinition.fromJson(json['sack'] as Map<String, dynamic>)
-    ..sockets = json['sockets'] == null ? null : DestinyItemSocketBlockDefinition.fromJson(json['sockets'] as Map<String, dynamic>)
-    ..summary = json['summary'] == null ? null : DestinyItemSummaryBlockDefinition.fromJson(json['summary'] as Map<String, dynamic>)
-    ..talentGrid = json['talentGrid'] == null ? null : DestinyItemTalentGridBlockDefinition.fromJson(json['talentGrid'] as Map<String, dynamic>)
-    ..investmentStats = (json['investmentStats'] as List)?.map((e) => e == null ? null : DestinyItemInvestmentStatDefinition.fromJson(e as Map<String, dynamic>))?.toList()
-    ..perks = (json['perks'] as List)?.map((e) => e == null ? null : DestinyItemPerkEntryDefinition.fromJson(e as Map<String, dynamic>))?.toList()
-    ..loreHash = json['loreHash'] as int
-    ..summaryItemHash = json['summaryItemHash'] as int
-    ..animations = (json['animations'] as List)?.map((e) => e == null ? null : DestinyAnimationReference.fromJson(e as Map<String, dynamic>))?.toList()
-    ..allowActions = json['allowActions'] as bool
-    ..links = (json['links'] as List)?.map((e) => e == null ? null : HyperlinkReference.fromJson(e as Map<String, dynamic>))?.toList()
-    ..doesPostmasterPullHaveSideEffects = json['doesPostmasterPullHaveSideEffects'] as bool
-    ..nonTransferrable = json['nonTransferrable'] as bool
-    ..itemCategoryHashes = (json['itemCategoryHashes'] as List)?.map((e) => e as int)?.toList()
-    ..specialItemType = _$enumDecodeNullable(_$SpecialItemTypeEnumMap, json['specialItemType'], unknownValue: SpecialItemType.ProtectedInvalidEnumValue)
-    ..itemType = _$enumDecodeNullable(_$DestinyItemTypeEnumMap, json['itemType'], unknownValue: DestinyItemType.ProtectedInvalidEnumValue)
-    ..itemSubType = _$enumDecodeNullable(_$DestinyItemSubTypeEnumMap, json['itemSubType'], unknownValue: DestinyItemSubType.ProtectedInvalidEnumValue)
-    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'], unknownValue: DestinyClass.ProtectedInvalidEnumValue)
-    ..breakerType = _$enumDecodeNullable(_$DestinyBreakerTypeEnumMap, json['breakerType'], unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
-    ..breakerTypeHash = json['breakerTypeHash'] as int
-    ..equippable = json['equippable'] as bool
-    ..damageTypeHashes = (json['damageTypeHashes'] as List)?.map((e) => e as int)?.toList()
-    ..damageTypes = (json['damageTypes'] as List)?.map((e) => _$enumDecodeNullable(_$DamageTypeEnumMap, e))?.toList()
-    ..defaultDamageType = _$enumDecodeNullable(_$DamageTypeEnumMap, json['defaultDamageType'], unknownValue: DamageType.ProtectedInvalidEnumValue)
-    ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int
-    ..seasonHash = json['seasonHash'] as int
-    ..isWrapper = json['isWrapper'] as bool
-    ..traitIds = (json['traitIds'] as List)?.map((e) => e as String)?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+        : DestinyEquippingBlockDefinition.fromJson(
+            json['equippingBlock'] as Map<String, dynamic>)
+    ..translationBlock = json['translationBlock'] == null
+        ? null
+        : DestinyItemTranslationBlockDefinition.fromJson(
+            json['translationBlock'] as Map<String, dynamic>)
+    ..preview = json['preview'] == null
+        ? null
+        : DestinyItemPreviewBlockDefinition.fromJson(
+            json['preview'] as Map<String, dynamic>)
+    ..quality = json['quality'] == null
+        ? null
+        : DestinyItemQualityBlockDefinition.fromJson(
+            json['quality'] as Map<String, dynamic>)
+    ..value = json['value'] == null
+        ? null
+        : DestinyItemValueBlockDefinition.fromJson(
+            json['value'] as Map<String, dynamic>)
+    ..sourceData = json['sourceData'] == null
+        ? null
+        : DestinyItemSourceBlockDefinition.fromJson(
+            json['sourceData'] as Map<String, dynamic>)
+    ..objectives = json['objectives'] == null
+        ? null
+        : DestinyItemObjectiveBlockDefinition.fromJson(
+            json['objectives'] as Map<String, dynamic>)
+    ..metrics = json['metrics'] == null
+        ? null
+        : DestinyItemMetricBlockDefinition.fromJson(
+            json['metrics'] as Map<String, dynamic>)
+    ..plug = json['plug'] == null
+        ? null
+        : DestinyItemPlugDefinition.fromJson(
+            json['plug'] as Map<String, dynamic>)
+    ..gearset = json['gearset'] == null
+        ? null
+        : DestinyItemGearsetBlockDefinition.fromJson(
+            json['gearset'] as Map<String, dynamic>)
+    ..sack = json['sack'] == null
+        ? null
+        : DestinyItemSackBlockDefinition.fromJson(
+            json['sack'] as Map<String, dynamic>)
+    ..sockets = json['sockets'] == null
+        ? null
+        : DestinyItemSocketBlockDefinition.fromJson(
+            json['sockets'] as Map<String, dynamic>)
+    ..summary = json['summary'] == null
+        ? null
+        : DestinyItemSummaryBlockDefinition.fromJson(
+            json['summary'] as Map<String, dynamic>)
+    ..talentGrid = json['talentGrid'] == null
+        ? null
+        : DestinyItemTalentGridBlockDefinition.fromJson(
+            json['talentGrid'] as Map<String, dynamic>)
+    ..investmentStats = (json['investmentStats'] as List<dynamic>?)
+        ?.map((e) => DestinyItemInvestmentStatDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..perks = (json['perks'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyItemPerkEntryDefinition.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..loreHash = json['loreHash'] as int?
+    ..summaryItemHash = json['summaryItemHash'] as int?
+    ..animations = (json['animations'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyAnimationReference.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..allowActions = json['allowActions'] as bool?
+    ..links = (json['links'] as List<dynamic>?)
+        ?.map((e) => HyperlinkReference.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..doesPostmasterPullHaveSideEffects =
+        json['doesPostmasterPullHaveSideEffects'] as bool?
+    ..nonTransferrable = json['nonTransferrable'] as bool?
+    ..itemCategoryHashes = (json['itemCategoryHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..specialItemType = _$enumDecodeNullable(
+        _$SpecialItemTypeEnumMap, json['specialItemType'],
+        unknownValue: SpecialItemType.ProtectedInvalidEnumValue)
+    ..itemType = _$enumDecodeNullable(
+        _$DestinyItemTypeEnumMap, json['itemType'],
+        unknownValue: DestinyItemType.ProtectedInvalidEnumValue)
+    ..itemSubType = _$enumDecodeNullable(
+        _$DestinyItemSubTypeEnumMap, json['itemSubType'],
+        unknownValue: DestinyItemSubType.ProtectedInvalidEnumValue)
+    ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'],
+        unknownValue: DestinyClass.ProtectedInvalidEnumValue)
+    ..breakerType = _$enumDecodeNullable(
+        _$DestinyBreakerTypeEnumMap, json['breakerType'],
+        unknownValue: DestinyBreakerType.ProtectedInvalidEnumValue)
+    ..breakerTypeHash = json['breakerTypeHash'] as int?
+    ..equippable = json['equippable'] as bool?
+    ..damageTypeHashes = (json['damageTypeHashes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..damageTypes = (json['damageTypes'] as List<dynamic>?)
+        ?.map((e) => _$enumDecode(_$DamageTypeEnumMap, e))
+        .toList()
+    ..defaultDamageType = _$enumDecodeNullable(
+        _$DamageTypeEnumMap, json['defaultDamageType'],
+        unknownValue: DamageType.ProtectedInvalidEnumValue)
+    ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int?
+    ..seasonHash = json['seasonHash'] as int?
+    ..isWrapper = json['isWrapper'] as bool?
+    ..traitIds =
+        (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
+    ..traitHashes =
+        (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
@@ -151,47 +221,53 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'equippable': instance.equippable,
       'damageTypeHashes': instance.damageTypeHashes,
       'damageTypes':
-          instance.damageTypes?.map((e) => _$DamageTypeEnumMap[e])?.toList(),
+          instance.damageTypes?.map((e) => _$DamageTypeEnumMap[e]).toList(),
       'defaultDamageType': _$DamageTypeEnumMap[instance.defaultDamageType],
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
       'seasonHash': instance.seasonHash,
       'isWrapper': instance.isWrapper,
       'traitIds': instance.traitIds,
+      'traitHashes': instance.traitHashes,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$SpecialItemTypeEnumMap = {

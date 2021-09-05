@@ -10,37 +10,32 @@ class DestinyProfileRecordsComponent{
 	DestinyProfileRecordsComponent();
 
 	factory DestinyProfileRecordsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProfileRecordsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProfileRecordsComponentFromJson(json);
 	}
 
 	/// Your 'active' Triumphs score, maintained for backwards compatibility.
 	@JsonKey(name:'score')
-	int score;
+	int? score;
 	/// Your 'active' Triumphs score.
 	@JsonKey(name:'activeScore')
-	int activeScore;
+	int? activeScore;
 	/// Your 'legacy' Triumphs score.
 	@JsonKey(name:'legacyScore')
-	int legacyScore;
+	int? legacyScore;
 	/// Your 'lifetime' Triumphs score.
 	@JsonKey(name:'lifetimeScore')
-	int lifetimeScore;
+	int? lifetimeScore;
 	/// If this profile is tracking a record, this is the hash identifier of the record it is tracking.
 	@JsonKey(name:'trackedRecordHash')
-	int trackedRecordHash;
+	int? trackedRecordHash;
 	@JsonKey(name:'records')
-	Map<String, DestinyRecordComponent> records;
+	Map<String, DestinyRecordComponent>? records;
 	/// The hash for the root presentation node definition of Triumph categories.
 	@JsonKey(name:'recordCategoriesRootNodeHash')
-	int recordCategoriesRootNodeHash;
+	int? recordCategoriesRootNodeHash;
 	/// The hash for the root presentation node definition of Triumph Seals.
 	@JsonKey(name:'recordSealsRootNodeHash')
-	int recordSealsRootNodeHash;
+	int? recordSealsRootNodeHash;
 
 	
 	

@@ -16,7 +16,7 @@ enum DestinyProgressionStepDisplayEffect {
 }
 
 extension DestinyProgressionStepDisplayEffectExtension on DestinyProgressionStepDisplayEffect{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyProgressionStepDisplayEffect.None:
         return 0;

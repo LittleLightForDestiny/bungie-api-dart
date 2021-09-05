@@ -10,26 +10,21 @@ class TagMetadataDefinition{
 	TagMetadataDefinition();
 
 	factory TagMetadataDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TagMetadataDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TagMetadataDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 	@JsonKey(name:'order')
-	int order;
+	int? order;
 	@JsonKey(name:'items')
-	List<TagMetadataItem> items;
+	List<TagMetadataItem>? items;
 	@JsonKey(name:'datatype')
-	String datatype;
+	String? datatype;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'isRequired')
-	bool isRequired;
+	bool? isRequired;
 
 	
 	

@@ -9,18 +9,13 @@ class DateRange{
 	DateRange();
 
 	factory DateRange.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DateRangeFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DateRangeFromJson(json);
 	}
 
 	@JsonKey(name:'start')
-	String start;
+	String? start;
 	@JsonKey(name:'end')
-	String end;
+	String? end;
 
 	
 	

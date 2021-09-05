@@ -9,13 +9,9 @@ part of 'destiny_historical_stats_with_merged.dart';
 DestinyHistoricalStatsWithMerged _$DestinyHistoricalStatsWithMergedFromJson(
     Map<String, dynamic> json) {
   return DestinyHistoricalStatsWithMerged()
-    ..results = (json['results'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyHistoricalStatsByPeriod.fromJson(
-                  e as Map<String, dynamic>)),
+    ..results = (json['results'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k,
+          DestinyHistoricalStatsByPeriod.fromJson(e as Map<String, dynamic>)),
     )
     ..merged = json['merged'] == null
         ? null

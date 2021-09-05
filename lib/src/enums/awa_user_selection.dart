@@ -16,7 +16,7 @@ enum AwaUserSelection {
 }
 
 extension AwaUserSelectionExtension on AwaUserSelection{
-  int get value {
+  int? get value {
     switch(this){
       case AwaUserSelection.None:
         return 0;

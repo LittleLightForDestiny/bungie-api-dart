@@ -9,28 +9,23 @@ class TrendingEntryCommunityCreation{
 	TrendingEntryCommunityCreation();
 
 	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TrendingEntryCommunityCreationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TrendingEntryCommunityCreationFromJson(json);
 	}
 
 	@JsonKey(name:'media')
-	String media;
+	String? media;
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	@JsonKey(name:'author')
-	String author;
+	String? author;
 	@JsonKey(name:'authorMembershipId')
-	String authorMembershipId;
+	String? authorMembershipId;
 	@JsonKey(name:'postId')
-	String postId;
+	String? postId;
 	@JsonKey(name:'body')
-	String body;
+	String? body;
 	@JsonKey(name:'upvotes')
-	int upvotes;
+	int? upvotes;
 
 	
 	

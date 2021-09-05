@@ -19,7 +19,7 @@ enum GroupApplicationResolveState {
 }
 
 extension GroupApplicationResolveStateExtension on GroupApplicationResolveState{
-  int get value {
+  int? get value {
     switch(this){
       case GroupApplicationResolveState.Unresolved:
         return 0;

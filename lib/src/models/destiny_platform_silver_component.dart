@@ -10,17 +10,12 @@ class DestinyPlatformSilverComponent{
 	DestinyPlatformSilverComponent();
 
 	factory DestinyPlatformSilverComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPlatformSilverComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPlatformSilverComponentFromJson(json);
 	}
 
 	/// If a Profile is played on multiple platforms, this is the silver they have for each platform, keyed by Membership Type.
 	@JsonKey(name:'platformSilver')
-	Map<String, DestinyItemComponent> platformSilver;
+	Map<String, DestinyItemComponent>? platformSilver;
 
 	
 	

@@ -6,18 +6,13 @@ DestinyPostGameCarnageReportExtendedData
     _$DestinyPostGameCarnageReportExtendedDataFromJson(
         Map<String, dynamic> json) {
   return DestinyPostGameCarnageReportExtendedData()
-    ..weapons = (json['weapons'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyHistoricalWeaponStats.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..values = (json['values'] as Map<String, dynamic>)?.map(
+    ..weapons = (json['weapons'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyHistoricalWeaponStats.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..values = (json['values'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyHistoricalStatsValue.fromJson(
-                  e as Map<String, dynamic>)),
+          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
     );
 }
 

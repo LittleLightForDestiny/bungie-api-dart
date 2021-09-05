@@ -9,16 +9,15 @@ part of 'destiny_item_objectives_component.dart';
 DestinyItemObjectivesComponent _$DestinyItemObjectivesComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemObjectivesComponent()
-    ..objectives = (json['objectives'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..objectives = (json['objectives'] as List<dynamic>?)
+        ?.map(
+            (e) => DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..flavorObjective = json['flavorObjective'] == null
         ? null
         : DestinyObjectiveProgress.fromJson(
             json['flavorObjective'] as Map<String, dynamic>)
-    ..dateCompleted = json['dateCompleted'] as String;
+    ..dateCompleted = json['dateCompleted'] as String?;
 }
 
 Map<String, dynamic> _$DestinyItemObjectivesComponentToJson(

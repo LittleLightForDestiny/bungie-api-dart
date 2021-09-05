@@ -12,17 +12,12 @@ class DestinyUnlockExpressionDefinition{
 	DestinyUnlockExpressionDefinition();
 
 	factory DestinyUnlockExpressionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyUnlockExpressionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyUnlockExpressionDefinitionFromJson(json);
 	}
 
 	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum's documentation for more details.
 	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
-	DestinyGatingScope scope;
+	DestinyGatingScope? scope;
 
 	
 	

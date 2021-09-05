@@ -9,20 +9,15 @@ class PartnerOfferClaimRequest{
 	PartnerOfferClaimRequest();
 
 	factory PartnerOfferClaimRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PartnerOfferClaimRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PartnerOfferClaimRequestFromJson(json);
 	}
 
 	@JsonKey(name:'PartnerOfferId')
-	String partnerOfferId;
+	String? partnerOfferId;
 	@JsonKey(name:'BungieNetMembershipId')
-	String bungieNetMembershipId;
+	String? bungieNetMembershipId;
 	@JsonKey(name:'TransactionId')
-	String transactionId;
+	String? transactionId;
 
 	
 	

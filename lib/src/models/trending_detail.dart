@@ -16,30 +16,25 @@ class TrendingDetail{
 	TrendingDetail();
 
 	factory TrendingDetail.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TrendingDetailFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TrendingDetailFromJson(json);
 	}
 
 	@JsonKey(name:'identifier')
-	String identifier;
+	String? identifier;
 	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
-	TrendingEntryType entityType;
+	TrendingEntryType? entityType;
 	@JsonKey(name:'news')
-	TrendingEntryNews news;
+	TrendingEntryNews? news;
 	@JsonKey(name:'support')
-	TrendingEntrySupportArticle support;
+	TrendingEntrySupportArticle? support;
 	@JsonKey(name:'destinyItem')
-	TrendingEntryDestinyItem destinyItem;
+	TrendingEntryDestinyItem? destinyItem;
 	@JsonKey(name:'destinyActivity')
-	TrendingEntryDestinyActivity destinyActivity;
+	TrendingEntryDestinyActivity? destinyActivity;
 	@JsonKey(name:'destinyRitual')
-	TrendingEntryDestinyRitual destinyRitual;
+	TrendingEntryDestinyRitual? destinyRitual;
 	@JsonKey(name:'creation')
-	TrendingEntryCommunityCreation creation;
+	TrendingEntryCommunityCreation? creation;
 
 	
 	

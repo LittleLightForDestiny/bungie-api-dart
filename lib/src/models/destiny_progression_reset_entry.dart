@@ -11,18 +11,13 @@ class DestinyProgressionResetEntry{
 	DestinyProgressionResetEntry();
 
 	factory DestinyProgressionResetEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProgressionResetEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProgressionResetEntryFromJson(json);
 	}
 
 	@JsonKey(name:'season')
-	int season;
+	int? season;
 	@JsonKey(name:'resets')
-	int resets;
+	int? resets;
 
 	
 	

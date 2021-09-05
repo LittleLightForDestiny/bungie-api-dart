@@ -28,7 +28,7 @@ enum TierType {
 }
 
 extension TierTypeExtension on TierType{
-  int get value {
+  int? get value {
     switch(this){
       case TierType.Unknown:
         return 0;

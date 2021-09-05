@@ -10,10 +10,10 @@ DestinyParentItemOverride _$DestinyParentItemOverrideFromJson(
     Map<String, dynamic> json) {
   return DestinyParentItemOverride()
     ..additionalEquipRequirementsDisplayStrings =
-        (json['additionalEquipRequirementsDisplayStrings'] as List)
+        (json['additionalEquipRequirementsDisplayStrings'] as List<dynamic>?)
             ?.map((e) => e as String)
-            ?.toList()
-    ..pipIcon = json['pipIcon'] as String;
+            .toList()
+    ..pipIcon = json['pipIcon'] as String?;
 }
 
 Map<String, dynamic> _$DestinyParentItemOverrideToJson(

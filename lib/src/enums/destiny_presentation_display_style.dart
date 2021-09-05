@@ -23,7 +23,7 @@ enum DestinyPresentationDisplayStyle {
 }
 
 extension DestinyPresentationDisplayStyleExtension on DestinyPresentationDisplayStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyPresentationDisplayStyle.Category:
         return 0;

@@ -18,45 +18,40 @@ class DestinySandboxPerkDefinition{
 	DestinySandboxPerkDefinition();
 
 	factory DestinySandboxPerkDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinySandboxPerkDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinySandboxPerkDefinitionFromJson(json);
 	}
 
 	/// These display properties are by no means guaranteed to be populated. Usually when it is, it's only because we back-filled them with the displayProperties of some Talent Node or Plug item that happened to be uniquely providing that perk.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// The string identifier for the perk.
 	@JsonKey(name:'perkIdentifier')
-	String perkIdentifier;
+	String? perkIdentifier;
 	/// If true, you can actually show the perk in the UI. Otherwise, it doesn't have useful player-facing information.
 	@JsonKey(name:'isDisplayable')
-	bool isDisplayable;
+	bool? isDisplayable;
 	/// If this perk grants a damage type to a weapon, the damage type will be defined here.
 	/// Unless you have a compelling reason to use this enum value, use the damageTypeHash instead to look up the actual DestinyDamageTypeDefinition.
 	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
-	DamageType damageType;
+	DamageType? damageType;
 	/// The hash identifier for looking up the DestinyDamageTypeDefinition, if this perk has a damage type.
 	/// This is preferred over using the damageType enumeration value, which has been left purely because it is occasionally convenient.
 	@JsonKey(name:'damageTypeHash')
-	int damageTypeHash;
+	int? damageTypeHash;
 	/// An old holdover from the original Armory, this was an attempt to group perks by functionality.
 	/// It is as yet unpopulated, and there will be quite a bit of work needed to restore it to its former working order.
 	@JsonKey(name:'perkGroups')
-	DestinyTalentNodeStepGroups perkGroups;
+	DestinyTalentNodeStepGroups? perkGroups;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

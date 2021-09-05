@@ -11,27 +11,22 @@ class DestinyInsertPlugsActionRequest{
 	DestinyInsertPlugsActionRequest();
 
 	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyInsertPlugsActionRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyInsertPlugsActionRequestFromJson(json);
 	}
 
 	/// Action token provided by the AwaGetActionToken API call.
 	@JsonKey(name:'actionToken')
-	String actionToken;
+	String? actionToken;
 	/// The instance ID of the item having a plug inserted. Only instanced items can have sockets.
 	@JsonKey(name:'itemInstanceId')
-	String itemInstanceId;
+	String? itemInstanceId;
 	/// The plugs being inserted.
 	@JsonKey(name:'plug')
-	DestinyInsertPlugsRequestEntry plug;
+	DestinyInsertPlugsRequestEntry? plug;
 	@JsonKey(name:'characterId')
-	String characterId;
+	String? characterId;
 	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
-	BungieMembershipType membershipType;
+	BungieMembershipType? membershipType;
 
 	
 	

@@ -9,8 +9,8 @@ part of 'destiny_milestone_activity_phase.dart';
 DestinyMilestoneActivityPhase _$DestinyMilestoneActivityPhaseFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneActivityPhase()
-    ..complete = json['complete'] as bool
-    ..phaseHash = json['phaseHash'] as int;
+    ..complete = json['complete'] as bool?
+    ..phaseHash = json['phaseHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyMilestoneActivityPhaseToJson(
