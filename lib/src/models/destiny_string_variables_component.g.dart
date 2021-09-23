@@ -1,0 +1,22 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'destiny_string_variables_component.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+DestinyStringVariablesComponent _$DestinyStringVariablesComponentFromJson(
+    Map<String, dynamic> json) {
+  return DestinyStringVariablesComponent()
+    ..integerValuesByHash =
+        (json['integerValuesByHash'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, e as int),
+    );
+}
+
+Map<String, dynamic> _$DestinyStringVariablesComponentToJson(
+        DestinyStringVariablesComponent instance) =>
+    <String, dynamic>{
+      'integerValuesByHash': instance.integerValuesByHash,
+    };

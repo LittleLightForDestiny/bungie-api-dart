@@ -1,0 +1,1 @@
+export '../src/models/dictionary_component_response_ofint64_and_destiny_string_variables_component.dart';

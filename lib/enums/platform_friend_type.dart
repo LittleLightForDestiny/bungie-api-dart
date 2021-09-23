@@ -1,0 +1,1 @@
+export '../src/enums/platform_friend_type.dart';
