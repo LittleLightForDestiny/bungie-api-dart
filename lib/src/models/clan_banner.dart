@@ -9,28 +9,23 @@ class ClanBanner{
 	ClanBanner();
 
 	factory ClanBanner.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ClanBannerFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ClanBannerFromJson(json);
 	}
 
 	@JsonKey(name:'decalId')
-	int decalId;
+	int? decalId;
 	@JsonKey(name:'decalColorId')
-	int decalColorId;
+	int? decalColorId;
 	@JsonKey(name:'decalBackgroundColorId')
-	int decalBackgroundColorId;
+	int? decalBackgroundColorId;
 	@JsonKey(name:'gonfalonId')
-	int gonfalonId;
+	int? gonfalonId;
 	@JsonKey(name:'gonfalonColorId')
-	int gonfalonColorId;
+	int? gonfalonColorId;
 	@JsonKey(name:'gonfalonDetailId')
-	int gonfalonDetailId;
+	int? gonfalonDetailId;
 	@JsonKey(name:'gonfalonDetailColorId')
-	int gonfalonDetailColorId;
+	int? gonfalonDetailColorId;
 
 	
 	

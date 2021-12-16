@@ -9,18 +9,14 @@ part of 'destiny_collectibles_component.dart';
 DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyCollectiblesComponent()
-    ..collectibles = (json['collectibles'] as Map<String, dynamic>)?.map(
+    ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyCollectibleComponent.fromJson(
-                  e as Map<String, dynamic>)),
+          k, DestinyCollectibleComponent.fromJson(e as Map<String, dynamic>)),
     )
     ..collectionCategoriesRootNodeHash =
-        json['collectionCategoriesRootNodeHash'] as int
+        json['collectionCategoriesRootNodeHash'] as int?
     ..collectionBadgesRootNodeHash =
-        json['collectionBadgesRootNodeHash'] as int;
+        json['collectionBadgesRootNodeHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(

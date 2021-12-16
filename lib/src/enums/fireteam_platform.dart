@@ -1,9 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 
 enum FireteamPlatform {
-  ///Unknown = 0
+  ///Any = 0
   @JsonValue(0)
-  Unknown,
+  Any,
   ///Playstation4 = 1
   @JsonValue(1)
   Playstation4,
@@ -25,9 +25,9 @@ enum FireteamPlatform {
 }
 
 extension FireteamPlatformExtension on FireteamPlatform{
-  int get value {
+  int? get value {
     switch(this){
-      case FireteamPlatform.Unknown:
+      case FireteamPlatform.Any:
         return 0;
       case FireteamPlatform.Playstation4:
         return 1;

@@ -12,32 +12,27 @@ class DestinyPostGameCarnageReportEntry{
 	DestinyPostGameCarnageReportEntry();
 
 	factory DestinyPostGameCarnageReportEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPostGameCarnageReportEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPostGameCarnageReportEntryFromJson(json);
 	}
 
 	/// Standing of the player
 	@JsonKey(name:'standing')
-	int standing;
+	int? standing;
 	/// Score of the player if available
 	@JsonKey(name:'score')
-	DestinyHistoricalStatsValue score;
+	DestinyHistoricalStatsValue? score;
 	/// Identity details of the player
 	@JsonKey(name:'player')
-	DestinyPlayer player;
+	DestinyPlayer? player;
 	/// ID of the player's character used in the activity.
 	@JsonKey(name:'characterId')
-	String characterId;
+	String? characterId;
 	/// Collection of stats for the player in this activity.
 	@JsonKey(name:'values')
-	Map<String, DestinyHistoricalStatsValue> values;
+	Map<String, DestinyHistoricalStatsValue>? values;
 	/// Extended data extracted from the activity blob.
 	@JsonKey(name:'extended')
-	DestinyPostGameCarnageReportExtendedData extended;
+	DestinyPostGameCarnageReportExtendedData? extended;
 
 	
 	

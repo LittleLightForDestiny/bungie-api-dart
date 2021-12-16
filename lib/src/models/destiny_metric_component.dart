@@ -10,19 +10,14 @@ class DestinyMetricComponent{
 	DestinyMetricComponent();
 
 	factory DestinyMetricComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMetricComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMetricComponentFromJson(json);
 	}
 
 	@JsonKey(name:'invisible')
-	bool invisible;
+	bool? invisible;
 	/// Returns data about a character's status with a given Objective. Combine with DestinyObjectiveDefinition static data for display purposes.
 	@JsonKey(name:'objectiveProgress')
-	DestinyObjectiveProgress objectiveProgress;
+	DestinyObjectiveProgress? objectiveProgress;
 
 	
 	

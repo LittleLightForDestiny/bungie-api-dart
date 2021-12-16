@@ -9,49 +9,32 @@ part of 'destiny_character_progression_component.dart';
 DestinyCharacterProgressionComponent
     _$DestinyCharacterProgressionComponentFromJson(Map<String, dynamic> json) {
   return DestinyCharacterProgressionComponent()
-    ..progressions = (json['progressions'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyProgression.fromJson(e as Map<String, dynamic>)),
+    ..progressions = (json['progressions'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, DestinyProgression.fromJson(e as Map<String, dynamic>)),
     )
-    ..factions = (json['factions'] as Map<String, dynamic>)?.map(
+    ..factions = (json['factions'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyFactionProgression.fromJson(e as Map<String, dynamic>)),
+          k, DestinyFactionProgression.fromJson(e as Map<String, dynamic>)),
     )
-    ..milestones = (json['milestones'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyMilestone.fromJson(e as Map<String, dynamic>)),
+    ..milestones = (json['milestones'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, DestinyMilestone.fromJson(e as Map<String, dynamic>)),
     )
-    ..quests = (json['quests'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyQuestStatus.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..quests = (json['quests'] as List<dynamic>?)
+        ?.map((e) => DestinyQuestStatus.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..uninstancedItemObjectives =
-        (json['uninstancedItemObjectives'] as Map<String, dynamic>)?.map(
+        (json['uninstancedItemObjectives'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
           k,
-          (e as List)
-              ?.map((e) => e == null
-                  ? null
-                  : DestinyObjectiveProgress.fromJson(
-                      e as Map<String, dynamic>))
-              ?.toList()),
+          (e as List<dynamic>)
+              .map((e) =>
+                  DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
+              .toList()),
     )
-    ..checklists = (json['checklists'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          (e as Map<String, dynamic>)?.map(
-            (k, e) => MapEntry(k, e as bool),
-          )),
+    ..checklists = (json['checklists'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, Map<String, bool>.from(e as Map)),
     )
     ..seasonalArtifact = json['seasonalArtifact'] == null
         ? null

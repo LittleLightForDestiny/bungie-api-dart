@@ -12,28 +12,23 @@ class GlobalAlert{
 	GlobalAlert();
 
 	factory GlobalAlert.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GlobalAlertFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GlobalAlertFromJson(json);
 	}
 
 	@JsonKey(name:'AlertKey')
-	String alertKey;
+	String? alertKey;
 	@JsonKey(name:'AlertHtml')
-	String alertHtml;
+	String? alertHtml;
 	@JsonKey(name:'AlertTimestamp')
-	String alertTimestamp;
+	String? alertTimestamp;
 	@JsonKey(name:'AlertLink')
-	String alertLink;
+	String? alertLink;
 	@JsonKey(name:'AlertLevel',unknownEnumValue:GlobalAlertLevel.ProtectedInvalidEnumValue)
-	GlobalAlertLevel alertLevel;
+	GlobalAlertLevel? alertLevel;
 	@JsonKey(name:'AlertType',unknownEnumValue:GlobalAlertType.ProtectedInvalidEnumValue)
-	GlobalAlertType alertType;
+	GlobalAlertType? alertType;
 	@JsonKey(name:'StreamInfo')
-	StreamInfo streamInfo;
+	StreamInfo? streamInfo;
 
 	
 	

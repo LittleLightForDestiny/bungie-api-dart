@@ -9,8 +9,8 @@ part of 'destiny_record_interval_objective.dart';
 DestinyRecordIntervalObjective _$DestinyRecordIntervalObjectiveFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordIntervalObjective()
-    ..intervalObjectiveHash = json['intervalObjectiveHash'] as int
-    ..intervalScoreValue = json['intervalScoreValue'] as int;
+    ..intervalObjectiveHash = json['intervalObjectiveHash'] as int?
+    ..intervalScoreValue = json['intervalScoreValue'] as int?;
 }
 
 Map<String, dynamic> _$DestinyRecordIntervalObjectiveToJson(

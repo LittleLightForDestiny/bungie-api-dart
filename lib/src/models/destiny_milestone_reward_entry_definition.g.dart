@@ -9,19 +9,17 @@ part of 'destiny_milestone_reward_entry_definition.dart';
 DestinyMilestoneRewardEntryDefinition
     _$DestinyMilestoneRewardEntryDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyMilestoneRewardEntryDefinition()
-    ..rewardEntryHash = json['rewardEntryHash'] as int
-    ..rewardEntryIdentifier = json['rewardEntryIdentifier'] as String
-    ..items = (json['items'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..vendorHash = json['vendorHash'] as int
+    ..rewardEntryHash = json['rewardEntryHash'] as int?
+    ..rewardEntryIdentifier = json['rewardEntryIdentifier'] as String?
+    ..items = (json['items'] as List<dynamic>?)
+        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..vendorHash = json['vendorHash'] as int?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..order = json['order'] as int;
+    ..order = json['order'] as int?;
 }
 
 Map<String, dynamic> _$DestinyMilestoneRewardEntryDefinitionToJson(

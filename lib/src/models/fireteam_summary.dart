@@ -10,52 +10,47 @@ class FireteamSummary{
 	FireteamSummary();
 
 	factory FireteamSummary.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$FireteamSummaryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$FireteamSummaryFromJson(json);
 	}
 
 	@JsonKey(name:'fireteamId')
-	String fireteamId;
+	String? fireteamId;
 	@JsonKey(name:'groupId')
-	String groupId;
+	String? groupId;
 	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.ProtectedInvalidEnumValue)
-	FireteamPlatform platform;
+	FireteamPlatform? platform;
 	@JsonKey(name:'activityType')
-	int activityType;
+	int? activityType;
 	@JsonKey(name:'isImmediate')
-	bool isImmediate;
+	bool? isImmediate;
 	@JsonKey(name:'scheduledTime')
-	String scheduledTime;
+	String? scheduledTime;
 	@JsonKey(name:'ownerMembershipId')
-	String ownerMembershipId;
+	String? ownerMembershipId;
 	@JsonKey(name:'playerSlotCount')
-	int playerSlotCount;
+	int? playerSlotCount;
 	@JsonKey(name:'alternateSlotCount')
-	int alternateSlotCount;
+	int? alternateSlotCount;
 	@JsonKey(name:'availablePlayerSlotCount')
-	int availablePlayerSlotCount;
+	int? availablePlayerSlotCount;
 	@JsonKey(name:'availableAlternateSlotCount')
-	int availableAlternateSlotCount;
+	int? availableAlternateSlotCount;
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	@JsonKey(name:'dateCreated')
-	String dateCreated;
+	String? dateCreated;
 	@JsonKey(name:'dateModified')
-	String dateModified;
+	String? dateModified;
 	@JsonKey(name:'isPublic')
-	bool isPublic;
+	bool? isPublic;
 	@JsonKey(name:'locale')
-	String locale;
+	String? locale;
 	@JsonKey(name:'isValid')
-	bool isValid;
+	bool? isValid;
 	@JsonKey(name:'datePlayerModified')
-	String datePlayerModified;
+	String? datePlayerModified;
 	@JsonKey(name:'titleBeforeModeration')
-	String titleBeforeModeration;
+	String? titleBeforeModeration;
 
 	
 	

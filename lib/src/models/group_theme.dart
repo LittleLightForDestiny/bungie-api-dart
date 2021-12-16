@@ -9,20 +9,15 @@ class GroupTheme{
 	GroupTheme();
 
 	factory GroupTheme.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupThemeFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupThemeFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'folder')
-	String folder;
+	String? folder;
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 
 	
 	

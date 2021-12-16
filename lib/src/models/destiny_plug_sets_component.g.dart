@@ -9,14 +9,12 @@ part of 'destiny_plug_sets_component.dart';
 DestinyPlugSetsComponent _$DestinyPlugSetsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyPlugSetsComponent()
-    ..plugs = (json['plugs'] as Map<String, dynamic>)?.map(
+    ..plugs = (json['plugs'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
           k,
-          (e as List)
-              ?.map((e) => e == null
-                  ? null
-                  : DestinyItemPlug.fromJson(e as Map<String, dynamic>))
-              ?.toList()),
+          (e as List<dynamic>)
+              .map((e) => DestinyItemPlug.fromJson(e as Map<String, dynamic>))
+              .toList()),
     );
 }
 

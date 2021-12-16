@@ -23,7 +23,7 @@ enum DestinyRewardSourceCategory {
 }
 
 extension DestinyRewardSourceCategoryExtension on DestinyRewardSourceCategory{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyRewardSourceCategory.None:
         return 0;

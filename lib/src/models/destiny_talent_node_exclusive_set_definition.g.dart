@@ -11,7 +11,7 @@ DestinyTalentNodeExclusiveSetDefinition
         Map<String, dynamic> json) {
   return DestinyTalentNodeExclusiveSetDefinition()
     ..nodeIndexes =
-        (json['nodeIndexes'] as List)?.map((e) => e as int)?.toList();
+        (json['nodeIndexes'] as List<dynamic>?)?.map((e) => e as int).toList();
 }
 
 Map<String, dynamic> _$DestinyTalentNodeExclusiveSetDefinitionToJson(

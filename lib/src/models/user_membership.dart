@@ -11,23 +11,24 @@ class UserMembership{
 	UserMembership();
 
 	factory UserMembership.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$UserMembershipFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$UserMembershipFromJson(json);
 	}
 
 	/// Type of the membership. Not necessarily the native type.
 	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
-	BungieMembershipType membershipType;
+	BungieMembershipType? membershipType;
 	/// Membership ID as they user is known in the Accounts service
 	@JsonKey(name:'membershipId')
-	String membershipId;
+	String? membershipId;
 	/// Display Name the player has chosen for themselves. The display name is optional when the data type is used as input to a platform API.
 	@JsonKey(name:'displayName')
-	String displayName;
+	String? displayName;
+	/// The bungie global display name, if set.
+	@JsonKey(name:'bungieGlobalDisplayName')
+	String? bungieGlobalDisplayName;
+	/// The bungie global display name code, if set.
+	@JsonKey(name:'bungieGlobalDisplayNameCode')
+	int? bungieGlobalDisplayNameCode;
 
 	
 	

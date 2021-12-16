@@ -10,28 +10,23 @@ class EMailSettingSubscriptionLocalization{
 	EMailSettingSubscriptionLocalization();
 
 	factory EMailSettingSubscriptionLocalization.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EMailSettingSubscriptionLocalizationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EMailSettingSubscriptionLocalizationFromJson(json);
 	}
 
 	@JsonKey(name:'unknownUserDescription')
-	String unknownUserDescription;
+	String? unknownUserDescription;
 	@JsonKey(name:'registeredUserDescription')
-	String registeredUserDescription;
+	String? registeredUserDescription;
 	@JsonKey(name:'unregisteredUserDescription')
-	String unregisteredUserDescription;
+	String? unregisteredUserDescription;
 	@JsonKey(name:'unknownUserActionText')
-	String unknownUserActionText;
+	String? unknownUserActionText;
 	@JsonKey(name:'knownUserActionText')
-	String knownUserActionText;
+	String? knownUserActionText;
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 
 	
 	

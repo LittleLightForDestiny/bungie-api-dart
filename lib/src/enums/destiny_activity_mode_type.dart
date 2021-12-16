@@ -239,7 +239,7 @@ enum DestinyActivityModeType {
 }
 
 extension DestinyActivityModeTypeExtension on DestinyActivityModeType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyActivityModeType.None:
         return 0;

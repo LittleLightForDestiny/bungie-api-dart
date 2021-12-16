@@ -9,20 +9,15 @@ class DestinyPositionDefinition{
 	DestinyPositionDefinition();
 
 	factory DestinyPositionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPositionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPositionDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'x')
-	int x;
+	int? x;
 	@JsonKey(name:'y')
-	int y;
+	int? y;
 	@JsonKey(name:'z')
-	int z;
+	int? z;
 
 	
 	

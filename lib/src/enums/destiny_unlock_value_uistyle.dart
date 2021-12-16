@@ -63,7 +63,7 @@ enum DestinyUnlockValueUIStyle {
 }
 
 extension DestinyUnlockValueUIStyleExtension on DestinyUnlockValueUIStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyUnlockValueUIStyle.Automatic:
         return 0;

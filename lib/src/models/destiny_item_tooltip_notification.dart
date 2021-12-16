@@ -9,18 +9,13 @@ class DestinyItemTooltipNotification{
 	DestinyItemTooltipNotification();
 
 	factory DestinyItemTooltipNotification.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemTooltipNotificationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemTooltipNotificationFromJson(json);
 	}
 
 	@JsonKey(name:'displayString')
-	String displayString;
+	String? displayString;
 	@JsonKey(name:'displayStyle')
-	String displayStyle;
+	String? displayStyle;
 
 	
 	

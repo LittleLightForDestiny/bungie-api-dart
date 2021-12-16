@@ -11,22 +11,23 @@ class DestinyRecordComponent{
 	DestinyRecordComponent();
 
 	factory DestinyRecordComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyRecordComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyRecordComponentFromJson(json);
 	}
 
 	@JsonKey(name:'state')
-	DestinyRecordState state;
+	DestinyRecordState? state;
 	@JsonKey(name:'objectives')
-	List<DestinyObjectiveProgress> objectives;
+	List<DestinyObjectiveProgress>? objectives;
 	@JsonKey(name:'intervalObjectives')
-	List<DestinyObjectiveProgress> intervalObjectives;
+	List<DestinyObjectiveProgress>? intervalObjectives;
 	@JsonKey(name:'intervalsRedeemedCount')
-	int intervalsRedeemedCount;
+	int? intervalsRedeemedCount;
+	/// If available, this is the number of times this record has been completed. For example, the number of times a seal title has been gilded.
+	@JsonKey(name:'completedCount')
+	int? completedCount;
+	/// If available, a list that describes which reward rewards should be shown (true) or hidden (false). This property is for regular record rewards, and not for interval objective rewards.
+	@JsonKey(name:'rewardVisibilty')
+	List<bool>? rewardVisibilty;
 
 	
 	

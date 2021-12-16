@@ -10,22 +10,17 @@ class DestinyColor{
 	DestinyColor();
 
 	factory DestinyColor.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyColorFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyColorFromJson(json);
 	}
 
 	@JsonKey(name:'red')
-	int red;
+	int? red;
 	@JsonKey(name:'green')
-	int green;
+	int? green;
 	@JsonKey(name:'blue')
-	int blue;
+	int? blue;
 	@JsonKey(name:'alpha')
-	int alpha;
+	int? alpha;
 
 	
 	

@@ -9,7 +9,7 @@ part of 'destiny_milestone_value_definition.dart';
 DestinyMilestoneValueDefinition _$DestinyMilestoneValueDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneValueDefinition()
-    ..key = json['key'] as String
+    ..key = json['key'] as String?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(

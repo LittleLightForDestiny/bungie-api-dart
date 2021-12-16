@@ -13,18 +13,18 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..completionValue = json['completionValue'] as int
+    ..completionValue = json['completionValue'] as int?
     ..scope = _$enumDecodeNullable(_$DestinyGatingScopeEnumMap, json['scope'],
         unknownValue: DestinyGatingScope.ProtectedInvalidEnumValue)
-    ..locationHash = json['locationHash'] as int
-    ..allowNegativeValue = json['allowNegativeValue'] as bool
+    ..locationHash = json['locationHash'] as int?
+    ..allowNegativeValue = json['allowNegativeValue'] as bool?
     ..allowValueChangeWhenCompleted =
-        json['allowValueChangeWhenCompleted'] as bool
-    ..isCountingDownward = json['isCountingDownward'] as bool
+        json['allowValueChangeWhenCompleted'] as bool?
+    ..isCountingDownward = json['isCountingDownward'] as bool?
     ..valueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['valueStyle'],
         unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
-    ..progressDescription = json['progressDescription'] as String
+    ..progressDescription = json['progressDescription'] as String?
     ..perks = json['perks'] == null
         ? null
         : DestinyObjectivePerkEntryDefinition.fromJson(
@@ -33,18 +33,18 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
         ? null
         : DestinyObjectiveStatEntryDefinition.fromJson(
             json['stats'] as Map<String, dynamic>)
-    ..minimumVisibilityThreshold = json['minimumVisibilityThreshold'] as int
-    ..allowOvercompletion = json['allowOvercompletion'] as bool
-    ..showValueOnComplete = json['showValueOnComplete'] as bool
+    ..minimumVisibilityThreshold = json['minimumVisibilityThreshold'] as int?
+    ..allowOvercompletion = json['allowOvercompletion'] as bool?
+    ..showValueOnComplete = json['showValueOnComplete'] as bool?
     ..completedValueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['completedValueStyle'],
         unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
     ..inProgressValueStyle = _$enumDecodeNullable(
         _$DestinyUnlockValueUIStyleEnumMap, json['inProgressValueStyle'],
         unknownValue: DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
@@ -73,36 +73,41 @@ Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
       'redacted': instance.redacted,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyGatingScopeEnumMap = {

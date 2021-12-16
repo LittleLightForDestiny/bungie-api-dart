@@ -11,21 +11,16 @@ class SingleComponentResponseOfDestinyProfileCollectiblesComponent{
 	SingleComponentResponseOfDestinyProfileCollectiblesComponent();
 
 	factory SingleComponentResponseOfDestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyProfileCollectiblesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyProfileCollectiblesComponentFromJson(json);
 	}
 
 	@JsonKey(name:'data')
-	DestinyProfileCollectiblesComponent data;
+	DestinyProfileCollectiblesComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

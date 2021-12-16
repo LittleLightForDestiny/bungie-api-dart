@@ -1,0 +1,1 @@
+export '../src/models/platform_friend_response.dart';

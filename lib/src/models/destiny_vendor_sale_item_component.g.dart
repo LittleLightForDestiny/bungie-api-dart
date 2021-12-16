@@ -12,29 +12,30 @@ DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
     ..saleStatus = json['saleStatus'] == null
         ? null
         : VendorItemStatus.fromJson(json['saleStatus'] as int)
-    ..requiredUnlocks =
-        (json['requiredUnlocks'] as List)?.map((e) => e as int)?.toList()
-    ..unlockStatuses = (json['unlockStatuses'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyUnlockStatus.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..failureIndexes =
-        (json['failureIndexes'] as List)?.map((e) => e as int)?.toList()
+    ..requiredUnlocks = (json['requiredUnlocks'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
+    ..unlockStatuses = (json['unlockStatuses'] as List<dynamic>?)
+        ?.map((e) => DestinyUnlockStatus.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..failureIndexes = (json['failureIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList()
     ..augments = json['augments'] == null
         ? null
         : DestinyVendorItemState.fromJson(json['augments'] as int)
-    ..vendorItemIndex = json['vendorItemIndex'] as int
-    ..itemHash = json['itemHash'] as int
-    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
-    ..quantity = json['quantity'] as int
-    ..costs = (json['costs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String
-    ..apiPurchasable = json['apiPurchasable'] as bool;
+    ..itemValueVisibility = (json['itemValueVisibility'] as List<dynamic>?)
+        ?.map((e) => e as bool)
+        .toList()
+    ..vendorItemIndex = json['vendorItemIndex'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int?
+    ..quantity = json['quantity'] as int?
+    ..costs = (json['costs'] as List<dynamic>?)
+        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String?
+    ..apiPurchasable = json['apiPurchasable'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
@@ -45,6 +46,7 @@ Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
       'unlockStatuses': instance.unlockStatuses,
       'failureIndexes': instance.failureIndexes,
       'augments': instance.augments,
+      'itemValueVisibility': instance.itemValueVisibility,
       'vendorItemIndex': instance.vendorItemIndex,
       'itemHash': instance.itemHash,
       'overrideStyleItemHash': instance.overrideStyleItemHash,

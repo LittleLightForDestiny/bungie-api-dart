@@ -16,7 +16,7 @@ enum DestinyStatAggregationType {
 }
 
 extension DestinyStatAggregationTypeExtension on DestinyStatAggregationType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyStatAggregationType.CharacterAverage:
         return 0;

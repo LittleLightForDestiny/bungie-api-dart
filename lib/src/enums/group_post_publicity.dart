@@ -16,7 +16,7 @@ enum GroupPostPublicity {
 }
 
 extension GroupPostPublicityExtension on GroupPostPublicity{
-  int get value {
+  int? get value {
     switch(this){
       case GroupPostPublicity.Public:
         return 0;

@@ -140,13 +140,17 @@ enum DestinyComponentType {
   /// Returns summary status information about all &quot;Metrics&quot; (also known in the game as &quot;Stat Trackers&quot;).
   @JsonValue(1100)
   Metrics,
+  ///StringVariables = 1200
+  /// Returns a mapping of localized string variable hashes to values, on a per-account or per-character basis.
+  @JsonValue(1200)
+  StringVariables,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
 }
 
 extension DestinyComponentTypeExtension on DestinyComponentType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyComponentType.None:
         return 0;
@@ -216,6 +220,8 @@ extension DestinyComponentTypeExtension on DestinyComponentType{
         return 1000;
       case DestinyComponentType.Metrics:
         return 1100;
+      case DestinyComponentType.StringVariables:
+        return 1200;
       default:
         return null;
     }

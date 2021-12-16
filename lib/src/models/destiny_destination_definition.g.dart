@@ -13,28 +13,23 @@ DestinyDestinationDefinition _$DestinyDestinationDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..placeHash = json['placeHash'] as int
-    ..defaultFreeroamActivityHash = json['defaultFreeroamActivityHash'] as int
-    ..activityGraphEntries = (json['activityGraphEntries'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyActivityGraphListEntryDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..bubbleSettings = (json['bubbleSettings'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyDestinationBubbleSettingDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..bubbles = (json['bubbles'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyBubbleDefinition.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+    ..placeHash = json['placeHash'] as int?
+    ..defaultFreeroamActivityHash = json['defaultFreeroamActivityHash'] as int?
+    ..activityGraphEntries = (json['activityGraphEntries'] as List<dynamic>?)
+        ?.map((e) => DestinyActivityGraphListEntryDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..bubbleSettings = (json['bubbleSettings'] as List<dynamic>?)
+        ?.map((e) => DestinyDestinationBubbleSettingDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..bubbles = (json['bubbles'] as List<dynamic>?)
+        ?.map(
+            (e) => DestinyBubbleDefinition.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyDestinationDefinitionToJson(

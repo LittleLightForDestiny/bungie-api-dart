@@ -9,30 +9,25 @@ class PartnerOfferHistoryResponse{
 	PartnerOfferHistoryResponse();
 
 	factory PartnerOfferHistoryResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PartnerOfferHistoryResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PartnerOfferHistoryResponseFromJson(json);
 	}
 
 	@JsonKey(name:'PartnerOfferKey')
-	String partnerOfferKey;
+	String? partnerOfferKey;
 	@JsonKey(name:'MembershipId')
-	String membershipId;
+	String? membershipId;
 	@JsonKey(name:'MembershipType')
-	int membershipType;
+	int? membershipType;
 	@JsonKey(name:'LocalizedName')
-	String localizedName;
+	String? localizedName;
 	@JsonKey(name:'LocalizedDescription')
-	String localizedDescription;
+	String? localizedDescription;
 	@JsonKey(name:'IsConsumable')
-	bool isConsumable;
+	bool? isConsumable;
 	@JsonKey(name:'QuantityApplied')
-	int quantityApplied;
+	int? quantityApplied;
 	@JsonKey(name:'ApplyDate')
-	String applyDate;
+	String? applyDate;
 
 	
 	

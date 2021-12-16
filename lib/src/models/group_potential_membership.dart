@@ -11,18 +11,13 @@ class GroupPotentialMembership{
 	GroupPotentialMembership();
 
 	factory GroupPotentialMembership.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupPotentialMembershipFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupPotentialMembershipFromJson(json);
 	}
 
 	@JsonKey(name:'member')
-	GroupPotentialMember member;
+	GroupPotentialMember? member;
 	@JsonKey(name:'group')
-	GroupV2 group;
+	GroupV2? group;
 
 	
 	

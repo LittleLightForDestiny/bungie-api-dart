@@ -9,9 +9,9 @@ part of 'destiny_position_definition.dart';
 DestinyPositionDefinition _$DestinyPositionDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyPositionDefinition()
-    ..x = json['x'] as int
-    ..y = json['y'] as int
-    ..z = json['z'] as int;
+    ..x = json['x'] as int?
+    ..y = json['y'] as int?
+    ..z = json['z'] as int?;
 }
 
 Map<String, dynamic> _$DestinyPositionDefinitionToJson(

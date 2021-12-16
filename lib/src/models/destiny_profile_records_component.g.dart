@@ -9,20 +9,18 @@ part of 'destiny_profile_records_component.dart';
 DestinyProfileRecordsComponent _$DestinyProfileRecordsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyProfileRecordsComponent()
-    ..score = json['score'] as int
-    ..activeScore = json['activeScore'] as int
-    ..legacyScore = json['legacyScore'] as int
-    ..lifetimeScore = json['lifetimeScore'] as int
-    ..trackedRecordHash = json['trackedRecordHash'] as int
-    ..records = (json['records'] as Map<String, dynamic>)?.map(
+    ..score = json['score'] as int?
+    ..activeScore = json['activeScore'] as int?
+    ..legacyScore = json['legacyScore'] as int?
+    ..lifetimeScore = json['lifetimeScore'] as int?
+    ..trackedRecordHash = json['trackedRecordHash'] as int?
+    ..records = (json['records'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
+          k, DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
     )
-    ..recordCategoriesRootNodeHash = json['recordCategoriesRootNodeHash'] as int
-    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int;
+    ..recordCategoriesRootNodeHash =
+        json['recordCategoriesRootNodeHash'] as int?
+    ..recordSealsRootNodeHash = json['recordSealsRootNodeHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(

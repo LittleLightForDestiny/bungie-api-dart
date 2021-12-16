@@ -9,11 +9,12 @@ part of 'destiny_milestone_quest_reward_item.dart';
 DestinyMilestoneQuestRewardItem _$DestinyMilestoneQuestRewardItemFromJson(
     Map<String, dynamic> json) {
   return DestinyMilestoneQuestRewardItem()
-    ..vendorHash = json['vendorHash'] as int
-    ..vendorItemIndex = json['vendorItemIndex'] as int
-    ..itemHash = json['itemHash'] as int
-    ..itemInstanceId = json['itemInstanceId'] as String
-    ..quantity = json['quantity'] as int;
+    ..vendorHash = json['vendorHash'] as int?
+    ..vendorItemIndex = json['vendorItemIndex'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..itemInstanceId = json['itemInstanceId'] as String?
+    ..quantity = json['quantity'] as int?
+    ..hasConditionalVisibility = json['hasConditionalVisibility'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyMilestoneQuestRewardItemToJson(
@@ -24,4 +25,5 @@ Map<String, dynamic> _$DestinyMilestoneQuestRewardItemToJson(
       'itemHash': instance.itemHash,
       'itemInstanceId': instance.itemInstanceId,
       'quantity': instance.quantity,
+      'hasConditionalVisibility': instance.hasConditionalVisibility,
     };

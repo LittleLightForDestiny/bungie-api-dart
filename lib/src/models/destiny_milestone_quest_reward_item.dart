@@ -11,29 +11,27 @@ class DestinyMilestoneQuestRewardItem{
 	DestinyMilestoneQuestRewardItem();
 
 	factory DestinyMilestoneQuestRewardItem.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneQuestRewardItemFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneQuestRewardItemFromJson(json);
 	}
 
 	/// The quest reward item *may* be associated with a vendor. If so, this is that vendor. Use this hash to look up the DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')
-	int vendorHash;
+	int? vendorHash;
 	/// The quest reward item *may* be associated with a vendor. If so, this is the index of the item being sold, which we can use at runtime to find instanced item information for the reward item.
 	@JsonKey(name:'vendorItemIndex')
-	int vendorItemIndex;
+	int? vendorItemIndex;
 	/// The hash identifier for the item in question. Use it to look up the item's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	/// If this quantity is referring to a specific instance of an item, this will have the item's instance ID. Normally, this will be null.
 	@JsonKey(name:'itemInstanceId')
-	String itemInstanceId;
+	String? itemInstanceId;
 	/// The amount of the item needed/available depending on the context of where DestinyItemQuantity is being used.
 	@JsonKey(name:'quantity')
-	int quantity;
+	int? quantity;
+	/// Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	@JsonKey(name:'hasConditionalVisibility')
+	bool? hasConditionalVisibility;
 
 	
 	

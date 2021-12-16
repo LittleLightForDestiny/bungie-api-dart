@@ -10,26 +10,21 @@ class DestinyPostGameCarnageReportTeamEntry{
 	DestinyPostGameCarnageReportTeamEntry();
 
 	factory DestinyPostGameCarnageReportTeamEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPostGameCarnageReportTeamEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPostGameCarnageReportTeamEntryFromJson(json);
 	}
 
 	/// Integer ID for the team.
 	@JsonKey(name:'teamId')
-	int teamId;
+	int? teamId;
 	/// Team's standing relative to other teams.
 	@JsonKey(name:'standing')
-	DestinyHistoricalStatsValue standing;
+	DestinyHistoricalStatsValue? standing;
 	/// Score earned by the team
 	@JsonKey(name:'score')
-	DestinyHistoricalStatsValue score;
+	DestinyHistoricalStatsValue? score;
 	/// Alpha or Bravo
 	@JsonKey(name:'teamName')
-	String teamName;
+	String? teamName;
 
 	
 	

@@ -8,7 +8,7 @@ part of 'entity_action_result.dart';
 
 EntityActionResult _$EntityActionResultFromJson(Map<String, dynamic> json) {
   return EntityActionResult()
-    ..entityId = json['entityId'] as String
+    ..entityId = json['entityId'] as String?
     ..result = _$enumDecodeNullable(_$PlatformErrorCodesEnumMap, json['result'],
         unknownValue: PlatformErrorCodes.ProtectedInvalidEnumValue);
 }
@@ -19,36 +19,41 @@ Map<String, dynamic> _$EntityActionResultToJson(EntityActionResult instance) =>
       'result': _$PlatformErrorCodesEnumMap[instance.result],
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$PlatformErrorCodesEnumMap = {
@@ -234,6 +239,8 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.UserEmailMustBeVerified: 233,
   PlatformErrorCodes.UserMustAllowCustomerServiceEmails: 234,
   PlatformErrorCodes.NonTransactionalEmailSendFailure: 235,
+  PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName: 236,
+  PlatformErrorCodes.DuplicateGlobalDisplayName: 237,
   PlatformErrorCodes.MessagingUnknownError: 300,
   PlatformErrorCodes.MessagingSelfError: 301,
   PlatformErrorCodes.MessagingSendThrottle: 302,
@@ -442,6 +449,7 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.ClanRequiresExistingDestinyAccount: 750,
   PlatformErrorCodes.ClanNameRestricted: 751,
   PlatformErrorCodes.ClanCreationBan: 752,
+  PlatformErrorCodes.ClanCreationTenureRequirementsNotMet: 753,
   PlatformErrorCodes.ItemAlreadyFollowed: 801,
   PlatformErrorCodes.ItemNotFollowed: 802,
   PlatformErrorCodes.CannotFollowSelf: 803,
@@ -754,6 +762,8 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.AwaWriteRequestTokenUsageLimitReached: 2806,
   PlatformErrorCodes.SteamWebApiError: 2900,
   PlatformErrorCodes.SteamWebNullResponseError: 2901,
+  PlatformErrorCodes.SteamAccountRequired: 2902,
+  PlatformErrorCodes.SteamNotAuthorized: 2903,
   PlatformErrorCodes.ClanFireteamNotFound: 3000,
   PlatformErrorCodes.ClanFireteamAddNoAlternatesForImmediate: 3001,
   PlatformErrorCodes.ClanFireteamFull: 3002,
@@ -784,6 +794,10 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.ClanFireteamExpired: 3026,
   PlatformErrorCodes.ClanFireteamInvalidAuthProvider: 3027,
   PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid: 3028,
+  PlatformErrorCodes.ClanFireteamThrottle: 3029,
+  PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams: 3030,
+  PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams: 3031,
+  PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified: 3032,
   PlatformErrorCodes.CrossSaveOverriddenAccountNotFound: 3200,
   PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms: 3201,
   PlatformErrorCodes.CrossSaveNoOverriddenPlatforms: 3202,
@@ -830,5 +844,24 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone: 3703,
   PlatformErrorCodes.ErrorPhoneValidationCodeInvalid: 3705,
   PlatformErrorCodes.ErrorPhoneValidationBanned: 3706,
+  PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlySent: 3707,
+  PlatformErrorCodes.ErrorPhoneValidationCodeExpired: 3708,
+  PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType: 3709,
+  PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked: 3710,
+  PlatformErrorCodes.ApplePushErrorUnknown: 3800,
+  PlatformErrorCodes.ApplePushErrorNull: 3801,
+  PlatformErrorCodes.ApplePushErrorTimeout: 3802,
+  PlatformErrorCodes.ApplePushBadRequest: 3803,
+  PlatformErrorCodes.ApplePushFailedAuth: 3804,
+  PlatformErrorCodes.ApplePushThrottled: 3805,
+  PlatformErrorCodes.ApplePushServiceUnavailable: 3806,
+  PlatformErrorCodes.NotAnImageOrVideo: 3807,
+  PlatformErrorCodes.ErrorBungieFriendsBlockFailed: 3900,
+  PlatformErrorCodes.ErrorBungieFriendsAutoReject: 3901,
+  PlatformErrorCodes.ErrorBungieFriendsNoRequestFound: 3902,
+  PlatformErrorCodes.ErrorBungieFriendsAlreadyFriends: 3903,
+  PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest: 3904,
+  PlatformErrorCodes.ErrorBungieFriendsUnableToRemove: 3905,
+  PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget: 3906,
   PlatformErrorCodes.ProtectedInvalidEnumValue: 999999999,
 };

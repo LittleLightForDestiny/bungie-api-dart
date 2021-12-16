@@ -9,12 +9,7 @@ class DestinyHistoricalStatsResults{
 	DestinyHistoricalStatsResults();
 
 	factory DestinyHistoricalStatsResults.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyHistoricalStatsResultsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyHistoricalStatsResultsFromJson(json);
 	}
 
 

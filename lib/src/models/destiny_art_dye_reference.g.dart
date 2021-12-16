@@ -9,7 +9,7 @@ part of 'destiny_art_dye_reference.dart';
 DestinyArtDyeReference _$DestinyArtDyeReferenceFromJson(
     Map<String, dynamic> json) {
   return DestinyArtDyeReference()
-    ..artDyeChannelHash = json['artDyeChannelHash'] as int;
+    ..artDyeChannelHash = json['artDyeChannelHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyArtDyeReferenceToJson(

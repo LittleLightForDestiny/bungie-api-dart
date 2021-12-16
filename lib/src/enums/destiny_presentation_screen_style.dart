@@ -19,7 +19,7 @@ enum DestinyPresentationScreenStyle {
 }
 
 extension DestinyPresentationScreenStyleExtension on DestinyPresentationScreenStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyPresentationScreenStyle.Default:
         return 0;

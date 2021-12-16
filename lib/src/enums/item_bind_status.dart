@@ -19,7 +19,7 @@ enum ItemBindStatus {
 }
 
 extension ItemBindStatusExtension on ItemBindStatus{
-  int get value {
+  int? get value {
     switch(this){
       case ItemBindStatus.NotBound:
         return 0;

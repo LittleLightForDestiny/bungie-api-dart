@@ -9,23 +9,18 @@ class DestinyRecordTitleBlock{
 	DestinyRecordTitleBlock();
 
 	factory DestinyRecordTitleBlock.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyRecordTitleBlockFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyRecordTitleBlockFromJson(json);
 	}
 
 	@JsonKey(name:'hasTitle')
-	bool hasTitle;
+	bool? hasTitle;
 	@JsonKey(name:'titlesByGender')
-	Map<String, String> titlesByGender;
+	Map<String, String>? titlesByGender;
 	/// For those who prefer to use the definitions.
 	@JsonKey(name:'titlesByGenderHash')
-	Map<String, String> titlesByGenderHash;
+	Map<String, String>? titlesByGenderHash;
 	@JsonKey(name:'gildingTrackingRecordHash')
-	int gildingTrackingRecordHash;
+	int? gildingTrackingRecordHash;
 
 	
 	

@@ -55,7 +55,7 @@ enum DestinyStatsCategoryType {
 }
 
 extension DestinyStatsCategoryTypeExtension on DestinyStatsCategoryType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyStatsCategoryType.None:
         return 0;

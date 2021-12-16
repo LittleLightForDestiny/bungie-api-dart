@@ -9,20 +9,15 @@ class ContentRepresentation{
 	ContentRepresentation();
 
 	factory ContentRepresentation.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$ContentRepresentationFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$ContentRepresentationFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'path')
-	String path;
+	String? path;
 	@JsonKey(name:'validationString')
-	String validationString;
+	String? validationString;
 
 	
 	

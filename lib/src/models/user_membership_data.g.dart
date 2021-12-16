@@ -8,12 +8,10 @@ part of 'user_membership_data.dart';
 
 UserMembershipData _$UserMembershipDataFromJson(Map<String, dynamic> json) {
   return UserMembershipData()
-    ..destinyMemberships = (json['destinyMemberships'] as List)
-        ?.map((e) => e == null
-            ? null
-            : GroupUserInfoCard.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..primaryMembershipId = json['primaryMembershipId'] as String
+    ..destinyMemberships = (json['destinyMemberships'] as List<dynamic>?)
+        ?.map((e) => GroupUserInfoCard.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..primaryMembershipId = json['primaryMembershipId'] as String?
     ..bungieNetUser = json['bungieNetUser'] == null
         ? null
         : GeneralUser.fromJson(json['bungieNetUser'] as Map<String, dynamic>);

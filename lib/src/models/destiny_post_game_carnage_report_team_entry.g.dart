@@ -9,7 +9,7 @@ part of 'destiny_post_game_carnage_report_team_entry.dart';
 DestinyPostGameCarnageReportTeamEntry
     _$DestinyPostGameCarnageReportTeamEntryFromJson(Map<String, dynamic> json) {
   return DestinyPostGameCarnageReportTeamEntry()
-    ..teamId = json['teamId'] as int
+    ..teamId = json['teamId'] as int?
     ..standing = json['standing'] == null
         ? null
         : DestinyHistoricalStatsValue.fromJson(
@@ -18,7 +18,7 @@ DestinyPostGameCarnageReportTeamEntry
         ? null
         : DestinyHistoricalStatsValue.fromJson(
             json['score'] as Map<String, dynamic>)
-    ..teamName = json['teamName'] as String;
+    ..teamName = json['teamName'] as String?;
 }
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportTeamEntryToJson(

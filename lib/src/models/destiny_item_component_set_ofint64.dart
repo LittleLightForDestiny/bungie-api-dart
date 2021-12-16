@@ -19,34 +19,29 @@ class DestinyItemComponentSetOfint64{
 	DestinyItemComponentSetOfint64();
 
 	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemComponentSetOfint64FromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemComponentSetOfint64FromJson(json);
 	}
 
 	@JsonKey(name:'instances')
-	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent instances;
+	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent? instances;
 	@JsonKey(name:'perks')
-	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent perks;
+	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent? perks;
 	@JsonKey(name:'renderData')
-	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent renderData;
+	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent? renderData;
 	@JsonKey(name:'stats')
-	DictionaryComponentResponseOfint64AndDestinyItemStatsComponent stats;
+	DictionaryComponentResponseOfint64AndDestinyItemStatsComponent? stats;
 	@JsonKey(name:'sockets')
-	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent sockets;
+	DictionaryComponentResponseOfint64AndDestinyItemSocketsComponent? sockets;
 	@JsonKey(name:'reusablePlugs')
-	DictionaryComponentResponseOfint64AndDestinyItemReusablePlugsComponent reusablePlugs;
+	DictionaryComponentResponseOfint64AndDestinyItemReusablePlugsComponent? reusablePlugs;
 	@JsonKey(name:'plugObjectives')
-	DictionaryComponentResponseOfint64AndDestinyItemPlugObjectivesComponent plugObjectives;
+	DictionaryComponentResponseOfint64AndDestinyItemPlugObjectivesComponent? plugObjectives;
 	@JsonKey(name:'talentGrids')
-	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent talentGrids;
+	DictionaryComponentResponseOfint64AndDestinyItemTalentGridComponent? talentGrids;
 	@JsonKey(name:'plugStates')
-	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent plugStates;
+	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent? plugStates;
 	@JsonKey(name:'objectives')
-	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
+	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent? objectives;
 
 	
 	

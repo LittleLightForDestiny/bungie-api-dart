@@ -11,22 +11,17 @@ class SingleComponentResponseOfDestinyCharacterActivitiesComponent{
 	SingleComponentResponseOfDestinyCharacterActivitiesComponent();
 
 	factory SingleComponentResponseOfDestinyCharacterActivitiesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyCharacterActivitiesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyCharacterActivitiesComponentFromJson(json);
 	}
 
 	/// This component holds activity data for a character. It will tell you about the character's current activity status, as well as activities that are available to the user.
 	@JsonKey(name:'data')
-	DestinyCharacterActivitiesComponent data;
+	DestinyCharacterActivitiesComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

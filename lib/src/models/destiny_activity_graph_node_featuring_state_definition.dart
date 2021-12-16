@@ -11,17 +11,12 @@ class DestinyActivityGraphNodeFeaturingStateDefinition{
 	DestinyActivityGraphNodeFeaturingStateDefinition();
 
 	factory DestinyActivityGraphNodeFeaturingStateDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphNodeFeaturingStateDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphNodeFeaturingStateDefinitionFromJson(json);
 	}
 
 	/// The node can be highlighted in a variety of ways - the game iterates through these and finds the first FeaturingState that is valid at the present moment given the Game, Account, and Character state, and renders the node in that state. See the ActivityGraphNodeHighlightType enum for possible values.
 	@JsonKey(name:'highlightType',unknownEnumValue:ActivityGraphNodeHighlightType.ProtectedInvalidEnumValue)
-	ActivityGraphNodeHighlightType highlightType;
+	ActivityGraphNodeHighlightType? highlightType;
 
 	
 	

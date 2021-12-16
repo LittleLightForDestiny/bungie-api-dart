@@ -13,7 +13,7 @@ enum GroupType {
 }
 
 extension GroupTypeExtension on GroupType{
-  int get value {
+  int? get value {
     switch(this){
       case GroupType.General:
         return 0;

@@ -9,14 +9,10 @@ part of 'destiny_aggregate_activity_stats.dart';
 DestinyAggregateActivityStats _$DestinyAggregateActivityStatsFromJson(
     Map<String, dynamic> json) {
   return DestinyAggregateActivityStats()
-    ..activityHash = json['activityHash'] as int
-    ..values = (json['values'] as Map<String, dynamic>)?.map(
+    ..activityHash = json['activityHash'] as int?
+    ..values = (json['values'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyHistoricalStatsValue.fromJson(
-                  e as Map<String, dynamic>)),
+          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
     );
 }
 

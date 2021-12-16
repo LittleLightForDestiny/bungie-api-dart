@@ -11,19 +11,14 @@ class DestinyVendorGroup{
 	DestinyVendorGroup();
 
 	factory DestinyVendorGroup.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorGroupFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorGroupFromJson(json);
 	}
 
 	@JsonKey(name:'vendorGroupHash')
-	int vendorGroupHash;
+	int? vendorGroupHash;
 	/// The ordered list of vendors within a particular group.
 	@JsonKey(name:'vendorHashes')
-	List<int> vendorHashes;
+	List<int>? vendorHashes;
 
 	
 	

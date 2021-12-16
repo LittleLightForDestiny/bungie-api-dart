@@ -16,7 +16,7 @@ enum DestinyVendorInteractionRewardSelection {
 }
 
 extension DestinyVendorInteractionRewardSelectionExtension on DestinyVendorInteractionRewardSelection{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyVendorInteractionRewardSelection.None:
         return 0;

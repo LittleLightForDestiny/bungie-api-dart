@@ -16,7 +16,7 @@ enum GroupPotentialMemberStatus {
 }
 
 extension GroupPotentialMemberStatusExtension on GroupPotentialMemberStatus{
-  int get value {
+  int? get value {
     switch(this){
       case GroupPotentialMemberStatus.None:
         return 0;

@@ -22,7 +22,7 @@ enum BucketCategory {
 }
 
 extension BucketCategoryExtension on BucketCategory{
-  int get value {
+  int? get value {
     switch(this){
       case BucketCategory.Invisible:
         return 0;

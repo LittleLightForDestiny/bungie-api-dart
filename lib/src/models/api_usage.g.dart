@@ -8,14 +8,12 @@ part of 'api_usage.dart';
 
 ApiUsage _$ApiUsageFromJson(Map<String, dynamic> json) {
   return ApiUsage()
-    ..apiCalls = (json['apiCalls'] as List)
-        ?.map((e) =>
-            e == null ? null : Series.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..throttledRequests = (json['throttledRequests'] as List)
-        ?.map((e) =>
-            e == null ? null : Series.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..apiCalls = (json['apiCalls'] as List<dynamic>?)
+        ?.map((e) => Series.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..throttledRequests = (json['throttledRequests'] as List<dynamic>?)
+        ?.map((e) => Series.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$ApiUsageToJson(ApiUsage instance) => <String, dynamic>{

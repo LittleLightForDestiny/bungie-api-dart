@@ -10,22 +10,17 @@ class DestinyCollectiblesComponent{
 	DestinyCollectiblesComponent();
 
 	factory DestinyCollectiblesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyCollectiblesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyCollectiblesComponentFromJson(json);
 	}
 
 	@JsonKey(name:'collectibles')
-	Map<String, DestinyCollectibleComponent> collectibles;
+	Map<String, DestinyCollectibleComponent>? collectibles;
 	/// The hash for the root presentation node definition of Collection categories.
 	@JsonKey(name:'collectionCategoriesRootNodeHash')
-	int collectionCategoriesRootNodeHash;
+	int? collectionCategoriesRootNodeHash;
 	/// The hash for the root presentation node definition of Collection Badges.
 	@JsonKey(name:'collectionBadgesRootNodeHash')
-	int collectionBadgesRootNodeHash;
+	int? collectionBadgesRootNodeHash;
 
 	
 	

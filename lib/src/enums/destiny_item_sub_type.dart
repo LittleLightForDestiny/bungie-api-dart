@@ -101,7 +101,7 @@ enum DestinyItemSubType {
 }
 
 extension DestinyItemSubTypeExtension on DestinyItemSubType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyItemSubType.None:
         return 0;

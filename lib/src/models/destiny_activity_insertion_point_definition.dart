@@ -11,17 +11,12 @@ class DestinyActivityInsertionPointDefinition{
 	DestinyActivityInsertionPointDefinition();
 
 	factory DestinyActivityInsertionPointDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityInsertionPointDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityInsertionPointDefinitionFromJson(json);
 	}
 
 	/// A unique hash value representing the phase. This can be useful for, for example, comparing how different instances of Raids have phases in different orders!
 	@JsonKey(name:'phaseHash')
-	int phaseHash;
+	int? phaseHash;
 
 	
 	

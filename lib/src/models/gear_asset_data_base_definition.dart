@@ -9,18 +9,13 @@ class GearAssetDataBaseDefinition{
 	GearAssetDataBaseDefinition();
 
 	factory GearAssetDataBaseDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GearAssetDataBaseDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GearAssetDataBaseDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'version')
-	int version;
+	int? version;
 	@JsonKey(name:'path')
-	String path;
+	String? path;
 
 	
 	

@@ -11,23 +11,18 @@ class DestinyProgressionRewardDefinition{
 	DestinyProgressionRewardDefinition();
 
 	factory DestinyProgressionRewardDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyProgressionRewardDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyProgressionRewardDefinitionFromJson(json);
 	}
 
 	/// The hash identifier of the DestinyProgressionMappingDefinition that contains the progressions for which experience should be applied.
 	@JsonKey(name:'progressionMappingHash')
-	int progressionMappingHash;
+	int? progressionMappingHash;
 	/// The amount of experience to give to each of the mapped progressions.
 	@JsonKey(name:'amount')
-	int amount;
+	int? amount;
 	/// If true, the game's internal mechanisms to throttle progression should be applied.
 	@JsonKey(name:'applyThrottles')
-	bool applyThrottles;
+	bool? applyThrottles;
 
 	
 	

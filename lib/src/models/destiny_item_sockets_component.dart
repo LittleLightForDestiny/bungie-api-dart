@@ -12,17 +12,12 @@ class DestinyItemSocketsComponent{
 	DestinyItemSocketsComponent();
 
 	factory DestinyItemSocketsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemSocketsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemSocketsComponentFromJson(json);
 	}
 
 	/// The list of all sockets on the item, and their status information.
 	@JsonKey(name:'sockets')
-	List<DestinyItemSocketState> sockets;
+	List<DestinyItemSocketState>? sockets;
 
 	
 	

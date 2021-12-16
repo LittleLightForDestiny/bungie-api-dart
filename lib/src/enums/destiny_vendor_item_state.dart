@@ -53,6 +53,12 @@ class DestinyVendorItemState {
     ///SeasonalRewardExpiration = 16384
     /// This indicates that the item has a seasonal reward expiration.
     static const DestinyVendorItemState SeasonalRewardExpiration = DestinyVendorItemState(16384);
+    ///BestDeal = 32768
+    /// This indicates that the sale item is the best deal among different choices.
+    static const DestinyVendorItemState BestDeal = DestinyVendorItemState(32768);
+    ///Popular = 65536
+    /// This indicates that the sale item is popular.
+    static const DestinyVendorItemState Popular = DestinyVendorItemState(65536);
 
     int get value {
         return _value;

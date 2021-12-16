@@ -16,7 +16,7 @@ enum CommunityContentSortMode {
 }
 
 extension CommunityContentSortModeExtension on CommunityContentSortMode{
-  int get value {
+  int? get value {
     switch(this){
       case CommunityContentSortMode.Trending:
         return 0;

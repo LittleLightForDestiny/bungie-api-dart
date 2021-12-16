@@ -22,7 +22,7 @@ enum DestinyAmmunitionType {
 }
 
 extension DestinyAmmunitionTypeExtension on DestinyAmmunitionType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyAmmunitionType.None:
         return 0;

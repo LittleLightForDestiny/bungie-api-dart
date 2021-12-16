@@ -9,18 +9,13 @@ class DestinyArtifactTierItem{
 	DestinyArtifactTierItem();
 
 	factory DestinyArtifactTierItem.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtifactTierItemFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtifactTierItemFromJson(json);
 	}
 
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	@JsonKey(name:'isActive')
-	bool isActive;
+	bool? isActive;
 
 	
 	

@@ -10,16 +10,11 @@ class PersonalDestinyVendorSaleItemSetComponent{
 	PersonalDestinyVendorSaleItemSetComponent();
 
 	factory PersonalDestinyVendorSaleItemSetComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PersonalDestinyVendorSaleItemSetComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PersonalDestinyVendorSaleItemSetComponentFromJson(json);
 	}
 
 	@JsonKey(name:'saleItems')
-	Map<String, DestinyVendorSaleItemComponent> saleItems;
+	Map<String, DestinyVendorSaleItemComponent>? saleItems;
 
 	
 	

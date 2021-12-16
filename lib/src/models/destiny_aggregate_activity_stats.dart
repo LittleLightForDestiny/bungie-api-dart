@@ -10,20 +10,15 @@ class DestinyAggregateActivityStats{
 	DestinyAggregateActivityStats();
 
 	factory DestinyAggregateActivityStats.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyAggregateActivityStatsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyAggregateActivityStatsFromJson(json);
 	}
 
 	/// Hash ID that can be looked up in the DestinyActivityTable.
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	/// Collection of stats for the player in this activity.
 	@JsonKey(name:'values')
-	Map<String, DestinyHistoricalStatsValue> values;
+	Map<String, DestinyHistoricalStatsValue>? values;
 
 	
 	

@@ -9,9 +9,9 @@ part of 'destiny_profile_transitory_party_member.dart';
 DestinyProfileTransitoryPartyMember
     _$DestinyProfileTransitoryPartyMemberFromJson(Map<String, dynamic> json) {
   return DestinyProfileTransitoryPartyMember()
-    ..membershipId = json['membershipId'] as String
-    ..emblemHash = json['emblemHash'] as int
-    ..displayName = json['displayName'] as String
+    ..membershipId = json['membershipId'] as String?
+    ..emblemHash = json['emblemHash'] as int?
+    ..displayName = json['displayName'] as String?
     ..status = json['status'] == null
         ? null
         : DestinyPartyMemberStates.fromJson(json['status'] as int);

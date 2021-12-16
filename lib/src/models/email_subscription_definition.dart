@@ -11,23 +11,18 @@ class EmailSubscriptionDefinition{
 	EmailSubscriptionDefinition();
 
 	factory EmailSubscriptionDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EmailSubscriptionDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EmailSubscriptionDefinitionFromJson(json);
 	}
 
 	/// The unique identifier for this subscription.
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	/// A dictionary of localized text for the EMail Opt-in setting, keyed by the locale.
 	@JsonKey(name:'localization')
-	Map<String, EMailSettingSubscriptionLocalization> localization;
+	Map<String, EMailSettingSubscriptionLocalization>? localization;
 	/// The bitflag value for this subscription. Should be a unique power of two value.
 	@JsonKey(name:'value')
-	String value;
+	String? value;
 
 	
 	

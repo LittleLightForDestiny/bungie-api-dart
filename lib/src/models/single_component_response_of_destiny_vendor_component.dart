@@ -11,22 +11,17 @@ class SingleComponentResponseOfDestinyVendorComponent{
 	SingleComponentResponseOfDestinyVendorComponent();
 
 	factory SingleComponentResponseOfDestinyVendorComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyVendorComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyVendorComponentFromJson(json);
 	}
 
 	/// This component contains essential/summary information about the vendor.
 	@JsonKey(name:'data')
-	DestinyVendorComponent data;
+	DestinyVendorComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

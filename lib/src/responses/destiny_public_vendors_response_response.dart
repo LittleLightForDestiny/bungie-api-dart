@@ -26,25 +26,25 @@ class DestinyPublicVendorsResponseResponse{
 	///  It is a decisively smaller subset of data compared to what we can get when we know the specific user making the request.
 	///  If you want any of the other data - item details, whether or not you can buy it, etc... you'll have to call in the context of a character. I know, sad but true.
 	@JsonKey(name:'Response')
-	DestinyPublicVendorsResponse response;
+	DestinyPublicVendorsResponse? response;
 	
 	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
-	int throttleSeconds;
+	int? throttleSeconds;
 	
 	@JsonKey(name:'ErrorStatus')
-	String errorStatus;
+	String? errorStatus;
 	
 	@JsonKey(name:'Message')
-	String message;
+	String? message;
 	
 	@JsonKey(name:'MessageData')
-	Map<String, String> messageData;
+	Map<String, String>? messageData;
 	
 	@JsonKey(name:'DetailedErrorTrace')
-	String detailedErrorTrace;
+	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyPublicVendorsResponseResponseToJson(this);
 }

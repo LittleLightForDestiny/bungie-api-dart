@@ -14,41 +14,36 @@ class GroupV2Card{
 	GroupV2Card();
 
 	factory GroupV2Card.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupV2CardFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupV2CardFromJson(json);
 	}
 
 	@JsonKey(name:'groupId')
-	String groupId;
+	String? groupId;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
-	GroupType groupType;
+	GroupType? groupType;
 	@JsonKey(name:'creationDate')
-	String creationDate;
+	String? creationDate;
 	@JsonKey(name:'about')
-	String about;
+	String? about;
 	@JsonKey(name:'motto')
-	String motto;
+	String? motto;
 	@JsonKey(name:'memberCount')
-	int memberCount;
+	int? memberCount;
 	@JsonKey(name:'locale')
-	String locale;
+	String? locale;
 	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.ProtectedInvalidEnumValue)
-	MembershipOption membershipOption;
+	MembershipOption? membershipOption;
 	@JsonKey(name:'capabilities')
-	Capabilities capabilities;
+	Capabilities? capabilities;
 	/// This contract contains clan-specific group information. It does not include any investment data.
 	@JsonKey(name:'clanInfo')
-	GroupV2ClanInfo clanInfo;
+	GroupV2ClanInfo? clanInfo;
 	@JsonKey(name:'avatarPath')
-	String avatarPath;
+	String? avatarPath;
 	@JsonKey(name:'theme')
-	String theme;
+	String? theme;
 
 	
 	

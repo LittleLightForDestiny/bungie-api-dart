@@ -10,7 +10,7 @@ DestinyPresentationNodeMetricChildEntry
     _$DestinyPresentationNodeMetricChildEntryFromJson(
         Map<String, dynamic> json) {
   return DestinyPresentationNodeMetricChildEntry()
-    ..metricHash = json['metricHash'] as int;
+    ..metricHash = json['metricHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyPresentationNodeMetricChildEntryToJson(

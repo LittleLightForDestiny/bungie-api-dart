@@ -15,24 +15,19 @@ class DestinyTalentNodeStepGroups{
 	DestinyTalentNodeStepGroups();
 
 	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyTalentNodeStepGroupsFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyTalentNodeStepGroupsFromJson(json);
 	}
 
 	@JsonKey(name:'weaponPerformance')
-	DestinyTalentNodeStepWeaponPerformances weaponPerformance;
+	DestinyTalentNodeStepWeaponPerformances? weaponPerformance;
 	@JsonKey(name:'impactEffects')
-	DestinyTalentNodeStepImpactEffects impactEffects;
+	DestinyTalentNodeStepImpactEffects? impactEffects;
 	@JsonKey(name:'guardianAttributes')
-	DestinyTalentNodeStepGuardianAttributes guardianAttributes;
+	DestinyTalentNodeStepGuardianAttributes? guardianAttributes;
 	@JsonKey(name:'lightAbilities')
-	DestinyTalentNodeStepLightAbilities lightAbilities;
+	DestinyTalentNodeStepLightAbilities? lightAbilities;
 	@JsonKey(name:'damageTypes')
-	DestinyTalentNodeStepDamageTypes damageTypes;
+	DestinyTalentNodeStepDamageTypes? damageTypes;
 
 	
 	

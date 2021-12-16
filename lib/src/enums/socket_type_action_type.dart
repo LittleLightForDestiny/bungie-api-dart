@@ -16,7 +16,7 @@ enum SocketTypeActionType {
 }
 
 extension SocketTypeActionTypeExtension on SocketTypeActionType{
-  int get value {
+  int? get value {
     switch(this){
       case SocketTypeActionType.InsertPlug:
         return 0;

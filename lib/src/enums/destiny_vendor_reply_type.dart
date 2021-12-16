@@ -16,7 +16,7 @@ enum DestinyVendorReplyType {
 }
 
 extension DestinyVendorReplyTypeExtension on DestinyVendorReplyType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyVendorReplyType.Accept:
         return 0;

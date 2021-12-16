@@ -19,7 +19,7 @@ enum DestinyStatCategory {
 }
 
 extension DestinyStatCategoryExtension on DestinyStatCategory{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyStatCategory.Gameplay:
         return 0;

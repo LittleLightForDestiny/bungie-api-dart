@@ -9,19 +9,17 @@ part of 'search_result_of_group_membership.dart';
 SearchResultOfGroupMembership _$SearchResultOfGroupMembershipFromJson(
     Map<String, dynamic> json) {
   return SearchResultOfGroupMembership()
-    ..results = (json['results'] as List)
-        ?.map((e) => e == null
-            ? null
-            : GroupMembership.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..totalResults = json['totalResults'] as int
-    ..hasMore = json['hasMore'] as bool
+    ..results = (json['results'] as List<dynamic>?)
+        ?.map((e) => GroupMembership.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..totalResults = json['totalResults'] as int?
+    ..hasMore = json['hasMore'] as bool?
     ..query = json['query'] == null
         ? null
         : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
     ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String
-    ..useTotalResults = json['useTotalResults'] as bool;
+        json['replacementContinuationToken'] as String?
+    ..useTotalResults = json['useTotalResults'] as bool?;
 }
 
 Map<String, dynamic> _$SearchResultOfGroupMembershipToJson(

@@ -14,22 +14,17 @@ class DestinyPresentationNodeChildrenBlock{
 	DestinyPresentationNodeChildrenBlock();
 
 	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPresentationNodeChildrenBlockFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPresentationNodeChildrenBlockFromJson(json);
 	}
 
 	@JsonKey(name:'presentationNodes')
-	List<DestinyPresentationNodeChildEntry> presentationNodes;
+	List<DestinyPresentationNodeChildEntry>? presentationNodes;
 	@JsonKey(name:'collectibles')
-	List<DestinyPresentationNodeCollectibleChildEntry> collectibles;
+	List<DestinyPresentationNodeCollectibleChildEntry>? collectibles;
 	@JsonKey(name:'records')
-	List<DestinyPresentationNodeRecordChildEntry> records;
+	List<DestinyPresentationNodeRecordChildEntry>? records;
 	@JsonKey(name:'metrics')
-	List<DestinyPresentationNodeMetricChildEntry> metrics;
+	List<DestinyPresentationNodeMetricChildEntry>? metrics;
 
 	
 	

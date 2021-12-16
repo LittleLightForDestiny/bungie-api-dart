@@ -10,20 +10,15 @@ class DestinySeasonPreviewImageDefinition{
 	DestinySeasonPreviewImageDefinition();
 
 	factory DestinySeasonPreviewImageDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinySeasonPreviewImageDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinySeasonPreviewImageDefinitionFromJson(json);
 	}
 
 	/// A thumbnail icon path to preview seasonal content, probably 480x270.
 	@JsonKey(name:'thumbnailImage')
-	String thumbnailImage;
+	String? thumbnailImage;
 	/// An optional path to a high-resolution image, probably 1920x1080.
 	@JsonKey(name:'highResImage')
-	String highResImage;
+	String? highResImage;
 
 	
 	

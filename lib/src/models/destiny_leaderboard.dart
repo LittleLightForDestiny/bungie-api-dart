@@ -10,18 +10,13 @@ class DestinyLeaderboard{
 	DestinyLeaderboard();
 
 	factory DestinyLeaderboard.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyLeaderboardFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyLeaderboardFromJson(json);
 	}
 
 	@JsonKey(name:'statId')
-	String statId;
+	String? statId;
 	@JsonKey(name:'entries')
-	List<DestinyLeaderboardEntry> entries;
+	List<DestinyLeaderboardEntry>? entries;
 
 	
 	

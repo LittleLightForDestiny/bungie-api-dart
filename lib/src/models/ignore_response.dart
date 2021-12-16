@@ -10,18 +10,13 @@ class IgnoreResponse{
 	IgnoreResponse();
 
 	factory IgnoreResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$IgnoreResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$IgnoreResponseFromJson(json);
 	}
 
 	@JsonKey(name:'isIgnored')
-	bool isIgnored;
+	bool? isIgnored;
 	@JsonKey(name:'ignoreFlags')
-	IgnoreStatus ignoreFlags;
+	IgnoreStatus? ignoreFlags;
 
 	
 	

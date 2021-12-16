@@ -9,18 +9,13 @@ class DyeReference{
 	DyeReference();
 
 	factory DyeReference.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DyeReferenceFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DyeReferenceFromJson(json);
 	}
 
 	@JsonKey(name:'channelHash')
-	int channelHash;
+	int? channelHash;
 	@JsonKey(name:'dyeHash')
-	int dyeHash;
+	int? dyeHash;
 
 	
 	

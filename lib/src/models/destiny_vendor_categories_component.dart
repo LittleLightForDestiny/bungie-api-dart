@@ -12,18 +12,13 @@ class DestinyVendorCategoriesComponent{
 	DestinyVendorCategoriesComponent();
 
 	factory DestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorCategoriesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorCategoriesComponentFromJson(json);
 	}
 
 	/// The list of categories for items that the vendor sells, in rendering order.
 	/// These categories each point to a "display category" in the displayCategories property of the DestinyVendorDefinition, as opposed to the other categories.
 	@JsonKey(name:'categories')
-	List<DestinyVendorCategory> categories;
+	List<DestinyVendorCategory>? categories;
 
 	
 	

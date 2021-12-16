@@ -8,7 +8,7 @@ part of 'ignore_response.dart';
 
 IgnoreResponse _$IgnoreResponseFromJson(Map<String, dynamic> json) {
   return IgnoreResponse()
-    ..isIgnored = json['isIgnored'] as bool
+    ..isIgnored = json['isIgnored'] as bool?
     ..ignoreFlags = json['ignoreFlags'] == null
         ? null
         : IgnoreStatus.fromJson(json['ignoreFlags'] as int);

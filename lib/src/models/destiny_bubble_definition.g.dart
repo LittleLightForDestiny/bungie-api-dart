@@ -9,7 +9,7 @@ part of 'destiny_bubble_definition.dart';
 DestinyBubbleDefinition _$DestinyBubbleDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyBubbleDefinition()
-    ..hash = json['hash'] as int
+    ..hash = json['hash'] as int?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(

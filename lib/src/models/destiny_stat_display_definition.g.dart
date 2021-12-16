@@ -9,14 +9,12 @@ part of 'destiny_stat_display_definition.dart';
 DestinyStatDisplayDefinition _$DestinyStatDisplayDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyStatDisplayDefinition()
-    ..statHash = json['statHash'] as int
-    ..maximumValue = json['maximumValue'] as int
-    ..displayAsNumeric = json['displayAsNumeric'] as bool
-    ..displayInterpolation = (json['displayInterpolation'] as List)
-        ?.map((e) => e == null
-            ? null
-            : InterpolationPoint.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..statHash = json['statHash'] as int?
+    ..maximumValue = json['maximumValue'] as int?
+    ..displayAsNumeric = json['displayAsNumeric'] as bool?
+    ..displayInterpolation = (json['displayInterpolation'] as List<dynamic>?)
+        ?.map((e) => InterpolationPoint.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyStatDisplayDefinitionToJson(

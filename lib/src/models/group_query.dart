@@ -17,34 +17,29 @@ class GroupQuery{
 	GroupQuery();
 
 	factory GroupQuery.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupQueryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupQueryFromJson(json);
 	}
 
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
-	GroupType groupType;
+	GroupType? groupType;
 	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.ProtectedInvalidEnumValue)
-	GroupDateRange creationDate;
+	GroupDateRange? creationDate;
 	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.ProtectedInvalidEnumValue)
-	GroupSortBy sortBy;
+	GroupSortBy? sortBy;
 	@JsonKey(name:'groupMemberCountFilter')
-	int groupMemberCountFilter;
+	int? groupMemberCountFilter;
 	@JsonKey(name:'localeFilter')
-	String localeFilter;
+	String? localeFilter;
 	@JsonKey(name:'tagText')
-	String tagText;
+	String? tagText;
 	@JsonKey(name:'itemsPerPage')
-	int itemsPerPage;
+	int? itemsPerPage;
 	@JsonKey(name:'currentPage')
-	int currentPage;
+	int? currentPage;
 	@JsonKey(name:'requestContinuationToken')
-	String requestContinuationToken;
+	String? requestContinuationToken;
 
 	
 	

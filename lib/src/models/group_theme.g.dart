@@ -8,9 +8,9 @@ part of 'group_theme.dart';
 
 GroupTheme _$GroupThemeFromJson(Map<String, dynamic> json) {
   return GroupTheme()
-    ..name = json['name'] as String
-    ..folder = json['folder'] as String
-    ..description = json['description'] as String;
+    ..name = json['name'] as String?
+    ..folder = json['folder'] as String?
+    ..description = json['description'] as String?;
 }
 
 Map<String, dynamic> _$GroupThemeToJson(GroupTheme instance) =>

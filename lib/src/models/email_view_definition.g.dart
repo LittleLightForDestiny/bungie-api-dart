@@ -8,12 +8,11 @@ part of 'email_view_definition.dart';
 
 EmailViewDefinition _$EmailViewDefinitionFromJson(Map<String, dynamic> json) {
   return EmailViewDefinition()
-    ..name = json['name'] as String
-    ..viewSettings = (json['viewSettings'] as List)
-        ?.map((e) => e == null
-            ? null
-            : EmailViewDefinitionSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..name = json['name'] as String?
+    ..viewSettings = (json['viewSettings'] as List<dynamic>?)
+        ?.map((e) =>
+            EmailViewDefinitionSetting.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$EmailViewDefinitionToJson(

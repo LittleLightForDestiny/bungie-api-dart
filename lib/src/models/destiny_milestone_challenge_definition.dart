@@ -9,17 +9,12 @@ class DestinyMilestoneChallengeDefinition{
 	DestinyMilestoneChallengeDefinition();
 
 	factory DestinyMilestoneChallengeDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneChallengeDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneChallengeDefinitionFromJson(json);
 	}
 
 	/// The challenge related to this milestone.
 	@JsonKey(name:'challengeObjectiveHash')
-	int challengeObjectiveHash;
+	int? challengeObjectiveHash;
 
 	
 	

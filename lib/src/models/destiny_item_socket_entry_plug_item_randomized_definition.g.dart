@@ -10,8 +10,8 @@ DestinyItemSocketEntryPlugItemRandomizedDefinition
     _$DestinyItemSocketEntryPlugItemRandomizedDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyItemSocketEntryPlugItemRandomizedDefinition()
-    ..currentlyCanRoll = json['currentlyCanRoll'] as bool
-    ..plugItemHash = json['plugItemHash'] as int;
+    ..currentlyCanRoll = json['currentlyCanRoll'] as bool?
+    ..plugItemHash = json['plugItemHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(

@@ -10,24 +10,19 @@ class DestinyCharacterRecordsComponent{
 	DestinyCharacterRecordsComponent();
 
 	factory DestinyCharacterRecordsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyCharacterRecordsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyCharacterRecordsComponentFromJson(json);
 	}
 
 	@JsonKey(name:'featuredRecordHashes')
-	List<int> featuredRecordHashes;
+	List<int>? featuredRecordHashes;
 	@JsonKey(name:'records')
-	Map<String, DestinyRecordComponent> records;
+	Map<String, DestinyRecordComponent>? records;
 	/// The hash for the root presentation node definition of Triumph categories.
 	@JsonKey(name:'recordCategoriesRootNodeHash')
-	int recordCategoriesRootNodeHash;
+	int? recordCategoriesRootNodeHash;
 	/// The hash for the root presentation node definition of Triumph Seals.
 	@JsonKey(name:'recordSealsRootNodeHash')
-	int recordSealsRootNodeHash;
+	int? recordSealsRootNodeHash;
 
 	
 	

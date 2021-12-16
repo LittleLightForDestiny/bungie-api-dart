@@ -10,18 +10,13 @@ class EntityActionResult{
 	EntityActionResult();
 
 	factory EntityActionResult.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$EntityActionResultFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$EntityActionResultFromJson(json);
 	}
 
 	@JsonKey(name:'entityId')
-	String entityId;
+	String? entityId;
 	@JsonKey(name:'result',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
-	PlatformErrorCodes result;
+	PlatformErrorCodes? result;
 
 	
 	

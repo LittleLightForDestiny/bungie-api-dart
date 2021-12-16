@@ -9,7 +9,7 @@ part of 'destiny_item_version_definition.dart';
 DestinyItemVersionDefinition _$DestinyItemVersionDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyItemVersionDefinition()
-    ..powerCapHash = json['powerCapHash'] as int;
+    ..powerCapHash = json['powerCapHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyItemVersionDefinitionToJson(

@@ -8,8 +8,8 @@ part of 'core_system.dart';
 
 CoreSystem _$CoreSystemFromJson(Map<String, dynamic> json) {
   return CoreSystem()
-    ..enabled = json['enabled'] as bool
-    ..parameters = (json['parameters'] as Map<String, dynamic>)?.map(
+    ..enabled = json['enabled'] as bool?
+    ..parameters = (json['parameters'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as String),
     );
 }

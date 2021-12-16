@@ -58,7 +58,7 @@ enum DestinyActivityNavPointType {
 }
 
 extension DestinyActivityNavPointTypeExtension on DestinyActivityNavPointType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyActivityNavPointType.Inactive:
         return 0;

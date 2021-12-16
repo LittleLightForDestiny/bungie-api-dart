@@ -11,7 +11,7 @@ DestinyPresentationNodeRequirementsBlock
         Map<String, dynamic> json) {
   return DestinyPresentationNodeRequirementsBlock()
     ..entitlementUnavailableMessage =
-        json['entitlementUnavailableMessage'] as String;
+        json['entitlementUnavailableMessage'] as String?;
 }
 
 Map<String, dynamic> _$DestinyPresentationNodeRequirementsBlockToJson(

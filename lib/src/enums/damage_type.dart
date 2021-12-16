@@ -28,7 +28,7 @@ enum DamageType {
 }
 
 extension DamageTypeExtension on DamageType{
-  int get value {
+  int? get value {
     switch(this){
       case DamageType.None:
         return 0;

@@ -77,7 +77,7 @@ class Fireteam{
         }
         throw Exception(response.mappedBody);
     }
-    /// Gets a listing of all clan fireteams that caller is an applicant, a member, or an alternate of.
+    /// Gets a listing of all fireteams that caller is an applicant, a member, or an alternate of.
     static Future<SearchResultOfFireteamResponseResponse> getMyClanFireteams (
         HttpClient client,
         bool groupFilter,
@@ -102,7 +102,7 @@ class Fireteam{
         }
         throw Exception(response.mappedBody);
     }
-    /// Gets a specific clan fireteam.
+    /// Gets a specific fireteam.
     static Future<FireteamResponseResponse> getClanFireteam (
         HttpClient client,
         String fireteamId,

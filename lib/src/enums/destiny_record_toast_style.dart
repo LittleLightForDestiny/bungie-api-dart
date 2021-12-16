@@ -31,7 +31,7 @@ enum DestinyRecordToastStyle {
 }
 
 extension DestinyRecordToastStyleExtension on DestinyRecordToastStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyRecordToastStyle.None:
         return 0;

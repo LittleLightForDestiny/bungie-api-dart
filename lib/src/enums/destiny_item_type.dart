@@ -88,7 +88,7 @@ enum DestinyItemType {
 }
 
 extension DestinyItemTypeExtension on DestinyItemType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyItemType.None:
         return 0;

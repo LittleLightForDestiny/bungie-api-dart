@@ -31,7 +31,7 @@ enum ForumTopicsSortEnum {
 }
 
 extension ForumTopicsSortEnumExtension on ForumTopicsSortEnum{
-  int get value {
+  int? get value {
     switch(this){
       case ForumTopicsSortEnum.Default:
         return 0;

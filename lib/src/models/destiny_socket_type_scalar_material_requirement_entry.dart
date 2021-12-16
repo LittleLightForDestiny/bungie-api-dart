@@ -9,18 +9,13 @@ class DestinySocketTypeScalarMaterialRequirementEntry{
 	DestinySocketTypeScalarMaterialRequirementEntry();
 
 	factory DestinySocketTypeScalarMaterialRequirementEntry.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinySocketTypeScalarMaterialRequirementEntryFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinySocketTypeScalarMaterialRequirementEntryFromJson(json);
 	}
 
 	@JsonKey(name:'currencyItemHash')
-	int currencyItemHash;
+	int? currencyItemHash;
 	@JsonKey(name:'scalarValue')
-	int scalarValue;
+	int? scalarValue;
 
 	
 	

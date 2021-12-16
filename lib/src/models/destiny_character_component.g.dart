@@ -9,21 +9,21 @@ part of 'destiny_character_component.dart';
 DestinyCharacterComponent _$DestinyCharacterComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyCharacterComponent()
-    ..membershipId = json['membershipId'] as String
+    ..membershipId = json['membershipId'] as String?
     ..membershipType = _$enumDecodeNullable(
         _$BungieMembershipTypeEnumMap, json['membershipType'],
         unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..characterId = json['characterId'] as String
-    ..dateLastPlayed = json['dateLastPlayed'] as String
-    ..minutesPlayedThisSession = json['minutesPlayedThisSession'] as String
-    ..minutesPlayedTotal = json['minutesPlayedTotal'] as String
-    ..light = json['light'] as int
-    ..stats = (json['stats'] as Map<String, dynamic>)?.map(
+    ..characterId = json['characterId'] as String?
+    ..dateLastPlayed = json['dateLastPlayed'] as String?
+    ..minutesPlayedThisSession = json['minutesPlayedThisSession'] as String?
+    ..minutesPlayedTotal = json['minutesPlayedTotal'] as String?
+    ..light = json['light'] as int?
+    ..stats = (json['stats'] as Map<String, dynamic>?)?.map(
       (k, e) => MapEntry(k, e as int),
     )
-    ..raceHash = json['raceHash'] as int
-    ..genderHash = json['genderHash'] as int
-    ..classHash = json['classHash'] as int
+    ..raceHash = json['raceHash'] as int?
+    ..genderHash = json['genderHash'] as int?
+    ..classHash = json['classHash'] as int?
     ..raceType = _$enumDecodeNullable(_$DestinyRaceEnumMap, json['raceType'],
         unknownValue: DestinyRace.ProtectedInvalidEnumValue)
     ..classType = _$enumDecodeNullable(_$DestinyClassEnumMap, json['classType'],
@@ -31,9 +31,9 @@ DestinyCharacterComponent _$DestinyCharacterComponentFromJson(
     ..genderType = _$enumDecodeNullable(
         _$DestinyGenderEnumMap, json['genderType'],
         unknownValue: DestinyGender.ProtectedInvalidEnumValue)
-    ..emblemPath = json['emblemPath'] as String
-    ..emblemBackgroundPath = json['emblemBackgroundPath'] as String
-    ..emblemHash = json['emblemHash'] as int
+    ..emblemPath = json['emblemPath'] as String?
+    ..emblemBackgroundPath = json['emblemBackgroundPath'] as String?
+    ..emblemHash = json['emblemHash'] as int?
     ..emblemColor = json['emblemColor'] == null
         ? null
         : DestinyColor.fromJson(json['emblemColor'] as Map<String, dynamic>)
@@ -41,9 +41,9 @@ DestinyCharacterComponent _$DestinyCharacterComponentFromJson(
         ? null
         : DestinyProgression.fromJson(
             json['levelProgression'] as Map<String, dynamic>)
-    ..baseCharacterLevel = json['baseCharacterLevel'] as int
-    ..percentToNextLevel = (json['percentToNextLevel'] as num)?.toDouble()
-    ..titleRecordHash = json['titleRecordHash'] as int;
+    ..baseCharacterLevel = json['baseCharacterLevel'] as int?
+    ..percentToNextLevel = (json['percentToNextLevel'] as num?)?.toDouble()
+    ..titleRecordHash = json['titleRecordHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyCharacterComponentToJson(
@@ -73,36 +73,41 @@ Map<String, dynamic> _$DestinyCharacterComponentToJson(
       'titleRecordHash': instance.titleRecordHash,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$BungieMembershipTypeEnumMap = {

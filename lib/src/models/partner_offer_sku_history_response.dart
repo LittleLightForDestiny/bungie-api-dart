@@ -10,28 +10,23 @@ class PartnerOfferSkuHistoryResponse{
 	PartnerOfferSkuHistoryResponse();
 
 	factory PartnerOfferSkuHistoryResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PartnerOfferSkuHistoryResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PartnerOfferSkuHistoryResponseFromJson(json);
 	}
 
 	@JsonKey(name:'SkuIdentifier')
-	String skuIdentifier;
+	String? skuIdentifier;
 	@JsonKey(name:'LocalizedName')
-	String localizedName;
+	String? localizedName;
 	@JsonKey(name:'LocalizedDescription')
-	String localizedDescription;
+	String? localizedDescription;
 	@JsonKey(name:'ClaimDate')
-	String claimDate;
+	String? claimDate;
 	@JsonKey(name:'AllOffersApplied')
-	bool allOffersApplied;
+	bool? allOffersApplied;
 	@JsonKey(name:'TransactionId')
-	String transactionId;
+	String? transactionId;
 	@JsonKey(name:'SkuOffers')
-	List<PartnerOfferHistoryResponse> skuOffers;
+	List<PartnerOfferHistoryResponse>? skuOffers;
 
 	
 	

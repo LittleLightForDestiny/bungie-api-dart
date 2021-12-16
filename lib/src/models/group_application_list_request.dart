@@ -10,18 +10,13 @@ class GroupApplicationListRequest{
 	GroupApplicationListRequest();
 
 	factory GroupApplicationListRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupApplicationListRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupApplicationListRequestFromJson(json);
 	}
 
 	@JsonKey(name:'memberships')
-	List<UserMembership> memberships;
+	List<UserMembership>? memberships;
 	@JsonKey(name:'message')
-	String message;
+	String? message;
 
 	
 	

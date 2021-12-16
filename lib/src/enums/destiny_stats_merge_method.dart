@@ -19,7 +19,7 @@ enum DestinyStatsMergeMethod {
 }
 
 extension DestinyStatsMergeMethodExtension on DestinyStatsMergeMethod{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyStatsMergeMethod.Add:
         return 0;

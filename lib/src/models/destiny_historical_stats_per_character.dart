@@ -10,22 +10,17 @@ class DestinyHistoricalStatsPerCharacter{
 	DestinyHistoricalStatsPerCharacter();
 
 	factory DestinyHistoricalStatsPerCharacter.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyHistoricalStatsPerCharacterFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyHistoricalStatsPerCharacterFromJson(json);
 	}
 
 	@JsonKey(name:'characterId')
-	String characterId;
+	String? characterId;
 	@JsonKey(name:'deleted')
-	bool deleted;
+	bool? deleted;
 	@JsonKey(name:'results')
-	Map<String, DestinyHistoricalStatsByPeriod> results;
+	Map<String, DestinyHistoricalStatsByPeriod>? results;
 	@JsonKey(name:'merged')
-	DestinyHistoricalStatsByPeriod merged;
+	DestinyHistoricalStatsByPeriod? merged;
 
 	
 	

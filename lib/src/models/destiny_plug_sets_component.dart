@@ -12,17 +12,12 @@ class DestinyPlugSetsComponent{
 	DestinyPlugSetsComponent();
 
 	factory DestinyPlugSetsComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPlugSetsComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPlugSetsComponentFromJson(json);
 	}
 
 	/// The shared list of plugs for each relevant PlugSet, keyed by the hash identifier of the PlugSet (DestinyPlugSetDefinition).
 	@JsonKey(name:'plugs')
-	Map<String, List<DestinyItemPlug>> plugs;
+	Map<String, List<DestinyItemPlug>>? plugs;
 
 	
 	

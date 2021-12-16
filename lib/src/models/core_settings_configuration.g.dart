@@ -9,73 +9,73 @@ part of 'core_settings_configuration.dart';
 CoreSettingsConfiguration _$CoreSettingsConfigurationFromJson(
     Map<String, dynamic> json) {
   return CoreSettingsConfiguration()
-    ..environment = json['environment'] as String
-    ..systems = (json['systems'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k, e == null ? null : CoreSystem.fromJson(e as Map<String, dynamic>)),
+    ..environment = json['environment'] as String?
+    ..systems = (json['systems'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, CoreSystem.fromJson(e as Map<String, dynamic>)),
     )
-    ..ignoreReasons = (json['ignoreReasons'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..forumCategories = (json['forumCategories'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..groupAvatars = (json['groupAvatars'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..destinyMembershipTypes = (json['destinyMembershipTypes'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..recruitmentPlatformTags = (json['recruitmentPlatformTags'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..recruitmentMiscTags = (json['recruitmentMiscTags'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..recruitmentActivities = (json['recruitmentActivities'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..userContentLocales = (json['userContentLocales'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..systemContentLocales = (json['systemContentLocales'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..clanBannerDecals = (json['clanBannerDecals'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..clanBannerDecalColors = (json['clanBannerDecalColors'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..clanBannerGonfalons = (json['clanBannerGonfalons'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..clanBannerGonfalonColors = (json['clanBannerGonfalonColors'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..clanBannerGonfalonDetails = (json['clanBannerGonfalonDetails'] as List)
-        ?.map((e) =>
-            e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..ignoreReasons = (json['ignoreReasons'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..forumCategories = (json['forumCategories'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..groupAvatars = (json['groupAvatars'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..destinyMembershipTypes =
+        (json['destinyMembershipTypes'] as List<dynamic>?)
+            ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+            .toList()
+    ..recruitmentPlatformTags =
+        (json['recruitmentPlatformTags'] as List<dynamic>?)
+            ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+            .toList()
+    ..recruitmentMiscTags = (json['recruitmentMiscTags'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..recruitmentActivities = (json['recruitmentActivities'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..userContentLocales = (json['userContentLocales'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..systemContentLocales = (json['systemContentLocales'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..clanBannerDecals = (json['clanBannerDecals'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..clanBannerDecalColors = (json['clanBannerDecalColors'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..clanBannerGonfalons = (json['clanBannerGonfalons'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..clanBannerGonfalonColors =
+        (json['clanBannerGonfalonColors'] as List<dynamic>?)
+            ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+            .toList()
+    ..clanBannerGonfalonDetails =
+        (json['clanBannerGonfalonDetails'] as List<dynamic>?)
+            ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+            .toList()
     ..clanBannerGonfalonDetailColors =
-        (json['clanBannerGonfalonDetailColors'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
-    ..clanBannerStandards = (json['clanBannerStandards'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList()
-    ..destiny2CoreSettings = json['destiny2CoreSettings'] == null ? null : Destiny2CoreSettings.fromJson(json['destiny2CoreSettings'] as Map<String, dynamic>)
-    ..emailSettings = json['emailSettings'] == null ? null : EmailSettings.fromJson(json['emailSettings'] as Map<String, dynamic>)
-    ..fireteamActivities = (json['fireteamActivities'] as List)?.map((e) => e == null ? null : CoreSetting.fromJson(e as Map<String, dynamic>))?.toList();
+        (json['clanBannerGonfalonDetailColors'] as List<dynamic>?)
+            ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+            .toList()
+    ..clanBannerStandards = (json['clanBannerStandards'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..destiny2CoreSettings = json['destiny2CoreSettings'] == null
+        ? null
+        : Destiny2CoreSettings.fromJson(
+            json['destiny2CoreSettings'] as Map<String, dynamic>)
+    ..emailSettings = json['emailSettings'] == null
+        ? null
+        : EmailSettings.fromJson(json['emailSettings'] as Map<String, dynamic>)
+    ..fireteamActivities = (json['fireteamActivities'] as List<dynamic>?)
+        ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$CoreSettingsConfigurationToJson(

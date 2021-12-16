@@ -22,25 +22,25 @@ class DestinyEntitySearchResultResponse{
 	
 	/// The results of a search for Destiny content. This will be improved on over time, I've been doing some experimenting to see what might be useful.
 	@JsonKey(name:'Response')
-	DestinyEntitySearchResult response;
+	DestinyEntitySearchResult? response;
 	
 	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
-	int throttleSeconds;
+	int? throttleSeconds;
 	
 	@JsonKey(name:'ErrorStatus')
-	String errorStatus;
+	String? errorStatus;
 	
 	@JsonKey(name:'Message')
-	String message;
+	String? message;
 	
 	@JsonKey(name:'MessageData')
-	Map<String, String> messageData;
+	Map<String, String>? messageData;
 	
 	@JsonKey(name:'DetailedErrorTrace')
-	String detailedErrorTrace;
+	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyEntitySearchResultResponseToJson(this);
 }

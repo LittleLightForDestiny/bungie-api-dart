@@ -10,20 +10,15 @@ class DestinyActivityLoadoutRequirement{
 	DestinyActivityLoadoutRequirement();
 
 	factory DestinyActivityLoadoutRequirement.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityLoadoutRequirementFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityLoadoutRequirementFromJson(json);
 	}
 
 	@JsonKey(name:'equipmentSlotHash')
-	int equipmentSlotHash;
+	int? equipmentSlotHash;
 	@JsonKey(name:'allowedEquippedItemHashes')
-	List<int> allowedEquippedItemHashes;
+	List<int>? allowedEquippedItemHashes;
 	@JsonKey(name:'allowedWeaponSubTypes')
-	List<DestinyItemSubType> allowedWeaponSubTypes;
+	List<DestinyItemSubType>? allowedWeaponSubTypes;
 
 	
 	

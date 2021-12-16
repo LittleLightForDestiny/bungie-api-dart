@@ -10,14 +10,11 @@ GroupV2ClanInfoAndInvestment _$GroupV2ClanInfoAndInvestmentFromJson(
     Map<String, dynamic> json) {
   return GroupV2ClanInfoAndInvestment()
     ..d2ClanProgressions =
-        (json['d2ClanProgressions'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyProgression.fromJson(e as Map<String, dynamic>)),
+        (json['d2ClanProgressions'] as Map<String, dynamic>?)?.map(
+      (k, e) =>
+          MapEntry(k, DestinyProgression.fromJson(e as Map<String, dynamic>)),
     )
-    ..clanCallsign = json['clanCallsign'] as String
+    ..clanCallsign = json['clanCallsign'] as String?
     ..clanBannerData = json['clanBannerData'] == null
         ? null
         : ClanBanner.fromJson(json['clanBannerData'] as Map<String, dynamic>);

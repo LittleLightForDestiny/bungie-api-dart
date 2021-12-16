@@ -9,12 +9,10 @@ part of 'destiny_activity_history_results.dart';
 DestinyActivityHistoryResults _$DestinyActivityHistoryResultsFromJson(
     Map<String, dynamic> json) {
   return DestinyActivityHistoryResults()
-    ..activities = (json['activities'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyHistoricalStatsPeriodGroup.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList();
+    ..activities = (json['activities'] as List<dynamic>?)
+        ?.map((e) => DestinyHistoricalStatsPeriodGroup.fromJson(
+            e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyActivityHistoryResultsToJson(

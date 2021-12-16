@@ -16,36 +16,31 @@ class DestinyChecklistDefinition{
 	DestinyChecklistDefinition();
 
 	factory DestinyChecklistDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyChecklistDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyChecklistDefinitionFromJson(json);
 	}
 
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// A localized string prompting you to view the checklist.
 	@JsonKey(name:'viewActionString')
-	String viewActionString;
+	String? viewActionString;
 	/// Indicates whether you will find this checklist on the Profile or Character components.
 	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
-	DestinyScope scope;
+	DestinyScope? scope;
 	/// The individual checklist items. Gotta catch 'em all.
 	@JsonKey(name:'entries')
-	List<DestinyChecklistEntryDefinition> entries;
+	List<DestinyChecklistEntryDefinition>? entries;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

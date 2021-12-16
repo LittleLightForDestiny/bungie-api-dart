@@ -9,11 +9,9 @@ part of 'destiny_record_interval_rewards.dart';
 DestinyRecordIntervalRewards _$DestinyRecordIntervalRewardsFromJson(
     Map<String, dynamic> json) {
   return DestinyRecordIntervalRewards()
-    ..intervalRewardItems = (json['intervalRewardItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..intervalRewardItems = (json['intervalRewardItems'] as List<dynamic>?)
+        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyRecordIntervalRewardsToJson(

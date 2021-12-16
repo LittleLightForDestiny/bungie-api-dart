@@ -19,13 +19,16 @@ enum DestinyEnergyType {
   ///Subclass = 5
   @JsonValue(5)
   Subclass,
+  ///Stasis = 6
+  @JsonValue(6)
+  Stasis,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
 }
 
 extension DestinyEnergyTypeExtension on DestinyEnergyType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyEnergyType.Any:
         return 0;
@@ -39,6 +42,8 @@ extension DestinyEnergyTypeExtension on DestinyEnergyType{
         return 4;
       case DestinyEnergyType.Subclass:
         return 5;
+      case DestinyEnergyType.Stasis:
+        return 6;
       default:
         return null;
     }

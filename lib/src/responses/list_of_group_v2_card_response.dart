@@ -21,25 +21,25 @@ class ListOfGroupV2CardResponse{
 	
 	
 	@JsonKey(name:'Response')
-	List<GroupV2Card> response;
+	List<GroupV2Card>? response;
 	
 	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes errorCode;
+	PlatformErrorCodes? errorCode;
 	
 	@JsonKey(name:'ThrottleSeconds')
-	int throttleSeconds;
+	int? throttleSeconds;
 	
 	@JsonKey(name:'ErrorStatus')
-	String errorStatus;
+	String? errorStatus;
 	
 	@JsonKey(name:'Message')
-	String message;
+	String? message;
 	
 	@JsonKey(name:'MessageData')
-	Map<String, String> messageData;
+	Map<String, String>? messageData;
 	
 	@JsonKey(name:'DetailedErrorTrace')
-	String detailedErrorTrace;
+	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$ListOfGroupV2CardResponseToJson(this);
 }

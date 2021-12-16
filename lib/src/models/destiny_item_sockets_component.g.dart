@@ -9,11 +9,9 @@ part of 'destiny_item_sockets_component.dart';
 DestinyItemSocketsComponent _$DestinyItemSocketsComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyItemSocketsComponent()
-    ..sockets = (json['sockets'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemSocketState.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..sockets = (json['sockets'] as List<dynamic>?)
+        ?.map((e) => DestinyItemSocketState.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyItemSocketsComponentToJson(

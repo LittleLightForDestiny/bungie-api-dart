@@ -10,23 +10,21 @@ class DestinyItemQuantity{
 	DestinyItemQuantity();
 
 	factory DestinyItemQuantity.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemQuantityFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemQuantityFromJson(json);
 	}
 
 	/// The hash identifier for the item in question. Use it to look up the item's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')
-	int itemHash;
+	int? itemHash;
 	/// If this quantity is referring to a specific instance of an item, this will have the item's instance ID. Normally, this will be null.
 	@JsonKey(name:'itemInstanceId')
-	String itemInstanceId;
+	String? itemInstanceId;
 	/// The amount of the item needed/available depending on the context of where DestinyItemQuantity is being used.
 	@JsonKey(name:'quantity')
-	int quantity;
+	int? quantity;
+	/// Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	@JsonKey(name:'hasConditionalVisibility')
+	bool? hasConditionalVisibility;
 
 	
 	

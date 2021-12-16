@@ -13,7 +13,7 @@ enum BucketScope {
 }
 
 extension BucketScopeExtension on BucketScope{
-  int get value {
+  int? get value {
     switch(this){
       case BucketScope.Character:
         return 0;

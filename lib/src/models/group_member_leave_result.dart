@@ -10,18 +10,13 @@ class GroupMemberLeaveResult{
 	GroupMemberLeaveResult();
 
 	factory GroupMemberLeaveResult.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupMemberLeaveResultFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupMemberLeaveResultFromJson(json);
 	}
 
 	@JsonKey(name:'group')
-	GroupV2 group;
+	GroupV2? group;
 	@JsonKey(name:'groupDeleted')
-	bool groupDeleted;
+	bool? groupDeleted;
 
 	
 	

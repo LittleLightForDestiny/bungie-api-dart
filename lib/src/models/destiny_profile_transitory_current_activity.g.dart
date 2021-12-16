@@ -10,13 +10,13 @@ DestinyProfileTransitoryCurrentActivity
     _$DestinyProfileTransitoryCurrentActivityFromJson(
         Map<String, dynamic> json) {
   return DestinyProfileTransitoryCurrentActivity()
-    ..startTime = json['startTime'] as String
-    ..endTime = json['endTime'] as String
-    ..score = (json['score'] as num)?.toDouble()
+    ..startTime = json['startTime'] as String?
+    ..endTime = json['endTime'] as String?
+    ..score = (json['score'] as num?)?.toDouble()
     ..highestOpposingFactionScore =
-        (json['highestOpposingFactionScore'] as num)?.toDouble()
-    ..numberOfOpponents = json['numberOfOpponents'] as int
-    ..numberOfPlayers = json['numberOfPlayers'] as int;
+        (json['highestOpposingFactionScore'] as num?)?.toDouble()
+    ..numberOfOpponents = json['numberOfOpponents'] as int?
+    ..numberOfPlayers = json['numberOfPlayers'] as int?;
 }
 
 Map<String, dynamic> _$DestinyProfileTransitoryCurrentActivityToJson(

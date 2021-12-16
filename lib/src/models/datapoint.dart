@@ -9,20 +9,15 @@ class Datapoint{
 	Datapoint();
 
 	factory Datapoint.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DatapointFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DatapointFromJson(json);
 	}
 
 	/// Timestamp for the related count.
 	@JsonKey(name:'time')
-	String time;
+	String? time;
 	/// Count associated with timestamp
 	@JsonKey(name:'count')
-	double count;
+	double? count;
 
 	
 	

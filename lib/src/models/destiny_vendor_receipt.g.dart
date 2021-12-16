@@ -8,23 +8,21 @@ part of 'destiny_vendor_receipt.dart';
 
 DestinyVendorReceipt _$DestinyVendorReceiptFromJson(Map<String, dynamic> json) {
   return DestinyVendorReceipt()
-    ..currencyPaid = (json['currencyPaid'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..currencyPaid = (json['currencyPaid'] as List<dynamic>?)
+        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..itemReceived = json['itemReceived'] == null
         ? null
         : DestinyItemQuantity.fromJson(
             json['itemReceived'] as Map<String, dynamic>)
-    ..licenseUnlockHash = json['licenseUnlockHash'] as int
-    ..purchasedByCharacterId = json['purchasedByCharacterId'] as String
+    ..licenseUnlockHash = json['licenseUnlockHash'] as int?
+    ..purchasedByCharacterId = json['purchasedByCharacterId'] as String?
     ..refundPolicy = _$enumDecodeNullable(
         _$DestinyVendorItemRefundPolicyEnumMap, json['refundPolicy'],
         unknownValue: DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
-    ..sequenceNumber = json['sequenceNumber'] as int
-    ..timeToExpiration = json['timeToExpiration'] as String
-    ..expiresOn = json['expiresOn'] as String;
+    ..sequenceNumber = json['sequenceNumber'] as int?
+    ..timeToExpiration = json['timeToExpiration'] as String?
+    ..expiresOn = json['expiresOn'] as String?;
 }
 
 Map<String, dynamic> _$DestinyVendorReceiptToJson(
@@ -41,36 +39,41 @@ Map<String, dynamic> _$DestinyVendorReceiptToJson(
       'expiresOn': instance.expiresOn,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyVendorItemRefundPolicyEnumMap = {

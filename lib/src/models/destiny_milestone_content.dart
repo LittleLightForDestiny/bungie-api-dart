@@ -11,26 +11,21 @@ class DestinyMilestoneContent{
 	DestinyMilestoneContent();
 
 	factory DestinyMilestoneContent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneContentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneContentFromJson(json);
 	}
 
 	/// The "About this Milestone" text from the Firehose.
 	@JsonKey(name:'about')
-	String about;
+	String? about;
 	/// The Current Status of the Milestone, as driven by the Firehose.
 	@JsonKey(name:'status')
-	String status;
+	String? status;
 	/// A list of tips, provided by the Firehose.
 	@JsonKey(name:'tips')
-	List<String> tips;
+	List<String>? tips;
 	/// If DPS has defined items related to this Milestone, they can categorize those items in the Firehose. That data will then be returned as item categories here.
 	@JsonKey(name:'itemCategories')
-	List<DestinyMilestoneContentItemCategory> itemCategories;
+	List<DestinyMilestoneContentItemCategory>? itemCategories;
 
 	
 	

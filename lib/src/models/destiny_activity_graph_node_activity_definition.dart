@@ -10,20 +10,15 @@ class DestinyActivityGraphNodeActivityDefinition{
 	DestinyActivityGraphNodeActivityDefinition();
 
 	factory DestinyActivityGraphNodeActivityDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityGraphNodeActivityDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityGraphNodeActivityDefinitionFromJson(json);
 	}
 
 	/// An identifier for this node activity. It is only guaranteed to be unique within the Activity Graph.
 	@JsonKey(name:'nodeActivityId')
-	int nodeActivityId;
+	int? nodeActivityId;
 	/// The activity that will be activated if the user clicks on this node. Controls all activity-related information displayed on the node if it is active (the text shown in the tooltip etc)
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 
 	
 	

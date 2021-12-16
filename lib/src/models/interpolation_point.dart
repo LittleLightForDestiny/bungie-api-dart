@@ -9,18 +9,13 @@ class InterpolationPoint{
 	InterpolationPoint();
 
 	factory InterpolationPoint.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$InterpolationPointFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$InterpolationPointFromJson(json);
 	}
 
 	@JsonKey(name:'value')
-	int value;
+	int? value;
 	@JsonKey(name:'weight')
-	int weight;
+	int? weight;
 
 	
 	

@@ -11,33 +11,28 @@ class GroupBan{
 	GroupBan();
 
 	factory GroupBan.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupBanFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupBanFromJson(json);
 	}
 
 	@JsonKey(name:'groupId')
-	String groupId;
+	String? groupId;
 	/// This contract supplies basic information commonly used to display a minimal amount of information about a user. Take care to not add more properties here unless the property applies in all (or at least the majority) of the situations where UserInfoCard is used. Avoid adding game specific or platform specific details here. In cases where UserInfoCard is a subset of the data needed in a contract, use UserInfoCard as a property of other contracts.
 	@JsonKey(name:'lastModifiedBy')
-	UserInfoCard lastModifiedBy;
+	UserInfoCard? lastModifiedBy;
 	/// This contract supplies basic information commonly used to display a minimal amount of information about a user. Take care to not add more properties here unless the property applies in all (or at least the majority) of the situations where UserInfoCard is used. Avoid adding game specific or platform specific details here. In cases where UserInfoCard is a subset of the data needed in a contract, use UserInfoCard as a property of other contracts.
 	@JsonKey(name:'createdBy')
-	UserInfoCard createdBy;
+	UserInfoCard? createdBy;
 	@JsonKey(name:'dateBanned')
-	String dateBanned;
+	String? dateBanned;
 	@JsonKey(name:'dateExpires')
-	String dateExpires;
+	String? dateExpires;
 	@JsonKey(name:'comment')
-	String comment;
+	String? comment;
 	/// This contract supplies basic information commonly used to display a minimal amount of information about a user. Take care to not add more properties here unless the property applies in all (or at least the majority) of the situations where UserInfoCard is used. Avoid adding game specific or platform specific details here. In cases where UserInfoCard is a subset of the data needed in a contract, use UserInfoCard as a property of other contracts.
 	@JsonKey(name:'bungieNetUserInfo')
-	UserInfoCard bungieNetUserInfo;
+	UserInfoCard? bungieNetUserInfo;
 	@JsonKey(name:'destinyUserInfo')
-	GroupUserInfoCard destinyUserInfo;
+	GroupUserInfoCard? destinyUserInfo;
 
 	
 	

@@ -10,29 +10,24 @@ class DestinyTalentExclusiveGroup{
 	DestinyTalentExclusiveGroup();
 
 	factory DestinyTalentExclusiveGroup.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyTalentExclusiveGroupFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyTalentExclusiveGroupFromJson(json);
 	}
 
 	/// The identifier for this exclusive group. Only guaranteed unique within the talent grid, not globally.
 	@JsonKey(name:'groupHash')
-	int groupHash;
+	int? groupHash;
 	/// If this group has an associated piece of lore to show next to it, this will be the identifier for that DestinyLoreDefinition.
 	@JsonKey(name:'loreHash')
-	int loreHash;
+	int? loreHash;
 	/// A quick reference of the talent nodes that are part of this group, by their Talent Node hashes. (See DestinyTalentNodeDefinition.nodeHash)
 	@JsonKey(name:'nodeHashes')
-	List<int> nodeHashes;
+	List<int>? nodeHashes;
 	/// A quick reference of Groups whose nodes will be deactivated if any node in this group is activated.
 	@JsonKey(name:'opposingGroupHashes')
-	List<int> opposingGroupHashes;
+	List<int>? opposingGroupHashes;
 	/// A quick reference of Nodes that will be deactivated if any node in this group is activated, by their Talent Node hashes. (See DestinyTalentNodeDefinition.nodeHash)
 	@JsonKey(name:'opposingNodeHashes')
-	List<int> opposingNodeHashes;
+	List<int>? opposingNodeHashes;
 
 	
 	

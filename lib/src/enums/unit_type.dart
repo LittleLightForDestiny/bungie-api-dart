@@ -62,7 +62,7 @@ enum UnitType {
 }
 
 extension UnitTypeExtension on UnitType{
-  int get value {
+  int? get value {
     switch(this){
       case UnitType.None:
         return 0;

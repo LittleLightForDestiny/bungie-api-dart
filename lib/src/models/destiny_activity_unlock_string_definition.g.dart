@@ -9,7 +9,7 @@ part of 'destiny_activity_unlock_string_definition.dart';
 DestinyActivityUnlockStringDefinition
     _$DestinyActivityUnlockStringDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyActivityUnlockStringDefinition()
-    ..displayString = json['displayString'] as String;
+    ..displayString = json['displayString'] as String?;
 }
 
 Map<String, dynamic> _$DestinyActivityUnlockStringDefinitionToJson(

@@ -10,20 +10,15 @@ class DestinyItemGearsetBlockDefinition{
 	DestinyItemGearsetBlockDefinition();
 
 	factory DestinyItemGearsetBlockDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemGearsetBlockDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemGearsetBlockDefinitionFromJson(json);
 	}
 
 	/// The maximum possible number of items that can be collected.
 	@JsonKey(name:'trackingValueMax')
-	int trackingValueMax;
+	int? trackingValueMax;
 	/// The list of hashes for items in the gearset. Use them to look up DestinyInventoryItemDefinition entries for the items in the set.
 	@JsonKey(name:'itemList')
-	List<int> itemList;
+	List<int>? itemList;
 
 	
 	

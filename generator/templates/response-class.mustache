@@ -24,7 +24,7 @@ class {{className}}{
 	/// {{{.}}}
 	{{/description}}
 	@JsonKey(name:'{{name}}')
-	{{{typeName}}} {{propertyName}};
+	{{{typeName}}}? {{propertyName}};
 	{{/properties}}
 
 	Map<String, dynamic> toJson() => _${{className}}ToJson(this);

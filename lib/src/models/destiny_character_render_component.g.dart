@@ -9,10 +9,9 @@ part of 'destiny_character_render_component.dart';
 DestinyCharacterRenderComponent _$DestinyCharacterRenderComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyCharacterRenderComponent()
-    ..customDyes = (json['customDyes'] as List)
-        ?.map((e) =>
-            e == null ? null : DyeReference.fromJson(e as Map<String, dynamic>))
-        ?.toList()
+    ..customDyes = (json['customDyes'] as List<dynamic>?)
+        ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
+        .toList()
     ..customization = json['customization'] == null
         ? null
         : DestinyCharacterCustomization.fromJson(

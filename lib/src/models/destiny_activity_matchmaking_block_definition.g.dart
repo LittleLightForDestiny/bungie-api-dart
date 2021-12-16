@@ -10,11 +10,11 @@ DestinyActivityMatchmakingBlockDefinition
     _$DestinyActivityMatchmakingBlockDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyActivityMatchmakingBlockDefinition()
-    ..isMatchmade = json['isMatchmade'] as bool
-    ..minParty = json['minParty'] as int
-    ..maxParty = json['maxParty'] as int
-    ..maxPlayers = json['maxPlayers'] as int
-    ..requiresGuardianOath = json['requiresGuardianOath'] as bool;
+    ..isMatchmade = json['isMatchmade'] as bool?
+    ..minParty = json['minParty'] as int?
+    ..maxParty = json['maxParty'] as int?
+    ..maxPlayers = json['maxPlayers'] as int?
+    ..requiresGuardianOath = json['requiresGuardianOath'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyActivityMatchmakingBlockDefinitionToJson(

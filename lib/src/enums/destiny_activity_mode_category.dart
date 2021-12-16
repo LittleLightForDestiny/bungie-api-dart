@@ -23,7 +23,7 @@ enum DestinyActivityModeCategory {
 }
 
 extension DestinyActivityModeCategoryExtension on DestinyActivityModeCategory{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyActivityModeCategory.None:
         return 0;

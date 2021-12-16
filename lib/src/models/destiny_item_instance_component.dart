@@ -16,54 +16,49 @@ class DestinyItemInstanceComponent{
 	DestinyItemInstanceComponent();
 
 	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemInstanceComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemInstanceComponentFromJson(json);
 	}
 
 	/// If the item has a damage type, this is the item's current damage type.
 	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
-	DamageType damageType;
+	DamageType? damageType;
 	/// The current damage type's hash, so you can look up localized info and icons for it.
 	@JsonKey(name:'damageTypeHash')
-	int damageTypeHash;
+	int? damageTypeHash;
 	/// The item stat that we consider to be "primary" for the item. For instance, this would be "Attack" for Weapons or "Defense" for armor.
 	@JsonKey(name:'primaryStat')
-	DestinyStat primaryStat;
+	DestinyStat? primaryStat;
 	/// The Item's "Level" has the most significant bearing on its stats, such as Light and Power.
 	@JsonKey(name:'itemLevel')
-	int itemLevel;
+	int? itemLevel;
 	/// The "Quality" of the item has a lesser - but still impactful - bearing on stats like Light and Power.
 	@JsonKey(name:'quality')
-	int quality;
+	int? quality;
 	/// Is the item currently equipped on the given character?
 	@JsonKey(name:'isEquipped')
-	bool isEquipped;
+	bool? isEquipped;
 	/// If this is an equippable item, you can check it here. There are permanent as well as transitory reasons why an item might not be able to be equipped: check cannotEquipReason for details.
 	@JsonKey(name:'canEquip')
-	bool canEquip;
+	bool? canEquip;
 	/// If the item cannot be equipped until you reach a certain level, that level will be reflected here.
 	@JsonKey(name:'equipRequiredLevel')
-	int equipRequiredLevel;
+	int? equipRequiredLevel;
 	/// Sometimes, there are limitations to equipping that are represented by character-level flags called "unlocks".
 	/// This is a list of flags that they need in order to equip the item that the character has not met. Use these to look up the descriptions to show in your UI by looking up the relevant DestinyUnlockDefinitions for the hashes.
 	@JsonKey(name:'unlockHashesRequiredToEquip')
-	List<int> unlockHashesRequiredToEquip;
+	List<int>? unlockHashesRequiredToEquip;
 	/// If you cannot equip the item, this is a flags enum that enumerates all of the reasons why you couldn't equip the item. You may need to refine your UI further by using unlockHashesRequiredToEquip and equipRequiredLevel.
 	@JsonKey(name:'cannotEquipReason')
-	EquipFailureReason cannotEquipReason;
+	EquipFailureReason? cannotEquipReason;
 	/// If populated, this item has a breaker type corresponding to the given value. See DestinyBreakerTypeDefinition for more details.
 	@JsonKey(name:'breakerType')
-	int breakerType;
+	int? breakerType;
 	/// If populated, this is the hash identifier for the item's breaker type. See DestinyBreakerTypeDefinition for more details.
 	@JsonKey(name:'breakerTypeHash')
-	int breakerTypeHash;
+	int? breakerTypeHash;
 	/// IF populated, this item supports Energy mechanics (i.e. Armor 2.0), and these are the current details of its energy type and available capacity to spend energy points.
 	@JsonKey(name:'energy')
-	DestinyItemInstanceEnergy energy;
+	DestinyItemInstanceEnergy? energy;
 
 	
 	

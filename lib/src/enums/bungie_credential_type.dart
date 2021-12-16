@@ -46,7 +46,7 @@ enum BungieCredentialType {
 }
 
 extension BungieCredentialTypeExtension on BungieCredentialType{
-  int get value {
+  int? get value {
     switch(this){
       case BungieCredentialType.None:
         return 0;

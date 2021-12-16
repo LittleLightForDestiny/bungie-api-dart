@@ -22,7 +22,7 @@ enum DestinyPresentationNodeType {
 }
 
 extension DestinyPresentationNodeTypeExtension on DestinyPresentationNodeType{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyPresentationNodeType.Default:
         return 0;

@@ -9,8 +9,8 @@ part of 'destiny_historical_stats_value_pair.dart';
 DestinyHistoricalStatsValuePair _$DestinyHistoricalStatsValuePairFromJson(
     Map<String, dynamic> json) {
   return DestinyHistoricalStatsValuePair()
-    ..value = (json['value'] as num)?.toDouble()
-    ..displayValue = json['displayValue'] as String;
+    ..value = (json['value'] as num?)?.toDouble()
+    ..displayValue = json['displayValue'] as String?;
 }
 
 Map<String, dynamic> _$DestinyHistoricalStatsValuePairToJson(

@@ -16,9 +16,9 @@ DestinyPresentationNodeComponent _$DestinyPresentationNodeComponentFromJson(
         ? null
         : DestinyObjectiveProgress.fromJson(
             json['objective'] as Map<String, dynamic>)
-    ..progressValue = json['progressValue'] as int
-    ..completionValue = json['completionValue'] as int
-    ..recordCategoryScore = json['recordCategoryScore'] as int;
+    ..progressValue = json['progressValue'] as int?
+    ..completionValue = json['completionValue'] as int?
+    ..recordCategoryScore = json['recordCategoryScore'] as int?;
 }
 
 Map<String, dynamic> _$DestinyPresentationNodeComponentToJson(

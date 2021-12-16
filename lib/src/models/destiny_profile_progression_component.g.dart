@@ -9,12 +9,8 @@ part of 'destiny_profile_progression_component.dart';
 DestinyProfileProgressionComponent _$DestinyProfileProgressionComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyProfileProgressionComponent()
-    ..checklists = (json['checklists'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          (e as Map<String, dynamic>)?.map(
-            (k, e) => MapEntry(k, e as bool),
-          )),
+    ..checklists = (json['checklists'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k, Map<String, bool>.from(e as Map)),
     )
     ..seasonalArtifact = json['seasonalArtifact'] == null
         ? null

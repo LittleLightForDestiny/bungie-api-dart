@@ -10,22 +10,17 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 	DestinyVendorRequirementDisplayEntryDefinition();
 
 	factory DestinyVendorRequirementDisplayEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'icon')
-	String icon;
+	String? icon;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 	@JsonKey(name:'source')
-	String source;
+	String? source;
 	@JsonKey(name:'type')
-	String type;
+	String? type;
 
 	
 	

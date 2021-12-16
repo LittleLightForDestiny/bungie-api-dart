@@ -8,8 +8,8 @@ part of 'date_range.dart';
 
 DateRange _$DateRangeFromJson(Map<String, dynamic> json) {
   return DateRange()
-    ..start = json['start'] as String
-    ..end = json['end'] as String;
+    ..start = json['start'] as String?
+    ..end = json['end'] as String?;
 }
 
 Map<String, dynamic> _$DateRangeToJson(DateRange instance) => <String, dynamic>{

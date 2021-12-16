@@ -10,20 +10,18 @@ DestinyVendorInventoryFlyoutDefinition
     _$DestinyVendorInventoryFlyoutDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyVendorInventoryFlyoutDefinition()
-    ..lockedDescription = json['lockedDescription'] as String
+    ..lockedDescription = json['lockedDescription'] as String?
     ..displayProperties = json['displayProperties'] == null
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..buckets = (json['buckets'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyVendorInventoryFlyoutBucketDefinition.fromJson(
-                e as Map<String, dynamic>))
-        ?.toList()
-    ..flyoutId = json['flyoutId'] as int
-    ..suppressNewness = json['suppressNewness'] as bool
-    ..equipmentSlotHash = json['equipmentSlotHash'] as int;
+    ..buckets = (json['buckets'] as List<dynamic>?)
+        ?.map((e) => DestinyVendorInventoryFlyoutBucketDefinition.fromJson(
+            e as Map<String, dynamic>))
+        .toList()
+    ..flyoutId = json['flyoutId'] as int?
+    ..suppressNewness = json['suppressNewness'] as bool?
+    ..equipmentSlotHash = json['equipmentSlotHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyVendorInventoryFlyoutDefinitionToJson(

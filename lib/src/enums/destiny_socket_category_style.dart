@@ -34,7 +34,7 @@ enum DestinySocketCategoryStyle {
 }
 
 extension DestinySocketCategoryStyleExtension on DestinySocketCategoryStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinySocketCategoryStyle.Unknown:
         return 0;

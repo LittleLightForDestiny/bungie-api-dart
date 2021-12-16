@@ -11,28 +11,23 @@ class DestinyPresentationNodeComponent{
 	DestinyPresentationNodeComponent();
 
 	factory DestinyPresentationNodeComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPresentationNodeComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPresentationNodeComponentFromJson(json);
 	}
 
 	@JsonKey(name:'state')
-	DestinyPresentationNodeState state;
+	DestinyPresentationNodeState? state;
 	/// An optional property: presentation nodes MAY have objectives, which can be used to infer more human readable data about the progress. However, progressValue and completionValue ought to be considered the canonical values for progress on Progression Nodes.
 	@JsonKey(name:'objective')
-	DestinyObjectiveProgress objective;
+	DestinyObjectiveProgress? objective;
 	/// How much of the presentation node is considered to be completed so far by the given character/profile.
 	@JsonKey(name:'progressValue')
-	int progressValue;
+	int? progressValue;
 	/// The value at which the presentation node is considered to be completed.
 	@JsonKey(name:'completionValue')
-	int completionValue;
+	int? completionValue;
 	/// If available, this is the current score for the record category that this node represents.
 	@JsonKey(name:'recordCategoryScore')
-	int recordCategoryScore;
+	int? recordCategoryScore;
 
 	
 	

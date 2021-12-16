@@ -11,20 +11,15 @@ class InventoryChangedResponse{
 	InventoryChangedResponse();
 
 	factory InventoryChangedResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$InventoryChangedResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$InventoryChangedResponseFromJson(json);
 	}
 
 	/// Items that appeared in the inventory possibly as a result of an action.
 	@JsonKey(name:'addedInventoryItems')
-	List<DestinyItemComponent> addedInventoryItems;
+	List<DestinyItemComponent>? addedInventoryItems;
 	/// Items that disappeared from the inventory possibly as a result of an action.
 	@JsonKey(name:'removedInventoryItems')
-	List<DestinyItemComponent> removedInventoryItems;
+	List<DestinyItemComponent>? removedInventoryItems;
 
 	
 	

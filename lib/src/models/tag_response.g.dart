@@ -8,7 +8,7 @@ part of 'tag_response.dart';
 
 TagResponse _$TagResponseFromJson(Map<String, dynamic> json) {
   return TagResponse()
-    ..tagText = json['tagText'] as String
+    ..tagText = json['tagText'] as String?
     ..ignoreStatus = json['ignoreStatus'] == null
         ? null
         : IgnoreResponse.fromJson(json['ignoreStatus'] as Map<String, dynamic>);

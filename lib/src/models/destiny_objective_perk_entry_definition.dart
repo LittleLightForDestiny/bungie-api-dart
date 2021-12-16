@@ -12,20 +12,15 @@ class DestinyObjectivePerkEntryDefinition{
 	DestinyObjectivePerkEntryDefinition();
 
 	factory DestinyObjectivePerkEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyObjectivePerkEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyObjectivePerkEntryDefinitionFromJson(json);
 	}
 
 	/// The hash identifier of the DestinySandboxPerkDefinition that will be applied to the character.
 	@JsonKey(name:'perkHash')
-	int perkHash;
+	int? perkHash;
 	/// An enumeration indicating whether it will be applied as long as the Objective is active, when it's completed, or until it's completed.
 	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue)
-	DestinyObjectiveGrantStyle style;
+	DestinyObjectiveGrantStyle? style;
 
 	
 	

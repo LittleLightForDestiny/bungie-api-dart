@@ -49,7 +49,7 @@ enum DestinyTalentNodeState {
 }
 
 extension DestinyTalentNodeStateExtension on DestinyTalentNodeState{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyTalentNodeState.Invalid:
         return 0;

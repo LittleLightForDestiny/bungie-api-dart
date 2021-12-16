@@ -22,7 +22,7 @@ enum FireteamDateRange {
 }
 
 extension FireteamDateRangeExtension on FireteamDateRange{
-  int get value {
+  int? get value {
     switch(this){
       case FireteamDateRange.All:
         return 0;

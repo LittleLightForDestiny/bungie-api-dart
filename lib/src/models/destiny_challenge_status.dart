@@ -12,17 +12,12 @@ class DestinyChallengeStatus{
 	DestinyChallengeStatus();
 
 	factory DestinyChallengeStatus.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyChallengeStatusFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyChallengeStatusFromJson(json);
 	}
 
 	/// The progress - including completion status - of the active challenge.
 	@JsonKey(name:'objective')
-	DestinyObjectiveProgress objective;
+	DestinyObjectiveProgress? objective;
 
 	
 	

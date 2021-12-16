@@ -22,7 +22,7 @@ enum GroupDateRange {
 }
 
 extension GroupDateRangeExtension on GroupDateRange{
-  int get value {
+  int? get value {
     switch(this){
       case GroupDateRange.All:
         return 0;

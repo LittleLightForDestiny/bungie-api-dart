@@ -16,7 +16,7 @@ enum ForumRecruitmentToneLabel {
 }
 
 extension ForumRecruitmentToneLabelExtension on ForumRecruitmentToneLabel{
-  int get value {
+  int? get value {
     switch(this){
       case ForumRecruitmentToneLabel.None:
         return 0;

@@ -8,12 +8,12 @@ part of 'trending_category.dart';
 
 TrendingCategory _$TrendingCategoryFromJson(Map<String, dynamic> json) {
   return TrendingCategory()
-    ..categoryName = json['categoryName'] as String
+    ..categoryName = json['categoryName'] as String?
     ..entries = json['entries'] == null
         ? null
         : SearchResultOfTrendingEntry.fromJson(
             json['entries'] as Map<String, dynamic>)
-    ..categoryId = json['categoryId'] as String;
+    ..categoryId = json['categoryId'] as String?;
 }
 
 Map<String, dynamic> _$TrendingCategoryToJson(TrendingCategory instance) =>

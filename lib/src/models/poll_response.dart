@@ -10,20 +10,15 @@ class PollResponse{
 	PollResponse();
 
 	factory PollResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$PollResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$PollResponseFromJson(json);
 	}
 
 	@JsonKey(name:'topicId')
-	String topicId;
+	String? topicId;
 	@JsonKey(name:'results')
-	List<PollResult> results;
+	List<PollResult>? results;
 	@JsonKey(name:'totalVotes')
-	int totalVotes;
+	int? totalVotes;
 
 	
 	

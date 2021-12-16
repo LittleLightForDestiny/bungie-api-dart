@@ -13,7 +13,7 @@ enum DestinyProgressionRewardItemAcquisitionBehavior {
 }
 
 extension DestinyProgressionRewardItemAcquisitionBehaviorExtension on DestinyProgressionRewardItemAcquisitionBehavior{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyProgressionRewardItemAcquisitionBehavior.Instant:
         return 0;

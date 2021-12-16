@@ -9,9 +9,9 @@ part of 'destiny_activity_guided_block_definition.dart';
 DestinyActivityGuidedBlockDefinition
     _$DestinyActivityGuidedBlockDefinitionFromJson(Map<String, dynamic> json) {
   return DestinyActivityGuidedBlockDefinition()
-    ..guidedMaxLobbySize = json['guidedMaxLobbySize'] as int
-    ..guidedMinLobbySize = json['guidedMinLobbySize'] as int
-    ..guidedDisbandCount = json['guidedDisbandCount'] as int;
+    ..guidedMaxLobbySize = json['guidedMaxLobbySize'] as int?
+    ..guidedMinLobbySize = json['guidedMinLobbySize'] as int?
+    ..guidedDisbandCount = json['guidedDisbandCount'] as int?;
 }
 
 Map<String, dynamic> _$DestinyActivityGuidedBlockDefinitionToJson(

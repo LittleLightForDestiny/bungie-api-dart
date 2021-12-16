@@ -9,19 +9,17 @@ part of 'search_result_of_trending_entry.dart';
 SearchResultOfTrendingEntry _$SearchResultOfTrendingEntryFromJson(
     Map<String, dynamic> json) {
   return SearchResultOfTrendingEntry()
-    ..results = (json['results'] as List)
-        ?.map((e) => e == null
-            ? null
-            : TrendingEntry.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..totalResults = json['totalResults'] as int
-    ..hasMore = json['hasMore'] as bool
+    ..results = (json['results'] as List<dynamic>?)
+        ?.map((e) => TrendingEntry.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..totalResults = json['totalResults'] as int?
+    ..hasMore = json['hasMore'] as bool?
     ..query = json['query'] == null
         ? null
         : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
     ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String
-    ..useTotalResults = json['useTotalResults'] as bool;
+        json['replacementContinuationToken'] as String?
+    ..useTotalResults = json['useTotalResults'] as bool?;
 }
 
 Map<String, dynamic> _$SearchResultOfTrendingEntryToJson(

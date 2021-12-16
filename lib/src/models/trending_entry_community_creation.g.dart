@@ -9,13 +9,13 @@ part of 'trending_entry_community_creation.dart';
 TrendingEntryCommunityCreation _$TrendingEntryCommunityCreationFromJson(
     Map<String, dynamic> json) {
   return TrendingEntryCommunityCreation()
-    ..media = json['media'] as String
-    ..title = json['title'] as String
-    ..author = json['author'] as String
-    ..authorMembershipId = json['authorMembershipId'] as String
-    ..postId = json['postId'] as String
-    ..body = json['body'] as String
-    ..upvotes = json['upvotes'] as int;
+    ..media = json['media'] as String?
+    ..title = json['title'] as String?
+    ..author = json['author'] as String?
+    ..authorMembershipId = json['authorMembershipId'] as String?
+    ..postId = json['postId'] as String?
+    ..body = json['body'] as String?
+    ..upvotes = json['upvotes'] as int?;
 }
 
 Map<String, dynamic> _$TrendingEntryCommunityCreationToJson(

@@ -13,35 +13,30 @@ class GroupResponse{
 	GroupResponse();
 
 	factory GroupResponse.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupResponseFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupResponseFromJson(json);
 	}
 
 	@JsonKey(name:'detail')
-	GroupV2 detail;
+	GroupV2? detail;
 	@JsonKey(name:'founder')
-	GroupMember founder;
+	GroupMember? founder;
 	@JsonKey(name:'alliedIds')
-	List<String> alliedIds;
+	List<String>? alliedIds;
 	@JsonKey(name:'parentGroup')
-	GroupV2 parentGroup;
+	GroupV2? parentGroup;
 	@JsonKey(name:'allianceStatus',unknownEnumValue:GroupAllianceStatus.ProtectedInvalidEnumValue)
-	GroupAllianceStatus allianceStatus;
+	GroupAllianceStatus? allianceStatus;
 	@JsonKey(name:'groupJoinInviteCount')
-	int groupJoinInviteCount;
+	int? groupJoinInviteCount;
 	/// A convenience property that indicates if every membership you (the current user) have that is a part of this group are part of an account that is considered inactive - for example, overridden accounts in Cross Save.
 	@JsonKey(name:'currentUserMembershipsInactiveForDestiny')
-	bool currentUserMembershipsInactiveForDestiny;
+	bool? currentUserMembershipsInactiveForDestiny;
 	/// This property will be populated if the authenticated user is a member of the group. Note that because of account linking, a user can sometimes be part of a clan more than once. As such, this returns the highest member type available.
 	@JsonKey(name:'currentUserMemberMap')
-	Map<String, GroupMember> currentUserMemberMap;
+	Map<String, GroupMember>? currentUserMemberMap;
 	/// This property will be populated if the authenticated user is an applicant or has an outstanding invitation to join. Note that because of account linking, a user can sometimes be part of a clan more than once.
 	@JsonKey(name:'currentUserPotentialMemberMap')
-	Map<String, GroupPotentialMember> currentUserPotentialMemberMap;
+	Map<String, GroupPotentialMember>? currentUserPotentialMemberMap;
 
 	
 	

@@ -9,13 +9,13 @@ part of 'destiny_objective_progress.dart';
 DestinyObjectiveProgress _$DestinyObjectiveProgressFromJson(
     Map<String, dynamic> json) {
   return DestinyObjectiveProgress()
-    ..objectiveHash = json['objectiveHash'] as int
-    ..destinationHash = json['destinationHash'] as int
-    ..activityHash = json['activityHash'] as int
-    ..progress = json['progress'] as int
-    ..completionValue = json['completionValue'] as int
-    ..complete = json['complete'] as bool
-    ..visible = json['visible'] as bool;
+    ..objectiveHash = json['objectiveHash'] as int?
+    ..destinationHash = json['destinationHash'] as int?
+    ..activityHash = json['activityHash'] as int?
+    ..progress = json['progress'] as int?
+    ..completionValue = json['completionValue'] as int?
+    ..complete = json['complete'] as bool?
+    ..visible = json['visible'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyObjectiveProgressToJson(

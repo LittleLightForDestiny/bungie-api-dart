@@ -22,7 +22,7 @@ enum DestinyGamePrivacySetting {
 }
 
 extension DestinyGamePrivacySettingExtension on DestinyGamePrivacySetting{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyGamePrivacySetting.Open:
         return 0;

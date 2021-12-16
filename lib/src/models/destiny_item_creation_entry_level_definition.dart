@@ -10,16 +10,11 @@ class DestinyItemCreationEntryLevelDefinition{
 	DestinyItemCreationEntryLevelDefinition();
 
 	factory DestinyItemCreationEntryLevelDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemCreationEntryLevelDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemCreationEntryLevelDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'level')
-	int level;
+	int? level;
 
 	
 	

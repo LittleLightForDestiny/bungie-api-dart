@@ -9,37 +9,38 @@ part of 'destiny_talent_node_definition.dart';
 DestinyTalentNodeDefinition _$DestinyTalentNodeDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyTalentNodeDefinition()
-    ..nodeIndex = json['nodeIndex'] as int
-    ..nodeHash = json['nodeHash'] as int
-    ..row = json['row'] as int
-    ..column = json['column'] as int
-    ..prerequisiteNodeIndexes = (json['prerequisiteNodeIndexes'] as List)
-        ?.map((e) => e as int)
-        ?.toList()
-    ..binaryPairNodeIndex = json['binaryPairNodeIndex'] as int
-    ..autoUnlocks = json['autoUnlocks'] as bool
-    ..lastStepRepeats = json['lastStepRepeats'] as bool
-    ..isRandom = json['isRandom'] as bool
+    ..nodeIndex = json['nodeIndex'] as int?
+    ..nodeHash = json['nodeHash'] as int?
+    ..row = json['row'] as int?
+    ..column = json['column'] as int?
+    ..prerequisiteNodeIndexes =
+        (json['prerequisiteNodeIndexes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
+    ..binaryPairNodeIndex = json['binaryPairNodeIndex'] as int?
+    ..autoUnlocks = json['autoUnlocks'] as bool?
+    ..lastStepRepeats = json['lastStepRepeats'] as bool?
+    ..isRandom = json['isRandom'] as bool?
     ..randomActivationRequirement = json['randomActivationRequirement'] == null
         ? null
         : DestinyNodeActivationRequirement.fromJson(
             json['randomActivationRequirement'] as Map<String, dynamic>)
-    ..isRandomRepurchasable = json['isRandomRepurchasable'] as bool
-    ..steps = (json['steps'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyNodeStepDefinition.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..exclusiveWithNodeHashes = (json['exclusiveWithNodeHashes'] as List)
-        ?.map((e) => e as int)
-        ?.toList()
+    ..isRandomRepurchasable = json['isRandomRepurchasable'] as bool?
+    ..steps = (json['steps'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyNodeStepDefinition.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..exclusiveWithNodeHashes =
+        (json['exclusiveWithNodeHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
     ..randomStartProgressionBarAtProgression =
-        json['randomStartProgressionBarAtProgression'] as int
-    ..layoutIdentifier = json['layoutIdentifier'] as String
-    ..groupHash = json['groupHash'] as int
-    ..loreHash = json['loreHash'] as int
-    ..nodeStyleIdentifier = json['nodeStyleIdentifier'] as String
-    ..ignoreForCompletion = json['ignoreForCompletion'] as bool;
+        json['randomStartProgressionBarAtProgression'] as int?
+    ..layoutIdentifier = json['layoutIdentifier'] as String?
+    ..groupHash = json['groupHash'] as int?
+    ..loreHash = json['loreHash'] as int?
+    ..nodeStyleIdentifier = json['nodeStyleIdentifier'] as String?
+    ..ignoreForCompletion = json['ignoreForCompletion'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyTalentNodeDefinitionToJson(

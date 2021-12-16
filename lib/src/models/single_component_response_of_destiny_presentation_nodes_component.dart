@@ -11,21 +11,16 @@ class SingleComponentResponseOfDestinyPresentationNodesComponent{
 	SingleComponentResponseOfDestinyPresentationNodesComponent();
 
 	factory SingleComponentResponseOfDestinyPresentationNodesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyPresentationNodesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyPresentationNodesComponentFromJson(json);
 	}
 
 	@JsonKey(name:'data')
-	DestinyPresentationNodesComponent data;
+	DestinyPresentationNodesComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

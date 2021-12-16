@@ -19,7 +19,7 @@ enum ForumMediaType {
 }
 
 extension ForumMediaTypeExtension on ForumMediaType{
-  int get value {
+  int? get value {
     switch(this){
       case ForumMediaType.None:
         return 0;

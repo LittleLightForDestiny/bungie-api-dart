@@ -18,29 +18,24 @@ class DestinyItemTalentGridComponent{
 	DestinyItemTalentGridComponent();
 
 	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemTalentGridComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemTalentGridComponentFromJson(json);
 	}
 
 	/// Most items don't have useful talent grids anymore, but Builds in particular still do.
 	/// You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.
 	@JsonKey(name:'talentGridHash')
-	int talentGridHash;
+	int? talentGridHash;
 	/// Detailed information about the individual nodes in the talent grid.
 	/// A node represents a single visual "pip" in the talent grid or Build detail view, though each node may have multiple "steps" which indicate the actual bonuses and visual representation of that node.
 	@JsonKey(name:'nodes')
-	List<DestinyTalentNode> nodes;
+	List<DestinyTalentNode>? nodes;
 	/// Indicates whether the talent grid on this item is completed, and thus whether it should have a gold border around it.
 	/// Only will be true if the item actually *has* a talent grid, and only then if it is completed (i.e. every exclusive set has an activated node, and every non-exclusive set node has been activated)
 	@JsonKey(name:'isGridComplete')
-	bool isGridComplete;
+	bool? isGridComplete;
 	/// If the item has a progression, it will be detailed here. A progression means that the item can gain experience. Thresholds of experience are what determines whether and when a talent node can be activated.
 	@JsonKey(name:'gridProgression')
-	DestinyProgression gridProgression;
+	DestinyProgression? gridProgression;
 
 	
 	

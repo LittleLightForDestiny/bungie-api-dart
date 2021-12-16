@@ -16,7 +16,7 @@ enum ForumRecruitmentIntensityLabel {
 }
 
 extension ForumRecruitmentIntensityLabelExtension on ForumRecruitmentIntensityLabel{
-  int get value {
+  int? get value {
     switch(this){
       case ForumRecruitmentIntensityLabel.None:
         return 0;

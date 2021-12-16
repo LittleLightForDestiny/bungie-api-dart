@@ -10,16 +10,11 @@ class TrendingCategories{
 	TrendingCategories();
 
 	factory TrendingCategories.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TrendingCategoriesFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TrendingCategoriesFromJson(json);
 	}
 
 	@JsonKey(name:'categories')
-	List<TrendingCategory> categories;
+	List<TrendingCategory>? categories;
 
 	
 	

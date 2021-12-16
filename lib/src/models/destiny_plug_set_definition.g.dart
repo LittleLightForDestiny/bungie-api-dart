@@ -13,16 +13,15 @@ DestinyPlugSetDefinition _$DestinyPlugSetDefinitionFromJson(
         ? null
         : DestinyDisplayPropertiesDefinition.fromJson(
             json['displayProperties'] as Map<String, dynamic>)
-    ..reusablePlugItems = (json['reusablePlugItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(
+    ..reusablePlugItems = (json['reusablePlugItems'] as List<dynamic>?)
+        ?.map((e) =>
+            DestinyItemSocketEntryPlugItemRandomizedDefinition.fromJson(
                 e as Map<String, dynamic>))
-        ?.toList()
-    ..isFakePlugSet = json['isFakePlugSet'] as bool
-    ..hash = json['hash'] as int
-    ..index = json['index'] as int
-    ..redacted = json['redacted'] as bool;
+        .toList()
+    ..isFakePlugSet = json['isFakePlugSet'] as bool?
+    ..hash = json['hash'] as int?
+    ..index = json['index'] as int?
+    ..redacted = json['redacted'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPlugSetDefinitionToJson(

@@ -10,16 +10,11 @@ class DestinyBaseItemComponentSetOfint64{
 	DestinyBaseItemComponentSetOfint64();
 
 	factory DestinyBaseItemComponentSetOfint64.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyBaseItemComponentSetOfint64FromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyBaseItemComponentSetOfint64FromJson(json);
 	}
 
 	@JsonKey(name:'objectives')
-	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent objectives;
+	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent? objectives;
 
 	
 	

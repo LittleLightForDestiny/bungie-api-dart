@@ -9,13 +9,9 @@ part of 'destiny_presentation_nodes_component.dart';
 DestinyPresentationNodesComponent _$DestinyPresentationNodesComponentFromJson(
     Map<String, dynamic> json) {
   return DestinyPresentationNodesComponent()
-    ..nodes = (json['nodes'] as Map<String, dynamic>)?.map(
-      (k, e) => MapEntry(
-          k,
-          e == null
-              ? null
-              : DestinyPresentationNodeComponent.fromJson(
-                  e as Map<String, dynamic>)),
+    ..nodes = (json['nodes'] as Map<String, dynamic>?)?.map(
+      (k, e) => MapEntry(k,
+          DestinyPresentationNodeComponent.fromJson(e as Map<String, dynamic>)),
     );
 }
 

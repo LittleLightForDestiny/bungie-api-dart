@@ -9,18 +9,13 @@ class HyperlinkReference{
 	HyperlinkReference();
 
 	factory HyperlinkReference.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$HyperlinkReferenceFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$HyperlinkReferenceFromJson(json);
 	}
 
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	@JsonKey(name:'url')
-	String url;
+	String? url;
 
 	
 	

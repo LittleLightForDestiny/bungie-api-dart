@@ -11,21 +11,16 @@ class SingleComponentResponseOfDestinyItemPlugObjectivesComponent{
 	SingleComponentResponseOfDestinyItemPlugObjectivesComponent();
 
 	factory SingleComponentResponseOfDestinyItemPlugObjectivesComponent.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$SingleComponentResponseOfDestinyItemPlugObjectivesComponentFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$SingleComponentResponseOfDestinyItemPlugObjectivesComponentFromJson(json);
 	}
 
 	@JsonKey(name:'data')
-	DestinyItemPlugObjectivesComponent data;
+	DestinyItemPlugObjectivesComponent? data;
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
-	ComponentPrivacySetting privacy;
+	ComponentPrivacySetting? privacy;
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
-	bool disabled;
+	bool? disabled;
 
 	
 	

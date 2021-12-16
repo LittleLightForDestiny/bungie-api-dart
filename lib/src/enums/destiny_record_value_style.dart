@@ -22,7 +22,7 @@ enum DestinyRecordValueStyle {
 }
 
 extension DestinyRecordValueStyleExtension on DestinyRecordValueStyle{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyRecordValueStyle.Integer:
         return 0;

@@ -13,7 +13,7 @@ enum VendorDisplayCategorySortOrder {
 }
 
 extension VendorDisplayCategorySortOrderExtension on VendorDisplayCategorySortOrder{
-  int get value {
+  int? get value {
     switch(this){
       case VendorDisplayCategorySortOrder.Default:
         return 0;

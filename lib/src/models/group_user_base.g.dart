@@ -8,7 +8,7 @@ part of 'group_user_base.dart';
 
 GroupUserBase _$GroupUserBaseFromJson(Map<String, dynamic> json) {
   return GroupUserBase()
-    ..groupId = json['groupId'] as String
+    ..groupId = json['groupId'] as String?
     ..destinyUserInfo = json['destinyUserInfo'] == null
         ? null
         : GroupUserInfoCard.fromJson(
@@ -17,7 +17,7 @@ GroupUserBase _$GroupUserBaseFromJson(Map<String, dynamic> json) {
         ? null
         : UserInfoCard.fromJson(
             json['bungieNetUserInfo'] as Map<String, dynamic>)
-    ..joinDate = json['joinDate'] as String;
+    ..joinDate = json['joinDate'] as String?;
 }
 
 Map<String, dynamic> _$GroupUserBaseToJson(GroupUserBase instance) =>

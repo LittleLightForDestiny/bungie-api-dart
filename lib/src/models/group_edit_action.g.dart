@@ -8,23 +8,23 @@ part of 'group_edit_action.dart';
 
 GroupEditAction _$GroupEditActionFromJson(Map<String, dynamic> json) {
   return GroupEditAction()
-    ..name = json['name'] as String
-    ..about = json['about'] as String
-    ..motto = json['motto'] as String
-    ..theme = json['theme'] as String
-    ..avatarImageIndex = json['avatarImageIndex'] as int
-    ..tags = json['tags'] as String
-    ..isPublic = json['isPublic'] as bool
-    ..membershipOption = json['membershipOption'] as int
-    ..isPublicTopicAdminOnly = json['isPublicTopicAdminOnly'] as bool
-    ..allowChat = json['allowChat'] as bool
-    ..chatSecurity = json['chatSecurity'] as int
-    ..callsign = json['callsign'] as String
-    ..locale = json['locale'] as String
-    ..homepage = json['homepage'] as int
+    ..name = json['name'] as String?
+    ..about = json['about'] as String?
+    ..motto = json['motto'] as String?
+    ..theme = json['theme'] as String?
+    ..avatarImageIndex = json['avatarImageIndex'] as int?
+    ..tags = json['tags'] as String?
+    ..isPublic = json['isPublic'] as bool?
+    ..membershipOption = json['membershipOption'] as int?
+    ..isPublicTopicAdminOnly = json['isPublicTopicAdminOnly'] as bool?
+    ..allowChat = json['allowChat'] as bool?
+    ..chatSecurity = json['chatSecurity'] as int?
+    ..callsign = json['callsign'] as String?
+    ..locale = json['locale'] as String?
+    ..homepage = json['homepage'] as int?
     ..enableInvitationMessagingForAdmins =
-        json['enableInvitationMessagingForAdmins'] as bool
-    ..defaultPublicity = json['defaultPublicity'] as int;
+        json['enableInvitationMessagingForAdmins'] as bool?
+    ..defaultPublicity = json['defaultPublicity'] as int?;
 }
 
 Map<String, dynamic> _$GroupEditActionToJson(GroupEditAction instance) =>

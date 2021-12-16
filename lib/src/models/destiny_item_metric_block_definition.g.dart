@@ -10,9 +10,9 @@ DestinyItemMetricBlockDefinition _$DestinyItemMetricBlockDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyItemMetricBlockDefinition()
     ..availableMetricCategoryNodeHashes =
-        (json['availableMetricCategoryNodeHashes'] as List)
+        (json['availableMetricCategoryNodeHashes'] as List<dynamic>?)
             ?.map((e) => e as int)
-            ?.toList();
+            .toList();
 }
 
 Map<String, dynamic> _$DestinyItemMetricBlockDefinitionToJson(

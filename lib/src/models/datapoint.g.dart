@@ -8,8 +8,8 @@ part of 'datapoint.dart';
 
 Datapoint _$DatapointFromJson(Map<String, dynamic> json) {
   return Datapoint()
-    ..time = json['time'] as String
-    ..count = (json['count'] as num)?.toDouble();
+    ..time = json['time'] as String?
+    ..count = (json['count'] as num?)?.toDouble();
 }
 
 Map<String, dynamic> _$DatapointToJson(Datapoint instance) => <String, dynamic>{

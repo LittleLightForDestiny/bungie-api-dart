@@ -16,7 +16,7 @@ enum FireteamSlotSearch {
 }
 
 extension FireteamSlotSearchExtension on FireteamSlotSearch{
-  int get value {
+  int? get value {
     switch(this){
       case FireteamSlotSearch.NoSlotRestriction:
         return 0;

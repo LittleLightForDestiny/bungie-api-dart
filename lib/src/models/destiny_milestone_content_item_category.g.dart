@@ -9,8 +9,9 @@ part of 'destiny_milestone_content_item_category.dart';
 DestinyMilestoneContentItemCategory
     _$DestinyMilestoneContentItemCategoryFromJson(Map<String, dynamic> json) {
   return DestinyMilestoneContentItemCategory()
-    ..title = json['title'] as String
-    ..itemHashes = (json['itemHashes'] as List)?.map((e) => e as int)?.toList();
+    ..title = json['title'] as String?
+    ..itemHashes =
+        (json['itemHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
 }
 
 Map<String, dynamic> _$DestinyMilestoneContentItemCategoryToJson(

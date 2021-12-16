@@ -1,0 +1,1 @@
+export '../src/models/bungie_friend.dart';

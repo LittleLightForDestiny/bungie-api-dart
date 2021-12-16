@@ -9,17 +9,15 @@ part of 'destiny_public_vendor_sale_item_component.dart';
 DestinyPublicVendorSaleItemComponent
     _$DestinyPublicVendorSaleItemComponentFromJson(Map<String, dynamic> json) {
   return DestinyPublicVendorSaleItemComponent()
-    ..vendorItemIndex = json['vendorItemIndex'] as int
-    ..itemHash = json['itemHash'] as int
-    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int
-    ..quantity = json['quantity'] as int
-    ..costs = (json['costs'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String
-    ..apiPurchasable = json['apiPurchasable'] as bool;
+    ..vendorItemIndex = json['vendorItemIndex'] as int?
+    ..itemHash = json['itemHash'] as int?
+    ..overrideStyleItemHash = json['overrideStyleItemHash'] as int?
+    ..quantity = json['quantity'] as int?
+    ..costs = (json['costs'] as List<dynamic>?)
+        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String?
+    ..apiPurchasable = json['apiPurchasable'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPublicVendorSaleItemComponentToJson(

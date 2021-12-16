@@ -9,16 +9,12 @@ part of 'inventory_changed_response.dart';
 InventoryChangedResponse _$InventoryChangedResponseFromJson(
     Map<String, dynamic> json) {
   return InventoryChangedResponse()
-    ..addedInventoryItems = (json['addedInventoryItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-        ?.toList()
-    ..removedInventoryItems = (json['removedInventoryItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..addedInventoryItems = (json['addedInventoryItems'] as List<dynamic>?)
+        ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
+        .toList()
+    ..removedInventoryItems = (json['removedInventoryItems'] as List<dynamic>?)
+        ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$InventoryChangedResponseToJson(

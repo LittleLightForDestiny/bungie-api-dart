@@ -34,7 +34,7 @@ enum DestinyProgressionScope {
 }
 
 extension DestinyProgressionScopeExtension on DestinyProgressionScope{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyProgressionScope.Account:
         return 0;

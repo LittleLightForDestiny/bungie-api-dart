@@ -14,33 +14,28 @@ class DestinyArtifactDefinition{
 	DestinyArtifactDefinition();
 
 	factory DestinyArtifactDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyArtifactDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyArtifactDefinitionFromJson(json);
 	}
 
 	/// Any basic display info we know about the Artifact. Currently sourced from a related inventory item, but the source of this data is subject to change.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// Any Geometry/3D info we know about the Artifact. Currently sourced from a related inventory item's gearset information, but the source of this data is subject to change.
 	@JsonKey(name:'translationBlock')
-	DestinyItemTranslationBlockDefinition translationBlock;
+	DestinyItemTranslationBlockDefinition? translationBlock;
 	/// Any Tier/Rank data related to this artifact, listed in display order.  Currently sourced from a Vendor, but this source is subject to change.
 	@JsonKey(name:'tiers')
-	List<DestinyArtifactTierDefinition> tiers;
+	List<DestinyArtifactTierDefinition>? tiers;
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')
-	int hash;
+	int? hash;
 	/// The index of the entity as it was found in the investment tables.
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
-	bool redacted;
+	bool? redacted;
 
 	
 	

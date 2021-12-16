@@ -9,11 +9,12 @@ part of 'destiny_item_socket_state.dart';
 DestinyItemSocketState _$DestinyItemSocketStateFromJson(
     Map<String, dynamic> json) {
   return DestinyItemSocketState()
-    ..plugHash = json['plugHash'] as int
-    ..isEnabled = json['isEnabled'] as bool
-    ..isVisible = json['isVisible'] as bool
-    ..enableFailIndexes =
-        (json['enableFailIndexes'] as List)?.map((e) => e as int)?.toList();
+    ..plugHash = json['plugHash'] as int?
+    ..isEnabled = json['isEnabled'] as bool?
+    ..isVisible = json['isVisible'] as bool?
+    ..enableFailIndexes = (json['enableFailIndexes'] as List<dynamic>?)
+        ?.map((e) => e as int)
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyItemSocketStateToJson(

@@ -16,6 +16,7 @@ import '../models/destiny_postmaster_transfer_request.dart';
 import '../models/destiny_report_offense_pgcr_request.dart';
 import '../responses/awa_authorization_result_response.dart';
 import '../responses/awa_initialize_response_response.dart';
+import '../responses/clan_banner_source_response.dart';
 import '../responses/destiny_activity_history_results_response.dart';
 import '../responses/destiny_aggregate_activity_results_response.dart';
 import '../responses/destiny_character_response_response.dart';
@@ -74,17 +75,15 @@ class Destiny2{
         }
         throw Exception(response.mappedBody);
     }
-    /// Returns a list of Destiny memberships given a full Gamertag or PSN ID. Unless you pass returnOriginalProfile=true, this will return membership information for the users' Primary Cross Save Profile if they are engaged in cross save rather than any original Destiny profile that is now being overridden.
+    /// Returns a list of Destiny memberships given a global Bungie Display Name. This method will hide overridden memberships due to cross save.
     static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayer (
         HttpClient client,
         String displayName,
         BungieMembershipType membershipType,
-        bool returnOriginalProfile,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _displayName = '$displayName';
         final String _membershipType = '${membershipType.value}';
-        params['returnOriginalProfile'] = returnOriginalProfile;
         final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/SearchDestinyPlayer/$_membershipType/$_displayName/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
@@ -164,6 +163,19 @@ class Destiny2{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return DestinyMilestoneResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Returns the dictionary of values for the Clan Banner
+    static Future<ClanBannerSourceResponse> getClanBannerSource (
+        HttpClient client,
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/Clan/ClanBannerDictionary/', params);
+        config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return ClanBannerSourceResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

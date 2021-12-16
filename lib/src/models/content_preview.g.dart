@@ -8,12 +8,12 @@ part of 'content_preview.dart';
 
 ContentPreview _$ContentPreviewFromJson(Map<String, dynamic> json) {
   return ContentPreview()
-    ..name = json['name'] as String
-    ..path = json['path'] as String
-    ..itemInSet = json['itemInSet'] as bool
-    ..setTag = json['setTag'] as String
-    ..setNesting = json['setNesting'] as int
-    ..useSetId = json['useSetId'] as int;
+    ..name = json['name'] as String?
+    ..path = json['path'] as String?
+    ..itemInSet = json['itemInSet'] as bool?
+    ..setTag = json['setTag'] as String?
+    ..setNesting = json['setNesting'] as int?
+    ..useSetId = json['useSetId'] as int?;
 }
 
 Map<String, dynamic> _$ContentPreviewToJson(ContentPreview instance) =>

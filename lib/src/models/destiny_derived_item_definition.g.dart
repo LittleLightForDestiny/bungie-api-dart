@@ -9,12 +9,12 @@ part of 'destiny_derived_item_definition.dart';
 DestinyDerivedItemDefinition _$DestinyDerivedItemDefinitionFromJson(
     Map<String, dynamic> json) {
   return DestinyDerivedItemDefinition()
-    ..itemHash = json['itemHash'] as int
-    ..itemName = json['itemName'] as String
-    ..itemDetail = json['itemDetail'] as String
-    ..itemDescription = json['itemDescription'] as String
-    ..iconPath = json['iconPath'] as String
-    ..vendorItemIndex = json['vendorItemIndex'] as int;
+    ..itemHash = json['itemHash'] as int?
+    ..itemName = json['itemName'] as String?
+    ..itemDetail = json['itemDetail'] as String?
+    ..itemDescription = json['itemDescription'] as String?
+    ..iconPath = json['iconPath'] as String?
+    ..vendorItemIndex = json['vendorItemIndex'] as int?;
 }
 
 Map<String, dynamic> _$DestinyDerivedItemDefinitionToJson(

@@ -24,7 +24,11 @@ DestinyPublicVendorsResponse _$DestinyPublicVendorsResponseFromJson(
     ..sales = json['sales'] == null
         ? null
         : DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent
-            .fromJson(json['sales'] as Map<String, dynamic>);
+            .fromJson(json['sales'] as Map<String, dynamic>)
+    ..stringVariables = json['stringVariables'] == null
+        ? null
+        : SingleComponentResponseOfDestinyStringVariablesComponent.fromJson(
+            json['stringVariables'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyPublicVendorsResponseToJson(
@@ -34,4 +38,5 @@ Map<String, dynamic> _$DestinyPublicVendorsResponseToJson(
       'vendors': instance.vendors,
       'categories': instance.categories,
       'sales': instance.sales,
+      'stringVariables': instance.stringVariables,
     };

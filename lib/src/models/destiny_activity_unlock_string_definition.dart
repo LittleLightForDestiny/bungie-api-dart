@@ -10,17 +10,12 @@ class DestinyActivityUnlockStringDefinition{
 	DestinyActivityUnlockStringDefinition();
 
 	factory DestinyActivityUnlockStringDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityUnlockStringDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityUnlockStringDefinitionFromJson(json);
 	}
 
 	/// The string to be displayed if the conditions are met.
 	@JsonKey(name:'displayString')
-	String displayString;
+	String? displayString;
 
 	
 	

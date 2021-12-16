@@ -16,7 +16,7 @@ enum HostGuidedGamesPermissionLevel {
 }
 
 extension HostGuidedGamesPermissionLevelExtension on HostGuidedGamesPermissionLevel{
-  int get value {
+  int? get value {
     switch(this){
       case HostGuidedGamesPermissionLevel.None:
         return 0;

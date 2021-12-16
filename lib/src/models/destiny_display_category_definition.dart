@@ -12,40 +12,35 @@ class DestinyDisplayCategoryDefinition{
 	DestinyDisplayCategoryDefinition();
 
 	factory DestinyDisplayCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyDisplayCategoryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyDisplayCategoryDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'index')
-	int index;
+	int? index;
 	/// A string identifier for the display category.
 	@JsonKey(name:'identifier')
-	String identifier;
+	String? identifier;
 	@JsonKey(name:'displayCategoryHash')
-	int displayCategoryHash;
+	int? displayCategoryHash;
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
-	DestinyDisplayPropertiesDefinition displayProperties;
+	DestinyDisplayPropertiesDefinition? displayProperties;
 	/// If true, this category should be displayed in the "Banner" section of the vendor's UI.
 	@JsonKey(name:'displayInBanner')
-	bool displayInBanner;
+	bool? displayInBanner;
 	/// If it exists, this is the hash identifier of a DestinyProgressionDefinition that represents the progression to show on this display category.
 	/// Specific categories can now have thier own distinct progression, apparently. So that's cool.
 	@JsonKey(name:'progressionHash')
-	int progressionHash;
+	int? progressionHash;
 	/// If this category sorts items in a nonstandard way, this will be the way we sort.
 	@JsonKey(name:'sortOrder',unknownEnumValue:VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue)
-	VendorDisplayCategorySortOrder sortOrder;
+	VendorDisplayCategorySortOrder? sortOrder;
 	/// An indicator of how the category will be displayed in the UI. It's up to you to do something cool or interesting in response to this, or just to treat it as a normal category.
 	@JsonKey(name:'displayStyleHash')
-	int displayStyleHash;
+	int? displayStyleHash;
 	/// An indicator of how the category will be displayed in the UI. It's up to you to do something cool or interesting in response to this, or just to treat it as a normal category.
 	@JsonKey(name:'displayStyleIdentifier')
-	String displayStyleIdentifier;
+	String? displayStyleIdentifier;
 
 	
 	

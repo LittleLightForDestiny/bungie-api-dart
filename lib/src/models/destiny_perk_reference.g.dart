@@ -8,10 +8,10 @@ part of 'destiny_perk_reference.dart';
 
 DestinyPerkReference _$DestinyPerkReferenceFromJson(Map<String, dynamic> json) {
   return DestinyPerkReference()
-    ..perkHash = json['perkHash'] as int
-    ..iconPath = json['iconPath'] as String
-    ..isActive = json['isActive'] as bool
-    ..visible = json['visible'] as bool;
+    ..perkHash = json['perkHash'] as int?
+    ..iconPath = json['iconPath'] as String?
+    ..isActive = json['isActive'] as bool?
+    ..visible = json['visible'] as bool?;
 }
 
 Map<String, dynamic> _$DestinyPerkReferenceToJson(

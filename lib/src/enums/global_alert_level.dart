@@ -19,7 +19,7 @@ enum GlobalAlertLevel {
 }
 
 extension GlobalAlertLevelExtension on GlobalAlertLevel{
-  int get value {
+  int? get value {
     switch(this){
       case GlobalAlertLevel.Unknown:
         return 0;

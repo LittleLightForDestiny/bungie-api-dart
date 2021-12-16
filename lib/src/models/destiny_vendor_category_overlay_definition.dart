@@ -10,25 +10,20 @@ class DestinyVendorCategoryOverlayDefinition{
 	DestinyVendorCategoryOverlayDefinition();
 
 	factory DestinyVendorCategoryOverlayDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'choiceDescription')
-	String choiceDescription;
+	String? choiceDescription;
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 	@JsonKey(name:'icon')
-	String icon;
+	String? icon;
 	@JsonKey(name:'title')
-	String title;
+	String? title;
 	/// If this overlay has a currency item that it features, this is said featured item.
 	@JsonKey(name:'currencyItemHash')
-	int currencyItemHash;
+	int? currencyItemHash;
 
 	
 	

@@ -11,22 +11,17 @@ class DestinyMilestoneActivityVariantDefinition{
 	DestinyMilestoneActivityVariantDefinition();
 
 	factory DestinyMilestoneActivityVariantDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
 	}
 
 	/// The hash to use for looking up the variant Activity's definition (DestinyActivityDefinition), where you can find its distinguishing characteristics such as difficulty level and recommended light level. 
 	/// Frequently, that will be the only distinguishing characteristics in practice, which is somewhat of a bummer.
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	/// If you care to do so, render the variants in the order prescribed by this value.
 	/// When you combine live Milestone data with the definition, the order becomes more useful because you'll be cross-referencing between the definition and live data.
 	@JsonKey(name:'order')
-	int order;
+	int? order;
 
 	
 	

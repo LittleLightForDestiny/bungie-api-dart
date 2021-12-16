@@ -8,8 +8,8 @@ part of 'hyperlink_reference.dart';
 
 HyperlinkReference _$HyperlinkReferenceFromJson(Map<String, dynamic> json) {
   return HyperlinkReference()
-    ..title = json['title'] as String
-    ..url = json['url'] as String;
+    ..title = json['title'] as String?
+    ..url = json['url'] as String?;
 }
 
 Map<String, dynamic> _$HyperlinkReferenceToJson(HyperlinkReference instance) =>

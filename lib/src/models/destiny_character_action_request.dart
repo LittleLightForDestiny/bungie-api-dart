@@ -10,18 +10,13 @@ class DestinyCharacterActionRequest{
 	DestinyCharacterActionRequest();
 
 	factory DestinyCharacterActionRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyCharacterActionRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyCharacterActionRequestFromJson(json);
 	}
 
 	@JsonKey(name:'characterId')
-	String characterId;
+	String? characterId;
 	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
-	BungieMembershipType membershipType;
+	BungieMembershipType? membershipType;
 
 	
 	

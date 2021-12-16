@@ -13,7 +13,7 @@ enum DestinyVendorFilter {
 }
 
 extension DestinyVendorFilterExtension on DestinyVendorFilter{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyVendorFilter.None:
         return 0;

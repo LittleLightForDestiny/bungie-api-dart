@@ -12,29 +12,24 @@ class DestinyPostGameCarnageReportData{
 	DestinyPostGameCarnageReportData();
 
 	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyPostGameCarnageReportDataFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyPostGameCarnageReportDataFromJson(json);
 	}
 
 	/// Date and time for the activity.
 	@JsonKey(name:'period')
-	String period;
+	String? period;
 	/// If this activity has "phases", this is the phase at which the activity was started.
 	@JsonKey(name:'startingPhaseIndex')
-	int startingPhaseIndex;
+	int? startingPhaseIndex;
 	/// Details about the activity.
 	@JsonKey(name:'activityDetails')
-	DestinyHistoricalStatsActivity activityDetails;
+	DestinyHistoricalStatsActivity? activityDetails;
 	/// Collection of players and their data for this activity.
 	@JsonKey(name:'entries')
-	List<DestinyPostGameCarnageReportEntry> entries;
+	List<DestinyPostGameCarnageReportEntry>? entries;
 	/// Collection of stats for the player in this activity.
 	@JsonKey(name:'teams')
-	List<DestinyPostGameCarnageReportTeamEntry> teams;
+	List<DestinyPostGameCarnageReportTeamEntry>? teams;
 
 	
 	

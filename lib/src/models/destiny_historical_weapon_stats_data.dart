@@ -10,17 +10,12 @@ class DestinyHistoricalWeaponStatsData{
 	DestinyHistoricalWeaponStatsData();
 
 	factory DestinyHistoricalWeaponStatsData.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyHistoricalWeaponStatsDataFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyHistoricalWeaponStatsDataFromJson(json);
 	}
 
 	/// List of weapons and their perspective values.
 	@JsonKey(name:'weapons')
-	List<DestinyHistoricalWeaponStats> weapons;
+	List<DestinyHistoricalWeaponStats>? weapons;
 
 	
 	

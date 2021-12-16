@@ -9,24 +9,19 @@ class TagMetadataItem{
 	TagMetadataItem();
 
 	factory TagMetadataItem.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$TagMetadataItemFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$TagMetadataItemFromJson(json);
 	}
 
 	@JsonKey(name:'description')
-	String description;
+	String? description;
 	@JsonKey(name:'tagText')
-	String tagText;
+	String? tagText;
 	@JsonKey(name:'groups')
-	List<String> groups;
+	List<String>? groups;
 	@JsonKey(name:'isDefault')
-	bool isDefault;
+	bool? isDefault;
 	@JsonKey(name:'name')
-	String name;
+	String? name;
 
 	
 	

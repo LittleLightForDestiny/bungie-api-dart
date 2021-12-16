@@ -10,17 +10,12 @@ class DestinyItemMetricBlockDefinition{
 	DestinyItemMetricBlockDefinition();
 
 	factory DestinyItemMetricBlockDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemMetricBlockDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemMetricBlockDefinitionFromJson(json);
 	}
 
 	/// Hash identifiers for any DestinyPresentationNodeDefinition entry that can be used to list available metrics. Any metric listed directly below these nodes, or in any of these nodes' children will be made available for selection.
 	@JsonKey(name:'availableMetricCategoryNodeHashes')
-	List<int> availableMetricCategoryNodeHashes;
+	List<int>? availableMetricCategoryNodeHashes;
 
 	
 	

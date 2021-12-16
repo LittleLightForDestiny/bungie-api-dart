@@ -11,29 +11,24 @@ class DestinyActivityPlaylistItemDefinition{
 	DestinyActivityPlaylistItemDefinition();
 
 	factory DestinyActivityPlaylistItemDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyActivityPlaylistItemDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyActivityPlaylistItemDefinitionFromJson(json);
 	}
 
 	/// The hash identifier of the Activity that can be played. Use it to look up the DestinyActivityDefinition.
 	@JsonKey(name:'activityHash')
-	int activityHash;
+	int? activityHash;
 	/// If this playlist entry had an activity mode directly defined on it, this will be the hash of that mode.
 	@JsonKey(name:'directActivityModeHash')
-	int directActivityModeHash;
+	int? directActivityModeHash;
 	/// If the playlist entry had an activity mode directly defined on it, this will be the enum value of that mode.
 	@JsonKey(name:'directActivityModeType')
-	int directActivityModeType;
+	int? directActivityModeType;
 	/// The hash identifiers for Activity Modes relevant to this entry.
 	@JsonKey(name:'activityModeHashes')
-	List<int> activityModeHashes;
+	List<int>? activityModeHashes;
 	/// The activity modes - if any - in enum form. Because we can't seem to escape the enums.
 	@JsonKey(name:'activityModeTypes')
-	List<DestinyActivityModeType> activityModeTypes;
+	List<DestinyActivityModeType>? activityModeTypes;
 
 	
 	

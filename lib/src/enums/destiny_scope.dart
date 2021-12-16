@@ -13,7 +13,7 @@ enum DestinyScope {
 }
 
 extension DestinyScopeExtension on DestinyScope{
-  int get value {
+  int? get value {
     switch(this){
       case DestinyScope.Profile:
         return 0;

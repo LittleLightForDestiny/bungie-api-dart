@@ -10,7 +10,7 @@ DestinyItemSocketEntryPlugItemDefinition
     _$DestinyItemSocketEntryPlugItemDefinitionFromJson(
         Map<String, dynamic> json) {
   return DestinyItemSocketEntryPlugItemDefinition()
-    ..plugItemHash = json['plugItemHash'] as int;
+    ..plugItemHash = json['plugItemHash'] as int?;
 }
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemDefinitionToJson(

@@ -8,15 +8,15 @@ part of 'group_v2_card.dart';
 
 GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) {
   return GroupV2Card()
-    ..groupId = json['groupId'] as String
-    ..name = json['name'] as String
+    ..groupId = json['groupId'] as String?
+    ..name = json['name'] as String?
     ..groupType = _$enumDecodeNullable(_$GroupTypeEnumMap, json['groupType'],
         unknownValue: GroupType.ProtectedInvalidEnumValue)
-    ..creationDate = json['creationDate'] as String
-    ..about = json['about'] as String
-    ..motto = json['motto'] as String
-    ..memberCount = json['memberCount'] as int
-    ..locale = json['locale'] as String
+    ..creationDate = json['creationDate'] as String?
+    ..about = json['about'] as String?
+    ..motto = json['motto'] as String?
+    ..memberCount = json['memberCount'] as int?
+    ..locale = json['locale'] as String?
     ..membershipOption = _$enumDecodeNullable(
         _$MembershipOptionEnumMap, json['membershipOption'],
         unknownValue: MembershipOption.ProtectedInvalidEnumValue)
@@ -26,8 +26,8 @@ GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) {
     ..clanInfo = json['clanInfo'] == null
         ? null
         : GroupV2ClanInfo.fromJson(json['clanInfo'] as Map<String, dynamic>)
-    ..avatarPath = json['avatarPath'] as String
-    ..theme = json['theme'] as String;
+    ..avatarPath = json['avatarPath'] as String?
+    ..theme = json['theme'] as String?;
 }
 
 Map<String, dynamic> _$GroupV2CardToJson(GroupV2Card instance) =>
@@ -47,36 +47,41 @@ Map<String, dynamic> _$GroupV2CardToJson(GroupV2Card instance) =>
       'theme': instance.theme,
     };
 
-T _$enumDecode<T>(
-  Map<T, dynamic> enumValues,
-  dynamic source, {
-  T unknownValue,
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
 }) {
   if (source == null) {
-    throw ArgumentError('A value must be provided. Supported values: '
-        '${enumValues.values.join(', ')}');
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
   }
 
-  final value = enumValues.entries
-      .singleWhere((e) => e.value == source, orElse: () => null)
-      ?.key;
-
-  if (value == null && unknownValue == null) {
-    throw ArgumentError('`$source` is not one of the supported values: '
-        '${enumValues.values.join(', ')}');
-  }
-  return value ?? unknownValue;
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
 }
 
-T _$enumDecodeNullable<T>(
-  Map<T, dynamic> enumValues,
+K? _$enumDecodeNullable<K, V>(
+  Map<K, V> enumValues,
   dynamic source, {
-  T unknownValue,
+  K? unknownValue,
 }) {
   if (source == null) {
     return null;
   }
-  return _$enumDecode<T>(enumValues, source, unknownValue: unknownValue);
+  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$GroupTypeEnumMap = {

@@ -9,16 +9,11 @@ class DestinyLinkedGraphEntryDefinition{
 	DestinyLinkedGraphEntryDefinition();
 
 	factory DestinyLinkedGraphEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyLinkedGraphEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyLinkedGraphEntryDefinitionFromJson(json);
 	}
 
 	@JsonKey(name:'activityGraphHash')
-	int activityGraphHash;
+	int? activityGraphHash;
 
 	
 	

@@ -43,7 +43,7 @@ enum TrendingEntryType {
 }
 
 extension TrendingEntryTypeExtension on TrendingEntryType{
-  int get value {
+  int? get value {
     switch(this){
       case TrendingEntryType.News:
         return 0;

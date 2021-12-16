@@ -8,12 +8,11 @@ part of 'destiny_leaderboard.dart';
 
 DestinyLeaderboard _$DestinyLeaderboardFromJson(Map<String, dynamic> json) {
   return DestinyLeaderboard()
-    ..statId = json['statId'] as String
-    ..entries = (json['entries'] as List)
-        ?.map((e) => e == null
-            ? null
-            : DestinyLeaderboardEntry.fromJson(e as Map<String, dynamic>))
-        ?.toList();
+    ..statId = json['statId'] as String?
+    ..entries = (json['entries'] as List<dynamic>?)
+        ?.map(
+            (e) => DestinyLeaderboardEntry.fromJson(e as Map<String, dynamic>))
+        .toList();
 }
 
 Map<String, dynamic> _$DestinyLeaderboardToJson(DestinyLeaderboard instance) =>

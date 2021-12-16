@@ -9,8 +9,8 @@ part of 'schema_record_state_block.dart';
 SchemaRecordStateBlock _$SchemaRecordStateBlockFromJson(
     Map<String, dynamic> json) {
   return SchemaRecordStateBlock()
-    ..featuredPriority = json['featuredPriority'] as int
-    ..obscuredString = json['obscuredString'] as String;
+    ..featuredPriority = json['featuredPriority'] as int?
+    ..obscuredString = json['obscuredString'] as String?;
 }
 
 Map<String, dynamic> _$SchemaRecordStateBlockToJson(

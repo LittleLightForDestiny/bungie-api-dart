@@ -9,16 +9,11 @@ class GroupApplicationRequest{
 	GroupApplicationRequest();
 
 	factory GroupApplicationRequest.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$GroupApplicationRequestFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$GroupApplicationRequestFromJson(json);
 	}
 
 	@JsonKey(name:'message')
-	String message;
+	String? message;
 
 	
 	

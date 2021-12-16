@@ -10,23 +10,18 @@ class DestinyItemIntrinsicSocketEntryDefinition{
 	DestinyItemIntrinsicSocketEntryDefinition();
 
 	factory DestinyItemIntrinsicSocketEntryDefinition.fromJson(Map<String, dynamic> json) {
-		try{
-			return _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(json);
-		}catch(e){
-			print(e);
-		}
-		return null;
+		return _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(json);
 	}
 
 	/// Indicates the plug that is intrinsically inserted into this socket.
 	@JsonKey(name:'plugItemHash')
-	int plugItemHash;
+	int? plugItemHash;
 	/// Indicates the type of this intrinsic socket.
 	@JsonKey(name:'socketTypeHash')
-	int socketTypeHash;
+	int? socketTypeHash;
 	/// If true, then this socket is visible in the item's "default" state. If you have an instance, you should always check the runtime state, as that can override this visibility setting: but if you're looking at the item on a conceptual level, this property can be useful for hiding data such as legacy sockets - which remain defined on items for infrastructure purposes, but can be confusing for users to see.
 	@JsonKey(name:'defaultVisible')
-	bool defaultVisible;
+	bool? defaultVisible;
 
 	
 	
