@@ -14,19 +14,19 @@ class BungieNetToken {
       _$BungieNetTokenFromJson(json);
 
   @JsonKey(name: 'access_token')
-  String? accessToken;
+  String accessToken;
 
   @JsonKey(name: 'expires_in')
-  int? expiresIn;
+  int expiresIn;
 
   @JsonKey(name: 'refresh_token')
-  String? refreshToken;
+  String refreshToken;
 
   @JsonKey(name: 'refresh_expires_in')
-  int? refreshExpiresIn;
+  int refreshExpiresIn;
 
   @JsonKey(name: 'membership_id')
-  String? membershipId;
+  String membershipId;
 
   Map<String, dynamic> toJson() => _$BungieNetTokenToJson(this);
 }

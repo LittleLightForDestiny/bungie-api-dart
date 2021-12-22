@@ -15,6 +15,7 @@ class DestinyItemStateRequest{
 
 	@JsonKey(name:'state')
 	bool? state;
+	/// The instance ID of the item for this action request.
 	@JsonKey(name:'itemId')
 	String? itemId;
 	@JsonKey(name:'characterId')

@@ -13,10 +13,6 @@ DestinyItemComponentSetOfint64 _$DestinyItemComponentSetOfint64FromJson(
         ? null
         : DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent
             .fromJson(json['instances'] as Map<String, dynamic>)
-    ..perks = json['perks'] == null
-        ? null
-        : DictionaryComponentResponseOfint64AndDestinyItemPerksComponent
-            .fromJson(json['perks'] as Map<String, dynamic>)
     ..renderData = json['renderData'] == null
         ? null
         : DictionaryComponentResponseOfint64AndDestinyItemRenderComponent
@@ -48,14 +44,17 @@ DestinyItemComponentSetOfint64 _$DestinyItemComponentSetOfint64FromJson(
     ..objectives = json['objectives'] == null
         ? null
         : DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent
-            .fromJson(json['objectives'] as Map<String, dynamic>);
+            .fromJson(json['objectives'] as Map<String, dynamic>)
+    ..perks = json['perks'] == null
+        ? null
+        : DictionaryComponentResponseOfint64AndDestinyItemPerksComponent
+            .fromJson(json['perks'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyItemComponentSetOfint64ToJson(
         DestinyItemComponentSetOfint64 instance) =>
     <String, dynamic>{
       'instances': instance.instances,
-      'perks': instance.perks,
       'renderData': instance.renderData,
       'stats': instance.stats,
       'sockets': instance.sockets,
@@ -64,4 +63,5 @@ Map<String, dynamic> _$DestinyItemComponentSetOfint64ToJson(
       'talentGrids': instance.talentGrids,
       'plugStates': instance.plugStates,
       'objectives': instance.objectives,
+      'perks': instance.perks,
     };

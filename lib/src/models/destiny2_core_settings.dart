@@ -38,6 +38,10 @@ class Destiny2CoreSettings{
 	int? loreRootNodeHash;
 	@JsonKey(name:'currentRankProgressionHashes')
 	List<int>? currentRankProgressionHashes;
+	@JsonKey(name:'insertPlugFreeProtectedPlugItemHashes')
+	List<int>? insertPlugFreeProtectedPlugItemHashes;
+	@JsonKey(name:'insertPlugFreeBlockedSocketTypeHashes')
+	List<int>? insertPlugFreeBlockedSocketTypeHashes;
 	@JsonKey(name:'undiscoveredCollectibleImage')
 	String? undiscoveredCollectibleImage;
 	@JsonKey(name:'ammoTypeHeavyIcon')

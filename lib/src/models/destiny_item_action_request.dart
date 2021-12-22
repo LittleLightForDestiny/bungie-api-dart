@@ -13,6 +13,7 @@ class DestinyItemActionRequest{
 		return _$DestinyItemActionRequestFromJson(json);
 	}
 
+	/// The instance ID of the item for this action request.
 	@JsonKey(name:'itemId')
 	String? itemId;
 	@JsonKey(name:'characterId')

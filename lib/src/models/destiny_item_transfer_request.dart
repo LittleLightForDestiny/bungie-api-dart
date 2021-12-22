@@ -19,6 +19,7 @@ class DestinyItemTransferRequest{
 	int? stackSize;
 	@JsonKey(name:'transferToVault')
 	bool? transferToVault;
+	/// The instance ID of the item for this action request.
 	@JsonKey(name:'itemId')
 	String? itemId;
 	@JsonKey(name:'characterId')

@@ -1,0 +1,1 @@
+export '../src/models/exact_search_request.dart';

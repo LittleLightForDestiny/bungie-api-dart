@@ -24,6 +24,14 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(Map<String, dynamic> json) {
         (json['currentRankProgressionHashes'] as List<dynamic>?)
             ?.map((e) => e as int)
             .toList()
+    ..insertPlugFreeProtectedPlugItemHashes =
+        (json['insertPlugFreeProtectedPlugItemHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
+    ..insertPlugFreeBlockedSocketTypeHashes =
+        (json['insertPlugFreeBlockedSocketTypeHashes'] as List<dynamic>?)
+            ?.map((e) => e as int)
+            .toList()
     ..undiscoveredCollectibleImage =
         json['undiscoveredCollectibleImage'] as String?
     ..ammoTypeHeavyIcon = json['ammoTypeHeavyIcon'] as String?
@@ -57,6 +65,10 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'exoticCatalystsRootNodeHash': instance.exoticCatalystsRootNodeHash,
       'loreRootNodeHash': instance.loreRootNodeHash,
       'currentRankProgressionHashes': instance.currentRankProgressionHashes,
+      'insertPlugFreeProtectedPlugItemHashes':
+          instance.insertPlugFreeProtectedPlugItemHashes,
+      'insertPlugFreeBlockedSocketTypeHashes':
+          instance.insertPlugFreeBlockedSocketTypeHashes,
       'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
       'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,
       'ammoTypeSpecialIcon': instance.ammoTypeSpecialIcon,

@@ -172,5 +172,6 @@ K? _$enumDecodeNullable<K, V>(
 const _$DestinyVendorProgressionTypeEnumMap = {
   DestinyVendorProgressionType.Default: 0,
   DestinyVendorProgressionType.Ritual: 1,
+  DestinyVendorProgressionType.NoSeasonalRefresh: 2,
   DestinyVendorProgressionType.ProtectedInvalidEnumValue: 999999999,
 };

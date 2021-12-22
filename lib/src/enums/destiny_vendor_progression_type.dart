@@ -9,6 +9,10 @@ enum DestinyVendorProgressionType {
   /// Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Season 13 Battlegrounds (War Table).
   @JsonValue(1)
   Ritual,
+  ///NoSeasonalRefresh = 2
+  /// A vendor progression with no seasonal refresh. For example: Xur in the Eternity destination for the 30th Anniversary.
+  @JsonValue(2)
+  NoSeasonalRefresh,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -21,6 +25,8 @@ extension DestinyVendorProgressionTypeExtension on DestinyVendorProgressionType{
         return 0;
       case DestinyVendorProgressionType.Ritual:
         return 1;
+      case DestinyVendorProgressionType.NoSeasonalRefresh:
+        return 2;
       default:
         return null;
     }

@@ -5,6 +5,7 @@ import 'destiny_faction_progression.dart';
 import 'destiny_milestone.dart';
 import 'destiny_quest_status.dart';
 import 'destiny_objective_progress.dart';
+import 'destiny_item_perks_component.dart';
 import 'destiny_artifact_character_scoped.dart';
 
 part 'destiny_character_progression_component.g.dart';
@@ -38,6 +39,10 @@ class DestinyCharacterProgressionComponent{
 	/// This dictionary is keyed by the item's hash: which you can use to look up the name and description for the overall task(s) implied by the objective. The value is the list of objectives for this item, and their statuses.
 	@JsonKey(name:'uninstancedItemObjectives')
 	Map<String, List<DestinyObjectiveProgress>>? uninstancedItemObjectives;
+	/// Sometimes, you have items in your inventory that don't have instances, but still have perks (for example: Trials passage cards). This gives you the perk information for uninstanced items.
+	/// This dictionary is keyed by item hash, which you can use to look up the corresponding item definition. The value is the list of perks states for the item.
+	@JsonKey(name:'uninstancedItemPerks')
+	Map<String, DestinyItemPerksComponent>? uninstancedItemPerks;
 	/// The set of checklists that can be examined for this specific character, keyed by the hash identifier of the Checklist (DestinyChecklistDefinition)
 	/// For each checklist returned, its value is itself a Dictionary keyed by the checklist's hash identifier with the value being a boolean indicating if it's been discovered yet.
 	@JsonKey(name:'checklists')

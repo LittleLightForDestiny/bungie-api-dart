@@ -1,6 +1,7 @@
 import '../helpers/http.dart';
 import '../enums/bungie_credential_type.dart';
 import '../enums/bungie_membership_type.dart';
+import '../models/user_search_prefix_request.dart';
 import '../responses/general_user_response.dart';
 import '../responses/hard_linked_user_membership_response.dart';
 import '../responses/list_of_get_credential_types_for_account_response_response.dart';
@@ -98,7 +99,7 @@ class User{
         }
         throw Exception(response.mappedBody);
     }
-    /// Given the prefix of a global display name, returns all users who share that name.
+    /// [OBSOLETE] Do not use this to search users, use SearchByGlobalNamePost instead.
     static Future<UserSearchResponseResponse> searchByGlobalNamePrefix (
         HttpClient client,
         String displayNamePrefix,
@@ -109,6 +110,23 @@ class User{
         final String _page = '$page';
         final HttpClientConfig config = HttpClientConfig('GET', '/User/Search/Prefix/$_displayNamePrefix/$_page/', params);
         config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return UserSearchResponseResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Given the prefix of a global display name, returns all users who share that name.
+    static Future<UserSearchResponseResponse> searchByGlobalNamePost (
+        HttpClient client,
+        int page,
+        UserSearchPrefixRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _page = '$page';
+        final HttpClientConfig config = HttpClientConfig('POST', '/User/Search/GlobalName/$_page/', params);
+        config.body = body.toJson();
+        config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return UserSearchResponseResponse.fromJson(response.mappedBody);

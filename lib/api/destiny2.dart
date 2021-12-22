@@ -8,12 +8,14 @@ import '../enums/period_type.dart';
 import '../models/awa_permission_requested.dart';
 import '../models/awa_user_response.dart';
 import '../models/destiny_insert_plugs_action_request.dart';
+import '../models/destiny_insert_plugs_free_action_request.dart';
 import '../models/destiny_item_action_request.dart';
 import '../models/destiny_item_set_action_request.dart';
 import '../models/destiny_item_state_request.dart';
 import '../models/destiny_item_transfer_request.dart';
 import '../models/destiny_postmaster_transfer_request.dart';
 import '../models/destiny_report_offense_pgcr_request.dart';
+import '../models/exact_search_request.dart';
 import '../responses/awa_authorization_result_response.dart';
 import '../responses/awa_initialize_response_response.dart';
 import '../responses/clan_banner_source_response.dart';
@@ -76,16 +78,16 @@ class Destiny2{
         throw Exception(response.mappedBody);
     }
     /// Returns a list of Destiny memberships given a global Bungie Display Name. This method will hide overridden memberships due to cross save.
-    static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayer (
+    static Future<IEnumerableOfUserInfoCardResponse> searchDestinyPlayerByBungieName (
         HttpClient client,
-        String displayName,
         BungieMembershipType membershipType,
+        ExactSearchRequest body
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _displayName = '$displayName';
         final String _membershipType = '${membershipType.value}';
-        final HttpClientConfig config = HttpClientConfig('GET', '/Destiny2/SearchDestinyPlayer/$_membershipType/$_displayName/', params);
-        config.bodyContentType = null;
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/SearchDestinyPlayerByBungieName/$_membershipType/', params);
+        config.body = body.toJson();
+        config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return IEnumerableOfUserInfoCardResponse.fromJson(response.mappedBody);
@@ -381,6 +383,21 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/InsertSocketPlug/', params);
+        config.body = body.toJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return DestinyItemChangeResponseResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Insert a 'free' plug into an item's socket. This does not require 'Advanced Write Action' authorization and is available to 3rd-party apps, but will only work on 'free and reversible' socket actions (Perks, Armor Mods, Shaders, Ornaments, etc.). You must have a valid Destiny Account, and the character must either be in a social space, in orbit, or offline.
+    static Future<DestinyItemChangeResponseResponse> insertSocketPlugFree (
+        HttpClient client,
+        DestinyInsertPlugsFreeActionRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/InsertSocketPlugFree/', params);
         config.body = body.toJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);

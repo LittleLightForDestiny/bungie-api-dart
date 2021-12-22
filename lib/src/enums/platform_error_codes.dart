@@ -1262,6 +1262,9 @@ enum PlatformErrorCodes {
   ///IgnoreUserIgnored = 1009
   @JsonValue(1009)
   IgnoreUserIgnored,
+  ///TargetUserIgnored = 1010
+  @JsonValue(1010)
+  TargetUserIgnored,
   ///NotificationSettingInvalid = 1100
   @JsonValue(1100)
   NotificationSettingInvalid,
@@ -2412,6 +2415,18 @@ enum PlatformErrorCodes {
   ///ErrorBungieFriendsIdenticalSourceTarget = 3906
   @JsonValue(3906)
   ErrorBungieFriendsIdenticalSourceTarget,
+  ///ErrorBungieFriendsSelf = 3907
+  @JsonValue(3907)
+  ErrorBungieFriendsSelf,
+  ///ErrorBungieBlockSelf = 3908
+  @JsonValue(3908)
+  ErrorBungieBlockSelf,
+  ///ErrorBungieFriendsListFull = 3910
+  @JsonValue(3910)
+  ErrorBungieFriendsListFull,
+  ///ErrorBungieBlockListFull = 3911
+  @JsonValue(3911)
+  ErrorBungieBlockListFull,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -3260,6 +3275,8 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 1008;
       case PlatformErrorCodes.IgnoreUserIgnored:
         return 1009;
+      case PlatformErrorCodes.TargetUserIgnored:
+        return 1010;
       case PlatformErrorCodes.NotificationSettingInvalid:
         return 1100;
       case PlatformErrorCodes.PsnApiExpiredAccessToken:
@@ -4026,6 +4043,14 @@ extension PlatformErrorCodesExtension on PlatformErrorCodes{
         return 3905;
       case PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget:
         return 3906;
+      case PlatformErrorCodes.ErrorBungieFriendsSelf:
+        return 3907;
+      case PlatformErrorCodes.ErrorBungieBlockSelf:
+        return 3908;
+      case PlatformErrorCodes.ErrorBungieFriendsListFull:
+        return 3910;
+      case PlatformErrorCodes.ErrorBungieBlockListFull:
+        return 3911;
       default:
         return null;
     }

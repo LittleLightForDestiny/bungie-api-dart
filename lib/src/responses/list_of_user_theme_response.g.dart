@@ -494,6 +494,7 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.IgnoreNotFound: 1007,
   PlatformErrorCodes.IgnoreUserGloballyIgnored: 1008,
   PlatformErrorCodes.IgnoreUserIgnored: 1009,
+  PlatformErrorCodes.TargetUserIgnored: 1010,
   PlatformErrorCodes.NotificationSettingInvalid: 1100,
   PlatformErrorCodes.PsnApiExpiredAccessToken: 1204,
   PlatformErrorCodes.PSNExForbidden: 1205,
@@ -880,5 +881,9 @@ const _$PlatformErrorCodesEnumMap = {
   PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest: 3904,
   PlatformErrorCodes.ErrorBungieFriendsUnableToRemove: 3905,
   PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget: 3906,
+  PlatformErrorCodes.ErrorBungieFriendsSelf: 3907,
+  PlatformErrorCodes.ErrorBungieBlockSelf: 3908,
+  PlatformErrorCodes.ErrorBungieFriendsListFull: 3910,
+  PlatformErrorCodes.ErrorBungieBlockListFull: 3911,
   PlatformErrorCodes.ProtectedInvalidEnumValue: 999999999,
 };

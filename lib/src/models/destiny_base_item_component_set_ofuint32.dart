@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'dictionary_component_response_ofuint32_and_destiny_item_objectives_component.dart';
+import 'dictionary_component_response_ofuint32_and_destiny_item_perks_component.dart';
 
 part 'destiny_base_item_component_set_ofuint32.g.dart';
 
@@ -15,6 +16,8 @@ class DestinyBaseItemComponentSetOfuint32{
 
 	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
+	@JsonKey(name:'perks')
+	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
 
 	
 	

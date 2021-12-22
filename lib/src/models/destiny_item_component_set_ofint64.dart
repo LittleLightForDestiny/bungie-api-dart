@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
 import 'dictionary_component_response_ofint64_and_destiny_item_instance_component.dart';
-import 'dictionary_component_response_ofint64_and_destiny_item_perks_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_render_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_stats_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_sockets_component.dart';
@@ -10,6 +9,7 @@ import 'dictionary_component_response_ofint64_and_destiny_item_plug_objectives_c
 import 'dictionary_component_response_ofint64_and_destiny_item_talent_grid_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_item_plug_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
+import 'dictionary_component_response_ofint64_and_destiny_item_perks_component.dart';
 
 part 'destiny_item_component_set_ofint64.g.dart';
 
@@ -24,8 +24,6 @@ class DestinyItemComponentSetOfint64{
 
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent? instances;
-	@JsonKey(name:'perks')
-	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent? perks;
 	@JsonKey(name:'renderData')
 	DictionaryComponentResponseOfint64AndDestinyItemRenderComponent? renderData;
 	@JsonKey(name:'stats')
@@ -42,6 +40,8 @@ class DestinyItemComponentSetOfint64{
 	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent? plugStates;
 	@JsonKey(name:'objectives')
 	DictionaryComponentResponseOfint64AndDestinyItemObjectivesComponent? objectives;
+	@JsonKey(name:'perks')
+	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent? perks;
 
 	
 	

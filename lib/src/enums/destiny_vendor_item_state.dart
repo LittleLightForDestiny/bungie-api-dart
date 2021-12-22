@@ -59,6 +59,9 @@ class DestinyVendorItemState {
     ///Popular = 65536
     /// This indicates that the sale item is popular.
     static const DestinyVendorItemState Popular = DestinyVendorItemState(65536);
+    ///Free = 131072
+    /// This indicates that the sale item is free.
+    static const DestinyVendorItemState Free = DestinyVendorItemState(131072);
 
     int get value {
         return _value;

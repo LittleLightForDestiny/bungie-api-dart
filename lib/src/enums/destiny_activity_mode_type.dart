@@ -233,6 +233,9 @@ enum DestinyActivityModeType {
   ///TrialsOfOsiris = 84
   @JsonValue(84)
   TrialsOfOsiris,
+  ///Dares = 85
+  @JsonValue(85)
+  Dares,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -395,6 +398,8 @@ extension DestinyActivityModeTypeExtension on DestinyActivityModeType{
         return 83;
       case DestinyActivityModeType.TrialsOfOsiris:
         return 84;
+      case DestinyActivityModeType.Dares:
+        return 85;
       default:
         return null;
     }

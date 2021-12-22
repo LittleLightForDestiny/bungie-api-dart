@@ -12,11 +12,16 @@ DestinyBaseItemComponentSetOfuint32
     ..objectives = json['objectives'] == null
         ? null
         : DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent
-            .fromJson(json['objectives'] as Map<String, dynamic>);
+            .fromJson(json['objectives'] as Map<String, dynamic>)
+    ..perks = json['perks'] == null
+        ? null
+        : DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent
+            .fromJson(json['perks'] as Map<String, dynamic>);
 }
 
 Map<String, dynamic> _$DestinyBaseItemComponentSetOfuint32ToJson(
         DestinyBaseItemComponentSetOfuint32 instance) =>
     <String, dynamic>{
       'objectives': instance.objectives,
+      'perks': instance.perks,
     };
