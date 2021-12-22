@@ -1,3 +1,5 @@
+## 2021-11-29 (13.12.1)
+- updating bungie's api version to 2.12.1 and migrating to null safety
 ## 2020-09-09 (12.10.0)
 - updating bungie's api version to 2.10.0
 
