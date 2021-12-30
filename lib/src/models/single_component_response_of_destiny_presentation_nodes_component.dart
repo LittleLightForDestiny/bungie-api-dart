@@ -6,23 +6,22 @@ import '../enums/component_privacy_setting.dart';
 part 'single_component_response_of_destiny_presentation_nodes_component.g.dart';
 
 @JsonSerializable()
-class SingleComponentResponseOfDestinyPresentationNodesComponent{
-	
+class SingleComponentResponseOfDestinyPresentationNodesComponent{	
 	SingleComponentResponseOfDestinyPresentationNodesComponent();
 
 	factory SingleComponentResponseOfDestinyPresentationNodesComponent.fromJson(Map<String, dynamic> json) {
 		return _$SingleComponentResponseOfDestinyPresentationNodesComponentFromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyPresentationNodesComponentToJson(this);
+	
 	@JsonKey(name:'data')
 	DestinyPresentationNodesComponent? data;
+	
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting? privacy;
+	
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
-
-	
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyPresentationNodesComponentToJson(this);
 }

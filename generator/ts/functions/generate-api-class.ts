@@ -10,12 +10,17 @@ import { readFileSync, writeFileSync } from 'fs';
 import { camelcaseToUnderscore } from '../utils/camelcase-to-underscore';
 
 export function generateApiClass(apiClass:ApiClass){
+  if(!shell.test('-d', '../lib/src/api')){
+    shell.mkdir('-p', '../lib/src/api');
+  }
   if(!shell.test('-d', '../lib/api')){
     shell.mkdir('-p', '../lib/api');
   }
   let template = readFileSync('templates/api-class.mustache').toString();
   let rendered = mustache.render(template, apiClass);
   let underscored = camelcaseToUnderscore(apiClass.className);
-  writeFileSync(`../lib/api/${underscored}.dart`, rendered);
+  writeFileSync(`../lib/src/api/${underscored}.dart`, rendered);
+  let exportData = `export '../src/api/${underscored}.dart';`;
+  writeFileSync(`../lib/api/${underscored}.dart`, exportData);
 }
 

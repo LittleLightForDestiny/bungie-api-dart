@@ -5,20 +5,18 @@ import '../enums/chat_security_setting.dart';
 part 'group_optional_conversation_add_request.g.dart';
 
 @JsonSerializable()
-class GroupOptionalConversationAddRequest{
-	
+class GroupOptionalConversationAddRequest{	
 	GroupOptionalConversationAddRequest();
 
 	factory GroupOptionalConversationAddRequest.fromJson(Map<String, dynamic> json) {
 		return _$GroupOptionalConversationAddRequestFromJson(json);
 	}
-
-	@JsonKey(name:'chatName')
-	String? chatName;
-	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
-	ChatSecuritySetting? chatSecurity;
-
-	
 	
 	Map<String, dynamic> toJson() => _$GroupOptionalConversationAddRequestToJson(this);
+	
+	@JsonKey(name:'chatName')
+	String? chatName;
+	
+	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
+	ChatSecuritySetting? chatSecurity;
 }

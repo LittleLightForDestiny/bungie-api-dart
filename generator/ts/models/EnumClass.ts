@@ -16,6 +16,14 @@ export class EnumClass{
         return this.data['x-enum-is-bitmask'] || false;
     }
 
+    get groupName():string{
+        if(this.pathName.indexOf('.') < 0){
+            return "Core";
+        }
+        let group = this.pathName.split('.').shift();
+        return group!;
+    }
+
     get filename():string{
         return camelcaseToUnderscore(this.className);
     }

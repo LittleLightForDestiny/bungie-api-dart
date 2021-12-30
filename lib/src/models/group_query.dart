@@ -12,36 +12,42 @@ part 'group_query.g.dart';
 /// - groupMemberCountFilter - localeFilter - tagText
 /// If you pass these, you will get a useless InvalidParameters error.
 @JsonSerializable()
-class GroupQuery{
-	
+class GroupQuery{	
 	GroupQuery();
 
 	factory GroupQuery.fromJson(Map<String, dynamic> json) {
 		return _$GroupQueryFromJson(json);
 	}
-
-	@JsonKey(name:'name')
-	String? name;
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
-	GroupType? groupType;
-	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.ProtectedInvalidEnumValue)
-	GroupDateRange? creationDate;
-	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.ProtectedInvalidEnumValue)
-	GroupSortBy? sortBy;
-	@JsonKey(name:'groupMemberCountFilter')
-	int? groupMemberCountFilter;
-	@JsonKey(name:'localeFilter')
-	String? localeFilter;
-	@JsonKey(name:'tagText')
-	String? tagText;
-	@JsonKey(name:'itemsPerPage')
-	int? itemsPerPage;
-	@JsonKey(name:'currentPage')
-	int? currentPage;
-	@JsonKey(name:'requestContinuationToken')
-	String? requestContinuationToken;
-
-	
 	
 	Map<String, dynamic> toJson() => _$GroupQueryToJson(this);
+	
+	@JsonKey(name:'name')
+	String? name;
+	
+	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
+	GroupType? groupType;
+	
+	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.ProtectedInvalidEnumValue)
+	GroupDateRange? creationDate;
+	
+	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.ProtectedInvalidEnumValue)
+	GroupSortBy? sortBy;
+	
+	@JsonKey(name:'groupMemberCountFilter')
+	int? groupMemberCountFilter;
+	
+	@JsonKey(name:'localeFilter')
+	String? localeFilter;
+	
+	@JsonKey(name:'tagText')
+	String? tagText;
+	
+	@JsonKey(name:'itemsPerPage')
+	int? itemsPerPage;
+	
+	@JsonKey(name:'currentPage')
+	int? currentPage;
+	
+	@JsonKey(name:'requestContinuationToken')
+	String? requestContinuationToken;
 }

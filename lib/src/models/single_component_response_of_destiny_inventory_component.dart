@@ -6,25 +6,24 @@ import '../enums/component_privacy_setting.dart';
 part 'single_component_response_of_destiny_inventory_component.g.dart';
 
 @JsonSerializable()
-class SingleComponentResponseOfDestinyInventoryComponent{
-	
+class SingleComponentResponseOfDestinyInventoryComponent{	
 	SingleComponentResponseOfDestinyInventoryComponent();
 
 	factory SingleComponentResponseOfDestinyInventoryComponent.fromJson(Map<String, dynamic> json) {
 		return _$SingleComponentResponseOfDestinyInventoryComponentFromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyInventoryComponentToJson(this);
+	
 	/// A list of minimal information for items in an inventory: be it a character's inventory, or a Profile's inventory. (Note that the Vault is a collection of inventory buckets in the Profile's inventory)
 	/// Inventory Items returned here are in a flat list, but importantly they have a bucketHash property that indicates the specific inventory bucket that is holding them. These buckets constitute things like the separate sections of the Vault, the user's inventory slots, etc. See DestinyInventoryBucketDefinition for more info.
 	@JsonKey(name:'data')
 	DestinyInventoryComponent? data;
+	
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting? privacy;
+	
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
-
-	
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyInventoryComponentToJson(this);
 }

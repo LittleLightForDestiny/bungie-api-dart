@@ -6,24 +6,23 @@ import '../enums/component_privacy_setting.dart';
 part 'single_component_response_of_destiny_character_progression_component.g.dart';
 
 @JsonSerializable()
-class SingleComponentResponseOfDestinyCharacterProgressionComponent{
-	
+class SingleComponentResponseOfDestinyCharacterProgressionComponent{	
 	SingleComponentResponseOfDestinyCharacterProgressionComponent();
 
 	factory SingleComponentResponseOfDestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) {
 		return _$SingleComponentResponseOfDestinyCharacterProgressionComponentFromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyCharacterProgressionComponentToJson(this);
+	
 	/// This component returns anything that could be considered "Progression" on a user: data where the user is gaining levels, reputation, completions, rewards, etc...
 	@JsonKey(name:'data')
 	DestinyCharacterProgressionComponent? data;
+	
 	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
 	ComponentPrivacySetting? privacy;
+	
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
-
-	
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyCharacterProgressionComponentToJson(this);
 }

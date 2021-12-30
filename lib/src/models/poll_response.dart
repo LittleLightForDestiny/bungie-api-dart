@@ -5,22 +5,21 @@ import 'poll_result.dart';
 part 'poll_response.g.dart';
 
 @JsonSerializable()
-class PollResponse{
-	
+class PollResponse{	
 	PollResponse();
 
 	factory PollResponse.fromJson(Map<String, dynamic> json) {
 		return _$PollResponseFromJson(json);
 	}
-
-	@JsonKey(name:'topicId')
-	String? topicId;
-	@JsonKey(name:'results')
-	List<PollResult>? results;
-	@JsonKey(name:'totalVotes')
-	int? totalVotes;
-
-	
 	
 	Map<String, dynamic> toJson() => _$PollResponseToJson(this);
+	
+	@JsonKey(name:'topicId')
+	String? topicId;
+	
+	@JsonKey(name:'results')
+	List<PollResult>? results;
+	
+	@JsonKey(name:'totalVotes')
+	int? totalVotes;
 }

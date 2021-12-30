@@ -11,32 +11,36 @@ import 'trending_entry_community_creation.dart';
 part 'trending_detail.g.dart';
 
 @JsonSerializable()
-class TrendingDetail{
-	
+class TrendingDetail{	
 	TrendingDetail();
 
 	factory TrendingDetail.fromJson(Map<String, dynamic> json) {
 		return _$TrendingDetailFromJson(json);
 	}
-
-	@JsonKey(name:'identifier')
-	String? identifier;
-	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
-	TrendingEntryType? entityType;
-	@JsonKey(name:'news')
-	TrendingEntryNews? news;
-	@JsonKey(name:'support')
-	TrendingEntrySupportArticle? support;
-	@JsonKey(name:'destinyItem')
-	TrendingEntryDestinyItem? destinyItem;
-	@JsonKey(name:'destinyActivity')
-	TrendingEntryDestinyActivity? destinyActivity;
-	@JsonKey(name:'destinyRitual')
-	TrendingEntryDestinyRitual? destinyRitual;
-	@JsonKey(name:'creation')
-	TrendingEntryCommunityCreation? creation;
-
-	
 	
 	Map<String, dynamic> toJson() => _$TrendingDetailToJson(this);
+	
+	@JsonKey(name:'identifier')
+	String? identifier;
+	
+	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
+	TrendingEntryType? entityType;
+	
+	@JsonKey(name:'news')
+	TrendingEntryNews? news;
+	
+	@JsonKey(name:'support')
+	TrendingEntrySupportArticle? support;
+	
+	@JsonKey(name:'destinyItem')
+	TrendingEntryDestinyItem? destinyItem;
+	
+	@JsonKey(name:'destinyActivity')
+	TrendingEntryDestinyActivity? destinyActivity;
+	
+	@JsonKey(name:'destinyRitual')
+	TrendingEntryDestinyRitual? destinyRitual;
+	
+	@JsonKey(name:'creation')
+	TrendingEntryCommunityCreation? creation;
 }

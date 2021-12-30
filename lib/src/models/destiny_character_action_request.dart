@@ -5,20 +5,18 @@ import '../enums/bungie_membership_type.dart';
 part 'destiny_character_action_request.g.dart';
 
 @JsonSerializable()
-class DestinyCharacterActionRequest{
-	
+class DestinyCharacterActionRequest{	
 	DestinyCharacterActionRequest();
 
 	factory DestinyCharacterActionRequest.fromJson(Map<String, dynamic> json) {
 		return _$DestinyCharacterActionRequestFromJson(json);
 	}
-
-	@JsonKey(name:'characterId')
-	String? characterId;
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
-	BungieMembershipType? membershipType;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyCharacterActionRequestToJson(this);
+	
+	@JsonKey(name:'characterId')
+	String? characterId;
+	
+	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	BungieMembershipType? membershipType;
 }

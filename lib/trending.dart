@@ -1,0 +1,14 @@
+export 'src/api/trending.dart';
+export 'src/responses/trending_categories_response.dart';
+export 'src/responses/trending_detail_response.dart';
+export 'src/models/trending_categories.dart';
+export 'src/models/trending_category.dart';
+export 'src/models/trending_entry.dart';
+export 'src/models/trending_detail.dart';
+export 'src/models/trending_entry_news.dart';
+export 'src/models/trending_entry_support_article.dart';
+export 'src/models/trending_entry_destiny_item.dart';
+export 'src/models/trending_entry_destiny_activity.dart';
+export 'src/models/trending_entry_destiny_ritual.dart';
+export 'src/models/trending_entry_community_creation.dart';
+export 'src/enums/trending_entry_type.dart';

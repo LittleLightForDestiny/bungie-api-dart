@@ -15,8 +15,16 @@ export class ModelClass{
         ModelClass.all[this.className] = this;
     }
 
-    get hasProperties():boolean{
-        return this.properties.length > 0;
+    get groupName():string{
+        if(this.pathName.indexOf('.') < 0){
+            return "Core";
+        }
+        let group = this.pathName.split('.').shift();
+        return group!;
+    }
+
+    hasProperties():boolean{
+        return this.properties().length > 0;
     }
 
     properties():ModelProperty[]{

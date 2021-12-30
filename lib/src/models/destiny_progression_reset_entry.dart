@@ -6,20 +6,18 @@ part 'destiny_progression_reset_entry.g.dart';
 /// Represents a season and the number of resets you had in that season.
 ///  We do not necessarily - even for progressions with resets - track it over all seasons. So be careful and check the season numbers being returned.
 @JsonSerializable()
-class DestinyProgressionResetEntry{
-	
+class DestinyProgressionResetEntry{	
 	DestinyProgressionResetEntry();
 
 	factory DestinyProgressionResetEntry.fromJson(Map<String, dynamic> json) {
 		return _$DestinyProgressionResetEntryFromJson(json);
 	}
-
-	@JsonKey(name:'season')
-	int? season;
-	@JsonKey(name:'resets')
-	int? resets;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyProgressionResetEntryToJson(this);
+	
+	@JsonKey(name:'season')
+	int? season;
+	
+	@JsonKey(name:'resets')
+	int? resets;
 }

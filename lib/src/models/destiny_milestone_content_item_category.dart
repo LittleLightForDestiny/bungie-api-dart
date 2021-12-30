@@ -5,20 +5,18 @@ part 'destiny_milestone_content_item_category.g.dart';
 
 /// Part of our dynamic, localized Milestone content is arbitrary categories of items. These are built in our content management system, and thus aren&#39;t the same as programmatically generated rewards.
 @JsonSerializable()
-class DestinyMilestoneContentItemCategory{
-	
+class DestinyMilestoneContentItemCategory{	
 	DestinyMilestoneContentItemCategory();
 
 	factory DestinyMilestoneContentItemCategory.fromJson(Map<String, dynamic> json) {
 		return _$DestinyMilestoneContentItemCategoryFromJson(json);
 	}
-
-	@JsonKey(name:'title')
-	String? title;
-	@JsonKey(name:'itemHashes')
-	List<int>? itemHashes;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyMilestoneContentItemCategoryToJson(this);
+	
+	@JsonKey(name:'title')
+	String? title;
+	
+	@JsonKey(name:'itemHashes')
+	List<int>? itemHashes;
 }

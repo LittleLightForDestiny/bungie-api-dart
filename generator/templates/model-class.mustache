@@ -10,8 +10,7 @@ part '{{filename}}.g.dart';
 /// {{.}}
 {{/description}}
 @JsonSerializable()
-class {{className}}{
-	
+class {{className}}{	
 	{{className}}({{#hasProperties}}{{{/hasProperties}}
 		{{#properties}}
 		this.{{propertyName}},
@@ -21,16 +20,14 @@ class {{className}}{
 	factory {{className}}.fromJson(Map<String, dynamic> json) {
 		return _${{className}}FromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
 	{{#properties}}
+	
 	{{#description}}
 	/// {{{.}}}
 	{{/description}}
 	{{{jsonKey}}}
 	{{{typeName}}}? {{propertyName}};
 	{{/properties}}
-
-	
-	
-	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
 }

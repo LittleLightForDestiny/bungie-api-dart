@@ -6,20 +6,18 @@ import 'dictionary_component_response_ofuint32_and_destiny_item_perks_component.
 part 'destiny_base_item_component_set_ofuint32.g.dart';
 
 @JsonSerializable()
-class DestinyBaseItemComponentSetOfuint32{
-	
+class DestinyBaseItemComponentSetOfuint32{	
 	DestinyBaseItemComponentSetOfuint32();
 
 	factory DestinyBaseItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) {
 		return _$DestinyBaseItemComponentSetOfuint32FromJson(json);
 	}
-
-	@JsonKey(name:'objectives')
-	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
-	@JsonKey(name:'perks')
-	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyBaseItemComponentSetOfuint32ToJson(this);
+	
+	@JsonKey(name:'objectives')
+	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
+	
+	@JsonKey(name:'perks')
+	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
 }

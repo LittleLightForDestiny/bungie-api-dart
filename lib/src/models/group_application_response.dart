@@ -5,18 +5,15 @@ import '../enums/group_application_resolve_state.dart';
 part 'group_application_response.g.dart';
 
 @JsonSerializable()
-class GroupApplicationResponse{
-	
+class GroupApplicationResponse{	
 	GroupApplicationResponse();
 
 	factory GroupApplicationResponse.fromJson(Map<String, dynamic> json) {
 		return _$GroupApplicationResponseFromJson(json);
 	}
-
-	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
-	GroupApplicationResolveState? resolution;
-
-	
 	
 	Map<String, dynamic> toJson() => _$GroupApplicationResponseToJson(this);
+	
+	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
+	GroupApplicationResolveState? resolution;
 }

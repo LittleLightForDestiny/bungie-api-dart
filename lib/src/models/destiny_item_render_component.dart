@@ -5,24 +5,22 @@ part 'destiny_item_render_component.g.dart';
 
 /// Many items can be rendered in 3D. When you request this block, you will obtain the custom data needed to render this specific instance of the item.
 @JsonSerializable()
-class DestinyItemRenderComponent{
-	
+class DestinyItemRenderComponent{	
 	DestinyItemRenderComponent();
 
 	factory DestinyItemRenderComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemRenderComponentFromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _$DestinyItemRenderComponentToJson(this);
+	
 	/// If you should use custom dyes on this item, it will be indicated here.
 	@JsonKey(name:'useCustomDyes')
 	bool? useCustomDyes;
+	
 	/// A dictionary for rendering gear components, with:
 	/// key = Art Arrangement Region Index
 	/// value = The chosen Arrangement Index for the Region, based on the value of a stat on the item used for making the choice.
 	@JsonKey(name:'artRegions')
 	Map<String, int>? artRegions;
-
-	
-	
-	Map<String, dynamic> toJson() => _$DestinyItemRenderComponentToJson(this);
 }

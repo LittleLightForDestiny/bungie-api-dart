@@ -6,22 +6,21 @@ import '../enums/destiny_presentation_display_style.dart';
 part 'destiny_presentation_child_block.g.dart';
 
 @JsonSerializable()
-class DestinyPresentationChildBlock{
-	
+class DestinyPresentationChildBlock{	
 	DestinyPresentationChildBlock();
 
 	factory DestinyPresentationChildBlock.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPresentationChildBlockFromJson(json);
 	}
-
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
-	DestinyPresentationNodeType? presentationNodeType;
-	@JsonKey(name:'parentPresentationNodeHashes')
-	List<int>? parentPresentationNodeHashes;
-	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
-	DestinyPresentationDisplayStyle? displayStyle;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyPresentationChildBlockToJson(this);
+	
+	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	DestinyPresentationNodeType? presentationNodeType;
+	
+	@JsonKey(name:'parentPresentationNodeHashes')
+	List<int>? parentPresentationNodeHashes;
+	
+	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
+	DestinyPresentationDisplayStyle? displayStyle;
 }

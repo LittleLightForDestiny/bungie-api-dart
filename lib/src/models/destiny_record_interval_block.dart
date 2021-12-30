@@ -6,22 +6,21 @@ import 'destiny_record_interval_rewards.dart';
 part 'destiny_record_interval_block.g.dart';
 
 @JsonSerializable()
-class DestinyRecordIntervalBlock{
-	
+class DestinyRecordIntervalBlock{	
 	DestinyRecordIntervalBlock();
 
 	factory DestinyRecordIntervalBlock.fromJson(Map<String, dynamic> json) {
 		return _$DestinyRecordIntervalBlockFromJson(json);
 	}
-
-	@JsonKey(name:'intervalObjectives')
-	List<DestinyRecordIntervalObjective>? intervalObjectives;
-	@JsonKey(name:'intervalRewards')
-	List<DestinyRecordIntervalRewards>? intervalRewards;
-	@JsonKey(name:'originalObjectiveArrayInsertionIndex')
-	int? originalObjectiveArrayInsertionIndex;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyRecordIntervalBlockToJson(this);
+	
+	@JsonKey(name:'intervalObjectives')
+	List<DestinyRecordIntervalObjective>? intervalObjectives;
+	
+	@JsonKey(name:'intervalRewards')
+	List<DestinyRecordIntervalRewards>? intervalRewards;
+	
+	@JsonKey(name:'originalObjectiveArrayInsertionIndex')
+	int? originalObjectiveArrayInsertionIndex;
 }

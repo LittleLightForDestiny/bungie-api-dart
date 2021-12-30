@@ -5,18 +5,15 @@ import '../enums/destiny_collectible_state.dart';
 part 'destiny_collectible_component.g.dart';
 
 @JsonSerializable()
-class DestinyCollectibleComponent{
-	
+class DestinyCollectibleComponent{	
 	DestinyCollectibleComponent();
 
 	factory DestinyCollectibleComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyCollectibleComponentFromJson(json);
 	}
-
-	@JsonKey(name:'state')
-	DestinyCollectibleState? state;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyCollectibleComponentToJson(this);
+	
+	@JsonKey(name:'state')
+	DestinyCollectibleState? state;
 }

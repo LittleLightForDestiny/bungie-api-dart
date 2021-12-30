@@ -6,18 +6,15 @@ part 'destiny_equip_item_results.g.dart';
 
 /// The results of a bulk Equipping operation performed through the Destiny API.
 @JsonSerializable()
-class DestinyEquipItemResults{
-	
+class DestinyEquipItemResults{	
 	DestinyEquipItemResults();
 
 	factory DestinyEquipItemResults.fromJson(Map<String, dynamic> json) {
 		return _$DestinyEquipItemResultsFromJson(json);
 	}
-
-	@JsonKey(name:'equipResults')
-	List<DestinyEquipItemResult>? equipResults;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyEquipItemResultsToJson(this);
+	
+	@JsonKey(name:'equipResults')
+	List<DestinyEquipItemResult>? equipResults;
 }

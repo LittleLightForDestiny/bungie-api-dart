@@ -5,18 +5,15 @@ import 'destiny_item_quantity.dart';
 part 'destiny_record_interval_rewards.g.dart';
 
 @JsonSerializable()
-class DestinyRecordIntervalRewards{
-	
+class DestinyRecordIntervalRewards{	
 	DestinyRecordIntervalRewards();
 
 	factory DestinyRecordIntervalRewards.fromJson(Map<String, dynamic> json) {
 		return _$DestinyRecordIntervalRewardsFromJson(json);
 	}
-
-	@JsonKey(name:'intervalRewardItems')
-	List<DestinyItemQuantity>? intervalRewardItems;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyRecordIntervalRewardsToJson(this);
+	
+	@JsonKey(name:'intervalRewardItems')
+	List<DestinyItemQuantity>? intervalRewardItems;
 }

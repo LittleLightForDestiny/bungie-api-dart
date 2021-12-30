@@ -6,22 +6,21 @@ import 'destiny_historical_stats_per_character.dart';
 part 'destiny_historical_stats_account_result.g.dart';
 
 @JsonSerializable()
-class DestinyHistoricalStatsAccountResult{
-	
+class DestinyHistoricalStatsAccountResult{	
 	DestinyHistoricalStatsAccountResult();
 
 	factory DestinyHistoricalStatsAccountResult.fromJson(Map<String, dynamic> json) {
 		return _$DestinyHistoricalStatsAccountResultFromJson(json);
 	}
-
-	@JsonKey(name:'mergedDeletedCharacters')
-	DestinyHistoricalStatsWithMerged? mergedDeletedCharacters;
-	@JsonKey(name:'mergedAllCharacters')
-	DestinyHistoricalStatsWithMerged? mergedAllCharacters;
-	@JsonKey(name:'characters')
-	List<DestinyHistoricalStatsPerCharacter>? characters;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsAccountResultToJson(this);
+	
+	@JsonKey(name:'mergedDeletedCharacters')
+	DestinyHistoricalStatsWithMerged? mergedDeletedCharacters;
+	
+	@JsonKey(name:'mergedAllCharacters')
+	DestinyHistoricalStatsWithMerged? mergedAllCharacters;
+	
+	@JsonKey(name:'characters')
+	List<DestinyHistoricalStatsPerCharacter>? characters;
 }

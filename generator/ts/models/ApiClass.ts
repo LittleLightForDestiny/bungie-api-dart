@@ -2,6 +2,7 @@ import { ApiMethod } from "./ApiMethod";
 import { PathItemObject, ParameterObject } from "openapi3-ts";
 import { ImportInfo } from "./ImportInfo";
 import {map, chain, each} from 'lodash';
+import { camelcaseToUnderscore } from "../utils/camelcase-to-underscore";
 export class ApiClass{
     static all:{[id:string]:ApiClass} = {};
     methods:ApiMethod[] = [];
@@ -11,6 +12,10 @@ export class ApiClass{
     ){
         if(!this.className) this.className = 'Core';
         ApiClass.all[this.className] = this;
+    }
+
+    get filename():String{
+        return camelcaseToUnderscore(this.className);
     }
 
     addMethod(name:string, url:string, pathInfo:PathItemObject){

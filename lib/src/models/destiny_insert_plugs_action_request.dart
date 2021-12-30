@@ -6,29 +6,30 @@ import '../enums/bungie_membership_type.dart';
 part 'destiny_insert_plugs_action_request.g.dart';
 
 @JsonSerializable()
-class DestinyInsertPlugsActionRequest{
-	
+class DestinyInsertPlugsActionRequest{	
 	DestinyInsertPlugsActionRequest();
 
 	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) {
 		return _$DestinyInsertPlugsActionRequestFromJson(json);
 	}
-
+	
+	Map<String, dynamic> toJson() => _$DestinyInsertPlugsActionRequestToJson(this);
+	
 	/// Action token provided by the AwaGetActionToken API call.
 	@JsonKey(name:'actionToken')
 	String? actionToken;
+	
 	/// The instance ID of the item having a plug inserted. Only instanced items can have sockets.
 	@JsonKey(name:'itemInstanceId')
 	String? itemInstanceId;
+	
 	/// The plugs being inserted.
 	@JsonKey(name:'plug')
 	DestinyInsertPlugsRequestEntry? plug;
+	
 	@JsonKey(name:'characterId')
 	String? characterId;
+	
 	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
 	BungieMembershipType? membershipType;
-
-	
-	
-	Map<String, dynamic> toJson() => _$DestinyInsertPlugsActionRequestToJson(this);
 }

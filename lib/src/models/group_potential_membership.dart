@@ -6,20 +6,18 @@ import 'group_v2.dart';
 part 'group_potential_membership.g.dart';
 
 @JsonSerializable()
-class GroupPotentialMembership{
-	
+class GroupPotentialMembership{	
 	GroupPotentialMembership();
 
 	factory GroupPotentialMembership.fromJson(Map<String, dynamic> json) {
 		return _$GroupPotentialMembershipFromJson(json);
 	}
-
-	@JsonKey(name:'member')
-	GroupPotentialMember? member;
-	@JsonKey(name:'group')
-	GroupV2? group;
-
-	
 	
 	Map<String, dynamic> toJson() => _$GroupPotentialMembershipToJson(this);
+	
+	@JsonKey(name:'member')
+	GroupPotentialMember? member;
+	
+	@JsonKey(name:'group')
+	GroupV2? group;
 }

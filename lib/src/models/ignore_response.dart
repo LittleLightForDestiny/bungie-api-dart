@@ -5,20 +5,18 @@ import '../enums/ignore_status.dart';
 part 'ignore_response.g.dart';
 
 @JsonSerializable()
-class IgnoreResponse{
-	
+class IgnoreResponse{	
 	IgnoreResponse();
 
 	factory IgnoreResponse.fromJson(Map<String, dynamic> json) {
 		return _$IgnoreResponseFromJson(json);
 	}
-
-	@JsonKey(name:'isIgnored')
-	bool? isIgnored;
-	@JsonKey(name:'ignoreFlags')
-	IgnoreStatus? ignoreFlags;
-
-	
 	
 	Map<String, dynamic> toJson() => _$IgnoreResponseToJson(this);
+	
+	@JsonKey(name:'isIgnored')
+	bool? isIgnored;
+	
+	@JsonKey(name:'ignoreFlags')
+	IgnoreStatus? ignoreFlags;
 }

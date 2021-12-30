@@ -14,36 +14,42 @@ import 'dictionary_component_response_ofuint32_and_destiny_item_perks_component.
 part 'destiny_item_component_set_ofuint32.g.dart';
 
 @JsonSerializable()
-class DestinyItemComponentSetOfuint32{
-	
+class DestinyItemComponentSetOfuint32{	
 	DestinyItemComponentSetOfuint32();
 
 	factory DestinyItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemComponentSetOfuint32FromJson(json);
 	}
-
-	@JsonKey(name:'instances')
-	DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent? instances;
-	@JsonKey(name:'renderData')
-	DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent? renderData;
-	@JsonKey(name:'stats')
-	DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent? stats;
-	@JsonKey(name:'sockets')
-	DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent? sockets;
-	@JsonKey(name:'reusablePlugs')
-	DictionaryComponentResponseOfuint32AndDestinyItemReusablePlugsComponent? reusablePlugs;
-	@JsonKey(name:'plugObjectives')
-	DictionaryComponentResponseOfuint32AndDestinyItemPlugObjectivesComponent? plugObjectives;
-	@JsonKey(name:'talentGrids')
-	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent? talentGrids;
-	@JsonKey(name:'plugStates')
-	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent? plugStates;
-	@JsonKey(name:'objectives')
-	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
-	@JsonKey(name:'perks')
-	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
-
-	
 	
 	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfuint32ToJson(this);
+	
+	@JsonKey(name:'instances')
+	DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent? instances;
+	
+	@JsonKey(name:'renderData')
+	DictionaryComponentResponseOfuint32AndDestinyItemRenderComponent? renderData;
+	
+	@JsonKey(name:'stats')
+	DictionaryComponentResponseOfuint32AndDestinyItemStatsComponent? stats;
+	
+	@JsonKey(name:'sockets')
+	DictionaryComponentResponseOfuint32AndDestinyItemSocketsComponent? sockets;
+	
+	@JsonKey(name:'reusablePlugs')
+	DictionaryComponentResponseOfuint32AndDestinyItemReusablePlugsComponent? reusablePlugs;
+	
+	@JsonKey(name:'plugObjectives')
+	DictionaryComponentResponseOfuint32AndDestinyItemPlugObjectivesComponent? plugObjectives;
+	
+	@JsonKey(name:'talentGrids')
+	DictionaryComponentResponseOfuint32AndDestinyItemTalentGridComponent? talentGrids;
+	
+	@JsonKey(name:'plugStates')
+	DictionaryComponentResponseOfuint32AndDestinyItemPlugComponent? plugStates;
+	
+	@JsonKey(name:'objectives')
+	DictionaryComponentResponseOfuint32AndDestinyItemObjectivesComponent? objectives;
+	
+	@JsonKey(name:'perks')
+	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
 }

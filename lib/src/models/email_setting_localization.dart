@@ -5,20 +5,18 @@ part 'email_setting_localization.g.dart';
 
 /// Localized text relevant to a given EMail setting in a given localization.
 @JsonSerializable()
-class EMailSettingLocalization{
-	
+class EMailSettingLocalization{	
 	EMailSettingLocalization();
 
 	factory EMailSettingLocalization.fromJson(Map<String, dynamic> json) {
 		return _$EMailSettingLocalizationFromJson(json);
 	}
-
-	@JsonKey(name:'title')
-	String? title;
-	@JsonKey(name:'description')
-	String? description;
-
-	
 	
 	Map<String, dynamic> toJson() => _$EMailSettingLocalizationToJson(this);
+	
+	@JsonKey(name:'title')
+	String? title;
+	
+	@JsonKey(name:'description')
+	String? description;
 }

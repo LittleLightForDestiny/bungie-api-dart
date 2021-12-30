@@ -16,6 +16,7 @@ import { generateModelClass } from './functions/generate-model-class';
 import { ModelClass } from './models/ModelClass';
 import { EnumClass } from './models/EnumClass';
 import { generateEnumClass } from './functions/generate-enum-class';
+import { writeFileSync } from 'fs';
 
 let doc = ApiDocHelper.load();
 
@@ -40,21 +41,50 @@ _.each(doc.components!.schemas!, (schema: SchemaObject, index:string)=>{
   }
 });
 
+let groups:{[id:string]:Set<String>} = {};
+
+function addToGroup(groupName:string, exportPath:string){
+  groupName = groupName.toLowerCase();
+  let group = groups[groupName];
+  if(!group){
+    for(let i in groups){
+      if(i.indexOf(groupName) == 0){
+        group = groups[i];
+        break;
+      }
+    }
+  }
+  if(!group){
+    group = groups[groupName] = new Set<String>();
+  }
+  group.add(exportPath);
+}
 
 deleteAll();
 copyCustom();
 _.each(ApiClass.all, (apiClass:ApiClass)=>{
   generateApiClass(apiClass);
+  addToGroup(apiClass.className, `src/api/${apiClass.filename}.dart`);
 });
 
 _.each(ResponseClass.all, (responseClass:ResponseClass)=>{
   generateResponseClass(responseClass);
+  addToGroup(responseClass.groupName, `src/responses/${responseClass.filename}.dart`);
 });
 
 _.each(ModelClass.all, (modelClass:ModelClass)=>{
   generateModelClass(modelClass);
+  addToGroup(modelClass.groupName, `src/models/${modelClass.filename}.dart`);
 });
 
 _.each(EnumClass.all, (enumClass:EnumClass)=>{
   generateEnumClass(enumClass);
+  addToGroup(enumClass.groupName, `src/enums/${enumClass.filename}.dart`);
 })
+
+_.each(groups, (group:Set<String>, groupName:String)=>{
+  let fileExports = Array.from(group).map((path)=>`export '${path}';`);
+  writeFileSync(`../lib/${groupName}.dart`, fileExports.join('\n'));
+});
+
+
