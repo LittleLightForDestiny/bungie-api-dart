@@ -7,43 +7,41 @@ part of 'destiny_activity_mode_definition.dart';
 // **************************************************************************
 
 DestinyActivityModeDefinition _$DestinyActivityModeDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyActivityModeDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..pgcrImage = json['pgcrImage'] as String?
-    ..modeType = _$enumDecodeNullable(
-        _$DestinyActivityModeTypeEnumMap, json['modeType'],
-        unknownValue: DestinyActivityModeType.ProtectedInvalidEnumValue)
-    ..activityModeCategory = _$enumDecodeNullable(
-        _$DestinyActivityModeCategoryEnumMap, json['activityModeCategory'],
-        unknownValue: DestinyActivityModeCategory.ProtectedInvalidEnumValue)
-    ..isTeamBased = json['isTeamBased'] as bool?
-    ..isAggregateMode = json['isAggregateMode'] as bool?
-    ..parentHashes =
-        (json['parentHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-    ..friendlyName = json['friendlyName'] as String?
-    ..activityModeMappings =
-        (json['activityModeMappings'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, _$enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
-    )
-    ..display = json['display'] as bool?
-    ..order = json['order'] as int?
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyActivityModeDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..pgcrImage = json['pgcrImage'] as String?
+      ..modeType = decodeDestinyActivityModeType(json['modeType'])
+      ..activityModeCategory =
+          decodeDestinyActivityModeCategory(json['activityModeCategory'])
+      ..isTeamBased = json['isTeamBased'] as bool?
+      ..isAggregateMode = json['isAggregateMode'] as bool?
+      ..parentHashes = (json['parentHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
+      ..friendlyName = json['friendlyName'] as String?
+      ..activityModeMappings =
+          (json['activityModeMappings'] as Map<String, dynamic>?)?.map(
+        (k, e) =>
+            MapEntry(k, _$enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
+      )
+      ..display = json['display'] as bool?
+      ..order = json['order'] as int?
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityModeDefinitionToJson(
         DestinyActivityModeDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
       'pgcrImage': instance.pgcrImage,
-      'modeType': _$DestinyActivityModeTypeEnumMap[instance.modeType],
+      'modeType': encodeDestinyActivityModeType(instance.modeType),
       'activityModeCategory':
-          _$DestinyActivityModeCategoryEnumMap[instance.activityModeCategory],
+          encodeDestinyActivityModeCategory(instance.activityModeCategory),
       'isTeamBased': instance.isTeamBased,
       'isAggregateMode': instance.isAggregateMode,
       'parentHashes': instance.parentHashes,
@@ -81,17 +79,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyActivityModeTypeEnumMap = {
@@ -174,12 +161,4 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.TrialsOfOsiris: 84,
   DestinyActivityModeType.Dares: 85,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$DestinyActivityModeCategoryEnumMap = {
-  DestinyActivityModeCategory.None: 0,
-  DestinyActivityModeCategory.PvE: 1,
-  DestinyActivityModeCategory.PvP: 2,
-  DestinyActivityModeCategory.PvECompetitive: 3,
-  DestinyActivityModeCategory.ProtectedInvalidEnumValue: 999999999,
 };

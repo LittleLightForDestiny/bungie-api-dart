@@ -44,7 +44,7 @@ class DestinyVendorItemDefinition{
 	List<DestinyVendorItemQuantity>? currencies;
 	
 	/// If this item can be refunded, this is the policy for what will be refundd, how, and in what time period.
-	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
+	@JsonKey(name:'refundPolicy',fromJson:decodeDestinyVendorItemRefundPolicy,toJson:encodeDestinyVendorItemRefundPolicy)
 	DestinyVendorItemRefundPolicy? refundPolicy;
 	
 	/// The amount of time before refundability of the newly purchased item will expire.
@@ -89,16 +89,16 @@ class DestinyVendorItemDefinition{
 	
 	/// The most restrictive scope that determines whether the item is available in the Vendor's inventory. See DestinyGatingScope's documentation for more information.
 	/// This can be determined by Unlock gating, or by whether or not the item has purchase level requirements (minimumLevel and maximumLevel properties).
-	@JsonKey(name:'visibilityScope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'visibilityScope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
 	DestinyGatingScope? visibilityScope;
 	
 	/// Similar to visibilityScope, it represents the most restrictive scope that determines whether the item can be purchased. It will at least be as restrictive as visibilityScope, but could be more restrictive if the item has additional purchase requirements beyond whether it is merely visible or not.
 	/// See DestinyGatingScope's documentation for more information.
-	@JsonKey(name:'purchasableScope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'purchasableScope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
 	DestinyGatingScope? purchasableScope;
 	
 	/// If this item can only be purchased by a given platform, this indicates the platform to which it is restricted.
-	@JsonKey(name:'exclusivity',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'exclusivity',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? exclusivity;
 	
 	/// If this sale can only be performed as the result of an offer check, this is true.

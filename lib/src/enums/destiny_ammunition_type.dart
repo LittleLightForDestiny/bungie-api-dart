@@ -23,19 +23,39 @@ enum DestinyAmmunitionType {
 
 extension DestinyAmmunitionTypeExtension on DestinyAmmunitionType{
   int? get value {
-    switch(this){
-      case DestinyAmmunitionType.None:
-        return 0;
-      case DestinyAmmunitionType.Primary:
-        return 1;
-      case DestinyAmmunitionType.Special:
-        return 2;
-      case DestinyAmmunitionType.Heavy:
-        return 3;
-      case DestinyAmmunitionType.Unknown:
-        return 4;
-      default:
-        return null;
+    if (_$DestinyAmmunitionTypeEnumMap.containsKey(this)){
+      return _$DestinyAmmunitionTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyAmmunitionType? decodeDestinyAmmunitionType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyAmmunitionTypeValueMap.containsKey(value)){
+    return _$DestinyAmmunitionTypeValueMap[value];
+  }
+
+  return DestinyAmmunitionType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyAmmunitionType (DestinyAmmunitionType? value) {
+  return value?.value;
+}
+
+const Map<DestinyAmmunitionType, int> _$DestinyAmmunitionTypeEnumMap = <DestinyAmmunitionType, int>{
+    DestinyAmmunitionType.None:0,
+    DestinyAmmunitionType.Primary:1,
+    DestinyAmmunitionType.Special:2,
+    DestinyAmmunitionType.Heavy:3,
+    DestinyAmmunitionType.Unknown:4,
+};
+const Map<int, DestinyAmmunitionType> _$DestinyAmmunitionTypeValueMap = <int, DestinyAmmunitionType>{
+    0:DestinyAmmunitionType.None,
+    1:DestinyAmmunitionType.Primary,
+    2:DestinyAmmunitionType.Special,
+    3:DestinyAmmunitionType.Heavy,
+    4:DestinyAmmunitionType.Unknown,
+};

@@ -1,44 +1,32 @@
 import '../enums/platform_error_codes.dart';
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'int64_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class Int64Response{
+class Int64Response extends BungieNetResponse<String> {
 	Int64Response({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
+		String? response,
+		PlatformErrorCodes? errorCode,
+		int? throttleSeconds,
+		String? errorStatus,
+		String? message,
+		Map<String, String>? messageData,
+		String? detailedErrorTrace,
+	}):super(
+		response:response,
+		errorCode:errorCode,
+		throttleSeconds:throttleSeconds,
+		errorStatus:errorStatus,
+		message:message,
+		messageData:messageData,
+		detailedErrorTrace:detailedErrorTrace,
+	);
 
 	factory Int64Response.fromJson(Map<String, dynamic> json) => _$Int64ResponseFromJson(json);
-	
-	
-	@JsonKey(name:'Response')
-	String? response;
-	
-	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes? errorCode;
-	
-	@JsonKey(name:'ThrottleSeconds')
-	int? throttleSeconds;
-	
-	@JsonKey(name:'ErrorStatus')
-	String? errorStatus;
-	
-	@JsonKey(name:'Message')
-	String? message;
-	
-	@JsonKey(name:'MessageData')
-	Map<String, String>? messageData;
-	
-	@JsonKey(name:'DetailedErrorTrace')
-	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$Int64ResponseToJson(this);
 }

@@ -24,17 +24,37 @@ enum DestinyRewardSourceCategory {
 
 extension DestinyRewardSourceCategoryExtension on DestinyRewardSourceCategory{
   int? get value {
-    switch(this){
-      case DestinyRewardSourceCategory.None:
-        return 0;
-      case DestinyRewardSourceCategory.Activity:
-        return 1;
-      case DestinyRewardSourceCategory.Vendor:
-        return 2;
-      case DestinyRewardSourceCategory.Aggregate:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyRewardSourceCategoryEnumMap.containsKey(this)){
+      return _$DestinyRewardSourceCategoryEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyRewardSourceCategory? decodeDestinyRewardSourceCategory (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyRewardSourceCategoryValueMap.containsKey(value)){
+    return _$DestinyRewardSourceCategoryValueMap[value];
+  }
+
+  return DestinyRewardSourceCategory.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyRewardSourceCategory (DestinyRewardSourceCategory? value) {
+  return value?.value;
+}
+
+const Map<DestinyRewardSourceCategory, int> _$DestinyRewardSourceCategoryEnumMap = <DestinyRewardSourceCategory, int>{
+    DestinyRewardSourceCategory.None:0,
+    DestinyRewardSourceCategory.Activity:1,
+    DestinyRewardSourceCategory.Vendor:2,
+    DestinyRewardSourceCategory.Aggregate:3,
+};
+const Map<int, DestinyRewardSourceCategory> _$DestinyRewardSourceCategoryValueMap = <int, DestinyRewardSourceCategory>{
+    0:DestinyRewardSourceCategory.None,
+    1:DestinyRewardSourceCategory.Activity,
+    2:DestinyRewardSourceCategory.Vendor,
+    3:DestinyRewardSourceCategory.Aggregate,
+};

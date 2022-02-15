@@ -7,18 +7,18 @@ part of 'destiny_activity_playlist_item_definition.dart';
 // **************************************************************************
 
 DestinyActivityPlaylistItemDefinition
-    _$DestinyActivityPlaylistItemDefinitionFromJson(Map<String, dynamic> json) {
-  return DestinyActivityPlaylistItemDefinition()
-    ..activityHash = json['activityHash'] as int?
-    ..directActivityModeHash = json['directActivityModeHash'] as int?
-    ..directActivityModeType = json['directActivityModeType'] as int?
-    ..activityModeHashes = (json['activityModeHashes'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList()
-    ..activityModeTypes = (json['activityModeTypes'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-        .toList();
-}
+    _$DestinyActivityPlaylistItemDefinitionFromJson(
+            Map<String, dynamic> json) =>
+        DestinyActivityPlaylistItemDefinition()
+          ..activityHash = json['activityHash'] as int?
+          ..directActivityModeHash = json['directActivityModeHash'] as int?
+          ..directActivityModeType = json['directActivityModeType'] as int?
+          ..activityModeHashes = (json['activityModeHashes'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList()
+          ..activityModeTypes = (json['activityModeTypes'] as List<dynamic>?)
+              ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+              .toList();
 
 Map<String, dynamic> _$DestinyActivityPlaylistItemDefinitionToJson(
         DestinyActivityPlaylistItemDefinition instance) =>

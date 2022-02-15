@@ -26,6 +26,6 @@ class DestinyInsertPlugsFreeActionRequest{
 	@JsonKey(name:'characterId')
 	String? characterId;
 	
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 }

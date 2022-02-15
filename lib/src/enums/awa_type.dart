@@ -15,13 +15,33 @@ enum AwaType {
 
 extension AwaTypeExtension on AwaType{
   int? get value {
-    switch(this){
-      case AwaType.None:
-        return 0;
-      case AwaType.InsertPlugs:
-        return 1;
-      default:
-        return null;
+    if (_$AwaTypeEnumMap.containsKey(this)){
+      return _$AwaTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+AwaType? decodeAwaType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$AwaTypeValueMap.containsKey(value)){
+    return _$AwaTypeValueMap[value];
+  }
+
+  return AwaType.ProtectedInvalidEnumValue;
+}
+
+int? encodeAwaType (AwaType? value) {
+  return value?.value;
+}
+
+const Map<AwaType, int> _$AwaTypeEnumMap = <AwaType, int>{
+    AwaType.None:0,
+    AwaType.InsertPlugs:1,
+};
+const Map<int, AwaType> _$AwaTypeValueMap = <int, AwaType>{
+    0:AwaType.None,
+    1:AwaType.InsertPlugs,
+};

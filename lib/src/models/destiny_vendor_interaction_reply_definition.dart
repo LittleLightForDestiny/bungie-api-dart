@@ -18,7 +18,7 @@ class DestinyVendorInteractionReplyDefinition{
 	Map<String, dynamic> toJson() => _$DestinyVendorInteractionReplyDefinitionToJson(this);
 	
 	/// The rewards granted upon responding to the vendor.
-	@JsonKey(name:'itemRewardsSelection',unknownEnumValue:DestinyVendorInteractionRewardSelection.ProtectedInvalidEnumValue)
+	@JsonKey(name:'itemRewardsSelection',fromJson:decodeDestinyVendorInteractionRewardSelection,toJson:encodeDestinyVendorInteractionRewardSelection)
 	DestinyVendorInteractionRewardSelection? itemRewardsSelection;
 	
 	/// The localized text for the reply.
@@ -26,6 +26,6 @@ class DestinyVendorInteractionReplyDefinition{
 	String? reply;
 	
 	/// An enum indicating the type of reply being made.
-	@JsonKey(name:'replyType',unknownEnumValue:DestinyVendorReplyType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'replyType',fromJson:decodeDestinyVendorReplyType,toJson:encodeDestinyVendorReplyType)
 	DestinyVendorReplyType? replyType;
 }

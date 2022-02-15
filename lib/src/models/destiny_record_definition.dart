@@ -30,7 +30,7 @@ class DestinyRecordDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// Indicates whether this Record's state is determined on a per-character or on an account-wide basis.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyScope,toJson:encodeDestinyScope)
 	DestinyScope? scope;
 	
 	@JsonKey(name:'presentationInfo')
@@ -42,7 +42,7 @@ class DestinyRecordDefinition{
 	@JsonKey(name:'objectiveHashes')
 	List<int>? objectiveHashes;
 	
-	@JsonKey(name:'recordValueStyle',unknownEnumValue:DestinyRecordValueStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'recordValueStyle',fromJson:decodeDestinyRecordValueStyle,toJson:encodeDestinyRecordValueStyle)
 	DestinyRecordValueStyle? recordValueStyle;
 	
 	@JsonKey(name:'forTitleGilding')
@@ -74,7 +74,7 @@ class DestinyRecordDefinition{
 	@JsonKey(name:'rewardItems')
 	List<DestinyItemQuantity>? rewardItems;
 	
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	
 	@JsonKey(name:'traitIds')

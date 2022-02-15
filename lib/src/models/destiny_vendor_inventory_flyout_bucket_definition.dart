@@ -24,6 +24,6 @@ class DestinyVendorInventoryFlyoutBucketDefinition{
 	int? inventoryBucketHash;
 	
 	/// The methodology to use for sorting items from the flyout.
-	@JsonKey(name:'sortItemsBy',unknownEnumValue:DestinyItemSortType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'sortItemsBy',fromJson:decodeDestinyItemSortType,toJson:encodeDestinyItemSortType)
 	DestinyItemSortType? sortItemsBy;
 }

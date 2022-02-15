@@ -7,10 +7,8 @@ part of 'destiny_milestone_vendor_definition.dart';
 // **************************************************************************
 
 DestinyMilestoneVendorDefinition _$DestinyMilestoneVendorDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyMilestoneVendorDefinition()
-    ..vendorHash = json['vendorHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyMilestoneVendorDefinition()..vendorHash = json['vendorHash'] as int?;
 
 Map<String, dynamic> _$DestinyMilestoneVendorDefinitionToJson(
         DestinyMilestoneVendorDefinition instance) =>

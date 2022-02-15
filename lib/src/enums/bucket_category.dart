@@ -23,19 +23,39 @@ enum BucketCategory {
 
 extension BucketCategoryExtension on BucketCategory{
   int? get value {
-    switch(this){
-      case BucketCategory.Invisible:
-        return 0;
-      case BucketCategory.Item:
-        return 1;
-      case BucketCategory.Currency:
-        return 2;
-      case BucketCategory.Equippable:
-        return 3;
-      case BucketCategory.Ignored:
-        return 4;
-      default:
-        return null;
+    if (_$BucketCategoryEnumMap.containsKey(this)){
+      return _$BucketCategoryEnumMap[this];
     }
+    return null;
   }
 }
+
+BucketCategory? decodeBucketCategory (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$BucketCategoryValueMap.containsKey(value)){
+    return _$BucketCategoryValueMap[value];
+  }
+
+  return BucketCategory.ProtectedInvalidEnumValue;
+}
+
+int? encodeBucketCategory (BucketCategory? value) {
+  return value?.value;
+}
+
+const Map<BucketCategory, int> _$BucketCategoryEnumMap = <BucketCategory, int>{
+    BucketCategory.Invisible:0,
+    BucketCategory.Item:1,
+    BucketCategory.Currency:2,
+    BucketCategory.Equippable:3,
+    BucketCategory.Ignored:4,
+};
+const Map<int, BucketCategory> _$BucketCategoryValueMap = <int, BucketCategory>{
+    0:BucketCategory.Invisible,
+    1:BucketCategory.Item,
+    2:BucketCategory.Currency,
+    3:BucketCategory.Equippable,
+    4:BucketCategory.Ignored,
+};

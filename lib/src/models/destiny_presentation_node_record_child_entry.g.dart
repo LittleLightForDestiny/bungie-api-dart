@@ -8,10 +8,9 @@ part of 'destiny_presentation_node_record_child_entry.dart';
 
 DestinyPresentationNodeRecordChildEntry
     _$DestinyPresentationNodeRecordChildEntryFromJson(
-        Map<String, dynamic> json) {
-  return DestinyPresentationNodeRecordChildEntry()
-    ..recordHash = json['recordHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyPresentationNodeRecordChildEntry()
+          ..recordHash = json['recordHash'] as int?;
 
 Map<String, dynamic> _$DestinyPresentationNodeRecordChildEntryToJson(
         DestinyPresentationNodeRecordChildEntry instance) =>

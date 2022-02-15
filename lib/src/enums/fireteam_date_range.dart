@@ -23,19 +23,39 @@ enum FireteamDateRange {
 
 extension FireteamDateRangeExtension on FireteamDateRange{
   int? get value {
-    switch(this){
-      case FireteamDateRange.All:
-        return 0;
-      case FireteamDateRange.Now:
-        return 1;
-      case FireteamDateRange.TwentyFourHours:
-        return 2;
-      case FireteamDateRange.FortyEightHours:
-        return 3;
-      case FireteamDateRange.ThisWeek:
-        return 4;
-      default:
-        return null;
+    if (_$FireteamDateRangeEnumMap.containsKey(this)){
+      return _$FireteamDateRangeEnumMap[this];
     }
+    return null;
   }
 }
+
+FireteamDateRange? decodeFireteamDateRange (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FireteamDateRangeValueMap.containsKey(value)){
+    return _$FireteamDateRangeValueMap[value];
+  }
+
+  return FireteamDateRange.ProtectedInvalidEnumValue;
+}
+
+int? encodeFireteamDateRange (FireteamDateRange? value) {
+  return value?.value;
+}
+
+const Map<FireteamDateRange, int> _$FireteamDateRangeEnumMap = <FireteamDateRange, int>{
+    FireteamDateRange.All:0,
+    FireteamDateRange.Now:1,
+    FireteamDateRange.TwentyFourHours:2,
+    FireteamDateRange.FortyEightHours:3,
+    FireteamDateRange.ThisWeek:4,
+};
+const Map<int, FireteamDateRange> _$FireteamDateRangeValueMap = <int, FireteamDateRange>{
+    0:FireteamDateRange.All,
+    1:FireteamDateRange.Now,
+    2:FireteamDateRange.TwentyFourHours,
+    3:FireteamDateRange.FortyEightHours,
+    4:FireteamDateRange.ThisWeek,
+};

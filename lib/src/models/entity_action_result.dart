@@ -17,6 +17,6 @@ class EntityActionResult{
 	@JsonKey(name:'entityId')
 	String? entityId;
 	
-	@JsonKey(name:'result',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
+	@JsonKey(name:'result',fromJson:decodePlatformErrorCodes,toJson:encodePlatformErrorCodes)
 	PlatformErrorCodes? result;
 }

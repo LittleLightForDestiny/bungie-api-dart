@@ -17,15 +17,35 @@ enum MembershipOption {
 
 extension MembershipOptionExtension on MembershipOption{
   int? get value {
-    switch(this){
-      case MembershipOption.Reviewed:
-        return 0;
-      case MembershipOption.Open:
-        return 1;
-      case MembershipOption.Closed:
-        return 2;
-      default:
-        return null;
+    if (_$MembershipOptionEnumMap.containsKey(this)){
+      return _$MembershipOptionEnumMap[this];
     }
+    return null;
   }
 }
+
+MembershipOption? decodeMembershipOption (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$MembershipOptionValueMap.containsKey(value)){
+    return _$MembershipOptionValueMap[value];
+  }
+
+  return MembershipOption.ProtectedInvalidEnumValue;
+}
+
+int? encodeMembershipOption (MembershipOption? value) {
+  return value?.value;
+}
+
+const Map<MembershipOption, int> _$MembershipOptionEnumMap = <MembershipOption, int>{
+    MembershipOption.Reviewed:0,
+    MembershipOption.Open:1,
+    MembershipOption.Closed:2,
+};
+const Map<int, MembershipOption> _$MembershipOptionValueMap = <int, MembershipOption>{
+    0:MembershipOption.Reviewed,
+    1:MembershipOption.Open,
+    2:MembershipOption.Closed,
+};

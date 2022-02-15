@@ -43,7 +43,7 @@ class DestinyVendorInteractionDefinition{
 	int? uiInteractionType;
 	
 	/// The enumerated version of the possible UI hints for vendor interactions, which is a little easier to grok than the hash found in uiInteractionType.
-	@JsonKey(name:'interactionType',unknownEnumValue:VendorInteractionType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'interactionType',fromJson:decodeVendorInteractionType,toJson:encodeVendorInteractionType)
 	VendorInteractionType? interactionType;
 	
 	/// If this interaction is displaying rewards, this is the text to use for the header of the reward-displaying section of the interaction.

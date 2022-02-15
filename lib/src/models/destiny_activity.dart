@@ -50,7 +50,7 @@ class DestinyActivity{
 	int? recommendedLight;
 	
 	/// A DestinyActivityDifficultyTier enum value indicating the difficulty of the activity.
-	@JsonKey(name:'difficultyTier',unknownEnumValue:DestinyActivityDifficultyTier.ProtectedInvalidEnumValue)
+	@JsonKey(name:'difficultyTier',fromJson:decodeDestinyActivityDifficultyTier,toJson:encodeDestinyActivityDifficultyTier)
 	DestinyActivityDifficultyTier? difficultyTier;
 	
 	@JsonKey(name:'challenges')

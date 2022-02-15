@@ -18,7 +18,7 @@ class DestinyErrorProfile{
 	Map<String, dynamic> toJson() => _$DestinyErrorProfileToJson(this);
 	
 	/// The error that we encountered. You should be able to look up localized text to show to the user for these failures.
-	@JsonKey(name:'errorCode',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
+	@JsonKey(name:'errorCode',fromJson:decodePlatformErrorCodes,toJson:encodePlatformErrorCodes)
 	PlatformErrorCodes? errorCode;
 	
 	/// Basic info about the account that failed. Don't expect anything other than membership ID, Membership Type, and displayName to be populated.

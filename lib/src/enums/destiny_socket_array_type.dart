@@ -14,13 +14,33 @@ enum DestinySocketArrayType {
 
 extension DestinySocketArrayTypeExtension on DestinySocketArrayType{
   int? get value {
-    switch(this){
-      case DestinySocketArrayType.Default:
-        return 0;
-      case DestinySocketArrayType.Intrinsic:
-        return 1;
-      default:
-        return null;
+    if (_$DestinySocketArrayTypeEnumMap.containsKey(this)){
+      return _$DestinySocketArrayTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinySocketArrayType? decodeDestinySocketArrayType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinySocketArrayTypeValueMap.containsKey(value)){
+    return _$DestinySocketArrayTypeValueMap[value];
+  }
+
+  return DestinySocketArrayType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinySocketArrayType (DestinySocketArrayType? value) {
+  return value?.value;
+}
+
+const Map<DestinySocketArrayType, int> _$DestinySocketArrayTypeEnumMap = <DestinySocketArrayType, int>{
+    DestinySocketArrayType.Default:0,
+    DestinySocketArrayType.Intrinsic:1,
+};
+const Map<int, DestinySocketArrayType> _$DestinySocketArrayTypeValueMap = <int, DestinySocketArrayType>{
+    0:DestinySocketArrayType.Default,
+    1:DestinySocketArrayType.Intrinsic,
+};

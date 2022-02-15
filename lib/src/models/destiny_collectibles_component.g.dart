@@ -7,17 +7,16 @@ part of 'destiny_collectibles_component.dart';
 // **************************************************************************
 
 DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyCollectiblesComponent()
-    ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyCollectibleComponent.fromJson(e as Map<String, dynamic>)),
-    )
-    ..collectionCategoriesRootNodeHash =
-        json['collectionCategoriesRootNodeHash'] as int?
-    ..collectionBadgesRootNodeHash =
-        json['collectionBadgesRootNodeHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyCollectiblesComponent()
+      ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyCollectibleComponent.fromJson(e as Map<String, dynamic>)),
+      )
+      ..collectionCategoriesRootNodeHash =
+          json['collectionCategoriesRootNodeHash'] as int?
+      ..collectionBadgesRootNodeHash =
+          json['collectionBadgesRootNodeHash'] as int?;
 
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(
         DestinyCollectiblesComponent instance) =>

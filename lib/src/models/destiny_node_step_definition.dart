@@ -40,7 +40,7 @@ class DestinyNodeStepDefinition{
 	String? interactionDescription;
 	
 	/// An enum representing a damage type granted by activating this step, if any.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'damageType',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? damageType;
 	
 	/// If the step provides a damage type, this will be the hash identifier used to look up the damage type's DestinyDamageTypeDefinition.

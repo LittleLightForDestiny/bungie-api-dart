@@ -17,15 +17,35 @@ enum ItemPerkVisibility {
 
 extension ItemPerkVisibilityExtension on ItemPerkVisibility{
   int? get value {
-    switch(this){
-      case ItemPerkVisibility.Visible:
-        return 0;
-      case ItemPerkVisibility.Disabled:
-        return 1;
-      case ItemPerkVisibility.Hidden:
-        return 2;
-      default:
-        return null;
+    if (_$ItemPerkVisibilityEnumMap.containsKey(this)){
+      return _$ItemPerkVisibilityEnumMap[this];
     }
+    return null;
   }
 }
+
+ItemPerkVisibility? decodeItemPerkVisibility (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ItemPerkVisibilityValueMap.containsKey(value)){
+    return _$ItemPerkVisibilityValueMap[value];
+  }
+
+  return ItemPerkVisibility.ProtectedInvalidEnumValue;
+}
+
+int? encodeItemPerkVisibility (ItemPerkVisibility? value) {
+  return value?.value;
+}
+
+const Map<ItemPerkVisibility, int> _$ItemPerkVisibilityEnumMap = <ItemPerkVisibility, int>{
+    ItemPerkVisibility.Visible:0,
+    ItemPerkVisibility.Disabled:1,
+    ItemPerkVisibility.Hidden:2,
+};
+const Map<int, ItemPerkVisibility> _$ItemPerkVisibilityValueMap = <int, ItemPerkVisibility>{
+    0:ItemPerkVisibility.Visible,
+    1:ItemPerkVisibility.Disabled,
+    2:ItemPerkVisibility.Hidden,
+};

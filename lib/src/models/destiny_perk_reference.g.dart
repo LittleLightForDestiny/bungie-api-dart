@@ -6,13 +6,13 @@ part of 'destiny_perk_reference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DestinyPerkReference _$DestinyPerkReferenceFromJson(Map<String, dynamic> json) {
-  return DestinyPerkReference()
-    ..perkHash = json['perkHash'] as int?
-    ..iconPath = json['iconPath'] as String?
-    ..isActive = json['isActive'] as bool?
-    ..visible = json['visible'] as bool?;
-}
+DestinyPerkReference _$DestinyPerkReferenceFromJson(
+        Map<String, dynamic> json) =>
+    DestinyPerkReference()
+      ..perkHash = json['perkHash'] as int?
+      ..iconPath = json['iconPath'] as String?
+      ..isActive = json['isActive'] as bool?
+      ..visible = json['visible'] as bool?;
 
 Map<String, dynamic> _$DestinyPerkReferenceToJson(
         DestinyPerkReference instance) =>

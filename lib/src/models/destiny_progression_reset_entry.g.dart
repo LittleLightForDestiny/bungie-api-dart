@@ -7,11 +7,10 @@ part of 'destiny_progression_reset_entry.dart';
 // **************************************************************************
 
 DestinyProgressionResetEntry _$DestinyProgressionResetEntryFromJson(
-    Map<String, dynamic> json) {
-  return DestinyProgressionResetEntry()
-    ..season = json['season'] as int?
-    ..resets = json['resets'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyProgressionResetEntry()
+      ..season = json['season'] as int?
+      ..resets = json['resets'] as int?;
 
 Map<String, dynamic> _$DestinyProgressionResetEntryToJson(
         DestinyProgressionResetEntry instance) =>

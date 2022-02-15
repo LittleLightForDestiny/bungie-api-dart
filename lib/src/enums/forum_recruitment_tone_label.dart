@@ -17,15 +17,35 @@ enum ForumRecruitmentToneLabel {
 
 extension ForumRecruitmentToneLabelExtension on ForumRecruitmentToneLabel{
   int? get value {
-    switch(this){
-      case ForumRecruitmentToneLabel.None:
-        return 0;
-      case ForumRecruitmentToneLabel.FamilyFriendly:
-        return 1;
-      case ForumRecruitmentToneLabel.Rowdy:
-        return 2;
-      default:
-        return null;
+    if (_$ForumRecruitmentToneLabelEnumMap.containsKey(this)){
+      return _$ForumRecruitmentToneLabelEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumRecruitmentToneLabel? decodeForumRecruitmentToneLabel (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumRecruitmentToneLabelValueMap.containsKey(value)){
+    return _$ForumRecruitmentToneLabelValueMap[value];
+  }
+
+  return ForumRecruitmentToneLabel.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumRecruitmentToneLabel (ForumRecruitmentToneLabel? value) {
+  return value?.value;
+}
+
+const Map<ForumRecruitmentToneLabel, int> _$ForumRecruitmentToneLabelEnumMap = <ForumRecruitmentToneLabel, int>{
+    ForumRecruitmentToneLabel.None:0,
+    ForumRecruitmentToneLabel.FamilyFriendly:1,
+    ForumRecruitmentToneLabel.Rowdy:2,
+};
+const Map<int, ForumRecruitmentToneLabel> _$ForumRecruitmentToneLabelValueMap = <int, ForumRecruitmentToneLabel>{
+    0:ForumRecruitmentToneLabel.None,
+    1:ForumRecruitmentToneLabel.FamilyFriendly,
+    2:ForumRecruitmentToneLabel.Rowdy,
+};

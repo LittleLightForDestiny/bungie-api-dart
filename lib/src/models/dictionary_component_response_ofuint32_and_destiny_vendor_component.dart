@@ -18,7 +18,7 @@ class DictionaryComponentResponseOfuint32AndDestinyVendorComponent{
 	@JsonKey(name:'data')
 	Map<String, DestinyVendorComponent>? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

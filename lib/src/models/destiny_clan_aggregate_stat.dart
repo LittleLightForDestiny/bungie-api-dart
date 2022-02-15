@@ -16,7 +16,7 @@ class DestinyClanAggregateStat{
 	Map<String, dynamic> toJson() => _$DestinyClanAggregateStatToJson(this);
 	
 	/// The id of the mode of stats (allPvp, allPvE, etc)
-	@JsonKey(name:'mode',unknownEnumValue:DestinyActivityModeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'mode',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
 	DestinyActivityModeType? mode;
 	
 	/// The id of the stat

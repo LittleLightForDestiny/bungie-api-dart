@@ -7,14 +7,13 @@ part of 'destiny_report_reason_definition.dart';
 // **************************************************************************
 
 DestinyReportReasonDefinition _$DestinyReportReasonDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyReportReasonDefinition()
-    ..reasonHash = json['reasonHash'] as int?
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>);
-}
+        Map<String, dynamic> json) =>
+    DestinyReportReasonDefinition()
+      ..reasonHash = json['reasonHash'] as int?
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DestinyReportReasonDefinitionToJson(
         DestinyReportReasonDefinition instance) =>

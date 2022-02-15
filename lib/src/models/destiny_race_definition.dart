@@ -21,7 +21,7 @@ class DestinyRaceDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// An enumeration defining the existing, known Races/Species for player characters. This value will be the enum value matching this definition.
-	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.ProtectedInvalidEnumValue)
+	@JsonKey(name:'raceType',fromJson:decodeDestinyRace,toJson:encodeDestinyRace)
 	DestinyRace? raceType;
 	
 	/// A localized string referring to the singular form of the Race's name when referred to in gendered form. Keyed by the DestinyGender.

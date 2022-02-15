@@ -8,11 +8,10 @@ part of 'destiny_activity_graph_node_activity_definition.dart';
 
 DestinyActivityGraphNodeActivityDefinition
     _$DestinyActivityGraphNodeActivityDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyActivityGraphNodeActivityDefinition()
-    ..nodeActivityId = json['nodeActivityId'] as int?
-    ..activityHash = json['activityHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyActivityGraphNodeActivityDefinition()
+          ..nodeActivityId = json['nodeActivityId'] as int?
+          ..activityHash = json['activityHash'] as int?;
 
 Map<String, dynamic> _$DestinyActivityGraphNodeActivityDefinitionToJson(
         DestinyActivityGraphNodeActivityDefinition instance) =>

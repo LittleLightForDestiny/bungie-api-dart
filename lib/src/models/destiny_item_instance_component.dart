@@ -21,7 +21,7 @@ class DestinyItemInstanceComponent{
 	Map<String, dynamic> toJson() => _$DestinyItemInstanceComponentToJson(this);
 	
 	/// If the item has a damage type, this is the item's current damage type.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'damageType',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? damageType;
 	
 	/// The current damage type's hash, so you can look up localized info and icons for it.

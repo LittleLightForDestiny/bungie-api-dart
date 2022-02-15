@@ -20,17 +20,37 @@ enum GlobalAlertLevel {
 
 extension GlobalAlertLevelExtension on GlobalAlertLevel{
   int? get value {
-    switch(this){
-      case GlobalAlertLevel.Unknown:
-        return 0;
-      case GlobalAlertLevel.Blue:
-        return 1;
-      case GlobalAlertLevel.Yellow:
-        return 2;
-      case GlobalAlertLevel.Red:
-        return 3;
-      default:
-        return null;
+    if (_$GlobalAlertLevelEnumMap.containsKey(this)){
+      return _$GlobalAlertLevelEnumMap[this];
     }
+    return null;
   }
 }
+
+GlobalAlertLevel? decodeGlobalAlertLevel (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GlobalAlertLevelValueMap.containsKey(value)){
+    return _$GlobalAlertLevelValueMap[value];
+  }
+
+  return GlobalAlertLevel.ProtectedInvalidEnumValue;
+}
+
+int? encodeGlobalAlertLevel (GlobalAlertLevel? value) {
+  return value?.value;
+}
+
+const Map<GlobalAlertLevel, int> _$GlobalAlertLevelEnumMap = <GlobalAlertLevel, int>{
+    GlobalAlertLevel.Unknown:0,
+    GlobalAlertLevel.Blue:1,
+    GlobalAlertLevel.Yellow:2,
+    GlobalAlertLevel.Red:3,
+};
+const Map<int, GlobalAlertLevel> _$GlobalAlertLevelValueMap = <int, GlobalAlertLevel>{
+    0:GlobalAlertLevel.Unknown,
+    1:GlobalAlertLevel.Blue,
+    2:GlobalAlertLevel.Yellow,
+    3:GlobalAlertLevel.Red,
+};

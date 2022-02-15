@@ -17,15 +17,35 @@ enum GroupPostPublicity {
 
 extension GroupPostPublicityExtension on GroupPostPublicity{
   int? get value {
-    switch(this){
-      case GroupPostPublicity.Public:
-        return 0;
-      case GroupPostPublicity.Alliance:
-        return 1;
-      case GroupPostPublicity.Private:
-        return 2;
-      default:
-        return null;
+    if (_$GroupPostPublicityEnumMap.containsKey(this)){
+      return _$GroupPostPublicityEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupPostPublicity? decodeGroupPostPublicity (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupPostPublicityValueMap.containsKey(value)){
+    return _$GroupPostPublicityValueMap[value];
+  }
+
+  return GroupPostPublicity.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupPostPublicity (GroupPostPublicity? value) {
+  return value?.value;
+}
+
+const Map<GroupPostPublicity, int> _$GroupPostPublicityEnumMap = <GroupPostPublicity, int>{
+    GroupPostPublicity.Public:0,
+    GroupPostPublicity.Alliance:1,
+    GroupPostPublicity.Private:2,
+};
+const Map<int, GroupPostPublicity> _$GroupPostPublicityValueMap = <int, GroupPostPublicity>{
+    0:GroupPostPublicity.Public,
+    1:GroupPostPublicity.Alliance,
+    2:GroupPostPublicity.Private,
+};

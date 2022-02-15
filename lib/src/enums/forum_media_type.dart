@@ -20,17 +20,37 @@ enum ForumMediaType {
 
 extension ForumMediaTypeExtension on ForumMediaType{
   int? get value {
-    switch(this){
-      case ForumMediaType.None:
-        return 0;
-      case ForumMediaType.Image:
-        return 1;
-      case ForumMediaType.Video:
-        return 2;
-      case ForumMediaType.Youtube:
-        return 3;
-      default:
-        return null;
+    if (_$ForumMediaTypeEnumMap.containsKey(this)){
+      return _$ForumMediaTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumMediaType? decodeForumMediaType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumMediaTypeValueMap.containsKey(value)){
+    return _$ForumMediaTypeValueMap[value];
+  }
+
+  return ForumMediaType.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumMediaType (ForumMediaType? value) {
+  return value?.value;
+}
+
+const Map<ForumMediaType, int> _$ForumMediaTypeEnumMap = <ForumMediaType, int>{
+    ForumMediaType.None:0,
+    ForumMediaType.Image:1,
+    ForumMediaType.Video:2,
+    ForumMediaType.Youtube:3,
+};
+const Map<int, ForumMediaType> _$ForumMediaTypeValueMap = <int, ForumMediaType>{
+    0:ForumMediaType.None,
+    1:ForumMediaType.Image,
+    2:ForumMediaType.Video,
+    3:ForumMediaType.Youtube,
+};

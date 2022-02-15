@@ -7,12 +7,11 @@ part of 'destiny_vendor_group_component.dart';
 // **************************************************************************
 
 DestinyVendorGroupComponent _$DestinyVendorGroupComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyVendorGroupComponent()
-    ..groups = (json['groups'] as List<dynamic>?)
-        ?.map((e) => DestinyVendorGroup.fromJson(e as Map<String, dynamic>))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyVendorGroupComponent()
+      ..groups = (json['groups'] as List<dynamic>?)
+          ?.map((e) => DestinyVendorGroup.fromJson(e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$DestinyVendorGroupComponentToJson(
         DestinyVendorGroupComponent instance) =>

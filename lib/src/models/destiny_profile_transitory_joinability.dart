@@ -21,7 +21,7 @@ class DestinyProfileTransitoryJoinability{
 	int? openSlots;
 	
 	/// Who the person is currently allowing invites from.
-	@JsonKey(name:'privacySetting',unknownEnumValue:DestinyGamePrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacySetting',fromJson:decodeDestinyGamePrivacySetting,toJson:encodeDestinyGamePrivacySetting)
 	DestinyGamePrivacySetting? privacySetting;
 	
 	/// Reasons why a person can't join this person's fireteam.

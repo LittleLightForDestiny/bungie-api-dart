@@ -29,23 +29,43 @@ enum DestinyGatingScope {
 
 extension DestinyGatingScopeExtension on DestinyGatingScope{
   int? get value {
-    switch(this){
-      case DestinyGatingScope.None:
-        return 0;
-      case DestinyGatingScope.Global:
-        return 1;
-      case DestinyGatingScope.Clan:
-        return 2;
-      case DestinyGatingScope.Profile:
-        return 3;
-      case DestinyGatingScope.Character:
-        return 4;
-      case DestinyGatingScope.Item:
-        return 5;
-      case DestinyGatingScope.AssumedWorstCase:
-        return 6;
-      default:
-        return null;
+    if (_$DestinyGatingScopeEnumMap.containsKey(this)){
+      return _$DestinyGatingScopeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyGatingScope? decodeDestinyGatingScope (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyGatingScopeValueMap.containsKey(value)){
+    return _$DestinyGatingScopeValueMap[value];
+  }
+
+  return DestinyGatingScope.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyGatingScope (DestinyGatingScope? value) {
+  return value?.value;
+}
+
+const Map<DestinyGatingScope, int> _$DestinyGatingScopeEnumMap = <DestinyGatingScope, int>{
+    DestinyGatingScope.None:0,
+    DestinyGatingScope.Global:1,
+    DestinyGatingScope.Clan:2,
+    DestinyGatingScope.Profile:3,
+    DestinyGatingScope.Character:4,
+    DestinyGatingScope.Item:5,
+    DestinyGatingScope.AssumedWorstCase:6,
+};
+const Map<int, DestinyGatingScope> _$DestinyGatingScopeValueMap = <int, DestinyGatingScope>{
+    0:DestinyGatingScope.None,
+    1:DestinyGatingScope.Global,
+    2:DestinyGatingScope.Clan,
+    3:DestinyGatingScope.Profile,
+    4:DestinyGatingScope.Character,
+    5:DestinyGatingScope.Item,
+    6:DestinyGatingScope.AssumedWorstCase,
+};

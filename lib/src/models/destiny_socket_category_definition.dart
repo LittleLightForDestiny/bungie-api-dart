@@ -30,7 +30,7 @@ class DestinySocketCategoryDefinition{
 	int? uiCategoryStyle;
 	
 	/// Same as uiCategoryStyle, but in a more usable enumeration form.
-	@JsonKey(name:'categoryStyle',unknownEnumValue:DestinySocketCategoryStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'categoryStyle',fromJson:decodeDestinySocketCategoryStyle,toJson:encodeDestinySocketCategoryStyle)
 	DestinySocketCategoryStyle? categoryStyle;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

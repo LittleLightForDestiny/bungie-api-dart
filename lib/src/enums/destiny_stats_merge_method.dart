@@ -20,15 +20,35 @@ enum DestinyStatsMergeMethod {
 
 extension DestinyStatsMergeMethodExtension on DestinyStatsMergeMethod{
   int? get value {
-    switch(this){
-      case DestinyStatsMergeMethod.Add:
-        return 0;
-      case DestinyStatsMergeMethod.Min:
-        return 1;
-      case DestinyStatsMergeMethod.Max:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyStatsMergeMethodEnumMap.containsKey(this)){
+      return _$DestinyStatsMergeMethodEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyStatsMergeMethod? decodeDestinyStatsMergeMethod (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyStatsMergeMethodValueMap.containsKey(value)){
+    return _$DestinyStatsMergeMethodValueMap[value];
+  }
+
+  return DestinyStatsMergeMethod.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyStatsMergeMethod (DestinyStatsMergeMethod? value) {
+  return value?.value;
+}
+
+const Map<DestinyStatsMergeMethod, int> _$DestinyStatsMergeMethodEnumMap = <DestinyStatsMergeMethod, int>{
+    DestinyStatsMergeMethod.Add:0,
+    DestinyStatsMergeMethod.Min:1,
+    DestinyStatsMergeMethod.Max:2,
+};
+const Map<int, DestinyStatsMergeMethod> _$DestinyStatsMergeMethodValueMap = <int, DestinyStatsMergeMethod>{
+    0:DestinyStatsMergeMethod.Add,
+    1:DestinyStatsMergeMethod.Min,
+    2:DestinyStatsMergeMethod.Max,
+};

@@ -7,12 +7,11 @@ part of 'destiny_milestone_reward_entry.dart';
 // **************************************************************************
 
 DestinyMilestoneRewardEntry _$DestinyMilestoneRewardEntryFromJson(
-    Map<String, dynamic> json) {
-  return DestinyMilestoneRewardEntry()
-    ..rewardEntryHash = json['rewardEntryHash'] as int?
-    ..earned = json['earned'] as bool?
-    ..redeemed = json['redeemed'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyMilestoneRewardEntry()
+      ..rewardEntryHash = json['rewardEntryHash'] as int?
+      ..earned = json['earned'] as bool?
+      ..redeemed = json['redeemed'] as bool?;
 
 Map<String, dynamic> _$DestinyMilestoneRewardEntryToJson(
         DestinyMilestoneRewardEntry instance) =>

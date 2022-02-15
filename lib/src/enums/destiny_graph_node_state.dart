@@ -23,19 +23,39 @@ enum DestinyGraphNodeState {
 
 extension DestinyGraphNodeStateExtension on DestinyGraphNodeState{
   int? get value {
-    switch(this){
-      case DestinyGraphNodeState.Hidden:
-        return 0;
-      case DestinyGraphNodeState.Visible:
-        return 1;
-      case DestinyGraphNodeState.Teaser:
-        return 2;
-      case DestinyGraphNodeState.Incomplete:
-        return 3;
-      case DestinyGraphNodeState.Completed:
-        return 4;
-      default:
-        return null;
+    if (_$DestinyGraphNodeStateEnumMap.containsKey(this)){
+      return _$DestinyGraphNodeStateEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyGraphNodeState? decodeDestinyGraphNodeState (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyGraphNodeStateValueMap.containsKey(value)){
+    return _$DestinyGraphNodeStateValueMap[value];
+  }
+
+  return DestinyGraphNodeState.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyGraphNodeState (DestinyGraphNodeState? value) {
+  return value?.value;
+}
+
+const Map<DestinyGraphNodeState, int> _$DestinyGraphNodeStateEnumMap = <DestinyGraphNodeState, int>{
+    DestinyGraphNodeState.Hidden:0,
+    DestinyGraphNodeState.Visible:1,
+    DestinyGraphNodeState.Teaser:2,
+    DestinyGraphNodeState.Incomplete:3,
+    DestinyGraphNodeState.Completed:4,
+};
+const Map<int, DestinyGraphNodeState> _$DestinyGraphNodeStateValueMap = <int, DestinyGraphNodeState>{
+    0:DestinyGraphNodeState.Hidden,
+    1:DestinyGraphNodeState.Visible,
+    2:DestinyGraphNodeState.Teaser,
+    3:DestinyGraphNodeState.Incomplete,
+    4:DestinyGraphNodeState.Completed,
+};

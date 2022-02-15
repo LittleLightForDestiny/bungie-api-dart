@@ -7,18 +7,17 @@ part of 'destiny_trait_definition.dart';
 // **************************************************************************
 
 DestinyTraitDefinition _$DestinyTraitDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyTraitDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..traitCategoryId = json['traitCategoryId'] as String?
-    ..traitCategoryHash = json['traitCategoryHash'] as int?
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyTraitDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..traitCategoryId = json['traitCategoryId'] as String?
+      ..traitCategoryHash = json['traitCategoryHash'] as int?
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyTraitDefinitionToJson(
         DestinyTraitDefinition instance) =>

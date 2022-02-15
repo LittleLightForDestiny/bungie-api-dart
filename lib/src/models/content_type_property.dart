@@ -75,7 +75,7 @@ class ContentTypeProperty{
 	@JsonKey(name:'visibleOn')
 	String? visibleOn;
 	
-	@JsonKey(name:'datatype',unknownEnumValue:ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue)
+	@JsonKey(name:'datatype',fromJson:decodeContentPropertyDataTypeEnum,toJson:encodeContentPropertyDataTypeEnum)
 	ContentPropertyDataTypeEnum? datatype;
 	
 	@JsonKey(name:'attributes')

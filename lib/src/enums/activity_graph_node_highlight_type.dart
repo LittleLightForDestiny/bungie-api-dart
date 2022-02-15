@@ -23,19 +23,39 @@ enum ActivityGraphNodeHighlightType {
 
 extension ActivityGraphNodeHighlightTypeExtension on ActivityGraphNodeHighlightType{
   int? get value {
-    switch(this){
-      case ActivityGraphNodeHighlightType.None:
-        return 0;
-      case ActivityGraphNodeHighlightType.Normal:
-        return 1;
-      case ActivityGraphNodeHighlightType.Hyper:
-        return 2;
-      case ActivityGraphNodeHighlightType.Comet:
-        return 3;
-      case ActivityGraphNodeHighlightType.RiseOfIron:
-        return 4;
-      default:
-        return null;
+    if (_$ActivityGraphNodeHighlightTypeEnumMap.containsKey(this)){
+      return _$ActivityGraphNodeHighlightTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+ActivityGraphNodeHighlightType? decodeActivityGraphNodeHighlightType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ActivityGraphNodeHighlightTypeValueMap.containsKey(value)){
+    return _$ActivityGraphNodeHighlightTypeValueMap[value];
+  }
+
+  return ActivityGraphNodeHighlightType.ProtectedInvalidEnumValue;
+}
+
+int? encodeActivityGraphNodeHighlightType (ActivityGraphNodeHighlightType? value) {
+  return value?.value;
+}
+
+const Map<ActivityGraphNodeHighlightType, int> _$ActivityGraphNodeHighlightTypeEnumMap = <ActivityGraphNodeHighlightType, int>{
+    ActivityGraphNodeHighlightType.None:0,
+    ActivityGraphNodeHighlightType.Normal:1,
+    ActivityGraphNodeHighlightType.Hyper:2,
+    ActivityGraphNodeHighlightType.Comet:3,
+    ActivityGraphNodeHighlightType.RiseOfIron:4,
+};
+const Map<int, ActivityGraphNodeHighlightType> _$ActivityGraphNodeHighlightTypeValueMap = <int, ActivityGraphNodeHighlightType>{
+    0:ActivityGraphNodeHighlightType.None,
+    1:ActivityGraphNodeHighlightType.Normal,
+    2:ActivityGraphNodeHighlightType.Hyper,
+    3:ActivityGraphNodeHighlightType.Comet,
+    4:ActivityGraphNodeHighlightType.RiseOfIron,
+};

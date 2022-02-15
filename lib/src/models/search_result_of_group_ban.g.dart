@@ -7,20 +7,19 @@ part of 'search_result_of_group_ban.dart';
 // **************************************************************************
 
 SearchResultOfGroupBan _$SearchResultOfGroupBanFromJson(
-    Map<String, dynamic> json) {
-  return SearchResultOfGroupBan()
-    ..results = (json['results'] as List<dynamic>?)
-        ?.map((e) => GroupBan.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..totalResults = json['totalResults'] as int?
-    ..hasMore = json['hasMore'] as bool?
-    ..query = json['query'] == null
-        ? null
-        : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
-    ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String?
-    ..useTotalResults = json['useTotalResults'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    SearchResultOfGroupBan()
+      ..results = (json['results'] as List<dynamic>?)
+          ?.map((e) => GroupBan.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..totalResults = json['totalResults'] as int?
+      ..hasMore = json['hasMore'] as bool?
+      ..query = json['query'] == null
+          ? null
+          : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+      ..replacementContinuationToken =
+          json['replacementContinuationToken'] as String?
+      ..useTotalResults = json['useTotalResults'] as bool?;
 
 Map<String, dynamic> _$SearchResultOfGroupBanToJson(
         SearchResultOfGroupBan instance) =>

@@ -20,15 +20,35 @@ enum DestinyPresentationScreenStyle {
 
 extension DestinyPresentationScreenStyleExtension on DestinyPresentationScreenStyle{
   int? get value {
-    switch(this){
-      case DestinyPresentationScreenStyle.Default:
-        return 0;
-      case DestinyPresentationScreenStyle.CategorySets:
-        return 1;
-      case DestinyPresentationScreenStyle.Badge:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyPresentationScreenStyleEnumMap.containsKey(this)){
+      return _$DestinyPresentationScreenStyleEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyPresentationScreenStyle? decodeDestinyPresentationScreenStyle (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyPresentationScreenStyleValueMap.containsKey(value)){
+    return _$DestinyPresentationScreenStyleValueMap[value];
+  }
+
+  return DestinyPresentationScreenStyle.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyPresentationScreenStyle (DestinyPresentationScreenStyle? value) {
+  return value?.value;
+}
+
+const Map<DestinyPresentationScreenStyle, int> _$DestinyPresentationScreenStyleEnumMap = <DestinyPresentationScreenStyle, int>{
+    DestinyPresentationScreenStyle.Default:0,
+    DestinyPresentationScreenStyle.CategorySets:1,
+    DestinyPresentationScreenStyle.Badge:2,
+};
+const Map<int, DestinyPresentationScreenStyle> _$DestinyPresentationScreenStyleValueMap = <int, DestinyPresentationScreenStyle>{
+    0:DestinyPresentationScreenStyle.Default,
+    1:DestinyPresentationScreenStyle.CategorySets,
+    2:DestinyPresentationScreenStyle.Badge,
+};

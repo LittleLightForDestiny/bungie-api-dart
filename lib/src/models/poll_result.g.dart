@@ -6,14 +6,12 @@ part of 'poll_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PollResult _$PollResultFromJson(Map<String, dynamic> json) {
-  return PollResult()
-    ..answerText = json['answerText'] as String?
-    ..answerSlot = json['answerSlot'] as int?
-    ..lastVoteDate = json['lastVoteDate'] as String?
-    ..votes = json['votes'] as int?
-    ..requestingUserVoted = json['requestingUserVoted'] as bool?;
-}
+PollResult _$PollResultFromJson(Map<String, dynamic> json) => PollResult()
+  ..answerText = json['answerText'] as String?
+  ..answerSlot = json['answerSlot'] as int?
+  ..lastVoteDate = json['lastVoteDate'] as String?
+  ..votes = json['votes'] as int?
+  ..requestingUserVoted = json['requestingUserVoted'] as bool?;
 
 Map<String, dynamic> _$PollResultToJson(PollResult instance) =>
     <String, dynamic>{

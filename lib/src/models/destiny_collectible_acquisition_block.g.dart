@@ -7,13 +7,12 @@ part of 'destiny_collectible_acquisition_block.dart';
 // **************************************************************************
 
 DestinyCollectibleAcquisitionBlock _$DestinyCollectibleAcquisitionBlockFromJson(
-    Map<String, dynamic> json) {
-  return DestinyCollectibleAcquisitionBlock()
-    ..acquireMaterialRequirementHash =
-        json['acquireMaterialRequirementHash'] as int?
-    ..acquireTimestampUnlockValueHash =
-        json['acquireTimestampUnlockValueHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyCollectibleAcquisitionBlock()
+      ..acquireMaterialRequirementHash =
+          json['acquireMaterialRequirementHash'] as int?
+      ..acquireTimestampUnlockValueHash =
+          json['acquireTimestampUnlockValueHash'] as int?;
 
 Map<String, dynamic> _$DestinyCollectibleAcquisitionBlockToJson(
         DestinyCollectibleAcquisitionBlock instance) =>

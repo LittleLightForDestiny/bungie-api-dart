@@ -14,13 +14,33 @@ enum DestinyProgressionRewardItemAcquisitionBehavior {
 
 extension DestinyProgressionRewardItemAcquisitionBehaviorExtension on DestinyProgressionRewardItemAcquisitionBehavior{
   int? get value {
-    switch(this){
-      case DestinyProgressionRewardItemAcquisitionBehavior.Instant:
-        return 0;
-      case DestinyProgressionRewardItemAcquisitionBehavior.PlayerClaimRequired:
-        return 1;
-      default:
-        return null;
+    if (_$DestinyProgressionRewardItemAcquisitionBehaviorEnumMap.containsKey(this)){
+      return _$DestinyProgressionRewardItemAcquisitionBehaviorEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyProgressionRewardItemAcquisitionBehavior? decodeDestinyProgressionRewardItemAcquisitionBehavior (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyProgressionRewardItemAcquisitionBehaviorValueMap.containsKey(value)){
+    return _$DestinyProgressionRewardItemAcquisitionBehaviorValueMap[value];
+  }
+
+  return DestinyProgressionRewardItemAcquisitionBehavior.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyProgressionRewardItemAcquisitionBehavior (DestinyProgressionRewardItemAcquisitionBehavior? value) {
+  return value?.value;
+}
+
+const Map<DestinyProgressionRewardItemAcquisitionBehavior, int> _$DestinyProgressionRewardItemAcquisitionBehaviorEnumMap = <DestinyProgressionRewardItemAcquisitionBehavior, int>{
+    DestinyProgressionRewardItemAcquisitionBehavior.Instant:0,
+    DestinyProgressionRewardItemAcquisitionBehavior.PlayerClaimRequired:1,
+};
+const Map<int, DestinyProgressionRewardItemAcquisitionBehavior> _$DestinyProgressionRewardItemAcquisitionBehaviorValueMap = <int, DestinyProgressionRewardItemAcquisitionBehavior>{
+    0:DestinyProgressionRewardItemAcquisitionBehavior.Instant,
+    1:DestinyProgressionRewardItemAcquisitionBehavior.PlayerClaimRequired,
+};

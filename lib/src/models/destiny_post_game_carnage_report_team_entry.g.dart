@@ -7,19 +7,19 @@ part of 'destiny_post_game_carnage_report_team_entry.dart';
 // **************************************************************************
 
 DestinyPostGameCarnageReportTeamEntry
-    _$DestinyPostGameCarnageReportTeamEntryFromJson(Map<String, dynamic> json) {
-  return DestinyPostGameCarnageReportTeamEntry()
-    ..teamId = json['teamId'] as int?
-    ..standing = json['standing'] == null
-        ? null
-        : DestinyHistoricalStatsValue.fromJson(
-            json['standing'] as Map<String, dynamic>)
-    ..score = json['score'] == null
-        ? null
-        : DestinyHistoricalStatsValue.fromJson(
-            json['score'] as Map<String, dynamic>)
-    ..teamName = json['teamName'] as String?;
-}
+    _$DestinyPostGameCarnageReportTeamEntryFromJson(
+            Map<String, dynamic> json) =>
+        DestinyPostGameCarnageReportTeamEntry()
+          ..teamId = json['teamId'] as int?
+          ..standing = json['standing'] == null
+              ? null
+              : DestinyHistoricalStatsValue.fromJson(
+                  json['standing'] as Map<String, dynamic>)
+          ..score = json['score'] == null
+              ? null
+              : DestinyHistoricalStatsValue.fromJson(
+                  json['score'] as Map<String, dynamic>)
+          ..teamName = json['teamName'] as String?;
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportTeamEntryToJson(
         DestinyPostGameCarnageReportTeamEntry instance) =>

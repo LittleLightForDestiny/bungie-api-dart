@@ -35,27 +35,47 @@ enum SpecialItemType {
 
 extension SpecialItemTypeExtension on SpecialItemType{
   int? get value {
-    switch(this){
-      case SpecialItemType.None:
-        return 0;
-      case SpecialItemType.SpecialCurrency:
-        return 1;
-      case SpecialItemType.Armor:
-        return 8;
-      case SpecialItemType.Weapon:
-        return 9;
-      case SpecialItemType.Engram:
-        return 23;
-      case SpecialItemType.Consumable:
-        return 24;
-      case SpecialItemType.ExchangeMaterial:
-        return 25;
-      case SpecialItemType.MissionReward:
-        return 27;
-      case SpecialItemType.Currency:
-        return 29;
-      default:
-        return null;
+    if (_$SpecialItemTypeEnumMap.containsKey(this)){
+      return _$SpecialItemTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+SpecialItemType? decodeSpecialItemType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$SpecialItemTypeValueMap.containsKey(value)){
+    return _$SpecialItemTypeValueMap[value];
+  }
+
+  return SpecialItemType.ProtectedInvalidEnumValue;
+}
+
+int? encodeSpecialItemType (SpecialItemType? value) {
+  return value?.value;
+}
+
+const Map<SpecialItemType, int> _$SpecialItemTypeEnumMap = <SpecialItemType, int>{
+    SpecialItemType.None:0,
+    SpecialItemType.SpecialCurrency:1,
+    SpecialItemType.Armor:8,
+    SpecialItemType.Weapon:9,
+    SpecialItemType.Engram:23,
+    SpecialItemType.Consumable:24,
+    SpecialItemType.ExchangeMaterial:25,
+    SpecialItemType.MissionReward:27,
+    SpecialItemType.Currency:29,
+};
+const Map<int, SpecialItemType> _$SpecialItemTypeValueMap = <int, SpecialItemType>{
+    0:SpecialItemType.None,
+    1:SpecialItemType.SpecialCurrency,
+    8:SpecialItemType.Armor,
+    9:SpecialItemType.Weapon,
+    23:SpecialItemType.Engram,
+    24:SpecialItemType.Consumable,
+    25:SpecialItemType.ExchangeMaterial,
+    27:SpecialItemType.MissionReward,
+    29:SpecialItemType.Currency,
+};

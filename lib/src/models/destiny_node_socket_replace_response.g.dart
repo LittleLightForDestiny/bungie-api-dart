@@ -7,11 +7,10 @@ part of 'destiny_node_socket_replace_response.dart';
 // **************************************************************************
 
 DestinyNodeSocketReplaceResponse _$DestinyNodeSocketReplaceResponseFromJson(
-    Map<String, dynamic> json) {
-  return DestinyNodeSocketReplaceResponse()
-    ..socketTypeHash = json['socketTypeHash'] as int?
-    ..plugItemHash = json['plugItemHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyNodeSocketReplaceResponse()
+      ..socketTypeHash = json['socketTypeHash'] as int?
+      ..plugItemHash = json['plugItemHash'] as int?;
 
 Map<String, dynamic> _$DestinyNodeSocketReplaceResponseToJson(
         DestinyNodeSocketReplaceResponse instance) =>

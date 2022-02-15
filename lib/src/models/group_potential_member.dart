@@ -16,7 +16,7 @@ class GroupPotentialMember{
 	
 	Map<String, dynamic> toJson() => _$GroupPotentialMemberToJson(this);
 	
-	@JsonKey(name:'potentialStatus',unknownEnumValue:GroupPotentialMemberStatus.ProtectedInvalidEnumValue)
+	@JsonKey(name:'potentialStatus',fromJson:decodeGroupPotentialMemberStatus,toJson:encodeGroupPotentialMemberStatus)
 	GroupPotentialMemberStatus? potentialStatus;
 	
 	@JsonKey(name:'groupId')

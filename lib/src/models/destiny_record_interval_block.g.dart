@@ -7,19 +7,18 @@ part of 'destiny_record_interval_block.dart';
 // **************************************************************************
 
 DestinyRecordIntervalBlock _$DestinyRecordIntervalBlockFromJson(
-    Map<String, dynamic> json) {
-  return DestinyRecordIntervalBlock()
-    ..intervalObjectives = (json['intervalObjectives'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyRecordIntervalObjective.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..intervalRewards = (json['intervalRewards'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyRecordIntervalRewards.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..originalObjectiveArrayInsertionIndex =
-        json['originalObjectiveArrayInsertionIndex'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyRecordIntervalBlock()
+      ..intervalObjectives = (json['intervalObjectives'] as List<dynamic>?)
+          ?.map((e) => DestinyRecordIntervalObjective.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..intervalRewards = (json['intervalRewards'] as List<dynamic>?)
+          ?.map((e) =>
+              DestinyRecordIntervalRewards.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..originalObjectiveArrayInsertionIndex =
+          json['originalObjectiveArrayInsertionIndex'] as int?;
 
 Map<String, dynamic> _$DestinyRecordIntervalBlockToJson(
         DestinyRecordIntervalBlock instance) =>

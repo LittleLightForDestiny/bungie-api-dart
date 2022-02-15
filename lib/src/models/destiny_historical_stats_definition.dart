@@ -23,7 +23,7 @@ class DestinyHistoricalStatsDefinition{
 	String? statId;
 	
 	/// Statistic group
-	@JsonKey(name:'group',unknownEnumValue:DestinyStatsGroupType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'group',fromJson:decodeDestinyStatsGroupType,toJson:encodeDestinyStatsGroupType)
 	DestinyStatsGroupType? group;
 	
 	/// Time periods the statistic covers
@@ -35,7 +35,7 @@ class DestinyHistoricalStatsDefinition{
 	List<DestinyActivityModeType>? modes;
 	
 	/// Category for the stat.
-	@JsonKey(name:'category',unknownEnumValue:DestinyStatsCategoryType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'category',fromJson:decodeDestinyStatsCategoryType,toJson:encodeDestinyStatsCategoryType)
 	DestinyStatsCategoryType? category;
 	
 	/// Display name
@@ -51,7 +51,7 @@ class DestinyHistoricalStatsDefinition{
 	String? statDescription;
 	
 	/// Unit, if any, for the statistic
-	@JsonKey(name:'unitType',unknownEnumValue:UnitType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'unitType',fromJson:decodeUnitType,toJson:encodeUnitType)
 	UnitType? unitType;
 	
 	/// Optional URI to an icon for the statistic

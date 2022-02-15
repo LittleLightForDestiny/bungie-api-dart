@@ -59,43 +59,63 @@ enum DestinyActivityNavPointType {
 
 extension DestinyActivityNavPointTypeExtension on DestinyActivityNavPointType{
   int? get value {
-    switch(this){
-      case DestinyActivityNavPointType.Inactive:
-        return 0;
-      case DestinyActivityNavPointType.PrimaryObjective:
-        return 1;
-      case DestinyActivityNavPointType.SecondaryObjective:
-        return 2;
-      case DestinyActivityNavPointType.TravelObjective:
-        return 3;
-      case DestinyActivityNavPointType.PublicEventObjective:
-        return 4;
-      case DestinyActivityNavPointType.AmmoCache:
-        return 5;
-      case DestinyActivityNavPointType.PointTypeFlag:
-        return 6;
-      case DestinyActivityNavPointType.CapturePoint:
-        return 7;
-      case DestinyActivityNavPointType.DefensiveEncounter:
-        return 8;
-      case DestinyActivityNavPointType.GhostInteraction:
-        return 9;
-      case DestinyActivityNavPointType.KillAi:
-        return 10;
-      case DestinyActivityNavPointType.QuestItem:
-        return 11;
-      case DestinyActivityNavPointType.PatrolMission:
-        return 12;
-      case DestinyActivityNavPointType.Incoming:
-        return 13;
-      case DestinyActivityNavPointType.ArenaObjective:
-        return 14;
-      case DestinyActivityNavPointType.AutomationHint:
-        return 15;
-      case DestinyActivityNavPointType.TrackedQuest:
-        return 16;
-      default:
-        return null;
+    if (_$DestinyActivityNavPointTypeEnumMap.containsKey(this)){
+      return _$DestinyActivityNavPointTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyActivityNavPointType? decodeDestinyActivityNavPointType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyActivityNavPointTypeValueMap.containsKey(value)){
+    return _$DestinyActivityNavPointTypeValueMap[value];
+  }
+
+  return DestinyActivityNavPointType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyActivityNavPointType (DestinyActivityNavPointType? value) {
+  return value?.value;
+}
+
+const Map<DestinyActivityNavPointType, int> _$DestinyActivityNavPointTypeEnumMap = <DestinyActivityNavPointType, int>{
+    DestinyActivityNavPointType.Inactive:0,
+    DestinyActivityNavPointType.PrimaryObjective:1,
+    DestinyActivityNavPointType.SecondaryObjective:2,
+    DestinyActivityNavPointType.TravelObjective:3,
+    DestinyActivityNavPointType.PublicEventObjective:4,
+    DestinyActivityNavPointType.AmmoCache:5,
+    DestinyActivityNavPointType.PointTypeFlag:6,
+    DestinyActivityNavPointType.CapturePoint:7,
+    DestinyActivityNavPointType.DefensiveEncounter:8,
+    DestinyActivityNavPointType.GhostInteraction:9,
+    DestinyActivityNavPointType.KillAi:10,
+    DestinyActivityNavPointType.QuestItem:11,
+    DestinyActivityNavPointType.PatrolMission:12,
+    DestinyActivityNavPointType.Incoming:13,
+    DestinyActivityNavPointType.ArenaObjective:14,
+    DestinyActivityNavPointType.AutomationHint:15,
+    DestinyActivityNavPointType.TrackedQuest:16,
+};
+const Map<int, DestinyActivityNavPointType> _$DestinyActivityNavPointTypeValueMap = <int, DestinyActivityNavPointType>{
+    0:DestinyActivityNavPointType.Inactive,
+    1:DestinyActivityNavPointType.PrimaryObjective,
+    2:DestinyActivityNavPointType.SecondaryObjective,
+    3:DestinyActivityNavPointType.TravelObjective,
+    4:DestinyActivityNavPointType.PublicEventObjective,
+    5:DestinyActivityNavPointType.AmmoCache,
+    6:DestinyActivityNavPointType.PointTypeFlag,
+    7:DestinyActivityNavPointType.CapturePoint,
+    8:DestinyActivityNavPointType.DefensiveEncounter,
+    9:DestinyActivityNavPointType.GhostInteraction,
+    10:DestinyActivityNavPointType.KillAi,
+    11:DestinyActivityNavPointType.QuestItem,
+    12:DestinyActivityNavPointType.PatrolMission,
+    13:DestinyActivityNavPointType.Incoming,
+    14:DestinyActivityNavPointType.ArenaObjective,
+    15:DestinyActivityNavPointType.AutomationHint,
+    16:DestinyActivityNavPointType.TrackedQuest,
+};

@@ -16,7 +16,7 @@ class GroupMember{
 	
 	Map<String, dynamic> toJson() => _$GroupMemberToJson(this);
 	
-	@JsonKey(name:'memberType',unknownEnumValue:RuntimeGroupMemberType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'memberType',fromJson:decodeRuntimeGroupMemberType,toJson:encodeRuntimeGroupMemberType)
 	RuntimeGroupMemberType? memberType;
 	
 	@JsonKey(name:'isOnline')

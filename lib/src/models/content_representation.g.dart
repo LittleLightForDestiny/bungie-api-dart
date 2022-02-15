@@ -7,12 +7,11 @@ part of 'content_representation.dart';
 // **************************************************************************
 
 ContentRepresentation _$ContentRepresentationFromJson(
-    Map<String, dynamic> json) {
-  return ContentRepresentation()
-    ..name = json['name'] as String?
-    ..path = json['path'] as String?
-    ..validationString = json['validationString'] as String?;
-}
+        Map<String, dynamic> json) =>
+    ContentRepresentation()
+      ..name = json['name'] as String?
+      ..path = json['path'] as String?
+      ..validationString = json['validationString'] as String?;
 
 Map<String, dynamic> _$ContentRepresentationToJson(
         ContentRepresentation instance) =>

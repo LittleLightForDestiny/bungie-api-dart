@@ -7,33 +7,32 @@ part of 'destiny_historical_stats_by_period.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsByPeriod _$DestinyHistoricalStatsByPeriodFromJson(
-    Map<String, dynamic> json) {
-  return DestinyHistoricalStatsByPeriod()
-    ..allTime = (json['allTime'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    )
-    ..allTimeTier1 = (json['allTimeTier1'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    )
-    ..allTimeTier2 = (json['allTimeTier2'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    )
-    ..allTimeTier3 = (json['allTimeTier3'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    )
-    ..daily = (json['daily'] as List<dynamic>?)
-        ?.map((e) => DestinyHistoricalStatsPeriodGroup.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..monthly = (json['monthly'] as List<dynamic>?)
-        ?.map((e) => DestinyHistoricalStatsPeriodGroup.fromJson(
-            e as Map<String, dynamic>))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyHistoricalStatsByPeriod()
+      ..allTime = (json['allTime'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
+      )
+      ..allTimeTier1 = (json['allTimeTier1'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
+      )
+      ..allTimeTier2 = (json['allTimeTier2'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
+      )
+      ..allTimeTier3 = (json['allTimeTier3'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
+      )
+      ..daily = (json['daily'] as List<dynamic>?)
+          ?.map((e) => DestinyHistoricalStatsPeriodGroup.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..monthly = (json['monthly'] as List<dynamic>?)
+          ?.map((e) => DestinyHistoricalStatsPeriodGroup.fromJson(
+              e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$DestinyHistoricalStatsByPeriodToJson(
         DestinyHistoricalStatsByPeriod instance) =>

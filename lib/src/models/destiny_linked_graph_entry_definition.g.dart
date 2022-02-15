@@ -7,10 +7,9 @@ part of 'destiny_linked_graph_entry_definition.dart';
 // **************************************************************************
 
 DestinyLinkedGraphEntryDefinition _$DestinyLinkedGraphEntryDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyLinkedGraphEntryDefinition()
-    ..activityGraphHash = json['activityGraphHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyLinkedGraphEntryDefinition()
+      ..activityGraphHash = json['activityGraphHash'] as int?;
 
 Map<String, dynamic> _$DestinyLinkedGraphEntryDefinitionToJson(
         DestinyLinkedGraphEntryDefinition instance) =>

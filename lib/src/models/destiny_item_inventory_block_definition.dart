@@ -44,7 +44,7 @@ class DestinyItemInventoryBlockDefinition{
 	String? tierTypeName;
 	
 	/// The enumeration matching the tier type of the item to known values, again for convenience sake.
-	@JsonKey(name:'tierType',unknownEnumValue:TierType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'tierType',fromJson:decodeTierType,toJson:encodeTierType)
 	TierType? tierType;
 	
 	/// The tooltip message to show, if any, when the item expires.

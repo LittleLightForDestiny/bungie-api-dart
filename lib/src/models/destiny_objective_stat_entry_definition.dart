@@ -21,6 +21,6 @@ class DestinyObjectiveStatEntryDefinition{
 	DestinyItemInvestmentStatDefinition? stat;
 	
 	/// Whether it will be applied as long as the objective is active, when it's completed, or until it's completed.
-	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'style',fromJson:decodeDestinyObjectiveGrantStyle,toJson:encodeDestinyObjectiveGrantStyle)
 	DestinyObjectiveGrantStyle? style;
 }

@@ -29,7 +29,7 @@ class DestinyItemTalentGridBlockDefinition{
 	String? buildName;
 	
 	/// If the talent grid implies a damage type, this is the enum value for that damage type.
-	@JsonKey(name:'hudDamageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'hudDamageType',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? hudDamageType;
 	
 	/// If the talent grid has a special icon that's shown in the game UI (like builds, funny that), this is the identifier for that icon. Sadly, we don't actually get that icon right now. I'll be looking to replace this with a path to the actual icon itself.

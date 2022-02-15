@@ -8,22 +8,22 @@ part of 'destiny_milestone_challenge_activity_definition.dart';
 
 DestinyMilestoneChallengeActivityDefinition
     _$DestinyMilestoneChallengeActivityDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyMilestoneChallengeActivityDefinition()
-    ..activityHash = json['activityHash'] as int?
-    ..challenges = (json['challenges'] as List<dynamic>?)
-        ?.map((e) => DestinyMilestoneChallengeDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..activityGraphNodes = (json['activityGraphNodes'] as List<dynamic>?)
-        ?.map((e) => DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..phases = (json['phases'] as List<dynamic>?)
-        ?.map((e) => DestinyMilestoneChallengeActivityPhase.fromJson(
-            e as Map<String, dynamic>))
-        .toList();
-}
+            Map<String, dynamic> json) =>
+        DestinyMilestoneChallengeActivityDefinition()
+          ..activityHash = json['activityHash'] as int?
+          ..challenges = (json['challenges'] as List<dynamic>?)
+              ?.map((e) => DestinyMilestoneChallengeDefinition.fromJson(
+                  e as Map<String, dynamic>))
+              .toList()
+          ..activityGraphNodes = (json['activityGraphNodes'] as List<dynamic>?)
+              ?.map((e) =>
+                  DestinyMilestoneChallengeActivityGraphNodeEntry.fromJson(
+                      e as Map<String, dynamic>))
+              .toList()
+          ..phases = (json['phases'] as List<dynamic>?)
+              ?.map((e) => DestinyMilestoneChallengeActivityPhase.fromJson(
+                  e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$DestinyMilestoneChallengeActivityDefinitionToJson(
         DestinyMilestoneChallengeActivityDefinition instance) =>

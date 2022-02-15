@@ -17,6 +17,6 @@ class GroupOptionalConversationAddRequest{
 	@JsonKey(name:'chatName')
 	String? chatName;
 	
-	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'chatSecurity',fromJson:decodeChatSecuritySetting,toJson:encodeChatSecuritySetting)
 	ChatSecuritySetting? chatSecurity;
 }

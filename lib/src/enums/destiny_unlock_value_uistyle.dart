@@ -64,37 +64,57 @@ enum DestinyUnlockValueUIStyle {
 
 extension DestinyUnlockValueUIStyleExtension on DestinyUnlockValueUIStyle{
   int? get value {
-    switch(this){
-      case DestinyUnlockValueUIStyle.Automatic:
-        return 0;
-      case DestinyUnlockValueUIStyle.Fraction:
-        return 1;
-      case DestinyUnlockValueUIStyle.Checkbox:
-        return 2;
-      case DestinyUnlockValueUIStyle.Percentage:
-        return 3;
-      case DestinyUnlockValueUIStyle.DateTime:
-        return 4;
-      case DestinyUnlockValueUIStyle.FractionFloat:
-        return 5;
-      case DestinyUnlockValueUIStyle.Integer:
-        return 6;
-      case DestinyUnlockValueUIStyle.TimeDuration:
-        return 7;
-      case DestinyUnlockValueUIStyle.Hidden:
-        return 8;
-      case DestinyUnlockValueUIStyle.Multiplier:
-        return 9;
-      case DestinyUnlockValueUIStyle.GreenPips:
-        return 10;
-      case DestinyUnlockValueUIStyle.RedPips:
-        return 11;
-      case DestinyUnlockValueUIStyle.ExplicitPercentage:
-        return 12;
-      case DestinyUnlockValueUIStyle.RawFloat:
-        return 13;
-      default:
-        return null;
+    if (_$DestinyUnlockValueUIStyleEnumMap.containsKey(this)){
+      return _$DestinyUnlockValueUIStyleEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyUnlockValueUIStyle? decodeDestinyUnlockValueUIStyle (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyUnlockValueUIStyleValueMap.containsKey(value)){
+    return _$DestinyUnlockValueUIStyleValueMap[value];
+  }
+
+  return DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyUnlockValueUIStyle (DestinyUnlockValueUIStyle? value) {
+  return value?.value;
+}
+
+const Map<DestinyUnlockValueUIStyle, int> _$DestinyUnlockValueUIStyleEnumMap = <DestinyUnlockValueUIStyle, int>{
+    DestinyUnlockValueUIStyle.Automatic:0,
+    DestinyUnlockValueUIStyle.Fraction:1,
+    DestinyUnlockValueUIStyle.Checkbox:2,
+    DestinyUnlockValueUIStyle.Percentage:3,
+    DestinyUnlockValueUIStyle.DateTime:4,
+    DestinyUnlockValueUIStyle.FractionFloat:5,
+    DestinyUnlockValueUIStyle.Integer:6,
+    DestinyUnlockValueUIStyle.TimeDuration:7,
+    DestinyUnlockValueUIStyle.Hidden:8,
+    DestinyUnlockValueUIStyle.Multiplier:9,
+    DestinyUnlockValueUIStyle.GreenPips:10,
+    DestinyUnlockValueUIStyle.RedPips:11,
+    DestinyUnlockValueUIStyle.ExplicitPercentage:12,
+    DestinyUnlockValueUIStyle.RawFloat:13,
+};
+const Map<int, DestinyUnlockValueUIStyle> _$DestinyUnlockValueUIStyleValueMap = <int, DestinyUnlockValueUIStyle>{
+    0:DestinyUnlockValueUIStyle.Automatic,
+    1:DestinyUnlockValueUIStyle.Fraction,
+    2:DestinyUnlockValueUIStyle.Checkbox,
+    3:DestinyUnlockValueUIStyle.Percentage,
+    4:DestinyUnlockValueUIStyle.DateTime,
+    5:DestinyUnlockValueUIStyle.FractionFloat,
+    6:DestinyUnlockValueUIStyle.Integer,
+    7:DestinyUnlockValueUIStyle.TimeDuration,
+    8:DestinyUnlockValueUIStyle.Hidden,
+    9:DestinyUnlockValueUIStyle.Multiplier,
+    10:DestinyUnlockValueUIStyle.GreenPips,
+    11:DestinyUnlockValueUIStyle.RedPips,
+    12:DestinyUnlockValueUIStyle.ExplicitPercentage,
+    13:DestinyUnlockValueUIStyle.RawFloat,
+};

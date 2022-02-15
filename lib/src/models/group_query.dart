@@ -24,13 +24,13 @@ class GroupQuery{
 	@JsonKey(name:'name')
 	String? name;
 	
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'groupType',fromJson:decodeGroupType,toJson:encodeGroupType)
 	GroupType? groupType;
 	
-	@JsonKey(name:'creationDate',unknownEnumValue:GroupDateRange.ProtectedInvalidEnumValue)
+	@JsonKey(name:'creationDate',fromJson:decodeGroupDateRange,toJson:encodeGroupDateRange)
 	GroupDateRange? creationDate;
 	
-	@JsonKey(name:'sortBy',unknownEnumValue:GroupSortBy.ProtectedInvalidEnumValue)
+	@JsonKey(name:'sortBy',fromJson:decodeGroupSortBy,toJson:encodeGroupSortBy)
 	GroupSortBy? sortBy;
 	
 	@JsonKey(name:'groupMemberCountFilter')

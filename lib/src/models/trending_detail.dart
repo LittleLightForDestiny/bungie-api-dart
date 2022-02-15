@@ -23,7 +23,7 @@ class TrendingDetail{
 	@JsonKey(name:'identifier')
 	String? identifier;
 	
-	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'entityType',fromJson:decodeTrendingEntryType,toJson:encodeTrendingEntryType)
 	TrendingEntryType? entityType;
 	
 	@JsonKey(name:'news')

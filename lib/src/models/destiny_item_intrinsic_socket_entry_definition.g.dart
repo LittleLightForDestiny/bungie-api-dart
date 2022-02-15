@@ -8,12 +8,11 @@ part of 'destiny_item_intrinsic_socket_entry_definition.dart';
 
 DestinyItemIntrinsicSocketEntryDefinition
     _$DestinyItemIntrinsicSocketEntryDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyItemIntrinsicSocketEntryDefinition()
-    ..plugItemHash = json['plugItemHash'] as int?
-    ..socketTypeHash = json['socketTypeHash'] as int?
-    ..defaultVisible = json['defaultVisible'] as bool?;
-}
+            Map<String, dynamic> json) =>
+        DestinyItemIntrinsicSocketEntryDefinition()
+          ..plugItemHash = json['plugItemHash'] as int?
+          ..socketTypeHash = json['socketTypeHash'] as int?
+          ..defaultVisible = json['defaultVisible'] as bool?;
 
 Map<String, dynamic> _$DestinyItemIntrinsicSocketEntryDefinitionToJson(
         DestinyItemIntrinsicSocketEntryDefinition instance) =>

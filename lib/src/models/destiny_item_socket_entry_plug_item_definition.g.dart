@@ -8,10 +8,9 @@ part of 'destiny_item_socket_entry_plug_item_definition.dart';
 
 DestinyItemSocketEntryPlugItemDefinition
     _$DestinyItemSocketEntryPlugItemDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyItemSocketEntryPlugItemDefinition()
-    ..plugItemHash = json['plugItemHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyItemSocketEntryPlugItemDefinition()
+          ..plugItemHash = json['plugItemHash'] as int?;
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemDefinitionToJson(
         DestinyItemSocketEntryPlugItemDefinition instance) =>

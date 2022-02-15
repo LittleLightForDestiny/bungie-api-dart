@@ -20,17 +20,37 @@ enum DestinyClass {
 
 extension DestinyClassExtension on DestinyClass{
   int? get value {
-    switch(this){
-      case DestinyClass.Titan:
-        return 0;
-      case DestinyClass.Hunter:
-        return 1;
-      case DestinyClass.Warlock:
-        return 2;
-      case DestinyClass.Unknown:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyClassEnumMap.containsKey(this)){
+      return _$DestinyClassEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyClass? decodeDestinyClass (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyClassValueMap.containsKey(value)){
+    return _$DestinyClassValueMap[value];
+  }
+
+  return DestinyClass.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyClass (DestinyClass? value) {
+  return value?.value;
+}
+
+const Map<DestinyClass, int> _$DestinyClassEnumMap = <DestinyClass, int>{
+    DestinyClass.Titan:0,
+    DestinyClass.Hunter:1,
+    DestinyClass.Warlock:2,
+    DestinyClass.Unknown:3,
+};
+const Map<int, DestinyClass> _$DestinyClassValueMap = <int, DestinyClass>{
+    0:DestinyClass.Titan,
+    1:DestinyClass.Hunter,
+    2:DestinyClass.Warlock,
+    3:DestinyClass.Unknown,
+};

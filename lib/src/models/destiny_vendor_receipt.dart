@@ -33,7 +33,7 @@ class DestinyVendorReceipt{
 	String? purchasedByCharacterId;
 	
 	/// Whether you can get a refund, and what happens in order for the refund to be received. See the DestinyVendorItemRefundPolicy enum for details.
-	@JsonKey(name:'refundPolicy',unknownEnumValue:DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue)
+	@JsonKey(name:'refundPolicy',fromJson:decodeDestinyVendorItemRefundPolicy,toJson:encodeDestinyVendorItemRefundPolicy)
 	DestinyVendorItemRefundPolicy? refundPolicy;
 	
 	/// The identifier of this receipt.

@@ -39,27 +39,47 @@ enum DestinyStatsGroupType {
 
 extension DestinyStatsGroupTypeExtension on DestinyStatsGroupType{
   int? get value {
-    switch(this){
-      case DestinyStatsGroupType.None:
-        return 0;
-      case DestinyStatsGroupType.General:
-        return 1;
-      case DestinyStatsGroupType.Weapons:
-        return 2;
-      case DestinyStatsGroupType.Medals:
-        return 3;
-      case DestinyStatsGroupType.ReservedGroups:
-        return 100;
-      case DestinyStatsGroupType.Leaderboard:
-        return 101;
-      case DestinyStatsGroupType.Activity:
-        return 102;
-      case DestinyStatsGroupType.UniqueWeapon:
-        return 103;
-      case DestinyStatsGroupType.Internal:
-        return 104;
-      default:
-        return null;
+    if (_$DestinyStatsGroupTypeEnumMap.containsKey(this)){
+      return _$DestinyStatsGroupTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyStatsGroupType? decodeDestinyStatsGroupType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyStatsGroupTypeValueMap.containsKey(value)){
+    return _$DestinyStatsGroupTypeValueMap[value];
+  }
+
+  return DestinyStatsGroupType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyStatsGroupType (DestinyStatsGroupType? value) {
+  return value?.value;
+}
+
+const Map<DestinyStatsGroupType, int> _$DestinyStatsGroupTypeEnumMap = <DestinyStatsGroupType, int>{
+    DestinyStatsGroupType.None:0,
+    DestinyStatsGroupType.General:1,
+    DestinyStatsGroupType.Weapons:2,
+    DestinyStatsGroupType.Medals:3,
+    DestinyStatsGroupType.ReservedGroups:100,
+    DestinyStatsGroupType.Leaderboard:101,
+    DestinyStatsGroupType.Activity:102,
+    DestinyStatsGroupType.UniqueWeapon:103,
+    DestinyStatsGroupType.Internal:104,
+};
+const Map<int, DestinyStatsGroupType> _$DestinyStatsGroupTypeValueMap = <int, DestinyStatsGroupType>{
+    0:DestinyStatsGroupType.None,
+    1:DestinyStatsGroupType.General,
+    2:DestinyStatsGroupType.Weapons,
+    3:DestinyStatsGroupType.Medals,
+    100:DestinyStatsGroupType.ReservedGroups,
+    101:DestinyStatsGroupType.Leaderboard,
+    102:DestinyStatsGroupType.Activity,
+    103:DestinyStatsGroupType.UniqueWeapon,
+    104:DestinyStatsGroupType.Internal,
+};

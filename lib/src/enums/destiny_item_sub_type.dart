@@ -102,69 +102,89 @@ enum DestinyItemSubType {
 
 extension DestinyItemSubTypeExtension on DestinyItemSubType{
   int? get value {
-    switch(this){
-      case DestinyItemSubType.None:
-        return 0;
-      case DestinyItemSubType.Crucible:
-        return 1;
-      case DestinyItemSubType.Vanguard:
-        return 2;
-      case DestinyItemSubType.Exotic:
-        return 5;
-      case DestinyItemSubType.AutoRifle:
-        return 6;
-      case DestinyItemSubType.Shotgun:
-        return 7;
-      case DestinyItemSubType.Machinegun:
-        return 8;
-      case DestinyItemSubType.HandCannon:
-        return 9;
-      case DestinyItemSubType.RocketLauncher:
-        return 10;
-      case DestinyItemSubType.FusionRifle:
-        return 11;
-      case DestinyItemSubType.SniperRifle:
-        return 12;
-      case DestinyItemSubType.PulseRifle:
-        return 13;
-      case DestinyItemSubType.ScoutRifle:
-        return 14;
-      case DestinyItemSubType.Crm:
-        return 16;
-      case DestinyItemSubType.Sidearm:
-        return 17;
-      case DestinyItemSubType.Sword:
-        return 18;
-      case DestinyItemSubType.Mask:
-        return 19;
-      case DestinyItemSubType.Shader:
-        return 20;
-      case DestinyItemSubType.Ornament:
-        return 21;
-      case DestinyItemSubType.FusionRifleLine:
-        return 22;
-      case DestinyItemSubType.GrenadeLauncher:
-        return 23;
-      case DestinyItemSubType.SubmachineGun:
-        return 24;
-      case DestinyItemSubType.TraceRifle:
-        return 25;
-      case DestinyItemSubType.HelmetArmor:
-        return 26;
-      case DestinyItemSubType.GauntletsArmor:
-        return 27;
-      case DestinyItemSubType.ChestArmor:
-        return 28;
-      case DestinyItemSubType.LegArmor:
-        return 29;
-      case DestinyItemSubType.ClassArmor:
-        return 30;
-      case DestinyItemSubType.Bow:
-        return 31;
-      case DestinyItemSubType.DummyRepeatableBounty:
-        return 32;
-      default:
-        return null;
+    if (_$DestinyItemSubTypeEnumMap.containsKey(this)){
+      return _$DestinyItemSubTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyItemSubType? decodeDestinyItemSubType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyItemSubTypeValueMap.containsKey(value)){
+    return _$DestinyItemSubTypeValueMap[value];
+  }
+
+  return DestinyItemSubType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyItemSubType (DestinyItemSubType? value) {
+  return value?.value;
+}
+
+const Map<DestinyItemSubType, int> _$DestinyItemSubTypeEnumMap = <DestinyItemSubType, int>{
+    DestinyItemSubType.None:0,
+    DestinyItemSubType.Crucible:1,
+    DestinyItemSubType.Vanguard:2,
+    DestinyItemSubType.Exotic:5,
+    DestinyItemSubType.AutoRifle:6,
+    DestinyItemSubType.Shotgun:7,
+    DestinyItemSubType.Machinegun:8,
+    DestinyItemSubType.HandCannon:9,
+    DestinyItemSubType.RocketLauncher:10,
+    DestinyItemSubType.FusionRifle:11,
+    DestinyItemSubType.SniperRifle:12,
+    DestinyItemSubType.PulseRifle:13,
+    DestinyItemSubType.ScoutRifle:14,
+    DestinyItemSubType.Crm:16,
+    DestinyItemSubType.Sidearm:17,
+    DestinyItemSubType.Sword:18,
+    DestinyItemSubType.Mask:19,
+    DestinyItemSubType.Shader:20,
+    DestinyItemSubType.Ornament:21,
+    DestinyItemSubType.FusionRifleLine:22,
+    DestinyItemSubType.GrenadeLauncher:23,
+    DestinyItemSubType.SubmachineGun:24,
+    DestinyItemSubType.TraceRifle:25,
+    DestinyItemSubType.HelmetArmor:26,
+    DestinyItemSubType.GauntletsArmor:27,
+    DestinyItemSubType.ChestArmor:28,
+    DestinyItemSubType.LegArmor:29,
+    DestinyItemSubType.ClassArmor:30,
+    DestinyItemSubType.Bow:31,
+    DestinyItemSubType.DummyRepeatableBounty:32,
+};
+const Map<int, DestinyItemSubType> _$DestinyItemSubTypeValueMap = <int, DestinyItemSubType>{
+    0:DestinyItemSubType.None,
+    1:DestinyItemSubType.Crucible,
+    2:DestinyItemSubType.Vanguard,
+    5:DestinyItemSubType.Exotic,
+    6:DestinyItemSubType.AutoRifle,
+    7:DestinyItemSubType.Shotgun,
+    8:DestinyItemSubType.Machinegun,
+    9:DestinyItemSubType.HandCannon,
+    10:DestinyItemSubType.RocketLauncher,
+    11:DestinyItemSubType.FusionRifle,
+    12:DestinyItemSubType.SniperRifle,
+    13:DestinyItemSubType.PulseRifle,
+    14:DestinyItemSubType.ScoutRifle,
+    16:DestinyItemSubType.Crm,
+    17:DestinyItemSubType.Sidearm,
+    18:DestinyItemSubType.Sword,
+    19:DestinyItemSubType.Mask,
+    20:DestinyItemSubType.Shader,
+    21:DestinyItemSubType.Ornament,
+    22:DestinyItemSubType.FusionRifleLine,
+    23:DestinyItemSubType.GrenadeLauncher,
+    24:DestinyItemSubType.SubmachineGun,
+    25:DestinyItemSubType.TraceRifle,
+    26:DestinyItemSubType.HelmetArmor,
+    27:DestinyItemSubType.GauntletsArmor,
+    28:DestinyItemSubType.ChestArmor,
+    29:DestinyItemSubType.LegArmor,
+    30:DestinyItemSubType.ClassArmor,
+    31:DestinyItemSubType.Bow,
+    32:DestinyItemSubType.DummyRepeatableBounty,
+};

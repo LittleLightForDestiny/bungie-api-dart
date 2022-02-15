@@ -18,7 +18,7 @@ class SingleComponentResponseOfDestinyProfileCollectiblesComponent{
 	@JsonKey(name:'data')
 	DestinyProfileCollectiblesComponent? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

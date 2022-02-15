@@ -38,7 +38,7 @@ class DestinySocketTypeDefinition{
 	int? socketCategoryHash;
 	
 	/// Sometimes a socket isn't visible. These are some of the conditions under which sockets of this type are not visible. Unfortunately, the truth of visibility is much, much more complex. Best to rely on the live data for whether the socket is visible and enabled.
-	@JsonKey(name:'visibility',unknownEnumValue:DestinySocketVisibility.ProtectedInvalidEnumValue)
+	@JsonKey(name:'visibility',fromJson:decodeDestinySocketVisibility,toJson:encodeDestinySocketVisibility)
 	DestinySocketVisibility? visibility;
 	
 	@JsonKey(name:'alwaysRandomizeSockets')

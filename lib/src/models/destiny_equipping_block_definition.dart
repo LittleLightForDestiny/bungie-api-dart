@@ -39,7 +39,7 @@ class DestinyEquippingBlockDefinition{
 	EquippingItemBlockAttributes? attributes;
 	
 	/// Ammo type used by a weapon is no longer determined by the bucket in which it is contained. If the item has an ammo type - i.e. if it is a weapon - this will be the type of ammunition expected.
-	@JsonKey(name:'ammoType',unknownEnumValue:DestinyAmmunitionType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'ammoType',fromJson:decodeDestinyAmmunitionType,toJson:encodeDestinyAmmunitionType)
 	DestinyAmmunitionType? ammoType;
 	
 	/// These are strings that represent the possible Game/Account/Character state failure conditions that can occur when trying to equip the item. They match up one-to-one with requiredUnlockExpressions.

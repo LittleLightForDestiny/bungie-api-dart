@@ -14,13 +14,33 @@ enum ChatSecuritySetting {
 
 extension ChatSecuritySettingExtension on ChatSecuritySetting{
   int? get value {
-    switch(this){
-      case ChatSecuritySetting.Group:
-        return 0;
-      case ChatSecuritySetting.Admins:
-        return 1;
-      default:
-        return null;
+    if (_$ChatSecuritySettingEnumMap.containsKey(this)){
+      return _$ChatSecuritySettingEnumMap[this];
     }
+    return null;
   }
 }
+
+ChatSecuritySetting? decodeChatSecuritySetting (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ChatSecuritySettingValueMap.containsKey(value)){
+    return _$ChatSecuritySettingValueMap[value];
+  }
+
+  return ChatSecuritySetting.ProtectedInvalidEnumValue;
+}
+
+int? encodeChatSecuritySetting (ChatSecuritySetting? value) {
+  return value?.value;
+}
+
+const Map<ChatSecuritySetting, int> _$ChatSecuritySettingEnumMap = <ChatSecuritySetting, int>{
+    ChatSecuritySetting.Group:0,
+    ChatSecuritySetting.Admins:1,
+};
+const Map<int, ChatSecuritySetting> _$ChatSecuritySettingValueMap = <int, ChatSecuritySetting>{
+    0:ChatSecuritySetting.Group,
+    1:ChatSecuritySetting.Admins,
+};

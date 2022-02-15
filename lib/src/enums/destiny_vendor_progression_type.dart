@@ -20,15 +20,35 @@ enum DestinyVendorProgressionType {
 
 extension DestinyVendorProgressionTypeExtension on DestinyVendorProgressionType{
   int? get value {
-    switch(this){
-      case DestinyVendorProgressionType.Default:
-        return 0;
-      case DestinyVendorProgressionType.Ritual:
-        return 1;
-      case DestinyVendorProgressionType.NoSeasonalRefresh:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyVendorProgressionTypeEnumMap.containsKey(this)){
+      return _$DestinyVendorProgressionTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyVendorProgressionType? decodeDestinyVendorProgressionType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyVendorProgressionTypeValueMap.containsKey(value)){
+    return _$DestinyVendorProgressionTypeValueMap[value];
+  }
+
+  return DestinyVendorProgressionType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyVendorProgressionType (DestinyVendorProgressionType? value) {
+  return value?.value;
+}
+
+const Map<DestinyVendorProgressionType, int> _$DestinyVendorProgressionTypeEnumMap = <DestinyVendorProgressionType, int>{
+    DestinyVendorProgressionType.Default:0,
+    DestinyVendorProgressionType.Ritual:1,
+    DestinyVendorProgressionType.NoSeasonalRefresh:2,
+};
+const Map<int, DestinyVendorProgressionType> _$DestinyVendorProgressionTypeValueMap = <int, DestinyVendorProgressionType>{
+    0:DestinyVendorProgressionType.Default,
+    1:DestinyVendorProgressionType.Ritual,
+    2:DestinyVendorProgressionType.NoSeasonalRefresh,
+};

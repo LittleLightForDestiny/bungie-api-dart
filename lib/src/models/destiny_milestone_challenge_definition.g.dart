@@ -7,10 +7,9 @@ part of 'destiny_milestone_challenge_definition.dart';
 // **************************************************************************
 
 DestinyMilestoneChallengeDefinition
-    _$DestinyMilestoneChallengeDefinitionFromJson(Map<String, dynamic> json) {
-  return DestinyMilestoneChallengeDefinition()
-    ..challengeObjectiveHash = json['challengeObjectiveHash'] as int?;
-}
+    _$DestinyMilestoneChallengeDefinitionFromJson(Map<String, dynamic> json) =>
+        DestinyMilestoneChallengeDefinition()
+          ..challengeObjectiveHash = json['challengeObjectiveHash'] as int?;
 
 Map<String, dynamic> _$DestinyMilestoneChallengeDefinitionToJson(
         DestinyMilestoneChallengeDefinition instance) =>

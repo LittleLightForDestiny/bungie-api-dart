@@ -49,6 +49,6 @@ class DestinyChecklistEntryDefinition{
 	int? vendorInteractionIndex;
 	
 	/// The scope at which this specific entry can be computed.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyScope,toJson:encodeDestinyScope)
 	DestinyScope? scope;
 }

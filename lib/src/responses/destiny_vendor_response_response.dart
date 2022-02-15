@@ -1,46 +1,33 @@
 import '../models/destiny_vendor_response.dart';
 import '../enums/platform_error_codes.dart';
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'destiny_vendor_response_response.g.dart';
 
 /// A response containing all of the components for a vendor.
 @JsonSerializable()
-class DestinyVendorResponseResponse{
+class DestinyVendorResponseResponse extends BungieNetResponse<DestinyVendorResponse> {
 	DestinyVendorResponseResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
+		DestinyVendorResponse? response,
+		PlatformErrorCodes? errorCode,
+		int? throttleSeconds,
+		String? errorStatus,
+		String? message,
+		Map<String, String>? messageData,
+		String? detailedErrorTrace,
+	}):super(
+		response:response,
+		errorCode:errorCode,
+		throttleSeconds:throttleSeconds,
+		errorStatus:errorStatus,
+		message:message,
+		messageData:messageData,
+		detailedErrorTrace:detailedErrorTrace,
+	);
 
 	factory DestinyVendorResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyVendorResponseResponseFromJson(json);
-	
-	
-	/// A response containing all of the components for a vendor.
-	@JsonKey(name:'Response')
-	DestinyVendorResponse? response;
-	
-	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes? errorCode;
-	
-	@JsonKey(name:'ThrottleSeconds')
-	int? throttleSeconds;
-	
-	@JsonKey(name:'ErrorStatus')
-	String? errorStatus;
-	
-	@JsonKey(name:'Message')
-	String? message;
-	
-	@JsonKey(name:'MessageData')
-	Map<String, String>? messageData;
-	
-	@JsonKey(name:'DetailedErrorTrace')
-	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyVendorResponseResponseToJson(this);
 }

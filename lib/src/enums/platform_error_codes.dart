@@ -2434,1625 +2434,1645 @@ enum PlatformErrorCodes {
 
 extension PlatformErrorCodesExtension on PlatformErrorCodes{
   int? get value {
-    switch(this){
-      case PlatformErrorCodes.None:
-        return 0;
-      case PlatformErrorCodes.Success:
-        return 1;
-      case PlatformErrorCodes.TransportException:
-        return 2;
-      case PlatformErrorCodes.UnhandledException:
-        return 3;
-      case PlatformErrorCodes.NotImplemented:
-        return 4;
-      case PlatformErrorCodes.SystemDisabled:
-        return 5;
-      case PlatformErrorCodes.FailedToLoadAvailableLocalesConfiguration:
-        return 6;
-      case PlatformErrorCodes.ParameterParseFailure:
-        return 7;
-      case PlatformErrorCodes.ParameterInvalidRange:
-        return 8;
-      case PlatformErrorCodes.BadRequest:
-        return 9;
-      case PlatformErrorCodes.AuthenticationInvalid:
-        return 10;
-      case PlatformErrorCodes.DataNotFound:
-        return 11;
-      case PlatformErrorCodes.InsufficientPrivileges:
-        return 12;
-      case PlatformErrorCodes.Duplicate:
-        return 13;
-      case PlatformErrorCodes.UnknownSqlResult:
-        return 14;
-      case PlatformErrorCodes.ValidationError:
-        return 15;
-      case PlatformErrorCodes.ValidationMissingFieldError:
-        return 16;
-      case PlatformErrorCodes.ValidationInvalidInputError:
-        return 17;
-      case PlatformErrorCodes.InvalidParameters:
-        return 18;
-      case PlatformErrorCodes.ParameterNotFound:
-        return 19;
-      case PlatformErrorCodes.UnhandledHttpException:
-        return 20;
-      case PlatformErrorCodes.NotFound:
-        return 21;
-      case PlatformErrorCodes.WebAuthModuleAsyncFailed:
-        return 22;
-      case PlatformErrorCodes.InvalidReturnValue:
-        return 23;
-      case PlatformErrorCodes.UserBanned:
-        return 24;
-      case PlatformErrorCodes.InvalidPostBody:
-        return 25;
-      case PlatformErrorCodes.MissingPostBody:
-        return 26;
-      case PlatformErrorCodes.ExternalServiceTimeout:
-        return 27;
-      case PlatformErrorCodes.ValidationLengthError:
-        return 28;
-      case PlatformErrorCodes.ValidationRangeError:
-        return 29;
-      case PlatformErrorCodes.JsonDeserializationError:
-        return 30;
-      case PlatformErrorCodes.ThrottleLimitExceeded:
-        return 31;
-      case PlatformErrorCodes.ValidationTagError:
-        return 32;
-      case PlatformErrorCodes.ValidationProfanityError:
-        return 33;
-      case PlatformErrorCodes.ValidationUrlFormatError:
-        return 34;
-      case PlatformErrorCodes.ThrottleLimitExceededMinutes:
-        return 35;
-      case PlatformErrorCodes.ThrottleLimitExceededMomentarily:
-        return 36;
-      case PlatformErrorCodes.ThrottleLimitExceededSeconds:
-        return 37;
-      case PlatformErrorCodes.ExternalServiceUnknown:
-        return 38;
-      case PlatformErrorCodes.ValidationWordLengthError:
-        return 39;
-      case PlatformErrorCodes.ValidationInvisibleUnicode:
-        return 40;
-      case PlatformErrorCodes.ValidationBadNames:
-        return 41;
-      case PlatformErrorCodes.ExternalServiceFailed:
-        return 42;
-      case PlatformErrorCodes.ServiceRetired:
-        return 43;
-      case PlatformErrorCodes.UnknownSqlException:
-        return 44;
-      case PlatformErrorCodes.UnsupportedLocale:
-        return 45;
-      case PlatformErrorCodes.InvalidPageNumber:
-        return 46;
-      case PlatformErrorCodes.MaximumPageSizeExceeded:
-        return 47;
-      case PlatformErrorCodes.ServiceUnsupported:
-        return 48;
-      case PlatformErrorCodes.ValidationMaximumUnicodeCombiningCharacters:
-        return 49;
-      case PlatformErrorCodes.ValidationMaximumSequentialCarriageReturns:
-        return 50;
-      case PlatformErrorCodes.PerEndpointRequestThrottleExceeded:
-        return 51;
-      case PlatformErrorCodes.AuthContextCacheAssertion:
-        return 52;
-      case PlatformErrorCodes.ExPlatformStringValidationError:
-        return 53;
-      case PlatformErrorCodes.PerApplicationThrottleExceeded:
-        return 54;
-      case PlatformErrorCodes.PerApplicationAnonymousThrottleExceeded:
-        return 55;
-      case PlatformErrorCodes.PerApplicationAuthenticatedThrottleExceeded:
-        return 56;
-      case PlatformErrorCodes.PerUserThrottleExceeded:
-        return 57;
-      case PlatformErrorCodes.PayloadSignatureVerificationFailure:
-        return 58;
-      case PlatformErrorCodes.InvalidServiceAuthContext:
-        return 59;
-      case PlatformErrorCodes.ObsoleteCredentialType:
-        return 89;
-      case PlatformErrorCodes.UnableToUnPairMobileApp:
-        return 90;
-      case PlatformErrorCodes.UnableToPairMobileApp:
-        return 91;
-      case PlatformErrorCodes.CannotUseMobileAuthWithNonMobileProvider:
-        return 92;
-      case PlatformErrorCodes.MissingDeviceCookie:
-        return 93;
-      case PlatformErrorCodes.FacebookTokenExpired:
-        return 94;
-      case PlatformErrorCodes.AuthTicketRequired:
-        return 95;
-      case PlatformErrorCodes.CookieContextRequired:
-        return 96;
-      case PlatformErrorCodes.UnknownAuthenticationError:
-        return 97;
-      case PlatformErrorCodes.BungieNetAccountCreationRequired:
-        return 98;
-      case PlatformErrorCodes.WebAuthRequired:
-        return 99;
-      case PlatformErrorCodes.ContentUnknownSqlResult:
-        return 100;
-      case PlatformErrorCodes.ContentNeedUniquePath:
-        return 101;
-      case PlatformErrorCodes.ContentSqlException:
-        return 102;
-      case PlatformErrorCodes.ContentNotFound:
-        return 103;
-      case PlatformErrorCodes.ContentSuccessWithTagAddFail:
-        return 104;
-      case PlatformErrorCodes.ContentSearchMissingParameters:
-        return 105;
-      case PlatformErrorCodes.ContentInvalidId:
-        return 106;
-      case PlatformErrorCodes.ContentPhysicalFileDeletionError:
-        return 107;
-      case PlatformErrorCodes.ContentPhysicalFileCreationError:
-        return 108;
-      case PlatformErrorCodes.ContentPerforceSubmissionError:
-        return 109;
-      case PlatformErrorCodes.ContentPerforceInitializationError:
-        return 110;
-      case PlatformErrorCodes.ContentDeploymentPackageNotReadyError:
-        return 111;
-      case PlatformErrorCodes.ContentUploadFailed:
-        return 112;
-      case PlatformErrorCodes.ContentTooManyResults:
-        return 113;
-      case PlatformErrorCodes.ContentInvalidState:
-        return 115;
-      case PlatformErrorCodes.ContentNavigationParentNotFound:
-        return 116;
-      case PlatformErrorCodes.ContentNavigationParentUpdateError:
-        return 117;
-      case PlatformErrorCodes.DeploymentPackageNotEditable:
-        return 118;
-      case PlatformErrorCodes.ContentValidationError:
-        return 119;
-      case PlatformErrorCodes.ContentPropertiesValidationError:
-        return 120;
-      case PlatformErrorCodes.ContentTypeNotFound:
-        return 121;
-      case PlatformErrorCodes.DeploymentPackageNotFound:
-        return 122;
-      case PlatformErrorCodes.ContentSearchInvalidParameters:
-        return 123;
-      case PlatformErrorCodes.ContentItemPropertyAggregationError:
-        return 124;
-      case PlatformErrorCodes.DeploymentPackageFileNotFound:
-        return 125;
-      case PlatformErrorCodes.ContentPerforceFileHistoryNotFound:
-        return 126;
-      case PlatformErrorCodes.ContentAssetZipCreationFailure:
-        return 127;
-      case PlatformErrorCodes.ContentAssetZipCreationBusy:
-        return 128;
-      case PlatformErrorCodes.ContentProjectNotFound:
-        return 129;
-      case PlatformErrorCodes.ContentFolderNotFound:
-        return 130;
-      case PlatformErrorCodes.ContentPackagesInconsistent:
-        return 131;
-      case PlatformErrorCodes.ContentPackagesInvalidState:
-        return 132;
-      case PlatformErrorCodes.ContentPackagesInconsistentType:
-        return 133;
-      case PlatformErrorCodes.ContentCannotDeletePackage:
-        return 134;
-      case PlatformErrorCodes.ContentLockedForChanges:
-        return 135;
-      case PlatformErrorCodes.ContentFileUploadFailed:
-        return 136;
-      case PlatformErrorCodes.ContentNotReviewed:
-        return 137;
-      case PlatformErrorCodes.ContentPermissionDenied:
-        return 138;
-      case PlatformErrorCodes.ContentInvalidExternalUrl:
-        return 139;
-      case PlatformErrorCodes.ContentExternalFileCannotBeImportedLocally:
-        return 140;
-      case PlatformErrorCodes.ContentTagSaveFailure:
-        return 141;
-      case PlatformErrorCodes.ContentPerforceUnmatchedFileError:
-        return 142;
-      case PlatformErrorCodes.ContentPerforceChangelistResultNotFound:
-        return 143;
-      case PlatformErrorCodes.ContentPerforceChangelistFileItemsNotFound:
-        return 144;
-      case PlatformErrorCodes.ContentPerforceInvalidRevisionError:
-        return 145;
-      case PlatformErrorCodes.ContentUnloadedSaveResult:
-        return 146;
-      case PlatformErrorCodes.ContentPropertyInvalidNumber:
-        return 147;
-      case PlatformErrorCodes.ContentPropertyInvalidUrl:
-        return 148;
-      case PlatformErrorCodes.ContentPropertyInvalidDate:
-        return 149;
-      case PlatformErrorCodes.ContentPropertyInvalidSet:
-        return 150;
-      case PlatformErrorCodes.ContentPropertyCannotDeserialize:
-        return 151;
-      case PlatformErrorCodes.ContentRegexValidationFailOnProperty:
-        return 152;
-      case PlatformErrorCodes.ContentMaxLengthFailOnProperty:
-        return 153;
-      case PlatformErrorCodes.ContentPropertyUnexpectedDeserializationError:
-        return 154;
-      case PlatformErrorCodes.ContentPropertyRequired:
-        return 155;
-      case PlatformErrorCodes.ContentCannotCreateFile:
-        return 156;
-      case PlatformErrorCodes.ContentInvalidMigrationFile:
-        return 157;
-      case PlatformErrorCodes.ContentMigrationAlteringProcessedItem:
-        return 158;
-      case PlatformErrorCodes.ContentPropertyDefinitionNotFound:
-        return 159;
-      case PlatformErrorCodes.ContentReviewDataChanged:
-        return 160;
-      case PlatformErrorCodes.ContentRollbackRevisionNotInPackage:
-        return 161;
-      case PlatformErrorCodes.ContentItemNotBasedOnLatestRevision:
-        return 162;
-      case PlatformErrorCodes.ContentUnauthorized:
-        return 163;
-      case PlatformErrorCodes.ContentCannotCreateDeploymentPackage:
-        return 164;
-      case PlatformErrorCodes.ContentUserNotFound:
-        return 165;
-      case PlatformErrorCodes.ContentLocalePermissionDenied:
-        return 166;
-      case PlatformErrorCodes.ContentInvalidLinkToInternalEnvironment:
-        return 167;
-      case PlatformErrorCodes.ContentInvalidBlacklistedContent:
-        return 168;
-      case PlatformErrorCodes.ContentMacroMalformedNoContentId:
-        return 169;
-      case PlatformErrorCodes.ContentMacroMalformedNoTemplateType:
-        return 170;
-      case PlatformErrorCodes.ContentIllegalBNetMembershipId:
-        return 171;
-      case PlatformErrorCodes.ContentLocaleDidNotMatchExpected:
-        return 172;
-      case PlatformErrorCodes.ContentBabelCallFailed:
-        return 173;
-      case PlatformErrorCodes.ContentEnglishPostLiveForbidden:
-        return 174;
-      case PlatformErrorCodes.ContentLocaleEditPermissionDenied:
-        return 175;
-      case PlatformErrorCodes.UserNonUniqueName:
-        return 200;
-      case PlatformErrorCodes.UserManualLinkingStepRequired:
-        return 201;
-      case PlatformErrorCodes.UserCreateUnknownSqlResult:
-        return 202;
-      case PlatformErrorCodes.UserCreateUnknownSqlException:
-        return 203;
-      case PlatformErrorCodes.UserMalformedMembershipId:
-        return 204;
-      case PlatformErrorCodes.UserCannotFindRequestedUser:
-        return 205;
-      case PlatformErrorCodes.UserCannotLoadAccountCredentialLinkInfo:
-        return 206;
-      case PlatformErrorCodes.UserInvalidMobileAppType:
-        return 207;
-      case PlatformErrorCodes.UserMissingMobilePairingInfo:
-        return 208;
-      case PlatformErrorCodes.UserCannotGenerateMobileKeyWhileUsingMobileCredential:
-        return 209;
-      case PlatformErrorCodes.UserGenerateMobileKeyExistingSlotCollision:
-        return 210;
-      case PlatformErrorCodes.UserDisplayNameMissingOrInvalid:
-        return 211;
-      case PlatformErrorCodes.UserCannotLoadAccountProfileData:
-        return 212;
-      case PlatformErrorCodes.UserCannotSaveUserProfileData:
-        return 213;
-      case PlatformErrorCodes.UserEmailMissingOrInvalid:
-        return 214;
-      case PlatformErrorCodes.UserTermsOfUseRequired:
-        return 215;
-      case PlatformErrorCodes.UserCannotCreateNewAccountWhileLoggedIn:
-        return 216;
-      case PlatformErrorCodes.UserCannotResolveCentralAccount:
-        return 217;
-      case PlatformErrorCodes.UserInvalidAvatar:
-        return 218;
-      case PlatformErrorCodes.UserMissingCreatedUserResult:
-        return 219;
-      case PlatformErrorCodes.UserCannotChangeUniqueNameYet:
-        return 220;
-      case PlatformErrorCodes.UserCannotChangeDisplayNameYet:
-        return 221;
-      case PlatformErrorCodes.UserCannotChangeEmail:
-        return 222;
-      case PlatformErrorCodes.UserUniqueNameMustStartWithLetter:
-        return 223;
-      case PlatformErrorCodes.UserNoLinkedAccountsSupportFriendListings:
-        return 224;
-      case PlatformErrorCodes.UserAcknowledgmentTableFull:
-        return 225;
-      case PlatformErrorCodes.UserCreationDestinyMembershipRequired:
-        return 226;
-      case PlatformErrorCodes.UserFriendsTokenNeedsRefresh:
-        return 227;
-      case PlatformErrorCodes.UserEmailValidationUnknown:
-        return 228;
-      case PlatformErrorCodes.UserEmailValidationLimit:
-        return 229;
-      case PlatformErrorCodes.TransactionEmailSendFailure:
-        return 230;
-      case PlatformErrorCodes.MailHookPermissionFailure:
-        return 231;
-      case PlatformErrorCodes.MailServiceRateLimit:
-        return 232;
-      case PlatformErrorCodes.UserEmailMustBeVerified:
-        return 233;
-      case PlatformErrorCodes.UserMustAllowCustomerServiceEmails:
-        return 234;
-      case PlatformErrorCodes.NonTransactionalEmailSendFailure:
-        return 235;
-      case PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName:
-        return 236;
-      case PlatformErrorCodes.DuplicateGlobalDisplayName:
-        return 237;
-      case PlatformErrorCodes.MessagingUnknownError:
-        return 300;
-      case PlatformErrorCodes.MessagingSelfError:
-        return 301;
-      case PlatformErrorCodes.MessagingSendThrottle:
-        return 302;
-      case PlatformErrorCodes.MessagingNoBody:
-        return 303;
-      case PlatformErrorCodes.MessagingTooManyUsers:
-        return 304;
-      case PlatformErrorCodes.MessagingCanNotLeaveConversation:
-        return 305;
-      case PlatformErrorCodes.MessagingUnableToSend:
-        return 306;
-      case PlatformErrorCodes.MessagingDeletedUserForbidden:
-        return 307;
-      case PlatformErrorCodes.MessagingCannotDeleteExternalConversation:
-        return 308;
-      case PlatformErrorCodes.MessagingGroupChatDisabled:
-        return 309;
-      case PlatformErrorCodes.MessagingMustIncludeSelfInPrivateMessage:
-        return 310;
-      case PlatformErrorCodes.MessagingSenderIsBanned:
-        return 311;
-      case PlatformErrorCodes.MessagingGroupOptionalChatExceededMaximum:
-        return 312;
-      case PlatformErrorCodes.PrivateMessagingRequiresDestinyMembership:
-        return 313;
-      case PlatformErrorCodes.AddSurveyAnswersUnknownSqlException:
-        return 400;
-      case PlatformErrorCodes.ForumBodyCannotBeEmpty:
-        return 500;
-      case PlatformErrorCodes.ForumSubjectCannotBeEmptyOnTopicPost:
-        return 501;
-      case PlatformErrorCodes.ForumCannotLocateParentPost:
-        return 502;
-      case PlatformErrorCodes.ForumThreadLockedForReplies:
-        return 503;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringCreatePost:
-        return 504;
-      case PlatformErrorCodes.ForumUnknownTagCreationError:
-        return 505;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringTagItem:
-        return 506;
-      case PlatformErrorCodes.ForumUnknownExceptionCreatePost:
-        return 507;
-      case PlatformErrorCodes.ForumQuestionMustBeTopicPost:
-        return 508;
-      case PlatformErrorCodes.ForumExceptionDuringTagSearch:
-        return 509;
-      case PlatformErrorCodes.ForumExceptionDuringTopicRetrieval:
-        return 510;
-      case PlatformErrorCodes.ForumAliasedTagError:
-        return 511;
-      case PlatformErrorCodes.ForumCannotLocateThread:
-        return 512;
-      case PlatformErrorCodes.ForumUnknownExceptionEditPost:
-        return 513;
-      case PlatformErrorCodes.ForumCannotLocatePost:
-        return 514;
-      case PlatformErrorCodes.ForumUnknownExceptionGetOrCreateTags:
-        return 515;
-      case PlatformErrorCodes.ForumEditPermissionDenied:
-        return 516;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringTagIdRetrieval:
-        return 517;
-      case PlatformErrorCodes.ForumCannotGetRating:
-        return 518;
-      case PlatformErrorCodes.ForumUnknownExceptionGetRating:
-        return 519;
-      case PlatformErrorCodes.ForumRatingsAccessError:
-        return 520;
-      case PlatformErrorCodes.ForumRelatedPostAccessError:
-        return 521;
-      case PlatformErrorCodes.ForumLatestReplyAccessError:
-        return 522;
-      case PlatformErrorCodes.ForumUserStatusAccessError:
-        return 523;
-      case PlatformErrorCodes.ForumAuthorAccessError:
-        return 524;
-      case PlatformErrorCodes.ForumGroupAccessError:
-        return 525;
-      case PlatformErrorCodes.ForumUrlExpectedButMissing:
-        return 526;
-      case PlatformErrorCodes.ForumRepliesCannotBeEmpty:
-        return 527;
-      case PlatformErrorCodes.ForumRepliesCannotBeInDifferentGroups:
-        return 528;
-      case PlatformErrorCodes.ForumSubTopicCannotBeCreatedAtThisThreadLevel:
-        return 529;
-      case PlatformErrorCodes.ForumCannotCreateContentTopic:
-        return 530;
-      case PlatformErrorCodes.ForumTopicDoesNotExist:
-        return 531;
-      case PlatformErrorCodes.ForumContentCommentsNotAllowed:
-        return 532;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringEditPost:
-        return 533;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringGetPost:
-        return 534;
-      case PlatformErrorCodes.ForumPostValidationBadUrl:
-        return 535;
-      case PlatformErrorCodes.ForumBodyTooLong:
-        return 536;
-      case PlatformErrorCodes.ForumSubjectTooLong:
-        return 537;
-      case PlatformErrorCodes.ForumAnnouncementNotAllowed:
-        return 538;
-      case PlatformErrorCodes.ForumCannotShareOwnPost:
-        return 539;
-      case PlatformErrorCodes.ForumEditNoOp:
-        return 540;
-      case PlatformErrorCodes.ForumUnknownDatabaseErrorDuringGetPost:
-        return 541;
-      case PlatformErrorCodes.ForumExceeedMaximumRowLimit:
-        return 542;
-      case PlatformErrorCodes.ForumCannotSharePrivatePost:
-        return 543;
-      case PlatformErrorCodes.ForumCannotCrossPostBetweenGroups:
-        return 544;
-      case PlatformErrorCodes.ForumIncompatibleCategories:
-        return 555;
-      case PlatformErrorCodes.ForumCannotUseTheseCategoriesOnNonTopicPost:
-        return 556;
-      case PlatformErrorCodes.ForumCanOnlyDeleteTopics:
-        return 557;
-      case PlatformErrorCodes.ForumDeleteSqlException:
-        return 558;
-      case PlatformErrorCodes.ForumDeleteSqlUnknownResult:
-        return 559;
-      case PlatformErrorCodes.ForumTooManyTags:
-        return 560;
-      case PlatformErrorCodes.ForumCanOnlyRateTopics:
-        return 561;
-      case PlatformErrorCodes.ForumBannedPostsCannotBeEdited:
-        return 562;
-      case PlatformErrorCodes.ForumThreadRootIsBanned:
-        return 563;
-      case PlatformErrorCodes.ForumCannotUseOfficialTagCategoryAsTag:
-        return 564;
-      case PlatformErrorCodes.ForumAnswerCannotBeMadeOnCreatePost:
-        return 565;
-      case PlatformErrorCodes.ForumAnswerCannotBeMadeOnEditPost:
-        return 566;
-      case PlatformErrorCodes.ForumAnswerPostIdIsNotADirectReplyOfQuestion:
-        return 567;
-      case PlatformErrorCodes.ForumAnswerTopicIdIsNotAQuestion:
-        return 568;
-      case PlatformErrorCodes.ForumUnknownExceptionDuringMarkAnswer:
-        return 569;
-      case PlatformErrorCodes.ForumUnknownSqlResultDuringMarkAnswer:
-        return 570;
-      case PlatformErrorCodes.ForumCannotRateYourOwnPosts:
-        return 571;
-      case PlatformErrorCodes.ForumPollsMustBeTheFirstPostInTopic:
-        return 572;
-      case PlatformErrorCodes.ForumInvalidPollInput:
-        return 573;
-      case PlatformErrorCodes.ForumGroupAdminEditNonMember:
-        return 574;
-      case PlatformErrorCodes.ForumCannotEditModeratorEditedPost:
-        return 575;
-      case PlatformErrorCodes.ForumRequiresDestinyMembership:
-        return 576;
-      case PlatformErrorCodes.ForumUnexpectedError:
-        return 577;
-      case PlatformErrorCodes.ForumAgeLock:
-        return 578;
-      case PlatformErrorCodes.ForumMaxPages:
-        return 579;
-      case PlatformErrorCodes.ForumMaxPagesOldestFirst:
-        return 580;
-      case PlatformErrorCodes.ForumCannotApplyForumIdWithoutTags:
-        return 581;
-      case PlatformErrorCodes.ForumCannotApplyForumIdToNonTopics:
-        return 582;
-      case PlatformErrorCodes.ForumCannotDownvoteCommunityCreations:
-        return 583;
-      case PlatformErrorCodes.ForumTopicsMustHaveOfficialCategory:
-        return 584;
-      case PlatformErrorCodes.ForumRecruitmentTopicMalformed:
-        return 585;
-      case PlatformErrorCodes.ForumRecruitmentTopicNotFound:
-        return 586;
-      case PlatformErrorCodes.ForumRecruitmentTopicNoSlotsRemaining:
-        return 587;
-      case PlatformErrorCodes.ForumRecruitmentTopicKickBan:
-        return 588;
-      case PlatformErrorCodes.ForumRecruitmentTopicRequirementsNotMet:
-        return 589;
-      case PlatformErrorCodes.ForumRecruitmentTopicNoPlayers:
-        return 590;
-      case PlatformErrorCodes.ForumRecruitmentApproveFailMessageBan:
-        return 591;
-      case PlatformErrorCodes.ForumRecruitmentGlobalBan:
-        return 592;
-      case PlatformErrorCodes.ForumUserBannedFromThisTopic:
-        return 593;
-      case PlatformErrorCodes.ForumRecruitmentFireteamMembersOnly:
-        return 594;
-      case PlatformErrorCodes.ForumRequiresDestiny2Progress:
-        return 595;
-      case PlatformErrorCodes.GroupMembershipApplicationAlreadyResolved:
-        return 601;
-      case PlatformErrorCodes.GroupMembershipAlreadyApplied:
-        return 602;
-      case PlatformErrorCodes.GroupMembershipInsufficientPrivileges:
-        return 603;
-      case PlatformErrorCodes.GroupIdNotReturnedFromCreation:
-        return 604;
-      case PlatformErrorCodes.GroupSearchInvalidParameters:
-        return 605;
-      case PlatformErrorCodes.GroupMembershipPendingApplicationNotFound:
-        return 606;
-      case PlatformErrorCodes.GroupInvalidId:
-        return 607;
-      case PlatformErrorCodes.GroupInvalidMembershipId:
-        return 608;
-      case PlatformErrorCodes.GroupInvalidMembershipType:
-        return 609;
-      case PlatformErrorCodes.GroupMissingTags:
-        return 610;
-      case PlatformErrorCodes.GroupMembershipNotFound:
-        return 611;
-      case PlatformErrorCodes.GroupInvalidRating:
-        return 612;
-      case PlatformErrorCodes.GroupUserFollowingAccessError:
-        return 613;
-      case PlatformErrorCodes.GroupUserMembershipAccessError:
-        return 614;
-      case PlatformErrorCodes.GroupCreatorAccessError:
-        return 615;
-      case PlatformErrorCodes.GroupAdminAccessError:
-        return 616;
-      case PlatformErrorCodes.GroupPrivatePostNotViewable:
-        return 617;
-      case PlatformErrorCodes.GroupMembershipNotLoggedIn:
-        return 618;
-      case PlatformErrorCodes.GroupNotDeleted:
-        return 619;
-      case PlatformErrorCodes.GroupUnknownErrorUndeletingGroup:
-        return 620;
-      case PlatformErrorCodes.GroupDeleted:
-        return 621;
-      case PlatformErrorCodes.GroupNotFound:
-        return 622;
-      case PlatformErrorCodes.GroupMemberBanned:
-        return 623;
-      case PlatformErrorCodes.GroupMembershipClosed:
-        return 624;
-      case PlatformErrorCodes.GroupPrivatePostOverrideError:
-        return 625;
-      case PlatformErrorCodes.GroupNameTaken:
-        return 626;
-      case PlatformErrorCodes.GroupDeletionGracePeriodExpired:
-        return 627;
-      case PlatformErrorCodes.GroupCannotCheckBanStatus:
-        return 628;
-      case PlatformErrorCodes.GroupMaximumMembershipCountReached:
-        return 629;
-      case PlatformErrorCodes.NoDestinyAccountForClanPlatform:
-        return 630;
-      case PlatformErrorCodes.AlreadyRequestingMembershipForClanPlatform:
-        return 631;
-      case PlatformErrorCodes.AlreadyClanMemberOnPlatform:
-        return 632;
-      case PlatformErrorCodes.GroupJoinedCannotSetClanName:
-        return 633;
-      case PlatformErrorCodes.GroupLeftCannotClearClanName:
-        return 634;
-      case PlatformErrorCodes.GroupRelationshipRequestPending:
-        return 635;
-      case PlatformErrorCodes.GroupRelationshipRequestBlocked:
-        return 636;
-      case PlatformErrorCodes.GroupRelationshipRequestNotFound:
-        return 637;
-      case PlatformErrorCodes.GroupRelationshipBlockNotFound:
-        return 638;
-      case PlatformErrorCodes.GroupRelationshipNotFound:
-        return 639;
-      case PlatformErrorCodes.GroupAlreadyAllied:
-        return 641;
-      case PlatformErrorCodes.GroupAlreadyMember:
-        return 642;
-      case PlatformErrorCodes.GroupRelationshipAlreadyExists:
-        return 643;
-      case PlatformErrorCodes.InvalidGroupTypesForRelationshipRequest:
-        return 644;
-      case PlatformErrorCodes.GroupAtMaximumAlliances:
-        return 646;
-      case PlatformErrorCodes.GroupCannotSetClanOnlySettings:
-        return 647;
-      case PlatformErrorCodes.ClanCannotSetTwoDefaultPostTypes:
-        return 648;
-      case PlatformErrorCodes.GroupMemberInvalidMemberType:
-        return 649;
-      case PlatformErrorCodes.GroupInvalidPlatformType:
-        return 650;
-      case PlatformErrorCodes.GroupMemberInvalidSort:
-        return 651;
-      case PlatformErrorCodes.GroupInvalidResolveState:
-        return 652;
-      case PlatformErrorCodes.ClanAlreadyEnabledForPlatform:
-        return 653;
-      case PlatformErrorCodes.ClanNotEnabledForPlatform:
-        return 654;
-      case PlatformErrorCodes.ClanEnabledButCouldNotJoinNoAccount:
-        return 655;
-      case PlatformErrorCodes.ClanEnabledButCouldNotJoinAlreadyMember:
-        return 656;
-      case PlatformErrorCodes.ClanCannotJoinNoCredential:
-        return 657;
-      case PlatformErrorCodes.NoClanMembershipForPlatform:
-        return 658;
-      case PlatformErrorCodes.GroupToGroupFollowLimitReached:
-        return 659;
-      case PlatformErrorCodes.ChildGroupAlreadyInAlliance:
-        return 660;
-      case PlatformErrorCodes.OwnerGroupAlreadyInAlliance:
-        return 661;
-      case PlatformErrorCodes.AllianceOwnerCannotJoinAlliance:
-        return 662;
-      case PlatformErrorCodes.GroupNotInAlliance:
-        return 663;
-      case PlatformErrorCodes.ChildGroupCannotInviteToAlliance:
-        return 664;
-      case PlatformErrorCodes.GroupToGroupAlreadyFollowed:
-        return 665;
-      case PlatformErrorCodes.GroupToGroupNotFollowing:
-        return 666;
-      case PlatformErrorCodes.ClanMaximumMembershipReached:
-        return 667;
-      case PlatformErrorCodes.ClanNameNotValid:
-        return 668;
-      case PlatformErrorCodes.ClanNameNotValidError:
-        return 669;
-      case PlatformErrorCodes.AllianceOwnerNotDefined:
-        return 670;
-      case PlatformErrorCodes.AllianceChildNotDefined:
-        return 671;
-      case PlatformErrorCodes.ClanCultureIllegalCharacters:
-        return 672;
-      case PlatformErrorCodes.ClanTagIllegalCharacters:
-        return 673;
-      case PlatformErrorCodes.ClanRequiresInvitation:
-        return 674;
-      case PlatformErrorCodes.ClanMembershipClosed:
-        return 675;
-      case PlatformErrorCodes.ClanInviteAlreadyMember:
-        return 676;
-      case PlatformErrorCodes.GroupInviteAlreadyMember:
-        return 677;
-      case PlatformErrorCodes.GroupJoinApprovalRequired:
-        return 678;
-      case PlatformErrorCodes.ClanTagRequired:
-        return 679;
-      case PlatformErrorCodes.GroupNameCannotStartOrEndWithWhiteSpace:
-        return 680;
-      case PlatformErrorCodes.ClanCallsignCannotStartOrEndWithWhiteSpace:
-        return 681;
-      case PlatformErrorCodes.ClanMigrationFailed:
-        return 682;
-      case PlatformErrorCodes.ClanNotEnabledAlreadyMemberOfAnotherClan:
-        return 683;
-      case PlatformErrorCodes.GroupModerationNotPermittedOnNonMembers:
-        return 684;
-      case PlatformErrorCodes.ClanCreationInWorldServerFailed:
-        return 685;
-      case PlatformErrorCodes.ClanNotFound:
-        return 686;
-      case PlatformErrorCodes.ClanMembershipLevelDoesNotPermitThatAction:
-        return 687;
-      case PlatformErrorCodes.ClanMemberNotFound:
-        return 688;
-      case PlatformErrorCodes.ClanMissingMembershipApprovers:
-        return 689;
-      case PlatformErrorCodes.ClanInWrongStateForRequestedAction:
-        return 690;
-      case PlatformErrorCodes.ClanNameAlreadyUsed:
-        return 691;
-      case PlatformErrorCodes.ClanTooFewMembers:
-        return 692;
-      case PlatformErrorCodes.ClanInfoCannotBeWhitespace:
-        return 693;
-      case PlatformErrorCodes.GroupCultureThrottle:
-        return 694;
-      case PlatformErrorCodes.ClanTargetDisallowsInvites:
-        return 695;
-      case PlatformErrorCodes.ClanInvalidOperation:
-        return 696;
-      case PlatformErrorCodes.ClanFounderCannotLeaveWithoutAbdication:
-        return 697;
-      case PlatformErrorCodes.ClanNameReserved:
-        return 698;
-      case PlatformErrorCodes.ClanApplicantInClanSoNowInvited:
-        return 699;
-      case PlatformErrorCodes.ActivitiesUnknownException:
-        return 701;
-      case PlatformErrorCodes.ActivitiesParameterNull:
-        return 702;
-      case PlatformErrorCodes.ActivityCountsDiabled:
-        return 703;
-      case PlatformErrorCodes.ActivitySearchInvalidParameters:
-        return 704;
-      case PlatformErrorCodes.ActivityPermissionDenied:
-        return 705;
-      case PlatformErrorCodes.ShareAlreadyShared:
-        return 706;
-      case PlatformErrorCodes.ActivityLoggingDisabled:
-        return 707;
-      case PlatformErrorCodes.ClanRequiresExistingDestinyAccount:
-        return 750;
-      case PlatformErrorCodes.ClanNameRestricted:
-        return 751;
-      case PlatformErrorCodes.ClanCreationBan:
-        return 752;
-      case PlatformErrorCodes.ClanCreationTenureRequirementsNotMet:
-        return 753;
-      case PlatformErrorCodes.ItemAlreadyFollowed:
-        return 801;
-      case PlatformErrorCodes.ItemNotFollowed:
-        return 802;
-      case PlatformErrorCodes.CannotFollowSelf:
-        return 803;
-      case PlatformErrorCodes.GroupFollowLimitExceeded:
-        return 804;
-      case PlatformErrorCodes.TagFollowLimitExceeded:
-        return 805;
-      case PlatformErrorCodes.UserFollowLimitExceeded:
-        return 806;
-      case PlatformErrorCodes.FollowUnsupportedEntityType:
-        return 807;
-      case PlatformErrorCodes.NoValidTagsInList:
-        return 900;
-      case PlatformErrorCodes.BelowMinimumSuggestionLength:
-        return 901;
-      case PlatformErrorCodes.CannotGetSuggestionsOnMultipleTagsSimultaneously:
-        return 902;
-      case PlatformErrorCodes.NotAValidPartialTag:
-        return 903;
-      case PlatformErrorCodes.TagSuggestionsUnknownSqlResult:
-        return 904;
-      case PlatformErrorCodes.TagsUnableToLoadPopularTagsFromDatabase:
-        return 905;
-      case PlatformErrorCodes.TagInvalid:
-        return 906;
-      case PlatformErrorCodes.TagNotFound:
-        return 907;
-      case PlatformErrorCodes.SingleTagExpected:
-        return 908;
-      case PlatformErrorCodes.TagsExceededMaximumPerItem:
-        return 909;
-      case PlatformErrorCodes.IgnoreInvalidParameters:
-        return 1000;
-      case PlatformErrorCodes.IgnoreSqlException:
-        return 1001;
-      case PlatformErrorCodes.IgnoreErrorRetrievingGroupPermissions:
-        return 1002;
-      case PlatformErrorCodes.IgnoreErrorInsufficientPermission:
-        return 1003;
-      case PlatformErrorCodes.IgnoreErrorRetrievingItem:
-        return 1004;
-      case PlatformErrorCodes.IgnoreCannotIgnoreSelf:
-        return 1005;
-      case PlatformErrorCodes.IgnoreIllegalType:
-        return 1006;
-      case PlatformErrorCodes.IgnoreNotFound:
-        return 1007;
-      case PlatformErrorCodes.IgnoreUserGloballyIgnored:
-        return 1008;
-      case PlatformErrorCodes.IgnoreUserIgnored:
-        return 1009;
-      case PlatformErrorCodes.TargetUserIgnored:
-        return 1010;
-      case PlatformErrorCodes.NotificationSettingInvalid:
-        return 1100;
-      case PlatformErrorCodes.PsnApiExpiredAccessToken:
-        return 1204;
-      case PlatformErrorCodes.PSNExForbidden:
-        return 1205;
-      case PlatformErrorCodes.PSNExSystemDisabled:
-        return 1218;
-      case PlatformErrorCodes.PsnApiErrorCodeUnknown:
-        return 1223;
-      case PlatformErrorCodes.PsnApiErrorWebException:
-        return 1224;
-      case PlatformErrorCodes.PsnApiBadRequest:
-        return 1225;
-      case PlatformErrorCodes.PsnApiAccessTokenRequired:
-        return 1226;
-      case PlatformErrorCodes.PsnApiInvalidAccessToken:
-        return 1227;
-      case PlatformErrorCodes.PsnApiBannedUser:
-        return 1229;
-      case PlatformErrorCodes.PsnApiAccountUpgradeRequired:
-        return 1230;
-      case PlatformErrorCodes.PsnApiServiceTemporarilyUnavailable:
-        return 1231;
-      case PlatformErrorCodes.PsnApiServerBusy:
-        return 1232;
-      case PlatformErrorCodes.PsnApiUnderMaintenance:
-        return 1233;
-      case PlatformErrorCodes.PsnApiProfileUserNotFound:
-        return 1234;
-      case PlatformErrorCodes.PsnApiProfilePrivacyRestriction:
-        return 1235;
-      case PlatformErrorCodes.PsnApiProfileUnderMaintenance:
-        return 1236;
-      case PlatformErrorCodes.PsnApiAccountAttributeMissing:
-        return 1237;
-      case PlatformErrorCodes.PsnApiNoPermission:
-        return 1238;
-      case PlatformErrorCodes.PsnApiTargetUserBlocked:
-        return 1239;
-      case PlatformErrorCodes.PsnApiJwksMissing:
-        return 1240;
-      case PlatformErrorCodes.PsnApiJwtMalformedHeader:
-        return 1241;
-      case PlatformErrorCodes.PsnApiJwtMalformedPayload:
-        return 1242;
-      case PlatformErrorCodes.XblExSystemDisabled:
-        return 1300;
-      case PlatformErrorCodes.XblExUnknownError:
-        return 1301;
-      case PlatformErrorCodes.XblApiErrorWebException:
-        return 1302;
-      case PlatformErrorCodes.XblStsTokenInvalid:
-        return 1303;
-      case PlatformErrorCodes.XblStsMissingToken:
-        return 1304;
-      case PlatformErrorCodes.XblStsExpiredToken:
-        return 1305;
-      case PlatformErrorCodes.XblAccessToTheSandboxDenied:
-        return 1306;
-      case PlatformErrorCodes.XblMsaResponseMissing:
-        return 1307;
-      case PlatformErrorCodes.XblMsaAccessTokenExpired:
-        return 1308;
-      case PlatformErrorCodes.XblMsaInvalidRequest:
-        return 1309;
-      case PlatformErrorCodes.XblMsaFriendsRequireSignIn:
-        return 1310;
-      case PlatformErrorCodes.XblUserActionRequired:
-        return 1311;
-      case PlatformErrorCodes.XblParentalControls:
-        return 1312;
-      case PlatformErrorCodes.XblDeveloperAccount:
-        return 1313;
-      case PlatformErrorCodes.XblUserTokenExpired:
-        return 1314;
-      case PlatformErrorCodes.XblUserTokenInvalid:
-        return 1315;
-      case PlatformErrorCodes.XblOffline:
-        return 1316;
-      case PlatformErrorCodes.XblUnknownErrorCode:
-        return 1317;
-      case PlatformErrorCodes.XblMsaInvalidGrant:
-        return 1318;
-      case PlatformErrorCodes.ReportNotYetResolved:
-        return 1400;
-      case PlatformErrorCodes.ReportOverturnDoesNotChangeDecision:
-        return 1401;
-      case PlatformErrorCodes.ReportNotFound:
-        return 1402;
-      case PlatformErrorCodes.ReportAlreadyReported:
-        return 1403;
-      case PlatformErrorCodes.ReportInvalidResolution:
-        return 1404;
-      case PlatformErrorCodes.ReportNotAssignedToYou:
-        return 1405;
-      case PlatformErrorCodes.LegacyGameStatsSystemDisabled:
-        return 1500;
-      case PlatformErrorCodes.LegacyGameStatsUnknownError:
-        return 1501;
-      case PlatformErrorCodes.LegacyGameStatsMalformedSneakerNetCode:
-        return 1502;
-      case PlatformErrorCodes.DestinyAccountAcquisitionFailure:
-        return 1600;
-      case PlatformErrorCodes.DestinyAccountNotFound:
-        return 1601;
-      case PlatformErrorCodes.DestinyBuildStatsDatabaseError:
-        return 1602;
-      case PlatformErrorCodes.DestinyCharacterStatsDatabaseError:
-        return 1603;
-      case PlatformErrorCodes.DestinyPvPStatsDatabaseError:
-        return 1604;
-      case PlatformErrorCodes.DestinyPvEStatsDatabaseError:
-        return 1605;
-      case PlatformErrorCodes.DestinyGrimoireStatsDatabaseError:
-        return 1606;
-      case PlatformErrorCodes.DestinyStatsParameterMembershipTypeParseError:
-        return 1607;
-      case PlatformErrorCodes.DestinyStatsParameterMembershipIdParseError:
-        return 1608;
-      case PlatformErrorCodes.DestinyStatsParameterRangeParseError:
-        return 1609;
-      case PlatformErrorCodes.DestinyStringItemHashNotFound:
-        return 1610;
-      case PlatformErrorCodes.DestinyStringSetNotFound:
-        return 1611;
-      case PlatformErrorCodes.DestinyContentLookupNotFoundForKey:
-        return 1612;
-      case PlatformErrorCodes.DestinyContentItemNotFound:
-        return 1613;
-      case PlatformErrorCodes.DestinyContentSectionNotFound:
-        return 1614;
-      case PlatformErrorCodes.DestinyContentPropertyNotFound:
-        return 1615;
-      case PlatformErrorCodes.DestinyContentConfigNotFound:
-        return 1616;
-      case PlatformErrorCodes.DestinyContentPropertyBucketValueNotFound:
-        return 1617;
-      case PlatformErrorCodes.DestinyUnexpectedError:
-        return 1618;
-      case PlatformErrorCodes.DestinyInvalidAction:
-        return 1619;
-      case PlatformErrorCodes.DestinyCharacterNotFound:
-        return 1620;
-      case PlatformErrorCodes.DestinyInvalidFlag:
-        return 1621;
-      case PlatformErrorCodes.DestinyInvalidRequest:
-        return 1622;
-      case PlatformErrorCodes.DestinyItemNotFound:
-        return 1623;
-      case PlatformErrorCodes.DestinyInvalidCustomizationChoices:
-        return 1624;
-      case PlatformErrorCodes.DestinyVendorItemNotFound:
-        return 1625;
-      case PlatformErrorCodes.DestinyInternalError:
-        return 1626;
-      case PlatformErrorCodes.DestinyVendorNotFound:
-        return 1627;
-      case PlatformErrorCodes.DestinyRecentActivitiesDatabaseError:
-        return 1628;
-      case PlatformErrorCodes.DestinyItemBucketNotFound:
-        return 1629;
-      case PlatformErrorCodes.DestinyInvalidMembershipType:
-        return 1630;
-      case PlatformErrorCodes.DestinyVersionIncompatibility:
-        return 1631;
-      case PlatformErrorCodes.DestinyItemAlreadyInInventory:
-        return 1632;
-      case PlatformErrorCodes.DestinyBucketNotFound:
-        return 1633;
-      case PlatformErrorCodes.DestinyCharacterNotInTower:
-        return 1634;
-      case PlatformErrorCodes.DestinyCharacterNotLoggedIn:
-        return 1635;
-      case PlatformErrorCodes.DestinyDefinitionsNotLoaded:
-        return 1636;
-      case PlatformErrorCodes.DestinyInventoryFull:
-        return 1637;
-      case PlatformErrorCodes.DestinyItemFailedLevelCheck:
-        return 1638;
-      case PlatformErrorCodes.DestinyItemFailedUnlockCheck:
-        return 1639;
-      case PlatformErrorCodes.DestinyItemUnequippable:
-        return 1640;
-      case PlatformErrorCodes.DestinyItemUniqueEquipRestricted:
-        return 1641;
-      case PlatformErrorCodes.DestinyNoRoomInDestination:
-        return 1642;
-      case PlatformErrorCodes.DestinyServiceFailure:
-        return 1643;
-      case PlatformErrorCodes.DestinyServiceRetired:
-        return 1644;
-      case PlatformErrorCodes.DestinyTransferFailed:
-        return 1645;
-      case PlatformErrorCodes.DestinyTransferNotFoundForSourceBucket:
-        return 1646;
-      case PlatformErrorCodes.DestinyUnexpectedResultInVendorTransferCheck:
-        return 1647;
-      case PlatformErrorCodes.DestinyUniquenessViolation:
-        return 1648;
-      case PlatformErrorCodes.DestinyErrorDeserializationFailure:
-        return 1649;
-      case PlatformErrorCodes.DestinyValidAccountTicketRequired:
-        return 1650;
-      case PlatformErrorCodes.DestinyShardRelayClientTimeout:
-        return 1651;
-      case PlatformErrorCodes.DestinyShardRelayProxyTimeout:
-        return 1652;
-      case PlatformErrorCodes.DestinyPGCRNotFound:
-        return 1653;
-      case PlatformErrorCodes.DestinyAccountMustBeOffline:
-        return 1654;
-      case PlatformErrorCodes.DestinyCanOnlyEquipInGame:
-        return 1655;
-      case PlatformErrorCodes.DestinyCannotPerformActionOnEquippedItem:
-        return 1656;
-      case PlatformErrorCodes.DestinyQuestAlreadyCompleted:
-        return 1657;
-      case PlatformErrorCodes.DestinyQuestAlreadyTracked:
-        return 1658;
-      case PlatformErrorCodes.DestinyTrackableQuestsFull:
-        return 1659;
-      case PlatformErrorCodes.DestinyItemNotTransferrable:
-        return 1660;
-      case PlatformErrorCodes.DestinyVendorPurchaseNotAllowed:
-        return 1661;
-      case PlatformErrorCodes.DestinyContentVersionMismatch:
-        return 1662;
-      case PlatformErrorCodes.DestinyItemActionForbidden:
-        return 1663;
-      case PlatformErrorCodes.DestinyRefundInvalid:
-        return 1664;
-      case PlatformErrorCodes.DestinyPrivacyRestriction:
-        return 1665;
-      case PlatformErrorCodes.DestinyActionInsufficientPrivileges:
-        return 1666;
-      case PlatformErrorCodes.DestinyInvalidClaimException:
-        return 1667;
-      case PlatformErrorCodes.DestinyLegacyPlatformRestricted:
-        return 1668;
-      case PlatformErrorCodes.DestinyLegacyPlatformInUse:
-        return 1669;
-      case PlatformErrorCodes.DestinyLegacyPlatformInaccessible:
-        return 1670;
-      case PlatformErrorCodes.DestinyCannotPerformActionAtThisLocation:
-        return 1671;
-      case PlatformErrorCodes.DestinyThrottledByGameServer:
-        return 1672;
-      case PlatformErrorCodes.DestinyItemNotTransferrableHasSideEffects:
-        return 1673;
-      case PlatformErrorCodes.DestinyItemLocked:
-        return 1674;
-      case PlatformErrorCodes.DestinyCannotAffordMaterialRequirements:
-        return 1675;
-      case PlatformErrorCodes.DestinyFailedPlugInsertionRules:
-        return 1676;
-      case PlatformErrorCodes.DestinySocketNotFound:
-        return 1677;
-      case PlatformErrorCodes.DestinySocketActionNotAllowed:
-        return 1678;
-      case PlatformErrorCodes.DestinySocketAlreadyHasPlug:
-        return 1679;
-      case PlatformErrorCodes.DestinyPlugItemNotAvailable:
-        return 1680;
-      case PlatformErrorCodes.DestinyCharacterLoggedInNotAllowed:
-        return 1681;
-      case PlatformErrorCodes.DestinyPublicAccountNotAccessible:
-        return 1682;
-      case PlatformErrorCodes.DestinyClaimsItemAlreadyClaimed:
-        return 1683;
-      case PlatformErrorCodes.DestinyClaimsNoInventorySpace:
-        return 1684;
-      case PlatformErrorCodes.DestinyClaimsRequiredLevelNotMet:
-        return 1685;
-      case PlatformErrorCodes.DestinyClaimsInvalidState:
-        return 1686;
-      case PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards:
-        return 1687;
-      case PlatformErrorCodes.DestinyDirectBabelClientTimeout:
-        return 1688;
-      case PlatformErrorCodes.FbInvalidRequest:
-        return 1800;
-      case PlatformErrorCodes.FbRedirectMismatch:
-        return 1801;
-      case PlatformErrorCodes.FbAccessDenied:
-        return 1802;
-      case PlatformErrorCodes.FbUnsupportedResponseType:
-        return 1803;
-      case PlatformErrorCodes.FbInvalidScope:
-        return 1804;
-      case PlatformErrorCodes.FbUnsupportedGrantType:
-        return 1805;
-      case PlatformErrorCodes.FbInvalidGrant:
-        return 1806;
-      case PlatformErrorCodes.InvitationExpired:
-        return 1900;
-      case PlatformErrorCodes.InvitationUnknownType:
-        return 1901;
-      case PlatformErrorCodes.InvitationInvalidResponseStatus:
-        return 1902;
-      case PlatformErrorCodes.InvitationInvalidType:
-        return 1903;
-      case PlatformErrorCodes.InvitationAlreadyPending:
-        return 1904;
-      case PlatformErrorCodes.InvitationInsufficientPermission:
-        return 1905;
-      case PlatformErrorCodes.InvitationInvalidCode:
-        return 1906;
-      case PlatformErrorCodes.InvitationInvalidTargetState:
-        return 1907;
-      case PlatformErrorCodes.InvitationCannotBeReactivated:
-        return 1908;
-      case PlatformErrorCodes.InvitationNoRecipients:
-        return 1910;
-      case PlatformErrorCodes.InvitationGroupCannotSendToSelf:
-        return 1911;
-      case PlatformErrorCodes.InvitationTooManyRecipients:
-        return 1912;
-      case PlatformErrorCodes.InvitationInvalid:
-        return 1913;
-      case PlatformErrorCodes.InvitationNotFound:
-        return 1914;
-      case PlatformErrorCodes.TokenInvalid:
-        return 2000;
-      case PlatformErrorCodes.TokenBadFormat:
-        return 2001;
-      case PlatformErrorCodes.TokenAlreadyClaimed:
-        return 2002;
-      case PlatformErrorCodes.TokenAlreadyClaimedSelf:
-        return 2003;
-      case PlatformErrorCodes.TokenThrottling:
-        return 2004;
-      case PlatformErrorCodes.TokenUnknownRedemptionFailure:
-        return 2005;
-      case PlatformErrorCodes.TokenPurchaseClaimFailedAfterTokenClaimed:
-        return 2006;
-      case PlatformErrorCodes.TokenUserAlreadyOwnsOffer:
-        return 2007;
-      case PlatformErrorCodes.TokenInvalidOfferKey:
-        return 2008;
-      case PlatformErrorCodes.TokenEmailNotValidated:
-        return 2009;
-      case PlatformErrorCodes.TokenProvisioningBadVendorOrOffer:
-        return 2010;
-      case PlatformErrorCodes.TokenPurchaseHistoryUnknownError:
-        return 2011;
-      case PlatformErrorCodes.TokenThrottleStateUnknownError:
-        return 2012;
-      case PlatformErrorCodes.TokenUserAgeNotVerified:
-        return 2013;
-      case PlatformErrorCodes.TokenExceededOfferMaximum:
-        return 2014;
-      case PlatformErrorCodes.TokenNoAvailableUnlocks:
-        return 2015;
-      case PlatformErrorCodes.TokenMarketplaceInvalidPlatform:
-        return 2016;
-      case PlatformErrorCodes.TokenNoMarketplaceCodesFound:
-        return 2017;
-      case PlatformErrorCodes.TokenOfferNotAvailableForRedemption:
-        return 2018;
-      case PlatformErrorCodes.TokenUnlockPartialFailure:
-        return 2019;
-      case PlatformErrorCodes.TokenMarketplaceInvalidRegion:
-        return 2020;
-      case PlatformErrorCodes.TokenOfferExpired:
-        return 2021;
-      case PlatformErrorCodes.RAFExceededMaximumReferrals:
-        return 2022;
-      case PlatformErrorCodes.RAFDuplicateBond:
-        return 2023;
-      case PlatformErrorCodes.RAFNoValidVeteranDestinyMembershipsFound:
-        return 2024;
-      case PlatformErrorCodes.RAFNotAValidVeteranUser:
-        return 2025;
-      case PlatformErrorCodes.RAFCodeAlreadyClaimedOrNotFound:
-        return 2026;
-      case PlatformErrorCodes.RAFMismatchedDestinyMembershipType:
-        return 2027;
-      case PlatformErrorCodes.RAFUnableToAccessPurchaseHistory:
-        return 2028;
-      case PlatformErrorCodes.RAFUnableToCreateBond:
-        return 2029;
-      case PlatformErrorCodes.RAFUnableToFindBond:
-        return 2030;
-      case PlatformErrorCodes.RAFUnableToRemoveBond:
-        return 2031;
-      case PlatformErrorCodes.RAFCannotBondToSelf:
-        return 2032;
-      case PlatformErrorCodes.RAFInvalidPlatform:
-        return 2033;
-      case PlatformErrorCodes.RAFGenerateThrottled:
-        return 2034;
-      case PlatformErrorCodes.RAFUnableToCreateBondVersionMismatch:
-        return 2035;
-      case PlatformErrorCodes.RAFUnableToRemoveBondVersionMismatch:
-        return 2036;
-      case PlatformErrorCodes.RAFRedeemThrottled:
-        return 2037;
-      case PlatformErrorCodes.NoAvailableDiscountCode:
-        return 2038;
-      case PlatformErrorCodes.DiscountAlreadyClaimed:
-        return 2039;
-      case PlatformErrorCodes.DiscountClaimFailure:
-        return 2040;
-      case PlatformErrorCodes.DiscountConfigurationFailure:
-        return 2041;
-      case PlatformErrorCodes.DiscountGenerationFailure:
-        return 2042;
-      case PlatformErrorCodes.DiscountAlreadyExists:
-        return 2043;
-      case PlatformErrorCodes.TokenRequiresCredentialXuid:
-        return 2044;
-      case PlatformErrorCodes.TokenRequiresCredentialPsnid:
-        return 2045;
-      case PlatformErrorCodes.OfferRequired:
-        return 2046;
-      case PlatformErrorCodes.UnknownEververseHistoryError:
-        return 2047;
-      case PlatformErrorCodes.MissingEververseHistoryError:
-        return 2048;
-      case PlatformErrorCodes.BungieRewardEmailStateInvalid:
-        return 2049;
-      case PlatformErrorCodes.BungieRewardNotYetClaimable:
-        return 2050;
-      case PlatformErrorCodes.MissingOfferConfig:
-        return 2051;
-      case PlatformErrorCodes.RAFQuestEntitlementRequiresBnet:
-        return 2052;
-      case PlatformErrorCodes.RAFQuestEntitlementTransportFailure:
-        return 2053;
-      case PlatformErrorCodes.RAFQuestEntitlementUnknownFailure:
-        return 2054;
-      case PlatformErrorCodes.RAFVeteranRewardUnknownFailure:
-        return 2055;
-      case PlatformErrorCodes.RAFTooEarlyToCancelBond:
-        return 2056;
-      case PlatformErrorCodes.LoyaltyRewardAlreadyRedeemed:
-        return 2057;
-      case PlatformErrorCodes.UnclaimedLoyaltyRewardEntryNotFound:
-        return 2058;
-      case PlatformErrorCodes.PartnerOfferPartialFailure:
-        return 2059;
-      case PlatformErrorCodes.PartnerOfferAlreadyClaimed:
-        return 2060;
-      case PlatformErrorCodes.PartnerOfferSkuNotFound:
-        return 2061;
-      case PlatformErrorCodes.PartnerOfferSkuExpired:
-        return 2062;
-      case PlatformErrorCodes.PartnerOfferPermissionFailure:
-        return 2063;
-      case PlatformErrorCodes.PartnerOfferNoDestinyAccount:
-        return 2064;
-      case PlatformErrorCodes.PartnerOfferApplyDataNotFound:
-        return 2065;
-      case PlatformErrorCodes.ApiExceededMaxKeys:
-        return 2100;
-      case PlatformErrorCodes.ApiInvalidOrExpiredKey:
-        return 2101;
-      case PlatformErrorCodes.ApiKeyMissingFromRequest:
-        return 2102;
-      case PlatformErrorCodes.ApplicationDisabled:
-        return 2103;
-      case PlatformErrorCodes.ApplicationExceededMax:
-        return 2104;
-      case PlatformErrorCodes.ApplicationDisallowedByScope:
-        return 2105;
-      case PlatformErrorCodes.AuthorizationCodeInvalid:
-        return 2106;
-      case PlatformErrorCodes.OriginHeaderDoesNotMatchKey:
-        return 2107;
-      case PlatformErrorCodes.AccessNotPermittedByApplicationScope:
-        return 2108;
-      case PlatformErrorCodes.ApplicationNameIsTaken:
-        return 2109;
-      case PlatformErrorCodes.RefreshTokenNotYetValid:
-        return 2110;
-      case PlatformErrorCodes.AccessTokenHasExpired:
-        return 2111;
-      case PlatformErrorCodes.ApplicationTokenFormatNotValid:
-        return 2112;
-      case PlatformErrorCodes.ApplicationNotConfiguredForBungieAuth:
-        return 2113;
-      case PlatformErrorCodes.ApplicationNotConfiguredForOAuth:
-        return 2114;
-      case PlatformErrorCodes.OAuthAccessTokenExpired:
-        return 2115;
-      case PlatformErrorCodes.ApplicationTokenKeyIdDoesNotExist:
-        return 2116;
-      case PlatformErrorCodes.ProvidedTokenNotValidRefreshToken:
-        return 2117;
-      case PlatformErrorCodes.RefreshTokenExpired:
-        return 2118;
-      case PlatformErrorCodes.AuthorizationRecordInvalid:
-        return 2119;
-      case PlatformErrorCodes.TokenPreviouslyRevoked:
-        return 2120;
-      case PlatformErrorCodes.TokenInvalidMembership:
-        return 2121;
-      case PlatformErrorCodes.AuthorizationCodeStale:
-        return 2122;
-      case PlatformErrorCodes.AuthorizationRecordExpired:
-        return 2123;
-      case PlatformErrorCodes.AuthorizationRecordRevoked:
-        return 2124;
-      case PlatformErrorCodes.AuthorizationRecordInactiveApiKey:
-        return 2125;
-      case PlatformErrorCodes.AuthorizationRecordApiKeyMatching:
-        return 2126;
-      case PlatformErrorCodes.PartnershipInvalidType:
-        return 2200;
-      case PlatformErrorCodes.PartnershipValidationError:
-        return 2201;
-      case PlatformErrorCodes.PartnershipValidationTimeout:
-        return 2202;
-      case PlatformErrorCodes.PartnershipAccessFailure:
-        return 2203;
-      case PlatformErrorCodes.PartnershipAccountInvalid:
-        return 2204;
-      case PlatformErrorCodes.PartnershipGetAccountInfoFailure:
-        return 2205;
-      case PlatformErrorCodes.PartnershipDisabled:
-        return 2206;
-      case PlatformErrorCodes.PartnershipAlreadyExists:
-        return 2207;
-      case PlatformErrorCodes.CommunityStreamingUnavailable:
-        return 2300;
-      case PlatformErrorCodes.TwitchNotLinked:
-        return 2500;
-      case PlatformErrorCodes.TwitchAccountNotFound:
-        return 2501;
-      case PlatformErrorCodes.TwitchCouldNotLoadDestinyInfo:
-        return 2502;
-      case PlatformErrorCodes.TwitchCouldNotRegisterUser:
-        return 2503;
-      case PlatformErrorCodes.TwitchCouldNotUnregisterUser:
-        return 2504;
-      case PlatformErrorCodes.TwitchRequiresRelinking:
-        return 2505;
-      case PlatformErrorCodes.TwitchNoPlatformChosen:
-        return 2506;
-      case PlatformErrorCodes.TrendingCategoryNotFound:
-        return 2600;
-      case PlatformErrorCodes.TrendingEntryTypeNotSupported:
-        return 2601;
-      case PlatformErrorCodes.ReportOffenderNotInPgcr:
-        return 2700;
-      case PlatformErrorCodes.ReportRequestorNotInPgcr:
-        return 2701;
-      case PlatformErrorCodes.ReportSubmissionFailed:
-        return 2702;
-      case PlatformErrorCodes.ReportCannotReportSelf:
-        return 2703;
-      case PlatformErrorCodes.AwaTypeDisabled:
-        return 2800;
-      case PlatformErrorCodes.AwaTooManyPendingRequests:
-        return 2801;
-      case PlatformErrorCodes.AwaTheFeatureRequiresARegisteredDevice:
-        return 2802;
-      case PlatformErrorCodes.AwaRequestWasUnansweredForTooLong:
-        return 2803;
-      case PlatformErrorCodes.AwaWriteRequestMissingOrInvalidToken:
-        return 2804;
-      case PlatformErrorCodes.AwaWriteRequestTokenExpired:
-        return 2805;
-      case PlatformErrorCodes.AwaWriteRequestTokenUsageLimitReached:
-        return 2806;
-      case PlatformErrorCodes.SteamWebApiError:
-        return 2900;
-      case PlatformErrorCodes.SteamWebNullResponseError:
-        return 2901;
-      case PlatformErrorCodes.SteamAccountRequired:
-        return 2902;
-      case PlatformErrorCodes.SteamNotAuthorized:
-        return 2903;
-      case PlatformErrorCodes.ClanFireteamNotFound:
-        return 3000;
-      case PlatformErrorCodes.ClanFireteamAddNoAlternatesForImmediate:
-        return 3001;
-      case PlatformErrorCodes.ClanFireteamFull:
-        return 3002;
-      case PlatformErrorCodes.ClanFireteamAltFull:
-        return 3003;
-      case PlatformErrorCodes.ClanFireteamBlocked:
-        return 3004;
-      case PlatformErrorCodes.ClanFireteamPlayerEntryNotFound:
-        return 3005;
-      case PlatformErrorCodes.ClanFireteamPermissions:
-        return 3006;
-      case PlatformErrorCodes.ClanFireteamInvalidPlatform:
-        return 3007;
-      case PlatformErrorCodes.ClanFireteamCannotAdjustSlotCount:
-        return 3008;
-      case PlatformErrorCodes.ClanFireteamInvalidPlayerPlatform:
-        return 3009;
-      case PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotEnoughPlayers:
-        return 3010;
-      case PlatformErrorCodes.ClanFireteamGameInvitesNotSupportForPlatform:
-        return 3011;
-      case PlatformErrorCodes.ClanFireteamPlatformInvitePreqFailure:
-        return 3012;
-      case PlatformErrorCodes.ClanFireteamInvalidAuthContext:
-        return 3013;
-      case PlatformErrorCodes.ClanFireteamInvalidAuthProviderPsn:
-        return 3014;
-      case PlatformErrorCodes.ClanFireteamPs4SessionFull:
-        return 3015;
-      case PlatformErrorCodes.ClanFireteamInvalidAuthToken:
-        return 3016;
-      case PlatformErrorCodes.ClanFireteamScheduledFireteamsDisabled:
-        return 3017;
-      case PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotScheduledYet:
-        return 3018;
-      case PlatformErrorCodes.ClanFireteamNotReadyForInvitesClosed:
-        return 3019;
-      case PlatformErrorCodes.ClanFireteamScheduledFireteamsRequireAdminPermissions:
-        return 3020;
-      case PlatformErrorCodes.ClanFireteamNonPublicMustHaveClan:
-        return 3021;
-      case PlatformErrorCodes.ClanFireteamPublicCreationRestriction:
-        return 3022;
-      case PlatformErrorCodes.ClanFireteamAlreadyJoined:
-        return 3023;
-      case PlatformErrorCodes.ClanFireteamScheduledFireteamsRange:
-        return 3024;
-      case PlatformErrorCodes.ClanFireteamPublicCreationRestrictionExtended:
-        return 3025;
-      case PlatformErrorCodes.ClanFireteamExpired:
-        return 3026;
-      case PlatformErrorCodes.ClanFireteamInvalidAuthProvider:
-        return 3027;
-      case PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid:
-        return 3028;
-      case PlatformErrorCodes.ClanFireteamThrottle:
-        return 3029;
-      case PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams:
-        return 3030;
-      case PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams:
-        return 3031;
-      case PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified:
-        return 3032;
-      case PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:
-        return 3200;
-      case PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:
-        return 3201;
-      case PlatformErrorCodes.CrossSaveNoOverriddenPlatforms:
-        return 3202;
-      case PlatformErrorCodes.CrossSavePrimaryAccountNotFound:
-        return 3203;
-      case PlatformErrorCodes.CrossSaveRequestInvalid:
-        return 3204;
-      case PlatformErrorCodes.CrossSaveBungieAccountValidationFailure:
-        return 3206;
-      case PlatformErrorCodes.CrossSaveOverriddenPlatformNotAllowed:
-        return 3207;
-      case PlatformErrorCodes.CrossSaveThresholdExceeded:
-        return 3208;
-      case PlatformErrorCodes.CrossSaveIncompatibleMembershipType:
-        return 3209;
-      case PlatformErrorCodes.CrossSaveCouldNotFindLinkedAccountForMembershipType:
-        return 3210;
-      case PlatformErrorCodes.CrossSaveCouldNotCreateDestinyProfileForMembershipType:
-        return 3211;
-      case PlatformErrorCodes.CrossSaveErrorCreatingDestinyProfileForMembershipType:
-        return 3212;
-      case PlatformErrorCodes.CrossSaveCannotOverrideSelf:
-        return 3213;
-      case PlatformErrorCodes.CrossSaveRecentSilverPurchase:
-        return 3214;
-      case PlatformErrorCodes.CrossSaveSilverBalanceNegative:
-        return 3215;
-      case PlatformErrorCodes.CrossSaveAccountNotAuthenticated:
-        return 3216;
-      case PlatformErrorCodes.ErrorOneAccountAlreadyActive:
-        return 3217;
-      case PlatformErrorCodes.ErrorOneAccountDestinyRestriction:
-        return 3218;
-      case PlatformErrorCodes.CrossSaveMustMigrateToSteam:
-        return 3219;
-      case PlatformErrorCodes.CrossSaveSteamAlreadyPaired:
-        return 3220;
-      case PlatformErrorCodes.CrossSaveCannotPairJustSteamAndBlizzard:
-        return 3221;
-      case PlatformErrorCodes.CrossSaveCannotPairSteamAloneBeforeShadowkeep:
-        return 3222;
-      case PlatformErrorCodes.AuthVerificationNotLinkedToAccount:
-        return 3300;
-      case PlatformErrorCodes.PCMigrationMissingBlizzard:
-        return 3400;
-      case PlatformErrorCodes.PCMigrationMissingSteam:
-        return 3401;
-      case PlatformErrorCodes.PCMigrationInvalidBlizzard:
-        return 3402;
-      case PlatformErrorCodes.PCMigrationInvalidSteam:
-        return 3403;
-      case PlatformErrorCodes.PCMigrationUnknownFailure:
-        return 3404;
-      case PlatformErrorCodes.PCMigrationUnknownException:
-        return 3405;
-      case PlatformErrorCodes.PCMigrationNotLinked:
-        return 3406;
-      case PlatformErrorCodes.PCMigrationAccountsAlreadyUsed:
-        return 3407;
-      case PlatformErrorCodes.PCMigrationStepFailed:
-        return 3408;
-      case PlatformErrorCodes.PCMigrationInvalidBlizzardCrossSaveState:
-        return 3409;
-      case PlatformErrorCodes.PCMigrationDestinationBanned:
-        return 3410;
-      case PlatformErrorCodes.PCMigrationDestinyFailure:
-        return 3411;
-      case PlatformErrorCodes.PCMigrationSilverTransferFailed:
-        return 3412;
-      case PlatformErrorCodes.PCMigrationEntitlementTransferFailed:
-        return 3413;
-      case PlatformErrorCodes.PCMigrationCannotStompClanFounder:
-        return 3414;
-      case PlatformErrorCodes.UnsupportedBrowser:
-        return 3500;
-      case PlatformErrorCodes.StadiaAccountRequired:
-        return 3600;
-      case PlatformErrorCodes.ErrorPhoneValidationTooManyUses:
-        return 3702;
-      case PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone:
-        return 3703;
-      case PlatformErrorCodes.ErrorPhoneValidationCodeInvalid:
-        return 3705;
-      case PlatformErrorCodes.ErrorPhoneValidationBanned:
-        return 3706;
-      case PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlySent:
-        return 3707;
-      case PlatformErrorCodes.ErrorPhoneValidationCodeExpired:
-        return 3708;
-      case PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType:
-        return 3709;
-      case PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked:
-        return 3710;
-      case PlatformErrorCodes.ApplePushErrorUnknown:
-        return 3800;
-      case PlatformErrorCodes.ApplePushErrorNull:
-        return 3801;
-      case PlatformErrorCodes.ApplePushErrorTimeout:
-        return 3802;
-      case PlatformErrorCodes.ApplePushBadRequest:
-        return 3803;
-      case PlatformErrorCodes.ApplePushFailedAuth:
-        return 3804;
-      case PlatformErrorCodes.ApplePushThrottled:
-        return 3805;
-      case PlatformErrorCodes.ApplePushServiceUnavailable:
-        return 3806;
-      case PlatformErrorCodes.NotAnImageOrVideo:
-        return 3807;
-      case PlatformErrorCodes.ErrorBungieFriendsBlockFailed:
-        return 3900;
-      case PlatformErrorCodes.ErrorBungieFriendsAutoReject:
-        return 3901;
-      case PlatformErrorCodes.ErrorBungieFriendsNoRequestFound:
-        return 3902;
-      case PlatformErrorCodes.ErrorBungieFriendsAlreadyFriends:
-        return 3903;
-      case PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest:
-        return 3904;
-      case PlatformErrorCodes.ErrorBungieFriendsUnableToRemove:
-        return 3905;
-      case PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget:
-        return 3906;
-      case PlatformErrorCodes.ErrorBungieFriendsSelf:
-        return 3907;
-      case PlatformErrorCodes.ErrorBungieBlockSelf:
-        return 3908;
-      case PlatformErrorCodes.ErrorBungieFriendsListFull:
-        return 3910;
-      case PlatformErrorCodes.ErrorBungieBlockListFull:
-        return 3911;
-      default:
-        return null;
+    if (_$PlatformErrorCodesEnumMap.containsKey(this)){
+      return _$PlatformErrorCodesEnumMap[this];
     }
+    return null;
   }
 }
+
+PlatformErrorCodes? decodePlatformErrorCodes (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$PlatformErrorCodesValueMap.containsKey(value)){
+    return _$PlatformErrorCodesValueMap[value];
+  }
+
+  return PlatformErrorCodes.ProtectedInvalidEnumValue;
+}
+
+int? encodePlatformErrorCodes (PlatformErrorCodes? value) {
+  return value?.value;
+}
+
+const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorCodes, int>{
+    PlatformErrorCodes.None:0,
+    PlatformErrorCodes.Success:1,
+    PlatformErrorCodes.TransportException:2,
+    PlatformErrorCodes.UnhandledException:3,
+    PlatformErrorCodes.NotImplemented:4,
+    PlatformErrorCodes.SystemDisabled:5,
+    PlatformErrorCodes.FailedToLoadAvailableLocalesConfiguration:6,
+    PlatformErrorCodes.ParameterParseFailure:7,
+    PlatformErrorCodes.ParameterInvalidRange:8,
+    PlatformErrorCodes.BadRequest:9,
+    PlatformErrorCodes.AuthenticationInvalid:10,
+    PlatformErrorCodes.DataNotFound:11,
+    PlatformErrorCodes.InsufficientPrivileges:12,
+    PlatformErrorCodes.Duplicate:13,
+    PlatformErrorCodes.UnknownSqlResult:14,
+    PlatformErrorCodes.ValidationError:15,
+    PlatformErrorCodes.ValidationMissingFieldError:16,
+    PlatformErrorCodes.ValidationInvalidInputError:17,
+    PlatformErrorCodes.InvalidParameters:18,
+    PlatformErrorCodes.ParameterNotFound:19,
+    PlatformErrorCodes.UnhandledHttpException:20,
+    PlatformErrorCodes.NotFound:21,
+    PlatformErrorCodes.WebAuthModuleAsyncFailed:22,
+    PlatformErrorCodes.InvalidReturnValue:23,
+    PlatformErrorCodes.UserBanned:24,
+    PlatformErrorCodes.InvalidPostBody:25,
+    PlatformErrorCodes.MissingPostBody:26,
+    PlatformErrorCodes.ExternalServiceTimeout:27,
+    PlatformErrorCodes.ValidationLengthError:28,
+    PlatformErrorCodes.ValidationRangeError:29,
+    PlatformErrorCodes.JsonDeserializationError:30,
+    PlatformErrorCodes.ThrottleLimitExceeded:31,
+    PlatformErrorCodes.ValidationTagError:32,
+    PlatformErrorCodes.ValidationProfanityError:33,
+    PlatformErrorCodes.ValidationUrlFormatError:34,
+    PlatformErrorCodes.ThrottleLimitExceededMinutes:35,
+    PlatformErrorCodes.ThrottleLimitExceededMomentarily:36,
+    PlatformErrorCodes.ThrottleLimitExceededSeconds:37,
+    PlatformErrorCodes.ExternalServiceUnknown:38,
+    PlatformErrorCodes.ValidationWordLengthError:39,
+    PlatformErrorCodes.ValidationInvisibleUnicode:40,
+    PlatformErrorCodes.ValidationBadNames:41,
+    PlatformErrorCodes.ExternalServiceFailed:42,
+    PlatformErrorCodes.ServiceRetired:43,
+    PlatformErrorCodes.UnknownSqlException:44,
+    PlatformErrorCodes.UnsupportedLocale:45,
+    PlatformErrorCodes.InvalidPageNumber:46,
+    PlatformErrorCodes.MaximumPageSizeExceeded:47,
+    PlatformErrorCodes.ServiceUnsupported:48,
+    PlatformErrorCodes.ValidationMaximumUnicodeCombiningCharacters:49,
+    PlatformErrorCodes.ValidationMaximumSequentialCarriageReturns:50,
+    PlatformErrorCodes.PerEndpointRequestThrottleExceeded:51,
+    PlatformErrorCodes.AuthContextCacheAssertion:52,
+    PlatformErrorCodes.ExPlatformStringValidationError:53,
+    PlatformErrorCodes.PerApplicationThrottleExceeded:54,
+    PlatformErrorCodes.PerApplicationAnonymousThrottleExceeded:55,
+    PlatformErrorCodes.PerApplicationAuthenticatedThrottleExceeded:56,
+    PlatformErrorCodes.PerUserThrottleExceeded:57,
+    PlatformErrorCodes.PayloadSignatureVerificationFailure:58,
+    PlatformErrorCodes.InvalidServiceAuthContext:59,
+    PlatformErrorCodes.ObsoleteCredentialType:89,
+    PlatformErrorCodes.UnableToUnPairMobileApp:90,
+    PlatformErrorCodes.UnableToPairMobileApp:91,
+    PlatformErrorCodes.CannotUseMobileAuthWithNonMobileProvider:92,
+    PlatformErrorCodes.MissingDeviceCookie:93,
+    PlatformErrorCodes.FacebookTokenExpired:94,
+    PlatformErrorCodes.AuthTicketRequired:95,
+    PlatformErrorCodes.CookieContextRequired:96,
+    PlatformErrorCodes.UnknownAuthenticationError:97,
+    PlatformErrorCodes.BungieNetAccountCreationRequired:98,
+    PlatformErrorCodes.WebAuthRequired:99,
+    PlatformErrorCodes.ContentUnknownSqlResult:100,
+    PlatformErrorCodes.ContentNeedUniquePath:101,
+    PlatformErrorCodes.ContentSqlException:102,
+    PlatformErrorCodes.ContentNotFound:103,
+    PlatformErrorCodes.ContentSuccessWithTagAddFail:104,
+    PlatformErrorCodes.ContentSearchMissingParameters:105,
+    PlatformErrorCodes.ContentInvalidId:106,
+    PlatformErrorCodes.ContentPhysicalFileDeletionError:107,
+    PlatformErrorCodes.ContentPhysicalFileCreationError:108,
+    PlatformErrorCodes.ContentPerforceSubmissionError:109,
+    PlatformErrorCodes.ContentPerforceInitializationError:110,
+    PlatformErrorCodes.ContentDeploymentPackageNotReadyError:111,
+    PlatformErrorCodes.ContentUploadFailed:112,
+    PlatformErrorCodes.ContentTooManyResults:113,
+    PlatformErrorCodes.ContentInvalidState:115,
+    PlatformErrorCodes.ContentNavigationParentNotFound:116,
+    PlatformErrorCodes.ContentNavigationParentUpdateError:117,
+    PlatformErrorCodes.DeploymentPackageNotEditable:118,
+    PlatformErrorCodes.ContentValidationError:119,
+    PlatformErrorCodes.ContentPropertiesValidationError:120,
+    PlatformErrorCodes.ContentTypeNotFound:121,
+    PlatformErrorCodes.DeploymentPackageNotFound:122,
+    PlatformErrorCodes.ContentSearchInvalidParameters:123,
+    PlatformErrorCodes.ContentItemPropertyAggregationError:124,
+    PlatformErrorCodes.DeploymentPackageFileNotFound:125,
+    PlatformErrorCodes.ContentPerforceFileHistoryNotFound:126,
+    PlatformErrorCodes.ContentAssetZipCreationFailure:127,
+    PlatformErrorCodes.ContentAssetZipCreationBusy:128,
+    PlatformErrorCodes.ContentProjectNotFound:129,
+    PlatformErrorCodes.ContentFolderNotFound:130,
+    PlatformErrorCodes.ContentPackagesInconsistent:131,
+    PlatformErrorCodes.ContentPackagesInvalidState:132,
+    PlatformErrorCodes.ContentPackagesInconsistentType:133,
+    PlatformErrorCodes.ContentCannotDeletePackage:134,
+    PlatformErrorCodes.ContentLockedForChanges:135,
+    PlatformErrorCodes.ContentFileUploadFailed:136,
+    PlatformErrorCodes.ContentNotReviewed:137,
+    PlatformErrorCodes.ContentPermissionDenied:138,
+    PlatformErrorCodes.ContentInvalidExternalUrl:139,
+    PlatformErrorCodes.ContentExternalFileCannotBeImportedLocally:140,
+    PlatformErrorCodes.ContentTagSaveFailure:141,
+    PlatformErrorCodes.ContentPerforceUnmatchedFileError:142,
+    PlatformErrorCodes.ContentPerforceChangelistResultNotFound:143,
+    PlatformErrorCodes.ContentPerforceChangelistFileItemsNotFound:144,
+    PlatformErrorCodes.ContentPerforceInvalidRevisionError:145,
+    PlatformErrorCodes.ContentUnloadedSaveResult:146,
+    PlatformErrorCodes.ContentPropertyInvalidNumber:147,
+    PlatformErrorCodes.ContentPropertyInvalidUrl:148,
+    PlatformErrorCodes.ContentPropertyInvalidDate:149,
+    PlatformErrorCodes.ContentPropertyInvalidSet:150,
+    PlatformErrorCodes.ContentPropertyCannotDeserialize:151,
+    PlatformErrorCodes.ContentRegexValidationFailOnProperty:152,
+    PlatformErrorCodes.ContentMaxLengthFailOnProperty:153,
+    PlatformErrorCodes.ContentPropertyUnexpectedDeserializationError:154,
+    PlatformErrorCodes.ContentPropertyRequired:155,
+    PlatformErrorCodes.ContentCannotCreateFile:156,
+    PlatformErrorCodes.ContentInvalidMigrationFile:157,
+    PlatformErrorCodes.ContentMigrationAlteringProcessedItem:158,
+    PlatformErrorCodes.ContentPropertyDefinitionNotFound:159,
+    PlatformErrorCodes.ContentReviewDataChanged:160,
+    PlatformErrorCodes.ContentRollbackRevisionNotInPackage:161,
+    PlatformErrorCodes.ContentItemNotBasedOnLatestRevision:162,
+    PlatformErrorCodes.ContentUnauthorized:163,
+    PlatformErrorCodes.ContentCannotCreateDeploymentPackage:164,
+    PlatformErrorCodes.ContentUserNotFound:165,
+    PlatformErrorCodes.ContentLocalePermissionDenied:166,
+    PlatformErrorCodes.ContentInvalidLinkToInternalEnvironment:167,
+    PlatformErrorCodes.ContentInvalidBlacklistedContent:168,
+    PlatformErrorCodes.ContentMacroMalformedNoContentId:169,
+    PlatformErrorCodes.ContentMacroMalformedNoTemplateType:170,
+    PlatformErrorCodes.ContentIllegalBNetMembershipId:171,
+    PlatformErrorCodes.ContentLocaleDidNotMatchExpected:172,
+    PlatformErrorCodes.ContentBabelCallFailed:173,
+    PlatformErrorCodes.ContentEnglishPostLiveForbidden:174,
+    PlatformErrorCodes.ContentLocaleEditPermissionDenied:175,
+    PlatformErrorCodes.UserNonUniqueName:200,
+    PlatformErrorCodes.UserManualLinkingStepRequired:201,
+    PlatformErrorCodes.UserCreateUnknownSqlResult:202,
+    PlatformErrorCodes.UserCreateUnknownSqlException:203,
+    PlatformErrorCodes.UserMalformedMembershipId:204,
+    PlatformErrorCodes.UserCannotFindRequestedUser:205,
+    PlatformErrorCodes.UserCannotLoadAccountCredentialLinkInfo:206,
+    PlatformErrorCodes.UserInvalidMobileAppType:207,
+    PlatformErrorCodes.UserMissingMobilePairingInfo:208,
+    PlatformErrorCodes.UserCannotGenerateMobileKeyWhileUsingMobileCredential:209,
+    PlatformErrorCodes.UserGenerateMobileKeyExistingSlotCollision:210,
+    PlatformErrorCodes.UserDisplayNameMissingOrInvalid:211,
+    PlatformErrorCodes.UserCannotLoadAccountProfileData:212,
+    PlatformErrorCodes.UserCannotSaveUserProfileData:213,
+    PlatformErrorCodes.UserEmailMissingOrInvalid:214,
+    PlatformErrorCodes.UserTermsOfUseRequired:215,
+    PlatformErrorCodes.UserCannotCreateNewAccountWhileLoggedIn:216,
+    PlatformErrorCodes.UserCannotResolveCentralAccount:217,
+    PlatformErrorCodes.UserInvalidAvatar:218,
+    PlatformErrorCodes.UserMissingCreatedUserResult:219,
+    PlatformErrorCodes.UserCannotChangeUniqueNameYet:220,
+    PlatformErrorCodes.UserCannotChangeDisplayNameYet:221,
+    PlatformErrorCodes.UserCannotChangeEmail:222,
+    PlatformErrorCodes.UserUniqueNameMustStartWithLetter:223,
+    PlatformErrorCodes.UserNoLinkedAccountsSupportFriendListings:224,
+    PlatformErrorCodes.UserAcknowledgmentTableFull:225,
+    PlatformErrorCodes.UserCreationDestinyMembershipRequired:226,
+    PlatformErrorCodes.UserFriendsTokenNeedsRefresh:227,
+    PlatformErrorCodes.UserEmailValidationUnknown:228,
+    PlatformErrorCodes.UserEmailValidationLimit:229,
+    PlatformErrorCodes.TransactionEmailSendFailure:230,
+    PlatformErrorCodes.MailHookPermissionFailure:231,
+    PlatformErrorCodes.MailServiceRateLimit:232,
+    PlatformErrorCodes.UserEmailMustBeVerified:233,
+    PlatformErrorCodes.UserMustAllowCustomerServiceEmails:234,
+    PlatformErrorCodes.NonTransactionalEmailSendFailure:235,
+    PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName:236,
+    PlatformErrorCodes.DuplicateGlobalDisplayName:237,
+    PlatformErrorCodes.MessagingUnknownError:300,
+    PlatformErrorCodes.MessagingSelfError:301,
+    PlatformErrorCodes.MessagingSendThrottle:302,
+    PlatformErrorCodes.MessagingNoBody:303,
+    PlatformErrorCodes.MessagingTooManyUsers:304,
+    PlatformErrorCodes.MessagingCanNotLeaveConversation:305,
+    PlatformErrorCodes.MessagingUnableToSend:306,
+    PlatformErrorCodes.MessagingDeletedUserForbidden:307,
+    PlatformErrorCodes.MessagingCannotDeleteExternalConversation:308,
+    PlatformErrorCodes.MessagingGroupChatDisabled:309,
+    PlatformErrorCodes.MessagingMustIncludeSelfInPrivateMessage:310,
+    PlatformErrorCodes.MessagingSenderIsBanned:311,
+    PlatformErrorCodes.MessagingGroupOptionalChatExceededMaximum:312,
+    PlatformErrorCodes.PrivateMessagingRequiresDestinyMembership:313,
+    PlatformErrorCodes.AddSurveyAnswersUnknownSqlException:400,
+    PlatformErrorCodes.ForumBodyCannotBeEmpty:500,
+    PlatformErrorCodes.ForumSubjectCannotBeEmptyOnTopicPost:501,
+    PlatformErrorCodes.ForumCannotLocateParentPost:502,
+    PlatformErrorCodes.ForumThreadLockedForReplies:503,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringCreatePost:504,
+    PlatformErrorCodes.ForumUnknownTagCreationError:505,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringTagItem:506,
+    PlatformErrorCodes.ForumUnknownExceptionCreatePost:507,
+    PlatformErrorCodes.ForumQuestionMustBeTopicPost:508,
+    PlatformErrorCodes.ForumExceptionDuringTagSearch:509,
+    PlatformErrorCodes.ForumExceptionDuringTopicRetrieval:510,
+    PlatformErrorCodes.ForumAliasedTagError:511,
+    PlatformErrorCodes.ForumCannotLocateThread:512,
+    PlatformErrorCodes.ForumUnknownExceptionEditPost:513,
+    PlatformErrorCodes.ForumCannotLocatePost:514,
+    PlatformErrorCodes.ForumUnknownExceptionGetOrCreateTags:515,
+    PlatformErrorCodes.ForumEditPermissionDenied:516,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringTagIdRetrieval:517,
+    PlatformErrorCodes.ForumCannotGetRating:518,
+    PlatformErrorCodes.ForumUnknownExceptionGetRating:519,
+    PlatformErrorCodes.ForumRatingsAccessError:520,
+    PlatformErrorCodes.ForumRelatedPostAccessError:521,
+    PlatformErrorCodes.ForumLatestReplyAccessError:522,
+    PlatformErrorCodes.ForumUserStatusAccessError:523,
+    PlatformErrorCodes.ForumAuthorAccessError:524,
+    PlatformErrorCodes.ForumGroupAccessError:525,
+    PlatformErrorCodes.ForumUrlExpectedButMissing:526,
+    PlatformErrorCodes.ForumRepliesCannotBeEmpty:527,
+    PlatformErrorCodes.ForumRepliesCannotBeInDifferentGroups:528,
+    PlatformErrorCodes.ForumSubTopicCannotBeCreatedAtThisThreadLevel:529,
+    PlatformErrorCodes.ForumCannotCreateContentTopic:530,
+    PlatformErrorCodes.ForumTopicDoesNotExist:531,
+    PlatformErrorCodes.ForumContentCommentsNotAllowed:532,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringEditPost:533,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringGetPost:534,
+    PlatformErrorCodes.ForumPostValidationBadUrl:535,
+    PlatformErrorCodes.ForumBodyTooLong:536,
+    PlatformErrorCodes.ForumSubjectTooLong:537,
+    PlatformErrorCodes.ForumAnnouncementNotAllowed:538,
+    PlatformErrorCodes.ForumCannotShareOwnPost:539,
+    PlatformErrorCodes.ForumEditNoOp:540,
+    PlatformErrorCodes.ForumUnknownDatabaseErrorDuringGetPost:541,
+    PlatformErrorCodes.ForumExceeedMaximumRowLimit:542,
+    PlatformErrorCodes.ForumCannotSharePrivatePost:543,
+    PlatformErrorCodes.ForumCannotCrossPostBetweenGroups:544,
+    PlatformErrorCodes.ForumIncompatibleCategories:555,
+    PlatformErrorCodes.ForumCannotUseTheseCategoriesOnNonTopicPost:556,
+    PlatformErrorCodes.ForumCanOnlyDeleteTopics:557,
+    PlatformErrorCodes.ForumDeleteSqlException:558,
+    PlatformErrorCodes.ForumDeleteSqlUnknownResult:559,
+    PlatformErrorCodes.ForumTooManyTags:560,
+    PlatformErrorCodes.ForumCanOnlyRateTopics:561,
+    PlatformErrorCodes.ForumBannedPostsCannotBeEdited:562,
+    PlatformErrorCodes.ForumThreadRootIsBanned:563,
+    PlatformErrorCodes.ForumCannotUseOfficialTagCategoryAsTag:564,
+    PlatformErrorCodes.ForumAnswerCannotBeMadeOnCreatePost:565,
+    PlatformErrorCodes.ForumAnswerCannotBeMadeOnEditPost:566,
+    PlatformErrorCodes.ForumAnswerPostIdIsNotADirectReplyOfQuestion:567,
+    PlatformErrorCodes.ForumAnswerTopicIdIsNotAQuestion:568,
+    PlatformErrorCodes.ForumUnknownExceptionDuringMarkAnswer:569,
+    PlatformErrorCodes.ForumUnknownSqlResultDuringMarkAnswer:570,
+    PlatformErrorCodes.ForumCannotRateYourOwnPosts:571,
+    PlatformErrorCodes.ForumPollsMustBeTheFirstPostInTopic:572,
+    PlatformErrorCodes.ForumInvalidPollInput:573,
+    PlatformErrorCodes.ForumGroupAdminEditNonMember:574,
+    PlatformErrorCodes.ForumCannotEditModeratorEditedPost:575,
+    PlatformErrorCodes.ForumRequiresDestinyMembership:576,
+    PlatformErrorCodes.ForumUnexpectedError:577,
+    PlatformErrorCodes.ForumAgeLock:578,
+    PlatformErrorCodes.ForumMaxPages:579,
+    PlatformErrorCodes.ForumMaxPagesOldestFirst:580,
+    PlatformErrorCodes.ForumCannotApplyForumIdWithoutTags:581,
+    PlatformErrorCodes.ForumCannotApplyForumIdToNonTopics:582,
+    PlatformErrorCodes.ForumCannotDownvoteCommunityCreations:583,
+    PlatformErrorCodes.ForumTopicsMustHaveOfficialCategory:584,
+    PlatformErrorCodes.ForumRecruitmentTopicMalformed:585,
+    PlatformErrorCodes.ForumRecruitmentTopicNotFound:586,
+    PlatformErrorCodes.ForumRecruitmentTopicNoSlotsRemaining:587,
+    PlatformErrorCodes.ForumRecruitmentTopicKickBan:588,
+    PlatformErrorCodes.ForumRecruitmentTopicRequirementsNotMet:589,
+    PlatformErrorCodes.ForumRecruitmentTopicNoPlayers:590,
+    PlatformErrorCodes.ForumRecruitmentApproveFailMessageBan:591,
+    PlatformErrorCodes.ForumRecruitmentGlobalBan:592,
+    PlatformErrorCodes.ForumUserBannedFromThisTopic:593,
+    PlatformErrorCodes.ForumRecruitmentFireteamMembersOnly:594,
+    PlatformErrorCodes.ForumRequiresDestiny2Progress:595,
+    PlatformErrorCodes.GroupMembershipApplicationAlreadyResolved:601,
+    PlatformErrorCodes.GroupMembershipAlreadyApplied:602,
+    PlatformErrorCodes.GroupMembershipInsufficientPrivileges:603,
+    PlatformErrorCodes.GroupIdNotReturnedFromCreation:604,
+    PlatformErrorCodes.GroupSearchInvalidParameters:605,
+    PlatformErrorCodes.GroupMembershipPendingApplicationNotFound:606,
+    PlatformErrorCodes.GroupInvalidId:607,
+    PlatformErrorCodes.GroupInvalidMembershipId:608,
+    PlatformErrorCodes.GroupInvalidMembershipType:609,
+    PlatformErrorCodes.GroupMissingTags:610,
+    PlatformErrorCodes.GroupMembershipNotFound:611,
+    PlatformErrorCodes.GroupInvalidRating:612,
+    PlatformErrorCodes.GroupUserFollowingAccessError:613,
+    PlatformErrorCodes.GroupUserMembershipAccessError:614,
+    PlatformErrorCodes.GroupCreatorAccessError:615,
+    PlatformErrorCodes.GroupAdminAccessError:616,
+    PlatformErrorCodes.GroupPrivatePostNotViewable:617,
+    PlatformErrorCodes.GroupMembershipNotLoggedIn:618,
+    PlatformErrorCodes.GroupNotDeleted:619,
+    PlatformErrorCodes.GroupUnknownErrorUndeletingGroup:620,
+    PlatformErrorCodes.GroupDeleted:621,
+    PlatformErrorCodes.GroupNotFound:622,
+    PlatformErrorCodes.GroupMemberBanned:623,
+    PlatformErrorCodes.GroupMembershipClosed:624,
+    PlatformErrorCodes.GroupPrivatePostOverrideError:625,
+    PlatformErrorCodes.GroupNameTaken:626,
+    PlatformErrorCodes.GroupDeletionGracePeriodExpired:627,
+    PlatformErrorCodes.GroupCannotCheckBanStatus:628,
+    PlatformErrorCodes.GroupMaximumMembershipCountReached:629,
+    PlatformErrorCodes.NoDestinyAccountForClanPlatform:630,
+    PlatformErrorCodes.AlreadyRequestingMembershipForClanPlatform:631,
+    PlatformErrorCodes.AlreadyClanMemberOnPlatform:632,
+    PlatformErrorCodes.GroupJoinedCannotSetClanName:633,
+    PlatformErrorCodes.GroupLeftCannotClearClanName:634,
+    PlatformErrorCodes.GroupRelationshipRequestPending:635,
+    PlatformErrorCodes.GroupRelationshipRequestBlocked:636,
+    PlatformErrorCodes.GroupRelationshipRequestNotFound:637,
+    PlatformErrorCodes.GroupRelationshipBlockNotFound:638,
+    PlatformErrorCodes.GroupRelationshipNotFound:639,
+    PlatformErrorCodes.GroupAlreadyAllied:641,
+    PlatformErrorCodes.GroupAlreadyMember:642,
+    PlatformErrorCodes.GroupRelationshipAlreadyExists:643,
+    PlatformErrorCodes.InvalidGroupTypesForRelationshipRequest:644,
+    PlatformErrorCodes.GroupAtMaximumAlliances:646,
+    PlatformErrorCodes.GroupCannotSetClanOnlySettings:647,
+    PlatformErrorCodes.ClanCannotSetTwoDefaultPostTypes:648,
+    PlatformErrorCodes.GroupMemberInvalidMemberType:649,
+    PlatformErrorCodes.GroupInvalidPlatformType:650,
+    PlatformErrorCodes.GroupMemberInvalidSort:651,
+    PlatformErrorCodes.GroupInvalidResolveState:652,
+    PlatformErrorCodes.ClanAlreadyEnabledForPlatform:653,
+    PlatformErrorCodes.ClanNotEnabledForPlatform:654,
+    PlatformErrorCodes.ClanEnabledButCouldNotJoinNoAccount:655,
+    PlatformErrorCodes.ClanEnabledButCouldNotJoinAlreadyMember:656,
+    PlatformErrorCodes.ClanCannotJoinNoCredential:657,
+    PlatformErrorCodes.NoClanMembershipForPlatform:658,
+    PlatformErrorCodes.GroupToGroupFollowLimitReached:659,
+    PlatformErrorCodes.ChildGroupAlreadyInAlliance:660,
+    PlatformErrorCodes.OwnerGroupAlreadyInAlliance:661,
+    PlatformErrorCodes.AllianceOwnerCannotJoinAlliance:662,
+    PlatformErrorCodes.GroupNotInAlliance:663,
+    PlatformErrorCodes.ChildGroupCannotInviteToAlliance:664,
+    PlatformErrorCodes.GroupToGroupAlreadyFollowed:665,
+    PlatformErrorCodes.GroupToGroupNotFollowing:666,
+    PlatformErrorCodes.ClanMaximumMembershipReached:667,
+    PlatformErrorCodes.ClanNameNotValid:668,
+    PlatformErrorCodes.ClanNameNotValidError:669,
+    PlatformErrorCodes.AllianceOwnerNotDefined:670,
+    PlatformErrorCodes.AllianceChildNotDefined:671,
+    PlatformErrorCodes.ClanCultureIllegalCharacters:672,
+    PlatformErrorCodes.ClanTagIllegalCharacters:673,
+    PlatformErrorCodes.ClanRequiresInvitation:674,
+    PlatformErrorCodes.ClanMembershipClosed:675,
+    PlatformErrorCodes.ClanInviteAlreadyMember:676,
+    PlatformErrorCodes.GroupInviteAlreadyMember:677,
+    PlatformErrorCodes.GroupJoinApprovalRequired:678,
+    PlatformErrorCodes.ClanTagRequired:679,
+    PlatformErrorCodes.GroupNameCannotStartOrEndWithWhiteSpace:680,
+    PlatformErrorCodes.ClanCallsignCannotStartOrEndWithWhiteSpace:681,
+    PlatformErrorCodes.ClanMigrationFailed:682,
+    PlatformErrorCodes.ClanNotEnabledAlreadyMemberOfAnotherClan:683,
+    PlatformErrorCodes.GroupModerationNotPermittedOnNonMembers:684,
+    PlatformErrorCodes.ClanCreationInWorldServerFailed:685,
+    PlatformErrorCodes.ClanNotFound:686,
+    PlatformErrorCodes.ClanMembershipLevelDoesNotPermitThatAction:687,
+    PlatformErrorCodes.ClanMemberNotFound:688,
+    PlatformErrorCodes.ClanMissingMembershipApprovers:689,
+    PlatformErrorCodes.ClanInWrongStateForRequestedAction:690,
+    PlatformErrorCodes.ClanNameAlreadyUsed:691,
+    PlatformErrorCodes.ClanTooFewMembers:692,
+    PlatformErrorCodes.ClanInfoCannotBeWhitespace:693,
+    PlatformErrorCodes.GroupCultureThrottle:694,
+    PlatformErrorCodes.ClanTargetDisallowsInvites:695,
+    PlatformErrorCodes.ClanInvalidOperation:696,
+    PlatformErrorCodes.ClanFounderCannotLeaveWithoutAbdication:697,
+    PlatformErrorCodes.ClanNameReserved:698,
+    PlatformErrorCodes.ClanApplicantInClanSoNowInvited:699,
+    PlatformErrorCodes.ActivitiesUnknownException:701,
+    PlatformErrorCodes.ActivitiesParameterNull:702,
+    PlatformErrorCodes.ActivityCountsDiabled:703,
+    PlatformErrorCodes.ActivitySearchInvalidParameters:704,
+    PlatformErrorCodes.ActivityPermissionDenied:705,
+    PlatformErrorCodes.ShareAlreadyShared:706,
+    PlatformErrorCodes.ActivityLoggingDisabled:707,
+    PlatformErrorCodes.ClanRequiresExistingDestinyAccount:750,
+    PlatformErrorCodes.ClanNameRestricted:751,
+    PlatformErrorCodes.ClanCreationBan:752,
+    PlatformErrorCodes.ClanCreationTenureRequirementsNotMet:753,
+    PlatformErrorCodes.ItemAlreadyFollowed:801,
+    PlatformErrorCodes.ItemNotFollowed:802,
+    PlatformErrorCodes.CannotFollowSelf:803,
+    PlatformErrorCodes.GroupFollowLimitExceeded:804,
+    PlatformErrorCodes.TagFollowLimitExceeded:805,
+    PlatformErrorCodes.UserFollowLimitExceeded:806,
+    PlatformErrorCodes.FollowUnsupportedEntityType:807,
+    PlatformErrorCodes.NoValidTagsInList:900,
+    PlatformErrorCodes.BelowMinimumSuggestionLength:901,
+    PlatformErrorCodes.CannotGetSuggestionsOnMultipleTagsSimultaneously:902,
+    PlatformErrorCodes.NotAValidPartialTag:903,
+    PlatformErrorCodes.TagSuggestionsUnknownSqlResult:904,
+    PlatformErrorCodes.TagsUnableToLoadPopularTagsFromDatabase:905,
+    PlatformErrorCodes.TagInvalid:906,
+    PlatformErrorCodes.TagNotFound:907,
+    PlatformErrorCodes.SingleTagExpected:908,
+    PlatformErrorCodes.TagsExceededMaximumPerItem:909,
+    PlatformErrorCodes.IgnoreInvalidParameters:1000,
+    PlatformErrorCodes.IgnoreSqlException:1001,
+    PlatformErrorCodes.IgnoreErrorRetrievingGroupPermissions:1002,
+    PlatformErrorCodes.IgnoreErrorInsufficientPermission:1003,
+    PlatformErrorCodes.IgnoreErrorRetrievingItem:1004,
+    PlatformErrorCodes.IgnoreCannotIgnoreSelf:1005,
+    PlatformErrorCodes.IgnoreIllegalType:1006,
+    PlatformErrorCodes.IgnoreNotFound:1007,
+    PlatformErrorCodes.IgnoreUserGloballyIgnored:1008,
+    PlatformErrorCodes.IgnoreUserIgnored:1009,
+    PlatformErrorCodes.TargetUserIgnored:1010,
+    PlatformErrorCodes.NotificationSettingInvalid:1100,
+    PlatformErrorCodes.PsnApiExpiredAccessToken:1204,
+    PlatformErrorCodes.PSNExForbidden:1205,
+    PlatformErrorCodes.PSNExSystemDisabled:1218,
+    PlatformErrorCodes.PsnApiErrorCodeUnknown:1223,
+    PlatformErrorCodes.PsnApiErrorWebException:1224,
+    PlatformErrorCodes.PsnApiBadRequest:1225,
+    PlatformErrorCodes.PsnApiAccessTokenRequired:1226,
+    PlatformErrorCodes.PsnApiInvalidAccessToken:1227,
+    PlatformErrorCodes.PsnApiBannedUser:1229,
+    PlatformErrorCodes.PsnApiAccountUpgradeRequired:1230,
+    PlatformErrorCodes.PsnApiServiceTemporarilyUnavailable:1231,
+    PlatformErrorCodes.PsnApiServerBusy:1232,
+    PlatformErrorCodes.PsnApiUnderMaintenance:1233,
+    PlatformErrorCodes.PsnApiProfileUserNotFound:1234,
+    PlatformErrorCodes.PsnApiProfilePrivacyRestriction:1235,
+    PlatformErrorCodes.PsnApiProfileUnderMaintenance:1236,
+    PlatformErrorCodes.PsnApiAccountAttributeMissing:1237,
+    PlatformErrorCodes.PsnApiNoPermission:1238,
+    PlatformErrorCodes.PsnApiTargetUserBlocked:1239,
+    PlatformErrorCodes.PsnApiJwksMissing:1240,
+    PlatformErrorCodes.PsnApiJwtMalformedHeader:1241,
+    PlatformErrorCodes.PsnApiJwtMalformedPayload:1242,
+    PlatformErrorCodes.XblExSystemDisabled:1300,
+    PlatformErrorCodes.XblExUnknownError:1301,
+    PlatformErrorCodes.XblApiErrorWebException:1302,
+    PlatformErrorCodes.XblStsTokenInvalid:1303,
+    PlatformErrorCodes.XblStsMissingToken:1304,
+    PlatformErrorCodes.XblStsExpiredToken:1305,
+    PlatformErrorCodes.XblAccessToTheSandboxDenied:1306,
+    PlatformErrorCodes.XblMsaResponseMissing:1307,
+    PlatformErrorCodes.XblMsaAccessTokenExpired:1308,
+    PlatformErrorCodes.XblMsaInvalidRequest:1309,
+    PlatformErrorCodes.XblMsaFriendsRequireSignIn:1310,
+    PlatformErrorCodes.XblUserActionRequired:1311,
+    PlatformErrorCodes.XblParentalControls:1312,
+    PlatformErrorCodes.XblDeveloperAccount:1313,
+    PlatformErrorCodes.XblUserTokenExpired:1314,
+    PlatformErrorCodes.XblUserTokenInvalid:1315,
+    PlatformErrorCodes.XblOffline:1316,
+    PlatformErrorCodes.XblUnknownErrorCode:1317,
+    PlatformErrorCodes.XblMsaInvalidGrant:1318,
+    PlatformErrorCodes.ReportNotYetResolved:1400,
+    PlatformErrorCodes.ReportOverturnDoesNotChangeDecision:1401,
+    PlatformErrorCodes.ReportNotFound:1402,
+    PlatformErrorCodes.ReportAlreadyReported:1403,
+    PlatformErrorCodes.ReportInvalidResolution:1404,
+    PlatformErrorCodes.ReportNotAssignedToYou:1405,
+    PlatformErrorCodes.LegacyGameStatsSystemDisabled:1500,
+    PlatformErrorCodes.LegacyGameStatsUnknownError:1501,
+    PlatformErrorCodes.LegacyGameStatsMalformedSneakerNetCode:1502,
+    PlatformErrorCodes.DestinyAccountAcquisitionFailure:1600,
+    PlatformErrorCodes.DestinyAccountNotFound:1601,
+    PlatformErrorCodes.DestinyBuildStatsDatabaseError:1602,
+    PlatformErrorCodes.DestinyCharacterStatsDatabaseError:1603,
+    PlatformErrorCodes.DestinyPvPStatsDatabaseError:1604,
+    PlatformErrorCodes.DestinyPvEStatsDatabaseError:1605,
+    PlatformErrorCodes.DestinyGrimoireStatsDatabaseError:1606,
+    PlatformErrorCodes.DestinyStatsParameterMembershipTypeParseError:1607,
+    PlatformErrorCodes.DestinyStatsParameterMembershipIdParseError:1608,
+    PlatformErrorCodes.DestinyStatsParameterRangeParseError:1609,
+    PlatformErrorCodes.DestinyStringItemHashNotFound:1610,
+    PlatformErrorCodes.DestinyStringSetNotFound:1611,
+    PlatformErrorCodes.DestinyContentLookupNotFoundForKey:1612,
+    PlatformErrorCodes.DestinyContentItemNotFound:1613,
+    PlatformErrorCodes.DestinyContentSectionNotFound:1614,
+    PlatformErrorCodes.DestinyContentPropertyNotFound:1615,
+    PlatformErrorCodes.DestinyContentConfigNotFound:1616,
+    PlatformErrorCodes.DestinyContentPropertyBucketValueNotFound:1617,
+    PlatformErrorCodes.DestinyUnexpectedError:1618,
+    PlatformErrorCodes.DestinyInvalidAction:1619,
+    PlatformErrorCodes.DestinyCharacterNotFound:1620,
+    PlatformErrorCodes.DestinyInvalidFlag:1621,
+    PlatformErrorCodes.DestinyInvalidRequest:1622,
+    PlatformErrorCodes.DestinyItemNotFound:1623,
+    PlatformErrorCodes.DestinyInvalidCustomizationChoices:1624,
+    PlatformErrorCodes.DestinyVendorItemNotFound:1625,
+    PlatformErrorCodes.DestinyInternalError:1626,
+    PlatformErrorCodes.DestinyVendorNotFound:1627,
+    PlatformErrorCodes.DestinyRecentActivitiesDatabaseError:1628,
+    PlatformErrorCodes.DestinyItemBucketNotFound:1629,
+    PlatformErrorCodes.DestinyInvalidMembershipType:1630,
+    PlatformErrorCodes.DestinyVersionIncompatibility:1631,
+    PlatformErrorCodes.DestinyItemAlreadyInInventory:1632,
+    PlatformErrorCodes.DestinyBucketNotFound:1633,
+    PlatformErrorCodes.DestinyCharacterNotInTower:1634,
+    PlatformErrorCodes.DestinyCharacterNotLoggedIn:1635,
+    PlatformErrorCodes.DestinyDefinitionsNotLoaded:1636,
+    PlatformErrorCodes.DestinyInventoryFull:1637,
+    PlatformErrorCodes.DestinyItemFailedLevelCheck:1638,
+    PlatformErrorCodes.DestinyItemFailedUnlockCheck:1639,
+    PlatformErrorCodes.DestinyItemUnequippable:1640,
+    PlatformErrorCodes.DestinyItemUniqueEquipRestricted:1641,
+    PlatformErrorCodes.DestinyNoRoomInDestination:1642,
+    PlatformErrorCodes.DestinyServiceFailure:1643,
+    PlatformErrorCodes.DestinyServiceRetired:1644,
+    PlatformErrorCodes.DestinyTransferFailed:1645,
+    PlatformErrorCodes.DestinyTransferNotFoundForSourceBucket:1646,
+    PlatformErrorCodes.DestinyUnexpectedResultInVendorTransferCheck:1647,
+    PlatformErrorCodes.DestinyUniquenessViolation:1648,
+    PlatformErrorCodes.DestinyErrorDeserializationFailure:1649,
+    PlatformErrorCodes.DestinyValidAccountTicketRequired:1650,
+    PlatformErrorCodes.DestinyShardRelayClientTimeout:1651,
+    PlatformErrorCodes.DestinyShardRelayProxyTimeout:1652,
+    PlatformErrorCodes.DestinyPGCRNotFound:1653,
+    PlatformErrorCodes.DestinyAccountMustBeOffline:1654,
+    PlatformErrorCodes.DestinyCanOnlyEquipInGame:1655,
+    PlatformErrorCodes.DestinyCannotPerformActionOnEquippedItem:1656,
+    PlatformErrorCodes.DestinyQuestAlreadyCompleted:1657,
+    PlatformErrorCodes.DestinyQuestAlreadyTracked:1658,
+    PlatformErrorCodes.DestinyTrackableQuestsFull:1659,
+    PlatformErrorCodes.DestinyItemNotTransferrable:1660,
+    PlatformErrorCodes.DestinyVendorPurchaseNotAllowed:1661,
+    PlatformErrorCodes.DestinyContentVersionMismatch:1662,
+    PlatformErrorCodes.DestinyItemActionForbidden:1663,
+    PlatformErrorCodes.DestinyRefundInvalid:1664,
+    PlatformErrorCodes.DestinyPrivacyRestriction:1665,
+    PlatformErrorCodes.DestinyActionInsufficientPrivileges:1666,
+    PlatformErrorCodes.DestinyInvalidClaimException:1667,
+    PlatformErrorCodes.DestinyLegacyPlatformRestricted:1668,
+    PlatformErrorCodes.DestinyLegacyPlatformInUse:1669,
+    PlatformErrorCodes.DestinyLegacyPlatformInaccessible:1670,
+    PlatformErrorCodes.DestinyCannotPerformActionAtThisLocation:1671,
+    PlatformErrorCodes.DestinyThrottledByGameServer:1672,
+    PlatformErrorCodes.DestinyItemNotTransferrableHasSideEffects:1673,
+    PlatformErrorCodes.DestinyItemLocked:1674,
+    PlatformErrorCodes.DestinyCannotAffordMaterialRequirements:1675,
+    PlatformErrorCodes.DestinyFailedPlugInsertionRules:1676,
+    PlatformErrorCodes.DestinySocketNotFound:1677,
+    PlatformErrorCodes.DestinySocketActionNotAllowed:1678,
+    PlatformErrorCodes.DestinySocketAlreadyHasPlug:1679,
+    PlatformErrorCodes.DestinyPlugItemNotAvailable:1680,
+    PlatformErrorCodes.DestinyCharacterLoggedInNotAllowed:1681,
+    PlatformErrorCodes.DestinyPublicAccountNotAccessible:1682,
+    PlatformErrorCodes.DestinyClaimsItemAlreadyClaimed:1683,
+    PlatformErrorCodes.DestinyClaimsNoInventorySpace:1684,
+    PlatformErrorCodes.DestinyClaimsRequiredLevelNotMet:1685,
+    PlatformErrorCodes.DestinyClaimsInvalidState:1686,
+    PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards:1687,
+    PlatformErrorCodes.DestinyDirectBabelClientTimeout:1688,
+    PlatformErrorCodes.FbInvalidRequest:1800,
+    PlatformErrorCodes.FbRedirectMismatch:1801,
+    PlatformErrorCodes.FbAccessDenied:1802,
+    PlatformErrorCodes.FbUnsupportedResponseType:1803,
+    PlatformErrorCodes.FbInvalidScope:1804,
+    PlatformErrorCodes.FbUnsupportedGrantType:1805,
+    PlatformErrorCodes.FbInvalidGrant:1806,
+    PlatformErrorCodes.InvitationExpired:1900,
+    PlatformErrorCodes.InvitationUnknownType:1901,
+    PlatformErrorCodes.InvitationInvalidResponseStatus:1902,
+    PlatformErrorCodes.InvitationInvalidType:1903,
+    PlatformErrorCodes.InvitationAlreadyPending:1904,
+    PlatformErrorCodes.InvitationInsufficientPermission:1905,
+    PlatformErrorCodes.InvitationInvalidCode:1906,
+    PlatformErrorCodes.InvitationInvalidTargetState:1907,
+    PlatformErrorCodes.InvitationCannotBeReactivated:1908,
+    PlatformErrorCodes.InvitationNoRecipients:1910,
+    PlatformErrorCodes.InvitationGroupCannotSendToSelf:1911,
+    PlatformErrorCodes.InvitationTooManyRecipients:1912,
+    PlatformErrorCodes.InvitationInvalid:1913,
+    PlatformErrorCodes.InvitationNotFound:1914,
+    PlatformErrorCodes.TokenInvalid:2000,
+    PlatformErrorCodes.TokenBadFormat:2001,
+    PlatformErrorCodes.TokenAlreadyClaimed:2002,
+    PlatformErrorCodes.TokenAlreadyClaimedSelf:2003,
+    PlatformErrorCodes.TokenThrottling:2004,
+    PlatformErrorCodes.TokenUnknownRedemptionFailure:2005,
+    PlatformErrorCodes.TokenPurchaseClaimFailedAfterTokenClaimed:2006,
+    PlatformErrorCodes.TokenUserAlreadyOwnsOffer:2007,
+    PlatformErrorCodes.TokenInvalidOfferKey:2008,
+    PlatformErrorCodes.TokenEmailNotValidated:2009,
+    PlatformErrorCodes.TokenProvisioningBadVendorOrOffer:2010,
+    PlatformErrorCodes.TokenPurchaseHistoryUnknownError:2011,
+    PlatformErrorCodes.TokenThrottleStateUnknownError:2012,
+    PlatformErrorCodes.TokenUserAgeNotVerified:2013,
+    PlatformErrorCodes.TokenExceededOfferMaximum:2014,
+    PlatformErrorCodes.TokenNoAvailableUnlocks:2015,
+    PlatformErrorCodes.TokenMarketplaceInvalidPlatform:2016,
+    PlatformErrorCodes.TokenNoMarketplaceCodesFound:2017,
+    PlatformErrorCodes.TokenOfferNotAvailableForRedemption:2018,
+    PlatformErrorCodes.TokenUnlockPartialFailure:2019,
+    PlatformErrorCodes.TokenMarketplaceInvalidRegion:2020,
+    PlatformErrorCodes.TokenOfferExpired:2021,
+    PlatformErrorCodes.RAFExceededMaximumReferrals:2022,
+    PlatformErrorCodes.RAFDuplicateBond:2023,
+    PlatformErrorCodes.RAFNoValidVeteranDestinyMembershipsFound:2024,
+    PlatformErrorCodes.RAFNotAValidVeteranUser:2025,
+    PlatformErrorCodes.RAFCodeAlreadyClaimedOrNotFound:2026,
+    PlatformErrorCodes.RAFMismatchedDestinyMembershipType:2027,
+    PlatformErrorCodes.RAFUnableToAccessPurchaseHistory:2028,
+    PlatformErrorCodes.RAFUnableToCreateBond:2029,
+    PlatformErrorCodes.RAFUnableToFindBond:2030,
+    PlatformErrorCodes.RAFUnableToRemoveBond:2031,
+    PlatformErrorCodes.RAFCannotBondToSelf:2032,
+    PlatformErrorCodes.RAFInvalidPlatform:2033,
+    PlatformErrorCodes.RAFGenerateThrottled:2034,
+    PlatformErrorCodes.RAFUnableToCreateBondVersionMismatch:2035,
+    PlatformErrorCodes.RAFUnableToRemoveBondVersionMismatch:2036,
+    PlatformErrorCodes.RAFRedeemThrottled:2037,
+    PlatformErrorCodes.NoAvailableDiscountCode:2038,
+    PlatformErrorCodes.DiscountAlreadyClaimed:2039,
+    PlatformErrorCodes.DiscountClaimFailure:2040,
+    PlatformErrorCodes.DiscountConfigurationFailure:2041,
+    PlatformErrorCodes.DiscountGenerationFailure:2042,
+    PlatformErrorCodes.DiscountAlreadyExists:2043,
+    PlatformErrorCodes.TokenRequiresCredentialXuid:2044,
+    PlatformErrorCodes.TokenRequiresCredentialPsnid:2045,
+    PlatformErrorCodes.OfferRequired:2046,
+    PlatformErrorCodes.UnknownEververseHistoryError:2047,
+    PlatformErrorCodes.MissingEververseHistoryError:2048,
+    PlatformErrorCodes.BungieRewardEmailStateInvalid:2049,
+    PlatformErrorCodes.BungieRewardNotYetClaimable:2050,
+    PlatformErrorCodes.MissingOfferConfig:2051,
+    PlatformErrorCodes.RAFQuestEntitlementRequiresBnet:2052,
+    PlatformErrorCodes.RAFQuestEntitlementTransportFailure:2053,
+    PlatformErrorCodes.RAFQuestEntitlementUnknownFailure:2054,
+    PlatformErrorCodes.RAFVeteranRewardUnknownFailure:2055,
+    PlatformErrorCodes.RAFTooEarlyToCancelBond:2056,
+    PlatformErrorCodes.LoyaltyRewardAlreadyRedeemed:2057,
+    PlatformErrorCodes.UnclaimedLoyaltyRewardEntryNotFound:2058,
+    PlatformErrorCodes.PartnerOfferPartialFailure:2059,
+    PlatformErrorCodes.PartnerOfferAlreadyClaimed:2060,
+    PlatformErrorCodes.PartnerOfferSkuNotFound:2061,
+    PlatformErrorCodes.PartnerOfferSkuExpired:2062,
+    PlatformErrorCodes.PartnerOfferPermissionFailure:2063,
+    PlatformErrorCodes.PartnerOfferNoDestinyAccount:2064,
+    PlatformErrorCodes.PartnerOfferApplyDataNotFound:2065,
+    PlatformErrorCodes.ApiExceededMaxKeys:2100,
+    PlatformErrorCodes.ApiInvalidOrExpiredKey:2101,
+    PlatformErrorCodes.ApiKeyMissingFromRequest:2102,
+    PlatformErrorCodes.ApplicationDisabled:2103,
+    PlatformErrorCodes.ApplicationExceededMax:2104,
+    PlatformErrorCodes.ApplicationDisallowedByScope:2105,
+    PlatformErrorCodes.AuthorizationCodeInvalid:2106,
+    PlatformErrorCodes.OriginHeaderDoesNotMatchKey:2107,
+    PlatformErrorCodes.AccessNotPermittedByApplicationScope:2108,
+    PlatformErrorCodes.ApplicationNameIsTaken:2109,
+    PlatformErrorCodes.RefreshTokenNotYetValid:2110,
+    PlatformErrorCodes.AccessTokenHasExpired:2111,
+    PlatformErrorCodes.ApplicationTokenFormatNotValid:2112,
+    PlatformErrorCodes.ApplicationNotConfiguredForBungieAuth:2113,
+    PlatformErrorCodes.ApplicationNotConfiguredForOAuth:2114,
+    PlatformErrorCodes.OAuthAccessTokenExpired:2115,
+    PlatformErrorCodes.ApplicationTokenKeyIdDoesNotExist:2116,
+    PlatformErrorCodes.ProvidedTokenNotValidRefreshToken:2117,
+    PlatformErrorCodes.RefreshTokenExpired:2118,
+    PlatformErrorCodes.AuthorizationRecordInvalid:2119,
+    PlatformErrorCodes.TokenPreviouslyRevoked:2120,
+    PlatformErrorCodes.TokenInvalidMembership:2121,
+    PlatformErrorCodes.AuthorizationCodeStale:2122,
+    PlatformErrorCodes.AuthorizationRecordExpired:2123,
+    PlatformErrorCodes.AuthorizationRecordRevoked:2124,
+    PlatformErrorCodes.AuthorizationRecordInactiveApiKey:2125,
+    PlatformErrorCodes.AuthorizationRecordApiKeyMatching:2126,
+    PlatformErrorCodes.PartnershipInvalidType:2200,
+    PlatformErrorCodes.PartnershipValidationError:2201,
+    PlatformErrorCodes.PartnershipValidationTimeout:2202,
+    PlatformErrorCodes.PartnershipAccessFailure:2203,
+    PlatformErrorCodes.PartnershipAccountInvalid:2204,
+    PlatformErrorCodes.PartnershipGetAccountInfoFailure:2205,
+    PlatformErrorCodes.PartnershipDisabled:2206,
+    PlatformErrorCodes.PartnershipAlreadyExists:2207,
+    PlatformErrorCodes.CommunityStreamingUnavailable:2300,
+    PlatformErrorCodes.TwitchNotLinked:2500,
+    PlatformErrorCodes.TwitchAccountNotFound:2501,
+    PlatformErrorCodes.TwitchCouldNotLoadDestinyInfo:2502,
+    PlatformErrorCodes.TwitchCouldNotRegisterUser:2503,
+    PlatformErrorCodes.TwitchCouldNotUnregisterUser:2504,
+    PlatformErrorCodes.TwitchRequiresRelinking:2505,
+    PlatformErrorCodes.TwitchNoPlatformChosen:2506,
+    PlatformErrorCodes.TrendingCategoryNotFound:2600,
+    PlatformErrorCodes.TrendingEntryTypeNotSupported:2601,
+    PlatformErrorCodes.ReportOffenderNotInPgcr:2700,
+    PlatformErrorCodes.ReportRequestorNotInPgcr:2701,
+    PlatformErrorCodes.ReportSubmissionFailed:2702,
+    PlatformErrorCodes.ReportCannotReportSelf:2703,
+    PlatformErrorCodes.AwaTypeDisabled:2800,
+    PlatformErrorCodes.AwaTooManyPendingRequests:2801,
+    PlatformErrorCodes.AwaTheFeatureRequiresARegisteredDevice:2802,
+    PlatformErrorCodes.AwaRequestWasUnansweredForTooLong:2803,
+    PlatformErrorCodes.AwaWriteRequestMissingOrInvalidToken:2804,
+    PlatformErrorCodes.AwaWriteRequestTokenExpired:2805,
+    PlatformErrorCodes.AwaWriteRequestTokenUsageLimitReached:2806,
+    PlatformErrorCodes.SteamWebApiError:2900,
+    PlatformErrorCodes.SteamWebNullResponseError:2901,
+    PlatformErrorCodes.SteamAccountRequired:2902,
+    PlatformErrorCodes.SteamNotAuthorized:2903,
+    PlatformErrorCodes.ClanFireteamNotFound:3000,
+    PlatformErrorCodes.ClanFireteamAddNoAlternatesForImmediate:3001,
+    PlatformErrorCodes.ClanFireteamFull:3002,
+    PlatformErrorCodes.ClanFireteamAltFull:3003,
+    PlatformErrorCodes.ClanFireteamBlocked:3004,
+    PlatformErrorCodes.ClanFireteamPlayerEntryNotFound:3005,
+    PlatformErrorCodes.ClanFireteamPermissions:3006,
+    PlatformErrorCodes.ClanFireteamInvalidPlatform:3007,
+    PlatformErrorCodes.ClanFireteamCannotAdjustSlotCount:3008,
+    PlatformErrorCodes.ClanFireteamInvalidPlayerPlatform:3009,
+    PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotEnoughPlayers:3010,
+    PlatformErrorCodes.ClanFireteamGameInvitesNotSupportForPlatform:3011,
+    PlatformErrorCodes.ClanFireteamPlatformInvitePreqFailure:3012,
+    PlatformErrorCodes.ClanFireteamInvalidAuthContext:3013,
+    PlatformErrorCodes.ClanFireteamInvalidAuthProviderPsn:3014,
+    PlatformErrorCodes.ClanFireteamPs4SessionFull:3015,
+    PlatformErrorCodes.ClanFireteamInvalidAuthToken:3016,
+    PlatformErrorCodes.ClanFireteamScheduledFireteamsDisabled:3017,
+    PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotScheduledYet:3018,
+    PlatformErrorCodes.ClanFireteamNotReadyForInvitesClosed:3019,
+    PlatformErrorCodes.ClanFireteamScheduledFireteamsRequireAdminPermissions:3020,
+    PlatformErrorCodes.ClanFireteamNonPublicMustHaveClan:3021,
+    PlatformErrorCodes.ClanFireteamPublicCreationRestriction:3022,
+    PlatformErrorCodes.ClanFireteamAlreadyJoined:3023,
+    PlatformErrorCodes.ClanFireteamScheduledFireteamsRange:3024,
+    PlatformErrorCodes.ClanFireteamPublicCreationRestrictionExtended:3025,
+    PlatformErrorCodes.ClanFireteamExpired:3026,
+    PlatformErrorCodes.ClanFireteamInvalidAuthProvider:3027,
+    PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid:3028,
+    PlatformErrorCodes.ClanFireteamThrottle:3029,
+    PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams:3030,
+    PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams:3031,
+    PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified:3032,
+    PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:3200,
+    PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:3201,
+    PlatformErrorCodes.CrossSaveNoOverriddenPlatforms:3202,
+    PlatformErrorCodes.CrossSavePrimaryAccountNotFound:3203,
+    PlatformErrorCodes.CrossSaveRequestInvalid:3204,
+    PlatformErrorCodes.CrossSaveBungieAccountValidationFailure:3206,
+    PlatformErrorCodes.CrossSaveOverriddenPlatformNotAllowed:3207,
+    PlatformErrorCodes.CrossSaveThresholdExceeded:3208,
+    PlatformErrorCodes.CrossSaveIncompatibleMembershipType:3209,
+    PlatformErrorCodes.CrossSaveCouldNotFindLinkedAccountForMembershipType:3210,
+    PlatformErrorCodes.CrossSaveCouldNotCreateDestinyProfileForMembershipType:3211,
+    PlatformErrorCodes.CrossSaveErrorCreatingDestinyProfileForMembershipType:3212,
+    PlatformErrorCodes.CrossSaveCannotOverrideSelf:3213,
+    PlatformErrorCodes.CrossSaveRecentSilverPurchase:3214,
+    PlatformErrorCodes.CrossSaveSilverBalanceNegative:3215,
+    PlatformErrorCodes.CrossSaveAccountNotAuthenticated:3216,
+    PlatformErrorCodes.ErrorOneAccountAlreadyActive:3217,
+    PlatformErrorCodes.ErrorOneAccountDestinyRestriction:3218,
+    PlatformErrorCodes.CrossSaveMustMigrateToSteam:3219,
+    PlatformErrorCodes.CrossSaveSteamAlreadyPaired:3220,
+    PlatformErrorCodes.CrossSaveCannotPairJustSteamAndBlizzard:3221,
+    PlatformErrorCodes.CrossSaveCannotPairSteamAloneBeforeShadowkeep:3222,
+    PlatformErrorCodes.AuthVerificationNotLinkedToAccount:3300,
+    PlatformErrorCodes.PCMigrationMissingBlizzard:3400,
+    PlatformErrorCodes.PCMigrationMissingSteam:3401,
+    PlatformErrorCodes.PCMigrationInvalidBlizzard:3402,
+    PlatformErrorCodes.PCMigrationInvalidSteam:3403,
+    PlatformErrorCodes.PCMigrationUnknownFailure:3404,
+    PlatformErrorCodes.PCMigrationUnknownException:3405,
+    PlatformErrorCodes.PCMigrationNotLinked:3406,
+    PlatformErrorCodes.PCMigrationAccountsAlreadyUsed:3407,
+    PlatformErrorCodes.PCMigrationStepFailed:3408,
+    PlatformErrorCodes.PCMigrationInvalidBlizzardCrossSaveState:3409,
+    PlatformErrorCodes.PCMigrationDestinationBanned:3410,
+    PlatformErrorCodes.PCMigrationDestinyFailure:3411,
+    PlatformErrorCodes.PCMigrationSilverTransferFailed:3412,
+    PlatformErrorCodes.PCMigrationEntitlementTransferFailed:3413,
+    PlatformErrorCodes.PCMigrationCannotStompClanFounder:3414,
+    PlatformErrorCodes.UnsupportedBrowser:3500,
+    PlatformErrorCodes.StadiaAccountRequired:3600,
+    PlatformErrorCodes.ErrorPhoneValidationTooManyUses:3702,
+    PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone:3703,
+    PlatformErrorCodes.ErrorPhoneValidationCodeInvalid:3705,
+    PlatformErrorCodes.ErrorPhoneValidationBanned:3706,
+    PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlySent:3707,
+    PlatformErrorCodes.ErrorPhoneValidationCodeExpired:3708,
+    PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType:3709,
+    PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked:3710,
+    PlatformErrorCodes.ApplePushErrorUnknown:3800,
+    PlatformErrorCodes.ApplePushErrorNull:3801,
+    PlatformErrorCodes.ApplePushErrorTimeout:3802,
+    PlatformErrorCodes.ApplePushBadRequest:3803,
+    PlatformErrorCodes.ApplePushFailedAuth:3804,
+    PlatformErrorCodes.ApplePushThrottled:3805,
+    PlatformErrorCodes.ApplePushServiceUnavailable:3806,
+    PlatformErrorCodes.NotAnImageOrVideo:3807,
+    PlatformErrorCodes.ErrorBungieFriendsBlockFailed:3900,
+    PlatformErrorCodes.ErrorBungieFriendsAutoReject:3901,
+    PlatformErrorCodes.ErrorBungieFriendsNoRequestFound:3902,
+    PlatformErrorCodes.ErrorBungieFriendsAlreadyFriends:3903,
+    PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest:3904,
+    PlatformErrorCodes.ErrorBungieFriendsUnableToRemove:3905,
+    PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget:3906,
+    PlatformErrorCodes.ErrorBungieFriendsSelf:3907,
+    PlatformErrorCodes.ErrorBungieBlockSelf:3908,
+    PlatformErrorCodes.ErrorBungieFriendsListFull:3910,
+    PlatformErrorCodes.ErrorBungieBlockListFull:3911,
+};
+const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, PlatformErrorCodes>{
+    0:PlatformErrorCodes.None,
+    1:PlatformErrorCodes.Success,
+    2:PlatformErrorCodes.TransportException,
+    3:PlatformErrorCodes.UnhandledException,
+    4:PlatformErrorCodes.NotImplemented,
+    5:PlatformErrorCodes.SystemDisabled,
+    6:PlatformErrorCodes.FailedToLoadAvailableLocalesConfiguration,
+    7:PlatformErrorCodes.ParameterParseFailure,
+    8:PlatformErrorCodes.ParameterInvalidRange,
+    9:PlatformErrorCodes.BadRequest,
+    10:PlatformErrorCodes.AuthenticationInvalid,
+    11:PlatformErrorCodes.DataNotFound,
+    12:PlatformErrorCodes.InsufficientPrivileges,
+    13:PlatformErrorCodes.Duplicate,
+    14:PlatformErrorCodes.UnknownSqlResult,
+    15:PlatformErrorCodes.ValidationError,
+    16:PlatformErrorCodes.ValidationMissingFieldError,
+    17:PlatformErrorCodes.ValidationInvalidInputError,
+    18:PlatformErrorCodes.InvalidParameters,
+    19:PlatformErrorCodes.ParameterNotFound,
+    20:PlatformErrorCodes.UnhandledHttpException,
+    21:PlatformErrorCodes.NotFound,
+    22:PlatformErrorCodes.WebAuthModuleAsyncFailed,
+    23:PlatformErrorCodes.InvalidReturnValue,
+    24:PlatformErrorCodes.UserBanned,
+    25:PlatformErrorCodes.InvalidPostBody,
+    26:PlatformErrorCodes.MissingPostBody,
+    27:PlatformErrorCodes.ExternalServiceTimeout,
+    28:PlatformErrorCodes.ValidationLengthError,
+    29:PlatformErrorCodes.ValidationRangeError,
+    30:PlatformErrorCodes.JsonDeserializationError,
+    31:PlatformErrorCodes.ThrottleLimitExceeded,
+    32:PlatformErrorCodes.ValidationTagError,
+    33:PlatformErrorCodes.ValidationProfanityError,
+    34:PlatformErrorCodes.ValidationUrlFormatError,
+    35:PlatformErrorCodes.ThrottleLimitExceededMinutes,
+    36:PlatformErrorCodes.ThrottleLimitExceededMomentarily,
+    37:PlatformErrorCodes.ThrottleLimitExceededSeconds,
+    38:PlatformErrorCodes.ExternalServiceUnknown,
+    39:PlatformErrorCodes.ValidationWordLengthError,
+    40:PlatformErrorCodes.ValidationInvisibleUnicode,
+    41:PlatformErrorCodes.ValidationBadNames,
+    42:PlatformErrorCodes.ExternalServiceFailed,
+    43:PlatformErrorCodes.ServiceRetired,
+    44:PlatformErrorCodes.UnknownSqlException,
+    45:PlatformErrorCodes.UnsupportedLocale,
+    46:PlatformErrorCodes.InvalidPageNumber,
+    47:PlatformErrorCodes.MaximumPageSizeExceeded,
+    48:PlatformErrorCodes.ServiceUnsupported,
+    49:PlatformErrorCodes.ValidationMaximumUnicodeCombiningCharacters,
+    50:PlatformErrorCodes.ValidationMaximumSequentialCarriageReturns,
+    51:PlatformErrorCodes.PerEndpointRequestThrottleExceeded,
+    52:PlatformErrorCodes.AuthContextCacheAssertion,
+    53:PlatformErrorCodes.ExPlatformStringValidationError,
+    54:PlatformErrorCodes.PerApplicationThrottleExceeded,
+    55:PlatformErrorCodes.PerApplicationAnonymousThrottleExceeded,
+    56:PlatformErrorCodes.PerApplicationAuthenticatedThrottleExceeded,
+    57:PlatformErrorCodes.PerUserThrottleExceeded,
+    58:PlatformErrorCodes.PayloadSignatureVerificationFailure,
+    59:PlatformErrorCodes.InvalidServiceAuthContext,
+    89:PlatformErrorCodes.ObsoleteCredentialType,
+    90:PlatformErrorCodes.UnableToUnPairMobileApp,
+    91:PlatformErrorCodes.UnableToPairMobileApp,
+    92:PlatformErrorCodes.CannotUseMobileAuthWithNonMobileProvider,
+    93:PlatformErrorCodes.MissingDeviceCookie,
+    94:PlatformErrorCodes.FacebookTokenExpired,
+    95:PlatformErrorCodes.AuthTicketRequired,
+    96:PlatformErrorCodes.CookieContextRequired,
+    97:PlatformErrorCodes.UnknownAuthenticationError,
+    98:PlatformErrorCodes.BungieNetAccountCreationRequired,
+    99:PlatformErrorCodes.WebAuthRequired,
+    100:PlatformErrorCodes.ContentUnknownSqlResult,
+    101:PlatformErrorCodes.ContentNeedUniquePath,
+    102:PlatformErrorCodes.ContentSqlException,
+    103:PlatformErrorCodes.ContentNotFound,
+    104:PlatformErrorCodes.ContentSuccessWithTagAddFail,
+    105:PlatformErrorCodes.ContentSearchMissingParameters,
+    106:PlatformErrorCodes.ContentInvalidId,
+    107:PlatformErrorCodes.ContentPhysicalFileDeletionError,
+    108:PlatformErrorCodes.ContentPhysicalFileCreationError,
+    109:PlatformErrorCodes.ContentPerforceSubmissionError,
+    110:PlatformErrorCodes.ContentPerforceInitializationError,
+    111:PlatformErrorCodes.ContentDeploymentPackageNotReadyError,
+    112:PlatformErrorCodes.ContentUploadFailed,
+    113:PlatformErrorCodes.ContentTooManyResults,
+    115:PlatformErrorCodes.ContentInvalidState,
+    116:PlatformErrorCodes.ContentNavigationParentNotFound,
+    117:PlatformErrorCodes.ContentNavigationParentUpdateError,
+    118:PlatformErrorCodes.DeploymentPackageNotEditable,
+    119:PlatformErrorCodes.ContentValidationError,
+    120:PlatformErrorCodes.ContentPropertiesValidationError,
+    121:PlatformErrorCodes.ContentTypeNotFound,
+    122:PlatformErrorCodes.DeploymentPackageNotFound,
+    123:PlatformErrorCodes.ContentSearchInvalidParameters,
+    124:PlatformErrorCodes.ContentItemPropertyAggregationError,
+    125:PlatformErrorCodes.DeploymentPackageFileNotFound,
+    126:PlatformErrorCodes.ContentPerforceFileHistoryNotFound,
+    127:PlatformErrorCodes.ContentAssetZipCreationFailure,
+    128:PlatformErrorCodes.ContentAssetZipCreationBusy,
+    129:PlatformErrorCodes.ContentProjectNotFound,
+    130:PlatformErrorCodes.ContentFolderNotFound,
+    131:PlatformErrorCodes.ContentPackagesInconsistent,
+    132:PlatformErrorCodes.ContentPackagesInvalidState,
+    133:PlatformErrorCodes.ContentPackagesInconsistentType,
+    134:PlatformErrorCodes.ContentCannotDeletePackage,
+    135:PlatformErrorCodes.ContentLockedForChanges,
+    136:PlatformErrorCodes.ContentFileUploadFailed,
+    137:PlatformErrorCodes.ContentNotReviewed,
+    138:PlatformErrorCodes.ContentPermissionDenied,
+    139:PlatformErrorCodes.ContentInvalidExternalUrl,
+    140:PlatformErrorCodes.ContentExternalFileCannotBeImportedLocally,
+    141:PlatformErrorCodes.ContentTagSaveFailure,
+    142:PlatformErrorCodes.ContentPerforceUnmatchedFileError,
+    143:PlatformErrorCodes.ContentPerforceChangelistResultNotFound,
+    144:PlatformErrorCodes.ContentPerforceChangelistFileItemsNotFound,
+    145:PlatformErrorCodes.ContentPerforceInvalidRevisionError,
+    146:PlatformErrorCodes.ContentUnloadedSaveResult,
+    147:PlatformErrorCodes.ContentPropertyInvalidNumber,
+    148:PlatformErrorCodes.ContentPropertyInvalidUrl,
+    149:PlatformErrorCodes.ContentPropertyInvalidDate,
+    150:PlatformErrorCodes.ContentPropertyInvalidSet,
+    151:PlatformErrorCodes.ContentPropertyCannotDeserialize,
+    152:PlatformErrorCodes.ContentRegexValidationFailOnProperty,
+    153:PlatformErrorCodes.ContentMaxLengthFailOnProperty,
+    154:PlatformErrorCodes.ContentPropertyUnexpectedDeserializationError,
+    155:PlatformErrorCodes.ContentPropertyRequired,
+    156:PlatformErrorCodes.ContentCannotCreateFile,
+    157:PlatformErrorCodes.ContentInvalidMigrationFile,
+    158:PlatformErrorCodes.ContentMigrationAlteringProcessedItem,
+    159:PlatformErrorCodes.ContentPropertyDefinitionNotFound,
+    160:PlatformErrorCodes.ContentReviewDataChanged,
+    161:PlatformErrorCodes.ContentRollbackRevisionNotInPackage,
+    162:PlatformErrorCodes.ContentItemNotBasedOnLatestRevision,
+    163:PlatformErrorCodes.ContentUnauthorized,
+    164:PlatformErrorCodes.ContentCannotCreateDeploymentPackage,
+    165:PlatformErrorCodes.ContentUserNotFound,
+    166:PlatformErrorCodes.ContentLocalePermissionDenied,
+    167:PlatformErrorCodes.ContentInvalidLinkToInternalEnvironment,
+    168:PlatformErrorCodes.ContentInvalidBlacklistedContent,
+    169:PlatformErrorCodes.ContentMacroMalformedNoContentId,
+    170:PlatformErrorCodes.ContentMacroMalformedNoTemplateType,
+    171:PlatformErrorCodes.ContentIllegalBNetMembershipId,
+    172:PlatformErrorCodes.ContentLocaleDidNotMatchExpected,
+    173:PlatformErrorCodes.ContentBabelCallFailed,
+    174:PlatformErrorCodes.ContentEnglishPostLiveForbidden,
+    175:PlatformErrorCodes.ContentLocaleEditPermissionDenied,
+    200:PlatformErrorCodes.UserNonUniqueName,
+    201:PlatformErrorCodes.UserManualLinkingStepRequired,
+    202:PlatformErrorCodes.UserCreateUnknownSqlResult,
+    203:PlatformErrorCodes.UserCreateUnknownSqlException,
+    204:PlatformErrorCodes.UserMalformedMembershipId,
+    205:PlatformErrorCodes.UserCannotFindRequestedUser,
+    206:PlatformErrorCodes.UserCannotLoadAccountCredentialLinkInfo,
+    207:PlatformErrorCodes.UserInvalidMobileAppType,
+    208:PlatformErrorCodes.UserMissingMobilePairingInfo,
+    209:PlatformErrorCodes.UserCannotGenerateMobileKeyWhileUsingMobileCredential,
+    210:PlatformErrorCodes.UserGenerateMobileKeyExistingSlotCollision,
+    211:PlatformErrorCodes.UserDisplayNameMissingOrInvalid,
+    212:PlatformErrorCodes.UserCannotLoadAccountProfileData,
+    213:PlatformErrorCodes.UserCannotSaveUserProfileData,
+    214:PlatformErrorCodes.UserEmailMissingOrInvalid,
+    215:PlatformErrorCodes.UserTermsOfUseRequired,
+    216:PlatformErrorCodes.UserCannotCreateNewAccountWhileLoggedIn,
+    217:PlatformErrorCodes.UserCannotResolveCentralAccount,
+    218:PlatformErrorCodes.UserInvalidAvatar,
+    219:PlatformErrorCodes.UserMissingCreatedUserResult,
+    220:PlatformErrorCodes.UserCannotChangeUniqueNameYet,
+    221:PlatformErrorCodes.UserCannotChangeDisplayNameYet,
+    222:PlatformErrorCodes.UserCannotChangeEmail,
+    223:PlatformErrorCodes.UserUniqueNameMustStartWithLetter,
+    224:PlatformErrorCodes.UserNoLinkedAccountsSupportFriendListings,
+    225:PlatformErrorCodes.UserAcknowledgmentTableFull,
+    226:PlatformErrorCodes.UserCreationDestinyMembershipRequired,
+    227:PlatformErrorCodes.UserFriendsTokenNeedsRefresh,
+    228:PlatformErrorCodes.UserEmailValidationUnknown,
+    229:PlatformErrorCodes.UserEmailValidationLimit,
+    230:PlatformErrorCodes.TransactionEmailSendFailure,
+    231:PlatformErrorCodes.MailHookPermissionFailure,
+    232:PlatformErrorCodes.MailServiceRateLimit,
+    233:PlatformErrorCodes.UserEmailMustBeVerified,
+    234:PlatformErrorCodes.UserMustAllowCustomerServiceEmails,
+    235:PlatformErrorCodes.NonTransactionalEmailSendFailure,
+    236:PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName,
+    237:PlatformErrorCodes.DuplicateGlobalDisplayName,
+    300:PlatformErrorCodes.MessagingUnknownError,
+    301:PlatformErrorCodes.MessagingSelfError,
+    302:PlatformErrorCodes.MessagingSendThrottle,
+    303:PlatformErrorCodes.MessagingNoBody,
+    304:PlatformErrorCodes.MessagingTooManyUsers,
+    305:PlatformErrorCodes.MessagingCanNotLeaveConversation,
+    306:PlatformErrorCodes.MessagingUnableToSend,
+    307:PlatformErrorCodes.MessagingDeletedUserForbidden,
+    308:PlatformErrorCodes.MessagingCannotDeleteExternalConversation,
+    309:PlatformErrorCodes.MessagingGroupChatDisabled,
+    310:PlatformErrorCodes.MessagingMustIncludeSelfInPrivateMessage,
+    311:PlatformErrorCodes.MessagingSenderIsBanned,
+    312:PlatformErrorCodes.MessagingGroupOptionalChatExceededMaximum,
+    313:PlatformErrorCodes.PrivateMessagingRequiresDestinyMembership,
+    400:PlatformErrorCodes.AddSurveyAnswersUnknownSqlException,
+    500:PlatformErrorCodes.ForumBodyCannotBeEmpty,
+    501:PlatformErrorCodes.ForumSubjectCannotBeEmptyOnTopicPost,
+    502:PlatformErrorCodes.ForumCannotLocateParentPost,
+    503:PlatformErrorCodes.ForumThreadLockedForReplies,
+    504:PlatformErrorCodes.ForumUnknownSqlResultDuringCreatePost,
+    505:PlatformErrorCodes.ForumUnknownTagCreationError,
+    506:PlatformErrorCodes.ForumUnknownSqlResultDuringTagItem,
+    507:PlatformErrorCodes.ForumUnknownExceptionCreatePost,
+    508:PlatformErrorCodes.ForumQuestionMustBeTopicPost,
+    509:PlatformErrorCodes.ForumExceptionDuringTagSearch,
+    510:PlatformErrorCodes.ForumExceptionDuringTopicRetrieval,
+    511:PlatformErrorCodes.ForumAliasedTagError,
+    512:PlatformErrorCodes.ForumCannotLocateThread,
+    513:PlatformErrorCodes.ForumUnknownExceptionEditPost,
+    514:PlatformErrorCodes.ForumCannotLocatePost,
+    515:PlatformErrorCodes.ForumUnknownExceptionGetOrCreateTags,
+    516:PlatformErrorCodes.ForumEditPermissionDenied,
+    517:PlatformErrorCodes.ForumUnknownSqlResultDuringTagIdRetrieval,
+    518:PlatformErrorCodes.ForumCannotGetRating,
+    519:PlatformErrorCodes.ForumUnknownExceptionGetRating,
+    520:PlatformErrorCodes.ForumRatingsAccessError,
+    521:PlatformErrorCodes.ForumRelatedPostAccessError,
+    522:PlatformErrorCodes.ForumLatestReplyAccessError,
+    523:PlatformErrorCodes.ForumUserStatusAccessError,
+    524:PlatformErrorCodes.ForumAuthorAccessError,
+    525:PlatformErrorCodes.ForumGroupAccessError,
+    526:PlatformErrorCodes.ForumUrlExpectedButMissing,
+    527:PlatformErrorCodes.ForumRepliesCannotBeEmpty,
+    528:PlatformErrorCodes.ForumRepliesCannotBeInDifferentGroups,
+    529:PlatformErrorCodes.ForumSubTopicCannotBeCreatedAtThisThreadLevel,
+    530:PlatformErrorCodes.ForumCannotCreateContentTopic,
+    531:PlatformErrorCodes.ForumTopicDoesNotExist,
+    532:PlatformErrorCodes.ForumContentCommentsNotAllowed,
+    533:PlatformErrorCodes.ForumUnknownSqlResultDuringEditPost,
+    534:PlatformErrorCodes.ForumUnknownSqlResultDuringGetPost,
+    535:PlatformErrorCodes.ForumPostValidationBadUrl,
+    536:PlatformErrorCodes.ForumBodyTooLong,
+    537:PlatformErrorCodes.ForumSubjectTooLong,
+    538:PlatformErrorCodes.ForumAnnouncementNotAllowed,
+    539:PlatformErrorCodes.ForumCannotShareOwnPost,
+    540:PlatformErrorCodes.ForumEditNoOp,
+    541:PlatformErrorCodes.ForumUnknownDatabaseErrorDuringGetPost,
+    542:PlatformErrorCodes.ForumExceeedMaximumRowLimit,
+    543:PlatformErrorCodes.ForumCannotSharePrivatePost,
+    544:PlatformErrorCodes.ForumCannotCrossPostBetweenGroups,
+    555:PlatformErrorCodes.ForumIncompatibleCategories,
+    556:PlatformErrorCodes.ForumCannotUseTheseCategoriesOnNonTopicPost,
+    557:PlatformErrorCodes.ForumCanOnlyDeleteTopics,
+    558:PlatformErrorCodes.ForumDeleteSqlException,
+    559:PlatformErrorCodes.ForumDeleteSqlUnknownResult,
+    560:PlatformErrorCodes.ForumTooManyTags,
+    561:PlatformErrorCodes.ForumCanOnlyRateTopics,
+    562:PlatformErrorCodes.ForumBannedPostsCannotBeEdited,
+    563:PlatformErrorCodes.ForumThreadRootIsBanned,
+    564:PlatformErrorCodes.ForumCannotUseOfficialTagCategoryAsTag,
+    565:PlatformErrorCodes.ForumAnswerCannotBeMadeOnCreatePost,
+    566:PlatformErrorCodes.ForumAnswerCannotBeMadeOnEditPost,
+    567:PlatformErrorCodes.ForumAnswerPostIdIsNotADirectReplyOfQuestion,
+    568:PlatformErrorCodes.ForumAnswerTopicIdIsNotAQuestion,
+    569:PlatformErrorCodes.ForumUnknownExceptionDuringMarkAnswer,
+    570:PlatformErrorCodes.ForumUnknownSqlResultDuringMarkAnswer,
+    571:PlatformErrorCodes.ForumCannotRateYourOwnPosts,
+    572:PlatformErrorCodes.ForumPollsMustBeTheFirstPostInTopic,
+    573:PlatformErrorCodes.ForumInvalidPollInput,
+    574:PlatformErrorCodes.ForumGroupAdminEditNonMember,
+    575:PlatformErrorCodes.ForumCannotEditModeratorEditedPost,
+    576:PlatformErrorCodes.ForumRequiresDestinyMembership,
+    577:PlatformErrorCodes.ForumUnexpectedError,
+    578:PlatformErrorCodes.ForumAgeLock,
+    579:PlatformErrorCodes.ForumMaxPages,
+    580:PlatformErrorCodes.ForumMaxPagesOldestFirst,
+    581:PlatformErrorCodes.ForumCannotApplyForumIdWithoutTags,
+    582:PlatformErrorCodes.ForumCannotApplyForumIdToNonTopics,
+    583:PlatformErrorCodes.ForumCannotDownvoteCommunityCreations,
+    584:PlatformErrorCodes.ForumTopicsMustHaveOfficialCategory,
+    585:PlatformErrorCodes.ForumRecruitmentTopicMalformed,
+    586:PlatformErrorCodes.ForumRecruitmentTopicNotFound,
+    587:PlatformErrorCodes.ForumRecruitmentTopicNoSlotsRemaining,
+    588:PlatformErrorCodes.ForumRecruitmentTopicKickBan,
+    589:PlatformErrorCodes.ForumRecruitmentTopicRequirementsNotMet,
+    590:PlatformErrorCodes.ForumRecruitmentTopicNoPlayers,
+    591:PlatformErrorCodes.ForumRecruitmentApproveFailMessageBan,
+    592:PlatformErrorCodes.ForumRecruitmentGlobalBan,
+    593:PlatformErrorCodes.ForumUserBannedFromThisTopic,
+    594:PlatformErrorCodes.ForumRecruitmentFireteamMembersOnly,
+    595:PlatformErrorCodes.ForumRequiresDestiny2Progress,
+    601:PlatformErrorCodes.GroupMembershipApplicationAlreadyResolved,
+    602:PlatformErrorCodes.GroupMembershipAlreadyApplied,
+    603:PlatformErrorCodes.GroupMembershipInsufficientPrivileges,
+    604:PlatformErrorCodes.GroupIdNotReturnedFromCreation,
+    605:PlatformErrorCodes.GroupSearchInvalidParameters,
+    606:PlatformErrorCodes.GroupMembershipPendingApplicationNotFound,
+    607:PlatformErrorCodes.GroupInvalidId,
+    608:PlatformErrorCodes.GroupInvalidMembershipId,
+    609:PlatformErrorCodes.GroupInvalidMembershipType,
+    610:PlatformErrorCodes.GroupMissingTags,
+    611:PlatformErrorCodes.GroupMembershipNotFound,
+    612:PlatformErrorCodes.GroupInvalidRating,
+    613:PlatformErrorCodes.GroupUserFollowingAccessError,
+    614:PlatformErrorCodes.GroupUserMembershipAccessError,
+    615:PlatformErrorCodes.GroupCreatorAccessError,
+    616:PlatformErrorCodes.GroupAdminAccessError,
+    617:PlatformErrorCodes.GroupPrivatePostNotViewable,
+    618:PlatformErrorCodes.GroupMembershipNotLoggedIn,
+    619:PlatformErrorCodes.GroupNotDeleted,
+    620:PlatformErrorCodes.GroupUnknownErrorUndeletingGroup,
+    621:PlatformErrorCodes.GroupDeleted,
+    622:PlatformErrorCodes.GroupNotFound,
+    623:PlatformErrorCodes.GroupMemberBanned,
+    624:PlatformErrorCodes.GroupMembershipClosed,
+    625:PlatformErrorCodes.GroupPrivatePostOverrideError,
+    626:PlatformErrorCodes.GroupNameTaken,
+    627:PlatformErrorCodes.GroupDeletionGracePeriodExpired,
+    628:PlatformErrorCodes.GroupCannotCheckBanStatus,
+    629:PlatformErrorCodes.GroupMaximumMembershipCountReached,
+    630:PlatformErrorCodes.NoDestinyAccountForClanPlatform,
+    631:PlatformErrorCodes.AlreadyRequestingMembershipForClanPlatform,
+    632:PlatformErrorCodes.AlreadyClanMemberOnPlatform,
+    633:PlatformErrorCodes.GroupJoinedCannotSetClanName,
+    634:PlatformErrorCodes.GroupLeftCannotClearClanName,
+    635:PlatformErrorCodes.GroupRelationshipRequestPending,
+    636:PlatformErrorCodes.GroupRelationshipRequestBlocked,
+    637:PlatformErrorCodes.GroupRelationshipRequestNotFound,
+    638:PlatformErrorCodes.GroupRelationshipBlockNotFound,
+    639:PlatformErrorCodes.GroupRelationshipNotFound,
+    641:PlatformErrorCodes.GroupAlreadyAllied,
+    642:PlatformErrorCodes.GroupAlreadyMember,
+    643:PlatformErrorCodes.GroupRelationshipAlreadyExists,
+    644:PlatformErrorCodes.InvalidGroupTypesForRelationshipRequest,
+    646:PlatformErrorCodes.GroupAtMaximumAlliances,
+    647:PlatformErrorCodes.GroupCannotSetClanOnlySettings,
+    648:PlatformErrorCodes.ClanCannotSetTwoDefaultPostTypes,
+    649:PlatformErrorCodes.GroupMemberInvalidMemberType,
+    650:PlatformErrorCodes.GroupInvalidPlatformType,
+    651:PlatformErrorCodes.GroupMemberInvalidSort,
+    652:PlatformErrorCodes.GroupInvalidResolveState,
+    653:PlatformErrorCodes.ClanAlreadyEnabledForPlatform,
+    654:PlatformErrorCodes.ClanNotEnabledForPlatform,
+    655:PlatformErrorCodes.ClanEnabledButCouldNotJoinNoAccount,
+    656:PlatformErrorCodes.ClanEnabledButCouldNotJoinAlreadyMember,
+    657:PlatformErrorCodes.ClanCannotJoinNoCredential,
+    658:PlatformErrorCodes.NoClanMembershipForPlatform,
+    659:PlatformErrorCodes.GroupToGroupFollowLimitReached,
+    660:PlatformErrorCodes.ChildGroupAlreadyInAlliance,
+    661:PlatformErrorCodes.OwnerGroupAlreadyInAlliance,
+    662:PlatformErrorCodes.AllianceOwnerCannotJoinAlliance,
+    663:PlatformErrorCodes.GroupNotInAlliance,
+    664:PlatformErrorCodes.ChildGroupCannotInviteToAlliance,
+    665:PlatformErrorCodes.GroupToGroupAlreadyFollowed,
+    666:PlatformErrorCodes.GroupToGroupNotFollowing,
+    667:PlatformErrorCodes.ClanMaximumMembershipReached,
+    668:PlatformErrorCodes.ClanNameNotValid,
+    669:PlatformErrorCodes.ClanNameNotValidError,
+    670:PlatformErrorCodes.AllianceOwnerNotDefined,
+    671:PlatformErrorCodes.AllianceChildNotDefined,
+    672:PlatformErrorCodes.ClanCultureIllegalCharacters,
+    673:PlatformErrorCodes.ClanTagIllegalCharacters,
+    674:PlatformErrorCodes.ClanRequiresInvitation,
+    675:PlatformErrorCodes.ClanMembershipClosed,
+    676:PlatformErrorCodes.ClanInviteAlreadyMember,
+    677:PlatformErrorCodes.GroupInviteAlreadyMember,
+    678:PlatformErrorCodes.GroupJoinApprovalRequired,
+    679:PlatformErrorCodes.ClanTagRequired,
+    680:PlatformErrorCodes.GroupNameCannotStartOrEndWithWhiteSpace,
+    681:PlatformErrorCodes.ClanCallsignCannotStartOrEndWithWhiteSpace,
+    682:PlatformErrorCodes.ClanMigrationFailed,
+    683:PlatformErrorCodes.ClanNotEnabledAlreadyMemberOfAnotherClan,
+    684:PlatformErrorCodes.GroupModerationNotPermittedOnNonMembers,
+    685:PlatformErrorCodes.ClanCreationInWorldServerFailed,
+    686:PlatformErrorCodes.ClanNotFound,
+    687:PlatformErrorCodes.ClanMembershipLevelDoesNotPermitThatAction,
+    688:PlatformErrorCodes.ClanMemberNotFound,
+    689:PlatformErrorCodes.ClanMissingMembershipApprovers,
+    690:PlatformErrorCodes.ClanInWrongStateForRequestedAction,
+    691:PlatformErrorCodes.ClanNameAlreadyUsed,
+    692:PlatformErrorCodes.ClanTooFewMembers,
+    693:PlatformErrorCodes.ClanInfoCannotBeWhitespace,
+    694:PlatformErrorCodes.GroupCultureThrottle,
+    695:PlatformErrorCodes.ClanTargetDisallowsInvites,
+    696:PlatformErrorCodes.ClanInvalidOperation,
+    697:PlatformErrorCodes.ClanFounderCannotLeaveWithoutAbdication,
+    698:PlatformErrorCodes.ClanNameReserved,
+    699:PlatformErrorCodes.ClanApplicantInClanSoNowInvited,
+    701:PlatformErrorCodes.ActivitiesUnknownException,
+    702:PlatformErrorCodes.ActivitiesParameterNull,
+    703:PlatformErrorCodes.ActivityCountsDiabled,
+    704:PlatformErrorCodes.ActivitySearchInvalidParameters,
+    705:PlatformErrorCodes.ActivityPermissionDenied,
+    706:PlatformErrorCodes.ShareAlreadyShared,
+    707:PlatformErrorCodes.ActivityLoggingDisabled,
+    750:PlatformErrorCodes.ClanRequiresExistingDestinyAccount,
+    751:PlatformErrorCodes.ClanNameRestricted,
+    752:PlatformErrorCodes.ClanCreationBan,
+    753:PlatformErrorCodes.ClanCreationTenureRequirementsNotMet,
+    801:PlatformErrorCodes.ItemAlreadyFollowed,
+    802:PlatformErrorCodes.ItemNotFollowed,
+    803:PlatformErrorCodes.CannotFollowSelf,
+    804:PlatformErrorCodes.GroupFollowLimitExceeded,
+    805:PlatformErrorCodes.TagFollowLimitExceeded,
+    806:PlatformErrorCodes.UserFollowLimitExceeded,
+    807:PlatformErrorCodes.FollowUnsupportedEntityType,
+    900:PlatformErrorCodes.NoValidTagsInList,
+    901:PlatformErrorCodes.BelowMinimumSuggestionLength,
+    902:PlatformErrorCodes.CannotGetSuggestionsOnMultipleTagsSimultaneously,
+    903:PlatformErrorCodes.NotAValidPartialTag,
+    904:PlatformErrorCodes.TagSuggestionsUnknownSqlResult,
+    905:PlatformErrorCodes.TagsUnableToLoadPopularTagsFromDatabase,
+    906:PlatformErrorCodes.TagInvalid,
+    907:PlatformErrorCodes.TagNotFound,
+    908:PlatformErrorCodes.SingleTagExpected,
+    909:PlatformErrorCodes.TagsExceededMaximumPerItem,
+    1000:PlatformErrorCodes.IgnoreInvalidParameters,
+    1001:PlatformErrorCodes.IgnoreSqlException,
+    1002:PlatformErrorCodes.IgnoreErrorRetrievingGroupPermissions,
+    1003:PlatformErrorCodes.IgnoreErrorInsufficientPermission,
+    1004:PlatformErrorCodes.IgnoreErrorRetrievingItem,
+    1005:PlatformErrorCodes.IgnoreCannotIgnoreSelf,
+    1006:PlatformErrorCodes.IgnoreIllegalType,
+    1007:PlatformErrorCodes.IgnoreNotFound,
+    1008:PlatformErrorCodes.IgnoreUserGloballyIgnored,
+    1009:PlatformErrorCodes.IgnoreUserIgnored,
+    1010:PlatformErrorCodes.TargetUserIgnored,
+    1100:PlatformErrorCodes.NotificationSettingInvalid,
+    1204:PlatformErrorCodes.PsnApiExpiredAccessToken,
+    1205:PlatformErrorCodes.PSNExForbidden,
+    1218:PlatformErrorCodes.PSNExSystemDisabled,
+    1223:PlatformErrorCodes.PsnApiErrorCodeUnknown,
+    1224:PlatformErrorCodes.PsnApiErrorWebException,
+    1225:PlatformErrorCodes.PsnApiBadRequest,
+    1226:PlatformErrorCodes.PsnApiAccessTokenRequired,
+    1227:PlatformErrorCodes.PsnApiInvalidAccessToken,
+    1229:PlatformErrorCodes.PsnApiBannedUser,
+    1230:PlatformErrorCodes.PsnApiAccountUpgradeRequired,
+    1231:PlatformErrorCodes.PsnApiServiceTemporarilyUnavailable,
+    1232:PlatformErrorCodes.PsnApiServerBusy,
+    1233:PlatformErrorCodes.PsnApiUnderMaintenance,
+    1234:PlatformErrorCodes.PsnApiProfileUserNotFound,
+    1235:PlatformErrorCodes.PsnApiProfilePrivacyRestriction,
+    1236:PlatformErrorCodes.PsnApiProfileUnderMaintenance,
+    1237:PlatformErrorCodes.PsnApiAccountAttributeMissing,
+    1238:PlatformErrorCodes.PsnApiNoPermission,
+    1239:PlatformErrorCodes.PsnApiTargetUserBlocked,
+    1240:PlatformErrorCodes.PsnApiJwksMissing,
+    1241:PlatformErrorCodes.PsnApiJwtMalformedHeader,
+    1242:PlatformErrorCodes.PsnApiJwtMalformedPayload,
+    1300:PlatformErrorCodes.XblExSystemDisabled,
+    1301:PlatformErrorCodes.XblExUnknownError,
+    1302:PlatformErrorCodes.XblApiErrorWebException,
+    1303:PlatformErrorCodes.XblStsTokenInvalid,
+    1304:PlatformErrorCodes.XblStsMissingToken,
+    1305:PlatformErrorCodes.XblStsExpiredToken,
+    1306:PlatformErrorCodes.XblAccessToTheSandboxDenied,
+    1307:PlatformErrorCodes.XblMsaResponseMissing,
+    1308:PlatformErrorCodes.XblMsaAccessTokenExpired,
+    1309:PlatformErrorCodes.XblMsaInvalidRequest,
+    1310:PlatformErrorCodes.XblMsaFriendsRequireSignIn,
+    1311:PlatformErrorCodes.XblUserActionRequired,
+    1312:PlatformErrorCodes.XblParentalControls,
+    1313:PlatformErrorCodes.XblDeveloperAccount,
+    1314:PlatformErrorCodes.XblUserTokenExpired,
+    1315:PlatformErrorCodes.XblUserTokenInvalid,
+    1316:PlatformErrorCodes.XblOffline,
+    1317:PlatformErrorCodes.XblUnknownErrorCode,
+    1318:PlatformErrorCodes.XblMsaInvalidGrant,
+    1400:PlatformErrorCodes.ReportNotYetResolved,
+    1401:PlatformErrorCodes.ReportOverturnDoesNotChangeDecision,
+    1402:PlatformErrorCodes.ReportNotFound,
+    1403:PlatformErrorCodes.ReportAlreadyReported,
+    1404:PlatformErrorCodes.ReportInvalidResolution,
+    1405:PlatformErrorCodes.ReportNotAssignedToYou,
+    1500:PlatformErrorCodes.LegacyGameStatsSystemDisabled,
+    1501:PlatformErrorCodes.LegacyGameStatsUnknownError,
+    1502:PlatformErrorCodes.LegacyGameStatsMalformedSneakerNetCode,
+    1600:PlatformErrorCodes.DestinyAccountAcquisitionFailure,
+    1601:PlatformErrorCodes.DestinyAccountNotFound,
+    1602:PlatformErrorCodes.DestinyBuildStatsDatabaseError,
+    1603:PlatformErrorCodes.DestinyCharacterStatsDatabaseError,
+    1604:PlatformErrorCodes.DestinyPvPStatsDatabaseError,
+    1605:PlatformErrorCodes.DestinyPvEStatsDatabaseError,
+    1606:PlatformErrorCodes.DestinyGrimoireStatsDatabaseError,
+    1607:PlatformErrorCodes.DestinyStatsParameterMembershipTypeParseError,
+    1608:PlatformErrorCodes.DestinyStatsParameterMembershipIdParseError,
+    1609:PlatformErrorCodes.DestinyStatsParameterRangeParseError,
+    1610:PlatformErrorCodes.DestinyStringItemHashNotFound,
+    1611:PlatformErrorCodes.DestinyStringSetNotFound,
+    1612:PlatformErrorCodes.DestinyContentLookupNotFoundForKey,
+    1613:PlatformErrorCodes.DestinyContentItemNotFound,
+    1614:PlatformErrorCodes.DestinyContentSectionNotFound,
+    1615:PlatformErrorCodes.DestinyContentPropertyNotFound,
+    1616:PlatformErrorCodes.DestinyContentConfigNotFound,
+    1617:PlatformErrorCodes.DestinyContentPropertyBucketValueNotFound,
+    1618:PlatformErrorCodes.DestinyUnexpectedError,
+    1619:PlatformErrorCodes.DestinyInvalidAction,
+    1620:PlatformErrorCodes.DestinyCharacterNotFound,
+    1621:PlatformErrorCodes.DestinyInvalidFlag,
+    1622:PlatformErrorCodes.DestinyInvalidRequest,
+    1623:PlatformErrorCodes.DestinyItemNotFound,
+    1624:PlatformErrorCodes.DestinyInvalidCustomizationChoices,
+    1625:PlatformErrorCodes.DestinyVendorItemNotFound,
+    1626:PlatformErrorCodes.DestinyInternalError,
+    1627:PlatformErrorCodes.DestinyVendorNotFound,
+    1628:PlatformErrorCodes.DestinyRecentActivitiesDatabaseError,
+    1629:PlatformErrorCodes.DestinyItemBucketNotFound,
+    1630:PlatformErrorCodes.DestinyInvalidMembershipType,
+    1631:PlatformErrorCodes.DestinyVersionIncompatibility,
+    1632:PlatformErrorCodes.DestinyItemAlreadyInInventory,
+    1633:PlatformErrorCodes.DestinyBucketNotFound,
+    1634:PlatformErrorCodes.DestinyCharacterNotInTower,
+    1635:PlatformErrorCodes.DestinyCharacterNotLoggedIn,
+    1636:PlatformErrorCodes.DestinyDefinitionsNotLoaded,
+    1637:PlatformErrorCodes.DestinyInventoryFull,
+    1638:PlatformErrorCodes.DestinyItemFailedLevelCheck,
+    1639:PlatformErrorCodes.DestinyItemFailedUnlockCheck,
+    1640:PlatformErrorCodes.DestinyItemUnequippable,
+    1641:PlatformErrorCodes.DestinyItemUniqueEquipRestricted,
+    1642:PlatformErrorCodes.DestinyNoRoomInDestination,
+    1643:PlatformErrorCodes.DestinyServiceFailure,
+    1644:PlatformErrorCodes.DestinyServiceRetired,
+    1645:PlatformErrorCodes.DestinyTransferFailed,
+    1646:PlatformErrorCodes.DestinyTransferNotFoundForSourceBucket,
+    1647:PlatformErrorCodes.DestinyUnexpectedResultInVendorTransferCheck,
+    1648:PlatformErrorCodes.DestinyUniquenessViolation,
+    1649:PlatformErrorCodes.DestinyErrorDeserializationFailure,
+    1650:PlatformErrorCodes.DestinyValidAccountTicketRequired,
+    1651:PlatformErrorCodes.DestinyShardRelayClientTimeout,
+    1652:PlatformErrorCodes.DestinyShardRelayProxyTimeout,
+    1653:PlatformErrorCodes.DestinyPGCRNotFound,
+    1654:PlatformErrorCodes.DestinyAccountMustBeOffline,
+    1655:PlatformErrorCodes.DestinyCanOnlyEquipInGame,
+    1656:PlatformErrorCodes.DestinyCannotPerformActionOnEquippedItem,
+    1657:PlatformErrorCodes.DestinyQuestAlreadyCompleted,
+    1658:PlatformErrorCodes.DestinyQuestAlreadyTracked,
+    1659:PlatformErrorCodes.DestinyTrackableQuestsFull,
+    1660:PlatformErrorCodes.DestinyItemNotTransferrable,
+    1661:PlatformErrorCodes.DestinyVendorPurchaseNotAllowed,
+    1662:PlatformErrorCodes.DestinyContentVersionMismatch,
+    1663:PlatformErrorCodes.DestinyItemActionForbidden,
+    1664:PlatformErrorCodes.DestinyRefundInvalid,
+    1665:PlatformErrorCodes.DestinyPrivacyRestriction,
+    1666:PlatformErrorCodes.DestinyActionInsufficientPrivileges,
+    1667:PlatformErrorCodes.DestinyInvalidClaimException,
+    1668:PlatformErrorCodes.DestinyLegacyPlatformRestricted,
+    1669:PlatformErrorCodes.DestinyLegacyPlatformInUse,
+    1670:PlatformErrorCodes.DestinyLegacyPlatformInaccessible,
+    1671:PlatformErrorCodes.DestinyCannotPerformActionAtThisLocation,
+    1672:PlatformErrorCodes.DestinyThrottledByGameServer,
+    1673:PlatformErrorCodes.DestinyItemNotTransferrableHasSideEffects,
+    1674:PlatformErrorCodes.DestinyItemLocked,
+    1675:PlatformErrorCodes.DestinyCannotAffordMaterialRequirements,
+    1676:PlatformErrorCodes.DestinyFailedPlugInsertionRules,
+    1677:PlatformErrorCodes.DestinySocketNotFound,
+    1678:PlatformErrorCodes.DestinySocketActionNotAllowed,
+    1679:PlatformErrorCodes.DestinySocketAlreadyHasPlug,
+    1680:PlatformErrorCodes.DestinyPlugItemNotAvailable,
+    1681:PlatformErrorCodes.DestinyCharacterLoggedInNotAllowed,
+    1682:PlatformErrorCodes.DestinyPublicAccountNotAccessible,
+    1683:PlatformErrorCodes.DestinyClaimsItemAlreadyClaimed,
+    1684:PlatformErrorCodes.DestinyClaimsNoInventorySpace,
+    1685:PlatformErrorCodes.DestinyClaimsRequiredLevelNotMet,
+    1686:PlatformErrorCodes.DestinyClaimsInvalidState,
+    1687:PlatformErrorCodes.DestinyNotEnoughRoomForMultipleRewards,
+    1688:PlatformErrorCodes.DestinyDirectBabelClientTimeout,
+    1800:PlatformErrorCodes.FbInvalidRequest,
+    1801:PlatformErrorCodes.FbRedirectMismatch,
+    1802:PlatformErrorCodes.FbAccessDenied,
+    1803:PlatformErrorCodes.FbUnsupportedResponseType,
+    1804:PlatformErrorCodes.FbInvalidScope,
+    1805:PlatformErrorCodes.FbUnsupportedGrantType,
+    1806:PlatformErrorCodes.FbInvalidGrant,
+    1900:PlatformErrorCodes.InvitationExpired,
+    1901:PlatformErrorCodes.InvitationUnknownType,
+    1902:PlatformErrorCodes.InvitationInvalidResponseStatus,
+    1903:PlatformErrorCodes.InvitationInvalidType,
+    1904:PlatformErrorCodes.InvitationAlreadyPending,
+    1905:PlatformErrorCodes.InvitationInsufficientPermission,
+    1906:PlatformErrorCodes.InvitationInvalidCode,
+    1907:PlatformErrorCodes.InvitationInvalidTargetState,
+    1908:PlatformErrorCodes.InvitationCannotBeReactivated,
+    1910:PlatformErrorCodes.InvitationNoRecipients,
+    1911:PlatformErrorCodes.InvitationGroupCannotSendToSelf,
+    1912:PlatformErrorCodes.InvitationTooManyRecipients,
+    1913:PlatformErrorCodes.InvitationInvalid,
+    1914:PlatformErrorCodes.InvitationNotFound,
+    2000:PlatformErrorCodes.TokenInvalid,
+    2001:PlatformErrorCodes.TokenBadFormat,
+    2002:PlatformErrorCodes.TokenAlreadyClaimed,
+    2003:PlatformErrorCodes.TokenAlreadyClaimedSelf,
+    2004:PlatformErrorCodes.TokenThrottling,
+    2005:PlatformErrorCodes.TokenUnknownRedemptionFailure,
+    2006:PlatformErrorCodes.TokenPurchaseClaimFailedAfterTokenClaimed,
+    2007:PlatformErrorCodes.TokenUserAlreadyOwnsOffer,
+    2008:PlatformErrorCodes.TokenInvalidOfferKey,
+    2009:PlatformErrorCodes.TokenEmailNotValidated,
+    2010:PlatformErrorCodes.TokenProvisioningBadVendorOrOffer,
+    2011:PlatformErrorCodes.TokenPurchaseHistoryUnknownError,
+    2012:PlatformErrorCodes.TokenThrottleStateUnknownError,
+    2013:PlatformErrorCodes.TokenUserAgeNotVerified,
+    2014:PlatformErrorCodes.TokenExceededOfferMaximum,
+    2015:PlatformErrorCodes.TokenNoAvailableUnlocks,
+    2016:PlatformErrorCodes.TokenMarketplaceInvalidPlatform,
+    2017:PlatformErrorCodes.TokenNoMarketplaceCodesFound,
+    2018:PlatformErrorCodes.TokenOfferNotAvailableForRedemption,
+    2019:PlatformErrorCodes.TokenUnlockPartialFailure,
+    2020:PlatformErrorCodes.TokenMarketplaceInvalidRegion,
+    2021:PlatformErrorCodes.TokenOfferExpired,
+    2022:PlatformErrorCodes.RAFExceededMaximumReferrals,
+    2023:PlatformErrorCodes.RAFDuplicateBond,
+    2024:PlatformErrorCodes.RAFNoValidVeteranDestinyMembershipsFound,
+    2025:PlatformErrorCodes.RAFNotAValidVeteranUser,
+    2026:PlatformErrorCodes.RAFCodeAlreadyClaimedOrNotFound,
+    2027:PlatformErrorCodes.RAFMismatchedDestinyMembershipType,
+    2028:PlatformErrorCodes.RAFUnableToAccessPurchaseHistory,
+    2029:PlatformErrorCodes.RAFUnableToCreateBond,
+    2030:PlatformErrorCodes.RAFUnableToFindBond,
+    2031:PlatformErrorCodes.RAFUnableToRemoveBond,
+    2032:PlatformErrorCodes.RAFCannotBondToSelf,
+    2033:PlatformErrorCodes.RAFInvalidPlatform,
+    2034:PlatformErrorCodes.RAFGenerateThrottled,
+    2035:PlatformErrorCodes.RAFUnableToCreateBondVersionMismatch,
+    2036:PlatformErrorCodes.RAFUnableToRemoveBondVersionMismatch,
+    2037:PlatformErrorCodes.RAFRedeemThrottled,
+    2038:PlatformErrorCodes.NoAvailableDiscountCode,
+    2039:PlatformErrorCodes.DiscountAlreadyClaimed,
+    2040:PlatformErrorCodes.DiscountClaimFailure,
+    2041:PlatformErrorCodes.DiscountConfigurationFailure,
+    2042:PlatformErrorCodes.DiscountGenerationFailure,
+    2043:PlatformErrorCodes.DiscountAlreadyExists,
+    2044:PlatformErrorCodes.TokenRequiresCredentialXuid,
+    2045:PlatformErrorCodes.TokenRequiresCredentialPsnid,
+    2046:PlatformErrorCodes.OfferRequired,
+    2047:PlatformErrorCodes.UnknownEververseHistoryError,
+    2048:PlatformErrorCodes.MissingEververseHistoryError,
+    2049:PlatformErrorCodes.BungieRewardEmailStateInvalid,
+    2050:PlatformErrorCodes.BungieRewardNotYetClaimable,
+    2051:PlatformErrorCodes.MissingOfferConfig,
+    2052:PlatformErrorCodes.RAFQuestEntitlementRequiresBnet,
+    2053:PlatformErrorCodes.RAFQuestEntitlementTransportFailure,
+    2054:PlatformErrorCodes.RAFQuestEntitlementUnknownFailure,
+    2055:PlatformErrorCodes.RAFVeteranRewardUnknownFailure,
+    2056:PlatformErrorCodes.RAFTooEarlyToCancelBond,
+    2057:PlatformErrorCodes.LoyaltyRewardAlreadyRedeemed,
+    2058:PlatformErrorCodes.UnclaimedLoyaltyRewardEntryNotFound,
+    2059:PlatformErrorCodes.PartnerOfferPartialFailure,
+    2060:PlatformErrorCodes.PartnerOfferAlreadyClaimed,
+    2061:PlatformErrorCodes.PartnerOfferSkuNotFound,
+    2062:PlatformErrorCodes.PartnerOfferSkuExpired,
+    2063:PlatformErrorCodes.PartnerOfferPermissionFailure,
+    2064:PlatformErrorCodes.PartnerOfferNoDestinyAccount,
+    2065:PlatformErrorCodes.PartnerOfferApplyDataNotFound,
+    2100:PlatformErrorCodes.ApiExceededMaxKeys,
+    2101:PlatformErrorCodes.ApiInvalidOrExpiredKey,
+    2102:PlatformErrorCodes.ApiKeyMissingFromRequest,
+    2103:PlatformErrorCodes.ApplicationDisabled,
+    2104:PlatformErrorCodes.ApplicationExceededMax,
+    2105:PlatformErrorCodes.ApplicationDisallowedByScope,
+    2106:PlatformErrorCodes.AuthorizationCodeInvalid,
+    2107:PlatformErrorCodes.OriginHeaderDoesNotMatchKey,
+    2108:PlatformErrorCodes.AccessNotPermittedByApplicationScope,
+    2109:PlatformErrorCodes.ApplicationNameIsTaken,
+    2110:PlatformErrorCodes.RefreshTokenNotYetValid,
+    2111:PlatformErrorCodes.AccessTokenHasExpired,
+    2112:PlatformErrorCodes.ApplicationTokenFormatNotValid,
+    2113:PlatformErrorCodes.ApplicationNotConfiguredForBungieAuth,
+    2114:PlatformErrorCodes.ApplicationNotConfiguredForOAuth,
+    2115:PlatformErrorCodes.OAuthAccessTokenExpired,
+    2116:PlatformErrorCodes.ApplicationTokenKeyIdDoesNotExist,
+    2117:PlatformErrorCodes.ProvidedTokenNotValidRefreshToken,
+    2118:PlatformErrorCodes.RefreshTokenExpired,
+    2119:PlatformErrorCodes.AuthorizationRecordInvalid,
+    2120:PlatformErrorCodes.TokenPreviouslyRevoked,
+    2121:PlatformErrorCodes.TokenInvalidMembership,
+    2122:PlatformErrorCodes.AuthorizationCodeStale,
+    2123:PlatformErrorCodes.AuthorizationRecordExpired,
+    2124:PlatformErrorCodes.AuthorizationRecordRevoked,
+    2125:PlatformErrorCodes.AuthorizationRecordInactiveApiKey,
+    2126:PlatformErrorCodes.AuthorizationRecordApiKeyMatching,
+    2200:PlatformErrorCodes.PartnershipInvalidType,
+    2201:PlatformErrorCodes.PartnershipValidationError,
+    2202:PlatformErrorCodes.PartnershipValidationTimeout,
+    2203:PlatformErrorCodes.PartnershipAccessFailure,
+    2204:PlatformErrorCodes.PartnershipAccountInvalid,
+    2205:PlatformErrorCodes.PartnershipGetAccountInfoFailure,
+    2206:PlatformErrorCodes.PartnershipDisabled,
+    2207:PlatformErrorCodes.PartnershipAlreadyExists,
+    2300:PlatformErrorCodes.CommunityStreamingUnavailable,
+    2500:PlatformErrorCodes.TwitchNotLinked,
+    2501:PlatformErrorCodes.TwitchAccountNotFound,
+    2502:PlatformErrorCodes.TwitchCouldNotLoadDestinyInfo,
+    2503:PlatformErrorCodes.TwitchCouldNotRegisterUser,
+    2504:PlatformErrorCodes.TwitchCouldNotUnregisterUser,
+    2505:PlatformErrorCodes.TwitchRequiresRelinking,
+    2506:PlatformErrorCodes.TwitchNoPlatformChosen,
+    2600:PlatformErrorCodes.TrendingCategoryNotFound,
+    2601:PlatformErrorCodes.TrendingEntryTypeNotSupported,
+    2700:PlatformErrorCodes.ReportOffenderNotInPgcr,
+    2701:PlatformErrorCodes.ReportRequestorNotInPgcr,
+    2702:PlatformErrorCodes.ReportSubmissionFailed,
+    2703:PlatformErrorCodes.ReportCannotReportSelf,
+    2800:PlatformErrorCodes.AwaTypeDisabled,
+    2801:PlatformErrorCodes.AwaTooManyPendingRequests,
+    2802:PlatformErrorCodes.AwaTheFeatureRequiresARegisteredDevice,
+    2803:PlatformErrorCodes.AwaRequestWasUnansweredForTooLong,
+    2804:PlatformErrorCodes.AwaWriteRequestMissingOrInvalidToken,
+    2805:PlatformErrorCodes.AwaWriteRequestTokenExpired,
+    2806:PlatformErrorCodes.AwaWriteRequestTokenUsageLimitReached,
+    2900:PlatformErrorCodes.SteamWebApiError,
+    2901:PlatformErrorCodes.SteamWebNullResponseError,
+    2902:PlatformErrorCodes.SteamAccountRequired,
+    2903:PlatformErrorCodes.SteamNotAuthorized,
+    3000:PlatformErrorCodes.ClanFireteamNotFound,
+    3001:PlatformErrorCodes.ClanFireteamAddNoAlternatesForImmediate,
+    3002:PlatformErrorCodes.ClanFireteamFull,
+    3003:PlatformErrorCodes.ClanFireteamAltFull,
+    3004:PlatformErrorCodes.ClanFireteamBlocked,
+    3005:PlatformErrorCodes.ClanFireteamPlayerEntryNotFound,
+    3006:PlatformErrorCodes.ClanFireteamPermissions,
+    3007:PlatformErrorCodes.ClanFireteamInvalidPlatform,
+    3008:PlatformErrorCodes.ClanFireteamCannotAdjustSlotCount,
+    3009:PlatformErrorCodes.ClanFireteamInvalidPlayerPlatform,
+    3010:PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotEnoughPlayers,
+    3011:PlatformErrorCodes.ClanFireteamGameInvitesNotSupportForPlatform,
+    3012:PlatformErrorCodes.ClanFireteamPlatformInvitePreqFailure,
+    3013:PlatformErrorCodes.ClanFireteamInvalidAuthContext,
+    3014:PlatformErrorCodes.ClanFireteamInvalidAuthProviderPsn,
+    3015:PlatformErrorCodes.ClanFireteamPs4SessionFull,
+    3016:PlatformErrorCodes.ClanFireteamInvalidAuthToken,
+    3017:PlatformErrorCodes.ClanFireteamScheduledFireteamsDisabled,
+    3018:PlatformErrorCodes.ClanFireteamNotReadyForInvitesNotScheduledYet,
+    3019:PlatformErrorCodes.ClanFireteamNotReadyForInvitesClosed,
+    3020:PlatformErrorCodes.ClanFireteamScheduledFireteamsRequireAdminPermissions,
+    3021:PlatformErrorCodes.ClanFireteamNonPublicMustHaveClan,
+    3022:PlatformErrorCodes.ClanFireteamPublicCreationRestriction,
+    3023:PlatformErrorCodes.ClanFireteamAlreadyJoined,
+    3024:PlatformErrorCodes.ClanFireteamScheduledFireteamsRange,
+    3025:PlatformErrorCodes.ClanFireteamPublicCreationRestrictionExtended,
+    3026:PlatformErrorCodes.ClanFireteamExpired,
+    3027:PlatformErrorCodes.ClanFireteamInvalidAuthProvider,
+    3028:PlatformErrorCodes.ClanFireteamInvalidAuthProviderXuid,
+    3029:PlatformErrorCodes.ClanFireteamThrottle,
+    3030:PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams,
+    3031:PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams,
+    3032:PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified,
+    3200:PlatformErrorCodes.CrossSaveOverriddenAccountNotFound,
+    3201:PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms,
+    3202:PlatformErrorCodes.CrossSaveNoOverriddenPlatforms,
+    3203:PlatformErrorCodes.CrossSavePrimaryAccountNotFound,
+    3204:PlatformErrorCodes.CrossSaveRequestInvalid,
+    3206:PlatformErrorCodes.CrossSaveBungieAccountValidationFailure,
+    3207:PlatformErrorCodes.CrossSaveOverriddenPlatformNotAllowed,
+    3208:PlatformErrorCodes.CrossSaveThresholdExceeded,
+    3209:PlatformErrorCodes.CrossSaveIncompatibleMembershipType,
+    3210:PlatformErrorCodes.CrossSaveCouldNotFindLinkedAccountForMembershipType,
+    3211:PlatformErrorCodes.CrossSaveCouldNotCreateDestinyProfileForMembershipType,
+    3212:PlatformErrorCodes.CrossSaveErrorCreatingDestinyProfileForMembershipType,
+    3213:PlatformErrorCodes.CrossSaveCannotOverrideSelf,
+    3214:PlatformErrorCodes.CrossSaveRecentSilverPurchase,
+    3215:PlatformErrorCodes.CrossSaveSilverBalanceNegative,
+    3216:PlatformErrorCodes.CrossSaveAccountNotAuthenticated,
+    3217:PlatformErrorCodes.ErrorOneAccountAlreadyActive,
+    3218:PlatformErrorCodes.ErrorOneAccountDestinyRestriction,
+    3219:PlatformErrorCodes.CrossSaveMustMigrateToSteam,
+    3220:PlatformErrorCodes.CrossSaveSteamAlreadyPaired,
+    3221:PlatformErrorCodes.CrossSaveCannotPairJustSteamAndBlizzard,
+    3222:PlatformErrorCodes.CrossSaveCannotPairSteamAloneBeforeShadowkeep,
+    3300:PlatformErrorCodes.AuthVerificationNotLinkedToAccount,
+    3400:PlatformErrorCodes.PCMigrationMissingBlizzard,
+    3401:PlatformErrorCodes.PCMigrationMissingSteam,
+    3402:PlatformErrorCodes.PCMigrationInvalidBlizzard,
+    3403:PlatformErrorCodes.PCMigrationInvalidSteam,
+    3404:PlatformErrorCodes.PCMigrationUnknownFailure,
+    3405:PlatformErrorCodes.PCMigrationUnknownException,
+    3406:PlatformErrorCodes.PCMigrationNotLinked,
+    3407:PlatformErrorCodes.PCMigrationAccountsAlreadyUsed,
+    3408:PlatformErrorCodes.PCMigrationStepFailed,
+    3409:PlatformErrorCodes.PCMigrationInvalidBlizzardCrossSaveState,
+    3410:PlatformErrorCodes.PCMigrationDestinationBanned,
+    3411:PlatformErrorCodes.PCMigrationDestinyFailure,
+    3412:PlatformErrorCodes.PCMigrationSilverTransferFailed,
+    3413:PlatformErrorCodes.PCMigrationEntitlementTransferFailed,
+    3414:PlatformErrorCodes.PCMigrationCannotStompClanFounder,
+    3500:PlatformErrorCodes.UnsupportedBrowser,
+    3600:PlatformErrorCodes.StadiaAccountRequired,
+    3702:PlatformErrorCodes.ErrorPhoneValidationTooManyUses,
+    3703:PlatformErrorCodes.ErrorPhoneValidationNoAssociatedPhone,
+    3705:PlatformErrorCodes.ErrorPhoneValidationCodeInvalid,
+    3706:PlatformErrorCodes.ErrorPhoneValidationBanned,
+    3707:PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlySent,
+    3708:PlatformErrorCodes.ErrorPhoneValidationCodeExpired,
+    3709:PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType,
+    3710:PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked,
+    3800:PlatformErrorCodes.ApplePushErrorUnknown,
+    3801:PlatformErrorCodes.ApplePushErrorNull,
+    3802:PlatformErrorCodes.ApplePushErrorTimeout,
+    3803:PlatformErrorCodes.ApplePushBadRequest,
+    3804:PlatformErrorCodes.ApplePushFailedAuth,
+    3805:PlatformErrorCodes.ApplePushThrottled,
+    3806:PlatformErrorCodes.ApplePushServiceUnavailable,
+    3807:PlatformErrorCodes.NotAnImageOrVideo,
+    3900:PlatformErrorCodes.ErrorBungieFriendsBlockFailed,
+    3901:PlatformErrorCodes.ErrorBungieFriendsAutoReject,
+    3902:PlatformErrorCodes.ErrorBungieFriendsNoRequestFound,
+    3903:PlatformErrorCodes.ErrorBungieFriendsAlreadyFriends,
+    3904:PlatformErrorCodes.ErrorBungieFriendsUnableToRemoveRequest,
+    3905:PlatformErrorCodes.ErrorBungieFriendsUnableToRemove,
+    3906:PlatformErrorCodes.ErrorBungieFriendsIdenticalSourceTarget,
+    3907:PlatformErrorCodes.ErrorBungieFriendsSelf,
+    3908:PlatformErrorCodes.ErrorBungieBlockSelf,
+    3910:PlatformErrorCodes.ErrorBungieFriendsListFull,
+    3911:PlatformErrorCodes.ErrorBungieBlockListFull,
+};

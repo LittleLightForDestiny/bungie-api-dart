@@ -23,19 +23,39 @@ enum DestinyGamePrivacySetting {
 
 extension DestinyGamePrivacySettingExtension on DestinyGamePrivacySetting{
   int? get value {
-    switch(this){
-      case DestinyGamePrivacySetting.Open:
-        return 0;
-      case DestinyGamePrivacySetting.ClanAndFriendsOnly:
-        return 1;
-      case DestinyGamePrivacySetting.FriendsOnly:
-        return 2;
-      case DestinyGamePrivacySetting.InvitationOnly:
-        return 3;
-      case DestinyGamePrivacySetting.Closed:
-        return 4;
-      default:
-        return null;
+    if (_$DestinyGamePrivacySettingEnumMap.containsKey(this)){
+      return _$DestinyGamePrivacySettingEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyGamePrivacySetting? decodeDestinyGamePrivacySetting (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyGamePrivacySettingValueMap.containsKey(value)){
+    return _$DestinyGamePrivacySettingValueMap[value];
+  }
+
+  return DestinyGamePrivacySetting.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyGamePrivacySetting (DestinyGamePrivacySetting? value) {
+  return value?.value;
+}
+
+const Map<DestinyGamePrivacySetting, int> _$DestinyGamePrivacySettingEnumMap = <DestinyGamePrivacySetting, int>{
+    DestinyGamePrivacySetting.Open:0,
+    DestinyGamePrivacySetting.ClanAndFriendsOnly:1,
+    DestinyGamePrivacySetting.FriendsOnly:2,
+    DestinyGamePrivacySetting.InvitationOnly:3,
+    DestinyGamePrivacySetting.Closed:4,
+};
+const Map<int, DestinyGamePrivacySetting> _$DestinyGamePrivacySettingValueMap = <int, DestinyGamePrivacySetting>{
+    0:DestinyGamePrivacySetting.Open,
+    1:DestinyGamePrivacySetting.ClanAndFriendsOnly,
+    2:DestinyGamePrivacySetting.FriendsOnly,
+    3:DestinyGamePrivacySetting.InvitationOnly,
+    4:DestinyGamePrivacySetting.Closed,
+};

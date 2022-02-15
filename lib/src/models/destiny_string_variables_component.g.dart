@@ -7,13 +7,12 @@ part of 'destiny_string_variables_component.dart';
 // **************************************************************************
 
 DestinyStringVariablesComponent _$DestinyStringVariablesComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyStringVariablesComponent()
-    ..integerValuesByHash =
-        (json['integerValuesByHash'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, e as int),
-    );
-}
+        Map<String, dynamic> json) =>
+    DestinyStringVariablesComponent()
+      ..integerValuesByHash =
+          (json['integerValuesByHash'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as int),
+      );
 
 Map<String, dynamic> _$DestinyStringVariablesComponentToJson(
         DestinyStringVariablesComponent instance) =>

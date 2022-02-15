@@ -17,15 +17,35 @@ enum DestinyStatAggregationType {
 
 extension DestinyStatAggregationTypeExtension on DestinyStatAggregationType{
   int? get value {
-    switch(this){
-      case DestinyStatAggregationType.CharacterAverage:
-        return 0;
-      case DestinyStatAggregationType.Character:
-        return 1;
-      case DestinyStatAggregationType.Item:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyStatAggregationTypeEnumMap.containsKey(this)){
+      return _$DestinyStatAggregationTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyStatAggregationType? decodeDestinyStatAggregationType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyStatAggregationTypeValueMap.containsKey(value)){
+    return _$DestinyStatAggregationTypeValueMap[value];
+  }
+
+  return DestinyStatAggregationType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyStatAggregationType (DestinyStatAggregationType? value) {
+  return value?.value;
+}
+
+const Map<DestinyStatAggregationType, int> _$DestinyStatAggregationTypeEnumMap = <DestinyStatAggregationType, int>{
+    DestinyStatAggregationType.CharacterAverage:0,
+    DestinyStatAggregationType.Character:1,
+    DestinyStatAggregationType.Item:2,
+};
+const Map<int, DestinyStatAggregationType> _$DestinyStatAggregationTypeValueMap = <int, DestinyStatAggregationType>{
+    0:DestinyStatAggregationType.CharacterAverage,
+    1:DestinyStatAggregationType.Character,
+    2:DestinyStatAggregationType.Item,
+};

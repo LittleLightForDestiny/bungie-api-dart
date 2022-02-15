@@ -20,17 +20,37 @@ enum GroupSortBy {
 
 extension GroupSortByExtension on GroupSortBy{
   int? get value {
-    switch(this){
-      case GroupSortBy.Name:
-        return 0;
-      case GroupSortBy.Date:
-        return 1;
-      case GroupSortBy.Popularity:
-        return 2;
-      case GroupSortBy.Id:
-        return 3;
-      default:
-        return null;
+    if (_$GroupSortByEnumMap.containsKey(this)){
+      return _$GroupSortByEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupSortBy? decodeGroupSortBy (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupSortByValueMap.containsKey(value)){
+    return _$GroupSortByValueMap[value];
+  }
+
+  return GroupSortBy.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupSortBy (GroupSortBy? value) {
+  return value?.value;
+}
+
+const Map<GroupSortBy, int> _$GroupSortByEnumMap = <GroupSortBy, int>{
+    GroupSortBy.Name:0,
+    GroupSortBy.Date:1,
+    GroupSortBy.Popularity:2,
+    GroupSortBy.Id:3,
+};
+const Map<int, GroupSortBy> _$GroupSortByValueMap = <int, GroupSortBy>{
+    0:GroupSortBy.Name,
+    1:GroupSortBy.Date,
+    2:GroupSortBy.Popularity,
+    3:GroupSortBy.Id,
+};

@@ -7,25 +7,26 @@ part of 'destiny_profile_collectibles_component.dart';
 // **************************************************************************
 
 DestinyProfileCollectiblesComponent
-    _$DestinyProfileCollectiblesComponentFromJson(Map<String, dynamic> json) {
-  return DestinyProfileCollectiblesComponent()
-    ..recentCollectibleHashes =
-        (json['recentCollectibleHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList()
-    ..newnessFlaggedCollectibleHashes =
-        (json['newnessFlaggedCollectibleHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList()
-    ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyCollectibleComponent.fromJson(e as Map<String, dynamic>)),
-    )
-    ..collectionCategoriesRootNodeHash =
-        json['collectionCategoriesRootNodeHash'] as int?
-    ..collectionBadgesRootNodeHash =
-        json['collectionBadgesRootNodeHash'] as int?;
-}
+    _$DestinyProfileCollectiblesComponentFromJson(Map<String, dynamic> json) =>
+        DestinyProfileCollectiblesComponent()
+          ..recentCollectibleHashes =
+              (json['recentCollectibleHashes'] as List<dynamic>?)
+                  ?.map((e) => e as int)
+                  .toList()
+          ..newnessFlaggedCollectibleHashes =
+              (json['newnessFlaggedCollectibleHashes'] as List<dynamic>?)
+                  ?.map((e) => e as int)
+                  .toList()
+          ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+                k,
+                DestinyCollectibleComponent.fromJson(
+                    e as Map<String, dynamic>)),
+          )
+          ..collectionCategoriesRootNodeHash =
+              json['collectionCategoriesRootNodeHash'] as int?
+          ..collectionBadgesRootNodeHash =
+              json['collectionBadgesRootNodeHash'] as int?;
 
 Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
         DestinyProfileCollectiblesComponent instance) =>

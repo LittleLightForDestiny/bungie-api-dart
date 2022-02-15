@@ -7,22 +7,22 @@ part of 'destiny_equipment_slot_definition.dart';
 // **************************************************************************
 
 DestinyEquipmentSlotDefinition _$DestinyEquipmentSlotDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyEquipmentSlotDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..equipmentCategoryHash = json['equipmentCategoryHash'] as int?
-    ..bucketTypeHash = json['bucketTypeHash'] as int?
-    ..applyCustomArtDyes = json['applyCustomArtDyes'] as bool?
-    ..artDyeChannels = (json['artDyeChannels'] as List<dynamic>?)
-        ?.map((e) => DestinyArtDyeReference.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyEquipmentSlotDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..equipmentCategoryHash = json['equipmentCategoryHash'] as int?
+      ..bucketTypeHash = json['bucketTypeHash'] as int?
+      ..applyCustomArtDyes = json['applyCustomArtDyes'] as bool?
+      ..artDyeChannels = (json['artDyeChannels'] as List<dynamic>?)
+          ?.map(
+              (e) => DestinyArtDyeReference.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEquipmentSlotDefinitionToJson(
         DestinyEquipmentSlotDefinition instance) =>

@@ -17,7 +17,7 @@ class DestinyProgressionRewardItemQuantity{
 	@JsonKey(name:'rewardedAtProgressionLevel')
 	int? rewardedAtProgressionLevel;
 	
-	@JsonKey(name:'acquisitionBehavior',unknownEnumValue:DestinyProgressionRewardItemAcquisitionBehavior.ProtectedInvalidEnumValue)
+	@JsonKey(name:'acquisitionBehavior',fromJson:decodeDestinyProgressionRewardItemAcquisitionBehavior,toJson:encodeDestinyProgressionRewardItemAcquisitionBehavior)
 	DestinyProgressionRewardItemAcquisitionBehavior? acquisitionBehavior;
 	
 	@JsonKey(name:'uiDisplayStyle')

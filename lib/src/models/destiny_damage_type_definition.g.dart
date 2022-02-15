@@ -7,20 +7,18 @@ part of 'destiny_damage_type_definition.dart';
 // **************************************************************************
 
 DestinyDamageTypeDefinition _$DestinyDamageTypeDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyDamageTypeDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..transparentIconPath = json['transparentIconPath'] as String?
-    ..showIcon = json['showIcon'] as bool?
-    ..enumValue = _$enumDecodeNullable(_$DamageTypeEnumMap, json['enumValue'],
-        unknownValue: DamageType.ProtectedInvalidEnumValue)
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyDamageTypeDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..transparentIconPath = json['transparentIconPath'] as String?
+      ..showIcon = json['showIcon'] as bool?
+      ..enumValue = decodeDamageType(json['enumValue'])
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyDamageTypeDefinitionToJson(
         DestinyDamageTypeDefinition instance) =>
@@ -28,56 +26,8 @@ Map<String, dynamic> _$DestinyDamageTypeDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'transparentIconPath': instance.transparentIconPath,
       'showIcon': instance.showIcon,
-      'enumValue': _$DamageTypeEnumMap[instance.enumValue],
+      'enumValue': encodeDamageType(instance.enumValue),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$DamageTypeEnumMap = {
-  DamageType.None: 0,
-  DamageType.Kinetic: 1,
-  DamageType.Arc: 2,
-  DamageType.Thermal: 3,
-  DamageType.Void: 4,
-  DamageType.Raid: 5,
-  DamageType.Stasis: 6,
-  DamageType.ProtectedInvalidEnumValue: 999999999,
-};

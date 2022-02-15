@@ -7,9 +7,8 @@ part of 'group_application_request.dart';
 // **************************************************************************
 
 GroupApplicationRequest _$GroupApplicationRequestFromJson(
-    Map<String, dynamic> json) {
-  return GroupApplicationRequest()..message = json['message'] as String?;
-}
+        Map<String, dynamic> json) =>
+    GroupApplicationRequest()..message = json['message'] as String?;
 
 Map<String, dynamic> _$GroupApplicationRequestToJson(
         GroupApplicationRequest instance) =>

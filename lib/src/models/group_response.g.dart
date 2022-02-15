@@ -6,35 +6,33 @@ part of 'group_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) {
-  return GroupResponse()
-    ..detail = json['detail'] == null
-        ? null
-        : GroupV2.fromJson(json['detail'] as Map<String, dynamic>)
-    ..founder = json['founder'] == null
-        ? null
-        : GroupMember.fromJson(json['founder'] as Map<String, dynamic>)
-    ..alliedIds =
-        (json['alliedIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-    ..parentGroup = json['parentGroup'] == null
-        ? null
-        : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
-    ..allianceStatus = _$enumDecodeNullable(
-        _$GroupAllianceStatusEnumMap, json['allianceStatus'],
-        unknownValue: GroupAllianceStatus.ProtectedInvalidEnumValue)
-    ..groupJoinInviteCount = json['groupJoinInviteCount'] as int?
-    ..currentUserMembershipsInactiveForDestiny =
-        json['currentUserMembershipsInactiveForDestiny'] as bool?
-    ..currentUserMemberMap =
-        (json['currentUserMemberMap'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, GroupMember.fromJson(e as Map<String, dynamic>)),
-    )
-    ..currentUserPotentialMemberMap =
-        (json['currentUserPotentialMemberMap'] as Map<String, dynamic>?)?.map(
-      (k, e) =>
-          MapEntry(k, GroupPotentialMember.fromJson(e as Map<String, dynamic>)),
-    );
-}
+GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) =>
+    GroupResponse()
+      ..detail = json['detail'] == null
+          ? null
+          : GroupV2.fromJson(json['detail'] as Map<String, dynamic>)
+      ..founder = json['founder'] == null
+          ? null
+          : GroupMember.fromJson(json['founder'] as Map<String, dynamic>)
+      ..alliedIds = (json['alliedIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList()
+      ..parentGroup = json['parentGroup'] == null
+          ? null
+          : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
+      ..allianceStatus = decodeGroupAllianceStatus(json['allianceStatus'])
+      ..groupJoinInviteCount = json['groupJoinInviteCount'] as int?
+      ..currentUserMembershipsInactiveForDestiny =
+          json['currentUserMembershipsInactiveForDestiny'] as bool?
+      ..currentUserMemberMap =
+          (json['currentUserMemberMap'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, GroupMember.fromJson(e as Map<String, dynamic>)),
+      )
+      ..currentUserPotentialMemberMap =
+          (json['currentUserPotentialMemberMap'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, GroupPotentialMember.fromJson(e as Map<String, dynamic>)),
+      );
 
 Map<String, dynamic> _$GroupResponseToJson(GroupResponse instance) =>
     <String, dynamic>{
@@ -42,54 +40,10 @@ Map<String, dynamic> _$GroupResponseToJson(GroupResponse instance) =>
       'founder': instance.founder,
       'alliedIds': instance.alliedIds,
       'parentGroup': instance.parentGroup,
-      'allianceStatus': _$GroupAllianceStatusEnumMap[instance.allianceStatus],
+      'allianceStatus': encodeGroupAllianceStatus(instance.allianceStatus),
       'groupJoinInviteCount': instance.groupJoinInviteCount,
       'currentUserMembershipsInactiveForDestiny':
           instance.currentUserMembershipsInactiveForDestiny,
       'currentUserMemberMap': instance.currentUserMemberMap,
       'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$GroupAllianceStatusEnumMap = {
-  GroupAllianceStatus.Unallied: 0,
-  GroupAllianceStatus.Parent: 1,
-  GroupAllianceStatus.Child: 2,
-  GroupAllianceStatus.ProtectedInvalidEnumValue: 999999999,
-};

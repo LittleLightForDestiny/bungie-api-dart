@@ -36,7 +36,7 @@ class DestinySandboxPerkDefinition{
 	
 	/// If this perk grants a damage type to a weapon, the damage type will be defined here.
 	/// Unless you have a compelling reason to use this enum value, use the damageTypeHash instead to look up the actual DestinyDamageTypeDefinition.
-	@JsonKey(name:'damageType',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'damageType',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? damageType;
 	
 	/// The hash identifier for looking up the DestinyDamageTypeDefinition, if this perk has a damage type.

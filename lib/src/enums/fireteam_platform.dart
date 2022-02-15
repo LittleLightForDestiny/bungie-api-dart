@@ -26,21 +26,41 @@ enum FireteamPlatform {
 
 extension FireteamPlatformExtension on FireteamPlatform{
   int? get value {
-    switch(this){
-      case FireteamPlatform.Any:
-        return 0;
-      case FireteamPlatform.Playstation4:
-        return 1;
-      case FireteamPlatform.XboxOne:
-        return 2;
-      case FireteamPlatform.Blizzard:
-        return 3;
-      case FireteamPlatform.Steam:
-        return 4;
-      case FireteamPlatform.Stadia:
-        return 5;
-      default:
-        return null;
+    if (_$FireteamPlatformEnumMap.containsKey(this)){
+      return _$FireteamPlatformEnumMap[this];
     }
+    return null;
   }
 }
+
+FireteamPlatform? decodeFireteamPlatform (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FireteamPlatformValueMap.containsKey(value)){
+    return _$FireteamPlatformValueMap[value];
+  }
+
+  return FireteamPlatform.ProtectedInvalidEnumValue;
+}
+
+int? encodeFireteamPlatform (FireteamPlatform? value) {
+  return value?.value;
+}
+
+const Map<FireteamPlatform, int> _$FireteamPlatformEnumMap = <FireteamPlatform, int>{
+    FireteamPlatform.Any:0,
+    FireteamPlatform.Playstation4:1,
+    FireteamPlatform.XboxOne:2,
+    FireteamPlatform.Blizzard:3,
+    FireteamPlatform.Steam:4,
+    FireteamPlatform.Stadia:5,
+};
+const Map<int, FireteamPlatform> _$FireteamPlatformValueMap = <int, FireteamPlatform>{
+    0:FireteamPlatform.Any,
+    1:FireteamPlatform.Playstation4,
+    2:FireteamPlatform.XboxOne,
+    3:FireteamPlatform.Blizzard,
+    4:FireteamPlatform.Steam,
+    5:FireteamPlatform.Stadia,
+};

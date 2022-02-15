@@ -7,13 +7,12 @@ part of 'destiny_material_requirement.dart';
 // **************************************************************************
 
 DestinyMaterialRequirement _$DestinyMaterialRequirementFromJson(
-    Map<String, dynamic> json) {
-  return DestinyMaterialRequirement()
-    ..itemHash = json['itemHash'] as int?
-    ..deleteOnAction = json['deleteOnAction'] as bool?
-    ..count = json['count'] as int?
-    ..omitFromRequirements = json['omitFromRequirements'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyMaterialRequirement()
+      ..itemHash = json['itemHash'] as int?
+      ..deleteOnAction = json['deleteOnAction'] as bool?
+      ..count = json['count'] as int?
+      ..omitFromRequirements = json['omitFromRequirements'] as bool?;
 
 Map<String, dynamic> _$DestinyMaterialRequirementToJson(
         DestinyMaterialRequirement instance) =>

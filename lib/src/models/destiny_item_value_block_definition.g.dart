@@ -7,13 +7,12 @@ part of 'destiny_item_value_block_definition.dart';
 // **************************************************************************
 
 DestinyItemValueBlockDefinition _$DestinyItemValueBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemValueBlockDefinition()
-    ..itemValue = (json['itemValue'] as List<dynamic>?)
-        ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..valueDescription = json['valueDescription'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyItemValueBlockDefinition()
+      ..itemValue = (json['itemValue'] as List<dynamic>?)
+          ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..valueDescription = json['valueDescription'] as String?;
 
 Map<String, dynamic> _$DestinyItemValueBlockDefinitionToJson(
         DestinyItemValueBlockDefinition instance) =>

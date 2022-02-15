@@ -7,12 +7,11 @@ part of 'destiny_collectible_component.dart';
 // **************************************************************************
 
 DestinyCollectibleComponent _$DestinyCollectibleComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyCollectibleComponent()
-    ..state = json['state'] == null
-        ? null
-        : DestinyCollectibleState.fromJson(json['state'] as int);
-}
+        Map<String, dynamic> json) =>
+    DestinyCollectibleComponent()
+      ..state = json['state'] == null
+          ? null
+          : DestinyCollectibleState.fromJson(json['state'] as int);
 
 Map<String, dynamic> _$DestinyCollectibleComponentToJson(
         DestinyCollectibleComponent instance) =>

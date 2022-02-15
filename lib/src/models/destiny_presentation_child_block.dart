@@ -15,12 +15,12 @@ class DestinyPresentationChildBlock{
 	
 	Map<String, dynamic> toJson() => _$DestinyPresentationChildBlockToJson(this);
 	
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	
 	@JsonKey(name:'parentPresentationNodeHashes')
 	List<int>? parentPresentationNodeHashes;
 	
-	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'displayStyle',fromJson:decodeDestinyPresentationDisplayStyle,toJson:encodeDestinyPresentationDisplayStyle)
 	DestinyPresentationDisplayStyle? displayStyle;
 }

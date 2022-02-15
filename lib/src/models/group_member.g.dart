@@ -6,28 +6,23 @@ part of 'group_member.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) {
-  return GroupMember()
-    ..memberType = _$enumDecodeNullable(
-        _$RuntimeGroupMemberTypeEnumMap, json['memberType'],
-        unknownValue: RuntimeGroupMemberType.ProtectedInvalidEnumValue)
-    ..isOnline = json['isOnline'] as bool?
-    ..lastOnlineStatusChange = json['lastOnlineStatusChange'] as String?
-    ..groupId = json['groupId'] as String?
-    ..destinyUserInfo = json['destinyUserInfo'] == null
-        ? null
-        : GroupUserInfoCard.fromJson(
-            json['destinyUserInfo'] as Map<String, dynamic>)
-    ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
-        ? null
-        : UserInfoCard.fromJson(
-            json['bungieNetUserInfo'] as Map<String, dynamic>)
-    ..joinDate = json['joinDate'] as String?;
-}
+GroupMember _$GroupMemberFromJson(Map<String, dynamic> json) => GroupMember()
+  ..memberType = decodeRuntimeGroupMemberType(json['memberType'])
+  ..isOnline = json['isOnline'] as bool?
+  ..lastOnlineStatusChange = json['lastOnlineStatusChange'] as String?
+  ..groupId = json['groupId'] as String?
+  ..destinyUserInfo = json['destinyUserInfo'] == null
+      ? null
+      : GroupUserInfoCard.fromJson(
+          json['destinyUserInfo'] as Map<String, dynamic>)
+  ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
+      ? null
+      : UserInfoCard.fromJson(json['bungieNetUserInfo'] as Map<String, dynamic>)
+  ..joinDate = json['joinDate'] as String?;
 
 Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) =>
     <String, dynamic>{
-      'memberType': _$RuntimeGroupMemberTypeEnumMap[instance.memberType],
+      'memberType': encodeRuntimeGroupMemberType(instance.memberType),
       'isOnline': instance.isOnline,
       'lastOnlineStatusChange': instance.lastOnlineStatusChange,
       'groupId': instance.groupId,
@@ -35,50 +30,3 @@ Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) =>
       'bungieNetUserInfo': instance.bungieNetUserInfo,
       'joinDate': instance.joinDate,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$RuntimeGroupMemberTypeEnumMap = {
-  RuntimeGroupMemberType.None: 0,
-  RuntimeGroupMemberType.Beginner: 1,
-  RuntimeGroupMemberType.Member: 2,
-  RuntimeGroupMemberType.Admin: 3,
-  RuntimeGroupMemberType.ActingFounder: 4,
-  RuntimeGroupMemberType.Founder: 5,
-  RuntimeGroupMemberType.ProtectedInvalidEnumValue: 999999999,
-};

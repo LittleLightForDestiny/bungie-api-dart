@@ -23,19 +23,39 @@ enum FireteamPlatformInviteResult {
 
 extension FireteamPlatformInviteResultExtension on FireteamPlatformInviteResult{
   int? get value {
-    switch(this){
-      case FireteamPlatformInviteResult.None:
-        return 0;
-      case FireteamPlatformInviteResult.Success:
-        return 1;
-      case FireteamPlatformInviteResult.AlreadyInFireteam:
-        return 2;
-      case FireteamPlatformInviteResult.Throttled:
-        return 3;
-      case FireteamPlatformInviteResult.ServiceError:
-        return 4;
-      default:
-        return null;
+    if (_$FireteamPlatformInviteResultEnumMap.containsKey(this)){
+      return _$FireteamPlatformInviteResultEnumMap[this];
     }
+    return null;
   }
 }
+
+FireteamPlatformInviteResult? decodeFireteamPlatformInviteResult (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FireteamPlatformInviteResultValueMap.containsKey(value)){
+    return _$FireteamPlatformInviteResultValueMap[value];
+  }
+
+  return FireteamPlatformInviteResult.ProtectedInvalidEnumValue;
+}
+
+int? encodeFireteamPlatformInviteResult (FireteamPlatformInviteResult? value) {
+  return value?.value;
+}
+
+const Map<FireteamPlatformInviteResult, int> _$FireteamPlatformInviteResultEnumMap = <FireteamPlatformInviteResult, int>{
+    FireteamPlatformInviteResult.None:0,
+    FireteamPlatformInviteResult.Success:1,
+    FireteamPlatformInviteResult.AlreadyInFireteam:2,
+    FireteamPlatformInviteResult.Throttled:3,
+    FireteamPlatformInviteResult.ServiceError:4,
+};
+const Map<int, FireteamPlatformInviteResult> _$FireteamPlatformInviteResultValueMap = <int, FireteamPlatformInviteResult>{
+    0:FireteamPlatformInviteResult.None,
+    1:FireteamPlatformInviteResult.Success,
+    2:FireteamPlatformInviteResult.AlreadyInFireteam,
+    3:FireteamPlatformInviteResult.Throttled,
+    4:FireteamPlatformInviteResult.ServiceError,
+};

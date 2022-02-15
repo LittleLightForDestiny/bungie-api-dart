@@ -21,7 +21,7 @@ class SingleComponentResponseOfDestinyCurrenciesComponent{
 	@JsonKey(name:'data')
 	DestinyCurrenciesComponent? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

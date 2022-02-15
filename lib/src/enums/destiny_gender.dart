@@ -17,15 +17,35 @@ enum DestinyGender {
 
 extension DestinyGenderExtension on DestinyGender{
   int? get value {
-    switch(this){
-      case DestinyGender.Male:
-        return 0;
-      case DestinyGender.Female:
-        return 1;
-      case DestinyGender.Unknown:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyGenderEnumMap.containsKey(this)){
+      return _$DestinyGenderEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyGender? decodeDestinyGender (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyGenderValueMap.containsKey(value)){
+    return _$DestinyGenderValueMap[value];
+  }
+
+  return DestinyGender.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyGender (DestinyGender? value) {
+  return value?.value;
+}
+
+const Map<DestinyGender, int> _$DestinyGenderEnumMap = <DestinyGender, int>{
+    DestinyGender.Male:0,
+    DestinyGender.Female:1,
+    DestinyGender.Unknown:2,
+};
+const Map<int, DestinyGender> _$DestinyGenderValueMap = <int, DestinyGender>{
+    0:DestinyGender.Male,
+    1:DestinyGender.Female,
+    2:DestinyGender.Unknown,
+};

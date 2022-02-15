@@ -7,34 +7,31 @@ part of 'destiny_profile_user_info_card.dart';
 // **************************************************************************
 
 DestinyProfileUserInfoCard _$DestinyProfileUserInfoCardFromJson(
-    Map<String, dynamic> json) {
-  return DestinyProfileUserInfoCard()
-    ..dateLastPlayed = json['dateLastPlayed'] as String?
-    ..isOverridden = json['isOverridden'] as bool?
-    ..isCrossSavePrimary = json['isCrossSavePrimary'] as bool?
-    ..platformSilver = json['platformSilver'] == null
-        ? null
-        : DestinyPlatformSilverComponent.fromJson(
-            json['platformSilver'] as Map<String, dynamic>)
-    ..unpairedGameVersions = json['unpairedGameVersions'] as int?
-    ..supplementalDisplayName = json['supplementalDisplayName'] as String?
-    ..iconPath = json['iconPath'] as String?
-    ..crossSaveOverride = _$enumDecodeNullable(
-        _$BungieMembershipTypeEnumMap, json['crossSaveOverride'],
-        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..applicableMembershipTypes =
-        (json['applicableMembershipTypes'] as List<dynamic>?)
-            ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
-            .toList()
-    ..isPublic = json['isPublic'] as bool?
-    ..membershipType = _$enumDecodeNullable(
-        _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..membershipId = json['membershipId'] as String?
-    ..displayName = json['displayName'] as String?
-    ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-    ..bungieGlobalDisplayNameCode = json['bungieGlobalDisplayNameCode'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyProfileUserInfoCard()
+      ..dateLastPlayed = json['dateLastPlayed'] as String?
+      ..isOverridden = json['isOverridden'] as bool?
+      ..isCrossSavePrimary = json['isCrossSavePrimary'] as bool?
+      ..platformSilver = json['platformSilver'] == null
+          ? null
+          : DestinyPlatformSilverComponent.fromJson(
+              json['platformSilver'] as Map<String, dynamic>)
+      ..unpairedGameVersions = json['unpairedGameVersions'] as int?
+      ..supplementalDisplayName = json['supplementalDisplayName'] as String?
+      ..iconPath = json['iconPath'] as String?
+      ..crossSaveOverride =
+          decodeBungieMembershipType(json['crossSaveOverride'])
+      ..applicableMembershipTypes =
+          (json['applicableMembershipTypes'] as List<dynamic>?)
+              ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
+              .toList()
+      ..isPublic = json['isPublic'] as bool?
+      ..membershipType = decodeBungieMembershipType(json['membershipType'])
+      ..membershipId = json['membershipId'] as String?
+      ..displayName = json['displayName'] as String?
+      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+      ..bungieGlobalDisplayNameCode =
+          json['bungieGlobalDisplayNameCode'] as int?;
 
 Map<String, dynamic> _$DestinyProfileUserInfoCardToJson(
         DestinyProfileUserInfoCard instance) =>
@@ -47,12 +44,12 @@ Map<String, dynamic> _$DestinyProfileUserInfoCardToJson(
       'supplementalDisplayName': instance.supplementalDisplayName,
       'iconPath': instance.iconPath,
       'crossSaveOverride':
-          _$BungieMembershipTypeEnumMap[instance.crossSaveOverride],
+          encodeBungieMembershipType(instance.crossSaveOverride),
       'applicableMembershipTypes': instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e])
           .toList(),
       'isPublic': instance.isPublic,
-      'membershipType': _$BungieMembershipTypeEnumMap[instance.membershipType],
+      'membershipType': encodeBungieMembershipType(instance.membershipType),
       'membershipId': instance.membershipId,
       'displayName': instance.displayName,
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
@@ -83,17 +80,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$BungieMembershipTypeEnumMap = {

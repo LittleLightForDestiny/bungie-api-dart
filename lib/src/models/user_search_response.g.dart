@@ -6,15 +6,14 @@ part of 'user_search_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserSearchResponse _$UserSearchResponseFromJson(Map<String, dynamic> json) {
-  return UserSearchResponse()
-    ..searchResults = (json['searchResults'] as List<dynamic>?)
-        ?.map(
-            (e) => UserSearchResponseDetail.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..page = json['page'] as int?
-    ..hasMore = json['hasMore'] as bool?;
-}
+UserSearchResponse _$UserSearchResponseFromJson(Map<String, dynamic> json) =>
+    UserSearchResponse()
+      ..searchResults = (json['searchResults'] as List<dynamic>?)
+          ?.map((e) =>
+              UserSearchResponseDetail.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..page = json['page'] as int?
+      ..hasMore = json['hasMore'] as bool?;
 
 Map<String, dynamic> _$UserSearchResponseToJson(UserSearchResponse instance) =>
     <String, dynamic>{

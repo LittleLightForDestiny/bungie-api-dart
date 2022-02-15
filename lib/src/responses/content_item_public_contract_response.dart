@@ -1,45 +1,33 @@
 import '../models/content_item_public_contract.dart';
 import '../enums/platform_error_codes.dart';
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'content_item_public_contract_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class ContentItemPublicContractResponse{
+class ContentItemPublicContractResponse extends BungieNetResponse<ContentItemPublicContract> {
 	ContentItemPublicContractResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
+		ContentItemPublicContract? response,
+		PlatformErrorCodes? errorCode,
+		int? throttleSeconds,
+		String? errorStatus,
+		String? message,
+		Map<String, String>? messageData,
+		String? detailedErrorTrace,
+	}):super(
+		response:response,
+		errorCode:errorCode,
+		throttleSeconds:throttleSeconds,
+		errorStatus:errorStatus,
+		message:message,
+		messageData:messageData,
+		detailedErrorTrace:detailedErrorTrace,
+	);
 
 	factory ContentItemPublicContractResponse.fromJson(Map<String, dynamic> json) => _$ContentItemPublicContractResponseFromJson(json);
-	
-	
-	@JsonKey(name:'Response')
-	ContentItemPublicContract? response;
-	
-	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes? errorCode;
-	
-	@JsonKey(name:'ThrottleSeconds')
-	int? throttleSeconds;
-	
-	@JsonKey(name:'ErrorStatus')
-	String? errorStatus;
-	
-	@JsonKey(name:'Message')
-	String? message;
-	
-	@JsonKey(name:'MessageData')
-	Map<String, String>? messageData;
-	
-	@JsonKey(name:'DetailedErrorTrace')
-	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$ContentItemPublicContractResponseToJson(this);
 }

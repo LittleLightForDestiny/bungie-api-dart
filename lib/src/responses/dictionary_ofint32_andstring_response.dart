@@ -1,44 +1,32 @@
 import '../enums/platform_error_codes.dart';
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'dictionary_ofint32_andstring_response.g.dart';
 
 /// Look at the Response property for more information about the nature of this response
 @JsonSerializable()
-class DictionaryOfint32AndstringResponse{
+class DictionaryOfint32AndstringResponse extends BungieNetResponse<Map<String, String>> {
 	DictionaryOfint32AndstringResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
+		Map<String, String>? response,
+		PlatformErrorCodes? errorCode,
+		int? throttleSeconds,
+		String? errorStatus,
+		String? message,
+		Map<String, String>? messageData,
+		String? detailedErrorTrace,
+	}):super(
+		response:response,
+		errorCode:errorCode,
+		throttleSeconds:throttleSeconds,
+		errorStatus:errorStatus,
+		message:message,
+		messageData:messageData,
+		detailedErrorTrace:detailedErrorTrace,
+	);
 
 	factory DictionaryOfint32AndstringResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfint32AndstringResponseFromJson(json);
-	
-	
-	@JsonKey(name:'Response')
-	Map<String, String>? response;
-	
-	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes? errorCode;
-	
-	@JsonKey(name:'ThrottleSeconds')
-	int? throttleSeconds;
-	
-	@JsonKey(name:'ErrorStatus')
-	String? errorStatus;
-	
-	@JsonKey(name:'Message')
-	String? message;
-	
-	@JsonKey(name:'MessageData')
-	Map<String, String>? messageData;
-	
-	@JsonKey(name:'DetailedErrorTrace')
-	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DictionaryOfint32AndstringResponseToJson(this);
 }

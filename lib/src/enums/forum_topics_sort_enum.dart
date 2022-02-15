@@ -32,25 +32,45 @@ enum ForumTopicsSortEnum {
 
 extension ForumTopicsSortEnumExtension on ForumTopicsSortEnum{
   int? get value {
-    switch(this){
-      case ForumTopicsSortEnum.Default:
-        return 0;
-      case ForumTopicsSortEnum.LastReplied:
-        return 1;
-      case ForumTopicsSortEnum.MostReplied:
-        return 2;
-      case ForumTopicsSortEnum.Popularity:
-        return 3;
-      case ForumTopicsSortEnum.Controversiality:
-        return 4;
-      case ForumTopicsSortEnum.Liked:
-        return 5;
-      case ForumTopicsSortEnum.HighestRated:
-        return 6;
-      case ForumTopicsSortEnum.MostUpvoted:
-        return 7;
-      default:
-        return null;
+    if (_$ForumTopicsSortEnumEnumMap.containsKey(this)){
+      return _$ForumTopicsSortEnumEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumTopicsSortEnum? decodeForumTopicsSortEnum (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumTopicsSortEnumValueMap.containsKey(value)){
+    return _$ForumTopicsSortEnumValueMap[value];
+  }
+
+  return ForumTopicsSortEnum.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumTopicsSortEnum (ForumTopicsSortEnum? value) {
+  return value?.value;
+}
+
+const Map<ForumTopicsSortEnum, int> _$ForumTopicsSortEnumEnumMap = <ForumTopicsSortEnum, int>{
+    ForumTopicsSortEnum.Default:0,
+    ForumTopicsSortEnum.LastReplied:1,
+    ForumTopicsSortEnum.MostReplied:2,
+    ForumTopicsSortEnum.Popularity:3,
+    ForumTopicsSortEnum.Controversiality:4,
+    ForumTopicsSortEnum.Liked:5,
+    ForumTopicsSortEnum.HighestRated:6,
+    ForumTopicsSortEnum.MostUpvoted:7,
+};
+const Map<int, ForumTopicsSortEnum> _$ForumTopicsSortEnumValueMap = <int, ForumTopicsSortEnum>{
+    0:ForumTopicsSortEnum.Default,
+    1:ForumTopicsSortEnum.LastReplied,
+    2:ForumTopicsSortEnum.MostReplied,
+    3:ForumTopicsSortEnum.Popularity,
+    4:ForumTopicsSortEnum.Controversiality,
+    5:ForumTopicsSortEnum.Liked,
+    6:ForumTopicsSortEnum.HighestRated,
+    7:ForumTopicsSortEnum.MostUpvoted,
+};

@@ -1,31 +1,28 @@
 {{#imports}}
 import '{{{.}}}.dart';
 {{/imports}}
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part '{{filename}}.g.dart';
 
 {{#description}}
 /// {{{.}}}
 {{/description}}
 @JsonSerializable()
-class {{className}}{
+class {{className}} extends BungieNetResponse<{{{responseClassName}}}> {
 	{{className}}({
 		{{#properties}}
-		this.{{propertyName}},
+		{{{typeName}}}? {{propertyName}},
 		{{/properties}}
-	});
+	}):super(
+		{{#properties}}
+		{{propertyName}}:{{propertyName}},
+		{{/properties}}
+	);
 
 	factory {{className}}.fromJson(Map<String, dynamic> json) => _${{className}}FromJson(json);
-	
-	{{#properties}}
-	
-	{{#description}}
-	/// {{{.}}}
-	{{/description}}
-	@JsonKey(name:'{{name}}')
-	{{{typeName}}}? {{propertyName}};
-	{{/properties}}
 
 	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
 }

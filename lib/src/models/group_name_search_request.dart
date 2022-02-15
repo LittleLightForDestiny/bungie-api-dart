@@ -17,6 +17,6 @@ class GroupNameSearchRequest{
 	@JsonKey(name:'groupName')
 	String? groupName;
 	
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'groupType',fromJson:decodeGroupType,toJson:encodeGroupType)
 	GroupType? groupType;
 }

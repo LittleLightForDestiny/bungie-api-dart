@@ -8,10 +8,9 @@ part of 'destiny_activity_modifier_reference_definition.dart';
 
 DestinyActivityModifierReferenceDefinition
     _$DestinyActivityModifierReferenceDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyActivityModifierReferenceDefinition()
-    ..activityModifierHash = json['activityModifierHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyActivityModifierReferenceDefinition()
+          ..activityModifierHash = json['activityModifierHash'] as int?;
 
 Map<String, dynamic> _$DestinyActivityModifierReferenceDefinitionToJson(
         DestinyActivityModifierReferenceDefinition instance) =>

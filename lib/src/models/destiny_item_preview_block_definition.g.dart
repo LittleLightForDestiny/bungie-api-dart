@@ -7,17 +7,17 @@ part of 'destiny_item_preview_block_definition.dart';
 // **************************************************************************
 
 DestinyItemPreviewBlockDefinition _$DestinyItemPreviewBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemPreviewBlockDefinition()
-    ..screenStyle = json['screenStyle'] as String?
-    ..previewVendorHash = json['previewVendorHash'] as int?
-    ..artifactHash = json['artifactHash'] as int?
-    ..previewActionString = json['previewActionString'] as String?
-    ..derivedItemCategories = (json['derivedItemCategories'] as List<dynamic>?)
-        ?.map((e) => DestinyDerivedItemCategoryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyItemPreviewBlockDefinition()
+      ..screenStyle = json['screenStyle'] as String?
+      ..previewVendorHash = json['previewVendorHash'] as int?
+      ..artifactHash = json['artifactHash'] as int?
+      ..previewActionString = json['previewActionString'] as String?
+      ..derivedItemCategories =
+          (json['derivedItemCategories'] as List<dynamic>?)
+              ?.map((e) => DestinyDerivedItemCategoryDefinition.fromJson(
+                  e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$DestinyItemPreviewBlockDefinitionToJson(
         DestinyItemPreviewBlockDefinition instance) =>

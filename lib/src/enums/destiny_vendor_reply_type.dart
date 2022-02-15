@@ -17,15 +17,35 @@ enum DestinyVendorReplyType {
 
 extension DestinyVendorReplyTypeExtension on DestinyVendorReplyType{
   int? get value {
-    switch(this){
-      case DestinyVendorReplyType.Accept:
-        return 0;
-      case DestinyVendorReplyType.Decline:
-        return 1;
-      case DestinyVendorReplyType.Complete:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyVendorReplyTypeEnumMap.containsKey(this)){
+      return _$DestinyVendorReplyTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyVendorReplyType? decodeDestinyVendorReplyType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyVendorReplyTypeValueMap.containsKey(value)){
+    return _$DestinyVendorReplyTypeValueMap[value];
+  }
+
+  return DestinyVendorReplyType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyVendorReplyType (DestinyVendorReplyType? value) {
+  return value?.value;
+}
+
+const Map<DestinyVendorReplyType, int> _$DestinyVendorReplyTypeEnumMap = <DestinyVendorReplyType, int>{
+    DestinyVendorReplyType.Accept:0,
+    DestinyVendorReplyType.Decline:1,
+    DestinyVendorReplyType.Complete:2,
+};
+const Map<int, DestinyVendorReplyType> _$DestinyVendorReplyTypeValueMap = <int, DestinyVendorReplyType>{
+    0:DestinyVendorReplyType.Accept,
+    1:DestinyVendorReplyType.Decline,
+    2:DestinyVendorReplyType.Complete,
+};

@@ -7,29 +7,28 @@ part of 'destiny_item_action_block_definition.dart';
 // **************************************************************************
 
 DestinyItemActionBlockDefinition _$DestinyItemActionBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemActionBlockDefinition()
-    ..verbName = json['verbName'] as String?
-    ..verbDescription = json['verbDescription'] as String?
-    ..isPositive = json['isPositive'] as bool?
-    ..overlayScreenName = json['overlayScreenName'] as String?
-    ..overlayIcon = json['overlayIcon'] as String?
-    ..requiredCooldownSeconds = json['requiredCooldownSeconds'] as int?
-    ..requiredItems = (json['requiredItems'] as List<dynamic>?)
-        ?.map((e) => DestinyItemActionRequiredItemDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..progressionRewards = (json['progressionRewards'] as List<dynamic>?)
-        ?.map((e) => DestinyProgressionRewardDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..actionTypeLabel = json['actionTypeLabel'] as String?
-    ..requiredLocation = json['requiredLocation'] as String?
-    ..requiredCooldownHash = json['requiredCooldownHash'] as int?
-    ..deleteOnAction = json['deleteOnAction'] as bool?
-    ..consumeEntireStack = json['consumeEntireStack'] as bool?
-    ..useOnAcquire = json['useOnAcquire'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyItemActionBlockDefinition()
+      ..verbName = json['verbName'] as String?
+      ..verbDescription = json['verbDescription'] as String?
+      ..isPositive = json['isPositive'] as bool?
+      ..overlayScreenName = json['overlayScreenName'] as String?
+      ..overlayIcon = json['overlayIcon'] as String?
+      ..requiredCooldownSeconds = json['requiredCooldownSeconds'] as int?
+      ..requiredItems = (json['requiredItems'] as List<dynamic>?)
+          ?.map((e) => DestinyItemActionRequiredItemDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..progressionRewards = (json['progressionRewards'] as List<dynamic>?)
+          ?.map((e) => DestinyProgressionRewardDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..actionTypeLabel = json['actionTypeLabel'] as String?
+      ..requiredLocation = json['requiredLocation'] as String?
+      ..requiredCooldownHash = json['requiredCooldownHash'] as int?
+      ..deleteOnAction = json['deleteOnAction'] as bool?
+      ..consumeEntireStack = json['consumeEntireStack'] as bool?
+      ..useOnAcquire = json['useOnAcquire'] as bool?;
 
 Map<String, dynamic> _$DestinyItemActionBlockDefinitionToJson(
         DestinyItemActionBlockDefinition instance) =>

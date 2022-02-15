@@ -17,6 +17,6 @@ class DestinyUnlockExpressionDefinition{
 	Map<String, dynamic> toJson() => _$DestinyUnlockExpressionDefinitionToJson(this);
 	
 	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum's documentation for more details.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
 	DestinyGatingScope? scope;
 }

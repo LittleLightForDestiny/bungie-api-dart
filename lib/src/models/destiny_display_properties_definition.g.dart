@@ -7,18 +7,17 @@ part of 'destiny_display_properties_definition.dart';
 // **************************************************************************
 
 DestinyDisplayPropertiesDefinition _$DestinyDisplayPropertiesDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyDisplayPropertiesDefinition()
-    ..description = json['description'] as String?
-    ..name = json['name'] as String?
-    ..icon = json['icon'] as String?
-    ..iconSequences = (json['iconSequences'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..highResIcon = json['highResIcon'] as String?
-    ..hasIcon = json['hasIcon'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyDisplayPropertiesDefinition()
+      ..description = json['description'] as String?
+      ..name = json['name'] as String?
+      ..icon = json['icon'] as String?
+      ..iconSequences = (json['iconSequences'] as List<dynamic>?)
+          ?.map((e) =>
+              DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..highResIcon = json['highResIcon'] as String?
+      ..hasIcon = json['hasIcon'] as bool?;
 
 Map<String, dynamic> _$DestinyDisplayPropertiesDefinitionToJson(
         DestinyDisplayPropertiesDefinition instance) =>

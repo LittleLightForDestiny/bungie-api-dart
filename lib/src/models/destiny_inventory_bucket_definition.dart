@@ -25,11 +25,11 @@ class DestinyInventoryBucketDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// Where the bucket is found. 0 = Character, 1 = Account
-	@JsonKey(name:'scope',unknownEnumValue:BucketScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeBucketScope,toJson:encodeBucketScope)
 	BucketScope? scope;
 	
 	/// An enum value for what items can be found in the bucket. See the BucketCategory enum for more details.
-	@JsonKey(name:'category',unknownEnumValue:BucketCategory.ProtectedInvalidEnumValue)
+	@JsonKey(name:'category',fromJson:decodeBucketCategory,toJson:encodeBucketCategory)
 	BucketCategory? category;
 	
 	/// Use this property to provide a quick-and-dirty recommended ordering for buckets in the UI. Most UIs will likely want to forsake this for something more custom and manual.
@@ -44,7 +44,7 @@ class DestinyInventoryBucketDefinition{
 	/// Sometimes, inventory buckets represent conceptual "locations" in the game that might not be expected. This value indicates the conceptual location of the bucket, regardless of where it is actually contained on the character/account. 
 	/// See ItemLocation for details. 
 	/// Note that location includes the Vault and the Postmaster (both of whom being just inventory buckets with additional actions that can be performed on them through a Vendor)
-	@JsonKey(name:'location',unknownEnumValue:ItemLocation.ProtectedInvalidEnumValue)
+	@JsonKey(name:'location',fromJson:decodeItemLocation,toJson:encodeItemLocation)
 	ItemLocation? location;
 	
 	/// If TRUE, there is at least one Vendor that can transfer items to/from this bucket. See the DestinyVendorDefinition's acceptedItems property for more information on how transferring works.

@@ -20,15 +20,35 @@ enum DestinyMilestoneDisplayPreference {
 
 extension DestinyMilestoneDisplayPreferenceExtension on DestinyMilestoneDisplayPreference{
   int? get value {
-    switch(this){
-      case DestinyMilestoneDisplayPreference.MilestoneDefinition:
-        return 0;
-      case DestinyMilestoneDisplayPreference.CurrentQuestSteps:
-        return 1;
-      case DestinyMilestoneDisplayPreference.CurrentActivityChallenges:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyMilestoneDisplayPreferenceEnumMap.containsKey(this)){
+      return _$DestinyMilestoneDisplayPreferenceEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyMilestoneDisplayPreference? decodeDestinyMilestoneDisplayPreference (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyMilestoneDisplayPreferenceValueMap.containsKey(value)){
+    return _$DestinyMilestoneDisplayPreferenceValueMap[value];
+  }
+
+  return DestinyMilestoneDisplayPreference.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyMilestoneDisplayPreference (DestinyMilestoneDisplayPreference? value) {
+  return value?.value;
+}
+
+const Map<DestinyMilestoneDisplayPreference, int> _$DestinyMilestoneDisplayPreferenceEnumMap = <DestinyMilestoneDisplayPreference, int>{
+    DestinyMilestoneDisplayPreference.MilestoneDefinition:0,
+    DestinyMilestoneDisplayPreference.CurrentQuestSteps:1,
+    DestinyMilestoneDisplayPreference.CurrentActivityChallenges:2,
+};
+const Map<int, DestinyMilestoneDisplayPreference> _$DestinyMilestoneDisplayPreferenceValueMap = <int, DestinyMilestoneDisplayPreference>{
+    0:DestinyMilestoneDisplayPreference.MilestoneDefinition,
+    1:DestinyMilestoneDisplayPreference.CurrentQuestSteps,
+    2:DestinyMilestoneDisplayPreference.CurrentActivityChallenges,
+};

@@ -21,7 +21,7 @@ class BungieFriend{
 	@JsonKey(name:'lastSeenAsMembershipId')
 	String? lastSeenAsMembershipId;
 	
-	@JsonKey(name:'lastSeenAsBungieMembershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'lastSeenAsBungieMembershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? lastSeenAsBungieMembershipType;
 	
 	@JsonKey(name:'bungieGlobalDisplayName')
@@ -30,13 +30,13 @@ class BungieFriend{
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
 	
-	@JsonKey(name:'onlineStatus',unknownEnumValue:PresenceStatus.ProtectedInvalidEnumValue)
+	@JsonKey(name:'onlineStatus',fromJson:decodePresenceStatus,toJson:encodePresenceStatus)
 	PresenceStatus? onlineStatus;
 	
 	@JsonKey(name:'onlineTitle')
 	PresenceOnlineStateFlags? onlineTitle;
 	
-	@JsonKey(name:'relationship',unknownEnumValue:FriendRelationshipState.ProtectedInvalidEnumValue)
+	@JsonKey(name:'relationship',fromJson:decodeFriendRelationshipState,toJson:encodeFriendRelationshipState)
 	FriendRelationshipState? relationship;
 	
 	@JsonKey(name:'bungieNetUser')

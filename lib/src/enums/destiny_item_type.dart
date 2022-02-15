@@ -89,63 +89,83 @@ enum DestinyItemType {
 
 extension DestinyItemTypeExtension on DestinyItemType{
   int? get value {
-    switch(this){
-      case DestinyItemType.None:
-        return 0;
-      case DestinyItemType.Currency:
-        return 1;
-      case DestinyItemType.Armor:
-        return 2;
-      case DestinyItemType.Weapon:
-        return 3;
-      case DestinyItemType.Message:
-        return 7;
-      case DestinyItemType.Engram:
-        return 8;
-      case DestinyItemType.Consumable:
-        return 9;
-      case DestinyItemType.ExchangeMaterial:
-        return 10;
-      case DestinyItemType.MissionReward:
-        return 11;
-      case DestinyItemType.QuestStep:
-        return 12;
-      case DestinyItemType.QuestStepComplete:
-        return 13;
-      case DestinyItemType.Emblem:
-        return 14;
-      case DestinyItemType.Quest:
-        return 15;
-      case DestinyItemType.Subclass:
-        return 16;
-      case DestinyItemType.ClanBanner:
-        return 17;
-      case DestinyItemType.Aura:
-        return 18;
-      case DestinyItemType.Mod:
-        return 19;
-      case DestinyItemType.Dummy:
-        return 20;
-      case DestinyItemType.Ship:
-        return 21;
-      case DestinyItemType.Vehicle:
-        return 22;
-      case DestinyItemType.Emote:
-        return 23;
-      case DestinyItemType.Ghost:
-        return 24;
-      case DestinyItemType.Package:
-        return 25;
-      case DestinyItemType.Bounty:
-        return 26;
-      case DestinyItemType.Wrapper:
-        return 27;
-      case DestinyItemType.SeasonalArtifact:
-        return 28;
-      case DestinyItemType.Finisher:
-        return 29;
-      default:
-        return null;
+    if (_$DestinyItemTypeEnumMap.containsKey(this)){
+      return _$DestinyItemTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyItemType? decodeDestinyItemType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyItemTypeValueMap.containsKey(value)){
+    return _$DestinyItemTypeValueMap[value];
+  }
+
+  return DestinyItemType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyItemType (DestinyItemType? value) {
+  return value?.value;
+}
+
+const Map<DestinyItemType, int> _$DestinyItemTypeEnumMap = <DestinyItemType, int>{
+    DestinyItemType.None:0,
+    DestinyItemType.Currency:1,
+    DestinyItemType.Armor:2,
+    DestinyItemType.Weapon:3,
+    DestinyItemType.Message:7,
+    DestinyItemType.Engram:8,
+    DestinyItemType.Consumable:9,
+    DestinyItemType.ExchangeMaterial:10,
+    DestinyItemType.MissionReward:11,
+    DestinyItemType.QuestStep:12,
+    DestinyItemType.QuestStepComplete:13,
+    DestinyItemType.Emblem:14,
+    DestinyItemType.Quest:15,
+    DestinyItemType.Subclass:16,
+    DestinyItemType.ClanBanner:17,
+    DestinyItemType.Aura:18,
+    DestinyItemType.Mod:19,
+    DestinyItemType.Dummy:20,
+    DestinyItemType.Ship:21,
+    DestinyItemType.Vehicle:22,
+    DestinyItemType.Emote:23,
+    DestinyItemType.Ghost:24,
+    DestinyItemType.Package:25,
+    DestinyItemType.Bounty:26,
+    DestinyItemType.Wrapper:27,
+    DestinyItemType.SeasonalArtifact:28,
+    DestinyItemType.Finisher:29,
+};
+const Map<int, DestinyItemType> _$DestinyItemTypeValueMap = <int, DestinyItemType>{
+    0:DestinyItemType.None,
+    1:DestinyItemType.Currency,
+    2:DestinyItemType.Armor,
+    3:DestinyItemType.Weapon,
+    7:DestinyItemType.Message,
+    8:DestinyItemType.Engram,
+    9:DestinyItemType.Consumable,
+    10:DestinyItemType.ExchangeMaterial,
+    11:DestinyItemType.MissionReward,
+    12:DestinyItemType.QuestStep,
+    13:DestinyItemType.QuestStepComplete,
+    14:DestinyItemType.Emblem,
+    15:DestinyItemType.Quest,
+    16:DestinyItemType.Subclass,
+    17:DestinyItemType.ClanBanner,
+    18:DestinyItemType.Aura,
+    19:DestinyItemType.Mod,
+    20:DestinyItemType.Dummy,
+    21:DestinyItemType.Ship,
+    22:DestinyItemType.Vehicle,
+    23:DestinyItemType.Emote,
+    24:DestinyItemType.Ghost,
+    25:DestinyItemType.Package,
+    26:DestinyItemType.Bounty,
+    27:DestinyItemType.Wrapper,
+    28:DestinyItemType.SeasonalArtifact,
+    29:DestinyItemType.Finisher,
+};

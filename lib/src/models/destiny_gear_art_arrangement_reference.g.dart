@@ -7,11 +7,10 @@ part of 'destiny_gear_art_arrangement_reference.dart';
 // **************************************************************************
 
 DestinyGearArtArrangementReference _$DestinyGearArtArrangementReferenceFromJson(
-    Map<String, dynamic> json) {
-  return DestinyGearArtArrangementReference()
-    ..classHash = json['classHash'] as int?
-    ..artArrangementHash = json['artArrangementHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyGearArtArrangementReference()
+      ..classHash = json['classHash'] as int?
+      ..artArrangementHash = json['artArrangementHash'] as int?;
 
 Map<String, dynamic> _$DestinyGearArtArrangementReferenceToJson(
         DestinyGearArtArrangementReference instance) =>

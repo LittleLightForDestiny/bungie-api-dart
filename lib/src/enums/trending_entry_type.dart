@@ -44,33 +44,53 @@ enum TrendingEntryType {
 
 extension TrendingEntryTypeExtension on TrendingEntryType{
   int? get value {
-    switch(this){
-      case TrendingEntryType.News:
-        return 0;
-      case TrendingEntryType.DestinyItem:
-        return 1;
-      case TrendingEntryType.DestinyActivity:
-        return 2;
-      case TrendingEntryType.DestinyRitual:
-        return 3;
-      case TrendingEntryType.SupportArticle:
-        return 4;
-      case TrendingEntryType.Creation:
-        return 5;
-      case TrendingEntryType.Stream:
-        return 6;
-      case TrendingEntryType.Update:
-        return 7;
-      case TrendingEntryType.Link:
-        return 8;
-      case TrendingEntryType.ForumTag:
-        return 9;
-      case TrendingEntryType.Container:
-        return 10;
-      case TrendingEntryType.Release:
-        return 11;
-      default:
-        return null;
+    if (_$TrendingEntryTypeEnumMap.containsKey(this)){
+      return _$TrendingEntryTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+TrendingEntryType? decodeTrendingEntryType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$TrendingEntryTypeValueMap.containsKey(value)){
+    return _$TrendingEntryTypeValueMap[value];
+  }
+
+  return TrendingEntryType.ProtectedInvalidEnumValue;
+}
+
+int? encodeTrendingEntryType (TrendingEntryType? value) {
+  return value?.value;
+}
+
+const Map<TrendingEntryType, int> _$TrendingEntryTypeEnumMap = <TrendingEntryType, int>{
+    TrendingEntryType.News:0,
+    TrendingEntryType.DestinyItem:1,
+    TrendingEntryType.DestinyActivity:2,
+    TrendingEntryType.DestinyRitual:3,
+    TrendingEntryType.SupportArticle:4,
+    TrendingEntryType.Creation:5,
+    TrendingEntryType.Stream:6,
+    TrendingEntryType.Update:7,
+    TrendingEntryType.Link:8,
+    TrendingEntryType.ForumTag:9,
+    TrendingEntryType.Container:10,
+    TrendingEntryType.Release:11,
+};
+const Map<int, TrendingEntryType> _$TrendingEntryTypeValueMap = <int, TrendingEntryType>{
+    0:TrendingEntryType.News,
+    1:TrendingEntryType.DestinyItem,
+    2:TrendingEntryType.DestinyActivity,
+    3:TrendingEntryType.DestinyRitual,
+    4:TrendingEntryType.SupportArticle,
+    5:TrendingEntryType.Creation,
+    6:TrendingEntryType.Stream,
+    7:TrendingEntryType.Update,
+    8:TrendingEntryType.Link,
+    9:TrendingEntryType.ForumTag,
+    10:TrendingEntryType.Container,
+    11:TrendingEntryType.Release,
+};

@@ -16,7 +16,7 @@ class CrossSaveUserMembership{
 	Map<String, dynamic> toJson() => _$CrossSaveUserMembershipToJson(this);
 	
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
-	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'crossSaveOverride',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? crossSaveOverride;
 	
 	/// The list of Membership Types indicating the platforms on which this Membership can be used.
@@ -29,7 +29,7 @@ class CrossSaveUserMembership{
 	bool? isPublic;
 	
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 	
 	/// Membership ID as they user is known in the Accounts service

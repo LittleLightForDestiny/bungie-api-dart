@@ -63,7 +63,7 @@ class DestinyItemPlugDefinition{
 	PlugUiStyles? plugStyle;
 	
 	/// Indicates the rules about when this plug can be used. See the PlugAvailabilityMode enumeration for more information!
-	@JsonKey(name:'plugAvailability',unknownEnumValue:PlugAvailabilityMode.ProtectedInvalidEnumValue)
+	@JsonKey(name:'plugAvailability',fromJson:decodePlugAvailabilityMode,toJson:encodePlugAvailabilityMode)
 	PlugAvailabilityMode? plugAvailability;
 	
 	/// If the plug meets certain state requirements, it may have an alternative label applied to it. This is the alternative label that will be applied in such a situation.

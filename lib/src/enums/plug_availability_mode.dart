@@ -17,15 +17,35 @@ enum PlugAvailabilityMode {
 
 extension PlugAvailabilityModeExtension on PlugAvailabilityMode{
   int? get value {
-    switch(this){
-      case PlugAvailabilityMode.Normal:
-        return 0;
-      case PlugAvailabilityMode.UnavailableIfSocketContainsMatchingPlugCategory:
-        return 1;
-      case PlugAvailabilityMode.AvailableIfSocketContainsMatchingPlugCategory:
-        return 2;
-      default:
-        return null;
+    if (_$PlugAvailabilityModeEnumMap.containsKey(this)){
+      return _$PlugAvailabilityModeEnumMap[this];
     }
+    return null;
   }
 }
+
+PlugAvailabilityMode? decodePlugAvailabilityMode (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$PlugAvailabilityModeValueMap.containsKey(value)){
+    return _$PlugAvailabilityModeValueMap[value];
+  }
+
+  return PlugAvailabilityMode.ProtectedInvalidEnumValue;
+}
+
+int? encodePlugAvailabilityMode (PlugAvailabilityMode? value) {
+  return value?.value;
+}
+
+const Map<PlugAvailabilityMode, int> _$PlugAvailabilityModeEnumMap = <PlugAvailabilityMode, int>{
+    PlugAvailabilityMode.Normal:0,
+    PlugAvailabilityMode.UnavailableIfSocketContainsMatchingPlugCategory:1,
+    PlugAvailabilityMode.AvailableIfSocketContainsMatchingPlugCategory:2,
+};
+const Map<int, PlugAvailabilityMode> _$PlugAvailabilityModeValueMap = <int, PlugAvailabilityMode>{
+    0:PlugAvailabilityMode.Normal,
+    1:PlugAvailabilityMode.UnavailableIfSocketContainsMatchingPlugCategory,
+    2:PlugAvailabilityMode.AvailableIfSocketContainsMatchingPlugCategory,
+};

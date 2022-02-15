@@ -7,15 +7,14 @@ part of 'destiny_plug_whitelist_entry_definition.dart';
 // **************************************************************************
 
 DestinyPlugWhitelistEntryDefinition
-    _$DestinyPlugWhitelistEntryDefinitionFromJson(Map<String, dynamic> json) {
-  return DestinyPlugWhitelistEntryDefinition()
-    ..categoryHash = json['categoryHash'] as int?
-    ..categoryIdentifier = json['categoryIdentifier'] as String?
-    ..reinitializationPossiblePlugHashes =
-        (json['reinitializationPossiblePlugHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList();
-}
+    _$DestinyPlugWhitelistEntryDefinitionFromJson(Map<String, dynamic> json) =>
+        DestinyPlugWhitelistEntryDefinition()
+          ..categoryHash = json['categoryHash'] as int?
+          ..categoryIdentifier = json['categoryIdentifier'] as String?
+          ..reinitializationPossiblePlugHashes =
+              (json['reinitializationPossiblePlugHashes'] as List<dynamic>?)
+                  ?.map((e) => e as int)
+                  .toList();
 
 Map<String, dynamic> _$DestinyPlugWhitelistEntryDefinitionToJson(
         DestinyPlugWhitelistEntryDefinition instance) =>

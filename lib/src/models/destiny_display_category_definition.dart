@@ -40,7 +40,7 @@ class DestinyDisplayCategoryDefinition{
 	int? progressionHash;
 	
 	/// If this category sorts items in a nonstandard way, this will be the way we sort.
-	@JsonKey(name:'sortOrder',unknownEnumValue:VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue)
+	@JsonKey(name:'sortOrder',fromJson:decodeVendorDisplayCategorySortOrder,toJson:encodeVendorDisplayCategorySortOrder)
 	VendorDisplayCategorySortOrder? sortOrder;
 	
 	/// An indicator of how the category will be displayed in the UI. It's up to you to do something cool or interesting in response to this, or just to treat it as a normal category.

@@ -17,15 +17,35 @@ enum CommunityContentSortMode {
 
 extension CommunityContentSortModeExtension on CommunityContentSortMode{
   int? get value {
-    switch(this){
-      case CommunityContentSortMode.Trending:
-        return 0;
-      case CommunityContentSortMode.Latest:
-        return 1;
-      case CommunityContentSortMode.HighestRated:
-        return 2;
-      default:
-        return null;
+    if (_$CommunityContentSortModeEnumMap.containsKey(this)){
+      return _$CommunityContentSortModeEnumMap[this];
     }
+    return null;
   }
 }
+
+CommunityContentSortMode? decodeCommunityContentSortMode (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$CommunityContentSortModeValueMap.containsKey(value)){
+    return _$CommunityContentSortModeValueMap[value];
+  }
+
+  return CommunityContentSortMode.ProtectedInvalidEnumValue;
+}
+
+int? encodeCommunityContentSortMode (CommunityContentSortMode? value) {
+  return value?.value;
+}
+
+const Map<CommunityContentSortMode, int> _$CommunityContentSortModeEnumMap = <CommunityContentSortMode, int>{
+    CommunityContentSortMode.Trending:0,
+    CommunityContentSortMode.Latest:1,
+    CommunityContentSortMode.HighestRated:2,
+};
+const Map<int, CommunityContentSortMode> _$CommunityContentSortModeValueMap = <int, CommunityContentSortMode>{
+    0:CommunityContentSortMode.Trending,
+    1:CommunityContentSortMode.Latest,
+    2:CommunityContentSortMode.HighestRated,
+};

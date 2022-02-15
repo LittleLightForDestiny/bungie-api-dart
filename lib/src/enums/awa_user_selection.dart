@@ -17,15 +17,35 @@ enum AwaUserSelection {
 
 extension AwaUserSelectionExtension on AwaUserSelection{
   int? get value {
-    switch(this){
-      case AwaUserSelection.None:
-        return 0;
-      case AwaUserSelection.Rejected:
-        return 1;
-      case AwaUserSelection.Approved:
-        return 2;
-      default:
-        return null;
+    if (_$AwaUserSelectionEnumMap.containsKey(this)){
+      return _$AwaUserSelectionEnumMap[this];
     }
+    return null;
   }
 }
+
+AwaUserSelection? decodeAwaUserSelection (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$AwaUserSelectionValueMap.containsKey(value)){
+    return _$AwaUserSelectionValueMap[value];
+  }
+
+  return AwaUserSelection.ProtectedInvalidEnumValue;
+}
+
+int? encodeAwaUserSelection (AwaUserSelection? value) {
+  return value?.value;
+}
+
+const Map<AwaUserSelection, int> _$AwaUserSelectionEnumMap = <AwaUserSelection, int>{
+    AwaUserSelection.None:0,
+    AwaUserSelection.Rejected:1,
+    AwaUserSelection.Approved:2,
+};
+const Map<int, AwaUserSelection> _$AwaUserSelectionValueMap = <int, AwaUserSelection>{
+    0:AwaUserSelection.None,
+    1:AwaUserSelection.Rejected,
+    2:AwaUserSelection.Approved,
+};

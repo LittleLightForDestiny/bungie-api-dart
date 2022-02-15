@@ -7,17 +7,16 @@ part of 'destiny_talent_node_category.dart';
 // **************************************************************************
 
 DestinyTalentNodeCategory _$DestinyTalentNodeCategoryFromJson(
-    Map<String, dynamic> json) {
-  return DestinyTalentNodeCategory()
-    ..identifier = json['identifier'] as String?
-    ..isLoreDriven = json['isLoreDriven'] as bool?
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..nodeHashes =
-        (json['nodeHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyTalentNodeCategory()
+      ..identifier = json['identifier'] as String?
+      ..isLoreDriven = json['isLoreDriven'] as bool?
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..nodeHashes =
+          (json['nodeHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
 
 Map<String, dynamic> _$DestinyTalentNodeCategoryToJson(
         DestinyTalentNodeCategory instance) =>

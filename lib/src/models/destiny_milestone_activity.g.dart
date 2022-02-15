@@ -7,19 +7,18 @@ part of 'destiny_milestone_activity.dart';
 // **************************************************************************
 
 DestinyMilestoneActivity _$DestinyMilestoneActivityFromJson(
-    Map<String, dynamic> json) {
-  return DestinyMilestoneActivity()
-    ..activityHash = json['activityHash'] as int?
-    ..activityModeHash = json['activityModeHash'] as int?
-    ..activityModeType = json['activityModeType'] as int?
-    ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList()
-    ..variants = (json['variants'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyMilestoneActivityVariant.fromJson(e as Map<String, dynamic>))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyMilestoneActivity()
+      ..activityHash = json['activityHash'] as int?
+      ..activityModeHash = json['activityModeHash'] as int?
+      ..activityModeType = json['activityModeType'] as int?
+      ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
+      ..variants = (json['variants'] as List<dynamic>?)
+          ?.map((e) => DestinyMilestoneActivityVariant.fromJson(
+              e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$DestinyMilestoneActivityToJson(
         DestinyMilestoneActivity instance) =>

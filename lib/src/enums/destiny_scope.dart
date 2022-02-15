@@ -14,13 +14,33 @@ enum DestinyScope {
 
 extension DestinyScopeExtension on DestinyScope{
   int? get value {
-    switch(this){
-      case DestinyScope.Profile:
-        return 0;
-      case DestinyScope.Character:
-        return 1;
-      default:
-        return null;
+    if (_$DestinyScopeEnumMap.containsKey(this)){
+      return _$DestinyScopeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyScope? decodeDestinyScope (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyScopeValueMap.containsKey(value)){
+    return _$DestinyScopeValueMap[value];
+  }
+
+  return DestinyScope.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyScope (DestinyScope? value) {
+  return value?.value;
+}
+
+const Map<DestinyScope, int> _$DestinyScopeEnumMap = <DestinyScope, int>{
+    DestinyScope.Profile:0,
+    DestinyScope.Character:1,
+};
+const Map<int, DestinyScope> _$DestinyScopeValueMap = <int, DestinyScope>{
+    0:DestinyScope.Profile,
+    1:DestinyScope.Character,
+};

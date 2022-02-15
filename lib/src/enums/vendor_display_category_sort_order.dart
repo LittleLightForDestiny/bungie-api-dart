@@ -14,13 +14,33 @@ enum VendorDisplayCategorySortOrder {
 
 extension VendorDisplayCategorySortOrderExtension on VendorDisplayCategorySortOrder{
   int? get value {
-    switch(this){
-      case VendorDisplayCategorySortOrder.Default:
-        return 0;
-      case VendorDisplayCategorySortOrder.SortByTier:
-        return 1;
-      default:
-        return null;
+    if (_$VendorDisplayCategorySortOrderEnumMap.containsKey(this)){
+      return _$VendorDisplayCategorySortOrderEnumMap[this];
     }
+    return null;
   }
 }
+
+VendorDisplayCategorySortOrder? decodeVendorDisplayCategorySortOrder (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$VendorDisplayCategorySortOrderValueMap.containsKey(value)){
+    return _$VendorDisplayCategorySortOrderValueMap[value];
+  }
+
+  return VendorDisplayCategorySortOrder.ProtectedInvalidEnumValue;
+}
+
+int? encodeVendorDisplayCategorySortOrder (VendorDisplayCategorySortOrder? value) {
+  return value?.value;
+}
+
+const Map<VendorDisplayCategorySortOrder, int> _$VendorDisplayCategorySortOrderEnumMap = <VendorDisplayCategorySortOrder, int>{
+    VendorDisplayCategorySortOrder.Default:0,
+    VendorDisplayCategorySortOrder.SortByTier:1,
+};
+const Map<int, VendorDisplayCategorySortOrder> _$VendorDisplayCategorySortOrderValueMap = <int, VendorDisplayCategorySortOrder>{
+    0:VendorDisplayCategorySortOrder.Default,
+    1:VendorDisplayCategorySortOrder.SortByTier,
+};

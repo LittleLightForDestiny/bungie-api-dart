@@ -48,7 +48,7 @@ class GroupFeatures{
 	/// Always Allowed: Founder, Acting Founder, Admin
 	/// Allowed Overrides: None, Member, Beginner
 	/// Default is Member for clans, None for groups, although this means nothing for groups.
-	@JsonKey(name:'hostGuidedGamePermissionOverride',unknownEnumValue:HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue)
+	@JsonKey(name:'hostGuidedGamePermissionOverride',fromJson:decodeHostGuidedGamesPermissionLevel,toJson:encodeHostGuidedGamesPermissionLevel)
 	HostGuidedGamesPermissionLevel? hostGuidedGamePermissionOverride;
 	
 	/// Minimum Member Level allowed to update banner
@@ -60,6 +60,6 @@ class GroupFeatures{
 	
 	/// Level to join a member at when accepting an invite, application, or joining an open clan
 	/// Default is Beginner.
-	@JsonKey(name:'joinLevel',unknownEnumValue:RuntimeGroupMemberType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'joinLevel',fromJson:decodeRuntimeGroupMemberType,toJson:encodeRuntimeGroupMemberType)
 	RuntimeGroupMemberType? joinLevel;
 }

@@ -1,46 +1,33 @@
 import '../models/destiny_manifest.dart';
 import '../enums/platform_error_codes.dart';
+import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+
 part 'destiny_manifest_response.g.dart';
 
 /// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
 @JsonSerializable()
-class DestinyManifestResponse{
+class DestinyManifestResponse extends BungieNetResponse<DestinyManifest> {
 	DestinyManifestResponse({
-		this.response,
-		this.errorCode,
-		this.throttleSeconds,
-		this.errorStatus,
-		this.message,
-		this.messageData,
-		this.detailedErrorTrace,
-	});
+		DestinyManifest? response,
+		PlatformErrorCodes? errorCode,
+		int? throttleSeconds,
+		String? errorStatus,
+		String? message,
+		Map<String, String>? messageData,
+		String? detailedErrorTrace,
+	}):super(
+		response:response,
+		errorCode:errorCode,
+		throttleSeconds:throttleSeconds,
+		errorStatus:errorStatus,
+		message:message,
+		messageData:messageData,
+		detailedErrorTrace:detailedErrorTrace,
+	);
 
 	factory DestinyManifestResponse.fromJson(Map<String, dynamic> json) => _$DestinyManifestResponseFromJson(json);
-	
-	
-	/// DestinyManifest is the external-facing contract for just the properties needed by those calling the Destiny Platform.
-	@JsonKey(name:'Response')
-	DestinyManifest? response;
-	
-	@JsonKey(name:'ErrorCode')
-	PlatformErrorCodes? errorCode;
-	
-	@JsonKey(name:'ThrottleSeconds')
-	int? throttleSeconds;
-	
-	@JsonKey(name:'ErrorStatus')
-	String? errorStatus;
-	
-	@JsonKey(name:'Message')
-	String? message;
-	
-	@JsonKey(name:'MessageData')
-	Map<String, String>? messageData;
-	
-	@JsonKey(name:'DetailedErrorTrace')
-	String? detailedErrorTrace;
 
 	Map<String, dynamic> toJson() => _$DestinyManifestResponseToJson(this);
 }

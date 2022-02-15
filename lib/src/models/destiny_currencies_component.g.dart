@@ -7,12 +7,11 @@ part of 'destiny_currencies_component.dart';
 // **************************************************************************
 
 DestinyCurrenciesComponent _$DestinyCurrenciesComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyCurrenciesComponent()
-    ..itemQuantities = (json['itemQuantities'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, e as int),
-    );
-}
+        Map<String, dynamic> json) =>
+    DestinyCurrenciesComponent()
+      ..itemQuantities = (json['itemQuantities'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as int),
+      );
 
 Map<String, dynamic> _$DestinyCurrenciesComponentToJson(
         DestinyCurrenciesComponent instance) =>

@@ -7,9 +7,8 @@ part of 'destiny_vendor_service_definition.dart';
 // **************************************************************************
 
 DestinyVendorServiceDefinition _$DestinyVendorServiceDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyVendorServiceDefinition()..name = json['name'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyVendorServiceDefinition()..name = json['name'] as String?;
 
 Map<String, dynamic> _$DestinyVendorServiceDefinitionToJson(
         DestinyVendorServiceDefinition instance) =>

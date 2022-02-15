@@ -62,7 +62,7 @@ class DestinyLocationReleaseDefinition{
 	int? activityPathDestination;
 	
 	/// The type of Nav Point that this represents. See the enumeration for more info.
-	@JsonKey(name:'navPointType',unknownEnumValue:DestinyActivityNavPointType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'navPointType',fromJson:decodeDestinyActivityNavPointType,toJson:encodeDestinyActivityNavPointType)
 	DestinyActivityNavPointType? navPointType;
 	
 	/// Looks like it should be the position on the map, but sadly it does not look populated... yet?

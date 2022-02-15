@@ -20,17 +20,37 @@ enum DestinySocketVisibility {
 
 extension DestinySocketVisibilityExtension on DestinySocketVisibility{
   int? get value {
-    switch(this){
-      case DestinySocketVisibility.Visible:
-        return 0;
-      case DestinySocketVisibility.Hidden:
-        return 1;
-      case DestinySocketVisibility.HiddenWhenEmpty:
-        return 2;
-      case DestinySocketVisibility.HiddenIfNoPlugsAvailable:
-        return 3;
-      default:
-        return null;
+    if (_$DestinySocketVisibilityEnumMap.containsKey(this)){
+      return _$DestinySocketVisibilityEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinySocketVisibility? decodeDestinySocketVisibility (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinySocketVisibilityValueMap.containsKey(value)){
+    return _$DestinySocketVisibilityValueMap[value];
+  }
+
+  return DestinySocketVisibility.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinySocketVisibility (DestinySocketVisibility? value) {
+  return value?.value;
+}
+
+const Map<DestinySocketVisibility, int> _$DestinySocketVisibilityEnumMap = <DestinySocketVisibility, int>{
+    DestinySocketVisibility.Visible:0,
+    DestinySocketVisibility.Hidden:1,
+    DestinySocketVisibility.HiddenWhenEmpty:2,
+    DestinySocketVisibility.HiddenIfNoPlugsAvailable:3,
+};
+const Map<int, DestinySocketVisibility> _$DestinySocketVisibilityValueMap = <int, DestinySocketVisibility>{
+    0:DestinySocketVisibility.Visible,
+    1:DestinySocketVisibility.Hidden,
+    2:DestinySocketVisibility.HiddenWhenEmpty,
+    3:DestinySocketVisibility.HiddenIfNoPlugsAvailable,
+};

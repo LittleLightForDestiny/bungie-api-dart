@@ -15,6 +15,6 @@ class DestinyActivityGraphNodeStateEntry{
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeStateEntryToJson(this);
 	
-	@JsonKey(name:'state',unknownEnumValue:DestinyGraphNodeState.ProtectedInvalidEnumValue)
+	@JsonKey(name:'state',fromJson:decodeDestinyGraphNodeState,toJson:encodeDestinyGraphNodeState)
 	DestinyGraphNodeState? state;
 }

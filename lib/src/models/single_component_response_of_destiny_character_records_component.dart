@@ -18,7 +18,7 @@ class SingleComponentResponseOfDestinyCharacterRecordsComponent{
 	@JsonKey(name:'data')
 	DestinyCharacterRecordsComponent? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

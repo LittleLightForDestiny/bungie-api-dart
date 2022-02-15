@@ -22,13 +22,13 @@ class PostResponse{
 	@JsonKey(name:'IsPinned')
 	bool? isPinned;
 	
-	@JsonKey(name:'urlMediaType',unknownEnumValue:ForumMediaType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'urlMediaType',fromJson:decodeForumMediaType,toJson:encodeForumMediaType)
 	ForumMediaType? urlMediaType;
 	
 	@JsonKey(name:'thumbnail')
 	String? thumbnail;
 	
-	@JsonKey(name:'popularity',unknownEnumValue:ForumPostPopularity.ProtectedInvalidEnumValue)
+	@JsonKey(name:'popularity',fromJson:decodeForumPostPopularity,toJson:encodeForumPostPopularity)
 	ForumPostPopularity? popularity;
 	
 	@JsonKey(name:'isActive')

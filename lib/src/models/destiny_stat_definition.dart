@@ -31,7 +31,7 @@ class DestinyStatDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// Stats can exist on a character or an item, and they may potentially be aggregated in different ways. The DestinyStatAggregationType enum value indicates the way that this stat is being aggregated.
-	@JsonKey(name:'aggregationType',unknownEnumValue:DestinyStatAggregationType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'aggregationType',fromJson:decodeDestinyStatAggregationType,toJson:encodeDestinyStatAggregationType)
 	DestinyStatAggregationType? aggregationType;
 	
 	/// True if the stat is computed rather than being delivered as a raw value on items.
@@ -40,7 +40,7 @@ class DestinyStatDefinition{
 	bool? hasComputedBlock;
 	
 	/// The category of the stat, according to the game.
-	@JsonKey(name:'statCategory',unknownEnumValue:DestinyStatCategory.ProtectedInvalidEnumValue)
+	@JsonKey(name:'statCategory',fromJson:decodeDestinyStatCategory,toJson:encodeDestinyStatCategory)
 	DestinyStatCategory? statCategory;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

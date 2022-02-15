@@ -17,15 +17,35 @@ enum DestinyProgressionStepDisplayEffect {
 
 extension DestinyProgressionStepDisplayEffectExtension on DestinyProgressionStepDisplayEffect{
   int? get value {
-    switch(this){
-      case DestinyProgressionStepDisplayEffect.None:
-        return 0;
-      case DestinyProgressionStepDisplayEffect.Character:
-        return 1;
-      case DestinyProgressionStepDisplayEffect.Item:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyProgressionStepDisplayEffectEnumMap.containsKey(this)){
+      return _$DestinyProgressionStepDisplayEffectEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyProgressionStepDisplayEffect? decodeDestinyProgressionStepDisplayEffect (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyProgressionStepDisplayEffectValueMap.containsKey(value)){
+    return _$DestinyProgressionStepDisplayEffectValueMap[value];
+  }
+
+  return DestinyProgressionStepDisplayEffect.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyProgressionStepDisplayEffect (DestinyProgressionStepDisplayEffect? value) {
+  return value?.value;
+}
+
+const Map<DestinyProgressionStepDisplayEffect, int> _$DestinyProgressionStepDisplayEffectEnumMap = <DestinyProgressionStepDisplayEffect, int>{
+    DestinyProgressionStepDisplayEffect.None:0,
+    DestinyProgressionStepDisplayEffect.Character:1,
+    DestinyProgressionStepDisplayEffect.Item:2,
+};
+const Map<int, DestinyProgressionStepDisplayEffect> _$DestinyProgressionStepDisplayEffectValueMap = <int, DestinyProgressionStepDisplayEffect>{
+    0:DestinyProgressionStepDisplayEffect.None,
+    1:DestinyProgressionStepDisplayEffect.Character,
+    2:DestinyProgressionStepDisplayEffect.Item,
+};

@@ -14,7 +14,7 @@ class GetCredentialTypesForAccountResponse{
 	
 	Map<String, dynamic> toJson() => _$GetCredentialTypesForAccountResponseToJson(this);
 	
-	@JsonKey(name:'credentialType',unknownEnumValue:BungieCredentialType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'credentialType',fromJson:decodeBungieCredentialType,toJson:encodeBungieCredentialType)
 	BungieCredentialType? credentialType;
 	
 	@JsonKey(name:'credentialDisplayName')

@@ -7,11 +7,10 @@ part of 'destiny_vendor_location_definition.dart';
 // **************************************************************************
 
 DestinyVendorLocationDefinition _$DestinyVendorLocationDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyVendorLocationDefinition()
-    ..destinationHash = json['destinationHash'] as int?
-    ..backgroundImagePath = json['backgroundImagePath'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyVendorLocationDefinition()
+      ..destinationHash = json['destinationHash'] as int?
+      ..backgroundImagePath = json['backgroundImagePath'] as String?;
 
 Map<String, dynamic> _$DestinyVendorLocationDefinitionToJson(
         DestinyVendorLocationDefinition instance) =>

@@ -14,13 +14,33 @@ enum ForumPostSortEnum {
 
 extension ForumPostSortEnumExtension on ForumPostSortEnum{
   int? get value {
-    switch(this){
-      case ForumPostSortEnum.Default:
-        return 0;
-      case ForumPostSortEnum.OldestFirst:
-        return 1;
-      default:
-        return null;
+    if (_$ForumPostSortEnumEnumMap.containsKey(this)){
+      return _$ForumPostSortEnumEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumPostSortEnum? decodeForumPostSortEnum (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumPostSortEnumValueMap.containsKey(value)){
+    return _$ForumPostSortEnumValueMap[value];
+  }
+
+  return ForumPostSortEnum.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumPostSortEnum (ForumPostSortEnum? value) {
+  return value?.value;
+}
+
+const Map<ForumPostSortEnum, int> _$ForumPostSortEnumEnumMap = <ForumPostSortEnum, int>{
+    ForumPostSortEnum.Default:0,
+    ForumPostSortEnum.OldestFirst:1,
+};
+const Map<int, ForumPostSortEnum> _$ForumPostSortEnumValueMap = <int, ForumPostSortEnum>{
+    0:ForumPostSortEnum.Default,
+    1:ForumPostSortEnum.OldestFirst,
+};

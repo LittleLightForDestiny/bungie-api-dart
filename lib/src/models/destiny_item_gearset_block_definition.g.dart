@@ -7,12 +7,11 @@ part of 'destiny_item_gearset_block_definition.dart';
 // **************************************************************************
 
 DestinyItemGearsetBlockDefinition _$DestinyItemGearsetBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemGearsetBlockDefinition()
-    ..trackingValueMax = json['trackingValueMax'] as int?
-    ..itemList =
-        (json['itemList'] as List<dynamic>?)?.map((e) => e as int).toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyItemGearsetBlockDefinition()
+      ..trackingValueMax = json['trackingValueMax'] as int?
+      ..itemList =
+          (json['itemList'] as List<dynamic>?)?.map((e) => e as int).toList();
 
 Map<String, dynamic> _$DestinyItemGearsetBlockDefinitionToJson(
         DestinyItemGearsetBlockDefinition instance) =>

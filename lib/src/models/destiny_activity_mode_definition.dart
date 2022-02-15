@@ -27,11 +27,11 @@ class DestinyActivityModeDefinition{
 	String? pgcrImage;
 	
 	/// The Enumeration value for this Activity Mode. Pass this identifier into Stats endpoints to get aggregate stats for this mode.
-	@JsonKey(name:'modeType',unknownEnumValue:DestinyActivityModeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'modeType',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
 	DestinyActivityModeType? modeType;
 	
 	/// The type of play being performed in broad terms (PVP, PVE)
-	@JsonKey(name:'activityModeCategory',unknownEnumValue:DestinyActivityModeCategory.ProtectedInvalidEnumValue)
+	@JsonKey(name:'activityModeCategory',fromJson:decodeDestinyActivityModeCategory,toJson:encodeDestinyActivityModeCategory)
 	DestinyActivityModeCategory? activityModeCategory;
 	
 	/// If True, this mode has oppositional teams fighting against each other rather than "Free-For-All" or Co-operative modes of play.

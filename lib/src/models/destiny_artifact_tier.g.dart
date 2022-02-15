@@ -6,16 +6,15 @@ part of 'destiny_artifact_tier.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DestinyArtifactTier _$DestinyArtifactTierFromJson(Map<String, dynamic> json) {
-  return DestinyArtifactTier()
-    ..tierHash = json['tierHash'] as int?
-    ..isUnlocked = json['isUnlocked'] as bool?
-    ..pointsToUnlock = json['pointsToUnlock'] as int?
-    ..items = (json['items'] as List<dynamic>?)
-        ?.map(
-            (e) => DestinyArtifactTierItem.fromJson(e as Map<String, dynamic>))
-        .toList();
-}
+DestinyArtifactTier _$DestinyArtifactTierFromJson(Map<String, dynamic> json) =>
+    DestinyArtifactTier()
+      ..tierHash = json['tierHash'] as int?
+      ..isUnlocked = json['isUnlocked'] as bool?
+      ..pointsToUnlock = json['pointsToUnlock'] as int?
+      ..items = (json['items'] as List<dynamic>?)
+          ?.map((e) =>
+              DestinyArtifactTierItem.fromJson(e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$DestinyArtifactTierToJson(
         DestinyArtifactTier instance) =>

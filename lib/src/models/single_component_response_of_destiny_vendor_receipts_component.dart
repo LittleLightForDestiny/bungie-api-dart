@@ -19,7 +19,7 @@ class SingleComponentResponseOfDestinyVendorReceiptsComponent{
 	@JsonKey(name:'data')
 	DestinyVendorReceiptsComponent? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

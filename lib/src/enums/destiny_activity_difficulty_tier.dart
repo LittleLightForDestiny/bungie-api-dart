@@ -32,25 +32,45 @@ enum DestinyActivityDifficultyTier {
 
 extension DestinyActivityDifficultyTierExtension on DestinyActivityDifficultyTier{
   int? get value {
-    switch(this){
-      case DestinyActivityDifficultyTier.Trivial:
-        return 0;
-      case DestinyActivityDifficultyTier.Easy:
-        return 1;
-      case DestinyActivityDifficultyTier.Normal:
-        return 2;
-      case DestinyActivityDifficultyTier.Challenging:
-        return 3;
-      case DestinyActivityDifficultyTier.Hard:
-        return 4;
-      case DestinyActivityDifficultyTier.Brave:
-        return 5;
-      case DestinyActivityDifficultyTier.AlmostImpossible:
-        return 6;
-      case DestinyActivityDifficultyTier.Impossible:
-        return 7;
-      default:
-        return null;
+    if (_$DestinyActivityDifficultyTierEnumMap.containsKey(this)){
+      return _$DestinyActivityDifficultyTierEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyActivityDifficultyTier? decodeDestinyActivityDifficultyTier (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyActivityDifficultyTierValueMap.containsKey(value)){
+    return _$DestinyActivityDifficultyTierValueMap[value];
+  }
+
+  return DestinyActivityDifficultyTier.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyActivityDifficultyTier (DestinyActivityDifficultyTier? value) {
+  return value?.value;
+}
+
+const Map<DestinyActivityDifficultyTier, int> _$DestinyActivityDifficultyTierEnumMap = <DestinyActivityDifficultyTier, int>{
+    DestinyActivityDifficultyTier.Trivial:0,
+    DestinyActivityDifficultyTier.Easy:1,
+    DestinyActivityDifficultyTier.Normal:2,
+    DestinyActivityDifficultyTier.Challenging:3,
+    DestinyActivityDifficultyTier.Hard:4,
+    DestinyActivityDifficultyTier.Brave:5,
+    DestinyActivityDifficultyTier.AlmostImpossible:6,
+    DestinyActivityDifficultyTier.Impossible:7,
+};
+const Map<int, DestinyActivityDifficultyTier> _$DestinyActivityDifficultyTierValueMap = <int, DestinyActivityDifficultyTier>{
+    0:DestinyActivityDifficultyTier.Trivial,
+    1:DestinyActivityDifficultyTier.Easy,
+    2:DestinyActivityDifficultyTier.Normal,
+    3:DestinyActivityDifficultyTier.Challenging,
+    4:DestinyActivityDifficultyTier.Hard,
+    5:DestinyActivityDifficultyTier.Brave,
+    6:DestinyActivityDifficultyTier.AlmostImpossible,
+    7:DestinyActivityDifficultyTier.Impossible,
+};

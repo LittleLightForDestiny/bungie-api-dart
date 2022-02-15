@@ -6,12 +6,12 @@ part of 'destiny_vendor_group.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DestinyVendorGroup _$DestinyVendorGroupFromJson(Map<String, dynamic> json) {
-  return DestinyVendorGroup()
-    ..vendorGroupHash = json['vendorGroupHash'] as int?
-    ..vendorHashes =
-        (json['vendorHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
-}
+DestinyVendorGroup _$DestinyVendorGroupFromJson(Map<String, dynamic> json) =>
+    DestinyVendorGroup()
+      ..vendorGroupHash = json['vendorGroupHash'] as int?
+      ..vendorHashes = (json['vendorHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList();
 
 Map<String, dynamic> _$DestinyVendorGroupToJson(DestinyVendorGroup instance) =>
     <String, dynamic>{

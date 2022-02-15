@@ -27,7 +27,7 @@ class TrendingEntry{
 	String? identifier;
 	
 	/// An enum - unfortunately - dictating all of the possible kinds of trending items that you might get in your result set, in case you want to do custom rendering or call to get the details of the item.
-	@JsonKey(name:'entityType',unknownEnumValue:TrendingEntryType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'entityType',fromJson:decodeTrendingEntryType,toJson:encodeTrendingEntryType)
 	TrendingEntryType? entityType;
 	
 	/// The localized "display name/article title/'primary localized identifier'" of the entity.

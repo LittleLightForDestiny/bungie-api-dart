@@ -37,11 +37,11 @@ class DestinyPresentationNodeDefinition{
 	@JsonKey(name:'rootViewIcon')
 	String? rootViewIcon;
 	
-	@JsonKey(name:'nodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'nodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? nodeType;
 	
 	/// Indicates whether this presentation node's state is determined on a per-character or on an account-wide basis.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyScope,toJson:encodeDestinyScope)
 	DestinyScope? scope;
 	
 	/// If this presentation node shows a related objective (for instance, if it tracks the progress of its children), the objective being tracked is indicated here.
@@ -57,11 +57,11 @@ class DestinyPresentationNodeDefinition{
 	DestinyPresentationNodeChildrenBlock? children;
 	
 	/// A hint for how to display this presentation node when it's shown in a list.
-	@JsonKey(name:'displayStyle',unknownEnumValue:DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'displayStyle',fromJson:decodeDestinyPresentationDisplayStyle,toJson:encodeDestinyPresentationDisplayStyle)
 	DestinyPresentationDisplayStyle? displayStyle;
 	
 	/// A hint for how to display this presentation node when it's shown in its own detail screen.
-	@JsonKey(name:'screenStyle',unknownEnumValue:DestinyPresentationScreenStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'screenStyle',fromJson:decodeDestinyPresentationScreenStyle,toJson:encodeDestinyPresentationScreenStyle)
 	DestinyPresentationScreenStyle? screenStyle;
 	
 	/// The requirements for being able to interact with this presentation node and its children.
@@ -75,7 +75,7 @@ class DestinyPresentationNodeDefinition{
 	@JsonKey(name:'maxCategoryRecordScore')
 	int? maxCategoryRecordScore;
 	
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	
 	@JsonKey(name:'traitIds')

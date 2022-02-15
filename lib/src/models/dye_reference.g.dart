@@ -6,11 +6,9 @@ part of 'dye_reference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DyeReference _$DyeReferenceFromJson(Map<String, dynamic> json) {
-  return DyeReference()
-    ..channelHash = json['channelHash'] as int?
-    ..dyeHash = json['dyeHash'] as int?;
-}
+DyeReference _$DyeReferenceFromJson(Map<String, dynamic> json) => DyeReference()
+  ..channelHash = json['channelHash'] as int?
+  ..dyeHash = json['dyeHash'] as int?;
 
 Map<String, dynamic> _$DyeReferenceToJson(DyeReference instance) =>
     <String, dynamic>{

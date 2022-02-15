@@ -7,22 +7,21 @@ part of 'destiny_item_socket_block_definition.dart';
 // **************************************************************************
 
 DestinyItemSocketBlockDefinition _$DestinyItemSocketBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemSocketBlockDefinition()
-    ..detail = json['detail'] as String?
-    ..socketEntries = (json['socketEntries'] as List<dynamic>?)
-        ?.map((e) => DestinyItemSocketEntryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..intrinsicSockets = (json['intrinsicSockets'] as List<dynamic>?)
-        ?.map((e) => DestinyItemIntrinsicSocketEntryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..socketCategories = (json['socketCategories'] as List<dynamic>?)
-        ?.map((e) => DestinyItemSocketCategoryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyItemSocketBlockDefinition()
+      ..detail = json['detail'] as String?
+      ..socketEntries = (json['socketEntries'] as List<dynamic>?)
+          ?.map((e) => DestinyItemSocketEntryDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..intrinsicSockets = (json['intrinsicSockets'] as List<dynamic>?)
+          ?.map((e) => DestinyItemIntrinsicSocketEntryDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..socketCategories = (json['socketCategories'] as List<dynamic>?)
+          ?.map((e) => DestinyItemSocketCategoryDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$DestinyItemSocketBlockDefinitionToJson(
         DestinyItemSocketBlockDefinition instance) =>

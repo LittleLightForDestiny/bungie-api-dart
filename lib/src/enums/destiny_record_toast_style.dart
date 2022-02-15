@@ -32,25 +32,45 @@ enum DestinyRecordToastStyle {
 
 extension DestinyRecordToastStyleExtension on DestinyRecordToastStyle{
   int? get value {
-    switch(this){
-      case DestinyRecordToastStyle.None:
-        return 0;
-      case DestinyRecordToastStyle.Record:
-        return 1;
-      case DestinyRecordToastStyle.Lore:
-        return 2;
-      case DestinyRecordToastStyle.Badge:
-        return 3;
-      case DestinyRecordToastStyle.MetaRecord:
-        return 4;
-      case DestinyRecordToastStyle.MedalComplete:
-        return 5;
-      case DestinyRecordToastStyle.SeasonChallengeComplete:
-        return 6;
-      case DestinyRecordToastStyle.GildedTitleComplete:
-        return 7;
-      default:
-        return null;
+    if (_$DestinyRecordToastStyleEnumMap.containsKey(this)){
+      return _$DestinyRecordToastStyleEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyRecordToastStyle? decodeDestinyRecordToastStyle (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyRecordToastStyleValueMap.containsKey(value)){
+    return _$DestinyRecordToastStyleValueMap[value];
+  }
+
+  return DestinyRecordToastStyle.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyRecordToastStyle (DestinyRecordToastStyle? value) {
+  return value?.value;
+}
+
+const Map<DestinyRecordToastStyle, int> _$DestinyRecordToastStyleEnumMap = <DestinyRecordToastStyle, int>{
+    DestinyRecordToastStyle.None:0,
+    DestinyRecordToastStyle.Record:1,
+    DestinyRecordToastStyle.Lore:2,
+    DestinyRecordToastStyle.Badge:3,
+    DestinyRecordToastStyle.MetaRecord:4,
+    DestinyRecordToastStyle.MedalComplete:5,
+    DestinyRecordToastStyle.SeasonChallengeComplete:6,
+    DestinyRecordToastStyle.GildedTitleComplete:7,
+};
+const Map<int, DestinyRecordToastStyle> _$DestinyRecordToastStyleValueMap = <int, DestinyRecordToastStyle>{
+    0:DestinyRecordToastStyle.None,
+    1:DestinyRecordToastStyle.Record,
+    2:DestinyRecordToastStyle.Lore,
+    3:DestinyRecordToastStyle.Badge,
+    4:DestinyRecordToastStyle.MetaRecord,
+    5:DestinyRecordToastStyle.MedalComplete,
+    6:DestinyRecordToastStyle.SeasonChallengeComplete,
+    7:DestinyRecordToastStyle.GildedTitleComplete,
+};

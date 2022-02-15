@@ -47,35 +47,55 @@ enum BungieCredentialType {
 
 extension BungieCredentialTypeExtension on BungieCredentialType{
   int? get value {
-    switch(this){
-      case BungieCredentialType.None:
-        return 0;
-      case BungieCredentialType.Xuid:
-        return 1;
-      case BungieCredentialType.Psnid:
-        return 2;
-      case BungieCredentialType.Wlid:
-        return 3;
-      case BungieCredentialType.Fake:
-        return 4;
-      case BungieCredentialType.Facebook:
-        return 5;
-      case BungieCredentialType.Google:
-        return 8;
-      case BungieCredentialType.Windows:
-        return 9;
-      case BungieCredentialType.DemonId:
-        return 10;
-      case BungieCredentialType.SteamId:
-        return 12;
-      case BungieCredentialType.BattleNetId:
-        return 14;
-      case BungieCredentialType.StadiaId:
-        return 16;
-      case BungieCredentialType.TwitchId:
-        return 18;
-      default:
-        return null;
+    if (_$BungieCredentialTypeEnumMap.containsKey(this)){
+      return _$BungieCredentialTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+BungieCredentialType? decodeBungieCredentialType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$BungieCredentialTypeValueMap.containsKey(value)){
+    return _$BungieCredentialTypeValueMap[value];
+  }
+
+  return BungieCredentialType.ProtectedInvalidEnumValue;
+}
+
+int? encodeBungieCredentialType (BungieCredentialType? value) {
+  return value?.value;
+}
+
+const Map<BungieCredentialType, int> _$BungieCredentialTypeEnumMap = <BungieCredentialType, int>{
+    BungieCredentialType.None:0,
+    BungieCredentialType.Xuid:1,
+    BungieCredentialType.Psnid:2,
+    BungieCredentialType.Wlid:3,
+    BungieCredentialType.Fake:4,
+    BungieCredentialType.Facebook:5,
+    BungieCredentialType.Google:8,
+    BungieCredentialType.Windows:9,
+    BungieCredentialType.DemonId:10,
+    BungieCredentialType.SteamId:12,
+    BungieCredentialType.BattleNetId:14,
+    BungieCredentialType.StadiaId:16,
+    BungieCredentialType.TwitchId:18,
+};
+const Map<int, BungieCredentialType> _$BungieCredentialTypeValueMap = <int, BungieCredentialType>{
+    0:BungieCredentialType.None,
+    1:BungieCredentialType.Xuid,
+    2:BungieCredentialType.Psnid,
+    3:BungieCredentialType.Wlid,
+    4:BungieCredentialType.Fake,
+    5:BungieCredentialType.Facebook,
+    8:BungieCredentialType.Google,
+    9:BungieCredentialType.Windows,
+    10:BungieCredentialType.DemonId,
+    12:BungieCredentialType.SteamId,
+    14:BungieCredentialType.BattleNetId,
+    16:BungieCredentialType.StadiaId,
+    18:BungieCredentialType.TwitchId,
+};

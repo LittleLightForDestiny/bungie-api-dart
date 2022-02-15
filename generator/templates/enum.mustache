@@ -16,13 +16,35 @@ enum {{className}} {
 
 extension {{className}}Extension on {{className}}{
   int? get value {
-    switch(this){
-      {{#values}}
-      case {{className}}.{{name}}:
-        return {{value}};
-      {{/values}}
-      default:
-        return null;
+    if (_${{className}}EnumMap.containsKey(this)){
+      return _${{className}}EnumMap[this];
     }
+    return null;
   }
 }
+
+{{className}}? decode{{className}} (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_${{className}}ValueMap.containsKey(value)){
+    return _${{className}}ValueMap[value];
+  }
+
+  return {{className}}.ProtectedInvalidEnumValue;
+}
+
+int? encode{{className}} ({{className}}? value) {
+  return value?.value;
+}
+
+const Map<{{className}}, int> _${{className}}EnumMap = <{{className}}, int>{
+  {{#values}}
+    {{className}}.{{name}}:{{value}},
+  {{/values}}
+};
+const Map<int, {{className}}> _${{className}}ValueMap = <int, {{className}}>{
+  {{#values}}
+    {{value}}:{{className}}.{{name}},
+  {{/values}}
+};

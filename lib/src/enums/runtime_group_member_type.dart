@@ -26,21 +26,41 @@ enum RuntimeGroupMemberType {
 
 extension RuntimeGroupMemberTypeExtension on RuntimeGroupMemberType{
   int? get value {
-    switch(this){
-      case RuntimeGroupMemberType.None:
-        return 0;
-      case RuntimeGroupMemberType.Beginner:
-        return 1;
-      case RuntimeGroupMemberType.Member:
-        return 2;
-      case RuntimeGroupMemberType.Admin:
-        return 3;
-      case RuntimeGroupMemberType.ActingFounder:
-        return 4;
-      case RuntimeGroupMemberType.Founder:
-        return 5;
-      default:
-        return null;
+    if (_$RuntimeGroupMemberTypeEnumMap.containsKey(this)){
+      return _$RuntimeGroupMemberTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+RuntimeGroupMemberType? decodeRuntimeGroupMemberType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$RuntimeGroupMemberTypeValueMap.containsKey(value)){
+    return _$RuntimeGroupMemberTypeValueMap[value];
+  }
+
+  return RuntimeGroupMemberType.ProtectedInvalidEnumValue;
+}
+
+int? encodeRuntimeGroupMemberType (RuntimeGroupMemberType? value) {
+  return value?.value;
+}
+
+const Map<RuntimeGroupMemberType, int> _$RuntimeGroupMemberTypeEnumMap = <RuntimeGroupMemberType, int>{
+    RuntimeGroupMemberType.None:0,
+    RuntimeGroupMemberType.Beginner:1,
+    RuntimeGroupMemberType.Member:2,
+    RuntimeGroupMemberType.Admin:3,
+    RuntimeGroupMemberType.ActingFounder:4,
+    RuntimeGroupMemberType.Founder:5,
+};
+const Map<int, RuntimeGroupMemberType> _$RuntimeGroupMemberTypeValueMap = <int, RuntimeGroupMemberType>{
+    0:RuntimeGroupMemberType.None,
+    1:RuntimeGroupMemberType.Beginner,
+    2:RuntimeGroupMemberType.Member,
+    3:RuntimeGroupMemberType.Admin,
+    4:RuntimeGroupMemberType.ActingFounder,
+    5:RuntimeGroupMemberType.Founder,
+};

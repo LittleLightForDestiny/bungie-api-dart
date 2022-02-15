@@ -8,11 +8,10 @@ part of 'destiny_milestone_activity_variant_definition.dart';
 
 DestinyMilestoneActivityVariantDefinition
     _$DestinyMilestoneActivityVariantDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyMilestoneActivityVariantDefinition()
-    ..activityHash = json['activityHash'] as int?
-    ..order = json['order'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyMilestoneActivityVariantDefinition()
+          ..activityHash = json['activityHash'] as int?
+          ..order = json['order'] as int?;
 
 Map<String, dynamic> _$DestinyMilestoneActivityVariantDefinitionToJson(
         DestinyMilestoneActivityVariantDefinition instance) =>

@@ -23,19 +23,39 @@ enum ForumTopicsQuickDateEnum {
 
 extension ForumTopicsQuickDateEnumExtension on ForumTopicsQuickDateEnum{
   int? get value {
-    switch(this){
-      case ForumTopicsQuickDateEnum.All:
-        return 0;
-      case ForumTopicsQuickDateEnum.LastYear:
-        return 1;
-      case ForumTopicsQuickDateEnum.LastMonth:
-        return 2;
-      case ForumTopicsQuickDateEnum.LastWeek:
-        return 3;
-      case ForumTopicsQuickDateEnum.LastDay:
-        return 4;
-      default:
-        return null;
+    if (_$ForumTopicsQuickDateEnumEnumMap.containsKey(this)){
+      return _$ForumTopicsQuickDateEnumEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumTopicsQuickDateEnum? decodeForumTopicsQuickDateEnum (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumTopicsQuickDateEnumValueMap.containsKey(value)){
+    return _$ForumTopicsQuickDateEnumValueMap[value];
+  }
+
+  return ForumTopicsQuickDateEnum.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumTopicsQuickDateEnum (ForumTopicsQuickDateEnum? value) {
+  return value?.value;
+}
+
+const Map<ForumTopicsQuickDateEnum, int> _$ForumTopicsQuickDateEnumEnumMap = <ForumTopicsQuickDateEnum, int>{
+    ForumTopicsQuickDateEnum.All:0,
+    ForumTopicsQuickDateEnum.LastYear:1,
+    ForumTopicsQuickDateEnum.LastMonth:2,
+    ForumTopicsQuickDateEnum.LastWeek:3,
+    ForumTopicsQuickDateEnum.LastDay:4,
+};
+const Map<int, ForumTopicsQuickDateEnum> _$ForumTopicsQuickDateEnumValueMap = <int, ForumTopicsQuickDateEnum>{
+    0:ForumTopicsQuickDateEnum.All,
+    1:ForumTopicsQuickDateEnum.LastYear,
+    2:ForumTopicsQuickDateEnum.LastMonth,
+    3:ForumTopicsQuickDateEnum.LastWeek,
+    4:ForumTopicsQuickDateEnum.LastDay,
+};

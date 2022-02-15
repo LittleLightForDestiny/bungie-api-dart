@@ -17,7 +17,7 @@ class FireteamUserInfoCard{
 	@JsonKey(name:'FireteamDisplayName')
 	String? fireteamDisplayName;
 	
-	@JsonKey(name:'FireteamMembershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'FireteamMembershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? fireteamMembershipType;
 	
 	/// A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
@@ -29,7 +29,7 @@ class FireteamUserInfoCard{
 	String? iconPath;
 	
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
-	@JsonKey(name:'crossSaveOverride',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'crossSaveOverride',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? crossSaveOverride;
 	
 	/// The list of Membership Types indicating the platforms on which this Membership can be used.
@@ -42,7 +42,7 @@ class FireteamUserInfoCard{
 	bool? isPublic;
 	
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 	
 	/// Membership ID as they user is known in the Accounts service

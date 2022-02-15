@@ -20,7 +20,7 @@ class FireteamSummary{
 	@JsonKey(name:'groupId')
 	String? groupId;
 	
-	@JsonKey(name:'platform',unknownEnumValue:FireteamPlatform.ProtectedInvalidEnumValue)
+	@JsonKey(name:'platform',fromJson:decodeFireteamPlatform,toJson:encodeFireteamPlatform)
 	FireteamPlatform? platform;
 	
 	@JsonKey(name:'activityType')

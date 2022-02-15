@@ -7,22 +7,22 @@ part of 'destiny_item_source_definition.dart';
 // **************************************************************************
 
 DestinyItemSourceDefinition _$DestinyItemSourceDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemSourceDefinition()
-    ..level = json['level'] as int?
-    ..minQuality = json['minQuality'] as int?
-    ..maxQuality = json['maxQuality'] as int?
-    ..minLevelRequired = json['minLevelRequired'] as int?
-    ..maxLevelRequired = json['maxLevelRequired'] as int?
-    ..computedStats = (json['computedStats'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k,
-          DestinyInventoryItemStatDefinition.fromJson(
-              e as Map<String, dynamic>)),
-    )
-    ..sourceHashes =
-        (json['sourceHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyItemSourceDefinition()
+      ..level = json['level'] as int?
+      ..minQuality = json['minQuality'] as int?
+      ..maxQuality = json['maxQuality'] as int?
+      ..minLevelRequired = json['minLevelRequired'] as int?
+      ..maxLevelRequired = json['maxLevelRequired'] as int?
+      ..computedStats = (json['computedStats'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k,
+            DestinyInventoryItemStatDefinition.fromJson(
+                e as Map<String, dynamic>)),
+      )
+      ..sourceHashes = (json['sourceHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList();
 
 Map<String, dynamic> _$DestinyItemSourceDefinitionToJson(
         DestinyItemSourceDefinition instance) =>

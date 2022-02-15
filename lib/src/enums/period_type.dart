@@ -20,17 +20,37 @@ enum PeriodType {
 
 extension PeriodTypeExtension on PeriodType{
   int? get value {
-    switch(this){
-      case PeriodType.None:
-        return 0;
-      case PeriodType.Daily:
-        return 1;
-      case PeriodType.AllTime:
-        return 2;
-      case PeriodType.Activity:
-        return 3;
-      default:
-        return null;
+    if (_$PeriodTypeEnumMap.containsKey(this)){
+      return _$PeriodTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+PeriodType? decodePeriodType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$PeriodTypeValueMap.containsKey(value)){
+    return _$PeriodTypeValueMap[value];
+  }
+
+  return PeriodType.ProtectedInvalidEnumValue;
+}
+
+int? encodePeriodType (PeriodType? value) {
+  return value?.value;
+}
+
+const Map<PeriodType, int> _$PeriodTypeEnumMap = <PeriodType, int>{
+    PeriodType.None:0,
+    PeriodType.Daily:1,
+    PeriodType.AllTime:2,
+    PeriodType.Activity:3,
+};
+const Map<int, PeriodType> _$PeriodTypeValueMap = <int, PeriodType>{
+    0:PeriodType.None,
+    1:PeriodType.Daily,
+    2:PeriodType.AllTime,
+    3:PeriodType.Activity,
+};

@@ -26,7 +26,7 @@ class GroupV2{
 	@JsonKey(name:'name')
 	String? name;
 	
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'groupType',fromJson:decodeGroupType,toJson:encodeGroupType)
 	GroupType? groupType;
 	
 	@JsonKey(name:'membershipIdCreated')
@@ -62,7 +62,7 @@ class GroupV2{
 	@JsonKey(name:'isDefaultPostPublic')
 	bool? isDefaultPostPublic;
 	
-	@JsonKey(name:'chatSecurity',unknownEnumValue:ChatSecuritySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'chatSecurity',fromJson:decodeChatSecuritySetting,toJson:encodeChatSecuritySetting)
 	ChatSecuritySetting? chatSecurity;
 	
 	@JsonKey(name:'locale')
@@ -71,13 +71,13 @@ class GroupV2{
 	@JsonKey(name:'avatarImageIndex')
 	int? avatarImageIndex;
 	
-	@JsonKey(name:'homepage',unknownEnumValue:GroupHomepage.ProtectedInvalidEnumValue)
+	@JsonKey(name:'homepage',fromJson:decodeGroupHomepage,toJson:encodeGroupHomepage)
 	GroupHomepage? homepage;
 	
-	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipOption',fromJson:decodeMembershipOption,toJson:encodeMembershipOption)
 	MembershipOption? membershipOption;
 	
-	@JsonKey(name:'defaultPublicity',unknownEnumValue:GroupPostPublicity.ProtectedInvalidEnumValue)
+	@JsonKey(name:'defaultPublicity',fromJson:decodeGroupPostPublicity,toJson:encodeGroupPostPublicity)
 	GroupPostPublicity? defaultPublicity;
 	
 	@JsonKey(name:'theme')

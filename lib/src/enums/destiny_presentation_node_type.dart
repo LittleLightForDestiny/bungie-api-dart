@@ -23,19 +23,39 @@ enum DestinyPresentationNodeType {
 
 extension DestinyPresentationNodeTypeExtension on DestinyPresentationNodeType{
   int? get value {
-    switch(this){
-      case DestinyPresentationNodeType.Default:
-        return 0;
-      case DestinyPresentationNodeType.Category:
-        return 1;
-      case DestinyPresentationNodeType.Collectibles:
-        return 2;
-      case DestinyPresentationNodeType.Records:
-        return 3;
-      case DestinyPresentationNodeType.Metric:
-        return 4;
-      default:
-        return null;
+    if (_$DestinyPresentationNodeTypeEnumMap.containsKey(this)){
+      return _$DestinyPresentationNodeTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyPresentationNodeType? decodeDestinyPresentationNodeType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyPresentationNodeTypeValueMap.containsKey(value)){
+    return _$DestinyPresentationNodeTypeValueMap[value];
+  }
+
+  return DestinyPresentationNodeType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyPresentationNodeType (DestinyPresentationNodeType? value) {
+  return value?.value;
+}
+
+const Map<DestinyPresentationNodeType, int> _$DestinyPresentationNodeTypeEnumMap = <DestinyPresentationNodeType, int>{
+    DestinyPresentationNodeType.Default:0,
+    DestinyPresentationNodeType.Category:1,
+    DestinyPresentationNodeType.Collectibles:2,
+    DestinyPresentationNodeType.Records:3,
+    DestinyPresentationNodeType.Metric:4,
+};
+const Map<int, DestinyPresentationNodeType> _$DestinyPresentationNodeTypeValueMap = <int, DestinyPresentationNodeType>{
+    0:DestinyPresentationNodeType.Default,
+    1:DestinyPresentationNodeType.Category,
+    2:DestinyPresentationNodeType.Collectibles,
+    3:DestinyPresentationNodeType.Records,
+    4:DestinyPresentationNodeType.Metric,
+};

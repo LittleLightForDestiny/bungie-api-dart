@@ -17,15 +17,35 @@ enum GroupAllianceStatus {
 
 extension GroupAllianceStatusExtension on GroupAllianceStatus{
   int? get value {
-    switch(this){
-      case GroupAllianceStatus.Unallied:
-        return 0;
-      case GroupAllianceStatus.Parent:
-        return 1;
-      case GroupAllianceStatus.Child:
-        return 2;
-      default:
-        return null;
+    if (_$GroupAllianceStatusEnumMap.containsKey(this)){
+      return _$GroupAllianceStatusEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupAllianceStatus? decodeGroupAllianceStatus (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupAllianceStatusValueMap.containsKey(value)){
+    return _$GroupAllianceStatusValueMap[value];
+  }
+
+  return GroupAllianceStatus.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupAllianceStatus (GroupAllianceStatus? value) {
+  return value?.value;
+}
+
+const Map<GroupAllianceStatus, int> _$GroupAllianceStatusEnumMap = <GroupAllianceStatus, int>{
+    GroupAllianceStatus.Unallied:0,
+    GroupAllianceStatus.Parent:1,
+    GroupAllianceStatus.Child:2,
+};
+const Map<int, GroupAllianceStatus> _$GroupAllianceStatusValueMap = <int, GroupAllianceStatus>{
+    0:GroupAllianceStatus.Unallied,
+    1:GroupAllianceStatus.Parent,
+    2:GroupAllianceStatus.Child,
+};

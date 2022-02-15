@@ -30,7 +30,7 @@ class DestinyHistoricalStatsActivity{
 	String? instanceId;
 	
 	/// Indicates the most specific game mode of the activity that we could find.
-	@JsonKey(name:'mode',unknownEnumValue:DestinyActivityModeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'mode',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
 	DestinyActivityModeType? mode;
 	
 	/// The list of all Activity Modes to which this activity applies, including aggregates. This will let you see, for example, whether the activity was both Clash and part of the Trials of the Nine event.
@@ -42,6 +42,6 @@ class DestinyHistoricalStatsActivity{
 	bool? isPrivate;
 	
 	/// The Membership Type indicating the platform on which this match was played.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 }

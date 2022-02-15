@@ -17,6 +17,6 @@ class GroupBanRequest{
 	@JsonKey(name:'comment')
 	String? comment;
 	
-	@JsonKey(name:'length',unknownEnumValue:IgnoreLength.ProtectedInvalidEnumValue)
+	@JsonKey(name:'length',fromJson:decodeIgnoreLength,toJson:encodeIgnoreLength)
 	IgnoreLength? length;
 }

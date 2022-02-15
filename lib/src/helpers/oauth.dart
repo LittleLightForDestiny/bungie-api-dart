@@ -1,4 +1,4 @@
-import './http.dart';
+import 'http.dart';
 import 'bungie_net_token.dart';
 
 /// Bungie.net Oauth methods

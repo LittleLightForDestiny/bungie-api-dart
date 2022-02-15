@@ -42,7 +42,7 @@ class DestinyItemCategoryDefinition{
 	String? itemTypeRegex;
 	
 	/// If the item in question has this category, it also should have this breaker type.
-	@JsonKey(name:'grantDestinyBreakerType',unknownEnumValue:DestinyBreakerType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'grantDestinyBreakerType',fromJson:decodeDestinyBreakerType,toJson:encodeDestinyBreakerType)
 	DestinyBreakerType? grantDestinyBreakerType;
 	
 	/// If the item is a plug, this is the identifier we expect to find associated with it if it is in this category.
@@ -58,18 +58,18 @@ class DestinyItemCategoryDefinition{
 	String? originBucketIdentifier;
 	
 	/// If an item belongs to this category, it will also receive this item type. This is now how DestinyItemType is populated for items: it used to be an even jankier process, but that's a story that requires more alcohol.
-	@JsonKey(name:'grantDestinyItemType',unknownEnumValue:DestinyItemType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'grantDestinyItemType',fromJson:decodeDestinyItemType,toJson:encodeDestinyItemType)
 	DestinyItemType? grantDestinyItemType;
 	
 	/// If an item belongs to this category, it will also receive this subtype enum value.
 	/// I know what you're thinking - what if it belongs to multiple categories that provide sub-types?
 	/// The last one processed wins, as is the case with all of these "grant" enums. Now you can see one reason why we moved away from these enums... but they're so convenient when they work, aren't they?
-	@JsonKey(name:'grantDestinySubType',unknownEnumValue:DestinyItemSubType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'grantDestinySubType',fromJson:decodeDestinyItemSubType,toJson:encodeDestinyItemSubType)
 	DestinyItemSubType? grantDestinySubType;
 	
 	/// If an item belongs to this category, it will also get this class restriction enum value.
 	/// See the other "grant"-prefixed properties on this definition for my color commentary.
-	@JsonKey(name:'grantDestinyClass',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
+	@JsonKey(name:'grantDestinyClass',fromJson:decodeDestinyClass,toJson:encodeDestinyClass)
 	DestinyClass? grantDestinyClass;
 	
 	/// The traitId that can be found on items that belong to this category.

@@ -50,37 +50,57 @@ enum DestinyTalentNodeState {
 
 extension DestinyTalentNodeStateExtension on DestinyTalentNodeState{
   int? get value {
-    switch(this){
-      case DestinyTalentNodeState.Invalid:
-        return 0;
-      case DestinyTalentNodeState.CanUpgrade:
-        return 1;
-      case DestinyTalentNodeState.NoPoints:
-        return 2;
-      case DestinyTalentNodeState.NoPrerequisites:
-        return 3;
-      case DestinyTalentNodeState.NoSteps:
-        return 4;
-      case DestinyTalentNodeState.NoUnlock:
-        return 5;
-      case DestinyTalentNodeState.NoMaterial:
-        return 6;
-      case DestinyTalentNodeState.NoGridLevel:
-        return 7;
-      case DestinyTalentNodeState.SwappingLocked:
-        return 8;
-      case DestinyTalentNodeState.MustSwap:
-        return 9;
-      case DestinyTalentNodeState.Complete:
-        return 10;
-      case DestinyTalentNodeState.Unknown:
-        return 11;
-      case DestinyTalentNodeState.CreationOnly:
-        return 12;
-      case DestinyTalentNodeState.Hidden:
-        return 13;
-      default:
-        return null;
+    if (_$DestinyTalentNodeStateEnumMap.containsKey(this)){
+      return _$DestinyTalentNodeStateEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyTalentNodeState? decodeDestinyTalentNodeState (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyTalentNodeStateValueMap.containsKey(value)){
+    return _$DestinyTalentNodeStateValueMap[value];
+  }
+
+  return DestinyTalentNodeState.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyTalentNodeState (DestinyTalentNodeState? value) {
+  return value?.value;
+}
+
+const Map<DestinyTalentNodeState, int> _$DestinyTalentNodeStateEnumMap = <DestinyTalentNodeState, int>{
+    DestinyTalentNodeState.Invalid:0,
+    DestinyTalentNodeState.CanUpgrade:1,
+    DestinyTalentNodeState.NoPoints:2,
+    DestinyTalentNodeState.NoPrerequisites:3,
+    DestinyTalentNodeState.NoSteps:4,
+    DestinyTalentNodeState.NoUnlock:5,
+    DestinyTalentNodeState.NoMaterial:6,
+    DestinyTalentNodeState.NoGridLevel:7,
+    DestinyTalentNodeState.SwappingLocked:8,
+    DestinyTalentNodeState.MustSwap:9,
+    DestinyTalentNodeState.Complete:10,
+    DestinyTalentNodeState.Unknown:11,
+    DestinyTalentNodeState.CreationOnly:12,
+    DestinyTalentNodeState.Hidden:13,
+};
+const Map<int, DestinyTalentNodeState> _$DestinyTalentNodeStateValueMap = <int, DestinyTalentNodeState>{
+    0:DestinyTalentNodeState.Invalid,
+    1:DestinyTalentNodeState.CanUpgrade,
+    2:DestinyTalentNodeState.NoPoints,
+    3:DestinyTalentNodeState.NoPrerequisites,
+    4:DestinyTalentNodeState.NoSteps,
+    5:DestinyTalentNodeState.NoUnlock,
+    6:DestinyTalentNodeState.NoMaterial,
+    7:DestinyTalentNodeState.NoGridLevel,
+    8:DestinyTalentNodeState.SwappingLocked,
+    9:DestinyTalentNodeState.MustSwap,
+    10:DestinyTalentNodeState.Complete,
+    11:DestinyTalentNodeState.Unknown,
+    12:DestinyTalentNodeState.CreationOnly,
+    13:DestinyTalentNodeState.Hidden,
+};

@@ -15,7 +15,7 @@ class DestinyPresentationNodeBaseDefinition{
 	
 	Map<String, dynamic> toJson() => _$DestinyPresentationNodeBaseDefinitionToJson(this);
 	
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	
 	@JsonKey(name:'traitIds')

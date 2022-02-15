@@ -51,31 +51,51 @@ enum VendorInteractionType {
 
 extension VendorInteractionTypeExtension on VendorInteractionType{
   int? get value {
-    switch(this){
-      case VendorInteractionType.Unknown:
-        return 0;
-      case VendorInteractionType.Undefined:
-        return 1;
-      case VendorInteractionType.QuestComplete:
-        return 2;
-      case VendorInteractionType.QuestContinue:
-        return 3;
-      case VendorInteractionType.ReputationPreview:
-        return 4;
-      case VendorInteractionType.RankUpReward:
-        return 5;
-      case VendorInteractionType.TokenTurnIn:
-        return 6;
-      case VendorInteractionType.QuestAccept:
-        return 7;
-      case VendorInteractionType.ProgressTab:
-        return 8;
-      case VendorInteractionType.End:
-        return 9;
-      case VendorInteractionType.Start:
-        return 10;
-      default:
-        return null;
+    if (_$VendorInteractionTypeEnumMap.containsKey(this)){
+      return _$VendorInteractionTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+VendorInteractionType? decodeVendorInteractionType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$VendorInteractionTypeValueMap.containsKey(value)){
+    return _$VendorInteractionTypeValueMap[value];
+  }
+
+  return VendorInteractionType.ProtectedInvalidEnumValue;
+}
+
+int? encodeVendorInteractionType (VendorInteractionType? value) {
+  return value?.value;
+}
+
+const Map<VendorInteractionType, int> _$VendorInteractionTypeEnumMap = <VendorInteractionType, int>{
+    VendorInteractionType.Unknown:0,
+    VendorInteractionType.Undefined:1,
+    VendorInteractionType.QuestComplete:2,
+    VendorInteractionType.QuestContinue:3,
+    VendorInteractionType.ReputationPreview:4,
+    VendorInteractionType.RankUpReward:5,
+    VendorInteractionType.TokenTurnIn:6,
+    VendorInteractionType.QuestAccept:7,
+    VendorInteractionType.ProgressTab:8,
+    VendorInteractionType.End:9,
+    VendorInteractionType.Start:10,
+};
+const Map<int, VendorInteractionType> _$VendorInteractionTypeValueMap = <int, VendorInteractionType>{
+    0:VendorInteractionType.Unknown,
+    1:VendorInteractionType.Undefined,
+    2:VendorInteractionType.QuestComplete,
+    3:VendorInteractionType.QuestContinue,
+    4:VendorInteractionType.ReputationPreview,
+    5:VendorInteractionType.RankUpReward,
+    6:VendorInteractionType.TokenTurnIn,
+    7:VendorInteractionType.QuestAccept,
+    8:VendorInteractionType.ProgressTab,
+    9:VendorInteractionType.End,
+    10:VendorInteractionType.Start,
+};

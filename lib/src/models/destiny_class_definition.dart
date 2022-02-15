@@ -17,7 +17,7 @@ class DestinyClassDefinition{
 	Map<String, dynamic> toJson() => _$DestinyClassDefinitionToJson(this);
 	
 	/// In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
-	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
+	@JsonKey(name:'classType',fromJson:decodeDestinyClass,toJson:encodeDestinyClass)
 	DestinyClass? classType;
 	
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.

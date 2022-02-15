@@ -14,13 +14,13 @@ class HardLinkedUserMembership{
 	
 	Map<String, dynamic> toJson() => _$HardLinkedUserMembershipToJson(this);
 	
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 	
 	@JsonKey(name:'membershipId')
 	String? membershipId;
 	
-	@JsonKey(name:'CrossSaveOverriddenType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'CrossSaveOverriddenType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? crossSaveOverriddenType;
 	
 	@JsonKey(name:'CrossSaveOverriddenMembershipId')

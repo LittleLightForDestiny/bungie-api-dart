@@ -7,11 +7,10 @@ part of 'destiny_item_set_block_entry_definition.dart';
 // **************************************************************************
 
 DestinyItemSetBlockEntryDefinition _$DestinyItemSetBlockEntryDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemSetBlockEntryDefinition()
-    ..trackingValue = json['trackingValue'] as int?
-    ..itemHash = json['itemHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyItemSetBlockEntryDefinition()
+      ..trackingValue = json['trackingValue'] as int?
+      ..itemHash = json['itemHash'] as int?;
 
 Map<String, dynamic> _$DestinyItemSetBlockEntryDefinitionToJson(
         DestinyItemSetBlockEntryDefinition instance) =>

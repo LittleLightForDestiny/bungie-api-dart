@@ -243,165 +243,185 @@ enum DestinyActivityModeType {
 
 extension DestinyActivityModeTypeExtension on DestinyActivityModeType{
   int? get value {
-    switch(this){
-      case DestinyActivityModeType.None:
-        return 0;
-      case DestinyActivityModeType.Story:
-        return 2;
-      case DestinyActivityModeType.Strike:
-        return 3;
-      case DestinyActivityModeType.Raid:
-        return 4;
-      case DestinyActivityModeType.AllPvP:
-        return 5;
-      case DestinyActivityModeType.Patrol:
-        return 6;
-      case DestinyActivityModeType.AllPvE:
-        return 7;
-      case DestinyActivityModeType.Reserved9:
-        return 9;
-      case DestinyActivityModeType.Control:
-        return 10;
-      case DestinyActivityModeType.Reserved11:
-        return 11;
-      case DestinyActivityModeType.Clash:
-        return 12;
-      case DestinyActivityModeType.Reserved13:
-        return 13;
-      case DestinyActivityModeType.CrimsonDoubles:
-        return 15;
-      case DestinyActivityModeType.Nightfall:
-        return 16;
-      case DestinyActivityModeType.HeroicNightfall:
-        return 17;
-      case DestinyActivityModeType.AllStrikes:
-        return 18;
-      case DestinyActivityModeType.IronBanner:
-        return 19;
-      case DestinyActivityModeType.Reserved20:
-        return 20;
-      case DestinyActivityModeType.Reserved21:
-        return 21;
-      case DestinyActivityModeType.Reserved22:
-        return 22;
-      case DestinyActivityModeType.Reserved24:
-        return 24;
-      case DestinyActivityModeType.AllMayhem:
-        return 25;
-      case DestinyActivityModeType.Reserved26:
-        return 26;
-      case DestinyActivityModeType.Reserved27:
-        return 27;
-      case DestinyActivityModeType.Reserved28:
-        return 28;
-      case DestinyActivityModeType.Reserved29:
-        return 29;
-      case DestinyActivityModeType.Reserved30:
-        return 30;
-      case DestinyActivityModeType.Supremacy:
-        return 31;
-      case DestinyActivityModeType.PrivateMatchesAll:
-        return 32;
-      case DestinyActivityModeType.Survival:
-        return 37;
-      case DestinyActivityModeType.Countdown:
-        return 38;
-      case DestinyActivityModeType.TrialsOfTheNine:
-        return 39;
-      case DestinyActivityModeType.Social:
-        return 40;
-      case DestinyActivityModeType.TrialsCountdown:
-        return 41;
-      case DestinyActivityModeType.TrialsSurvival:
-        return 42;
-      case DestinyActivityModeType.IronBannerControl:
-        return 43;
-      case DestinyActivityModeType.IronBannerClash:
-        return 44;
-      case DestinyActivityModeType.IronBannerSupremacy:
-        return 45;
-      case DestinyActivityModeType.ScoredNightfall:
-        return 46;
-      case DestinyActivityModeType.ScoredHeroicNightfall:
-        return 47;
-      case DestinyActivityModeType.Rumble:
-        return 48;
-      case DestinyActivityModeType.AllDoubles:
-        return 49;
-      case DestinyActivityModeType.Doubles:
-        return 50;
-      case DestinyActivityModeType.PrivateMatchesClash:
-        return 51;
-      case DestinyActivityModeType.PrivateMatchesControl:
-        return 52;
-      case DestinyActivityModeType.PrivateMatchesSupremacy:
-        return 53;
-      case DestinyActivityModeType.PrivateMatchesCountdown:
-        return 54;
-      case DestinyActivityModeType.PrivateMatchesSurvival:
-        return 55;
-      case DestinyActivityModeType.PrivateMatchesMayhem:
-        return 56;
-      case DestinyActivityModeType.PrivateMatchesRumble:
-        return 57;
-      case DestinyActivityModeType.HeroicAdventure:
-        return 58;
-      case DestinyActivityModeType.Showdown:
-        return 59;
-      case DestinyActivityModeType.Lockdown:
-        return 60;
-      case DestinyActivityModeType.Scorched:
-        return 61;
-      case DestinyActivityModeType.ScorchedTeam:
-        return 62;
-      case DestinyActivityModeType.Gambit:
-        return 63;
-      case DestinyActivityModeType.AllPvECompetitive:
-        return 64;
-      case DestinyActivityModeType.Breakthrough:
-        return 65;
-      case DestinyActivityModeType.BlackArmoryRun:
-        return 66;
-      case DestinyActivityModeType.Salvage:
-        return 67;
-      case DestinyActivityModeType.IronBannerSalvage:
-        return 68;
-      case DestinyActivityModeType.PvPCompetitive:
-        return 69;
-      case DestinyActivityModeType.PvPQuickplay:
-        return 70;
-      case DestinyActivityModeType.ClashQuickplay:
-        return 71;
-      case DestinyActivityModeType.ClashCompetitive:
-        return 72;
-      case DestinyActivityModeType.ControlQuickplay:
-        return 73;
-      case DestinyActivityModeType.ControlCompetitive:
-        return 74;
-      case DestinyActivityModeType.GambitPrime:
-        return 75;
-      case DestinyActivityModeType.Reckoning:
-        return 76;
-      case DestinyActivityModeType.Menagerie:
-        return 77;
-      case DestinyActivityModeType.VexOffensive:
-        return 78;
-      case DestinyActivityModeType.NightmareHunt:
-        return 79;
-      case DestinyActivityModeType.Elimination:
-        return 80;
-      case DestinyActivityModeType.Momentum:
-        return 81;
-      case DestinyActivityModeType.Dungeon:
-        return 82;
-      case DestinyActivityModeType.Sundial:
-        return 83;
-      case DestinyActivityModeType.TrialsOfOsiris:
-        return 84;
-      case DestinyActivityModeType.Dares:
-        return 85;
-      default:
-        return null;
+    if (_$DestinyActivityModeTypeEnumMap.containsKey(this)){
+      return _$DestinyActivityModeTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyActivityModeType? decodeDestinyActivityModeType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyActivityModeTypeValueMap.containsKey(value)){
+    return _$DestinyActivityModeTypeValueMap[value];
+  }
+
+  return DestinyActivityModeType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyActivityModeType (DestinyActivityModeType? value) {
+  return value?.value;
+}
+
+const Map<DestinyActivityModeType, int> _$DestinyActivityModeTypeEnumMap = <DestinyActivityModeType, int>{
+    DestinyActivityModeType.None:0,
+    DestinyActivityModeType.Story:2,
+    DestinyActivityModeType.Strike:3,
+    DestinyActivityModeType.Raid:4,
+    DestinyActivityModeType.AllPvP:5,
+    DestinyActivityModeType.Patrol:6,
+    DestinyActivityModeType.AllPvE:7,
+    DestinyActivityModeType.Reserved9:9,
+    DestinyActivityModeType.Control:10,
+    DestinyActivityModeType.Reserved11:11,
+    DestinyActivityModeType.Clash:12,
+    DestinyActivityModeType.Reserved13:13,
+    DestinyActivityModeType.CrimsonDoubles:15,
+    DestinyActivityModeType.Nightfall:16,
+    DestinyActivityModeType.HeroicNightfall:17,
+    DestinyActivityModeType.AllStrikes:18,
+    DestinyActivityModeType.IronBanner:19,
+    DestinyActivityModeType.Reserved20:20,
+    DestinyActivityModeType.Reserved21:21,
+    DestinyActivityModeType.Reserved22:22,
+    DestinyActivityModeType.Reserved24:24,
+    DestinyActivityModeType.AllMayhem:25,
+    DestinyActivityModeType.Reserved26:26,
+    DestinyActivityModeType.Reserved27:27,
+    DestinyActivityModeType.Reserved28:28,
+    DestinyActivityModeType.Reserved29:29,
+    DestinyActivityModeType.Reserved30:30,
+    DestinyActivityModeType.Supremacy:31,
+    DestinyActivityModeType.PrivateMatchesAll:32,
+    DestinyActivityModeType.Survival:37,
+    DestinyActivityModeType.Countdown:38,
+    DestinyActivityModeType.TrialsOfTheNine:39,
+    DestinyActivityModeType.Social:40,
+    DestinyActivityModeType.TrialsCountdown:41,
+    DestinyActivityModeType.TrialsSurvival:42,
+    DestinyActivityModeType.IronBannerControl:43,
+    DestinyActivityModeType.IronBannerClash:44,
+    DestinyActivityModeType.IronBannerSupremacy:45,
+    DestinyActivityModeType.ScoredNightfall:46,
+    DestinyActivityModeType.ScoredHeroicNightfall:47,
+    DestinyActivityModeType.Rumble:48,
+    DestinyActivityModeType.AllDoubles:49,
+    DestinyActivityModeType.Doubles:50,
+    DestinyActivityModeType.PrivateMatchesClash:51,
+    DestinyActivityModeType.PrivateMatchesControl:52,
+    DestinyActivityModeType.PrivateMatchesSupremacy:53,
+    DestinyActivityModeType.PrivateMatchesCountdown:54,
+    DestinyActivityModeType.PrivateMatchesSurvival:55,
+    DestinyActivityModeType.PrivateMatchesMayhem:56,
+    DestinyActivityModeType.PrivateMatchesRumble:57,
+    DestinyActivityModeType.HeroicAdventure:58,
+    DestinyActivityModeType.Showdown:59,
+    DestinyActivityModeType.Lockdown:60,
+    DestinyActivityModeType.Scorched:61,
+    DestinyActivityModeType.ScorchedTeam:62,
+    DestinyActivityModeType.Gambit:63,
+    DestinyActivityModeType.AllPvECompetitive:64,
+    DestinyActivityModeType.Breakthrough:65,
+    DestinyActivityModeType.BlackArmoryRun:66,
+    DestinyActivityModeType.Salvage:67,
+    DestinyActivityModeType.IronBannerSalvage:68,
+    DestinyActivityModeType.PvPCompetitive:69,
+    DestinyActivityModeType.PvPQuickplay:70,
+    DestinyActivityModeType.ClashQuickplay:71,
+    DestinyActivityModeType.ClashCompetitive:72,
+    DestinyActivityModeType.ControlQuickplay:73,
+    DestinyActivityModeType.ControlCompetitive:74,
+    DestinyActivityModeType.GambitPrime:75,
+    DestinyActivityModeType.Reckoning:76,
+    DestinyActivityModeType.Menagerie:77,
+    DestinyActivityModeType.VexOffensive:78,
+    DestinyActivityModeType.NightmareHunt:79,
+    DestinyActivityModeType.Elimination:80,
+    DestinyActivityModeType.Momentum:81,
+    DestinyActivityModeType.Dungeon:82,
+    DestinyActivityModeType.Sundial:83,
+    DestinyActivityModeType.TrialsOfOsiris:84,
+    DestinyActivityModeType.Dares:85,
+};
+const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int, DestinyActivityModeType>{
+    0:DestinyActivityModeType.None,
+    2:DestinyActivityModeType.Story,
+    3:DestinyActivityModeType.Strike,
+    4:DestinyActivityModeType.Raid,
+    5:DestinyActivityModeType.AllPvP,
+    6:DestinyActivityModeType.Patrol,
+    7:DestinyActivityModeType.AllPvE,
+    9:DestinyActivityModeType.Reserved9,
+    10:DestinyActivityModeType.Control,
+    11:DestinyActivityModeType.Reserved11,
+    12:DestinyActivityModeType.Clash,
+    13:DestinyActivityModeType.Reserved13,
+    15:DestinyActivityModeType.CrimsonDoubles,
+    16:DestinyActivityModeType.Nightfall,
+    17:DestinyActivityModeType.HeroicNightfall,
+    18:DestinyActivityModeType.AllStrikes,
+    19:DestinyActivityModeType.IronBanner,
+    20:DestinyActivityModeType.Reserved20,
+    21:DestinyActivityModeType.Reserved21,
+    22:DestinyActivityModeType.Reserved22,
+    24:DestinyActivityModeType.Reserved24,
+    25:DestinyActivityModeType.AllMayhem,
+    26:DestinyActivityModeType.Reserved26,
+    27:DestinyActivityModeType.Reserved27,
+    28:DestinyActivityModeType.Reserved28,
+    29:DestinyActivityModeType.Reserved29,
+    30:DestinyActivityModeType.Reserved30,
+    31:DestinyActivityModeType.Supremacy,
+    32:DestinyActivityModeType.PrivateMatchesAll,
+    37:DestinyActivityModeType.Survival,
+    38:DestinyActivityModeType.Countdown,
+    39:DestinyActivityModeType.TrialsOfTheNine,
+    40:DestinyActivityModeType.Social,
+    41:DestinyActivityModeType.TrialsCountdown,
+    42:DestinyActivityModeType.TrialsSurvival,
+    43:DestinyActivityModeType.IronBannerControl,
+    44:DestinyActivityModeType.IronBannerClash,
+    45:DestinyActivityModeType.IronBannerSupremacy,
+    46:DestinyActivityModeType.ScoredNightfall,
+    47:DestinyActivityModeType.ScoredHeroicNightfall,
+    48:DestinyActivityModeType.Rumble,
+    49:DestinyActivityModeType.AllDoubles,
+    50:DestinyActivityModeType.Doubles,
+    51:DestinyActivityModeType.PrivateMatchesClash,
+    52:DestinyActivityModeType.PrivateMatchesControl,
+    53:DestinyActivityModeType.PrivateMatchesSupremacy,
+    54:DestinyActivityModeType.PrivateMatchesCountdown,
+    55:DestinyActivityModeType.PrivateMatchesSurvival,
+    56:DestinyActivityModeType.PrivateMatchesMayhem,
+    57:DestinyActivityModeType.PrivateMatchesRumble,
+    58:DestinyActivityModeType.HeroicAdventure,
+    59:DestinyActivityModeType.Showdown,
+    60:DestinyActivityModeType.Lockdown,
+    61:DestinyActivityModeType.Scorched,
+    62:DestinyActivityModeType.ScorchedTeam,
+    63:DestinyActivityModeType.Gambit,
+    64:DestinyActivityModeType.AllPvECompetitive,
+    65:DestinyActivityModeType.Breakthrough,
+    66:DestinyActivityModeType.BlackArmoryRun,
+    67:DestinyActivityModeType.Salvage,
+    68:DestinyActivityModeType.IronBannerSalvage,
+    69:DestinyActivityModeType.PvPCompetitive,
+    70:DestinyActivityModeType.PvPQuickplay,
+    71:DestinyActivityModeType.ClashQuickplay,
+    72:DestinyActivityModeType.ClashCompetitive,
+    73:DestinyActivityModeType.ControlQuickplay,
+    74:DestinyActivityModeType.ControlCompetitive,
+    75:DestinyActivityModeType.GambitPrime,
+    76:DestinyActivityModeType.Reckoning,
+    77:DestinyActivityModeType.Menagerie,
+    78:DestinyActivityModeType.VexOffensive,
+    79:DestinyActivityModeType.NightmareHunt,
+    80:DestinyActivityModeType.Elimination,
+    81:DestinyActivityModeType.Momentum,
+    82:DestinyActivityModeType.Dungeon,
+    83:DestinyActivityModeType.Sundial,
+    84:DestinyActivityModeType.TrialsOfOsiris,
+    85:DestinyActivityModeType.Dares,
+};

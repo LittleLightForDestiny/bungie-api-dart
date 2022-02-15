@@ -6,11 +6,10 @@ part of 'destiny_unlock_status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DestinyUnlockStatus _$DestinyUnlockStatusFromJson(Map<String, dynamic> json) {
-  return DestinyUnlockStatus()
-    ..unlockHash = json['unlockHash'] as int?
-    ..isSet = json['isSet'] as bool?;
-}
+DestinyUnlockStatus _$DestinyUnlockStatusFromJson(Map<String, dynamic> json) =>
+    DestinyUnlockStatus()
+      ..unlockHash = json['unlockHash'] as int?
+      ..isSet = json['isSet'] as bool?;
 
 Map<String, dynamic> _$DestinyUnlockStatusToJson(
         DestinyUnlockStatus instance) =>

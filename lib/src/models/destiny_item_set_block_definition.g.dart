@@ -7,19 +7,18 @@ part of 'destiny_item_set_block_definition.dart';
 // **************************************************************************
 
 DestinyItemSetBlockDefinition _$DestinyItemSetBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemSetBlockDefinition()
-    ..itemList = (json['itemList'] as List<dynamic>?)
-        ?.map((e) => DestinyItemSetBlockEntryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..requireOrderedSetItemAdd = json['requireOrderedSetItemAdd'] as bool?
-    ..setIsFeatured = json['setIsFeatured'] as bool?
-    ..setType = json['setType'] as String?
-    ..questLineName = json['questLineName'] as String?
-    ..questLineDescription = json['questLineDescription'] as String?
-    ..questStepSummary = json['questStepSummary'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyItemSetBlockDefinition()
+      ..itemList = (json['itemList'] as List<dynamic>?)
+          ?.map((e) => DestinyItemSetBlockEntryDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..requireOrderedSetItemAdd = json['requireOrderedSetItemAdd'] as bool?
+      ..setIsFeatured = json['setIsFeatured'] as bool?
+      ..setType = json['setType'] as String?
+      ..questLineName = json['questLineName'] as String?
+      ..questLineDescription = json['questLineDescription'] as String?
+      ..questStepSummary = json['questStepSummary'] as String?;
 
 Map<String, dynamic> _$DestinyItemSetBlockDefinitionToJson(
         DestinyItemSetBlockDefinition instance) =>

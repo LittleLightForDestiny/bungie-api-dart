@@ -7,14 +7,13 @@ part of 'destiny_environment_location_mapping.dart';
 // **************************************************************************
 
 DestinyEnvironmentLocationMapping _$DestinyEnvironmentLocationMappingFromJson(
-    Map<String, dynamic> json) {
-  return DestinyEnvironmentLocationMapping()
-    ..locationHash = json['locationHash'] as int?
-    ..activationSource = json['activationSource'] as String?
-    ..itemHash = json['itemHash'] as int?
-    ..objectiveHash = json['objectiveHash'] as int?
-    ..activityHash = json['activityHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyEnvironmentLocationMapping()
+      ..locationHash = json['locationHash'] as int?
+      ..activationSource = json['activationSource'] as String?
+      ..itemHash = json['itemHash'] as int?
+      ..objectiveHash = json['objectiveHash'] as int?
+      ..activityHash = json['activityHash'] as int?;
 
 Map<String, dynamic> _$DestinyEnvironmentLocationMappingToJson(
         DestinyEnvironmentLocationMapping instance) =>

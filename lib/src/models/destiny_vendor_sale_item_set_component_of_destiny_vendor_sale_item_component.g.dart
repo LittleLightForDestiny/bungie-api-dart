@@ -8,13 +8,14 @@ part of 'destiny_vendor_sale_item_set_component_of_destiny_vendor_sale_item_comp
 
 DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent
     _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentFromJson(
-        Map<String, dynamic> json) {
-  return DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent()
-    ..saleItems = (json['saleItems'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k,
-          DestinyVendorSaleItemComponent.fromJson(e as Map<String, dynamic>)),
-    );
-}
+            Map<String, dynamic> json) =>
+        DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponent()
+          ..saleItems = (json['saleItems'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+                k,
+                DestinyVendorSaleItemComponent.fromJson(
+                    e as Map<String, dynamic>)),
+          );
 
 Map<String, dynamic>
     _$DestinyVendorSaleItemSetComponentOfDestinyVendorSaleItemComponentToJson(

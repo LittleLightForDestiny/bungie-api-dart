@@ -17,15 +17,35 @@ enum DestinyVendorInteractionRewardSelection {
 
 extension DestinyVendorInteractionRewardSelectionExtension on DestinyVendorInteractionRewardSelection{
   int? get value {
-    switch(this){
-      case DestinyVendorInteractionRewardSelection.None:
-        return 0;
-      case DestinyVendorInteractionRewardSelection.One:
-        return 1;
-      case DestinyVendorInteractionRewardSelection.All:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyVendorInteractionRewardSelectionEnumMap.containsKey(this)){
+      return _$DestinyVendorInteractionRewardSelectionEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyVendorInteractionRewardSelection? decodeDestinyVendorInteractionRewardSelection (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyVendorInteractionRewardSelectionValueMap.containsKey(value)){
+    return _$DestinyVendorInteractionRewardSelectionValueMap[value];
+  }
+
+  return DestinyVendorInteractionRewardSelection.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyVendorInteractionRewardSelection (DestinyVendorInteractionRewardSelection? value) {
+  return value?.value;
+}
+
+const Map<DestinyVendorInteractionRewardSelection, int> _$DestinyVendorInteractionRewardSelectionEnumMap = <DestinyVendorInteractionRewardSelection, int>{
+    DestinyVendorInteractionRewardSelection.None:0,
+    DestinyVendorInteractionRewardSelection.One:1,
+    DestinyVendorInteractionRewardSelection.All:2,
+};
+const Map<int, DestinyVendorInteractionRewardSelection> _$DestinyVendorInteractionRewardSelectionValueMap = <int, DestinyVendorInteractionRewardSelection>{
+    0:DestinyVendorInteractionRewardSelection.None,
+    1:DestinyVendorInteractionRewardSelection.One,
+    2:DestinyVendorInteractionRewardSelection.All,
+};

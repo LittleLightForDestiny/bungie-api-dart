@@ -151,79 +151,99 @@ enum DestinyComponentType {
 
 extension DestinyComponentTypeExtension on DestinyComponentType{
   int? get value {
-    switch(this){
-      case DestinyComponentType.None:
-        return 0;
-      case DestinyComponentType.Profiles:
-        return 100;
-      case DestinyComponentType.VendorReceipts:
-        return 101;
-      case DestinyComponentType.ProfileInventories:
-        return 102;
-      case DestinyComponentType.ProfileCurrencies:
-        return 103;
-      case DestinyComponentType.ProfileProgression:
-        return 104;
-      case DestinyComponentType.PlatformSilver:
-        return 105;
-      case DestinyComponentType.Characters:
-        return 200;
-      case DestinyComponentType.CharacterInventories:
-        return 201;
-      case DestinyComponentType.CharacterProgressions:
-        return 202;
-      case DestinyComponentType.CharacterRenderData:
-        return 203;
-      case DestinyComponentType.CharacterActivities:
-        return 204;
-      case DestinyComponentType.CharacterEquipment:
-        return 205;
-      case DestinyComponentType.ItemInstances:
-        return 300;
-      case DestinyComponentType.ItemObjectives:
-        return 301;
-      case DestinyComponentType.ItemPerks:
-        return 302;
-      case DestinyComponentType.ItemRenderData:
-        return 303;
-      case DestinyComponentType.ItemStats:
-        return 304;
-      case DestinyComponentType.ItemSockets:
-        return 305;
-      case DestinyComponentType.ItemTalentGrids:
-        return 306;
-      case DestinyComponentType.ItemCommonData:
-        return 307;
-      case DestinyComponentType.ItemPlugStates:
-        return 308;
-      case DestinyComponentType.ItemPlugObjectives:
-        return 309;
-      case DestinyComponentType.ItemReusablePlugs:
-        return 310;
-      case DestinyComponentType.Vendors:
-        return 400;
-      case DestinyComponentType.VendorCategories:
-        return 401;
-      case DestinyComponentType.VendorSales:
-        return 402;
-      case DestinyComponentType.Kiosks:
-        return 500;
-      case DestinyComponentType.CurrencyLookups:
-        return 600;
-      case DestinyComponentType.PresentationNodes:
-        return 700;
-      case DestinyComponentType.Collectibles:
-        return 800;
-      case DestinyComponentType.Records:
-        return 900;
-      case DestinyComponentType.Transitory:
-        return 1000;
-      case DestinyComponentType.Metrics:
-        return 1100;
-      case DestinyComponentType.StringVariables:
-        return 1200;
-      default:
-        return null;
+    if (_$DestinyComponentTypeEnumMap.containsKey(this)){
+      return _$DestinyComponentTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyComponentType? decodeDestinyComponentType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyComponentTypeValueMap.containsKey(value)){
+    return _$DestinyComponentTypeValueMap[value];
+  }
+
+  return DestinyComponentType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyComponentType (DestinyComponentType? value) {
+  return value?.value;
+}
+
+const Map<DestinyComponentType, int> _$DestinyComponentTypeEnumMap = <DestinyComponentType, int>{
+    DestinyComponentType.None:0,
+    DestinyComponentType.Profiles:100,
+    DestinyComponentType.VendorReceipts:101,
+    DestinyComponentType.ProfileInventories:102,
+    DestinyComponentType.ProfileCurrencies:103,
+    DestinyComponentType.ProfileProgression:104,
+    DestinyComponentType.PlatformSilver:105,
+    DestinyComponentType.Characters:200,
+    DestinyComponentType.CharacterInventories:201,
+    DestinyComponentType.CharacterProgressions:202,
+    DestinyComponentType.CharacterRenderData:203,
+    DestinyComponentType.CharacterActivities:204,
+    DestinyComponentType.CharacterEquipment:205,
+    DestinyComponentType.ItemInstances:300,
+    DestinyComponentType.ItemObjectives:301,
+    DestinyComponentType.ItemPerks:302,
+    DestinyComponentType.ItemRenderData:303,
+    DestinyComponentType.ItemStats:304,
+    DestinyComponentType.ItemSockets:305,
+    DestinyComponentType.ItemTalentGrids:306,
+    DestinyComponentType.ItemCommonData:307,
+    DestinyComponentType.ItemPlugStates:308,
+    DestinyComponentType.ItemPlugObjectives:309,
+    DestinyComponentType.ItemReusablePlugs:310,
+    DestinyComponentType.Vendors:400,
+    DestinyComponentType.VendorCategories:401,
+    DestinyComponentType.VendorSales:402,
+    DestinyComponentType.Kiosks:500,
+    DestinyComponentType.CurrencyLookups:600,
+    DestinyComponentType.PresentationNodes:700,
+    DestinyComponentType.Collectibles:800,
+    DestinyComponentType.Records:900,
+    DestinyComponentType.Transitory:1000,
+    DestinyComponentType.Metrics:1100,
+    DestinyComponentType.StringVariables:1200,
+};
+const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, DestinyComponentType>{
+    0:DestinyComponentType.None,
+    100:DestinyComponentType.Profiles,
+    101:DestinyComponentType.VendorReceipts,
+    102:DestinyComponentType.ProfileInventories,
+    103:DestinyComponentType.ProfileCurrencies,
+    104:DestinyComponentType.ProfileProgression,
+    105:DestinyComponentType.PlatformSilver,
+    200:DestinyComponentType.Characters,
+    201:DestinyComponentType.CharacterInventories,
+    202:DestinyComponentType.CharacterProgressions,
+    203:DestinyComponentType.CharacterRenderData,
+    204:DestinyComponentType.CharacterActivities,
+    205:DestinyComponentType.CharacterEquipment,
+    300:DestinyComponentType.ItemInstances,
+    301:DestinyComponentType.ItemObjectives,
+    302:DestinyComponentType.ItemPerks,
+    303:DestinyComponentType.ItemRenderData,
+    304:DestinyComponentType.ItemStats,
+    305:DestinyComponentType.ItemSockets,
+    306:DestinyComponentType.ItemTalentGrids,
+    307:DestinyComponentType.ItemCommonData,
+    308:DestinyComponentType.ItemPlugStates,
+    309:DestinyComponentType.ItemPlugObjectives,
+    310:DestinyComponentType.ItemReusablePlugs,
+    400:DestinyComponentType.Vendors,
+    401:DestinyComponentType.VendorCategories,
+    402:DestinyComponentType.VendorSales,
+    500:DestinyComponentType.Kiosks,
+    600:DestinyComponentType.CurrencyLookups,
+    700:DestinyComponentType.PresentationNodes,
+    800:DestinyComponentType.Collectibles,
+    900:DestinyComponentType.Records,
+    1000:DestinyComponentType.Transitory,
+    1100:DestinyComponentType.Metrics,
+    1200:DestinyComponentType.StringVariables,
+};

@@ -7,16 +7,15 @@ part of 'destiny_activity_modifier_definition.dart';
 // **************************************************************************
 
 DestinyActivityModifierDefinition _$DestinyActivityModifierDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyActivityModifierDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyActivityModifierDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityModifierDefinitionToJson(
         DestinyActivityModifierDefinition instance) =>

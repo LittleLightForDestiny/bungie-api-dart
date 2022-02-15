@@ -7,22 +7,17 @@ part of 'destiny_historical_stats_activity.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsActivity _$DestinyHistoricalStatsActivityFromJson(
-    Map<String, dynamic> json) {
-  return DestinyHistoricalStatsActivity()
-    ..referenceId = json['referenceId'] as int?
-    ..directorActivityHash = json['directorActivityHash'] as int?
-    ..instanceId = json['instanceId'] as String?
-    ..mode = _$enumDecodeNullable(
-        _$DestinyActivityModeTypeEnumMap, json['mode'],
-        unknownValue: DestinyActivityModeType.ProtectedInvalidEnumValue)
-    ..modes = (json['modes'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-        .toList()
-    ..isPrivate = json['isPrivate'] as bool?
-    ..membershipType = _$enumDecodeNullable(
-        _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue);
-}
+        Map<String, dynamic> json) =>
+    DestinyHistoricalStatsActivity()
+      ..referenceId = json['referenceId'] as int?
+      ..directorActivityHash = json['directorActivityHash'] as int?
+      ..instanceId = json['instanceId'] as String?
+      ..mode = decodeDestinyActivityModeType(json['mode'])
+      ..modes = (json['modes'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          .toList()
+      ..isPrivate = json['isPrivate'] as bool?
+      ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
         DestinyHistoricalStatsActivity instance) =>
@@ -30,12 +25,12 @@ Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
       'referenceId': instance.referenceId,
       'directorActivityHash': instance.directorActivityHash,
       'instanceId': instance.instanceId,
-      'mode': _$DestinyActivityModeTypeEnumMap[instance.mode],
+      'mode': encodeDestinyActivityModeType(instance.mode),
       'modes': instance.modes
           ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
           .toList(),
       'isPrivate': instance.isPrivate,
-      'membershipType': _$BungieMembershipTypeEnumMap[instance.membershipType],
+      'membershipType': encodeBungieMembershipType(instance.membershipType),
     };
 
 K _$enumDecode<K, V>(
@@ -62,17 +57,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$DestinyActivityModeTypeEnumMap = {
@@ -155,17 +139,4 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.TrialsOfOsiris: 84,
   DestinyActivityModeType.Dares: 85,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$BungieMembershipTypeEnumMap = {
-  BungieMembershipType.None: 0,
-  BungieMembershipType.TigerXbox: 1,
-  BungieMembershipType.TigerPsn: 2,
-  BungieMembershipType.TigerSteam: 3,
-  BungieMembershipType.TigerBlizzard: 4,
-  BungieMembershipType.TigerStadia: 5,
-  BungieMembershipType.TigerDemon: 10,
-  BungieMembershipType.BungieNext: 254,
-  BungieMembershipType.All: -1,
-  BungieMembershipType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -7,17 +7,16 @@ part of 'partner_offer_history_response.dart';
 // **************************************************************************
 
 PartnerOfferHistoryResponse _$PartnerOfferHistoryResponseFromJson(
-    Map<String, dynamic> json) {
-  return PartnerOfferHistoryResponse()
-    ..partnerOfferKey = json['PartnerOfferKey'] as String?
-    ..membershipId = json['MembershipId'] as String?
-    ..membershipType = json['MembershipType'] as int?
-    ..localizedName = json['LocalizedName'] as String?
-    ..localizedDescription = json['LocalizedDescription'] as String?
-    ..isConsumable = json['IsConsumable'] as bool?
-    ..quantityApplied = json['QuantityApplied'] as int?
-    ..applyDate = json['ApplyDate'] as String?;
-}
+        Map<String, dynamic> json) =>
+    PartnerOfferHistoryResponse()
+      ..partnerOfferKey = json['PartnerOfferKey'] as String?
+      ..membershipId = json['MembershipId'] as String?
+      ..membershipType = json['MembershipType'] as int?
+      ..localizedName = json['LocalizedName'] as String?
+      ..localizedDescription = json['LocalizedDescription'] as String?
+      ..isConsumable = json['IsConsumable'] as bool?
+      ..quantityApplied = json['QuantityApplied'] as int?
+      ..applyDate = json['ApplyDate'] as String?;
 
 Map<String, dynamic> _$PartnerOfferHistoryResponseToJson(
         PartnerOfferHistoryResponse instance) =>

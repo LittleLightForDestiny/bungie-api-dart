@@ -14,13 +14,33 @@ enum GlobalAlertType {
 
 extension GlobalAlertTypeExtension on GlobalAlertType{
   int? get value {
-    switch(this){
-      case GlobalAlertType.GlobalAlert:
-        return 0;
-      case GlobalAlertType.StreamingAlert:
-        return 1;
-      default:
-        return null;
+    if (_$GlobalAlertTypeEnumMap.containsKey(this)){
+      return _$GlobalAlertTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+GlobalAlertType? decodeGlobalAlertType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GlobalAlertTypeValueMap.containsKey(value)){
+    return _$GlobalAlertTypeValueMap[value];
+  }
+
+  return GlobalAlertType.ProtectedInvalidEnumValue;
+}
+
+int? encodeGlobalAlertType (GlobalAlertType? value) {
+  return value?.value;
+}
+
+const Map<GlobalAlertType, int> _$GlobalAlertTypeEnumMap = <GlobalAlertType, int>{
+    GlobalAlertType.GlobalAlert:0,
+    GlobalAlertType.StreamingAlert:1,
+};
+const Map<int, GlobalAlertType> _$GlobalAlertTypeValueMap = <int, GlobalAlertType>{
+    0:GlobalAlertType.GlobalAlert,
+    1:GlobalAlertType.StreamingAlert,
+};

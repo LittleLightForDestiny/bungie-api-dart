@@ -7,48 +7,42 @@ part of 'destiny_historical_stats_definition.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyHistoricalStatsDefinition()
-    ..statId = json['statId'] as String?
-    ..group = _$enumDecodeNullable(
-        _$DestinyStatsGroupTypeEnumMap, json['group'],
-        unknownValue: DestinyStatsGroupType.ProtectedInvalidEnumValue)
-    ..periodTypes = (json['periodTypes'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$PeriodTypeEnumMap, e))
-        .toList()
-    ..modes = (json['modes'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-        .toList()
-    ..category = _$enumDecodeNullable(
-        _$DestinyStatsCategoryTypeEnumMap, json['category'],
-        unknownValue: DestinyStatsCategoryType.ProtectedInvalidEnumValue)
-    ..statName = json['statName'] as String?
-    ..statNameAbbr = json['statNameAbbr'] as String?
-    ..statDescription = json['statDescription'] as String?
-    ..unitType = _$enumDecodeNullable(_$UnitTypeEnumMap, json['unitType'],
-        unknownValue: UnitType.ProtectedInvalidEnumValue)
-    ..iconImage = json['iconImage'] as String?
-    ..mergeMethod = json['mergeMethod'] as int?
-    ..unitLabel = json['unitLabel'] as String?
-    ..weight = json['weight'] as int?
-    ..medalTierHash = json['medalTierHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyHistoricalStatsDefinition()
+      ..statId = json['statId'] as String?
+      ..group = decodeDestinyStatsGroupType(json['group'])
+      ..periodTypes = (json['periodTypes'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$PeriodTypeEnumMap, e))
+          .toList()
+      ..modes = (json['modes'] as List<dynamic>?)
+          ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          .toList()
+      ..category = decodeDestinyStatsCategoryType(json['category'])
+      ..statName = json['statName'] as String?
+      ..statNameAbbr = json['statNameAbbr'] as String?
+      ..statDescription = json['statDescription'] as String?
+      ..unitType = decodeUnitType(json['unitType'])
+      ..iconImage = json['iconImage'] as String?
+      ..mergeMethod = json['mergeMethod'] as int?
+      ..unitLabel = json['unitLabel'] as String?
+      ..weight = json['weight'] as int?
+      ..medalTierHash = json['medalTierHash'] as int?;
 
 Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
         DestinyHistoricalStatsDefinition instance) =>
     <String, dynamic>{
       'statId': instance.statId,
-      'group': _$DestinyStatsGroupTypeEnumMap[instance.group],
+      'group': encodeDestinyStatsGroupType(instance.group),
       'periodTypes':
           instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]).toList(),
       'modes': instance.modes
           ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
           .toList(),
-      'category': _$DestinyStatsCategoryTypeEnumMap[instance.category],
+      'category': encodeDestinyStatsCategoryType(instance.category),
       'statName': instance.statName,
       'statNameAbbr': instance.statNameAbbr,
       'statDescription': instance.statDescription,
-      'unitType': _$UnitTypeEnumMap[instance.unitType],
+      'unitType': encodeUnitType(instance.unitType),
       'iconImage': instance.iconImage,
       'mergeMethod': instance.mergeMethod,
       'unitLabel': instance.unitLabel,
@@ -81,30 +75,6 @@ K _$enumDecode<K, V>(
     },
   ).key;
 }
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$DestinyStatsGroupTypeEnumMap = {
-  DestinyStatsGroupType.None: 0,
-  DestinyStatsGroupType.General: 1,
-  DestinyStatsGroupType.Weapons: 2,
-  DestinyStatsGroupType.Medals: 3,
-  DestinyStatsGroupType.ReservedGroups: 100,
-  DestinyStatsGroupType.Leaderboard: 101,
-  DestinyStatsGroupType.Activity: 102,
-  DestinyStatsGroupType.UniqueWeapon: 103,
-  DestinyStatsGroupType.Internal: 104,
-  DestinyStatsGroupType.ProtectedInvalidEnumValue: 999999999,
-};
 
 const _$PeriodTypeEnumMap = {
   PeriodType.None: 0,
@@ -194,42 +164,4 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.TrialsOfOsiris: 84,
   DestinyActivityModeType.Dares: 85,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$DestinyStatsCategoryTypeEnumMap = {
-  DestinyStatsCategoryType.None: 0,
-  DestinyStatsCategoryType.Kills: 1,
-  DestinyStatsCategoryType.Assists: 2,
-  DestinyStatsCategoryType.Deaths: 3,
-  DestinyStatsCategoryType.Criticals: 4,
-  DestinyStatsCategoryType.KDa: 5,
-  DestinyStatsCategoryType.KD: 6,
-  DestinyStatsCategoryType.Score: 7,
-  DestinyStatsCategoryType.Entered: 8,
-  DestinyStatsCategoryType.TimePlayed: 9,
-  DestinyStatsCategoryType.MedalWins: 10,
-  DestinyStatsCategoryType.MedalGame: 11,
-  DestinyStatsCategoryType.MedalSpecialKills: 12,
-  DestinyStatsCategoryType.MedalSprees: 13,
-  DestinyStatsCategoryType.MedalMultiKills: 14,
-  DestinyStatsCategoryType.MedalAbilities: 15,
-  DestinyStatsCategoryType.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$UnitTypeEnumMap = {
-  UnitType.None: 0,
-  UnitType.Count: 1,
-  UnitType.PerGame: 2,
-  UnitType.Seconds: 3,
-  UnitType.Points: 4,
-  UnitType.Team: 5,
-  UnitType.Distance: 6,
-  UnitType.Percent: 7,
-  UnitType.Ratio: 8,
-  UnitType.Boolean: 9,
-  UnitType.WeaponType: 10,
-  UnitType.Standing: 11,
-  UnitType.Milliseconds: 12,
-  UnitType.CompletionReason: 13,
-  UnitType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -7,35 +7,32 @@ part of 'cross_save_user_membership.dart';
 // **************************************************************************
 
 CrossSaveUserMembership _$CrossSaveUserMembershipFromJson(
-    Map<String, dynamic> json) {
-  return CrossSaveUserMembership()
-    ..crossSaveOverride = _$enumDecodeNullable(
-        _$BungieMembershipTypeEnumMap, json['crossSaveOverride'],
-        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..applicableMembershipTypes =
-        (json['applicableMembershipTypes'] as List<dynamic>?)
-            ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
-            .toList()
-    ..isPublic = json['isPublic'] as bool?
-    ..membershipType = _$enumDecodeNullable(
-        _$BungieMembershipTypeEnumMap, json['membershipType'],
-        unknownValue: BungieMembershipType.ProtectedInvalidEnumValue)
-    ..membershipId = json['membershipId'] as String?
-    ..displayName = json['displayName'] as String?
-    ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-    ..bungieGlobalDisplayNameCode = json['bungieGlobalDisplayNameCode'] as int?;
-}
+        Map<String, dynamic> json) =>
+    CrossSaveUserMembership()
+      ..crossSaveOverride =
+          decodeBungieMembershipType(json['crossSaveOverride'])
+      ..applicableMembershipTypes =
+          (json['applicableMembershipTypes'] as List<dynamic>?)
+              ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
+              .toList()
+      ..isPublic = json['isPublic'] as bool?
+      ..membershipType = decodeBungieMembershipType(json['membershipType'])
+      ..membershipId = json['membershipId'] as String?
+      ..displayName = json['displayName'] as String?
+      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+      ..bungieGlobalDisplayNameCode =
+          json['bungieGlobalDisplayNameCode'] as int?;
 
 Map<String, dynamic> _$CrossSaveUserMembershipToJson(
         CrossSaveUserMembership instance) =>
     <String, dynamic>{
       'crossSaveOverride':
-          _$BungieMembershipTypeEnumMap[instance.crossSaveOverride],
+          encodeBungieMembershipType(instance.crossSaveOverride),
       'applicableMembershipTypes': instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e])
           .toList(),
       'isPublic': instance.isPublic,
-      'membershipType': _$BungieMembershipTypeEnumMap[instance.membershipType],
+      'membershipType': encodeBungieMembershipType(instance.membershipType),
       'membershipId': instance.membershipId,
       'displayName': instance.displayName,
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
@@ -66,17 +63,6 @@ K _$enumDecode<K, V>(
       return MapEntry(unknownValue, enumValues.values.first);
     },
   ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
 }
 
 const _$BungieMembershipTypeEnumMap = {

@@ -21,6 +21,6 @@ class DestinyObjectivePerkEntryDefinition{
 	int? perkHash;
 	
 	/// An enumeration indicating whether it will be applied as long as the Objective is active, when it's completed, or until it's completed.
-	@JsonKey(name:'style',unknownEnumValue:DestinyObjectiveGrantStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'style',fromJson:decodeDestinyObjectiveGrantStyle,toJson:encodeDestinyObjectiveGrantStyle)
 	DestinyObjectiveGrantStyle? style;
 }

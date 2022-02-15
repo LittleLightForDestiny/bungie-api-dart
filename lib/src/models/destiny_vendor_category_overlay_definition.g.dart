@@ -8,14 +8,13 @@ part of 'destiny_vendor_category_overlay_definition.dart';
 
 DestinyVendorCategoryOverlayDefinition
     _$DestinyVendorCategoryOverlayDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyVendorCategoryOverlayDefinition()
-    ..choiceDescription = json['choiceDescription'] as String?
-    ..description = json['description'] as String?
-    ..icon = json['icon'] as String?
-    ..title = json['title'] as String?
-    ..currencyItemHash = json['currencyItemHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyVendorCategoryOverlayDefinition()
+          ..choiceDescription = json['choiceDescription'] as String?
+          ..description = json['description'] as String?
+          ..icon = json['icon'] as String?
+          ..title = json['title'] as String?
+          ..currencyItemHash = json['currencyItemHash'] as int?;
 
 Map<String, dynamic> _$DestinyVendorCategoryOverlayDefinitionToJson(
         DestinyVendorCategoryOverlayDefinition instance) =>

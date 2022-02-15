@@ -7,11 +7,10 @@ part of 'destiny_public_milestone_vendor.dart';
 // **************************************************************************
 
 DestinyPublicMilestoneVendor _$DestinyPublicMilestoneVendorFromJson(
-    Map<String, dynamic> json) {
-  return DestinyPublicMilestoneVendor()
-    ..vendorHash = json['vendorHash'] as int?
-    ..previewItemHash = json['previewItemHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyPublicMilestoneVendor()
+      ..vendorHash = json['vendorHash'] as int?
+      ..previewItemHash = json['previewItemHash'] as int?;
 
 Map<String, dynamic> _$DestinyPublicMilestoneVendorToJson(
         DestinyPublicMilestoneVendor instance) =>

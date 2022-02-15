@@ -8,13 +8,12 @@ part of 'destiny_milestone_quest_rewards_definition.dart';
 
 DestinyMilestoneQuestRewardsDefinition
     _$DestinyMilestoneQuestRewardsDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyMilestoneQuestRewardsDefinition()
-    ..items = (json['items'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyMilestoneQuestRewardItem.fromJson(e as Map<String, dynamic>))
-        .toList();
-}
+            Map<String, dynamic> json) =>
+        DestinyMilestoneQuestRewardsDefinition()
+          ..items = (json['items'] as List<dynamic>?)
+              ?.map((e) => DestinyMilestoneQuestRewardItem.fromJson(
+                  e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$DestinyMilestoneQuestRewardsDefinitionToJson(
         DestinyMilestoneQuestRewardsDefinition instance) =>

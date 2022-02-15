@@ -26,7 +26,7 @@ class DestinyTalentNode{
 	int? nodeHash;
 	
 	/// An DestinyTalentNodeState enum value indicating the node's state: whether it can be activated or swapped, and why not if neither can be performed.
-	@JsonKey(name:'state',unknownEnumValue:DestinyTalentNodeState.ProtectedInvalidEnumValue)
+	@JsonKey(name:'state',fromJson:decodeDestinyTalentNodeState,toJson:encodeDestinyTalentNodeState)
 	DestinyTalentNodeState? state;
 	
 	/// If true, the node is activated: it's current step then provides its benefits.

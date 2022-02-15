@@ -28,19 +28,39 @@ enum ApplicationStatus {
 
 extension ApplicationStatusExtension on ApplicationStatus{
   int? get value {
-    switch(this){
-      case ApplicationStatus.None:
-        return 0;
-      case ApplicationStatus.Private:
-        return 1;
-      case ApplicationStatus.Public:
-        return 2;
-      case ApplicationStatus.Disabled:
-        return 3;
-      case ApplicationStatus.Blocked:
-        return 4;
-      default:
-        return null;
+    if (_$ApplicationStatusEnumMap.containsKey(this)){
+      return _$ApplicationStatusEnumMap[this];
     }
+    return null;
   }
 }
+
+ApplicationStatus? decodeApplicationStatus (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ApplicationStatusValueMap.containsKey(value)){
+    return _$ApplicationStatusValueMap[value];
+  }
+
+  return ApplicationStatus.ProtectedInvalidEnumValue;
+}
+
+int? encodeApplicationStatus (ApplicationStatus? value) {
+  return value?.value;
+}
+
+const Map<ApplicationStatus, int> _$ApplicationStatusEnumMap = <ApplicationStatus, int>{
+    ApplicationStatus.None:0,
+    ApplicationStatus.Private:1,
+    ApplicationStatus.Public:2,
+    ApplicationStatus.Disabled:3,
+    ApplicationStatus.Blocked:4,
+};
+const Map<int, ApplicationStatus> _$ApplicationStatusValueMap = <int, ApplicationStatus>{
+    0:ApplicationStatus.None,
+    1:ApplicationStatus.Private,
+    2:ApplicationStatus.Public,
+    3:ApplicationStatus.Disabled,
+    4:ApplicationStatus.Blocked,
+};

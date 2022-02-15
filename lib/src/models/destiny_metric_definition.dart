@@ -25,7 +25,7 @@ class DestinyMetricDefinition{
 	@JsonKey(name:'lowerValueIsBetter')
 	bool? lowerValueIsBetter;
 	
-	@JsonKey(name:'presentationNodeType',unknownEnumValue:DestinyPresentationNodeType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	
 	@JsonKey(name:'traitIds')

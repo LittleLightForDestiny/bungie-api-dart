@@ -32,11 +32,11 @@ class DestinyItemComponent{
 	int? quantity;
 	
 	/// If the item is bound to a location, it will be specified in this enum.
-	@JsonKey(name:'bindStatus',unknownEnumValue:ItemBindStatus.ProtectedInvalidEnumValue)
+	@JsonKey(name:'bindStatus',fromJson:decodeItemBindStatus,toJson:encodeItemBindStatus)
 	ItemBindStatus? bindStatus;
 	
 	/// An easy reference for where the item is located. Redundant if you got the item from an Inventory, but useful when making detail calls on specific items.
-	@JsonKey(name:'location',unknownEnumValue:ItemLocation.ProtectedInvalidEnumValue)
+	@JsonKey(name:'location',fromJson:decodeItemLocation,toJson:encodeItemLocation)
 	ItemLocation? location;
 	
 	/// The hash identifier for the specific inventory bucket in which the item is located.

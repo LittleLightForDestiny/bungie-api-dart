@@ -7,16 +7,15 @@ part of 'destiny_profile_progression_component.dart';
 // **************************************************************************
 
 DestinyProfileProgressionComponent _$DestinyProfileProgressionComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyProfileProgressionComponent()
-    ..checklists = (json['checklists'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(k, Map<String, bool>.from(e as Map)),
-    )
-    ..seasonalArtifact = json['seasonalArtifact'] == null
-        ? null
-        : DestinyArtifactProfileScoped.fromJson(
-            json['seasonalArtifact'] as Map<String, dynamic>);
-}
+        Map<String, dynamic> json) =>
+    DestinyProfileProgressionComponent()
+      ..checklists = (json['checklists'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, Map<String, bool>.from(e as Map)),
+      )
+      ..seasonalArtifact = json['seasonalArtifact'] == null
+          ? null
+          : DestinyArtifactProfileScoped.fromJson(
+              json['seasonalArtifact'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DestinyProfileProgressionComponentToJson(
         DestinyProfileProgressionComponent instance) =>

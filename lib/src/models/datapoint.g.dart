@@ -6,11 +6,9 @@ part of 'datapoint.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Datapoint _$DatapointFromJson(Map<String, dynamic> json) {
-  return Datapoint()
-    ..time = json['time'] as String?
-    ..count = (json['count'] as num?)?.toDouble();
-}
+Datapoint _$DatapointFromJson(Map<String, dynamic> json) => Datapoint()
+  ..time = json['time'] as String?
+  ..count = (json['count'] as num?)?.toDouble();
 
 Map<String, dynamic> _$DatapointToJson(Datapoint instance) => <String, dynamic>{
       'time': instance.time,

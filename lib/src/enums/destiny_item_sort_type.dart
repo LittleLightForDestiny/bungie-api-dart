@@ -17,15 +17,35 @@ enum DestinyItemSortType {
 
 extension DestinyItemSortTypeExtension on DestinyItemSortType{
   int? get value {
-    switch(this){
-      case DestinyItemSortType.ItemId:
-        return 0;
-      case DestinyItemSortType.Timestamp:
-        return 1;
-      case DestinyItemSortType.StackSize:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyItemSortTypeEnumMap.containsKey(this)){
+      return _$DestinyItemSortTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyItemSortType? decodeDestinyItemSortType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyItemSortTypeValueMap.containsKey(value)){
+    return _$DestinyItemSortTypeValueMap[value];
+  }
+
+  return DestinyItemSortType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyItemSortType (DestinyItemSortType? value) {
+  return value?.value;
+}
+
+const Map<DestinyItemSortType, int> _$DestinyItemSortTypeEnumMap = <DestinyItemSortType, int>{
+    DestinyItemSortType.ItemId:0,
+    DestinyItemSortType.Timestamp:1,
+    DestinyItemSortType.StackSize:2,
+};
+const Map<int, DestinyItemSortType> _$DestinyItemSortTypeValueMap = <int, DestinyItemSortType>{
+    0:DestinyItemSortType.ItemId,
+    1:DestinyItemSortType.Timestamp,
+    2:DestinyItemSortType.StackSize,
+};

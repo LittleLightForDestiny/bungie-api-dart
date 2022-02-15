@@ -7,13 +7,12 @@ part of 'group_application_list_request.dart';
 // **************************************************************************
 
 GroupApplicationListRequest _$GroupApplicationListRequestFromJson(
-    Map<String, dynamic> json) {
-  return GroupApplicationListRequest()
-    ..memberships = (json['memberships'] as List<dynamic>?)
-        ?.map((e) => UserMembership.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..message = json['message'] as String?;
-}
+        Map<String, dynamic> json) =>
+    GroupApplicationListRequest()
+      ..memberships = (json['memberships'] as List<dynamic>?)
+          ?.map((e) => UserMembership.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..message = json['message'] as String?;
 
 Map<String, dynamic> _$GroupApplicationListRequestToJson(
         GroupApplicationListRequest instance) =>

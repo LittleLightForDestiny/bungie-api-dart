@@ -53,39 +53,59 @@ enum ContentPropertyDataTypeEnum {
 
 extension ContentPropertyDataTypeEnumExtension on ContentPropertyDataTypeEnum{
   int? get value {
-    switch(this){
-      case ContentPropertyDataTypeEnum.None:
-        return 0;
-      case ContentPropertyDataTypeEnum.Plaintext:
-        return 1;
-      case ContentPropertyDataTypeEnum.Html:
-        return 2;
-      case ContentPropertyDataTypeEnum.Dropdown:
-        return 3;
-      case ContentPropertyDataTypeEnum.List:
-        return 4;
-      case ContentPropertyDataTypeEnum.Json:
-        return 5;
-      case ContentPropertyDataTypeEnum.Content:
-        return 6;
-      case ContentPropertyDataTypeEnum.Representation:
-        return 7;
-      case ContentPropertyDataTypeEnum.Set:
-        return 8;
-      case ContentPropertyDataTypeEnum.File:
-        return 9;
-      case ContentPropertyDataTypeEnum.FolderSet:
-        return 10;
-      case ContentPropertyDataTypeEnum.Date:
-        return 11;
-      case ContentPropertyDataTypeEnum.MultilinePlaintext:
-        return 12;
-      case ContentPropertyDataTypeEnum.DestinyContent:
-        return 13;
-      case ContentPropertyDataTypeEnum.Color:
-        return 14;
-      default:
-        return null;
+    if (_$ContentPropertyDataTypeEnumEnumMap.containsKey(this)){
+      return _$ContentPropertyDataTypeEnumEnumMap[this];
     }
+    return null;
   }
 }
+
+ContentPropertyDataTypeEnum? decodeContentPropertyDataTypeEnum (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ContentPropertyDataTypeEnumValueMap.containsKey(value)){
+    return _$ContentPropertyDataTypeEnumValueMap[value];
+  }
+
+  return ContentPropertyDataTypeEnum.ProtectedInvalidEnumValue;
+}
+
+int? encodeContentPropertyDataTypeEnum (ContentPropertyDataTypeEnum? value) {
+  return value?.value;
+}
+
+const Map<ContentPropertyDataTypeEnum, int> _$ContentPropertyDataTypeEnumEnumMap = <ContentPropertyDataTypeEnum, int>{
+    ContentPropertyDataTypeEnum.None:0,
+    ContentPropertyDataTypeEnum.Plaintext:1,
+    ContentPropertyDataTypeEnum.Html:2,
+    ContentPropertyDataTypeEnum.Dropdown:3,
+    ContentPropertyDataTypeEnum.List:4,
+    ContentPropertyDataTypeEnum.Json:5,
+    ContentPropertyDataTypeEnum.Content:6,
+    ContentPropertyDataTypeEnum.Representation:7,
+    ContentPropertyDataTypeEnum.Set:8,
+    ContentPropertyDataTypeEnum.File:9,
+    ContentPropertyDataTypeEnum.FolderSet:10,
+    ContentPropertyDataTypeEnum.Date:11,
+    ContentPropertyDataTypeEnum.MultilinePlaintext:12,
+    ContentPropertyDataTypeEnum.DestinyContent:13,
+    ContentPropertyDataTypeEnum.Color:14,
+};
+const Map<int, ContentPropertyDataTypeEnum> _$ContentPropertyDataTypeEnumValueMap = <int, ContentPropertyDataTypeEnum>{
+    0:ContentPropertyDataTypeEnum.None,
+    1:ContentPropertyDataTypeEnum.Plaintext,
+    2:ContentPropertyDataTypeEnum.Html,
+    3:ContentPropertyDataTypeEnum.Dropdown,
+    4:ContentPropertyDataTypeEnum.List,
+    5:ContentPropertyDataTypeEnum.Json,
+    6:ContentPropertyDataTypeEnum.Content,
+    7:ContentPropertyDataTypeEnum.Representation,
+    8:ContentPropertyDataTypeEnum.Set,
+    9:ContentPropertyDataTypeEnum.File,
+    10:ContentPropertyDataTypeEnum.FolderSet,
+    11:ContentPropertyDataTypeEnum.Date,
+    12:ContentPropertyDataTypeEnum.MultilinePlaintext,
+    13:ContentPropertyDataTypeEnum.DestinyContent,
+    14:ContentPropertyDataTypeEnum.Color,
+};

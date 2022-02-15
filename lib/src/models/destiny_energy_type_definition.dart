@@ -29,7 +29,7 @@ class DestinyEnergyTypeDefinition{
 	bool? showIcon;
 	
 	/// We have an enumeration for Energy types for quick reference. This is the current definition's Energy type enum value.
-	@JsonKey(name:'enumValue',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'enumValue',fromJson:decodeDestinyEnergyType,toJson:encodeDestinyEnergyType)
 	DestinyEnergyType? enumValue;
 	
 	/// If this Energy Type can be used for determining the Type of Energy that an item can consume, this is the hash for the DestinyInvestmentStatDefinition that represents the stat which holds the Capacity for that energy type. (Note that this is optional because "Any" is a valid cost, but not valid for Capacity - an Armor must have a specific Energy Type for determining the energy type that the Armor is restricted to use)

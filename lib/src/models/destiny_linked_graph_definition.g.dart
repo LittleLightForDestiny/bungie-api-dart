@@ -7,21 +7,20 @@ part of 'destiny_linked_graph_definition.dart';
 // **************************************************************************
 
 DestinyLinkedGraphDefinition _$DestinyLinkedGraphDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyLinkedGraphDefinition()
-    ..description = json['description'] as String?
-    ..name = json['name'] as String?
-    ..unlockExpression = json['unlockExpression'] == null
-        ? null
-        : DestinyUnlockExpressionDefinition.fromJson(
-            json['unlockExpression'] as Map<String, dynamic>)
-    ..linkedGraphId = json['linkedGraphId'] as int?
-    ..linkedGraphs = (json['linkedGraphs'] as List<dynamic>?)
-        ?.map((e) => DestinyLinkedGraphEntryDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..overview = json['overview'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyLinkedGraphDefinition()
+      ..description = json['description'] as String?
+      ..name = json['name'] as String?
+      ..unlockExpression = json['unlockExpression'] == null
+          ? null
+          : DestinyUnlockExpressionDefinition.fromJson(
+              json['unlockExpression'] as Map<String, dynamic>)
+      ..linkedGraphId = json['linkedGraphId'] as int?
+      ..linkedGraphs = (json['linkedGraphs'] as List<dynamic>?)
+          ?.map((e) => DestinyLinkedGraphEntryDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..overview = json['overview'] as String?;
 
 Map<String, dynamic> _$DestinyLinkedGraphDefinitionToJson(
         DestinyLinkedGraphDefinition instance) =>

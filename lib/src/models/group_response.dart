@@ -29,7 +29,7 @@ class GroupResponse{
 	@JsonKey(name:'parentGroup')
 	GroupV2? parentGroup;
 	
-	@JsonKey(name:'allianceStatus',unknownEnumValue:GroupAllianceStatus.ProtectedInvalidEnumValue)
+	@JsonKey(name:'allianceStatus',fromJson:decodeGroupAllianceStatus,toJson:encodeGroupAllianceStatus)
 	GroupAllianceStatus? allianceStatus;
 	
 	@JsonKey(name:'groupJoinInviteCount')

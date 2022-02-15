@@ -24,6 +24,6 @@ class DestinyRecordCompletionBlock{
 	@JsonKey(name:'shouldFireToast')
 	bool? shouldFireToast;
 	
-	@JsonKey(name:'toastStyle',unknownEnumValue:DestinyRecordToastStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'toastStyle',fromJson:decodeDestinyRecordToastStyle,toJson:encodeDestinyRecordToastStyle)
 	DestinyRecordToastStyle? toastStyle;
 }

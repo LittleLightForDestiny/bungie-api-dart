@@ -8,11 +8,10 @@ part of 'destiny_presentation_node_requirements_block.dart';
 
 DestinyPresentationNodeRequirementsBlock
     _$DestinyPresentationNodeRequirementsBlockFromJson(
-        Map<String, dynamic> json) {
-  return DestinyPresentationNodeRequirementsBlock()
-    ..entitlementUnavailableMessage =
-        json['entitlementUnavailableMessage'] as String?;
-}
+            Map<String, dynamic> json) =>
+        DestinyPresentationNodeRequirementsBlock()
+          ..entitlementUnavailableMessage =
+              json['entitlementUnavailableMessage'] as String?;
 
 Map<String, dynamic> _$DestinyPresentationNodeRequirementsBlockToJson(
         DestinyPresentationNodeRequirementsBlock instance) =>

@@ -24,6 +24,6 @@ class DestinyEnergyCapacityEntry{
 	int? energyTypeHash;
 	
 	/// The Energy Type for this energy capacity, in enum form for easy use.
-	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'energyType',fromJson:decodeDestinyEnergyType,toJson:encodeDestinyEnergyType)
 	DestinyEnergyType? energyType;
 }

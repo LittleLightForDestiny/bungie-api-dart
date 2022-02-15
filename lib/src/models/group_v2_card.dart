@@ -24,7 +24,7 @@ class GroupV2Card{
 	@JsonKey(name:'name')
 	String? name;
 	
-	@JsonKey(name:'groupType',unknownEnumValue:GroupType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'groupType',fromJson:decodeGroupType,toJson:encodeGroupType)
 	GroupType? groupType;
 	
 	@JsonKey(name:'creationDate')
@@ -42,7 +42,7 @@ class GroupV2Card{
 	@JsonKey(name:'locale')
 	String? locale;
 	
-	@JsonKey(name:'membershipOption',unknownEnumValue:MembershipOption.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipOption',fromJson:decodeMembershipOption,toJson:encodeMembershipOption)
 	MembershipOption? membershipOption;
 	
 	@JsonKey(name:'capabilities')

@@ -23,7 +23,7 @@ class DestinyRewardSourceDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// Sources are grouped into categories: common ways that items are provided. I hope to see this expand in Destiny 2 once we have time to generate accurate reward source data.
-	@JsonKey(name:'category',unknownEnumValue:DestinyRewardSourceCategory.ProtectedInvalidEnumValue)
+	@JsonKey(name:'category',fromJson:decodeDestinyRewardSourceCategory,toJson:encodeDestinyRewardSourceCategory)
 	DestinyRewardSourceCategory? category;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

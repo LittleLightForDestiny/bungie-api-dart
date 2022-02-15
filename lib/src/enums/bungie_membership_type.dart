@@ -36,27 +36,47 @@ enum BungieMembershipType {
 
 extension BungieMembershipTypeExtension on BungieMembershipType{
   int? get value {
-    switch(this){
-      case BungieMembershipType.None:
-        return 0;
-      case BungieMembershipType.TigerXbox:
-        return 1;
-      case BungieMembershipType.TigerPsn:
-        return 2;
-      case BungieMembershipType.TigerSteam:
-        return 3;
-      case BungieMembershipType.TigerBlizzard:
-        return 4;
-      case BungieMembershipType.TigerStadia:
-        return 5;
-      case BungieMembershipType.TigerDemon:
-        return 10;
-      case BungieMembershipType.BungieNext:
-        return 254;
-      case BungieMembershipType.All:
-        return -1;
-      default:
-        return null;
+    if (_$BungieMembershipTypeEnumMap.containsKey(this)){
+      return _$BungieMembershipTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+BungieMembershipType? decodeBungieMembershipType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$BungieMembershipTypeValueMap.containsKey(value)){
+    return _$BungieMembershipTypeValueMap[value];
+  }
+
+  return BungieMembershipType.ProtectedInvalidEnumValue;
+}
+
+int? encodeBungieMembershipType (BungieMembershipType? value) {
+  return value?.value;
+}
+
+const Map<BungieMembershipType, int> _$BungieMembershipTypeEnumMap = <BungieMembershipType, int>{
+    BungieMembershipType.None:0,
+    BungieMembershipType.TigerXbox:1,
+    BungieMembershipType.TigerPsn:2,
+    BungieMembershipType.TigerSteam:3,
+    BungieMembershipType.TigerBlizzard:4,
+    BungieMembershipType.TigerStadia:5,
+    BungieMembershipType.TigerDemon:10,
+    BungieMembershipType.BungieNext:254,
+    BungieMembershipType.All:-1,
+};
+const Map<int, BungieMembershipType> _$BungieMembershipTypeValueMap = <int, BungieMembershipType>{
+    0:BungieMembershipType.None,
+    1:BungieMembershipType.TigerXbox,
+    2:BungieMembershipType.TigerPsn,
+    3:BungieMembershipType.TigerSteam,
+    4:BungieMembershipType.TigerBlizzard,
+    5:BungieMembershipType.TigerStadia,
+    10:BungieMembershipType.TigerDemon,
+    254:BungieMembershipType.BungieNext,
+    -1:BungieMembershipType.All,
+};

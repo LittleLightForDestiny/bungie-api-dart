@@ -7,14 +7,13 @@ part of 'destiny_milestone_value_definition.dart';
 // **************************************************************************
 
 DestinyMilestoneValueDefinition _$DestinyMilestoneValueDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyMilestoneValueDefinition()
-    ..key = json['key'] as String?
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>);
-}
+        Map<String, dynamic> json) =>
+    DestinyMilestoneValueDefinition()
+      ..key = json['key'] as String?
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DestinyMilestoneValueDefinitionToJson(
         DestinyMilestoneValueDefinition instance) =>

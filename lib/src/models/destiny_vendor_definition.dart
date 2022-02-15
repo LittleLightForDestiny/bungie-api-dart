@@ -39,7 +39,7 @@ class DestinyVendorDefinition{
 	DestinyVendorDisplayPropertiesDefinition? displayProperties;
 	
 	/// The type of reward progression that this vendor has. Default - The original rank progression from token redemption. Ritual - Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Battlegrounds (War Table).
-	@JsonKey(name:'vendorProgressionType',unknownEnumValue:DestinyVendorProgressionType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'vendorProgressionType',fromJson:decodeDestinyVendorProgressionType,toJson:encodeDestinyVendorProgressionType)
 	DestinyVendorProgressionType? vendorProgressionType;
 	
 	/// If the vendor has a custom localized string describing the "buy" action, that is returned here.

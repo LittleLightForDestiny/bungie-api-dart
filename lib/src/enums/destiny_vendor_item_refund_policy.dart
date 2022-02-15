@@ -17,15 +17,35 @@ enum DestinyVendorItemRefundPolicy {
 
 extension DestinyVendorItemRefundPolicyExtension on DestinyVendorItemRefundPolicy{
   int? get value {
-    switch(this){
-      case DestinyVendorItemRefundPolicy.NotRefundable:
-        return 0;
-      case DestinyVendorItemRefundPolicy.DeletesItem:
-        return 1;
-      case DestinyVendorItemRefundPolicy.RevokesLicense:
-        return 2;
-      default:
-        return null;
+    if (_$DestinyVendorItemRefundPolicyEnumMap.containsKey(this)){
+      return _$DestinyVendorItemRefundPolicyEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyVendorItemRefundPolicy? decodeDestinyVendorItemRefundPolicy (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyVendorItemRefundPolicyValueMap.containsKey(value)){
+    return _$DestinyVendorItemRefundPolicyValueMap[value];
+  }
+
+  return DestinyVendorItemRefundPolicy.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyVendorItemRefundPolicy (DestinyVendorItemRefundPolicy? value) {
+  return value?.value;
+}
+
+const Map<DestinyVendorItemRefundPolicy, int> _$DestinyVendorItemRefundPolicyEnumMap = <DestinyVendorItemRefundPolicy, int>{
+    DestinyVendorItemRefundPolicy.NotRefundable:0,
+    DestinyVendorItemRefundPolicy.DeletesItem:1,
+    DestinyVendorItemRefundPolicy.RevokesLicense:2,
+};
+const Map<int, DestinyVendorItemRefundPolicy> _$DestinyVendorItemRefundPolicyValueMap = <int, DestinyVendorItemRefundPolicy>{
+    0:DestinyVendorItemRefundPolicy.NotRefundable,
+    1:DestinyVendorItemRefundPolicy.DeletesItem,
+    2:DestinyVendorItemRefundPolicy.RevokesLicense,
+};

@@ -6,37 +6,31 @@ part of 'post_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PostResponse _$PostResponseFromJson(Map<String, dynamic> json) {
-  return PostResponse()
-    ..lastReplyTimestamp = json['lastReplyTimestamp'] as String?
-    ..isPinned = json['IsPinned'] as bool?
-    ..urlMediaType = _$enumDecodeNullable(
-        _$ForumMediaTypeEnumMap, json['urlMediaType'],
-        unknownValue: ForumMediaType.ProtectedInvalidEnumValue)
-    ..thumbnail = json['thumbnail'] as String?
-    ..popularity = _$enumDecodeNullable(
-        _$ForumPostPopularityEnumMap, json['popularity'],
-        unknownValue: ForumPostPopularity.ProtectedInvalidEnumValue)
-    ..isActive = json['isActive'] as bool?
-    ..isAnnouncement = json['isAnnouncement'] as bool?
-    ..userRating = json['userRating'] as int?
-    ..userHasRated = json['userHasRated'] as bool?
-    ..userHasMutedPost = json['userHasMutedPost'] as bool?
-    ..latestReplyPostId = json['latestReplyPostId'] as String?
-    ..latestReplyAuthorId = json['latestReplyAuthorId'] as String?
-    ..ignoreStatus = json['ignoreStatus'] == null
-        ? null
-        : IgnoreResponse.fromJson(json['ignoreStatus'] as Map<String, dynamic>)
-    ..locale = json['locale'] as String?;
-}
+PostResponse _$PostResponseFromJson(Map<String, dynamic> json) => PostResponse()
+  ..lastReplyTimestamp = json['lastReplyTimestamp'] as String?
+  ..isPinned = json['IsPinned'] as bool?
+  ..urlMediaType = decodeForumMediaType(json['urlMediaType'])
+  ..thumbnail = json['thumbnail'] as String?
+  ..popularity = decodeForumPostPopularity(json['popularity'])
+  ..isActive = json['isActive'] as bool?
+  ..isAnnouncement = json['isAnnouncement'] as bool?
+  ..userRating = json['userRating'] as int?
+  ..userHasRated = json['userHasRated'] as bool?
+  ..userHasMutedPost = json['userHasMutedPost'] as bool?
+  ..latestReplyPostId = json['latestReplyPostId'] as String?
+  ..latestReplyAuthorId = json['latestReplyAuthorId'] as String?
+  ..ignoreStatus = json['ignoreStatus'] == null
+      ? null
+      : IgnoreResponse.fromJson(json['ignoreStatus'] as Map<String, dynamic>)
+  ..locale = json['locale'] as String?;
 
 Map<String, dynamic> _$PostResponseToJson(PostResponse instance) =>
     <String, dynamic>{
       'lastReplyTimestamp': instance.lastReplyTimestamp,
       'IsPinned': instance.isPinned,
-      'urlMediaType': _$ForumMediaTypeEnumMap[instance.urlMediaType],
+      'urlMediaType': encodeForumMediaType(instance.urlMediaType),
       'thumbnail': instance.thumbnail,
-      'popularity': _$ForumPostPopularityEnumMap[instance.popularity],
+      'popularity': encodeForumPostPopularity(instance.popularity),
       'isActive': instance.isActive,
       'isAnnouncement': instance.isAnnouncement,
       'userRating': instance.userRating,
@@ -47,58 +41,3 @@ Map<String, dynamic> _$PostResponseToJson(PostResponse instance) =>
       'ignoreStatus': instance.ignoreStatus,
       'locale': instance.locale,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$ForumMediaTypeEnumMap = {
-  ForumMediaType.None: 0,
-  ForumMediaType.Image: 1,
-  ForumMediaType.Video: 2,
-  ForumMediaType.Youtube: 3,
-  ForumMediaType.ProtectedInvalidEnumValue: 999999999,
-};
-
-const _$ForumPostPopularityEnumMap = {
-  ForumPostPopularity.Empty: 0,
-  ForumPostPopularity.Default: 1,
-  ForumPostPopularity.Discussed: 2,
-  ForumPostPopularity.CoolStory: 3,
-  ForumPostPopularity.HeatingUp: 4,
-  ForumPostPopularity.Hot: 5,
-  ForumPostPopularity.ProtectedInvalidEnumValue: 999999999,
-};

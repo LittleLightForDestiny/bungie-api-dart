@@ -7,18 +7,17 @@ part of 'destiny_item_talent_grid_component.dart';
 // **************************************************************************
 
 DestinyItemTalentGridComponent _$DestinyItemTalentGridComponentFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemTalentGridComponent()
-    ..talentGridHash = json['talentGridHash'] as int?
-    ..nodes = (json['nodes'] as List<dynamic>?)
-        ?.map((e) => DestinyTalentNode.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..isGridComplete = json['isGridComplete'] as bool?
-    ..gridProgression = json['gridProgression'] == null
-        ? null
-        : DestinyProgression.fromJson(
-            json['gridProgression'] as Map<String, dynamic>);
-}
+        Map<String, dynamic> json) =>
+    DestinyItemTalentGridComponent()
+      ..talentGridHash = json['talentGridHash'] as int?
+      ..nodes = (json['nodes'] as List<dynamic>?)
+          ?.map((e) => DestinyTalentNode.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..isGridComplete = json['isGridComplete'] as bool?
+      ..gridProgression = json['gridProgression'] == null
+          ? null
+          : DestinyProgression.fromJson(
+              json['gridProgression'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DestinyItemTalentGridComponentToJson(
         DestinyItemTalentGridComponent instance) =>

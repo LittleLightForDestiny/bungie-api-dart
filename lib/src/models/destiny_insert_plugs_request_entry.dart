@@ -22,7 +22,7 @@ class DestinyInsertPlugsRequestEntry{
 	int? socketIndex;
 	
 	/// This property, combined with the socketIndex, tells us which socket we are referring to (since operations can be performed on both Intrinsic and "default" sockets, and they occupy different arrays in the Inventory Item Definition). I know, I know. Don't give me that look.
-	@JsonKey(name:'socketArrayType',unknownEnumValue:DestinySocketArrayType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'socketArrayType',fromJson:decodeDestinySocketArrayType,toJson:encodeDestinySocketArrayType)
 	DestinySocketArrayType? socketArrayType;
 	
 	/// Plugs are never instanced (except in infusion). So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.

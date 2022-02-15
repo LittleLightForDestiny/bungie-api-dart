@@ -7,12 +7,12 @@ part of 'destiny_public_milestone_activity_variant.dart';
 // **************************************************************************
 
 DestinyPublicMilestoneActivityVariant
-    _$DestinyPublicMilestoneActivityVariantFromJson(Map<String, dynamic> json) {
-  return DestinyPublicMilestoneActivityVariant()
-    ..activityHash = json['activityHash'] as int?
-    ..activityModeHash = json['activityModeHash'] as int?
-    ..activityModeType = json['activityModeType'] as int?;
-}
+    _$DestinyPublicMilestoneActivityVariantFromJson(
+            Map<String, dynamic> json) =>
+        DestinyPublicMilestoneActivityVariant()
+          ..activityHash = json['activityHash'] as int?
+          ..activityModeHash = json['activityModeHash'] as int?
+          ..activityModeType = json['activityModeType'] as int?;
 
 Map<String, dynamic> _$DestinyPublicMilestoneActivityVariantToJson(
         DestinyPublicMilestoneActivityVariant instance) =>

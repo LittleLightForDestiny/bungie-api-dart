@@ -35,27 +35,47 @@ enum DestinySocketCategoryStyle {
 
 extension DestinySocketCategoryStyleExtension on DestinySocketCategoryStyle{
   int? get value {
-    switch(this){
-      case DestinySocketCategoryStyle.Unknown:
-        return 0;
-      case DestinySocketCategoryStyle.Reusable:
-        return 1;
-      case DestinySocketCategoryStyle.Consumable:
-        return 2;
-      case DestinySocketCategoryStyle.Unlockable:
-        return 3;
-      case DestinySocketCategoryStyle.Intrinsic:
-        return 4;
-      case DestinySocketCategoryStyle.EnergyMeter:
-        return 5;
-      case DestinySocketCategoryStyle.LargePerk:
-        return 6;
-      case DestinySocketCategoryStyle.Abilities:
-        return 7;
-      case DestinySocketCategoryStyle.Supers:
-        return 8;
-      default:
-        return null;
+    if (_$DestinySocketCategoryStyleEnumMap.containsKey(this)){
+      return _$DestinySocketCategoryStyleEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinySocketCategoryStyle? decodeDestinySocketCategoryStyle (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinySocketCategoryStyleValueMap.containsKey(value)){
+    return _$DestinySocketCategoryStyleValueMap[value];
+  }
+
+  return DestinySocketCategoryStyle.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinySocketCategoryStyle (DestinySocketCategoryStyle? value) {
+  return value?.value;
+}
+
+const Map<DestinySocketCategoryStyle, int> _$DestinySocketCategoryStyleEnumMap = <DestinySocketCategoryStyle, int>{
+    DestinySocketCategoryStyle.Unknown:0,
+    DestinySocketCategoryStyle.Reusable:1,
+    DestinySocketCategoryStyle.Consumable:2,
+    DestinySocketCategoryStyle.Unlockable:3,
+    DestinySocketCategoryStyle.Intrinsic:4,
+    DestinySocketCategoryStyle.EnergyMeter:5,
+    DestinySocketCategoryStyle.LargePerk:6,
+    DestinySocketCategoryStyle.Abilities:7,
+    DestinySocketCategoryStyle.Supers:8,
+};
+const Map<int, DestinySocketCategoryStyle> _$DestinySocketCategoryStyleValueMap = <int, DestinySocketCategoryStyle>{
+    0:DestinySocketCategoryStyle.Unknown,
+    1:DestinySocketCategoryStyle.Reusable,
+    2:DestinySocketCategoryStyle.Consumable,
+    3:DestinySocketCategoryStyle.Unlockable,
+    4:DestinySocketCategoryStyle.Intrinsic,
+    5:DestinySocketCategoryStyle.EnergyMeter,
+    6:DestinySocketCategoryStyle.LargePerk,
+    7:DestinySocketCategoryStyle.Abilities,
+    8:DestinySocketCategoryStyle.Supers,
+};

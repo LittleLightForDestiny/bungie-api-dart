@@ -8,17 +8,18 @@ part of 'destiny_post_game_carnage_report_extended_data.dart';
 
 DestinyPostGameCarnageReportExtendedData
     _$DestinyPostGameCarnageReportExtendedDataFromJson(
-        Map<String, dynamic> json) {
-  return DestinyPostGameCarnageReportExtendedData()
-    ..weapons = (json['weapons'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyHistoricalWeaponStats.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..values = (json['values'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    );
-}
+            Map<String, dynamic> json) =>
+        DestinyPostGameCarnageReportExtendedData()
+          ..weapons = (json['weapons'] as List<dynamic>?)
+              ?.map((e) => DestinyHistoricalWeaponStats.fromJson(
+                  e as Map<String, dynamic>))
+              .toList()
+          ..values = (json['values'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+                k,
+                DestinyHistoricalStatsValue.fromJson(
+                    e as Map<String, dynamic>)),
+          );
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportExtendedDataToJson(
         DestinyPostGameCarnageReportExtendedData instance) =>

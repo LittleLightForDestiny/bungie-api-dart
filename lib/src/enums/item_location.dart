@@ -23,19 +23,39 @@ enum ItemLocation {
 
 extension ItemLocationExtension on ItemLocation{
   int? get value {
-    switch(this){
-      case ItemLocation.Unknown:
-        return 0;
-      case ItemLocation.Inventory:
-        return 1;
-      case ItemLocation.Vault:
-        return 2;
-      case ItemLocation.Vendor:
-        return 3;
-      case ItemLocation.Postmaster:
-        return 4;
-      default:
-        return null;
+    if (_$ItemLocationEnumMap.containsKey(this)){
+      return _$ItemLocationEnumMap[this];
     }
+    return null;
   }
 }
+
+ItemLocation? decodeItemLocation (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ItemLocationValueMap.containsKey(value)){
+    return _$ItemLocationValueMap[value];
+  }
+
+  return ItemLocation.ProtectedInvalidEnumValue;
+}
+
+int? encodeItemLocation (ItemLocation? value) {
+  return value?.value;
+}
+
+const Map<ItemLocation, int> _$ItemLocationEnumMap = <ItemLocation, int>{
+    ItemLocation.Unknown:0,
+    ItemLocation.Inventory:1,
+    ItemLocation.Vault:2,
+    ItemLocation.Vendor:3,
+    ItemLocation.Postmaster:4,
+};
+const Map<int, ItemLocation> _$ItemLocationValueMap = <int, ItemLocation>{
+    0:ItemLocation.Unknown,
+    1:ItemLocation.Inventory,
+    2:ItemLocation.Vault,
+    3:ItemLocation.Vendor,
+    4:ItemLocation.Postmaster,
+};

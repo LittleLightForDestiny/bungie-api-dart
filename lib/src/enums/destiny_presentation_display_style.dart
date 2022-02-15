@@ -24,19 +24,39 @@ enum DestinyPresentationDisplayStyle {
 
 extension DestinyPresentationDisplayStyleExtension on DestinyPresentationDisplayStyle{
   int? get value {
-    switch(this){
-      case DestinyPresentationDisplayStyle.Category:
-        return 0;
-      case DestinyPresentationDisplayStyle.Badge:
-        return 1;
-      case DestinyPresentationDisplayStyle.Medals:
-        return 2;
-      case DestinyPresentationDisplayStyle.Collectible:
-        return 3;
-      case DestinyPresentationDisplayStyle.Record:
-        return 4;
-      default:
-        return null;
+    if (_$DestinyPresentationDisplayStyleEnumMap.containsKey(this)){
+      return _$DestinyPresentationDisplayStyleEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyPresentationDisplayStyle? decodeDestinyPresentationDisplayStyle (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyPresentationDisplayStyleValueMap.containsKey(value)){
+    return _$DestinyPresentationDisplayStyleValueMap[value];
+  }
+
+  return DestinyPresentationDisplayStyle.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyPresentationDisplayStyle (DestinyPresentationDisplayStyle? value) {
+  return value?.value;
+}
+
+const Map<DestinyPresentationDisplayStyle, int> _$DestinyPresentationDisplayStyleEnumMap = <DestinyPresentationDisplayStyle, int>{
+    DestinyPresentationDisplayStyle.Category:0,
+    DestinyPresentationDisplayStyle.Badge:1,
+    DestinyPresentationDisplayStyle.Medals:2,
+    DestinyPresentationDisplayStyle.Collectible:3,
+    DestinyPresentationDisplayStyle.Record:4,
+};
+const Map<int, DestinyPresentationDisplayStyle> _$DestinyPresentationDisplayStyleValueMap = <int, DestinyPresentationDisplayStyle>{
+    0:DestinyPresentationDisplayStyle.Category,
+    1:DestinyPresentationDisplayStyle.Badge,
+    2:DestinyPresentationDisplayStyle.Medals,
+    3:DestinyPresentationDisplayStyle.Collectible,
+    4:DestinyPresentationDisplayStyle.Record,
+};

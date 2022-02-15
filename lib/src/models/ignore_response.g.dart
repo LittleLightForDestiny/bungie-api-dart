@@ -6,13 +6,12 @@ part of 'ignore_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-IgnoreResponse _$IgnoreResponseFromJson(Map<String, dynamic> json) {
-  return IgnoreResponse()
-    ..isIgnored = json['isIgnored'] as bool?
-    ..ignoreFlags = json['ignoreFlags'] == null
-        ? null
-        : IgnoreStatus.fromJson(json['ignoreFlags'] as int);
-}
+IgnoreResponse _$IgnoreResponseFromJson(Map<String, dynamic> json) =>
+    IgnoreResponse()
+      ..isIgnored = json['isIgnored'] as bool?
+      ..ignoreFlags = json['ignoreFlags'] == null
+          ? null
+          : IgnoreStatus.fromJson(json['ignoreFlags'] as int);
 
 Map<String, dynamic> _$IgnoreResponseToJson(IgnoreResponse instance) =>
     <String, dynamic>{

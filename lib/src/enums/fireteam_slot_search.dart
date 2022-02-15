@@ -17,15 +17,35 @@ enum FireteamSlotSearch {
 
 extension FireteamSlotSearchExtension on FireteamSlotSearch{
   int? get value {
-    switch(this){
-      case FireteamSlotSearch.NoSlotRestriction:
-        return 0;
-      case FireteamSlotSearch.HasOpenPlayerSlots:
-        return 1;
-      case FireteamSlotSearch.HasOpenPlayerOrAltSlots:
-        return 2;
-      default:
-        return null;
+    if (_$FireteamSlotSearchEnumMap.containsKey(this)){
+      return _$FireteamSlotSearchEnumMap[this];
     }
+    return null;
   }
 }
+
+FireteamSlotSearch? decodeFireteamSlotSearch (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FireteamSlotSearchValueMap.containsKey(value)){
+    return _$FireteamSlotSearchValueMap[value];
+  }
+
+  return FireteamSlotSearch.ProtectedInvalidEnumValue;
+}
+
+int? encodeFireteamSlotSearch (FireteamSlotSearch? value) {
+  return value?.value;
+}
+
+const Map<FireteamSlotSearch, int> _$FireteamSlotSearchEnumMap = <FireteamSlotSearch, int>{
+    FireteamSlotSearch.NoSlotRestriction:0,
+    FireteamSlotSearch.HasOpenPlayerSlots:1,
+    FireteamSlotSearch.HasOpenPlayerOrAltSlots:2,
+};
+const Map<int, FireteamSlotSearch> _$FireteamSlotSearchValueMap = <int, FireteamSlotSearch>{
+    0:FireteamSlotSearch.NoSlotRestriction,
+    1:FireteamSlotSearch.HasOpenPlayerSlots,
+    2:FireteamSlotSearch.HasOpenPlayerOrAltSlots,
+};

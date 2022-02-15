@@ -22,7 +22,7 @@ class GroupMemberApplication{
 	@JsonKey(name:'creationDate')
 	String? creationDate;
 	
-	@JsonKey(name:'resolveState',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
+	@JsonKey(name:'resolveState',fromJson:decodeGroupApplicationResolveState,toJson:encodeGroupApplicationResolveState)
 	GroupApplicationResolveState? resolveState;
 	
 	@JsonKey(name:'resolveDate')

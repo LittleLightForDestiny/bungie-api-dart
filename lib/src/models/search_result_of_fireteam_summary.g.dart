@@ -7,20 +7,19 @@ part of 'search_result_of_fireteam_summary.dart';
 // **************************************************************************
 
 SearchResultOfFireteamSummary _$SearchResultOfFireteamSummaryFromJson(
-    Map<String, dynamic> json) {
-  return SearchResultOfFireteamSummary()
-    ..results = (json['results'] as List<dynamic>?)
-        ?.map((e) => FireteamSummary.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..totalResults = json['totalResults'] as int?
-    ..hasMore = json['hasMore'] as bool?
-    ..query = json['query'] == null
-        ? null
-        : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
-    ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String?
-    ..useTotalResults = json['useTotalResults'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    SearchResultOfFireteamSummary()
+      ..results = (json['results'] as List<dynamic>?)
+          ?.map((e) => FireteamSummary.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..totalResults = json['totalResults'] as int?
+      ..hasMore = json['hasMore'] as bool?
+      ..query = json['query'] == null
+          ? null
+          : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+      ..replacementContinuationToken =
+          json['replacementContinuationToken'] as String?
+      ..useTotalResults = json['useTotalResults'] as bool?;
 
 Map<String, dynamic> _$SearchResultOfFireteamSummaryToJson(
         SearchResultOfFireteamSummary instance) =>

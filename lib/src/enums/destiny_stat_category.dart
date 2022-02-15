@@ -20,17 +20,37 @@ enum DestinyStatCategory {
 
 extension DestinyStatCategoryExtension on DestinyStatCategory{
   int? get value {
-    switch(this){
-      case DestinyStatCategory.Gameplay:
-        return 0;
-      case DestinyStatCategory.Weapon:
-        return 1;
-      case DestinyStatCategory.Defense:
-        return 2;
-      case DestinyStatCategory.Primary:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyStatCategoryEnumMap.containsKey(this)){
+      return _$DestinyStatCategoryEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyStatCategory? decodeDestinyStatCategory (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyStatCategoryValueMap.containsKey(value)){
+    return _$DestinyStatCategoryValueMap[value];
+  }
+
+  return DestinyStatCategory.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyStatCategory (DestinyStatCategory? value) {
+  return value?.value;
+}
+
+const Map<DestinyStatCategory, int> _$DestinyStatCategoryEnumMap = <DestinyStatCategory, int>{
+    DestinyStatCategory.Gameplay:0,
+    DestinyStatCategory.Weapon:1,
+    DestinyStatCategory.Defense:2,
+    DestinyStatCategory.Primary:3,
+};
+const Map<int, DestinyStatCategory> _$DestinyStatCategoryValueMap = <int, DestinyStatCategory>{
+    0:DestinyStatCategory.Gameplay,
+    1:DestinyStatCategory.Weapon,
+    2:DestinyStatCategory.Defense,
+    3:DestinyStatCategory.Primary,
+};

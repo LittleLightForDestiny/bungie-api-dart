@@ -20,17 +20,37 @@ enum PlatformFriendType {
 
 extension PlatformFriendTypeExtension on PlatformFriendType{
   int? get value {
-    switch(this){
-      case PlatformFriendType.Unknown:
-        return 0;
-      case PlatformFriendType.Xbox:
-        return 1;
-      case PlatformFriendType.PSN:
-        return 2;
-      case PlatformFriendType.Steam:
-        return 3;
-      default:
-        return null;
+    if (_$PlatformFriendTypeEnumMap.containsKey(this)){
+      return _$PlatformFriendTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+PlatformFriendType? decodePlatformFriendType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$PlatformFriendTypeValueMap.containsKey(value)){
+    return _$PlatformFriendTypeValueMap[value];
+  }
+
+  return PlatformFriendType.ProtectedInvalidEnumValue;
+}
+
+int? encodePlatformFriendType (PlatformFriendType? value) {
+  return value?.value;
+}
+
+const Map<PlatformFriendType, int> _$PlatformFriendTypeEnumMap = <PlatformFriendType, int>{
+    PlatformFriendType.Unknown:0,
+    PlatformFriendType.Xbox:1,
+    PlatformFriendType.PSN:2,
+    PlatformFriendType.Steam:3,
+};
+const Map<int, PlatformFriendType> _$PlatformFriendTypeValueMap = <int, PlatformFriendType>{
+    0:PlatformFriendType.Unknown,
+    1:PlatformFriendType.Xbox,
+    2:PlatformFriendType.PSN,
+    3:PlatformFriendType.Steam,
+};

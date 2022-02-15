@@ -8,21 +8,20 @@ part of 'search_result_of_destiny_entity_search_result_item.dart';
 
 SearchResultOfDestinyEntitySearchResultItem
     _$SearchResultOfDestinyEntitySearchResultItemFromJson(
-        Map<String, dynamic> json) {
-  return SearchResultOfDestinyEntitySearchResultItem()
-    ..results = (json['results'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyEntitySearchResultItem.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..totalResults = json['totalResults'] as int?
-    ..hasMore = json['hasMore'] as bool?
-    ..query = json['query'] == null
-        ? null
-        : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
-    ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String?
-    ..useTotalResults = json['useTotalResults'] as bool?;
-}
+            Map<String, dynamic> json) =>
+        SearchResultOfDestinyEntitySearchResultItem()
+          ..results = (json['results'] as List<dynamic>?)
+              ?.map((e) => DestinyEntitySearchResultItem.fromJson(
+                  e as Map<String, dynamic>))
+              .toList()
+          ..totalResults = json['totalResults'] as int?
+          ..hasMore = json['hasMore'] as bool?
+          ..query = json['query'] == null
+              ? null
+              : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+          ..replacementContinuationToken =
+              json['replacementContinuationToken'] as String?
+          ..useTotalResults = json['useTotalResults'] as bool?;
 
 Map<String, dynamic> _$SearchResultOfDestinyEntitySearchResultItemToJson(
         SearchResultOfDestinyEntitySearchResultItem instance) =>

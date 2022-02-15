@@ -7,14 +7,13 @@ part of 'destiny_historical_weapon_stats.dart';
 // **************************************************************************
 
 DestinyHistoricalWeaponStats _$DestinyHistoricalWeaponStatsFromJson(
-    Map<String, dynamic> json) {
-  return DestinyHistoricalWeaponStats()
-    ..referenceId = json['referenceId'] as int?
-    ..values = (json['values'] as Map<String, dynamic>?)?.map(
-      (k, e) => MapEntry(
-          k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
-    );
-}
+        Map<String, dynamic> json) =>
+    DestinyHistoricalWeaponStats()
+      ..referenceId = json['referenceId'] as int?
+      ..values = (json['values'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+            k, DestinyHistoricalStatsValue.fromJson(e as Map<String, dynamic>)),
+      );
 
 Map<String, dynamic> _$DestinyHistoricalWeaponStatsToJson(
         DestinyHistoricalWeaponStats instance) =>

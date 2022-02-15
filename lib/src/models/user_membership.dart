@@ -16,7 +16,7 @@ class UserMembership{
 	Map<String, dynamic> toJson() => _$UserMembershipToJson(this);
 	
 	/// Type of the membership. Not necessarily the native type.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 	
 	/// Membership ID as they user is known in the Accounts service

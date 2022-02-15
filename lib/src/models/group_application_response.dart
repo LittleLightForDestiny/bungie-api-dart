@@ -14,6 +14,6 @@ class GroupApplicationResponse{
 	
 	Map<String, dynamic> toJson() => _$GroupApplicationResponseToJson(this);
 	
-	@JsonKey(name:'resolution',unknownEnumValue:GroupApplicationResolveState.ProtectedInvalidEnumValue)
+	@JsonKey(name:'resolution',fromJson:decodeGroupApplicationResolveState,toJson:encodeGroupApplicationResolveState)
 	GroupApplicationResolveState? resolution;
 }

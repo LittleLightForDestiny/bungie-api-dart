@@ -22,10 +22,10 @@ class ForumRecruitmentDetail{
 	@JsonKey(name:'microphoneRequired')
 	bool? microphoneRequired;
 	
-	@JsonKey(name:'intensity',unknownEnumValue:ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue)
+	@JsonKey(name:'intensity',fromJson:decodeForumRecruitmentIntensityLabel,toJson:encodeForumRecruitmentIntensityLabel)
 	ForumRecruitmentIntensityLabel? intensity;
 	
-	@JsonKey(name:'tone',unknownEnumValue:ForumRecruitmentToneLabel.ProtectedInvalidEnumValue)
+	@JsonKey(name:'tone',fromJson:decodeForumRecruitmentToneLabel,toJson:encodeForumRecruitmentToneLabel)
 	ForumRecruitmentToneLabel? tone;
 	
 	@JsonKey(name:'approved')

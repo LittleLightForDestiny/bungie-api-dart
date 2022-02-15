@@ -23,17 +23,37 @@ enum AwaResponseReason {
 
 extension AwaResponseReasonExtension on AwaResponseReason{
   int? get value {
-    switch(this){
-      case AwaResponseReason.None:
-        return 0;
-      case AwaResponseReason.Answered:
-        return 1;
-      case AwaResponseReason.TimedOut:
-        return 2;
-      case AwaResponseReason.Replaced:
-        return 3;
-      default:
-        return null;
+    if (_$AwaResponseReasonEnumMap.containsKey(this)){
+      return _$AwaResponseReasonEnumMap[this];
     }
+    return null;
   }
 }
+
+AwaResponseReason? decodeAwaResponseReason (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$AwaResponseReasonValueMap.containsKey(value)){
+    return _$AwaResponseReasonValueMap[value];
+  }
+
+  return AwaResponseReason.ProtectedInvalidEnumValue;
+}
+
+int? encodeAwaResponseReason (AwaResponseReason? value) {
+  return value?.value;
+}
+
+const Map<AwaResponseReason, int> _$AwaResponseReasonEnumMap = <AwaResponseReason, int>{
+    AwaResponseReason.None:0,
+    AwaResponseReason.Answered:1,
+    AwaResponseReason.TimedOut:2,
+    AwaResponseReason.Replaced:3,
+};
+const Map<int, AwaResponseReason> _$AwaResponseReasonValueMap = <int, AwaResponseReason>{
+    0:AwaResponseReason.None,
+    1:AwaResponseReason.Answered,
+    2:AwaResponseReason.TimedOut,
+    3:AwaResponseReason.Replaced,
+};

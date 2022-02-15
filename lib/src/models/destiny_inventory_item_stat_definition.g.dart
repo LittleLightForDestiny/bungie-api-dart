@@ -7,14 +7,13 @@ part of 'destiny_inventory_item_stat_definition.dart';
 // **************************************************************************
 
 DestinyInventoryItemStatDefinition _$DestinyInventoryItemStatDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyInventoryItemStatDefinition()
-    ..statHash = json['statHash'] as int?
-    ..value = json['value'] as int?
-    ..minimum = json['minimum'] as int?
-    ..maximum = json['maximum'] as int?
-    ..displayMaximum = json['displayMaximum'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyInventoryItemStatDefinition()
+      ..statHash = json['statHash'] as int?
+      ..value = json['value'] as int?
+      ..minimum = json['minimum'] as int?
+      ..maximum = json['maximum'] as int?
+      ..displayMaximum = json['displayMaximum'] as int?;
 
 Map<String, dynamic> _$DestinyInventoryItemStatDefinitionToJson(
         DestinyInventoryItemStatDefinition instance) =>

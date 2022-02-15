@@ -15,7 +15,7 @@ class ApplicationDeveloper{
 	
 	Map<String, dynamic> toJson() => _$ApplicationDeveloperToJson(this);
 	
-	@JsonKey(name:'role',unknownEnumValue:DeveloperRole.ProtectedInvalidEnumValue)
+	@JsonKey(name:'role',fromJson:decodeDeveloperRole,toJson:encodeDeveloperRole)
 	DeveloperRole? role;
 	
 	@JsonKey(name:'apiEulaVersion')

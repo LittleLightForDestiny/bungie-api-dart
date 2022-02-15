@@ -1,0 +1,1 @@
+export '../src/models/destiny_medal_tier_definition.dart';

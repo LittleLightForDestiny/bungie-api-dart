@@ -19,7 +19,7 @@ class DestinyItemInstanceEnergy{
 	int? energyTypeHash;
 	
 	/// This is the enum version of the Energy Type value, for convenience.
-	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'energyType',fromJson:decodeDestinyEnergyType,toJson:encodeDestinyEnergyType)
 	DestinyEnergyType? energyType;
 	
 	/// The total capacity of Energy that the item currently has, regardless of if it is currently being used.

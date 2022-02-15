@@ -4,11 +4,6 @@
 rm -rf ./lib
 mkdir -p ./lib
 
-mkdir -p ./lib/src/helpers
-cp generator/dart-custom/helpers/bungie_net_token.dart ./lib/src/helpers
-cp generator/dart-custom/helpers/http.dart ./lib/src/helpers
-cp generator/dart-custom/helpers/oauth.dart ./lib/src/helpers
-
 # Compile and run the generator
 cd generator
 npm start

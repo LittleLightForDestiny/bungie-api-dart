@@ -17,15 +17,35 @@ enum FireteamPublicSearchOption {
 
 extension FireteamPublicSearchOptionExtension on FireteamPublicSearchOption{
   int? get value {
-    switch(this){
-      case FireteamPublicSearchOption.PublicAndPrivate:
-        return 0;
-      case FireteamPublicSearchOption.PublicOnly:
-        return 1;
-      case FireteamPublicSearchOption.PrivateOnly:
-        return 2;
-      default:
-        return null;
+    if (_$FireteamPublicSearchOptionEnumMap.containsKey(this)){
+      return _$FireteamPublicSearchOptionEnumMap[this];
     }
+    return null;
   }
 }
+
+FireteamPublicSearchOption? decodeFireteamPublicSearchOption (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FireteamPublicSearchOptionValueMap.containsKey(value)){
+    return _$FireteamPublicSearchOptionValueMap[value];
+  }
+
+  return FireteamPublicSearchOption.ProtectedInvalidEnumValue;
+}
+
+int? encodeFireteamPublicSearchOption (FireteamPublicSearchOption? value) {
+  return value?.value;
+}
+
+const Map<FireteamPublicSearchOption, int> _$FireteamPublicSearchOptionEnumMap = <FireteamPublicSearchOption, int>{
+    FireteamPublicSearchOption.PublicAndPrivate:0,
+    FireteamPublicSearchOption.PublicOnly:1,
+    FireteamPublicSearchOption.PrivateOnly:2,
+};
+const Map<int, FireteamPublicSearchOption> _$FireteamPublicSearchOptionValueMap = <int, FireteamPublicSearchOption>{
+    0:FireteamPublicSearchOption.PublicAndPrivate,
+    1:FireteamPublicSearchOption.PublicOnly,
+    2:FireteamPublicSearchOption.PrivateOnly,
+};

@@ -17,15 +17,35 @@ enum GroupsForMemberFilter {
 
 extension GroupsForMemberFilterExtension on GroupsForMemberFilter{
   int? get value {
-    switch(this){
-      case GroupsForMemberFilter.All:
-        return 0;
-      case GroupsForMemberFilter.Founded:
-        return 1;
-      case GroupsForMemberFilter.NonFounded:
-        return 2;
-      default:
-        return null;
+    if (_$GroupsForMemberFilterEnumMap.containsKey(this)){
+      return _$GroupsForMemberFilterEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupsForMemberFilter? decodeGroupsForMemberFilter (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupsForMemberFilterValueMap.containsKey(value)){
+    return _$GroupsForMemberFilterValueMap[value];
+  }
+
+  return GroupsForMemberFilter.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupsForMemberFilter (GroupsForMemberFilter? value) {
+  return value?.value;
+}
+
+const Map<GroupsForMemberFilter, int> _$GroupsForMemberFilterEnumMap = <GroupsForMemberFilter, int>{
+    GroupsForMemberFilter.All:0,
+    GroupsForMemberFilter.Founded:1,
+    GroupsForMemberFilter.NonFounded:2,
+};
+const Map<int, GroupsForMemberFilter> _$GroupsForMemberFilterValueMap = <int, GroupsForMemberFilter>{
+    0:GroupsForMemberFilter.All,
+    1:GroupsForMemberFilter.Founded,
+    2:GroupsForMemberFilter.NonFounded,
+};

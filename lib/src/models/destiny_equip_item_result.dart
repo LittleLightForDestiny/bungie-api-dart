@@ -20,6 +20,6 @@ class DestinyEquipItemResult{
 	String? itemInstanceId;
 	
 	/// A PlatformErrorCodes enum indicating whether it succeeded, and if it failed why.
-	@JsonKey(name:'equipStatus',unknownEnumValue:PlatformErrorCodes.ProtectedInvalidEnumValue)
+	@JsonKey(name:'equipStatus',fromJson:decodePlatformErrorCodes,toJson:encodePlatformErrorCodes)
 	PlatformErrorCodes? equipStatus;
 }

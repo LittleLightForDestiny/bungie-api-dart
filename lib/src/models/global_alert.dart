@@ -28,10 +28,10 @@ class GlobalAlert{
 	@JsonKey(name:'AlertLink')
 	String? alertLink;
 	
-	@JsonKey(name:'AlertLevel',unknownEnumValue:GlobalAlertLevel.ProtectedInvalidEnumValue)
+	@JsonKey(name:'AlertLevel',fromJson:decodeGlobalAlertLevel,toJson:encodeGlobalAlertLevel)
 	GlobalAlertLevel? alertLevel;
 	
-	@JsonKey(name:'AlertType',unknownEnumValue:GlobalAlertType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'AlertType',fromJson:decodeGlobalAlertType,toJson:encodeGlobalAlertType)
 	GlobalAlertType? alertType;
 	
 	@JsonKey(name:'StreamInfo')

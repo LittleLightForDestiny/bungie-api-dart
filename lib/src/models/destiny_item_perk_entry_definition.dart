@@ -24,6 +24,6 @@ class DestinyItemPerkEntryDefinition{
 	int? perkHash;
 	
 	/// Indicates whether this perk should be shown, or if it should be shown disabled.
-	@JsonKey(name:'perkVisibility',unknownEnumValue:ItemPerkVisibility.ProtectedInvalidEnumValue)
+	@JsonKey(name:'perkVisibility',fromJson:decodeItemPerkVisibility,toJson:encodeItemPerkVisibility)
 	ItemPerkVisibility? perkVisibility;
 }

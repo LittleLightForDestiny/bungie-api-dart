@@ -24,17 +24,37 @@ enum DestinyActivityModeCategory {
 
 extension DestinyActivityModeCategoryExtension on DestinyActivityModeCategory{
   int? get value {
-    switch(this){
-      case DestinyActivityModeCategory.None:
-        return 0;
-      case DestinyActivityModeCategory.PvE:
-        return 1;
-      case DestinyActivityModeCategory.PvP:
-        return 2;
-      case DestinyActivityModeCategory.PvECompetitive:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyActivityModeCategoryEnumMap.containsKey(this)){
+      return _$DestinyActivityModeCategoryEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyActivityModeCategory? decodeDestinyActivityModeCategory (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyActivityModeCategoryValueMap.containsKey(value)){
+    return _$DestinyActivityModeCategoryValueMap[value];
+  }
+
+  return DestinyActivityModeCategory.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyActivityModeCategory (DestinyActivityModeCategory? value) {
+  return value?.value;
+}
+
+const Map<DestinyActivityModeCategory, int> _$DestinyActivityModeCategoryEnumMap = <DestinyActivityModeCategory, int>{
+    DestinyActivityModeCategory.None:0,
+    DestinyActivityModeCategory.PvE:1,
+    DestinyActivityModeCategory.PvP:2,
+    DestinyActivityModeCategory.PvECompetitive:3,
+};
+const Map<int, DestinyActivityModeCategory> _$DestinyActivityModeCategoryValueMap = <int, DestinyActivityModeCategory>{
+    0:DestinyActivityModeCategory.None,
+    1:DestinyActivityModeCategory.PvE,
+    2:DestinyActivityModeCategory.PvP,
+    3:DestinyActivityModeCategory.PvECompetitive,
+};

@@ -17,7 +17,7 @@ class DestinyGenderDefinition{
 	Map<String, dynamic> toJson() => _$DestinyGenderDefinitionToJson(this);
 	
 	/// This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
-	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.ProtectedInvalidEnumValue)
+	@JsonKey(name:'genderType',fromJson:decodeDestinyGender,toJson:encodeDestinyGender)
 	DestinyGender? genderType;
 	
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.

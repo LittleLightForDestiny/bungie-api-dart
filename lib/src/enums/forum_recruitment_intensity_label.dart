@@ -17,15 +17,35 @@ enum ForumRecruitmentIntensityLabel {
 
 extension ForumRecruitmentIntensityLabelExtension on ForumRecruitmentIntensityLabel{
   int? get value {
-    switch(this){
-      case ForumRecruitmentIntensityLabel.None:
-        return 0;
-      case ForumRecruitmentIntensityLabel.Casual:
-        return 1;
-      case ForumRecruitmentIntensityLabel.Professional:
-        return 2;
-      default:
-        return null;
+    if (_$ForumRecruitmentIntensityLabelEnumMap.containsKey(this)){
+      return _$ForumRecruitmentIntensityLabelEnumMap[this];
     }
+    return null;
   }
 }
+
+ForumRecruitmentIntensityLabel? decodeForumRecruitmentIntensityLabel (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ForumRecruitmentIntensityLabelValueMap.containsKey(value)){
+    return _$ForumRecruitmentIntensityLabelValueMap[value];
+  }
+
+  return ForumRecruitmentIntensityLabel.ProtectedInvalidEnumValue;
+}
+
+int? encodeForumRecruitmentIntensityLabel (ForumRecruitmentIntensityLabel? value) {
+  return value?.value;
+}
+
+const Map<ForumRecruitmentIntensityLabel, int> _$ForumRecruitmentIntensityLabelEnumMap = <ForumRecruitmentIntensityLabel, int>{
+    ForumRecruitmentIntensityLabel.None:0,
+    ForumRecruitmentIntensityLabel.Casual:1,
+    ForumRecruitmentIntensityLabel.Professional:2,
+};
+const Map<int, ForumRecruitmentIntensityLabel> _$ForumRecruitmentIntensityLabelValueMap = <int, ForumRecruitmentIntensityLabel>{
+    0:ForumRecruitmentIntensityLabel.None,
+    1:ForumRecruitmentIntensityLabel.Casual,
+    2:ForumRecruitmentIntensityLabel.Professional,
+};

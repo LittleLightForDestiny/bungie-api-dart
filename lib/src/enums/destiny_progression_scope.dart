@@ -35,27 +35,47 @@ enum DestinyProgressionScope {
 
 extension DestinyProgressionScopeExtension on DestinyProgressionScope{
   int? get value {
-    switch(this){
-      case DestinyProgressionScope.Account:
-        return 0;
-      case DestinyProgressionScope.Character:
-        return 1;
-      case DestinyProgressionScope.Clan:
-        return 2;
-      case DestinyProgressionScope.Item:
-        return 3;
-      case DestinyProgressionScope.ImplicitFromEquipment:
-        return 4;
-      case DestinyProgressionScope.Mapped:
-        return 5;
-      case DestinyProgressionScope.MappedAggregate:
-        return 6;
-      case DestinyProgressionScope.MappedStat:
-        return 7;
-      case DestinyProgressionScope.MappedUnlockValue:
-        return 8;
-      default:
-        return null;
+    if (_$DestinyProgressionScopeEnumMap.containsKey(this)){
+      return _$DestinyProgressionScopeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyProgressionScope? decodeDestinyProgressionScope (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyProgressionScopeValueMap.containsKey(value)){
+    return _$DestinyProgressionScopeValueMap[value];
+  }
+
+  return DestinyProgressionScope.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyProgressionScope (DestinyProgressionScope? value) {
+  return value?.value;
+}
+
+const Map<DestinyProgressionScope, int> _$DestinyProgressionScopeEnumMap = <DestinyProgressionScope, int>{
+    DestinyProgressionScope.Account:0,
+    DestinyProgressionScope.Character:1,
+    DestinyProgressionScope.Clan:2,
+    DestinyProgressionScope.Item:3,
+    DestinyProgressionScope.ImplicitFromEquipment:4,
+    DestinyProgressionScope.Mapped:5,
+    DestinyProgressionScope.MappedAggregate:6,
+    DestinyProgressionScope.MappedStat:7,
+    DestinyProgressionScope.MappedUnlockValue:8,
+};
+const Map<int, DestinyProgressionScope> _$DestinyProgressionScopeValueMap = <int, DestinyProgressionScope>{
+    0:DestinyProgressionScope.Account,
+    1:DestinyProgressionScope.Character,
+    2:DestinyProgressionScope.Clan,
+    3:DestinyProgressionScope.Item,
+    4:DestinyProgressionScope.ImplicitFromEquipment,
+    5:DestinyProgressionScope.Mapped,
+    6:DestinyProgressionScope.MappedAggregate,
+    7:DestinyProgressionScope.MappedStat,
+    8:DestinyProgressionScope.MappedUnlockValue,
+};

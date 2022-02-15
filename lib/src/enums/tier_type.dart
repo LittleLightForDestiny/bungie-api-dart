@@ -29,23 +29,43 @@ enum TierType {
 
 extension TierTypeExtension on TierType{
   int? get value {
-    switch(this){
-      case TierType.Unknown:
-        return 0;
-      case TierType.Currency:
-        return 1;
-      case TierType.Basic:
-        return 2;
-      case TierType.Common:
-        return 3;
-      case TierType.Rare:
-        return 4;
-      case TierType.Superior:
-        return 5;
-      case TierType.Exotic:
-        return 6;
-      default:
-        return null;
+    if (_$TierTypeEnumMap.containsKey(this)){
+      return _$TierTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+TierType? decodeTierType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$TierTypeValueMap.containsKey(value)){
+    return _$TierTypeValueMap[value];
+  }
+
+  return TierType.ProtectedInvalidEnumValue;
+}
+
+int? encodeTierType (TierType? value) {
+  return value?.value;
+}
+
+const Map<TierType, int> _$TierTypeEnumMap = <TierType, int>{
+    TierType.Unknown:0,
+    TierType.Currency:1,
+    TierType.Basic:2,
+    TierType.Common:3,
+    TierType.Rare:4,
+    TierType.Superior:5,
+    TierType.Exotic:6,
+};
+const Map<int, TierType> _$TierTypeValueMap = <int, TierType>{
+    0:TierType.Unknown,
+    1:TierType.Currency,
+    2:TierType.Basic,
+    3:TierType.Common,
+    4:TierType.Rare,
+    5:TierType.Superior,
+    6:TierType.Exotic,
+};

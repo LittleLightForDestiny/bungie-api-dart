@@ -24,6 +24,6 @@ class DestinyEnergyCostEntry{
 	int? energyTypeHash;
 	
 	/// The type of energy that this plug costs, in enum form.
-	@JsonKey(name:'energyType',unknownEnumValue:DestinyEnergyType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'energyType',fromJson:decodeDestinyEnergyType,toJson:encodeDestinyEnergyType)
 	DestinyEnergyType? energyType;
 }

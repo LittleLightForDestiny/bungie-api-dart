@@ -20,17 +20,37 @@ enum GroupApplicationResolveState {
 
 extension GroupApplicationResolveStateExtension on GroupApplicationResolveState{
   int? get value {
-    switch(this){
-      case GroupApplicationResolveState.Unresolved:
-        return 0;
-      case GroupApplicationResolveState.Accepted:
-        return 1;
-      case GroupApplicationResolveState.Denied:
-        return 2;
-      case GroupApplicationResolveState.Rescinded:
-        return 3;
-      default:
-        return null;
+    if (_$GroupApplicationResolveStateEnumMap.containsKey(this)){
+      return _$GroupApplicationResolveStateEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupApplicationResolveState? decodeGroupApplicationResolveState (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupApplicationResolveStateValueMap.containsKey(value)){
+    return _$GroupApplicationResolveStateValueMap[value];
+  }
+
+  return GroupApplicationResolveState.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupApplicationResolveState (GroupApplicationResolveState? value) {
+  return value?.value;
+}
+
+const Map<GroupApplicationResolveState, int> _$GroupApplicationResolveStateEnumMap = <GroupApplicationResolveState, int>{
+    GroupApplicationResolveState.Unresolved:0,
+    GroupApplicationResolveState.Accepted:1,
+    GroupApplicationResolveState.Denied:2,
+    GroupApplicationResolveState.Rescinded:3,
+};
+const Map<int, GroupApplicationResolveState> _$GroupApplicationResolveStateValueMap = <int, GroupApplicationResolveState>{
+    0:GroupApplicationResolveState.Unresolved,
+    1:GroupApplicationResolveState.Accepted,
+    2:GroupApplicationResolveState.Denied,
+    3:GroupApplicationResolveState.Rescinded,
+};

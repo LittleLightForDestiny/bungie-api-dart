@@ -56,41 +56,61 @@ enum DestinyStatsCategoryType {
 
 extension DestinyStatsCategoryTypeExtension on DestinyStatsCategoryType{
   int? get value {
-    switch(this){
-      case DestinyStatsCategoryType.None:
-        return 0;
-      case DestinyStatsCategoryType.Kills:
-        return 1;
-      case DestinyStatsCategoryType.Assists:
-        return 2;
-      case DestinyStatsCategoryType.Deaths:
-        return 3;
-      case DestinyStatsCategoryType.Criticals:
-        return 4;
-      case DestinyStatsCategoryType.KDa:
-        return 5;
-      case DestinyStatsCategoryType.KD:
-        return 6;
-      case DestinyStatsCategoryType.Score:
-        return 7;
-      case DestinyStatsCategoryType.Entered:
-        return 8;
-      case DestinyStatsCategoryType.TimePlayed:
-        return 9;
-      case DestinyStatsCategoryType.MedalWins:
-        return 10;
-      case DestinyStatsCategoryType.MedalGame:
-        return 11;
-      case DestinyStatsCategoryType.MedalSpecialKills:
-        return 12;
-      case DestinyStatsCategoryType.MedalSprees:
-        return 13;
-      case DestinyStatsCategoryType.MedalMultiKills:
-        return 14;
-      case DestinyStatsCategoryType.MedalAbilities:
-        return 15;
-      default:
-        return null;
+    if (_$DestinyStatsCategoryTypeEnumMap.containsKey(this)){
+      return _$DestinyStatsCategoryTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyStatsCategoryType? decodeDestinyStatsCategoryType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyStatsCategoryTypeValueMap.containsKey(value)){
+    return _$DestinyStatsCategoryTypeValueMap[value];
+  }
+
+  return DestinyStatsCategoryType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyStatsCategoryType (DestinyStatsCategoryType? value) {
+  return value?.value;
+}
+
+const Map<DestinyStatsCategoryType, int> _$DestinyStatsCategoryTypeEnumMap = <DestinyStatsCategoryType, int>{
+    DestinyStatsCategoryType.None:0,
+    DestinyStatsCategoryType.Kills:1,
+    DestinyStatsCategoryType.Assists:2,
+    DestinyStatsCategoryType.Deaths:3,
+    DestinyStatsCategoryType.Criticals:4,
+    DestinyStatsCategoryType.KDa:5,
+    DestinyStatsCategoryType.KD:6,
+    DestinyStatsCategoryType.Score:7,
+    DestinyStatsCategoryType.Entered:8,
+    DestinyStatsCategoryType.TimePlayed:9,
+    DestinyStatsCategoryType.MedalWins:10,
+    DestinyStatsCategoryType.MedalGame:11,
+    DestinyStatsCategoryType.MedalSpecialKills:12,
+    DestinyStatsCategoryType.MedalSprees:13,
+    DestinyStatsCategoryType.MedalMultiKills:14,
+    DestinyStatsCategoryType.MedalAbilities:15,
+};
+const Map<int, DestinyStatsCategoryType> _$DestinyStatsCategoryTypeValueMap = <int, DestinyStatsCategoryType>{
+    0:DestinyStatsCategoryType.None,
+    1:DestinyStatsCategoryType.Kills,
+    2:DestinyStatsCategoryType.Assists,
+    3:DestinyStatsCategoryType.Deaths,
+    4:DestinyStatsCategoryType.Criticals,
+    5:DestinyStatsCategoryType.KDa,
+    6:DestinyStatsCategoryType.KD,
+    7:DestinyStatsCategoryType.Score,
+    8:DestinyStatsCategoryType.Entered,
+    9:DestinyStatsCategoryType.TimePlayed,
+    10:DestinyStatsCategoryType.MedalWins,
+    11:DestinyStatsCategoryType.MedalGame,
+    12:DestinyStatsCategoryType.MedalSpecialKills,
+    13:DestinyStatsCategoryType.MedalSprees,
+    14:DestinyStatsCategoryType.MedalMultiKills,
+    15:DestinyStatsCategoryType.MedalAbilities,
+};

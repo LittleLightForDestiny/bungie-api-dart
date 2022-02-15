@@ -7,41 +7,38 @@ part of 'destiny_progression_definition.dart';
 // **************************************************************************
 
 DestinyProgressionDefinition _$DestinyProgressionDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyProgressionDefinition()
-    ..displayProperties = json['displayProperties'] == null
-        ? null
-        : DestinyProgressionDisplayPropertiesDefinition.fromJson(
-            json['displayProperties'] as Map<String, dynamic>)
-    ..scope = _$enumDecodeNullable(
-        _$DestinyProgressionScopeEnumMap, json['scope'],
-        unknownValue: DestinyProgressionScope.ProtectedInvalidEnumValue)
-    ..repeatLastStep = json['repeatLastStep'] as bool?
-    ..source = json['source'] as String?
-    ..steps = (json['steps'] as List<dynamic>?)
-        ?.map((e) => DestinyProgressionStepDefinition.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..visible = json['visible'] as bool?
-    ..factionHash = json['factionHash'] as int?
-    ..color = json['color'] == null
-        ? null
-        : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
-    ..rankIcon = json['rankIcon'] as String?
-    ..rewardItems = (json['rewardItems'] as List<dynamic>?)
-        ?.map((e) => DestinyProgressionRewardItemQuantity.fromJson(
-            e as Map<String, dynamic>))
-        .toList()
-    ..hash = json['hash'] as int?
-    ..index = json['index'] as int?
-    ..redacted = json['redacted'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    DestinyProgressionDefinition()
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyProgressionDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>)
+      ..scope = decodeDestinyProgressionScope(json['scope'])
+      ..repeatLastStep = json['repeatLastStep'] as bool?
+      ..source = json['source'] as String?
+      ..steps = (json['steps'] as List<dynamic>?)
+          ?.map((e) => DestinyProgressionStepDefinition.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..visible = json['visible'] as bool?
+      ..factionHash = json['factionHash'] as int?
+      ..color = json['color'] == null
+          ? null
+          : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+      ..rankIcon = json['rankIcon'] as String?
+      ..rewardItems = (json['rewardItems'] as List<dynamic>?)
+          ?.map((e) => DestinyProgressionRewardItemQuantity.fromJson(
+              e as Map<String, dynamic>))
+          .toList()
+      ..hash = json['hash'] as int?
+      ..index = json['index'] as int?
+      ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyProgressionDefinitionToJson(
         DestinyProgressionDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
-      'scope': _$DestinyProgressionScopeEnumMap[instance.scope],
+      'scope': encodeDestinyProgressionScope(instance.scope),
       'repeatLastStep': instance.repeatLastStep,
       'source': instance.source,
       'steps': instance.steps,
@@ -54,53 +51,3 @@ Map<String, dynamic> _$DestinyProgressionDefinitionToJson(
       'index': instance.index,
       'redacted': instance.redacted,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$DestinyProgressionScopeEnumMap = {
-  DestinyProgressionScope.Account: 0,
-  DestinyProgressionScope.Character: 1,
-  DestinyProgressionScope.Clan: 2,
-  DestinyProgressionScope.Item: 3,
-  DestinyProgressionScope.ImplicitFromEquipment: 4,
-  DestinyProgressionScope.Mapped: 5,
-  DestinyProgressionScope.MappedAggregate: 6,
-  DestinyProgressionScope.MappedStat: 7,
-  DestinyProgressionScope.MappedUnlockValue: 8,
-  DestinyProgressionScope.ProtectedInvalidEnumValue: 999999999,
-};

@@ -18,7 +18,7 @@ class DictionaryComponentResponseOfint64AndDestinyCharacterRecordsComponent{
 	@JsonKey(name:'data')
 	Map<String, DestinyCharacterRecordsComponent>? data;
 	
-	@JsonKey(name:'privacy',unknownEnumValue:ComponentPrivacySetting.ProtectedInvalidEnumValue)
+	@JsonKey(name:'privacy',fromJson:decodeComponentPrivacySetting,toJson:encodeComponentPrivacySetting)
 	ComponentPrivacySetting? privacy;
 	
 	/// If true, this component is disabled.

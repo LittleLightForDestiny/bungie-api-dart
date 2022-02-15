@@ -35,6 +35,6 @@ class FireteamMember{
 	@JsonKey(name:'lastPlatformInviteAttemptDate')
 	String? lastPlatformInviteAttemptDate;
 	
-	@JsonKey(name:'lastPlatformInviteAttemptResult',unknownEnumValue:FireteamPlatformInviteResult.ProtectedInvalidEnumValue)
+	@JsonKey(name:'lastPlatformInviteAttemptResult',fromJson:decodeFireteamPlatformInviteResult,toJson:encodeFireteamPlatformInviteResult)
 	FireteamPlatformInviteResult? lastPlatformInviteAttemptResult;
 }

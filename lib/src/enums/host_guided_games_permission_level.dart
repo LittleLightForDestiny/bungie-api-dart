@@ -17,15 +17,35 @@ enum HostGuidedGamesPermissionLevel {
 
 extension HostGuidedGamesPermissionLevelExtension on HostGuidedGamesPermissionLevel{
   int? get value {
-    switch(this){
-      case HostGuidedGamesPermissionLevel.None:
-        return 0;
-      case HostGuidedGamesPermissionLevel.Beginner:
-        return 1;
-      case HostGuidedGamesPermissionLevel.Member:
-        return 2;
-      default:
-        return null;
+    if (_$HostGuidedGamesPermissionLevelEnumMap.containsKey(this)){
+      return _$HostGuidedGamesPermissionLevelEnumMap[this];
     }
+    return null;
   }
 }
+
+HostGuidedGamesPermissionLevel? decodeHostGuidedGamesPermissionLevel (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$HostGuidedGamesPermissionLevelValueMap.containsKey(value)){
+    return _$HostGuidedGamesPermissionLevelValueMap[value];
+  }
+
+  return HostGuidedGamesPermissionLevel.ProtectedInvalidEnumValue;
+}
+
+int? encodeHostGuidedGamesPermissionLevel (HostGuidedGamesPermissionLevel? value) {
+  return value?.value;
+}
+
+const Map<HostGuidedGamesPermissionLevel, int> _$HostGuidedGamesPermissionLevelEnumMap = <HostGuidedGamesPermissionLevel, int>{
+    HostGuidedGamesPermissionLevel.None:0,
+    HostGuidedGamesPermissionLevel.Beginner:1,
+    HostGuidedGamesPermissionLevel.Member:2,
+};
+const Map<int, HostGuidedGamesPermissionLevel> _$HostGuidedGamesPermissionLevelValueMap = <int, HostGuidedGamesPermissionLevel>{
+    0:HostGuidedGamesPermissionLevel.None,
+    1:HostGuidedGamesPermissionLevel.Beginner,
+    2:HostGuidedGamesPermissionLevel.Member,
+};

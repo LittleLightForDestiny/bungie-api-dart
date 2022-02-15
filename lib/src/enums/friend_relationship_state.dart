@@ -20,17 +20,37 @@ enum FriendRelationshipState {
 
 extension FriendRelationshipStateExtension on FriendRelationshipState{
   int? get value {
-    switch(this){
-      case FriendRelationshipState.Unknown:
-        return 0;
-      case FriendRelationshipState.Friend:
-        return 1;
-      case FriendRelationshipState.IncomingRequest:
-        return 2;
-      case FriendRelationshipState.OutgoingRequest:
-        return 3;
-      default:
-        return null;
+    if (_$FriendRelationshipStateEnumMap.containsKey(this)){
+      return _$FriendRelationshipStateEnumMap[this];
     }
+    return null;
   }
 }
+
+FriendRelationshipState? decodeFriendRelationshipState (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$FriendRelationshipStateValueMap.containsKey(value)){
+    return _$FriendRelationshipStateValueMap[value];
+  }
+
+  return FriendRelationshipState.ProtectedInvalidEnumValue;
+}
+
+int? encodeFriendRelationshipState (FriendRelationshipState? value) {
+  return value?.value;
+}
+
+const Map<FriendRelationshipState, int> _$FriendRelationshipStateEnumMap = <FriendRelationshipState, int>{
+    FriendRelationshipState.Unknown:0,
+    FriendRelationshipState.Friend:1,
+    FriendRelationshipState.IncomingRequest:2,
+    FriendRelationshipState.OutgoingRequest:3,
+};
+const Map<int, FriendRelationshipState> _$FriendRelationshipStateValueMap = <int, FriendRelationshipState>{
+    0:FriendRelationshipState.Unknown,
+    1:FriendRelationshipState.Friend,
+    2:FriendRelationshipState.IncomingRequest,
+    3:FriendRelationshipState.OutgoingRequest,
+};

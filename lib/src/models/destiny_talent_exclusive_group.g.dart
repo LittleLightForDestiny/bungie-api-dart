@@ -7,19 +7,18 @@ part of 'destiny_talent_exclusive_group.dart';
 // **************************************************************************
 
 DestinyTalentExclusiveGroup _$DestinyTalentExclusiveGroupFromJson(
-    Map<String, dynamic> json) {
-  return DestinyTalentExclusiveGroup()
-    ..groupHash = json['groupHash'] as int?
-    ..loreHash = json['loreHash'] as int?
-    ..nodeHashes =
-        (json['nodeHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-    ..opposingGroupHashes = (json['opposingGroupHashes'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList()
-    ..opposingNodeHashes = (json['opposingNodeHashes'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyTalentExclusiveGroup()
+      ..groupHash = json['groupHash'] as int?
+      ..loreHash = json['loreHash'] as int?
+      ..nodeHashes =
+          (json['nodeHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+      ..opposingGroupHashes = (json['opposingGroupHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
+      ..opposingNodeHashes = (json['opposingNodeHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList();
 
 Map<String, dynamic> _$DestinyTalentExclusiveGroupToJson(
         DestinyTalentExclusiveGroup instance) =>

@@ -20,17 +20,37 @@ enum DestinyBreakerType {
 
 extension DestinyBreakerTypeExtension on DestinyBreakerType{
   int? get value {
-    switch(this){
-      case DestinyBreakerType.None:
-        return 0;
-      case DestinyBreakerType.ShieldPiercing:
-        return 1;
-      case DestinyBreakerType.Disruption:
-        return 2;
-      case DestinyBreakerType.Stagger:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyBreakerTypeEnumMap.containsKey(this)){
+      return _$DestinyBreakerTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyBreakerType? decodeDestinyBreakerType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyBreakerTypeValueMap.containsKey(value)){
+    return _$DestinyBreakerTypeValueMap[value];
+  }
+
+  return DestinyBreakerType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyBreakerType (DestinyBreakerType? value) {
+  return value?.value;
+}
+
+const Map<DestinyBreakerType, int> _$DestinyBreakerTypeEnumMap = <DestinyBreakerType, int>{
+    DestinyBreakerType.None:0,
+    DestinyBreakerType.ShieldPiercing:1,
+    DestinyBreakerType.Disruption:2,
+    DestinyBreakerType.Stagger:3,
+};
+const Map<int, DestinyBreakerType> _$DestinyBreakerTypeValueMap = <int, DestinyBreakerType>{
+    0:DestinyBreakerType.None,
+    1:DestinyBreakerType.ShieldPiercing,
+    2:DestinyBreakerType.Disruption,
+    3:DestinyBreakerType.Stagger,
+};

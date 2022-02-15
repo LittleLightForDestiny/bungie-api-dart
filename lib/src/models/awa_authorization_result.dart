@@ -18,10 +18,10 @@ class AwaAuthorizationResult{
 	Map<String, dynamic> toJson() => _$AwaAuthorizationResultToJson(this);
 	
 	/// Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action.
-	@JsonKey(name:'userSelection',unknownEnumValue:AwaUserSelection.ProtectedInvalidEnumValue)
+	@JsonKey(name:'userSelection',fromJson:decodeAwaUserSelection,toJson:encodeAwaUserSelection)
 	AwaUserSelection? userSelection;
 	
-	@JsonKey(name:'responseReason',unknownEnumValue:AwaResponseReason.ProtectedInvalidEnumValue)
+	@JsonKey(name:'responseReason',fromJson:decodeAwaResponseReason,toJson:encodeAwaResponseReason)
 	AwaResponseReason? responseReason;
 	
 	/// Message to the app developer to help understand the response.
@@ -41,10 +41,10 @@ class AwaAuthorizationResult{
 	String? validUntil;
 	
 	/// Advanced Write Action Type from the permission request.
-	@JsonKey(name:'type',unknownEnumValue:AwaType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'type',fromJson:decodeAwaType,toJson:encodeAwaType)
 	AwaType? type;
 	
 	/// MembershipType from the permission request.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 }

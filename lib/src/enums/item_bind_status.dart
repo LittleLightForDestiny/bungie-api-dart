@@ -20,17 +20,37 @@ enum ItemBindStatus {
 
 extension ItemBindStatusExtension on ItemBindStatus{
   int? get value {
-    switch(this){
-      case ItemBindStatus.NotBound:
-        return 0;
-      case ItemBindStatus.BoundToCharacter:
-        return 1;
-      case ItemBindStatus.BoundToAccount:
-        return 2;
-      case ItemBindStatus.BoundToGuild:
-        return 3;
-      default:
-        return null;
+    if (_$ItemBindStatusEnumMap.containsKey(this)){
+      return _$ItemBindStatusEnumMap[this];
     }
+    return null;
   }
 }
+
+ItemBindStatus? decodeItemBindStatus (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$ItemBindStatusValueMap.containsKey(value)){
+    return _$ItemBindStatusValueMap[value];
+  }
+
+  return ItemBindStatus.ProtectedInvalidEnumValue;
+}
+
+int? encodeItemBindStatus (ItemBindStatus? value) {
+  return value?.value;
+}
+
+const Map<ItemBindStatus, int> _$ItemBindStatusEnumMap = <ItemBindStatus, int>{
+    ItemBindStatus.NotBound:0,
+    ItemBindStatus.BoundToCharacter:1,
+    ItemBindStatus.BoundToAccount:2,
+    ItemBindStatus.BoundToGuild:3,
+};
+const Map<int, ItemBindStatus> _$ItemBindStatusValueMap = <int, ItemBindStatus>{
+    0:ItemBindStatus.NotBound,
+    1:ItemBindStatus.BoundToCharacter,
+    2:ItemBindStatus.BoundToAccount,
+    3:ItemBindStatus.BoundToGuild,
+};

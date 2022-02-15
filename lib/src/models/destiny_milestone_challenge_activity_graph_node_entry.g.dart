@@ -8,11 +8,10 @@ part of 'destiny_milestone_challenge_activity_graph_node_entry.dart';
 
 DestinyMilestoneChallengeActivityGraphNodeEntry
     _$DestinyMilestoneChallengeActivityGraphNodeEntryFromJson(
-        Map<String, dynamic> json) {
-  return DestinyMilestoneChallengeActivityGraphNodeEntry()
-    ..activityGraphHash = json['activityGraphHash'] as int?
-    ..activityGraphNodeHash = json['activityGraphNodeHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyMilestoneChallengeActivityGraphNodeEntry()
+          ..activityGraphHash = json['activityGraphHash'] as int?
+          ..activityGraphNodeHash = json['activityGraphNodeHash'] as int?;
 
 Map<String, dynamic> _$DestinyMilestoneChallengeActivityGraphNodeEntryToJson(
         DestinyMilestoneChallengeActivityGraphNodeEntry instance) =>

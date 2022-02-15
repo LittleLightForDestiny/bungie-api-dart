@@ -29,23 +29,43 @@ enum DamageType {
 
 extension DamageTypeExtension on DamageType{
   int? get value {
-    switch(this){
-      case DamageType.None:
-        return 0;
-      case DamageType.Kinetic:
-        return 1;
-      case DamageType.Arc:
-        return 2;
-      case DamageType.Thermal:
-        return 3;
-      case DamageType.Void:
-        return 4;
-      case DamageType.Raid:
-        return 5;
-      case DamageType.Stasis:
-        return 6;
-      default:
-        return null;
+    if (_$DamageTypeEnumMap.containsKey(this)){
+      return _$DamageTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DamageType? decodeDamageType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DamageTypeValueMap.containsKey(value)){
+    return _$DamageTypeValueMap[value];
+  }
+
+  return DamageType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDamageType (DamageType? value) {
+  return value?.value;
+}
+
+const Map<DamageType, int> _$DamageTypeEnumMap = <DamageType, int>{
+    DamageType.None:0,
+    DamageType.Kinetic:1,
+    DamageType.Arc:2,
+    DamageType.Thermal:3,
+    DamageType.Void:4,
+    DamageType.Raid:5,
+    DamageType.Stasis:6,
+};
+const Map<int, DamageType> _$DamageTypeValueMap = <int, DamageType>{
+    0:DamageType.None,
+    1:DamageType.Kinetic,
+    2:DamageType.Arc,
+    3:DamageType.Thermal,
+    4:DamageType.Void,
+    5:DamageType.Raid,
+    6:DamageType.Stasis,
+};

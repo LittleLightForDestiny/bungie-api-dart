@@ -29,7 +29,7 @@ class DestinyDamageTypeDefinition{
 	bool? showIcon;
 	
 	/// We have an enumeration for damage types for quick reference. This is the current definition's damage type enum value.
-	@JsonKey(name:'enumValue',unknownEnumValue:DamageType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'enumValue',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? enumValue;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

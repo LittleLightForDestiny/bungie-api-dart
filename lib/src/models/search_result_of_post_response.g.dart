@@ -7,20 +7,19 @@ part of 'search_result_of_post_response.dart';
 // **************************************************************************
 
 SearchResultOfPostResponse _$SearchResultOfPostResponseFromJson(
-    Map<String, dynamic> json) {
-  return SearchResultOfPostResponse()
-    ..results = (json['results'] as List<dynamic>?)
-        ?.map((e) => PostResponse.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..totalResults = json['totalResults'] as int?
-    ..hasMore = json['hasMore'] as bool?
-    ..query = json['query'] == null
-        ? null
-        : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
-    ..replacementContinuationToken =
-        json['replacementContinuationToken'] as String?
-    ..useTotalResults = json['useTotalResults'] as bool?;
-}
+        Map<String, dynamic> json) =>
+    SearchResultOfPostResponse()
+      ..results = (json['results'] as List<dynamic>?)
+          ?.map((e) => PostResponse.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..totalResults = json['totalResults'] as int?
+      ..hasMore = json['hasMore'] as bool?
+      ..query = json['query'] == null
+          ? null
+          : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+      ..replacementContinuationToken =
+          json['replacementContinuationToken'] as String?
+      ..useTotalResults = json['useTotalResults'] as bool?;
 
 Map<String, dynamic> _$SearchResultOfPostResponseToJson(
         SearchResultOfPostResponse instance) =>

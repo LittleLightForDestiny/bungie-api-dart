@@ -1,3 +1,6 @@
+## 2021-12-30 (13.13.0+1)
+- adding group exports and constructor params for models
+
 ## 2021-12-22 (13.13.0)
 - updating bungie's api version to 2.13.0
 

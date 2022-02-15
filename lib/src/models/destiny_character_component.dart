@@ -25,7 +25,7 @@ class DestinyCharacterComponent{
 	String? membershipId;
 	
 	/// membershipType tells you the platform on which the character plays. Examine the BungieMembershipType enumeration for possible values.
-	@JsonKey(name:'membershipType',unknownEnumValue:BungieMembershipType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
 	
 	/// The unique identifier for the character.
@@ -67,17 +67,17 @@ class DestinyCharacterComponent{
 	
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's race.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove.
-	@JsonKey(name:'raceType',unknownEnumValue:DestinyRace.ProtectedInvalidEnumValue)
+	@JsonKey(name:'raceType',fromJson:decodeDestinyRace,toJson:encodeDestinyRace)
 	DestinyRace? raceType;
 	
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's class.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove.
-	@JsonKey(name:'classType',unknownEnumValue:DestinyClass.ProtectedInvalidEnumValue)
+	@JsonKey(name:'classType',fromJson:decodeDestinyClass,toJson:encodeDestinyClass)
 	DestinyClass? classType;
 	
 	/// Mostly for historical purposes at this point, this is an enumeration for the character's Gender.
 	/// It'll be preferable in the general case to look up the related definition: but for some people this was too convenient to remove. And yeah, it's an enumeration and not a boolean. Fight me.
-	@JsonKey(name:'genderType',unknownEnumValue:DestinyGender.ProtectedInvalidEnumValue)
+	@JsonKey(name:'genderType',fromJson:decodeDestinyGender,toJson:encodeDestinyGender)
 	DestinyGender? genderType;
 	
 	/// A shortcut path to the user's currently equipped emblem image. If you're just showing summary info for a user, this is more convenient than examining their equipped emblem and looking up the definition.

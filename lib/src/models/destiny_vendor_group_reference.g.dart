@@ -7,10 +7,9 @@ part of 'destiny_vendor_group_reference.dart';
 // **************************************************************************
 
 DestinyVendorGroupReference _$DestinyVendorGroupReferenceFromJson(
-    Map<String, dynamic> json) {
-  return DestinyVendorGroupReference()
-    ..vendorGroupHash = json['vendorGroupHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyVendorGroupReference()
+      ..vendorGroupHash = json['vendorGroupHash'] as int?;
 
 Map<String, dynamic> _$DestinyVendorGroupReferenceToJson(
         DestinyVendorGroupReference instance) =>

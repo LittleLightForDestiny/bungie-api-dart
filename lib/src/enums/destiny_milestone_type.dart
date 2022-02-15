@@ -31,21 +31,41 @@ enum DestinyMilestoneType {
 
 extension DestinyMilestoneTypeExtension on DestinyMilestoneType{
   int? get value {
-    switch(this){
-      case DestinyMilestoneType.Unknown:
-        return 0;
-      case DestinyMilestoneType.Tutorial:
-        return 1;
-      case DestinyMilestoneType.OneTime:
-        return 2;
-      case DestinyMilestoneType.Weekly:
-        return 3;
-      case DestinyMilestoneType.Daily:
-        return 4;
-      case DestinyMilestoneType.Special:
-        return 5;
-      default:
-        return null;
+    if (_$DestinyMilestoneTypeEnumMap.containsKey(this)){
+      return _$DestinyMilestoneTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyMilestoneType? decodeDestinyMilestoneType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyMilestoneTypeValueMap.containsKey(value)){
+    return _$DestinyMilestoneTypeValueMap[value];
+  }
+
+  return DestinyMilestoneType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyMilestoneType (DestinyMilestoneType? value) {
+  return value?.value;
+}
+
+const Map<DestinyMilestoneType, int> _$DestinyMilestoneTypeEnumMap = <DestinyMilestoneType, int>{
+    DestinyMilestoneType.Unknown:0,
+    DestinyMilestoneType.Tutorial:1,
+    DestinyMilestoneType.OneTime:2,
+    DestinyMilestoneType.Weekly:3,
+    DestinyMilestoneType.Daily:4,
+    DestinyMilestoneType.Special:5,
+};
+const Map<int, DestinyMilestoneType> _$DestinyMilestoneTypeValueMap = <int, DestinyMilestoneType>{
+    0:DestinyMilestoneType.Unknown,
+    1:DestinyMilestoneType.Tutorial,
+    2:DestinyMilestoneType.OneTime,
+    3:DestinyMilestoneType.Weekly,
+    4:DestinyMilestoneType.Daily,
+    5:DestinyMilestoneType.Special,
+};

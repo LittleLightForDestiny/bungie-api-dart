@@ -63,37 +63,57 @@ enum UnitType {
 
 extension UnitTypeExtension on UnitType{
   int? get value {
-    switch(this){
-      case UnitType.None:
-        return 0;
-      case UnitType.Count:
-        return 1;
-      case UnitType.PerGame:
-        return 2;
-      case UnitType.Seconds:
-        return 3;
-      case UnitType.Points:
-        return 4;
-      case UnitType.Team:
-        return 5;
-      case UnitType.Distance:
-        return 6;
-      case UnitType.Percent:
-        return 7;
-      case UnitType.Ratio:
-        return 8;
-      case UnitType.Boolean:
-        return 9;
-      case UnitType.WeaponType:
-        return 10;
-      case UnitType.Standing:
-        return 11;
-      case UnitType.Milliseconds:
-        return 12;
-      case UnitType.CompletionReason:
-        return 13;
-      default:
-        return null;
+    if (_$UnitTypeEnumMap.containsKey(this)){
+      return _$UnitTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+UnitType? decodeUnitType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$UnitTypeValueMap.containsKey(value)){
+    return _$UnitTypeValueMap[value];
+  }
+
+  return UnitType.ProtectedInvalidEnumValue;
+}
+
+int? encodeUnitType (UnitType? value) {
+  return value?.value;
+}
+
+const Map<UnitType, int> _$UnitTypeEnumMap = <UnitType, int>{
+    UnitType.None:0,
+    UnitType.Count:1,
+    UnitType.PerGame:2,
+    UnitType.Seconds:3,
+    UnitType.Points:4,
+    UnitType.Team:5,
+    UnitType.Distance:6,
+    UnitType.Percent:7,
+    UnitType.Ratio:8,
+    UnitType.Boolean:9,
+    UnitType.WeaponType:10,
+    UnitType.Standing:11,
+    UnitType.Milliseconds:12,
+    UnitType.CompletionReason:13,
+};
+const Map<int, UnitType> _$UnitTypeValueMap = <int, UnitType>{
+    0:UnitType.None,
+    1:UnitType.Count,
+    2:UnitType.PerGame,
+    3:UnitType.Seconds,
+    4:UnitType.Points,
+    5:UnitType.Team,
+    6:UnitType.Distance,
+    7:UnitType.Percent,
+    8:UnitType.Ratio,
+    9:UnitType.Boolean,
+    10:UnitType.WeaponType,
+    11:UnitType.Standing,
+    12:UnitType.Milliseconds,
+    13:UnitType.CompletionReason,
+};

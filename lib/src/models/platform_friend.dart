@@ -17,7 +17,7 @@ class PlatformFriend{
 	@JsonKey(name:'platformDisplayName')
 	String? platformDisplayName;
 	
-	@JsonKey(name:'friendPlatform',unknownEnumValue:PlatformFriendType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'friendPlatform',fromJson:decodePlatformFriendType,toJson:encodePlatformFriendType)
 	PlatformFriendType? friendPlatform;
 	
 	@JsonKey(name:'destinyMembershipId')

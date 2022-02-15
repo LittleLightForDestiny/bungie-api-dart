@@ -29,7 +29,7 @@ class DestinyChecklistDefinition{
 	String? viewActionString;
 	
 	/// Indicates whether you will find this checklist on the Profile or Character components.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyScope,toJson:encodeDestinyScope)
 	DestinyScope? scope;
 	
 	/// The individual checklist items. Gotta catch 'em all.

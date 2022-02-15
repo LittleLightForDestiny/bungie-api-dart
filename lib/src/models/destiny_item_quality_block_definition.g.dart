@@ -7,29 +7,28 @@ part of 'destiny_item_quality_block_definition.dart';
 // **************************************************************************
 
 DestinyItemQualityBlockDefinition _$DestinyItemQualityBlockDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyItemQualityBlockDefinition()
-    ..itemLevels =
-        (json['itemLevels'] as List<dynamic>?)?.map((e) => e as int).toList()
-    ..qualityLevel = json['qualityLevel'] as int?
-    ..infusionCategoryName = json['infusionCategoryName'] as String?
-    ..infusionCategoryHash = json['infusionCategoryHash'] as int?
-    ..infusionCategoryHashes =
-        (json['infusionCategoryHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList()
-    ..progressionLevelRequirementHash =
-        json['progressionLevelRequirementHash'] as int?
-    ..currentVersion = json['currentVersion'] as int?
-    ..versions = (json['versions'] as List<dynamic>?)
-        ?.map((e) =>
-            DestinyItemVersionDefinition.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..displayVersionWatermarkIcons =
-        (json['displayVersionWatermarkIcons'] as List<dynamic>?)
-            ?.map((e) => e as String)
-            .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyItemQualityBlockDefinition()
+      ..itemLevels =
+          (json['itemLevels'] as List<dynamic>?)?.map((e) => e as int).toList()
+      ..qualityLevel = json['qualityLevel'] as int?
+      ..infusionCategoryName = json['infusionCategoryName'] as String?
+      ..infusionCategoryHash = json['infusionCategoryHash'] as int?
+      ..infusionCategoryHashes =
+          (json['infusionCategoryHashes'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList()
+      ..progressionLevelRequirementHash =
+          json['progressionLevelRequirementHash'] as int?
+      ..currentVersion = json['currentVersion'] as int?
+      ..versions = (json['versions'] as List<dynamic>?)
+          ?.map((e) =>
+              DestinyItemVersionDefinition.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..displayVersionWatermarkIcons =
+          (json['displayVersionWatermarkIcons'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList();
 
 Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
         DestinyItemQualityBlockDefinition instance) =>

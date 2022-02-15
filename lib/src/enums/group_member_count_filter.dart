@@ -20,17 +20,37 @@ enum GroupMemberCountFilter {
 
 extension GroupMemberCountFilterExtension on GroupMemberCountFilter{
   int? get value {
-    switch(this){
-      case GroupMemberCountFilter.All:
-        return 0;
-      case GroupMemberCountFilter.OneToTen:
-        return 1;
-      case GroupMemberCountFilter.ElevenToOneHundred:
-        return 2;
-      case GroupMemberCountFilter.GreaterThanOneHundred:
-        return 3;
-      default:
-        return null;
+    if (_$GroupMemberCountFilterEnumMap.containsKey(this)){
+      return _$GroupMemberCountFilterEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupMemberCountFilter? decodeGroupMemberCountFilter (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupMemberCountFilterValueMap.containsKey(value)){
+    return _$GroupMemberCountFilterValueMap[value];
+  }
+
+  return GroupMemberCountFilter.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupMemberCountFilter (GroupMemberCountFilter? value) {
+  return value?.value;
+}
+
+const Map<GroupMemberCountFilter, int> _$GroupMemberCountFilterEnumMap = <GroupMemberCountFilter, int>{
+    GroupMemberCountFilter.All:0,
+    GroupMemberCountFilter.OneToTen:1,
+    GroupMemberCountFilter.ElevenToOneHundred:2,
+    GroupMemberCountFilter.GreaterThanOneHundred:3,
+};
+const Map<int, GroupMemberCountFilter> _$GroupMemberCountFilterValueMap = <int, GroupMemberCountFilter>{
+    0:GroupMemberCountFilter.All,
+    1:GroupMemberCountFilter.OneToTen,
+    2:GroupMemberCountFilter.ElevenToOneHundred,
+    3:GroupMemberCountFilter.GreaterThanOneHundred,
+};

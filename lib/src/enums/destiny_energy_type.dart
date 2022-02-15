@@ -29,23 +29,43 @@ enum DestinyEnergyType {
 
 extension DestinyEnergyTypeExtension on DestinyEnergyType{
   int? get value {
-    switch(this){
-      case DestinyEnergyType.Any:
-        return 0;
-      case DestinyEnergyType.Arc:
-        return 1;
-      case DestinyEnergyType.Thermal:
-        return 2;
-      case DestinyEnergyType.Void:
-        return 3;
-      case DestinyEnergyType.Ghost:
-        return 4;
-      case DestinyEnergyType.Subclass:
-        return 5;
-      case DestinyEnergyType.Stasis:
-        return 6;
-      default:
-        return null;
+    if (_$DestinyEnergyTypeEnumMap.containsKey(this)){
+      return _$DestinyEnergyTypeEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyEnergyType? decodeDestinyEnergyType (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyEnergyTypeValueMap.containsKey(value)){
+    return _$DestinyEnergyTypeValueMap[value];
+  }
+
+  return DestinyEnergyType.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyEnergyType (DestinyEnergyType? value) {
+  return value?.value;
+}
+
+const Map<DestinyEnergyType, int> _$DestinyEnergyTypeEnumMap = <DestinyEnergyType, int>{
+    DestinyEnergyType.Any:0,
+    DestinyEnergyType.Arc:1,
+    DestinyEnergyType.Thermal:2,
+    DestinyEnergyType.Void:3,
+    DestinyEnergyType.Ghost:4,
+    DestinyEnergyType.Subclass:5,
+    DestinyEnergyType.Stasis:6,
+};
+const Map<int, DestinyEnergyType> _$DestinyEnergyTypeValueMap = <int, DestinyEnergyType>{
+    0:DestinyEnergyType.Any,
+    1:DestinyEnergyType.Arc,
+    2:DestinyEnergyType.Thermal,
+    3:DestinyEnergyType.Void,
+    4:DestinyEnergyType.Ghost,
+    5:DestinyEnergyType.Subclass,
+    6:DestinyEnergyType.Stasis,
+};

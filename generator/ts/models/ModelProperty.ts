@@ -59,7 +59,7 @@ export class ModelProperty{
         // }
         var info = this.info;
         if(info["x-enum-reference"] && !info['x-enum-is-bitmask']){
-            params.push(`unknownEnumValue:${this.typeName()}.ProtectedInvalidEnumValue`);
+            params.push(`fromJson:decode${this.typeName()}`, `toJson:encode${this.typeName()}`);
         }
         return `@JsonKey(${params.join(',')})`;
     }

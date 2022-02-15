@@ -21,7 +21,7 @@ class DestinyProgressionStepDefinition{
 	String? stepName;
 	
 	/// This appears to be, when you "level up", whether a visual effect will display and on what entity. See DestinyProgressionStepDisplayEffect for slightly more info.
-	@JsonKey(name:'displayEffectType',unknownEnumValue:DestinyProgressionStepDisplayEffect.ProtectedInvalidEnumValue)
+	@JsonKey(name:'displayEffectType',fromJson:decodeDestinyProgressionStepDisplayEffect,toJson:encodeDestinyProgressionStepDisplayEffect)
 	DestinyProgressionStepDisplayEffect? displayEffectType;
 	
 	/// The total amount of progression points/"experience" you will need to initially reach this step. If this is the last step and the progression is repeating indefinitely (DestinyProgressionDefinition.repeatLastStep), this will also be the progress needed to level it up further by repeating this step again.

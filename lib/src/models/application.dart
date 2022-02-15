@@ -40,7 +40,7 @@ class Application{
 	String? origin;
 	
 	/// Current status of the application.
-	@JsonKey(name:'status',unknownEnumValue:ApplicationStatus.ProtectedInvalidEnumValue)
+	@JsonKey(name:'status',fromJson:decodeApplicationStatus,toJson:encodeApplicationStatus)
 	ApplicationStatus? status;
 	
 	/// Date the application was first added to our database.

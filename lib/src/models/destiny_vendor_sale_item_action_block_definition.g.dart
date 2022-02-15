@@ -8,11 +8,10 @@ part of 'destiny_vendor_sale_item_action_block_definition.dart';
 
 DestinyVendorSaleItemActionBlockDefinition
     _$DestinyVendorSaleItemActionBlockDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyVendorSaleItemActionBlockDefinition()
-    ..executeSeconds = (json['executeSeconds'] as num?)?.toDouble()
-    ..isPositive = json['isPositive'] as bool?;
-}
+            Map<String, dynamic> json) =>
+        DestinyVendorSaleItemActionBlockDefinition()
+          ..executeSeconds = (json['executeSeconds'] as num?)?.toDouble()
+          ..isPositive = json['isPositive'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorSaleItemActionBlockDefinitionToJson(
         DestinyVendorSaleItemActionBlockDefinition instance) =>

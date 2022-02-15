@@ -8,10 +8,9 @@ part of 'destiny_activity_graph_list_entry_definition.dart';
 
 DestinyActivityGraphListEntryDefinition
     _$DestinyActivityGraphListEntryDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyActivityGraphListEntryDefinition()
-    ..activityGraphHash = json['activityGraphHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyActivityGraphListEntryDefinition()
+          ..activityGraphHash = json['activityGraphHash'] as int?;
 
 Map<String, dynamic> _$DestinyActivityGraphListEntryDefinitionToJson(
         DestinyActivityGraphListEntryDefinition instance) =>

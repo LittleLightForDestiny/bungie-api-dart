@@ -44,33 +44,53 @@ enum IgnoreLength {
 
 extension IgnoreLengthExtension on IgnoreLength{
   int? get value {
-    switch(this){
-      case IgnoreLength.None:
-        return 0;
-      case IgnoreLength.Week:
-        return 1;
-      case IgnoreLength.TwoWeeks:
-        return 2;
-      case IgnoreLength.ThreeWeeks:
-        return 3;
-      case IgnoreLength.Month:
-        return 4;
-      case IgnoreLength.ThreeMonths:
-        return 5;
-      case IgnoreLength.SixMonths:
-        return 6;
-      case IgnoreLength.Year:
-        return 7;
-      case IgnoreLength.Forever:
-        return 8;
-      case IgnoreLength.ThreeMinutes:
-        return 9;
-      case IgnoreLength.Hour:
-        return 10;
-      case IgnoreLength.ThirtyDays:
-        return 11;
-      default:
-        return null;
+    if (_$IgnoreLengthEnumMap.containsKey(this)){
+      return _$IgnoreLengthEnumMap[this];
     }
+    return null;
   }
 }
+
+IgnoreLength? decodeIgnoreLength (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$IgnoreLengthValueMap.containsKey(value)){
+    return _$IgnoreLengthValueMap[value];
+  }
+
+  return IgnoreLength.ProtectedInvalidEnumValue;
+}
+
+int? encodeIgnoreLength (IgnoreLength? value) {
+  return value?.value;
+}
+
+const Map<IgnoreLength, int> _$IgnoreLengthEnumMap = <IgnoreLength, int>{
+    IgnoreLength.None:0,
+    IgnoreLength.Week:1,
+    IgnoreLength.TwoWeeks:2,
+    IgnoreLength.ThreeWeeks:3,
+    IgnoreLength.Month:4,
+    IgnoreLength.ThreeMonths:5,
+    IgnoreLength.SixMonths:6,
+    IgnoreLength.Year:7,
+    IgnoreLength.Forever:8,
+    IgnoreLength.ThreeMinutes:9,
+    IgnoreLength.Hour:10,
+    IgnoreLength.ThirtyDays:11,
+};
+const Map<int, IgnoreLength> _$IgnoreLengthValueMap = <int, IgnoreLength>{
+    0:IgnoreLength.None,
+    1:IgnoreLength.Week,
+    2:IgnoreLength.TwoWeeks,
+    3:IgnoreLength.ThreeWeeks,
+    4:IgnoreLength.Month,
+    5:IgnoreLength.ThreeMonths,
+    6:IgnoreLength.SixMonths,
+    7:IgnoreLength.Year,
+    8:IgnoreLength.Forever,
+    9:IgnoreLength.ThreeMinutes,
+    10:IgnoreLength.Hour,
+    11:IgnoreLength.ThirtyDays,
+};

@@ -23,19 +23,39 @@ enum GroupDateRange {
 
 extension GroupDateRangeExtension on GroupDateRange{
   int? get value {
-    switch(this){
-      case GroupDateRange.All:
-        return 0;
-      case GroupDateRange.PastDay:
-        return 1;
-      case GroupDateRange.PastWeek:
-        return 2;
-      case GroupDateRange.PastMonth:
-        return 3;
-      case GroupDateRange.PastYear:
-        return 4;
-      default:
-        return null;
+    if (_$GroupDateRangeEnumMap.containsKey(this)){
+      return _$GroupDateRangeEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupDateRange? decodeGroupDateRange (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupDateRangeValueMap.containsKey(value)){
+    return _$GroupDateRangeValueMap[value];
+  }
+
+  return GroupDateRange.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupDateRange (GroupDateRange? value) {
+  return value?.value;
+}
+
+const Map<GroupDateRange, int> _$GroupDateRangeEnumMap = <GroupDateRange, int>{
+    GroupDateRange.All:0,
+    GroupDateRange.PastDay:1,
+    GroupDateRange.PastWeek:2,
+    GroupDateRange.PastMonth:3,
+    GroupDateRange.PastYear:4,
+};
+const Map<int, GroupDateRange> _$GroupDateRangeValueMap = <int, GroupDateRange>{
+    0:GroupDateRange.All,
+    1:GroupDateRange.PastDay,
+    2:GroupDateRange.PastWeek,
+    3:GroupDateRange.PastMonth,
+    4:GroupDateRange.PastYear,
+};

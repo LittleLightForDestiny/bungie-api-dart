@@ -7,15 +7,15 @@ part of 'destiny_report_offense_pgcr_request.dart';
 // **************************************************************************
 
 DestinyReportOffensePgcrRequest _$DestinyReportOffensePgcrRequestFromJson(
-    Map<String, dynamic> json) {
-  return DestinyReportOffensePgcrRequest()
-    ..reasonCategoryHashes = (json['reasonCategoryHashes'] as List<dynamic>?)
-        ?.map((e) => e as int)
-        .toList()
-    ..reasonHashes =
-        (json['reasonHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-    ..offendingCharacterId = json['offendingCharacterId'] as String?;
-}
+        Map<String, dynamic> json) =>
+    DestinyReportOffensePgcrRequest()
+      ..reasonCategoryHashes = (json['reasonCategoryHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
+      ..reasonHashes = (json['reasonHashes'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
+      ..offendingCharacterId = json['offendingCharacterId'] as String?;
 
 Map<String, dynamic> _$DestinyReportOffensePgcrRequestToJson(
         DestinyReportOffensePgcrRequest instance) =>

@@ -17,15 +17,35 @@ enum GroupHomepage {
 
 extension GroupHomepageExtension on GroupHomepage{
   int? get value {
-    switch(this){
-      case GroupHomepage.Wall:
-        return 0;
-      case GroupHomepage.Forum:
-        return 1;
-      case GroupHomepage.AllianceForum:
-        return 2;
-      default:
-        return null;
+    if (_$GroupHomepageEnumMap.containsKey(this)){
+      return _$GroupHomepageEnumMap[this];
     }
+    return null;
   }
 }
+
+GroupHomepage? decodeGroupHomepage (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$GroupHomepageValueMap.containsKey(value)){
+    return _$GroupHomepageValueMap[value];
+  }
+
+  return GroupHomepage.ProtectedInvalidEnumValue;
+}
+
+int? encodeGroupHomepage (GroupHomepage? value) {
+  return value?.value;
+}
+
+const Map<GroupHomepage, int> _$GroupHomepageEnumMap = <GroupHomepage, int>{
+    GroupHomepage.Wall:0,
+    GroupHomepage.Forum:1,
+    GroupHomepage.AllianceForum:2,
+};
+const Map<int, GroupHomepage> _$GroupHomepageValueMap = <int, GroupHomepage>{
+    0:GroupHomepage.Wall,
+    1:GroupHomepage.Forum,
+    2:GroupHomepage.AllianceForum,
+};

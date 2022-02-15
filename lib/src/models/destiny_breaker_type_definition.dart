@@ -20,7 +20,7 @@ class DestinyBreakerTypeDefinition{
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
 	/// We have an enumeration for Breaker types for quick reference. This is the current definition's breaker type enum value.
-	@JsonKey(name:'enumValue',unknownEnumValue:DestinyBreakerType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'enumValue',fromJson:decodeDestinyBreakerType,toJson:encodeDestinyBreakerType)
 	DestinyBreakerType? enumValue;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

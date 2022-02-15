@@ -8,10 +8,9 @@ part of 'destiny_item_creation_entry_level_definition.dart';
 
 DestinyItemCreationEntryLevelDefinition
     _$DestinyItemCreationEntryLevelDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyItemCreationEntryLevelDefinition()
-    ..level = json['level'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyItemCreationEntryLevelDefinition()
+          ..level = json['level'] as int?;
 
 Map<String, dynamic> _$DestinyItemCreationEntryLevelDefinitionToJson(
         DestinyItemCreationEntryLevelDefinition instance) =>

@@ -7,26 +7,27 @@ part of 'destiny_character_activities_component.dart';
 // **************************************************************************
 
 DestinyCharacterActivitiesComponent
-    _$DestinyCharacterActivitiesComponentFromJson(Map<String, dynamic> json) {
-  return DestinyCharacterActivitiesComponent()
-    ..dateActivityStarted = json['dateActivityStarted'] as String?
-    ..availableActivities = (json['availableActivities'] as List<dynamic>?)
-        ?.map((e) => DestinyActivity.fromJson(e as Map<String, dynamic>))
-        .toList()
-    ..currentActivityHash = json['currentActivityHash'] as int?
-    ..currentActivityModeHash = json['currentActivityModeHash'] as int?
-    ..currentActivityModeType = json['currentActivityModeType'] as int?
-    ..currentActivityModeHashes =
-        (json['currentActivityModeHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList()
-    ..currentActivityModeTypes =
-        (json['currentActivityModeTypes'] as List<dynamic>?)
-            ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-            .toList()
-    ..currentPlaylistActivityHash = json['currentPlaylistActivityHash'] as int?
-    ..lastCompletedStoryHash = json['lastCompletedStoryHash'] as int?;
-}
+    _$DestinyCharacterActivitiesComponentFromJson(Map<String, dynamic> json) =>
+        DestinyCharacterActivitiesComponent()
+          ..dateActivityStarted = json['dateActivityStarted'] as String?
+          ..availableActivities = (json['availableActivities']
+                  as List<dynamic>?)
+              ?.map((e) => DestinyActivity.fromJson(e as Map<String, dynamic>))
+              .toList()
+          ..currentActivityHash = json['currentActivityHash'] as int?
+          ..currentActivityModeHash = json['currentActivityModeHash'] as int?
+          ..currentActivityModeType = json['currentActivityModeType'] as int?
+          ..currentActivityModeHashes =
+              (json['currentActivityModeHashes'] as List<dynamic>?)
+                  ?.map((e) => e as int)
+                  .toList()
+          ..currentActivityModeTypes = (json['currentActivityModeTypes']
+                  as List<dynamic>?)
+              ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+              .toList()
+          ..currentPlaylistActivityHash =
+              json['currentPlaylistActivityHash'] as int?
+          ..lastCompletedStoryHash = json['lastCompletedStoryHash'] as int?;
 
 Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
         DestinyCharacterActivitiesComponent instance) =>

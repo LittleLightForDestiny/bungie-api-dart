@@ -7,10 +7,8 @@ part of 'destiny_artifact_tier_item_definition.dart';
 // **************************************************************************
 
 DestinyArtifactTierItemDefinition _$DestinyArtifactTierItemDefinitionFromJson(
-    Map<String, dynamic> json) {
-  return DestinyArtifactTierItemDefinition()
-    ..itemHash = json['itemHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyArtifactTierItemDefinition()..itemHash = json['itemHash'] as int?;
 
 Map<String, dynamic> _$DestinyArtifactTierItemDefinitionToJson(
         DestinyArtifactTierItemDefinition instance) =>

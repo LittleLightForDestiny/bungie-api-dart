@@ -8,14 +8,13 @@ part of 'destiny_activity_matchmaking_block_definition.dart';
 
 DestinyActivityMatchmakingBlockDefinition
     _$DestinyActivityMatchmakingBlockDefinitionFromJson(
-        Map<String, dynamic> json) {
-  return DestinyActivityMatchmakingBlockDefinition()
-    ..isMatchmade = json['isMatchmade'] as bool?
-    ..minParty = json['minParty'] as int?
-    ..maxParty = json['maxParty'] as int?
-    ..maxPlayers = json['maxPlayers'] as int?
-    ..requiresGuardianOath = json['requiresGuardianOath'] as bool?;
-}
+            Map<String, dynamic> json) =>
+        DestinyActivityMatchmakingBlockDefinition()
+          ..isMatchmade = json['isMatchmade'] as bool?
+          ..minParty = json['minParty'] as int?
+          ..maxParty = json['maxParty'] as int?
+          ..maxPlayers = json['maxPlayers'] as int?
+          ..requiresGuardianOath = json['requiresGuardianOath'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityMatchmakingBlockDefinitionToJson(
         DestinyActivityMatchmakingBlockDefinition instance) =>

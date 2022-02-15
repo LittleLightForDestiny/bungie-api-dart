@@ -20,6 +20,6 @@ class DestinyInsertPlugActionDefinition{
 	int? actionExecuteSeconds;
 	
 	/// The type of action being performed when you act on this Socket Type. The most common value is "insert plug", but there are others as well (for instance, a "Masterwork" socket may allow for Re-initialization, and an Infusion socket allows for items to be consumed to upgrade the item)
-	@JsonKey(name:'actionType',unknownEnumValue:SocketTypeActionType.ProtectedInvalidEnumValue)
+	@JsonKey(name:'actionType',fromJson:decodeSocketTypeActionType,toJson:encodeSocketTypeActionType)
 	SocketTypeActionType? actionType;
 }

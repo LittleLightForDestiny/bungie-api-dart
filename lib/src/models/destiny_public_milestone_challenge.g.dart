@@ -7,11 +7,10 @@ part of 'destiny_public_milestone_challenge.dart';
 // **************************************************************************
 
 DestinyPublicMilestoneChallenge _$DestinyPublicMilestoneChallengeFromJson(
-    Map<String, dynamic> json) {
-  return DestinyPublicMilestoneChallenge()
-    ..objectiveHash = json['objectiveHash'] as int?
-    ..activityHash = json['activityHash'] as int?;
-}
+        Map<String, dynamic> json) =>
+    DestinyPublicMilestoneChallenge()
+      ..objectiveHash = json['objectiveHash'] as int?
+      ..activityHash = json['activityHash'] as int?;
 
 Map<String, dynamic> _$DestinyPublicMilestoneChallengeToJson(
         DestinyPublicMilestoneChallenge instance) =>

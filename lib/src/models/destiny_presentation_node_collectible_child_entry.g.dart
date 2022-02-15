@@ -8,10 +8,9 @@ part of 'destiny_presentation_node_collectible_child_entry.dart';
 
 DestinyPresentationNodeCollectibleChildEntry
     _$DestinyPresentationNodeCollectibleChildEntryFromJson(
-        Map<String, dynamic> json) {
-  return DestinyPresentationNodeCollectibleChildEntry()
-    ..collectibleHash = json['collectibleHash'] as int?;
-}
+            Map<String, dynamic> json) =>
+        DestinyPresentationNodeCollectibleChildEntry()
+          ..collectibleHash = json['collectibleHash'] as int?;
 
 Map<String, dynamic> _$DestinyPresentationNodeCollectibleChildEntryToJson(
         DestinyPresentationNodeCollectibleChildEntry instance) =>

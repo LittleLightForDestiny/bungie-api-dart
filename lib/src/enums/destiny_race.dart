@@ -20,17 +20,37 @@ enum DestinyRace {
 
 extension DestinyRaceExtension on DestinyRace{
   int? get value {
-    switch(this){
-      case DestinyRace.Human:
-        return 0;
-      case DestinyRace.Awoken:
-        return 1;
-      case DestinyRace.Exo:
-        return 2;
-      case DestinyRace.Unknown:
-        return 3;
-      default:
-        return null;
+    if (_$DestinyRaceEnumMap.containsKey(this)){
+      return _$DestinyRaceEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyRace? decodeDestinyRace (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyRaceValueMap.containsKey(value)){
+    return _$DestinyRaceValueMap[value];
+  }
+
+  return DestinyRace.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyRace (DestinyRace? value) {
+  return value?.value;
+}
+
+const Map<DestinyRace, int> _$DestinyRaceEnumMap = <DestinyRace, int>{
+    DestinyRace.Human:0,
+    DestinyRace.Awoken:1,
+    DestinyRace.Exo:2,
+    DestinyRace.Unknown:3,
+};
+const Map<int, DestinyRace> _$DestinyRaceValueMap = <int, DestinyRace>{
+    0:DestinyRace.Human,
+    1:DestinyRace.Awoken,
+    2:DestinyRace.Exo,
+    3:DestinyRace.Unknown,
+};

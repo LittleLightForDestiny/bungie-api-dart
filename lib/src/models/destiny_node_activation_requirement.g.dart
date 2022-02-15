@@ -7,14 +7,13 @@ part of 'destiny_node_activation_requirement.dart';
 // **************************************************************************
 
 DestinyNodeActivationRequirement _$DestinyNodeActivationRequirementFromJson(
-    Map<String, dynamic> json) {
-  return DestinyNodeActivationRequirement()
-    ..gridLevel = json['gridLevel'] as int?
-    ..materialRequirementHashes =
-        (json['materialRequirementHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyNodeActivationRequirement()
+      ..gridLevel = json['gridLevel'] as int?
+      ..materialRequirementHashes =
+          (json['materialRequirementHashes'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList();
 
 Map<String, dynamic> _$DestinyNodeActivationRequirementToJson(
         DestinyNodeActivationRequirement instance) =>

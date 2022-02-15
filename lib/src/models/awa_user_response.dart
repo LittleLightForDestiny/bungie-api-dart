@@ -15,7 +15,7 @@ class AwaUserResponse{
 	Map<String, dynamic> toJson() => _$AwaUserResponseToJson(this);
 	
 	/// Indication of the selection the user has made (Approving or rejecting the action)
-	@JsonKey(name:'selection',unknownEnumValue:AwaUserSelection.ProtectedInvalidEnumValue)
+	@JsonKey(name:'selection',fromJson:decodeAwaUserSelection,toJson:encodeAwaUserSelection)
 	AwaUserSelection? selection;
 	
 	/// Correlation ID of the request

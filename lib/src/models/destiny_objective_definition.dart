@@ -34,7 +34,7 @@ class DestinyObjectiveDefinition{
 	int? completionValue;
 	
 	/// A shortcut for determining the most restrictive gating that this Objective is set to use. This includes both the dynamic determination of progress and of completion values. See the DestinyGatingScope enum's documentation for more details.
-	@JsonKey(name:'scope',unknownEnumValue:DestinyGatingScope.ProtectedInvalidEnumValue)
+	@JsonKey(name:'scope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
 	DestinyGatingScope? scope;
 	
 	/// OPTIONAL: a hash identifier for the location at which this objective must be accomplished, if there is a location defined. Look up the DestinyLocationDefinition for this hash for that additional location info.
@@ -56,7 +56,7 @@ class DestinyObjectiveDefinition{
 	bool? isCountingDownward;
 	
 	/// The UI style applied to the objective. It's an enum, take a look at DestinyUnlockValueUIStyle for details of the possible styles. Use this info as you wish to customize your UI.
-	@JsonKey(name:'valueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'valueStyle',fromJson:decodeDestinyUnlockValueUIStyle,toJson:encodeDestinyUnlockValueUIStyle)
 	DestinyUnlockValueUIStyle? valueStyle;
 	
 	/// Text to describe the progress bar.
@@ -84,11 +84,11 @@ class DestinyObjectiveDefinition{
 	bool? showValueOnComplete;
 	
 	/// The style to use when the objective is completed.
-	@JsonKey(name:'completedValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'completedValueStyle',fromJson:decodeDestinyUnlockValueUIStyle,toJson:encodeDestinyUnlockValueUIStyle)
 	DestinyUnlockValueUIStyle? completedValueStyle;
 	
 	/// The style to use when the objective is still in progress.
-	@JsonKey(name:'inProgressValueStyle',unknownEnumValue:DestinyUnlockValueUIStyle.ProtectedInvalidEnumValue)
+	@JsonKey(name:'inProgressValueStyle',fromJson:decodeDestinyUnlockValueUIStyle,toJson:encodeDestinyUnlockValueUIStyle)
 	DestinyUnlockValueUIStyle? inProgressValueStyle;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.

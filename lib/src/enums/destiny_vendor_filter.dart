@@ -14,13 +14,33 @@ enum DestinyVendorFilter {
 
 extension DestinyVendorFilterExtension on DestinyVendorFilter{
   int? get value {
-    switch(this){
-      case DestinyVendorFilter.None:
-        return 0;
-      case DestinyVendorFilter.ApiPurchasable:
-        return 1;
-      default:
-        return null;
+    if (_$DestinyVendorFilterEnumMap.containsKey(this)){
+      return _$DestinyVendorFilterEnumMap[this];
     }
+    return null;
   }
 }
+
+DestinyVendorFilter? decodeDestinyVendorFilter (dynamic value) {
+  if(value == null) {
+    return null;
+  }
+  if(_$DestinyVendorFilterValueMap.containsKey(value)){
+    return _$DestinyVendorFilterValueMap[value];
+  }
+
+  return DestinyVendorFilter.ProtectedInvalidEnumValue;
+}
+
+int? encodeDestinyVendorFilter (DestinyVendorFilter? value) {
+  return value?.value;
+}
+
+const Map<DestinyVendorFilter, int> _$DestinyVendorFilterEnumMap = <DestinyVendorFilter, int>{
+    DestinyVendorFilter.None:0,
+    DestinyVendorFilter.ApiPurchasable:1,
+};
+const Map<int, DestinyVendorFilter> _$DestinyVendorFilterValueMap = <int, DestinyVendorFilter>{
+    0:DestinyVendorFilter.None,
+    1:DestinyVendorFilter.ApiPurchasable,
+};

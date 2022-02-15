@@ -7,17 +7,17 @@ part of 'destiny_activity_loadout_requirement.dart';
 // **************************************************************************
 
 DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
-    Map<String, dynamic> json) {
-  return DestinyActivityLoadoutRequirement()
-    ..equipmentSlotHash = json['equipmentSlotHash'] as int?
-    ..allowedEquippedItemHashes =
-        (json['allowedEquippedItemHashes'] as List<dynamic>?)
-            ?.map((e) => e as int)
-            .toList()
-    ..allowedWeaponSubTypes = (json['allowedWeaponSubTypes'] as List<dynamic>?)
-        ?.map((e) => _$enumDecode(_$DestinyItemSubTypeEnumMap, e))
-        .toList();
-}
+        Map<String, dynamic> json) =>
+    DestinyActivityLoadoutRequirement()
+      ..equipmentSlotHash = json['equipmentSlotHash'] as int?
+      ..allowedEquippedItemHashes =
+          (json['allowedEquippedItemHashes'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList()
+      ..allowedWeaponSubTypes =
+          (json['allowedWeaponSubTypes'] as List<dynamic>?)
+              ?.map((e) => _$enumDecode(_$DestinyItemSubTypeEnumMap, e))
+              .toList();
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
         DestinyActivityLoadoutRequirement instance) =>
