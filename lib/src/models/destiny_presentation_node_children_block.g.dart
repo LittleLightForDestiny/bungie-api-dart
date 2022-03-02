@@ -25,6 +25,10 @@ DestinyPresentationNodeChildrenBlock
           ..metrics = (json['metrics'] as List<dynamic>?)
               ?.map((e) => DestinyPresentationNodeMetricChildEntry.fromJson(
                   e as Map<String, dynamic>))
+              .toList()
+          ..craftables = (json['craftables'] as List<dynamic>?)
+              ?.map((e) => DestinyPresentationNodeCraftableChildEntry.fromJson(
+                  e as Map<String, dynamic>))
               .toList();
 
 Map<String, dynamic> _$DestinyPresentationNodeChildrenBlockToJson(
@@ -34,4 +38,5 @@ Map<String, dynamic> _$DestinyPresentationNodeChildrenBlockToJson(
       'collectibles': instance.collectibles,
       'records': instance.records,
       'metrics': instance.metrics,
+      'craftables': instance.craftables,
     };

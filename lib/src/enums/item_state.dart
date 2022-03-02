@@ -16,6 +16,12 @@ class ItemState {
     ///Masterwork = 4
     /// If this bit is set, the item has a Masterwork plug inserted. This usually coincides with having a special "glowing" effect applied to the item's icon.
     static const ItemState Masterwork = ItemState(4);
+    ///Crafted = 8
+    /// If this bit is set, the item has been 'crafted' by the player. You may want to represent this visually with a "crafted" icon overlay.
+    static const ItemState Crafted = ItemState(8);
+    ///HighlightedObjective = 16
+    /// If this bit is set, the item has a 'highlighted' objective. You may want to represent this with an orange-red icon border color.
+    static const ItemState HighlightedObjective = ItemState(16);
 
     int get value {
         return _value;

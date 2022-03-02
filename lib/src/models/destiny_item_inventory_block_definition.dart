@@ -61,4 +61,8 @@ class DestinyItemInventoryBlockDefinition{
 	
 	@JsonKey(name:'suppressExpirationWhenObjectivesComplete')
 	bool? suppressExpirationWhenObjectivesComplete;
+	
+	/// A reference to the associated crafting 'recipe' item definition, if this item can be crafted.
+	@JsonKey(name:'recipeItemHash')
+	int? recipeItemHash;
 }

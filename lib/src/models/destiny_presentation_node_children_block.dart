@@ -4,6 +4,7 @@ import 'destiny_presentation_node_child_entry.dart';
 import 'destiny_presentation_node_collectible_child_entry.dart';
 import 'destiny_presentation_node_record_child_entry.dart';
 import 'destiny_presentation_node_metric_child_entry.dart';
+import 'destiny_presentation_node_craftable_child_entry.dart';
 
 part 'destiny_presentation_node_children_block.g.dart';
 
@@ -29,4 +30,7 @@ class DestinyPresentationNodeChildrenBlock{
 	
 	@JsonKey(name:'metrics')
 	List<DestinyPresentationNodeMetricChildEntry>? metrics;
+	
+	@JsonKey(name:'craftables')
+	List<DestinyPresentationNodeCraftableChildEntry>? craftables;
 }

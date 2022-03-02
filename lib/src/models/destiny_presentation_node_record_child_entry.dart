@@ -15,4 +15,8 @@ class DestinyPresentationNodeRecordChildEntry{
 	
 	@JsonKey(name:'recordHash')
 	int? recordHash;
+	
+	/// Use this value to sort the presentation node children in ascending order.
+	@JsonKey(name:'nodeDisplayPriority')
+	int? nodeDisplayPriority;
 }

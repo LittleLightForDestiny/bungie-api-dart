@@ -39,6 +39,10 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           ? null
           : DestinyItemActionBlockDefinition.fromJson(
               json['action'] as Map<String, dynamic>)
+      ..crafting = json['crafting'] == null
+          ? null
+          : DestinyItemCraftingBlockDefinition.fromJson(
+              json['crafting'] as Map<String, dynamic>)
       ..inventory = json['inventory'] == null
           ? null
           : DestinyItemInventoryBlockDefinition.fromJson(
@@ -177,6 +181,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'displaySource': instance.displaySource,
       'tooltipStyle': instance.tooltipStyle,
       'action': instance.action,
+      'crafting': instance.crafting,
       'inventory': instance.inventory,
       'setData': instance.setData,
       'stats': instance.stats,

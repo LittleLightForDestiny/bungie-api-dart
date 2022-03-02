@@ -86,5 +86,6 @@ const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.ClassArmor: 30,
   DestinyItemSubType.Bow: 31,
   DestinyItemSubType.DummyRepeatableBounty: 32,
+  DestinyItemSubType.Glaive: 33,
   DestinyItemSubType.ProtectedInvalidEnumValue: 999999999,
 };

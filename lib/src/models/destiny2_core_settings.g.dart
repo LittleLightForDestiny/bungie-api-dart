@@ -22,6 +22,7 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(
       ..exoticCatalystsRootNodeHash =
           json['exoticCatalystsRootNodeHash'] as int?
       ..loreRootNodeHash = json['loreRootNodeHash'] as int?
+      ..craftingRootNodeHash = json['craftingRootNodeHash'] as int?
       ..currentRankProgressionHashes =
           (json['currentRankProgressionHashes'] as List<dynamic>?)
               ?.map((e) => e as int)
@@ -66,6 +67,7 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'medalsRootNodeHash': instance.medalsRootNodeHash,
       'exoticCatalystsRootNodeHash': instance.exoticCatalystsRootNodeHash,
       'loreRootNodeHash': instance.loreRootNodeHash,
+      'craftingRootNodeHash': instance.craftingRootNodeHash,
       'currentRankProgressionHashes': instance.currentRankProgressionHashes,
       'insertPlugFreeProtectedPlugItemHashes':
           instance.insertPlugFreeProtectedPlugItemHashes,

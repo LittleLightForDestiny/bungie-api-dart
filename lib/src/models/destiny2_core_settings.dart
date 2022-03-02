@@ -49,6 +49,9 @@ class Destiny2CoreSettings{
 	@JsonKey(name:'loreRootNodeHash')
 	int? loreRootNodeHash;
 	
+	@JsonKey(name:'craftingRootNodeHash')
+	int? craftingRootNodeHash;
+	
 	@JsonKey(name:'currentRankProgressionHashes')
 	List<int>? currentRankProgressionHashes;
 	

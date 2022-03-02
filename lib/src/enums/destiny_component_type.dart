@@ -144,6 +144,10 @@ enum DestinyComponentType {
   /// Returns a mapping of localized string variable hashes to values, on a per-account or per-character basis.
   @JsonValue(1200)
   StringVariables,
+  ///Craftables = 1300
+  /// Returns summary status information about all &quot;Craftables&quot; aka crafting recipe items.
+  @JsonValue(1300)
+  Craftables,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -209,6 +213,7 @@ const Map<DestinyComponentType, int> _$DestinyComponentTypeEnumMap = <DestinyCom
     DestinyComponentType.Transitory:1000,
     DestinyComponentType.Metrics:1100,
     DestinyComponentType.StringVariables:1200,
+    DestinyComponentType.Craftables:1300,
 };
 const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, DestinyComponentType>{
     0:DestinyComponentType.None,
@@ -246,4 +251,5 @@ const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, Dest
     1000:DestinyComponentType.Transitory,
     1100:DestinyComponentType.Metrics,
     1200:DestinyComponentType.StringVariables,
+    1300:DestinyComponentType.Craftables,
 };

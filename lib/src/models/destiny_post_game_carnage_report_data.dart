@@ -20,9 +20,13 @@ class DestinyPostGameCarnageReportData{
 	@JsonKey(name:'period')
 	String? period;
 	
-	/// If this activity has "phases", this is the phase at which the activity was started.
+	/// OBSOLETE - If this activity has "phases", this is the phase at which the activity was started.
 	@JsonKey(name:'startingPhaseIndex')
 	int? startingPhaseIndex;
+	
+	/// True if the activity was started from the beginning, if that information is available.
+	@JsonKey(name:'activityWasStartedFromBeginning')
+	bool? activityWasStartedFromBeginning;
 	
 	/// Details about the activity.
 	@JsonKey(name:'activityDetails')

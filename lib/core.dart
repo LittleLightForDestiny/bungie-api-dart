@@ -62,6 +62,7 @@ export 'src/models/dictionary_component_response_ofint64_and_destiny_presentatio
 export 'src/models/dictionary_component_response_ofint64_and_destiny_character_records_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_collectibles_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_string_variables_component.dart';
+export 'src/models/dictionary_component_response_ofint64_and_destiny_craftables_component.dart';
 export 'src/models/destiny_base_item_component_set_ofint64.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_item_objectives_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_item_perks_component.dart';

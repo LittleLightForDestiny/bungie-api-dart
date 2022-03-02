@@ -95,6 +95,9 @@ enum DestinyItemSubType {
   ///DummyRepeatableBounty = 32
   @JsonValue(32)
   DummyRepeatableBounty,
+  ///Glaive = 33
+  @JsonValue(33)
+  Glaive,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -155,6 +158,7 @@ const Map<DestinyItemSubType, int> _$DestinyItemSubTypeEnumMap = <DestinyItemSub
     DestinyItemSubType.ClassArmor:30,
     DestinyItemSubType.Bow:31,
     DestinyItemSubType.DummyRepeatableBounty:32,
+    DestinyItemSubType.Glaive:33,
 };
 const Map<int, DestinyItemSubType> _$DestinyItemSubTypeValueMap = <int, DestinyItemSubType>{
     0:DestinyItemSubType.None,
@@ -187,4 +191,5 @@ const Map<int, DestinyItemSubType> _$DestinyItemSubTypeValueMap = <int, DestinyI
     30:DestinyItemSubType.ClassArmor,
     31:DestinyItemSubType.Bow,
     32:DestinyItemSubType.DummyRepeatableBounty,
+    33:DestinyItemSubType.Glaive,
 };

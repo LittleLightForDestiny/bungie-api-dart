@@ -25,6 +25,7 @@ import 'dictionary_component_response_ofint64_and_destiny_presentation_nodes_com
 import 'dictionary_component_response_ofint64_and_destiny_character_records_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_collectibles_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_string_variables_component.dart';
+import 'dictionary_component_response_ofint64_and_destiny_craftables_component.dart';
 import 'destiny_item_component_set_ofint64.dart';
 import 'dictionary_component_response_ofint64_and_destiny_currencies_component.dart';
 
@@ -174,6 +175,10 @@ class DestinyProfileResponse{
 	/// COMPONENT TYPE: StringVariables
 	@JsonKey(name:'characterStringVariables')
 	DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent? characterStringVariables;
+	
+	/// COMPONENT TYPE: Craftables
+	@JsonKey(name:'characterCraftables')
+	DictionaryComponentResponseOfint64AndDestinyCraftablesComponent? characterCraftables;
 	
 	/// Information about instanced items across all returned characters, keyed by the item's instance ID.
 	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]

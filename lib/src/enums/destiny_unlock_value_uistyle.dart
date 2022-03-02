@@ -57,6 +57,10 @@ enum DestinyUnlockValueUIStyle {
   /// Show the value as a floating-point number. For example: &quot;4.52&quot; NOTE: Passed along from Investment as whole number with last two digits as decimal values (452 -&gt; 4.52)
   @JsonValue(13)
   RawFloat,
+  ///LevelAndReward = 14
+  /// Show the value as a level and a reward.
+  @JsonValue(14)
+  LevelAndReward,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -101,6 +105,7 @@ const Map<DestinyUnlockValueUIStyle, int> _$DestinyUnlockValueUIStyleEnumMap = <
     DestinyUnlockValueUIStyle.RedPips:11,
     DestinyUnlockValueUIStyle.ExplicitPercentage:12,
     DestinyUnlockValueUIStyle.RawFloat:13,
+    DestinyUnlockValueUIStyle.LevelAndReward:14,
 };
 const Map<int, DestinyUnlockValueUIStyle> _$DestinyUnlockValueUIStyleValueMap = <int, DestinyUnlockValueUIStyle>{
     0:DestinyUnlockValueUIStyle.Automatic,
@@ -117,4 +122,5 @@ const Map<int, DestinyUnlockValueUIStyle> _$DestinyUnlockValueUIStyleValueMap = 
     11:DestinyUnlockValueUIStyle.RedPips,
     12:DestinyUnlockValueUIStyle.ExplicitPercentage,
     13:DestinyUnlockValueUIStyle.RawFloat,
+    14:DestinyUnlockValueUIStyle.LevelAndReward,
 };

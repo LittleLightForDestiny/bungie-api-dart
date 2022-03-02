@@ -4,6 +4,7 @@ import 'destiny_display_properties_definition.dart';
 import 'destiny_item_tooltip_notification.dart';
 import 'destiny_color.dart';
 import 'destiny_item_action_block_definition.dart';
+import 'destiny_item_crafting_block_definition.dart';
 import 'destiny_item_inventory_block_definition.dart';
 import 'destiny_item_set_block_definition.dart';
 import 'destiny_item_stat_block_definition.dart';
@@ -112,6 +113,10 @@ class DestinyInventoryItemDefinition{
 	/// If the item can be "used", this block will be non-null, and will have data related to the action performed when using the item. (Guess what? 99% of the time, this action is "dismantle". Shocker)
 	@JsonKey(name:'action')
 	DestinyItemActionBlockDefinition? action;
+	
+	/// Recipe items will have relevant crafting information available here.
+	@JsonKey(name:'crafting')
+	DestinyItemCraftingBlockDefinition? crafting;
 	
 	/// If this item can exist in an inventory, this block will be non-null. In practice, every item that currently exists has one of these blocks. But note that it is not necessarily guaranteed.
 	@JsonKey(name:'inventory')

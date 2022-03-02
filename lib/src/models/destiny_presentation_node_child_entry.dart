@@ -15,4 +15,8 @@ class DestinyPresentationNodeChildEntry{
 	
 	@JsonKey(name:'presentationNodeHash')
 	int? presentationNodeHash;
+	
+	/// Use this value to sort the presentation node children in ascending order.
+	@JsonKey(name:'nodeDisplayPriority')
+	int? nodeDisplayPriority;
 }

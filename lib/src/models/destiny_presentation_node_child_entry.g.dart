@@ -9,10 +9,12 @@ part of 'destiny_presentation_node_child_entry.dart';
 DestinyPresentationNodeChildEntry _$DestinyPresentationNodeChildEntryFromJson(
         Map<String, dynamic> json) =>
     DestinyPresentationNodeChildEntry()
-      ..presentationNodeHash = json['presentationNodeHash'] as int?;
+      ..presentationNodeHash = json['presentationNodeHash'] as int?
+      ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
 
 Map<String, dynamic> _$DestinyPresentationNodeChildEntryToJson(
         DestinyPresentationNodeChildEntry instance) =>
     <String, dynamic>{
       'presentationNodeHash': instance.presentationNodeHash,
+      'nodeDisplayPriority': instance.nodeDisplayPriority,
     };

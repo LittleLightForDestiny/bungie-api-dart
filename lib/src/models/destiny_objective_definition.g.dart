@@ -37,6 +37,8 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
           decodeDestinyUnlockValueUIStyle(json['completedValueStyle'])
       ..inProgressValueStyle =
           decodeDestinyUnlockValueUIStyle(json['inProgressValueStyle'])
+      ..uiLabel = json['uiLabel'] as String?
+      ..uiStyle = decodeDestinyObjectiveUiStyle(json['uiStyle'])
       ..hash = json['hash'] as int?
       ..index = json['index'] as int?
       ..redacted = json['redacted'] as bool?;
@@ -62,6 +64,8 @@ Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
           encodeDestinyUnlockValueUIStyle(instance.completedValueStyle),
       'inProgressValueStyle':
           encodeDestinyUnlockValueUIStyle(instance.inProgressValueStyle),
+      'uiLabel': instance.uiLabel,
+      'uiStyle': encodeDestinyObjectiveUiStyle(instance.uiStyle),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

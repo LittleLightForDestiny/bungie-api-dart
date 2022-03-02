@@ -12,6 +12,7 @@ DestinyMaterialRequirement _$DestinyMaterialRequirementFromJson(
       ..itemHash = json['itemHash'] as int?
       ..deleteOnAction = json['deleteOnAction'] as bool?
       ..count = json['count'] as int?
+      ..countIsConstant = json['countIsConstant'] as bool?
       ..omitFromRequirements = json['omitFromRequirements'] as bool?;
 
 Map<String, dynamic> _$DestinyMaterialRequirementToJson(
@@ -20,5 +21,6 @@ Map<String, dynamic> _$DestinyMaterialRequirementToJson(
       'itemHash': instance.itemHash,
       'deleteOnAction': instance.deleteOnAction,
       'count': instance.count,
+      'countIsConstant': instance.countIsConstant,
       'omitFromRequirements': instance.omitFromRequirements,
     };

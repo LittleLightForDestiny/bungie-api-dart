@@ -11,6 +11,8 @@ DestinyPostGameCarnageReportData _$DestinyPostGameCarnageReportDataFromJson(
     DestinyPostGameCarnageReportData()
       ..period = json['period'] as String?
       ..startingPhaseIndex = json['startingPhaseIndex'] as int?
+      ..activityWasStartedFromBeginning =
+          json['activityWasStartedFromBeginning'] as bool?
       ..activityDetails = json['activityDetails'] == null
           ? null
           : DestinyHistoricalStatsActivity.fromJson(
@@ -29,6 +31,8 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportDataToJson(
     <String, dynamic>{
       'period': instance.period,
       'startingPhaseIndex': instance.startingPhaseIndex,
+      'activityWasStartedFromBeginning':
+          instance.activityWasStartedFromBeginning,
       'activityDetails': instance.activityDetails,
       'entries': instance.entries,
       'teams': instance.teams,

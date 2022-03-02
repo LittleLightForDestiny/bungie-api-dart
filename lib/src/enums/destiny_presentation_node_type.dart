@@ -16,6 +16,9 @@ enum DestinyPresentationNodeType {
   ///Metric = 4
   @JsonValue(4)
   Metric,
+  ///Craftable = 5
+  @JsonValue(5)
+  Craftable,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -51,6 +54,7 @@ const Map<DestinyPresentationNodeType, int> _$DestinyPresentationNodeTypeEnumMap
     DestinyPresentationNodeType.Collectibles:2,
     DestinyPresentationNodeType.Records:3,
     DestinyPresentationNodeType.Metric:4,
+    DestinyPresentationNodeType.Craftable:5,
 };
 const Map<int, DestinyPresentationNodeType> _$DestinyPresentationNodeTypeValueMap = <int, DestinyPresentationNodeType>{
     0:DestinyPresentationNodeType.Default,
@@ -58,4 +62,5 @@ const Map<int, DestinyPresentationNodeType> _$DestinyPresentationNodeTypeValueMa
     2:DestinyPresentationNodeType.Collectibles,
     3:DestinyPresentationNodeType.Records,
     4:DestinyPresentationNodeType.Metric,
+    5:DestinyPresentationNodeType.Craftable,
 };

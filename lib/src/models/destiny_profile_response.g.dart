@@ -123,6 +123,10 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
           : DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent
               .fromJson(
                   json['characterStringVariables'] as Map<String, dynamic>)
+      ..characterCraftables = json['characterCraftables'] == null
+          ? null
+          : DictionaryComponentResponseOfint64AndDestinyCraftablesComponent
+              .fromJson(json['characterCraftables'] as Map<String, dynamic>)
       ..itemComponents = json['itemComponents'] == null
           ? null
           : DestinyItemComponentSetOfint64.fromJson(
@@ -164,6 +168,7 @@ Map<String, dynamic> _$DestinyProfileResponseToJson(
       'characterRecords': instance.characterRecords,
       'characterCollectibles': instance.characterCollectibles,
       'characterStringVariables': instance.characterStringVariables,
+      'characterCraftables': instance.characterCraftables,
       'itemComponents': instance.itemComponents,
       'characterCurrencyLookups': instance.characterCurrencyLookups,
     };

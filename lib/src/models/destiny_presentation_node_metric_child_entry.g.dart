@@ -10,10 +10,12 @@ DestinyPresentationNodeMetricChildEntry
     _$DestinyPresentationNodeMetricChildEntryFromJson(
             Map<String, dynamic> json) =>
         DestinyPresentationNodeMetricChildEntry()
-          ..metricHash = json['metricHash'] as int?;
+          ..metricHash = json['metricHash'] as int?
+          ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
 
 Map<String, dynamic> _$DestinyPresentationNodeMetricChildEntryToJson(
         DestinyPresentationNodeMetricChildEntry instance) =>
     <String, dynamic>{
       'metricHash': instance.metricHash,
+      'nodeDisplayPriority': instance.nodeDisplayPriority,
     };

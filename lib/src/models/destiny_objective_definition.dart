@@ -5,6 +5,7 @@ import '../enums/destiny_gating_scope.dart';
 import '../enums/destiny_unlock_value_uistyle.dart';
 import 'destiny_objective_perk_entry_definition.dart';
 import 'destiny_objective_stat_entry_definition.dart';
+import '../enums/destiny_objective_ui_style.dart';
 
 part 'destiny_objective_definition.g.dart';
 
@@ -90,6 +91,14 @@ class DestinyObjectiveDefinition{
 	/// The style to use when the objective is still in progress.
 	@JsonKey(name:'inProgressValueStyle',fromJson:decodeDestinyUnlockValueUIStyle,toJson:encodeDestinyUnlockValueUIStyle)
 	DestinyUnlockValueUIStyle? inProgressValueStyle;
+	
+	/// Objectives can have arbitrary UI-defined identifiers that define the style applied to objectives. For convenience, known UI labels will be defined in the uiStyle enum value.
+	@JsonKey(name:'uiLabel')
+	String? uiLabel;
+	
+	/// If the objective has a known UI label value, this property will represent it.
+	@JsonKey(name:'uiStyle',fromJson:decodeDestinyObjectiveUiStyle,toJson:encodeDestinyObjectiveUiStyle)
+	DestinyObjectiveUiStyle? uiStyle;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

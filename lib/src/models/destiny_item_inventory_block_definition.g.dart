@@ -22,7 +22,8 @@ DestinyItemInventoryBlockDefinition
               json['expiredInActivityMessage'] as String?
           ..expiredInOrbitMessage = json['expiredInOrbitMessage'] as String?
           ..suppressExpirationWhenObjectivesComplete =
-              json['suppressExpirationWhenObjectivesComplete'] as bool?;
+              json['suppressExpirationWhenObjectivesComplete'] as bool?
+          ..recipeItemHash = json['recipeItemHash'] as int?;
 
 Map<String, dynamic> _$DestinyItemInventoryBlockDefinitionToJson(
         DestinyItemInventoryBlockDefinition instance) =>
@@ -40,4 +41,5 @@ Map<String, dynamic> _$DestinyItemInventoryBlockDefinitionToJson(
       'expiredInOrbitMessage': instance.expiredInOrbitMessage,
       'suppressExpirationWhenObjectivesComplete':
           instance.suppressExpirationWhenObjectivesComplete,
+      'recipeItemHash': instance.recipeItemHash,
     };

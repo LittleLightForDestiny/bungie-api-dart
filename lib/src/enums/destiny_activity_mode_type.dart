@@ -236,6 +236,9 @@ enum DestinyActivityModeType {
   ///Dares = 85
   @JsonValue(85)
   Dares,
+  ///Offensive = 86
+  @JsonValue(86)
+  Offensive,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -344,6 +347,7 @@ const Map<DestinyActivityModeType, int> _$DestinyActivityModeTypeEnumMap = <Dest
     DestinyActivityModeType.Sundial:83,
     DestinyActivityModeType.TrialsOfOsiris:84,
     DestinyActivityModeType.Dares:85,
+    DestinyActivityModeType.Offensive:86,
 };
 const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int, DestinyActivityModeType>{
     0:DestinyActivityModeType.None,
@@ -424,4 +428,5 @@ const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int
     83:DestinyActivityModeType.Sundial,
     84:DestinyActivityModeType.TrialsOfOsiris,
     85:DestinyActivityModeType.Dares,
+    86:DestinyActivityModeType.Offensive,
 };
