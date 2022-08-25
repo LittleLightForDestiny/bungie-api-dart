@@ -25,6 +25,7 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
       ..recordValueStyle =
           decodeDestinyRecordValueStyle(json['recordValueStyle'])
       ..forTitleGilding = json['forTitleGilding'] as bool?
+      ..shouldShowLargeIcons = json['shouldShowLargeIcons'] as bool?
       ..titleInfo = json['titleInfo'] == null
           ? null
           : DestinyRecordTitleBlock.fromJson(
@@ -76,6 +77,7 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
       'recordValueStyle':
           encodeDestinyRecordValueStyle(instance.recordValueStyle),
       'forTitleGilding': instance.forTitleGilding,
+      'shouldShowLargeIcons': instance.shouldShowLargeIcons,
       'titleInfo': instance.titleInfo,
       'completionInfo': instance.completionInfo,
       'stateInfo': instance.stateInfo,

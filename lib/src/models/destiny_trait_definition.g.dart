@@ -15,6 +15,7 @@ DestinyTraitDefinition _$DestinyTraitDefinitionFromJson(
               json['displayProperties'] as Map<String, dynamic>)
       ..traitCategoryId = json['traitCategoryId'] as String?
       ..traitCategoryHash = json['traitCategoryHash'] as int?
+      ..displayHint = json['displayHint'] as String?
       ..hash = json['hash'] as int?
       ..index = json['index'] as int?
       ..redacted = json['redacted'] as bool?;
@@ -25,6 +26,7 @@ Map<String, dynamic> _$DestinyTraitDefinitionToJson(
       'displayProperties': instance.displayProperties,
       'traitCategoryId': instance.traitCategoryId,
       'traitCategoryHash': instance.traitCategoryHash,
+      'displayHint': instance.displayHint,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

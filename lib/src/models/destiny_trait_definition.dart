@@ -24,6 +24,10 @@ class DestinyTraitDefinition{
 	@JsonKey(name:'traitCategoryHash')
 	int? traitCategoryHash;
 	
+	/// An identifier for how this trait can be displayed. For example: a 'keyword' hint to show an explanation for certain related terms.
+	@JsonKey(name:'displayHint')
+	String? displayHint;
+	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

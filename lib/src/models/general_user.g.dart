@@ -45,7 +45,8 @@ GeneralUser _$GeneralUserFromJson(Map<String, dynamic> json) => GeneralUser()
   ..cachedBungieGlobalDisplayName =
       json['cachedBungieGlobalDisplayName'] as String?
   ..cachedBungieGlobalDisplayNameCode =
-      json['cachedBungieGlobalDisplayNameCode'] as int?;
+      json['cachedBungieGlobalDisplayNameCode'] as int?
+  ..egsDisplayName = json['egsDisplayName'] as String?;
 
 Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
     <String, dynamic>{
@@ -85,4 +86,5 @@ Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
       'cachedBungieGlobalDisplayName': instance.cachedBungieGlobalDisplayName,
       'cachedBungieGlobalDisplayNameCode':
           instance.cachedBungieGlobalDisplayNameCode,
+      'egsDisplayName': instance.egsDisplayName,
     };

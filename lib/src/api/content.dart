@@ -2,6 +2,7 @@ import '../helpers/http.dart';
 import '../responses/content_item_public_contract_response.dart';
 import '../responses/content_type_description_response.dart';
 import '../responses/iread_only_collection_of_content_item_public_contract_response.dart';
+import '../responses/news_article_rss_response_response.dart';
 import '../responses/search_result_of_content_item_public_contract_response.dart';
 class Content{
     /// Gets an object describing a particular variant of content.
@@ -125,6 +126,21 @@ class Content{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return IReadOnlyCollectionOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Returns a JSON string response that is the RSS feed for news articles.
+    static Future<NewsArticleRssResponseResponse> rssNewsArticles (
+        HttpClient client,
+        String pageToken,
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _pageToken = '$pageToken';
+        final HttpClientConfig config = HttpClientConfig('GET', '/Content/Rss/NewsArticles/$_pageToken/', params);
+        config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return NewsArticleRssResponseResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

@@ -118,4 +118,7 @@ class GeneralUser{
 	
 	@JsonKey(name:'cachedBungieGlobalDisplayNameCode')
 	int? cachedBungieGlobalDisplayNameCode;
+	
+	@JsonKey(name:'egsDisplayName')
+	String? egsDisplayName;
 }

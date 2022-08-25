@@ -19,6 +19,9 @@ enum FireteamPlatform {
   ///Stadia = 5
   @JsonValue(5)
   Stadia,
+  ///Egs = 6
+  @JsonValue(6)
+  Egs,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -55,6 +58,7 @@ const Map<FireteamPlatform, int> _$FireteamPlatformEnumMap = <FireteamPlatform, 
     FireteamPlatform.Blizzard:3,
     FireteamPlatform.Steam:4,
     FireteamPlatform.Stadia:5,
+    FireteamPlatform.Egs:6,
 };
 const Map<int, FireteamPlatform> _$FireteamPlatformValueMap = <int, FireteamPlatform>{
     0:FireteamPlatform.Any,
@@ -63,4 +67,5 @@ const Map<int, FireteamPlatform> _$FireteamPlatformValueMap = <int, FireteamPlat
     3:FireteamPlatform.Blizzard,
     4:FireteamPlatform.Steam,
     5:FireteamPlatform.Stadia,
+    6:FireteamPlatform.Egs,
 };

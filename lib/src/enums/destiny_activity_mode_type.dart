@@ -239,6 +239,18 @@ enum DestinyActivityModeType {
   ///Offensive = 86
   @JsonValue(86)
   Offensive,
+  ///LostSector = 87
+  @JsonValue(87)
+  LostSector,
+  ///Rift = 88
+  @JsonValue(88)
+  Rift,
+  ///ZoneControl = 89
+  @JsonValue(89)
+  ZoneControl,
+  ///IronBannerRift = 90
+  @JsonValue(90)
+  IronBannerRift,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -348,6 +360,10 @@ const Map<DestinyActivityModeType, int> _$DestinyActivityModeTypeEnumMap = <Dest
     DestinyActivityModeType.TrialsOfOsiris:84,
     DestinyActivityModeType.Dares:85,
     DestinyActivityModeType.Offensive:86,
+    DestinyActivityModeType.LostSector:87,
+    DestinyActivityModeType.Rift:88,
+    DestinyActivityModeType.ZoneControl:89,
+    DestinyActivityModeType.IronBannerRift:90,
 };
 const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int, DestinyActivityModeType>{
     0:DestinyActivityModeType.None,
@@ -429,4 +445,8 @@ const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int
     84:DestinyActivityModeType.TrialsOfOsiris,
     85:DestinyActivityModeType.Dares,
     86:DestinyActivityModeType.Offensive,
+    87:DestinyActivityModeType.LostSector,
+    88:DestinyActivityModeType.Rift,
+    89:DestinyActivityModeType.ZoneControl,
+    90:DestinyActivityModeType.IronBannerRift,
 };

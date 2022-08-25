@@ -13,6 +13,7 @@ DestinyPlugItemCraftingRequirements
               ?.map((e) => DestinyPlugItemCraftingUnlockRequirement.fromJson(
                   e as Map<String, dynamic>))
               .toList()
+          ..requiredLevel = json['requiredLevel'] as int?
           ..materialRequirementHashes =
               (json['materialRequirementHashes'] as List<dynamic>?)
                   ?.map((e) => e as int)
@@ -22,5 +23,6 @@ Map<String, dynamic> _$DestinyPlugItemCraftingRequirementsToJson(
         DestinyPlugItemCraftingRequirements instance) =>
     <String, dynamic>{
       'unlockRequirements': instance.unlockRequirements,
+      'requiredLevel': instance.requiredLevel,
       'materialRequirementHashes': instance.materialRequirementHashes,
     };

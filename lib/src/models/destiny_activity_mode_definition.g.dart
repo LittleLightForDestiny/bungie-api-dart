@@ -161,5 +161,9 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.TrialsOfOsiris: 84,
   DestinyActivityModeType.Dares: 85,
   DestinyActivityModeType.Offensive: 86,
+  DestinyActivityModeType.LostSector: 87,
+  DestinyActivityModeType.Rift: 88,
+  DestinyActivityModeType.ZoneControl: 89,
+  DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

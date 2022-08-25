@@ -41,7 +41,7 @@ class ApplicationScopes {
     /// Can perform actions that will result in a prompt to the user via the Destiny app.
     static const ApplicationScopes AdvancedWriteActions = ApplicationScopes(2048);
     ///PartnerOfferGrant = 4096
-    /// Can user the partner offer api to claim rewards defined for a partner
+    /// Can use the partner offer api to claim rewards defined for a partner
     static const ApplicationScopes PartnerOfferGrant = ApplicationScopes(4096);
     ///DestinyUnlockValueQuery = 8192
     /// Allows an app to query sensitive information like unlock flags and values not available through normal methods.

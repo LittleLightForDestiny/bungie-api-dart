@@ -48,6 +48,10 @@ class DestinyRecordDefinition{
 	@JsonKey(name:'forTitleGilding')
 	bool? forTitleGilding;
 	
+	/// A hint to show a large icon for a reward
+	@JsonKey(name:'shouldShowLargeIcons')
+	bool? shouldShowLargeIcons;
+	
 	@JsonKey(name:'titleInfo')
 	DestinyRecordTitleBlock? titleInfo;
 	

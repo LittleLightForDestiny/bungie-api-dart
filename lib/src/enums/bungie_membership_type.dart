@@ -19,6 +19,9 @@ enum BungieMembershipType {
   ///TigerStadia = 5
   @JsonValue(5)
   TigerStadia,
+  ///TigerEgs = 6
+  @JsonValue(6)
+  TigerEgs,
   ///TigerDemon = 10
   @JsonValue(10)
   TigerDemon,
@@ -65,6 +68,7 @@ const Map<BungieMembershipType, int> _$BungieMembershipTypeEnumMap = <BungieMemb
     BungieMembershipType.TigerSteam:3,
     BungieMembershipType.TigerBlizzard:4,
     BungieMembershipType.TigerStadia:5,
+    BungieMembershipType.TigerEgs:6,
     BungieMembershipType.TigerDemon:10,
     BungieMembershipType.BungieNext:254,
     BungieMembershipType.All:-1,
@@ -76,6 +80,7 @@ const Map<int, BungieMembershipType> _$BungieMembershipTypeValueMap = <int, Bung
     3:BungieMembershipType.TigerSteam,
     4:BungieMembershipType.TigerBlizzard,
     5:BungieMembershipType.TigerStadia,
+    6:BungieMembershipType.TigerEgs,
     10:BungieMembershipType.TigerDemon,
     254:BungieMembershipType.BungieNext,
     -1:BungieMembershipType.All,

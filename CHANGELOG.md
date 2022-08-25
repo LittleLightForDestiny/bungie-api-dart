@@ -1,3 +1,6 @@
+## 2022-08-25 (13.16.0)
+- updating to bungie's api definitions from v2.16.0
+
 ## 2022-03-02 (13.14.0)
 - updating bungie's api version to 2.14.0
 

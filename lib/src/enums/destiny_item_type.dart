@@ -82,6 +82,9 @@ enum DestinyItemType {
   ///Finisher = 29
   @JsonValue(29)
   Finisher,
+  ///Pattern = 30
+  @JsonValue(30)
+  Pattern,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -139,6 +142,7 @@ const Map<DestinyItemType, int> _$DestinyItemTypeEnumMap = <DestinyItemType, int
     DestinyItemType.Wrapper:27,
     DestinyItemType.SeasonalArtifact:28,
     DestinyItemType.Finisher:29,
+    DestinyItemType.Pattern:30,
 };
 const Map<int, DestinyItemType> _$DestinyItemTypeValueMap = <int, DestinyItemType>{
     0:DestinyItemType.None,
@@ -168,4 +172,5 @@ const Map<int, DestinyItemType> _$DestinyItemTypeValueMap = <int, DestinyItemTyp
     27:DestinyItemType.Wrapper,
     28:DestinyItemType.SeasonalArtifact,
     29:DestinyItemType.Finisher,
+    30:DestinyItemType.Pattern,
 };

@@ -40,6 +40,9 @@ enum BungieCredentialType {
   ///TwitchId = 18
   @JsonValue(18)
   TwitchId,
+  ///EgsId = 20
+  @JsonValue(20)
+  EgsId,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -83,6 +86,7 @@ const Map<BungieCredentialType, int> _$BungieCredentialTypeEnumMap = <BungieCred
     BungieCredentialType.BattleNetId:14,
     BungieCredentialType.StadiaId:16,
     BungieCredentialType.TwitchId:18,
+    BungieCredentialType.EgsId:20,
 };
 const Map<int, BungieCredentialType> _$BungieCredentialTypeValueMap = <int, BungieCredentialType>{
     0:BungieCredentialType.None,
@@ -98,4 +102,5 @@ const Map<int, BungieCredentialType> _$BungieCredentialTypeValueMap = <int, Bung
     14:BungieCredentialType.BattleNetId,
     16:BungieCredentialType.StadiaId,
     18:BungieCredentialType.TwitchId,
+    20:BungieCredentialType.EgsId,
 };

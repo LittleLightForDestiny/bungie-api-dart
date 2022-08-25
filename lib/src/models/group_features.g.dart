@@ -76,6 +76,7 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerSteam: 3,
   BungieMembershipType.TigerBlizzard: 4,
   BungieMembershipType.TigerStadia: 5,
+  BungieMembershipType.TigerEgs: 6,
   BungieMembershipType.TigerDemon: 10,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,

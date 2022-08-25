@@ -1,4 +1,5 @@
 export 'src/responses/ienumerable_of_application_response.dart';
+export 'src/responses/cedictionary_of_bungie_credential_type_andstring_response.dart';
 export 'src/responses/list_of_get_credential_types_for_account_response_response.dart';
 export 'src/responses/list_of_user_theme_response.dart';
 export 'src/responses/search_result_of_content_item_public_contract_response.dart';
@@ -17,6 +18,7 @@ export 'src/responses/search_result_of_group_ban_response.dart';
 export 'src/responses/search_result_of_group_member_application_response.dart';
 export 'src/responses/list_of_entity_action_result_response.dart';
 export 'src/responses/celist_of_partner_offer_sku_history_response_response.dart';
+export 'src/responses/dictionary_ofstring_and_bungie_reward_display_response.dart';
 export 'src/responses/ienumerable_of_user_info_card_response.dart';
 export 'src/responses/read_only_dictionary_ofstring_and_destiny_historical_stats_definition_response.dart';
 export 'src/responses/list_of_destiny_clan_aggregate_stat_response.dart';

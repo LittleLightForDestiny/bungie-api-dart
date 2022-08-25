@@ -19,6 +19,12 @@ class DestinyActivityModifierDefinition{
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
+	@JsonKey(name:'displayInNavMode')
+	bool? displayInNavMode;
+	
+	@JsonKey(name:'displayInActivitySelection')
+	bool? displayInActivitySelection;
+	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	@JsonKey(name:'hash')

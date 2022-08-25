@@ -22,9 +22,13 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
       ..seasonHashes = (json['seasonHashes'] as List<dynamic>?)
           ?.map((e) => e as int)
           .toList()
+      ..eventCardHashesOwned = (json['eventCardHashesOwned'] as List<dynamic>?)
+          ?.map((e) => e as int)
+          .toList()
       ..currentSeasonHash = json['currentSeasonHash'] as int?
       ..currentSeasonRewardPowerCap =
-          json['currentSeasonRewardPowerCap'] as int?;
+          json['currentSeasonRewardPowerCap'] as int?
+      ..activeEventCardHash = json['activeEventCardHash'] as int?;
 
 Map<String, dynamic> _$DestinyProfileComponentToJson(
         DestinyProfileComponent instance) =>
@@ -34,6 +38,8 @@ Map<String, dynamic> _$DestinyProfileComponentToJson(
       'versionsOwned': instance.versionsOwned,
       'characterIds': instance.characterIds,
       'seasonHashes': instance.seasonHashes,
+      'eventCardHashesOwned': instance.eventCardHashesOwned,
       'currentSeasonHash': instance.currentSeasonHash,
       'currentSeasonRewardPowerCap': instance.currentSeasonRewardPowerCap,
+      'activeEventCardHash': instance.activeEventCardHash,
     };

@@ -13,6 +13,9 @@ enum PlatformFriendType {
   ///Steam = 3
   @JsonValue(3)
   Steam,
+  ///Egs = 4
+  @JsonValue(4)
+  Egs,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -47,10 +50,12 @@ const Map<PlatformFriendType, int> _$PlatformFriendTypeEnumMap = <PlatformFriend
     PlatformFriendType.Xbox:1,
     PlatformFriendType.PSN:2,
     PlatformFriendType.Steam:3,
+    PlatformFriendType.Egs:4,
 };
 const Map<int, PlatformFriendType> _$PlatformFriendTypeValueMap = <int, PlatformFriendType>{
     0:PlatformFriendType.Unknown,
     1:PlatformFriendType.Xbox,
     2:PlatformFriendType.PSN,
     3:PlatformFriendType.Steam,
+    4:PlatformFriendType.Egs,
 };

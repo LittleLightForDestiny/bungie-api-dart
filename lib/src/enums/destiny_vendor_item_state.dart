@@ -62,6 +62,9 @@ class DestinyVendorItemState {
     ///Free = 131072
     /// This indicates that the sale item is free.
     static const DestinyVendorItemState Free = DestinyVendorItemState(131072);
+    ///Locked = 262144
+    /// This indicates that the sale item is locked.
+    static const DestinyVendorItemState Locked = DestinyVendorItemState(262144);
 
     int get value {
         return _value;

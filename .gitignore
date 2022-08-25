@@ -7,5 +7,3 @@ lib/package-lock.json
 .npm-debug.log
 .dart_tool
 .vscode
-
-pubspec.lock

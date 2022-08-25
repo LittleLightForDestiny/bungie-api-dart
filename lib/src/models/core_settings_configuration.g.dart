@@ -22,6 +22,10 @@ CoreSettingsConfiguration _$CoreSettingsConfigurationFromJson(
       ..groupAvatars = (json['groupAvatars'] as List<dynamic>?)
           ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
           .toList()
+      ..defaultGroupTheme = json['defaultGroupTheme'] == null
+          ? null
+          : CoreSetting.fromJson(
+              json['defaultGroupTheme'] as Map<String, dynamic>)
       ..destinyMembershipTypes =
           (json['destinyMembershipTypes'] as List<dynamic>?)
               ?.map((e) => CoreSetting.fromJson(e as Map<String, dynamic>))
@@ -88,6 +92,7 @@ Map<String, dynamic> _$CoreSettingsConfigurationToJson(
       'ignoreReasons': instance.ignoreReasons,
       'forumCategories': instance.forumCategories,
       'groupAvatars': instance.groupAvatars,
+      'defaultGroupTheme': instance.defaultGroupTheme,
       'destinyMembershipTypes': instance.destinyMembershipTypes,
       'recruitmentPlatformTags': instance.recruitmentPlatformTags,
       'recruitmentMiscTags': instance.recruitmentMiscTags,

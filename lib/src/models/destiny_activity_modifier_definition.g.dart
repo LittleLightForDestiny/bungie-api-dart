@@ -13,6 +13,8 @@ DestinyActivityModifierDefinition _$DestinyActivityModifierDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
+      ..displayInNavMode = json['displayInNavMode'] as bool?
+      ..displayInActivitySelection = json['displayInActivitySelection'] as bool?
       ..hash = json['hash'] as int?
       ..index = json['index'] as int?
       ..redacted = json['redacted'] as bool?;
@@ -21,6 +23,8 @@ Map<String, dynamic> _$DestinyActivityModifierDefinitionToJson(
         DestinyActivityModifierDefinition instance) =>
     <String, dynamic>{
       'displayProperties': instance.displayProperties,
+      'displayInNavMode': instance.displayInNavMode,
+      'displayInActivitySelection': instance.displayInActivitySelection,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

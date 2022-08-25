@@ -17,6 +17,10 @@ class DestinyPlugItemCraftingRequirements{
 	@JsonKey(name:'unlockRequirements')
 	List<DestinyPlugItemCraftingUnlockRequirement>? unlockRequirements;
 	
+	/// If the plug has a known level requirement, it'll be available here.
+	@JsonKey(name:'requiredLevel')
+	int? requiredLevel;
+	
 	@JsonKey(name:'materialRequirementHashes')
 	List<int>? materialRequirementHashes;
 }

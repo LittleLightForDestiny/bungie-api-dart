@@ -32,6 +32,9 @@ class CoreSettingsConfiguration{
 	@JsonKey(name:'groupAvatars')
 	List<CoreSetting>? groupAvatars;
 	
+	@JsonKey(name:'defaultGroupTheme')
+	CoreSetting? defaultGroupTheme;
+	
 	@JsonKey(name:'destinyMembershipTypes')
 	List<CoreSetting>? destinyMembershipTypes;
 	

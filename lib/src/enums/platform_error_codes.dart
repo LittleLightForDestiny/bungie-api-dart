@@ -440,6 +440,24 @@ enum PlatformErrorCodes {
   ///ContentLocaleEditPermissionDenied = 175
   @JsonValue(175)
   ContentLocaleEditPermissionDenied,
+  ///ContentStackUnknownError = 176
+  @JsonValue(176)
+  ContentStackUnknownError,
+  ///ContentStackNotFound = 177
+  @JsonValue(177)
+  ContentStackNotFound,
+  ///ContentStackRateLimited = 178
+  @JsonValue(178)
+  ContentStackRateLimited,
+  ///ContentStackTimeout = 179
+  @JsonValue(179)
+  ContentStackTimeout,
+  ///ContentStackServiceError = 180
+  @JsonValue(180)
+  ContentStackServiceError,
+  ///ContentStackDeserializationFailure = 181
+  @JsonValue(181)
+  ContentStackDeserializationFailure,
   ///UserNonUniqueName = 200
   @JsonValue(200)
   UserNonUniqueName,
@@ -554,6 +572,18 @@ enum PlatformErrorCodes {
   ///DuplicateGlobalDisplayName = 237
   @JsonValue(237)
   DuplicateGlobalDisplayName,
+  ///ErrorRunningNameValidationChecks = 238
+  @JsonValue(238)
+  ErrorRunningNameValidationChecks,
+  ///ErrorDatabaseGlobalName = 239
+  @JsonValue(239)
+  ErrorDatabaseGlobalName,
+  ///ErrorNoAvailableNameChanges = 240
+  @JsonValue(240)
+  ErrorNoAvailableNameChanges,
+  ///ErrorNameAlreadySetToInput = 241
+  @JsonValue(241)
+  ErrorNameAlreadySetToInput,
   ///MessagingUnknownError = 300
   @JsonValue(300)
   MessagingUnknownError,
@@ -857,6 +887,9 @@ enum PlatformErrorCodes {
   ///ForumRequiresDestiny2Progress = 595
   @JsonValue(595)
   ForumRequiresDestiny2Progress,
+  ///ForumRequiresDestiny2EntitlementPurchase = 596
+  @JsonValue(596)
+  ForumRequiresDestiny2EntitlementPurchase,
   ///GroupMembershipApplicationAlreadyResolved = 601
   @JsonValue(601)
   GroupMembershipApplicationAlreadyResolved,
@@ -2076,6 +2109,12 @@ enum PlatformErrorCodes {
   ///TwitchNoPlatformChosen = 2506
   @JsonValue(2506)
   TwitchNoPlatformChosen,
+  ///TwitchDropHistoryPermissionFailure = 2507
+  @JsonValue(2507)
+  TwitchDropHistoryPermissionFailure,
+  ///TwitchDropsRepairPartialFailure = 2508
+  @JsonValue(2508)
+  TwitchDropsRepairPartialFailure,
   ///TrendingCategoryNotFound = 2600
   @JsonValue(2600)
   TrendingCategoryNotFound,
@@ -2226,6 +2265,24 @@ enum PlatformErrorCodes {
   ///ClanFireteamJoinNoAccountSpecified = 3032
   @JsonValue(3032)
   ClanFireteamJoinNoAccountSpecified,
+  ///ClanFireteamMinDestiny2ProgressForCreation = 3033
+  @JsonValue(3033)
+  ClanFireteamMinDestiny2ProgressForCreation,
+  ///ClanFireteamMinDestiny2ProgressForJoin = 3034
+  @JsonValue(3034)
+  ClanFireteamMinDestiny2ProgressForJoin,
+  ///ClanFireteamSMSOrPurchaseRequiredCreate = 3035
+  @JsonValue(3035)
+  ClanFireteamSMSOrPurchaseRequiredCreate,
+  ///ClanFireteamPurchaseRequiredCreate = 3036
+  @JsonValue(3036)
+  ClanFireteamPurchaseRequiredCreate,
+  ///ClanFireteamSMSOrPurchaseRequiredJoin = 3037
+  @JsonValue(3037)
+  ClanFireteamSMSOrPurchaseRequiredJoin,
+  ///ClanFireteamPurchaseRequiredJoin = 3038
+  @JsonValue(3038)
+  ClanFireteamPurchaseRequiredJoin,
   ///CrossSaveOverriddenAccountNotFound = 3200
   @JsonValue(3200)
   CrossSaveOverriddenAccountNotFound,
@@ -2427,6 +2484,36 @@ enum PlatformErrorCodes {
   ///ErrorBungieBlockListFull = 3911
   @JsonValue(3911)
   ErrorBungieBlockListFull,
+  ///ErrorEgsUnknown = 4000
+  @JsonValue(4000)
+  ErrorEgsUnknown,
+  ///ErrorEgsBadRequest = 4001
+  @JsonValue(4001)
+  ErrorEgsBadRequest,
+  ///ErrorEgsNotAuthorized = 4002
+  @JsonValue(4002)
+  ErrorEgsNotAuthorized,
+  ///ErrorEgsForbidden = 4003
+  @JsonValue(4003)
+  ErrorEgsForbidden,
+  ///ErrorEgsAccountNotFound = 4004
+  @JsonValue(4004)
+  ErrorEgsAccountNotFound,
+  ///ErrorEgsWebException = 4005
+  @JsonValue(4005)
+  ErrorEgsWebException,
+  ///ErrorEgsUnavailable = 4006
+  @JsonValue(4006)
+  ErrorEgsUnavailable,
+  ///ErrorEgsJwksMissing = 4007
+  @JsonValue(4007)
+  ErrorEgsJwksMissing,
+  ///ErrorEgsJwtMalformedHeader = 4008
+  @JsonValue(4008)
+  ErrorEgsJwtMalformedHeader,
+  ///ErrorEgsJwtMalformedPayload = 4009
+  @JsonValue(4009)
+  ErrorEgsJwtMalformedPayload,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -2603,6 +2690,12 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ContentBabelCallFailed:173,
     PlatformErrorCodes.ContentEnglishPostLiveForbidden:174,
     PlatformErrorCodes.ContentLocaleEditPermissionDenied:175,
+    PlatformErrorCodes.ContentStackUnknownError:176,
+    PlatformErrorCodes.ContentStackNotFound:177,
+    PlatformErrorCodes.ContentStackRateLimited:178,
+    PlatformErrorCodes.ContentStackTimeout:179,
+    PlatformErrorCodes.ContentStackServiceError:180,
+    PlatformErrorCodes.ContentStackDeserializationFailure:181,
     PlatformErrorCodes.UserNonUniqueName:200,
     PlatformErrorCodes.UserManualLinkingStepRequired:201,
     PlatformErrorCodes.UserCreateUnknownSqlResult:202,
@@ -2641,6 +2734,10 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.NonTransactionalEmailSendFailure:235,
     PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName:236,
     PlatformErrorCodes.DuplicateGlobalDisplayName:237,
+    PlatformErrorCodes.ErrorRunningNameValidationChecks:238,
+    PlatformErrorCodes.ErrorDatabaseGlobalName:239,
+    PlatformErrorCodes.ErrorNoAvailableNameChanges:240,
+    PlatformErrorCodes.ErrorNameAlreadySetToInput:241,
     PlatformErrorCodes.MessagingUnknownError:300,
     PlatformErrorCodes.MessagingSelfError:301,
     PlatformErrorCodes.MessagingSendThrottle:302,
@@ -2742,6 +2839,7 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ForumUserBannedFromThisTopic:593,
     PlatformErrorCodes.ForumRecruitmentFireteamMembersOnly:594,
     PlatformErrorCodes.ForumRequiresDestiny2Progress:595,
+    PlatformErrorCodes.ForumRequiresDestiny2EntitlementPurchase:596,
     PlatformErrorCodes.GroupMembershipApplicationAlreadyResolved:601,
     PlatformErrorCodes.GroupMembershipAlreadyApplied:602,
     PlatformErrorCodes.GroupMembershipInsufficientPrivileges:603,
@@ -3148,6 +3246,8 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.TwitchCouldNotUnregisterUser:2504,
     PlatformErrorCodes.TwitchRequiresRelinking:2505,
     PlatformErrorCodes.TwitchNoPlatformChosen:2506,
+    PlatformErrorCodes.TwitchDropHistoryPermissionFailure:2507,
+    PlatformErrorCodes.TwitchDropsRepairPartialFailure:2508,
     PlatformErrorCodes.TrendingCategoryNotFound:2600,
     PlatformErrorCodes.TrendingEntryTypeNotSupported:2601,
     PlatformErrorCodes.ReportOffenderNotInPgcr:2700,
@@ -3198,6 +3298,12 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams:3030,
     PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams:3031,
     PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified:3032,
+    PlatformErrorCodes.ClanFireteamMinDestiny2ProgressForCreation:3033,
+    PlatformErrorCodes.ClanFireteamMinDestiny2ProgressForJoin:3034,
+    PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredCreate:3035,
+    PlatformErrorCodes.ClanFireteamPurchaseRequiredCreate:3036,
+    PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredJoin:3037,
+    PlatformErrorCodes.ClanFireteamPurchaseRequiredJoin:3038,
     PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:3200,
     PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:3201,
     PlatformErrorCodes.CrossSaveNoOverriddenPlatforms:3202,
@@ -3265,6 +3371,16 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ErrorBungieBlockSelf:3908,
     PlatformErrorCodes.ErrorBungieFriendsListFull:3910,
     PlatformErrorCodes.ErrorBungieBlockListFull:3911,
+    PlatformErrorCodes.ErrorEgsUnknown:4000,
+    PlatformErrorCodes.ErrorEgsBadRequest:4001,
+    PlatformErrorCodes.ErrorEgsNotAuthorized:4002,
+    PlatformErrorCodes.ErrorEgsForbidden:4003,
+    PlatformErrorCodes.ErrorEgsAccountNotFound:4004,
+    PlatformErrorCodes.ErrorEgsWebException:4005,
+    PlatformErrorCodes.ErrorEgsUnavailable:4006,
+    PlatformErrorCodes.ErrorEgsJwksMissing:4007,
+    PlatformErrorCodes.ErrorEgsJwtMalformedHeader:4008,
+    PlatformErrorCodes.ErrorEgsJwtMalformedPayload:4009,
 };
 const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, PlatformErrorCodes>{
     0:PlatformErrorCodes.None,
@@ -3413,6 +3529,12 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     173:PlatformErrorCodes.ContentBabelCallFailed,
     174:PlatformErrorCodes.ContentEnglishPostLiveForbidden,
     175:PlatformErrorCodes.ContentLocaleEditPermissionDenied,
+    176:PlatformErrorCodes.ContentStackUnknownError,
+    177:PlatformErrorCodes.ContentStackNotFound,
+    178:PlatformErrorCodes.ContentStackRateLimited,
+    179:PlatformErrorCodes.ContentStackTimeout,
+    180:PlatformErrorCodes.ContentStackServiceError,
+    181:PlatformErrorCodes.ContentStackDeserializationFailure,
     200:PlatformErrorCodes.UserNonUniqueName,
     201:PlatformErrorCodes.UserManualLinkingStepRequired,
     202:PlatformErrorCodes.UserCreateUnknownSqlResult,
@@ -3451,6 +3573,10 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     235:PlatformErrorCodes.NonTransactionalEmailSendFailure,
     236:PlatformErrorCodes.UnknownErrorSettingGlobalDisplayName,
     237:PlatformErrorCodes.DuplicateGlobalDisplayName,
+    238:PlatformErrorCodes.ErrorRunningNameValidationChecks,
+    239:PlatformErrorCodes.ErrorDatabaseGlobalName,
+    240:PlatformErrorCodes.ErrorNoAvailableNameChanges,
+    241:PlatformErrorCodes.ErrorNameAlreadySetToInput,
     300:PlatformErrorCodes.MessagingUnknownError,
     301:PlatformErrorCodes.MessagingSelfError,
     302:PlatformErrorCodes.MessagingSendThrottle,
@@ -3552,6 +3678,7 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     593:PlatformErrorCodes.ForumUserBannedFromThisTopic,
     594:PlatformErrorCodes.ForumRecruitmentFireteamMembersOnly,
     595:PlatformErrorCodes.ForumRequiresDestiny2Progress,
+    596:PlatformErrorCodes.ForumRequiresDestiny2EntitlementPurchase,
     601:PlatformErrorCodes.GroupMembershipApplicationAlreadyResolved,
     602:PlatformErrorCodes.GroupMembershipAlreadyApplied,
     603:PlatformErrorCodes.GroupMembershipInsufficientPrivileges,
@@ -3958,6 +4085,8 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     2504:PlatformErrorCodes.TwitchCouldNotUnregisterUser,
     2505:PlatformErrorCodes.TwitchRequiresRelinking,
     2506:PlatformErrorCodes.TwitchNoPlatformChosen,
+    2507:PlatformErrorCodes.TwitchDropHistoryPermissionFailure,
+    2508:PlatformErrorCodes.TwitchDropsRepairPartialFailure,
     2600:PlatformErrorCodes.TrendingCategoryNotFound,
     2601:PlatformErrorCodes.TrendingEntryTypeNotSupported,
     2700:PlatformErrorCodes.ReportOffenderNotInPgcr,
@@ -4008,6 +4137,12 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     3030:PlatformErrorCodes.ClanFireteamTooManyOpenScheduledFireteams,
     3031:PlatformErrorCodes.ClanFireteamCannotReopenScheduledFireteams,
     3032:PlatformErrorCodes.ClanFireteamJoinNoAccountSpecified,
+    3033:PlatformErrorCodes.ClanFireteamMinDestiny2ProgressForCreation,
+    3034:PlatformErrorCodes.ClanFireteamMinDestiny2ProgressForJoin,
+    3035:PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredCreate,
+    3036:PlatformErrorCodes.ClanFireteamPurchaseRequiredCreate,
+    3037:PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredJoin,
+    3038:PlatformErrorCodes.ClanFireteamPurchaseRequiredJoin,
     3200:PlatformErrorCodes.CrossSaveOverriddenAccountNotFound,
     3201:PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms,
     3202:PlatformErrorCodes.CrossSaveNoOverriddenPlatforms,
@@ -4075,4 +4210,14 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     3908:PlatformErrorCodes.ErrorBungieBlockSelf,
     3910:PlatformErrorCodes.ErrorBungieFriendsListFull,
     3911:PlatformErrorCodes.ErrorBungieBlockListFull,
+    4000:PlatformErrorCodes.ErrorEgsUnknown,
+    4001:PlatformErrorCodes.ErrorEgsBadRequest,
+    4002:PlatformErrorCodes.ErrorEgsNotAuthorized,
+    4003:PlatformErrorCodes.ErrorEgsForbidden,
+    4004:PlatformErrorCodes.ErrorEgsAccountNotFound,
+    4005:PlatformErrorCodes.ErrorEgsWebException,
+    4006:PlatformErrorCodes.ErrorEgsUnavailable,
+    4007:PlatformErrorCodes.ErrorEgsJwksMissing,
+    4008:PlatformErrorCodes.ErrorEgsJwtMalformedHeader,
+    4009:PlatformErrorCodes.ErrorEgsJwtMalformedPayload,
 };

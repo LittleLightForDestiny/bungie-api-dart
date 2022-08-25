@@ -2,6 +2,7 @@ import '../helpers/http.dart';
 import '../enums/bungie_credential_type.dart';
 import '../enums/bungie_membership_type.dart';
 import '../models/user_search_prefix_request.dart';
+import '../responses/cedictionary_of_bungie_credential_type_andstring_response.dart';
 import '../responses/general_user_response.dart';
 import '../responses/hard_linked_user_membership_response.dart';
 import '../responses/list_of_get_credential_types_for_account_response_response.dart';
@@ -21,6 +22,21 @@ class User{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return GeneralUserResponse.fromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Gets a list of all display names linked to this membership id but sanitized (profanity filtered). Obeys all visibility rules of calling user and is heavily cached.
+    static Future<CEDictionaryOfBungieCredentialTypeAndstringResponse> getSanitizedPlatformDisplayNames (
+        HttpClient client,
+        String membershipId,
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _membershipId = '$membershipId';
+        final HttpClientConfig config = HttpClientConfig('GET', '/User/GetSanitizedPlatformDisplayNames/$_membershipId/', params);
+        config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return CEDictionaryOfBungieCredentialTypeAndstringResponse.fromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
