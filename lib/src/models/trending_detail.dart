@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/trending_entry_type.dart';
 import 'trending_entry_news.dart';
@@ -14,11 +15,6 @@ part 'trending_detail.g.dart';
 class TrendingDetail{	
 	TrendingDetail();
 
-	factory TrendingDetail.fromJson(Map<String, dynamic> json) {
-		return _$TrendingDetailFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$TrendingDetailToJson(this);
 	
 	@JsonKey(name:'identifier')
 	String? identifier;
@@ -43,4 +39,16 @@ class TrendingDetail{
 	
 	@JsonKey(name:'creation')
 	TrendingEntryCommunityCreation? creation;
+
+	factory TrendingDetail.fromJson(Map<String, dynamic> json) {
+		return _$TrendingDetailFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$TrendingDetailToJson(this);
+
+	static Future<TrendingDetail> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, TrendingDetail>((json)=>TrendingDetail.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

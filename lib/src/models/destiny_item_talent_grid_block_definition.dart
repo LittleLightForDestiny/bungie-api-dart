@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/damage_type.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_talent_grid_block_definition.g.dart';
 class DestinyItemTalentGridBlockDefinition{	
 	DestinyItemTalentGridBlockDefinition();
 
-	factory DestinyItemTalentGridBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemTalentGridBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemTalentGridBlockDefinitionToJson(this);
 	
 	/// The hash identifier of the DestinyTalentGridDefinition attached to this item.
 	@JsonKey(name:'talentGridHash')
@@ -35,4 +31,16 @@ class DestinyItemTalentGridBlockDefinition{
 	/// If the talent grid has a special icon that's shown in the game UI (like builds, funny that), this is the identifier for that icon. Sadly, we don't actually get that icon right now. I'll be looking to replace this with a path to the actual icon itself.
 	@JsonKey(name:'hudIcon')
 	String? hudIcon;
+
+	factory DestinyItemTalentGridBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemTalentGridBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemTalentGridBlockDefinitionToJson(this);
+
+	static Future<DestinyItemTalentGridBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemTalentGridBlockDefinition>((json)=>DestinyItemTalentGridBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

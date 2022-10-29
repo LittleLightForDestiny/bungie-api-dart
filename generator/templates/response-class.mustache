@@ -4,6 +4,7 @@ import '{{{.}}}.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part '{{filename}}.g.dart';
 
@@ -25,4 +26,10 @@ class {{className}} extends BungieNetResponse<{{{responseClassName}}}> {
 	factory {{className}}.fromJson(Map<String, dynamic> json) => _${{className}}FromJson(json);
 
 	Map<String, dynamic> toJson() => _${{className}}ToJson(this);
+
+	static Future<{{className}}> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, {{className}}>((json)=>{{className}}.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

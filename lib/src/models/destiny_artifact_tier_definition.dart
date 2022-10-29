@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_artifact_tier_item_definition.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_artifact_tier_definition.g.dart';
 class DestinyArtifactTierDefinition{	
 	DestinyArtifactTierDefinition();
 
-	factory DestinyArtifactTierDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyArtifactTierDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyArtifactTierDefinitionToJson(this);
 	
 	/// An identifier, unique within the Artifact, for this specific tier.
 	@JsonKey(name:'tierHash')
@@ -33,4 +29,16 @@ class DestinyArtifactTierDefinition{
 	/// The minimum number of "unlock points" that you must have used before you can unlock items from this tier.
 	@JsonKey(name:'minimumUnlockPointsUsedRequirement')
 	int? minimumUnlockPointsUsedRequirement;
+
+	factory DestinyArtifactTierDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyArtifactTierDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyArtifactTierDefinitionToJson(this);
+
+	static Future<DestinyArtifactTierDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyArtifactTierDefinition>((json)=>DestinyArtifactTierDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

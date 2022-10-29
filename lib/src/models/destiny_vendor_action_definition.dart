@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_action_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_vendor_action_definition.g.dart';
 class DestinyVendorActionDefinition{	
 	DestinyVendorActionDefinition();
 
-	factory DestinyVendorActionDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorActionDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorActionDefinitionToJson(this);
 	
 	@JsonKey(name:'description')
 	String? description;
@@ -40,4 +36,16 @@ class DestinyVendorActionDefinition{
 	
 	@JsonKey(name:'autoPerformAction')
 	bool? autoPerformAction;
+
+	factory DestinyVendorActionDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorActionDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorActionDefinitionToJson(this);
+
+	static Future<DestinyVendorActionDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorActionDefinition>((json)=>DestinyVendorActionDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

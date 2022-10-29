@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'ienumerable_of_application_response.g.dart';
 
@@ -30,4 +31,10 @@ class IEnumerableOfApplicationResponse extends BungieNetResponse<List<Applicatio
 	factory IEnumerableOfApplicationResponse.fromJson(Map<String, dynamic> json) => _$IEnumerableOfApplicationResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$IEnumerableOfApplicationResponseToJson(this);
+
+	static Future<IEnumerableOfApplicationResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, IEnumerableOfApplicationResponse>((json)=>IEnumerableOfApplicationResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

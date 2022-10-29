@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'interpolation_point_float.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_progression_level_requirement_definition.g.dart';
 class DestinyProgressionLevelRequirementDefinition{	
 	DestinyProgressionLevelRequirementDefinition();
 
-	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionLevelRequirementDefinitionToJson(this);
 	
 	/// A curve of level requirements, weighted by the related progressions' level.
 	/// Interpolate against this curve with the character's progression level to determine what the level requirement of the generated item that is using this data will be.
@@ -38,4 +34,16 @@ class DestinyProgressionLevelRequirementDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyProgressionLevelRequirementDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionLevelRequirementDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionLevelRequirementDefinitionToJson(this);
+
+	static Future<DestinyProgressionLevelRequirementDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgressionLevelRequirementDefinition>((json)=>DestinyProgressionLevelRequirementDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

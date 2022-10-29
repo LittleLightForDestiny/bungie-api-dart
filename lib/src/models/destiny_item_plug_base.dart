@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_plug_base.g.dart';
@@ -7,11 +8,6 @@ part 'destiny_item_plug_base.g.dart';
 class DestinyItemPlugBase{	
 	DestinyItemPlugBase();
 
-	factory DestinyItemPlugBase.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemPlugBaseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemPlugBaseToJson(this);
 	
 	/// The hash identifier of the DestinyInventoryItemDefinition that represents this plug.
 	@JsonKey(name:'plugItemHash')
@@ -34,4 +30,16 @@ class DestinyItemPlugBase{
 	/// This list will be empty if the plug is enabled.
 	@JsonKey(name:'enableFailIndexes')
 	List<int>? enableFailIndexes;
+
+	factory DestinyItemPlugBase.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemPlugBaseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemPlugBaseToJson(this);
+
+	static Future<DestinyItemPlugBase> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemPlugBase>((json)=>DestinyItemPlugBase.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

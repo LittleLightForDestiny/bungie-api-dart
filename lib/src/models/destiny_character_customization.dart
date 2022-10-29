@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_character_customization.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_character_customization.g.dart';
 class DestinyCharacterCustomization{	
 	DestinyCharacterCustomization();
 
-	factory DestinyCharacterCustomization.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterCustomizationFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterCustomizationToJson(this);
 	
 	@JsonKey(name:'personality')
 	int? personality;
@@ -50,4 +46,16 @@ class DestinyCharacterCustomization{
 	
 	@JsonKey(name:'decalIndex')
 	int? decalIndex;
+
+	factory DestinyCharacterCustomization.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterCustomizationFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterCustomizationToJson(this);
+
+	static Future<DestinyCharacterCustomization> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterCustomization>((json)=>DestinyCharacterCustomization.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

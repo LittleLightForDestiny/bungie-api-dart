@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_milestone_content_item_category.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_milestone_content.g.dart';
 class DestinyMilestoneContent{	
 	DestinyMilestoneContent();
 
-	factory DestinyMilestoneContent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneContentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneContentToJson(this);
 	
 	/// The "About this Milestone" text from the Firehose.
 	@JsonKey(name:'about')
@@ -30,4 +26,16 @@ class DestinyMilestoneContent{
 	/// If DPS has defined items related to this Milestone, they can categorize those items in the Firehose. That data will then be returned as item categories here.
 	@JsonKey(name:'itemCategories')
 	List<DestinyMilestoneContentItemCategory>? itemCategories;
+
+	factory DestinyMilestoneContent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneContentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneContentToJson(this);
+
+	static Future<DestinyMilestoneContent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneContent>((json)=>DestinyMilestoneContent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

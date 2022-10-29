@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'group_options_edit_action.g.dart';
@@ -7,11 +8,6 @@ part 'group_options_edit_action.g.dart';
 class GroupOptionsEditAction{	
 	GroupOptionsEditAction();
 
-	factory GroupOptionsEditAction.fromJson(Map<String, dynamic> json) {
-		return _$GroupOptionsEditActionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupOptionsEditActionToJson(this);
 	
 	/// Minimum Member Level allowed to invite new members to group
 	/// Always Allowed: Founder, Acting Founder
@@ -45,4 +41,16 @@ class GroupOptionsEditAction{
 	/// Default is Beginner.
 	@JsonKey(name:'JoinLevel')
 	int? joinLevel;
+
+	factory GroupOptionsEditAction.fromJson(Map<String, dynamic> json) {
+		return _$GroupOptionsEditActionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupOptionsEditActionToJson(this);
+
+	static Future<GroupOptionsEditAction> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupOptionsEditAction>((json)=>GroupOptionsEditAction.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

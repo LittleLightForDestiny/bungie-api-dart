@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/group_potential_member_status.dart';
 import 'group_user_info_card.dart';
@@ -10,11 +11,6 @@ part 'group_potential_member.g.dart';
 class GroupPotentialMember{	
 	GroupPotentialMember();
 
-	factory GroupPotentialMember.fromJson(Map<String, dynamic> json) {
-		return _$GroupPotentialMemberFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupPotentialMemberToJson(this);
 	
 	@JsonKey(name:'potentialStatus',fromJson:decodeGroupPotentialMemberStatus,toJson:encodeGroupPotentialMemberStatus)
 	GroupPotentialMemberStatus? potentialStatus;
@@ -31,4 +27,16 @@ class GroupPotentialMember{
 	
 	@JsonKey(name:'joinDate')
 	String? joinDate;
+
+	factory GroupPotentialMember.fromJson(Map<String, dynamic> json) {
+		return _$GroupPotentialMemberFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupPotentialMemberToJson(this);
+
+	static Future<GroupPotentialMember> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupPotentialMember>((json)=>GroupPotentialMember.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

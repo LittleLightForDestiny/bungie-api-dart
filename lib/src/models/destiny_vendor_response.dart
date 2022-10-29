@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_vendor_component.dart';
 import 'single_component_response_of_destiny_vendor_categories_component.dart';
@@ -14,11 +15,6 @@ part 'destiny_vendor_response.g.dart';
 class DestinyVendorResponse{	
 	DestinyVendorResponse();
 
-	factory DestinyVendorResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorResponseToJson(this);
 	
 	/// The base properties of the vendor.
 	/// COMPONENT TYPE: Vendors
@@ -49,4 +45,16 @@ class DestinyVendorResponse{
 	/// COMPONENT TYPE: StringVariables
 	@JsonKey(name:'stringVariables')
 	SingleComponentResponseOfDestinyStringVariablesComponent? stringVariables;
+
+	factory DestinyVendorResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorResponseToJson(this);
+
+	static Future<DestinyVendorResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorResponse>((json)=>DestinyVendorResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_public_milestone_activity_variant.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_public_milestone_activity_variant.g.dart';
 class DestinyPublicMilestoneActivityVariant{	
 	DestinyPublicMilestoneActivityVariant();
 
-	factory DestinyPublicMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicMilestoneActivityVariantFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneActivityVariantToJson(this);
 	
 	/// The hash identifier of this activity variant. Examine the activity's definition in the Manifest database to determine what makes it a distinct variant. Usually it will be difficulty level or whether or not it is a guided game variant of the activity, but theoretically it could be distinguished in any arbitrary way.
 	@JsonKey(name:'activityHash')
@@ -25,4 +21,16 @@ class DestinyPublicMilestoneActivityVariant{
 	/// The enumeration equivalent of the most specific Activity Mode under which this activity is played.
 	@JsonKey(name:'activityModeType')
 	int? activityModeType;
+
+	factory DestinyPublicMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicMilestoneActivityVariantFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneActivityVariantToJson(this);
+
+	static Future<DestinyPublicMilestoneActivityVariant> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicMilestoneActivityVariant>((json)=>DestinyPublicMilestoneActivityVariant.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

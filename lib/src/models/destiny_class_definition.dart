@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_class.dart';
 import 'destiny_display_properties_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_class_definition.g.dart';
 class DestinyClassDefinition{	
 	DestinyClassDefinition();
 
-	factory DestinyClassDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyClassDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyClassDefinitionToJson(this);
 	
 	/// In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
 	@JsonKey(name:'classType',fromJson:decodeDestinyClass,toJson:encodeDestinyClass)
@@ -47,4 +43,16 @@ class DestinyClassDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyClassDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyClassDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyClassDefinitionToJson(this);
+
+	static Future<DestinyClassDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyClassDefinition>((json)=>DestinyClassDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

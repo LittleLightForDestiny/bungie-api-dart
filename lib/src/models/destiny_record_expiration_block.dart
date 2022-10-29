@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_record_expiration_block.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_record_expiration_block.g.dart';
 class DestinyRecordExpirationBlock{	
 	DestinyRecordExpirationBlock();
 
-	factory DestinyRecordExpirationBlock.fromJson(Map<String, dynamic> json) {
-		return _$DestinyRecordExpirationBlockFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyRecordExpirationBlockToJson(this);
 	
 	@JsonKey(name:'hasExpiration')
 	bool? hasExpiration;
@@ -22,4 +18,16 @@ class DestinyRecordExpirationBlock{
 	
 	@JsonKey(name:'icon')
 	String? icon;
+
+	factory DestinyRecordExpirationBlock.fromJson(Map<String, dynamic> json) {
+		return _$DestinyRecordExpirationBlockFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyRecordExpirationBlockToJson(this);
+
+	static Future<DestinyRecordExpirationBlock> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyRecordExpirationBlock>((json)=>DestinyRecordExpirationBlock.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/vendor_item_status.dart';
 import 'destiny_unlock_status.dart';
@@ -13,11 +14,6 @@ part 'destiny_vendor_sale_item_component.g.dart';
 class DestinyVendorSaleItemComponent{	
 	DestinyVendorSaleItemComponent();
 
-	factory DestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorSaleItemComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemComponentToJson(this);
 	
 	/// A flag indicating whether the requesting character can buy the item, and if not the reasons why the character can't buy it.
 	@JsonKey(name:'saleStatus')
@@ -77,4 +73,16 @@ class DestinyVendorSaleItemComponent{
 	/// If true, this item can be purchased through the Bungie.net API.
 	@JsonKey(name:'apiPurchasable')
 	bool? apiPurchasable;
+
+	factory DestinyVendorSaleItemComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorSaleItemComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemComponentToJson(this);
+
+	static Future<DestinyVendorSaleItemComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorSaleItemComponent>((json)=>DestinyVendorSaleItemComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

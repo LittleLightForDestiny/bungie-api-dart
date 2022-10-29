@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'user_info_card.dart';
 import 'group_user_info_card.dart';
@@ -9,11 +10,6 @@ part 'group_ban.g.dart';
 class GroupBan{	
 	GroupBan();
 
-	factory GroupBan.fromJson(Map<String, dynamic> json) {
-		return _$GroupBanFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupBanToJson(this);
 	
 	@JsonKey(name:'groupId')
 	String? groupId;
@@ -41,4 +37,16 @@ class GroupBan{
 	
 	@JsonKey(name:'destinyUserInfo')
 	GroupUserInfoCard? destinyUserInfo;
+
+	factory GroupBan.fromJson(Map<String, dynamic> json) {
+		return _$GroupBanFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupBanToJson(this);
+
+	static Future<GroupBan> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupBan>((json)=>GroupBan.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

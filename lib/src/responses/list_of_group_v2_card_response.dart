@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'list_of_group_v2_card_response.g.dart';
 
@@ -30,4 +31,10 @@ class ListOfGroupV2CardResponse extends BungieNetResponse<List<GroupV2Card>> {
 	factory ListOfGroupV2CardResponse.fromJson(Map<String, dynamic> json) => _$ListOfGroupV2CardResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$ListOfGroupV2CardResponseToJson(this);
+
+	static Future<ListOfGroupV2CardResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ListOfGroupV2CardResponse>((json)=>ListOfGroupV2CardResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

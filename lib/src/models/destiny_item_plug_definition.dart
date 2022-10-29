@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_plug_rule_definition.dart';
 import '../enums/plug_ui_styles.dart';
@@ -15,11 +16,6 @@ part 'destiny_item_plug_definition.g.dart';
 class DestinyItemPlugDefinition{	
 	DestinyItemPlugDefinition();
 
-	factory DestinyItemPlugDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemPlugDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemPlugDefinitionToJson(this);
 	
 	/// The rules around when this plug can be inserted into a socket, aside from the socket's individual restrictions.
 	/// The live data DestinyItemPlugComponent.insertFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
@@ -91,4 +87,16 @@ class DestinyItemPlugDefinition{
 	/// IF not null, this plug has an energy cost. This contains the details of that cost.
 	@JsonKey(name:'energyCost')
 	DestinyEnergyCostEntry? energyCost;
+
+	factory DestinyItemPlugDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemPlugDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemPlugDefinitionToJson(this);
+
+	static Future<DestinyItemPlugDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemPlugDefinition>((json)=>DestinyItemPlugDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

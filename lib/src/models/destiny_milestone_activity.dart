@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_milestone_activity_variant.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_milestone_activity.g.dart';
 class DestinyMilestoneActivity{	
 	DestinyMilestoneActivity();
 
-	factory DestinyMilestoneActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityToJson(this);
 	
 	/// The hash of an arbitrarily chosen variant of this activity. We'll go ahead and call that the "canonical" activity, because if you're using this value you should only use it for properties that are common across the variants: things like the name of the activity, it's location, etc... Use this hash to look up the DestinyActivityDefinition of this activity for rendering data.
 	@JsonKey(name:'activityHash')
@@ -34,4 +30,16 @@ class DestinyMilestoneActivity{
 	/// If you want more than just name/location/etc... you're going to have to dig into and show the variants of the conceptual activity. These will differ in seemingly arbitrary ways, like difficulty level and modifiers applied. Show it in whatever way tickles your fancy.
 	@JsonKey(name:'variants')
 	List<DestinyMilestoneActivityVariant>? variants;
+
+	factory DestinyMilestoneActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityToJson(this);
+
+	static Future<DestinyMilestoneActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneActivity>((json)=>DestinyMilestoneActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

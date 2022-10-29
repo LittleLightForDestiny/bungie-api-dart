@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_leaderboard_results_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyLeaderboardResultsResponse extends BungieNetResponse<Map<String, Ma
 	factory DestinyLeaderboardResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyLeaderboardResultsResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyLeaderboardResultsResponseToJson(this);
+
+	static Future<DestinyLeaderboardResultsResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLeaderboardResultsResponse>((json)=>DestinyLeaderboardResultsResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

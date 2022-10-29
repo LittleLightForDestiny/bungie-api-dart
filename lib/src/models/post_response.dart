@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/forum_media_type.dart';
 import '../enums/forum_post_popularity.dart';
@@ -10,11 +11,6 @@ part 'post_response.g.dart';
 class PostResponse{	
 	PostResponse();
 
-	factory PostResponse.fromJson(Map<String, dynamic> json) {
-		return _$PostResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$PostResponseToJson(this);
 	
 	@JsonKey(name:'lastReplyTimestamp')
 	String? lastReplyTimestamp;
@@ -57,4 +53,16 @@ class PostResponse{
 	
 	@JsonKey(name:'locale')
 	String? locale;
+
+	factory PostResponse.fromJson(Map<String, dynamic> json) {
+		return _$PostResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$PostResponseToJson(this);
+
+	static Future<PostResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PostResponse>((json)=>PostResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

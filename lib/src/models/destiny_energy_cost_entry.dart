@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_energy_type.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_energy_cost_entry.g.dart';
 class DestinyEnergyCostEntry{	
 	DestinyEnergyCostEntry();
 
-	factory DestinyEnergyCostEntry.fromJson(Map<String, dynamic> json) {
-		return _$DestinyEnergyCostEntryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyEnergyCostEntryToJson(this);
 	
 	/// The Energy cost for inserting this plug.
 	@JsonKey(name:'energyCost')
@@ -26,4 +22,16 @@ class DestinyEnergyCostEntry{
 	/// The type of energy that this plug costs, in enum form.
 	@JsonKey(name:'energyType',fromJson:decodeDestinyEnergyType,toJson:encodeDestinyEnergyType)
 	DestinyEnergyType? energyType;
+
+	factory DestinyEnergyCostEntry.fromJson(Map<String, dynamic> json) {
+		return _$DestinyEnergyCostEntryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyEnergyCostEntryToJson(this);
+
+	static Future<DestinyEnergyCostEntry> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyEnergyCostEntry>((json)=>DestinyEnergyCostEntry.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_node_activation_requirement.dart';
 import 'destiny_node_step_definition.dart';
@@ -12,11 +13,6 @@ part 'destiny_talent_node_definition.g.dart';
 class DestinyTalentNodeDefinition{	
 	DestinyTalentNodeDefinition();
 
-	factory DestinyTalentNodeDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTalentNodeDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTalentNodeDefinitionToJson(this);
 	
 	/// The index into the DestinyTalentGridDefinition's "nodes" property where this node is located. Used to uniquely identify the node within the Talent Grid. Note that this is content version dependent: make sure you have the latest version of content before trying to use these properties.
 	@JsonKey(name:'nodeIndex')
@@ -102,4 +98,16 @@ class DestinyTalentNodeDefinition{
 	/// Comes from the talent grid node style: if true, then this node should be ignored for determining whether the grid is complete.
 	@JsonKey(name:'ignoreForCompletion')
 	bool? ignoreForCompletion;
+
+	factory DestinyTalentNodeDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTalentNodeDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentNodeDefinitionToJson(this);
+
+	static Future<DestinyTalentNodeDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTalentNodeDefinition>((json)=>DestinyTalentNodeDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

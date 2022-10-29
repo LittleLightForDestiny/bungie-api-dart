@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'email_setting_localization.dart';
 import '../enums/opt_in_flags.dart';
@@ -10,11 +11,6 @@ part 'email_view_definition_setting.g.dart';
 class EmailViewDefinitionSetting{	
 	EmailViewDefinitionSetting();
 
-	factory EmailViewDefinitionSetting.fromJson(Map<String, dynamic> json) {
-		return _$EmailViewDefinitionSettingFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$EmailViewDefinitionSettingToJson(this);
 	
 	/// The identifier for this UI Setting, which can be used to relate it to custom strings or other data as desired.
 	@JsonKey(name:'name')
@@ -35,4 +31,16 @@ class EmailViewDefinitionSetting{
 	/// The subscriptions to show as children of this setting, if any.
 	@JsonKey(name:'subscriptions')
 	List<EmailSubscriptionDefinition>? subscriptions;
+
+	factory EmailViewDefinitionSetting.fromJson(Map<String, dynamic> json) {
+		return _$EmailViewDefinitionSettingFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$EmailViewDefinitionSettingToJson(this);
+
+	static Future<EmailViewDefinitionSetting> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, EmailViewDefinitionSetting>((json)=>EmailViewDefinitionSetting.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_milestone_reward_entry_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_milestone_reward_category_definition.g.dart';
 class DestinyMilestoneRewardCategoryDefinition{	
 	DestinyMilestoneRewardCategoryDefinition();
 
-	factory DestinyMilestoneRewardCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneRewardCategoryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneRewardCategoryDefinitionToJson(this);
 	
 	/// Identifies the reward category. Only guaranteed unique within this specific component!
 	@JsonKey(name:'categoryHash')
@@ -35,4 +31,16 @@ class DestinyMilestoneRewardCategoryDefinition{
 	/// If you want to use BNet's recommended order for rendering categories programmatically, use this value and compare it to other categories to determine the order in which they should be rendered. I don't feel great about putting this here, I won't lie.
 	@JsonKey(name:'order')
 	int? order;
+
+	factory DestinyMilestoneRewardCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneRewardCategoryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneRewardCategoryDefinitionToJson(this);
+
+	static Future<DestinyMilestoneRewardCategoryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneRewardCategoryDefinition>((json)=>DestinyMilestoneRewardCategoryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

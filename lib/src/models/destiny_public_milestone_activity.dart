@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_public_milestone_activity_variant.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_public_milestone_activity.g.dart';
 class DestinyPublicMilestoneActivity{	
 	DestinyPublicMilestoneActivity();
 
-	factory DestinyPublicMilestoneActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicMilestoneActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneActivityToJson(this);
 	
 	/// The hash identifier of the activity that's been chosen to be considered the canonical "conceptual" activity definition. This may have many variants, defined herein.
 	@JsonKey(name:'activityHash')
@@ -34,4 +30,16 @@ class DestinyPublicMilestoneActivity{
 	/// The enumeration equivalent of the most specific Activity Mode under which this activity is played.
 	@JsonKey(name:'activityModeType')
 	int? activityModeType;
+
+	factory DestinyPublicMilestoneActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicMilestoneActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneActivityToJson(this);
+
+	static Future<DestinyPublicMilestoneActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicMilestoneActivity>((json)=>DestinyPublicMilestoneActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

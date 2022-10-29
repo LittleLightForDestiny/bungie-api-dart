@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'core_system.dart';
 import 'core_setting.dart';
@@ -11,11 +12,6 @@ part 'core_settings_configuration.g.dart';
 class CoreSettingsConfiguration{	
 	CoreSettingsConfiguration();
 
-	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) {
-		return _$CoreSettingsConfigurationFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$CoreSettingsConfigurationToJson(this);
 	
 	@JsonKey(name:'environment')
 	String? environment;
@@ -83,4 +79,16 @@ class CoreSettingsConfiguration{
 	
 	@JsonKey(name:'fireteamActivities')
 	List<CoreSetting>? fireteamActivities;
+
+	factory CoreSettingsConfiguration.fromJson(Map<String, dynamic> json) {
+		return _$CoreSettingsConfigurationFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$CoreSettingsConfigurationToJson(this);
+
+	static Future<CoreSettingsConfiguration> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, CoreSettingsConfiguration>((json)=>CoreSettingsConfiguration.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

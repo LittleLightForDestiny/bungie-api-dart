@@ -2,6 +2,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'boolean_response.g.dart';
 
@@ -29,4 +30,10 @@ class BooleanResponse extends BungieNetResponse<bool> {
 	factory BooleanResponse.fromJson(Map<String, dynamic> json) => _$BooleanResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$BooleanResponseToJson(this);
+
+	static Future<BooleanResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, BooleanResponse>((json)=>BooleanResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

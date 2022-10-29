@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'interpolation_point.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_stat_display_definition.g.dart';
 class DestinyStatDisplayDefinition{	
 	DestinyStatDisplayDefinition();
 
-	factory DestinyStatDisplayDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyStatDisplayDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyStatDisplayDefinitionToJson(this);
 	
 	/// The hash identifier for the stat being transformed into a Display stat.
 	/// Use it to look up the DestinyStatDefinition, or key into a DestinyInventoryItemDefinition's stats property.
@@ -33,4 +29,16 @@ class DestinyStatDisplayDefinition{
 	/// See DestinyStatDefinition for a description of the stages of stat transformation.
 	@JsonKey(name:'displayInterpolation')
 	List<InterpolationPoint>? displayInterpolation;
+
+	factory DestinyStatDisplayDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyStatDisplayDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyStatDisplayDefinitionToJson(this);
+
+	static Future<DestinyStatDisplayDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyStatDisplayDefinition>((json)=>DestinyStatDisplayDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

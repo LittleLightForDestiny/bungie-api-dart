@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'post_search_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class PostSearchResponseResponse extends BungieNetResponse<PostSearchResponse> {
 	factory PostSearchResponseResponse.fromJson(Map<String, dynamic> json) => _$PostSearchResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$PostSearchResponseResponseToJson(this);
+
+	static Future<PostSearchResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PostSearchResponseResponse>((json)=>PostSearchResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

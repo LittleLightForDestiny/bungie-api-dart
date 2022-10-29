@@ -14,7 +14,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BungieFriendListResponseResponse.fromJson(response.mappedBody);
+            return BungieFriendListResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -27,7 +27,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BungieFriendRequestListResponseResponse.fromJson(response.mappedBody);
+            return BungieFriendRequestListResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -42,7 +42,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -57,7 +57,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -72,7 +72,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -87,7 +87,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -102,7 +102,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -119,7 +119,7 @@ class Social{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PlatformFriendResponseResponse.fromJson(response.mappedBody);
+            return PlatformFriendResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

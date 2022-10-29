@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -9,11 +10,6 @@ part 'cross_save_user_membership.g.dart';
 class CrossSaveUserMembership{	
 	CrossSaveUserMembership();
 
-	factory CrossSaveUserMembership.fromJson(Map<String, dynamic> json) {
-		return _$CrossSaveUserMembershipFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$CrossSaveUserMembershipToJson(this);
 	
 	/// If there is a cross save override in effect, this value will tell you the type that is overridding this one.
 	@JsonKey(name:'crossSaveOverride',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
@@ -47,4 +43,16 @@ class CrossSaveUserMembership{
 	/// The bungie global display name code, if set.
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory CrossSaveUserMembership.fromJson(Map<String, dynamic> json) {
+		return _$CrossSaveUserMembershipFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$CrossSaveUserMembershipToJson(this);
+
+	static Future<CrossSaveUserMembership> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, CrossSaveUserMembership>((json)=>CrossSaveUserMembership.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

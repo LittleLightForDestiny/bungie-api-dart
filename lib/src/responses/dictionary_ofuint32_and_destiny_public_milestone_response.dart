@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'dictionary_ofuint32_and_destiny_public_milestone_response.g.dart';
 
@@ -30,4 +31,10 @@ class DictionaryOfuint32AndDestinyPublicMilestoneResponse extends BungieNetRespo
 	factory DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DictionaryOfuint32AndDestinyPublicMilestoneResponseToJson(this);
+
+	static Future<DictionaryOfuint32AndDestinyPublicMilestoneResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DictionaryOfuint32AndDestinyPublicMilestoneResponse>((json)=>DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

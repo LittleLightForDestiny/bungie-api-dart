@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_kiosk_item.dart';
 
@@ -11,13 +12,20 @@ part 'destiny_kiosks_component.g.dart';
 class DestinyKiosksComponent{	
 	DestinyKiosksComponent();
 
+	
+	/// A dictionary keyed by the Kiosk Vendor's hash identifier (use it to look up the DestinyVendorDefinition for the relevant kiosk vendor), and whose value is a list of all the items that the user can "see" in the Kiosk, and any other interesting metadata.
+	@JsonKey(name:'kioskItems')
+	Map<String, List<DestinyKioskItem>>? kioskItems;
+
 	factory DestinyKiosksComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyKiosksComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyKiosksComponentToJson(this);
-	
-	/// A dictionary keyed by the Kiosk Vendor's hash identifier (use it to look up the DestinyVendorDefinition for the relevant kiosk vendor), and whose value is a list of all the items that the user can "see" in the Kiosk, and any other interesting metadata.
-	@JsonKey(name:'kioskItems')
-	Map<String, List<DestinyKioskItem>>? kioskItems;
+
+	static Future<DestinyKiosksComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyKiosksComponent>((json)=>DestinyKiosksComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

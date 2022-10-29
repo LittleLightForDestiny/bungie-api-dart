@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_item_quantity.dart';
 import '../enums/destiny_vendor_item_refund_policy.dart';
@@ -15,11 +16,6 @@ part 'destiny_vendor_item_definition.g.dart';
 class DestinyVendorItemDefinition{	
 	DestinyVendorItemDefinition();
 
-	factory DestinyVendorItemDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorItemDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorItemDefinitionToJson(this);
 	
 	/// The index into the DestinyVendorDefinition.saleList. This is what we use to refer to items being sold throughout live and definition data.
 	@JsonKey(name:'vendorItemIndex')
@@ -128,4 +124,16 @@ class DestinyVendorItemDefinition{
 	/// This is also only whether it's unpurchasable as a static property according to game content. There are other reasons why an item may or may not be purchasable at runtime, so even if this isn't set to True you should trust the runtime value for this sale item over the static definition if this is unset.
 	@JsonKey(name:'unpurchasable')
 	bool? unpurchasable;
+
+	factory DestinyVendorItemDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorItemDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorItemDefinitionToJson(this);
+
+	static Future<DestinyVendorItemDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorItemDefinition>((json)=>DestinyVendorItemDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

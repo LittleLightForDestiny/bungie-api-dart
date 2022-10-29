@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/destiny_activity_nav_point_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_location_release_definition.g.dart';
 class DestinyLocationReleaseDefinition{	
 	DestinyLocationReleaseDefinition();
 
-	factory DestinyLocationReleaseDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyLocationReleaseDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyLocationReleaseDefinitionToJson(this);
 	
 	/// Sadly, these don't appear to be populated anymore (ever?)
 	@JsonKey(name:'displayProperties')
@@ -68,4 +64,16 @@ class DestinyLocationReleaseDefinition{
 	/// Looks like it should be the position on the map, but sadly it does not look populated... yet?
 	@JsonKey(name:'worldPosition')
 	List<int>? worldPosition;
+
+	factory DestinyLocationReleaseDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyLocationReleaseDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyLocationReleaseDefinitionToJson(this);
+
+	static Future<DestinyLocationReleaseDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLocationReleaseDefinition>((json)=>DestinyLocationReleaseDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

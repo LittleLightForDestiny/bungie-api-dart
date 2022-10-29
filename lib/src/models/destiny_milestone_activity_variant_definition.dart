@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_milestone_activity_variant_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_milestone_activity_variant_definition.g.dart';
 class DestinyMilestoneActivityVariantDefinition{	
 	DestinyMilestoneActivityVariantDefinition();
 
-	factory DestinyMilestoneActivityVariantDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityVariantDefinitionToJson(this);
 	
 	/// The hash to use for looking up the variant Activity's definition (DestinyActivityDefinition), where you can find its distinguishing characteristics such as difficulty level and recommended light level. 
 	/// Frequently, that will be the only distinguishing characteristics in practice, which is somewhat of a bummer.
@@ -24,4 +20,16 @@ class DestinyMilestoneActivityVariantDefinition{
 	/// When you combine live Milestone data with the definition, the order becomes more useful because you'll be cross-referencing between the definition and live data.
 	@JsonKey(name:'order')
 	int? order;
+
+	factory DestinyMilestoneActivityVariantDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneActivityVariantDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityVariantDefinitionToJson(this);
+
+	static Future<DestinyMilestoneActivityVariantDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneActivityVariantDefinition>((json)=>DestinyMilestoneActivityVariantDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

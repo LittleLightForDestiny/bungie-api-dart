@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/damage_type.dart';
@@ -16,11 +17,6 @@ part 'destiny_sandbox_perk_definition.g.dart';
 class DestinySandboxPerkDefinition{	
 	DestinySandboxPerkDefinition();
 
-	factory DestinySandboxPerkDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinySandboxPerkDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinySandboxPerkDefinitionToJson(this);
 	
 	/// These display properties are by no means guaranteed to be populated. Usually when it is, it's only because we back-filled them with the displayProperties of some Talent Node or Plug item that happened to be uniquely providing that perk.
 	@JsonKey(name:'displayProperties')
@@ -61,4 +57,16 @@ class DestinySandboxPerkDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinySandboxPerkDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinySandboxPerkDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinySandboxPerkDefinitionToJson(this);
+
+	static Future<DestinySandboxPerkDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinySandboxPerkDefinition>((json)=>DestinySandboxPerkDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

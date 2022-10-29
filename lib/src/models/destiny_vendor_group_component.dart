@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_group.dart';
 
@@ -9,13 +10,20 @@ part 'destiny_vendor_group_component.g.dart';
 class DestinyVendorGroupComponent{	
 	DestinyVendorGroupComponent();
 
+	
+	/// The ordered list of groups being returned.
+	@JsonKey(name:'groups')
+	List<DestinyVendorGroup>? groups;
+
 	factory DestinyVendorGroupComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyVendorGroupComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyVendorGroupComponentToJson(this);
-	
-	/// The ordered list of groups being returned.
-	@JsonKey(name:'groups')
-	List<DestinyVendorGroup>? groups;
+
+	static Future<DestinyVendorGroupComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorGroupComponent>((json)=>DestinyVendorGroupComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

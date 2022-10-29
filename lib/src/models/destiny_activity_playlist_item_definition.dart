@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_activity_mode_type.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_activity_playlist_item_definition.g.dart';
 class DestinyActivityPlaylistItemDefinition{	
 	DestinyActivityPlaylistItemDefinition();
 
-	factory DestinyActivityPlaylistItemDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityPlaylistItemDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityPlaylistItemDefinitionToJson(this);
 	
 	/// The hash identifier of the Activity that can be played. Use it to look up the DestinyActivityDefinition.
 	@JsonKey(name:'activityHash')
@@ -34,4 +30,16 @@ class DestinyActivityPlaylistItemDefinition{
 	/// The activity modes - if any - in enum form. Because we can't seem to escape the enums.
 	@JsonKey(name:'activityModeTypes')
 	List<DestinyActivityModeType>? activityModeTypes;
+
+	factory DestinyActivityPlaylistItemDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityPlaylistItemDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityPlaylistItemDefinitionToJson(this);
+
+	static Future<DestinyActivityPlaylistItemDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityPlaylistItemDefinition>((json)=>DestinyActivityPlaylistItemDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

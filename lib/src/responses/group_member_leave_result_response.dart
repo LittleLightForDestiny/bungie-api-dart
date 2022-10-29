@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'group_member_leave_result_response.g.dart';
 
@@ -30,4 +31,10 @@ class GroupMemberLeaveResultResponse extends BungieNetResponse<GroupMemberLeaveR
 	factory GroupMemberLeaveResultResponse.fromJson(Map<String, dynamic> json) => _$GroupMemberLeaveResultResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$GroupMemberLeaveResultResponseToJson(this);
+
+	static Future<GroupMemberLeaveResultResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupMemberLeaveResultResponse>((json)=>GroupMemberLeaveResultResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

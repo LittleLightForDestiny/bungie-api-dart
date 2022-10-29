@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'user_info_card.dart';
 import '../enums/destiny_game_versions.dart';
@@ -10,11 +11,6 @@ part 'destiny_profile_component.g.dart';
 class DestinyProfileComponent{	
 	DestinyProfileComponent();
 
-	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileComponentToJson(this);
 	
 	/// If you need to render the Profile (their platform name, icon, etc...) somewhere, this property contains that information.
 	@JsonKey(name:'userInfo')
@@ -54,4 +50,16 @@ class DestinyProfileComponent{
 	/// If populated, this is a reference to the event card that is currently active.
 	@JsonKey(name:'activeEventCardHash')
 	int? activeEventCardHash;
+
+	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileComponentToJson(this);
+
+	static Future<DestinyProfileComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileComponent>((json)=>DestinyProfileComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

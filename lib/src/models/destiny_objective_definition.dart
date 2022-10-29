@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/destiny_gating_scope.dart';
@@ -20,11 +21,6 @@ part 'destiny_objective_definition.g.dart';
 class DestinyObjectiveDefinition{	
 	DestinyObjectiveDefinition();
 
-	factory DestinyObjectiveDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyObjectiveDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyObjectiveDefinitionToJson(this);
 	
 	/// Ideally, this should tell you what your task is. I'm not going to lie to you though. Sometimes this doesn't have useful information at all. Which sucks, but there's nothing either of us can do about it.
 	@JsonKey(name:'displayProperties')
@@ -113,4 +109,16 @@ class DestinyObjectiveDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyObjectiveDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyObjectiveDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyObjectiveDefinitionToJson(this);
+
+	static Future<DestinyObjectiveDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyObjectiveDefinition>((json)=>DestinyObjectiveDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

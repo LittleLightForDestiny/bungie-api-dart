@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/damage_type.dart';
 import 'destiny_stat.dart';
@@ -14,11 +15,6 @@ part 'destiny_item_instance_component.g.dart';
 class DestinyItemInstanceComponent{	
 	DestinyItemInstanceComponent();
 
-	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemInstanceComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemInstanceComponentToJson(this);
 	
 	/// If the item has a damage type, this is the item's current damage type.
 	@JsonKey(name:'damageType',fromJson:decodeDamageType,toJson:encodeDamageType)
@@ -72,4 +68,16 @@ class DestinyItemInstanceComponent{
 	/// IF populated, this item supports Energy mechanics (i.e. Armor 2.0), and these are the current details of its energy type and available capacity to spend energy points.
 	@JsonKey(name:'energy')
 	DestinyItemInstanceEnergy? energy;
+
+	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemInstanceComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemInstanceComponentToJson(this);
+
+	static Future<DestinyItemInstanceComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemInstanceComponent>((json)=>DestinyItemInstanceComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

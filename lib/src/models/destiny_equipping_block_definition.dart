@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/equipping_item_block_attributes.dart';
 import '../enums/destiny_ammunition_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_equipping_block_definition.g.dart';
 class DestinyEquippingBlockDefinition{	
 	DestinyEquippingBlockDefinition();
 
-	factory DestinyEquippingBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyEquippingBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyEquippingBlockDefinitionToJson(this);
 	
 	/// If the item is part of a gearset, this is a reference to that gearset item.
 	@JsonKey(name:'gearsetItemHash')
@@ -45,4 +41,16 @@ class DestinyEquippingBlockDefinition{
 	/// These are strings that represent the possible Game/Account/Character state failure conditions that can occur when trying to equip the item. They match up one-to-one with requiredUnlockExpressions.
 	@JsonKey(name:'displayStrings')
 	List<String>? displayStrings;
+
+	factory DestinyEquippingBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyEquippingBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyEquippingBlockDefinitionToJson(this);
+
+	static Future<DestinyEquippingBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyEquippingBlockDefinition>((json)=>DestinyEquippingBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

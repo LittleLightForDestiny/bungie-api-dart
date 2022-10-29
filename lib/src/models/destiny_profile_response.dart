@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_vendor_receipts_component.dart';
 import 'single_component_response_of_destiny_inventory_component.dart';
@@ -36,11 +37,6 @@ part 'destiny_profile_response.g.dart';
 class DestinyProfileResponse{	
 	DestinyProfileResponse();
 
-	factory DestinyProfileResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileResponseToJson(this);
 	
 	/// Recent, refundable purchases you have made from vendors. When will you use it? Couldn't say...
 	/// COMPONENT TYPE: VendorReceipts
@@ -189,4 +185,16 @@ class DestinyProfileResponse{
 	/// COMPONENT TYPE: CurrencyLookups
 	@JsonKey(name:'characterCurrencyLookups')
 	DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent? characterCurrencyLookups;
+
+	factory DestinyProfileResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileResponseToJson(this);
+
+	static Future<DestinyProfileResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileResponse>((json)=>DestinyProfileResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

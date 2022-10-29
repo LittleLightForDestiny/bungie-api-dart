@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_stat.dart';
 
@@ -11,13 +12,20 @@ part 'destiny_item_stats_component.g.dart';
 class DestinyItemStatsComponent{	
 	DestinyItemStatsComponent();
 
+	
+	/// If the item has stats that it provides (damage, defense, etc...), it will be given here.
+	@JsonKey(name:'stats')
+	Map<String, DestinyStat>? stats;
+
 	factory DestinyItemStatsComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemStatsComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyItemStatsComponentToJson(this);
-	
-	/// If the item has stats that it provides (damage, defense, etc...), it will be given here.
-	@JsonKey(name:'stats')
-	Map<String, DestinyStat>? stats;
+
+	static Future<DestinyItemStatsComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemStatsComponent>((json)=>DestinyItemStatsComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

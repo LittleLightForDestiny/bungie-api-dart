@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_currencies_component.dart';
 import '../enums/component_privacy_setting.dart';
@@ -9,11 +10,6 @@ part 'single_component_response_of_destiny_currencies_component.g.dart';
 class SingleComponentResponseOfDestinyCurrenciesComponent{	
 	SingleComponentResponseOfDestinyCurrenciesComponent();
 
-	factory SingleComponentResponseOfDestinyCurrenciesComponent.fromJson(Map<String, dynamic> json) {
-		return _$SingleComponentResponseOfDestinyCurrenciesComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyCurrenciesComponentToJson(this);
 	
 	/// This component provides a quick lookup of every item the requested character has and how much of that item they have.
 	/// Requesting this component will allow you to circumvent manually putting together the list of which currencies you have for the purpose of testing currency requirements on an item being purchased, or operations that have costs.
@@ -27,4 +23,16 @@ class SingleComponentResponseOfDestinyCurrenciesComponent{
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
+
+	factory SingleComponentResponseOfDestinyCurrenciesComponent.fromJson(Map<String, dynamic> json) {
+		return _$SingleComponentResponseOfDestinyCurrenciesComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyCurrenciesComponentToJson(this);
+
+	static Future<SingleComponentResponseOfDestinyCurrenciesComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, SingleComponentResponseOfDestinyCurrenciesComponent>((json)=>SingleComponentResponseOfDestinyCurrenciesComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

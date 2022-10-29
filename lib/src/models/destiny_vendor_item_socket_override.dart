@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_item_socket_override.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_vendor_item_socket_override.g.dart';
 class DestinyVendorItemSocketOverride{	
 	DestinyVendorItemSocketOverride();
 
-	factory DestinyVendorItemSocketOverride.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorItemSocketOverrideFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorItemSocketOverrideToJson(this);
 	
 	/// If this is populated, the socket will be overridden with a specific plug.
 	/// If this isn't populated, it's being overridden by something more complicated that is only known by the Game Server and God, which means we can't tell you in advance what it'll be.
@@ -26,4 +22,16 @@ class DestinyVendorItemSocketOverride{
 	/// This appears to be used to select which socket ultimately gets the override defined here.
 	@JsonKey(name:'socketTypeHash')
 	int? socketTypeHash;
+
+	factory DestinyVendorItemSocketOverride.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorItemSocketOverrideFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorItemSocketOverrideToJson(this);
+
+	static Future<DestinyVendorItemSocketOverride> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorItemSocketOverride>((json)=>DestinyVendorItemSocketOverride.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

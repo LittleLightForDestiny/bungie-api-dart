@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'fireteam_user_info_card.dart';
 import 'user_info_card.dart';
@@ -10,11 +11,6 @@ part 'fireteam_member.g.dart';
 class FireteamMember{	
 	FireteamMember();
 
-	factory FireteamMember.fromJson(Map<String, dynamic> json) {
-		return _$FireteamMemberFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$FireteamMemberToJson(this);
 	
 	@JsonKey(name:'destinyUserInfo')
 	FireteamUserInfoCard? destinyUserInfo;
@@ -37,4 +33,16 @@ class FireteamMember{
 	
 	@JsonKey(name:'lastPlatformInviteAttemptResult',fromJson:decodeFireteamPlatformInviteResult,toJson:encodeFireteamPlatformInviteResult)
 	FireteamPlatformInviteResult? lastPlatformInviteAttemptResult;
+
+	factory FireteamMember.fromJson(Map<String, dynamic> json) {
+		return _$FireteamMemberFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$FireteamMemberToJson(this);
+
+	static Future<FireteamMember> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, FireteamMember>((json)=>FireteamMember.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

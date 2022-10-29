@@ -43,7 +43,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfint32AndstringResponse.fromJson(response.mappedBody);
+            return DictionaryOfint32AndstringResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -56,7 +56,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfGroupThemeResponse.fromJson(response.mappedBody);
+            return ListOfGroupThemeResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -71,7 +71,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -88,7 +88,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfGroupV2CardResponse.fromJson(response.mappedBody);
+            return ListOfGroupV2CardResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -99,11 +99,11 @@ class GroupV2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/Search/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupSearchResponseResponse.fromJson(response.mappedBody);
+            return GroupSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -118,7 +118,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupResponseResponse.fromJson(response.mappedBody);
+            return GroupResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -135,7 +135,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupResponseResponse.fromJson(response.mappedBody);
+            return GroupResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -146,11 +146,11 @@ class GroupV2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/NameV2/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupResponseResponse.fromJson(response.mappedBody);
+            return GroupResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -165,7 +165,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEListOfGroupOptionalConversationResponse.fromJson(response.mappedBody);
+            return CEListOfGroupOptionalConversationResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -178,11 +178,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Edit/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -195,11 +195,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/EditClanBanner/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -212,11 +212,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/EditFounderOptions/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -229,11 +229,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/OptionalConversations/Add/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int64Response.fromJson(response.mappedBody);
+            return Int64Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -248,11 +248,11 @@ class GroupV2{
         final String _conversationId = '$conversationId';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/OptionalConversations/Edit/$_conversationId/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int64Response.fromJson(response.mappedBody);
+            return Int64Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -273,7 +273,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfGroupMemberResponse.fromJson(response.mappedBody);
+            return SearchResultOfGroupMemberResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -290,7 +290,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfGroupMemberResponse.fromJson(response.mappedBody);
+            return SearchResultOfGroupMemberResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -311,7 +311,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -330,7 +330,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupMemberLeaveResultResponse.fromJson(response.mappedBody);
+            return GroupMemberLeaveResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -347,11 +347,11 @@ class GroupV2{
         final String _membershipId = '$membershipId';
         final String _membershipType = '${membershipType.value}';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/$_membershipType/$_membershipId/Ban/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -370,7 +370,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -387,7 +387,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfGroupBanResponse.fromJson(response.mappedBody);
+            return SearchResultOfGroupBanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -406,7 +406,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -423,7 +423,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfGroupMemberApplicationResponse.fromJson(response.mappedBody);
+            return SearchResultOfGroupMemberApplicationResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -440,7 +440,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfGroupMemberApplicationResponse.fromJson(response.mappedBody);
+            return SearchResultOfGroupMemberApplicationResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -453,11 +453,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/ApproveAll/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfEntityActionResultResponse.fromJson(response.mappedBody);
+            return ListOfEntityActionResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -470,11 +470,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/DenyAll/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfEntityActionResultResponse.fromJson(response.mappedBody);
+            return ListOfEntityActionResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -487,11 +487,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/ApproveList/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfEntityActionResultResponse.fromJson(response.mappedBody);
+            return ListOfEntityActionResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -508,11 +508,11 @@ class GroupV2{
         final String _membershipId = '$membershipId';
         final String _membershipType = '${membershipType.value}';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/Approve/$_membershipType/$_membershipId/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -525,11 +525,11 @@ class GroupV2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/DenyList/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfEntityActionResultResponse.fromJson(response.mappedBody);
+            return ListOfEntityActionResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -550,7 +550,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GetGroupsForMemberResponseResponse.fromJson(response.mappedBody);
+            return GetGroupsForMemberResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -569,7 +569,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupMembershipSearchResponseResponse.fromJson(response.mappedBody);
+            return GroupMembershipSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -590,7 +590,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupPotentialMembershipSearchResponseResponse.fromJson(response.mappedBody);
+            return GroupPotentialMembershipSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -607,11 +607,11 @@ class GroupV2{
         final String _membershipId = '$membershipId';
         final String _membershipType = '${membershipType.value}';
         final HttpClientConfig config = HttpClientConfig('POST', '/GroupV2/$_groupId/Members/IndividualInvite/$_membershipType/$_membershipId/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupApplicationResponseResponse.fromJson(response.mappedBody);
+            return GroupApplicationResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -630,7 +630,7 @@ class GroupV2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GroupApplicationResponseResponse.fromJson(response.mappedBody);
+            return GroupApplicationResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

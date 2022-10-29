@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_requirement_display_entry_definition.dart';
 import 'destiny_icon_sequence_definition.dart';
@@ -9,11 +10,6 @@ part 'destiny_vendor_display_properties_definition.g.dart';
 class DestinyVendorDisplayPropertiesDefinition{	
 	DestinyVendorDisplayPropertiesDefinition();
 
-	factory DestinyVendorDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorDisplayPropertiesDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorDisplayPropertiesDefinitionToJson(this);
 	
 	/// I regret calling this a "large icon". It's more like a medium-sized image with a picture of the vendor's mug on it, trying their best to look cool. Not what one would call an icon.
 	@JsonKey(name:'largeIcon')
@@ -63,4 +59,16 @@ class DestinyVendorDisplayPropertiesDefinition{
 	
 	@JsonKey(name:'hasIcon')
 	bool? hasIcon;
+
+	factory DestinyVendorDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorDisplayPropertiesDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorDisplayPropertiesDefinitionToJson(this);
+
+	static Future<DestinyVendorDisplayPropertiesDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorDisplayPropertiesDefinition>((json)=>DestinyVendorDisplayPropertiesDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

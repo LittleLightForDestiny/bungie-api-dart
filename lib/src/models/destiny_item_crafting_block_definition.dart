@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_crafting_block_bonus_plug_definition.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_item_crafting_block_definition.g.dart';
 class DestinyItemCraftingBlockDefinition{	
 	DestinyItemCraftingBlockDefinition();
 
-	factory DestinyItemCraftingBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemCraftingBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemCraftingBlockDefinitionToJson(this);
 	
 	/// A reference to the item definition that is created when crafting with this 'recipe' item.
 	@JsonKey(name:'outputItemHash')
@@ -33,4 +29,16 @@ class DestinyItemCraftingBlockDefinition{
 	/// A list of 'bonus' socket plugs that may be available if certain requirements are met.
 	@JsonKey(name:'bonusPlugs')
 	List<DestinyItemCraftingBlockBonusPlugDefinition>? bonusPlugs;
+
+	factory DestinyItemCraftingBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemCraftingBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemCraftingBlockDefinitionToJson(this);
+
+	static Future<DestinyItemCraftingBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemCraftingBlockDefinition>((json)=>DestinyItemCraftingBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_progression_reset_entry.dart';
 import '../enums/destiny_progression_reward_item_state.dart';
@@ -10,11 +11,6 @@ part 'destiny_faction_progression.g.dart';
 class DestinyFactionProgression{	
 	DestinyFactionProgression();
 
-	factory DestinyFactionProgression.fromJson(Map<String, dynamic> json) {
-		return _$DestinyFactionProgressionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyFactionProgressionToJson(this);
 	
 	/// The hash identifier of the Faction related to this progression. Use it to look up the DestinyFactionDefinition for more rendering info.
 	@JsonKey(name:'factionHash')
@@ -79,4 +75,16 @@ class DestinyFactionProgression{
 	/// Information about historical rewards for this progression, if there is any data for it.
 	@JsonKey(name:'rewardItemStates')
 	List<DestinyProgressionRewardItemState>? rewardItemStates;
+
+	factory DestinyFactionProgression.fromJson(Map<String, dynamic> json) {
+		return _$DestinyFactionProgressionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyFactionProgressionToJson(this);
+
+	static Future<DestinyFactionProgression> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyFactionProgression>((json)=>DestinyFactionProgression.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

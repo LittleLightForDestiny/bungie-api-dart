@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -9,11 +10,6 @@ part 'user_info_card.g.dart';
 class UserInfoCard{	
 	UserInfoCard();
 
-	factory UserInfoCard.fromJson(Map<String, dynamic> json) {
-		return _$UserInfoCardFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$UserInfoCardToJson(this);
 	
 	/// A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
 	@JsonKey(name:'supplementalDisplayName')
@@ -55,4 +51,16 @@ class UserInfoCard{
 	/// The bungie global display name code, if set.
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory UserInfoCard.fromJson(Map<String, dynamic> json) {
+		return _$UserInfoCardFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$UserInfoCardToJson(this);
+
+	static Future<UserInfoCard> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, UserInfoCard>((json)=>UserInfoCard.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

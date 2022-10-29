@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_material_requirement.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_material_requirement.g.dart';
 class DestinyMaterialRequirement{	
 	DestinyMaterialRequirement();
 
-	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMaterialRequirementFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMaterialRequirementToJson(this);
 	
 	/// The hash identifier of the material required. Use it to look up the material's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')
@@ -33,4 +29,16 @@ class DestinyMaterialRequirement{
 	/// If True, this requirement is "silent": don't bother showing it in a material requirements display. I mean, I'm not your mom: I'm not going to tell you you *can't* show it. But we won't show it in our UI.
 	@JsonKey(name:'omitFromRequirements')
 	bool? omitFromRequirements;
+
+	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMaterialRequirementFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMaterialRequirementToJson(this);
+
+	static Future<DestinyMaterialRequirement> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMaterialRequirement>((json)=>DestinyMaterialRequirement.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

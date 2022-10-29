@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_profile_transitory_tracking_entry.g.dart';
@@ -10,11 +11,6 @@ part 'destiny_profile_transitory_tracking_entry.g.dart';
 class DestinyProfileTransitoryTrackingEntry{	
 	DestinyProfileTransitoryTrackingEntry();
 
-	factory DestinyProfileTransitoryTrackingEntry.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileTransitoryTrackingEntryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryTrackingEntryToJson(this);
 	
 	/// OPTIONAL - If this is tracking a DestinyLocationDefinition, this is the identifier for that location.
 	@JsonKey(name:'locationHash')
@@ -40,4 +36,16 @@ class DestinyProfileTransitoryTrackingEntry{
 	/// I don't know, but we can get at it - when I get time to actually test what it is, I'll update this. In the meantime, bask in the mysterious data.
 	@JsonKey(name:'trackedDate')
 	String? trackedDate;
+
+	factory DestinyProfileTransitoryTrackingEntry.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileTransitoryTrackingEntryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryTrackingEntryToJson(this);
+
+	static Future<DestinyProfileTransitoryTrackingEntry> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileTransitoryTrackingEntry>((json)=>DestinyProfileTransitoryTrackingEntry.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

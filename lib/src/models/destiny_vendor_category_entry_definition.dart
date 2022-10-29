@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_category_overlay_definition.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_vendor_category_entry_definition.g.dart';
 class DestinyVendorCategoryEntryDefinition{	
 	DestinyVendorCategoryEntryDefinition();
 
-	factory DestinyVendorCategoryEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorCategoryEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorCategoryEntryDefinitionToJson(this);
 	
 	/// The index of the category in the original category definitions for the vendor.
 	@JsonKey(name:'categoryIndex')
@@ -76,4 +72,16 @@ class DestinyVendorCategoryEntryDefinition{
 	
 	@JsonKey(name:'resetOffsetMinutesOverride')
 	int? resetOffsetMinutesOverride;
+
+	factory DestinyVendorCategoryEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorCategoryEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorCategoryEntryDefinitionToJson(this);
+
+	static Future<DestinyVendorCategoryEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorCategoryEntryDefinition>((json)=>DestinyVendorCategoryEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

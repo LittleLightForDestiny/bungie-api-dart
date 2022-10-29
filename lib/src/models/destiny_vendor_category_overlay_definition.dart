@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_category_overlay_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_vendor_category_overlay_definition.g.dart';
 class DestinyVendorCategoryOverlayDefinition{	
 	DestinyVendorCategoryOverlayDefinition();
 
-	factory DestinyVendorCategoryOverlayDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorCategoryOverlayDefinitionToJson(this);
 	
 	@JsonKey(name:'choiceDescription')
 	String? choiceDescription;
@@ -29,4 +25,16 @@ class DestinyVendorCategoryOverlayDefinition{
 	/// If this overlay has a currency item that it features, this is said featured item.
 	@JsonKey(name:'currencyItemHash')
 	int? currencyItemHash;
+
+	factory DestinyVendorCategoryOverlayDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorCategoryOverlayDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorCategoryOverlayDefinitionToJson(this);
+
+	static Future<DestinyVendorCategoryOverlayDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorCategoryOverlayDefinition>((json)=>DestinyVendorCategoryOverlayDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_interaction_sack_entry_definition.g.dart';
@@ -8,12 +9,19 @@ part 'destiny_vendor_interaction_sack_entry_definition.g.dart';
 class DestinyVendorInteractionSackEntryDefinition{	
 	DestinyVendorInteractionSackEntryDefinition();
 
+	
+	@JsonKey(name:'sackType')
+	int? sackType;
+
 	factory DestinyVendorInteractionSackEntryDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyVendorInteractionSackEntryDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyVendorInteractionSackEntryDefinitionToJson(this);
-	
-	@JsonKey(name:'sackType')
-	int? sackType;
+
+	static Future<DestinyVendorInteractionSackEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorInteractionSackEntryDefinition>((json)=>DestinyVendorInteractionSackEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

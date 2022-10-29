@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_trait_category_definition.g.dart';
@@ -7,11 +8,6 @@ part 'destiny_trait_category_definition.g.dart';
 class DestinyTraitCategoryDefinition{	
 	DestinyTraitCategoryDefinition();
 
-	factory DestinyTraitCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTraitCategoryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTraitCategoryDefinitionToJson(this);
 	
 	@JsonKey(name:'traitCategoryId')
 	String? traitCategoryId;
@@ -34,4 +30,16 @@ class DestinyTraitCategoryDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyTraitCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTraitCategoryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTraitCategoryDefinitionToJson(this);
+
+	static Future<DestinyTraitCategoryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTraitCategoryDefinition>((json)=>DestinyTraitCategoryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

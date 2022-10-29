@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'partner_offer_history_response.dart';
 
@@ -8,11 +9,6 @@ part 'partner_offer_sku_history_response.g.dart';
 class PartnerOfferSkuHistoryResponse{	
 	PartnerOfferSkuHistoryResponse();
 
-	factory PartnerOfferSkuHistoryResponse.fromJson(Map<String, dynamic> json) {
-		return _$PartnerOfferSkuHistoryResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$PartnerOfferSkuHistoryResponseToJson(this);
 	
 	@JsonKey(name:'SkuIdentifier')
 	String? skuIdentifier;
@@ -34,4 +30,16 @@ class PartnerOfferSkuHistoryResponse{
 	
 	@JsonKey(name:'SkuOffers')
 	List<PartnerOfferHistoryResponse>? skuOffers;
+
+	factory PartnerOfferSkuHistoryResponse.fromJson(Map<String, dynamic> json) {
+		return _$PartnerOfferSkuHistoryResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$PartnerOfferSkuHistoryResponseToJson(this);
+
+	static Future<PartnerOfferSkuHistoryResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PartnerOfferSkuHistoryResponse>((json)=>PartnerOfferSkuHistoryResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

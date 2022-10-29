@@ -33,7 +33,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -56,7 +56,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -85,7 +85,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -112,7 +112,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -129,7 +129,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -146,7 +146,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -161,7 +161,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int64Response.fromJson(response.mappedBody);
+            return Int64Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -176,7 +176,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfTagResponseResponse.fromJson(response.mappedBody);
+            return ListOfTagResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -191,7 +191,7 @@ class Forum{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -206,7 +206,7 @@ class Forum{
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEListOfForumRecruitmentDetailResponse.fromJson(response.mappedBody);
+            return CEListOfForumRecruitmentDetailResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_socket_state.dart';
 
@@ -10,13 +11,20 @@ part 'destiny_item_sockets_component.g.dart';
 class DestinyItemSocketsComponent{	
 	DestinyItemSocketsComponent();
 
+	
+	/// The list of all sockets on the item, and their status information.
+	@JsonKey(name:'sockets')
+	List<DestinyItemSocketState>? sockets;
+
 	factory DestinyItemSocketsComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemSocketsComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyItemSocketsComponentToJson(this);
-	
-	/// The list of all sockets on the item, and their status information.
-	@JsonKey(name:'sockets')
-	List<DestinyItemSocketState>? sockets;
+
+	static Future<DestinyItemSocketsComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSocketsComponent>((json)=>DestinyItemSocketsComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

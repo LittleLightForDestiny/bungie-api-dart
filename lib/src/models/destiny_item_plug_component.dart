@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_objective_progress.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_plug_component.g.dart';
 class DestinyItemPlugComponent{	
 	DestinyItemPlugComponent();
 
-	factory DestinyItemPlugComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemPlugComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemPlugComponentToJson(this);
 	
 	/// Sometimes, Plugs may have objectives: these are often used for flavor and display purposes, but they can be used for any arbitrary purpose (both fortunately and unfortunately). Recently (with Season 2) they were expanded in use to be used as the "gating" for whether the plug can be inserted at all. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item's data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition's progressDescription property. Refer to the plug's itemHash and objective property for more information if you would like to display even more data.
 	@JsonKey(name:'plugObjectives')
@@ -41,4 +37,16 @@ class DestinyItemPlugComponent{
 	/// This list will be empty if the plug is enabled.
 	@JsonKey(name:'enableFailIndexes')
 	List<int>? enableFailIndexes;
+
+	factory DestinyItemPlugComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemPlugComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemPlugComponentToJson(this);
+
+	static Future<DestinyItemPlugComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemPlugComponent>((json)=>DestinyItemPlugComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

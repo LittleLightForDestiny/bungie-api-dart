@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_presentation_node_type.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_scored_presentation_node_base_definition.g.dart';
 class DestinyScoredPresentationNodeBaseDefinition{	
 	DestinyScoredPresentationNodeBaseDefinition();
 
-	factory DestinyScoredPresentationNodeBaseDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyScoredPresentationNodeBaseDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyScoredPresentationNodeBaseDefinitionToJson(this);
 	
 	@JsonKey(name:'maxCategoryRecordScore')
 	int? maxCategoryRecordScore;
@@ -42,4 +38,16 @@ class DestinyScoredPresentationNodeBaseDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyScoredPresentationNodeBaseDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyScoredPresentationNodeBaseDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyScoredPresentationNodeBaseDefinitionToJson(this);
+
+	static Future<DestinyScoredPresentationNodeBaseDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyScoredPresentationNodeBaseDefinition>((json)=>DestinyScoredPresentationNodeBaseDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

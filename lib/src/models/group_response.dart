@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'group_v2.dart';
 import 'group_member.dart';
@@ -11,11 +12,6 @@ part 'group_response.g.dart';
 class GroupResponse{	
 	GroupResponse();
 
-	factory GroupResponse.fromJson(Map<String, dynamic> json) {
-		return _$GroupResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupResponseToJson(this);
 	
 	@JsonKey(name:'detail')
 	GroupV2? detail;
@@ -46,4 +42,16 @@ class GroupResponse{
 	/// This property will be populated if the authenticated user is an applicant or has an outstanding invitation to join. Note that because of account linking, a user can sometimes be part of a clan more than once.
 	@JsonKey(name:'currentUserPotentialMemberMap')
 	Map<String, GroupPotentialMember>? currentUserPotentialMemberMap;
+
+	factory GroupResponse.fromJson(Map<String, dynamic> json) {
+		return _$GroupResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupResponseToJson(this);
+
+	static Future<GroupResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupResponse>((json)=>GroupResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

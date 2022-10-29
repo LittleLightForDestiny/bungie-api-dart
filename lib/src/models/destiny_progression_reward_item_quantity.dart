@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_progression_reward_item_acquisition_behavior.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_progression_reward_item_quantity.g.dart';
 class DestinyProgressionRewardItemQuantity{	
 	DestinyProgressionRewardItemQuantity();
 
-	factory DestinyProgressionRewardItemQuantity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionRewardItemQuantityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionRewardItemQuantityToJson(this);
 	
 	@JsonKey(name:'rewardedAtProgressionLevel')
 	int? rewardedAtProgressionLevel;
@@ -41,4 +37,16 @@ class DestinyProgressionRewardItemQuantity{
 	/// Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
 	@JsonKey(name:'hasConditionalVisibility')
 	bool? hasConditionalVisibility;
+
+	factory DestinyProgressionRewardItemQuantity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionRewardItemQuantityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionRewardItemQuantityToJson(this);
+
+	static Future<DestinyProgressionRewardItemQuantity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgressionRewardItemQuantity>((json)=>DestinyProgressionRewardItemQuantity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

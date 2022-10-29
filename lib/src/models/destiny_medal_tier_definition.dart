@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_medal_tier_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_medal_tier_definition.g.dart';
 class DestinyMedalTierDefinition{	
 	DestinyMedalTierDefinition();
 
-	factory DestinyMedalTierDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMedalTierDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMedalTierDefinitionToJson(this);
 	
 	/// The name of the tier.
 	@JsonKey(name:'tierName')
@@ -35,4 +31,16 @@ class DestinyMedalTierDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyMedalTierDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMedalTierDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMedalTierDefinitionToJson(this);
+
+	static Future<DestinyMedalTierDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMedalTierDefinition>((json)=>DestinyMedalTierDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -2,6 +2,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'dictionary_ofint32_andstring_response.g.dart';
 
@@ -29,4 +30,10 @@ class DictionaryOfint32AndstringResponse extends BungieNetResponse<Map<String, S
 	factory DictionaryOfint32AndstringResponse.fromJson(Map<String, dynamic> json) => _$DictionaryOfint32AndstringResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DictionaryOfint32AndstringResponseToJson(this);
+
+	static Future<DictionaryOfint32AndstringResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DictionaryOfint32AndstringResponse>((json)=>DictionaryOfint32AndstringResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

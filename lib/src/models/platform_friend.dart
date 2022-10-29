@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/platform_friend_type.dart';
 
@@ -8,11 +9,6 @@ part 'platform_friend.g.dart';
 class PlatformFriend{	
 	PlatformFriend();
 
-	factory PlatformFriend.fromJson(Map<String, dynamic> json) {
-		return _$PlatformFriendFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$PlatformFriendToJson(this);
 	
 	@JsonKey(name:'platformDisplayName')
 	String? platformDisplayName;
@@ -34,4 +30,16 @@ class PlatformFriend{
 	
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory PlatformFriend.fromJson(Map<String, dynamic> json) {
+		return _$PlatformFriendFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$PlatformFriendToJson(this);
+
+	static Future<PlatformFriend> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PlatformFriend>((json)=>PlatformFriend.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

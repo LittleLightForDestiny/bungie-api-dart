@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_base_component.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_vendor_base_component.g.dart';
 class DestinyVendorBaseComponent{	
 	DestinyVendorBaseComponent();
 
-	factory DestinyVendorBaseComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorBaseComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorBaseComponentToJson(this);
 	
 	/// The unique identifier for the vendor. Use it to look up their DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')
@@ -28,4 +24,16 @@ class DestinyVendorBaseComponent{
 	/// If False, they may not actually be visible in the world at the moment.
 	@JsonKey(name:'enabled')
 	bool? enabled;
+
+	factory DestinyVendorBaseComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorBaseComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorBaseComponentToJson(this);
+
+	static Future<DestinyVendorBaseComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorBaseComponent>((json)=>DestinyVendorBaseComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

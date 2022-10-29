@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_historical_stats_account_result_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyHistoricalStatsAccountResultResponse extends BungieNetResponse<Dest
 	factory DestinyHistoricalStatsAccountResultResponse.fromJson(Map<String, dynamic> json) => _$DestinyHistoricalStatsAccountResultResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsAccountResultResponseToJson(this);
+
+	static Future<DestinyHistoricalStatsAccountResultResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyHistoricalStatsAccountResultResponse>((json)=>DestinyHistoricalStatsAccountResultResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

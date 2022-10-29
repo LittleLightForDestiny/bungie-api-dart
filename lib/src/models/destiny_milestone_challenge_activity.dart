@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_challenge_status.dart';
 import 'destiny_milestone_activity_phase.dart';
@@ -9,11 +10,6 @@ part 'destiny_milestone_challenge_activity.g.dart';
 class DestinyMilestoneChallengeActivity{	
 	DestinyMilestoneChallengeActivity();
 
-	factory DestinyMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneChallengeActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneChallengeActivityToJson(this);
 	
 	@JsonKey(name:'activityHash')
 	int? activityHash;
@@ -40,4 +36,16 @@ class DestinyMilestoneChallengeActivity{
 	/// If the Activity has discrete "phases" that we can track, that info will be here. Otherwise, this value will be NULL. Note that this is a list and not a dictionary: the order implies the ascending order of phases or progression in this activity.
 	@JsonKey(name:'phases')
 	List<DestinyMilestoneActivityPhase>? phases;
+
+	factory DestinyMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneChallengeActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneChallengeActivityToJson(this);
+
+	static Future<DestinyMilestoneChallengeActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneChallengeActivity>((json)=>DestinyMilestoneChallengeActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

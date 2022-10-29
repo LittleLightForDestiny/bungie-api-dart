@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_item_state_request.g.dart';
 class DestinyItemStateRequest{	
 	DestinyItemStateRequest();
 
-	factory DestinyItemStateRequest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemStateRequestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemStateRequestToJson(this);
 	
 	@JsonKey(name:'state')
 	bool? state;
@@ -26,4 +22,16 @@ class DestinyItemStateRequest{
 	
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
+
+	factory DestinyItemStateRequest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemStateRequestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemStateRequestToJson(this);
+
+	static Future<DestinyItemStateRequest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemStateRequest>((json)=>DestinyItemStateRequest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

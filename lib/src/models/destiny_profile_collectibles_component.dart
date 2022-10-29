@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_collectible_component.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_profile_collectibles_component.g.dart';
 class DestinyProfileCollectiblesComponent{	
 	DestinyProfileCollectiblesComponent();
 
-	factory DestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileCollectiblesComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileCollectiblesComponentToJson(this);
 	
 	/// The list of collectibles determined by the game as having been "recently" acquired.
 	@JsonKey(name:'recentCollectibleHashes')
@@ -33,4 +29,16 @@ class DestinyProfileCollectiblesComponent{
 	/// The hash for the root presentation node definition of Collection Badges.
 	@JsonKey(name:'collectionBadgesRootNodeHash')
 	int? collectionBadgesRootNodeHash;
+
+	factory DestinyProfileCollectiblesComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileCollectiblesComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileCollectiblesComponentToJson(this);
+
+	static Future<DestinyProfileCollectiblesComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileCollectiblesComponent>((json)=>DestinyProfileCollectiblesComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

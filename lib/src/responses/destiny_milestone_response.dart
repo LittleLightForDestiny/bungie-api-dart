@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_milestone_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyMilestoneResponse extends BungieNetResponse<DestinyMilestone> {
 	factory DestinyMilestoneResponse.fromJson(Map<String, dynamic> json) => _$DestinyMilestoneResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyMilestoneResponseToJson(this);
+
+	static Future<DestinyMilestoneResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneResponse>((json)=>DestinyMilestoneResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

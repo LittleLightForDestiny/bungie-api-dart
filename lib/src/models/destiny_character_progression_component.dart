@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_progression.dart';
 import 'destiny_faction_progression.dart';
@@ -15,11 +16,6 @@ part 'destiny_character_progression_component.g.dart';
 class DestinyCharacterProgressionComponent{	
 	DestinyCharacterProgressionComponent();
 
-	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterProgressionComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterProgressionComponentToJson(this);
 	
 	/// A Dictionary of all known progressions for the Character, keyed by the Progression's hash.
 	/// Not all progressions have user-facing data, but those who do will have that data contained in the DestinyProgressionDefinition.
@@ -58,4 +54,16 @@ class DestinyCharacterProgressionComponent{
 	/// Data related to your progress on the current season's artifact that can vary per character.
 	@JsonKey(name:'seasonalArtifact')
 	DestinyArtifactCharacterScoped? seasonalArtifact;
+
+	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterProgressionComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterProgressionComponentToJson(this);
+
+	static Future<DestinyCharacterProgressionComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterProgressionComponent>((json)=>DestinyCharacterProgressionComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

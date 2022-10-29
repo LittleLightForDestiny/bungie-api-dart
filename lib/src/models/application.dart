@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/application_status.dart';
 import 'application_developer.dart';
@@ -9,11 +10,6 @@ part 'application.g.dart';
 class Application{	
 	Application();
 
-	factory Application.fromJson(Map<String, dynamic> json) {
-		return _$ApplicationFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ApplicationToJson(this);
 	
 	/// Unique ID assigned to the application
 	@JsonKey(name:'applicationId')
@@ -62,4 +58,16 @@ class Application{
 	/// An optional override for the Authorize view name.
 	@JsonKey(name:'overrideAuthorizeViewName')
 	String? overrideAuthorizeViewName;
+
+	factory Application.fromJson(Map<String, dynamic> json) {
+		return _$ApplicationFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ApplicationToJson(this);
+
+	static Future<Application> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, Application>((json)=>Application.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

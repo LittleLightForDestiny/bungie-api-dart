@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_activity_reward_definition.g.dart';
 class DestinyActivityRewardDefinition{	
 	DestinyActivityRewardDefinition();
 
-	factory DestinyActivityRewardDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityRewardDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityRewardDefinitionToJson(this);
 	
 	/// The header for the reward set, if any.
 	@JsonKey(name:'rewardText')
@@ -23,4 +19,16 @@ class DestinyActivityRewardDefinition{
 	/// Interesting trivia: you actually *do* earn these items when you complete the activity. They go into a single-slot bucket on your profile, which is how you see the pop-ups of these rewards when you complete an activity that match these "dummy" items. You can even see them if you look at the last one you earned in your profile-level inventory through the BNet API! Who said reading documentation is a waste of time?
 	@JsonKey(name:'rewardItems')
 	List<DestinyItemQuantity>? rewardItems;
+
+	factory DestinyActivityRewardDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityRewardDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityRewardDefinitionToJson(this);
+
+	static Future<DestinyActivityRewardDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityRewardDefinition>((json)=>DestinyActivityRewardDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

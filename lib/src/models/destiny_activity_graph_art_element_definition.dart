@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_position_definition.dart';
 
@@ -9,13 +10,20 @@ part 'destiny_activity_graph_art_element_definition.g.dart';
 class DestinyActivityGraphArtElementDefinition{	
 	DestinyActivityGraphArtElementDefinition();
 
+	
+	/// The position on the map of the art element.
+	@JsonKey(name:'position')
+	DestinyPositionDefinition? position;
+
 	factory DestinyActivityGraphArtElementDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyActivityGraphArtElementDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityGraphArtElementDefinitionToJson(this);
-	
-	/// The position on the map of the art element.
-	@JsonKey(name:'position')
-	DestinyPositionDefinition? position;
+
+	static Future<DestinyActivityGraphArtElementDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphArtElementDefinition>((json)=>DestinyActivityGraphArtElementDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

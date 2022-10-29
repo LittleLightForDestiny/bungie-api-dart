@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_socket_state.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_item_socket_state.g.dart';
 class DestinyItemSocketState{	
 	DestinyItemSocketState();
 
-	factory DestinyItemSocketState.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemSocketStateFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemSocketStateToJson(this);
 	
 	/// The currently active plug, if any.
 	/// Note that, because all plugs are statically defined, its effect on stats and perks can be statically determined using the plug item's definition. The stats and perks can be taken at face value on the plug item as the stats and perks it will provide to the user/item.
@@ -33,4 +29,16 @@ class DestinyItemSocketState{
 	/// If a plug is inserted but not enabled, this will be populated with indexes into the plug item definition's plug.enabledRules property, so that you can show the reasons why it is not enabled.
 	@JsonKey(name:'enableFailIndexes')
 	List<int>? enableFailIndexes;
+
+	factory DestinyItemSocketState.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemSocketStateFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSocketStateToJson(this);
+
+	static Future<DestinyItemSocketState> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSocketState>((json)=>DestinyItemSocketState.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

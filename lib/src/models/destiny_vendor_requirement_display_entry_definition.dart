@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_requirement_display_entry_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_vendor_requirement_display_entry_definition.g.dart';
 class DestinyVendorRequirementDisplayEntryDefinition{	
 	DestinyVendorRequirementDisplayEntryDefinition();
 
-	factory DestinyVendorRequirementDisplayEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorRequirementDisplayEntryDefinitionToJson(this);
 	
 	@JsonKey(name:'icon')
 	String? icon;
@@ -25,4 +21,16 @@ class DestinyVendorRequirementDisplayEntryDefinition{
 	
 	@JsonKey(name:'type')
 	String? type;
+
+	factory DestinyVendorRequirementDisplayEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorRequirementDisplayEntryDefinitionToJson(this);
+
+	static Future<DestinyVendorRequirementDisplayEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorRequirementDisplayEntryDefinition>((json)=>DestinyVendorRequirementDisplayEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

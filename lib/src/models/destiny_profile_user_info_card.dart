@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_platform_silver_component.dart';
 import '../enums/bungie_membership_type.dart';
@@ -9,11 +10,6 @@ part 'destiny_profile_user_info_card.g.dart';
 class DestinyProfileUserInfoCard{	
 	DestinyProfileUserInfoCard();
 
-	factory DestinyProfileUserInfoCard.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileUserInfoCardFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileUserInfoCardToJson(this);
 	
 	@JsonKey(name:'dateLastPlayed')
 	String? dateLastPlayed;
@@ -77,4 +73,16 @@ class DestinyProfileUserInfoCard{
 	/// The bungie global display name code, if set.
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory DestinyProfileUserInfoCard.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileUserInfoCardFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileUserInfoCardToJson(this);
+
+	static Future<DestinyProfileUserInfoCard> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileUserInfoCard>((json)=>DestinyProfileUserInfoCard.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

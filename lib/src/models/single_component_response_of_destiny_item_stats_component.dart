@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_stats_component.dart';
 import '../enums/component_privacy_setting.dart';
@@ -9,11 +10,6 @@ part 'single_component_response_of_destiny_item_stats_component.g.dart';
 class SingleComponentResponseOfDestinyItemStatsComponent{	
 	SingleComponentResponseOfDestinyItemStatsComponent();
 
-	factory SingleComponentResponseOfDestinyItemStatsComponent.fromJson(Map<String, dynamic> json) {
-		return _$SingleComponentResponseOfDestinyItemStatsComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyItemStatsComponentToJson(this);
 	
 	/// If you want the stats on an item's instanced data, get this component.
 	/// These are stats like Attack, Defense etc... and *not* historical stats.
@@ -27,4 +23,16 @@ class SingleComponentResponseOfDestinyItemStatsComponent{
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
+
+	factory SingleComponentResponseOfDestinyItemStatsComponent.fromJson(Map<String, dynamic> json) {
+		return _$SingleComponentResponseOfDestinyItemStatsComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyItemStatsComponentToJson(this);
+
+	static Future<SingleComponentResponseOfDestinyItemStatsComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, SingleComponentResponseOfDestinyItemStatsComponent>((json)=>SingleComponentResponseOfDestinyItemStatsComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

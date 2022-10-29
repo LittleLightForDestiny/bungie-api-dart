@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_inventory_component.dart';
 import 'single_component_response_of_destiny_character_component.dart';
@@ -21,11 +22,6 @@ part 'destiny_character_response.g.dart';
 class DestinyCharacterResponse{	
 	DestinyCharacterResponse();
 
-	factory DestinyCharacterResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterResponseToJson(this);
 	
 	/// The character-level non-equipped inventory items.
 	/// COMPONENT TYPE: CharacterInventories
@@ -94,4 +90,16 @@ class DestinyCharacterResponse{
 	/// COMPONENT TYPE: CurrencyLookups
 	@JsonKey(name:'currencyLookups')
 	SingleComponentResponseOfDestinyCurrenciesComponent? currencyLookups;
+
+	factory DestinyCharacterResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterResponseToJson(this);
+
+	static Future<DestinyCharacterResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterResponse>((json)=>DestinyCharacterResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

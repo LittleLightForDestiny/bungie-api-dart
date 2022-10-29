@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_derived_item_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_derived_item_category_definition.g.dart';
 class DestinyDerivedItemCategoryDefinition{	
 	DestinyDerivedItemCategoryDefinition();
 
-	factory DestinyDerivedItemCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDerivedItemCategoryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDerivedItemCategoryDefinitionToJson(this);
 	
 	/// The localized string for the category title. This will be something describing the items you can get as a group, or your likelihood/the quantity you'll get.
 	@JsonKey(name:'categoryDescription')
@@ -23,4 +19,16 @@ class DestinyDerivedItemCategoryDefinition{
 	/// This is the list of all of the items for this category and the basic properties we'll know about them.
 	@JsonKey(name:'items')
 	List<DestinyDerivedItemDefinition>? items;
+
+	factory DestinyDerivedItemCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDerivedItemCategoryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDerivedItemCategoryDefinitionToJson(this);
+
+	static Future<DestinyDerivedItemCategoryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDerivedItemCategoryDefinition>((json)=>DestinyDerivedItemCategoryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

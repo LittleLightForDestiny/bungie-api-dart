@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'gear_asset_data_base_definition.dart';
 import 'image_pyramid_entry.dart';
@@ -10,11 +11,6 @@ part 'destiny_manifest.g.dart';
 class DestinyManifest{	
 	DestinyManifest();
 
-	factory DestinyManifest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyManifestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyManifestToJson(this);
 	
 	@JsonKey(name:'version')
 	String? version;
@@ -45,4 +41,16 @@ class DestinyManifest{
 	/// Information about the "Image Pyramid" for Destiny icons. Where possible, we create smaller versions of Destiny icons. These are found as subfolders under the location of the "original/full size" Destiny images, with the same file name and extension as the original image itself. (this lets us avoid sending largely redundant path info with every entity, at the expense of the smaller versions of the image being less discoverable)
 	@JsonKey(name:'iconImagePyramidInfo')
 	List<ImagePyramidEntry>? iconImagePyramidInfo;
+
+	factory DestinyManifest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyManifestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyManifestToJson(this);
+
+	static Future<DestinyManifest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyManifest>((json)=>DestinyManifest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'user_info_card.dart';
 
@@ -8,11 +9,6 @@ part 'user_search_response_detail.g.dart';
 class UserSearchResponseDetail{	
 	UserSearchResponseDetail();
 
-	factory UserSearchResponseDetail.fromJson(Map<String, dynamic> json) {
-		return _$UserSearchResponseDetailFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$UserSearchResponseDetailToJson(this);
 	
 	@JsonKey(name:'bungieGlobalDisplayName')
 	String? bungieGlobalDisplayName;
@@ -25,4 +21,16 @@ class UserSearchResponseDetail{
 	
 	@JsonKey(name:'destinyMemberships')
 	List<UserInfoCard>? destinyMemberships;
+
+	factory UserSearchResponseDetail.fromJson(Map<String, dynamic> json) {
+		return _$UserSearchResponseDetailFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$UserSearchResponseDetailToJson(this);
+
+	static Future<UserSearchResponseDetail> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, UserSearchResponseDetail>((json)=>UserSearchResponseDetail.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

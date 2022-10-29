@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_render_component.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_item_render_component.g.dart';
 class DestinyItemRenderComponent{	
 	DestinyItemRenderComponent();
 
-	factory DestinyItemRenderComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemRenderComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemRenderComponentToJson(this);
 	
 	/// If you should use custom dyes on this item, it will be indicated here.
 	@JsonKey(name:'useCustomDyes')
@@ -23,4 +19,16 @@ class DestinyItemRenderComponent{
 	/// value = The chosen Arrangement Index for the Region, based on the value of a stat on the item used for making the choice.
 	@JsonKey(name:'artRegions')
 	Map<String, int>? artRegions;
+
+	factory DestinyItemRenderComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemRenderComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemRenderComponentToJson(this);
+
+	static Future<DestinyItemRenderComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemRenderComponent>((json)=>DestinyItemRenderComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

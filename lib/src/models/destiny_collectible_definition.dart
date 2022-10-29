@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/destiny_scope.dart';
@@ -14,11 +15,6 @@ part 'destiny_collectible_definition.g.dart';
 class DestinyCollectibleDefinition{	
 	DestinyCollectibleDefinition();
 
-	factory DestinyCollectibleDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCollectibleDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCollectibleDefinitionToJson(this);
 	
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -75,4 +71,16 @@ class DestinyCollectibleDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyCollectibleDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCollectibleDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCollectibleDefinitionToJson(this);
+
+	static Future<DestinyCollectibleDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCollectibleDefinition>((json)=>DestinyCollectibleDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

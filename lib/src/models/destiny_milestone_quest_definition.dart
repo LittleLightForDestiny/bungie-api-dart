@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_milestone_quest_rewards_definition.dart';
@@ -11,11 +12,6 @@ part 'destiny_milestone_quest_definition.g.dart';
 class DestinyMilestoneQuestDefinition{	
 	DestinyMilestoneQuestDefinition();
 
-	factory DestinyMilestoneQuestDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneQuestDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestDefinitionToJson(this);
 	
 	/// The item representing this Milestone quest. Use this hash to look up the DestinyInventoryItemDefinition for the quest to find its steps and human readable data.
 	@JsonKey(name:'questItemHash')
@@ -40,4 +36,16 @@ class DestinyMilestoneQuestDefinition{
 	/// Sometimes, a Milestone's quest is related to an entire Destination rather than a specific activity. In that situation, this will be the hash of that Destination. Hotspots are currently the only Milestones that expose this data, but that does not preclude this data from being returned for other Milestones in the future.
 	@JsonKey(name:'destinationHash')
 	int? destinationHash;
+
+	factory DestinyMilestoneQuestDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneQuestDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestDefinitionToJson(this);
+
+	static Future<DestinyMilestoneQuestDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneQuestDefinition>((json)=>DestinyMilestoneQuestDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

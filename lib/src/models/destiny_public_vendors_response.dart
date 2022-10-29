@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_vendor_group_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_public_vendor_component.dart';
@@ -15,11 +16,6 @@ part 'destiny_public_vendors_response.g.dart';
 class DestinyPublicVendorsResponse{	
 	DestinyPublicVendorsResponse();
 
-	factory DestinyPublicVendorsResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicVendorsResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicVendorsResponseToJson(this);
 	
 	/// For Vendors being returned, this will give you the information you need to group them and order them in the same way that the Bungie Companion app performs grouping. It will automatically be returned if you request the Vendors component.
 	/// COMPONENT TYPE: Vendors
@@ -46,4 +42,16 @@ class DestinyPublicVendorsResponse{
 	/// COMPONENT TYPE: StringVariables
 	@JsonKey(name:'stringVariables')
 	SingleComponentResponseOfDestinyStringVariablesComponent? stringVariables;
+
+	factory DestinyPublicVendorsResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicVendorsResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicVendorsResponseToJson(this);
+
+	static Future<DestinyPublicVendorsResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicVendorsResponse>((json)=>DestinyPublicVendorsResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

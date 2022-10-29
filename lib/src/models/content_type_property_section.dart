@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'content_type_property_section.g.dart';
@@ -7,11 +8,6 @@ part 'content_type_property_section.g.dart';
 class ContentTypePropertySection{	
 	ContentTypePropertySection();
 
-	factory ContentTypePropertySection.fromJson(Map<String, dynamic> json) {
-		return _$ContentTypePropertySectionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentTypePropertySectionToJson(this);
 	
 	@JsonKey(name:'name')
 	String? name;
@@ -21,4 +17,16 @@ class ContentTypePropertySection{
 	
 	@JsonKey(name:'collapsed')
 	bool? collapsed;
+
+	factory ContentTypePropertySection.fromJson(Map<String, dynamic> json) {
+		return _$ContentTypePropertySectionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentTypePropertySectionToJson(this);
+
+	static Future<ContentTypePropertySection> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentTypePropertySection>((json)=>ContentTypePropertySection.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

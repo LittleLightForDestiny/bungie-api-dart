@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_plug_whitelist_entry_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_plug_whitelist_entry_definition.g.dart';
 class DestinyPlugWhitelistEntryDefinition{	
 	DestinyPlugWhitelistEntryDefinition();
 
-	factory DestinyPlugWhitelistEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPlugWhitelistEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPlugWhitelistEntryDefinitionToJson(this);
 	
 	/// The hash identifier of the Plug Category to compare against the plug item's plug.plugCategoryHash.
 	/// Note that this does NOT relate to any Definition in itself, it is only used for comparison purposes.
@@ -31,4 +27,16 @@ class DestinyPlugWhitelistEntryDefinition{
 	/// That whitelist entry will potentially have a new “reinitializationPossiblePlugHashes” property.If it does, that means we know what it will roll if you try to insert this plug into this socket.
 	@JsonKey(name:'reinitializationPossiblePlugHashes')
 	List<int>? reinitializationPossiblePlugHashes;
+
+	factory DestinyPlugWhitelistEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPlugWhitelistEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPlugWhitelistEntryDefinitionToJson(this);
+
+	static Future<DestinyPlugWhitelistEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlugWhitelistEntryDefinition>((json)=>DestinyPlugWhitelistEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

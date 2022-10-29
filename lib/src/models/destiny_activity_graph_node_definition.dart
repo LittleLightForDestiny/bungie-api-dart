@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_position_definition.dart';
@@ -13,11 +14,6 @@ part 'destiny_activity_graph_node_definition.g.dart';
 class DestinyActivityGraphNodeDefinition{	
 	DestinyActivityGraphNodeDefinition();
 
-	factory DestinyActivityGraphNodeDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityGraphNodeDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeDefinitionToJson(this);
 	
 	/// An identifier for the Activity Graph Node, only guaranteed to be unique within its parent Activity Graph.
 	@JsonKey(name:'nodeId')
@@ -42,4 +38,16 @@ class DestinyActivityGraphNodeDefinition{
 	/// Represents possible states that the graph node can be in. These are combined with some checking that happens in the game client and server to determine which state is actually active at any given time.
 	@JsonKey(name:'states')
 	List<DestinyActivityGraphNodeStateEntry>? states;
+
+	factory DestinyActivityGraphNodeDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityGraphNodeDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeDefinitionToJson(this);
+
+	static Future<DestinyActivityGraphNodeDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphNodeDefinition>((json)=>DestinyActivityGraphNodeDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

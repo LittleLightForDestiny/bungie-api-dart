@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_milestone_activity_completion_status.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_milestone_activity_variant.g.dart';
 class DestinyMilestoneActivityVariant{	
 	DestinyMilestoneActivityVariant();
 
-	factory DestinyMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneActivityVariantFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityVariantToJson(this);
 	
 	/// The hash for the specific variant of the activity related to this milestone. You can pull more detailed static info from the DestinyActivityDefinition, such as difficulty level.
 	@JsonKey(name:'activityHash')
@@ -30,4 +26,16 @@ class DestinyMilestoneActivityVariant{
 	/// The enumeration equivalent of the most specific Activity Mode under which this activity is played.
 	@JsonKey(name:'activityModeType')
 	int? activityModeType;
+
+	factory DestinyMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneActivityVariantFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityVariantToJson(this);
+
+	static Future<DestinyMilestoneActivityVariant> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneActivityVariant>((json)=>DestinyMilestoneActivityVariant.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/opt_in_flags.dart';
 import 'email_subscription_definition.dart';
@@ -10,11 +11,6 @@ part 'email_opt_in_definition.g.dart';
 class EmailOptInDefinition{	
 	EmailOptInDefinition();
 
-	factory EmailOptInDefinition.fromJson(Map<String, dynamic> json) {
-		return _$EmailOptInDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$EmailOptInDefinitionToJson(this);
 	
 	/// The unique identifier for this opt-in category.
 	@JsonKey(name:'name')
@@ -31,4 +27,16 @@ class EmailOptInDefinition{
 	/// Information about the dependent subscriptions for this opt-in.
 	@JsonKey(name:'dependentSubscriptions')
 	List<EmailSubscriptionDefinition>? dependentSubscriptions;
+
+	factory EmailOptInDefinition.fromJson(Map<String, dynamic> json) {
+		return _$EmailOptInDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$EmailOptInDefinitionToJson(this);
+
+	static Future<EmailOptInDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, EmailOptInDefinition>((json)=>EmailOptInDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

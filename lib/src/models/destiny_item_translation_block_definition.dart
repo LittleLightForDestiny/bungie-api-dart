@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'dye_reference.dart';
 import 'destiny_gear_art_arrangement_reference.dart';
@@ -10,11 +11,6 @@ part 'destiny_item_translation_block_definition.g.dart';
 class DestinyItemTranslationBlockDefinition{	
 	DestinyItemTranslationBlockDefinition();
 
-	factory DestinyItemTranslationBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemTranslationBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemTranslationBlockDefinitionToJson(this);
 	
 	@JsonKey(name:'weaponPatternIdentifier')
 	String? weaponPatternIdentifier;
@@ -36,4 +32,16 @@ class DestinyItemTranslationBlockDefinition{
 	
 	@JsonKey(name:'hasGeometry')
 	bool? hasGeometry;
+
+	factory DestinyItemTranslationBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemTranslationBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemTranslationBlockDefinitionToJson(this);
+
+	static Future<DestinyItemTranslationBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemTranslationBlockDefinition>((json)=>DestinyItemTranslationBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

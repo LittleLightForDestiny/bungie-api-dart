@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'email_opt_in_definition.dart';
 import 'email_subscription_definition.dart';
@@ -11,11 +12,6 @@ part 'email_settings.g.dart';
 class EmailSettings{	
 	EmailSettings();
 
-	factory EmailSettings.fromJson(Map<String, dynamic> json) {
-		return _$EmailSettingsFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$EmailSettingsToJson(this);
 	
 	/// Keyed by the name identifier of the opt-in definition.
 	@JsonKey(name:'optInDefinitions')
@@ -28,4 +24,16 @@ class EmailSettings{
 	/// Keyed by the name identifier of the View definition.
 	@JsonKey(name:'views')
 	Map<String, EmailViewDefinition>? views;
+
+	factory EmailSettings.fromJson(Map<String, dynamic> json) {
+		return _$EmailSettingsFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$EmailSettingsToJson(this);
+
+	static Future<EmailSettings> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, EmailSettings>((json)=>EmailSettings.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

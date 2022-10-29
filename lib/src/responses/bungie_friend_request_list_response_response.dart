@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'bungie_friend_request_list_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class BungieFriendRequestListResponseResponse extends BungieNetResponse<BungieFr
 	factory BungieFriendRequestListResponseResponse.fromJson(Map<String, dynamic> json) => _$BungieFriendRequestListResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$BungieFriendRequestListResponseResponseToJson(this);
+
+	static Future<BungieFriendRequestListResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, BungieFriendRequestListResponseResponse>((json)=>BungieFriendRequestListResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/tier_type.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_item_inventory_block_definition.g.dart';
 class DestinyItemInventoryBlockDefinition{	
 	DestinyItemInventoryBlockDefinition();
 
-	factory DestinyItemInventoryBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemInventoryBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemInventoryBlockDefinitionToJson(this);
 	
 	/// If this string is populated, you can't have more than one stack with this label in a given inventory. Note that this is different from the equipping block's unique label, which is used for equipping uniqueness.
 	@JsonKey(name:'stackUniqueLabel')
@@ -65,4 +61,16 @@ class DestinyItemInventoryBlockDefinition{
 	/// A reference to the associated crafting 'recipe' item definition, if this item can be crafted.
 	@JsonKey(name:'recipeItemHash')
 	int? recipeItemHash;
+
+	factory DestinyItemInventoryBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemInventoryBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemInventoryBlockDefinitionToJson(this);
+
+	static Future<DestinyItemInventoryBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemInventoryBlockDefinition>((json)=>DestinyItemInventoryBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

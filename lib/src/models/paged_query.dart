@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'paged_query.g.dart';
@@ -7,11 +8,6 @@ part 'paged_query.g.dart';
 class PagedQuery{	
 	PagedQuery();
 
-	factory PagedQuery.fromJson(Map<String, dynamic> json) {
-		return _$PagedQueryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$PagedQueryToJson(this);
 	
 	@JsonKey(name:'itemsPerPage')
 	int? itemsPerPage;
@@ -21,4 +17,16 @@ class PagedQuery{
 	
 	@JsonKey(name:'requestContinuationToken')
 	String? requestContinuationToken;
+
+	factory PagedQuery.fromJson(Map<String, dynamic> json) {
+		return _$PagedQueryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$PagedQueryToJson(this);
+
+	static Future<PagedQuery> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PagedQuery>((json)=>PagedQuery.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

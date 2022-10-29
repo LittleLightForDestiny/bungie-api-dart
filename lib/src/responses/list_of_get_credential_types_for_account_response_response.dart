@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'list_of_get_credential_types_for_account_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class ListOfGetCredentialTypesForAccountResponseResponse extends BungieNetRespon
 	factory ListOfGetCredentialTypesForAccountResponseResponse.fromJson(Map<String, dynamic> json) => _$ListOfGetCredentialTypesForAccountResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$ListOfGetCredentialTypesForAccountResponseResponseToJson(this);
+
+	static Future<ListOfGetCredentialTypesForAccountResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ListOfGetCredentialTypesForAccountResponseResponse>((json)=>ListOfGetCredentialTypesForAccountResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

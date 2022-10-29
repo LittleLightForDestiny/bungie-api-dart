@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'trending_entry_community_creation.g.dart';
@@ -7,11 +8,6 @@ part 'trending_entry_community_creation.g.dart';
 class TrendingEntryCommunityCreation{	
 	TrendingEntryCommunityCreation();
 
-	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) {
-		return _$TrendingEntryCommunityCreationFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$TrendingEntryCommunityCreationToJson(this);
 	
 	@JsonKey(name:'media')
 	String? media;
@@ -33,4 +29,16 @@ class TrendingEntryCommunityCreation{
 	
 	@JsonKey(name:'upvotes')
 	int? upvotes;
+
+	factory TrendingEntryCommunityCreation.fromJson(Map<String, dynamic> json) {
+		return _$TrendingEntryCommunityCreationFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$TrendingEntryCommunityCreationToJson(this);
+
+	static Future<TrendingEntryCommunityCreation> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, TrendingEntryCommunityCreation>((json)=>TrendingEntryCommunityCreation.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

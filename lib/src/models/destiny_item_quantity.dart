@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_quantity.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_item_quantity.g.dart';
 class DestinyItemQuantity{	
 	DestinyItemQuantity();
 
-	factory DestinyItemQuantity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemQuantityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemQuantityToJson(this);
 	
 	/// The hash identifier for the item in question. Use it to look up the item's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')
@@ -29,4 +25,16 @@ class DestinyItemQuantity{
 	/// Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
 	@JsonKey(name:'hasConditionalVisibility')
 	bool? hasConditionalVisibility;
+
+	factory DestinyItemQuantity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemQuantityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemQuantityToJson(this);
+
+	static Future<DestinyItemQuantity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemQuantity>((json)=>DestinyItemQuantity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

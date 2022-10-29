@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/vendor_display_category_sort_order.dart';
@@ -10,11 +11,6 @@ part 'destiny_display_category_definition.g.dart';
 class DestinyDisplayCategoryDefinition{	
 	DestinyDisplayCategoryDefinition();
 
-	factory DestinyDisplayCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDisplayCategoryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDisplayCategoryDefinitionToJson(this);
 	
 	@JsonKey(name:'index')
 	int? index;
@@ -50,4 +46,16 @@ class DestinyDisplayCategoryDefinition{
 	/// An indicator of how the category will be displayed in the UI. It's up to you to do something cool or interesting in response to this, or just to treat it as a normal category.
 	@JsonKey(name:'displayStyleIdentifier')
 	String? displayStyleIdentifier;
+
+	factory DestinyDisplayCategoryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDisplayCategoryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDisplayCategoryDefinitionToJson(this);
+
+	static Future<DestinyDisplayCategoryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDisplayCategoryDefinition>((json)=>DestinyDisplayCategoryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

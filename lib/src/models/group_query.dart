@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/group_type.dart';
 import '../enums/group_date_range.dart';
@@ -15,11 +16,6 @@ part 'group_query.g.dart';
 class GroupQuery{	
 	GroupQuery();
 
-	factory GroupQuery.fromJson(Map<String, dynamic> json) {
-		return _$GroupQueryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupQueryToJson(this);
 	
 	@JsonKey(name:'name')
 	String? name;
@@ -50,4 +46,16 @@ class GroupQuery{
 	
 	@JsonKey(name:'requestContinuationToken')
 	String? requestContinuationToken;
+
+	factory GroupQuery.fromJson(Map<String, dynamic> json) {
+		return _$GroupQueryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupQueryToJson(this);
+
+	static Future<GroupQuery> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupQuery>((json)=>GroupQuery.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

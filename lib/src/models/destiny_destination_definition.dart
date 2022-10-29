@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_activity_graph_list_entry_definition.dart';
@@ -13,11 +14,6 @@ part 'destiny_destination_definition.g.dart';
 class DestinyDestinationDefinition{	
 	DestinyDestinationDefinition();
 
-	factory DestinyDestinationDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDestinationDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDestinationDefinitionToJson(this);
 	
 	/// Many Destiny*Definition contracts - the "first order" entities of Destiny that have their own tables in the Manifest Database - also have displayable information. This is the base class for that display information.
 	@JsonKey(name:'displayProperties')
@@ -58,4 +54,16 @@ class DestinyDestinationDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyDestinationDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDestinationDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDestinationDefinitionToJson(this);
+
+	static Future<DestinyDestinationDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDestinationDefinition>((json)=>DestinyDestinationDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

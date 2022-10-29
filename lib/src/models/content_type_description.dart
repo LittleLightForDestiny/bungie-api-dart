@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'content_type_property.dart';
 import 'tag_metadata_definition.dart';
@@ -12,11 +13,6 @@ part 'content_type_description.g.dart';
 class ContentTypeDescription{	
 	ContentTypeDescription();
 
-	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) {
-		return _$ContentTypeDescriptionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentTypeDescriptionToJson(this);
 	
 	@JsonKey(name:'cType')
 	String? cType;
@@ -80,4 +76,16 @@ class ContentTypeDescription{
 	
 	@JsonKey(name:'propertySections')
 	List<ContentTypePropertySection>? propertySections;
+
+	factory ContentTypeDescription.fromJson(Map<String, dynamic> json) {
+		return _$ContentTypeDescriptionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentTypeDescriptionToJson(this);
+
+	static Future<ContentTypeDescription> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentTypeDescription>((json)=>ContentTypeDescription.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'platform_friend.dart';
 
@@ -8,11 +9,6 @@ part 'platform_friend_response.g.dart';
 class PlatformFriendResponse{	
 	PlatformFriendResponse();
 
-	factory PlatformFriendResponse.fromJson(Map<String, dynamic> json) {
-		return _$PlatformFriendResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$PlatformFriendResponseToJson(this);
 	
 	@JsonKey(name:'itemsPerPage')
 	int? itemsPerPage;
@@ -25,4 +21,16 @@ class PlatformFriendResponse{
 	
 	@JsonKey(name:'platformFriends')
 	List<PlatformFriend>? platformFriends;
+
+	factory PlatformFriendResponse.fromJson(Map<String, dynamic> json) {
+		return _$PlatformFriendResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$PlatformFriendResponseToJson(this);
+
+	static Future<PlatformFriendResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, PlatformFriendResponse>((json)=>PlatformFriendResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

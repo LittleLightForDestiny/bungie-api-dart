@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/trending_entry_type.dart';
 
@@ -9,11 +10,6 @@ part 'trending_entry.g.dart';
 class TrendingEntry{	
 	TrendingEntry();
 
-	factory TrendingEntry.fromJson(Map<String, dynamic> json) {
-		return _$TrendingEntryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$TrendingEntryToJson(this);
 	
 	/// The weighted score of this trending item.
 	@JsonKey(name:'weight')
@@ -69,4 +65,16 @@ class TrendingEntry{
 	/// If the entry has a date at which it was created, this is that date.
 	@JsonKey(name:'creationDate')
 	String? creationDate;
+
+	factory TrendingEntry.fromJson(Map<String, dynamic> json) {
+		return _$TrendingEntryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$TrendingEntryToJson(this);
+
+	static Future<TrendingEntry> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, TrendingEntry>((json)=>TrendingEntry.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

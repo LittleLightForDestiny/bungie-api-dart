@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_profile_user_info_card.dart';
 import 'user_info_card.dart';
@@ -12,11 +13,6 @@ part 'destiny_linked_profiles_response.g.dart';
 class DestinyLinkedProfilesResponse{	
 	DestinyLinkedProfilesResponse();
 
-	factory DestinyLinkedProfilesResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyLinkedProfilesResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyLinkedProfilesResponseToJson(this);
 	
 	/// Any Destiny account for whom we could successfully pull characters will be returned here, as the Platform-level summary of user data. (no character data, no Destiny account data other than the Membership ID and Type so you can make further queries)
 	@JsonKey(name:'profiles')
@@ -30,4 +26,16 @@ class DestinyLinkedProfilesResponse{
 	/// This is brief summary info for profiles that we believe have valid Destiny info, but who failed to return data for some other reason and thus we know that subsequent calls for their info will also fail.
 	@JsonKey(name:'profilesWithErrors')
 	List<DestinyErrorProfile>? profilesWithErrors;
+
+	factory DestinyLinkedProfilesResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyLinkedProfilesResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyLinkedProfilesResponseToJson(this);
+
+	static Future<DestinyLinkedProfilesResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLinkedProfilesResponse>((json)=>DestinyLinkedProfilesResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

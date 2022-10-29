@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_milestone_quest_reward_item.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_milestone_quest_reward_item.g.dart';
 class DestinyMilestoneQuestRewardItem{	
 	DestinyMilestoneQuestRewardItem();
 
-	factory DestinyMilestoneQuestRewardItem.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneQuestRewardItemFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestRewardItemToJson(this);
 	
 	/// The quest reward item *may* be associated with a vendor. If so, this is that vendor. Use this hash to look up the DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')
@@ -38,4 +34,16 @@ class DestinyMilestoneQuestRewardItem{
 	/// Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
 	@JsonKey(name:'hasConditionalVisibility')
 	bool? hasConditionalVisibility;
+
+	factory DestinyMilestoneQuestRewardItem.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneQuestRewardItemFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestRewardItemToJson(this);
+
+	static Future<DestinyMilestoneQuestRewardItem> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneQuestRewardItem>((json)=>DestinyMilestoneQuestRewardItem.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

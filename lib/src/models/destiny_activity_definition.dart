@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_activity_reward_definition.dart';
@@ -26,11 +27,6 @@ part 'destiny_activity_definition.g.dart';
 class DestinyActivityDefinition{	
 	DestinyActivityDefinition();
 
-	factory DestinyActivityDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityDefinitionToJson(this);
 	
 	/// The title, subtitle, and icon for the activity. We do a little post-processing on this to try and account for Activities where the designers have left this data too minimal to determine what activity is actually being played.
 	@JsonKey(name:'displayProperties')
@@ -156,4 +152,16 @@ class DestinyActivityDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyActivityDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityDefinitionToJson(this);
+
+	static Future<DestinyActivityDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityDefinition>((json)=>DestinyActivityDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'general_user.dart';
 import 'content_representation.dart';
@@ -10,11 +11,6 @@ part 'content_item_public_contract.g.dart';
 class ContentItemPublicContract{	
 	ContentItemPublicContract();
 
-	factory ContentItemPublicContract.fromJson(Map<String, dynamic> json) {
-		return _$ContentItemPublicContractFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentItemPublicContractToJson(this);
 	
 	@JsonKey(name:'contentId')
 	String? contentId;
@@ -63,4 +59,16 @@ class ContentItemPublicContract{
 	
 	@JsonKey(name:'commentSummary')
 	CommentSummary? commentSummary;
+
+	factory ContentItemPublicContract.fromJson(Map<String, dynamic> json) {
+		return _$ContentItemPublicContractFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentItemPublicContractToJson(this);
+
+	static Future<ContentItemPublicContract> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentItemPublicContract>((json)=>ContentItemPublicContract.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

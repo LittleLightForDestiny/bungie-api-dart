@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'tag_metadata_item.g.dart';
@@ -7,11 +8,6 @@ part 'tag_metadata_item.g.dart';
 class TagMetadataItem{	
 	TagMetadataItem();
 
-	factory TagMetadataItem.fromJson(Map<String, dynamic> json) {
-		return _$TagMetadataItemFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$TagMetadataItemToJson(this);
 	
 	@JsonKey(name:'description')
 	String? description;
@@ -27,4 +23,16 @@ class TagMetadataItem{
 	
 	@JsonKey(name:'name')
 	String? name;
+
+	factory TagMetadataItem.fromJson(Map<String, dynamic> json) {
+		return _$TagMetadataItemFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$TagMetadataItemToJson(this);
+
+	static Future<TagMetadataItem> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, TagMetadataItem>((json)=>TagMetadataItem.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

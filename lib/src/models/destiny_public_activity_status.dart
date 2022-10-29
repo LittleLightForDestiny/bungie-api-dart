@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_public_activity_status.g.dart';
 class DestinyPublicActivityStatus{	
 	DestinyPublicActivityStatus();
 
-	factory DestinyPublicActivityStatus.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicActivityStatusFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicActivityStatusToJson(this);
 	
 	/// Active Challenges for the activity, if any - represented as hashes for DestinyObjectiveDefinitions.
 	@JsonKey(name:'challengeObjectiveHashes')
@@ -28,4 +24,16 @@ class DestinyPublicActivityStatus{
 	/// These are often pointers to fake items that look good in a tooltip, but represent an abstract concept of what you will get for a reward rather than the specific items you may obtain.
 	@JsonKey(name:'rewardTooltipItems')
 	List<DestinyItemQuantity>? rewardTooltipItems;
+
+	factory DestinyPublicActivityStatus.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicActivityStatusFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicActivityStatusToJson(this);
+
+	static Future<DestinyPublicActivityStatus> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicActivityStatus>((json)=>DestinyPublicActivityStatus.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

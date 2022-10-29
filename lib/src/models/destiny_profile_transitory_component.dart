@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_profile_transitory_party_member.dart';
 import 'destiny_profile_transitory_current_activity.dart';
@@ -13,11 +14,6 @@ part 'destiny_profile_transitory_component.g.dart';
 class DestinyProfileTransitoryComponent{	
 	DestinyProfileTransitoryComponent();
 
-	factory DestinyProfileTransitoryComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileTransitoryComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryComponentToJson(this);
 	
 	/// If you have any members currently in your party, this is some (very) bare-bones information about those members.
 	@JsonKey(name:'partyMembers')
@@ -38,4 +34,16 @@ class DestinyProfileTransitoryComponent{
 	/// The hash identifier for the DestinyDestinationDefinition of the last location you were orbiting when in orbit.
 	@JsonKey(name:'lastOrbitedDestinationHash')
 	int? lastOrbitedDestinationHash;
+
+	factory DestinyProfileTransitoryComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileTransitoryComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryComponentToJson(this);
+
+	static Future<DestinyProfileTransitoryComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileTransitoryComponent>((json)=>DestinyProfileTransitoryComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

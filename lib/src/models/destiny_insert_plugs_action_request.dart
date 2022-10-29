@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_insert_plugs_request_entry.dart';
 import '../enums/bungie_membership_type.dart';
@@ -9,11 +10,6 @@ part 'destiny_insert_plugs_action_request.g.dart';
 class DestinyInsertPlugsActionRequest{	
 	DestinyInsertPlugsActionRequest();
 
-	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyInsertPlugsActionRequestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyInsertPlugsActionRequestToJson(this);
 	
 	/// Action token provided by the AwaGetActionToken API call.
 	@JsonKey(name:'actionToken')
@@ -32,4 +28,16 @@ class DestinyInsertPlugsActionRequest{
 	
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
+
+	factory DestinyInsertPlugsActionRequest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyInsertPlugsActionRequestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyInsertPlugsActionRequestToJson(this);
+
+	static Future<DestinyInsertPlugsActionRequest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyInsertPlugsActionRequest>((json)=>DestinyInsertPlugsActionRequest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_gender.dart';
 import 'destiny_display_properties_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_gender_definition.g.dart';
 class DestinyGenderDefinition{	
 	DestinyGenderDefinition();
 
-	factory DestinyGenderDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyGenderDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyGenderDefinitionToJson(this);
 	
 	/// This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
 	@JsonKey(name:'genderType',fromJson:decodeDestinyGender,toJson:encodeDestinyGender)
@@ -36,4 +32,16 @@ class DestinyGenderDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyGenderDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyGenderDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyGenderDefinitionToJson(this);
+
+	static Future<DestinyGenderDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyGenderDefinition>((json)=>DestinyGenderDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

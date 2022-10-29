@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_progression_reset_entry.dart';
 import '../enums/destiny_progression_reward_item_state.dart';
@@ -10,11 +11,6 @@ part 'destiny_progression.g.dart';
 class DestinyProgression{	
 	DestinyProgression();
 
-	factory DestinyProgression.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionToJson(this);
 	
 	/// The hash identifier of the Progression in question. Use it to look up the DestinyProgressionDefinition in static data.
 	@JsonKey(name:'progressionHash')
@@ -71,4 +67,16 @@ class DestinyProgression{
 	/// Information about historical rewards for this progression, if there is any data for it.
 	@JsonKey(name:'rewardItemStates')
 	List<DestinyProgressionRewardItemState>? rewardItemStates;
+
+	factory DestinyProgression.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionToJson(this);
+
+	static Future<DestinyProgression> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgression>((json)=>DestinyProgression.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_display_properties_definition.dart';
 import '../enums/destiny_vendor_progression_type.dart';
@@ -29,11 +30,6 @@ part 'destiny_vendor_definition.g.dart';
 class DestinyVendorDefinition{	
 	DestinyVendorDefinition();
 
-	factory DestinyVendorDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorDefinitionToJson(this);
 	
 	@JsonKey(name:'displayProperties')
 	DestinyVendorDisplayPropertiesDefinition? displayProperties;
@@ -182,4 +178,16 @@ class DestinyVendorDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyVendorDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorDefinitionToJson(this);
+
+	static Future<DestinyVendorDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorDefinition>((json)=>DestinyVendorDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

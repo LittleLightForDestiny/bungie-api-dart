@@ -12,7 +12,7 @@ class GlobalAlerts{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEListOfGlobalAlertResponse.fromJson(response.mappedBody);
+            return CEListOfGlobalAlertResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

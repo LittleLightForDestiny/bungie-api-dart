@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_progression_mapping_definition.g.dart';
 class DestinyProgressionMappingDefinition{	
 	DestinyProgressionMappingDefinition();
 
-	factory DestinyProgressionMappingDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionMappingDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionMappingDefinitionToJson(this);
 	
 	/// Infrequently defined in practice. Defer to the individual progressions' display properties.
 	@JsonKey(name:'displayProperties')
@@ -36,4 +32,16 @@ class DestinyProgressionMappingDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyProgressionMappingDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionMappingDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionMappingDefinitionToJson(this);
+
+	static Future<DestinyProgressionMappingDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgressionMappingDefinition>((json)=>DestinyProgressionMappingDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

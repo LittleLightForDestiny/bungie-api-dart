@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_interaction_reply_definition.dart';
 import 'destiny_vendor_interaction_sack_entry_definition.dart';
@@ -12,11 +13,6 @@ part 'destiny_vendor_interaction_definition.g.dart';
 class DestinyVendorInteractionDefinition{	
 	DestinyVendorInteractionDefinition();
 
-	factory DestinyVendorInteractionDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorInteractionDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorInteractionDefinitionToJson(this);
 	
 	/// The position of this interaction in its parent array. Note that this is NOT content agnostic, and should not be used as such.
 	@JsonKey(name:'interactionIndex')
@@ -69,4 +65,16 @@ class DestinyVendorInteractionDefinition{
 	/// The localized text telling the player what to do when they see this dialog.
 	@JsonKey(name:'instructions')
 	String? instructions;
+
+	factory DestinyVendorInteractionDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorInteractionDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorInteractionDefinitionToJson(this);
+
+	static Future<DestinyVendorInteractionDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorInteractionDefinition>((json)=>DestinyVendorInteractionDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

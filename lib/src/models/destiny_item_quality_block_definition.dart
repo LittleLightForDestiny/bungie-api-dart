@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_version_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_quality_block_definition.g.dart';
 class DestinyItemQualityBlockDefinition{	
 	DestinyItemQualityBlockDefinition();
 
-	factory DestinyItemQualityBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemQualityBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemQualityBlockDefinitionToJson(this);
 	
 	/// The "base" defined level of an item. This is a list because, in theory, each Expansion could define its own base level for an item.
 	/// In practice, not only was that never done in Destiny 1, but now this isn't even populated at all. When it's not populated, the level at which it spawns has to be inferred by Reward information, of which BNet receives an imperfect view and will only be reliable on instanced data as a result.
@@ -55,4 +51,16 @@ class DestinyItemQualityBlockDefinition{
 	/// Icon overlays to denote the item version and power cap status.
 	@JsonKey(name:'displayVersionWatermarkIcons')
 	List<String>? displayVersionWatermarkIcons;
+
+	factory DestinyItemQualityBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemQualityBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemQualityBlockDefinitionToJson(this);
+
+	static Future<DestinyItemQualityBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemQualityBlockDefinition>((json)=>DestinyItemQualityBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

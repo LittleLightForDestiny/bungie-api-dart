@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_presentation_node_requirements_block.g.dart';
@@ -8,13 +9,20 @@ part 'destiny_presentation_node_requirements_block.g.dart';
 class DestinyPresentationNodeRequirementsBlock{	
 	DestinyPresentationNodeRequirementsBlock();
 
+	
+	/// If this node is not accessible due to Entitlements (for instance, you don't own the required game expansion), this is the message to show.
+	@JsonKey(name:'entitlementUnavailableMessage')
+	String? entitlementUnavailableMessage;
+
 	factory DestinyPresentationNodeRequirementsBlock.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPresentationNodeRequirementsBlockFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyPresentationNodeRequirementsBlockToJson(this);
-	
-	/// If this node is not accessible due to Entitlements (for instance, you don't own the required game expansion), this is the message to show.
-	@JsonKey(name:'entitlementUnavailableMessage')
-	String? entitlementUnavailableMessage;
+
+	static Future<DestinyPresentationNodeRequirementsBlock> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPresentationNodeRequirementsBlock>((json)=>DestinyPresentationNodeRequirementsBlock.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

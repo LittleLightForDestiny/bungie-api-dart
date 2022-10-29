@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'user_info_card.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_player.g.dart';
 class DestinyPlayer{	
 	DestinyPlayer();
 
-	factory DestinyPlayer.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPlayerFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPlayerToJson(this);
 	
 	/// Details about the player as they are known in game (platform display name, Destiny emblem)
 	@JsonKey(name:'destinyUserInfo')
@@ -54,4 +50,16 @@ class DestinyPlayer{
 	/// If we know the emblem's hash, this can be used to look up the player's emblem at the time of a match when receiving PGCR data, or otherwise their currently equipped emblem (if we are able to obtain it).
 	@JsonKey(name:'emblemHash')
 	int? emblemHash;
+
+	factory DestinyPlayer.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPlayerFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPlayerToJson(this);
+
+	static Future<DestinyPlayer> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlayer>((json)=>DestinyPlayer.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/destiny_scope.dart';
@@ -11,11 +12,6 @@ part 'destiny_checklist_entry_definition.g.dart';
 class DestinyChecklistEntryDefinition{	
 	DestinyChecklistEntryDefinition();
 
-	factory DestinyChecklistEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyChecklistEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyChecklistEntryDefinitionToJson(this);
 	
 	/// The identifier for this Checklist entry. Guaranteed unique only within this Checklist Definition, and not globally/for all checklists.
 	@JsonKey(name:'hash')
@@ -51,4 +47,16 @@ class DestinyChecklistEntryDefinition{
 	/// The scope at which this specific entry can be computed.
 	@JsonKey(name:'scope',fromJson:decodeDestinyScope,toJson:encodeDestinyScope)
 	DestinyScope? scope;
+
+	factory DestinyChecklistEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyChecklistEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyChecklistEntryDefinitionToJson(this);
+
+	static Future<DestinyChecklistEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyChecklistEntryDefinition>((json)=>DestinyChecklistEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

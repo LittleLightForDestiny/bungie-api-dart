@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'dictionary_component_response_ofuint32_and_destiny_item_instance_component.dart';
 import 'dictionary_component_response_ofuint32_and_destiny_item_render_component.dart';
@@ -17,11 +18,6 @@ part 'destiny_item_component_set_ofuint32.g.dart';
 class DestinyItemComponentSetOfuint32{	
 	DestinyItemComponentSetOfuint32();
 
-	factory DestinyItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemComponentSetOfuint32FromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfuint32ToJson(this);
 	
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfuint32AndDestinyItemInstanceComponent? instances;
@@ -52,4 +48,16 @@ class DestinyItemComponentSetOfuint32{
 	
 	@JsonKey(name:'perks')
 	DictionaryComponentResponseOfuint32AndDestinyItemPerksComponent? perks;
+
+	factory DestinyItemComponentSetOfuint32.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemComponentSetOfuint32FromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfuint32ToJson(this);
+
+	static Future<DestinyItemComponentSetOfuint32> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemComponentSetOfuint32>((json)=>DestinyItemComponentSetOfuint32.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

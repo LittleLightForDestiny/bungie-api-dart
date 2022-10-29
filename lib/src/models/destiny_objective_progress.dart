@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_objective_progress.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_objective_progress.g.dart';
 class DestinyObjectiveProgress{	
 	DestinyObjectiveProgress();
 
-	factory DestinyObjectiveProgress.fromJson(Map<String, dynamic> json) {
-		return _$DestinyObjectiveProgressFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyObjectiveProgressToJson(this);
 	
 	/// The unique identifier of the Objective being referred to. Use to look up the DestinyObjectiveDefinition in static data.
 	@JsonKey(name:'objectiveHash')
@@ -43,4 +39,16 @@ class DestinyObjectiveProgress{
 	/// If this is true, the objective is visible in-game. Otherwise, it's not yet visible to the player. Up to you if you want to honor this property.
 	@JsonKey(name:'visible')
 	bool? visible;
+
+	factory DestinyObjectiveProgress.fromJson(Map<String, dynamic> json) {
+		return _$DestinyObjectiveProgressFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyObjectiveProgressToJson(this);
+
+	static Future<DestinyObjectiveProgress> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyObjectiveProgress>((json)=>DestinyObjectiveProgress.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

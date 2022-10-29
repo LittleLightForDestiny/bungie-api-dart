@@ -10,7 +10,7 @@ class UserSystemOverrides{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfstringAndCoreSystemResponse.fromJson(response.mappedBody);
+            return DictionaryOfstringAndCoreSystemResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

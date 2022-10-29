@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/damage_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_damage_type_definition.g.dart';
 class DestinyDamageTypeDefinition{	
 	DestinyDamageTypeDefinition();
 
-	factory DestinyDamageTypeDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDamageTypeDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDamageTypeDefinitionToJson(this);
 	
 	/// The description of the damage type, icon etc...
 	@JsonKey(name:'displayProperties')
@@ -44,4 +40,16 @@ class DestinyDamageTypeDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyDamageTypeDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDamageTypeDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDamageTypeDefinitionToJson(this);
+
+	static Future<DestinyDamageTypeDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDamageTypeDefinition>((json)=>DestinyDamageTypeDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

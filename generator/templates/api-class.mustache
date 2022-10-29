@@ -33,7 +33,7 @@ class {{className}}{
         config.bodyContentType = {{{requestBodyContentType}}};
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return {{returnType}}.fromJson(response.mappedBody);
+            return {{returnType}}.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

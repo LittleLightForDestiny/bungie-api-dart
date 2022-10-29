@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'dictionary_component_response_ofint64_and_destiny_item_instance_component.dart';
 import 'dictionary_component_response_ofint64_and_destiny_item_render_component.dart';
@@ -17,11 +18,6 @@ part 'destiny_item_component_set_ofint64.g.dart';
 class DestinyItemComponentSetOfint64{	
 	DestinyItemComponentSetOfint64();
 
-	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemComponentSetOfint64FromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfint64ToJson(this);
 	
 	@JsonKey(name:'instances')
 	DictionaryComponentResponseOfint64AndDestinyItemInstanceComponent? instances;
@@ -52,4 +48,16 @@ class DestinyItemComponentSetOfint64{
 	
 	@JsonKey(name:'perks')
 	DictionaryComponentResponseOfint64AndDestinyItemPerksComponent? perks;
+
+	factory DestinyItemComponentSetOfint64.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemComponentSetOfint64FromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemComponentSetOfint64ToJson(this);
+
+	static Future<DestinyItemComponentSetOfint64> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemComponentSetOfint64>((json)=>DestinyItemComponentSetOfint64.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

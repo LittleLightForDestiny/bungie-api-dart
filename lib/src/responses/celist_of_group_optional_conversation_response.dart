@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'celist_of_group_optional_conversation_response.g.dart';
 
@@ -30,4 +31,10 @@ class CEListOfGroupOptionalConversationResponse extends BungieNetResponse<List<G
 	factory CEListOfGroupOptionalConversationResponse.fromJson(Map<String, dynamic> json) => _$CEListOfGroupOptionalConversationResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$CEListOfGroupOptionalConversationResponseToJson(this);
+
+	static Future<CEListOfGroupOptionalConversationResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, CEListOfGroupOptionalConversationResponse>((json)=>CEListOfGroupOptionalConversationResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

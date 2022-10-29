@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_talent_node_state.dart';
 import 'destiny_material_requirement.dart';
@@ -11,11 +12,6 @@ part 'destiny_talent_node.g.dart';
 class DestinyTalentNode{	
 	DestinyTalentNode();
 
-	factory DestinyTalentNode.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTalentNodeFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTalentNodeToJson(this);
 	
 	/// The index of the Talent Node being referred to (an index into DestinyTalentGridDefinition.nodes[]). CONTENT VERSION DEPENDENT.
 	@JsonKey(name:'nodeIndex')
@@ -56,4 +52,16 @@ class DestinyTalentNode{
 	/// This property has some history. A talent grid can provide stats on both the item it's related to and the character equipping the item. This returns data about those stat bonuses.
 	@JsonKey(name:'nodeStatsBlock')
 	DestinyTalentNodeStatBlock? nodeStatsBlock;
+
+	factory DestinyTalentNode.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTalentNodeFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentNodeToJson(this);
+
+	static Future<DestinyTalentNode> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTalentNode>((json)=>DestinyTalentNode.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_gating_scope.dart';
 
@@ -10,13 +11,20 @@ part 'destiny_unlock_expression_definition.g.dart';
 class DestinyUnlockExpressionDefinition{	
 	DestinyUnlockExpressionDefinition();
 
+	
+	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum's documentation for more details.
+	@JsonKey(name:'scope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
+	DestinyGatingScope? scope;
+
 	factory DestinyUnlockExpressionDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyUnlockExpressionDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyUnlockExpressionDefinitionToJson(this);
-	
-	/// A shortcut for determining the most restrictive gating that this expression performs. See the DestinyGatingScope enum's documentation for more details.
-	@JsonKey(name:'scope',fromJson:decodeDestinyGatingScope,toJson:encodeDestinyGatingScope)
-	DestinyGatingScope? scope;
+
+	static Future<DestinyUnlockExpressionDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyUnlockExpressionDefinition>((json)=>DestinyUnlockExpressionDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

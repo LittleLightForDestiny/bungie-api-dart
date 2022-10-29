@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_vendor_sale_item_base_component.g.dart';
 class DestinyVendorSaleItemBaseComponent{	
 	DestinyVendorSaleItemBaseComponent();
 
-	factory DestinyVendorSaleItemBaseComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorSaleItemBaseComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemBaseComponentToJson(this);
 	
 	/// The index into the DestinyVendorDefinition.itemList property. Note that this means Vendor data *is* Content Version dependent: make sure you have the latest content before you use Vendor data, or these indexes may mismatch. 
 	/// Most systems avoid this problem, but Vendors is one area where we are unable to reasonably avoid content dependency at the moment.
@@ -46,4 +42,16 @@ class DestinyVendorSaleItemBaseComponent{
 	/// If true, this item can be purchased through the Bungie.net API.
 	@JsonKey(name:'apiPurchasable')
 	bool? apiPurchasable;
+
+	factory DestinyVendorSaleItemBaseComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorSaleItemBaseComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorSaleItemBaseComponentToJson(this);
+
+	static Future<DestinyVendorSaleItemBaseComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorSaleItemBaseComponent>((json)=>DestinyVendorSaleItemBaseComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

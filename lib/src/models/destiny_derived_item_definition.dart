@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_derived_item_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_derived_item_definition.g.dart';
 class DestinyDerivedItemDefinition{	
 	DestinyDerivedItemDefinition();
 
-	factory DestinyDerivedItemDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDerivedItemDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDerivedItemDefinitionToJson(this);
 	
 	/// The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won't be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
 	@JsonKey(name:'itemHash')
@@ -37,4 +33,16 @@ class DestinyDerivedItemDefinition{
 	/// If the item was derived from a "Preview Vendor", this will be an index into the DestinyVendorDefinition's itemList property. Otherwise, -1.
 	@JsonKey(name:'vendorItemIndex')
 	int? vendorItemIndex;
+
+	factory DestinyDerivedItemDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDerivedItemDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDerivedItemDefinitionToJson(this);
+
+	static Future<DestinyDerivedItemDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDerivedItemDefinition>((json)=>DestinyDerivedItemDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

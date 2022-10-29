@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -9,11 +10,6 @@ part 'user_membership.g.dart';
 class UserMembership{	
 	UserMembership();
 
-	factory UserMembership.fromJson(Map<String, dynamic> json) {
-		return _$UserMembershipFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$UserMembershipToJson(this);
 	
 	/// Type of the membership. Not necessarily the native type.
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
@@ -34,4 +30,16 @@ class UserMembership{
 	/// The bungie global display name code, if set.
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory UserMembership.fromJson(Map<String, dynamic> json) {
+		return _$UserMembershipFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$UserMembershipToJson(this);
+
+	static Future<UserMembership> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, UserMembership>((json)=>UserMembership.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

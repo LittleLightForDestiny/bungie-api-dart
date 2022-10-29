@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'group_user_info_card.dart';
 import 'general_user.dart';
@@ -9,11 +10,6 @@ part 'user_membership_data.g.dart';
 class UserMembershipData{	
 	UserMembershipData();
 
-	factory UserMembershipData.fromJson(Map<String, dynamic> json) {
-		return _$UserMembershipDataFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$UserMembershipDataToJson(this);
 	
 	/// this allows you to see destiny memberships that are visible and linked to this account (regardless of whether or not they have characters on the world server)
 	@JsonKey(name:'destinyMemberships')
@@ -26,4 +22,16 @@ class UserMembershipData{
 	
 	@JsonKey(name:'bungieNetUser')
 	GeneralUser? bungieNetUser;
+
+	factory UserMembershipData.fromJson(Map<String, dynamic> json) {
+		return _$UserMembershipDataFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$UserMembershipDataToJson(this);
+
+	static Future<UserMembershipData> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, UserMembershipData>((json)=>UserMembershipData.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

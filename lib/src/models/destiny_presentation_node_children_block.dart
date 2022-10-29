@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_presentation_node_child_entry.dart';
 import 'destiny_presentation_node_collectible_child_entry.dart';
@@ -13,11 +14,6 @@ part 'destiny_presentation_node_children_block.g.dart';
 class DestinyPresentationNodeChildrenBlock{	
 	DestinyPresentationNodeChildrenBlock();
 
-	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPresentationNodeChildrenBlockFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPresentationNodeChildrenBlockToJson(this);
 	
 	@JsonKey(name:'presentationNodes')
 	List<DestinyPresentationNodeChildEntry>? presentationNodes;
@@ -33,4 +29,16 @@ class DestinyPresentationNodeChildrenBlock{
 	
 	@JsonKey(name:'craftables')
 	List<DestinyPresentationNodeCraftableChildEntry>? craftables;
+
+	factory DestinyPresentationNodeChildrenBlock.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPresentationNodeChildrenBlockFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPresentationNodeChildrenBlockToJson(this);
+
+	static Future<DestinyPresentationNodeChildrenBlock> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPresentationNodeChildrenBlock>((json)=>DestinyPresentationNodeChildrenBlock.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/fireteam_platform.dart';
 
@@ -8,11 +9,6 @@ part 'fireteam_summary.g.dart';
 class FireteamSummary{	
 	FireteamSummary();
 
-	factory FireteamSummary.fromJson(Map<String, dynamic> json) {
-		return _$FireteamSummaryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$FireteamSummaryToJson(this);
 	
 	@JsonKey(name:'fireteamId')
 	String? fireteamId;
@@ -70,4 +66,16 @@ class FireteamSummary{
 	
 	@JsonKey(name:'titleBeforeModeration')
 	String? titleBeforeModeration;
+
+	factory FireteamSummary.fromJson(Map<String, dynamic> json) {
+		return _$FireteamSummaryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$FireteamSummaryToJson(this);
+
+	static Future<FireteamSummary> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, FireteamSummary>((json)=>FireteamSummary.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

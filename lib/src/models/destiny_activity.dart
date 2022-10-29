@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_activity_difficulty_tier.dart';
 import 'destiny_challenge_status.dart';
@@ -11,11 +12,6 @@ part 'destiny_activity.g.dart';
 class DestinyActivity{	
 	DestinyActivity();
 
-	factory DestinyActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityToJson(this);
 	
 	/// The hash identifier of the Activity. Use this to look up the DestinyActivityDefinition of the activity.
 	@JsonKey(name:'activityHash')
@@ -71,4 +67,16 @@ class DestinyActivity{
 	/// If returned, this is the index into the DestinyActivityDefinition's "loadouts" property, indicating the currently active loadout requirements.
 	@JsonKey(name:'loadoutRequirementIndex')
 	int? loadoutRequirementIndex;
+
+	factory DestinyActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityToJson(this);
+
+	static Future<DestinyActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivity>((json)=>DestinyActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

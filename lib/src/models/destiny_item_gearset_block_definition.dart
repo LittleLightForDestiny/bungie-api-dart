@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_gearset_block_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_item_gearset_block_definition.g.dart';
 class DestinyItemGearsetBlockDefinition{	
 	DestinyItemGearsetBlockDefinition();
 
-	factory DestinyItemGearsetBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemGearsetBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemGearsetBlockDefinitionToJson(this);
 	
 	/// The maximum possible number of items that can be collected.
 	@JsonKey(name:'trackingValueMax')
@@ -21,4 +17,16 @@ class DestinyItemGearsetBlockDefinition{
 	/// The list of hashes for items in the gearset. Use them to look up DestinyInventoryItemDefinition entries for the items in the set.
 	@JsonKey(name:'itemList')
 	List<int>? itemList;
+
+	factory DestinyItemGearsetBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemGearsetBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemGearsetBlockDefinitionToJson(this);
+
+	static Future<DestinyItemGearsetBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemGearsetBlockDefinition>((json)=>DestinyItemGearsetBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -13,7 +13,7 @@ class Trending{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return TrendingCategoriesResponse.fromJson(response.mappedBody);
+            return TrendingCategoriesResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -30,7 +30,7 @@ class Trending{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfTrendingEntryResponse.fromJson(response.mappedBody);
+            return SearchResultOfTrendingEntryResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -47,7 +47,7 @@ class Trending{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return TrendingDetailResponse.fromJson(response.mappedBody);
+            return TrendingDetailResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

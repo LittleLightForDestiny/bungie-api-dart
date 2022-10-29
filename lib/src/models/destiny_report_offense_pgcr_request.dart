@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_report_offense_pgcr_request.g.dart';
@@ -10,11 +11,6 @@ part 'destiny_report_offense_pgcr_request.g.dart';
 class DestinyReportOffensePgcrRequest{	
 	DestinyReportOffensePgcrRequest();
 
-	factory DestinyReportOffensePgcrRequest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyReportOffensePgcrRequestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyReportOffensePgcrRequestToJson(this);
 	
 	/// So you've decided to report someone instead of cursing them and their descendants. Well, okay then. This is the category or categorie(s) of infractions for which you are reporting the user. These are hash identifiers that map to DestinyReportReasonCategoryDefinition entries.
 	@JsonKey(name:'reasonCategoryHashes')
@@ -27,4 +23,16 @@ class DestinyReportOffensePgcrRequest{
 	/// Within the PGCR provided when calling the Reporting endpoint, this should be the character ID of the user that you thought was violating terms of use. They must exist in the PGCR provided.
 	@JsonKey(name:'offendingCharacterId')
 	String? offendingCharacterId;
+
+	factory DestinyReportOffensePgcrRequest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyReportOffensePgcrRequestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyReportOffensePgcrRequestToJson(this);
+
+	static Future<DestinyReportOffensePgcrRequest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyReportOffensePgcrRequest>((json)=>DestinyReportOffensePgcrRequest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

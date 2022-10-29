@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/damage_type.dart';
@@ -16,11 +17,6 @@ part 'destiny_node_step_definition.g.dart';
 class DestinyNodeStepDefinition{	
 	DestinyNodeStepDefinition();
 
-	factory DestinyNodeStepDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyNodeStepDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyNodeStepDefinitionToJson(this);
 	
 	/// These are the display properties actually used to render the Talent Node. The currently active step's displayProperties are shown.
 	@JsonKey(name:'displayProperties')
@@ -93,4 +89,16 @@ class DestinyNodeStepDefinition{
 	/// If this step is activated, this will be a list of information used to replace socket items with new Plugs. See DestinyInventoryItemDefinition for more information about sockets and plugs.
 	@JsonKey(name:'socketReplacements')
 	List<DestinyNodeSocketReplaceResponse>? socketReplacements;
+
+	factory DestinyNodeStepDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyNodeStepDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyNodeStepDefinitionToJson(this);
+
+	static Future<DestinyNodeStepDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyNodeStepDefinition>((json)=>DestinyNodeStepDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

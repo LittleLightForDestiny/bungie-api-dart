@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/destiny_energy_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_energy_type_definition.g.dart';
 class DestinyEnergyTypeDefinition{	
 	DestinyEnergyTypeDefinition();
 
-	factory DestinyEnergyTypeDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyEnergyTypeDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyEnergyTypeDefinitionToJson(this);
 	
 	/// The description of the energy type, icon etc...
 	@JsonKey(name:'displayProperties')
@@ -52,4 +48,16 @@ class DestinyEnergyTypeDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyEnergyTypeDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyEnergyTypeDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyEnergyTypeDefinitionToJson(this);
+
+	static Future<DestinyEnergyTypeDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyEnergyTypeDefinition>((json)=>DestinyEnergyTypeDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

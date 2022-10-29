@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny2_core_settings.g.dart';
@@ -7,11 +8,6 @@ part 'destiny2_core_settings.g.dart';
 class Destiny2CoreSettings{	
 	Destiny2CoreSettings();
 
-	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) {
-		return _$Destiny2CoreSettingsFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$Destiny2CoreSettingsToJson(this);
 	
 	@JsonKey(name:'collectionRootNode')
 	int? collectionRootNode;
@@ -87,4 +83,16 @@ class Destiny2CoreSettings{
 	
 	@JsonKey(name:'pastSeasonHashes')
 	List<int>? pastSeasonHashes;
+
+	factory Destiny2CoreSettings.fromJson(Map<String, dynamic> json) {
+		return _$Destiny2CoreSettingsFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$Destiny2CoreSettingsToJson(this);
+
+	static Future<Destiny2CoreSettings> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, Destiny2CoreSettings>((json)=>Destiny2CoreSettings.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

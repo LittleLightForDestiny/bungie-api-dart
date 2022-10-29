@@ -18,7 +18,7 @@ class CommunityContent{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PostSearchResponseResponse.fromJson(response.mappedBody);
+            return PostSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

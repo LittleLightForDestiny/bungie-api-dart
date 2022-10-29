@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_icon_sequence_definition.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_progression_display_properties_definition.g.dart';
 class DestinyProgressionDisplayPropertiesDefinition{	
 	DestinyProgressionDisplayPropertiesDefinition();
 
-	factory DestinyProgressionDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionDisplayPropertiesDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionDisplayPropertiesDefinitionToJson(this);
 	
 	/// When progressions show your "experience" gained, that bar has units (i.e. "Experience", "Bad Dudes Snuffed Out", whatever). This is the localized string for that unit of measurement.
 	@JsonKey(name:'displayUnitsName')
@@ -39,4 +35,16 @@ class DestinyProgressionDisplayPropertiesDefinition{
 	
 	@JsonKey(name:'hasIcon')
 	bool? hasIcon;
+
+	factory DestinyProgressionDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionDisplayPropertiesDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionDisplayPropertiesDefinitionToJson(this);
+
+	static Future<DestinyProgressionDisplayPropertiesDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgressionDisplayPropertiesDefinition>((json)=>DestinyProgressionDisplayPropertiesDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

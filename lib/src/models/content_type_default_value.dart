@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'content_type_default_value.g.dart';
@@ -7,11 +8,6 @@ part 'content_type_default_value.g.dart';
 class ContentTypeDefaultValue{	
 	ContentTypeDefaultValue();
 
-	factory ContentTypeDefaultValue.fromJson(Map<String, dynamic> json) {
-		return _$ContentTypeDefaultValueFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentTypeDefaultValueToJson(this);
 	
 	@JsonKey(name:'whenClause')
 	String? whenClause;
@@ -21,4 +17,16 @@ class ContentTypeDefaultValue{
 	
 	@JsonKey(name:'defaultValue')
 	String? defaultValue;
+
+	factory ContentTypeDefaultValue.fromJson(Map<String, dynamic> json) {
+		return _$ContentTypeDefaultValueFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentTypeDefaultValueToJson(this);
+
+	static Future<ContentTypeDefaultValue> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentTypeDefaultValue>((json)=>ContentTypeDefaultValue.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

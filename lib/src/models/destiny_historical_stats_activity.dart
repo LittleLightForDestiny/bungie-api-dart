@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_activity_mode_type.dart';
 import '../enums/bungie_membership_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_historical_stats_activity.g.dart';
 class DestinyHistoricalStatsActivity{	
 	DestinyHistoricalStatsActivity();
 
-	factory DestinyHistoricalStatsActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyHistoricalStatsActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsActivityToJson(this);
 	
 	/// The unique hash identifier of the DestinyActivityDefinition that was played. If I had this to do over, it'd be named activityHash. Too late now.
 	@JsonKey(name:'referenceId')
@@ -44,4 +40,16 @@ class DestinyHistoricalStatsActivity{
 	/// The Membership Type indicating the platform on which this match was played.
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
+
+	factory DestinyHistoricalStatsActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyHistoricalStatsActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsActivityToJson(this);
+
+	static Future<DestinyHistoricalStatsActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyHistoricalStatsActivity>((json)=>DestinyHistoricalStatsActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

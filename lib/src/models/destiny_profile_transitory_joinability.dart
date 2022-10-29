@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_game_privacy_setting.dart';
 import '../enums/destiny_join_closed_reasons.dart';
@@ -10,11 +11,6 @@ part 'destiny_profile_transitory_joinability.g.dart';
 class DestinyProfileTransitoryJoinability{	
 	DestinyProfileTransitoryJoinability();
 
-	factory DestinyProfileTransitoryJoinability.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileTransitoryJoinabilityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryJoinabilityToJson(this);
 	
 	/// The number of slots still available on this person's fireteam.
 	@JsonKey(name:'openSlots')
@@ -27,4 +23,16 @@ class DestinyProfileTransitoryJoinability{
 	/// Reasons why a person can't join this person's fireteam.
 	@JsonKey(name:'closedReasons')
 	DestinyJoinClosedReasons? closedReasons;
+
+	factory DestinyProfileTransitoryJoinability.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileTransitoryJoinabilityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryJoinabilityToJson(this);
+
+	static Future<DestinyProfileTransitoryJoinability> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileTransitoryJoinability>((json)=>DestinyProfileTransitoryJoinability.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

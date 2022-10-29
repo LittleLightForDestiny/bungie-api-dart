@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/forum_recruitment_intensity_label.dart';
 import '../enums/forum_recruitment_tone_label.dart';
@@ -10,11 +11,6 @@ part 'forum_recruitment_detail.g.dart';
 class ForumRecruitmentDetail{	
 	ForumRecruitmentDetail();
 
-	factory ForumRecruitmentDetail.fromJson(Map<String, dynamic> json) {
-		return _$ForumRecruitmentDetailFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ForumRecruitmentDetailToJson(this);
 	
 	@JsonKey(name:'topicId')
 	String? topicId;
@@ -45,4 +41,16 @@ class ForumRecruitmentDetail{
 	
 	@JsonKey(name:'kickedPlayerIds')
 	List<String>? kickedPlayerIds;
+
+	factory ForumRecruitmentDetail.fromJson(Map<String, dynamic> json) {
+		return _$ForumRecruitmentDetailFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ForumRecruitmentDetailToJson(this);
+
+	static Future<ForumRecruitmentDetail> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ForumRecruitmentDetail>((json)=>ForumRecruitmentDetail.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

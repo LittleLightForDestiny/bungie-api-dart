@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/chat_security_setting.dart';
 
@@ -8,11 +9,6 @@ part 'group_optional_conversation.g.dart';
 class GroupOptionalConversation{	
 	GroupOptionalConversation();
 
-	factory GroupOptionalConversation.fromJson(Map<String, dynamic> json) {
-		return _$GroupOptionalConversationFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupOptionalConversationToJson(this);
 	
 	@JsonKey(name:'groupId')
 	String? groupId;
@@ -28,4 +24,16 @@ class GroupOptionalConversation{
 	
 	@JsonKey(name:'chatSecurity',fromJson:decodeChatSecuritySetting,toJson:encodeChatSecuritySetting)
 	ChatSecuritySetting? chatSecurity;
+
+	factory GroupOptionalConversation.fromJson(Map<String, dynamic> json) {
+		return _$GroupOptionalConversationFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupOptionalConversationToJson(this);
+
+	static Future<GroupOptionalConversation> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupOptionalConversation>((json)=>GroupOptionalConversation.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

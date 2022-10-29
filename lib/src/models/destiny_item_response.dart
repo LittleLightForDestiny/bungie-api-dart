@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_item_component.dart';
 import 'single_component_response_of_destiny_item_instance_component.dart';
@@ -18,11 +19,6 @@ part 'destiny_item_response.g.dart';
 class DestinyItemResponse{	
 	DestinyItemResponse();
 
-	factory DestinyItemResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemResponseToJson(this);
 	
 	/// If the item is on a character, this will return the ID of the character that is holding the item.
 	@JsonKey(name:'characterId')
@@ -78,4 +74,16 @@ class DestinyItemResponse{
 	/// COMPONENT TYPE: ItemPlugObjectives
 	@JsonKey(name:'plugObjectives')
 	SingleComponentResponseOfDestinyItemPlugObjectivesComponent? plugObjectives;
+
+	factory DestinyItemResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemResponseToJson(this);
+
+	static Future<DestinyItemResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemResponse>((json)=>DestinyItemResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

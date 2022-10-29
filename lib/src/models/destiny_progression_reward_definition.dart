@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_progression_reward_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_progression_reward_definition.g.dart';
 class DestinyProgressionRewardDefinition{	
 	DestinyProgressionRewardDefinition();
 
-	factory DestinyProgressionRewardDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProgressionRewardDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProgressionRewardDefinitionToJson(this);
 	
 	/// The hash identifier of the DestinyProgressionMappingDefinition that contains the progressions for which experience should be applied.
 	@JsonKey(name:'progressionMappingHash')
@@ -26,4 +22,16 @@ class DestinyProgressionRewardDefinition{
 	/// If true, the game's internal mechanisms to throttle progression should be applied.
 	@JsonKey(name:'applyThrottles')
 	bool? applyThrottles;
+
+	factory DestinyProgressionRewardDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProgressionRewardDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProgressionRewardDefinitionToJson(this);
+
+	static Future<DestinyProgressionRewardDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProgressionRewardDefinition>((json)=>DestinyProgressionRewardDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

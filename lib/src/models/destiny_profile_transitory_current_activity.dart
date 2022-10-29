@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_profile_transitory_current_activity.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_profile_transitory_current_activity.g.dart';
 class DestinyProfileTransitoryCurrentActivity{	
 	DestinyProfileTransitoryCurrentActivity();
 
-	factory DestinyProfileTransitoryCurrentActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileTransitoryCurrentActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryCurrentActivityToJson(this);
 	
 	/// When the activity started.
 	@JsonKey(name:'startTime')
@@ -38,4 +34,16 @@ class DestinyProfileTransitoryCurrentActivity{
 	/// This is how many human or poorly crafted aimbots are on your team.
 	@JsonKey(name:'numberOfPlayers')
 	int? numberOfPlayers;
+
+	factory DestinyProfileTransitoryCurrentActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileTransitoryCurrentActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryCurrentActivityToJson(this);
+
+	static Future<DestinyProfileTransitoryCurrentActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileTransitoryCurrentActivity>((json)=>DestinyProfileTransitoryCurrentActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

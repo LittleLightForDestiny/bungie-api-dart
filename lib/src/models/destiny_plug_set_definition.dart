@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_item_socket_entry_plug_item_randomized_definition.dart';
@@ -13,11 +14,6 @@ part 'destiny_plug_set_definition.g.dart';
 class DestinyPlugSetDefinition{	
 	DestinyPlugSetDefinition();
 
-	factory DestinyPlugSetDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPlugSetDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPlugSetDefinitionToJson(this);
 	
 	/// If you want to show these plugs in isolation, these are the display properties for them.
 	@JsonKey(name:'displayProperties')
@@ -45,4 +41,16 @@ class DestinyPlugSetDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyPlugSetDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPlugSetDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPlugSetDefinitionToJson(this);
+
+	static Future<DestinyPlugSetDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlugSetDefinition>((json)=>DestinyPlugSetDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

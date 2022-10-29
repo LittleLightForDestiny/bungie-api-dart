@@ -10,7 +10,7 @@ class Settings{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CoreSettingsConfigurationResponse.fromJson(response.mappedBody);
+            return CoreSettingsConfigurationResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_sack_block_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_item_sack_block_definition.g.dart';
 class DestinyItemSackBlockDefinition{	
 	DestinyItemSackBlockDefinition();
 
-	factory DestinyItemSackBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemSackBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemSackBlockDefinitionToJson(this);
 	
 	/// A description of what will happen when you open the sack. As far as I can tell, this is blank currently. Unknown whether it will eventually be populated with useful info.
 	@JsonKey(name:'detailAction')
@@ -30,4 +26,16 @@ class DestinyItemSackBlockDefinition{
 	
 	@JsonKey(name:'openOnAcquire')
 	bool? openOnAcquire;
+
+	factory DestinyItemSackBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemSackBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSackBlockDefinitionToJson(this);
+
+	static Future<DestinyItemSackBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSackBlockDefinition>((json)=>DestinyItemSackBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

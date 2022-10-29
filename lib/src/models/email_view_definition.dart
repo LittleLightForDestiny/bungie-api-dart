@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'email_view_definition_setting.dart';
 
@@ -9,11 +10,6 @@ part 'email_view_definition.g.dart';
 class EmailViewDefinition{	
 	EmailViewDefinition();
 
-	factory EmailViewDefinition.fromJson(Map<String, dynamic> json) {
-		return _$EmailViewDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$EmailViewDefinitionToJson(this);
 	
 	/// The identifier for this view.
 	@JsonKey(name:'name')
@@ -22,4 +18,16 @@ class EmailViewDefinition{
 	/// The ordered list of settings to show in this view.
 	@JsonKey(name:'viewSettings')
 	List<EmailViewDefinitionSetting>? viewSettings;
+
+	factory EmailViewDefinition.fromJson(Map<String, dynamic> json) {
+		return _$EmailViewDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$EmailViewDefinitionToJson(this);
+
+	static Future<EmailViewDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, EmailViewDefinition>((json)=>EmailViewDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

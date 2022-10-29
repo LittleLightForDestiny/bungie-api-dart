@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_socket_entry_plug_item_definition.dart';
 import '../enums/socket_plug_sources.dart';
@@ -10,11 +11,6 @@ part 'destiny_item_socket_entry_definition.g.dart';
 class DestinyItemSocketEntryDefinition{	
 	DestinyItemSocketEntryDefinition();
 
-	factory DestinyItemSocketEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemSocketEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemSocketEntryDefinitionToJson(this);
 	
 	/// All sockets have a type, and this is the hash identifier for this particular type. Use it to look up the DestinySocketTypeDefinition: read there for more information on how socket types affect the behavior of the socket.
 	@JsonKey(name:'socketTypeHash')
@@ -55,4 +51,16 @@ class DestinyItemSocketEntryDefinition{
 	/// If true, then this socket is visible in the item's "default" state. If you have an instance, you should always check the runtime state, as that can override this visibility setting: but if you're looking at the item on a conceptual level, this property can be useful for hiding data such as legacy sockets - which remain defined on items for infrastructure purposes, but can be confusing for users to see.
 	@JsonKey(name:'defaultVisible')
 	bool? defaultVisible;
+
+	factory DestinyItemSocketEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemSocketEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSocketEntryDefinitionToJson(this);
+
+	static Future<DestinyItemSocketEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSocketEntryDefinition>((json)=>DestinyItemSocketEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_party_member_states.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_profile_transitory_party_member.g.dart';
 class DestinyProfileTransitoryPartyMember{	
 	DestinyProfileTransitoryPartyMember();
 
-	factory DestinyProfileTransitoryPartyMember.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileTransitoryPartyMemberFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryPartyMemberToJson(this);
 	
 	/// The Membership ID that matches the party member.
 	@JsonKey(name:'membershipId')
@@ -31,4 +27,16 @@ class DestinyProfileTransitoryPartyMember{
 	/// A Flags Enumeration value indicating the states that the player is in relevant to being on a fireteam.
 	@JsonKey(name:'status')
 	DestinyPartyMemberStates? status;
+
+	factory DestinyProfileTransitoryPartyMember.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileTransitoryPartyMemberFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileTransitoryPartyMemberToJson(this);
+
+	static Future<DestinyProfileTransitoryPartyMember> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileTransitoryPartyMember>((json)=>DestinyProfileTransitoryPartyMember.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

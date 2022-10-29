@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_item_change_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyItemChangeResponseResponse extends BungieNetResponse<DestinyItemCha
 	factory DestinyItemChangeResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyItemChangeResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyItemChangeResponseResponseToJson(this);
+
+	static Future<DestinyItemChangeResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemChangeResponseResponse>((json)=>DestinyItemChangeResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

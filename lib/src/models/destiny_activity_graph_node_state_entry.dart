@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_graph_node_state.dart';
 
@@ -9,12 +10,19 @@ part 'destiny_activity_graph_node_state_entry.g.dart';
 class DestinyActivityGraphNodeStateEntry{	
 	DestinyActivityGraphNodeStateEntry();
 
+	
+	@JsonKey(name:'state',fromJson:decodeDestinyGraphNodeState,toJson:encodeDestinyGraphNodeState)
+	DestinyGraphNodeState? state;
+
 	factory DestinyActivityGraphNodeStateEntry.fromJson(Map<String, dynamic> json) {
 		return _$DestinyActivityGraphNodeStateEntryFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeStateEntryToJson(this);
-	
-	@JsonKey(name:'state',fromJson:decodeDestinyGraphNodeState,toJson:encodeDestinyGraphNodeState)
-	DestinyGraphNodeState? state;
+
+	static Future<DestinyActivityGraphNodeStateEntry> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphNodeStateEntry>((json)=>DestinyActivityGraphNodeStateEntry.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

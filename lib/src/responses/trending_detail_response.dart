@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'trending_detail_response.g.dart';
 
@@ -30,4 +31,10 @@ class TrendingDetailResponse extends BungieNetResponse<TrendingDetail> {
 	factory TrendingDetailResponse.fromJson(Map<String, dynamic> json) => _$TrendingDetailResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$TrendingDetailResponseToJson(this);
+
+	static Future<TrendingDetailResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, TrendingDetailResponse>((json)=>TrendingDetailResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

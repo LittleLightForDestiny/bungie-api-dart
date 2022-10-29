@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'email_setting_subscription_localization.dart';
 
@@ -9,11 +10,6 @@ part 'email_subscription_definition.g.dart';
 class EmailSubscriptionDefinition{	
 	EmailSubscriptionDefinition();
 
-	factory EmailSubscriptionDefinition.fromJson(Map<String, dynamic> json) {
-		return _$EmailSubscriptionDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$EmailSubscriptionDefinitionToJson(this);
 	
 	/// The unique identifier for this subscription.
 	@JsonKey(name:'name')
@@ -26,4 +22,16 @@ class EmailSubscriptionDefinition{
 	/// The bitflag value for this subscription. Should be a unique power of two value.
 	@JsonKey(name:'value')
 	String? value;
+
+	factory EmailSubscriptionDefinition.fromJson(Map<String, dynamic> json) {
+		return _$EmailSubscriptionDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$EmailSubscriptionDefinitionToJson(this);
+
+	static Future<EmailSubscriptionDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, EmailSubscriptionDefinition>((json)=>EmailSubscriptionDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

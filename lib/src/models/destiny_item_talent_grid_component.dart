@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_talent_node.dart';
 import 'destiny_progression.dart';
@@ -16,11 +17,6 @@ part 'destiny_item_talent_grid_component.g.dart';
 class DestinyItemTalentGridComponent{	
 	DestinyItemTalentGridComponent();
 
-	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemTalentGridComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemTalentGridComponentToJson(this);
 	
 	/// Most items don't have useful talent grids anymore, but Builds in particular still do.
 	/// You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.
@@ -40,4 +36,16 @@ class DestinyItemTalentGridComponent{
 	/// If the item has a progression, it will be detailed here. A progression means that the item can gain experience. Thresholds of experience are what determines whether and when a talent node can be activated.
 	@JsonKey(name:'gridProgression')
 	DestinyProgression? gridProgression;
+
+	factory DestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemTalentGridComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemTalentGridComponentToJson(this);
+
+	static Future<DestinyItemTalentGridComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemTalentGridComponent>((json)=>DestinyItemTalentGridComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

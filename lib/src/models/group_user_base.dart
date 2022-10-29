@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'group_user_info_card.dart';
 import 'user_info_card.dart';
@@ -9,11 +10,6 @@ part 'group_user_base.g.dart';
 class GroupUserBase{	
 	GroupUserBase();
 
-	factory GroupUserBase.fromJson(Map<String, dynamic> json) {
-		return _$GroupUserBaseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupUserBaseToJson(this);
 	
 	@JsonKey(name:'groupId')
 	String? groupId;
@@ -27,4 +23,16 @@ class GroupUserBase{
 	
 	@JsonKey(name:'joinDate')
 	String? joinDate;
+
+	factory GroupUserBase.fromJson(Map<String, dynamic> json) {
+		return _$GroupUserBaseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupUserBaseToJson(this);
+
+	static Future<GroupUserBase> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupUserBase>((json)=>GroupUserBase.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

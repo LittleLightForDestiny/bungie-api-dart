@@ -56,7 +56,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyManifestResponse.fromJson(response.mappedBody);
+            return DestinyManifestResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -73,7 +73,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyDefinitionResponse.fromJson(response.mappedBody);
+            return DestinyDefinitionResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -86,11 +86,11 @@ class Destiny2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _membershipType = '${membershipType.value}';
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/SearchDestinyPlayerByBungieName/$_membershipType/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return IEnumerableOfUserInfoCardResponse.fromJson(response.mappedBody);
+            return IEnumerableOfUserInfoCardResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -109,7 +109,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyLinkedProfilesResponseResponse.fromJson(response.mappedBody);
+            return DestinyLinkedProfilesResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -128,7 +128,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyProfileResponseResponse.fromJson(response.mappedBody);
+            return DestinyProfileResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -149,7 +149,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyCharacterResponseResponse.fromJson(response.mappedBody);
+            return DestinyCharacterResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -164,7 +164,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyMilestoneResponse.fromJson(response.mappedBody);
+            return DestinyMilestoneResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -177,7 +177,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ClanBannerSourceResponse.fromJson(response.mappedBody);
+            return ClanBannerSourceResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -198,7 +198,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyItemResponseResponse.fromJson(response.mappedBody);
+            return DestinyItemResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -221,7 +221,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyVendorsResponseResponse.fromJson(response.mappedBody);
+            return DestinyVendorsResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -244,7 +244,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyVendorResponseResponse.fromJson(response.mappedBody);
+            return DestinyVendorResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -259,7 +259,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyPublicVendorsResponseResponse.fromJson(response.mappedBody);
+            return DestinyPublicVendorsResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -282,7 +282,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyCollectibleNodeDetailResponseResponse.fromJson(response.mappedBody);
+            return DestinyCollectibleNodeDetailResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -293,11 +293,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/TransferItem/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -308,11 +308,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/PullFromPostmaster/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -323,11 +323,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/EquipItem/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -338,11 +338,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/EquipItems/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyEquipItemResultsResponse.fromJson(response.mappedBody);
+            return DestinyEquipItemResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -353,11 +353,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/SetLockState/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -368,11 +368,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/SetTrackedState/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -383,11 +383,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/InsertSocketPlug/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyItemChangeResponseResponse.fromJson(response.mappedBody);
+            return DestinyItemChangeResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -398,11 +398,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Items/InsertSocketPlugFree/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyItemChangeResponseResponse.fromJson(response.mappedBody);
+            return DestinyItemChangeResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -417,7 +417,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyPostGameCarnageReportDataResponse.fromJson(response.mappedBody);
+            return DestinyPostGameCarnageReportDataResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -430,11 +430,11 @@ class Destiny2{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _activityId = '$activityId';
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Stats/PostGameCarnageReport/$_activityId/Report/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -447,7 +447,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(response.mappedBody);
+            return ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -468,7 +468,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyLeaderboardResultsResponse.fromJson(response.mappedBody);
+            return DestinyLeaderboardResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -485,7 +485,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfDestinyClanAggregateStatResponse.fromJson(response.mappedBody);
+            return ListOfDestinyClanAggregateStatResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -508,7 +508,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyLeaderboardResultsResponse.fromJson(response.mappedBody);
+            return DestinyLeaderboardResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -533,7 +533,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyLeaderboardResultsResponse.fromJson(response.mappedBody);
+            return DestinyLeaderboardResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -552,7 +552,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyEntitySearchResultResponse.fromJson(response.mappedBody);
+            return DestinyEntitySearchResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -581,7 +581,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyHistoricalStatsResultsResponse.fromJson(response.mappedBody);
+            return DestinyHistoricalStatsResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -600,7 +600,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyHistoricalStatsAccountResultResponse.fromJson(response.mappedBody);
+            return DestinyHistoricalStatsAccountResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -625,7 +625,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyActivityHistoryResultsResponse.fromJson(response.mappedBody);
+            return DestinyActivityHistoryResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -644,7 +644,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyHistoricalWeaponStatsDataResponse.fromJson(response.mappedBody);
+            return DestinyHistoricalWeaponStatsDataResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -663,7 +663,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyAggregateActivityResultsResponse.fromJson(response.mappedBody);
+            return DestinyAggregateActivityResultsResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -678,7 +678,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DestinyMilestoneContentResponse.fromJson(response.mappedBody);
+            return DestinyMilestoneContentResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -691,7 +691,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfuint32AndDestinyPublicMilestoneResponse.fromJson(response.mappedBody);
+            return DictionaryOfuint32AndDestinyPublicMilestoneResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -702,11 +702,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Awa/Initialize/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return AwaInitializeResponseResponse.fromJson(response.mappedBody);
+            return AwaInitializeResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -717,11 +717,11 @@ class Destiny2{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Awa/AwaProvideAuthorizationResult/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -736,7 +736,7 @@ class Destiny2{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return AwaAuthorizationResultResponse.fromJson(response.mappedBody);
+            return AwaAuthorizationResultResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

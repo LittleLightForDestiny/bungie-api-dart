@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'api_usage_response.g.dart';
 
@@ -30,4 +31,10 @@ class ApiUsageResponse extends BungieNetResponse<ApiUsage> {
 	factory ApiUsageResponse.fromJson(Map<String, dynamic> json) => _$ApiUsageResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$ApiUsageResponseToJson(this);
+
+	static Future<ApiUsageResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ApiUsageResponse>((json)=>ApiUsageResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_icon_sequence_definition.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_display_properties_definition.g.dart';
 class DestinyDisplayPropertiesDefinition{	
 	DestinyDisplayPropertiesDefinition();
 
-	factory DestinyDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyDisplayPropertiesDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyDisplayPropertiesDefinitionToJson(this);
 	
 	@JsonKey(name:'description')
 	String? description;
@@ -36,4 +32,16 @@ class DestinyDisplayPropertiesDefinition{
 	
 	@JsonKey(name:'hasIcon')
 	bool? hasIcon;
+
+	factory DestinyDisplayPropertiesDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyDisplayPropertiesDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyDisplayPropertiesDefinitionToJson(this);
+
+	static Future<DestinyDisplayPropertiesDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyDisplayPropertiesDefinition>((json)=>DestinyDisplayPropertiesDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

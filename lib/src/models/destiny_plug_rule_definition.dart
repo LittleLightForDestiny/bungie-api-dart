@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_plug_rule_definition.g.dart';
@@ -9,13 +10,20 @@ part 'destiny_plug_rule_definition.g.dart';
 class DestinyPlugRuleDefinition{	
 	DestinyPlugRuleDefinition();
 
+	
+	/// The localized string to show if this rule fails.
+	@JsonKey(name:'failureMessage')
+	String? failureMessage;
+
 	factory DestinyPlugRuleDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPlugRuleDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyPlugRuleDefinitionToJson(this);
-	
-	/// The localized string to show if this rule fails.
-	@JsonKey(name:'failureMessage')
-	String? failureMessage;
+
+	static Future<DestinyPlugRuleDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlugRuleDefinition>((json)=>DestinyPlugRuleDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

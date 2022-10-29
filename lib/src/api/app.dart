@@ -17,7 +17,7 @@ class App{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ApiUsageResponse.fromJson(response.mappedBody);
+            return ApiUsageResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -30,7 +30,7 @@ class App{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return IEnumerableOfApplicationResponse.fromJson(response.mappedBody);
+            return IEnumerableOfApplicationResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

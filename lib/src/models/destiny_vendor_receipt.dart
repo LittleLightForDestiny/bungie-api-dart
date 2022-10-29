@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 import '../enums/destiny_vendor_item_refund_policy.dart';
@@ -10,11 +11,6 @@ part 'destiny_vendor_receipt.g.dart';
 class DestinyVendorReceipt{	
 	DestinyVendorReceipt();
 
-	factory DestinyVendorReceipt.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorReceiptFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorReceiptToJson(this);
 	
 	/// The amount paid for the item, in terms of items that were consumed in the purchase and their quantity.
 	@JsonKey(name:'currencyPaid')
@@ -47,4 +43,16 @@ class DestinyVendorReceipt{
 	/// The date at which this receipt is rendered invalid.
 	@JsonKey(name:'expiresOn')
 	String? expiresOn;
+
+	factory DestinyVendorReceipt.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorReceiptFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorReceiptToJson(this);
+
+	static Future<DestinyVendorReceipt> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorReceipt>((json)=>DestinyVendorReceipt.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

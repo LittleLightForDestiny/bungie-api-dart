@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_activity_unlock_string_definition.g.dart';
@@ -8,13 +9,20 @@ part 'destiny_activity_unlock_string_definition.g.dart';
 class DestinyActivityUnlockStringDefinition{	
 	DestinyActivityUnlockStringDefinition();
 
+	
+	/// The string to be displayed if the conditions are met.
+	@JsonKey(name:'displayString')
+	String? displayString;
+
 	factory DestinyActivityUnlockStringDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyActivityUnlockStringDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityUnlockStringDefinitionToJson(this);
-	
-	/// The string to be displayed if the conditions are met.
-	@JsonKey(name:'displayString')
-	String? displayString;
+
+	static Future<DestinyActivityUnlockStringDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityUnlockStringDefinition>((json)=>DestinyActivityUnlockStringDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

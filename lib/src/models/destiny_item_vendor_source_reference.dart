@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_vendor_source_reference.g.dart';
@@ -10,11 +11,6 @@ part 'destiny_item_vendor_source_reference.g.dart';
 class DestinyItemVendorSourceReference{	
 	DestinyItemVendorSourceReference();
 
-	factory DestinyItemVendorSourceReference.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemVendorSourceReferenceFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemVendorSourceReferenceToJson(this);
 	
 	/// The identifier for the vendor that may sell this item.
 	@JsonKey(name:'vendorHash')
@@ -23,4 +19,16 @@ class DestinyItemVendorSourceReference{
 	/// The Vendor sale item indexes that represent the sale information for this item. The same vendor may sell an item in multiple "ways", hence why this is a list. (for instance, a weapon may be "sold" as a reward in a quest, for Glimmer, and for Masterwork Cores: each of those ways would be represented by a different vendor sale item with a different index)
 	@JsonKey(name:'vendorItemIndexes')
 	List<int>? vendorItemIndexes;
+
+	factory DestinyItemVendorSourceReference.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemVendorSourceReferenceFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemVendorSourceReferenceToJson(this);
+
+	static Future<DestinyItemVendorSourceReference> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemVendorSourceReference>((json)=>DestinyItemVendorSourceReference.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_location_release_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_location_definition.g.dart';
 class DestinyLocationDefinition{	
 	DestinyLocationDefinition();
 
-	factory DestinyLocationDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyLocationDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyLocationDefinitionToJson(this);
 	
 	/// If the location has a Vendor on it, this is the hash identifier for that Vendor. Look them up with DestinyVendorDefinition.
 	@JsonKey(name:'vendorHash')
@@ -36,4 +32,16 @@ class DestinyLocationDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyLocationDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyLocationDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyLocationDefinitionToJson(this);
+
+	static Future<DestinyLocationDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLocationDefinition>((json)=>DestinyLocationDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

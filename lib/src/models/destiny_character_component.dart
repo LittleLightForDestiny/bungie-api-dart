@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 import '../enums/destiny_race.dart';
@@ -14,11 +15,6 @@ part 'destiny_character_component.g.dart';
 class DestinyCharacterComponent{	
 	DestinyCharacterComponent();
 
-	factory DestinyCharacterComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterComponentToJson(this);
 	
 	/// Every Destiny Profile has a membershipId. This is provided on the character as well for convenience.
 	@JsonKey(name:'membershipId')
@@ -111,4 +107,16 @@ class DestinyCharacterComponent{
 	/// If this Character has a title assigned to it, this is the identifier of the DestinyRecordDefinition that has that title information.
 	@JsonKey(name:'titleRecordHash')
 	int? titleRecordHash;
+
+	factory DestinyCharacterComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterComponentToJson(this);
+
+	static Future<DestinyCharacterComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterComponent>((json)=>DestinyCharacterComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

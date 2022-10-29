@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'single_component_response_of_destiny_collectibles_component.dart';
 import 'destiny_item_component_set_ofuint32.dart';
@@ -10,11 +11,6 @@ part 'destiny_collectible_node_detail_response.g.dart';
 class DestinyCollectibleNodeDetailResponse{	
 	DestinyCollectibleNodeDetailResponse();
 
-	factory DestinyCollectibleNodeDetailResponse.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCollectibleNodeDetailResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCollectibleNodeDetailResponseToJson(this);
 	
 	/// COMPONENT TYPE: Collectibles
 	@JsonKey(name:'collectibles')
@@ -26,4 +22,16 @@ class DestinyCollectibleNodeDetailResponse{
 	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]
 	@JsonKey(name:'collectibleItemComponents')
 	DestinyItemComponentSetOfuint32? collectibleItemComponents;
+
+	factory DestinyCollectibleNodeDetailResponse.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCollectibleNodeDetailResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCollectibleNodeDetailResponseToJson(this);
+
+	static Future<DestinyCollectibleNodeDetailResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCollectibleNodeDetailResponse>((json)=>DestinyCollectibleNodeDetailResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

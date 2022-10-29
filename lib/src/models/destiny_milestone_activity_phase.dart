@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_milestone_activity_phase.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_milestone_activity_phase.g.dart';
 class DestinyMilestoneActivityPhase{	
 	DestinyMilestoneActivityPhase();
 
-	factory DestinyMilestoneActivityPhase.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneActivityPhaseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityPhaseToJson(this);
 	
 	/// Indicates if the phase has been completed.
 	@JsonKey(name:'complete')
@@ -21,4 +17,16 @@ class DestinyMilestoneActivityPhase{
 	/// In DestinyActivityDefinition, if the activity has phases, there will be a set of phases defined in the "insertionPoints" property. This is the hash that maps to that phase.
 	@JsonKey(name:'phaseHash')
 	int? phaseHash;
+
+	factory DestinyMilestoneActivityPhase.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneActivityPhaseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneActivityPhaseToJson(this);
+
+	static Future<DestinyMilestoneActivityPhase> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneActivityPhase>((json)=>DestinyMilestoneActivityPhase.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

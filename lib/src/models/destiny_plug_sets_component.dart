@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_plug.dart';
 
@@ -10,13 +11,20 @@ part 'destiny_plug_sets_component.g.dart';
 class DestinyPlugSetsComponent{	
 	DestinyPlugSetsComponent();
 
+	
+	/// The shared list of plugs for each relevant PlugSet, keyed by the hash identifier of the PlugSet (DestinyPlugSetDefinition).
+	@JsonKey(name:'plugs')
+	Map<String, List<DestinyItemPlug>>? plugs;
+
 	factory DestinyPlugSetsComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPlugSetsComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyPlugSetsComponentToJson(this);
-	
-	/// The shared list of plugs for each relevant PlugSet, keyed by the hash identifier of the PlugSet (DestinyPlugSetDefinition).
-	@JsonKey(name:'plugs')
-	Map<String, List<DestinyItemPlug>>? plugs;
+
+	static Future<DestinyPlugSetsComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlugSetsComponent>((json)=>DestinyPlugSetsComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

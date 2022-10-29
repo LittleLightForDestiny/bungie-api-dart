@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_milestone_vendor_definition.g.dart';
@@ -9,13 +10,20 @@ part 'destiny_milestone_vendor_definition.g.dart';
 class DestinyMilestoneVendorDefinition{	
 	DestinyMilestoneVendorDefinition();
 
+	
+	/// The hash of the vendor whose wares should be shown as associated with the Milestone.
+	@JsonKey(name:'vendorHash')
+	int? vendorHash;
+
 	factory DestinyMilestoneVendorDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyMilestoneVendorDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyMilestoneVendorDefinitionToJson(this);
-	
-	/// The hash of the vendor whose wares should be shown as associated with the Milestone.
-	@JsonKey(name:'vendorHash')
-	int? vendorHash;
+
+	static Future<DestinyMilestoneVendorDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneVendorDefinition>((json)=>DestinyMilestoneVendorDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

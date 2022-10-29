@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_derived_item_category_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_preview_block_definition.g.dart';
 class DestinyItemPreviewBlockDefinition{	
 	DestinyItemPreviewBlockDefinition();
 
-	factory DestinyItemPreviewBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemPreviewBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemPreviewBlockDefinitionToJson(this);
 	
 	/// A string that the game UI uses as a hint for which detail screen to show for the item. You, too, can leverage this for your own custom screen detail views. Note, however, that these are arbitrarily defined by designers: there's no guarantees of a fixed, known number of these - so fall back to something reasonable if you don't recognize it.
 	@JsonKey(name:'screenStyle')
@@ -35,4 +31,16 @@ class DestinyItemPreviewBlockDefinition{
 	/// This is a list of the items being previewed, categorized in the same way as they are in the preview UI.
 	@JsonKey(name:'derivedItemCategories')
 	List<DestinyDerivedItemCategoryDefinition>? derivedItemCategories;
+
+	factory DestinyItemPreviewBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemPreviewBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemPreviewBlockDefinitionToJson(this);
+
+	static Future<DestinyItemPreviewBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemPreviewBlockDefinition>((json)=>DestinyItemPreviewBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

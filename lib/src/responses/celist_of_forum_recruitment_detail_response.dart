@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'celist_of_forum_recruitment_detail_response.g.dart';
 
@@ -30,4 +31,10 @@ class CEListOfForumRecruitmentDetailResponse extends BungieNetResponse<List<Foru
 	factory CEListOfForumRecruitmentDetailResponse.fromJson(Map<String, dynamic> json) => _$CEListOfForumRecruitmentDetailResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$CEListOfForumRecruitmentDetailResponseToJson(this);
+
+	static Future<CEListOfForumRecruitmentDetailResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, CEListOfForumRecruitmentDetailResponse>((json)=>CEListOfForumRecruitmentDetailResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

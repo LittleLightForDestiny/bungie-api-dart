@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_historical_stats_value.dart';
 import 'destiny_historical_stats_period_group.dart';
@@ -9,11 +10,6 @@ part 'destiny_historical_stats_by_period.g.dart';
 class DestinyHistoricalStatsByPeriod{	
 	DestinyHistoricalStatsByPeriod();
 
-	factory DestinyHistoricalStatsByPeriod.fromJson(Map<String, dynamic> json) {
-		return _$DestinyHistoricalStatsByPeriodFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsByPeriodToJson(this);
 	
 	@JsonKey(name:'allTime')
 	Map<String, DestinyHistoricalStatsValue>? allTime;
@@ -32,4 +28,16 @@ class DestinyHistoricalStatsByPeriod{
 	
 	@JsonKey(name:'monthly')
 	List<DestinyHistoricalStatsPeriodGroup>? monthly;
+
+	factory DestinyHistoricalStatsByPeriod.fromJson(Map<String, dynamic> json) {
+		return _$DestinyHistoricalStatsByPeriodFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsByPeriodToJson(this);
+
+	static Future<DestinyHistoricalStatsByPeriod> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyHistoricalStatsByPeriod>((json)=>DestinyHistoricalStatsByPeriod.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

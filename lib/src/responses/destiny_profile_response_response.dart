@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_profile_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyProfileResponseResponse extends BungieNetResponse<DestinyProfileRes
 	factory DestinyProfileResponseResponse.fromJson(Map<String, dynamic> json) => _$DestinyProfileResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyProfileResponseResponseToJson(this);
+
+	static Future<DestinyProfileResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileResponseResponse>((json)=>DestinyProfileResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

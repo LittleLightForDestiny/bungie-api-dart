@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 import '../enums/presence_status.dart';
@@ -12,11 +13,6 @@ part 'bungie_friend.g.dart';
 class BungieFriend{	
 	BungieFriend();
 
-	factory BungieFriend.fromJson(Map<String, dynamic> json) {
-		return _$BungieFriendFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$BungieFriendToJson(this);
 	
 	@JsonKey(name:'lastSeenAsMembershipId')
 	String? lastSeenAsMembershipId;
@@ -41,4 +37,16 @@ class BungieFriend{
 	
 	@JsonKey(name:'bungieNetUser')
 	GeneralUser? bungieNetUser;
+
+	factory BungieFriend.fromJson(Map<String, dynamic> json) {
+		return _$BungieFriendFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$BungieFriendToJson(this);
+
+	static Future<BungieFriend> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, BungieFriend>((json)=>BungieFriend.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

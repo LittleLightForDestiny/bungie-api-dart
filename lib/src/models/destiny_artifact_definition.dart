@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_item_translation_block_definition.dart';
@@ -12,11 +13,6 @@ part 'destiny_artifact_definition.g.dart';
 class DestinyArtifactDefinition{	
 	DestinyArtifactDefinition();
 
-	factory DestinyArtifactDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyArtifactDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyArtifactDefinitionToJson(this);
 	
 	/// Any basic display info we know about the Artifact. Currently sourced from a related inventory item, but the source of this data is subject to change.
 	@JsonKey(name:'displayProperties')
@@ -42,4 +38,16 @@ class DestinyArtifactDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyArtifactDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyArtifactDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyArtifactDefinitionToJson(this);
+
+	static Future<DestinyArtifactDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyArtifactDefinition>((json)=>DestinyArtifactDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

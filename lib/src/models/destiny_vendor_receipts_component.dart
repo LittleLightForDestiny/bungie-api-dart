@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_receipt.dart';
 
@@ -9,13 +10,20 @@ part 'destiny_vendor_receipts_component.g.dart';
 class DestinyVendorReceiptsComponent{	
 	DestinyVendorReceiptsComponent();
 
+	
+	/// The receipts for refundable purchases made at a vendor.
+	@JsonKey(name:'receipts')
+	List<DestinyVendorReceipt>? receipts;
+
 	factory DestinyVendorReceiptsComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyVendorReceiptsComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyVendorReceiptsComponentToJson(this);
-	
-	/// The receipts for refundable purchases made at a vendor.
-	@JsonKey(name:'receipts')
-	List<DestinyVendorReceipt>? receipts;
+
+	static Future<DestinyVendorReceiptsComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorReceiptsComponent>((json)=>DestinyVendorReceiptsComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

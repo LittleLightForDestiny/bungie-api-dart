@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_talent_exclusive_group.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_talent_exclusive_group.g.dart';
 class DestinyTalentExclusiveGroup{	
 	DestinyTalentExclusiveGroup();
 
-	factory DestinyTalentExclusiveGroup.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTalentExclusiveGroupFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTalentExclusiveGroupToJson(this);
 	
 	/// The identifier for this exclusive group. Only guaranteed unique within the talent grid, not globally.
 	@JsonKey(name:'groupHash')
@@ -33,4 +29,16 @@ class DestinyTalentExclusiveGroup{
 	/// A quick reference of Nodes that will be deactivated if any node in this group is activated, by their Talent Node hashes. (See DestinyTalentNodeDefinition.nodeHash)
 	@JsonKey(name:'opposingNodeHashes')
 	List<int>? opposingNodeHashes;
+
+	factory DestinyTalentExclusiveGroup.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTalentExclusiveGroupFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentExclusiveGroupToJson(this);
+
+	static Future<DestinyTalentExclusiveGroup> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTalentExclusiveGroup>((json)=>DestinyTalentExclusiveGroup.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -8,11 +9,6 @@ part 'group_user_info_card.g.dart';
 class GroupUserInfoCard{	
 	GroupUserInfoCard();
 
-	factory GroupUserInfoCard.fromJson(Map<String, dynamic> json) {
-		return _$GroupUserInfoCardFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupUserInfoCardToJson(this);
 	
 	/// This will be the display name the clan server last saw the user as. If the account is an active cross save override, this will be the display name to use. Otherwise, this will match the displayName property.
 	@JsonKey(name:'LastSeenDisplayName')
@@ -62,4 +58,16 @@ class GroupUserInfoCard{
 	/// The bungie global display name code, if set.
 	@JsonKey(name:'bungieGlobalDisplayNameCode')
 	int? bungieGlobalDisplayNameCode;
+
+	factory GroupUserInfoCard.fromJson(Map<String, dynamic> json) {
+		return _$GroupUserInfoCardFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupUserInfoCardToJson(this);
+
+	static Future<GroupUserInfoCard> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupUserInfoCard>((json)=>GroupUserInfoCard.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

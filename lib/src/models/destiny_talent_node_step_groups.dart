@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_talent_node_step_weapon_performances.dart';
 import '../enums/destiny_talent_node_step_impact_effects.dart';
@@ -13,11 +14,6 @@ part 'destiny_talent_node_step_groups.g.dart';
 class DestinyTalentNodeStepGroups{	
 	DestinyTalentNodeStepGroups();
 
-	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTalentNodeStepGroupsFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTalentNodeStepGroupsToJson(this);
 	
 	@JsonKey(name:'weaponPerformance')
 	DestinyTalentNodeStepWeaponPerformances? weaponPerformance;
@@ -33,4 +29,16 @@ class DestinyTalentNodeStepGroups{
 	
 	@JsonKey(name:'damageTypes')
 	DestinyTalentNodeStepDamageTypes? damageTypes;
+
+	factory DestinyTalentNodeStepGroups.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTalentNodeStepGroupsFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentNodeStepGroupsToJson(this);
+
+	static Future<DestinyTalentNodeStepGroups> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTalentNodeStepGroups>((json)=>DestinyTalentNodeStepGroups.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

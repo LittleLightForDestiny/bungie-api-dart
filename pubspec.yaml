@@ -1,12 +1,13 @@
 name: bungie_api
 description: This project implements Dart definitions and API helpers for the [Bungie.net API](https://github.com/Bungie-net/api).
 
-version: 13.16.0
+version: 13.16.1
 
 homepage:
   https://github.com/LittleLightForDestiny/bungie-api-dart.git
 
 dependencies:
+  compute: 1.0.2
   json_annotation: ^4.0.0
 
 dev_dependencies:

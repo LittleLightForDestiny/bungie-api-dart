@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_milestone_quest.dart';
 import 'destiny_milestone_challenge_activity.dart';
@@ -12,11 +13,6 @@ part 'destiny_milestone.g.dart';
 class DestinyMilestone{	
 	DestinyMilestone();
 
-	factory DestinyMilestone.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneToJson(this);
 	
 	/// The unique identifier for the Milestone. Use it to look up the DestinyMilestoneDefinition, so you can combine the other data in this contract with static definition data.
 	@JsonKey(name:'milestoneHash')
@@ -59,4 +55,16 @@ class DestinyMilestone{
 	/// Used for ordering milestones in a display to match how we order them in BNet. May pull from static data, or possibly in the future from dynamic information.
 	@JsonKey(name:'order')
 	int? order;
+
+	factory DestinyMilestone.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneToJson(this);
+
+	static Future<DestinyMilestone> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestone>((json)=>DestinyMilestone.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

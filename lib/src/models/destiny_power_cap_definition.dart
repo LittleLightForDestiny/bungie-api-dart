@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_power_cap_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_power_cap_definition.g.dart';
 class DestinyPowerCapDefinition{	
 	DestinyPowerCapDefinition();
 
-	factory DestinyPowerCapDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPowerCapDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPowerCapDefinitionToJson(this);
 	
 	/// The raw value for a power cap.
 	@JsonKey(name:'powerCap')
@@ -30,4 +26,16 @@ class DestinyPowerCapDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyPowerCapDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPowerCapDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPowerCapDefinitionToJson(this);
+
+	static Future<DestinyPowerCapDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPowerCapDefinition>((json)=>DestinyPowerCapDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

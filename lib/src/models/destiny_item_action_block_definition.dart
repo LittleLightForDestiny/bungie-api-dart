@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_action_required_item_definition.dart';
 import 'destiny_progression_reward_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_item_action_block_definition.g.dart';
 class DestinyItemActionBlockDefinition{	
 	DestinyItemActionBlockDefinition();
 
-	factory DestinyItemActionBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemActionBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemActionBlockDefinitionToJson(this);
 	
 	/// Localized text for the verb of the action being performed.
 	@JsonKey(name:'verbName')
@@ -71,4 +67,16 @@ class DestinyItemActionBlockDefinition{
 	/// If true, this action will be performed as soon as you earn this item. Some rewards work this way, providing you a single item to pick up from a reward-granting vendor in-game and then immediately consuming itself to provide you multiple items.
 	@JsonKey(name:'useOnAcquire')
 	bool? useOnAcquire;
+
+	factory DestinyItemActionBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemActionBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemActionBlockDefinitionToJson(this);
+
+	static Future<DestinyItemActionBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemActionBlockDefinition>((json)=>DestinyItemActionBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

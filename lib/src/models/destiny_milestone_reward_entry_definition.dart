@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 import 'destiny_display_properties_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_milestone_reward_entry_definition.g.dart';
 class DestinyMilestoneRewardEntryDefinition{	
 	DestinyMilestoneRewardEntryDefinition();
 
-	factory DestinyMilestoneRewardEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneRewardEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneRewardEntryDefinitionToJson(this);
 	
 	/// The identifier for this reward entry. Runtime data will refer to reward entries by this hash. Only guaranteed unique within the specific Milestone.
 	@JsonKey(name:'rewardEntryHash')
@@ -39,4 +35,16 @@ class DestinyMilestoneRewardEntryDefinition{
 	/// If you want to follow BNet's ordering of these rewards, use this number within a given category to order the rewards. Yeah, I know. I feel dirty too.
 	@JsonKey(name:'order')
 	int? order;
+
+	factory DestinyMilestoneRewardEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneRewardEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneRewardEntryDefinitionToJson(this);
+
+	static Future<DestinyMilestoneRewardEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneRewardEntryDefinition>((json)=>DestinyMilestoneRewardEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

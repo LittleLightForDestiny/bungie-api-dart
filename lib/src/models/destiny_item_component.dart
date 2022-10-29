@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/item_bind_status.dart';
 import '../enums/item_location.dart';
@@ -13,11 +14,6 @@ part 'destiny_item_component.g.dart';
 class DestinyItemComponent{	
 	DestinyItemComponent();
 
-	factory DestinyItemComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemComponentToJson(this);
 	
 	/// The identifier for the item's definition, which is where most of the useful static information for the item can be found.
 	@JsonKey(name:'itemHash')
@@ -88,4 +84,16 @@ class DestinyItemComponent{
 	/// If available, a list that describes which item values (rewards) should be shown (true) or hidden (false).
 	@JsonKey(name:'itemValueVisibility')
 	List<bool>? itemValueVisibility;
+
+	factory DestinyItemComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemComponentToJson(this);
+
+	static Future<DestinyItemComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemComponent>((json)=>DestinyItemComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

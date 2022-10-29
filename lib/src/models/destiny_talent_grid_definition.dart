@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_talent_node_definition.dart';
 import 'destiny_talent_node_exclusive_set_definition.dart';
@@ -17,11 +18,6 @@ part 'destiny_talent_grid_definition.g.dart';
 class DestinyTalentGridDefinition{	
 	DestinyTalentGridDefinition();
 
-	factory DestinyTalentGridDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTalentGridDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyTalentGridDefinitionToJson(this);
 	
 	/// The maximum possible level of the Talent Grid: at this level, any nodes are allowed to be activated.
 	@JsonKey(name:'maxGridLevel')
@@ -71,4 +67,16 @@ class DestinyTalentGridDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyTalentGridDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyTalentGridDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyTalentGridDefinitionToJson(this);
+
+	static Future<DestinyTalentGridDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyTalentGridDefinition>((json)=>DestinyTalentGridDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

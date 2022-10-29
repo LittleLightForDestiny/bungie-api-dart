@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_objective_display_properties.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_objective_block_definition.g.dart';
 class DestinyItemObjectiveBlockDefinition{	
 	DestinyItemObjectiveBlockDefinition();
 
-	factory DestinyItemObjectiveBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemObjectiveBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemObjectiveBlockDefinitionToJson(this);
 	
 	/// The hashes to Objectives (DestinyObjectiveDefinition) that are part of this Quest Step, in the order that they should be rendered.
 	@JsonKey(name:'objectiveHashes')
@@ -55,4 +51,16 @@ class DestinyItemObjectiveBlockDefinition{
 	
 	@JsonKey(name:'displayAsStatTracker')
 	bool? displayAsStatTracker;
+
+	factory DestinyItemObjectiveBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemObjectiveBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemObjectiveBlockDefinitionToJson(this);
+
+	static Future<DestinyItemObjectiveBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemObjectiveBlockDefinition>((json)=>DestinyItemObjectiveBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/group_type.dart';
 import '../enums/chat_security_setting.dart';
@@ -14,11 +15,6 @@ part 'group_v2.g.dart';
 class GroupV2{	
 	GroupV2();
 
-	factory GroupV2.fromJson(Map<String, dynamic> json) {
-		return _$GroupV2FromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupV2ToJson(this);
 	
 	@JsonKey(name:'groupId')
 	String? groupId;
@@ -104,4 +100,16 @@ class GroupV2{
 	/// The same as GroupV2ClanInfo, but includes any investment data.
 	@JsonKey(name:'clanInfo')
 	GroupV2ClanInfoAndInvestment? clanInfo;
+
+	factory GroupV2.fromJson(Map<String, dynamic> json) {
+		return _$GroupV2FromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupV2ToJson(this);
+
+	static Future<GroupV2> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupV2>((json)=>GroupV2.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

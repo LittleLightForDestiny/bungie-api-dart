@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_unlock_expression_definition.dart';
 import 'destiny_linked_graph_entry_definition.dart';
@@ -10,11 +11,6 @@ part 'destiny_linked_graph_definition.g.dart';
 class DestinyLinkedGraphDefinition{	
 	DestinyLinkedGraphDefinition();
 
-	factory DestinyLinkedGraphDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyLinkedGraphDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyLinkedGraphDefinitionToJson(this);
 	
 	@JsonKey(name:'description')
 	String? description;
@@ -35,4 +31,16 @@ class DestinyLinkedGraphDefinition{
 	
 	@JsonKey(name:'overview')
 	String? overview;
+
+	factory DestinyLinkedGraphDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyLinkedGraphDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyLinkedGraphDefinitionToJson(this);
+
+	static Future<DestinyLinkedGraphDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLinkedGraphDefinition>((json)=>DestinyLinkedGraphDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

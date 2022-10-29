@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_material_requirement.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_material_requirement_set_definition.g.dart';
 class DestinyMaterialRequirementSetDefinition{	
 	DestinyMaterialRequirementSetDefinition();
 
-	factory DestinyMaterialRequirementSetDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMaterialRequirementSetDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMaterialRequirementSetDefinitionToJson(this);
 	
 	/// The list of all materials that are required.
 	@JsonKey(name:'materials')
@@ -32,4 +28,16 @@ class DestinyMaterialRequirementSetDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyMaterialRequirementSetDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMaterialRequirementSetDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMaterialRequirementSetDefinitionToJson(this);
+
+	static Future<DestinyMaterialRequirementSetDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMaterialRequirementSetDefinition>((json)=>DestinyMaterialRequirementSetDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

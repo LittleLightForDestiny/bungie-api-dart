@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/awa_user_selection.dart';
 import '../enums/awa_response_reason.dart';
@@ -11,11 +12,6 @@ part 'awa_authorization_result.g.dart';
 class AwaAuthorizationResult{	
 	AwaAuthorizationResult();
 
-	factory AwaAuthorizationResult.fromJson(Map<String, dynamic> json) {
-		return _$AwaAuthorizationResultFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$AwaAuthorizationResultToJson(this);
 	
 	/// Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action.
 	@JsonKey(name:'userSelection',fromJson:decodeAwaUserSelection,toJson:encodeAwaUserSelection)
@@ -47,4 +43,16 @@ class AwaAuthorizationResult{
 	/// MembershipType from the permission request.
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
+
+	factory AwaAuthorizationResult.fromJson(Map<String, dynamic> json) {
+		return _$AwaAuthorizationResultFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$AwaAuthorizationResultToJson(this);
+
+	static Future<AwaAuthorizationResult> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, AwaAuthorizationResult>((json)=>AwaAuthorizationResult.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

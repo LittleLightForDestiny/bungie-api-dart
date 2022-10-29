@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/bungie_membership_type.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_item_transfer_request.g.dart';
 class DestinyItemTransferRequest{	
 	DestinyItemTransferRequest();
 
-	factory DestinyItemTransferRequest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemTransferRequestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemTransferRequestToJson(this);
 	
 	@JsonKey(name:'itemReferenceHash')
 	int? itemReferenceHash;
@@ -32,4 +28,16 @@ class DestinyItemTransferRequest{
 	
 	@JsonKey(name:'membershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
 	BungieMembershipType? membershipType;
+
+	factory DestinyItemTransferRequest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemTransferRequestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemTransferRequestToJson(this);
+
+	static Future<DestinyItemTransferRequest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemTransferRequest>((json)=>DestinyItemTransferRequest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

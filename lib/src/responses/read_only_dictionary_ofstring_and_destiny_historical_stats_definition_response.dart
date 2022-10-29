@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'read_only_dictionary_ofstring_and_destiny_historical_stats_definition_response.g.dart';
 
@@ -30,4 +31,10 @@ class ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse exte
 	factory ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(Map<String, dynamic> json) => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponseToJson(this);
+
+	static Future<ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse>((json)=>ReadOnlyDictionaryOfstringAndDestinyHistoricalStatsDefinitionResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

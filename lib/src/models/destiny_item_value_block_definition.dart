@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_quantity.dart';
 
@@ -11,11 +12,6 @@ part 'destiny_item_value_block_definition.g.dart';
 class DestinyItemValueBlockDefinition{	
 	DestinyItemValueBlockDefinition();
 
-	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemValueBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemValueBlockDefinitionToJson(this);
 	
 	/// References to the items that make up this item's "value", and the quantity.
 	@JsonKey(name:'itemValue')
@@ -24,4 +20,16 @@ class DestinyItemValueBlockDefinition{
 	/// If there's a localized text description of the value provided, this will be said description.
 	@JsonKey(name:'valueDescription')
 	String? valueDescription;
+
+	factory DestinyItemValueBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemValueBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemValueBlockDefinitionToJson(this);
+
+	static Future<DestinyItemValueBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemValueBlockDefinition>((json)=>DestinyItemValueBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

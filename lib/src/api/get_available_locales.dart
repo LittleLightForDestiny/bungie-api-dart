@@ -10,7 +10,7 @@ class GetAvailableLocales{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEDictionaryOfstringAndstringResponse.fromJson(response.mappedBody);
+            return CEDictionaryOfstringAndstringResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

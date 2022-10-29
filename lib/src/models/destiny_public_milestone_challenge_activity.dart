@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_public_milestone_challenge_activity.g.dart';
@@ -7,11 +8,6 @@ part 'destiny_public_milestone_challenge_activity.g.dart';
 class DestinyPublicMilestoneChallengeActivity{	
 	DestinyPublicMilestoneChallengeActivity();
 
-	factory DestinyPublicMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicMilestoneChallengeActivityFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneChallengeActivityToJson(this);
 	
 	@JsonKey(name:'activityHash')
 	int? activityHash;
@@ -37,4 +33,16 @@ class DestinyPublicMilestoneChallengeActivity{
 	/// We have no human readable information for this data, so it's up to you if you want to associate it with such info to show it.
 	@JsonKey(name:'booleanActivityOptions')
 	Map<String, bool>? booleanActivityOptions;
+
+	factory DestinyPublicMilestoneChallengeActivity.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicMilestoneChallengeActivityFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneChallengeActivityToJson(this);
+
+	static Future<DestinyPublicMilestoneChallengeActivity> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicMilestoneChallengeActivity>((json)=>DestinyPublicMilestoneChallengeActivity.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

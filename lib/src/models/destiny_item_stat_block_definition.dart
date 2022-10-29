@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_inventory_item_stat_definition.dart';
 
@@ -11,11 +12,6 @@ part 'destiny_item_stat_block_definition.g.dart';
 class DestinyItemStatBlockDefinition{	
 	DestinyItemStatBlockDefinition();
 
-	factory DestinyItemStatBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemStatBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemStatBlockDefinitionToJson(this);
 	
 	/// If true, the game won't show the "primary" stat on this item when you inspect it.
 	/// NOTE: This is being manually mapped, because I happen to want it in a block that isn't going to directly create this derivative block.
@@ -40,4 +36,16 @@ class DestinyItemStatBlockDefinition{
 	/// Use this hash to look up the stat's value using DestinyInventoryItemDefinition.stats.stats, and the renderable data for the primary stat in the related DestinyStatDefinition.
 	@JsonKey(name:'primaryBaseStatHash')
 	int? primaryBaseStatHash;
+
+	factory DestinyItemStatBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemStatBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemStatBlockDefinitionToJson(this);
+
+	static Future<DestinyItemStatBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemStatBlockDefinition>((json)=>DestinyItemStatBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

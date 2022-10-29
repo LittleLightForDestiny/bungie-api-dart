@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/awa_type.dart';
 import '../enums/bungie_membership_type.dart';
@@ -9,11 +10,6 @@ part 'awa_permission_requested.g.dart';
 class AwaPermissionRequested{	
 	AwaPermissionRequested();
 
-	factory AwaPermissionRequested.fromJson(Map<String, dynamic> json) {
-		return _$AwaPermissionRequestedFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$AwaPermissionRequestedToJson(this);
 	
 	/// Type of advanced write action.
 	@JsonKey(name:'type',fromJson:decodeAwaType,toJson:encodeAwaType)
@@ -30,4 +26,16 @@ class AwaPermissionRequested{
 	/// Destiny character ID, if applicable, that will be affected by the action.
 	@JsonKey(name:'characterId')
 	String? characterId;
+
+	factory AwaPermissionRequested.fromJson(Map<String, dynamic> json) {
+		return _$AwaPermissionRequestedFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$AwaPermissionRequestedToJson(this);
+
+	static Future<AwaPermissionRequested> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, AwaPermissionRequested>((json)=>AwaPermissionRequested.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

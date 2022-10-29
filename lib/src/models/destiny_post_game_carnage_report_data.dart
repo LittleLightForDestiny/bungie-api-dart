@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_historical_stats_activity.dart';
 import 'destiny_post_game_carnage_report_entry.dart';
@@ -10,11 +11,6 @@ part 'destiny_post_game_carnage_report_data.g.dart';
 class DestinyPostGameCarnageReportData{	
 	DestinyPostGameCarnageReportData();
 
-	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPostGameCarnageReportDataFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportDataToJson(this);
 	
 	/// Date and time for the activity.
 	@JsonKey(name:'period')
@@ -39,4 +35,16 @@ class DestinyPostGameCarnageReportData{
 	/// Collection of stats for the player in this activity.
 	@JsonKey(name:'teams')
 	List<DestinyPostGameCarnageReportTeamEntry>? teams;
+
+	factory DestinyPostGameCarnageReportData.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPostGameCarnageReportDataFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPostGameCarnageReportDataToJson(this);
+
+	static Future<DestinyPostGameCarnageReportData> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPostGameCarnageReportData>((json)=>DestinyPostGameCarnageReportData.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

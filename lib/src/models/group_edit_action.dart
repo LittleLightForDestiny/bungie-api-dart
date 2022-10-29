@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'group_edit_action.g.dart';
@@ -7,11 +8,6 @@ part 'group_edit_action.g.dart';
 class GroupEditAction{	
 	GroupEditAction();
 
-	factory GroupEditAction.fromJson(Map<String, dynamic> json) {
-		return _$GroupEditActionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupEditActionToJson(this);
 	
 	@JsonKey(name:'name')
 	String? name;
@@ -60,4 +56,16 @@ class GroupEditAction{
 	
 	@JsonKey(name:'defaultPublicity')
 	int? defaultPublicity;
+
+	factory GroupEditAction.fromJson(Map<String, dynamic> json) {
+		return _$GroupEditActionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupEditActionToJson(this);
+
+	static Future<GroupEditAction> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupEditAction>((json)=>GroupEditAction.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

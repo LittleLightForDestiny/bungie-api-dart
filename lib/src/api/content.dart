@@ -16,7 +16,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ContentTypeDescriptionResponse.fromJson(response.mappedBody);
+            return ContentTypeDescriptionResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -35,7 +35,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ContentItemPublicContractResponse.fromJson(response.mappedBody);
+            return ContentItemPublicContractResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -56,7 +56,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ContentItemPublicContractResponse.fromJson(response.mappedBody);
+            return ContentItemPublicContractResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -83,7 +83,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+            return SearchResultOfContentItemPublicContractResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -108,7 +108,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+            return SearchResultOfContentItemPublicContractResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -125,7 +125,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return IReadOnlyCollectionOfContentItemPublicContractResponse.fromJson(response.mappedBody);
+            return IReadOnlyCollectionOfContentItemPublicContractResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -140,7 +140,7 @@ class Content{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return NewsArticleRssResponseResponse.fromJson(response.mappedBody);
+            return NewsArticleRssResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_inventory_item_stat_definition.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_item_source_definition.g.dart';
 class DestinyItemSourceDefinition{	
 	DestinyItemSourceDefinition();
 
-	factory DestinyItemSourceDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemSourceDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemSourceDefinitionToJson(this);
 	
 	/// The level at which the item spawns. Essentially the Primary Key for this source data: there will be multiple of these source entries per item that has source data, grouped by the level at which the item spawns.
 	@JsonKey(name:'level')
@@ -43,4 +39,16 @@ class DestinyItemSourceDefinition{
 	/// The DestinyRewardSourceDefinitions found that can spawn the item at this level.
 	@JsonKey(name:'sourceHashes')
 	List<int>? sourceHashes;
+
+	factory DestinyItemSourceDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemSourceDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSourceDefinitionToJson(this);
+
+	static Future<DestinyItemSourceDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSourceDefinition>((json)=>DestinyItemSourceDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

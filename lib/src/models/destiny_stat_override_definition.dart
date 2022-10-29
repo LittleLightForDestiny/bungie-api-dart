@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 
@@ -12,11 +13,6 @@ part 'destiny_stat_override_definition.g.dart';
 class DestinyStatOverrideDefinition{	
 	DestinyStatOverrideDefinition();
 
-	factory DestinyStatOverrideDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyStatOverrideDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyStatOverrideDefinitionToJson(this);
 	
 	/// The hash identifier of the stat whose display properties are being overridden.
 	@JsonKey(name:'statHash')
@@ -25,4 +21,16 @@ class DestinyStatOverrideDefinition{
 	/// The display properties to show instead of the base DestinyStatDefinition display properties.
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition? displayProperties;
+
+	factory DestinyStatOverrideDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyStatOverrideDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyStatOverrideDefinitionToJson(this);
+
+	static Future<DestinyStatOverrideDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyStatOverrideDefinition>((json)=>DestinyStatOverrideDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/content_property_data_type_enum.dart';
 import 'content_type_default_value.dart';
@@ -9,11 +10,6 @@ part 'content_type_property.g.dart';
 class ContentTypeProperty{	
 	ContentTypeProperty();
 
-	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) {
-		return _$ContentTypePropertyFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentTypePropertyToJson(this);
 	
 	@JsonKey(name:'name')
 	String? name;
@@ -140,4 +136,16 @@ class ContentTypeProperty{
 	
 	@JsonKey(name:'isImage')
 	bool? isImage;
+
+	factory ContentTypeProperty.fromJson(Map<String, dynamic> json) {
+		return _$ContentTypePropertyFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentTypePropertyToJson(this);
+
+	static Future<ContentTypeProperty> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentTypeProperty>((json)=>ContentTypeProperty.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

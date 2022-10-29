@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_currencies_component.g.dart';
@@ -10,14 +11,21 @@ part 'destiny_currencies_component.g.dart';
 class DestinyCurrenciesComponent{	
 	DestinyCurrenciesComponent();
 
-	factory DestinyCurrenciesComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCurrenciesComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCurrenciesComponentToJson(this);
 	
 	/// A dictionary - keyed by the item's hash identifier (DestinyInventoryItemDefinition), and whose value is the amount of that item you have across all available inventory buckets for purchasing.
 	/// This allows you to see whether the requesting character can afford any given purchase/action without having to re-create this list itself.
 	@JsonKey(name:'itemQuantities')
 	Map<String, int>? itemQuantities;
+
+	factory DestinyCurrenciesComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCurrenciesComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCurrenciesComponentToJson(this);
+
+	static Future<DestinyCurrenciesComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCurrenciesComponent>((json)=>DestinyCurrenciesComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

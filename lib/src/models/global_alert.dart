@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/global_alert_level.dart';
 import '../enums/global_alert_type.dart';
@@ -10,11 +11,6 @@ part 'global_alert.g.dart';
 class GlobalAlert{	
 	GlobalAlert();
 
-	factory GlobalAlert.fromJson(Map<String, dynamic> json) {
-		return _$GlobalAlertFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GlobalAlertToJson(this);
 	
 	@JsonKey(name:'AlertKey')
 	String? alertKey;
@@ -36,4 +32,16 @@ class GlobalAlert{
 	
 	@JsonKey(name:'StreamInfo')
 	StreamInfo? streamInfo;
+
+	factory GlobalAlert.fromJson(Map<String, dynamic> json) {
+		return _$GlobalAlertFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GlobalAlertToJson(this);
+
+	static Future<GlobalAlert> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GlobalAlert>((json)=>GlobalAlert.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_vendor_interaction_reward_selection.dart';
 import '../enums/destiny_vendor_reply_type.dart';
@@ -11,11 +12,6 @@ part 'destiny_vendor_interaction_reply_definition.g.dart';
 class DestinyVendorInteractionReplyDefinition{	
 	DestinyVendorInteractionReplyDefinition();
 
-	factory DestinyVendorInteractionReplyDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorInteractionReplyDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorInteractionReplyDefinitionToJson(this);
 	
 	/// The rewards granted upon responding to the vendor.
 	@JsonKey(name:'itemRewardsSelection',fromJson:decodeDestinyVendorInteractionRewardSelection,toJson:encodeDestinyVendorInteractionRewardSelection)
@@ -28,4 +24,16 @@ class DestinyVendorInteractionReplyDefinition{
 	/// An enum indicating the type of reply being made.
 	@JsonKey(name:'replyType',fromJson:decodeDestinyVendorReplyType,toJson:encodeDestinyVendorReplyType)
 	DestinyVendorReplyType? replyType;
+
+	factory DestinyVendorInteractionReplyDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorInteractionReplyDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorInteractionReplyDefinitionToJson(this);
+
+	static Future<DestinyVendorInteractionReplyDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorInteractionReplyDefinition>((json)=>DestinyVendorInteractionReplyDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

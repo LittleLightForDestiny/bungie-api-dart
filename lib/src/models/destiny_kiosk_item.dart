@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_objective_progress.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_kiosk_item.g.dart';
 class DestinyKioskItem{	
 	DestinyKioskItem();
 
-	factory DestinyKioskItem.fromJson(Map<String, dynamic> json) {
-		return _$DestinyKioskItemFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyKioskItemToJson(this);
 	
 	/// The index of the item in the related DestinyVendorDefintion's itemList property, representing the sale.
 	@JsonKey(name:'index')
@@ -29,4 +25,16 @@ class DestinyKioskItem{
 	/// I may regret naming it this way - but this represents when an item has an objective that doesn't serve a beneficial purpose, but rather is used for "flavor" or additional information. For instance, when Emblems track specific stats, those stats are represented as Objectives on the item.
 	@JsonKey(name:'flavorObjective')
 	DestinyObjectiveProgress? flavorObjective;
+
+	factory DestinyKioskItem.fromJson(Map<String, dynamic> json) {
+		return _$DestinyKioskItemFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyKioskItemToJson(this);
+
+	static Future<DestinyKioskItem> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyKioskItem>((json)=>DestinyKioskItem.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

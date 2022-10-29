@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'group_membership.dart';
 import 'paged_query.dart';
@@ -9,11 +10,6 @@ part 'group_membership_search_response.g.dart';
 class GroupMembershipSearchResponse{	
 	GroupMembershipSearchResponse();
 
-	factory GroupMembershipSearchResponse.fromJson(Map<String, dynamic> json) {
-		return _$GroupMembershipSearchResponseFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupMembershipSearchResponseToJson(this);
 	
 	@JsonKey(name:'results')
 	List<GroupMembership>? results;
@@ -36,4 +32,16 @@ class GroupMembershipSearchResponse{
 	/// This is a long-held historical throwback to when we used to do paging with known total results. Those queries toasted our database, and we were left to hastily alter our endpoints and create backward- compatible shims, of which useTotalResults is one.
 	@JsonKey(name:'useTotalResults')
 	bool? useTotalResults;
+
+	factory GroupMembershipSearchResponse.fromJson(Map<String, dynamic> json) {
+		return _$GroupMembershipSearchResponseFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupMembershipSearchResponseToJson(this);
+
+	static Future<GroupMembershipSearchResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupMembershipSearchResponse>((json)=>GroupMembershipSearchResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

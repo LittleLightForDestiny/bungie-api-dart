@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_item_action_required_item_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_item_action_required_item_definition.g.dart';
 class DestinyItemActionRequiredItemDefinition{	
 	DestinyItemActionRequiredItemDefinition();
 
-	factory DestinyItemActionRequiredItemDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemActionRequiredItemDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemActionRequiredItemDefinitionToJson(this);
 	
 	/// The minimum quantity of the item you have to have.
 	@JsonKey(name:'count')
@@ -25,4 +21,16 @@ class DestinyItemActionRequiredItemDefinition{
 	/// If true, the item/quantity will be deleted from your inventory when the action is performed. Otherwise, you'll retain these required items after the action is complete.
 	@JsonKey(name:'deleteOnAction')
 	bool? deleteOnAction;
+
+	factory DestinyItemActionRequiredItemDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemActionRequiredItemDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemActionRequiredItemDefinitionToJson(this);
+
+	static Future<DestinyItemActionRequiredItemDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemActionRequiredItemDefinition>((json)=>DestinyItemActionRequiredItemDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

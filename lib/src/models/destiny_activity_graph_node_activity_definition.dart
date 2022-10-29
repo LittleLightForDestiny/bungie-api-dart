@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_activity_graph_node_activity_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_activity_graph_node_activity_definition.g.dart';
 class DestinyActivityGraphNodeActivityDefinition{	
 	DestinyActivityGraphNodeActivityDefinition();
 
-	factory DestinyActivityGraphNodeActivityDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityGraphNodeActivityDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeActivityDefinitionToJson(this);
 	
 	/// An identifier for this node activity. It is only guaranteed to be unique within the Activity Graph.
 	@JsonKey(name:'nodeActivityId')
@@ -21,4 +17,16 @@ class DestinyActivityGraphNodeActivityDefinition{
 	/// The activity that will be activated if the user clicks on this node. Controls all activity-related information displayed on the node if it is active (the text shown in the tooltip etc)
 	@JsonKey(name:'activityHash')
 	int? activityHash;
+
+	factory DestinyActivityGraphNodeActivityDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityGraphNodeActivityDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphNodeActivityDefinitionToJson(this);
+
+	static Future<DestinyActivityGraphNodeActivityDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphNodeActivityDefinition>((json)=>DestinyActivityGraphNodeActivityDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

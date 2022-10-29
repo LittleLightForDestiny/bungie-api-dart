@@ -21,7 +21,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return GeneralUserResponse.fromJson(response.mappedBody);
+            return GeneralUserResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -36,7 +36,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEDictionaryOfBungieCredentialTypeAndstringResponse.fromJson(response.mappedBody);
+            return CEDictionaryOfBungieCredentialTypeAndstringResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -51,7 +51,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfGetCredentialTypesForAccountResponseResponse.fromJson(response.mappedBody);
+            return ListOfGetCredentialTypesForAccountResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -64,7 +64,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return ListOfUserThemeResponse.fromJson(response.mappedBody);
+            return ListOfUserThemeResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -81,7 +81,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return UserMembershipDataResponse.fromJson(response.mappedBody);
+            return UserMembershipDataResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -94,7 +94,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return UserMembershipDataResponse.fromJson(response.mappedBody);
+            return UserMembershipDataResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -111,7 +111,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return HardLinkedUserMembershipResponse.fromJson(response.mappedBody);
+            return HardLinkedUserMembershipResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -128,7 +128,7 @@ class User{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return UserSearchResponseResponse.fromJson(response.mappedBody);
+            return UserSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -141,11 +141,11 @@ class User{
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _page = '$page';
         final HttpClientConfig config = HttpClientConfig('POST', '/User/Search/GlobalName/$_page/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return UserSearchResponseResponse.fromJson(response.mappedBody);
+            return UserSearchResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

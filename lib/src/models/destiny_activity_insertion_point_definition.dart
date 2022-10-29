@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_activity_insertion_point_definition.g.dart';
@@ -9,13 +10,20 @@ part 'destiny_activity_insertion_point_definition.g.dart';
 class DestinyActivityInsertionPointDefinition{	
 	DestinyActivityInsertionPointDefinition();
 
+	
+	/// A unique hash value representing the phase. This can be useful for, for example, comparing how different instances of Raids have phases in different orders!
+	@JsonKey(name:'phaseHash')
+	int? phaseHash;
+
 	factory DestinyActivityInsertionPointDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyActivityInsertionPointDefinitionFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyActivityInsertionPointDefinitionToJson(this);
-	
-	/// A unique hash value representing the phase. This can be useful for, for example, comparing how different instances of Raids have phases in different orders!
-	@JsonKey(name:'phaseHash')
-	int? phaseHash;
+
+	static Future<DestinyActivityInsertionPointDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityInsertionPointDefinition>((json)=>DestinyActivityInsertionPointDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

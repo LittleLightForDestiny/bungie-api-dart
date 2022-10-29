@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_activity.dart';
 import '../enums/destiny_activity_mode_type.dart';
@@ -10,11 +11,6 @@ part 'destiny_character_activities_component.g.dart';
 class DestinyCharacterActivitiesComponent{	
 	DestinyCharacterActivitiesComponent();
 
-	factory DestinyCharacterActivitiesComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterActivitiesComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterActivitiesComponentToJson(this);
 	
 	/// The last date that the user started playing an activity.
 	@JsonKey(name:'dateActivityStarted')
@@ -51,4 +47,16 @@ class DestinyCharacterActivitiesComponent{
 	/// This will have the activity hash of the last completed story/campaign mission, in case you care about that.
 	@JsonKey(name:'lastCompletedStoryHash')
 	int? lastCompletedStoryHash;
+
+	factory DestinyCharacterActivitiesComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterActivitiesComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterActivitiesComponentToJson(this);
+
+	static Future<DestinyCharacterActivitiesComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterActivitiesComponent>((json)=>DestinyCharacterActivitiesComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/capabilities.dart';
 import '../enums/bungie_membership_type.dart';
@@ -11,11 +12,6 @@ part 'group_features.g.dart';
 class GroupFeatures{	
 	GroupFeatures();
 
-	factory GroupFeatures.fromJson(Map<String, dynamic> json) {
-		return _$GroupFeaturesFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupFeaturesToJson(this);
 	
 	@JsonKey(name:'maximumMembers')
 	int? maximumMembers;
@@ -62,4 +58,16 @@ class GroupFeatures{
 	/// Default is Beginner.
 	@JsonKey(name:'joinLevel',fromJson:decodeRuntimeGroupMemberType,toJson:encodeRuntimeGroupMemberType)
 	RuntimeGroupMemberType? joinLevel;
+
+	factory GroupFeatures.fromJson(Map<String, dynamic> json) {
+		return _$GroupFeaturesFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupFeaturesToJson(this);
+
+	static Future<GroupFeatures> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupFeatures>((json)=>GroupFeatures.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

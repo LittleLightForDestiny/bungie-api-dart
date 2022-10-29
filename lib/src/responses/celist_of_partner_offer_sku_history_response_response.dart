@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'celist_of_partner_offer_sku_history_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class CEListOfPartnerOfferSkuHistoryResponseResponse extends BungieNetResponse<L
 	factory CEListOfPartnerOfferSkuHistoryResponseResponse.fromJson(Map<String, dynamic> json) => _$CEListOfPartnerOfferSkuHistoryResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$CEListOfPartnerOfferSkuHistoryResponseResponseToJson(this);
+
+	static Future<CEListOfPartnerOfferSkuHistoryResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, CEListOfPartnerOfferSkuHistoryResponseResponse>((json)=>CEListOfPartnerOfferSkuHistoryResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

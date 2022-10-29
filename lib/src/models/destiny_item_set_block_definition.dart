@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_set_block_entry_definition.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_item_set_block_definition.g.dart';
 class DestinyItemSetBlockDefinition{	
 	DestinyItemSetBlockDefinition();
 
-	factory DestinyItemSetBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyItemSetBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyItemSetBlockDefinitionToJson(this);
 	
 	/// A collection of hashes of set items, for items such as Quest Metadata items that possess this data.
 	@JsonKey(name:'itemList')
@@ -42,4 +38,16 @@ class DestinyItemSetBlockDefinition{
 	/// An additional summary of this step in the quest line.
 	@JsonKey(name:'questStepSummary')
 	String? questStepSummary;
+
+	factory DestinyItemSetBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyItemSetBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyItemSetBlockDefinitionToJson(this);
+
+	static Future<DestinyItemSetBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyItemSetBlockDefinition>((json)=>DestinyItemSetBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

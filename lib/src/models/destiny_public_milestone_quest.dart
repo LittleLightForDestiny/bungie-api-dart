@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_public_milestone_activity.dart';
 import 'destiny_public_milestone_challenge.dart';
@@ -9,11 +10,6 @@ part 'destiny_public_milestone_quest.g.dart';
 class DestinyPublicMilestoneQuest{	
 	DestinyPublicMilestoneQuest();
 
-	factory DestinyPublicMilestoneQuest.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPublicMilestoneQuestFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneQuestToJson(this);
 	
 	/// Quests are defined as Items in content. As such, this is the hash identifier of the DestinyInventoryItemDefinition that represents this quest. It will have pointers to all of the steps in the quest, and display information for the quest (title, description, icon etc) Individual steps will be referred to in the Quest item's DestinyInventoryItemDefinition.setData property, and themselves are Items with their own renderable data.
 	@JsonKey(name:'questItemHash')
@@ -26,4 +22,16 @@ class DestinyPublicMilestoneQuest{
 	/// For the given quest there could be 0-to-Many challenges: mini quests that you can perform in the course of doing this quest, that may grant you rewards and benefits.
 	@JsonKey(name:'challenges')
 	List<DestinyPublicMilestoneChallenge>? challenges;
+
+	factory DestinyPublicMilestoneQuest.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPublicMilestoneQuestFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPublicMilestoneQuestToJson(this);
+
+	static Future<DestinyPublicMilestoneQuest> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPublicMilestoneQuest>((json)=>DestinyPublicMilestoneQuest.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

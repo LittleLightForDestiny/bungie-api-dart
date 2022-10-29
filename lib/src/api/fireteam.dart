@@ -19,7 +19,7 @@ class Fireteam{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return Int32Response.fromJson(response.mappedBody);
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -48,7 +48,7 @@ class Fireteam{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfFireteamSummaryResponse.fromJson(response.mappedBody);
+            return SearchResultOfFireteamSummaryResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -73,7 +73,7 @@ class Fireteam{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfFireteamSummaryResponse.fromJson(response.mappedBody);
+            return SearchResultOfFireteamSummaryResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -98,7 +98,7 @@ class Fireteam{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return SearchResultOfFireteamResponseResponse.fromJson(response.mappedBody);
+            return SearchResultOfFireteamResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -115,7 +115,7 @@ class Fireteam{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return FireteamResponseResponse.fromJson(response.mappedBody);
+            return FireteamResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

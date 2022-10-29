@@ -15,7 +15,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -26,11 +26,11 @@ class Tokens{
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final HttpClientConfig config = HttpClientConfig('POST', '/Tokens/Partner/ClaimOffer/', params);
-        config.body = body.toJson();
+        config.body = await body.asyncToJson();
         config.bodyContentType = 'application/json';
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -47,7 +47,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return BooleanResponse.fromJson(response.mappedBody);
+            return BooleanResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -64,7 +64,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return CEListOfPartnerOfferSkuHistoryResponseResponse.fromJson(response.mappedBody);
+            return CEListOfPartnerOfferSkuHistoryResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -81,7 +81,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return PartnerRewardHistoryResponseResponse.fromJson(response.mappedBody);
+            return PartnerRewardHistoryResponseResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -96,7 +96,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfstringAndBungieRewardDisplayResponse.fromJson(response.mappedBody);
+            return DictionaryOfstringAndBungieRewardDisplayResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -113,7 +113,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfstringAndBungieRewardDisplayResponse.fromJson(response.mappedBody);
+            return DictionaryOfstringAndBungieRewardDisplayResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }
@@ -126,7 +126,7 @@ class Tokens{
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
-            return DictionaryOfstringAndBungieRewardDisplayResponse.fromJson(response.mappedBody);
+            return DictionaryOfstringAndBungieRewardDisplayResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

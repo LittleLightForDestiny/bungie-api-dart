@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_progression.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_artifact_profile_scoped.g.dart';
 class DestinyArtifactProfileScoped{	
 	DestinyArtifactProfileScoped();
 
-	factory DestinyArtifactProfileScoped.fromJson(Map<String, dynamic> json) {
-		return _$DestinyArtifactProfileScopedFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyArtifactProfileScopedToJson(this);
 	
 	@JsonKey(name:'artifactHash')
 	int? artifactHash;
@@ -32,4 +28,16 @@ class DestinyArtifactProfileScoped{
 	
 	@JsonKey(name:'powerBonus')
 	int? powerBonus;
+
+	factory DestinyArtifactProfileScoped.fromJson(Map<String, dynamic> json) {
+		return _$DestinyArtifactProfileScopedFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyArtifactProfileScopedToJson(this);
+
+	static Future<DestinyArtifactProfileScoped> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyArtifactProfileScoped>((json)=>DestinyArtifactProfileScoped.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

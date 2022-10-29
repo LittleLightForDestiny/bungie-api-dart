@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/group_type.dart';
 import '../enums/membership_option.dart';
@@ -12,11 +13,6 @@ part 'group_v2_card.g.dart';
 class GroupV2Card{	
 	GroupV2Card();
 
-	factory GroupV2Card.fromJson(Map<String, dynamic> json) {
-		return _$GroupV2CardFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$GroupV2CardToJson(this);
 	
 	@JsonKey(name:'groupId')
 	String? groupId;
@@ -57,4 +53,16 @@ class GroupV2Card{
 	
 	@JsonKey(name:'theme')
 	String? theme;
+
+	factory GroupV2Card.fromJson(Map<String, dynamic> json) {
+		return _$GroupV2CardFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$GroupV2CardToJson(this);
+
+	static Future<GroupV2Card> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupV2Card>((json)=>GroupV2Card.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

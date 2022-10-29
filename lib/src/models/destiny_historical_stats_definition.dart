@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_stats_group_type.dart';
 import '../enums/period_type.dart';
@@ -12,11 +13,6 @@ part 'destiny_historical_stats_definition.g.dart';
 class DestinyHistoricalStatsDefinition{	
 	DestinyHistoricalStatsDefinition();
 
-	factory DestinyHistoricalStatsDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyHistoricalStatsDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsDefinitionToJson(this);
 	
 	/// Unique programmer friendly ID for this stat
 	@JsonKey(name:'statId')
@@ -73,4 +69,16 @@ class DestinyHistoricalStatsDefinition{
 	/// The tier associated with this medal - be it implicitly or explicitly.
 	@JsonKey(name:'medalTierHash')
 	int? medalTierHash;
+
+	factory DestinyHistoricalStatsDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyHistoricalStatsDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyHistoricalStatsDefinitionToJson(this);
+
+	static Future<DestinyHistoricalStatsDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyHistoricalStatsDefinition>((json)=>DestinyHistoricalStatsDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

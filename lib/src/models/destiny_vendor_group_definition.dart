@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_vendor_group_definition.g.dart';
@@ -10,11 +11,6 @@ part 'destiny_vendor_group_definition.g.dart';
 class DestinyVendorGroupDefinition{	
 	DestinyVendorGroupDefinition();
 
-	factory DestinyVendorGroupDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorGroupDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorGroupDefinitionToJson(this);
 	
 	/// The recommended order in which to render the groups, Ascending order.
 	@JsonKey(name:'order')
@@ -36,4 +32,16 @@ class DestinyVendorGroupDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyVendorGroupDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorGroupDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorGroupDefinitionToJson(this);
+
+	static Future<DestinyVendorGroupDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorGroupDefinition>((json)=>DestinyVendorGroupDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'destiny_aggregate_activity_results_response.g.dart';
 
@@ -30,4 +31,10 @@ class DestinyAggregateActivityResultsResponse extends BungieNetResponse<DestinyA
 	factory DestinyAggregateActivityResultsResponse.fromJson(Map<String, dynamic> json) => _$DestinyAggregateActivityResultsResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$DestinyAggregateActivityResultsResponseToJson(this);
+
+	static Future<DestinyAggregateActivityResultsResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyAggregateActivityResultsResponse>((json)=>DestinyAggregateActivityResultsResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

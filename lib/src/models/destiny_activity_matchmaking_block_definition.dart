@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_activity_matchmaking_block_definition.g.dart';
@@ -8,11 +9,6 @@ part 'destiny_activity_matchmaking_block_definition.g.dart';
 class DestinyActivityMatchmakingBlockDefinition{	
 	DestinyActivityMatchmakingBlockDefinition();
 
-	factory DestinyActivityMatchmakingBlockDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityMatchmakingBlockDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityMatchmakingBlockDefinitionToJson(this);
 	
 	/// If TRUE, the activity is matchmade. Otherwise, it requires explicit forming of a party.
 	@JsonKey(name:'isMatchmade')
@@ -33,4 +29,16 @@ class DestinyActivityMatchmakingBlockDefinition{
 	/// If true, you have to Solemnly Swear to be up to Nothing But Good(tm) to play.
 	@JsonKey(name:'requiresGuardianOath')
 	bool? requiresGuardianOath;
+
+	factory DestinyActivityMatchmakingBlockDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityMatchmakingBlockDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityMatchmakingBlockDefinitionToJson(this);
+
+	static Future<DestinyActivityMatchmakingBlockDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityMatchmakingBlockDefinition>((json)=>DestinyActivityMatchmakingBlockDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

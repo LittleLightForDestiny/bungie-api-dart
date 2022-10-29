@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_plug_item_crafting_unlock_requirement.dart';
 
@@ -8,11 +9,6 @@ part 'destiny_plug_item_crafting_requirements.g.dart';
 class DestinyPlugItemCraftingRequirements{	
 	DestinyPlugItemCraftingRequirements();
 
-	factory DestinyPlugItemCraftingRequirements.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPlugItemCraftingRequirementsFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPlugItemCraftingRequirementsToJson(this);
 	
 	@JsonKey(name:'unlockRequirements')
 	List<DestinyPlugItemCraftingUnlockRequirement>? unlockRequirements;
@@ -23,4 +19,16 @@ class DestinyPlugItemCraftingRequirements{
 	
 	@JsonKey(name:'materialRequirementHashes')
 	List<int>? materialRequirementHashes;
+
+	factory DestinyPlugItemCraftingRequirements.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPlugItemCraftingRequirementsFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPlugItemCraftingRequirementsToJson(this);
+
+	static Future<DestinyPlugItemCraftingRequirements> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPlugItemCraftingRequirements>((json)=>DestinyPlugItemCraftingRequirements.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

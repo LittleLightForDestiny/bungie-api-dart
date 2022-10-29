@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_insert_plug_action_definition.dart';
@@ -14,11 +15,6 @@ part 'destiny_socket_type_definition.g.dart';
 class DestinySocketTypeDefinition{	
 	DestinySocketTypeDefinition();
 
-	factory DestinySocketTypeDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinySocketTypeDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinySocketTypeDefinitionToJson(this);
 	
 	/// There are fields for this display data, but they appear to be unpopulated as of now. I am not sure where in the UI these would show if they even were populated, but I will continue to return this data in case it becomes useful.
 	@JsonKey(name:'displayProperties')
@@ -72,4 +68,16 @@ class DestinySocketTypeDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinySocketTypeDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinySocketTypeDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinySocketTypeDefinitionToJson(this);
+
+	static Future<DestinySocketTypeDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinySocketTypeDefinition>((json)=>DestinySocketTypeDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

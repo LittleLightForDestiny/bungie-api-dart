@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_activity_graph_node_definition.dart';
 import 'destiny_activity_graph_art_element_definition.dart';
@@ -18,11 +19,6 @@ part 'destiny_activity_graph_definition.g.dart';
 class DestinyActivityGraphDefinition{	
 	DestinyActivityGraphDefinition();
 
-	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityGraphDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityGraphDefinitionToJson(this);
 	
 	/// These represent the visual "nodes" on the map's view. These are the activities you can click on in the map.
 	@JsonKey(name:'nodes')
@@ -60,4 +56,16 @@ class DestinyActivityGraphDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyActivityGraphDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityGraphDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphDefinitionToJson(this);
+
+	static Future<DestinyActivityGraphDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphDefinition>((json)=>DestinyActivityGraphDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

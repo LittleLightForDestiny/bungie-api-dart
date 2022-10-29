@@ -61,7 +61,7 @@ export class ApiDocHelper{
             let refObject = obj as ReferenceObject;
             let ref = this.getRef(refObject.$ref);
             if(ref.type == 'object'){
-                return `this.${name}.toJson()`;
+                return `await this.${name}.asyncToJson()`;
             }
         }
         let param:ParameterObject = obj as ParameterObject;

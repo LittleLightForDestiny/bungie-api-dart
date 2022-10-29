@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_faction_vendor_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_faction_vendor_definition.g.dart';
 class DestinyFactionVendorDefinition{	
 	DestinyFactionVendorDefinition();
 
-	factory DestinyFactionVendorDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyFactionVendorDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyFactionVendorDefinitionToJson(this);
 	
 	/// The faction vendor hash.
 	@JsonKey(name:'vendorHash')
@@ -26,4 +22,16 @@ class DestinyFactionVendorDefinition{
 	/// The relative path to the background image representing this Vendor at this location, for use in a banner.
 	@JsonKey(name:'backgroundImagePath')
 	String? backgroundImagePath;
+
+	factory DestinyFactionVendorDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyFactionVendorDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyFactionVendorDefinitionToJson(this);
+
+	static Future<DestinyFactionVendorDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyFactionVendorDefinition>((json)=>DestinyFactionVendorDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

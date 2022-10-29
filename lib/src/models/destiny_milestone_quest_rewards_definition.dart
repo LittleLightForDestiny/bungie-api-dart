@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_milestone_quest_reward_item.dart';
 
@@ -9,15 +10,22 @@ part 'destiny_milestone_quest_rewards_definition.g.dart';
 class DestinyMilestoneQuestRewardsDefinition{	
 	DestinyMilestoneQuestRewardsDefinition();
 
-	factory DestinyMilestoneQuestRewardsDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyMilestoneQuestRewardsDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestRewardsDefinitionToJson(this);
 	
 	/// The items that represent your reward for completing the quest.
 	/// Be warned, these could be "dummy" items: items that are only used to render a good-looking in-game tooltip, but aren't the actual items themselves.
 	/// For instance, when experience is given there's often a dummy item representing "experience", with quantity being the amount of experience you got. We don't have a programmatic association between those and whatever Progression is actually getting that experience... yet.
 	@JsonKey(name:'items')
 	List<DestinyMilestoneQuestRewardItem>? items;
+
+	factory DestinyMilestoneQuestRewardsDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyMilestoneQuestRewardsDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyMilestoneQuestRewardsDefinitionToJson(this);
+
+	static Future<DestinyMilestoneQuestRewardsDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyMilestoneQuestRewardsDefinition>((json)=>DestinyMilestoneQuestRewardsDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

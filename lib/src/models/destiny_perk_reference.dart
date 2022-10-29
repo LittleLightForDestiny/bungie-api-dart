@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_perk_reference.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_perk_reference.g.dart';
 class DestinyPerkReference{	
 	DestinyPerkReference();
 
-	factory DestinyPerkReference.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPerkReferenceFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPerkReferenceToJson(this);
 	
 	/// The hash identifier for the perk, which can be used to look up DestinySandboxPerkDefinition if it exists. Be warned, perks frequently do not have user-viewable information. You should examine whether you actually found a name/description in the perk's definition before you show it to the user.
 	@JsonKey(name:'perkHash')
@@ -30,4 +26,16 @@ class DestinyPerkReference{
 	/// Some perks provide benefits, but aren't visible in the UI. This value will let you know if this is perk should be shown in your UI.
 	@JsonKey(name:'visible')
 	bool? visible;
+
+	factory DestinyPerkReference.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPerkReferenceFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPerkReferenceToJson(this);
+
+	static Future<DestinyPerkReference> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPerkReference>((json)=>DestinyPerkReference.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

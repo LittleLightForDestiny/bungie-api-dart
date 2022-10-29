@@ -3,6 +3,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'group_application_response_response.g.dart';
 
@@ -30,4 +31,10 @@ class GroupApplicationResponseResponse extends BungieNetResponse<GroupApplicatio
 	factory GroupApplicationResponseResponse.fromJson(Map<String, dynamic> json) => _$GroupApplicationResponseResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$GroupApplicationResponseResponseToJson(this);
+
+	static Future<GroupApplicationResponseResponse> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, GroupApplicationResponseResponse>((json)=>GroupApplicationResponseResponse.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

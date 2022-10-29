@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_activity_graph_connection_definition.g.dart';
@@ -8,15 +9,22 @@ part 'destiny_activity_graph_connection_definition.g.dart';
 class DestinyActivityGraphConnectionDefinition{	
 	DestinyActivityGraphConnectionDefinition();
 
-	factory DestinyActivityGraphConnectionDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyActivityGraphConnectionDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyActivityGraphConnectionDefinitionToJson(this);
 	
 	@JsonKey(name:'sourceNodeHash')
 	int? sourceNodeHash;
 	
 	@JsonKey(name:'destNodeHash')
 	int? destNodeHash;
+
+	factory DestinyActivityGraphConnectionDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyActivityGraphConnectionDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyActivityGraphConnectionDefinitionToJson(this);
+
+	static Future<DestinyActivityGraphConnectionDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyActivityGraphConnectionDefinition>((json)=>DestinyActivityGraphConnectionDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

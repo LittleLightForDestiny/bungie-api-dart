@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_progression.dart';
 
@@ -9,11 +10,6 @@ part 'destiny_vendor_component.g.dart';
 class DestinyVendorComponent{	
 	DestinyVendorComponent();
 
-	factory DestinyVendorComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorComponentToJson(this);
 	
 	/// If True, you can purchase from the Vendor.
 	@JsonKey(name:'canPurchase')
@@ -45,4 +41,16 @@ class DestinyVendorComponent{
 	/// If False, they may not actually be visible in the world at the moment.
 	@JsonKey(name:'enabled')
 	bool? enabled;
+
+	factory DestinyVendorComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorComponentToJson(this);
+
+	static Future<DestinyVendorComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorComponent>((json)=>DestinyVendorComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

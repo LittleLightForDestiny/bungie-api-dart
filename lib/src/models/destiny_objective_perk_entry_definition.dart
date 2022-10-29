@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_objective_grant_style.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_objective_perk_entry_definition.g.dart';
 class DestinyObjectivePerkEntryDefinition{	
 	DestinyObjectivePerkEntryDefinition();
 
-	factory DestinyObjectivePerkEntryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyObjectivePerkEntryDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyObjectivePerkEntryDefinitionToJson(this);
 	
 	/// The hash identifier of the DestinySandboxPerkDefinition that will be applied to the character.
 	@JsonKey(name:'perkHash')
@@ -23,4 +19,16 @@ class DestinyObjectivePerkEntryDefinition{
 	/// An enumeration indicating whether it will be applied as long as the Objective is active, when it's completed, or until it's completed.
 	@JsonKey(name:'style',fromJson:decodeDestinyObjectiveGrantStyle,toJson:encodeDestinyObjectiveGrantStyle)
 	DestinyObjectiveGrantStyle? style;
+
+	factory DestinyObjectivePerkEntryDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyObjectivePerkEntryDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyObjectivePerkEntryDefinitionToJson(this);
+
+	static Future<DestinyObjectivePerkEntryDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyObjectivePerkEntryDefinition>((json)=>DestinyObjectivePerkEntryDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

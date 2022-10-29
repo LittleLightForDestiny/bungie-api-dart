@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_artifact_profile_scoped.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_profile_progression_component.g.dart';
 class DestinyProfileProgressionComponent{	
 	DestinyProfileProgressionComponent();
 
-	factory DestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyProfileProgressionComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyProfileProgressionComponentToJson(this);
 	
 	/// The set of checklists that can be examined on a profile-wide basis, keyed by the hash identifier of the Checklist (DestinyChecklistDefinition)
 	/// For each checklist returned, its value is itself a Dictionary keyed by the checklist's hash identifier with the value being a boolean indicating if it's been discovered yet.
@@ -24,4 +20,16 @@ class DestinyProfileProgressionComponent{
 	/// Data related to your progress on the current season's artifact that is the same across characters.
 	@JsonKey(name:'seasonalArtifact')
 	DestinyArtifactProfileScoped? seasonalArtifact;
+
+	factory DestinyProfileProgressionComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyProfileProgressionComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyProfileProgressionComponentToJson(this);
+
+	static Future<DestinyProfileProgressionComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyProfileProgressionComponent>((json)=>DestinyProfileProgressionComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

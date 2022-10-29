@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'content_preview.g.dart';
@@ -7,11 +8,6 @@ part 'content_preview.g.dart';
 class ContentPreview{	
 	ContentPreview();
 
-	factory ContentPreview.fromJson(Map<String, dynamic> json) {
-		return _$ContentPreviewFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$ContentPreviewToJson(this);
 	
 	@JsonKey(name:'name')
 	String? name;
@@ -30,4 +26,16 @@ class ContentPreview{
 	
 	@JsonKey(name:'useSetId')
 	int? useSetId;
+
+	factory ContentPreview.fromJson(Map<String, dynamic> json) {
+		return _$ContentPreviewFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$ContentPreviewToJson(this);
+
+	static Future<ContentPreview> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, ContentPreview>((json)=>ContentPreview.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

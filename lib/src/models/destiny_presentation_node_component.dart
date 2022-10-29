@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_presentation_node_state.dart';
 import 'destiny_objective_progress.dart';
@@ -9,11 +10,6 @@ part 'destiny_presentation_node_component.g.dart';
 class DestinyPresentationNodeComponent{	
 	DestinyPresentationNodeComponent();
 
-	factory DestinyPresentationNodeComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyPresentationNodeComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyPresentationNodeComponentToJson(this);
 	
 	@JsonKey(name:'state')
 	DestinyPresentationNodeState? state;
@@ -33,4 +29,16 @@ class DestinyPresentationNodeComponent{
 	/// If available, this is the current score for the record category that this node represents.
 	@JsonKey(name:'recordCategoryScore')
 	int? recordCategoryScore;
+
+	factory DestinyPresentationNodeComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyPresentationNodeComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyPresentationNodeComponentToJson(this);
+
+	static Future<DestinyPresentationNodeComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyPresentationNodeComponent>((json)=>DestinyPresentationNodeComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

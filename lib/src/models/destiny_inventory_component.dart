@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_component.dart';
 
@@ -10,13 +11,20 @@ part 'destiny_inventory_component.g.dart';
 class DestinyInventoryComponent{	
 	DestinyInventoryComponent();
 
+	
+	/// The items in this inventory. If you care to bucket them, use the item's bucketHash property to group them.
+	@JsonKey(name:'items')
+	List<DestinyItemComponent>? items;
+
 	factory DestinyInventoryComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyInventoryComponentFromJson(json);
 	}
 	
 	Map<String, dynamic> toJson() => _$DestinyInventoryComponentToJson(this);
-	
-	/// The items in this inventory. If you care to bucket them, use the item's bucketHash property to group them.
-	@JsonKey(name:'items')
-	List<DestinyItemComponent>? items;
+
+	static Future<DestinyInventoryComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyInventoryComponent>((json)=>DestinyInventoryComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

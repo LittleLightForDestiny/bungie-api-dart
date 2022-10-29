@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 
 part 'destiny_inventory_item_stat_definition.g.dart';
@@ -9,11 +10,6 @@ part 'destiny_inventory_item_stat_definition.g.dart';
 class DestinyInventoryItemStatDefinition{	
 	DestinyInventoryItemStatDefinition();
 
-	factory DestinyInventoryItemStatDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyInventoryItemStatDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyInventoryItemStatDefinitionToJson(this);
 	
 	/// The hash for the DestinyStatDefinition representing this stat.
 	@JsonKey(name:'statHash')
@@ -39,4 +35,16 @@ class DestinyInventoryItemStatDefinition{
 	/// If not returned, there is no maximum to use (and thus the stat should not be shown in a way that assumes there is a limit to the stat)
 	@JsonKey(name:'displayMaximum')
 	int? displayMaximum;
+
+	factory DestinyInventoryItemStatDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyInventoryItemStatDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyInventoryItemStatDefinitionToJson(this);
+
+	static Future<DestinyInventoryItemStatDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyInventoryItemStatDefinition>((json)=>DestinyInventoryItemStatDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

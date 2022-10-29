@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import '../enums/destiny_socket_array_type.dart';
 
@@ -10,11 +11,6 @@ part 'destiny_insert_plugs_request_entry.g.dart';
 class DestinyInsertPlugsRequestEntry{	
 	DestinyInsertPlugsRequestEntry();
 
-	factory DestinyInsertPlugsRequestEntry.fromJson(Map<String, dynamic> json) {
-		return _$DestinyInsertPlugsRequestEntryFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyInsertPlugsRequestEntryToJson(this);
 	
 	/// The index into the socket array, which identifies the specific socket being operated on. We also need to know the socketArrayType in order to uniquely identify the socket.
 	/// Don't point to or try to insert a plug into an infusion socket. It won't work.
@@ -28,4 +24,16 @@ class DestinyInsertPlugsRequestEntry{
 	/// Plugs are never instanced (except in infusion). So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
 	@JsonKey(name:'plugItemHash')
 	int? plugItemHash;
+
+	factory DestinyInsertPlugsRequestEntry.fromJson(Map<String, dynamic> json) {
+		return _$DestinyInsertPlugsRequestEntryFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyInsertPlugsRequestEntryToJson(this);
+
+	static Future<DestinyInsertPlugsRequestEntry> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyInsertPlugsRequestEntry>((json)=>DestinyInsertPlugsRequestEntry.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

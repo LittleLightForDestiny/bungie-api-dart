@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_item_talent_grid_component.dart';
 import '../enums/component_privacy_setting.dart';
@@ -9,11 +10,6 @@ part 'single_component_response_of_destiny_item_talent_grid_component.g.dart';
 class SingleComponentResponseOfDestinyItemTalentGridComponent{	
 	SingleComponentResponseOfDestinyItemTalentGridComponent();
 
-	factory SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
-		return _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyItemTalentGridComponentToJson(this);
 	
 	/// Well, we're here in Destiny 2, and Talent Grids are unfortunately still around.
 	/// The good news is that they're pretty much only being used for certain base information on items and for Builds/Subclasses. The bad news is that they still suck. If you really want this information, grab this component.
@@ -31,4 +27,16 @@ class SingleComponentResponseOfDestinyItemTalentGridComponent{
 	/// If true, this component is disabled.
 	@JsonKey(name:'disabled')
 	bool? disabled;
+
+	factory SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(Map<String, dynamic> json) {
+		return _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$SingleComponentResponseOfDestinyItemTalentGridComponentToJson(this);
+
+	static Future<SingleComponentResponseOfDestinyItemTalentGridComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, SingleComponentResponseOfDestinyItemTalentGridComponent>((json)=>SingleComponentResponseOfDestinyItemTalentGridComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

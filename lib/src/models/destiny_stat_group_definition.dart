@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_stat_display_definition.dart';
 import 'destiny_stat_override_definition.dart';
@@ -12,11 +13,6 @@ part 'destiny_stat_group_definition.g.dart';
 class DestinyStatGroupDefinition{	
 	DestinyStatGroupDefinition();
 
-	factory DestinyStatGroupDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyStatGroupDefinitionFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyStatGroupDefinitionToJson(this);
 	
 	/// The maximum possible value that any stat in this group can be transformed into.
 	/// This is used by stats that *don't* have scaledStats entries below, but that still need to be displayed as a progress bar, in which case this is used as the upper bound for said progress bar. (the lower bound is always 0)
@@ -49,4 +45,16 @@ class DestinyStatGroupDefinition{
 	/// If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	@JsonKey(name:'redacted')
 	bool? redacted;
+
+	factory DestinyStatGroupDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyStatGroupDefinitionFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyStatGroupDefinitionToJson(this);
+
+	static Future<DestinyStatGroupDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyStatGroupDefinition>((json)=>DestinyStatGroupDefinition.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

@@ -2,6 +2,7 @@ import '../enums/platform_error_codes.dart';
 import '../helpers/base_bungie_net_response.dart';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 part 'int64_response.g.dart';
 
@@ -29,4 +30,10 @@ class Int64Response extends BungieNetResponse<String> {
 	factory Int64Response.fromJson(Map<String, dynamic> json) => _$Int64ResponseFromJson(json);
 
 	Map<String, dynamic> toJson() => _$Int64ResponseToJson(this);
+
+	static Future<Int64Response> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, Int64Response>((json)=>Int64Response.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

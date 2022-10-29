@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'destiny_vendor_category.dart';
 
@@ -10,14 +11,21 @@ part 'destiny_vendor_categories_component.g.dart';
 class DestinyVendorCategoriesComponent{	
 	DestinyVendorCategoriesComponent();
 
-	factory DestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyVendorCategoriesComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyVendorCategoriesComponentToJson(this);
 	
 	/// The list of categories for items that the vendor sells, in rendering order.
 	/// These categories each point to a "display category" in the displayCategories property of the DestinyVendorDefinition, as opposed to the other categories.
 	@JsonKey(name:'categories')
 	List<DestinyVendorCategory>? categories;
+
+	factory DestinyVendorCategoriesComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyVendorCategoriesComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyVendorCategoriesComponentToJson(this);
+
+	static Future<DestinyVendorCategoriesComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyVendorCategoriesComponent>((json)=>DestinyVendorCategoriesComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }

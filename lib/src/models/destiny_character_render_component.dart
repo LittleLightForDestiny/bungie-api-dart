@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:compute/compute.dart';
 
 import 'dye_reference.dart';
 import 'destiny_character_customization.dart';
@@ -12,11 +13,6 @@ part 'destiny_character_render_component.g.dart';
 class DestinyCharacterRenderComponent{	
 	DestinyCharacterRenderComponent();
 
-	factory DestinyCharacterRenderComponent.fromJson(Map<String, dynamic> json) {
-		return _$DestinyCharacterRenderComponentFromJson(json);
-	}
-	
-	Map<String, dynamic> toJson() => _$DestinyCharacterRenderComponentToJson(this);
 	
 	/// Custom dyes, calculated by iterating over the character's equipped items. Useful for pre-fetching all of the dye data needed from our server.
 	@JsonKey(name:'customDyes')
@@ -32,4 +28,16 @@ class DestinyCharacterRenderComponent{
 	/// Combined, that should be enough to render all of the items on the equipped character.
 	@JsonKey(name:'peerView')
 	DestinyCharacterPeerView? peerView;
+
+	factory DestinyCharacterRenderComponent.fromJson(Map<String, dynamic> json) {
+		return _$DestinyCharacterRenderComponentFromJson(json);
+	}
+	
+	Map<String, dynamic> toJson() => _$DestinyCharacterRenderComponentToJson(this);
+
+	static Future<DestinyCharacterRenderComponent> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyCharacterRenderComponent>((json)=>DestinyCharacterRenderComponent.fromJson(json), json);
+
+	Future<Map<String, dynamic>> asyncToJson() => 
+		compute<void, Map<String, dynamic>>((_)=>toJson(), null);
 }
