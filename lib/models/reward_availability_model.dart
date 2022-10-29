@@ -1,0 +1,1 @@
+export '../src/models/reward_availability_model.dart';

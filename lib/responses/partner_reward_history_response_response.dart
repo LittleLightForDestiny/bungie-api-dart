@@ -1,0 +1,1 @@
+export '../src/responses/partner_reward_history_response_response.dart';

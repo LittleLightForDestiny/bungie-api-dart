@@ -1,0 +1,1 @@
+export '../src/models/news_article_rss_item.dart';

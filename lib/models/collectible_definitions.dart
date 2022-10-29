@@ -1,0 +1,1 @@
+export '../src/models/collectible_definitions.dart';

@@ -1,0 +1,1 @@
+export '../src/models/destiny_event_card_definition.dart';

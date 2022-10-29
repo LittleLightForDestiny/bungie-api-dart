@@ -1,0 +1,1 @@
+export '../src/responses/news_article_rss_response_response.dart';
