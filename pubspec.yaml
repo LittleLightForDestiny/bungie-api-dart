@@ -7,7 +7,7 @@ homepage:
   https://github.com/LittleLightForDestiny/bungie-api-dart.git
 
 dependencies:
-  compute: 1.0.2
+  compute: ^1.0.2
   json_annotation: ^4.0.0
 
 dev_dependencies:
