@@ -143,5 +143,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.Rift: 88,
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
+  DestinyActivityModeType.IronBannerZoneControl: 91,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

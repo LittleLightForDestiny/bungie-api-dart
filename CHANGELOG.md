@@ -1,5 +1,9 @@
+## 2023-02-02 (13.17.0)
+- updating to bungie's api definitions from v2.17.0
+
 ## 2022-10-29 (13.16.1)
 - adds async processing for json parsing
+
 ## 2022-08-25 (13.16.0)
 - updating to bungie's api definitions from v2.16.0
 

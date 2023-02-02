@@ -38,6 +38,16 @@ class DestinyProfileResponse{
 	DestinyProfileResponse();
 
 	
+	/// Records the timestamp of when most components were last generated from the world server source. Unless the component type is specified in the documentation for secondaryComponentsMintedTimestamp, this value is sufficient to do data freshness.
+	@JsonKey(name:'responseMintedTimestamp')
+	String? responseMintedTimestamp;
+	
+	/// Some secondary components are not tracked in the primary response timestamp and have their timestamp tracked here. If your component is any of the following, this field is where you will find your timestamp value:
+	///  PresentationNodes, Records, Collectibles, Metrics, StringVariables, Craftables, Transitory
+	///  All other component types may use the primary timestamp property.
+	@JsonKey(name:'secondaryComponentsMintedTimestamp')
+	String? secondaryComponentsMintedTimestamp;
+	
 	/// Recent, refundable purchases you have made from vendors. When will you use it? Couldn't say...
 	/// COMPONENT TYPE: VendorReceipts
 	@JsonKey(name:'vendorReceipts')

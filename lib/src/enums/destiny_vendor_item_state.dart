@@ -65,6 +65,11 @@ class DestinyVendorItemState {
     ///Locked = 262144
     /// This indicates that the sale item is locked.
     static const DestinyVendorItemState Locked = DestinyVendorItemState(262144);
+    ///Paracausal = 524288
+    /// This indicates that the sale item is paracausal.
+    static const DestinyVendorItemState Paracausal = DestinyVendorItemState(524288);
+    ///Cryptarch = 1048576
+    static const DestinyVendorItemState Cryptarch = DestinyVendorItemState(1048576);
 
     int get value {
         return _value;

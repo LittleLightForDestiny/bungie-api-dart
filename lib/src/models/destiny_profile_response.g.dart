@@ -9,6 +9,9 @@ part of 'destiny_profile_response.dart';
 DestinyProfileResponse _$DestinyProfileResponseFromJson(
         Map<String, dynamic> json) =>
     DestinyProfileResponse()
+      ..responseMintedTimestamp = json['responseMintedTimestamp'] as String?
+      ..secondaryComponentsMintedTimestamp =
+          json['secondaryComponentsMintedTimestamp'] as String?
       ..vendorReceipts = json['vendorReceipts'] == null
           ? null
           : SingleComponentResponseOfDestinyVendorReceiptsComponent.fromJson(
@@ -140,6 +143,9 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
 Map<String, dynamic> _$DestinyProfileResponseToJson(
         DestinyProfileResponse instance) =>
     <String, dynamic>{
+      'responseMintedTimestamp': instance.responseMintedTimestamp,
+      'secondaryComponentsMintedTimestamp':
+          instance.secondaryComponentsMintedTimestamp,
       'vendorReceipts': instance.vendorReceipts,
       'profileInventory': instance.profileInventory,
       'profileCurrencies': instance.profileCurrencies,

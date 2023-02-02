@@ -23,6 +23,15 @@ class NewsArticleRssItem{
 	
 	@JsonKey(name:'Description')
 	String? description;
+	
+	@JsonKey(name:'HtmlContent')
+	String? htmlContent;
+	
+	@JsonKey(name:'ImagePath')
+	String? imagePath;
+	
+	@JsonKey(name:'OptionalMobileImagePath')
+	String? optionalMobileImagePath;
 
 	factory NewsArticleRssItem.fromJson(Map<String, dynamic> json) {
 		return _$NewsArticleRssItemFromJson(json);

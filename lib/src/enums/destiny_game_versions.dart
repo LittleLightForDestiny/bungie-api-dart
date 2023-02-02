@@ -25,6 +25,8 @@ class DestinyGameVersions {
     static const DestinyGameVersions Anniversary30th = DestinyGameVersions(128);
     ///TheWitchQueen = 256
     static const DestinyGameVersions TheWitchQueen = DestinyGameVersions(256);
+    ///Lightfall = 512
+    static const DestinyGameVersions Lightfall = DestinyGameVersions(512);
 
     int get value {
         return _value;

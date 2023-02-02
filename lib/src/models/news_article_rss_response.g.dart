@@ -14,7 +14,8 @@ NewsArticleRssResponse _$NewsArticleRssResponseFromJson(
           .toList()
       ..currentPaginationToken = json['CurrentPaginationToken'] as int?
       ..nextPaginationToken = json['NextPaginationToken'] as int?
-      ..resultCountThisPage = json['ResultCountThisPage'] as int?;
+      ..resultCountThisPage = json['ResultCountThisPage'] as int?
+      ..categoryFilter = json['CategoryFilter'] as String?;
 
 Map<String, dynamic> _$NewsArticleRssResponseToJson(
         NewsArticleRssResponse instance) =>
@@ -23,4 +24,5 @@ Map<String, dynamic> _$NewsArticleRssResponseToJson(
       'CurrentPaginationToken': instance.currentPaginationToken,
       'NextPaginationToken': instance.nextPaginationToken,
       'ResultCountThisPage': instance.resultCountThisPage,
+      'CategoryFilter': instance.categoryFilter,
     };

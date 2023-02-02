@@ -12,7 +12,10 @@ NewsArticleRssItem _$NewsArticleRssItemFromJson(Map<String, dynamic> json) =>
       ..link = json['Link'] as String?
       ..pubDate = json['PubDate'] as String?
       ..uniqueIdentifier = json['UniqueIdentifier'] as String?
-      ..description = json['Description'] as String?;
+      ..description = json['Description'] as String?
+      ..htmlContent = json['HtmlContent'] as String?
+      ..imagePath = json['ImagePath'] as String?
+      ..optionalMobileImagePath = json['OptionalMobileImagePath'] as String?;
 
 Map<String, dynamic> _$NewsArticleRssItemToJson(NewsArticleRssItem instance) =>
     <String, dynamic>{
@@ -21,4 +24,7 @@ Map<String, dynamic> _$NewsArticleRssItemToJson(NewsArticleRssItem instance) =>
       'PubDate': instance.pubDate,
       'UniqueIdentifier': instance.uniqueIdentifier,
       'Description': instance.description,
+      'HtmlContent': instance.htmlContent,
+      'ImagePath': instance.imagePath,
+      'OptionalMobileImagePath': instance.optionalMobileImagePath,
     };

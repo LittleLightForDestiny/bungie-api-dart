@@ -44,7 +44,6 @@ enum PlatformErrorCodes {
   @JsonValue(13)
   Duplicate,
   ///UnknownSqlResult = 14
-  /// Deprecated, please do not check for this value anywhere.
   @JsonValue(14)
   UnknownSqlResult,
   ///ValidationError = 15
@@ -584,6 +583,15 @@ enum PlatformErrorCodes {
   ///ErrorNameAlreadySetToInput = 241
   @JsonValue(241)
   ErrorNameAlreadySetToInput,
+  ///UserDisplayNameLessThanMinLength = 242
+  @JsonValue(242)
+  UserDisplayNameLessThanMinLength,
+  ///UserDisplayNameGreaterThanMaxLength = 243
+  @JsonValue(243)
+  UserDisplayNameGreaterThanMaxLength,
+  ///UserDisplayNameContainsUnacceptableOrInvalidContent = 244
+  @JsonValue(244)
+  UserDisplayNameContainsUnacceptableOrInvalidContent,
   ///MessagingUnknownError = 300
   @JsonValue(300)
   MessagingUnknownError,
@@ -1214,6 +1222,12 @@ enum PlatformErrorCodes {
   ///ClanCreationTenureRequirementsNotMet = 753
   @JsonValue(753)
   ClanCreationTenureRequirementsNotMet,
+  ///ClanFieldContainsReservedTerms = 754
+  @JsonValue(754)
+  ClanFieldContainsReservedTerms,
+  ///ClanFieldContainsInappropriateContent = 755
+  @JsonValue(755)
+  ClanFieldContainsInappropriateContent,
   ///ItemAlreadyFollowed = 801
   @JsonValue(801)
   ItemAlreadyFollowed,
@@ -2115,6 +2129,12 @@ enum PlatformErrorCodes {
   ///TwitchDropsRepairPartialFailure = 2508
   @JsonValue(2508)
   TwitchDropsRepairPartialFailure,
+  ///TwitchNotAuthorized = 2509
+  @JsonValue(2509)
+  TwitchNotAuthorized,
+  ///TwitchUnknownAuthorizationFailure = 2510
+  @JsonValue(2510)
+  TwitchUnknownAuthorizationFailure,
   ///TrendingCategoryNotFound = 2600
   @JsonValue(2600)
   TrendingCategoryNotFound,
@@ -2738,6 +2758,9 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ErrorDatabaseGlobalName:239,
     PlatformErrorCodes.ErrorNoAvailableNameChanges:240,
     PlatformErrorCodes.ErrorNameAlreadySetToInput:241,
+    PlatformErrorCodes.UserDisplayNameLessThanMinLength:242,
+    PlatformErrorCodes.UserDisplayNameGreaterThanMaxLength:243,
+    PlatformErrorCodes.UserDisplayNameContainsUnacceptableOrInvalidContent:244,
     PlatformErrorCodes.MessagingUnknownError:300,
     PlatformErrorCodes.MessagingSelfError:301,
     PlatformErrorCodes.MessagingSendThrottle:302,
@@ -2948,6 +2971,8 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ClanNameRestricted:751,
     PlatformErrorCodes.ClanCreationBan:752,
     PlatformErrorCodes.ClanCreationTenureRequirementsNotMet:753,
+    PlatformErrorCodes.ClanFieldContainsReservedTerms:754,
+    PlatformErrorCodes.ClanFieldContainsInappropriateContent:755,
     PlatformErrorCodes.ItemAlreadyFollowed:801,
     PlatformErrorCodes.ItemNotFollowed:802,
     PlatformErrorCodes.CannotFollowSelf:803,
@@ -3248,6 +3273,8 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.TwitchNoPlatformChosen:2506,
     PlatformErrorCodes.TwitchDropHistoryPermissionFailure:2507,
     PlatformErrorCodes.TwitchDropsRepairPartialFailure:2508,
+    PlatformErrorCodes.TwitchNotAuthorized:2509,
+    PlatformErrorCodes.TwitchUnknownAuthorizationFailure:2510,
     PlatformErrorCodes.TrendingCategoryNotFound:2600,
     PlatformErrorCodes.TrendingEntryTypeNotSupported:2601,
     PlatformErrorCodes.ReportOffenderNotInPgcr:2700,
@@ -3577,6 +3604,9 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     239:PlatformErrorCodes.ErrorDatabaseGlobalName,
     240:PlatformErrorCodes.ErrorNoAvailableNameChanges,
     241:PlatformErrorCodes.ErrorNameAlreadySetToInput,
+    242:PlatformErrorCodes.UserDisplayNameLessThanMinLength,
+    243:PlatformErrorCodes.UserDisplayNameGreaterThanMaxLength,
+    244:PlatformErrorCodes.UserDisplayNameContainsUnacceptableOrInvalidContent,
     300:PlatformErrorCodes.MessagingUnknownError,
     301:PlatformErrorCodes.MessagingSelfError,
     302:PlatformErrorCodes.MessagingSendThrottle,
@@ -3787,6 +3817,8 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     751:PlatformErrorCodes.ClanNameRestricted,
     752:PlatformErrorCodes.ClanCreationBan,
     753:PlatformErrorCodes.ClanCreationTenureRequirementsNotMet,
+    754:PlatformErrorCodes.ClanFieldContainsReservedTerms,
+    755:PlatformErrorCodes.ClanFieldContainsInappropriateContent,
     801:PlatformErrorCodes.ItemAlreadyFollowed,
     802:PlatformErrorCodes.ItemNotFollowed,
     803:PlatformErrorCodes.CannotFollowSelf,
@@ -4087,6 +4119,8 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     2506:PlatformErrorCodes.TwitchNoPlatformChosen,
     2507:PlatformErrorCodes.TwitchDropHistoryPermissionFailure,
     2508:PlatformErrorCodes.TwitchDropsRepairPartialFailure,
+    2509:PlatformErrorCodes.TwitchNotAuthorized,
+    2510:PlatformErrorCodes.TwitchUnknownAuthorizationFailure,
     2600:PlatformErrorCodes.TrendingCategoryNotFound,
     2601:PlatformErrorCodes.TrendingEntryTypeNotSupported,
     2700:PlatformErrorCodes.ReportOffenderNotInPgcr,

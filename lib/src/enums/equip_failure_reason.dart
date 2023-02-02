@@ -20,9 +20,18 @@ class EquipFailureReason {
     ///ItemFailedLevelCheck = 8
     /// This item requires you to have reached a specific character level in order to equip it, and you haven't reached that level yet.
     static const EquipFailureReason ItemFailedLevelCheck = EquipFailureReason(8);
-    ///ItemNotOnCharacter = 16
-    /// This item can't be equipped on the character requested, because it must be in that character's inventory first. Transfer the item to the character you want to equip it before you attempt to equip it.
-    static const EquipFailureReason ItemNotOnCharacter = EquipFailureReason(16);
+    ///ItemWrapped = 16
+    /// This item is 'wrapped' and must be unwrapped before being equipped. NOTE: This value used to be called ItemNotOnCharacter but that is no longer accurate.
+    static const EquipFailureReason ItemWrapped = EquipFailureReason(16);
+    ///ItemNotLoaded = 32
+    /// This item is not yet loaded and cannot be equipped yet.
+    static const EquipFailureReason ItemNotLoaded = EquipFailureReason(32);
+    ///ItemEquipBlocklisted = 64
+    /// This item is block-listed and cannot be equipped.
+    static const EquipFailureReason ItemEquipBlocklisted = EquipFailureReason(64);
+    ///ItemLoadoutRequirementNotMet = 128
+    /// This item does not meet the loadout requirements for the current activity
+    static const EquipFailureReason ItemLoadoutRequirementNotMet = EquipFailureReason(128);
 
     int get value {
         return _value;

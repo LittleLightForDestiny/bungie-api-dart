@@ -132,10 +132,14 @@ class Content{
     /// Returns a JSON string response that is the RSS feed for news articles.
     static Future<NewsArticleRssResponseResponse> rssNewsArticles (
         HttpClient client,
+        String categoryfilter,
+        bool includebody,
         String pageToken,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
         final String _pageToken = '$pageToken';
+        params['categoryfilter'] = categoryfilter;
+        params['includebody'] = includebody;
         final HttpClientConfig config = HttpClientConfig('GET', '/Content/Rss/NewsArticles/$_pageToken/', params);
         config.bodyContentType = null;
         final HttpResponse response = await client.request(config);

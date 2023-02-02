@@ -21,6 +21,9 @@ class NewsArticleRssResponse{
 	
 	@JsonKey(name:'ResultCountThisPage')
 	int? resultCountThisPage;
+	
+	@JsonKey(name:'CategoryFilter')
+	String? categoryFilter;
 
 	factory NewsArticleRssResponse.fromJson(Map<String, dynamic> json) {
 		return _$NewsArticleRssResponseFromJson(json);
