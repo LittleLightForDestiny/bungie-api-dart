@@ -43,7 +43,7 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
 Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
         DestinyItemCategoryDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'visible': instance.visible,
       'deprecated': instance.deprecated,
       'shortTitle': instance.shortTitle,

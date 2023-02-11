@@ -21,7 +21,7 @@ DestinyProgressionMappingDefinition
 Map<String, dynamic> _$DestinyProgressionMappingDefinitionToJson(
         DestinyProgressionMappingDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'displayUnits': instance.displayUnits,
       'hash': instance.hash,
       'index': instance.index,

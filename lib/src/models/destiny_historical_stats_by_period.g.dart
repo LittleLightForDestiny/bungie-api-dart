@@ -37,10 +37,13 @@ DestinyHistoricalStatsByPeriod _$DestinyHistoricalStatsByPeriodFromJson(
 Map<String, dynamic> _$DestinyHistoricalStatsByPeriodToJson(
         DestinyHistoricalStatsByPeriod instance) =>
     <String, dynamic>{
-      'allTime': instance.allTime,
-      'allTimeTier1': instance.allTimeTier1,
-      'allTimeTier2': instance.allTimeTier2,
-      'allTimeTier3': instance.allTimeTier3,
-      'daily': instance.daily,
-      'monthly': instance.monthly,
+      'allTime': instance.allTime?.map((k, e) => MapEntry(k, e.toJson())),
+      'allTimeTier1':
+          instance.allTimeTier1?.map((k, e) => MapEntry(k, e.toJson())),
+      'allTimeTier2':
+          instance.allTimeTier2?.map((k, e) => MapEntry(k, e.toJson())),
+      'allTimeTier3':
+          instance.allTimeTier3?.map((k, e) => MapEntry(k, e.toJson())),
+      'daily': instance.daily?.map((e) => e.toJson()).toList(),
+      'monthly': instance.monthly?.map((e) => e.toJson()).toList(),
     };

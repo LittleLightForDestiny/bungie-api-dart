@@ -21,6 +21,6 @@ PartnerRewardHistoryResponse _$PartnerRewardHistoryResponseFromJson(
 Map<String, dynamic> _$PartnerRewardHistoryResponseToJson(
         PartnerRewardHistoryResponse instance) =>
     <String, dynamic>{
-      'PartnerOffers': instance.partnerOffers,
-      'TwitchDrops': instance.twitchDrops,
+      'PartnerOffers': instance.partnerOffers?.map((e) => e.toJson()).toList(),
+      'TwitchDrops': instance.twitchDrops?.map((e) => e.toJson()).toList(),
     };

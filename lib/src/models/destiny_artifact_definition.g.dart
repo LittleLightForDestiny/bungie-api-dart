@@ -28,9 +28,9 @@ DestinyArtifactDefinition _$DestinyArtifactDefinitionFromJson(
 Map<String, dynamic> _$DestinyArtifactDefinitionToJson(
         DestinyArtifactDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'translationBlock': instance.translationBlock,
-      'tiers': instance.tiers,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'translationBlock': instance.translationBlock?.toJson(),
+      'tiers': instance.tiers?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

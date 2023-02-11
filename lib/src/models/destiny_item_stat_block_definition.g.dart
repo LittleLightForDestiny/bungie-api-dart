@@ -25,7 +25,7 @@ Map<String, dynamic> _$DestinyItemStatBlockDefinitionToJson(
     <String, dynamic>{
       'disablePrimaryStatDisplay': instance.disablePrimaryStatDisplay,
       'statGroupHash': instance.statGroupHash,
-      'stats': instance.stats,
+      'stats': instance.stats?.map((k, e) => MapEntry(k, e.toJson())),
       'hasDisplayableStats': instance.hasDisplayableStats,
       'primaryBaseStatHash': instance.primaryBaseStatHash,
     };

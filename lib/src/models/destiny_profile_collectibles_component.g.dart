@@ -34,7 +34,8 @@ Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
       'recentCollectibleHashes': instance.recentCollectibleHashes,
       'newnessFlaggedCollectibleHashes':
           instance.newnessFlaggedCollectibleHashes,
-      'collectibles': instance.collectibles,
+      'collectibles':
+          instance.collectibles?.map((k, e) => MapEntry(k, e.toJson())),
       'collectionCategoriesRootNodeHash':
           instance.collectionCategoriesRootNodeHash,
       'collectionBadgesRootNodeHash': instance.collectionBadgesRootNodeHash,

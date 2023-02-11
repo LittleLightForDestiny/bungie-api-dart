@@ -17,5 +17,5 @@ DestinyItemSocketsComponent _$DestinyItemSocketsComponentFromJson(
 Map<String, dynamic> _$DestinyItemSocketsComponentToJson(
         DestinyItemSocketsComponent instance) =>
     <String, dynamic>{
-      'sockets': instance.sockets,
+      'sockets': instance.sockets?.map((e) => e.toJson()).toList(),
     };

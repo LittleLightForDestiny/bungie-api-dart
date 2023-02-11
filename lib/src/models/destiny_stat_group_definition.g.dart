@@ -28,8 +28,8 @@ Map<String, dynamic> _$DestinyStatGroupDefinitionToJson(
     <String, dynamic>{
       'maximumValue': instance.maximumValue,
       'uiPosition': instance.uiPosition,
-      'scaledStats': instance.scaledStats,
-      'overrides': instance.overrides,
+      'scaledStats': instance.scaledStats?.map((e) => e.toJson()).toList(),
+      'overrides': instance.overrides?.map((k, e) => MapEntry(k, e.toJson())),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

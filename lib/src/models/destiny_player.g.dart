@@ -28,14 +28,14 @@ DestinyPlayer _$DestinyPlayerFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DestinyPlayerToJson(DestinyPlayer instance) =>
     <String, dynamic>{
-      'destinyUserInfo': instance.destinyUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
       'characterClass': instance.characterClass,
       'classHash': instance.classHash,
       'raceHash': instance.raceHash,
       'genderHash': instance.genderHash,
       'characterLevel': instance.characterLevel,
       'lightLevel': instance.lightLevel,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
       'clanName': instance.clanName,
       'clanTag': instance.clanTag,
       'emblemHash': instance.emblemHash,

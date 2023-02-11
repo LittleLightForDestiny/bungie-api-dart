@@ -37,7 +37,7 @@ DestinyActivityModeDefinition _$DestinyActivityModeDefinitionFromJson(
 Map<String, dynamic> _$DestinyActivityModeDefinitionToJson(
         DestinyActivityModeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'pgcrImage': instance.pgcrImage,
       'modeType': encodeDestinyActivityModeType(instance.modeType),
       'activityModeCategory':

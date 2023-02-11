@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinyKioskItemToJson(DestinyKioskItem instance) =>
       'index': instance.index,
       'canAcquire': instance.canAcquire,
       'failureIndexes': instance.failureIndexes,
-      'flavorObjective': instance.flavorObjective,
+      'flavorObjective': instance.flavorObjective?.toJson(),
     };

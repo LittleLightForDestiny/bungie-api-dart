@@ -69,22 +69,22 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
 Map<String, dynamic> _$DestinyRecordDefinitionToJson(
         DestinyRecordDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'scope': encodeDestinyScope(instance.scope),
-      'presentationInfo': instance.presentationInfo,
+      'presentationInfo': instance.presentationInfo?.toJson(),
       'loreHash': instance.loreHash,
       'objectiveHashes': instance.objectiveHashes,
       'recordValueStyle':
           encodeDestinyRecordValueStyle(instance.recordValueStyle),
       'forTitleGilding': instance.forTitleGilding,
       'shouldShowLargeIcons': instance.shouldShowLargeIcons,
-      'titleInfo': instance.titleInfo,
-      'completionInfo': instance.completionInfo,
-      'stateInfo': instance.stateInfo,
-      'requirements': instance.requirements,
-      'expirationInfo': instance.expirationInfo,
-      'intervalInfo': instance.intervalInfo,
-      'rewardItems': instance.rewardItems,
+      'titleInfo': instance.titleInfo?.toJson(),
+      'completionInfo': instance.completionInfo?.toJson(),
+      'stateInfo': instance.stateInfo?.toJson(),
+      'requirements': instance.requirements?.toJson(),
+      'expirationInfo': instance.expirationInfo?.toJson(),
+      'intervalInfo': instance.intervalInfo?.toJson(),
+      'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
       'presentationNodeType':
           encodeDestinyPresentationNodeType(instance.presentationNodeType),
       'traitIds': instance.traitIds,

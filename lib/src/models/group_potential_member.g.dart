@@ -28,7 +28,7 @@ Map<String, dynamic> _$GroupPotentialMemberToJson(
       'potentialStatus':
           encodeGroupPotentialMemberStatus(instance.potentialStatus),
       'groupId': instance.groupId,
-      'destinyUserInfo': instance.destinyUserInfo,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
       'joinDate': instance.joinDate,
     };

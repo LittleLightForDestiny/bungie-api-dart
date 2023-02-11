@@ -23,6 +23,6 @@ Map<String, dynamic> _$DestinyPublicMilestoneQuestToJson(
         DestinyPublicMilestoneQuest instance) =>
     <String, dynamic>{
       'questItemHash': instance.questItemHash,
-      'activity': instance.activity,
-      'challenges': instance.challenges,
+      'activity': instance.activity?.toJson(),
+      'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
     };

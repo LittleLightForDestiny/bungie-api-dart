@@ -19,5 +19,5 @@ DestinyPresentationNodesComponent _$DestinyPresentationNodesComponentFromJson(
 Map<String, dynamic> _$DestinyPresentationNodesComponentToJson(
         DestinyPresentationNodesComponent instance) =>
     <String, dynamic>{
-      'nodes': instance.nodes,
+      'nodes': instance.nodes?.map((k, e) => MapEntry(k, e.toJson())),
     };

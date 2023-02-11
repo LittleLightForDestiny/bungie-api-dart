@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyClanAggregateStatToJson(
     <String, dynamic>{
       'mode': encodeDestinyActivityModeType(instance.mode),
       'statId': instance.statId,
-      'value': instance.value,
+      'value': instance.value?.toJson(),
     };

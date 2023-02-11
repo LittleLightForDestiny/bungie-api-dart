@@ -31,9 +31,9 @@ Map<String, dynamic> _$DestinyMilestoneQuestDefinitionToJson(
         DestinyMilestoneQuestDefinition instance) =>
     <String, dynamic>{
       'questItemHash': instance.questItemHash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'overrideImage': instance.overrideImage,
-      'questRewards': instance.questRewards,
-      'activities': instance.activities,
+      'questRewards': instance.questRewards?.toJson(),
+      'activities': instance.activities?.map((k, e) => MapEntry(k, e.toJson())),
       'destinationHash': instance.destinationHash,
     };

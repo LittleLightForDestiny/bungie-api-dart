@@ -25,5 +25,6 @@ Map<String, dynamic> _$DestinyPublicActivityStatusToJson(
     <String, dynamic>{
       'challengeObjectiveHashes': instance.challengeObjectiveHashes,
       'modifierHashes': instance.modifierHashes,
-      'rewardTooltipItems': instance.rewardTooltipItems,
+      'rewardTooltipItems':
+          instance.rewardTooltipItems?.map((e) => e.toJson()).toList(),
     };

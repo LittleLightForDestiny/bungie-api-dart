@@ -20,5 +20,6 @@ DestinyPlugSetsComponent _$DestinyPlugSetsComponentFromJson(
 Map<String, dynamic> _$DestinyPlugSetsComponentToJson(
         DestinyPlugSetsComponent instance) =>
     <String, dynamic>{
-      'plugs': instance.plugs,
+      'plugs': instance.plugs
+          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
     };

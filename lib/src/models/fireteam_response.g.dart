@@ -20,7 +20,7 @@ FireteamResponse _$FireteamResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FireteamResponseToJson(FireteamResponse instance) =>
     <String, dynamic>{
-      'Summary': instance.summary,
-      'Members': instance.members,
-      'Alternates': instance.alternates,
+      'Summary': instance.summary?.toJson(),
+      'Members': instance.members?.map((e) => e.toJson()).toList(),
+      'Alternates': instance.alternates?.map((e) => e.toJson()).toList(),
     };

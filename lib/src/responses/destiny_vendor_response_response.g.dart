@@ -26,7 +26,7 @@ DestinyVendorResponseResponse _$DestinyVendorResponseResponseFromJson(
 Map<String, dynamic> _$DestinyVendorResponseResponseToJson(
         DestinyVendorResponseResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

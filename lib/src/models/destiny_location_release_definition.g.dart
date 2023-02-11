@@ -32,7 +32,7 @@ DestinyLocationReleaseDefinition _$DestinyLocationReleaseDefinitionFromJson(
 Map<String, dynamic> _$DestinyLocationReleaseDefinitionToJson(
         DestinyLocationReleaseDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'smallTransparentIcon': instance.smallTransparentIcon,
       'mapIcon': instance.mapIcon,
       'largeTransparentIcon': instance.largeTransparentIcon,

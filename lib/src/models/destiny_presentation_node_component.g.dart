@@ -23,8 +23,8 @@ DestinyPresentationNodeComponent _$DestinyPresentationNodeComponentFromJson(
 Map<String, dynamic> _$DestinyPresentationNodeComponentToJson(
         DestinyPresentationNodeComponent instance) =>
     <String, dynamic>{
-      'state': instance.state,
-      'objective': instance.objective,
+      'state': instance.state?.toJson(),
+      'objective': instance.objective?.toJson(),
       'progressValue': instance.progressValue,
       'completionValue': instance.completionValue,
       'recordCategoryScore': instance.recordCategoryScore,

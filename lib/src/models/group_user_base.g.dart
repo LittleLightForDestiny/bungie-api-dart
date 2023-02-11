@@ -22,7 +22,7 @@ GroupUserBase _$GroupUserBaseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$GroupUserBaseToJson(GroupUserBase instance) =>
     <String, dynamic>{
       'groupId': instance.groupId,
-      'destinyUserInfo': instance.destinyUserInfo,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
       'joinDate': instance.joinDate,
     };

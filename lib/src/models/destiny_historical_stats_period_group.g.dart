@@ -23,6 +23,6 @@ Map<String, dynamic> _$DestinyHistoricalStatsPeriodGroupToJson(
         DestinyHistoricalStatsPeriodGroup instance) =>
     <String, dynamic>{
       'period': instance.period,
-      'activityDetails': instance.activityDetails,
-      'values': instance.values,
+      'activityDetails': instance.activityDetails?.toJson(),
+      'values': instance.values?.map((k, e) => MapEntry(k, e.toJson())),
     };

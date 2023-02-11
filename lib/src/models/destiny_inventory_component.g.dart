@@ -16,5 +16,5 @@ DestinyInventoryComponent _$DestinyInventoryComponentFromJson(
 Map<String, dynamic> _$DestinyInventoryComponentToJson(
         DestinyInventoryComponent instance) =>
     <String, dynamic>{
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
     };

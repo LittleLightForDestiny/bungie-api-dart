@@ -23,6 +23,7 @@ CollectibleDefinitions _$CollectibleDefinitionsFromJson(
 Map<String, dynamic> _$CollectibleDefinitionsToJson(
         CollectibleDefinitions instance) =>
     <String, dynamic>{
-      'CollectibleDefinition': instance.collectibleDefinition,
-      'DestinyInventoryItemDefinition': instance.destinyInventoryItemDefinition,
+      'CollectibleDefinition': instance.collectibleDefinition?.toJson(),
+      'DestinyInventoryItemDefinition':
+          instance.destinyInventoryItemDefinition?.toJson(),
     };

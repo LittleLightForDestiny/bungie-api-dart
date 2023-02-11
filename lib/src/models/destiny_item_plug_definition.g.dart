@@ -51,7 +51,8 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
 Map<String, dynamic> _$DestinyItemPlugDefinitionToJson(
         DestinyItemPlugDefinition instance) =>
     <String, dynamic>{
-      'insertionRules': instance.insertionRules,
+      'insertionRules':
+          instance.insertionRules?.map((e) => e.toJson()).toList(),
       'plugCategoryIdentifier': instance.plugCategoryIdentifier,
       'plugCategoryHash': instance.plugCategoryHash,
       'onActionRecreateSelf': instance.onActionRecreateSelf,
@@ -59,14 +60,14 @@ Map<String, dynamic> _$DestinyItemPlugDefinitionToJson(
           instance.insertionMaterialRequirementHash,
       'previewItemOverrideHash': instance.previewItemOverrideHash,
       'enabledMaterialRequirementHash': instance.enabledMaterialRequirementHash,
-      'enabledRules': instance.enabledRules,
+      'enabledRules': instance.enabledRules?.map((e) => e.toJson()).toList(),
       'uiPlugLabel': instance.uiPlugLabel,
-      'plugStyle': instance.plugStyle,
+      'plugStyle': instance.plugStyle?.toJson(),
       'plugAvailability': encodePlugAvailabilityMode(instance.plugAvailability),
       'alternateUiPlugLabel': instance.alternateUiPlugLabel,
-      'alternatePlugStyle': instance.alternatePlugStyle,
+      'alternatePlugStyle': instance.alternatePlugStyle?.toJson(),
       'isDummyPlug': instance.isDummyPlug,
-      'parentItemOverride': instance.parentItemOverride,
-      'energyCapacity': instance.energyCapacity,
-      'energyCost': instance.energyCost,
+      'parentItemOverride': instance.parentItemOverride?.toJson(),
+      'energyCapacity': instance.energyCapacity?.toJson(),
+      'energyCost': instance.energyCost?.toJson(),
     };

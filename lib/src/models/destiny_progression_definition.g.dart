@@ -37,16 +37,16 @@ DestinyProgressionDefinition _$DestinyProgressionDefinitionFromJson(
 Map<String, dynamic> _$DestinyProgressionDefinitionToJson(
         DestinyProgressionDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'scope': encodeDestinyProgressionScope(instance.scope),
       'repeatLastStep': instance.repeatLastStep,
       'source': instance.source,
-      'steps': instance.steps,
+      'steps': instance.steps?.map((e) => e.toJson()).toList(),
       'visible': instance.visible,
       'factionHash': instance.factionHash,
-      'color': instance.color,
+      'color': instance.color?.toJson(),
       'rankIcon': instance.rankIcon,
-      'rewardItems': instance.rewardItems,
+      'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

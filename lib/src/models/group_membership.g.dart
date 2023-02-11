@@ -17,6 +17,6 @@ GroupMembership _$GroupMembershipFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupMembershipToJson(GroupMembership instance) =>
     <String, dynamic>{
-      'member': instance.member,
-      'group': instance.group,
+      'member': instance.member?.toJson(),
+      'group': instance.group?.toJson(),
     };

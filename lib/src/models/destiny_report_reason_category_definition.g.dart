@@ -27,8 +27,8 @@ DestinyReportReasonCategoryDefinition
 Map<String, dynamic> _$DestinyReportReasonCategoryDefinitionToJson(
         DestinyReportReasonCategoryDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'reasons': instance.reasons,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'reasons': instance.reasons?.map((k, e) => MapEntry(k, e.toJson())),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

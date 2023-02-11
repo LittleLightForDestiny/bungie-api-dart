@@ -34,6 +34,6 @@ Map<String, dynamic> _$ApplicationToJson(Application instance) =>
       'creationDate': instance.creationDate,
       'statusChanged': instance.statusChanged,
       'firstPublished': instance.firstPublished,
-      'team': instance.team,
+      'team': instance.team?.map((e) => e.toJson()).toList(),
       'overrideAuthorizeViewName': instance.overrideAuthorizeViewName,
     };

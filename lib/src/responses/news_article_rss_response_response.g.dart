@@ -26,7 +26,7 @@ NewsArticleRssResponseResponse _$NewsArticleRssResponseResponseFromJson(
 Map<String, dynamic> _$NewsArticleRssResponseResponseToJson(
         NewsArticleRssResponseResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

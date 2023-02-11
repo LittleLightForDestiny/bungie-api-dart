@@ -27,8 +27,8 @@ Map<String, dynamic> _$DestinyLinkedGraphDefinitionToJson(
     <String, dynamic>{
       'description': instance.description,
       'name': instance.name,
-      'unlockExpression': instance.unlockExpression,
+      'unlockExpression': instance.unlockExpression?.toJson(),
       'linkedGraphId': instance.linkedGraphId,
-      'linkedGraphs': instance.linkedGraphs,
+      'linkedGraphs': instance.linkedGraphs?.map((e) => e.toJson()).toList(),
       'overview': instance.overview,
     };

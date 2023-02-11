@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyMilestoneActivityDefinitionToJson(
         DestinyMilestoneActivityDefinition instance) =>
     <String, dynamic>{
       'conceptualActivityHash': instance.conceptualActivityHash,
-      'variants': instance.variants,
+      'variants': instance.variants?.map((k, e) => MapEntry(k, e.toJson())),
     };

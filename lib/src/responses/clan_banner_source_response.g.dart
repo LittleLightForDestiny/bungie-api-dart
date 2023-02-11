@@ -25,7 +25,7 @@ ClanBannerSourceResponse _$ClanBannerSourceResponseFromJson(
 Map<String, dynamic> _$ClanBannerSourceResponseToJson(
         ClanBannerSourceResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

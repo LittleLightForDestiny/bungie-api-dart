@@ -18,5 +18,5 @@ DestinyMilestoneQuestRewardsDefinition
 Map<String, dynamic> _$DestinyMilestoneQuestRewardsDefinitionToJson(
         DestinyMilestoneQuestRewardsDefinition instance) =>
     <String, dynamic>{
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
     };

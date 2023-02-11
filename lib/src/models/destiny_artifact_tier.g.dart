@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyArtifactTierToJson(
       'tierHash': instance.tierHash,
       'isUnlocked': instance.isUnlocked,
       'pointsToUnlock': instance.pointsToUnlock,
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
     };

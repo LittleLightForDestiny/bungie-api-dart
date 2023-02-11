@@ -15,5 +15,5 @@ TagResponse _$TagResponseFromJson(Map<String, dynamic> json) => TagResponse()
 Map<String, dynamic> _$TagResponseToJson(TagResponse instance) =>
     <String, dynamic>{
       'tagText': instance.tagText,
-      'ignoreStatus': instance.ignoreStatus,
+      'ignoreStatus': instance.ignoreStatus?.toJson(),
     };

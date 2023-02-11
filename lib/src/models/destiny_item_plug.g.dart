@@ -24,7 +24,8 @@ DestinyItemPlug _$DestinyItemPlugFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$DestinyItemPlugToJson(DestinyItemPlug instance) =>
     <String, dynamic>{
-      'plugObjectives': instance.plugObjectives,
+      'plugObjectives':
+          instance.plugObjectives?.map((e) => e.toJson()).toList(),
       'plugItemHash': instance.plugItemHash,
       'canInsert': instance.canInsert,
       'enabled': instance.enabled,

@@ -35,6 +35,6 @@ Map<String, dynamic> _$GroupMemberApplicationToJson(
       'resolvedByMembershipId': instance.resolvedByMembershipId,
       'requestMessage': instance.requestMessage,
       'resolveMessage': instance.resolveMessage,
-      'destinyUserInfo': instance.destinyUserInfo,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
     };

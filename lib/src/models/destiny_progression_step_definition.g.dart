@@ -25,6 +25,6 @@ Map<String, dynamic> _$DestinyProgressionStepDefinitionToJson(
       'displayEffectType':
           encodeDestinyProgressionStepDisplayEffect(instance.displayEffectType),
       'progressTotal': instance.progressTotal,
-      'rewardItems': instance.rewardItems,
+      'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
       'icon': instance.icon,
     };

@@ -30,9 +30,9 @@ DestinyProfileTransitoryComponent _$DestinyProfileTransitoryComponentFromJson(
 Map<String, dynamic> _$DestinyProfileTransitoryComponentToJson(
         DestinyProfileTransitoryComponent instance) =>
     <String, dynamic>{
-      'partyMembers': instance.partyMembers,
-      'currentActivity': instance.currentActivity,
-      'joinability': instance.joinability,
-      'tracking': instance.tracking,
+      'partyMembers': instance.partyMembers?.map((e) => e.toJson()).toList(),
+      'currentActivity': instance.currentActivity?.toJson(),
+      'joinability': instance.joinability?.toJson(),
+      'tracking': instance.tracking?.map((e) => e.toJson()).toList(),
       'lastOrbitedDestinationHash': instance.lastOrbitedDestinationHash,
     };

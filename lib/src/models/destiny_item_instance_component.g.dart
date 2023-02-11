@@ -38,15 +38,15 @@ Map<String, dynamic> _$DestinyItemInstanceComponentToJson(
     <String, dynamic>{
       'damageType': encodeDamageType(instance.damageType),
       'damageTypeHash': instance.damageTypeHash,
-      'primaryStat': instance.primaryStat,
+      'primaryStat': instance.primaryStat?.toJson(),
       'itemLevel': instance.itemLevel,
       'quality': instance.quality,
       'isEquipped': instance.isEquipped,
       'canEquip': instance.canEquip,
       'equipRequiredLevel': instance.equipRequiredLevel,
       'unlockHashesRequiredToEquip': instance.unlockHashesRequiredToEquip,
-      'cannotEquipReason': instance.cannotEquipReason,
+      'cannotEquipReason': instance.cannotEquipReason?.toJson(),
       'breakerType': instance.breakerType,
       'breakerTypeHash': instance.breakerTypeHash,
-      'energy': instance.energy,
+      'energy': instance.energy?.toJson(),
     };

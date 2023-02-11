@@ -23,7 +23,7 @@ Map<String, dynamic> _$DestinyLeaderboardEntryToJson(
         DestinyLeaderboardEntry instance) =>
     <String, dynamic>{
       'rank': instance.rank,
-      'player': instance.player,
+      'player': instance.player?.toJson(),
       'characterId': instance.characterId,
-      'value': instance.value,
+      'value': instance.value?.toJson(),
     };

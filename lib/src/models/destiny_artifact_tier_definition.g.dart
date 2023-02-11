@@ -26,7 +26,7 @@ Map<String, dynamic> _$DestinyArtifactTierDefinitionToJson(
       'tierHash': instance.tierHash,
       'displayTitle': instance.displayTitle,
       'progressRequirementMessage': instance.progressRequirementMessage,
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
       'minimumUnlockPointsUsedRequirement':
           instance.minimumUnlockPointsUsedRequirement,
     };

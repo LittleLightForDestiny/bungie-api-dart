@@ -24,5 +24,6 @@ Map<String, dynamic> _$DestinyMilestoneContentToJson(
       'about': instance.about,
       'status': instance.status,
       'tips': instance.tips,
-      'itemCategories': instance.itemCategories,
+      'itemCategories':
+          instance.itemCategories?.map((e) => e.toJson()).toList(),
     };

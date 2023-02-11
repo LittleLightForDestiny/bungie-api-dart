@@ -32,7 +32,7 @@ Map<String, dynamic> _$DestinySandboxPatternDefinitionToJson(
       'weaponTranslationGroupHash': instance.weaponTranslationGroupHash,
       'weaponTypeHash': instance.weaponTypeHash,
       'weaponType': encodeDestinyItemSubType(instance.weaponType),
-      'filters': instance.filters,
+      'filters': instance.filters?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

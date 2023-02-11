@@ -25,5 +25,5 @@ Map<String, dynamic> _$GlobalAlertToJson(GlobalAlert instance) =>
       'AlertLink': instance.alertLink,
       'AlertLevel': encodeGlobalAlertLevel(instance.alertLevel),
       'AlertType': encodeGlobalAlertType(instance.alertType),
-      'StreamInfo': instance.streamInfo,
+      'StreamInfo': instance.streamInfo?.toJson(),
     };

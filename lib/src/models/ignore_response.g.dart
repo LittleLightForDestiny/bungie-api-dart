@@ -16,5 +16,5 @@ IgnoreResponse _$IgnoreResponseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$IgnoreResponseToJson(IgnoreResponse instance) =>
     <String, dynamic>{
       'isIgnored': instance.isIgnored,
-      'ignoreFlags': instance.ignoreFlags,
+      'ignoreFlags': instance.ignoreFlags?.toJson(),
     };

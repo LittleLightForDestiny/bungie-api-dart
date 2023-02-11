@@ -26,7 +26,7 @@ SearchResultOfTrendingEntryResponse
 Map<String, dynamic> _$SearchResultOfTrendingEntryResponseToJson(
         SearchResultOfTrendingEntryResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

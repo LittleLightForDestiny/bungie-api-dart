@@ -33,9 +33,9 @@ DestinyPublicVendorsResponse _$DestinyPublicVendorsResponseFromJson(
 Map<String, dynamic> _$DestinyPublicVendorsResponseToJson(
         DestinyPublicVendorsResponse instance) =>
     <String, dynamic>{
-      'vendorGroups': instance.vendorGroups,
-      'vendors': instance.vendors,
-      'categories': instance.categories,
-      'sales': instance.sales,
-      'stringVariables': instance.stringVariables,
+      'vendorGroups': instance.vendorGroups?.toJson(),
+      'vendors': instance.vendors?.toJson(),
+      'categories': instance.categories?.toJson(),
+      'sales': instance.sales?.toJson(),
+      'stringVariables': instance.stringVariables?.toJson(),
     };

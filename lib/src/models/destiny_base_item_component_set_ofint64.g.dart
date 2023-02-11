@@ -21,6 +21,6 @@ DestinyBaseItemComponentSetOfint64 _$DestinyBaseItemComponentSetOfint64FromJson(
 Map<String, dynamic> _$DestinyBaseItemComponentSetOfint64ToJson(
         DestinyBaseItemComponentSetOfint64 instance) =>
     <String, dynamic>{
-      'objectives': instance.objectives,
-      'perks': instance.perks,
+      'objectives': instance.objectives?.toJson(),
+      'perks': instance.perks?.toJson(),
     };

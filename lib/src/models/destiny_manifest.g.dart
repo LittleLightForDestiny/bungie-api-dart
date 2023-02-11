@@ -41,11 +41,13 @@ Map<String, dynamic> _$DestinyManifestToJson(DestinyManifest instance) =>
     <String, dynamic>{
       'version': instance.version,
       'mobileAssetContentPath': instance.mobileAssetContentPath,
-      'mobileGearAssetDataBases': instance.mobileGearAssetDataBases,
+      'mobileGearAssetDataBases':
+          instance.mobileGearAssetDataBases?.map((e) => e.toJson()).toList(),
       'mobileWorldContentPaths': instance.mobileWorldContentPaths,
       'jsonWorldContentPaths': instance.jsonWorldContentPaths,
       'jsonWorldComponentContentPaths': instance.jsonWorldComponentContentPaths,
       'mobileClanBannerDatabasePath': instance.mobileClanBannerDatabasePath,
       'mobileGearCDN': instance.mobileGearCdn,
-      'iconImagePyramidInfo': instance.iconImagePyramidInfo,
+      'iconImagePyramidInfo':
+          instance.iconImagePyramidInfo?.map((e) => e.toJson()).toList(),
     };

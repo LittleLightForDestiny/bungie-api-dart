@@ -60,17 +60,18 @@ Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
       'itemHash': instance.itemHash,
       'quantity': instance.quantity,
       'failureIndexes': instance.failureIndexes,
-      'currencies': instance.currencies,
+      'currencies': instance.currencies?.map((e) => e.toJson()).toList(),
       'refundPolicy':
           encodeDestinyVendorItemRefundPolicy(instance.refundPolicy),
       'refundTimeLimit': instance.refundTimeLimit,
-      'creationLevels': instance.creationLevels,
+      'creationLevels':
+          instance.creationLevels?.map((e) => e.toJson()).toList(),
       'displayCategoryIndex': instance.displayCategoryIndex,
       'categoryIndex': instance.categoryIndex,
       'originalCategoryIndex': instance.originalCategoryIndex,
       'minimumLevel': instance.minimumLevel,
       'maximumLevel': instance.maximumLevel,
-      'action': instance.action,
+      'action': instance.action?.toJson(),
       'displayCategory': instance.displayCategory,
       'inventoryBucketHash': instance.inventoryBucketHash,
       'visibilityScope': encodeDestinyGatingScope(instance.visibilityScope),
@@ -81,6 +82,7 @@ Map<String, dynamic> _$DestinyVendorItemDefinitionToJson(
       'sortValue': instance.sortValue,
       'expirationTooltip': instance.expirationTooltip,
       'redirectToSaleIndexes': instance.redirectToSaleIndexes,
-      'socketOverrides': instance.socketOverrides,
+      'socketOverrides':
+          instance.socketOverrides?.map((e) => e.toJson()).toList(),
       'unpurchasable': instance.unpurchasable,
     };

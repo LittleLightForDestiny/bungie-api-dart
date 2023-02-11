@@ -31,9 +31,9 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportEntryToJson(
         DestinyPostGameCarnageReportEntry instance) =>
     <String, dynamic>{
       'standing': instance.standing,
-      'score': instance.score,
-      'player': instance.player,
+      'score': instance.score?.toJson(),
+      'player': instance.player?.toJson(),
       'characterId': instance.characterId,
-      'values': instance.values,
-      'extended': instance.extended,
+      'values': instance.values?.map((k, e) => MapEntry(k, e.toJson())),
+      'extended': instance.extended?.toJson(),
     };

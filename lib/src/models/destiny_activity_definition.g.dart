@@ -94,10 +94,10 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
 Map<String, dynamic> _$DestinyActivityDefinitionToJson(
         DestinyActivityDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'originalDisplayProperties': instance.originalDisplayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'originalDisplayProperties': instance.originalDisplayProperties?.toJson(),
       'selectionScreenDisplayProperties':
-          instance.selectionScreenDisplayProperties,
+          instance.selectionScreenDisplayProperties?.toJson(),
       'releaseIcon': instance.releaseIcon,
       'releaseTime': instance.releaseTime,
       'activityLightLevel': instance.activityLightLevel,
@@ -106,25 +106,29 @@ Map<String, dynamic> _$DestinyActivityDefinitionToJson(
       'activityTypeHash': instance.activityTypeHash,
       'tier': instance.tier,
       'pgcrImage': instance.pgcrImage,
-      'rewards': instance.rewards,
-      'modifiers': instance.modifiers,
+      'rewards': instance.rewards?.map((e) => e.toJson()).toList(),
+      'modifiers': instance.modifiers?.map((e) => e.toJson()).toList(),
       'isPlaylist': instance.isPlaylist,
-      'challenges': instance.challenges,
-      'optionalUnlockStrings': instance.optionalUnlockStrings,
-      'playlistItems': instance.playlistItems,
-      'activityGraphList': instance.activityGraphList,
-      'matchmaking': instance.matchmaking,
-      'guidedGame': instance.guidedGame,
+      'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
+      'optionalUnlockStrings':
+          instance.optionalUnlockStrings?.map((e) => e.toJson()).toList(),
+      'playlistItems': instance.playlistItems?.map((e) => e.toJson()).toList(),
+      'activityGraphList':
+          instance.activityGraphList?.map((e) => e.toJson()).toList(),
+      'matchmaking': instance.matchmaking?.toJson(),
+      'guidedGame': instance.guidedGame?.toJson(),
       'directActivityModeHash': instance.directActivityModeHash,
       'directActivityModeType': instance.directActivityModeType,
-      'loadouts': instance.loadouts,
+      'loadouts': instance.loadouts?.map((e) => e.toJson()).toList(),
       'activityModeHashes': instance.activityModeHashes,
       'activityModeTypes': instance.activityModeTypes
           ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
           .toList(),
       'isPvP': instance.isPvP,
-      'insertionPoints': instance.insertionPoints,
-      'activityLocationMappings': instance.activityLocationMappings,
+      'insertionPoints':
+          instance.insertionPoints?.map((e) => e.toJson()).toList(),
+      'activityLocationMappings':
+          instance.activityLocationMappings?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

@@ -60,7 +60,7 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
 Map<String, dynamic> _$DestinyMilestoneDefinitionToJson(
         DestinyMilestoneDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'displayPreference':
           encodeDestinyMilestoneDisplayPreference(instance.displayPreference),
       'image': instance.image,
@@ -72,13 +72,13 @@ Map<String, dynamic> _$DestinyMilestoneDefinitionToJson(
       'explorePrioritizesActivityImage':
           instance.explorePrioritizesActivityImage,
       'hasPredictableDates': instance.hasPredictableDates,
-      'quests': instance.quests,
-      'rewards': instance.rewards,
+      'quests': instance.quests?.map((k, e) => MapEntry(k, e.toJson())),
+      'rewards': instance.rewards?.map((k, e) => MapEntry(k, e.toJson())),
       'vendorsDisplayTitle': instance.vendorsDisplayTitle,
-      'vendors': instance.vendors,
-      'values': instance.values,
+      'vendors': instance.vendors?.map((e) => e.toJson()).toList(),
+      'values': instance.values?.map((k, e) => MapEntry(k, e.toJson())),
       'isInGameMilestone': instance.isInGameMilestone,
-      'activities': instance.activities,
+      'activities': instance.activities?.map((e) => e.toJson()).toList(),
       'defaultOrder': instance.defaultOrder,
       'hash': instance.hash,
       'index': instance.index,

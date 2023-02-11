@@ -32,9 +32,10 @@ Map<String, dynamic> _$DestinyTalentNodeToJson(DestinyTalentNode instance) =>
       'state': encodeDestinyTalentNodeState(instance.state),
       'isActivated': instance.isActivated,
       'stepIndex': instance.stepIndex,
-      'materialsToUpgrade': instance.materialsToUpgrade,
+      'materialsToUpgrade':
+          instance.materialsToUpgrade?.map((e) => e.toJson()).toList(),
       'activationGridLevel': instance.activationGridLevel,
       'progressPercent': instance.progressPercent,
       'hidden': instance.hidden,
-      'nodeStatsBlock': instance.nodeStatsBlock,
+      'nodeStatsBlock': instance.nodeStatsBlock?.toJson(),
     };

@@ -25,6 +25,6 @@ Map<String, dynamic> _$DestinyHistoricalStatsPerCharacterToJson(
     <String, dynamic>{
       'characterId': instance.characterId,
       'deleted': instance.deleted,
-      'results': instance.results,
-      'merged': instance.merged,
+      'results': instance.results?.map((k, e) => MapEntry(k, e.toJson())),
+      'merged': instance.merged?.toJson(),
     };

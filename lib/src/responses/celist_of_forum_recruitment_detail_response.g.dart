@@ -27,7 +27,7 @@ CEListOfForumRecruitmentDetailResponse
 Map<String, dynamic> _$CEListOfForumRecruitmentDetailResponseToJson(
         CEListOfForumRecruitmentDetailResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.map((e) => e.toJson()).toList(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

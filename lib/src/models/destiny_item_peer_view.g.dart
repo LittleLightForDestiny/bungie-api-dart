@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyItemPeerViewToJson(
         DestinyItemPeerView instance) =>
     <String, dynamic>{
       'itemHash': instance.itemHash,
-      'dyes': instance.dyes,
+      'dyes': instance.dyes?.map((e) => e.toJson()).toList(),
     };

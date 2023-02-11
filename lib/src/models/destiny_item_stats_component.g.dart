@@ -16,5 +16,5 @@ DestinyItemStatsComponent _$DestinyItemStatsComponentFromJson(
 Map<String, dynamic> _$DestinyItemStatsComponentToJson(
         DestinyItemStatsComponent instance) =>
     <String, dynamic>{
-      'stats': instance.stats,
+      'stats': instance.stats?.map((k, e) => MapEntry(k, e.toJson())),
     };

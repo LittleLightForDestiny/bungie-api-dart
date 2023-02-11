@@ -18,5 +18,5 @@ Map<String, dynamic> _$EmailViewDefinitionToJson(
         EmailViewDefinition instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'viewSettings': instance.viewSettings,
+      'viewSettings': instance.viewSettings?.map((e) => e.toJson()).toList(),
     };

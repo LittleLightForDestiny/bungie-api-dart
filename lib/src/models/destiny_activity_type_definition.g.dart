@@ -20,7 +20,7 @@ DestinyActivityTypeDefinition _$DestinyActivityTypeDefinitionFromJson(
 Map<String, dynamic> _$DestinyActivityTypeDefinitionToJson(
         DestinyActivityTypeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

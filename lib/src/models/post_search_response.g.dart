@@ -42,17 +42,18 @@ PostSearchResponse _$PostSearchResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PostSearchResponseToJson(PostSearchResponse instance) =>
     <String, dynamic>{
-      'relatedPosts': instance.relatedPosts,
-      'authors': instance.authors,
-      'groups': instance.groups,
-      'searchedTags': instance.searchedTags,
-      'polls': instance.polls,
-      'recruitmentDetails': instance.recruitmentDetails,
+      'relatedPosts': instance.relatedPosts?.map((e) => e.toJson()).toList(),
+      'authors': instance.authors?.map((e) => e.toJson()).toList(),
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
+      'searchedTags': instance.searchedTags?.map((e) => e.toJson()).toList(),
+      'polls': instance.polls?.map((e) => e.toJson()).toList(),
+      'recruitmentDetails':
+          instance.recruitmentDetails?.map((e) => e.toJson()).toList(),
       'availablePages': instance.availablePages,
-      'results': instance.results,
+      'results': instance.results?.map((e) => e.toJson()).toList(),
       'totalResults': instance.totalResults,
       'hasMore': instance.hasMore,
-      'query': instance.query,
+      'query': instance.query?.toJson(),
       'replacementContinuationToken': instance.replacementContinuationToken,
       'useTotalResults': instance.useTotalResults,
     };

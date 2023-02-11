@@ -33,7 +33,8 @@ Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
         DestinyCharacterActivitiesComponent instance) =>
     <String, dynamic>{
       'dateActivityStarted': instance.dateActivityStarted,
-      'availableActivities': instance.availableActivities,
+      'availableActivities':
+          instance.availableActivities?.map((e) => e.toJson()).toList(),
       'currentActivityHash': instance.currentActivityHash,
       'currentActivityModeHash': instance.currentActivityModeHash,
       'currentActivityModeType': instance.currentActivityModeType,

@@ -26,7 +26,7 @@ Map<String, dynamic> _$DestinyItemSourceBlockDefinitionToJson(
         DestinyItemSourceBlockDefinition instance) =>
     <String, dynamic>{
       'sourceHashes': instance.sourceHashes,
-      'sources': instance.sources,
+      'sources': instance.sources?.map((e) => e.toJson()).toList(),
       'exclusive': encodeBungieMembershipType(instance.exclusive),
-      'vendorSources': instance.vendorSources,
+      'vendorSources': instance.vendorSources?.map((e) => e.toJson()).toList(),
     };

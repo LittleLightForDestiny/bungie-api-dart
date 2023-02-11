@@ -23,7 +23,7 @@ DestinyItemSetBlockDefinition _$DestinyItemSetBlockDefinitionFromJson(
 Map<String, dynamic> _$DestinyItemSetBlockDefinitionToJson(
         DestinyItemSetBlockDefinition instance) =>
     <String, dynamic>{
-      'itemList': instance.itemList,
+      'itemList': instance.itemList?.map((e) => e.toJson()).toList(),
       'requireOrderedSetItemAdd': instance.requireOrderedSetItemAdd,
       'setIsFeatured': instance.setIsFeatured,
       'setType': instance.setType,

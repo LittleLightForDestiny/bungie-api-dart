@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyCraftableSocketComponentToJson(
         DestinyCraftableSocketComponent instance) =>
     <String, dynamic>{
       'plugSetHash': instance.plugSetHash,
-      'plugs': instance.plugs,
+      'plugs': instance.plugs?.map((e) => e.toJson()).toList(),
     };

@@ -25,7 +25,8 @@ Map<String, dynamic> _$DestinyQuestStatusToJson(DestinyQuestStatus instance) =>
     <String, dynamic>{
       'questHash': instance.questHash,
       'stepHash': instance.stepHash,
-      'stepObjectives': instance.stepObjectives,
+      'stepObjectives':
+          instance.stepObjectives?.map((e) => e.toJson()).toList(),
       'tracked': instance.tracked,
       'itemInstanceId': instance.itemInstanceId,
       'completed': instance.completed,

@@ -21,5 +21,6 @@ DestinyItemReusablePlugsComponent _$DestinyItemReusablePlugsComponentFromJson(
 Map<String, dynamic> _$DestinyItemReusablePlugsComponentToJson(
         DestinyItemReusablePlugsComponent instance) =>
     <String, dynamic>{
-      'plugs': instance.plugs,
+      'plugs': instance.plugs
+          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
     };

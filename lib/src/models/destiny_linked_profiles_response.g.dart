@@ -24,7 +24,8 @@ DestinyLinkedProfilesResponse _$DestinyLinkedProfilesResponseFromJson(
 Map<String, dynamic> _$DestinyLinkedProfilesResponseToJson(
         DestinyLinkedProfilesResponse instance) =>
     <String, dynamic>{
-      'profiles': instance.profiles,
-      'bnetMembership': instance.bnetMembership,
-      'profilesWithErrors': instance.profilesWithErrors,
+      'profiles': instance.profiles?.map((e) => e.toJson()).toList(),
+      'bnetMembership': instance.bnetMembership?.toJson(),
+      'profilesWithErrors':
+          instance.profilesWithErrors?.map((e) => e.toJson()).toList(),
     };

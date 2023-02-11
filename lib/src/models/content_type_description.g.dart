@@ -57,9 +57,10 @@ Map<String, dynamic> _$ContentTypeDescriptionToJson(
       'previewImage': instance.previewImage,
       'priority': instance.priority,
       'reminder': instance.reminder,
-      'properties': instance.properties,
-      'tagMetadata': instance.tagMetadata,
-      'tagMetadataItems': instance.tagMetadataItems,
+      'properties': instance.properties?.map((e) => e.toJson()).toList(),
+      'tagMetadata': instance.tagMetadata?.map((e) => e.toJson()).toList(),
+      'tagMetadataItems':
+          instance.tagMetadataItems?.map((k, e) => MapEntry(k, e.toJson())),
       'usageExamples': instance.usageExamples,
       'showInContentEditor': instance.showInContentEditor,
       'typeOf': instance.typeOf,
@@ -69,7 +70,8 @@ Map<String, dynamic> _$ContentTypeDescriptionToJson(
       'allowComments': instance.allowComments,
       'autoEnglishPropertyFallback': instance.autoEnglishPropertyFallback,
       'bulkUploadable': instance.bulkUploadable,
-      'previews': instance.previews,
+      'previews': instance.previews?.map((e) => e.toJson()).toList(),
       'suppressCmsPath': instance.suppressCmsPath,
-      'propertySections': instance.propertySections,
+      'propertySections':
+          instance.propertySections?.map((e) => e.toJson()).toList(),
     };

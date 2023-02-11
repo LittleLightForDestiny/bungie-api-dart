@@ -20,7 +20,7 @@ DestinyItemSocketEntryPlugItemRandomizedDefinition
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(
         DestinyItemSocketEntryPlugItemRandomizedDefinition instance) =>
     <String, dynamic>{
-      'craftingRequirements': instance.craftingRequirements,
+      'craftingRequirements': instance.craftingRequirements?.toJson(),
       'currentlyCanRoll': instance.currentlyCanRoll,
       'plugItemHash': instance.plugItemHash,
     };

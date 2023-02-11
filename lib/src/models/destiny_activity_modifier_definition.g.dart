@@ -22,7 +22,7 @@ DestinyActivityModifierDefinition _$DestinyActivityModifierDefinitionFromJson(
 Map<String, dynamic> _$DestinyActivityModifierDefinitionToJson(
         DestinyActivityModifierDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'displayInNavMode': instance.displayInNavMode,
       'displayInActivitySelection': instance.displayInActivitySelection,
       'hash': instance.hash,

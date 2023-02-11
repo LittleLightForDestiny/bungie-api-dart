@@ -15,6 +15,7 @@ ApiUsage _$ApiUsageFromJson(Map<String, dynamic> json) => ApiUsage()
       .toList();
 
 Map<String, dynamic> _$ApiUsageToJson(ApiUsage instance) => <String, dynamic>{
-      'apiCalls': instance.apiCalls,
-      'throttledRequests': instance.throttledRequests,
+      'apiCalls': instance.apiCalls?.map((e) => e.toJson()).toList(),
+      'throttledRequests':
+          instance.throttledRequests?.map((e) => e.toJson()).toList(),
     };

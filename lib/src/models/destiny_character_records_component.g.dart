@@ -24,7 +24,7 @@ Map<String, dynamic> _$DestinyCharacterRecordsComponentToJson(
         DestinyCharacterRecordsComponent instance) =>
     <String, dynamic>{
       'featuredRecordHashes': instance.featuredRecordHashes,
-      'records': instance.records,
+      'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
       'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
       'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
     };

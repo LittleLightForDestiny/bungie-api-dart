@@ -40,17 +40,18 @@ DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
 Map<String, dynamic> _$DestinyVendorSaleItemComponentToJson(
         DestinyVendorSaleItemComponent instance) =>
     <String, dynamic>{
-      'saleStatus': instance.saleStatus,
+      'saleStatus': instance.saleStatus?.toJson(),
       'requiredUnlocks': instance.requiredUnlocks,
-      'unlockStatuses': instance.unlockStatuses,
+      'unlockStatuses':
+          instance.unlockStatuses?.map((e) => e.toJson()).toList(),
       'failureIndexes': instance.failureIndexes,
-      'augments': instance.augments,
+      'augments': instance.augments?.toJson(),
       'itemValueVisibility': instance.itemValueVisibility,
       'vendorItemIndex': instance.vendorItemIndex,
       'itemHash': instance.itemHash,
       'overrideStyleItemHash': instance.overrideStyleItemHash,
       'quantity': instance.quantity,
-      'costs': instance.costs,
+      'costs': instance.costs?.map((e) => e.toJson()).toList(),
       'overrideNextRefreshDate': instance.overrideNextRefreshDate,
       'apiPurchasable': instance.apiPurchasable,
     };

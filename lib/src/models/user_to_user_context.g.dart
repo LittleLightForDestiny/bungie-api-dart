@@ -18,6 +18,6 @@ UserToUserContext _$UserToUserContextFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$UserToUserContextToJson(UserToUserContext instance) =>
     <String, dynamic>{
       'isFollowing': instance.isFollowing,
-      'ignoreStatus': instance.ignoreStatus,
+      'ignoreStatus': instance.ignoreStatus?.toJson(),
       'globalIgnoreEndDate': instance.globalIgnoreEndDate,
     };

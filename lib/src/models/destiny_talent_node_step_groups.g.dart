@@ -33,9 +33,9 @@ DestinyTalentNodeStepGroups _$DestinyTalentNodeStepGroupsFromJson(
 Map<String, dynamic> _$DestinyTalentNodeStepGroupsToJson(
         DestinyTalentNodeStepGroups instance) =>
     <String, dynamic>{
-      'weaponPerformance': instance.weaponPerformance,
-      'impactEffects': instance.impactEffects,
-      'guardianAttributes': instance.guardianAttributes,
-      'lightAbilities': instance.lightAbilities,
-      'damageTypes': instance.damageTypes,
+      'weaponPerformance': instance.weaponPerformance?.toJson(),
+      'impactEffects': instance.impactEffects?.toJson(),
+      'guardianAttributes': instance.guardianAttributes?.toJson(),
+      'lightAbilities': instance.lightAbilities?.toJson(),
+      'damageTypes': instance.damageTypes?.toJson(),
     };

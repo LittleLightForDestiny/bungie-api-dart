@@ -27,8 +27,9 @@ Map<String, dynamic> _$EmailViewDefinitionSettingToJson(
         EmailViewDefinitionSetting instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'localization': instance.localization,
+      'localization':
+          instance.localization?.map((k, e) => MapEntry(k, e.toJson())),
       'setByDefault': instance.setByDefault,
-      'optInAggregateValue': instance.optInAggregateValue,
-      'subscriptions': instance.subscriptions,
+      'optInAggregateValue': instance.optInAggregateValue?.toJson(),
+      'subscriptions': instance.subscriptions?.map((e) => e.toJson()).toList(),
     };

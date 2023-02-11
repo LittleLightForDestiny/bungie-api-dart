@@ -38,12 +38,13 @@ DestinyMilestone _$DestinyMilestoneFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$DestinyMilestoneToJson(DestinyMilestone instance) =>
     <String, dynamic>{
       'milestoneHash': instance.milestoneHash,
-      'availableQuests': instance.availableQuests,
-      'activities': instance.activities,
+      'availableQuests':
+          instance.availableQuests?.map((e) => e.toJson()).toList(),
+      'activities': instance.activities?.map((e) => e.toJson()).toList(),
       'values': instance.values,
       'vendorHashes': instance.vendorHashes,
-      'vendors': instance.vendors,
-      'rewards': instance.rewards,
+      'vendors': instance.vendors?.map((e) => e.toJson()).toList(),
+      'rewards': instance.rewards?.map((e) => e.toJson()).toList(),
       'startDate': instance.startDate,
       'endDate': instance.endDate,
       'order': instance.order,

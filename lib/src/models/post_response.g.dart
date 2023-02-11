@@ -38,6 +38,6 @@ Map<String, dynamic> _$PostResponseToJson(PostResponse instance) =>
       'userHasMutedPost': instance.userHasMutedPost,
       'latestReplyPostId': instance.latestReplyPostId,
       'latestReplyAuthorId': instance.latestReplyAuthorId,
-      'ignoreStatus': instance.ignoreStatus,
+      'ignoreStatus': instance.ignoreStatus?.toJson(),
       'locale': instance.locale,
     };

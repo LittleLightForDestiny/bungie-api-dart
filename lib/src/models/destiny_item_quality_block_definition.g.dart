@@ -41,6 +41,6 @@ Map<String, dynamic> _$DestinyItemQualityBlockDefinitionToJson(
       'progressionLevelRequirementHash':
           instance.progressionLevelRequirementHash,
       'currentVersion': instance.currentVersion,
-      'versions': instance.versions,
+      'versions': instance.versions?.map((e) => e.toJson()).toList(),
       'displayVersionWatermarkIcons': instance.displayVersionWatermarkIcons,
     };

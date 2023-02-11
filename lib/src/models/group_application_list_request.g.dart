@@ -17,6 +17,6 @@ GroupApplicationListRequest _$GroupApplicationListRequestFromJson(
 Map<String, dynamic> _$GroupApplicationListRequestToJson(
         GroupApplicationListRequest instance) =>
     <String, dynamic>{
-      'memberships': instance.memberships,
+      'memberships': instance.memberships?.map((e) => e.toJson()).toList(),
       'message': instance.message,
     };

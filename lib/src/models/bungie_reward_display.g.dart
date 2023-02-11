@@ -25,7 +25,9 @@ BungieRewardDisplay _$BungieRewardDisplayFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$BungieRewardDisplayToJson(
         BungieRewardDisplay instance) =>
     <String, dynamic>{
-      'UserRewardAvailabilityModel': instance.userRewardAvailabilityModel,
-      'ObjectiveDisplayProperties': instance.objectiveDisplayProperties,
-      'RewardDisplayProperties': instance.rewardDisplayProperties,
+      'UserRewardAvailabilityModel':
+          instance.userRewardAvailabilityModel?.toJson(),
+      'ObjectiveDisplayProperties':
+          instance.objectiveDisplayProperties?.toJson(),
+      'RewardDisplayProperties': instance.rewardDisplayProperties?.toJson(),
     };

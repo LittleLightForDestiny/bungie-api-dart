@@ -26,7 +26,7 @@ CoreSettingsConfigurationResponse _$CoreSettingsConfigurationResponseFromJson(
 Map<String, dynamic> _$CoreSettingsConfigurationResponseToJson(
         CoreSettingsConfigurationResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

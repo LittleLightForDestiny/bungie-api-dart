@@ -17,5 +17,5 @@ DestinyAggregateActivityResults _$DestinyAggregateActivityResultsFromJson(
 Map<String, dynamic> _$DestinyAggregateActivityResultsToJson(
         DestinyAggregateActivityResults instance) =>
     <String, dynamic>{
-      'activities': instance.activities,
+      'activities': instance.activities?.map((e) => e.toJson()).toList(),
     };

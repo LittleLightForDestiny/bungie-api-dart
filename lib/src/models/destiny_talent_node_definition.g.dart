@@ -55,9 +55,10 @@ Map<String, dynamic> _$DestinyTalentNodeDefinitionToJson(
       'autoUnlocks': instance.autoUnlocks,
       'lastStepRepeats': instance.lastStepRepeats,
       'isRandom': instance.isRandom,
-      'randomActivationRequirement': instance.randomActivationRequirement,
+      'randomActivationRequirement':
+          instance.randomActivationRequirement?.toJson(),
       'isRandomRepurchasable': instance.isRandomRepurchasable,
-      'steps': instance.steps,
+      'steps': instance.steps?.map((e) => e.toJson()).toList(),
       'exclusiveWithNodeHashes': instance.exclusiveWithNodeHashes,
       'randomStartProgressionBarAtProgression':
           instance.randomStartProgressionBarAtProgression,

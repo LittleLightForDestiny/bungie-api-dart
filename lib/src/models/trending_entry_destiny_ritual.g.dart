@@ -33,6 +33,6 @@ Map<String, dynamic> _$TrendingEntryDestinyRitualToJson(
       'subtitle': instance.subtitle,
       'dateStart': instance.dateStart,
       'dateEnd': instance.dateEnd,
-      'milestoneDetails': instance.milestoneDetails,
-      'eventContent': instance.eventContent,
+      'milestoneDetails': instance.milestoneDetails?.toJson(),
+      'eventContent': instance.eventContent?.toJson(),
     };

@@ -22,7 +22,8 @@ Map<String, dynamic> _$DestinyLocationDefinitionToJson(
         DestinyLocationDefinition instance) =>
     <String, dynamic>{
       'vendorHash': instance.vendorHash,
-      'locationReleases': instance.locationReleases,
+      'locationReleases':
+          instance.locationReleases?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

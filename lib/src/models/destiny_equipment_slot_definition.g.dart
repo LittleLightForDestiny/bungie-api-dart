@@ -27,11 +27,12 @@ DestinyEquipmentSlotDefinition _$DestinyEquipmentSlotDefinitionFromJson(
 Map<String, dynamic> _$DestinyEquipmentSlotDefinitionToJson(
         DestinyEquipmentSlotDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'equipmentCategoryHash': instance.equipmentCategoryHash,
       'bucketTypeHash': instance.bucketTypeHash,
       'applyCustomArtDyes': instance.applyCustomArtDyes,
-      'artDyeChannels': instance.artDyeChannels,
+      'artDyeChannels':
+          instance.artDyeChannels?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

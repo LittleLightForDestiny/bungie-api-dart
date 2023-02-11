@@ -26,7 +26,7 @@ DestinyItemChangeResponseResponse _$DestinyItemChangeResponseResponseFromJson(
 Map<String, dynamic> _$DestinyItemChangeResponseResponseToJson(
         DestinyItemChangeResponseResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

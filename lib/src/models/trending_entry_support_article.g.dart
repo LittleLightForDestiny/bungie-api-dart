@@ -17,5 +17,5 @@ TrendingEntrySupportArticle _$TrendingEntrySupportArticleFromJson(
 Map<String, dynamic> _$TrendingEntrySupportArticleToJson(
         TrendingEntrySupportArticle instance) =>
     <String, dynamic>{
-      'article': instance.article,
+      'article': instance.article?.toJson(),
     };

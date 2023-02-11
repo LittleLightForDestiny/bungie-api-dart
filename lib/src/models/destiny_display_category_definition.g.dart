@@ -28,7 +28,7 @@ Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(
       'index': instance.index,
       'identifier': instance.identifier,
       'displayCategoryHash': instance.displayCategoryHash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'displayInBanner': instance.displayInBanner,
       'progressionHash': instance.progressionHash,
       'sortOrder': encodeVendorDisplayCategorySortOrder(instance.sortOrder),

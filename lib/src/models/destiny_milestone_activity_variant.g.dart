@@ -21,7 +21,7 @@ Map<String, dynamic> _$DestinyMilestoneActivityVariantToJson(
         DestinyMilestoneActivityVariant instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'completionStatus': instance.completionStatus,
+      'completionStatus': instance.completionStatus?.toJson(),
       'activityModeHash': instance.activityModeHash,
       'activityModeType': instance.activityModeType,
     };

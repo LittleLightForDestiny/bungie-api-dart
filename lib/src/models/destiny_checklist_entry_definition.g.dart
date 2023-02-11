@@ -27,7 +27,7 @@ Map<String, dynamic> _$DestinyChecklistEntryDefinitionToJson(
         DestinyChecklistEntryDefinition instance) =>
     <String, dynamic>{
       'hash': instance.hash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'destinationHash': instance.destinationHash,
       'locationHash': instance.locationHash,
       'bubbleHash': instance.bubbleHash,

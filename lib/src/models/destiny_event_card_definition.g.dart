@@ -35,10 +35,10 @@ DestinyEventCardDefinition _$DestinyEventCardDefinitionFromJson(
 Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
         DestinyEventCardDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'linkRedirectPath': instance.linkRedirectPath,
-      'color': instance.color,
-      'images': instance.images,
+      'color': instance.color?.toJson(),
+      'images': instance.images?.toJson(),
       'triumphsPresentationNodeHash': instance.triumphsPresentationNodeHash,
       'sealPresentationNodeHash': instance.sealPresentationNodeHash,
       'ticketCurrencyItemHash': instance.ticketCurrencyItemHash,

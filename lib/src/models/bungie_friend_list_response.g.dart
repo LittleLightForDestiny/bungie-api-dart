@@ -16,5 +16,5 @@ BungieFriendListResponse _$BungieFriendListResponseFromJson(
 Map<String, dynamic> _$BungieFriendListResponseToJson(
         BungieFriendListResponse instance) =>
     <String, dynamic>{
-      'friends': instance.friends,
+      'friends': instance.friends?.map((e) => e.toJson()).toList(),
     };

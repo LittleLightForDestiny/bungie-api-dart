@@ -88,25 +88,41 @@ Map<String, dynamic> _$CoreSettingsConfigurationToJson(
         CoreSettingsConfiguration instance) =>
     <String, dynamic>{
       'environment': instance.environment,
-      'systems': instance.systems,
-      'ignoreReasons': instance.ignoreReasons,
-      'forumCategories': instance.forumCategories,
-      'groupAvatars': instance.groupAvatars,
-      'defaultGroupTheme': instance.defaultGroupTheme,
-      'destinyMembershipTypes': instance.destinyMembershipTypes,
-      'recruitmentPlatformTags': instance.recruitmentPlatformTags,
-      'recruitmentMiscTags': instance.recruitmentMiscTags,
-      'recruitmentActivities': instance.recruitmentActivities,
-      'userContentLocales': instance.userContentLocales,
-      'systemContentLocales': instance.systemContentLocales,
-      'clanBannerDecals': instance.clanBannerDecals,
-      'clanBannerDecalColors': instance.clanBannerDecalColors,
-      'clanBannerGonfalons': instance.clanBannerGonfalons,
-      'clanBannerGonfalonColors': instance.clanBannerGonfalonColors,
-      'clanBannerGonfalonDetails': instance.clanBannerGonfalonDetails,
-      'clanBannerGonfalonDetailColors': instance.clanBannerGonfalonDetailColors,
-      'clanBannerStandards': instance.clanBannerStandards,
-      'destiny2CoreSettings': instance.destiny2CoreSettings,
-      'emailSettings': instance.emailSettings,
-      'fireteamActivities': instance.fireteamActivities,
+      'systems': instance.systems?.map((k, e) => MapEntry(k, e.toJson())),
+      'ignoreReasons': instance.ignoreReasons?.map((e) => e.toJson()).toList(),
+      'forumCategories':
+          instance.forumCategories?.map((e) => e.toJson()).toList(),
+      'groupAvatars': instance.groupAvatars?.map((e) => e.toJson()).toList(),
+      'defaultGroupTheme': instance.defaultGroupTheme?.toJson(),
+      'destinyMembershipTypes':
+          instance.destinyMembershipTypes?.map((e) => e.toJson()).toList(),
+      'recruitmentPlatformTags':
+          instance.recruitmentPlatformTags?.map((e) => e.toJson()).toList(),
+      'recruitmentMiscTags':
+          instance.recruitmentMiscTags?.map((e) => e.toJson()).toList(),
+      'recruitmentActivities':
+          instance.recruitmentActivities?.map((e) => e.toJson()).toList(),
+      'userContentLocales':
+          instance.userContentLocales?.map((e) => e.toJson()).toList(),
+      'systemContentLocales':
+          instance.systemContentLocales?.map((e) => e.toJson()).toList(),
+      'clanBannerDecals':
+          instance.clanBannerDecals?.map((e) => e.toJson()).toList(),
+      'clanBannerDecalColors':
+          instance.clanBannerDecalColors?.map((e) => e.toJson()).toList(),
+      'clanBannerGonfalons':
+          instance.clanBannerGonfalons?.map((e) => e.toJson()).toList(),
+      'clanBannerGonfalonColors':
+          instance.clanBannerGonfalonColors?.map((e) => e.toJson()).toList(),
+      'clanBannerGonfalonDetails':
+          instance.clanBannerGonfalonDetails?.map((e) => e.toJson()).toList(),
+      'clanBannerGonfalonDetailColors': instance.clanBannerGonfalonDetailColors
+          ?.map((e) => e.toJson())
+          .toList(),
+      'clanBannerStandards':
+          instance.clanBannerStandards?.map((e) => e.toJson()).toList(),
+      'destiny2CoreSettings': instance.destiny2CoreSettings?.toJson(),
+      'emailSettings': instance.emailSettings?.toJson(),
+      'fireteamActivities':
+          instance.fireteamActivities?.map((e) => e.toJson()).toList(),
     };

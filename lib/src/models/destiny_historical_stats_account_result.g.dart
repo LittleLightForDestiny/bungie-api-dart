@@ -25,7 +25,7 @@ DestinyHistoricalStatsAccountResult
 Map<String, dynamic> _$DestinyHistoricalStatsAccountResultToJson(
         DestinyHistoricalStatsAccountResult instance) =>
     <String, dynamic>{
-      'mergedDeletedCharacters': instance.mergedDeletedCharacters,
-      'mergedAllCharacters': instance.mergedAllCharacters,
-      'characters': instance.characters,
+      'mergedDeletedCharacters': instance.mergedDeletedCharacters?.toJson(),
+      'mergedAllCharacters': instance.mergedAllCharacters?.toJson(),
+      'characters': instance.characters?.map((e) => e.toJson()).toList(),
     };

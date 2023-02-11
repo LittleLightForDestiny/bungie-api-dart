@@ -17,6 +17,6 @@ GroupMemberLeaveResult _$GroupMemberLeaveResultFromJson(
 Map<String, dynamic> _$GroupMemberLeaveResultToJson(
         GroupMemberLeaveResult instance) =>
     <String, dynamic>{
-      'group': instance.group,
+      'group': instance.group?.toJson(),
       'groupDeleted': instance.groupDeleted,
     };

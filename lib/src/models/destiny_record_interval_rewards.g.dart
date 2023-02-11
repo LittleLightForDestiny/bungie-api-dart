@@ -16,5 +16,6 @@ DestinyRecordIntervalRewards _$DestinyRecordIntervalRewardsFromJson(
 Map<String, dynamic> _$DestinyRecordIntervalRewardsToJson(
         DestinyRecordIntervalRewards instance) =>
     <String, dynamic>{
-      'intervalRewardItems': instance.intervalRewardItems,
+      'intervalRewardItems':
+          instance.intervalRewardItems?.map((e) => e.toJson()).toList(),
     };

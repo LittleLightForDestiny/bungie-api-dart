@@ -20,5 +20,5 @@ PersonalDestinyVendorSaleItemSetComponent
 Map<String, dynamic> _$PersonalDestinyVendorSaleItemSetComponentToJson(
         PersonalDestinyVendorSaleItemSetComponent instance) =>
     <String, dynamic>{
-      'saleItems': instance.saleItems,
+      'saleItems': instance.saleItems?.map((k, e) => MapEntry(k, e.toJson())),
     };

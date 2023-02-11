@@ -32,9 +32,9 @@ Map<String, dynamic> _$DestinyItemTranslationBlockDefinitionToJson(
     <String, dynamic>{
       'weaponPatternIdentifier': instance.weaponPatternIdentifier,
       'weaponPatternHash': instance.weaponPatternHash,
-      'defaultDyes': instance.defaultDyes,
-      'lockedDyes': instance.lockedDyes,
-      'customDyes': instance.customDyes,
-      'arrangements': instance.arrangements,
+      'defaultDyes': instance.defaultDyes?.map((e) => e.toJson()).toList(),
+      'lockedDyes': instance.lockedDyes?.map((e) => e.toJson()).toList(),
+      'customDyes': instance.customDyes?.map((e) => e.toJson()).toList(),
+      'arrangements': instance.arrangements?.map((e) => e.toJson()).toList(),
       'hasGeometry': instance.hasGeometry,
     };

@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyStatOverrideDefinitionToJson(
         DestinyStatOverrideDefinition instance) =>
     <String, dynamic>{
       'statHash': instance.statHash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
     };

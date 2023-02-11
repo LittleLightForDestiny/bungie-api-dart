@@ -20,7 +20,7 @@ SingleComponentResponseOfDestinyCharacterComponent
 Map<String, dynamic> _$SingleComponentResponseOfDestinyCharacterComponentToJson(
         SingleComponentResponseOfDestinyCharacterComponent instance) =>
     <String, dynamic>{
-      'data': instance.data,
+      'data': instance.data?.toJson(),
       'privacy': encodeComponentPrivacySetting(instance.privacy),
       'disabled': instance.disabled,
     };

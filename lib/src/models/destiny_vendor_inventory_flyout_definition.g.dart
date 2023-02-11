@@ -28,8 +28,8 @@ Map<String, dynamic> _$DestinyVendorInventoryFlyoutDefinitionToJson(
         DestinyVendorInventoryFlyoutDefinition instance) =>
     <String, dynamic>{
       'lockedDescription': instance.lockedDescription,
-      'displayProperties': instance.displayProperties,
-      'buckets': instance.buckets,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'buckets': instance.buckets?.map((e) => e.toJson()).toList(),
       'flyoutId': instance.flyoutId,
       'suppressNewness': instance.suppressNewness,
       'equipmentSlotHash': instance.equipmentSlotHash,

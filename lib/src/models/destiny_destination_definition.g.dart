@@ -35,12 +35,14 @@ DestinyDestinationDefinition _$DestinyDestinationDefinitionFromJson(
 Map<String, dynamic> _$DestinyDestinationDefinitionToJson(
         DestinyDestinationDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'placeHash': instance.placeHash,
       'defaultFreeroamActivityHash': instance.defaultFreeroamActivityHash,
-      'activityGraphEntries': instance.activityGraphEntries,
-      'bubbleSettings': instance.bubbleSettings,
-      'bubbles': instance.bubbles,
+      'activityGraphEntries':
+          instance.activityGraphEntries?.map((e) => e.toJson()).toList(),
+      'bubbleSettings':
+          instance.bubbleSettings?.map((e) => e.toJson()).toList(),
+      'bubbles': instance.bubbles?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

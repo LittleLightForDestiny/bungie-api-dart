@@ -21,5 +21,5 @@ Map<String, dynamic> _$DestinyEntitySearchResultToJson(
         DestinyEntitySearchResult instance) =>
     <String, dynamic>{
       'suggestedWords': instance.suggestedWords,
-      'results': instance.results,
+      'results': instance.results?.toJson(),
     };

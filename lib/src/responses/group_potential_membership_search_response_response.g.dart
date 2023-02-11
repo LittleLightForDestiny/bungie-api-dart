@@ -27,7 +27,7 @@ GroupPotentialMembershipSearchResponseResponse
 Map<String, dynamic> _$GroupPotentialMembershipSearchResponseResponseToJson(
         GroupPotentialMembershipSearchResponseResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

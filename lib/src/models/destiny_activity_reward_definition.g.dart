@@ -18,5 +18,5 @@ Map<String, dynamic> _$DestinyActivityRewardDefinitionToJson(
         DestinyActivityRewardDefinition instance) =>
     <String, dynamic>{
       'rewardText': instance.rewardText,
-      'rewardItems': instance.rewardItems,
+      'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
     };

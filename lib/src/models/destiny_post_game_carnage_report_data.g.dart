@@ -33,7 +33,7 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportDataToJson(
       'startingPhaseIndex': instance.startingPhaseIndex,
       'activityWasStartedFromBeginning':
           instance.activityWasStartedFromBeginning,
-      'activityDetails': instance.activityDetails,
-      'entries': instance.entries,
-      'teams': instance.teams,
+      'activityDetails': instance.activityDetails?.toJson(),
+      'entries': instance.entries?.map((e) => e.toJson()).toList(),
+      'teams': instance.teams?.map((e) => e.toJson()).toList(),
     };

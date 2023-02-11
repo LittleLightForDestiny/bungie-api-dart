@@ -23,5 +23,6 @@ Map<String, dynamic> _$UserSearchResponseDetailToJson(
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
       'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
       'bungieNetMembershipId': instance.bungieNetMembershipId,
-      'destinyMemberships': instance.destinyMemberships,
+      'destinyMemberships':
+          instance.destinyMemberships?.map((e) => e.toJson()).toList(),
     };

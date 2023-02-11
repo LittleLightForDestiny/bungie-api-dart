@@ -22,7 +22,8 @@ GroupV2ClanInfoAndInvestment _$GroupV2ClanInfoAndInvestmentFromJson(
 Map<String, dynamic> _$GroupV2ClanInfoAndInvestmentToJson(
         GroupV2ClanInfoAndInvestment instance) =>
     <String, dynamic>{
-      'd2ClanProgressions': instance.d2ClanProgressions,
+      'd2ClanProgressions':
+          instance.d2ClanProgressions?.map((k, e) => MapEntry(k, e.toJson())),
       'clanCallsign': instance.clanCallsign,
-      'clanBannerData': instance.clanBannerData,
+      'clanBannerData': instance.clanBannerData?.toJson(),
     };

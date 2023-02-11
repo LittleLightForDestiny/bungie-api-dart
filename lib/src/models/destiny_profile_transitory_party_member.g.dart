@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryPartyMemberToJson(
       'membershipId': instance.membershipId,
       'emblemHash': instance.emblemHash,
       'displayName': instance.displayName,
-      'status': instance.status,
+      'status': instance.status?.toJson(),
     };

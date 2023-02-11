@@ -22,7 +22,7 @@ DestinyItemObjectivesComponent _$DestinyItemObjectivesComponentFromJson(
 Map<String, dynamic> _$DestinyItemObjectivesComponentToJson(
         DestinyItemObjectivesComponent instance) =>
     <String, dynamic>{
-      'objectives': instance.objectives,
-      'flavorObjective': instance.flavorObjective,
+      'objectives': instance.objectives?.map((e) => e.toJson()).toList(),
+      'flavorObjective': instance.flavorObjective?.toJson(),
       'dateCompleted': instance.dateCompleted,
     };

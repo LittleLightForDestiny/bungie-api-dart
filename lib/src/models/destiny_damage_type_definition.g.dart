@@ -23,7 +23,7 @@ DestinyDamageTypeDefinition _$DestinyDamageTypeDefinitionFromJson(
 Map<String, dynamic> _$DestinyDamageTypeDefinitionToJson(
         DestinyDamageTypeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'transparentIconPath': instance.transparentIconPath,
       'showIcon': instance.showIcon,
       'enumValue': encodeDamageType(instance.enumValue),

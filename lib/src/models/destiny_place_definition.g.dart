@@ -20,7 +20,7 @@ DestinyPlaceDefinition _$DestinyPlaceDefinitionFromJson(
 Map<String, dynamic> _$DestinyPlaceDefinitionToJson(
         DestinyPlaceDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

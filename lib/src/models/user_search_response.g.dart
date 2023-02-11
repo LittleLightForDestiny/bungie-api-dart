@@ -17,7 +17,7 @@ UserSearchResponse _$UserSearchResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UserSearchResponseToJson(UserSearchResponse instance) =>
     <String, dynamic>{
-      'searchResults': instance.searchResults,
+      'searchResults': instance.searchResults?.map((e) => e.toJson()).toList(),
       'page': instance.page,
       'hasMore': instance.hasMore,
     };

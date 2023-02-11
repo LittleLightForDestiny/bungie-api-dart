@@ -41,6 +41,8 @@ Map<String, dynamic> _$DestinyItemObjectiveBlockDefinitionToJson(
       'objectiveVerbName': instance.objectiveVerbName,
       'questTypeIdentifier': instance.questTypeIdentifier,
       'questTypeHash': instance.questTypeHash,
-      'perObjectiveDisplayProperties': instance.perObjectiveDisplayProperties,
+      'perObjectiveDisplayProperties': instance.perObjectiveDisplayProperties
+          ?.map((e) => e.toJson())
+          .toList(),
       'displayAsStatTracker': instance.displayAsStatTracker,
     };

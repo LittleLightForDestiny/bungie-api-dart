@@ -25,7 +25,7 @@ Map<String, dynamic> _$DestinyPublicMilestoneActivityToJson(
     <String, dynamic>{
       'activityHash': instance.activityHash,
       'modifierHashes': instance.modifierHashes,
-      'variants': instance.variants,
+      'variants': instance.variants?.map((e) => e.toJson()).toList(),
       'activityModeHash': instance.activityModeHash,
       'activityModeType': instance.activityModeType,
     };

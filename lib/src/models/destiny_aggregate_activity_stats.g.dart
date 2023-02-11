@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyAggregateActivityStatsToJson(
         DestinyAggregateActivityStats instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'values': instance.values,
+      'values': instance.values?.map((k, e) => MapEntry(k, e.toJson())),
     };

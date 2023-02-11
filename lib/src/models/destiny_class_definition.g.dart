@@ -32,7 +32,7 @@ Map<String, dynamic> _$DestinyClassDefinitionToJson(
         DestinyClassDefinition instance) =>
     <String, dynamic>{
       'classType': encodeDestinyClass(instance.classType),
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'genderedClassNames': instance.genderedClassNames,
       'genderedClassNamesByGenderHash': instance.genderedClassNamesByGenderHash,
       'mentorVendorHash': instance.mentorVendorHash,

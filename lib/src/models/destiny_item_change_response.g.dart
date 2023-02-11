@@ -23,7 +23,9 @@ DestinyItemChangeResponse _$DestinyItemChangeResponseFromJson(
 Map<String, dynamic> _$DestinyItemChangeResponseToJson(
         DestinyItemChangeResponse instance) =>
     <String, dynamic>{
-      'item': instance.item,
-      'addedInventoryItems': instance.addedInventoryItems,
-      'removedInventoryItems': instance.removedInventoryItems,
+      'item': instance.item?.toJson(),
+      'addedInventoryItems':
+          instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
+      'removedInventoryItems':
+          instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
     };

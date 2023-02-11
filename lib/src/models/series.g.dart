@@ -13,6 +13,6 @@ Series _$SeriesFromJson(Map<String, dynamic> json) => Series()
   ..target = json['target'] as String?;
 
 Map<String, dynamic> _$SeriesToJson(Series instance) => <String, dynamic>{
-      'datapoints': instance.datapoints,
+      'datapoints': instance.datapoints?.map((e) => e.toJson()).toList(),
       'target': instance.target,
     };

@@ -28,7 +28,7 @@ Map<String, dynamic> _$DestinyEquippingBlockDefinitionToJson(
       'uniqueLabel': instance.uniqueLabel,
       'uniqueLabelHash': instance.uniqueLabelHash,
       'equipmentSlotTypeHash': instance.equipmentSlotTypeHash,
-      'attributes': instance.attributes,
+      'attributes': instance.attributes?.toJson(),
       'ammoType': encodeDestinyAmmunitionType(instance.ammoType),
       'displayStrings': instance.displayStrings,
     };

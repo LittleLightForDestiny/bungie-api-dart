@@ -45,13 +45,13 @@ DestinyNodeStepDefinition _$DestinyNodeStepDefinitionFromJson(
 Map<String, dynamic> _$DestinyNodeStepDefinitionToJson(
         DestinyNodeStepDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'stepIndex': instance.stepIndex,
       'nodeStepHash': instance.nodeStepHash,
       'interactionDescription': instance.interactionDescription,
       'damageType': encodeDamageType(instance.damageType),
       'damageTypeHash': instance.damageTypeHash,
-      'activationRequirement': instance.activationRequirement,
+      'activationRequirement': instance.activationRequirement?.toJson(),
       'canActivateNextStep': instance.canActivateNextStep,
       'nextStepIndex': instance.nextStepIndex,
       'isNextStepRandom': instance.isNextStepRandom,
@@ -59,7 +59,8 @@ Map<String, dynamic> _$DestinyNodeStepDefinitionToJson(
       'startProgressionBarAtProgress': instance.startProgressionBarAtProgress,
       'statHashes': instance.statHashes,
       'affectsQuality': instance.affectsQuality,
-      'stepGroups': instance.stepGroups,
+      'stepGroups': instance.stepGroups?.toJson(),
       'affectsLevel': instance.affectsLevel,
-      'socketReplacements': instance.socketReplacements,
+      'socketReplacements':
+          instance.socketReplacements?.map((e) => e.toJson()).toList(),
     };

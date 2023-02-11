@@ -23,6 +23,6 @@ Map<String, dynamic> _$DestinyTalentNodeCategoryToJson(
     <String, dynamic>{
       'identifier': instance.identifier,
       'isLoreDriven': instance.isLoreDriven,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'nodeHashes': instance.nodeHashes,
     };

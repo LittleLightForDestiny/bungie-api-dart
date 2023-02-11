@@ -24,7 +24,7 @@ Map<String, dynamic>
             DictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent
                 instance) =>
         <String, dynamic>{
-          'data': instance.data,
+          'data': instance.data?.map((k, e) => MapEntry(k, e.toJson())),
           'privacy': encodeComponentPrivacySetting(instance.privacy),
           'disabled': instance.disabled,
         };

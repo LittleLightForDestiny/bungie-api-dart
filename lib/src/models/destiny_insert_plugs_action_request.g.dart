@@ -23,7 +23,7 @@ Map<String, dynamic> _$DestinyInsertPlugsActionRequestToJson(
     <String, dynamic>{
       'actionToken': instance.actionToken,
       'itemInstanceId': instance.itemInstanceId,
-      'plug': instance.plug,
+      'plug': instance.plug?.toJson(),
       'characterId': instance.characterId,
       'membershipType': encodeBungieMembershipType(instance.membershipType),
     };

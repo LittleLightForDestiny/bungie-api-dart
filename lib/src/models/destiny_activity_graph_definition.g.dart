@@ -41,12 +41,14 @@ DestinyActivityGraphDefinition _$DestinyActivityGraphDefinitionFromJson(
 Map<String, dynamic> _$DestinyActivityGraphDefinitionToJson(
         DestinyActivityGraphDefinition instance) =>
     <String, dynamic>{
-      'nodes': instance.nodes,
-      'artElements': instance.artElements,
-      'connections': instance.connections,
-      'displayObjectives': instance.displayObjectives,
-      'displayProgressions': instance.displayProgressions,
-      'linkedGraphs': instance.linkedGraphs,
+      'nodes': instance.nodes?.map((e) => e.toJson()).toList(),
+      'artElements': instance.artElements?.map((e) => e.toJson()).toList(),
+      'connections': instance.connections?.map((e) => e.toJson()).toList(),
+      'displayObjectives':
+          instance.displayObjectives?.map((e) => e.toJson()).toList(),
+      'displayProgressions':
+          instance.displayProgressions?.map((e) => e.toJson()).toList(),
+      'linkedGraphs': instance.linkedGraphs?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

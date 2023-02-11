@@ -28,12 +28,12 @@ DestinySandboxPerkDefinition _$DestinySandboxPerkDefinitionFromJson(
 Map<String, dynamic> _$DestinySandboxPerkDefinitionToJson(
         DestinySandboxPerkDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'perkIdentifier': instance.perkIdentifier,
       'isDisplayable': instance.isDisplayable,
       'damageType': encodeDamageType(instance.damageType),
       'damageTypeHash': instance.damageTypeHash,
-      'perkGroups': instance.perkGroups,
+      'perkGroups': instance.perkGroups?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

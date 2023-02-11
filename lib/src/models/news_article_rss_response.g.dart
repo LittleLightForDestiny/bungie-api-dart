@@ -20,7 +20,7 @@ NewsArticleRssResponse _$NewsArticleRssResponseFromJson(
 Map<String, dynamic> _$NewsArticleRssResponseToJson(
         NewsArticleRssResponse instance) =>
     <String, dynamic>{
-      'NewsArticles': instance.newsArticles,
+      'NewsArticles': instance.newsArticles?.map((e) => e.toJson()).toList(),
       'CurrentPaginationToken': instance.currentPaginationToken,
       'NextPaginationToken': instance.nextPaginationToken,
       'ResultCountThisPage': instance.resultCountThisPage,

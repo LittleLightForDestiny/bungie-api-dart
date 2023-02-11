@@ -25,7 +25,7 @@ TrendingDetailResponse _$TrendingDetailResponseFromJson(
 Map<String, dynamic> _$TrendingDetailResponseToJson(
         TrendingDetailResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

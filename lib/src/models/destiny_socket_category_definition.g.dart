@@ -22,7 +22,7 @@ DestinySocketCategoryDefinition _$DestinySocketCategoryDefinitionFromJson(
 Map<String, dynamic> _$DestinySocketCategoryDefinitionToJson(
         DestinySocketCategoryDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'uiCategoryStyle': instance.uiCategoryStyle,
       'categoryStyle': encodeDestinySocketCategoryStyle(instance.categoryStyle),
       'hash': instance.hash,

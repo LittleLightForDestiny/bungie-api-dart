@@ -26,7 +26,7 @@ GroupApplicationResponseResponse _$GroupApplicationResponseResponseFromJson(
 Map<String, dynamic> _$GroupApplicationResponseResponseToJson(
         GroupApplicationResponseResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

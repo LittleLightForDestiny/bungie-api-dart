@@ -39,7 +39,7 @@ Map<String, dynamic> _$DestinyProfileUserInfoCardToJson(
       'dateLastPlayed': instance.dateLastPlayed,
       'isOverridden': instance.isOverridden,
       'isCrossSavePrimary': instance.isCrossSavePrimary,
-      'platformSilver': instance.platformSilver,
+      'platformSilver': instance.platformSilver?.toJson(),
       'unpairedGameVersions': instance.unpairedGameVersions,
       'supplementalDisplayName': instance.supplementalDisplayName,
       'iconPath': instance.iconPath,

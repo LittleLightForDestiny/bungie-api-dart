@@ -30,11 +30,12 @@ Map<String, dynamic> _$DestinyItemSocketEntryDefinitionToJson(
     <String, dynamic>{
       'socketTypeHash': instance.socketTypeHash,
       'singleInitialItemHash': instance.singleInitialItemHash,
-      'reusablePlugItems': instance.reusablePlugItems,
+      'reusablePlugItems':
+          instance.reusablePlugItems?.map((e) => e.toJson()).toList(),
       'preventInitializationOnVendorPurchase':
           instance.preventInitializationOnVendorPurchase,
       'hidePerksInItemTooltip': instance.hidePerksInItemTooltip,
-      'plugSources': instance.plugSources,
+      'plugSources': instance.plugSources?.toJson(),
       'reusablePlugSetHash': instance.reusablePlugSetHash,
       'randomizedPlugSetHash': instance.randomizedPlugSetHash,
       'defaultVisible': instance.defaultVisible,

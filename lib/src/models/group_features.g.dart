@@ -30,7 +30,7 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
     <String, dynamic>{
       'maximumMembers': instance.maximumMembers,
       'maximumMembershipsOfGroupType': instance.maximumMembershipsOfGroupType,
-      'capabilities': instance.capabilities,
+      'capabilities': instance.capabilities?.toJson(),
       'membershipTypes': instance.membershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e])
           .toList(),

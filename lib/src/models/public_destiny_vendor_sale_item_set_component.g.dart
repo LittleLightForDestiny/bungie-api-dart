@@ -20,5 +20,5 @@ PublicDestinyVendorSaleItemSetComponent
 Map<String, dynamic> _$PublicDestinyVendorSaleItemSetComponentToJson(
         PublicDestinyVendorSaleItemSetComponent instance) =>
     <String, dynamic>{
-      'saleItems': instance.saleItems,
+      'saleItems': instance.saleItems?.map((k, e) => MapEntry(k, e.toJson())),
     };

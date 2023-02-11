@@ -53,14 +53,14 @@ DestinyItemComponentSetOfint64 _$DestinyItemComponentSetOfint64FromJson(
 Map<String, dynamic> _$DestinyItemComponentSetOfint64ToJson(
         DestinyItemComponentSetOfint64 instance) =>
     <String, dynamic>{
-      'instances': instance.instances,
-      'renderData': instance.renderData,
-      'stats': instance.stats,
-      'sockets': instance.sockets,
-      'reusablePlugs': instance.reusablePlugs,
-      'plugObjectives': instance.plugObjectives,
-      'talentGrids': instance.talentGrids,
-      'plugStates': instance.plugStates,
-      'objectives': instance.objectives,
-      'perks': instance.perks,
+      'instances': instance.instances?.toJson(),
+      'renderData': instance.renderData?.toJson(),
+      'stats': instance.stats?.toJson(),
+      'sockets': instance.sockets?.toJson(),
+      'reusablePlugs': instance.reusablePlugs?.toJson(),
+      'plugObjectives': instance.plugObjectives?.toJson(),
+      'talentGrids': instance.talentGrids?.toJson(),
+      'plugStates': instance.plugStates?.toJson(),
+      'objectives': instance.objectives?.toJson(),
+      'perks': instance.perks?.toJson(),
     };

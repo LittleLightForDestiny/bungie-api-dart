@@ -39,8 +39,9 @@ Map<String, dynamic> _$DestinyItemActionBlockDefinitionToJson(
       'overlayScreenName': instance.overlayScreenName,
       'overlayIcon': instance.overlayIcon,
       'requiredCooldownSeconds': instance.requiredCooldownSeconds,
-      'requiredItems': instance.requiredItems,
-      'progressionRewards': instance.progressionRewards,
+      'requiredItems': instance.requiredItems?.map((e) => e.toJson()).toList(),
+      'progressionRewards':
+          instance.progressionRewards?.map((e) => e.toJson()).toList(),
       'actionTypeLabel': instance.actionTypeLabel,
       'requiredLocation': instance.requiredLocation,
       'requiredCooldownHash': instance.requiredCooldownHash,

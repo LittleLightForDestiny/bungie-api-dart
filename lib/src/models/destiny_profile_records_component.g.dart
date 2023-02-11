@@ -30,7 +30,7 @@ Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(
       'legacyScore': instance.legacyScore,
       'lifetimeScore': instance.lifetimeScore,
       'trackedRecordHash': instance.trackedRecordHash,
-      'records': instance.records,
+      'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
       'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
       'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
     };

@@ -28,7 +28,7 @@ Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(
       'description': instance.description,
       'name': instance.name,
       'icon': instance.icon,
-      'iconSequences': instance.iconSequences,
+      'iconSequences': instance.iconSequences?.map((e) => e.toJson()).toList(),
       'highResIcon': instance.highResIcon,
       'hasIcon': instance.hasIcon,
     };

@@ -19,6 +19,8 @@ BungieFriendRequestListResponse _$BungieFriendRequestListResponseFromJson(
 Map<String, dynamic> _$BungieFriendRequestListResponseToJson(
         BungieFriendRequestListResponse instance) =>
     <String, dynamic>{
-      'incomingRequests': instance.incomingRequests,
-      'outgoingRequests': instance.outgoingRequests,
+      'incomingRequests':
+          instance.incomingRequests?.map((e) => e.toJson()).toList(),
+      'outgoingRequests':
+          instance.outgoingRequests?.map((e) => e.toJson()).toList(),
     };

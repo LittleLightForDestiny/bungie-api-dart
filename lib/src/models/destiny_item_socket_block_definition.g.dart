@@ -27,7 +27,9 @@ Map<String, dynamic> _$DestinyItemSocketBlockDefinitionToJson(
         DestinyItemSocketBlockDefinition instance) =>
     <String, dynamic>{
       'detail': instance.detail,
-      'socketEntries': instance.socketEntries,
-      'intrinsicSockets': instance.intrinsicSockets,
-      'socketCategories': instance.socketCategories,
+      'socketEntries': instance.socketEntries?.map((e) => e.toJson()).toList(),
+      'intrinsicSockets':
+          instance.intrinsicSockets?.map((e) => e.toJson()).toList(),
+      'socketCategories':
+          instance.socketCategories?.map((e) => e.toJson()).toList(),
     };

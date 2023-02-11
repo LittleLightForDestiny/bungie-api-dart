@@ -29,5 +29,5 @@ Map<String, dynamic> _$PartnerOfferSkuHistoryResponseToJson(
       'ClaimDate': instance.claimDate,
       'AllOffersApplied': instance.allOffersApplied,
       'TransactionId': instance.transactionId,
-      'SkuOffers': instance.skuOffers,
+      'SkuOffers': instance.skuOffers?.map((e) => e.toJson()).toList(),
     };

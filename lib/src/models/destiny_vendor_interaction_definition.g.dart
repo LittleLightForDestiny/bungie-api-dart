@@ -36,16 +36,17 @@ Map<String, dynamic> _$DestinyVendorInteractionDefinitionToJson(
         DestinyVendorInteractionDefinition instance) =>
     <String, dynamic>{
       'interactionIndex': instance.interactionIndex,
-      'replies': instance.replies,
+      'replies': instance.replies?.map((e) => e.toJson()).toList(),
       'vendorCategoryIndex': instance.vendorCategoryIndex,
       'questlineItemHash': instance.questlineItemHash,
-      'sackInteractionList': instance.sackInteractionList,
+      'sackInteractionList':
+          instance.sackInteractionList?.map((e) => e.toJson()).toList(),
       'uiInteractionType': instance.uiInteractionType,
       'interactionType': encodeVendorInteractionType(instance.interactionType),
       'rewardBlockLabel': instance.rewardBlockLabel,
       'rewardVendorCategoryIndex': instance.rewardVendorCategoryIndex,
       'flavorLineOne': instance.flavorLineOne,
       'flavorLineTwo': instance.flavorLineTwo,
-      'headerDisplayProperties': instance.headerDisplayProperties,
+      'headerDisplayProperties': instance.headerDisplayProperties?.toJson(),
       'instructions': instance.instructions,
     };

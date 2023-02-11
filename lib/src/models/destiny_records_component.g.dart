@@ -20,7 +20,7 @@ DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
 Map<String, dynamic> _$DestinyRecordsComponentToJson(
         DestinyRecordsComponent instance) =>
     <String, dynamic>{
-      'records': instance.records,
+      'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
       'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
       'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
     };

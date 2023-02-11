@@ -18,6 +18,6 @@ DestinyObjectiveStatEntryDefinition
 Map<String, dynamic> _$DestinyObjectiveStatEntryDefinitionToJson(
         DestinyObjectiveStatEntryDefinition instance) =>
     <String, dynamic>{
-      'stat': instance.stat,
+      'stat': instance.stat?.toJson(),
       'style': encodeDestinyObjectiveGrantStyle(instance.style),
     };

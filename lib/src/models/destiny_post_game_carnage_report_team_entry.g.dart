@@ -25,7 +25,7 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportTeamEntryToJson(
         DestinyPostGameCarnageReportTeamEntry instance) =>
     <String, dynamic>{
       'teamId': instance.teamId,
-      'standing': instance.standing,
-      'score': instance.score,
+      'standing': instance.standing?.toJson(),
+      'score': instance.score?.toJson(),
       'teamName': instance.teamName,
     };

@@ -26,7 +26,7 @@ ContentItemPublicContractResponse _$ContentItemPublicContractResponseFromJson(
 Map<String, dynamic> _$ContentItemPublicContractResponseToJson(
         ContentItemPublicContractResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

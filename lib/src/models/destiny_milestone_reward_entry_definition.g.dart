@@ -28,8 +28,8 @@ Map<String, dynamic> _$DestinyMilestoneRewardEntryDefinitionToJson(
     <String, dynamic>{
       'rewardEntryHash': instance.rewardEntryHash,
       'rewardEntryIdentifier': instance.rewardEntryIdentifier,
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
       'vendorHash': instance.vendorHash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'order': instance.order,
     };

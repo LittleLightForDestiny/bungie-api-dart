@@ -29,7 +29,7 @@ Map<String, dynamic> _$BungieFriendToJson(BungieFriend instance) =>
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
       'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
       'onlineStatus': encodePresenceStatus(instance.onlineStatus),
-      'onlineTitle': instance.onlineTitle,
+      'onlineTitle': instance.onlineTitle?.toJson(),
       'relationship': encodeFriendRelationshipState(instance.relationship),
-      'bungieNetUser': instance.bungieNetUser,
+      'bungieNetUser': instance.bungieNetUser?.toJson(),
     };

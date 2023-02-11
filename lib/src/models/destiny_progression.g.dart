@@ -42,6 +42,7 @@ Map<String, dynamic> _$DestinyProgressionToJson(DestinyProgression instance) =>
       'progressToNextLevel': instance.progressToNextLevel,
       'nextLevelAt': instance.nextLevelAt,
       'currentResetCount': instance.currentResetCount,
-      'seasonResets': instance.seasonResets,
-      'rewardItemStates': instance.rewardItemStates,
+      'seasonResets': instance.seasonResets?.map((e) => e.toJson()).toList(),
+      'rewardItemStates':
+          instance.rewardItemStates?.map((e) => e.toJson()).toList(),
     };

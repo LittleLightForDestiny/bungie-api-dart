@@ -23,10 +23,10 @@ GroupSearchResponse _$GroupSearchResponseFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$GroupSearchResponseToJson(
         GroupSearchResponse instance) =>
     <String, dynamic>{
-      'results': instance.results,
+      'results': instance.results?.map((e) => e.toJson()).toList(),
       'totalResults': instance.totalResults,
       'hasMore': instance.hasMore,
-      'query': instance.query,
+      'query': instance.query?.toJson(),
       'replacementContinuationToken': instance.replacementContinuationToken,
       'useTotalResults': instance.useTotalResults,
     };

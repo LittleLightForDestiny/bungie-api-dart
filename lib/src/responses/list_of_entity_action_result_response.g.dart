@@ -25,7 +25,7 @@ ListOfEntityActionResultResponse _$ListOfEntityActionResultResponseFromJson(
 Map<String, dynamic> _$ListOfEntityActionResultResponseToJson(
         ListOfEntityActionResultResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.map((e) => e.toJson()).toList(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

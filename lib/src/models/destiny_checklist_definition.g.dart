@@ -26,10 +26,10 @@ DestinyChecklistDefinition _$DestinyChecklistDefinitionFromJson(
 Map<String, dynamic> _$DestinyChecklistDefinitionToJson(
         DestinyChecklistDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'viewActionString': instance.viewActionString,
       'scope': encodeDestinyScope(instance.scope),
-      'entries': instance.entries,
+      'entries': instance.entries?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

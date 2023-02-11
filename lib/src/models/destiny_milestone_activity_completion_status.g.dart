@@ -20,5 +20,5 @@ Map<String, dynamic> _$DestinyMilestoneActivityCompletionStatusToJson(
         DestinyMilestoneActivityCompletionStatus instance) =>
     <String, dynamic>{
       'completed': instance.completed,
-      'phases': instance.phases,
+      'phases': instance.phases?.map((e) => e.toJson()).toList(),
     };

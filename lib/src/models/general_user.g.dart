@@ -63,7 +63,7 @@ Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>
       'firstAccess': instance.firstAccess,
       'lastUpdate': instance.lastUpdate,
       'legacyPortalUID': instance.legacyPortalUid,
-      'context': instance.context,
+      'context': instance.context?.toJson(),
       'psnDisplayName': instance.psnDisplayName,
       'xboxDisplayName': instance.xboxDisplayName,
       'fbDisplayName': instance.fbDisplayName,

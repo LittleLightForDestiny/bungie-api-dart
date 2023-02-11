@@ -41,11 +41,12 @@ DestinyVendorsResponse _$DestinyVendorsResponseFromJson(
 Map<String, dynamic> _$DestinyVendorsResponseToJson(
         DestinyVendorsResponse instance) =>
     <String, dynamic>{
-      'vendorGroups': instance.vendorGroups,
-      'vendors': instance.vendors,
-      'categories': instance.categories,
-      'sales': instance.sales,
-      'itemComponents': instance.itemComponents,
-      'currencyLookups': instance.currencyLookups,
-      'stringVariables': instance.stringVariables,
+      'vendorGroups': instance.vendorGroups?.toJson(),
+      'vendors': instance.vendors?.toJson(),
+      'categories': instance.categories?.toJson(),
+      'sales': instance.sales?.toJson(),
+      'itemComponents':
+          instance.itemComponents?.map((k, e) => MapEntry(k, e.toJson())),
+      'currencyLookups': instance.currencyLookups?.toJson(),
+      'stringVariables': instance.stringVariables?.toJson(),
     };

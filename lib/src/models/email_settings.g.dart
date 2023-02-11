@@ -25,7 +25,9 @@ EmailSettings _$EmailSettingsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$EmailSettingsToJson(EmailSettings instance) =>
     <String, dynamic>{
-      'optInDefinitions': instance.optInDefinitions,
-      'subscriptionDefinitions': instance.subscriptionDefinitions,
-      'views': instance.views,
+      'optInDefinitions':
+          instance.optInDefinitions?.map((k, e) => MapEntry(k, e.toJson())),
+      'subscriptionDefinitions': instance.subscriptionDefinitions
+          ?.map((k, e) => MapEntry(k, e.toJson())),
+      'views': instance.views?.map((k, e) => MapEntry(k, e.toJson())),
     };

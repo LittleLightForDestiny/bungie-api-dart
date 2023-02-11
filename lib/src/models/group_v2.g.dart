@@ -70,6 +70,6 @@ Map<String, dynamic> _$GroupV2ToJson(GroupV2 instance) => <String, dynamic>{
       'enableInvitationMessagingForAdmins':
           instance.enableInvitationMessagingForAdmins,
       'banExpireDate': instance.banExpireDate,
-      'features': instance.features,
-      'clanInfo': instance.clanInfo,
+      'features': instance.features?.toJson(),
+      'clanInfo': instance.clanInfo?.toJson(),
     };

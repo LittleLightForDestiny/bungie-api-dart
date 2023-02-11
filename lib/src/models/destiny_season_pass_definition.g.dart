@@ -22,7 +22,7 @@ DestinySeasonPassDefinition _$DestinySeasonPassDefinitionFromJson(
 Map<String, dynamic> _$DestinySeasonPassDefinitionToJson(
         DestinySeasonPassDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'rewardProgressionHash': instance.rewardProgressionHash,
       'prestigeProgressionHash': instance.prestigeProgressionHash,
       'hash': instance.hash,

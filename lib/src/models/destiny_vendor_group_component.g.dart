@@ -16,5 +16,5 @@ DestinyVendorGroupComponent _$DestinyVendorGroupComponentFromJson(
 Map<String, dynamic> _$DestinyVendorGroupComponentToJson(
         DestinyVendorGroupComponent instance) =>
     <String, dynamic>{
-      'groups': instance.groups,
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
     };

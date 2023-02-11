@@ -33,10 +33,11 @@ Map<String, dynamic> _$DestinyPublicMilestoneToJson(
         DestinyPublicMilestone instance) =>
     <String, dynamic>{
       'milestoneHash': instance.milestoneHash,
-      'availableQuests': instance.availableQuests,
-      'activities': instance.activities,
+      'availableQuests':
+          instance.availableQuests?.map((e) => e.toJson()).toList(),
+      'activities': instance.activities?.map((e) => e.toJson()).toList(),
       'vendorHashes': instance.vendorHashes,
-      'vendors': instance.vendors,
+      'vendors': instance.vendors?.map((e) => e.toJson()).toList(),
       'startDate': instance.startDate,
       'endDate': instance.endDate,
       'order': instance.order,

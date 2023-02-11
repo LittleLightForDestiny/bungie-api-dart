@@ -30,7 +30,8 @@ Map<String, dynamic> _$DestinyMilestoneRewardCategoryDefinitionToJson(
     <String, dynamic>{
       'categoryHash': instance.categoryHash,
       'categoryIdentifier': instance.categoryIdentifier,
-      'displayProperties': instance.displayProperties,
-      'rewardEntries': instance.rewardEntries,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'rewardEntries':
+          instance.rewardEntries?.map((k, e) => MapEntry(k, e.toJson())),
       'order': instance.order,
     };

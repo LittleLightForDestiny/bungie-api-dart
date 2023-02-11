@@ -21,7 +21,7 @@ DestinyMaterialRequirementSetDefinition
 Map<String, dynamic> _$DestinyMaterialRequirementSetDefinitionToJson(
         DestinyMaterialRequirementSetDefinition instance) =>
     <String, dynamic>{
-      'materials': instance.materials,
+      'materials': instance.materials?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

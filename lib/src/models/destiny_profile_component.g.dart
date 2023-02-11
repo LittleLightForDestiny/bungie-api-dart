@@ -33,9 +33,9 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
 Map<String, dynamic> _$DestinyProfileComponentToJson(
         DestinyProfileComponent instance) =>
     <String, dynamic>{
-      'userInfo': instance.userInfo,
+      'userInfo': instance.userInfo?.toJson(),
       'dateLastPlayed': instance.dateLastPlayed,
-      'versionsOwned': instance.versionsOwned,
+      'versionsOwned': instance.versionsOwned?.toJson(),
       'characterIds': instance.characterIds,
       'seasonHashes': instance.seasonHashes,
       'eventCardHashesOwned': instance.eventCardHashesOwned,

@@ -24,7 +24,8 @@ Map<String, dynamic> _$EmailOptInDefinitionToJson(
         EmailOptInDefinition instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'value': instance.value,
+      'value': instance.value?.toJson(),
       'setByDefault': instance.setByDefault,
-      'dependentSubscriptions': instance.dependentSubscriptions,
+      'dependentSubscriptions':
+          instance.dependentSubscriptions?.map((e) => e.toJson()).toList(),
     };

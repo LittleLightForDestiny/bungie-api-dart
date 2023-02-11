@@ -25,7 +25,7 @@ ListOfGroupV2CardResponse _$ListOfGroupV2CardResponseFromJson(
 Map<String, dynamic> _$ListOfGroupV2CardResponseToJson(
         ListOfGroupV2CardResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.map((e) => e.toJson()).toList(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

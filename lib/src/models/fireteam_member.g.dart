@@ -26,8 +26,8 @@ FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
     <String, dynamic>{
-      'destinyUserInfo': instance.destinyUserInfo,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
       'characterId': instance.characterId,
       'dateJoined': instance.dateJoined,
       'hasMicrophone': instance.hasMicrophone,

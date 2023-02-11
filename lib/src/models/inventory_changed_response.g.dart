@@ -20,6 +20,8 @@ InventoryChangedResponse _$InventoryChangedResponseFromJson(
 Map<String, dynamic> _$InventoryChangedResponseToJson(
         InventoryChangedResponse instance) =>
     <String, dynamic>{
-      'addedInventoryItems': instance.addedInventoryItems,
-      'removedInventoryItems': instance.removedInventoryItems,
+      'addedInventoryItems':
+          instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
+      'removedInventoryItems':
+          instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
     };

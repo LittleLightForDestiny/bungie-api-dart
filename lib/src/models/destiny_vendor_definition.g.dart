@@ -92,7 +92,7 @@ DestinyVendorDefinition _$DestinyVendorDefinitionFromJson(
 Map<String, dynamic> _$DestinyVendorDefinitionToJson(
         DestinyVendorDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'vendorProgressionType':
           encodeDestinyVendorProgressionType(instance.vendorProgressionType),
       'buyString': instance.buyString,
@@ -104,7 +104,7 @@ Map<String, dynamic> _$DestinyVendorDefinitionToJson(
       'resetIntervalMinutes': instance.resetIntervalMinutes,
       'resetOffsetMinutes': instance.resetOffsetMinutes,
       'failureStrings': instance.failureStrings,
-      'unlockRanges': instance.unlockRanges,
+      'unlockRanges': instance.unlockRanges?.map((e) => e.toJson()).toList(),
       'vendorIdentifier': instance.vendorIdentifier,
       'vendorPortrait': instance.vendorPortrait,
       'vendorBanner': instance.vendorBanner,
@@ -112,18 +112,21 @@ Map<String, dynamic> _$DestinyVendorDefinitionToJson(
       'visible': instance.visible,
       'vendorSubcategoryIdentifier': instance.vendorSubcategoryIdentifier,
       'consolidateCategories': instance.consolidateCategories,
-      'actions': instance.actions,
-      'categories': instance.categories,
-      'originalCategories': instance.originalCategories,
-      'displayCategories': instance.displayCategories,
-      'interactions': instance.interactions,
-      'inventoryFlyouts': instance.inventoryFlyouts,
-      'itemList': instance.itemList,
-      'services': instance.services,
-      'acceptedItems': instance.acceptedItems,
+      'actions': instance.actions?.map((e) => e.toJson()).toList(),
+      'categories': instance.categories?.map((e) => e.toJson()).toList(),
+      'originalCategories':
+          instance.originalCategories?.map((e) => e.toJson()).toList(),
+      'displayCategories':
+          instance.displayCategories?.map((e) => e.toJson()).toList(),
+      'interactions': instance.interactions?.map((e) => e.toJson()).toList(),
+      'inventoryFlyouts':
+          instance.inventoryFlyouts?.map((e) => e.toJson()).toList(),
+      'itemList': instance.itemList?.map((e) => e.toJson()).toList(),
+      'services': instance.services?.map((e) => e.toJson()).toList(),
+      'acceptedItems': instance.acceptedItems?.map((e) => e.toJson()).toList(),
       'returnWithVendorRequest': instance.returnWithVendorRequest,
-      'locations': instance.locations,
-      'groups': instance.groups,
+      'locations': instance.locations?.map((e) => e.toJson()).toList(),
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
       'ignoreSaleItemHashes': instance.ignoreSaleItemHashes,
       'hash': instance.hash,
       'index': instance.index,

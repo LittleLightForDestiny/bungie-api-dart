@@ -18,6 +18,6 @@ DestinyCraftablesComponent _$DestinyCraftablesComponentFromJson(
 Map<String, dynamic> _$DestinyCraftablesComponentToJson(
         DestinyCraftablesComponent instance) =>
     <String, dynamic>{
-      'craftables': instance.craftables,
+      'craftables': instance.craftables?.map((k, e) => MapEntry(k, e.toJson())),
       'craftingRootNodeHash': instance.craftingRootNodeHash,
     };

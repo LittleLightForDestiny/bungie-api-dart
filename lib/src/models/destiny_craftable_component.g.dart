@@ -24,5 +24,5 @@ Map<String, dynamic> _$DestinyCraftableComponentToJson(
     <String, dynamic>{
       'visible': instance.visible,
       'failedRequirementIndexes': instance.failedRequirementIndexes,
-      'sockets': instance.sockets,
+      'sockets': instance.sockets?.map((e) => e.toJson()).toList(),
     };

@@ -19,6 +19,7 @@ DestinyTalentNodeStatBlock _$DestinyTalentNodeStatBlockFromJson(
 Map<String, dynamic> _$DestinyTalentNodeStatBlockToJson(
         DestinyTalentNodeStatBlock instance) =>
     <String, dynamic>{
-      'currentStepStats': instance.currentStepStats,
-      'nextStepStats': instance.nextStepStats,
+      'currentStepStats':
+          instance.currentStepStats?.map((e) => e.toJson()).toList(),
+      'nextStepStats': instance.nextStepStats?.map((e) => e.toJson()).toList(),
     };

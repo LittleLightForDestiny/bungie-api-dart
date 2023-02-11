@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyHistoricalWeaponStatsToJson(
         DestinyHistoricalWeaponStats instance) =>
     <String, dynamic>{
       'referenceId': instance.referenceId,
-      'values': instance.values,
+      'values': instance.values?.map((k, e) => MapEntry(k, e.toJson())),
     };

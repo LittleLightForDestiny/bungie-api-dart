@@ -36,8 +36,8 @@ Map<String, dynamic> _$GroupV2CardToJson(GroupV2Card instance) =>
       'memberCount': instance.memberCount,
       'locale': instance.locale,
       'membershipOption': encodeMembershipOption(instance.membershipOption),
-      'capabilities': instance.capabilities,
-      'clanInfo': instance.clanInfo,
+      'capabilities': instance.capabilities?.toJson(),
+      'clanInfo': instance.clanInfo?.toJson(),
       'avatarPath': instance.avatarPath,
       'theme': instance.theme,
     };

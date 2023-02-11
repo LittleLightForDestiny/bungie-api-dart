@@ -22,5 +22,6 @@ DestinyItemPlugObjectivesComponent _$DestinyItemPlugObjectivesComponentFromJson(
 Map<String, dynamic> _$DestinyItemPlugObjectivesComponentToJson(
         DestinyItemPlugObjectivesComponent instance) =>
     <String, dynamic>{
-      'objectivesPerPlug': instance.objectivesPerPlug,
+      'objectivesPerPlug': instance.objectivesPerPlug
+          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
     };

@@ -21,5 +21,6 @@ DestinyKiosksComponent _$DestinyKiosksComponentFromJson(
 Map<String, dynamic> _$DestinyKiosksComponentToJson(
         DestinyKiosksComponent instance) =>
     <String, dynamic>{
-      'kioskItems': instance.kioskItems,
+      'kioskItems': instance.kioskItems
+          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
     };

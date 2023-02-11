@@ -49,18 +49,18 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
 Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
         DestinyPresentationNodeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'originalIcon': instance.originalIcon,
       'rootViewIcon': instance.rootViewIcon,
       'nodeType': encodeDestinyPresentationNodeType(instance.nodeType),
       'scope': encodeDestinyScope(instance.scope),
       'objectiveHash': instance.objectiveHash,
       'completionRecordHash': instance.completionRecordHash,
-      'children': instance.children,
+      'children': instance.children?.toJson(),
       'displayStyle':
           encodeDestinyPresentationDisplayStyle(instance.displayStyle),
       'screenStyle': encodeDestinyPresentationScreenStyle(instance.screenStyle),
-      'requirements': instance.requirements,
+      'requirements': instance.requirements?.toJson(),
       'disableChildSubscreenNavigation':
           instance.disableChildSubscreenNavigation,
       'maxCategoryRecordScore': instance.maxCategoryRecordScore,

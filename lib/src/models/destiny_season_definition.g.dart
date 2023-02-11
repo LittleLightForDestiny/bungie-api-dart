@@ -34,7 +34,7 @@ DestinySeasonDefinition _$DestinySeasonDefinitionFromJson(
 Map<String, dynamic> _$DestinySeasonDefinitionToJson(
         DestinySeasonDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'backgroundImagePath': instance.backgroundImagePath,
       'seasonNumber': instance.seasonNumber,
       'startDate': instance.startDate,
@@ -45,7 +45,7 @@ Map<String, dynamic> _$DestinySeasonDefinitionToJson(
       'sealPresentationNodeHash': instance.sealPresentationNodeHash,
       'seasonalChallengesPresentationNodeHash':
           instance.seasonalChallengesPresentationNodeHash,
-      'preview': instance.preview,
+      'preview': instance.preview?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

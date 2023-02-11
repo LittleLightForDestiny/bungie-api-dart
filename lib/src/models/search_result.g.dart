@@ -20,7 +20,7 @@ Map<String, dynamic> _$SearchResultToJson(SearchResult instance) =>
     <String, dynamic>{
       'totalResults': instance.totalResults,
       'hasMore': instance.hasMore,
-      'query': instance.query,
+      'query': instance.query?.toJson(),
       'replacementContinuationToken': instance.replacementContinuationToken,
       'useTotalResults': instance.useTotalResults,
     };

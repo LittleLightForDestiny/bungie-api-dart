@@ -36,9 +36,10 @@ Map<String, dynamic> _$DestinyActivityGraphNodeDefinitionToJson(
         DestinyActivityGraphNodeDefinition instance) =>
     <String, dynamic>{
       'nodeId': instance.nodeId,
-      'overrideDisplay': instance.overrideDisplay,
-      'position': instance.position,
-      'featuringStates': instance.featuringStates,
-      'activities': instance.activities,
-      'states': instance.states,
+      'overrideDisplay': instance.overrideDisplay?.toJson(),
+      'position': instance.position?.toJson(),
+      'featuringStates':
+          instance.featuringStates?.map((e) => e.toJson()).toList(),
+      'activities': instance.activities?.map((e) => e.toJson()).toList(),
+      'states': instance.states?.map((e) => e.toJson()).toList(),
     };

@@ -26,7 +26,7 @@ UserMembershipDataResponse _$UserMembershipDataResponseFromJson(
 Map<String, dynamic> _$UserMembershipDataResponseToJson(
         UserMembershipDataResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

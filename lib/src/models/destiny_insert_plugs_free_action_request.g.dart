@@ -20,7 +20,7 @@ DestinyInsertPlugsFreeActionRequest
 Map<String, dynamic> _$DestinyInsertPlugsFreeActionRequestToJson(
         DestinyInsertPlugsFreeActionRequest instance) =>
     <String, dynamic>{
-      'plug': instance.plug,
+      'plug': instance.plug?.toJson(),
       'itemId': instance.itemId,
       'characterId': instance.characterId,
       'membershipType': encodeBungieMembershipType(instance.membershipType),

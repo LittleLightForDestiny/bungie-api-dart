@@ -32,6 +32,7 @@ Map<String, dynamic> _$DestinyItemSourceDefinitionToJson(
       'maxQuality': instance.maxQuality,
       'minLevelRequired': instance.minLevelRequired,
       'maxLevelRequired': instance.maxLevelRequired,
-      'computedStats': instance.computedStats,
+      'computedStats':
+          instance.computedStats?.map((k, e) => MapEntry(k, e.toJson())),
       'sourceHashes': instance.sourceHashes,
     };

@@ -20,5 +20,5 @@ Map<String, dynamic> _$ApplicationDeveloperToJson(
     <String, dynamic>{
       'role': encodeDeveloperRole(instance.role),
       'apiEulaVersion': instance.apiEulaVersion,
-      'user': instance.user,
+      'user': instance.user?.toJson(),
     };

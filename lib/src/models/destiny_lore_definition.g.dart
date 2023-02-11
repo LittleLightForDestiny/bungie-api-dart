@@ -21,7 +21,7 @@ DestinyLoreDefinition _$DestinyLoreDefinitionFromJson(
 Map<String, dynamic> _$DestinyLoreDefinitionToJson(
         DestinyLoreDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'subtitle': instance.subtitle,
       'hash': instance.hash,
       'index': instance.index,

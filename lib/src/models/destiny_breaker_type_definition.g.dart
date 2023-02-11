@@ -21,7 +21,7 @@ DestinyBreakerTypeDefinition _$DestinyBreakerTypeDefinitionFromJson(
 Map<String, dynamic> _$DestinyBreakerTypeDefinitionToJson(
         DestinyBreakerTypeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'enumValue': encodeDestinyBreakerType(instance.enumValue),
       'hash': instance.hash,
       'index': instance.index,

@@ -32,8 +32,10 @@ Map<String, dynamic> _$RewardAvailabilityModelToJson(
         RewardAvailabilityModel instance) =>
     <String, dynamic>{
       'HasExistingCode': instance.hasExistingCode,
-      'RecordDefinitions': instance.recordDefinitions,
-      'CollectibleDefinitions': instance.collectibleDefinitions,
+      'RecordDefinitions':
+          instance.recordDefinitions?.map((e) => e.toJson()).toList(),
+      'CollectibleDefinitions':
+          instance.collectibleDefinitions?.map((e) => e.toJson()).toList(),
       'IsOffer': instance.isOffer,
       'HasOffer': instance.hasOffer,
       'OfferApplied': instance.offerApplied,

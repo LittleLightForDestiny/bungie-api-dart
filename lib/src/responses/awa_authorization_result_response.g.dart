@@ -26,7 +26,7 @@ AwaAuthorizationResultResponse _$AwaAuthorizationResultResponseFromJson(
 Map<String, dynamic> _$AwaAuthorizationResultResponseToJson(
         AwaAuthorizationResultResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.toJson(),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

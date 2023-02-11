@@ -28,8 +28,8 @@ Map<String, dynamic> _$DestinyHistoricalStatsValueToJson(
         DestinyHistoricalStatsValue instance) =>
     <String, dynamic>{
       'statId': instance.statId,
-      'basic': instance.basic,
-      'pga': instance.pga,
-      'weighted': instance.weighted,
+      'basic': instance.basic?.toJson(),
+      'pga': instance.pga?.toJson(),
+      'weighted': instance.weighted?.toJson(),
       'activityId': instance.activityId,
     };

@@ -45,14 +45,14 @@ DestinyCollectibleDefinition _$DestinyCollectibleDefinitionFromJson(
 Map<String, dynamic> _$DestinyCollectibleDefinitionToJson(
         DestinyCollectibleDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'scope': encodeDestinyScope(instance.scope),
       'sourceString': instance.sourceString,
       'sourceHash': instance.sourceHash,
       'itemHash': instance.itemHash,
-      'acquisitionInfo': instance.acquisitionInfo,
-      'stateInfo': instance.stateInfo,
-      'presentationInfo': instance.presentationInfo,
+      'acquisitionInfo': instance.acquisitionInfo?.toJson(),
+      'stateInfo': instance.stateInfo?.toJson(),
+      'presentationInfo': instance.presentationInfo?.toJson(),
       'presentationNodeType':
           encodeDestinyPresentationNodeType(instance.presentationNodeType),
       'traitIds': instance.traitIds,

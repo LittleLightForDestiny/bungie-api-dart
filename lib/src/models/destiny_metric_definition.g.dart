@@ -31,7 +31,7 @@ DestinyMetricDefinition _$DestinyMetricDefinitionFromJson(
 Map<String, dynamic> _$DestinyMetricDefinitionToJson(
         DestinyMetricDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'trackingObjectiveHash': instance.trackingObjectiveHash,
       'lowerValueIsBetter': instance.lowerValueIsBetter,
       'presentationNodeType':

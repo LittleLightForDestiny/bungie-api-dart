@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyBubbleDefinitionToJson(
         DestinyBubbleDefinition instance) =>
     <String, dynamic>{
       'hash': instance.hash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
     };

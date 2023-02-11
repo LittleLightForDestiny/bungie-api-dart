@@ -22,7 +22,8 @@ DestinyPlugItemCraftingRequirements
 Map<String, dynamic> _$DestinyPlugItemCraftingRequirementsToJson(
         DestinyPlugItemCraftingRequirements instance) =>
     <String, dynamic>{
-      'unlockRequirements': instance.unlockRequirements,
+      'unlockRequirements':
+          instance.unlockRequirements?.map((e) => e.toJson()).toList(),
       'requiredLevel': instance.requiredLevel,
       'materialRequirementHashes': instance.materialRequirementHashes,
     };

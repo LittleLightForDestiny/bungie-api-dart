@@ -23,7 +23,7 @@ Map<String, dynamic> _$TagMetadataDefinitionToJson(
     <String, dynamic>{
       'description': instance.description,
       'order': instance.order,
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
       'datatype': instance.datatype,
       'name': instance.name,
       'isRequired': instance.isRequired,

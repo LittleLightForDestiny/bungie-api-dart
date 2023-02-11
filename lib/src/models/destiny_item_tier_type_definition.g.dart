@@ -24,8 +24,8 @@ DestinyItemTierTypeDefinition _$DestinyItemTierTypeDefinitionFromJson(
 Map<String, dynamic> _$DestinyItemTierTypeDefinitionToJson(
         DestinyItemTierTypeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'infusionProcess': instance.infusionProcess,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'infusionProcess': instance.infusionProcess?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

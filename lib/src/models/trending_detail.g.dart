@@ -38,10 +38,10 @@ Map<String, dynamic> _$TrendingDetailToJson(TrendingDetail instance) =>
     <String, dynamic>{
       'identifier': instance.identifier,
       'entityType': encodeTrendingEntryType(instance.entityType),
-      'news': instance.news,
-      'support': instance.support,
-      'destinyItem': instance.destinyItem,
-      'destinyActivity': instance.destinyActivity,
-      'destinyRitual': instance.destinyRitual,
-      'creation': instance.creation,
+      'news': instance.news?.toJson(),
+      'support': instance.support?.toJson(),
+      'destinyItem': instance.destinyItem?.toJson(),
+      'destinyActivity': instance.destinyActivity?.toJson(),
+      'destinyRitual': instance.destinyRitual?.toJson(),
+      'creation': instance.creation?.toJson(),
     };

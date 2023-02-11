@@ -21,7 +21,8 @@ DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(
         DestinyCollectiblesComponent instance) =>
     <String, dynamic>{
-      'collectibles': instance.collectibles,
+      'collectibles':
+          instance.collectibles?.map((k, e) => MapEntry(k, e.toJson())),
       'collectionCategoriesRootNodeHash':
           instance.collectionCategoriesRootNodeHash,
       'collectionBadgesRootNodeHash': instance.collectionBadgesRootNodeHash,

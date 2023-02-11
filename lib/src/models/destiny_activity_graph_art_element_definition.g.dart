@@ -18,5 +18,5 @@ DestinyActivityGraphArtElementDefinition
 Map<String, dynamic> _$DestinyActivityGraphArtElementDefinitionToJson(
         DestinyActivityGraphArtElementDefinition instance) =>
     <String, dynamic>{
-      'position': instance.position,
+      'position': instance.position?.toJson(),
     };

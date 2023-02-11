@@ -41,6 +41,6 @@ Map<String, dynamic> _$TrendingEntryToJson(TrendingEntry instance) =>
       'webmVideo': instance.webmVideo,
       'mp4Video': instance.mp4Video,
       'featureImage': instance.featureImage,
-      'items': instance.items,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
       'creationDate': instance.creationDate,
     };

@@ -46,7 +46,7 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
 Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
         DestinyObjectiveDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'completionValue': instance.completionValue,
       'scope': encodeDestinyGatingScope(instance.scope),
       'locationHash': instance.locationHash,
@@ -55,8 +55,8 @@ Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
       'isCountingDownward': instance.isCountingDownward,
       'valueStyle': encodeDestinyUnlockValueUIStyle(instance.valueStyle),
       'progressDescription': instance.progressDescription,
-      'perks': instance.perks,
-      'stats': instance.stats,
+      'perks': instance.perks?.toJson(),
+      'stats': instance.stats?.toJson(),
       'minimumVisibilityThreshold': instance.minimumVisibilityThreshold,
       'allowOvercompletion': instance.allowOvercompletion,
       'showValueOnComplete': instance.showValueOnComplete,

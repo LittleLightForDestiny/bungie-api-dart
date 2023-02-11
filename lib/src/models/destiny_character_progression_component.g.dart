@@ -50,12 +50,15 @@ DestinyCharacterProgressionComponent
 Map<String, dynamic> _$DestinyCharacterProgressionComponentToJson(
         DestinyCharacterProgressionComponent instance) =>
     <String, dynamic>{
-      'progressions': instance.progressions,
-      'factions': instance.factions,
-      'milestones': instance.milestones,
-      'quests': instance.quests,
-      'uninstancedItemObjectives': instance.uninstancedItemObjectives,
-      'uninstancedItemPerks': instance.uninstancedItemPerks,
+      'progressions':
+          instance.progressions?.map((k, e) => MapEntry(k, e.toJson())),
+      'factions': instance.factions?.map((k, e) => MapEntry(k, e.toJson())),
+      'milestones': instance.milestones?.map((k, e) => MapEntry(k, e.toJson())),
+      'quests': instance.quests?.map((e) => e.toJson()).toList(),
+      'uninstancedItemObjectives': instance.uninstancedItemObjectives
+          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
+      'uninstancedItemPerks':
+          instance.uninstancedItemPerks?.map((k, e) => MapEntry(k, e.toJson())),
       'checklists': instance.checklists,
-      'seasonalArtifact': instance.seasonalArtifact,
+      'seasonalArtifact': instance.seasonalArtifact?.toJson(),
     };

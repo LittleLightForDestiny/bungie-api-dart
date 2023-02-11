@@ -16,5 +16,5 @@ DestinyCollectibleComponent _$DestinyCollectibleComponentFromJson(
 Map<String, dynamic> _$DestinyCollectibleComponentToJson(
         DestinyCollectibleComponent instance) =>
     <String, dynamic>{
-      'state': instance.state,
+      'state': instance.state?.toJson(),
     };

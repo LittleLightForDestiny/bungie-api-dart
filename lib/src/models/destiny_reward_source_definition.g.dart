@@ -21,7 +21,7 @@ DestinyRewardSourceDefinition _$DestinyRewardSourceDefinitionFromJson(
 Map<String, dynamic> _$DestinyRewardSourceDefinitionToJson(
         DestinyRewardSourceDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'category': encodeDestinyRewardSourceCategory(instance.category),
       'hash': instance.hash,
       'index': instance.index,

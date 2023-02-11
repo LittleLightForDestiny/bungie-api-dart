@@ -26,8 +26,9 @@ DestinyPlugSetDefinition _$DestinyPlugSetDefinitionFromJson(
 Map<String, dynamic> _$DestinyPlugSetDefinitionToJson(
         DestinyPlugSetDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'reusablePlugItems': instance.reusablePlugItems,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'reusablePlugItems':
+          instance.reusablePlugItems?.map((e) => e.toJson()).toList(),
       'isFakePlugSet': instance.isFakePlugSet,
       'hash': instance.hash,
       'index': instance.index,

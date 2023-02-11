@@ -40,9 +40,9 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
 Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
         DestinySocketTypeDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
-      'insertAction': instance.insertAction,
-      'plugWhitelist': instance.plugWhitelist,
+      'displayProperties': instance.displayProperties?.toJson(),
+      'insertAction': instance.insertAction?.toJson(),
+      'plugWhitelist': instance.plugWhitelist?.map((e) => e.toJson()).toList(),
       'socketCategoryHash': instance.socketCategoryHash,
       'visibility': encodeDestinySocketVisibility(instance.visibility),
       'alwaysRandomizeSockets': instance.alwaysRandomizeSockets,
@@ -51,7 +51,8 @@ Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(
       'overridesUiAppearance': instance.overridesUiAppearance,
       'avoidDuplicatesOnInitialization':
           instance.avoidDuplicatesOnInitialization,
-      'currencyScalars': instance.currencyScalars,
+      'currencyScalars':
+          instance.currencyScalars?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

@@ -18,6 +18,6 @@ DestinyMetricsComponent _$DestinyMetricsComponentFromJson(
 Map<String, dynamic> _$DestinyMetricsComponentToJson(
         DestinyMetricsComponent instance) =>
     <String, dynamic>{
-      'metrics': instance.metrics,
+      'metrics': instance.metrics?.map((k, e) => MapEntry(k, e.toJson())),
       'metricsRootNodeHash': instance.metricsRootNodeHash,
     };

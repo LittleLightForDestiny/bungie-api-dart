@@ -22,6 +22,7 @@ Map<String, dynamic> _$EmailSubscriptionDefinitionToJson(
         EmailSubscriptionDefinition instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'localization': instance.localization,
+      'localization':
+          instance.localization?.map((k, e) => MapEntry(k, e.toJson())),
       'value': instance.value,
     };

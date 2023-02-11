@@ -29,9 +29,10 @@ DestinyRecordComponent _$DestinyRecordComponentFromJson(
 Map<String, dynamic> _$DestinyRecordComponentToJson(
         DestinyRecordComponent instance) =>
     <String, dynamic>{
-      'state': instance.state,
-      'objectives': instance.objectives,
-      'intervalObjectives': instance.intervalObjectives,
+      'state': instance.state?.toJson(),
+      'objectives': instance.objectives?.map((e) => e.toJson()).toList(),
+      'intervalObjectives':
+          instance.intervalObjectives?.map((e) => e.toJson()).toList(),
       'intervalsRedeemedCount': instance.intervalsRedeemedCount,
       'completedCount': instance.completedCount,
       'rewardVisibilty': instance.rewardVisibilty,

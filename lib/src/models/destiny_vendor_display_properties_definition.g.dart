@@ -38,14 +38,15 @@ Map<String, dynamic> _$DestinyVendorDisplayPropertiesDefinitionToJson(
       'largeIcon': instance.largeIcon,
       'subtitle': instance.subtitle,
       'originalIcon': instance.originalIcon,
-      'requirementsDisplay': instance.requirementsDisplay,
+      'requirementsDisplay':
+          instance.requirementsDisplay?.map((e) => e.toJson()).toList(),
       'smallTransparentIcon': instance.smallTransparentIcon,
       'mapIcon': instance.mapIcon,
       'largeTransparentIcon': instance.largeTransparentIcon,
       'description': instance.description,
       'name': instance.name,
       'icon': instance.icon,
-      'iconSequences': instance.iconSequences,
+      'iconSequences': instance.iconSequences?.map((e) => e.toJson()).toList(),
       'highResIcon': instance.highResIcon,
       'hasIcon': instance.hasIcon,
     };

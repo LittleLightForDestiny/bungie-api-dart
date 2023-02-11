@@ -16,6 +16,6 @@ PollResponse _$PollResponseFromJson(Map<String, dynamic> json) => PollResponse()
 Map<String, dynamic> _$PollResponseToJson(PollResponse instance) =>
     <String, dynamic>{
       'topicId': instance.topicId,
-      'results': instance.results,
+      'results': instance.results?.map((e) => e.toJson()).toList(),
       'totalVotes': instance.totalVotes,
     };

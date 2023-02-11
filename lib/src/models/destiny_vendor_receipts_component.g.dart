@@ -16,5 +16,5 @@ DestinyVendorReceiptsComponent _$DestinyVendorReceiptsComponentFromJson(
 Map<String, dynamic> _$DestinyVendorReceiptsComponentToJson(
         DestinyVendorReceiptsComponent instance) =>
     <String, dynamic>{
-      'receipts': instance.receipts,
+      'receipts': instance.receipts?.map((e) => e.toJson()).toList(),
     };

@@ -23,5 +23,5 @@ Map<String, dynamic> _$DestinySeasonPreviewDefinitionToJson(
       'description': instance.description,
       'linkPath': instance.linkPath,
       'videoLink': instance.videoLink,
-      'images': instance.images,
+      'images': instance.images?.map((e) => e.toJson()).toList(),
     };

@@ -43,7 +43,7 @@ Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
       'recommendedLight': instance.recommendedLight,
       'difficultyTier':
           encodeDestinyActivityDifficultyTier(instance.difficultyTier),
-      'challenges': instance.challenges,
+      'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
       'modifierHashes': instance.modifierHashes,
       'booleanActivityOptions': instance.booleanActivityOptions,
       'loadoutRequirementIndex': instance.loadoutRequirementIndex,

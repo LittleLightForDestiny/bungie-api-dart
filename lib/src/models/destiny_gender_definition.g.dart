@@ -22,7 +22,7 @@ Map<String, dynamic> _$DestinyGenderDefinitionToJson(
         DestinyGenderDefinition instance) =>
     <String, dynamic>{
       'genderType': encodeDestinyGender(instance.genderType),
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

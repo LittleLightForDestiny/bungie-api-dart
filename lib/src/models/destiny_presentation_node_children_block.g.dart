@@ -34,9 +34,10 @@ DestinyPresentationNodeChildrenBlock
 Map<String, dynamic> _$DestinyPresentationNodeChildrenBlockToJson(
         DestinyPresentationNodeChildrenBlock instance) =>
     <String, dynamic>{
-      'presentationNodes': instance.presentationNodes,
-      'collectibles': instance.collectibles,
-      'records': instance.records,
-      'metrics': instance.metrics,
-      'craftables': instance.craftables,
+      'presentationNodes':
+          instance.presentationNodes?.map((e) => e.toJson()).toList(),
+      'collectibles': instance.collectibles?.map((e) => e.toJson()).toList(),
+      'records': instance.records?.map((e) => e.toJson()).toList(),
+      'metrics': instance.metrics?.map((e) => e.toJson()).toList(),
+      'craftables': instance.craftables?.map((e) => e.toJson()).toList(),
     };

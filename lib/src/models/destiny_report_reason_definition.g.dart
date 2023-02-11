@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyReportReasonDefinitionToJson(
         DestinyReportReasonDefinition instance) =>
     <String, dynamic>{
       'reasonHash': instance.reasonHash,
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
     };

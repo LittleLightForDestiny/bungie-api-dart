@@ -19,5 +19,5 @@ Map<String, dynamic> _$DestinyMetricComponentToJson(
         DestinyMetricComponent instance) =>
     <String, dynamic>{
       'invisible': instance.invisible,
-      'objectiveProgress': instance.objectiveProgress,
+      'objectiveProgress': instance.objectiveProgress?.toJson(),
     };

@@ -30,12 +30,12 @@ DestinyFactionDefinition _$DestinyFactionDefinitionFromJson(
 Map<String, dynamic> _$DestinyFactionDefinitionToJson(
         DestinyFactionDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'progressionHash': instance.progressionHash,
       'tokenValues': instance.tokenValues,
       'rewardItemHash': instance.rewardItemHash,
       'rewardVendorHash': instance.rewardVendorHash,
-      'vendors': instance.vendors,
+      'vendors': instance.vendors?.map((e) => e.toJson()).toList(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

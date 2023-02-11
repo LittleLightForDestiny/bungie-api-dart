@@ -27,7 +27,7 @@ Map<String, dynamic> _$DestinyPublicVendorSaleItemComponentToJson(
       'itemHash': instance.itemHash,
       'overrideStyleItemHash': instance.overrideStyleItemHash,
       'quantity': instance.quantity,
-      'costs': instance.costs,
+      'costs': instance.costs?.map((e) => e.toJson()).toList(),
       'overrideNextRefreshDate': instance.overrideNextRefreshDate,
       'apiPurchasable': instance.apiPurchasable,
     };

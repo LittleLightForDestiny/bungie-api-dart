@@ -29,7 +29,7 @@ DestinyRaceDefinition _$DestinyRaceDefinitionFromJson(
 Map<String, dynamic> _$DestinyRaceDefinitionToJson(
         DestinyRaceDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'raceType': encodeDestinyRace(instance.raceType),
       'genderedRaceNames': instance.genderedRaceNames,
       'genderedRaceNamesByGenderHash': instance.genderedRaceNamesByGenderHash,

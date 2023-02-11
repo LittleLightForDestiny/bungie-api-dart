@@ -46,7 +46,7 @@ Map<String, dynamic> _$DestinyVendorCategoryEntryDefinitionToJson(
       'buyStringOverride': instance.buyStringOverride,
       'disabledDescription': instance.disabledDescription,
       'displayTitle': instance.displayTitle,
-      'overlay': instance.overlay,
+      'overlay': instance.overlay?.toJson(),
       'vendorItemIndexes': instance.vendorItemIndexes,
       'isPreview': instance.isPreview,
       'isDisplayOnly': instance.isDisplayOnly,

@@ -27,7 +27,7 @@ DictionaryOfstringAndBungieRewardDisplayResponse
 Map<String, dynamic> _$DictionaryOfstringAndBungieRewardDisplayResponseToJson(
         DictionaryOfstringAndBungieRewardDisplayResponse instance) =>
     <String, dynamic>{
-      'Response': instance.response,
+      'Response': instance.response?.map((k, e) => MapEntry(k, e.toJson())),
       'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
       'ThrottleSeconds': instance.throttleSeconds,
       'ErrorStatus': instance.errorStatus,

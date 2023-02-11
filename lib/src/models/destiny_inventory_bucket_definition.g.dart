@@ -28,7 +28,7 @@ DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
 Map<String, dynamic> _$DestinyInventoryBucketDefinitionToJson(
         DestinyInventoryBucketDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'scope': encodeBucketScope(instance.scope),
       'category': encodeBucketCategory(instance.category),
       'bucketOrder': instance.bucketOrder,

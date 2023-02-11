@@ -24,7 +24,7 @@ Map<String, dynamic> _$DestinyVendorComponentToJson(
         DestinyVendorComponent instance) =>
     <String, dynamic>{
       'canPurchase': instance.canPurchase,
-      'progression': instance.progression,
+      'progression': instance.progression?.toJson(),
       'vendorLocationIndex': instance.vendorLocationIndex,
       'seasonalRank': instance.seasonalRank,
       'vendorHash': instance.vendorHash,

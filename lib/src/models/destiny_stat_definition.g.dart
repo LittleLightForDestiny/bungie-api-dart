@@ -24,7 +24,7 @@ DestinyStatDefinition _$DestinyStatDefinitionFromJson(
 Map<String, dynamic> _$DestinyStatDefinitionToJson(
         DestinyStatDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'aggregationType':
           encodeDestinyStatAggregationType(instance.aggregationType),
       'hasComputedBlock': instance.hasComputedBlock,

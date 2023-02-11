@@ -27,11 +27,11 @@ GroupBan _$GroupBanFromJson(Map<String, dynamic> json) => GroupBan()
 
 Map<String, dynamic> _$GroupBanToJson(GroupBan instance) => <String, dynamic>{
       'groupId': instance.groupId,
-      'lastModifiedBy': instance.lastModifiedBy,
-      'createdBy': instance.createdBy,
+      'lastModifiedBy': instance.lastModifiedBy?.toJson(),
+      'createdBy': instance.createdBy?.toJson(),
       'dateBanned': instance.dateBanned,
       'dateExpires': instance.dateExpires,
       'comment': instance.comment,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
-      'destinyUserInfo': instance.destinyUserInfo,
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
     };

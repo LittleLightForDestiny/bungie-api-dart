@@ -23,7 +23,7 @@ DestinyTraitDefinition _$DestinyTraitDefinitionFromJson(
 Map<String, dynamic> _$DestinyTraitDefinitionToJson(
         DestinyTraitDefinition instance) =>
     <String, dynamic>{
-      'displayProperties': instance.displayProperties,
+      'displayProperties': instance.displayProperties?.toJson(),
       'traitCategoryId': instance.traitCategoryId,
       'traitCategoryHash': instance.traitCategoryHash,
       'displayHint': instance.displayHint,

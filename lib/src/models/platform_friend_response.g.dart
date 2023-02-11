@@ -22,5 +22,6 @@ Map<String, dynamic> _$PlatformFriendResponseToJson(
       'itemsPerPage': instance.itemsPerPage,
       'currentPage': instance.currentPage,
       'hasMore': instance.hasMore,
-      'platformFriends': instance.platformFriends,
+      'platformFriends':
+          instance.platformFriends?.map((e) => e.toJson()).toList(),
     };

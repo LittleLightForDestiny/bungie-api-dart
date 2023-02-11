@@ -21,6 +21,6 @@ DestinyHistoricalStatsWithMerged _$DestinyHistoricalStatsWithMergedFromJson(
 Map<String, dynamic> _$DestinyHistoricalStatsWithMergedToJson(
         DestinyHistoricalStatsWithMerged instance) =>
     <String, dynamic>{
-      'results': instance.results,
-      'merged': instance.merged,
+      'results': instance.results?.map((k, e) => MapEntry(k, e.toJson())),
+      'merged': instance.merged?.toJson(),
     };

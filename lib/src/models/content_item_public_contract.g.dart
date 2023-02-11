@@ -49,10 +49,11 @@ Map<String, dynamic> _$ContentItemPublicContractToJson(
       'hasAgeGate': instance.hasAgeGate,
       'minimumAge': instance.minimumAge,
       'ratingImagePath': instance.ratingImagePath,
-      'author': instance.author,
+      'author': instance.author?.toJson(),
       'autoEnglishPropertyFallback': instance.autoEnglishPropertyFallback,
       'properties': instance.properties,
-      'representations': instance.representations,
+      'representations':
+          instance.representations?.map((e) => e.toJson()).toList(),
       'tags': instance.tags,
-      'commentSummary': instance.commentSummary,
+      'commentSummary': instance.commentSummary?.toJson(),
     };

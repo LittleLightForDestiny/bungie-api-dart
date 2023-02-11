@@ -17,5 +17,5 @@ Map<String, dynamic> _$DestinyErrorProfileToJson(
         DestinyErrorProfile instance) =>
     <String, dynamic>{
       'errorCode': encodePlatformErrorCodes(instance.errorCode),
-      'infoCard': instance.infoCard,
+      'infoCard': instance.infoCard?.toJson(),
     };

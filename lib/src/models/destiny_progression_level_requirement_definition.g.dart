@@ -22,7 +22,8 @@ DestinyProgressionLevelRequirementDefinition
 Map<String, dynamic> _$DestinyProgressionLevelRequirementDefinitionToJson(
         DestinyProgressionLevelRequirementDefinition instance) =>
     <String, dynamic>{
-      'requirementCurve': instance.requirementCurve,
+      'requirementCurve':
+          instance.requirementCurve?.map((e) => e.toJson()).toList(),
       'progressionHash': instance.progressionHash,
       'hash': instance.hash,
       'index': instance.index,

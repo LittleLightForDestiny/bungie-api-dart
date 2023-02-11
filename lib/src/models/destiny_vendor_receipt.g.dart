@@ -26,8 +26,8 @@ DestinyVendorReceipt _$DestinyVendorReceiptFromJson(
 Map<String, dynamic> _$DestinyVendorReceiptToJson(
         DestinyVendorReceipt instance) =>
     <String, dynamic>{
-      'currencyPaid': instance.currencyPaid,
-      'itemReceived': instance.itemReceived,
+      'currencyPaid': instance.currencyPaid?.map((e) => e.toJson()).toList(),
+      'itemReceived': instance.itemReceived?.toJson(),
       'licenseUnlockHash': instance.licenseUnlockHash,
       'purchasedByCharacterId': instance.purchasedByCharacterId,
       'refundPolicy':

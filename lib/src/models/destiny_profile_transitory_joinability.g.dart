@@ -22,5 +22,5 @@ Map<String, dynamic> _$DestinyProfileTransitoryJoinabilityToJson(
       'openSlots': instance.openSlots,
       'privacySetting':
           encodeDestinyGamePrivacySetting(instance.privacySetting),
-      'closedReasons': instance.closedReasons,
+      'closedReasons': instance.closedReasons?.toJson(),
     };

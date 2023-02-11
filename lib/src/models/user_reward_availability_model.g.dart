@@ -19,7 +19,7 @@ UserRewardAvailabilityModel _$UserRewardAvailabilityModelFromJson(
 Map<String, dynamic> _$UserRewardAvailabilityModelToJson(
         UserRewardAvailabilityModel instance) =>
     <String, dynamic>{
-      'AvailabilityModel': instance.availabilityModel,
+      'AvailabilityModel': instance.availabilityModel?.toJson(),
       'IsAvailableForUser': instance.isAvailableForUser,
       'IsUnlockedForUser': instance.isUnlockedForUser,
     };

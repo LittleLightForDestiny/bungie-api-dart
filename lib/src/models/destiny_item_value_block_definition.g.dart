@@ -17,6 +17,6 @@ DestinyItemValueBlockDefinition _$DestinyItemValueBlockDefinitionFromJson(
 Map<String, dynamic> _$DestinyItemValueBlockDefinitionToJson(
         DestinyItemValueBlockDefinition instance) =>
     <String, dynamic>{
-      'itemValue': instance.itemValue,
+      'itemValue': instance.itemValue?.map((e) => e.toJson()).toList(),
       'valueDescription': instance.valueDescription,
     };

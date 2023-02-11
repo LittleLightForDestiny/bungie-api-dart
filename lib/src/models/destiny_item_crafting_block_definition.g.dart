@@ -31,5 +31,5 @@ Map<String, dynamic> _$DestinyItemCraftingBlockDefinitionToJson(
       'requiredSocketTypeHashes': instance.requiredSocketTypeHashes,
       'failedRequirementStrings': instance.failedRequirementStrings,
       'baseMaterialRequirements': instance.baseMaterialRequirements,
-      'bonusPlugs': instance.bonusPlugs,
+      'bonusPlugs': instance.bonusPlugs?.map((e) => e.toJson()).toList(),
     };

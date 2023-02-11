@@ -36,14 +36,16 @@ GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$GroupResponseToJson(GroupResponse instance) =>
     <String, dynamic>{
-      'detail': instance.detail,
-      'founder': instance.founder,
+      'detail': instance.detail?.toJson(),
+      'founder': instance.founder?.toJson(),
       'alliedIds': instance.alliedIds,
-      'parentGroup': instance.parentGroup,
+      'parentGroup': instance.parentGroup?.toJson(),
       'allianceStatus': encodeGroupAllianceStatus(instance.allianceStatus),
       'groupJoinInviteCount': instance.groupJoinInviteCount,
       'currentUserMembershipsInactiveForDestiny':
           instance.currentUserMembershipsInactiveForDestiny,
-      'currentUserMemberMap': instance.currentUserMemberMap,
-      'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap,
+      'currentUserMemberMap':
+          instance.currentUserMemberMap?.map((k, e) => MapEntry(k, e.toJson())),
+      'currentUserPotentialMemberMap': instance.currentUserPotentialMemberMap
+          ?.map((k, e) => MapEntry(k, e.toJson())),
     };

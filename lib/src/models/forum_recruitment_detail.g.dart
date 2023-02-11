@@ -35,6 +35,6 @@ Map<String, dynamic> _$ForumRecruitmentDetailToJson(
       'conversationId': instance.conversationId,
       'playerSlotsTotal': instance.playerSlotsTotal,
       'playerSlotsRemaining': instance.playerSlotsRemaining,
-      'Fireteam': instance.fireteam,
+      'Fireteam': instance.fireteam?.map((e) => e.toJson()).toList(),
       'kickedPlayerIds': instance.kickedPlayerIds,
     };

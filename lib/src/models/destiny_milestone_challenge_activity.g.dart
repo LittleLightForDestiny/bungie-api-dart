@@ -31,9 +31,9 @@ Map<String, dynamic> _$DestinyMilestoneChallengeActivityToJson(
         DestinyMilestoneChallengeActivity instance) =>
     <String, dynamic>{
       'activityHash': instance.activityHash,
-      'challenges': instance.challenges,
+      'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
       'modifierHashes': instance.modifierHashes,
       'booleanActivityOptions': instance.booleanActivityOptions,
       'loadoutRequirementIndex': instance.loadoutRequirementIndex,
-      'phases': instance.phases,
+      'phases': instance.phases?.map((e) => e.toJson()).toList(),
     };

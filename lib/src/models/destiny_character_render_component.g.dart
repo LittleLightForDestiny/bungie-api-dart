@@ -24,7 +24,7 @@ DestinyCharacterRenderComponent _$DestinyCharacterRenderComponentFromJson(
 Map<String, dynamic> _$DestinyCharacterRenderComponentToJson(
         DestinyCharacterRenderComponent instance) =>
     <String, dynamic>{
-      'customDyes': instance.customDyes,
-      'customization': instance.customization,
-      'peerView': instance.peerView,
+      'customDyes': instance.customDyes?.map((e) => e.toJson()).toList(),
+      'customization': instance.customization?.toJson(),
+      'peerView': instance.peerView?.toJson(),
     };

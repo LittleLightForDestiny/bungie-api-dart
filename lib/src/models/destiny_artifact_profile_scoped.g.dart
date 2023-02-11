@@ -25,8 +25,8 @@ Map<String, dynamic> _$DestinyArtifactProfileScopedToJson(
         DestinyArtifactProfileScoped instance) =>
     <String, dynamic>{
       'artifactHash': instance.artifactHash,
-      'pointProgression': instance.pointProgression,
+      'pointProgression': instance.pointProgression?.toJson(),
       'pointsAcquired': instance.pointsAcquired,
-      'powerBonusProgression': instance.powerBonusProgression,
+      'powerBonusProgression': instance.powerBonusProgression?.toJson(),
       'powerBonus': instance.powerBonus,
     };

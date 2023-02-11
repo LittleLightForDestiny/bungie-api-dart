@@ -26,7 +26,7 @@ Map<String, dynamic> _$GroupMemberToJson(GroupMember instance) =>
       'isOnline': instance.isOnline,
       'lastOnlineStatusChange': instance.lastOnlineStatusChange,
       'groupId': instance.groupId,
-      'destinyUserInfo': instance.destinyUserInfo,
-      'bungieNetUserInfo': instance.bungieNetUserInfo,
+      'destinyUserInfo': instance.destinyUserInfo?.toJson(),
+      'bungieNetUserInfo': instance.bungieNetUserInfo?.toJson(),
       'joinDate': instance.joinDate,
     };
