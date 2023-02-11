@@ -1,3 +1,5 @@
+## 2023-02-11 (13.17.1)
+- fixes toJson methods
 ## 2023-02-02 (13.17.0)
 - updating to bungie's api definitions from v2.17.0
 
