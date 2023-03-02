@@ -3,6 +3,7 @@ import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/damage_type.dart';
+import 'destiny_color.dart';
 
 part 'destiny_damage_type_definition.g.dart';
 
@@ -27,6 +28,10 @@ class DestinyDamageTypeDefinition{
 	/// We have an enumeration for damage types for quick reference. This is the current definition's damage type enum value.
 	@JsonKey(name:'enumValue',fromJson:decodeDamageType,toJson:encodeDamageType)
 	DamageType? enumValue;
+	
+	/// A color associated with the damage type. The displayProperties icon is tinted with a color close to this.
+	@JsonKey(name:'color')
+	DestinyColor? color;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

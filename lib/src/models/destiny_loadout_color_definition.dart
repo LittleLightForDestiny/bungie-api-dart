@@ -2,21 +2,15 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 
-part 'destiny_trait_category_definition.g.dart';
+part 'destiny_loadout_color_definition.g.dart';
 
 @JsonSerializable()
-class DestinyTraitCategoryDefinition{	
-	DestinyTraitCategoryDefinition();
+class DestinyLoadoutColorDefinition{	
+	DestinyLoadoutColorDefinition();
 
 	
-	@JsonKey(name:'traitCategoryId')
-	String? traitCategoryId;
-	
-	@JsonKey(name:'traitHashes')
-	List<int>? traitHashes;
-	
-	@JsonKey(name:'traitIds')
-	List<String>? traitIds;
+	@JsonKey(name:'colorImagePath')
+	String? colorImagePath;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.
@@ -31,14 +25,14 @@ class DestinyTraitCategoryDefinition{
 	@JsonKey(name:'redacted')
 	bool? redacted;
 
-	factory DestinyTraitCategoryDefinition.fromJson(Map<String, dynamic> json) {
-		return _$DestinyTraitCategoryDefinitionFromJson(json);
+	factory DestinyLoadoutColorDefinition.fromJson(Map<String, dynamic> json) {
+		return _$DestinyLoadoutColorDefinitionFromJson(json);
 	}
 	
-	Map<String, dynamic> toJson() => _$DestinyTraitCategoryDefinitionToJson(this);
+	Map<String, dynamic> toJson() => _$DestinyLoadoutColorDefinitionToJson(this);
 
-	static Future<DestinyTraitCategoryDefinition> asyncFromJson(Map<String, dynamic> json) => 
-		compute<Map<String, dynamic>, DestinyTraitCategoryDefinition>((json)=>DestinyTraitCategoryDefinition.fromJson(json), json);
+	static Future<DestinyLoadoutColorDefinition> asyncFromJson(Map<String, dynamic> json) => 
+		compute<Map<String, dynamic>, DestinyLoadoutColorDefinition>((json)=>DestinyLoadoutColorDefinition.fromJson(json), json);
 
 	Future<Map<String, dynamic>> asyncToJson() => 
 		compute<void, Map<String, dynamic>>((_)=>toJson(), null);

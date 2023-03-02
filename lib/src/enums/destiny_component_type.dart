@@ -53,6 +53,10 @@ enum DestinyComponentType {
   /// This will return info about the equipped items on the character(s). Everyone can see this.
   @JsonValue(205)
   CharacterEquipment,
+  ///CharacterLoadouts = 206
+  /// This will return info about the loadouts of the character(s).
+  @JsonValue(206)
+  CharacterLoadouts,
   ///ItemInstances = 300
   /// This will return basic info about instanced items - whether they can be equipped, their tracked status, and some info commonly needed in many places (current damage type, primary stat value, etc)
   @JsonValue(300)
@@ -148,6 +152,10 @@ enum DestinyComponentType {
   /// Returns summary status information about all &quot;Craftables&quot; aka crafting recipe items.
   @JsonValue(1300)
   Craftables,
+  ///SocialCommendations = 1400
+  /// Returns score values for all commendations and commendation nodes.
+  @JsonValue(1400)
+  SocialCommendations,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -191,6 +199,7 @@ const Map<DestinyComponentType, int> _$DestinyComponentTypeEnumMap = <DestinyCom
     DestinyComponentType.CharacterRenderData:203,
     DestinyComponentType.CharacterActivities:204,
     DestinyComponentType.CharacterEquipment:205,
+    DestinyComponentType.CharacterLoadouts:206,
     DestinyComponentType.ItemInstances:300,
     DestinyComponentType.ItemObjectives:301,
     DestinyComponentType.ItemPerks:302,
@@ -214,6 +223,7 @@ const Map<DestinyComponentType, int> _$DestinyComponentTypeEnumMap = <DestinyCom
     DestinyComponentType.Metrics:1100,
     DestinyComponentType.StringVariables:1200,
     DestinyComponentType.Craftables:1300,
+    DestinyComponentType.SocialCommendations:1400,
 };
 const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, DestinyComponentType>{
     0:DestinyComponentType.None,
@@ -229,6 +239,7 @@ const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, Dest
     203:DestinyComponentType.CharacterRenderData,
     204:DestinyComponentType.CharacterActivities,
     205:DestinyComponentType.CharacterEquipment,
+    206:DestinyComponentType.CharacterLoadouts,
     300:DestinyComponentType.ItemInstances,
     301:DestinyComponentType.ItemObjectives,
     302:DestinyComponentType.ItemPerks,
@@ -252,4 +263,5 @@ const Map<int, DestinyComponentType> _$DestinyComponentTypeValueMap = <int, Dest
     1100:DestinyComponentType.Metrics,
     1200:DestinyComponentType.StringVariables,
     1300:DestinyComponentType.Craftables,
+    1400:DestinyComponentType.SocialCommendations,
 };

@@ -6,6 +6,7 @@ import 'single_component_response_of_destiny_character_component.dart';
 import 'single_component_response_of_destiny_character_progression_component.dart';
 import 'single_component_response_of_destiny_character_render_component.dart';
 import 'single_component_response_of_destiny_character_activities_component.dart';
+import 'single_component_response_of_destiny_loadouts_component.dart';
 import 'single_component_response_of_destiny_kiosks_component.dart';
 import 'single_component_response_of_destiny_plug_sets_component.dart';
 import 'single_component_response_of_destiny_presentation_nodes_component.dart';
@@ -52,6 +53,11 @@ class DestinyCharacterResponse{
 	/// COMPONENT TYPE: CharacterEquipment
 	@JsonKey(name:'equipment')
 	SingleComponentResponseOfDestinyInventoryComponent? equipment;
+	
+	/// The loadouts available to the character.
+	/// COMPONENT TYPE: CharacterLoadouts
+	@JsonKey(name:'loadouts')
+	SingleComponentResponseOfDestinyLoadoutsComponent? loadouts;
 	
 	/// Items available from Kiosks that are available to this specific character. 
 	/// COMPONENT TYPE: Kiosks

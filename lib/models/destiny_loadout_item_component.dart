@@ -1,0 +1,1 @@
+export '../src/models/destiny_loadout_item_component.dart';

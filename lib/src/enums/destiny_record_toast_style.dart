@@ -28,6 +28,9 @@ enum DestinyRecordToastStyle {
   ///CraftingRecipeUnlocked = 8
   @JsonValue(8)
   CraftingRecipeUnlocked,
+  ///ToastGuardianRankDetails = 9
+  @JsonValue(9)
+  ToastGuardianRankDetails,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -67,6 +70,7 @@ const Map<DestinyRecordToastStyle, int> _$DestinyRecordToastStyleEnumMap = <Dest
     DestinyRecordToastStyle.SeasonChallengeComplete:6,
     DestinyRecordToastStyle.GildedTitleComplete:7,
     DestinyRecordToastStyle.CraftingRecipeUnlocked:8,
+    DestinyRecordToastStyle.ToastGuardianRankDetails:9,
 };
 const Map<int, DestinyRecordToastStyle> _$DestinyRecordToastStyleValueMap = <int, DestinyRecordToastStyle>{
     0:DestinyRecordToastStyle.None,
@@ -78,4 +82,5 @@ const Map<int, DestinyRecordToastStyle> _$DestinyRecordToastStyleValueMap = <int
     6:DestinyRecordToastStyle.SeasonChallengeComplete,
     7:DestinyRecordToastStyle.GildedTitleComplete,
     8:DestinyRecordToastStyle.CraftingRecipeUnlocked,
+    9:DestinyRecordToastStyle.ToastGuardianRankDetails,
 };

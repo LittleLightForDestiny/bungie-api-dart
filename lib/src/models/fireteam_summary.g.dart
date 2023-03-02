@@ -27,7 +27,13 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) =>
       ..locale = json['locale'] as String?
       ..isValid = json['isValid'] as bool?
       ..datePlayerModified = json['datePlayerModified'] as String?
-      ..titleBeforeModeration = json['titleBeforeModeration'] as String?;
+      ..titleBeforeModeration = json['titleBeforeModeration'] as String?
+      ..ownerCurrentGuardianRankSnapshot =
+          json['ownerCurrentGuardianRankSnapshot'] as int?
+      ..ownerHighestLifetimeGuardianRankSnapshot =
+          json['ownerHighestLifetimeGuardianRankSnapshot'] as int?
+      ..ownerTotalCommendationScoreSnapshot =
+          json['ownerTotalCommendationScoreSnapshot'] as int?;
 
 Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
     <String, dynamic>{
@@ -50,4 +56,10 @@ Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
       'isValid': instance.isValid,
       'datePlayerModified': instance.datePlayerModified,
       'titleBeforeModeration': instance.titleBeforeModeration,
+      'ownerCurrentGuardianRankSnapshot':
+          instance.ownerCurrentGuardianRankSnapshot,
+      'ownerHighestLifetimeGuardianRankSnapshot':
+          instance.ownerHighestLifetimeGuardianRankSnapshot,
+      'ownerTotalCommendationScoreSnapshot':
+          instance.ownerTotalCommendationScoreSnapshot,
     };

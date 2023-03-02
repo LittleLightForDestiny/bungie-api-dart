@@ -48,6 +48,15 @@ class Destiny2CoreSettings{
 	@JsonKey(name:'craftingRootNodeHash')
 	int? craftingRootNodeHash;
 	
+	@JsonKey(name:'loadoutConstantsHash')
+	int? loadoutConstantsHash;
+	
+	@JsonKey(name:'guardianRankConstantsHash')
+	int? guardianRankConstantsHash;
+	
+	@JsonKey(name:'guardianRanksRootNodeHash')
+	int? guardianRanksRootNodeHash;
+	
 	@JsonKey(name:'currentRankProgressionHashes')
 	List<int>? currentRankProgressionHashes;
 	

@@ -28,6 +28,7 @@ class Fireteam{
         HttpClient client,
         int activityType,
         FireteamDateRange dateRange,
+        bool excludeImmediate,
         String groupId,
         String langFilter,
         int page,
@@ -43,6 +44,7 @@ class Fireteam{
         final String _platform = '${platform.value}';
         final String _publicOnly = '${publicOnly.value}';
         final String _slotFilter = '${slotFilter.value}';
+        params['excludeImmediate'] = excludeImmediate;
         params['langFilter'] = langFilter;
         final HttpClientConfig config = HttpClientConfig('GET', '/Fireteam/Clan/$_groupId/Available/$_platform/$_activityType/$_dateRange/$_slotFilter/$_publicOnly/$_page/', params);
         config.bodyContentType = null;
@@ -57,6 +59,7 @@ class Fireteam{
         HttpClient client,
         int activityType,
         FireteamDateRange dateRange,
+        bool excludeImmediate,
         String langFilter,
         int page,
         FireteamPlatform platform,
@@ -68,6 +71,7 @@ class Fireteam{
         final String _page = '$page';
         final String _platform = '${platform.value}';
         final String _slotFilter = '${slotFilter.value}';
+        params['excludeImmediate'] = excludeImmediate;
         params['langFilter'] = langFilter;
         final HttpClientConfig config = HttpClientConfig('GET', '/Fireteam/Search/Available/$_platform/$_activityType/$_dateRange/$_slotFilter/$_page/', params);
         config.bodyContentType = null;

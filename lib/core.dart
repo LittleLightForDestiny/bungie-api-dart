@@ -50,8 +50,10 @@ export 'src/models/single_component_response_of_destiny_profile_collectibles_com
 export 'src/models/single_component_response_of_destiny_profile_transitory_component.dart';
 export 'src/models/single_component_response_of_destiny_metrics_component.dart';
 export 'src/models/single_component_response_of_destiny_string_variables_component.dart';
+export 'src/models/single_component_response_of_destiny_social_commendations_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_character_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_inventory_component.dart';
+export 'src/models/dictionary_component_response_ofint64_and_destiny_loadouts_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_character_progression_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_character_render_component.dart';
 export 'src/models/dictionary_component_response_ofint64_and_destiny_character_activities_component.dart';
@@ -82,6 +84,7 @@ export 'src/models/single_component_response_of_destiny_character_component.dart
 export 'src/models/single_component_response_of_destiny_character_progression_component.dart';
 export 'src/models/single_component_response_of_destiny_character_render_component.dart';
 export 'src/models/single_component_response_of_destiny_character_activities_component.dart';
+export 'src/models/single_component_response_of_destiny_loadouts_component.dart';
 export 'src/models/single_component_response_of_destiny_character_records_component.dart';
 export 'src/models/single_component_response_of_destiny_collectibles_component.dart';
 export 'src/models/single_component_response_of_destiny_currencies_component.dart';

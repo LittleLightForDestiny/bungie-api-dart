@@ -50,6 +50,14 @@ class DestinyProfileComponent{
 	/// If populated, this is a reference to the event card that is currently active.
 	@JsonKey(name:'activeEventCardHash')
 	int? activeEventCardHash;
+	
+	/// The 'current' Guardian Rank value, which starts at rank 1.
+	@JsonKey(name:'currentGuardianRank')
+	int? currentGuardianRank;
+	
+	/// The 'lifetime highest' Guardian Rank value, which starts at rank 1.
+	@JsonKey(name:'lifetimeHighestGuardianRank')
+	int? lifetimeHighestGuardianRank;
 
 	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyProfileComponentFromJson(json);

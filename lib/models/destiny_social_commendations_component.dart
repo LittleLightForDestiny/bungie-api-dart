@@ -1,0 +1,1 @@
+export '../src/models/destiny_social_commendations_component.dart';

@@ -28,7 +28,10 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
       ..currentSeasonHash = json['currentSeasonHash'] as int?
       ..currentSeasonRewardPowerCap =
           json['currentSeasonRewardPowerCap'] as int?
-      ..activeEventCardHash = json['activeEventCardHash'] as int?;
+      ..activeEventCardHash = json['activeEventCardHash'] as int?
+      ..currentGuardianRank = json['currentGuardianRank'] as int?
+      ..lifetimeHighestGuardianRank =
+          json['lifetimeHighestGuardianRank'] as int?;
 
 Map<String, dynamic> _$DestinyProfileComponentToJson(
         DestinyProfileComponent instance) =>
@@ -42,4 +45,6 @@ Map<String, dynamic> _$DestinyProfileComponentToJson(
       'currentSeasonHash': instance.currentSeasonHash,
       'currentSeasonRewardPowerCap': instance.currentSeasonRewardPowerCap,
       'activeEventCardHash': instance.activeEventCardHash,
+      'currentGuardianRank': instance.currentGuardianRank,
+      'lifetimeHighestGuardianRank': instance.lifetimeHighestGuardianRank,
     };

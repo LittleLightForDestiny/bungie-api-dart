@@ -17,6 +17,12 @@ enum DestinyPresentationDisplayStyle {
   ///Record = 4
   @JsonValue(4)
   Record,
+  ///SeasonalTriumph = 5
+  @JsonValue(5)
+  SeasonalTriumph,
+  ///GuardianRank = 6
+  @JsonValue(6)
+  GuardianRank,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -52,6 +58,8 @@ const Map<DestinyPresentationDisplayStyle, int> _$DestinyPresentationDisplayStyl
     DestinyPresentationDisplayStyle.Medals:2,
     DestinyPresentationDisplayStyle.Collectible:3,
     DestinyPresentationDisplayStyle.Record:4,
+    DestinyPresentationDisplayStyle.SeasonalTriumph:5,
+    DestinyPresentationDisplayStyle.GuardianRank:6,
 };
 const Map<int, DestinyPresentationDisplayStyle> _$DestinyPresentationDisplayStyleValueMap = <int, DestinyPresentationDisplayStyle>{
     0:DestinyPresentationDisplayStyle.Category,
@@ -59,4 +67,6 @@ const Map<int, DestinyPresentationDisplayStyle> _$DestinyPresentationDisplayStyl
     2:DestinyPresentationDisplayStyle.Medals,
     3:DestinyPresentationDisplayStyle.Collectible,
     4:DestinyPresentationDisplayStyle.Record,
+    5:DestinyPresentationDisplayStyle.SeasonalTriumph,
+    6:DestinyPresentationDisplayStyle.GuardianRank,
 };

@@ -13,6 +13,8 @@ import '../models/destiny_item_action_request.dart';
 import '../models/destiny_item_set_action_request.dart';
 import '../models/destiny_item_state_request.dart';
 import '../models/destiny_item_transfer_request.dart';
+import '../models/destiny_loadout_action_request.dart';
+import '../models/destiny_loadout_update_action_request.dart';
 import '../models/destiny_postmaster_transfer_request.dart';
 import '../models/destiny_report_offense_pgcr_request.dart';
 import '../models/exact_search_request.dart';
@@ -343,6 +345,66 @@ class Destiny2{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return DestinyEquipItemResultsResponse.asyncFromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Equip a loadout. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline.
+    static Future<Int32Response> equipLoadout (
+        HttpClient client,
+        DestinyLoadoutActionRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Loadouts/EquipLoadout/', params);
+        config.body = await body.asyncToJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return Int32Response.asyncFromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Snapshot a loadout with the currently equipped items.
+    static Future<Int32Response> snapshotLoadout (
+        HttpClient client,
+        DestinyLoadoutUpdateActionRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Loadouts/SnapshotLoadout/', params);
+        config.body = await body.asyncToJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return Int32Response.asyncFromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Update the color, icon, and name of a loadout.
+    static Future<Int32Response> updateLoadoutIdentifiers (
+        HttpClient client,
+        DestinyLoadoutUpdateActionRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Loadouts/UpdateLoadoutIdentifiers/', params);
+        config.body = await body.asyncToJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return Int32Response.asyncFromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Clear the identifiers and items of a loadout.
+    static Future<Int32Response> clearLoadout (
+        HttpClient client,
+        DestinyLoadoutActionRequest body
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final HttpClientConfig config = HttpClientConfig('POST', '/Destiny2/Actions/Loadouts/ClearLoadout/', params);
+        config.body = await body.asyncToJson();
+        config.bodyContentType = 'application/json';
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return Int32Response.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

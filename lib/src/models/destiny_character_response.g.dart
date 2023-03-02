@@ -33,6 +33,10 @@ DestinyCharacterResponse _$DestinyCharacterResponseFromJson(
           ? null
           : SingleComponentResponseOfDestinyInventoryComponent.fromJson(
               json['equipment'] as Map<String, dynamic>)
+      ..loadouts = json['loadouts'] == null
+          ? null
+          : SingleComponentResponseOfDestinyLoadoutsComponent.fromJson(
+              json['loadouts'] as Map<String, dynamic>)
       ..kiosks = json['kiosks'] == null
           ? null
           : SingleComponentResponseOfDestinyKiosksComponent.fromJson(
@@ -75,6 +79,7 @@ Map<String, dynamic> _$DestinyCharacterResponseToJson(
       'renderData': instance.renderData?.toJson(),
       'activities': instance.activities?.toJson(),
       'equipment': instance.equipment?.toJson(),
+      'loadouts': instance.loadouts?.toJson(),
       'kiosks': instance.kiosks?.toJson(),
       'plugSets': instance.plugSets?.toJson(),
       'presentationNodes': instance.presentationNodes?.toJson(),

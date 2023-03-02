@@ -16,6 +16,9 @@ DestinyDamageTypeDefinition _$DestinyDamageTypeDefinitionFromJson(
       ..transparentIconPath = json['transparentIconPath'] as String?
       ..showIcon = json['showIcon'] as bool?
       ..enumValue = decodeDamageType(json['enumValue'])
+      ..color = json['color'] == null
+          ? null
+          : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
       ..hash = json['hash'] as int?
       ..index = json['index'] as int?
       ..redacted = json['redacted'] as bool?;
@@ -27,6 +30,7 @@ Map<String, dynamic> _$DestinyDamageTypeDefinitionToJson(
       'transparentIconPath': instance.transparentIconPath,
       'showIcon': instance.showIcon,
       'enumValue': encodeDamageType(instance.enumValue),
+      'color': instance.color?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

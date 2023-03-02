@@ -14,12 +14,6 @@ class DestinyTraitDefinition{
 	@JsonKey(name:'displayProperties')
 	DestinyDisplayPropertiesDefinition? displayProperties;
 	
-	@JsonKey(name:'traitCategoryId')
-	String? traitCategoryId;
-	
-	@JsonKey(name:'traitCategoryHash')
-	int? traitCategoryHash;
-	
 	/// An identifier for how this trait can be displayed. For example: a 'keyword' hint to show an explanation for certain related terms.
 	@JsonKey(name:'displayHint')
 	String? displayHint;

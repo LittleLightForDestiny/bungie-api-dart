@@ -22,6 +22,9 @@ enum DamageType {
   ///Stasis = 6
   @JsonValue(6)
   Stasis,
+  ///Strand = 7
+  @JsonValue(7)
+  Strand,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -59,6 +62,7 @@ const Map<DamageType, int> _$DamageTypeEnumMap = <DamageType, int>{
     DamageType.Void:4,
     DamageType.Raid:5,
     DamageType.Stasis:6,
+    DamageType.Strand:7,
 };
 const Map<int, DamageType> _$DamageTypeValueMap = <int, DamageType>{
     0:DamageType.None,
@@ -68,4 +72,5 @@ const Map<int, DamageType> _$DamageTypeValueMap = <int, DamageType>{
     4:DamageType.Void,
     5:DamageType.Raid,
     6:DamageType.Stasis,
+    7:DamageType.Strand,
 };

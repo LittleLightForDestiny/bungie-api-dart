@@ -68,6 +68,10 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
           ? null
           : SingleComponentResponseOfDestinyStringVariablesComponent.fromJson(
               json['profileStringVariables'] as Map<String, dynamic>)
+      ..profileCommendations = json['profileCommendations'] == null
+          ? null
+          : SingleComponentResponseOfDestinySocialCommendationsComponent
+              .fromJson(json['profileCommendations'] as Map<String, dynamic>)
       ..characters = json['characters'] == null
           ? null
           : DictionaryComponentResponseOfint64AndDestinyCharacterComponent
@@ -76,6 +80,10 @@ DestinyProfileResponse _$DestinyProfileResponseFromJson(
           ? null
           : DictionaryComponentResponseOfint64AndDestinyInventoryComponent
               .fromJson(json['characterInventories'] as Map<String, dynamic>)
+      ..characterLoadouts = json['characterLoadouts'] == null
+          ? null
+          : DictionaryComponentResponseOfint64AndDestinyLoadoutsComponent
+              .fromJson(json['characterLoadouts'] as Map<String, dynamic>)
       ..characterProgressions = json['characterProgressions'] == null
           ? null
           : DictionaryComponentResponseOfint64AndDestinyCharacterProgressionComponent
@@ -160,8 +168,10 @@ Map<String, dynamic> _$DestinyProfileResponseToJson(
       'profileTransitoryData': instance.profileTransitoryData?.toJson(),
       'metrics': instance.metrics?.toJson(),
       'profileStringVariables': instance.profileStringVariables?.toJson(),
+      'profileCommendations': instance.profileCommendations?.toJson(),
       'characters': instance.characters?.toJson(),
       'characterInventories': instance.characterInventories?.toJson(),
+      'characterLoadouts': instance.characterLoadouts?.toJson(),
       'characterProgressions': instance.characterProgressions?.toJson(),
       'characterRenderData': instance.characterRenderData?.toJson(),
       'characterActivities': instance.characterActivities?.toJson(),

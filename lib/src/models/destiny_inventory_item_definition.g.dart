@@ -268,5 +268,6 @@ const _$DamageTypeEnumMap = {
   DamageType.Void: 4,
   DamageType.Raid: 5,
   DamageType.Stasis: 6,
+  DamageType.Strand: 7,
   DamageType.ProtectedInvalidEnumValue: 999999999,
 };

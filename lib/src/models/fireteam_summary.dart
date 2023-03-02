@@ -66,6 +66,15 @@ class FireteamSummary{
 	
 	@JsonKey(name:'titleBeforeModeration')
 	String? titleBeforeModeration;
+	
+	@JsonKey(name:'ownerCurrentGuardianRankSnapshot')
+	int? ownerCurrentGuardianRankSnapshot;
+	
+	@JsonKey(name:'ownerHighestLifetimeGuardianRankSnapshot')
+	int? ownerHighestLifetimeGuardianRankSnapshot;
+	
+	@JsonKey(name:'ownerTotalCommendationScoreSnapshot')
+	int? ownerTotalCommendationScoreSnapshot;
 
 	factory FireteamSummary.fromJson(Map<String, dynamic> json) {
 		return _$FireteamSummaryFromJson(json);
