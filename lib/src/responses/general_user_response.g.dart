@@ -8,9 +8,10 @@ part of 'general_user_response.dart';
 
 GeneralUserResponse _$GeneralUserResponseFromJson(Map<String, dynamic> json) =>
     GeneralUserResponse(
-      response: json['Response'] == null
-          ? null
-          : GeneralUser.fromJson(json['Response'] as Map<String, dynamic>),
+      response:
+          json['Response'] == null
+              ? null
+              : GeneralUser.fromJson(json['Response'] as Map<String, dynamic>),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,
@@ -22,13 +23,13 @@ GeneralUserResponse _$GeneralUserResponseFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$GeneralUserResponseToJson(
-        GeneralUserResponse instance) =>
-    <String, dynamic>{
-      'Response': instance.response?.toJson(),
-      'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
-      'ThrottleSeconds': instance.throttleSeconds,
-      'ErrorStatus': instance.errorStatus,
-      'Message': instance.message,
-      'MessageData': instance.messageData,
-      'DetailedErrorTrace': instance.detailedErrorTrace,
-    };
+  GeneralUserResponse instance,
+) => <String, dynamic>{
+  'Response': instance.response?.toJson(),
+  'ErrorCode': encodePlatformErrorCodes(instance.errorCode),
+  'ThrottleSeconds': instance.throttleSeconds,
+  'ErrorStatus': instance.errorStatus,
+  'Message': instance.message,
+  'MessageData': instance.messageData,
+  'DetailedErrorTrace': instance.detailedErrorTrace,
+};

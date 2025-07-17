@@ -12,8 +12,8 @@ DestinyUnlockStatus _$DestinyUnlockStatusFromJson(Map<String, dynamic> json) =>
       ..isSet = json['isSet'] as bool?;
 
 Map<String, dynamic> _$DestinyUnlockStatusToJson(
-        DestinyUnlockStatus instance) =>
-    <String, dynamic>{
-      'unlockHash': instance.unlockHash,
-      'isSet': instance.isSet,
-    };
+  DestinyUnlockStatus instance,
+) => <String, dynamic>{
+  'unlockHash': instance.unlockHash,
+  'isSet': instance.isSet,
+};

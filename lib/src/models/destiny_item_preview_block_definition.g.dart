@@ -7,7 +7,8 @@ part of 'destiny_item_preview_block_definition.dart';
 // **************************************************************************
 
 DestinyItemPreviewBlockDefinition _$DestinyItemPreviewBlockDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemPreviewBlockDefinition()
       ..screenStyle = json['screenStyle'] as String?
       ..previewVendorHash = (json['previewVendorHash'] as num?)?.toInt()
@@ -15,17 +16,20 @@ DestinyItemPreviewBlockDefinition _$DestinyItemPreviewBlockDefinitionFromJson(
       ..previewActionString = json['previewActionString'] as String?
       ..derivedItemCategories =
           (json['derivedItemCategories'] as List<dynamic>?)
-              ?.map((e) => DestinyDerivedItemCategoryDefinition.fromJson(
-                  e as Map<String, dynamic>))
+              ?.map(
+                (e) => DestinyDerivedItemCategoryDefinition.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
               .toList();
 
 Map<String, dynamic> _$DestinyItemPreviewBlockDefinitionToJson(
-        DestinyItemPreviewBlockDefinition instance) =>
-    <String, dynamic>{
-      'screenStyle': instance.screenStyle,
-      'previewVendorHash': instance.previewVendorHash,
-      'artifactHash': instance.artifactHash,
-      'previewActionString': instance.previewActionString,
-      'derivedItemCategories':
-          instance.derivedItemCategories?.map((e) => e.toJson()).toList(),
-    };
+  DestinyItemPreviewBlockDefinition instance,
+) => <String, dynamic>{
+  'screenStyle': instance.screenStyle,
+  'previewVendorHash': instance.previewVendorHash,
+  'artifactHash': instance.artifactHash,
+  'previewActionString': instance.previewActionString,
+  'derivedItemCategories':
+      instance.derivedItemCategories?.map((e) => e.toJson()).toList(),
+};

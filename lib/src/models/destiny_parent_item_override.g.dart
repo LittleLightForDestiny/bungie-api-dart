@@ -7,7 +7,8 @@ part of 'destiny_parent_item_override.dart';
 // **************************************************************************
 
 DestinyParentItemOverride _$DestinyParentItemOverrideFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyParentItemOverride()
       ..additionalEquipRequirementsDisplayStrings =
           (json['additionalEquipRequirementsDisplayStrings'] as List<dynamic>?)
@@ -16,9 +17,9 @@ DestinyParentItemOverride _$DestinyParentItemOverrideFromJson(
       ..pipIcon = json['pipIcon'] as String?;
 
 Map<String, dynamic> _$DestinyParentItemOverrideToJson(
-        DestinyParentItemOverride instance) =>
-    <String, dynamic>{
-      'additionalEquipRequirementsDisplayStrings':
-          instance.additionalEquipRequirementsDisplayStrings,
-      'pipIcon': instance.pipIcon,
-    };
+  DestinyParentItemOverride instance,
+) => <String, dynamic>{
+  'additionalEquipRequirementsDisplayStrings':
+      instance.additionalEquipRequirementsDisplayStrings,
+  'pipIcon': instance.pipIcon,
+};

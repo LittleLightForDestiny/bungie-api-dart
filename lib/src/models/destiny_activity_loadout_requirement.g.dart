@@ -7,7 +7,8 @@ part of 'destiny_activity_loadout_requirement.dart';
 // **************************************************************************
 
 DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyActivityLoadoutRequirement()
       ..equipmentSlotHash = (json['equipmentSlotHash'] as num?)?.toInt()
       ..allowedEquippedItemHashes =
@@ -20,14 +21,15 @@ DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
               .toList();
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
-        DestinyActivityLoadoutRequirement instance) =>
-    <String, dynamic>{
-      'equipmentSlotHash': instance.equipmentSlotHash,
-      'allowedEquippedItemHashes': instance.allowedEquippedItemHashes,
-      'allowedWeaponSubTypes': instance.allowedWeaponSubTypes
+  DestinyActivityLoadoutRequirement instance,
+) => <String, dynamic>{
+  'equipmentSlotHash': instance.equipmentSlotHash,
+  'allowedEquippedItemHashes': instance.allowedEquippedItemHashes,
+  'allowedWeaponSubTypes':
+      instance.allowedWeaponSubTypes
           ?.map((e) => _$DestinyItemSubTypeEnumMap[e]!)
           .toList(),
-    };
+};
 
 const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.None: 0,

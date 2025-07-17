@@ -1,0 +1,1 @@
+export '../src/models/destiny_fireteam_finder_kick_player_request.dart';

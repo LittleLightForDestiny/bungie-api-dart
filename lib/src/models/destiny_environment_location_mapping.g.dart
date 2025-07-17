@@ -7,7 +7,8 @@ part of 'destiny_environment_location_mapping.dart';
 // **************************************************************************
 
 DestinyEnvironmentLocationMapping _$DestinyEnvironmentLocationMappingFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyEnvironmentLocationMapping()
       ..locationHash = (json['locationHash'] as num?)?.toInt()
       ..activationSource = json['activationSource'] as String?
@@ -16,11 +17,11 @@ DestinyEnvironmentLocationMapping _$DestinyEnvironmentLocationMappingFromJson(
       ..activityHash = (json['activityHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyEnvironmentLocationMappingToJson(
-        DestinyEnvironmentLocationMapping instance) =>
-    <String, dynamic>{
-      'locationHash': instance.locationHash,
-      'activationSource': instance.activationSource,
-      'itemHash': instance.itemHash,
-      'objectiveHash': instance.objectiveHash,
-      'activityHash': instance.activityHash,
-    };
+  DestinyEnvironmentLocationMapping instance,
+) => <String, dynamic>{
+  'locationHash': instance.locationHash,
+  'activationSource': instance.activationSource,
+  'itemHash': instance.itemHash,
+  'objectiveHash': instance.objectiveHash,
+  'activityHash': instance.activityHash,
+};

@@ -7,15 +7,18 @@ part of 'fireteam_user_info_card.dart';
 // **************************************************************************
 
 FireteamUserInfoCard _$FireteamUserInfoCardFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     FireteamUserInfoCard()
       ..fireteamDisplayName = json['FireteamDisplayName'] as String?
-      ..fireteamMembershipType =
-          decodeBungieMembershipType(json['FireteamMembershipType'])
+      ..fireteamMembershipType = decodeBungieMembershipType(
+        json['FireteamMembershipType'],
+      )
       ..supplementalDisplayName = json['supplementalDisplayName'] as String?
       ..iconPath = json['iconPath'] as String?
-      ..crossSaveOverride =
-          decodeBungieMembershipType(json['crossSaveOverride'])
+      ..crossSaveOverride = decodeBungieMembershipType(
+        json['crossSaveOverride'],
+      )
       ..applicableMembershipTypes =
           (json['applicableMembershipTypes'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
@@ -29,25 +32,26 @@ FireteamUserInfoCard _$FireteamUserInfoCardFromJson(
           (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$FireteamUserInfoCardToJson(
-        FireteamUserInfoCard instance) =>
-    <String, dynamic>{
-      'FireteamDisplayName': instance.fireteamDisplayName,
-      'FireteamMembershipType':
-          encodeBungieMembershipType(instance.fireteamMembershipType),
-      'supplementalDisplayName': instance.supplementalDisplayName,
-      'iconPath': instance.iconPath,
-      'crossSaveOverride':
-          encodeBungieMembershipType(instance.crossSaveOverride),
-      'applicableMembershipTypes': instance.applicableMembershipTypes
+  FireteamUserInfoCard instance,
+) => <String, dynamic>{
+  'FireteamDisplayName': instance.fireteamDisplayName,
+  'FireteamMembershipType': encodeBungieMembershipType(
+    instance.fireteamMembershipType,
+  ),
+  'supplementalDisplayName': instance.supplementalDisplayName,
+  'iconPath': instance.iconPath,
+  'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
+  'applicableMembershipTypes':
+      instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
-      'isPublic': instance.isPublic,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-      'membershipId': instance.membershipId,
-      'displayName': instance.displayName,
-      'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
-      'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
-    };
+  'isPublic': instance.isPublic,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+  'membershipId': instance.membershipId,
+  'displayName': instance.displayName,
+  'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
+  'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
+};
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,

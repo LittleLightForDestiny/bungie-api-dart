@@ -266,7 +266,6 @@ class GroupV2{
         String nameSearch,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         params['memberType'] = memberType.value;
         params['nameSearch'] = nameSearch;
@@ -285,7 +284,6 @@ class GroupV2{
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/AdminsAndFounder/', params);
         config.bodyContentType = null;
@@ -382,7 +380,6 @@ class GroupV2{
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/Banned/', params);
         config.bodyContentType = null;
@@ -399,7 +396,6 @@ class GroupV2{
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/EditHistory/', params);
         config.bodyContentType = null;
@@ -435,7 +431,6 @@ class GroupV2{
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/Members/Pending/', params);
         config.bodyContentType = null;
@@ -452,7 +447,6 @@ class GroupV2{
         String groupId,
     ) async {
         final Map<String, dynamic> params = Map<String, dynamic>();
-        final String _currentpage = '$currentpage';
         final String _groupId = '$groupId';
         final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/Members/InvitedIndividuals/', params);
         config.bodyContentType = null;

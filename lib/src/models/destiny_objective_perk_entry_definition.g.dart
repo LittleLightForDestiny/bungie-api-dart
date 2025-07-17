@@ -7,14 +7,14 @@ part of 'destiny_objective_perk_entry_definition.dart';
 // **************************************************************************
 
 DestinyObjectivePerkEntryDefinition
-    _$DestinyObjectivePerkEntryDefinitionFromJson(Map<String, dynamic> json) =>
-        DestinyObjectivePerkEntryDefinition()
-          ..perkHash = (json['perkHash'] as num?)?.toInt()
-          ..style = decodeDestinyObjectiveGrantStyle(json['style']);
+_$DestinyObjectivePerkEntryDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyObjectivePerkEntryDefinition()
+      ..perkHash = (json['perkHash'] as num?)?.toInt()
+      ..style = decodeDestinyObjectiveGrantStyle(json['style']);
 
 Map<String, dynamic> _$DestinyObjectivePerkEntryDefinitionToJson(
-        DestinyObjectivePerkEntryDefinition instance) =>
-    <String, dynamic>{
-      'perkHash': instance.perkHash,
-      'style': encodeDestinyObjectiveGrantStyle(instance.style),
-    };
+  DestinyObjectivePerkEntryDefinition instance,
+) => <String, dynamic>{
+  'perkHash': instance.perkHash,
+  'style': encodeDestinyObjectiveGrantStyle(instance.style),
+};

@@ -9,13 +9,14 @@ part of 'destiny_error_profile.dart';
 DestinyErrorProfile _$DestinyErrorProfileFromJson(Map<String, dynamic> json) =>
     DestinyErrorProfile()
       ..errorCode = decodePlatformErrorCodes(json['errorCode'])
-      ..infoCard = json['infoCard'] == null
-          ? null
-          : UserInfoCard.fromJson(json['infoCard'] as Map<String, dynamic>);
+      ..infoCard =
+          json['infoCard'] == null
+              ? null
+              : UserInfoCard.fromJson(json['infoCard'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$DestinyErrorProfileToJson(
-        DestinyErrorProfile instance) =>
-    <String, dynamic>{
-      'errorCode': encodePlatformErrorCodes(instance.errorCode),
-      'infoCard': instance.infoCard?.toJson(),
-    };
+  DestinyErrorProfile instance,
+) => <String, dynamic>{
+  'errorCode': encodePlatformErrorCodes(instance.errorCode),
+  'infoCard': instance.infoCard?.toJson(),
+};

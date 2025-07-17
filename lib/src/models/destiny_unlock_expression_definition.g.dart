@@ -7,12 +7,11 @@ part of 'destiny_unlock_expression_definition.dart';
 // **************************************************************************
 
 DestinyUnlockExpressionDefinition _$DestinyUnlockExpressionDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyUnlockExpressionDefinition()
       ..scope = decodeDestinyGatingScope(json['scope']);
 
 Map<String, dynamic> _$DestinyUnlockExpressionDefinitionToJson(
-        DestinyUnlockExpressionDefinition instance) =>
-    <String, dynamic>{
-      'scope': encodeDestinyGatingScope(instance.scope),
-    };
+  DestinyUnlockExpressionDefinition instance,
+) => <String, dynamic>{'scope': encodeDestinyGatingScope(instance.scope)};

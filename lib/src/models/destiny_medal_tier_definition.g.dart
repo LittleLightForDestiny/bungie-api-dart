@@ -7,7 +7,8 @@ part of 'destiny_medal_tier_definition.dart';
 // **************************************************************************
 
 DestinyMedalTierDefinition _$DestinyMedalTierDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyMedalTierDefinition()
       ..tierName = json['tierName'] as String?
       ..order = (json['order'] as num?)?.toInt()
@@ -16,11 +17,11 @@ DestinyMedalTierDefinition _$DestinyMedalTierDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyMedalTierDefinitionToJson(
-        DestinyMedalTierDefinition instance) =>
-    <String, dynamic>{
-      'tierName': instance.tierName,
-      'order': instance.order,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyMedalTierDefinition instance,
+) => <String, dynamic>{
+  'tierName': instance.tierName,
+  'order': instance.order,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

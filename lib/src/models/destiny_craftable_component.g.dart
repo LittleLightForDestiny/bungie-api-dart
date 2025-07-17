@@ -7,22 +7,27 @@ part of 'destiny_craftable_component.dart';
 // **************************************************************************
 
 DestinyCraftableComponent _$DestinyCraftableComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyCraftableComponent()
       ..visible = json['visible'] as bool?
       ..failedRequirementIndexes =
           (json['failedRequirementIndexes'] as List<dynamic>?)
               ?.map((e) => (e as num).toInt())
               .toList()
-      ..sockets = (json['sockets'] as List<dynamic>?)
-          ?.map((e) => DestinyCraftableSocketComponent.fromJson(
-              e as Map<String, dynamic>))
-          .toList();
+      ..sockets =
+          (json['sockets'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyCraftableSocketComponent.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyCraftableComponentToJson(
-        DestinyCraftableComponent instance) =>
-    <String, dynamic>{
-      'visible': instance.visible,
-      'failedRequirementIndexes': instance.failedRequirementIndexes,
-      'sockets': instance.sockets?.map((e) => e.toJson()).toList(),
-    };
+  DestinyCraftableComponent instance,
+) => <String, dynamic>{
+  'visible': instance.visible,
+  'failedRequirementIndexes': instance.failedRequirementIndexes,
+  'sockets': instance.sockets?.map((e) => e.toJson()).toList(),
+};

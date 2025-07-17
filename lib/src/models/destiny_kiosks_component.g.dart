@@ -7,20 +7,22 @@ part of 'destiny_kiosks_component.dart';
 // **************************************************************************
 
 DestinyKiosksComponent _$DestinyKiosksComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyKiosksComponent()
       ..kioskItems = (json['kioskItems'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            k,
-            (e as List<dynamic>)
-                .map(
-                    (e) => DestinyKioskItem.fromJson(e as Map<String, dynamic>))
-                .toList()),
+          k,
+          (e as List<dynamic>)
+              .map((e) => DestinyKioskItem.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
       );
 
 Map<String, dynamic> _$DestinyKiosksComponentToJson(
-        DestinyKiosksComponent instance) =>
-    <String, dynamic>{
-      'kioskItems': instance.kioskItems
-          ?.map((k, e) => MapEntry(k, e.map((e) => e.toJson()).toList())),
-    };
+  DestinyKiosksComponent instance,
+) => <String, dynamic>{
+  'kioskItems': instance.kioskItems?.map(
+    (k, e) => MapEntry(k, e.map((e) => e.toJson()).toList()),
+  ),
+};

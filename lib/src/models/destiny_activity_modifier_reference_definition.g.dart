@@ -7,14 +7,12 @@ part of 'destiny_activity_modifier_reference_definition.dart';
 // **************************************************************************
 
 DestinyActivityModifierReferenceDefinition
-    _$DestinyActivityModifierReferenceDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyActivityModifierReferenceDefinition()
-          ..activityModifierHash =
-              (json['activityModifierHash'] as num?)?.toInt();
+_$DestinyActivityModifierReferenceDefinitionFromJson(
+  Map<String, dynamic> json,
+) =>
+    DestinyActivityModifierReferenceDefinition()
+      ..activityModifierHash = (json['activityModifierHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityModifierReferenceDefinitionToJson(
-        DestinyActivityModifierReferenceDefinition instance) =>
-    <String, dynamic>{
-      'activityModifierHash': instance.activityModifierHash,
-    };
+  DestinyActivityModifierReferenceDefinition instance,
+) => <String, dynamic>{'activityModifierHash': instance.activityModifierHash};

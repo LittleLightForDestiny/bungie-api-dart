@@ -8,10 +8,14 @@ part of 'user_search_response.dart';
 
 UserSearchResponse _$UserSearchResponseFromJson(Map<String, dynamic> json) =>
     UserSearchResponse()
-      ..searchResults = (json['searchResults'] as List<dynamic>?)
-          ?.map((e) =>
-              UserSearchResponseDetail.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..searchResults =
+          (json['searchResults'] as List<dynamic>?)
+              ?.map(
+                (e) => UserSearchResponseDetail.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
       ..page = (json['page'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?;
 

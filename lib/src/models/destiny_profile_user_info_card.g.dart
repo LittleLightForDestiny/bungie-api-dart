@@ -7,20 +7,24 @@ part of 'destiny_profile_user_info_card.dart';
 // **************************************************************************
 
 DestinyProfileUserInfoCard _$DestinyProfileUserInfoCardFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyProfileUserInfoCard()
       ..dateLastPlayed = json['dateLastPlayed'] as String?
       ..isOverridden = json['isOverridden'] as bool?
       ..isCrossSavePrimary = json['isCrossSavePrimary'] as bool?
-      ..platformSilver = json['platformSilver'] == null
-          ? null
-          : DestinyPlatformSilverComponent.fromJson(
-              json['platformSilver'] as Map<String, dynamic>)
+      ..platformSilver =
+          json['platformSilver'] == null
+              ? null
+              : DestinyPlatformSilverComponent.fromJson(
+                json['platformSilver'] as Map<String, dynamic>,
+              )
       ..unpairedGameVersions = (json['unpairedGameVersions'] as num?)?.toInt()
       ..supplementalDisplayName = json['supplementalDisplayName'] as String?
       ..iconPath = json['iconPath'] as String?
-      ..crossSaveOverride =
-          decodeBungieMembershipType(json['crossSaveOverride'])
+      ..crossSaveOverride = decodeBungieMembershipType(
+        json['crossSaveOverride'],
+      )
       ..applicableMembershipTypes =
           (json['applicableMembershipTypes'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
@@ -34,27 +38,27 @@ DestinyProfileUserInfoCard _$DestinyProfileUserInfoCardFromJson(
           (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileUserInfoCardToJson(
-        DestinyProfileUserInfoCard instance) =>
-    <String, dynamic>{
-      'dateLastPlayed': instance.dateLastPlayed,
-      'isOverridden': instance.isOverridden,
-      'isCrossSavePrimary': instance.isCrossSavePrimary,
-      'platformSilver': instance.platformSilver?.toJson(),
-      'unpairedGameVersions': instance.unpairedGameVersions,
-      'supplementalDisplayName': instance.supplementalDisplayName,
-      'iconPath': instance.iconPath,
-      'crossSaveOverride':
-          encodeBungieMembershipType(instance.crossSaveOverride),
-      'applicableMembershipTypes': instance.applicableMembershipTypes
+  DestinyProfileUserInfoCard instance,
+) => <String, dynamic>{
+  'dateLastPlayed': instance.dateLastPlayed,
+  'isOverridden': instance.isOverridden,
+  'isCrossSavePrimary': instance.isCrossSavePrimary,
+  'platformSilver': instance.platformSilver?.toJson(),
+  'unpairedGameVersions': instance.unpairedGameVersions,
+  'supplementalDisplayName': instance.supplementalDisplayName,
+  'iconPath': instance.iconPath,
+  'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
+  'applicableMembershipTypes':
+      instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
-      'isPublic': instance.isPublic,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-      'membershipId': instance.membershipId,
-      'displayName': instance.displayName,
-      'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
-      'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
-    };
+  'isPublic': instance.isPublic,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+  'membershipId': instance.membershipId,
+  'displayName': instance.displayName,
+  'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
+  'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
+};
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,

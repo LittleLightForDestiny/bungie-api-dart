@@ -7,9 +7,9 @@ part of 'destiny_historical_stats_results.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsResults _$DestinyHistoricalStatsResultsFromJson(
-        Map<String, dynamic> json) =>
-    DestinyHistoricalStatsResults();
+  Map<String, dynamic> json,
+) => DestinyHistoricalStatsResults();
 
 Map<String, dynamic> _$DestinyHistoricalStatsResultsToJson(
-        DestinyHistoricalStatsResults instance) =>
-    <String, dynamic>{};
+  DestinyHistoricalStatsResults instance,
+) => <String, dynamic>{};

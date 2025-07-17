@@ -7,17 +7,18 @@ part of 'destiny_presentation_nodes_component.dart';
 // **************************************************************************
 
 DestinyPresentationNodesComponent _$DestinyPresentationNodesComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPresentationNodesComponent()
       ..nodes = (json['nodes'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            k,
-            DestinyPresentationNodeComponent.fromJson(
-                e as Map<String, dynamic>)),
+          k,
+          DestinyPresentationNodeComponent.fromJson(e as Map<String, dynamic>),
+        ),
       );
 
 Map<String, dynamic> _$DestinyPresentationNodesComponentToJson(
-        DestinyPresentationNodesComponent instance) =>
-    <String, dynamic>{
-      'nodes': instance.nodes?.map((k, e) => MapEntry(k, e.toJson())),
-    };
+  DestinyPresentationNodesComponent instance,
+) => <String, dynamic>{
+  'nodes': instance.nodes?.map((k, e) => MapEntry(k, e.toJson())),
+};

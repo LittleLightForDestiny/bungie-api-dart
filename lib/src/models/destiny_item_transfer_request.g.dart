@@ -7,7 +7,8 @@ part of 'destiny_item_transfer_request.dart';
 // **************************************************************************
 
 DestinyItemTransferRequest _$DestinyItemTransferRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemTransferRequest()
       ..itemReferenceHash = (json['itemReferenceHash'] as num?)?.toInt()
       ..stackSize = (json['stackSize'] as num?)?.toInt()
@@ -17,12 +18,12 @@ DestinyItemTransferRequest _$DestinyItemTransferRequestFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyItemTransferRequestToJson(
-        DestinyItemTransferRequest instance) =>
-    <String, dynamic>{
-      'itemReferenceHash': instance.itemReferenceHash,
-      'stackSize': instance.stackSize,
-      'transferToVault': instance.transferToVault,
-      'itemId': instance.itemId,
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyItemTransferRequest instance,
+) => <String, dynamic>{
+  'itemReferenceHash': instance.itemReferenceHash,
+  'stackSize': instance.stackSize,
+  'transferToVault': instance.transferToVault,
+  'itemId': instance.itemId,
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

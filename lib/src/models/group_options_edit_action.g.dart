@@ -7,7 +7,8 @@ part of 'group_options_edit_action.dart';
 // **************************************************************************
 
 GroupOptionsEditAction _$GroupOptionsEditActionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     GroupOptionsEditAction()
       ..invitePermissionOverride = json['InvitePermissionOverride'] as bool?
       ..updateCulturePermissionOverride =
@@ -19,13 +20,11 @@ GroupOptionsEditAction _$GroupOptionsEditActionFromJson(
       ..joinLevel = (json['JoinLevel'] as num?)?.toInt();
 
 Map<String, dynamic> _$GroupOptionsEditActionToJson(
-        GroupOptionsEditAction instance) =>
-    <String, dynamic>{
-      'InvitePermissionOverride': instance.invitePermissionOverride,
-      'UpdateCulturePermissionOverride':
-          instance.updateCulturePermissionOverride,
-      'HostGuidedGamePermissionOverride':
-          instance.hostGuidedGamePermissionOverride,
-      'UpdateBannerPermissionOverride': instance.updateBannerPermissionOverride,
-      'JoinLevel': instance.joinLevel,
-    };
+  GroupOptionsEditAction instance,
+) => <String, dynamic>{
+  'InvitePermissionOverride': instance.invitePermissionOverride,
+  'UpdateCulturePermissionOverride': instance.updateCulturePermissionOverride,
+  'HostGuidedGamePermissionOverride': instance.hostGuidedGamePermissionOverride,
+  'UpdateBannerPermissionOverride': instance.updateBannerPermissionOverride,
+  'JoinLevel': instance.joinLevel,
+};

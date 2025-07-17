@@ -1,0 +1,1 @@
+export '../src/models/destiny_vendor_item_component_set_ofint32.dart';

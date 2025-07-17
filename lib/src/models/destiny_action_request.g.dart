@@ -7,12 +7,13 @@ part of 'destiny_action_request.dart';
 // **************************************************************************
 
 DestinyActionRequest _$DestinyActionRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyActionRequest()
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyActionRequestToJson(
-        DestinyActionRequest instance) =>
-    <String, dynamic>{
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyActionRequest instance,
+) => <String, dynamic>{
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

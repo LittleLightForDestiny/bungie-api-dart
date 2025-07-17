@@ -7,15 +7,16 @@ part of 'destiny_challenge_status.dart';
 // **************************************************************************
 
 DestinyChallengeStatus _$DestinyChallengeStatusFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyChallengeStatus()
-      ..objective = json['objective'] == null
-          ? null
-          : DestinyObjectiveProgress.fromJson(
-              json['objective'] as Map<String, dynamic>);
+      ..objective =
+          json['objective'] == null
+              ? null
+              : DestinyObjectiveProgress.fromJson(
+                json['objective'] as Map<String, dynamic>,
+              );
 
 Map<String, dynamic> _$DestinyChallengeStatusToJson(
-        DestinyChallengeStatus instance) =>
-    <String, dynamic>{
-      'objective': instance.objective?.toJson(),
-    };
+  DestinyChallengeStatus instance,
+) => <String, dynamic>{'objective': instance.objective?.toJson()};

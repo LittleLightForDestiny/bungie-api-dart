@@ -7,7 +7,8 @@ part of 'destiny_item_instance_energy.dart';
 // **************************************************************************
 
 DestinyItemInstanceEnergy _$DestinyItemInstanceEnergyFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemInstanceEnergy()
       ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
       ..energyType = decodeDestinyEnergyType(json['energyType'])
@@ -16,11 +17,11 @@ DestinyItemInstanceEnergy _$DestinyItemInstanceEnergyFromJson(
       ..energyUnused = (json['energyUnused'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemInstanceEnergyToJson(
-        DestinyItemInstanceEnergy instance) =>
-    <String, dynamic>{
-      'energyTypeHash': instance.energyTypeHash,
-      'energyType': encodeDestinyEnergyType(instance.energyType),
-      'energyCapacity': instance.energyCapacity,
-      'energyUsed': instance.energyUsed,
-      'energyUnused': instance.energyUnused,
-    };
+  DestinyItemInstanceEnergy instance,
+) => <String, dynamic>{
+  'energyTypeHash': instance.energyTypeHash,
+  'energyType': encodeDestinyEnergyType(instance.energyType),
+  'energyCapacity': instance.energyCapacity,
+  'energyUsed': instance.energyUsed,
+  'energyUnused': instance.energyUnused,
+};

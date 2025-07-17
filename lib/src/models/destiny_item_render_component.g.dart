@@ -7,7 +7,8 @@ part of 'destiny_item_render_component.dart';
 // **************************************************************************
 
 DestinyItemRenderComponent _$DestinyItemRenderComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemRenderComponent()
       ..useCustomDyes = json['useCustomDyes'] as bool?
       ..artRegions = (json['artRegions'] as Map<String, dynamic>?)?.map(
@@ -15,8 +16,8 @@ DestinyItemRenderComponent _$DestinyItemRenderComponentFromJson(
       );
 
 Map<String, dynamic> _$DestinyItemRenderComponentToJson(
-        DestinyItemRenderComponent instance) =>
-    <String, dynamic>{
-      'useCustomDyes': instance.useCustomDyes,
-      'artRegions': instance.artRegions,
-    };
+  DestinyItemRenderComponent instance,
+) => <String, dynamic>{
+  'useCustomDyes': instance.useCustomDyes,
+  'artRegions': instance.artRegions,
+};

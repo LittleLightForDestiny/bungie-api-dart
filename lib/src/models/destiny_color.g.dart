@@ -6,11 +6,12 @@ part of 'destiny_color.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DestinyColor _$DestinyColorFromJson(Map<String, dynamic> json) => DestinyColor()
-  ..red = (json['red'] as num?)?.toInt()
-  ..green = (json['green'] as num?)?.toInt()
-  ..blue = (json['blue'] as num?)?.toInt()
-  ..alpha = (json['alpha'] as num?)?.toInt();
+DestinyColor _$DestinyColorFromJson(Map<String, dynamic> json) =>
+    DestinyColor()
+      ..red = (json['red'] as num?)?.toInt()
+      ..green = (json['green'] as num?)?.toInt()
+      ..blue = (json['blue'] as num?)?.toInt()
+      ..alpha = (json['alpha'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyColorToJson(DestinyColor instance) =>
     <String, dynamic>{

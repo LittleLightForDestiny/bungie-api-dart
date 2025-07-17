@@ -7,21 +7,25 @@ part of 'destiny_stat_display_definition.dart';
 // **************************************************************************
 
 DestinyStatDisplayDefinition _$DestinyStatDisplayDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyStatDisplayDefinition()
       ..statHash = (json['statHash'] as num?)?.toInt()
       ..maximumValue = (json['maximumValue'] as num?)?.toInt()
       ..displayAsNumeric = json['displayAsNumeric'] as bool?
-      ..displayInterpolation = (json['displayInterpolation'] as List<dynamic>?)
-          ?.map((e) => InterpolationPoint.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..displayInterpolation =
+          (json['displayInterpolation'] as List<dynamic>?)
+              ?.map(
+                (e) => InterpolationPoint.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyStatDisplayDefinitionToJson(
-        DestinyStatDisplayDefinition instance) =>
-    <String, dynamic>{
-      'statHash': instance.statHash,
-      'maximumValue': instance.maximumValue,
-      'displayAsNumeric': instance.displayAsNumeric,
-      'displayInterpolation':
-          instance.displayInterpolation?.map((e) => e.toJson()).toList(),
-    };
+  DestinyStatDisplayDefinition instance,
+) => <String, dynamic>{
+  'statHash': instance.statHash,
+  'maximumValue': instance.maximumValue,
+  'displayAsNumeric': instance.displayAsNumeric,
+  'displayInterpolation':
+      instance.displayInterpolation?.map((e) => e.toJson()).toList(),
+};

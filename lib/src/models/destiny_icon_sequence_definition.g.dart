@@ -7,13 +7,12 @@ part of 'destiny_icon_sequence_definition.dart';
 // **************************************************************************
 
 DestinyIconSequenceDefinition _$DestinyIconSequenceDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyIconSequenceDefinition()
       ..frames =
           (json['frames'] as List<dynamic>?)?.map((e) => e as String).toList();
 
 Map<String, dynamic> _$DestinyIconSequenceDefinitionToJson(
-        DestinyIconSequenceDefinition instance) =>
-    <String, dynamic>{
-      'frames': instance.frames,
-    };
+  DestinyIconSequenceDefinition instance,
+) => <String, dynamic>{'frames': instance.frames};

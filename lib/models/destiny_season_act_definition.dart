@@ -1,0 +1,1 @@
+export '../src/models/destiny_season_act_definition.dart';

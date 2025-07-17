@@ -7,7 +7,8 @@ part of 'destiny_profile_records_component.dart';
 // **************************************************************************
 
 DestinyProfileRecordsComponent _$DestinyProfileRecordsComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyProfileRecordsComponent()
       ..score = (json['score'] as num?)?.toInt()
       ..activeScore = (json['activeScore'] as num?)?.toInt()
@@ -16,7 +17,9 @@ DestinyProfileRecordsComponent _$DestinyProfileRecordsComponentFromJson(
       ..trackedRecordHash = (json['trackedRecordHash'] as num?)?.toInt()
       ..records = (json['records'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            k, DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
+          k,
+          DestinyRecordComponent.fromJson(e as Map<String, dynamic>),
+        ),
       )
       ..recordCategoriesRootNodeHash =
           (json['recordCategoriesRootNodeHash'] as num?)?.toInt()
@@ -24,14 +27,14 @@ DestinyProfileRecordsComponent _$DestinyProfileRecordsComponentFromJson(
           (json['recordSealsRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileRecordsComponentToJson(
-        DestinyProfileRecordsComponent instance) =>
-    <String, dynamic>{
-      'score': instance.score,
-      'activeScore': instance.activeScore,
-      'legacyScore': instance.legacyScore,
-      'lifetimeScore': instance.lifetimeScore,
-      'trackedRecordHash': instance.trackedRecordHash,
-      'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
-      'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
-      'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
-    };
+  DestinyProfileRecordsComponent instance,
+) => <String, dynamic>{
+  'score': instance.score,
+  'activeScore': instance.activeScore,
+  'legacyScore': instance.legacyScore,
+  'lifetimeScore': instance.lifetimeScore,
+  'trackedRecordHash': instance.trackedRecordHash,
+  'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
+  'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
+  'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
+};

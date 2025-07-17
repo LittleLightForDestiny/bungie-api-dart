@@ -7,17 +7,19 @@ part of 'destiny_objective_stat_entry_definition.dart';
 // **************************************************************************
 
 DestinyObjectiveStatEntryDefinition
-    _$DestinyObjectiveStatEntryDefinitionFromJson(Map<String, dynamic> json) =>
-        DestinyObjectiveStatEntryDefinition()
-          ..stat = json['stat'] == null
+_$DestinyObjectiveStatEntryDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyObjectiveStatEntryDefinition()
+      ..stat =
+          json['stat'] == null
               ? null
               : DestinyItemInvestmentStatDefinition.fromJson(
-                  json['stat'] as Map<String, dynamic>)
-          ..style = decodeDestinyObjectiveGrantStyle(json['style']);
+                json['stat'] as Map<String, dynamic>,
+              )
+      ..style = decodeDestinyObjectiveGrantStyle(json['style']);
 
 Map<String, dynamic> _$DestinyObjectiveStatEntryDefinitionToJson(
-        DestinyObjectiveStatEntryDefinition instance) =>
-    <String, dynamic>{
-      'stat': instance.stat?.toJson(),
-      'style': encodeDestinyObjectiveGrantStyle(instance.style),
-    };
+  DestinyObjectiveStatEntryDefinition instance,
+) => <String, dynamic>{
+  'stat': instance.stat?.toJson(),
+  'style': encodeDestinyObjectiveGrantStyle(instance.style),
+};

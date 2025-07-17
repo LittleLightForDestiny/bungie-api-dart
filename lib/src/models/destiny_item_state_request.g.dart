@@ -7,7 +7,8 @@ part of 'destiny_item_state_request.dart';
 // **************************************************************************
 
 DestinyItemStateRequest _$DestinyItemStateRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemStateRequest()
       ..state = json['state'] as bool?
       ..itemId = json['itemId'] as String?
@@ -15,10 +16,10 @@ DestinyItemStateRequest _$DestinyItemStateRequestFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyItemStateRequestToJson(
-        DestinyItemStateRequest instance) =>
-    <String, dynamic>{
-      'state': instance.state,
-      'itemId': instance.itemId,
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyItemStateRequest instance,
+) => <String, dynamic>{
+  'state': instance.state,
+  'itemId': instance.itemId,
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

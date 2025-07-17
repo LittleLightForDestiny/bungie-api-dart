@@ -7,23 +7,26 @@ part of 'destiny_presentation_child_block.dart';
 // **************************************************************************
 
 DestinyPresentationChildBlock _$DestinyPresentationChildBlockFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPresentationChildBlock()
-      ..presentationNodeType =
-          decodeDestinyPresentationNodeType(json['presentationNodeType'])
+      ..presentationNodeType = decodeDestinyPresentationNodeType(
+        json['presentationNodeType'],
+      )
       ..parentPresentationNodeHashes =
           (json['parentPresentationNodeHashes'] as List<dynamic>?)
               ?.map((e) => (e as num).toInt())
               .toList()
-      ..displayStyle =
-          decodeDestinyPresentationDisplayStyle(json['displayStyle']);
+      ..displayStyle = decodeDestinyPresentationDisplayStyle(
+        json['displayStyle'],
+      );
 
 Map<String, dynamic> _$DestinyPresentationChildBlockToJson(
-        DestinyPresentationChildBlock instance) =>
-    <String, dynamic>{
-      'presentationNodeType':
-          encodeDestinyPresentationNodeType(instance.presentationNodeType),
-      'parentPresentationNodeHashes': instance.parentPresentationNodeHashes,
-      'displayStyle':
-          encodeDestinyPresentationDisplayStyle(instance.displayStyle),
-    };
+  DestinyPresentationChildBlock instance,
+) => <String, dynamic>{
+  'presentationNodeType': encodeDestinyPresentationNodeType(
+    instance.presentationNodeType,
+  ),
+  'parentPresentationNodeHashes': instance.parentPresentationNodeHashes,
+  'displayStyle': encodeDestinyPresentationDisplayStyle(instance.displayStyle),
+};

@@ -7,7 +7,8 @@ part of 'destiny_vendor_group_definition.dart';
 // **************************************************************************
 
 DestinyVendorGroupDefinition _$DestinyVendorGroupDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyVendorGroupDefinition()
       ..order = (json['order'] as num?)?.toInt()
       ..categoryName = json['categoryName'] as String?
@@ -16,11 +17,11 @@ DestinyVendorGroupDefinition _$DestinyVendorGroupDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorGroupDefinitionToJson(
-        DestinyVendorGroupDefinition instance) =>
-    <String, dynamic>{
-      'order': instance.order,
-      'categoryName': instance.categoryName,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyVendorGroupDefinition instance,
+) => <String, dynamic>{
+  'order': instance.order,
+  'categoryName': instance.categoryName,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

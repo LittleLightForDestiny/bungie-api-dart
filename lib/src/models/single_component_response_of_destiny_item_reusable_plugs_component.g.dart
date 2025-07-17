@@ -7,21 +7,24 @@ part of 'single_component_response_of_destiny_item_reusable_plugs_component.dart
 // **************************************************************************
 
 SingleComponentResponseOfDestinyItemReusablePlugsComponent
-    _$SingleComponentResponseOfDestinyItemReusablePlugsComponentFromJson(
-            Map<String, dynamic> json) =>
-        SingleComponentResponseOfDestinyItemReusablePlugsComponent()
-          ..data = json['data'] == null
+_$SingleComponentResponseOfDestinyItemReusablePlugsComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    SingleComponentResponseOfDestinyItemReusablePlugsComponent()
+      ..data =
+          json['data'] == null
               ? null
               : DestinyItemReusablePlugsComponent.fromJson(
-                  json['data'] as Map<String, dynamic>)
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+                json['data'] as Map<String, dynamic>,
+              )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
-Map<String,
-    dynamic> _$SingleComponentResponseOfDestinyItemReusablePlugsComponentToJson(
-        SingleComponentResponseOfDestinyItemReusablePlugsComponent instance) =>
-    <String, dynamic>{
-      'data': instance.data?.toJson(),
-      'privacy': encodeComponentPrivacySetting(instance.privacy),
-      'disabled': instance.disabled,
-    };
+Map<String, dynamic>
+_$SingleComponentResponseOfDestinyItemReusablePlugsComponentToJson(
+  SingleComponentResponseOfDestinyItemReusablePlugsComponent instance,
+) => <String, dynamic>{
+  'data': instance.data?.toJson(),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

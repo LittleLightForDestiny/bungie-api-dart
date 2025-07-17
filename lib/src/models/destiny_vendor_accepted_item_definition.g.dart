@@ -7,16 +7,16 @@ part of 'destiny_vendor_accepted_item_definition.dart';
 // **************************************************************************
 
 DestinyVendorAcceptedItemDefinition
-    _$DestinyVendorAcceptedItemDefinitionFromJson(Map<String, dynamic> json) =>
-        DestinyVendorAcceptedItemDefinition()
-          ..acceptedInventoryBucketHash =
-              (json['acceptedInventoryBucketHash'] as num?)?.toInt()
-          ..destinationInventoryBucketHash =
-              (json['destinationInventoryBucketHash'] as num?)?.toInt();
+_$DestinyVendorAcceptedItemDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyVendorAcceptedItemDefinition()
+      ..acceptedInventoryBucketHash =
+          (json['acceptedInventoryBucketHash'] as num?)?.toInt()
+      ..destinationInventoryBucketHash =
+          (json['destinationInventoryBucketHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorAcceptedItemDefinitionToJson(
-        DestinyVendorAcceptedItemDefinition instance) =>
-    <String, dynamic>{
-      'acceptedInventoryBucketHash': instance.acceptedInventoryBucketHash,
-      'destinationInventoryBucketHash': instance.destinationInventoryBucketHash,
-    };
+  DestinyVendorAcceptedItemDefinition instance,
+) => <String, dynamic>{
+  'acceptedInventoryBucketHash': instance.acceptedInventoryBucketHash,
+  'destinationInventoryBucketHash': instance.destinationInventoryBucketHash,
+};

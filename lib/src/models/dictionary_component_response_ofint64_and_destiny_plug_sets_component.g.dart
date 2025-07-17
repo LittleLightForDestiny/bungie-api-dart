@@ -7,22 +7,24 @@ part of 'dictionary_component_response_ofint64_and_destiny_plug_sets_component.d
 // **************************************************************************
 
 DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent
-    _$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentFromJson(
-            Map<String, dynamic> json) =>
-        DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent()
-          ..data = (json['data'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(k,
-                DestinyPlugSetsComponent.fromJson(e as Map<String, dynamic>)),
-          )
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+_$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent()
+      ..data = (json['data'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          DestinyPlugSetsComponent.fromJson(e as Map<String, dynamic>),
+        ),
+      )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
-    _$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentToJson(
-            DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent
-                instance) =>
-        <String, dynamic>{
-          'data': instance.data?.map((k, e) => MapEntry(k, e.toJson())),
-          'privacy': encodeComponentPrivacySetting(instance.privacy),
-          'disabled': instance.disabled,
-        };
+_$DictionaryComponentResponseOfint64AndDestinyPlugSetsComponentToJson(
+  DictionaryComponentResponseOfint64AndDestinyPlugSetsComponent instance,
+) => <String, dynamic>{
+  'data': instance.data?.map((k, e) => MapEntry(k, e.toJson())),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

@@ -8,9 +8,10 @@ part of 'api_usage_response.dart';
 
 ApiUsageResponse _$ApiUsageResponseFromJson(Map<String, dynamic> json) =>
     ApiUsageResponse(
-      response: json['Response'] == null
-          ? null
-          : ApiUsage.fromJson(json['Response'] as Map<String, dynamic>),
+      response:
+          json['Response'] == null
+              ? null
+              : ApiUsage.fromJson(json['Response'] as Map<String, dynamic>),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

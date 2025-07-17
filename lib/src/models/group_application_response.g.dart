@@ -7,12 +7,13 @@ part of 'group_application_response.dart';
 // **************************************************************************
 
 GroupApplicationResponse _$GroupApplicationResponseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     GroupApplicationResponse()
       ..resolution = decodeGroupApplicationResolveState(json['resolution']);
 
 Map<String, dynamic> _$GroupApplicationResponseToJson(
-        GroupApplicationResponse instance) =>
-    <String, dynamic>{
-      'resolution': encodeGroupApplicationResolveState(instance.resolution),
-    };
+  GroupApplicationResponse instance,
+) => <String, dynamic>{
+  'resolution': encodeGroupApplicationResolveState(instance.resolution),
+};

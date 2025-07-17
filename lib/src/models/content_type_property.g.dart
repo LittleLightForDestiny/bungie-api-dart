@@ -32,29 +32,35 @@ ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) =>
       ..attributes = (json['attributes'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       )
-      ..childProperties = (json['childProperties'] as List<dynamic>?)
-          ?.map((e) => ContentTypeProperty.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..childProperties =
+          (json['childProperties'] as List<dynamic>?)
+              ?.map(
+                (e) => ContentTypeProperty.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
       ..contentTypeAllowed = json['contentTypeAllowed'] as String?
       ..bindToProperty = json['bindToProperty'] as String?
       ..boundRegex = json['boundRegex'] as String?
-      ..representationSelection =
-          (json['representationSelection'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as String),
-      )
-      ..defaultValues = (json['defaultValues'] as List<dynamic>?)
-          ?.map((e) =>
-              ContentTypeDefaultValue.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..representationSelection = (json['representationSelection']
+              as Map<String, dynamic>?)
+          ?.map((k, e) => MapEntry(k, e as String))
+      ..defaultValues =
+          (json['defaultValues'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    ContentTypeDefaultValue.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
       ..isExternalAllowed = json['isExternalAllowed'] as bool?
       ..propertySection = json['propertySection'] as String?
       ..weight = (json['weight'] as num?)?.toInt()
       ..entitytype = json['entitytype'] as String?
       ..isCombo = json['isCombo'] as bool?
       ..suppressProperty = json['suppressProperty'] as bool?
-      ..legalContentTypes = (json['legalContentTypes'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList()
+      ..legalContentTypes =
+          (json['legalContentTypes'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList()
       ..representationValidationString =
           json['representationValidationString'] as String?
       ..minWidth = (json['minWidth'] as num?)?.toInt()
@@ -65,49 +71,48 @@ ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) =>
       ..isImage = json['isImage'] as bool?;
 
 Map<String, dynamic> _$ContentTypePropertyToJson(
-        ContentTypeProperty instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'rootPropertyName': instance.rootPropertyName,
-      'readableName': instance.readableName,
-      'value': instance.value,
-      'propertyDescription': instance.propertyDescription,
-      'localizable': instance.localizable,
-      'fallback': instance.fallback,
-      'enabled': instance.enabled,
-      'order': instance.order,
-      'visible': instance.visible,
-      'isTitle': instance.isTitle,
-      'required': instance.required,
-      'maxLength': instance.maxLength,
-      'maxByteLength': instance.maxByteLength,
-      'maxFileSize': instance.maxFileSize,
-      'regexp': instance.regexp,
-      'validateAs': instance.validateAs,
-      'rssAttribute': instance.rssAttribute,
-      'visibleDependency': instance.visibleDependency,
-      'visibleOn': instance.visibleOn,
-      'datatype': encodeContentPropertyDataTypeEnum(instance.datatype),
-      'attributes': instance.attributes,
-      'childProperties':
-          instance.childProperties?.map((e) => e.toJson()).toList(),
-      'contentTypeAllowed': instance.contentTypeAllowed,
-      'bindToProperty': instance.bindToProperty,
-      'boundRegex': instance.boundRegex,
-      'representationSelection': instance.representationSelection,
-      'defaultValues': instance.defaultValues?.map((e) => e.toJson()).toList(),
-      'isExternalAllowed': instance.isExternalAllowed,
-      'propertySection': instance.propertySection,
-      'weight': instance.weight,
-      'entitytype': instance.entitytype,
-      'isCombo': instance.isCombo,
-      'suppressProperty': instance.suppressProperty,
-      'legalContentTypes': instance.legalContentTypes,
-      'representationValidationString': instance.representationValidationString,
-      'minWidth': instance.minWidth,
-      'maxWidth': instance.maxWidth,
-      'minHeight': instance.minHeight,
-      'maxHeight': instance.maxHeight,
-      'isVideo': instance.isVideo,
-      'isImage': instance.isImage,
-    };
+  ContentTypeProperty instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'rootPropertyName': instance.rootPropertyName,
+  'readableName': instance.readableName,
+  'value': instance.value,
+  'propertyDescription': instance.propertyDescription,
+  'localizable': instance.localizable,
+  'fallback': instance.fallback,
+  'enabled': instance.enabled,
+  'order': instance.order,
+  'visible': instance.visible,
+  'isTitle': instance.isTitle,
+  'required': instance.required,
+  'maxLength': instance.maxLength,
+  'maxByteLength': instance.maxByteLength,
+  'maxFileSize': instance.maxFileSize,
+  'regexp': instance.regexp,
+  'validateAs': instance.validateAs,
+  'rssAttribute': instance.rssAttribute,
+  'visibleDependency': instance.visibleDependency,
+  'visibleOn': instance.visibleOn,
+  'datatype': encodeContentPropertyDataTypeEnum(instance.datatype),
+  'attributes': instance.attributes,
+  'childProperties': instance.childProperties?.map((e) => e.toJson()).toList(),
+  'contentTypeAllowed': instance.contentTypeAllowed,
+  'bindToProperty': instance.bindToProperty,
+  'boundRegex': instance.boundRegex,
+  'representationSelection': instance.representationSelection,
+  'defaultValues': instance.defaultValues?.map((e) => e.toJson()).toList(),
+  'isExternalAllowed': instance.isExternalAllowed,
+  'propertySection': instance.propertySection,
+  'weight': instance.weight,
+  'entitytype': instance.entitytype,
+  'isCombo': instance.isCombo,
+  'suppressProperty': instance.suppressProperty,
+  'legalContentTypes': instance.legalContentTypes,
+  'representationValidationString': instance.representationValidationString,
+  'minWidth': instance.minWidth,
+  'maxWidth': instance.maxWidth,
+  'minHeight': instance.minHeight,
+  'maxHeight': instance.maxHeight,
+  'isVideo': instance.isVideo,
+  'isImage': instance.isImage,
+};

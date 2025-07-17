@@ -7,7 +7,8 @@ part of 'destiny_item_source_definition.dart';
 // **************************************************************************
 
 DestinyItemSourceDefinition _$DestinyItemSourceDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemSourceDefinition()
       ..level = (json['level'] as num?)?.toInt()
       ..minQuality = (json['minQuality'] as num?)?.toInt()
@@ -16,23 +17,27 @@ DestinyItemSourceDefinition _$DestinyItemSourceDefinitionFromJson(
       ..maxLevelRequired = (json['maxLevelRequired'] as num?)?.toInt()
       ..computedStats = (json['computedStats'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            k,
-            DestinyInventoryItemStatDefinition.fromJson(
-                e as Map<String, dynamic>)),
+          k,
+          DestinyInventoryItemStatDefinition.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        ),
       )
-      ..sourceHashes = (json['sourceHashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList();
+      ..sourceHashes =
+          (json['sourceHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList();
 
 Map<String, dynamic> _$DestinyItemSourceDefinitionToJson(
-        DestinyItemSourceDefinition instance) =>
-    <String, dynamic>{
-      'level': instance.level,
-      'minQuality': instance.minQuality,
-      'maxQuality': instance.maxQuality,
-      'minLevelRequired': instance.minLevelRequired,
-      'maxLevelRequired': instance.maxLevelRequired,
-      'computedStats':
-          instance.computedStats?.map((k, e) => MapEntry(k, e.toJson())),
-      'sourceHashes': instance.sourceHashes,
-    };
+  DestinyItemSourceDefinition instance,
+) => <String, dynamic>{
+  'level': instance.level,
+  'minQuality': instance.minQuality,
+  'maxQuality': instance.maxQuality,
+  'minLevelRequired': instance.minLevelRequired,
+  'maxLevelRequired': instance.maxLevelRequired,
+  'computedStats': instance.computedStats?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
+  'sourceHashes': instance.sourceHashes,
+};

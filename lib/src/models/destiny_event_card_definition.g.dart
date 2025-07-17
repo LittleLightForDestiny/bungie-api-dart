@@ -7,20 +7,26 @@ part of 'destiny_event_card_definition.dart';
 // **************************************************************************
 
 DestinyEventCardDefinition _$DestinyEventCardDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyEventCardDefinition()
-      ..displayProperties = json['displayProperties'] == null
-          ? null
-          : DestinyDisplayPropertiesDefinition.fromJson(
-              json['displayProperties'] as Map<String, dynamic>)
+      ..displayProperties =
+          json['displayProperties'] == null
+              ? null
+              : DestinyDisplayPropertiesDefinition.fromJson(
+                json['displayProperties'] as Map<String, dynamic>,
+              )
       ..linkRedirectPath = json['linkRedirectPath'] as String?
-      ..color = json['color'] == null
-          ? null
-          : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
-      ..images = json['images'] == null
-          ? null
-          : DestinyEventCardImages.fromJson(
-              json['images'] as Map<String, dynamic>)
+      ..color =
+          json['color'] == null
+              ? null
+              : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+      ..images =
+          json['images'] == null
+              ? null
+              : DestinyEventCardImages.fromJson(
+                json['images'] as Map<String, dynamic>,
+              )
       ..triumphsPresentationNodeHash =
           (json['triumphsPresentationNodeHash'] as num?)?.toInt()
       ..sealPresentationNodeHash =
@@ -43,23 +49,23 @@ DestinyEventCardDefinition _$DestinyEventCardDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
-        DestinyEventCardDefinition instance) =>
-    <String, dynamic>{
-      'displayProperties': instance.displayProperties?.toJson(),
-      'linkRedirectPath': instance.linkRedirectPath,
-      'color': instance.color?.toJson(),
-      'images': instance.images?.toJson(),
-      'triumphsPresentationNodeHash': instance.triumphsPresentationNodeHash,
-      'sealPresentationNodeHash': instance.sealPresentationNodeHash,
-      'eventCardCurrencyList': instance.eventCardCurrencyList,
-      'ticketCurrencyItemHash': instance.ticketCurrencyItemHash,
-      'ticketVendorHash': instance.ticketVendorHash,
-      'ticketVendorCategoryHash': instance.ticketVendorCategoryHash,
-      'endTime': instance.endTime,
-      'rewardProgressionHash': instance.rewardProgressionHash,
-      'weeklyChallengesPresentationNodeHash':
-          instance.weeklyChallengesPresentationNodeHash,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyEventCardDefinition instance,
+) => <String, dynamic>{
+  'displayProperties': instance.displayProperties?.toJson(),
+  'linkRedirectPath': instance.linkRedirectPath,
+  'color': instance.color?.toJson(),
+  'images': instance.images?.toJson(),
+  'triumphsPresentationNodeHash': instance.triumphsPresentationNodeHash,
+  'sealPresentationNodeHash': instance.sealPresentationNodeHash,
+  'eventCardCurrencyList': instance.eventCardCurrencyList,
+  'ticketCurrencyItemHash': instance.ticketCurrencyItemHash,
+  'ticketVendorHash': instance.ticketVendorHash,
+  'ticketVendorCategoryHash': instance.ticketVendorCategoryHash,
+  'endTime': instance.endTime,
+  'rewardProgressionHash': instance.rewardProgressionHash,
+  'weeklyChallengesPresentationNodeHash':
+      instance.weeklyChallengesPresentationNodeHash,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

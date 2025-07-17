@@ -7,17 +7,21 @@ part of 'destiny_derived_item_category_definition.dart';
 // **************************************************************************
 
 DestinyDerivedItemCategoryDefinition
-    _$DestinyDerivedItemCategoryDefinitionFromJson(Map<String, dynamic> json) =>
-        DestinyDerivedItemCategoryDefinition()
-          ..categoryDescription = json['categoryDescription'] as String?
-          ..items = (json['items'] as List<dynamic>?)
-              ?.map((e) => DestinyDerivedItemDefinition.fromJson(
-                  e as Map<String, dynamic>))
+_$DestinyDerivedItemCategoryDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyDerivedItemCategoryDefinition()
+      ..categoryDescription = json['categoryDescription'] as String?
+      ..items =
+          (json['items'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyDerivedItemDefinition.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
               .toList();
 
 Map<String, dynamic> _$DestinyDerivedItemCategoryDefinitionToJson(
-        DestinyDerivedItemCategoryDefinition instance) =>
-    <String, dynamic>{
-      'categoryDescription': instance.categoryDescription,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-    };
+  DestinyDerivedItemCategoryDefinition instance,
+) => <String, dynamic>{
+  'categoryDescription': instance.categoryDescription,
+  'items': instance.items?.map((e) => e.toJson()).toList(),
+};

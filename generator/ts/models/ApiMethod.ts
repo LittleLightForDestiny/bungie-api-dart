@@ -24,7 +24,7 @@ export class ApiMethod{
 
     urlParameters(){
         return this.parameters().filter((param)=>{
-            return param.in() == "path";
+            return param.in() == "path" && this.methodUrl.includes(param.name());
         });
     }
 

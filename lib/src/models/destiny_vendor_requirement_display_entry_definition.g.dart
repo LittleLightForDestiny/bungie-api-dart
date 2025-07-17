@@ -7,19 +7,20 @@ part of 'destiny_vendor_requirement_display_entry_definition.dart';
 // **************************************************************************
 
 DestinyVendorRequirementDisplayEntryDefinition
-    _$DestinyVendorRequirementDisplayEntryDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyVendorRequirementDisplayEntryDefinition()
-          ..icon = json['icon'] as String?
-          ..name = json['name'] as String?
-          ..source = json['source'] as String?
-          ..type = json['type'] as String?;
+_$DestinyVendorRequirementDisplayEntryDefinitionFromJson(
+  Map<String, dynamic> json,
+) =>
+    DestinyVendorRequirementDisplayEntryDefinition()
+      ..icon = json['icon'] as String?
+      ..name = json['name'] as String?
+      ..source = json['source'] as String?
+      ..type = json['type'] as String?;
 
 Map<String, dynamic> _$DestinyVendorRequirementDisplayEntryDefinitionToJson(
-        DestinyVendorRequirementDisplayEntryDefinition instance) =>
-    <String, dynamic>{
-      'icon': instance.icon,
-      'name': instance.name,
-      'source': instance.source,
-      'type': instance.type,
-    };
+  DestinyVendorRequirementDisplayEntryDefinition instance,
+) => <String, dynamic>{
+  'icon': instance.icon,
+  'name': instance.name,
+  'source': instance.source,
+  'type': instance.type,
+};

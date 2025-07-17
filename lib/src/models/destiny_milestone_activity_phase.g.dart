@@ -7,14 +7,15 @@ part of 'destiny_milestone_activity_phase.dart';
 // **************************************************************************
 
 DestinyMilestoneActivityPhase _$DestinyMilestoneActivityPhaseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyMilestoneActivityPhase()
       ..complete = json['complete'] as bool?
       ..phaseHash = (json['phaseHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneActivityPhaseToJson(
-        DestinyMilestoneActivityPhase instance) =>
-    <String, dynamic>{
-      'complete': instance.complete,
-      'phaseHash': instance.phaseHash,
-    };
+  DestinyMilestoneActivityPhase instance,
+) => <String, dynamic>{
+  'complete': instance.complete,
+  'phaseHash': instance.phaseHash,
+};

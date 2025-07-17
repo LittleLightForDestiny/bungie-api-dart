@@ -7,7 +7,8 @@ part of 'destiny_derived_item_definition.dart';
 // **************************************************************************
 
 DestinyDerivedItemDefinition _$DestinyDerivedItemDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyDerivedItemDefinition()
       ..itemHash = (json['itemHash'] as num?)?.toInt()
       ..itemName = json['itemName'] as String?
@@ -17,12 +18,12 @@ DestinyDerivedItemDefinition _$DestinyDerivedItemDefinitionFromJson(
       ..vendorItemIndex = (json['vendorItemIndex'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyDerivedItemDefinitionToJson(
-        DestinyDerivedItemDefinition instance) =>
-    <String, dynamic>{
-      'itemHash': instance.itemHash,
-      'itemName': instance.itemName,
-      'itemDetail': instance.itemDetail,
-      'itemDescription': instance.itemDescription,
-      'iconPath': instance.iconPath,
-      'vendorItemIndex': instance.vendorItemIndex,
-    };
+  DestinyDerivedItemDefinition instance,
+) => <String, dynamic>{
+  'itemHash': instance.itemHash,
+  'itemName': instance.itemName,
+  'itemDetail': instance.itemDetail,
+  'itemDescription': instance.itemDescription,
+  'iconPath': instance.iconPath,
+  'vendorItemIndex': instance.vendorItemIndex,
+};

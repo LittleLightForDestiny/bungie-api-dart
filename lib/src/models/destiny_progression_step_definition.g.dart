@@ -7,24 +7,30 @@ part of 'destiny_progression_step_definition.dart';
 // **************************************************************************
 
 DestinyProgressionStepDefinition _$DestinyProgressionStepDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyProgressionStepDefinition()
       ..stepName = json['stepName'] as String?
-      ..displayEffectType =
-          decodeDestinyProgressionStepDisplayEffect(json['displayEffectType'])
+      ..displayEffectType = decodeDestinyProgressionStepDisplayEffect(
+        json['displayEffectType'],
+      )
       ..progressTotal = (json['progressTotal'] as num?)?.toInt()
-      ..rewardItems = (json['rewardItems'] as List<dynamic>?)
-          ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..rewardItems =
+          (json['rewardItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
       ..icon = json['icon'] as String?;
 
 Map<String, dynamic> _$DestinyProgressionStepDefinitionToJson(
-        DestinyProgressionStepDefinition instance) =>
-    <String, dynamic>{
-      'stepName': instance.stepName,
-      'displayEffectType':
-          encodeDestinyProgressionStepDisplayEffect(instance.displayEffectType),
-      'progressTotal': instance.progressTotal,
-      'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
-      'icon': instance.icon,
-    };
+  DestinyProgressionStepDefinition instance,
+) => <String, dynamic>{
+  'stepName': instance.stepName,
+  'displayEffectType': encodeDestinyProgressionStepDisplayEffect(
+    instance.displayEffectType,
+  ),
+  'progressTotal': instance.progressTotal,
+  'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
+  'icon': instance.icon,
+};

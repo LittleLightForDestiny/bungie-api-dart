@@ -7,7 +7,8 @@ part of 'destiny_faction_progression.dart';
 // **************************************************************************
 
 DestinyFactionProgression _$DestinyFactionProgressionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyFactionProgression()
       ..factionHash = (json['factionHash'] as num?)?.toInt()
       ..factionVendorIndex = (json['factionVendorIndex'] as num?)?.toInt()
@@ -23,43 +24,53 @@ DestinyFactionProgression _$DestinyFactionProgressionFromJson(
       ..progressToNextLevel = (json['progressToNextLevel'] as num?)?.toInt()
       ..nextLevelAt = (json['nextLevelAt'] as num?)?.toInt()
       ..currentResetCount = (json['currentResetCount'] as num?)?.toInt()
-      ..seasonResets = (json['seasonResets'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyProgressionResetEntry.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..rewardItemStates = (json['rewardItemStates'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyProgressionRewardItemState.fromJson((e as num).toInt()))
-          .toList()
-      ..rewardItemSocketOverrideStates =
-          (json['rewardItemSocketOverrideStates'] as Map<String, dynamic>?)
+      ..seasonResets =
+          (json['seasonResets'] as List<dynamic>?)
               ?.map(
-        (k, e) => MapEntry(
-            k,
-            DestinyProgressionRewardItemSocketOverrideState.fromJson(
-                e as Map<String, dynamic>)),
-      );
+                (e) => DestinyProgressionResetEntry.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
+      ..rewardItemStates =
+          (json['rewardItemStates'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyProgressionRewardItemState.fromJson(
+                  (e as num).toInt(),
+                ),
+              )
+              .toList()
+      ..rewardItemSocketOverrideStates = (json['rewardItemSocketOverrideStates']
+              as Map<String, dynamic>?)
+          ?.map(
+            (k, e) => MapEntry(
+              k,
+              DestinyProgressionRewardItemSocketOverrideState.fromJson(
+                e as Map<String, dynamic>,
+              ),
+            ),
+          );
 
 Map<String, dynamic> _$DestinyFactionProgressionToJson(
-        DestinyFactionProgression instance) =>
-    <String, dynamic>{
-      'factionHash': instance.factionHash,
-      'factionVendorIndex': instance.factionVendorIndex,
-      'progressionHash': instance.progressionHash,
-      'dailyProgress': instance.dailyProgress,
-      'dailyLimit': instance.dailyLimit,
-      'weeklyProgress': instance.weeklyProgress,
-      'weeklyLimit': instance.weeklyLimit,
-      'currentProgress': instance.currentProgress,
-      'level': instance.level,
-      'levelCap': instance.levelCap,
-      'stepIndex': instance.stepIndex,
-      'progressToNextLevel': instance.progressToNextLevel,
-      'nextLevelAt': instance.nextLevelAt,
-      'currentResetCount': instance.currentResetCount,
-      'seasonResets': instance.seasonResets?.map((e) => e.toJson()).toList(),
-      'rewardItemStates':
-          instance.rewardItemStates?.map((e) => e.toJson()).toList(),
-      'rewardItemSocketOverrideStates': instance.rewardItemSocketOverrideStates
-          ?.map((k, e) => MapEntry(k, e.toJson())),
-    };
+  DestinyFactionProgression instance,
+) => <String, dynamic>{
+  'factionHash': instance.factionHash,
+  'factionVendorIndex': instance.factionVendorIndex,
+  'progressionHash': instance.progressionHash,
+  'dailyProgress': instance.dailyProgress,
+  'dailyLimit': instance.dailyLimit,
+  'weeklyProgress': instance.weeklyProgress,
+  'weeklyLimit': instance.weeklyLimit,
+  'currentProgress': instance.currentProgress,
+  'level': instance.level,
+  'levelCap': instance.levelCap,
+  'stepIndex': instance.stepIndex,
+  'progressToNextLevel': instance.progressToNextLevel,
+  'nextLevelAt': instance.nextLevelAt,
+  'currentResetCount': instance.currentResetCount,
+  'seasonResets': instance.seasonResets?.map((e) => e.toJson()).toList(),
+  'rewardItemStates':
+      instance.rewardItemStates?.map((e) => e.toJson()).toList(),
+  'rewardItemSocketOverrideStates': instance.rewardItemSocketOverrideStates
+      ?.map((k, e) => MapEntry(k, e.toJson())),
+};

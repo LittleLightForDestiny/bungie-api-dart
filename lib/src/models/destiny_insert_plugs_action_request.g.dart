@@ -7,23 +7,26 @@ part of 'destiny_insert_plugs_action_request.dart';
 // **************************************************************************
 
 DestinyInsertPlugsActionRequest _$DestinyInsertPlugsActionRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyInsertPlugsActionRequest()
       ..actionToken = json['actionToken'] as String?
       ..itemInstanceId = json['itemInstanceId'] as String?
-      ..plug = json['plug'] == null
-          ? null
-          : DestinyInsertPlugsRequestEntry.fromJson(
-              json['plug'] as Map<String, dynamic>)
+      ..plug =
+          json['plug'] == null
+              ? null
+              : DestinyInsertPlugsRequestEntry.fromJson(
+                json['plug'] as Map<String, dynamic>,
+              )
       ..characterId = json['characterId'] as String?
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyInsertPlugsActionRequestToJson(
-        DestinyInsertPlugsActionRequest instance) =>
-    <String, dynamic>{
-      'actionToken': instance.actionToken,
-      'itemInstanceId': instance.itemInstanceId,
-      'plug': instance.plug?.toJson(),
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyInsertPlugsActionRequest instance,
+) => <String, dynamic>{
+  'actionToken': instance.actionToken,
+  'itemInstanceId': instance.itemInstanceId,
+  'plug': instance.plug?.toJson(),
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

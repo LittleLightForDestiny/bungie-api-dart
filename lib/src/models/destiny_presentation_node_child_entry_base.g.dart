@@ -7,14 +7,10 @@ part of 'destiny_presentation_node_child_entry_base.dart';
 // **************************************************************************
 
 DestinyPresentationNodeChildEntryBase
-    _$DestinyPresentationNodeChildEntryBaseFromJson(
-            Map<String, dynamic> json) =>
-        DestinyPresentationNodeChildEntryBase()
-          ..nodeDisplayPriority =
-              (json['nodeDisplayPriority'] as num?)?.toInt();
+_$DestinyPresentationNodeChildEntryBaseFromJson(Map<String, dynamic> json) =>
+    DestinyPresentationNodeChildEntryBase()
+      ..nodeDisplayPriority = (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeChildEntryBaseToJson(
-        DestinyPresentationNodeChildEntryBase instance) =>
-    <String, dynamic>{
-      'nodeDisplayPriority': instance.nodeDisplayPriority,
-    };
+  DestinyPresentationNodeChildEntryBase instance,
+) => <String, dynamic>{'nodeDisplayPriority': instance.nodeDisplayPriority};

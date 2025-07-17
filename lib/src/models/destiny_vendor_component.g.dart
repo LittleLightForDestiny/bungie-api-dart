@@ -7,13 +7,16 @@ part of 'destiny_vendor_component.dart';
 // **************************************************************************
 
 DestinyVendorComponent _$DestinyVendorComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyVendorComponent()
       ..canPurchase = json['canPurchase'] as bool?
-      ..progression = json['progression'] == null
-          ? null
-          : DestinyProgression.fromJson(
-              json['progression'] as Map<String, dynamic>)
+      ..progression =
+          json['progression'] == null
+              ? null
+              : DestinyProgression.fromJson(
+                json['progression'] as Map<String, dynamic>,
+              )
       ..vendorLocationIndex = (json['vendorLocationIndex'] as num?)?.toInt()
       ..seasonalRank = (json['seasonalRank'] as num?)?.toInt()
       ..vendorHash = (json['vendorHash'] as num?)?.toInt()
@@ -21,13 +24,13 @@ DestinyVendorComponent _$DestinyVendorComponentFromJson(
       ..enabled = json['enabled'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorComponentToJson(
-        DestinyVendorComponent instance) =>
-    <String, dynamic>{
-      'canPurchase': instance.canPurchase,
-      'progression': instance.progression?.toJson(),
-      'vendorLocationIndex': instance.vendorLocationIndex,
-      'seasonalRank': instance.seasonalRank,
-      'vendorHash': instance.vendorHash,
-      'nextRefreshDate': instance.nextRefreshDate,
-      'enabled': instance.enabled,
-    };
+  DestinyVendorComponent instance,
+) => <String, dynamic>{
+  'canPurchase': instance.canPurchase,
+  'progression': instance.progression?.toJson(),
+  'vendorLocationIndex': instance.vendorLocationIndex,
+  'seasonalRank': instance.seasonalRank,
+  'vendorHash': instance.vendorHash,
+  'nextRefreshDate': instance.nextRefreshDate,
+  'enabled': instance.enabled,
+};

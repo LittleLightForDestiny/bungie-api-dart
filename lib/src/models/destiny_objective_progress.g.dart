@@ -7,7 +7,8 @@ part of 'destiny_objective_progress.dart';
 // **************************************************************************
 
 DestinyObjectiveProgress _$DestinyObjectiveProgressFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyObjectiveProgress()
       ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
       ..destinationHash = (json['destinationHash'] as num?)?.toInt()
@@ -18,13 +19,13 @@ DestinyObjectiveProgress _$DestinyObjectiveProgressFromJson(
       ..visible = json['visible'] as bool?;
 
 Map<String, dynamic> _$DestinyObjectiveProgressToJson(
-        DestinyObjectiveProgress instance) =>
-    <String, dynamic>{
-      'objectiveHash': instance.objectiveHash,
-      'destinationHash': instance.destinationHash,
-      'activityHash': instance.activityHash,
-      'progress': instance.progress,
-      'completionValue': instance.completionValue,
-      'complete': instance.complete,
-      'visible': instance.visible,
-    };
+  DestinyObjectiveProgress instance,
+) => <String, dynamic>{
+  'objectiveHash': instance.objectiveHash,
+  'destinationHash': instance.destinationHash,
+  'activityHash': instance.activityHash,
+  'progress': instance.progress,
+  'completionValue': instance.completionValue,
+  'complete': instance.complete,
+  'visible': instance.visible,
+};

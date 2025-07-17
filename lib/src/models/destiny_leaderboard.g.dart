@@ -9,10 +9,13 @@ part of 'destiny_leaderboard.dart';
 DestinyLeaderboard _$DestinyLeaderboardFromJson(Map<String, dynamic> json) =>
     DestinyLeaderboard()
       ..statId = json['statId'] as String?
-      ..entries = (json['entries'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyLeaderboardEntry.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..entries =
+          (json['entries'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    DestinyLeaderboardEntry.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyLeaderboardToJson(DestinyLeaderboard instance) =>
     <String, dynamic>{

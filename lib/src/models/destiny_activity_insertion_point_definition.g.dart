@@ -7,13 +7,10 @@ part of 'destiny_activity_insertion_point_definition.dart';
 // **************************************************************************
 
 DestinyActivityInsertionPointDefinition
-    _$DestinyActivityInsertionPointDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyActivityInsertionPointDefinition()
-          ..phaseHash = (json['phaseHash'] as num?)?.toInt();
+_$DestinyActivityInsertionPointDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyActivityInsertionPointDefinition()
+      ..phaseHash = (json['phaseHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityInsertionPointDefinitionToJson(
-        DestinyActivityInsertionPointDefinition instance) =>
-    <String, dynamic>{
-      'phaseHash': instance.phaseHash,
-    };
+  DestinyActivityInsertionPointDefinition instance,
+) => <String, dynamic>{'phaseHash': instance.phaseHash};

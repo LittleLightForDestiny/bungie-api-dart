@@ -8,21 +8,26 @@ part of 'fireteam_member.dart';
 
 FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) =>
     FireteamMember()
-      ..destinyUserInfo = json['destinyUserInfo'] == null
-          ? null
-          : FireteamUserInfoCard.fromJson(
-              json['destinyUserInfo'] as Map<String, dynamic>)
-      ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
-          ? null
-          : UserInfoCard.fromJson(
-              json['bungieNetUserInfo'] as Map<String, dynamic>)
+      ..destinyUserInfo =
+          json['destinyUserInfo'] == null
+              ? null
+              : FireteamUserInfoCard.fromJson(
+                json['destinyUserInfo'] as Map<String, dynamic>,
+              )
+      ..bungieNetUserInfo =
+          json['bungieNetUserInfo'] == null
+              ? null
+              : UserInfoCard.fromJson(
+                json['bungieNetUserInfo'] as Map<String, dynamic>,
+              )
       ..characterId = json['characterId'] as String?
       ..dateJoined = json['dateJoined'] as String?
       ..hasMicrophone = json['hasMicrophone'] as bool?
       ..lastPlatformInviteAttemptDate =
           json['lastPlatformInviteAttemptDate'] as String?
       ..lastPlatformInviteAttemptResult = decodeFireteamPlatformInviteResult(
-          json['lastPlatformInviteAttemptResult']);
+        json['lastPlatformInviteAttemptResult'],
+      );
 
 Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
     <String, dynamic>{
@@ -33,5 +38,6 @@ Map<String, dynamic> _$FireteamMemberToJson(FireteamMember instance) =>
       'hasMicrophone': instance.hasMicrophone,
       'lastPlatformInviteAttemptDate': instance.lastPlatformInviteAttemptDate,
       'lastPlatformInviteAttemptResult': encodeFireteamPlatformInviteResult(
-          instance.lastPlatformInviteAttemptResult),
+        instance.lastPlatformInviteAttemptResult,
+      ),
     };

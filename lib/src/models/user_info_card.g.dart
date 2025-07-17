@@ -6,38 +6,42 @@ part of 'user_info_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserInfoCard _$UserInfoCardFromJson(Map<String, dynamic> json) => UserInfoCard()
-  ..supplementalDisplayName = json['supplementalDisplayName'] as String?
-  ..iconPath = json['iconPath'] as String?
-  ..crossSaveOverride = decodeBungieMembershipType(json['crossSaveOverride'])
-  ..applicableMembershipTypes =
-      (json['applicableMembershipTypes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
-          .toList()
-  ..isPublic = json['isPublic'] as bool?
-  ..membershipType = decodeBungieMembershipType(json['membershipType'])
-  ..membershipId = json['membershipId'] as String?
-  ..displayName = json['displayName'] as String?
-  ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-  ..bungieGlobalDisplayNameCode =
-      (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
+UserInfoCard _$UserInfoCardFromJson(Map<String, dynamic> json) =>
+    UserInfoCard()
+      ..supplementalDisplayName = json['supplementalDisplayName'] as String?
+      ..iconPath = json['iconPath'] as String?
+      ..crossSaveOverride = decodeBungieMembershipType(
+        json['crossSaveOverride'],
+      )
+      ..applicableMembershipTypes =
+          (json['applicableMembershipTypes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
+              .toList()
+      ..isPublic = json['isPublic'] as bool?
+      ..membershipType = decodeBungieMembershipType(json['membershipType'])
+      ..membershipId = json['membershipId'] as String?
+      ..displayName = json['displayName'] as String?
+      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+      ..bungieGlobalDisplayNameCode =
+          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
-Map<String, dynamic> _$UserInfoCardToJson(UserInfoCard instance) =>
-    <String, dynamic>{
-      'supplementalDisplayName': instance.supplementalDisplayName,
-      'iconPath': instance.iconPath,
-      'crossSaveOverride':
-          encodeBungieMembershipType(instance.crossSaveOverride),
-      'applicableMembershipTypes': instance.applicableMembershipTypes
+Map<String, dynamic> _$UserInfoCardToJson(
+  UserInfoCard instance,
+) => <String, dynamic>{
+  'supplementalDisplayName': instance.supplementalDisplayName,
+  'iconPath': instance.iconPath,
+  'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
+  'applicableMembershipTypes':
+      instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
-      'isPublic': instance.isPublic,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-      'membershipId': instance.membershipId,
-      'displayName': instance.displayName,
-      'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
-      'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
-    };
+  'isPublic': instance.isPublic,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+  'membershipId': instance.membershipId,
+  'displayName': instance.displayName,
+  'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
+  'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
+};
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,

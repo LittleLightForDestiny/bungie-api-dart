@@ -7,13 +7,10 @@ part of 'destiny_activity_graph_list_entry_definition.dart';
 // **************************************************************************
 
 DestinyActivityGraphListEntryDefinition
-    _$DestinyActivityGraphListEntryDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyActivityGraphListEntryDefinition()
-          ..activityGraphHash = (json['activityGraphHash'] as num?)?.toInt();
+_$DestinyActivityGraphListEntryDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyActivityGraphListEntryDefinition()
+      ..activityGraphHash = (json['activityGraphHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityGraphListEntryDefinitionToJson(
-        DestinyActivityGraphListEntryDefinition instance) =>
-    <String, dynamic>{
-      'activityGraphHash': instance.activityGraphHash,
-    };
+  DestinyActivityGraphListEntryDefinition instance,
+) => <String, dynamic>{'activityGraphHash': instance.activityGraphHash};

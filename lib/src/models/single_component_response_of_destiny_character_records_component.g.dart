@@ -7,21 +7,24 @@ part of 'single_component_response_of_destiny_character_records_component.dart';
 // **************************************************************************
 
 SingleComponentResponseOfDestinyCharacterRecordsComponent
-    _$SingleComponentResponseOfDestinyCharacterRecordsComponentFromJson(
-            Map<String, dynamic> json) =>
-        SingleComponentResponseOfDestinyCharacterRecordsComponent()
-          ..data = json['data'] == null
+_$SingleComponentResponseOfDestinyCharacterRecordsComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    SingleComponentResponseOfDestinyCharacterRecordsComponent()
+      ..data =
+          json['data'] == null
               ? null
               : DestinyCharacterRecordsComponent.fromJson(
-                  json['data'] as Map<String, dynamic>)
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+                json['data'] as Map<String, dynamic>,
+              )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
-Map<String,
-    dynamic> _$SingleComponentResponseOfDestinyCharacterRecordsComponentToJson(
-        SingleComponentResponseOfDestinyCharacterRecordsComponent instance) =>
-    <String, dynamic>{
-      'data': instance.data?.toJson(),
-      'privacy': encodeComponentPrivacySetting(instance.privacy),
-      'disabled': instance.disabled,
-    };
+Map<String, dynamic>
+_$SingleComponentResponseOfDestinyCharacterRecordsComponentToJson(
+  SingleComponentResponseOfDestinyCharacterRecordsComponent instance,
+) => <String, dynamic>{
+  'data': instance.data?.toJson(),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

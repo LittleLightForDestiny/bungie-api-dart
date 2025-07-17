@@ -7,7 +7,8 @@ part of 'trending_entry_community_creation.dart';
 // **************************************************************************
 
 TrendingEntryCommunityCreation _$TrendingEntryCommunityCreationFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     TrendingEntryCommunityCreation()
       ..media = json['media'] as String?
       ..title = json['title'] as String?
@@ -18,13 +19,13 @@ TrendingEntryCommunityCreation _$TrendingEntryCommunityCreationFromJson(
       ..upvotes = (json['upvotes'] as num?)?.toInt();
 
 Map<String, dynamic> _$TrendingEntryCommunityCreationToJson(
-        TrendingEntryCommunityCreation instance) =>
-    <String, dynamic>{
-      'media': instance.media,
-      'title': instance.title,
-      'author': instance.author,
-      'authorMembershipId': instance.authorMembershipId,
-      'postId': instance.postId,
-      'body': instance.body,
-      'upvotes': instance.upvotes,
-    };
+  TrendingEntryCommunityCreation instance,
+) => <String, dynamic>{
+  'media': instance.media,
+  'title': instance.title,
+  'author': instance.author,
+  'authorMembershipId': instance.authorMembershipId,
+  'postId': instance.postId,
+  'body': instance.body,
+  'upvotes': instance.upvotes,
+};

@@ -7,24 +7,29 @@ part of 'destiny_public_activity_status.dart';
 // **************************************************************************
 
 DestinyPublicActivityStatus _$DestinyPublicActivityStatusFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPublicActivityStatus()
       ..challengeObjectiveHashes =
           (json['challengeObjectiveHashes'] as List<dynamic>?)
               ?.map((e) => (e as num).toInt())
               .toList()
-      ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList()
-      ..rewardTooltipItems = (json['rewardTooltipItems'] as List<dynamic>?)
-          ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..modifierHashes =
+          (json['modifierHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..rewardTooltipItems =
+          (json['rewardTooltipItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyPublicActivityStatusToJson(
-        DestinyPublicActivityStatus instance) =>
-    <String, dynamic>{
-      'challengeObjectiveHashes': instance.challengeObjectiveHashes,
-      'modifierHashes': instance.modifierHashes,
-      'rewardTooltipItems':
-          instance.rewardTooltipItems?.map((e) => e.toJson()).toList(),
-    };
+  DestinyPublicActivityStatus instance,
+) => <String, dynamic>{
+  'challengeObjectiveHashes': instance.challengeObjectiveHashes,
+  'modifierHashes': instance.modifierHashes,
+  'rewardTooltipItems':
+      instance.rewardTooltipItems?.map((e) => e.toJson()).toList(),
+};

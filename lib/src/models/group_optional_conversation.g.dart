@@ -7,7 +7,8 @@ part of 'group_optional_conversation.dart';
 // **************************************************************************
 
 GroupOptionalConversation _$GroupOptionalConversationFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     GroupOptionalConversation()
       ..groupId = json['groupId'] as String?
       ..conversationId = json['conversationId'] as String?
@@ -16,11 +17,11 @@ GroupOptionalConversation _$GroupOptionalConversationFromJson(
       ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity']);
 
 Map<String, dynamic> _$GroupOptionalConversationToJson(
-        GroupOptionalConversation instance) =>
-    <String, dynamic>{
-      'groupId': instance.groupId,
-      'conversationId': instance.conversationId,
-      'chatEnabled': instance.chatEnabled,
-      'chatName': instance.chatName,
-      'chatSecurity': encodeChatSecuritySetting(instance.chatSecurity),
-    };
+  GroupOptionalConversation instance,
+) => <String, dynamic>{
+  'groupId': instance.groupId,
+  'conversationId': instance.conversationId,
+  'chatEnabled': instance.chatEnabled,
+  'chatName': instance.chatName,
+  'chatSecurity': encodeChatSecuritySetting(instance.chatSecurity),
+};

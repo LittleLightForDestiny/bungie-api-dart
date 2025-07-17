@@ -7,7 +7,8 @@ part of 'destiny_loadout_update_action_request.dart';
 // **************************************************************************
 
 DestinyLoadoutUpdateActionRequest _$DestinyLoadoutUpdateActionRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyLoadoutUpdateActionRequest()
       ..colorHash = (json['colorHash'] as num?)?.toInt()
       ..iconHash = (json['iconHash'] as num?)?.toInt()
@@ -17,12 +18,12 @@ DestinyLoadoutUpdateActionRequest _$DestinyLoadoutUpdateActionRequestFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyLoadoutUpdateActionRequestToJson(
-        DestinyLoadoutUpdateActionRequest instance) =>
-    <String, dynamic>{
-      'colorHash': instance.colorHash,
-      'iconHash': instance.iconHash,
-      'nameHash': instance.nameHash,
-      'loadoutIndex': instance.loadoutIndex,
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyLoadoutUpdateActionRequest instance,
+) => <String, dynamic>{
+  'colorHash': instance.colorHash,
+  'iconHash': instance.iconHash,
+  'nameHash': instance.nameHash,
+  'loadoutIndex': instance.loadoutIndex,
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

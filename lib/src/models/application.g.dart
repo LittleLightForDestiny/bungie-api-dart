@@ -6,22 +6,27 @@ part of 'application.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Application _$ApplicationFromJson(Map<String, dynamic> json) => Application()
-  ..applicationType = decodeOAuthApplicationType(json['applicationType'])
-  ..applicationId = (json['applicationId'] as num?)?.toInt()
-  ..name = json['name'] as String?
-  ..redirectUrl = json['redirectUrl'] as String?
-  ..link = json['link'] as String?
-  ..scope = json['scope'] as String?
-  ..origin = json['origin'] as String?
-  ..status = decodeApplicationStatus(json['status'])
-  ..creationDate = json['creationDate'] as String?
-  ..statusChanged = json['statusChanged'] as String?
-  ..firstPublished = json['firstPublished'] as String?
-  ..team = (json['team'] as List<dynamic>?)
-      ?.map((e) => ApplicationDeveloper.fromJson(e as Map<String, dynamic>))
-      .toList()
-  ..overrideAuthorizeViewName = json['overrideAuthorizeViewName'] as String?;
+Application _$ApplicationFromJson(Map<String, dynamic> json) =>
+    Application()
+      ..applicationType = decodeOAuthApplicationType(json['applicationType'])
+      ..applicationId = (json['applicationId'] as num?)?.toInt()
+      ..name = json['name'] as String?
+      ..redirectUrl = json['redirectUrl'] as String?
+      ..link = json['link'] as String?
+      ..scope = json['scope'] as String?
+      ..origin = json['origin'] as String?
+      ..status = decodeApplicationStatus(json['status'])
+      ..creationDate = json['creationDate'] as String?
+      ..statusChanged = json['statusChanged'] as String?
+      ..firstPublished = json['firstPublished'] as String?
+      ..team =
+          (json['team'] as List<dynamic>?)
+              ?.map(
+                (e) => ApplicationDeveloper.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
+      ..overrideAuthorizeViewName =
+          json['overrideAuthorizeViewName'] as String?;
 
 Map<String, dynamic> _$ApplicationToJson(Application instance) =>
     <String, dynamic>{

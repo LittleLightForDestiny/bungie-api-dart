@@ -7,16 +7,20 @@ part of 'destiny_activity_challenge_definition.dart';
 // **************************************************************************
 
 DestinyActivityChallengeDefinition _$DestinyActivityChallengeDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyActivityChallengeDefinition()
       ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
-      ..dummyRewards = (json['dummyRewards'] as List<dynamic>?)
-          ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..dummyRewards =
+          (json['dummyRewards'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyActivityChallengeDefinitionToJson(
-        DestinyActivityChallengeDefinition instance) =>
-    <String, dynamic>{
-      'objectiveHash': instance.objectiveHash,
-      'dummyRewards': instance.dummyRewards?.map((e) => e.toJson()).toList(),
-    };
+  DestinyActivityChallengeDefinition instance,
+) => <String, dynamic>{
+  'objectiveHash': instance.objectiveHash,
+  'dummyRewards': instance.dummyRewards?.map((e) => e.toJson()).toList(),
+};

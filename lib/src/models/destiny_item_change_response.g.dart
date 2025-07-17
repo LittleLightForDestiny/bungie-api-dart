@@ -7,25 +7,34 @@ part of 'destiny_item_change_response.dart';
 // **************************************************************************
 
 DestinyItemChangeResponse _$DestinyItemChangeResponseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemChangeResponse()
-      ..item = json['item'] == null
-          ? null
-          : DestinyItemResponse.fromJson(json['item'] as Map<String, dynamic>)
-      ..addedInventoryItems = (json['addedInventoryItems'] as List<dynamic>?)
-          ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..removedInventoryItems = (json['removedInventoryItems']
-              as List<dynamic>?)
-          ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..item =
+          json['item'] == null
+              ? null
+              : DestinyItemResponse.fromJson(
+                json['item'] as Map<String, dynamic>,
+              )
+      ..addedInventoryItems =
+          (json['addedInventoryItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
+      ..removedInventoryItems =
+          (json['removedInventoryItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyItemChangeResponseToJson(
-        DestinyItemChangeResponse instance) =>
-    <String, dynamic>{
-      'item': instance.item?.toJson(),
-      'addedInventoryItems':
-          instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
-      'removedInventoryItems':
-          instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
-    };
+  DestinyItemChangeResponse instance,
+) => <String, dynamic>{
+  'item': instance.item?.toJson(),
+  'addedInventoryItems':
+      instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
+  'removedInventoryItems':
+      instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
+};

@@ -7,13 +7,10 @@ part of 'destiny_item_socket_entry_plug_item_definition.dart';
 // **************************************************************************
 
 DestinyItemSocketEntryPlugItemDefinition
-    _$DestinyItemSocketEntryPlugItemDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyItemSocketEntryPlugItemDefinition()
-          ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
+_$DestinyItemSocketEntryPlugItemDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyItemSocketEntryPlugItemDefinition()
+      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemDefinitionToJson(
-        DestinyItemSocketEntryPlugItemDefinition instance) =>
-    <String, dynamic>{
-      'plugItemHash': instance.plugItemHash,
-    };
+  DestinyItemSocketEntryPlugItemDefinition instance,
+) => <String, dynamic>{'plugItemHash': instance.plugItemHash};

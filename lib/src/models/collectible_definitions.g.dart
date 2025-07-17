@@ -7,23 +7,26 @@ part of 'collectible_definitions.dart';
 // **************************************************************************
 
 CollectibleDefinitions _$CollectibleDefinitionsFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     CollectibleDefinitions()
-      ..collectibleDefinition = json['CollectibleDefinition'] == null
-          ? null
-          : DestinyCollectibleDefinition.fromJson(
-              json['CollectibleDefinition'] as Map<String, dynamic>)
+      ..collectibleDefinition =
+          json['CollectibleDefinition'] == null
+              ? null
+              : DestinyCollectibleDefinition.fromJson(
+                json['CollectibleDefinition'] as Map<String, dynamic>,
+              )
       ..destinyInventoryItemDefinition =
           json['DestinyInventoryItemDefinition'] == null
               ? null
               : DestinyInventoryItemDefinition.fromJson(
-                  json['DestinyInventoryItemDefinition']
-                      as Map<String, dynamic>);
+                json['DestinyInventoryItemDefinition'] as Map<String, dynamic>,
+              );
 
 Map<String, dynamic> _$CollectibleDefinitionsToJson(
-        CollectibleDefinitions instance) =>
-    <String, dynamic>{
-      'CollectibleDefinition': instance.collectibleDefinition?.toJson(),
-      'DestinyInventoryItemDefinition':
-          instance.destinyInventoryItemDefinition?.toJson(),
-    };
+  CollectibleDefinitions instance,
+) => <String, dynamic>{
+  'CollectibleDefinition': instance.collectibleDefinition?.toJson(),
+  'DestinyInventoryItemDefinition':
+      instance.destinyInventoryItemDefinition?.toJson(),
+};

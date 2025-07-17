@@ -7,20 +7,23 @@ part of 'bungie_friend_request_list_response.dart';
 // **************************************************************************
 
 BungieFriendRequestListResponse _$BungieFriendRequestListResponseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     BungieFriendRequestListResponse()
-      ..incomingRequests = (json['incomingRequests'] as List<dynamic>?)
-          ?.map((e) => BungieFriend.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..outgoingRequests = (json['outgoingRequests'] as List<dynamic>?)
-          ?.map((e) => BungieFriend.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..incomingRequests =
+          (json['incomingRequests'] as List<dynamic>?)
+              ?.map((e) => BungieFriend.fromJson(e as Map<String, dynamic>))
+              .toList()
+      ..outgoingRequests =
+          (json['outgoingRequests'] as List<dynamic>?)
+              ?.map((e) => BungieFriend.fromJson(e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$BungieFriendRequestListResponseToJson(
-        BungieFriendRequestListResponse instance) =>
-    <String, dynamic>{
-      'incomingRequests':
-          instance.incomingRequests?.map((e) => e.toJson()).toList(),
-      'outgoingRequests':
-          instance.outgoingRequests?.map((e) => e.toJson()).toList(),
-    };
+  BungieFriendRequestListResponse instance,
+) => <String, dynamic>{
+  'incomingRequests':
+      instance.incomingRequests?.map((e) => e.toJson()).toList(),
+  'outgoingRequests':
+      instance.outgoingRequests?.map((e) => e.toJson()).toList(),
+};

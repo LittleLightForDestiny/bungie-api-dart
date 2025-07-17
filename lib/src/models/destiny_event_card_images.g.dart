@@ -7,7 +7,8 @@ part of 'destiny_event_card_images.dart';
 // **************************************************************************
 
 DestinyEventCardImages _$DestinyEventCardImagesFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyEventCardImages()
       ..unownedCardSleeveImagePath =
           json['unownedCardSleeveImagePath'] as String?
@@ -20,13 +21,13 @@ DestinyEventCardImages _$DestinyEventCardImagesFromJson(
       ..themeBackgroundImagePath = json['themeBackgroundImagePath'] as String?;
 
 Map<String, dynamic> _$DestinyEventCardImagesToJson(
-        DestinyEventCardImages instance) =>
-    <String, dynamic>{
-      'unownedCardSleeveImagePath': instance.unownedCardSleeveImagePath,
-      'unownedCardSleeveWrapImagePath': instance.unownedCardSleeveWrapImagePath,
-      'cardIncompleteImagePath': instance.cardIncompleteImagePath,
-      'cardCompleteImagePath': instance.cardCompleteImagePath,
-      'cardCompleteWrapImagePath': instance.cardCompleteWrapImagePath,
-      'progressIconImagePath': instance.progressIconImagePath,
-      'themeBackgroundImagePath': instance.themeBackgroundImagePath,
-    };
+  DestinyEventCardImages instance,
+) => <String, dynamic>{
+  'unownedCardSleeveImagePath': instance.unownedCardSleeveImagePath,
+  'unownedCardSleeveWrapImagePath': instance.unownedCardSleeveWrapImagePath,
+  'cardIncompleteImagePath': instance.cardIncompleteImagePath,
+  'cardCompleteImagePath': instance.cardCompleteImagePath,
+  'cardCompleteWrapImagePath': instance.cardCompleteWrapImagePath,
+  'progressIconImagePath': instance.progressIconImagePath,
+  'themeBackgroundImagePath': instance.themeBackgroundImagePath,
+};

@@ -7,7 +7,8 @@ part of 'destiny_record_completion_block.dart';
 // **************************************************************************
 
 DestinyRecordCompletionBlock _$DestinyRecordCompletionBlockFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyRecordCompletionBlock()
       ..partialCompletionObjectiveCountThreshold =
           (json['partialCompletionObjectiveCountThreshold'] as num?)?.toInt()
@@ -16,11 +17,11 @@ DestinyRecordCompletionBlock _$DestinyRecordCompletionBlockFromJson(
       ..toastStyle = decodeDestinyRecordToastStyle(json['toastStyle']);
 
 Map<String, dynamic> _$DestinyRecordCompletionBlockToJson(
-        DestinyRecordCompletionBlock instance) =>
-    <String, dynamic>{
-      'partialCompletionObjectiveCountThreshold':
-          instance.partialCompletionObjectiveCountThreshold,
-      'ScoreValue': instance.scoreValue,
-      'shouldFireToast': instance.shouldFireToast,
-      'toastStyle': encodeDestinyRecordToastStyle(instance.toastStyle),
-    };
+  DestinyRecordCompletionBlock instance,
+) => <String, dynamic>{
+  'partialCompletionObjectiveCountThreshold':
+      instance.partialCompletionObjectiveCountThreshold,
+  'ScoreValue': instance.scoreValue,
+  'shouldFireToast': instance.shouldFireToast,
+  'toastStyle': encodeDestinyRecordToastStyle(instance.toastStyle),
+};

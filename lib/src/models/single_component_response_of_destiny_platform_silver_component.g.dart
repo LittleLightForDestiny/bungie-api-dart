@@ -7,21 +7,24 @@ part of 'single_component_response_of_destiny_platform_silver_component.dart';
 // **************************************************************************
 
 SingleComponentResponseOfDestinyPlatformSilverComponent
-    _$SingleComponentResponseOfDestinyPlatformSilverComponentFromJson(
-            Map<String, dynamic> json) =>
-        SingleComponentResponseOfDestinyPlatformSilverComponent()
-          ..data = json['data'] == null
+_$SingleComponentResponseOfDestinyPlatformSilverComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    SingleComponentResponseOfDestinyPlatformSilverComponent()
+      ..data =
+          json['data'] == null
               ? null
               : DestinyPlatformSilverComponent.fromJson(
-                  json['data'] as Map<String, dynamic>)
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+                json['data'] as Map<String, dynamic>,
+              )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
-    _$SingleComponentResponseOfDestinyPlatformSilverComponentToJson(
-            SingleComponentResponseOfDestinyPlatformSilverComponent instance) =>
-        <String, dynamic>{
-          'data': instance.data?.toJson(),
-          'privacy': encodeComponentPrivacySetting(instance.privacy),
-          'disabled': instance.disabled,
-        };
+_$SingleComponentResponseOfDestinyPlatformSilverComponentToJson(
+  SingleComponentResponseOfDestinyPlatformSilverComponent instance,
+) => <String, dynamic>{
+  'data': instance.data?.toJson(),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

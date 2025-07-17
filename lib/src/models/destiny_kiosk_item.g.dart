@@ -10,13 +10,16 @@ DestinyKioskItem _$DestinyKioskItemFromJson(Map<String, dynamic> json) =>
     DestinyKioskItem()
       ..index = (json['index'] as num?)?.toInt()
       ..canAcquire = json['canAcquire'] as bool?
-      ..failureIndexes = (json['failureIndexes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList()
-      ..flavorObjective = json['flavorObjective'] == null
-          ? null
-          : DestinyObjectiveProgress.fromJson(
-              json['flavorObjective'] as Map<String, dynamic>);
+      ..failureIndexes =
+          (json['failureIndexes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..flavorObjective =
+          json['flavorObjective'] == null
+              ? null
+              : DestinyObjectiveProgress.fromJson(
+                json['flavorObjective'] as Map<String, dynamic>,
+              );
 
 Map<String, dynamic> _$DestinyKioskItemToJson(DestinyKioskItem instance) =>
     <String, dynamic>{

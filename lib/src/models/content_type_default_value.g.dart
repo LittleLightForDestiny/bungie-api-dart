@@ -7,16 +7,17 @@ part of 'content_type_default_value.dart';
 // **************************************************************************
 
 ContentTypeDefaultValue _$ContentTypeDefaultValueFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     ContentTypeDefaultValue()
       ..whenClause = json['whenClause'] as String?
       ..whenValue = json['whenValue'] as String?
       ..defaultValue = json['defaultValue'] as String?;
 
 Map<String, dynamic> _$ContentTypeDefaultValueToJson(
-        ContentTypeDefaultValue instance) =>
-    <String, dynamic>{
-      'whenClause': instance.whenClause,
-      'whenValue': instance.whenValue,
-      'defaultValue': instance.defaultValue,
-    };
+  ContentTypeDefaultValue instance,
+) => <String, dynamic>{
+  'whenClause': instance.whenClause,
+  'whenValue': instance.whenValue,
+  'defaultValue': instance.defaultValue,
+};

@@ -7,12 +7,15 @@ part of 'destiny_location_release_definition.dart';
 // **************************************************************************
 
 DestinyLocationReleaseDefinition _$DestinyLocationReleaseDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyLocationReleaseDefinition()
-      ..displayProperties = json['displayProperties'] == null
-          ? null
-          : DestinyDisplayPropertiesDefinition.fromJson(
-              json['displayProperties'] as Map<String, dynamic>)
+      ..displayProperties =
+          json['displayProperties'] == null
+              ? null
+              : DestinyDisplayPropertiesDefinition.fromJson(
+                json['displayProperties'] as Map<String, dynamic>,
+              )
       ..smallTransparentIcon = json['smallTransparentIcon'] as String?
       ..mapIcon = json['mapIcon'] as String?
       ..largeTransparentIcon = json['largeTransparentIcon'] as String?
@@ -26,25 +29,26 @@ DestinyLocationReleaseDefinition _$DestinyLocationReleaseDefinitionFromJson(
       ..activityPathDestination =
           (json['activityPathDestination'] as num?)?.toInt()
       ..navPointType = decodeDestinyActivityNavPointType(json['navPointType'])
-      ..worldPosition = (json['worldPosition'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList();
+      ..worldPosition =
+          (json['worldPosition'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList();
 
 Map<String, dynamic> _$DestinyLocationReleaseDefinitionToJson(
-        DestinyLocationReleaseDefinition instance) =>
-    <String, dynamic>{
-      'displayProperties': instance.displayProperties?.toJson(),
-      'smallTransparentIcon': instance.smallTransparentIcon,
-      'mapIcon': instance.mapIcon,
-      'largeTransparentIcon': instance.largeTransparentIcon,
-      'spawnPoint': instance.spawnPoint,
-      'destinationHash': instance.destinationHash,
-      'activityHash': instance.activityHash,
-      'activityGraphHash': instance.activityGraphHash,
-      'activityGraphNodeHash': instance.activityGraphNodeHash,
-      'activityBubbleName': instance.activityBubbleName,
-      'activityPathBundle': instance.activityPathBundle,
-      'activityPathDestination': instance.activityPathDestination,
-      'navPointType': encodeDestinyActivityNavPointType(instance.navPointType),
-      'worldPosition': instance.worldPosition,
-    };
+  DestinyLocationReleaseDefinition instance,
+) => <String, dynamic>{
+  'displayProperties': instance.displayProperties?.toJson(),
+  'smallTransparentIcon': instance.smallTransparentIcon,
+  'mapIcon': instance.mapIcon,
+  'largeTransparentIcon': instance.largeTransparentIcon,
+  'spawnPoint': instance.spawnPoint,
+  'destinationHash': instance.destinationHash,
+  'activityHash': instance.activityHash,
+  'activityGraphHash': instance.activityGraphHash,
+  'activityGraphNodeHash': instance.activityGraphNodeHash,
+  'activityBubbleName': instance.activityBubbleName,
+  'activityPathBundle': instance.activityPathBundle,
+  'activityPathDestination': instance.activityPathDestination,
+  'navPointType': encodeDestinyActivityNavPointType(instance.navPointType),
+  'worldPosition': instance.worldPosition,
+};

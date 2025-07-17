@@ -7,12 +7,11 @@ part of 'destiny_item_summary_block_definition.dart';
 // **************************************************************************
 
 DestinyItemSummaryBlockDefinition _$DestinyItemSummaryBlockDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemSummaryBlockDefinition()
       ..sortPriority = (json['sortPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemSummaryBlockDefinitionToJson(
-        DestinyItemSummaryBlockDefinition instance) =>
-    <String, dynamic>{
-      'sortPriority': instance.sortPriority,
-    };
+  DestinyItemSummaryBlockDefinition instance,
+) => <String, dynamic>{'sortPriority': instance.sortPriority};

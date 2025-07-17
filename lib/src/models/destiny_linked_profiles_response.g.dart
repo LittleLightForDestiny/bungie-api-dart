@@ -7,25 +7,35 @@ part of 'destiny_linked_profiles_response.dart';
 // **************************************************************************
 
 DestinyLinkedProfilesResponse _$DestinyLinkedProfilesResponseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyLinkedProfilesResponse()
-      ..profiles = (json['profiles'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyProfileUserInfoCard.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..bnetMembership = json['bnetMembership'] == null
-          ? null
-          : UserInfoCard.fromJson(
-              json['bnetMembership'] as Map<String, dynamic>)
-      ..profilesWithErrors = (json['profilesWithErrors'] as List<dynamic>?)
-          ?.map((e) => DestinyErrorProfile.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..profiles =
+          (json['profiles'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyProfileUserInfoCard.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
+      ..bnetMembership =
+          json['bnetMembership'] == null
+              ? null
+              : UserInfoCard.fromJson(
+                json['bnetMembership'] as Map<String, dynamic>,
+              )
+      ..profilesWithErrors =
+          (json['profilesWithErrors'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyErrorProfile.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyLinkedProfilesResponseToJson(
-        DestinyLinkedProfilesResponse instance) =>
-    <String, dynamic>{
-      'profiles': instance.profiles?.map((e) => e.toJson()).toList(),
-      'bnetMembership': instance.bnetMembership?.toJson(),
-      'profilesWithErrors':
-          instance.profilesWithErrors?.map((e) => e.toJson()).toList(),
-    };
+  DestinyLinkedProfilesResponse instance,
+) => <String, dynamic>{
+  'profiles': instance.profiles?.map((e) => e.toJson()).toList(),
+  'bnetMembership': instance.bnetMembership?.toJson(),
+  'profilesWithErrors':
+      instance.profilesWithErrors?.map((e) => e.toJson()).toList(),
+};

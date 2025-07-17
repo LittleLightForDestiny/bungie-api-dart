@@ -11,37 +11,42 @@ GroupFeatures _$GroupFeaturesFromJson(Map<String, dynamic> json) =>
       ..maximumMembers = (json['maximumMembers'] as num?)?.toInt()
       ..maximumMembershipsOfGroupType =
           (json['maximumMembershipsOfGroupType'] as num?)?.toInt()
-      ..capabilities = json['capabilities'] == null
-          ? null
-          : Capabilities.fromJson((json['capabilities'] as num).toInt())
-      ..membershipTypes = (json['membershipTypes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
-          .toList()
+      ..capabilities =
+          json['capabilities'] == null
+              ? null
+              : Capabilities.fromJson((json['capabilities'] as num).toInt())
+      ..membershipTypes =
+          (json['membershipTypes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
+              .toList()
       ..invitePermissionOverride = json['invitePermissionOverride'] as bool?
       ..updateCulturePermissionOverride =
           json['updateCulturePermissionOverride'] as bool?
       ..hostGuidedGamePermissionOverride = decodeHostGuidedGamesPermissionLevel(
-          json['hostGuidedGamePermissionOverride'])
+        json['hostGuidedGamePermissionOverride'],
+      )
       ..updateBannerPermissionOverride =
           json['updateBannerPermissionOverride'] as bool?
       ..joinLevel = decodeRuntimeGroupMemberType(json['joinLevel']);
 
-Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
-    <String, dynamic>{
-      'maximumMembers': instance.maximumMembers,
-      'maximumMembershipsOfGroupType': instance.maximumMembershipsOfGroupType,
-      'capabilities': instance.capabilities?.toJson(),
-      'membershipTypes': instance.membershipTypes
+Map<String, dynamic> _$GroupFeaturesToJson(
+  GroupFeatures instance,
+) => <String, dynamic>{
+  'maximumMembers': instance.maximumMembers,
+  'maximumMembershipsOfGroupType': instance.maximumMembershipsOfGroupType,
+  'capabilities': instance.capabilities?.toJson(),
+  'membershipTypes':
+      instance.membershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
-      'invitePermissionOverride': instance.invitePermissionOverride,
-      'updateCulturePermissionOverride':
-          instance.updateCulturePermissionOverride,
-      'hostGuidedGamePermissionOverride': encodeHostGuidedGamesPermissionLevel(
-          instance.hostGuidedGamePermissionOverride),
-      'updateBannerPermissionOverride': instance.updateBannerPermissionOverride,
-      'joinLevel': encodeRuntimeGroupMemberType(instance.joinLevel),
-    };
+  'invitePermissionOverride': instance.invitePermissionOverride,
+  'updateCulturePermissionOverride': instance.updateCulturePermissionOverride,
+  'hostGuidedGamePermissionOverride': encodeHostGuidedGamesPermissionLevel(
+    instance.hostGuidedGamePermissionOverride,
+  ),
+  'updateBannerPermissionOverride': instance.updateBannerPermissionOverride,
+  'joinLevel': encodeRuntimeGroupMemberType(instance.joinLevel),
+};
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,

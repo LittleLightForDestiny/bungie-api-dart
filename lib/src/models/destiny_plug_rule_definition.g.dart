@@ -7,12 +7,11 @@ part of 'destiny_plug_rule_definition.dart';
 // **************************************************************************
 
 DestinyPlugRuleDefinition _$DestinyPlugRuleDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPlugRuleDefinition()
       ..failureMessage = json['failureMessage'] as String?;
 
 Map<String, dynamic> _$DestinyPlugRuleDefinitionToJson(
-        DestinyPlugRuleDefinition instance) =>
-    <String, dynamic>{
-      'failureMessage': instance.failureMessage,
-    };
+  DestinyPlugRuleDefinition instance,
+) => <String, dynamic>{'failureMessage': instance.failureMessage};

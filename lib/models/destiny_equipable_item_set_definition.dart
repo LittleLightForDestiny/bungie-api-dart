@@ -1,0 +1,1 @@
+export '../src/models/destiny_equipable_item_set_definition.dart';

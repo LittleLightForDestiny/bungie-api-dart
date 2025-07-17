@@ -12,7 +12,4 @@ ImagePyramidEntry _$ImagePyramidEntryFromJson(Map<String, dynamic> json) =>
       ..factor = (json['factor'] as num?)?.toDouble();
 
 Map<String, dynamic> _$ImagePyramidEntryToJson(ImagePyramidEntry instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'factor': instance.factor,
-    };
+    <String, dynamic>{'name': instance.name, 'factor': instance.factor};

@@ -7,12 +7,15 @@ part of 'destiny_energy_type_definition.dart';
 // **************************************************************************
 
 DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyEnergyTypeDefinition()
-      ..displayProperties = json['displayProperties'] == null
-          ? null
-          : DestinyDisplayPropertiesDefinition.fromJson(
-              json['displayProperties'] as Map<String, dynamic>)
+      ..displayProperties =
+          json['displayProperties'] == null
+              ? null
+              : DestinyDisplayPropertiesDefinition.fromJson(
+                json['displayProperties'] as Map<String, dynamic>,
+              )
       ..transparentIconPath = json['transparentIconPath'] as String?
       ..showIcon = json['showIcon'] as bool?
       ..enumValue = decodeDestinyEnergyType(json['enumValue'])
@@ -23,15 +26,15 @@ DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEnergyTypeDefinitionToJson(
-        DestinyEnergyTypeDefinition instance) =>
-    <String, dynamic>{
-      'displayProperties': instance.displayProperties?.toJson(),
-      'transparentIconPath': instance.transparentIconPath,
-      'showIcon': instance.showIcon,
-      'enumValue': encodeDestinyEnergyType(instance.enumValue),
-      'capacityStatHash': instance.capacityStatHash,
-      'costStatHash': instance.costStatHash,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyEnergyTypeDefinition instance,
+) => <String, dynamic>{
+  'displayProperties': instance.displayProperties?.toJson(),
+  'transparentIconPath': instance.transparentIconPath,
+  'showIcon': instance.showIcon,
+  'enumValue': encodeDestinyEnergyType(instance.enumValue),
+  'capacityStatHash': instance.capacityStatHash,
+  'costStatHash': instance.costStatHash,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

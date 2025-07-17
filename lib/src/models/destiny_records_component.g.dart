@@ -7,11 +7,14 @@ part of 'destiny_records_component.dart';
 // **************************************************************************
 
 DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyRecordsComponent()
       ..records = (json['records'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
-            k, DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
+          k,
+          DestinyRecordComponent.fromJson(e as Map<String, dynamic>),
+        ),
       )
       ..recordCategoriesRootNodeHash =
           (json['recordCategoriesRootNodeHash'] as num?)?.toInt()
@@ -19,9 +22,9 @@ DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
           (json['recordSealsRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyRecordsComponentToJson(
-        DestinyRecordsComponent instance) =>
-    <String, dynamic>{
-      'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
-      'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
-      'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
-    };
+  DestinyRecordsComponent instance,
+) => <String, dynamic>{
+  'records': instance.records?.map((k, e) => MapEntry(k, e.toJson())),
+  'recordCategoriesRootNodeHash': instance.recordCategoriesRootNodeHash,
+  'recordSealsRootNodeHash': instance.recordSealsRootNodeHash,
+};

@@ -7,21 +7,27 @@ part of 'inventory_changed_response.dart';
 // **************************************************************************
 
 InventoryChangedResponse _$InventoryChangedResponseFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     InventoryChangedResponse()
-      ..addedInventoryItems = (json['addedInventoryItems'] as List<dynamic>?)
-          ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..removedInventoryItems = (json['removedInventoryItems']
-              as List<dynamic>?)
-          ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..addedInventoryItems =
+          (json['addedInventoryItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
+      ..removedInventoryItems =
+          (json['removedInventoryItems'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$InventoryChangedResponseToJson(
-        InventoryChangedResponse instance) =>
-    <String, dynamic>{
-      'addedInventoryItems':
-          instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
-      'removedInventoryItems':
-          instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
-    };
+  InventoryChangedResponse instance,
+) => <String, dynamic>{
+  'addedInventoryItems':
+      instance.addedInventoryItems?.map((e) => e.toJson()).toList(),
+  'removedInventoryItems':
+      instance.removedInventoryItems?.map((e) => e.toJson()).toList(),
+};

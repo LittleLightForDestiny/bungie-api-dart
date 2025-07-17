@@ -7,7 +7,8 @@ part of 'destiny2_core_settings.dart';
 // **************************************************************************
 
 Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     Destiny2CoreSettings()
       ..collectionRootNode = (json['collectionRootNode'] as num?)?.toInt()
       ..badgesRootNode = (json['badgesRootNode'] as num?)?.toInt()
@@ -67,52 +68,54 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(
       ..currentSeasonHash = (json['currentSeasonHash'] as num?)?.toInt()
       ..seasonalChallengesPresentationNodeHash =
           (json['seasonalChallengesPresentationNodeHash'] as num?)?.toInt()
-      ..futureSeasonHashes = (json['futureSeasonHashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList()
-      ..pastSeasonHashes = (json['pastSeasonHashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList();
+      ..futureSeasonHashes =
+          (json['futureSeasonHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..pastSeasonHashes =
+          (json['pastSeasonHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList();
 
 Map<String, dynamic> _$Destiny2CoreSettingsToJson(
-        Destiny2CoreSettings instance) =>
-    <String, dynamic>{
-      'collectionRootNode': instance.collectionRootNode,
-      'badgesRootNode': instance.badgesRootNode,
-      'recordsRootNode': instance.recordsRootNode,
-      'medalsRootNode': instance.medalsRootNode,
-      'metricsRootNode': instance.metricsRootNode,
-      'activeTriumphsRootNodeHash': instance.activeTriumphsRootNodeHash,
-      'activeSealsRootNodeHash': instance.activeSealsRootNodeHash,
-      'legacyTriumphsRootNodeHash': instance.legacyTriumphsRootNodeHash,
-      'legacySealsRootNodeHash': instance.legacySealsRootNodeHash,
-      'medalsRootNodeHash': instance.medalsRootNodeHash,
-      'exoticCatalystsRootNodeHash': instance.exoticCatalystsRootNodeHash,
-      'loreRootNodeHash': instance.loreRootNodeHash,
-      'craftingRootNodeHash': instance.craftingRootNodeHash,
-      'loadoutConstantsHash': instance.loadoutConstantsHash,
-      'guardianRankConstantsHash': instance.guardianRankConstantsHash,
-      'fireteamFinderConstantsHash': instance.fireteamFinderConstantsHash,
-      'inventoryItemConstantsHash': instance.inventoryItemConstantsHash,
-      'featuredItemsListHash': instance.featuredItemsListHash,
-      'armorArchetypePlugSetHash': instance.armorArchetypePlugSetHash,
-      'seasonalHubEventCardHash': instance.seasonalHubEventCardHash,
-      'guardianRanksRootNodeHash': instance.guardianRanksRootNodeHash,
-      'currentRankProgressionHashes': instance.currentRankProgressionHashes,
-      'insertPlugFreeProtectedPlugItemHashes':
-          instance.insertPlugFreeProtectedPlugItemHashes,
-      'insertPlugFreeBlockedSocketTypeHashes':
-          instance.insertPlugFreeBlockedSocketTypeHashes,
-      'enabledFireteamFinderActivityGraphHashes':
-          instance.enabledFireteamFinderActivityGraphHashes,
-      'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
-      'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,
-      'ammoTypeSpecialIcon': instance.ammoTypeSpecialIcon,
-      'ammoTypePrimaryIcon': instance.ammoTypePrimaryIcon,
-      'currentSeasonalArtifactHash': instance.currentSeasonalArtifactHash,
-      'currentSeasonHash': instance.currentSeasonHash,
-      'seasonalChallengesPresentationNodeHash':
-          instance.seasonalChallengesPresentationNodeHash,
-      'futureSeasonHashes': instance.futureSeasonHashes,
-      'pastSeasonHashes': instance.pastSeasonHashes,
-    };
+  Destiny2CoreSettings instance,
+) => <String, dynamic>{
+  'collectionRootNode': instance.collectionRootNode,
+  'badgesRootNode': instance.badgesRootNode,
+  'recordsRootNode': instance.recordsRootNode,
+  'medalsRootNode': instance.medalsRootNode,
+  'metricsRootNode': instance.metricsRootNode,
+  'activeTriumphsRootNodeHash': instance.activeTriumphsRootNodeHash,
+  'activeSealsRootNodeHash': instance.activeSealsRootNodeHash,
+  'legacyTriumphsRootNodeHash': instance.legacyTriumphsRootNodeHash,
+  'legacySealsRootNodeHash': instance.legacySealsRootNodeHash,
+  'medalsRootNodeHash': instance.medalsRootNodeHash,
+  'exoticCatalystsRootNodeHash': instance.exoticCatalystsRootNodeHash,
+  'loreRootNodeHash': instance.loreRootNodeHash,
+  'craftingRootNodeHash': instance.craftingRootNodeHash,
+  'loadoutConstantsHash': instance.loadoutConstantsHash,
+  'guardianRankConstantsHash': instance.guardianRankConstantsHash,
+  'fireteamFinderConstantsHash': instance.fireteamFinderConstantsHash,
+  'inventoryItemConstantsHash': instance.inventoryItemConstantsHash,
+  'featuredItemsListHash': instance.featuredItemsListHash,
+  'armorArchetypePlugSetHash': instance.armorArchetypePlugSetHash,
+  'seasonalHubEventCardHash': instance.seasonalHubEventCardHash,
+  'guardianRanksRootNodeHash': instance.guardianRanksRootNodeHash,
+  'currentRankProgressionHashes': instance.currentRankProgressionHashes,
+  'insertPlugFreeProtectedPlugItemHashes':
+      instance.insertPlugFreeProtectedPlugItemHashes,
+  'insertPlugFreeBlockedSocketTypeHashes':
+      instance.insertPlugFreeBlockedSocketTypeHashes,
+  'enabledFireteamFinderActivityGraphHashes':
+      instance.enabledFireteamFinderActivityGraphHashes,
+  'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
+  'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,
+  'ammoTypeSpecialIcon': instance.ammoTypeSpecialIcon,
+  'ammoTypePrimaryIcon': instance.ammoTypePrimaryIcon,
+  'currentSeasonalArtifactHash': instance.currentSeasonalArtifactHash,
+  'currentSeasonHash': instance.currentSeasonHash,
+  'seasonalChallengesPresentationNodeHash':
+      instance.seasonalChallengesPresentationNodeHash,
+  'futureSeasonHashes': instance.futureSeasonHashes,
+  'pastSeasonHashes': instance.pastSeasonHashes,
+};

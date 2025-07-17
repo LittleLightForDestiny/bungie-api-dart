@@ -7,10 +7,12 @@ part of 'cross_save_user_membership.dart';
 // **************************************************************************
 
 CrossSaveUserMembership _$CrossSaveUserMembershipFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     CrossSaveUserMembership()
-      ..crossSaveOverride =
-          decodeBungieMembershipType(json['crossSaveOverride'])
+      ..crossSaveOverride = decodeBungieMembershipType(
+        json['crossSaveOverride'],
+      )
       ..applicableMembershipTypes =
           (json['applicableMembershipTypes'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
@@ -24,20 +26,20 @@ CrossSaveUserMembership _$CrossSaveUserMembershipFromJson(
           (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$CrossSaveUserMembershipToJson(
-        CrossSaveUserMembership instance) =>
-    <String, dynamic>{
-      'crossSaveOverride':
-          encodeBungieMembershipType(instance.crossSaveOverride),
-      'applicableMembershipTypes': instance.applicableMembershipTypes
+  CrossSaveUserMembership instance,
+) => <String, dynamic>{
+  'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
+  'applicableMembershipTypes':
+      instance.applicableMembershipTypes
           ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
-      'isPublic': instance.isPublic,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-      'membershipId': instance.membershipId,
-      'displayName': instance.displayName,
-      'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
-      'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
-    };
+  'isPublic': instance.isPublic,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+  'membershipId': instance.membershipId,
+  'displayName': instance.displayName,
+  'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
+  'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
+};
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,

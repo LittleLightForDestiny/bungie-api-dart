@@ -7,12 +7,15 @@ part of 'destiny_guardian_rank_definition.dart';
 // **************************************************************************
 
 DestinyGuardianRankDefinition _$DestinyGuardianRankDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyGuardianRankDefinition()
-      ..displayProperties = json['displayProperties'] == null
-          ? null
-          : DestinyDisplayPropertiesDefinition.fromJson(
-              json['displayProperties'] as Map<String, dynamic>)
+      ..displayProperties =
+          json['displayProperties'] == null
+              ? null
+              : DestinyDisplayPropertiesDefinition.fromJson(
+                json['displayProperties'] as Map<String, dynamic>,
+              )
       ..rankNumber = (json['rankNumber'] as num?)?.toInt()
       ..presentationNodeHash = (json['presentationNodeHash'] as num?)?.toInt()
       ..foregroundImagePath = json['foregroundImagePath'] as String?
@@ -23,15 +26,15 @@ DestinyGuardianRankDefinition _$DestinyGuardianRankDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyGuardianRankDefinitionToJson(
-        DestinyGuardianRankDefinition instance) =>
-    <String, dynamic>{
-      'displayProperties': instance.displayProperties?.toJson(),
-      'rankNumber': instance.rankNumber,
-      'presentationNodeHash': instance.presentationNodeHash,
-      'foregroundImagePath': instance.foregroundImagePath,
-      'overlayImagePath': instance.overlayImagePath,
-      'overlayMaskImagePath': instance.overlayMaskImagePath,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyGuardianRankDefinition instance,
+) => <String, dynamic>{
+  'displayProperties': instance.displayProperties?.toJson(),
+  'rankNumber': instance.rankNumber,
+  'presentationNodeHash': instance.presentationNodeHash,
+  'foregroundImagePath': instance.foregroundImagePath,
+  'overlayImagePath': instance.overlayImagePath,
+  'overlayMaskImagePath': instance.overlayMaskImagePath,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

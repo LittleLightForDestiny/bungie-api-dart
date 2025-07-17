@@ -21,9 +21,10 @@ TrendingEntry _$TrendingEntryFromJson(Map<String, dynamic> json) =>
       ..webmVideo = json['webmVideo'] as String?
       ..mp4Video = json['mp4Video'] as String?
       ..featureImage = json['featureImage'] as String?
-      ..items = (json['items'] as List<dynamic>?)
-          ?.map((e) => TrendingEntry.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..items =
+          (json['items'] as List<dynamic>?)
+              ?.map((e) => TrendingEntry.fromJson(e as Map<String, dynamic>))
+              .toList()
       ..creationDate = json['creationDate'] as String?;
 
 Map<String, dynamic> _$TrendingEntryToJson(TrendingEntry instance) =>

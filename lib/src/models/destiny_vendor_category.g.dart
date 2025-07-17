@@ -7,16 +7,18 @@ part of 'destiny_vendor_category.dart';
 // **************************************************************************
 
 DestinyVendorCategory _$DestinyVendorCategoryFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyVendorCategory()
       ..displayCategoryIndex = (json['displayCategoryIndex'] as num?)?.toInt()
-      ..itemIndexes = (json['itemIndexes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList();
+      ..itemIndexes =
+          (json['itemIndexes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList();
 
 Map<String, dynamic> _$DestinyVendorCategoryToJson(
-        DestinyVendorCategory instance) =>
-    <String, dynamic>{
-      'displayCategoryIndex': instance.displayCategoryIndex,
-      'itemIndexes': instance.itemIndexes,
-    };
+  DestinyVendorCategory instance,
+) => <String, dynamic>{
+  'displayCategoryIndex': instance.displayCategoryIndex,
+  'itemIndexes': instance.itemIndexes,
+};

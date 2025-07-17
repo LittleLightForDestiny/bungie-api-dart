@@ -7,12 +7,15 @@ part of 'destiny_inventory_bucket_definition.dart';
 // **************************************************************************
 
 DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyInventoryBucketDefinition()
-      ..displayProperties = json['displayProperties'] == null
-          ? null
-          : DestinyDisplayPropertiesDefinition.fromJson(
-              json['displayProperties'] as Map<String, dynamic>)
+      ..displayProperties =
+          json['displayProperties'] == null
+              ? null
+              : DestinyDisplayPropertiesDefinition.fromJson(
+                json['displayProperties'] as Map<String, dynamic>,
+              )
       ..scope = decodeBucketScope(json['scope'])
       ..category = decodeBucketCategory(json['category'])
       ..bucketOrder = (json['bucketOrder'] as num?)?.toInt()
@@ -26,18 +29,18 @@ DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyInventoryBucketDefinitionToJson(
-        DestinyInventoryBucketDefinition instance) =>
-    <String, dynamic>{
-      'displayProperties': instance.displayProperties?.toJson(),
-      'scope': encodeBucketScope(instance.scope),
-      'category': encodeBucketCategory(instance.category),
-      'bucketOrder': instance.bucketOrder,
-      'itemCount': instance.itemCount,
-      'location': encodeItemLocation(instance.location),
-      'hasTransferDestination': instance.hasTransferDestination,
-      'enabled': instance.enabled,
-      'fifo': instance.fifo,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyInventoryBucketDefinition instance,
+) => <String, dynamic>{
+  'displayProperties': instance.displayProperties?.toJson(),
+  'scope': encodeBucketScope(instance.scope),
+  'category': encodeBucketCategory(instance.category),
+  'bucketOrder': instance.bucketOrder,
+  'itemCount': instance.itemCount,
+  'location': encodeItemLocation(instance.location),
+  'hasTransferDestination': instance.hasTransferDestination,
+  'enabled': instance.enabled,
+  'fifo': instance.fifo,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

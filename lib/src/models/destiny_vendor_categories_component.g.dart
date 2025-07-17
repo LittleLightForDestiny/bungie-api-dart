@@ -7,15 +7,19 @@ part of 'destiny_vendor_categories_component.dart';
 // **************************************************************************
 
 DestinyVendorCategoriesComponent _$DestinyVendorCategoriesComponentFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyVendorCategoriesComponent()
-      ..categories = (json['categories'] as List<dynamic>?)
-          ?.map(
-              (e) => DestinyVendorCategory.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..categories =
+          (json['categories'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    DestinyVendorCategory.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyVendorCategoriesComponentToJson(
-        DestinyVendorCategoriesComponent instance) =>
-    <String, dynamic>{
-      'categories': instance.categories?.map((e) => e.toJson()).toList(),
-    };
+  DestinyVendorCategoriesComponent instance,
+) => <String, dynamic>{
+  'categories': instance.categories?.map((e) => e.toJson()).toList(),
+};

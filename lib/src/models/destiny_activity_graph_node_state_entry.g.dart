@@ -7,12 +7,11 @@ part of 'destiny_activity_graph_node_state_entry.dart';
 // **************************************************************************
 
 DestinyActivityGraphNodeStateEntry _$DestinyActivityGraphNodeStateEntryFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyActivityGraphNodeStateEntry()
       ..state = decodeDestinyGraphNodeState(json['state']);
 
 Map<String, dynamic> _$DestinyActivityGraphNodeStateEntryToJson(
-        DestinyActivityGraphNodeStateEntry instance) =>
-    <String, dynamic>{
-      'state': encodeDestinyGraphNodeState(instance.state),
-    };
+  DestinyActivityGraphNodeStateEntry instance,
+) => <String, dynamic>{'state': encodeDestinyGraphNodeState(instance.state)};

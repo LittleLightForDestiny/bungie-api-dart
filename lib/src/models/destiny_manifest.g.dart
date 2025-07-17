@@ -10,32 +10,34 @@ DestinyManifest _$DestinyManifestFromJson(Map<String, dynamic> json) =>
     DestinyManifest()
       ..version = json['version'] as String?
       ..mobileAssetContentPath = json['mobileAssetContentPath'] as String?
-      ..mobileGearAssetDataBases = (json['mobileGearAssetDataBases']
-              as List<dynamic>?)
-          ?.map((e) =>
-              GearAssetDataBaseDefinition.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..mobileWorldContentPaths =
-          (json['mobileWorldContentPaths'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as String),
-      )
-      ..jsonWorldContentPaths =
-          (json['jsonWorldContentPaths'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as String),
-      )
-      ..jsonWorldComponentContentPaths =
-          (json['jsonWorldComponentContentPaths'] as Map<String, dynamic>?)
+      ..mobileGearAssetDataBases =
+          (json['mobileGearAssetDataBases'] as List<dynamic>?)
               ?.map(
-        (k, e) => MapEntry(k, Map<String, String>.from(e as Map)),
-      )
+                (e) => GearAssetDataBaseDefinition.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
+      ..mobileWorldContentPaths = (json['mobileWorldContentPaths']
+              as Map<String, dynamic>?)
+          ?.map((k, e) => MapEntry(k, e as String))
+      ..jsonWorldContentPaths = (json['jsonWorldContentPaths']
+              as Map<String, dynamic>?)
+          ?.map((k, e) => MapEntry(k, e as String))
+      ..jsonWorldComponentContentPaths = (json['jsonWorldComponentContentPaths']
+              as Map<String, dynamic>?)
+          ?.map((k, e) => MapEntry(k, Map<String, String>.from(e as Map)))
       ..mobileClanBannerDatabasePath =
           json['mobileClanBannerDatabasePath'] as String?
       ..mobileGearCdn = (json['mobileGearCDN'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       )
-      ..iconImagePyramidInfo = (json['iconImagePyramidInfo'] as List<dynamic>?)
-          ?.map((e) => ImagePyramidEntry.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..iconImagePyramidInfo =
+          (json['iconImagePyramidInfo'] as List<dynamic>?)
+              ?.map(
+                (e) => ImagePyramidEntry.fromJson(e as Map<String, dynamic>),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyManifestToJson(DestinyManifest instance) =>
     <String, dynamic>{

@@ -7,7 +7,8 @@ part of 'awa_permission_requested.dart';
 // **************************************************************************
 
 AwaPermissionRequested _$AwaPermissionRequestedFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     AwaPermissionRequested()
       ..type = decodeAwaType(json['type'])
       ..affectedItemId = json['affectedItemId'] as String?
@@ -15,10 +16,10 @@ AwaPermissionRequested _$AwaPermissionRequestedFromJson(
       ..characterId = json['characterId'] as String?;
 
 Map<String, dynamic> _$AwaPermissionRequestedToJson(
-        AwaPermissionRequested instance) =>
-    <String, dynamic>{
-      'type': encodeAwaType(instance.type),
-      'affectedItemId': instance.affectedItemId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-      'characterId': instance.characterId,
-    };
+  AwaPermissionRequested instance,
+) => <String, dynamic>{
+  'type': encodeAwaType(instance.type),
+  'affectedItemId': instance.affectedItemId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+  'characterId': instance.characterId,
+};

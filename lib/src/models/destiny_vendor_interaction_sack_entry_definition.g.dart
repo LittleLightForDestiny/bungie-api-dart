@@ -7,13 +7,12 @@ part of 'destiny_vendor_interaction_sack_entry_definition.dart';
 // **************************************************************************
 
 DestinyVendorInteractionSackEntryDefinition
-    _$DestinyVendorInteractionSackEntryDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyVendorInteractionSackEntryDefinition()
-          ..sackType = (json['sackType'] as num?)?.toInt();
+_$DestinyVendorInteractionSackEntryDefinitionFromJson(
+  Map<String, dynamic> json,
+) =>
+    DestinyVendorInteractionSackEntryDefinition()
+      ..sackType = (json['sackType'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorInteractionSackEntryDefinitionToJson(
-        DestinyVendorInteractionSackEntryDefinition instance) =>
-    <String, dynamic>{
-      'sackType': instance.sackType,
-    };
+  DestinyVendorInteractionSackEntryDefinition instance,
+) => <String, dynamic>{'sackType': instance.sackType};

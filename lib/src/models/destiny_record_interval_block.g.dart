@@ -7,26 +7,34 @@ part of 'destiny_record_interval_block.dart';
 // **************************************************************************
 
 DestinyRecordIntervalBlock _$DestinyRecordIntervalBlockFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyRecordIntervalBlock()
-      ..intervalObjectives = (json['intervalObjectives'] as List<dynamic>?)
-          ?.map((e) => DestinyRecordIntervalObjective.fromJson(
-              e as Map<String, dynamic>))
-          .toList()
-      ..intervalRewards = (json['intervalRewards'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyRecordIntervalRewards.fromJson(e as Map<String, dynamic>))
-          .toList()
+      ..intervalObjectives =
+          (json['intervalObjectives'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyRecordIntervalObjective.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
+      ..intervalRewards =
+          (json['intervalRewards'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyRecordIntervalRewards.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
       ..originalObjectiveArrayInsertionIndex =
           (json['originalObjectiveArrayInsertionIndex'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyRecordIntervalBlockToJson(
-        DestinyRecordIntervalBlock instance) =>
-    <String, dynamic>{
-      'intervalObjectives':
-          instance.intervalObjectives?.map((e) => e.toJson()).toList(),
-      'intervalRewards':
-          instance.intervalRewards?.map((e) => e.toJson()).toList(),
-      'originalObjectiveArrayInsertionIndex':
-          instance.originalObjectiveArrayInsertionIndex,
-    };
+  DestinyRecordIntervalBlock instance,
+) => <String, dynamic>{
+  'intervalObjectives':
+      instance.intervalObjectives?.map((e) => e.toJson()).toList(),
+  'intervalRewards': instance.intervalRewards?.map((e) => e.toJson()).toList(),
+  'originalObjectiveArrayInsertionIndex':
+      instance.originalObjectiveArrayInsertionIndex,
+};

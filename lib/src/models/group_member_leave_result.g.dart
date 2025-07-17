@@ -7,16 +7,18 @@ part of 'group_member_leave_result.dart';
 // **************************************************************************
 
 GroupMemberLeaveResult _$GroupMemberLeaveResultFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     GroupMemberLeaveResult()
-      ..group = json['group'] == null
-          ? null
-          : GroupV2.fromJson(json['group'] as Map<String, dynamic>)
+      ..group =
+          json['group'] == null
+              ? null
+              : GroupV2.fromJson(json['group'] as Map<String, dynamic>)
       ..groupDeleted = json['groupDeleted'] as bool?;
 
 Map<String, dynamic> _$GroupMemberLeaveResultToJson(
-        GroupMemberLeaveResult instance) =>
-    <String, dynamic>{
-      'group': instance.group?.toJson(),
-      'groupDeleted': instance.groupDeleted,
-    };
+  GroupMemberLeaveResult instance,
+) => <String, dynamic>{
+  'group': instance.group?.toJson(),
+  'groupDeleted': instance.groupDeleted,
+};

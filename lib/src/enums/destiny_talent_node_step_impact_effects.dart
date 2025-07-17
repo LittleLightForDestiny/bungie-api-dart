@@ -34,15 +34,14 @@ class DestinyTalentNodeStepImpactEffects {
     }
 
     @override
-    bool operator ==(dynamic other) {
+    bool operator ==(Object other) {
         if(other is int){
             return other == value;
         }
-        try{
-        return value == other.value;
-        }catch(e){
-            return other == this;
+        if(other is DestinyTalentNodeStepImpactEffects){
+            return value == other.value;
         }
+        return other == this;
     }
 
     @override

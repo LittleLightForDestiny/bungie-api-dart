@@ -14,10 +14,10 @@ DestinyItemQuantity _$DestinyItemQuantityFromJson(Map<String, dynamic> json) =>
       ..hasConditionalVisibility = json['hasConditionalVisibility'] as bool?;
 
 Map<String, dynamic> _$DestinyItemQuantityToJson(
-        DestinyItemQuantity instance) =>
-    <String, dynamic>{
-      'itemHash': instance.itemHash,
-      'itemInstanceId': instance.itemInstanceId,
-      'quantity': instance.quantity,
-      'hasConditionalVisibility': instance.hasConditionalVisibility,
-    };
+  DestinyItemQuantity instance,
+) => <String, dynamic>{
+  'itemHash': instance.itemHash,
+  'itemInstanceId': instance.itemInstanceId,
+  'quantity': instance.quantity,
+  'hasConditionalVisibility': instance.hasConditionalVisibility,
+};

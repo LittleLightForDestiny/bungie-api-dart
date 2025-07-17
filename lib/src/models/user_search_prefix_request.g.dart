@@ -7,12 +7,11 @@ part of 'user_search_prefix_request.dart';
 // **************************************************************************
 
 UserSearchPrefixRequest _$UserSearchPrefixRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     UserSearchPrefixRequest()
       ..displayNamePrefix = json['displayNamePrefix'] as String?;
 
 Map<String, dynamic> _$UserSearchPrefixRequestToJson(
-        UserSearchPrefixRequest instance) =>
-    <String, dynamic>{
-      'displayNamePrefix': instance.displayNamePrefix,
-    };
+  UserSearchPrefixRequest instance,
+) => <String, dynamic>{'displayNamePrefix': instance.displayNamePrefix};

@@ -12,22 +12,25 @@ BungieRewardDisplay _$BungieRewardDisplayFromJson(Map<String, dynamic> json) =>
           json['UserRewardAvailabilityModel'] == null
               ? null
               : UserRewardAvailabilityModel.fromJson(
-                  json['UserRewardAvailabilityModel'] as Map<String, dynamic>)
-      ..objectiveDisplayProperties = json['ObjectiveDisplayProperties'] == null
-          ? null
-          : RewardDisplayProperties.fromJson(
-              json['ObjectiveDisplayProperties'] as Map<String, dynamic>)
-      ..rewardDisplayProperties = json['RewardDisplayProperties'] == null
-          ? null
-          : RewardDisplayProperties.fromJson(
-              json['RewardDisplayProperties'] as Map<String, dynamic>);
+                json['UserRewardAvailabilityModel'] as Map<String, dynamic>,
+              )
+      ..objectiveDisplayProperties =
+          json['ObjectiveDisplayProperties'] == null
+              ? null
+              : RewardDisplayProperties.fromJson(
+                json['ObjectiveDisplayProperties'] as Map<String, dynamic>,
+              )
+      ..rewardDisplayProperties =
+          json['RewardDisplayProperties'] == null
+              ? null
+              : RewardDisplayProperties.fromJson(
+                json['RewardDisplayProperties'] as Map<String, dynamic>,
+              );
 
 Map<String, dynamic> _$BungieRewardDisplayToJson(
-        BungieRewardDisplay instance) =>
-    <String, dynamic>{
-      'UserRewardAvailabilityModel':
-          instance.userRewardAvailabilityModel?.toJson(),
-      'ObjectiveDisplayProperties':
-          instance.objectiveDisplayProperties?.toJson(),
-      'RewardDisplayProperties': instance.rewardDisplayProperties?.toJson(),
-    };
+  BungieRewardDisplay instance,
+) => <String, dynamic>{
+  'UserRewardAvailabilityModel': instance.userRewardAvailabilityModel?.toJson(),
+  'ObjectiveDisplayProperties': instance.objectiveDisplayProperties?.toJson(),
+  'RewardDisplayProperties': instance.rewardDisplayProperties?.toJson(),
+};

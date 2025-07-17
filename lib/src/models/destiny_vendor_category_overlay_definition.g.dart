@@ -7,21 +7,20 @@ part of 'destiny_vendor_category_overlay_definition.dart';
 // **************************************************************************
 
 DestinyVendorCategoryOverlayDefinition
-    _$DestinyVendorCategoryOverlayDefinitionFromJson(
-            Map<String, dynamic> json) =>
-        DestinyVendorCategoryOverlayDefinition()
-          ..choiceDescription = json['choiceDescription'] as String?
-          ..description = json['description'] as String?
-          ..icon = json['icon'] as String?
-          ..title = json['title'] as String?
-          ..currencyItemHash = (json['currencyItemHash'] as num?)?.toInt();
+_$DestinyVendorCategoryOverlayDefinitionFromJson(Map<String, dynamic> json) =>
+    DestinyVendorCategoryOverlayDefinition()
+      ..choiceDescription = json['choiceDescription'] as String?
+      ..description = json['description'] as String?
+      ..icon = json['icon'] as String?
+      ..title = json['title'] as String?
+      ..currencyItemHash = (json['currencyItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorCategoryOverlayDefinitionToJson(
-        DestinyVendorCategoryOverlayDefinition instance) =>
-    <String, dynamic>{
-      'choiceDescription': instance.choiceDescription,
-      'description': instance.description,
-      'icon': instance.icon,
-      'title': instance.title,
-      'currencyItemHash': instance.currencyItemHash,
-    };
+  DestinyVendorCategoryOverlayDefinition instance,
+) => <String, dynamic>{
+  'choiceDescription': instance.choiceDescription,
+  'description': instance.description,
+  'icon': instance.icon,
+  'title': instance.title,
+  'currencyItemHash': instance.currencyItemHash,
+};

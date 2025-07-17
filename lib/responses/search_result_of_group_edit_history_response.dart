@@ -1,0 +1,1 @@
+export '../src/responses/search_result_of_group_edit_history_response.dart';

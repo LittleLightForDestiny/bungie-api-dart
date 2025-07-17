@@ -7,20 +7,23 @@ part of 'single_component_response_of_destiny_inventory_component.dart';
 // **************************************************************************
 
 SingleComponentResponseOfDestinyInventoryComponent
-    _$SingleComponentResponseOfDestinyInventoryComponentFromJson(
-            Map<String, dynamic> json) =>
-        SingleComponentResponseOfDestinyInventoryComponent()
-          ..data = json['data'] == null
+_$SingleComponentResponseOfDestinyInventoryComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    SingleComponentResponseOfDestinyInventoryComponent()
+      ..data =
+          json['data'] == null
               ? null
               : DestinyInventoryComponent.fromJson(
-                  json['data'] as Map<String, dynamic>)
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+                json['data'] as Map<String, dynamic>,
+              )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic> _$SingleComponentResponseOfDestinyInventoryComponentToJson(
-        SingleComponentResponseOfDestinyInventoryComponent instance) =>
-    <String, dynamic>{
-      'data': instance.data?.toJson(),
-      'privacy': encodeComponentPrivacySetting(instance.privacy),
-      'disabled': instance.disabled,
-    };
+  SingleComponentResponseOfDestinyInventoryComponent instance,
+) => <String, dynamic>{
+  'data': instance.data?.toJson(),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

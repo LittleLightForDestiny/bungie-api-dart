@@ -6,11 +6,12 @@ part of 'date_range.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-DateRange _$DateRangeFromJson(Map<String, dynamic> json) => DateRange()
-  ..start = json['start'] as String?
-  ..end = json['end'] as String?;
+DateRange _$DateRangeFromJson(Map<String, dynamic> json) =>
+    DateRange()
+      ..start = json['start'] as String?
+      ..end = json['end'] as String?;
 
 Map<String, dynamic> _$DateRangeToJson(DateRange instance) => <String, dynamic>{
-      'start': instance.start,
-      'end': instance.end,
-    };
+  'start': instance.start,
+  'end': instance.end,
+};

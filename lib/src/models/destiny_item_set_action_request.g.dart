@@ -7,7 +7,8 @@ part of 'destiny_item_set_action_request.dart';
 // **************************************************************************
 
 DestinyItemSetActionRequest _$DestinyItemSetActionRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyItemSetActionRequest()
       ..itemIds =
           (json['itemIds'] as List<dynamic>?)?.map((e) => e as String).toList()
@@ -15,9 +16,9 @@ DestinyItemSetActionRequest _$DestinyItemSetActionRequestFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyItemSetActionRequestToJson(
-        DestinyItemSetActionRequest instance) =>
-    <String, dynamic>{
-      'itemIds': instance.itemIds,
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyItemSetActionRequest instance,
+) => <String, dynamic>{
+  'itemIds': instance.itemIds,
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

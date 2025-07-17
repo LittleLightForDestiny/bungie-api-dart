@@ -7,7 +7,8 @@ part of 'destiny_postmaster_transfer_request.dart';
 // **************************************************************************
 
 DestinyPostmasterTransferRequest _$DestinyPostmasterTransferRequestFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPostmasterTransferRequest()
       ..itemReferenceHash = (json['itemReferenceHash'] as num?)?.toInt()
       ..stackSize = (json['stackSize'] as num?)?.toInt()
@@ -16,11 +17,11 @@ DestinyPostmasterTransferRequest _$DestinyPostmasterTransferRequestFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyPostmasterTransferRequestToJson(
-        DestinyPostmasterTransferRequest instance) =>
-    <String, dynamic>{
-      'itemReferenceHash': instance.itemReferenceHash,
-      'stackSize': instance.stackSize,
-      'itemId': instance.itemId,
-      'characterId': instance.characterId,
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  DestinyPostmasterTransferRequest instance,
+) => <String, dynamic>{
+  'itemReferenceHash': instance.itemReferenceHash,
+  'stackSize': instance.stackSize,
+  'itemId': instance.itemId,
+  'characterId': instance.characterId,
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

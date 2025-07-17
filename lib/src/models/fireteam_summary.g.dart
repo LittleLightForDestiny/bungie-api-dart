@@ -36,31 +36,31 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) =>
       ..ownerTotalCommendationScoreSnapshot =
           (json['ownerTotalCommendationScoreSnapshot'] as num?)?.toInt();
 
-Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
-    <String, dynamic>{
-      'fireteamId': instance.fireteamId,
-      'groupId': instance.groupId,
-      'platform': encodeFireteamPlatform(instance.platform),
-      'activityType': instance.activityType,
-      'isImmediate': instance.isImmediate,
-      'scheduledTime': instance.scheduledTime,
-      'ownerMembershipId': instance.ownerMembershipId,
-      'playerSlotCount': instance.playerSlotCount,
-      'alternateSlotCount': instance.alternateSlotCount,
-      'availablePlayerSlotCount': instance.availablePlayerSlotCount,
-      'availableAlternateSlotCount': instance.availableAlternateSlotCount,
-      'title': instance.title,
-      'dateCreated': instance.dateCreated,
-      'dateModified': instance.dateModified,
-      'isPublic': instance.isPublic,
-      'locale': instance.locale,
-      'isValid': instance.isValid,
-      'datePlayerModified': instance.datePlayerModified,
-      'titleBeforeModeration': instance.titleBeforeModeration,
-      'ownerCurrentGuardianRankSnapshot':
-          instance.ownerCurrentGuardianRankSnapshot,
-      'ownerHighestLifetimeGuardianRankSnapshot':
-          instance.ownerHighestLifetimeGuardianRankSnapshot,
-      'ownerTotalCommendationScoreSnapshot':
-          instance.ownerTotalCommendationScoreSnapshot,
-    };
+Map<String, dynamic> _$FireteamSummaryToJson(
+  FireteamSummary instance,
+) => <String, dynamic>{
+  'fireteamId': instance.fireteamId,
+  'groupId': instance.groupId,
+  'platform': encodeFireteamPlatform(instance.platform),
+  'activityType': instance.activityType,
+  'isImmediate': instance.isImmediate,
+  'scheduledTime': instance.scheduledTime,
+  'ownerMembershipId': instance.ownerMembershipId,
+  'playerSlotCount': instance.playerSlotCount,
+  'alternateSlotCount': instance.alternateSlotCount,
+  'availablePlayerSlotCount': instance.availablePlayerSlotCount,
+  'availableAlternateSlotCount': instance.availableAlternateSlotCount,
+  'title': instance.title,
+  'dateCreated': instance.dateCreated,
+  'dateModified': instance.dateModified,
+  'isPublic': instance.isPublic,
+  'locale': instance.locale,
+  'isValid': instance.isValid,
+  'datePlayerModified': instance.datePlayerModified,
+  'titleBeforeModeration': instance.titleBeforeModeration,
+  'ownerCurrentGuardianRankSnapshot': instance.ownerCurrentGuardianRankSnapshot,
+  'ownerHighestLifetimeGuardianRankSnapshot':
+      instance.ownerHighestLifetimeGuardianRankSnapshot,
+  'ownerTotalCommendationScoreSnapshot':
+      instance.ownerTotalCommendationScoreSnapshot,
+};

@@ -7,7 +7,8 @@ part of 'destiny_loadout_name_definition.dart';
 // **************************************************************************
 
 DestinyLoadoutNameDefinition _$DestinyLoadoutNameDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyLoadoutNameDefinition()
       ..name = json['name'] as String?
       ..hash = (json['hash'] as num?)?.toInt()
@@ -15,10 +16,10 @@ DestinyLoadoutNameDefinition _$DestinyLoadoutNameDefinitionFromJson(
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyLoadoutNameDefinitionToJson(
-        DestinyLoadoutNameDefinition instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'hash': instance.hash,
-      'index': instance.index,
-      'redacted': instance.redacted,
-    };
+  DestinyLoadoutNameDefinition instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'hash': instance.hash,
+  'index': instance.index,
+  'redacted': instance.redacted,
+};

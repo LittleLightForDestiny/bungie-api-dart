@@ -7,14 +7,12 @@ part of 'interpolation_point_float.dart';
 // **************************************************************************
 
 InterpolationPointFloat _$InterpolationPointFloatFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     InterpolationPointFloat()
       ..value = (json['value'] as num?)?.toDouble()
       ..weight = (json['weight'] as num?)?.toDouble();
 
 Map<String, dynamic> _$InterpolationPointFloatToJson(
-        InterpolationPointFloat instance) =>
-    <String, dynamic>{
-      'value': instance.value,
-      'weight': instance.weight,
-    };
+  InterpolationPointFloat instance,
+) => <String, dynamic>{'value': instance.value, 'weight': instance.weight};

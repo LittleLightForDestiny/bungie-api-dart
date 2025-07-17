@@ -7,24 +7,27 @@ part of 'dictionary_component_response_ofuint32_and_personal_destiny_vendor_sale
 // **************************************************************************
 
 DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent
-    _$DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponentFromJson(
-            Map<String, dynamic> json) =>
-        DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent()
-          ..data = (json['data'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry(
-                k,
-                PersonalDestinyVendorSaleItemSetComponent.fromJson(
-                    e as Map<String, dynamic>)),
-          )
-          ..privacy = decodeComponentPrivacySetting(json['privacy'])
-          ..disabled = json['disabled'] as bool?;
+_$DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponentFromJson(
+  Map<String, dynamic> json,
+) =>
+    DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent()
+      ..data = (json['data'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          PersonalDestinyVendorSaleItemSetComponent.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        ),
+      )
+      ..privacy = decodeComponentPrivacySetting(json['privacy'])
+      ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
-    _$DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponentToJson(
-            DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent
-                instance) =>
-        <String, dynamic>{
-          'data': instance.data?.map((k, e) => MapEntry(k, e.toJson())),
-          'privacy': encodeComponentPrivacySetting(instance.privacy),
-          'disabled': instance.disabled,
-        };
+_$DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponentToJson(
+  DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent
+  instance,
+) => <String, dynamic>{
+  'data': instance.data?.map((k, e) => MapEntry(k, e.toJson())),
+  'privacy': encodeComponentPrivacySetting(instance.privacy),
+  'disabled': instance.disabled,
+};

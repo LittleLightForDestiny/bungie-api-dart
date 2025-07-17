@@ -7,15 +7,20 @@ part of 'destiny_aggregate_activity_results.dart';
 // **************************************************************************
 
 DestinyAggregateActivityResults _$DestinyAggregateActivityResultsFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyAggregateActivityResults()
-      ..activities = (json['activities'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyAggregateActivityStats.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..activities =
+          (json['activities'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyAggregateActivityStats.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList();
 
 Map<String, dynamic> _$DestinyAggregateActivityResultsToJson(
-        DestinyAggregateActivityResults instance) =>
-    <String, dynamic>{
-      'activities': instance.activities?.map((e) => e.toJson()).toList(),
-    };
+  DestinyAggregateActivityResults instance,
+) => <String, dynamic>{
+  'activities': instance.activities?.map((e) => e.toJson()).toList(),
+};

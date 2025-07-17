@@ -16,19 +16,23 @@ DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) =>
       ..isVisible = json['isVisible'] as bool?
       ..displayLevel = (json['displayLevel'] as num?)?.toInt()
       ..recommendedLight = (json['recommendedLight'] as num?)?.toInt()
-      ..difficultyTier =
-          decodeDestinyActivityDifficultyTier(json['difficultyTier'])
-      ..challenges = (json['challenges'] as List<dynamic>?)
-          ?.map(
-              (e) => DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList()
-      ..booleanActivityOptions =
-          (json['booleanActivityOptions'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as bool),
+      ..difficultyTier = decodeDestinyActivityDifficultyTier(
+        json['difficultyTier'],
       )
+      ..challenges =
+          (json['challenges'] as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    DestinyChallengeStatus.fromJson(e as Map<String, dynamic>),
+              )
+              .toList()
+      ..modifierHashes =
+          (json['modifierHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..booleanActivityOptions = (json['booleanActivityOptions']
+              as Map<String, dynamic>?)
+          ?.map((k, e) => MapEntry(k, e as bool))
       ..loadoutRequirementIndex =
           (json['loadoutRequirementIndex'] as num?)?.toInt();
 
@@ -42,8 +46,9 @@ Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
       'isVisible': instance.isVisible,
       'displayLevel': instance.displayLevel,
       'recommendedLight': instance.recommendedLight,
-      'difficultyTier':
-          encodeDestinyActivityDifficultyTier(instance.difficultyTier),
+      'difficultyTier': encodeDestinyActivityDifficultyTier(
+        instance.difficultyTier,
+      ),
       'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
       'modifierHashes': instance.modifierHashes,
       'booleanActivityOptions': instance.booleanActivityOptions,

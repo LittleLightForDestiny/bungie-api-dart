@@ -7,16 +7,19 @@ part of 'destiny_historical_stats_definition.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyHistoricalStatsDefinition()
       ..statId = json['statId'] as String?
       ..group = decodeDestinyStatsGroupType(json['group'])
-      ..periodTypes = (json['periodTypes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$PeriodTypeEnumMap, e))
-          .toList()
-      ..modes = (json['modes'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-          .toList()
+      ..periodTypes =
+          (json['periodTypes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$PeriodTypeEnumMap, e))
+              .toList()
+      ..modes =
+          (json['modes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+              .toList()
       ..category = decodeDestinyStatsCategoryType(json['category'])
       ..statName = json['statName'] as String?
       ..statNameAbbr = json['statNameAbbr'] as String?
@@ -29,26 +32,25 @@ DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
       ..medalTierHash = (json['medalTierHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
-        DestinyHistoricalStatsDefinition instance) =>
-    <String, dynamic>{
-      'statId': instance.statId,
-      'group': encodeDestinyStatsGroupType(instance.group),
-      'periodTypes':
-          instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]!).toList(),
-      'modes': instance.modes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
-          .toList(),
-      'category': encodeDestinyStatsCategoryType(instance.category),
-      'statName': instance.statName,
-      'statNameAbbr': instance.statNameAbbr,
-      'statDescription': instance.statDescription,
-      'unitType': encodeUnitType(instance.unitType),
-      'iconImage': instance.iconImage,
-      'mergeMethod': instance.mergeMethod,
-      'unitLabel': instance.unitLabel,
-      'weight': instance.weight,
-      'medalTierHash': instance.medalTierHash,
-    };
+  DestinyHistoricalStatsDefinition instance,
+) => <String, dynamic>{
+  'statId': instance.statId,
+  'group': encodeDestinyStatsGroupType(instance.group),
+  'periodTypes':
+      instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]!).toList(),
+  'modes':
+      instance.modes?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!).toList(),
+  'category': encodeDestinyStatsCategoryType(instance.category),
+  'statName': instance.statName,
+  'statNameAbbr': instance.statNameAbbr,
+  'statDescription': instance.statDescription,
+  'unitType': encodeUnitType(instance.unitType),
+  'iconImage': instance.iconImage,
+  'mergeMethod': instance.mergeMethod,
+  'unitLabel': instance.unitLabel,
+  'weight': instance.weight,
+  'medalTierHash': instance.medalTierHash,
+};
 
 const _$PeriodTypeEnumMap = {
   PeriodType.None: 0,

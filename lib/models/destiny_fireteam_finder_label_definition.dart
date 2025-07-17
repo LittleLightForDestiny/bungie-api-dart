@@ -1,0 +1,1 @@
+export '../src/models/destiny_fireteam_finder_label_definition.dart';

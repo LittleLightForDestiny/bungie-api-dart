@@ -8,9 +8,10 @@ part of 'trending_categories.dart';
 
 TrendingCategories _$TrendingCategoriesFromJson(Map<String, dynamic> json) =>
     TrendingCategories()
-      ..categories = (json['categories'] as List<dynamic>?)
-          ?.map((e) => TrendingCategory.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..categories =
+          (json['categories'] as List<dynamic>?)
+              ?.map((e) => TrendingCategory.fromJson(e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$TrendingCategoriesToJson(TrendingCategories instance) =>
     <String, dynamic>{

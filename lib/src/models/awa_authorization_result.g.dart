@@ -7,7 +7,8 @@ part of 'awa_authorization_result.dart';
 // **************************************************************************
 
 AwaAuthorizationResult _$AwaAuthorizationResultFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     AwaAuthorizationResult()
       ..userSelection = decodeAwaUserSelection(json['userSelection'])
       ..responseReason = decodeAwaResponseReason(json['responseReason'])
@@ -19,14 +20,14 @@ AwaAuthorizationResult _$AwaAuthorizationResultFromJson(
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$AwaAuthorizationResultToJson(
-        AwaAuthorizationResult instance) =>
-    <String, dynamic>{
-      'userSelection': encodeAwaUserSelection(instance.userSelection),
-      'responseReason': encodeAwaResponseReason(instance.responseReason),
-      'developerNote': instance.developerNote,
-      'actionToken': instance.actionToken,
-      'maximumNumberOfUses': instance.maximumNumberOfUses,
-      'validUntil': instance.validUntil,
-      'type': encodeAwaType(instance.type),
-      'membershipType': encodeBungieMembershipType(instance.membershipType),
-    };
+  AwaAuthorizationResult instance,
+) => <String, dynamic>{
+  'userSelection': encodeAwaUserSelection(instance.userSelection),
+  'responseReason': encodeAwaResponseReason(instance.responseReason),
+  'developerNote': instance.developerNote,
+  'actionToken': instance.actionToken,
+  'maximumNumberOfUses': instance.maximumNumberOfUses,
+  'validUntil': instance.validUntil,
+  'type': encodeAwaType(instance.type),
+  'membershipType': encodeBungieMembershipType(instance.membershipType),
+};

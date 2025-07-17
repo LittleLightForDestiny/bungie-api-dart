@@ -7,14 +7,14 @@ part of 'group_optional_conversation_add_request.dart';
 // **************************************************************************
 
 GroupOptionalConversationAddRequest
-    _$GroupOptionalConversationAddRequestFromJson(Map<String, dynamic> json) =>
-        GroupOptionalConversationAddRequest()
-          ..chatName = json['chatName'] as String?
-          ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity']);
+_$GroupOptionalConversationAddRequestFromJson(Map<String, dynamic> json) =>
+    GroupOptionalConversationAddRequest()
+      ..chatName = json['chatName'] as String?
+      ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity']);
 
 Map<String, dynamic> _$GroupOptionalConversationAddRequestToJson(
-        GroupOptionalConversationAddRequest instance) =>
-    <String, dynamic>{
-      'chatName': instance.chatName,
-      'chatSecurity': encodeChatSecuritySetting(instance.chatSecurity),
-    };
+  GroupOptionalConversationAddRequest instance,
+) => <String, dynamic>{
+  'chatName': instance.chatName,
+  'chatSecurity': encodeChatSecuritySetting(instance.chatSecurity),
+};

@@ -7,7 +7,8 @@ part of 'destiny_node_activation_requirement.dart';
 // **************************************************************************
 
 DestinyNodeActivationRequirement _$DestinyNodeActivationRequirementFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyNodeActivationRequirement()
       ..gridLevel = (json['gridLevel'] as num?)?.toInt()
       ..materialRequirementHashes =
@@ -16,8 +17,8 @@ DestinyNodeActivationRequirement _$DestinyNodeActivationRequirementFromJson(
               .toList();
 
 Map<String, dynamic> _$DestinyNodeActivationRequirementToJson(
-        DestinyNodeActivationRequirement instance) =>
-    <String, dynamic>{
-      'gridLevel': instance.gridLevel,
-      'materialRequirementHashes': instance.materialRequirementHashes,
-    };
+  DestinyNodeActivationRequirement instance,
+) => <String, dynamic>{
+  'gridLevel': instance.gridLevel,
+  'materialRequirementHashes': instance.materialRequirementHashes,
+};

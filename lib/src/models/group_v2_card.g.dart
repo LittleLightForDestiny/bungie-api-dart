@@ -6,25 +6,30 @@ part of 'group_v2_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) => GroupV2Card()
-  ..groupId = json['groupId'] as String?
-  ..name = json['name'] as String?
-  ..groupType = decodeGroupType(json['groupType'])
-  ..creationDate = json['creationDate'] as String?
-  ..about = json['about'] as String?
-  ..motto = json['motto'] as String?
-  ..memberCount = (json['memberCount'] as num?)?.toInt()
-  ..locale = json['locale'] as String?
-  ..membershipOption = decodeMembershipOption(json['membershipOption'])
-  ..capabilities = json['capabilities'] == null
-      ? null
-      : Capabilities.fromJson((json['capabilities'] as num).toInt())
-  ..remoteGroupId = json['remoteGroupId'] as String?
-  ..clanInfo = json['clanInfo'] == null
-      ? null
-      : GroupV2ClanInfo.fromJson(json['clanInfo'] as Map<String, dynamic>)
-  ..avatarPath = json['avatarPath'] as String?
-  ..theme = json['theme'] as String?;
+GroupV2Card _$GroupV2CardFromJson(Map<String, dynamic> json) =>
+    GroupV2Card()
+      ..groupId = json['groupId'] as String?
+      ..name = json['name'] as String?
+      ..groupType = decodeGroupType(json['groupType'])
+      ..creationDate = json['creationDate'] as String?
+      ..about = json['about'] as String?
+      ..motto = json['motto'] as String?
+      ..memberCount = (json['memberCount'] as num?)?.toInt()
+      ..locale = json['locale'] as String?
+      ..membershipOption = decodeMembershipOption(json['membershipOption'])
+      ..capabilities =
+          json['capabilities'] == null
+              ? null
+              : Capabilities.fromJson((json['capabilities'] as num).toInt())
+      ..remoteGroupId = json['remoteGroupId'] as String?
+      ..clanInfo =
+          json['clanInfo'] == null
+              ? null
+              : GroupV2ClanInfo.fromJson(
+                json['clanInfo'] as Map<String, dynamic>,
+              )
+      ..avatarPath = json['avatarPath'] as String?
+      ..theme = json['theme'] as String?;
 
 Map<String, dynamic> _$GroupV2CardToJson(GroupV2Card instance) =>
     <String, dynamic>{

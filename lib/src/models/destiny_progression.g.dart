@@ -20,22 +20,32 @@ DestinyProgression _$DestinyProgressionFromJson(Map<String, dynamic> json) =>
       ..progressToNextLevel = (json['progressToNextLevel'] as num?)?.toInt()
       ..nextLevelAt = (json['nextLevelAt'] as num?)?.toInt()
       ..currentResetCount = (json['currentResetCount'] as num?)?.toInt()
-      ..seasonResets = (json['seasonResets'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyProgressionResetEntry.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..rewardItemStates = (json['rewardItemStates'] as List<dynamic>?)
-          ?.map((e) =>
-              DestinyProgressionRewardItemState.fromJson((e as num).toInt()))
-          .toList()
-      ..rewardItemSocketOverrideStates =
-          (json['rewardItemSocketOverrideStates'] as Map<String, dynamic>?)
+      ..seasonResets =
+          (json['seasonResets'] as List<dynamic>?)
               ?.map(
-        (k, e) => MapEntry(
-            k,
-            DestinyProgressionRewardItemSocketOverrideState.fromJson(
-                e as Map<String, dynamic>)),
-      );
+                (e) => DestinyProgressionResetEntry.fromJson(
+                  e as Map<String, dynamic>,
+                ),
+              )
+              .toList()
+      ..rewardItemStates =
+          (json['rewardItemStates'] as List<dynamic>?)
+              ?.map(
+                (e) => DestinyProgressionRewardItemState.fromJson(
+                  (e as num).toInt(),
+                ),
+              )
+              .toList()
+      ..rewardItemSocketOverrideStates = (json['rewardItemSocketOverrideStates']
+              as Map<String, dynamic>?)
+          ?.map(
+            (k, e) => MapEntry(
+              k,
+              DestinyProgressionRewardItemSocketOverrideState.fromJson(
+                e as Map<String, dynamic>,
+              ),
+            ),
+          );
 
 Map<String, dynamic> _$DestinyProgressionToJson(DestinyProgression instance) =>
     <String, dynamic>{

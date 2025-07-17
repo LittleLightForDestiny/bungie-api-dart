@@ -7,20 +7,25 @@ part of 'destiny_historical_stats_with_merged.dart';
 // **************************************************************************
 
 DestinyHistoricalStatsWithMerged _$DestinyHistoricalStatsWithMergedFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyHistoricalStatsWithMerged()
       ..results = (json['results'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k,
-            DestinyHistoricalStatsByPeriod.fromJson(e as Map<String, dynamic>)),
+        (k, e) => MapEntry(
+          k,
+          DestinyHistoricalStatsByPeriod.fromJson(e as Map<String, dynamic>),
+        ),
       )
-      ..merged = json['merged'] == null
-          ? null
-          : DestinyHistoricalStatsByPeriod.fromJson(
-              json['merged'] as Map<String, dynamic>);
+      ..merged =
+          json['merged'] == null
+              ? null
+              : DestinyHistoricalStatsByPeriod.fromJson(
+                json['merged'] as Map<String, dynamic>,
+              );
 
 Map<String, dynamic> _$DestinyHistoricalStatsWithMergedToJson(
-        DestinyHistoricalStatsWithMerged instance) =>
-    <String, dynamic>{
-      'results': instance.results?.map((k, e) => MapEntry(k, e.toJson())),
-      'merged': instance.merged?.toJson(),
-    };
+  DestinyHistoricalStatsWithMerged instance,
+) => <String, dynamic>{
+  'results': instance.results?.map((k, e) => MapEntry(k, e.toJson())),
+  'merged': instance.merged?.toJson(),
+};

@@ -7,7 +7,8 @@ part of 'destiny_perk_reference.dart';
 // **************************************************************************
 
 DestinyPerkReference _$DestinyPerkReferenceFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     DestinyPerkReference()
       ..perkHash = (json['perkHash'] as num?)?.toInt()
       ..iconPath = json['iconPath'] as String?
@@ -15,10 +16,10 @@ DestinyPerkReference _$DestinyPerkReferenceFromJson(
       ..visible = json['visible'] as bool?;
 
 Map<String, dynamic> _$DestinyPerkReferenceToJson(
-        DestinyPerkReference instance) =>
-    <String, dynamic>{
-      'perkHash': instance.perkHash,
-      'iconPath': instance.iconPath,
-      'isActive': instance.isActive,
-      'visible': instance.visible,
-    };
+  DestinyPerkReference instance,
+) => <String, dynamic>{
+  'perkHash': instance.perkHash,
+  'iconPath': instance.iconPath,
+  'isActive': instance.isActive,
+  'visible': instance.visible,
+};

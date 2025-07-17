@@ -8,15 +8,20 @@ part of 'fireteam_response.dart';
 
 FireteamResponse _$FireteamResponseFromJson(Map<String, dynamic> json) =>
     FireteamResponse()
-      ..summary = json['Summary'] == null
-          ? null
-          : FireteamSummary.fromJson(json['Summary'] as Map<String, dynamic>)
-      ..members = (json['Members'] as List<dynamic>?)
-          ?.map((e) => FireteamMember.fromJson(e as Map<String, dynamic>))
-          .toList()
-      ..alternates = (json['Alternates'] as List<dynamic>?)
-          ?.map((e) => FireteamMember.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..summary =
+          json['Summary'] == null
+              ? null
+              : FireteamSummary.fromJson(
+                json['Summary'] as Map<String, dynamic>,
+              )
+      ..members =
+          (json['Members'] as List<dynamic>?)
+              ?.map((e) => FireteamMember.fromJson(e as Map<String, dynamic>))
+              .toList()
+      ..alternates =
+          (json['Alternates'] as List<dynamic>?)
+              ?.map((e) => FireteamMember.fromJson(e as Map<String, dynamic>))
+              .toList();
 
 Map<String, dynamic> _$FireteamResponseToJson(FireteamResponse instance) =>
     <String, dynamic>{
