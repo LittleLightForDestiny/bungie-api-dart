@@ -11,26 +11,26 @@ DestinyVendorSaleItemComponent _$DestinyVendorSaleItemComponentFromJson(
     DestinyVendorSaleItemComponent()
       ..saleStatus = json['saleStatus'] == null
           ? null
-          : VendorItemStatus.fromJson(json['saleStatus'] as int)
+          : VendorItemStatus.fromJson((json['saleStatus'] as num).toInt())
       ..requiredUnlocks = (json['requiredUnlocks'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..unlockStatuses = (json['unlockStatuses'] as List<dynamic>?)
           ?.map((e) => DestinyUnlockStatus.fromJson(e as Map<String, dynamic>))
           .toList()
       ..failureIndexes = (json['failureIndexes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..augments = json['augments'] == null
           ? null
-          : DestinyVendorItemState.fromJson(json['augments'] as int)
+          : DestinyVendorItemState.fromJson((json['augments'] as num).toInt())
       ..itemValueVisibility = (json['itemValueVisibility'] as List<dynamic>?)
           ?.map((e) => e as bool)
           .toList()
-      ..vendorItemIndex = json['vendorItemIndex'] as int?
-      ..itemHash = json['itemHash'] as int?
-      ..overrideStyleItemHash = json['overrideStyleItemHash'] as int?
-      ..quantity = json['quantity'] as int?
+      ..vendorItemIndex = (json['vendorItemIndex'] as num?)?.toInt()
+      ..itemHash = (json['itemHash'] as num?)?.toInt()
+      ..overrideStyleItemHash = (json['overrideStyleItemHash'] as num?)?.toInt()
+      ..quantity = (json['quantity'] as num?)?.toInt()
       ..costs = (json['costs'] as List<dynamic>?)
           ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList()

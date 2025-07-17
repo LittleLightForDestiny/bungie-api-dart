@@ -9,7 +9,7 @@ part of 'destiny_item_talent_grid_block_definition.dart';
 DestinyItemTalentGridBlockDefinition
     _$DestinyItemTalentGridBlockDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyItemTalentGridBlockDefinition()
-          ..talentGridHash = json['talentGridHash'] as int?
+          ..talentGridHash = (json['talentGridHash'] as num?)?.toInt()
           ..itemDetailString = json['itemDetailString'] as String?
           ..buildName = json['buildName'] as String?
           ..hudDamageType = decodeDamageType(json['hudDamageType'])

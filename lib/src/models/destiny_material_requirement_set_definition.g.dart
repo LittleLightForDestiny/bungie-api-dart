@@ -14,8 +14,8 @@ DestinyMaterialRequirementSetDefinition
               ?.map((e) => DestinyMaterialRequirement.fromJson(
                   e as Map<String, dynamic>))
               .toList()
-          ..hash = json['hash'] as int?
-          ..index = json['index'] as int?
+          ..hash = (json['hash'] as num?)?.toInt()
+          ..index = (json['index'] as num?)?.toInt()
           ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyMaterialRequirementSetDefinitionToJson(

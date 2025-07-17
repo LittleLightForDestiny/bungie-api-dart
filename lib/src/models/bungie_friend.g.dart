@@ -11,11 +11,12 @@ BungieFriend _$BungieFriendFromJson(Map<String, dynamic> json) => BungieFriend()
   ..lastSeenAsBungieMembershipType =
       decodeBungieMembershipType(json['lastSeenAsBungieMembershipType'])
   ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-  ..bungieGlobalDisplayNameCode = json['bungieGlobalDisplayNameCode'] as int?
+  ..bungieGlobalDisplayNameCode =
+      (json['bungieGlobalDisplayNameCode'] as num?)?.toInt()
   ..onlineStatus = decodePresenceStatus(json['onlineStatus'])
   ..onlineTitle = json['onlineTitle'] == null
       ? null
-      : PresenceOnlineStateFlags.fromJson(json['onlineTitle'] as int)
+      : PresenceOnlineStateFlags.fromJson((json['onlineTitle'] as num).toInt())
   ..relationship = decodeFriendRelationshipState(json['relationship'])
   ..bungieNetUser = json['bungieNetUser'] == null
       ? null

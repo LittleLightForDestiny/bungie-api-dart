@@ -37,6 +37,14 @@ class DestinyItemPlugComponent{
 	/// This list will be empty if the plug is enabled.
 	@JsonKey(name:'enableFailIndexes')
 	List<int>? enableFailIndexes;
+	
+	/// If available, this is the stack size to display for the socket plug item.
+	@JsonKey(name:'stackSize')
+	int? stackSize;
+	
+	/// If available, this is the maximum stack size to display for the socket plug item.
+	@JsonKey(name:'maxStackSize')
+	int? maxStackSize;
 
 	factory DestinyItemPlugComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemPlugComponentFromJson(json);

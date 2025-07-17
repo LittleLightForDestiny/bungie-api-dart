@@ -9,10 +9,10 @@ part of 'destiny_vendor_category_entry_definition.dart';
 DestinyVendorCategoryEntryDefinition
     _$DestinyVendorCategoryEntryDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyVendorCategoryEntryDefinition()
-          ..categoryIndex = json['categoryIndex'] as int?
-          ..sortValue = json['sortValue'] as int?
-          ..categoryHash = json['categoryHash'] as int?
-          ..quantityAvailable = json['quantityAvailable'] as int?
+          ..categoryIndex = (json['categoryIndex'] as num?)?.toInt()
+          ..sortValue = (json['sortValue'] as num?)?.toInt()
+          ..categoryHash = (json['categoryHash'] as num?)?.toInt()
+          ..quantityAvailable = (json['quantityAvailable'] as num?)?.toInt()
           ..showUnavailableItems = json['showUnavailableItems'] as bool?
           ..hideIfNoCurrency = json['hideIfNoCurrency'] as bool?
           ..hideFromRegularPurchase = json['hideFromRegularPurchase'] as bool?
@@ -24,14 +24,14 @@ DestinyVendorCategoryEntryDefinition
               : DestinyVendorCategoryOverlayDefinition.fromJson(
                   json['overlay'] as Map<String, dynamic>)
           ..vendorItemIndexes = (json['vendorItemIndexes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
           ..isPreview = json['isPreview'] as bool?
           ..isDisplayOnly = json['isDisplayOnly'] as bool?
           ..resetIntervalMinutesOverride =
-              json['resetIntervalMinutesOverride'] as int?
+              (json['resetIntervalMinutesOverride'] as num?)?.toInt()
           ..resetOffsetMinutesOverride =
-              json['resetOffsetMinutesOverride'] as int?;
+              (json['resetOffsetMinutesOverride'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorCategoryEntryDefinitionToJson(
         DestinyVendorCategoryEntryDefinition instance) =>

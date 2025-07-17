@@ -13,18 +13,18 @@ DestinyFactionDefinition _$DestinyFactionDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..progressionHash = json['progressionHash'] as int?
+      ..progressionHash = (json['progressionHash'] as num?)?.toInt()
       ..tokenValues = (json['tokenValues'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as int),
+        (k, e) => MapEntry(k, (e as num).toInt()),
       )
-      ..rewardItemHash = json['rewardItemHash'] as int?
-      ..rewardVendorHash = json['rewardVendorHash'] as int?
+      ..rewardItemHash = (json['rewardItemHash'] as num?)?.toInt()
+      ..rewardVendorHash = (json['rewardVendorHash'] as num?)?.toInt()
       ..vendors = (json['vendors'] as List<dynamic>?)
           ?.map((e) => DestinyFactionVendorDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyFactionDefinitionToJson(

@@ -66,7 +66,7 @@ enum DestinyComponentType {
   @JsonValue(301)
   ItemObjectives,
   ///ItemPerks = 302
-  /// Items can have perks (DestinyPerkDefinition). If they do, this will return info for what perks are active on items.
+  /// Items can have perks (DestinySandboxPerkDefinition). If they do, this will return info for what perks are active on items.
   @JsonValue(302)
   ItemPerks,
   ///ItemRenderData = 303

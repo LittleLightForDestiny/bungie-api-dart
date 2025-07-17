@@ -15,8 +15,9 @@ DestinyTalentNodeCategory _$DestinyTalentNodeCategoryFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..nodeHashes =
-          (json['nodeHashes'] as List<dynamic>?)?.map((e) => e as int).toList();
+      ..nodeHashes = (json['nodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList();
 
 Map<String, dynamic> _$DestinyTalentNodeCategoryToJson(
         DestinyTalentNodeCategory instance) =>

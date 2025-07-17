@@ -3,12 +3,11 @@ import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import '../enums/damage_type.dart';
-import 'destiny_talent_node_step_groups.dart';
 
 part 'destiny_sandbox_perk_definition.g.dart';
 
 /// Perks are modifiers to a character or item that can be applied situationally.
-/// - Perks determine a weapons&#39; damage type.
+/// - Perks determine a weapon&#39;s damage type.
 /// - Perks put the Mods in Modifiers (they are literally the entity that bestows the Sandbox benefit for whatever fluff text about the modifier in the Socket, Plug or Talent Node)
 /// - Perks are applied for unique alterations of state in Objectives
 /// Anyways, I&#39;m sure you can see why perks are so interesting.
@@ -39,11 +38,6 @@ class DestinySandboxPerkDefinition{
 	/// This is preferred over using the damageType enumeration value, which has been left purely because it is occasionally convenient.
 	@JsonKey(name:'damageTypeHash')
 	int? damageTypeHash;
-	
-	/// An old holdover from the original Armory, this was an attempt to group perks by functionality.
-	/// It is as yet unpopulated, and there will be quite a bit of work needed to restore it to its former working order.
-	@JsonKey(name:'perkGroups')
-	DestinyTalentNodeStepGroups? perkGroups;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

@@ -14,6 +14,9 @@ class DestinyArtifactTierItem{
 	
 	@JsonKey(name:'isActive')
 	bool? isActive;
+	
+	@JsonKey(name:'isVisible')
+	bool? isVisible;
 
 	factory DestinyArtifactTierItem.fromJson(Map<String, dynamic> json) {
 		return _$DestinyArtifactTierItemFromJson(json);

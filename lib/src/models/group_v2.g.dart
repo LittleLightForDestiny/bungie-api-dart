@@ -15,7 +15,7 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) => GroupV2()
   ..modificationDate = json['modificationDate'] as String?
   ..about = json['about'] as String?
   ..tags = (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList()
-  ..memberCount = json['memberCount'] as int?
+  ..memberCount = (json['memberCount'] as num?)?.toInt()
   ..isPublic = json['isPublic'] as bool?
   ..isPublicTopicAdminOnly = json['isPublicTopicAdminOnly'] as bool?
   ..motto = json['motto'] as String?
@@ -23,7 +23,7 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) => GroupV2()
   ..isDefaultPostPublic = json['isDefaultPostPublic'] as bool?
   ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity'])
   ..locale = json['locale'] as String?
-  ..avatarImageIndex = json['avatarImageIndex'] as int?
+  ..avatarImageIndex = (json['avatarImageIndex'] as num?)?.toInt()
   ..homepage = decodeGroupHomepage(json['homepage'])
   ..membershipOption = decodeMembershipOption(json['membershipOption'])
   ..defaultPublicity = decodeGroupPostPublicity(json['defaultPublicity'])
@@ -37,6 +37,7 @@ GroupV2 _$GroupV2FromJson(Map<String, dynamic> json) => GroupV2()
   ..features = json['features'] == null
       ? null
       : GroupFeatures.fromJson(json['features'] as Map<String, dynamic>)
+  ..remoteGroupId = json['remoteGroupId'] as String?
   ..clanInfo = json['clanInfo'] == null
       ? null
       : GroupV2ClanInfoAndInvestment.fromJson(
@@ -71,5 +72,6 @@ Map<String, dynamic> _$GroupV2ToJson(GroupV2 instance) => <String, dynamic>{
           instance.enableInvitationMessagingForAdmins,
       'banExpireDate': instance.banExpireDate,
       'features': instance.features?.toJson(),
+      'remoteGroupId': instance.remoteGroupId,
       'clanInfo': instance.clanInfo?.toJson(),
     };

@@ -23,9 +23,9 @@ DestinyClassDefinition _$DestinyClassDefinitionFromJson(
               ?.map(
         (k, e) => MapEntry(k, e as String),
       )
-      ..mentorVendorHash = json['mentorVendorHash'] as int?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..mentorVendorHash = (json['mentorVendorHash'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyClassDefinitionToJson(

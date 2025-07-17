@@ -9,10 +9,11 @@ part of 'destiny_public_vendor_sale_item_component.dart';
 DestinyPublicVendorSaleItemComponent
     _$DestinyPublicVendorSaleItemComponentFromJson(Map<String, dynamic> json) =>
         DestinyPublicVendorSaleItemComponent()
-          ..vendorItemIndex = json['vendorItemIndex'] as int?
-          ..itemHash = json['itemHash'] as int?
-          ..overrideStyleItemHash = json['overrideStyleItemHash'] as int?
-          ..quantity = json['quantity'] as int?
+          ..vendorItemIndex = (json['vendorItemIndex'] as num?)?.toInt()
+          ..itemHash = (json['itemHash'] as num?)?.toInt()
+          ..overrideStyleItemHash =
+              (json['overrideStyleItemHash'] as num?)?.toInt()
+          ..quantity = (json['quantity'] as num?)?.toInt()
           ..costs = (json['costs'] as List<dynamic>?)
               ?.map((e) =>
                   DestinyItemQuantity.fromJson(e as Map<String, dynamic>))

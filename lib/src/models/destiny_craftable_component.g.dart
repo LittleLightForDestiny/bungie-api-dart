@@ -12,7 +12,7 @@ DestinyCraftableComponent _$DestinyCraftableComponentFromJson(
       ..visible = json['visible'] as bool?
       ..failedRequirementIndexes =
           (json['failedRequirementIndexes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..sockets = (json['sockets'] as List<dynamic>?)
           ?.map((e) => DestinyCraftableSocketComponent.fromJson(

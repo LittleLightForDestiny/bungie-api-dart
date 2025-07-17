@@ -10,8 +10,9 @@ AwaUserResponse _$AwaUserResponseFromJson(Map<String, dynamic> json) =>
     AwaUserResponse()
       ..selection = decodeAwaUserSelection(json['selection'])
       ..correlationId = json['correlationId'] as String?
-      ..nonce =
-          (json['nonce'] as List<dynamic>?)?.map((e) => e as int).toList();
+      ..nonce = (json['nonce'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList();
 
 Map<String, dynamic> _$AwaUserResponseToJson(AwaUserResponse instance) =>
     <String, dynamic>{

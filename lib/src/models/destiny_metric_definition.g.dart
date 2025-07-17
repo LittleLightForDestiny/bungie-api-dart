@@ -13,19 +13,20 @@ DestinyMetricDefinition _$DestinyMetricDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..trackingObjectiveHash = json['trackingObjectiveHash'] as int?
+      ..trackingObjectiveHash = (json['trackingObjectiveHash'] as num?)?.toInt()
       ..lowerValueIsBetter = json['lowerValueIsBetter'] as bool?
       ..presentationNodeType =
           decodeDestinyPresentationNodeType(json['presentationNodeType'])
       ..traitIds =
           (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyMetricDefinitionToJson(

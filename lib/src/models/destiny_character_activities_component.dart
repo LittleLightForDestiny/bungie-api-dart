@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import 'destiny_activity.dart';
+import 'destiny_activity_interactable_reference.dart';
 import '../enums/destiny_activity_mode_type.dart';
 
 part 'destiny_character_activities_component.g.dart';
@@ -19,6 +20,10 @@ class DestinyCharacterActivitiesComponent{
 	/// The list of activities that the user can play.
 	@JsonKey(name:'availableActivities')
 	List<DestinyActivity>? availableActivities;
+	
+	/// The list of activity interactables that the player can interact with.
+	@JsonKey(name:'availableActivityInteractables')
+	List<DestinyActivityInteractableReference>? availableActivityInteractables;
 	
 	/// If the user is in an activity, this will be the hash of the Activity being played. Note that you must combine this info with currentActivityModeHash to get a real picture of what the user is doing right now. For instance, PVP "Activities" are just maps: it's the ActivityMode that determines what type of PVP game they're playing.
 	@JsonKey(name:'currentActivityHash')

@@ -9,11 +9,11 @@ part of 'destiny_environment_location_mapping.dart';
 DestinyEnvironmentLocationMapping _$DestinyEnvironmentLocationMappingFromJson(
         Map<String, dynamic> json) =>
     DestinyEnvironmentLocationMapping()
-      ..locationHash = json['locationHash'] as int?
+      ..locationHash = (json['locationHash'] as num?)?.toInt()
       ..activationSource = json['activationSource'] as String?
-      ..itemHash = json['itemHash'] as int?
-      ..objectiveHash = json['objectiveHash'] as int?
-      ..activityHash = json['activityHash'] as int?;
+      ..itemHash = (json['itemHash'] as num?)?.toInt()
+      ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
+      ..activityHash = (json['activityHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyEnvironmentLocationMappingToJson(
         DestinyEnvironmentLocationMapping instance) =>

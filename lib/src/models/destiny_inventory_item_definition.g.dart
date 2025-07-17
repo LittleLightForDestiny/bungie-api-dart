@@ -17,9 +17,10 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           ?.map((e) => DestinyItemTooltipNotification.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..collectibleHash = json['collectibleHash'] as int?
+      ..collectibleHash = (json['collectibleHash'] as num?)?.toInt()
       ..iconWatermark = json['iconWatermark'] as String?
       ..iconWatermarkShelved = json['iconWatermarkShelved'] as String?
+      ..iconWatermarkFeatured = json['iconWatermarkFeatured'] as String?
       ..secondaryIcon = json['secondaryIcon'] as String?
       ..secondaryOverlay = json['secondaryOverlay'] as String?
       ..secondarySpecial = json['secondarySpecial'] as String?
@@ -27,6 +28,7 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           ? null
           : DestinyColor.fromJson(
               json['backgroundColor'] as Map<String, dynamic>)
+      ..isFeaturedItem = json['isFeaturedItem'] as bool?
       ..screenshot = json['screenshot'] as String?
       ..itemTypeDisplayName = json['itemTypeDisplayName'] as String?
       ..flavorText = json['flavorText'] as String?
@@ -55,7 +57,7 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           ? null
           : DestinyItemStatBlockDefinition.fromJson(
               json['stats'] as Map<String, dynamic>)
-      ..emblemObjectiveHash = json['emblemObjectiveHash'] as int?
+      ..emblemObjectiveHash = (json['emblemObjectiveHash'] as num?)?.toInt()
       ..equippingBlock = json['equippingBlock'] == null
           ? null
           : DestinyEquippingBlockDefinition.fromJson(
@@ -120,8 +122,8 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           ?.map((e) => DestinyItemPerkEntryDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..loreHash = json['loreHash'] as int?
-      ..summaryItemHash = json['summaryItemHash'] as int?
+      ..loreHash = (json['loreHash'] as num?)?.toInt()
+      ..summaryItemHash = (json['summaryItemHash'] as num?)?.toInt()
       ..animations = (json['animations'] as List<dynamic>?)
           ?.map((e) =>
               DestinyAnimationReference.fromJson(e as Map<String, dynamic>))
@@ -134,31 +136,32 @@ DestinyInventoryItemDefinition _$DestinyInventoryItemDefinitionFromJson(
           json['doesPostmasterPullHaveSideEffects'] as bool?
       ..nonTransferrable = json['nonTransferrable'] as bool?
       ..itemCategoryHashes = (json['itemCategoryHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..specialItemType = decodeSpecialItemType(json['specialItemType'])
       ..itemType = decodeDestinyItemType(json['itemType'])
       ..itemSubType = decodeDestinyItemSubType(json['itemSubType'])
       ..classType = decodeDestinyClass(json['classType'])
       ..breakerType = decodeDestinyBreakerType(json['breakerType'])
-      ..breakerTypeHash = json['breakerTypeHash'] as int?
+      ..breakerTypeHash = (json['breakerTypeHash'] as num?)?.toInt()
       ..equippable = json['equippable'] as bool?
       ..damageTypeHashes = (json['damageTypeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..damageTypes = (json['damageTypes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$DamageTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$DamageTypeEnumMap, e))
           .toList()
       ..defaultDamageType = decodeDamageType(json['defaultDamageType'])
-      ..defaultDamageTypeHash = json['defaultDamageTypeHash'] as int?
-      ..seasonHash = json['seasonHash'] as int?
+      ..defaultDamageTypeHash = (json['defaultDamageTypeHash'] as num?)?.toInt()
+      ..seasonHash = (json['seasonHash'] as num?)?.toInt()
       ..isWrapper = json['isWrapper'] as bool?
       ..traitIds =
           (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
@@ -170,10 +173,12 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'collectibleHash': instance.collectibleHash,
       'iconWatermark': instance.iconWatermark,
       'iconWatermarkShelved': instance.iconWatermarkShelved,
+      'iconWatermarkFeatured': instance.iconWatermarkFeatured,
       'secondaryIcon': instance.secondaryIcon,
       'secondaryOverlay': instance.secondaryOverlay,
       'secondarySpecial': instance.secondarySpecial,
       'backgroundColor': instance.backgroundColor?.toJson(),
+      'isFeaturedItem': instance.isFeaturedItem,
       'screenshot': instance.screenshot,
       'itemTypeDisplayName': instance.itemTypeDisplayName,
       'flavorText': instance.flavorText,
@@ -222,7 +227,7 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'equippable': instance.equippable,
       'damageTypeHashes': instance.damageTypeHashes,
       'damageTypes':
-          instance.damageTypes?.map((e) => _$DamageTypeEnumMap[e]).toList(),
+          instance.damageTypes?.map((e) => _$DamageTypeEnumMap[e]!).toList(),
       'defaultDamageType': encodeDamageType(instance.defaultDamageType),
       'defaultDamageTypeHash': instance.defaultDamageTypeHash,
       'seasonHash': instance.seasonHash,
@@ -233,32 +238,6 @@ Map<String, dynamic> _$DestinyInventoryItemDefinitionToJson(
       'index': instance.index,
       'redacted': instance.redacted,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DamageTypeEnumMap = {
   DamageType.None: 0,

@@ -11,7 +11,7 @@ UserSearchResponseDetail _$UserSearchResponseDetailFromJson(
     UserSearchResponseDetail()
       ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
       ..bungieGlobalDisplayNameCode =
-          json['bungieGlobalDisplayNameCode'] as int?
+          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt()
       ..bungieNetMembershipId = json['bungieNetMembershipId'] as String?
       ..destinyMemberships = (json['destinyMemberships'] as List<dynamic>?)
           ?.map((e) => UserInfoCard.fromJson(e as Map<String, dynamic>))

@@ -181,6 +181,9 @@ enum PlatformErrorCodes {
   ///InvalidServiceAuthContext = 59
   @JsonValue(59)
   InvalidServiceAuthContext,
+  ///FailedMinimumAgeCheck = 60
+  @JsonValue(60)
+  FailedMinimumAgeCheck,
   ///ObsoleteCredentialType = 89
   @JsonValue(89)
   ObsoleteCredentialType,
@@ -592,6 +595,21 @@ enum PlatformErrorCodes {
   ///UserDisplayNameContainsUnacceptableOrInvalidContent = 244
   @JsonValue(244)
   UserDisplayNameContainsUnacceptableOrInvalidContent,
+  ///EmailValidationOffline = 245
+  @JsonValue(245)
+  EmailValidationOffline,
+  ///EmailValidationFailOldCode = 246
+  @JsonValue(246)
+  EmailValidationFailOldCode,
+  ///EmailValidationFailBadLink = 247
+  @JsonValue(247)
+  EmailValidationFailBadLink,
+  ///EmailUnsubscribeFail = 248
+  @JsonValue(248)
+  EmailUnsubscribeFail,
+  ///EmailUnsubscribeFailNew = 249
+  @JsonValue(249)
+  EmailUnsubscribeFailNew,
   ///MessagingUnknownError = 300
   @JsonValue(300)
   MessagingUnknownError,
@@ -634,6 +652,9 @@ enum PlatformErrorCodes {
   ///PrivateMessagingRequiresDestinyMembership = 313
   @JsonValue(313)
   PrivateMessagingRequiresDestinyMembership,
+  ///MessagingSendDailyThrottle = 314
+  @JsonValue(314)
+  MessagingSendDailyThrottle,
   ///AddSurveyAnswersUnknownSqlException = 400
   @JsonValue(400)
   AddSurveyAnswersUnknownSqlException,
@@ -2303,6 +2324,144 @@ enum PlatformErrorCodes {
   ///ClanFireteamPurchaseRequiredJoin = 3038
   @JsonValue(3038)
   ClanFireteamPurchaseRequiredJoin,
+  ///FireteamFinderInvalidMembershipType = 3100
+  @JsonValue(3100)
+  FireteamFinderInvalidMembershipType,
+  ///FireteamFinderInvalidMembershipId = 3101
+  @JsonValue(3101)
+  FireteamFinderInvalidMembershipId,
+  ///FireteamFinderInvalidCharacterId = 3102
+  @JsonValue(3102)
+  FireteamFinderInvalidCharacterId,
+  ///FireteamFinderInvalidListingOptions = 3103
+  @JsonValue(3103)
+  FireteamFinderInvalidListingOptions,
+  ///FireteamFinderInvalidRequestData = 3104
+  @JsonValue(3104)
+  FireteamFinderInvalidRequestData,
+  ///FireteamFinderListingApplicationFailed = 3105
+  @JsonValue(3105)
+  FireteamFinderListingApplicationFailed,
+  ///FireteamFinderListingAutoJoinFailed = 3106
+  @JsonValue(3106)
+  FireteamFinderListingAutoJoinFailed,
+  ///FireteamFinderPlayerApplicationsParsingFailed = 3107
+  @JsonValue(3107)
+  FireteamFinderPlayerApplicationsParsingFailed,
+  ///FireteamFinderJoinLobbyHostFailed = 3108
+  @JsonValue(3108)
+  FireteamFinderJoinLobbyHostFailed,
+  ///FireteamFinderPlayerNotInGame = 3109
+  @JsonValue(3109)
+  FireteamFinderPlayerNotInGame,
+  ///FireteamFinderActivationFailed = 3110
+  @JsonValue(3110)
+  FireteamFinderActivationFailed,
+  ///FireteamFinderApplicationNotFound = 3111
+  @JsonValue(3111)
+  FireteamFinderApplicationNotFound,
+  ///FireteamFinderUserAlreadyAppliedToListing = 3112
+  @JsonValue(3112)
+  FireteamFinderUserAlreadyAppliedToListing,
+  ///FireteamFinderApplicationClosedForUpdates = 3113
+  @JsonValue(3113)
+  FireteamFinderApplicationClosedForUpdates,
+  ///FireteamFinderListingAtMaxOpenApplicationsLimit = 3114
+  @JsonValue(3114)
+  FireteamFinderListingAtMaxOpenApplicationsLimit,
+  ///FireteamFinderUserNotInApplication = 3115
+  @JsonValue(3115)
+  FireteamFinderUserNotInApplication,
+  ///FireteamFinderApplicationUserAlreadyListingOwner = 3116
+  @JsonValue(3116)
+  FireteamFinderApplicationUserAlreadyListingOwner,
+  ///FireteamFinderOfferNotFound = 3117
+  @JsonValue(3117)
+  FireteamFinderOfferNotFound,
+  ///FireteamFinderOfferClosedForUpdates = 3118
+  @JsonValue(3118)
+  FireteamFinderOfferClosedForUpdates,
+  ///FireteamFinderOfferUserNotTarget = 3119
+  @JsonValue(3119)
+  FireteamFinderOfferUserNotTarget,
+  ///FireteamFinderLobbyNotFound = 3120
+  @JsonValue(3120)
+  FireteamFinderLobbyNotFound,
+  ///FireteamFinderListingNotFound = 3121
+  @JsonValue(3121)
+  FireteamFinderListingNotFound,
+  ///FireteamFinderLobbyFull = 3122
+  @JsonValue(3122)
+  FireteamFinderLobbyFull,
+  ///FireteamFinderUserNotListingOwner = 3123
+  @JsonValue(3123)
+  FireteamFinderUserNotListingOwner,
+  ///FireteamFinderUserNotLobbyOwner = 3124
+  @JsonValue(3124)
+  FireteamFinderUserNotLobbyOwner,
+  ///FireteamFinderLobbyClosedForUpdates = 3125
+  @JsonValue(3125)
+  FireteamFinderLobbyClosedForUpdates,
+  ///FireteamFinderUserNotInLobby = 3126
+  @JsonValue(3126)
+  FireteamFinderUserNotInLobby,
+  ///FireteamFinderDisabledSettingsValue = 3127
+  @JsonValue(3127)
+  FireteamFinderDisabledSettingsValue,
+  ///FireteamFinderOwnerInActiveLobby = 3128
+  @JsonValue(3128)
+  FireteamFinderOwnerInActiveLobby,
+  ///FireteamFinderApplicationClosedToOfflinePlayers = 3129
+  @JsonValue(3129)
+  FireteamFinderApplicationClosedToOfflinePlayers,
+  ///FireteamFinderUserNotApplicationOwner = 3130
+  @JsonValue(3130)
+  FireteamFinderUserNotApplicationOwner,
+  ///FireteamFinderInviteValidationFailed = 3131
+  @JsonValue(3131)
+  FireteamFinderInviteValidationFailed,
+  ///FireteamFinderOwnerNotInGame = 3132
+  @JsonValue(3132)
+  FireteamFinderOwnerNotInGame,
+  ///FireteamFinderPlayerAtMaxLobbyLimit = 3133
+  @JsonValue(3133)
+  FireteamFinderPlayerAtMaxLobbyLimit,
+  ///FireteamFinderLobbyTooFarInTheFuture = 3134
+  @JsonValue(3134)
+  FireteamFinderLobbyTooFarInTheFuture,
+  ///FireteamFinderApplicantNotInGame = 3135
+  @JsonValue(3135)
+  FireteamFinderApplicantNotInGame,
+  ///FireteamFinderResponseUndefined = 3150
+  @JsonValue(3150)
+  FireteamFinderResponseUndefined,
+  ///FireteamFinderResponseMoved = 3151
+  @JsonValue(3151)
+  FireteamFinderResponseMoved,
+  ///FireteamFinderResponseLoggingIn = 3152
+  @JsonValue(3152)
+  FireteamFinderResponseLoggingIn,
+  ///FireteamFinderResponseBadRequest = 3153
+  @JsonValue(3153)
+  FireteamFinderResponseBadRequest,
+  ///FireteamFinderResponseUnauthorized = 3154
+  @JsonValue(3154)
+  FireteamFinderResponseUnauthorized,
+  ///FireteamFinderResponseForbidden = 3155
+  @JsonValue(3155)
+  FireteamFinderResponseForbidden,
+  ///FireteamFinderResponseNotFound = 3156
+  @JsonValue(3156)
+  FireteamFinderResponseNotFound,
+  ///FireteamFinderInternalServerError = 3157
+  @JsonValue(3157)
+  FireteamFinderInternalServerError,
+  ///FireteamFinderServiceUnavailable = 3158
+  @JsonValue(3158)
+  FireteamFinderServiceUnavailable,
+  ///FireteamFinderInternalServerErrorNonFatal = 3159
+  @JsonValue(3159)
+  FireteamFinderInternalServerErrorNonFatal,
   ///CrossSaveOverriddenAccountNotFound = 3200
   @JsonValue(3200)
   CrossSaveOverriddenAccountNotFound,
@@ -2447,6 +2606,9 @@ enum PlatformErrorCodes {
   ///ErrorPhoneValidationCodeTooRecentlyChecked = 3710
   @JsonValue(3710)
   ErrorPhoneValidationCodeTooRecentlyChecked,
+  ///ErrorPhoneValidationRecentlyPlayedDestiny2AccountRequired = 3711
+  @JsonValue(3711)
+  ErrorPhoneValidationRecentlyPlayedDestiny2AccountRequired,
   ///ApplePushErrorUnknown = 3800
   @JsonValue(3800)
   ApplePushErrorUnknown,
@@ -2504,6 +2666,12 @@ enum PlatformErrorCodes {
   ///ErrorBungieBlockListFull = 3911
   @JsonValue(3911)
   ErrorBungieBlockListFull,
+  ///ErrorBungieFriendNotFound = 3912
+  @JsonValue(3912)
+  ErrorBungieFriendNotFound,
+  ///ErrorBungieFriendInvalidMembershipType = 3913
+  @JsonValue(3913)
+  ErrorBungieFriendInvalidMembershipType,
   ///ErrorEgsUnknown = 4000
   @JsonValue(4000)
   ErrorEgsUnknown,
@@ -2624,6 +2792,7 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.PerUserThrottleExceeded:57,
     PlatformErrorCodes.PayloadSignatureVerificationFailure:58,
     PlatformErrorCodes.InvalidServiceAuthContext:59,
+    PlatformErrorCodes.FailedMinimumAgeCheck:60,
     PlatformErrorCodes.ObsoleteCredentialType:89,
     PlatformErrorCodes.UnableToUnPairMobileApp:90,
     PlatformErrorCodes.UnableToPairMobileApp:91,
@@ -2761,6 +2930,11 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.UserDisplayNameLessThanMinLength:242,
     PlatformErrorCodes.UserDisplayNameGreaterThanMaxLength:243,
     PlatformErrorCodes.UserDisplayNameContainsUnacceptableOrInvalidContent:244,
+    PlatformErrorCodes.EmailValidationOffline:245,
+    PlatformErrorCodes.EmailValidationFailOldCode:246,
+    PlatformErrorCodes.EmailValidationFailBadLink:247,
+    PlatformErrorCodes.EmailUnsubscribeFail:248,
+    PlatformErrorCodes.EmailUnsubscribeFailNew:249,
     PlatformErrorCodes.MessagingUnknownError:300,
     PlatformErrorCodes.MessagingSelfError:301,
     PlatformErrorCodes.MessagingSendThrottle:302,
@@ -2775,6 +2949,7 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.MessagingSenderIsBanned:311,
     PlatformErrorCodes.MessagingGroupOptionalChatExceededMaximum:312,
     PlatformErrorCodes.PrivateMessagingRequiresDestinyMembership:313,
+    PlatformErrorCodes.MessagingSendDailyThrottle:314,
     PlatformErrorCodes.AddSurveyAnswersUnknownSqlException:400,
     PlatformErrorCodes.ForumBodyCannotBeEmpty:500,
     PlatformErrorCodes.ForumSubjectCannotBeEmptyOnTopicPost:501,
@@ -3331,6 +3506,52 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ClanFireteamPurchaseRequiredCreate:3036,
     PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredJoin:3037,
     PlatformErrorCodes.ClanFireteamPurchaseRequiredJoin:3038,
+    PlatformErrorCodes.FireteamFinderInvalidMembershipType:3100,
+    PlatformErrorCodes.FireteamFinderInvalidMembershipId:3101,
+    PlatformErrorCodes.FireteamFinderInvalidCharacterId:3102,
+    PlatformErrorCodes.FireteamFinderInvalidListingOptions:3103,
+    PlatformErrorCodes.FireteamFinderInvalidRequestData:3104,
+    PlatformErrorCodes.FireteamFinderListingApplicationFailed:3105,
+    PlatformErrorCodes.FireteamFinderListingAutoJoinFailed:3106,
+    PlatformErrorCodes.FireteamFinderPlayerApplicationsParsingFailed:3107,
+    PlatformErrorCodes.FireteamFinderJoinLobbyHostFailed:3108,
+    PlatformErrorCodes.FireteamFinderPlayerNotInGame:3109,
+    PlatformErrorCodes.FireteamFinderActivationFailed:3110,
+    PlatformErrorCodes.FireteamFinderApplicationNotFound:3111,
+    PlatformErrorCodes.FireteamFinderUserAlreadyAppliedToListing:3112,
+    PlatformErrorCodes.FireteamFinderApplicationClosedForUpdates:3113,
+    PlatformErrorCodes.FireteamFinderListingAtMaxOpenApplicationsLimit:3114,
+    PlatformErrorCodes.FireteamFinderUserNotInApplication:3115,
+    PlatformErrorCodes.FireteamFinderApplicationUserAlreadyListingOwner:3116,
+    PlatformErrorCodes.FireteamFinderOfferNotFound:3117,
+    PlatformErrorCodes.FireteamFinderOfferClosedForUpdates:3118,
+    PlatformErrorCodes.FireteamFinderOfferUserNotTarget:3119,
+    PlatformErrorCodes.FireteamFinderLobbyNotFound:3120,
+    PlatformErrorCodes.FireteamFinderListingNotFound:3121,
+    PlatformErrorCodes.FireteamFinderLobbyFull:3122,
+    PlatformErrorCodes.FireteamFinderUserNotListingOwner:3123,
+    PlatformErrorCodes.FireteamFinderUserNotLobbyOwner:3124,
+    PlatformErrorCodes.FireteamFinderLobbyClosedForUpdates:3125,
+    PlatformErrorCodes.FireteamFinderUserNotInLobby:3126,
+    PlatformErrorCodes.FireteamFinderDisabledSettingsValue:3127,
+    PlatformErrorCodes.FireteamFinderOwnerInActiveLobby:3128,
+    PlatformErrorCodes.FireteamFinderApplicationClosedToOfflinePlayers:3129,
+    PlatformErrorCodes.FireteamFinderUserNotApplicationOwner:3130,
+    PlatformErrorCodes.FireteamFinderInviteValidationFailed:3131,
+    PlatformErrorCodes.FireteamFinderOwnerNotInGame:3132,
+    PlatformErrorCodes.FireteamFinderPlayerAtMaxLobbyLimit:3133,
+    PlatformErrorCodes.FireteamFinderLobbyTooFarInTheFuture:3134,
+    PlatformErrorCodes.FireteamFinderApplicantNotInGame:3135,
+    PlatformErrorCodes.FireteamFinderResponseUndefined:3150,
+    PlatformErrorCodes.FireteamFinderResponseMoved:3151,
+    PlatformErrorCodes.FireteamFinderResponseLoggingIn:3152,
+    PlatformErrorCodes.FireteamFinderResponseBadRequest:3153,
+    PlatformErrorCodes.FireteamFinderResponseUnauthorized:3154,
+    PlatformErrorCodes.FireteamFinderResponseForbidden:3155,
+    PlatformErrorCodes.FireteamFinderResponseNotFound:3156,
+    PlatformErrorCodes.FireteamFinderInternalServerError:3157,
+    PlatformErrorCodes.FireteamFinderServiceUnavailable:3158,
+    PlatformErrorCodes.FireteamFinderInternalServerErrorNonFatal:3159,
     PlatformErrorCodes.CrossSaveOverriddenAccountNotFound:3200,
     PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms:3201,
     PlatformErrorCodes.CrossSaveNoOverriddenPlatforms:3202,
@@ -3379,6 +3600,7 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ErrorPhoneValidationCodeExpired:3708,
     PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType:3709,
     PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked:3710,
+    PlatformErrorCodes.ErrorPhoneValidationRecentlyPlayedDestiny2AccountRequired:3711,
     PlatformErrorCodes.ApplePushErrorUnknown:3800,
     PlatformErrorCodes.ApplePushErrorNull:3801,
     PlatformErrorCodes.ApplePushErrorTimeout:3802,
@@ -3398,6 +3620,8 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ErrorBungieBlockSelf:3908,
     PlatformErrorCodes.ErrorBungieFriendsListFull:3910,
     PlatformErrorCodes.ErrorBungieBlockListFull:3911,
+    PlatformErrorCodes.ErrorBungieFriendNotFound:3912,
+    PlatformErrorCodes.ErrorBungieFriendInvalidMembershipType:3913,
     PlatformErrorCodes.ErrorEgsUnknown:4000,
     PlatformErrorCodes.ErrorEgsBadRequest:4001,
     PlatformErrorCodes.ErrorEgsNotAuthorized:4002,
@@ -3470,6 +3694,7 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     57:PlatformErrorCodes.PerUserThrottleExceeded,
     58:PlatformErrorCodes.PayloadSignatureVerificationFailure,
     59:PlatformErrorCodes.InvalidServiceAuthContext,
+    60:PlatformErrorCodes.FailedMinimumAgeCheck,
     89:PlatformErrorCodes.ObsoleteCredentialType,
     90:PlatformErrorCodes.UnableToUnPairMobileApp,
     91:PlatformErrorCodes.UnableToPairMobileApp,
@@ -3607,6 +3832,11 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     242:PlatformErrorCodes.UserDisplayNameLessThanMinLength,
     243:PlatformErrorCodes.UserDisplayNameGreaterThanMaxLength,
     244:PlatformErrorCodes.UserDisplayNameContainsUnacceptableOrInvalidContent,
+    245:PlatformErrorCodes.EmailValidationOffline,
+    246:PlatformErrorCodes.EmailValidationFailOldCode,
+    247:PlatformErrorCodes.EmailValidationFailBadLink,
+    248:PlatformErrorCodes.EmailUnsubscribeFail,
+    249:PlatformErrorCodes.EmailUnsubscribeFailNew,
     300:PlatformErrorCodes.MessagingUnknownError,
     301:PlatformErrorCodes.MessagingSelfError,
     302:PlatformErrorCodes.MessagingSendThrottle,
@@ -3621,6 +3851,7 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     311:PlatformErrorCodes.MessagingSenderIsBanned,
     312:PlatformErrorCodes.MessagingGroupOptionalChatExceededMaximum,
     313:PlatformErrorCodes.PrivateMessagingRequiresDestinyMembership,
+    314:PlatformErrorCodes.MessagingSendDailyThrottle,
     400:PlatformErrorCodes.AddSurveyAnswersUnknownSqlException,
     500:PlatformErrorCodes.ForumBodyCannotBeEmpty,
     501:PlatformErrorCodes.ForumSubjectCannotBeEmptyOnTopicPost,
@@ -4177,6 +4408,52 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     3036:PlatformErrorCodes.ClanFireteamPurchaseRequiredCreate,
     3037:PlatformErrorCodes.ClanFireteamSMSOrPurchaseRequiredJoin,
     3038:PlatformErrorCodes.ClanFireteamPurchaseRequiredJoin,
+    3100:PlatformErrorCodes.FireteamFinderInvalidMembershipType,
+    3101:PlatformErrorCodes.FireteamFinderInvalidMembershipId,
+    3102:PlatformErrorCodes.FireteamFinderInvalidCharacterId,
+    3103:PlatformErrorCodes.FireteamFinderInvalidListingOptions,
+    3104:PlatformErrorCodes.FireteamFinderInvalidRequestData,
+    3105:PlatformErrorCodes.FireteamFinderListingApplicationFailed,
+    3106:PlatformErrorCodes.FireteamFinderListingAutoJoinFailed,
+    3107:PlatformErrorCodes.FireteamFinderPlayerApplicationsParsingFailed,
+    3108:PlatformErrorCodes.FireteamFinderJoinLobbyHostFailed,
+    3109:PlatformErrorCodes.FireteamFinderPlayerNotInGame,
+    3110:PlatformErrorCodes.FireteamFinderActivationFailed,
+    3111:PlatformErrorCodes.FireteamFinderApplicationNotFound,
+    3112:PlatformErrorCodes.FireteamFinderUserAlreadyAppliedToListing,
+    3113:PlatformErrorCodes.FireteamFinderApplicationClosedForUpdates,
+    3114:PlatformErrorCodes.FireteamFinderListingAtMaxOpenApplicationsLimit,
+    3115:PlatformErrorCodes.FireteamFinderUserNotInApplication,
+    3116:PlatformErrorCodes.FireteamFinderApplicationUserAlreadyListingOwner,
+    3117:PlatformErrorCodes.FireteamFinderOfferNotFound,
+    3118:PlatformErrorCodes.FireteamFinderOfferClosedForUpdates,
+    3119:PlatformErrorCodes.FireteamFinderOfferUserNotTarget,
+    3120:PlatformErrorCodes.FireteamFinderLobbyNotFound,
+    3121:PlatformErrorCodes.FireteamFinderListingNotFound,
+    3122:PlatformErrorCodes.FireteamFinderLobbyFull,
+    3123:PlatformErrorCodes.FireteamFinderUserNotListingOwner,
+    3124:PlatformErrorCodes.FireteamFinderUserNotLobbyOwner,
+    3125:PlatformErrorCodes.FireteamFinderLobbyClosedForUpdates,
+    3126:PlatformErrorCodes.FireteamFinderUserNotInLobby,
+    3127:PlatformErrorCodes.FireteamFinderDisabledSettingsValue,
+    3128:PlatformErrorCodes.FireteamFinderOwnerInActiveLobby,
+    3129:PlatformErrorCodes.FireteamFinderApplicationClosedToOfflinePlayers,
+    3130:PlatformErrorCodes.FireteamFinderUserNotApplicationOwner,
+    3131:PlatformErrorCodes.FireteamFinderInviteValidationFailed,
+    3132:PlatformErrorCodes.FireteamFinderOwnerNotInGame,
+    3133:PlatformErrorCodes.FireteamFinderPlayerAtMaxLobbyLimit,
+    3134:PlatformErrorCodes.FireteamFinderLobbyTooFarInTheFuture,
+    3135:PlatformErrorCodes.FireteamFinderApplicantNotInGame,
+    3150:PlatformErrorCodes.FireteamFinderResponseUndefined,
+    3151:PlatformErrorCodes.FireteamFinderResponseMoved,
+    3152:PlatformErrorCodes.FireteamFinderResponseLoggingIn,
+    3153:PlatformErrorCodes.FireteamFinderResponseBadRequest,
+    3154:PlatformErrorCodes.FireteamFinderResponseUnauthorized,
+    3155:PlatformErrorCodes.FireteamFinderResponseForbidden,
+    3156:PlatformErrorCodes.FireteamFinderResponseNotFound,
+    3157:PlatformErrorCodes.FireteamFinderInternalServerError,
+    3158:PlatformErrorCodes.FireteamFinderServiceUnavailable,
+    3159:PlatformErrorCodes.FireteamFinderInternalServerErrorNonFatal,
     3200:PlatformErrorCodes.CrossSaveOverriddenAccountNotFound,
     3201:PlatformErrorCodes.CrossSaveTooManyOverriddenPlatforms,
     3202:PlatformErrorCodes.CrossSaveNoOverriddenPlatforms,
@@ -4225,6 +4502,7 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     3708:PlatformErrorCodes.ErrorPhoneValidationCodeExpired,
     3709:PlatformErrorCodes.ErrorPhoneValidationInvalidNumberType,
     3710:PlatformErrorCodes.ErrorPhoneValidationCodeTooRecentlyChecked,
+    3711:PlatformErrorCodes.ErrorPhoneValidationRecentlyPlayedDestiny2AccountRequired,
     3800:PlatformErrorCodes.ApplePushErrorUnknown,
     3801:PlatformErrorCodes.ApplePushErrorNull,
     3802:PlatformErrorCodes.ApplePushErrorTimeout,
@@ -4244,6 +4522,8 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     3908:PlatformErrorCodes.ErrorBungieBlockSelf,
     3910:PlatformErrorCodes.ErrorBungieFriendsListFull,
     3911:PlatformErrorCodes.ErrorBungieBlockListFull,
+    3912:PlatformErrorCodes.ErrorBungieFriendNotFound,
+    3913:PlatformErrorCodes.ErrorBungieFriendInvalidMembershipType,
     4000:PlatformErrorCodes.ErrorEgsUnknown,
     4001:PlatformErrorCodes.ErrorEgsBadRequest,
     4002:PlatformErrorCodes.ErrorEgsNotAuthorized,

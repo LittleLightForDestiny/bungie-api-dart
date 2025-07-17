@@ -25,7 +25,8 @@ DestinyProfileTransitoryComponent _$DestinyProfileTransitoryComponentFromJson(
           ?.map((e) => DestinyProfileTransitoryTrackingEntry.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..lastOrbitedDestinationHash = json['lastOrbitedDestinationHash'] as int?;
+      ..lastOrbitedDestinationHash =
+          (json['lastOrbitedDestinationHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileTransitoryComponentToJson(
         DestinyProfileTransitoryComponent instance) =>

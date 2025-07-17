@@ -15,23 +15,24 @@ DestinyProfileComponent _$DestinyProfileComponentFromJson(
       ..dateLastPlayed = json['dateLastPlayed'] as String?
       ..versionsOwned = json['versionsOwned'] == null
           ? null
-          : DestinyGameVersions.fromJson(json['versionsOwned'] as int)
+          : DestinyGameVersions.fromJson((json['versionsOwned'] as num).toInt())
       ..characterIds = (json['characterIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList()
       ..seasonHashes = (json['seasonHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..eventCardHashesOwned = (json['eventCardHashesOwned'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..currentSeasonHash = json['currentSeasonHash'] as int?
+      ..currentSeasonHash = (json['currentSeasonHash'] as num?)?.toInt()
       ..currentSeasonRewardPowerCap =
-          json['currentSeasonRewardPowerCap'] as int?
-      ..activeEventCardHash = json['activeEventCardHash'] as int?
-      ..currentGuardianRank = json['currentGuardianRank'] as int?
+          (json['currentSeasonRewardPowerCap'] as num?)?.toInt()
+      ..activeEventCardHash = (json['activeEventCardHash'] as num?)?.toInt()
+      ..currentGuardianRank = (json['currentGuardianRank'] as num?)?.toInt()
       ..lifetimeHighestGuardianRank =
-          json['lifetimeHighestGuardianRank'] as int?;
+          (json['lifetimeHighestGuardianRank'] as num?)?.toInt()
+      ..renewedGuardianRank = (json['renewedGuardianRank'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileComponentToJson(
         DestinyProfileComponent instance) =>
@@ -47,4 +48,5 @@ Map<String, dynamic> _$DestinyProfileComponentToJson(
       'activeEventCardHash': instance.activeEventCardHash,
       'currentGuardianRank': instance.currentGuardianRank,
       'lifetimeHighestGuardianRank': instance.lifetimeHighestGuardianRank,
+      'renewedGuardianRank': instance.renewedGuardianRank,
     };

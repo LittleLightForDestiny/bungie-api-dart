@@ -9,7 +9,7 @@ part of 'destiny_entity_search_result_item.dart';
 DestinyEntitySearchResultItem _$DestinyEntitySearchResultItemFromJson(
         Map<String, dynamic> json) =>
     DestinyEntitySearchResultItem()
-      ..hash = json['hash'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
       ..entityType = json['entityType'] as String?
       ..displayProperties = json['displayProperties'] == null
           ? null

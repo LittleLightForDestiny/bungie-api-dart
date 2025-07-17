@@ -16,13 +16,9 @@ DestinySandboxPerkDefinition _$DestinySandboxPerkDefinitionFromJson(
       ..perkIdentifier = json['perkIdentifier'] as String?
       ..isDisplayable = json['isDisplayable'] as bool?
       ..damageType = decodeDamageType(json['damageType'])
-      ..damageTypeHash = json['damageTypeHash'] as int?
-      ..perkGroups = json['perkGroups'] == null
-          ? null
-          : DestinyTalentNodeStepGroups.fromJson(
-              json['perkGroups'] as Map<String, dynamic>)
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..damageTypeHash = (json['damageTypeHash'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinySandboxPerkDefinitionToJson(
@@ -33,7 +29,6 @@ Map<String, dynamic> _$DestinySandboxPerkDefinitionToJson(
       'isDisplayable': instance.isDisplayable,
       'damageType': encodeDamageType(instance.damageType),
       'damageTypeHash': instance.damageTypeHash,
-      'perkGroups': instance.perkGroups?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

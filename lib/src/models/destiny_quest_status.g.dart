@@ -8,8 +8,8 @@ part of 'destiny_quest_status.dart';
 
 DestinyQuestStatus _$DestinyQuestStatusFromJson(Map<String, dynamic> json) =>
     DestinyQuestStatus()
-      ..questHash = json['questHash'] as int?
-      ..stepHash = json['stepHash'] as int?
+      ..questHash = (json['questHash'] as num?)?.toInt()
+      ..stepHash = (json['stepHash'] as num?)?.toInt()
       ..stepObjectives = (json['stepObjectives'] as List<dynamic>?)
           ?.map((e) =>
               DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
@@ -19,7 +19,7 @@ DestinyQuestStatus _$DestinyQuestStatusFromJson(Map<String, dynamic> json) =>
       ..completed = json['completed'] as bool?
       ..redeemed = json['redeemed'] as bool?
       ..started = json['started'] as bool?
-      ..vendorHash = json['vendorHash'] as int?;
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyQuestStatusToJson(DestinyQuestStatus instance) =>
     <String, dynamic>{

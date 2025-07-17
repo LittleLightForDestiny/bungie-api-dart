@@ -14,20 +14,28 @@ DestinyCharacterActivitiesComponent
                   as List<dynamic>?)
               ?.map((e) => DestinyActivity.fromJson(e as Map<String, dynamic>))
               .toList()
-          ..currentActivityHash = json['currentActivityHash'] as int?
-          ..currentActivityModeHash = json['currentActivityModeHash'] as int?
-          ..currentActivityModeType = json['currentActivityModeType'] as int?
+          ..availableActivityInteractables =
+              (json['availableActivityInteractables'] as List<dynamic>?)
+                  ?.map((e) => DestinyActivityInteractableReference.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()
+          ..currentActivityHash = (json['currentActivityHash'] as num?)?.toInt()
+          ..currentActivityModeHash =
+              (json['currentActivityModeHash'] as num?)?.toInt()
+          ..currentActivityModeType =
+              (json['currentActivityModeType'] as num?)?.toInt()
           ..currentActivityModeHashes =
               (json['currentActivityModeHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
-          ..currentActivityModeTypes = (json['currentActivityModeTypes']
-                  as List<dynamic>?)
-              ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-              .toList()
+          ..currentActivityModeTypes =
+              (json['currentActivityModeTypes'] as List<dynamic>?)
+                  ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+                  .toList()
           ..currentPlaylistActivityHash =
-              json['currentPlaylistActivityHash'] as int?
-          ..lastCompletedStoryHash = json['lastCompletedStoryHash'] as int?;
+              (json['currentPlaylistActivityHash'] as num?)?.toInt()
+          ..lastCompletedStoryHash =
+              (json['lastCompletedStoryHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
         DestinyCharacterActivitiesComponent instance) =>
@@ -35,42 +43,19 @@ Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
       'dateActivityStarted': instance.dateActivityStarted,
       'availableActivities':
           instance.availableActivities?.map((e) => e.toJson()).toList(),
+      'availableActivityInteractables': instance.availableActivityInteractables
+          ?.map((e) => e.toJson())
+          .toList(),
       'currentActivityHash': instance.currentActivityHash,
       'currentActivityModeHash': instance.currentActivityModeHash,
       'currentActivityModeType': instance.currentActivityModeType,
       'currentActivityModeHashes': instance.currentActivityModeHashes,
       'currentActivityModeTypes': instance.currentActivityModeTypes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
+          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
           .toList(),
       'currentPlaylistActivityHash': instance.currentPlaylistActivityHash,
       'lastCompletedStoryHash': instance.lastCompletedStoryHash,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.None: 0,
@@ -157,5 +142,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
+  DestinyActivityModeType.Relic: 92,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

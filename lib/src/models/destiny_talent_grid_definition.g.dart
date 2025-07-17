@@ -9,9 +9,9 @@ part of 'destiny_talent_grid_definition.dart';
 DestinyTalentGridDefinition _$DestinyTalentGridDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyTalentGridDefinition()
-      ..maxGridLevel = json['maxGridLevel'] as int?
-      ..gridLevelPerColumn = json['gridLevelPerColumn'] as int?
-      ..progressionHash = json['progressionHash'] as int?
+      ..maxGridLevel = (json['maxGridLevel'] as num?)?.toInt()
+      ..gridLevelPerColumn = (json['gridLevelPerColumn'] as num?)?.toInt()
+      ..progressionHash = (json['progressionHash'] as num?)?.toInt()
       ..nodes = (json['nodes'] as List<dynamic>?)
           ?.map((e) =>
               DestinyTalentNodeDefinition.fromJson(e as Map<String, dynamic>))
@@ -22,7 +22,7 @@ DestinyTalentGridDefinition _$DestinyTalentGridDefinitionFromJson(
           .toList()
       ..independentNodeIndexes =
           (json['independentNodeIndexes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..groups = (json['groups'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
@@ -32,8 +32,8 @@ DestinyTalentGridDefinition _$DestinyTalentGridDefinitionFromJson(
           ?.map((e) =>
               DestinyTalentNodeCategory.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyTalentGridDefinitionToJson(

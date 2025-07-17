@@ -7,7 +7,7 @@ part of 'user_theme.dart';
 // **************************************************************************
 
 UserTheme _$UserThemeFromJson(Map<String, dynamic> json) => UserTheme()
-  ..userThemeId = json['userThemeId'] as int?
+  ..userThemeId = (json['userThemeId'] as num?)?.toInt()
   ..userThemeName = json['userThemeName'] as String?
   ..userThemeDescription = json['userThemeDescription'] as String?;
 

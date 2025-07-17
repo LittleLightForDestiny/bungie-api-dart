@@ -9,8 +9,8 @@ part of 'destiny_item_set_block_entry_definition.dart';
 DestinyItemSetBlockEntryDefinition _$DestinyItemSetBlockEntryDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemSetBlockEntryDefinition()
-      ..trackingValue = json['trackingValue'] as int?
-      ..itemHash = json['itemHash'] as int?;
+      ..trackingValue = (json['trackingValue'] as num?)?.toInt()
+      ..itemHash = (json['itemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemSetBlockEntryDefinitionToJson(
         DestinyItemSetBlockEntryDefinition instance) =>

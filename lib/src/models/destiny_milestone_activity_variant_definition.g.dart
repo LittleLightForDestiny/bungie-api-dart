@@ -10,8 +10,8 @@ DestinyMilestoneActivityVariantDefinition
     _$DestinyMilestoneActivityVariantDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyMilestoneActivityVariantDefinition()
-          ..activityHash = json['activityHash'] as int?
-          ..order = json['order'] as int?;
+          ..activityHash = (json['activityHash'] as num?)?.toInt()
+          ..order = (json['order'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneActivityVariantDefinitionToJson(
         DestinyMilestoneActivityVariantDefinition instance) =>

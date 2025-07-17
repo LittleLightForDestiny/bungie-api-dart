@@ -10,8 +10,9 @@ DestinyPresentationNodeCollectibleChildEntry
     _$DestinyPresentationNodeCollectibleChildEntryFromJson(
             Map<String, dynamic> json) =>
         DestinyPresentationNodeCollectibleChildEntry()
-          ..collectibleHash = json['collectibleHash'] as int?
-          ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
+          ..collectibleHash = (json['collectibleHash'] as num?)?.toInt()
+          ..nodeDisplayPriority =
+              (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeCollectibleChildEntryToJson(
         DestinyPresentationNodeCollectibleChildEntry instance) =>

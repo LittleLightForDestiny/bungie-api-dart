@@ -10,9 +10,9 @@ DestinyCollectibleAcquisitionBlock _$DestinyCollectibleAcquisitionBlockFromJson(
         Map<String, dynamic> json) =>
     DestinyCollectibleAcquisitionBlock()
       ..acquireMaterialRequirementHash =
-          json['acquireMaterialRequirementHash'] as int?
+          (json['acquireMaterialRequirementHash'] as num?)?.toInt()
       ..acquireTimestampUnlockValueHash =
-          json['acquireTimestampUnlockValueHash'] as int?;
+          (json['acquireTimestampUnlockValueHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCollectibleAcquisitionBlockToJson(
         DestinyCollectibleAcquisitionBlock instance) =>

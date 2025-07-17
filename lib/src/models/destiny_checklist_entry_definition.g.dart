@@ -9,18 +9,19 @@ part of 'destiny_checklist_entry_definition.dart';
 DestinyChecklistEntryDefinition _$DestinyChecklistEntryDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyChecklistEntryDefinition()
-      ..hash = json['hash'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
       ..displayProperties = json['displayProperties'] == null
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..destinationHash = json['destinationHash'] as int?
-      ..locationHash = json['locationHash'] as int?
-      ..bubbleHash = json['bubbleHash'] as int?
-      ..activityHash = json['activityHash'] as int?
-      ..itemHash = json['itemHash'] as int?
-      ..vendorHash = json['vendorHash'] as int?
-      ..vendorInteractionIndex = json['vendorInteractionIndex'] as int?
+      ..destinationHash = (json['destinationHash'] as num?)?.toInt()
+      ..locationHash = (json['locationHash'] as num?)?.toInt()
+      ..bubbleHash = (json['bubbleHash'] as num?)?.toInt()
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
+      ..itemHash = (json['itemHash'] as num?)?.toInt()
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
+      ..vendorInteractionIndex =
+          (json['vendorInteractionIndex'] as num?)?.toInt()
       ..scope = decodeDestinyScope(json['scope']);
 
 Map<String, dynamic> _$DestinyChecklistEntryDefinitionToJson(

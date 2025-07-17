@@ -9,19 +9,20 @@ part of 'destiny_milestone_challenge_activity.dart';
 DestinyMilestoneChallengeActivity _$DestinyMilestoneChallengeActivityFromJson(
         Map<String, dynamic> json) =>
     DestinyMilestoneChallengeActivity()
-      ..activityHash = json['activityHash'] as int?
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
       ..challenges = (json['challenges'] as List<dynamic>?)
           ?.map(
               (e) => DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
           .toList()
       ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..booleanActivityOptions =
           (json['booleanActivityOptions'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as bool),
       )
-      ..loadoutRequirementIndex = json['loadoutRequirementIndex'] as int?
+      ..loadoutRequirementIndex =
+          (json['loadoutRequirementIndex'] as num?)?.toInt()
       ..phases = (json['phases'] as List<dynamic>?)
           ?.map((e) =>
               DestinyMilestoneActivityPhase.fromJson(e as Map<String, dynamic>))

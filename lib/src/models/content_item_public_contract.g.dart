@@ -16,7 +16,7 @@ ContentItemPublicContract _$ContentItemPublicContractFromJson(
       ..modifyDate = json['modifyDate'] as String?
       ..allowComments = json['allowComments'] as bool?
       ..hasAgeGate = json['hasAgeGate'] as bool?
-      ..minimumAge = json['minimumAge'] as int?
+      ..minimumAge = (json['minimumAge'] as num?)?.toInt()
       ..ratingImagePath = json['ratingImagePath'] as String?
       ..author = json['author'] == null
           ? null

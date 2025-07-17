@@ -21,7 +21,7 @@ GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) =>
           ? null
           : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
       ..allianceStatus = decodeGroupAllianceStatus(json['allianceStatus'])
-      ..groupJoinInviteCount = json['groupJoinInviteCount'] as int?
+      ..groupJoinInviteCount = (json['groupJoinInviteCount'] as num?)?.toInt()
       ..currentUserMembershipsInactiveForDestiny =
           json['currentUserMembershipsInactiveForDestiny'] as bool?
       ..currentUserMemberMap =

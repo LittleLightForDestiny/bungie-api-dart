@@ -13,7 +13,7 @@ DestinyPresentationChildBlock _$DestinyPresentationChildBlockFromJson(
           decodeDestinyPresentationNodeType(json['presentationNodeType'])
       ..parentPresentationNodeHashes =
           (json['parentPresentationNodeHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..displayStyle =
           decodeDestinyPresentationDisplayStyle(json['displayStyle']);

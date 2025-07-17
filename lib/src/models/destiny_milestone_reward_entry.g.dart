@@ -9,7 +9,7 @@ part of 'destiny_milestone_reward_entry.dart';
 DestinyMilestoneRewardEntry _$DestinyMilestoneRewardEntryFromJson(
         Map<String, dynamic> json) =>
     DestinyMilestoneRewardEntry()
-      ..rewardEntryHash = json['rewardEntryHash'] as int?
+      ..rewardEntryHash = (json['rewardEntryHash'] as num?)?.toInt()
       ..earned = json['earned'] as bool?
       ..redeemed = json['redeemed'] as bool?;
 

@@ -17,7 +17,7 @@ EmailViewDefinitionSetting _$EmailViewDefinitionSettingFromJson(
       ..setByDefault = json['setByDefault'] as bool?
       ..optInAggregateValue = json['optInAggregateValue'] == null
           ? null
-          : OptInFlags.fromJson(json['optInAggregateValue'] as int)
+          : OptInFlags.fromJson((json['optInAggregateValue'] as num).toInt())
       ..subscriptions = (json['subscriptions'] as List<dynamic>?)
           ?.map((e) =>
               EmailSubscriptionDefinition.fromJson(e as Map<String, dynamic>))

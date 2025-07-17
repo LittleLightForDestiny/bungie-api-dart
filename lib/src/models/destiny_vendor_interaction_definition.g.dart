@@ -9,21 +9,22 @@ part of 'destiny_vendor_interaction_definition.dart';
 DestinyVendorInteractionDefinition _$DestinyVendorInteractionDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyVendorInteractionDefinition()
-      ..interactionIndex = json['interactionIndex'] as int?
+      ..interactionIndex = (json['interactionIndex'] as num?)?.toInt()
       ..replies = (json['replies'] as List<dynamic>?)
           ?.map((e) => DestinyVendorInteractionReplyDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..vendorCategoryIndex = json['vendorCategoryIndex'] as int?
-      ..questlineItemHash = json['questlineItemHash'] as int?
+      ..vendorCategoryIndex = (json['vendorCategoryIndex'] as num?)?.toInt()
+      ..questlineItemHash = (json['questlineItemHash'] as num?)?.toInt()
       ..sackInteractionList = (json['sackInteractionList'] as List<dynamic>?)
           ?.map((e) => DestinyVendorInteractionSackEntryDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..uiInteractionType = json['uiInteractionType'] as int?
+      ..uiInteractionType = (json['uiInteractionType'] as num?)?.toInt()
       ..interactionType = decodeVendorInteractionType(json['interactionType'])
       ..rewardBlockLabel = json['rewardBlockLabel'] as String?
-      ..rewardVendorCategoryIndex = json['rewardVendorCategoryIndex'] as int?
+      ..rewardVendorCategoryIndex =
+          (json['rewardVendorCategoryIndex'] as num?)?.toInt()
       ..flavorLineOne = json['flavorLineOne'] as String?
       ..flavorLineTwo = json['flavorLineTwo'] as String?
       ..headerDisplayProperties = json['headerDisplayProperties'] == null

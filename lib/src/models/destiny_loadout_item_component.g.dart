@@ -11,7 +11,7 @@ DestinyLoadoutItemComponent _$DestinyLoadoutItemComponentFromJson(
     DestinyLoadoutItemComponent()
       ..itemInstanceId = json['itemInstanceId'] as String?
       ..plugItemHashes = (json['plugItemHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList();
 
 Map<String, dynamic> _$DestinyLoadoutItemComponentToJson(

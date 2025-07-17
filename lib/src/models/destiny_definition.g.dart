@@ -8,8 +8,8 @@ part of 'destiny_definition.dart';
 
 DestinyDefinition _$DestinyDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyDefinition()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyDefinitionToJson(DestinyDefinition instance) =>

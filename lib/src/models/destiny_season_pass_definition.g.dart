@@ -13,10 +13,19 @@ DestinySeasonPassDefinition _$DestinySeasonPassDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..rewardProgressionHash = json['rewardProgressionHash'] as int?
-      ..prestigeProgressionHash = json['prestigeProgressionHash'] as int?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..rewardProgressionHash = (json['rewardProgressionHash'] as num?)?.toInt()
+      ..prestigeProgressionHash =
+          (json['prestigeProgressionHash'] as num?)?.toInt()
+      ..linkRedirectPath = json['linkRedirectPath'] as String?
+      ..color = json['color'] == null
+          ? null
+          : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+      ..images = json['images'] == null
+          ? null
+          : DestinySeasonPassImages.fromJson(
+              json['images'] as Map<String, dynamic>)
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinySeasonPassDefinitionToJson(
@@ -25,6 +34,9 @@ Map<String, dynamic> _$DestinySeasonPassDefinitionToJson(
       'displayProperties': instance.displayProperties?.toJson(),
       'rewardProgressionHash': instance.rewardProgressionHash,
       'prestigeProgressionHash': instance.prestigeProgressionHash,
+      'linkRedirectPath': instance.linkRedirectPath,
+      'color': instance.color?.toJson(),
+      'images': instance.images?.toJson(),
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

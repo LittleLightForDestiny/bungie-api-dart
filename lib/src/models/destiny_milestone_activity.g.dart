@@ -9,11 +9,11 @@ part of 'destiny_milestone_activity.dart';
 DestinyMilestoneActivity _$DestinyMilestoneActivityFromJson(
         Map<String, dynamic> json) =>
     DestinyMilestoneActivity()
-      ..activityHash = json['activityHash'] as int?
-      ..activityModeHash = json['activityModeHash'] as int?
-      ..activityModeType = json['activityModeType'] as int?
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
+      ..activityModeHash = (json['activityModeHash'] as num?)?.toInt()
+      ..activityModeType = (json['activityModeType'] as num?)?.toInt()
       ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..variants = (json['variants'] as List<dynamic>?)
           ?.map((e) => DestinyMilestoneActivityVariant.fromJson(

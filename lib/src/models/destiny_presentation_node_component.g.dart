@@ -11,14 +11,15 @@ DestinyPresentationNodeComponent _$DestinyPresentationNodeComponentFromJson(
     DestinyPresentationNodeComponent()
       ..state = json['state'] == null
           ? null
-          : DestinyPresentationNodeState.fromJson(json['state'] as int)
+          : DestinyPresentationNodeState.fromJson(
+              (json['state'] as num).toInt())
       ..objective = json['objective'] == null
           ? null
           : DestinyObjectiveProgress.fromJson(
               json['objective'] as Map<String, dynamic>)
-      ..progressValue = json['progressValue'] as int?
-      ..completionValue = json['completionValue'] as int?
-      ..recordCategoryScore = json['recordCategoryScore'] as int?;
+      ..progressValue = (json['progressValue'] as num?)?.toInt()
+      ..completionValue = (json['completionValue'] as num?)?.toInt()
+      ..recordCategoryScore = (json['recordCategoryScore'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeComponentToJson(
         DestinyPresentationNodeComponent instance) =>

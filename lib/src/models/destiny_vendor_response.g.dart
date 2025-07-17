@@ -23,7 +23,7 @@ DestinyVendorResponse _$DestinyVendorResponseFromJson(
               .fromJson(json['sales'] as Map<String, dynamic>)
       ..itemComponents = json['itemComponents'] == null
           ? null
-          : DestinyItemComponentSetOfint32.fromJson(
+          : DestinyVendorItemComponentSetOfint32.fromJson(
               json['itemComponents'] as Map<String, dynamic>)
       ..currencyLookups = json['currencyLookups'] == null
           ? null

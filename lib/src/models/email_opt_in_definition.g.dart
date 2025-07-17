@@ -12,7 +12,7 @@ EmailOptInDefinition _$EmailOptInDefinitionFromJson(
       ..name = json['name'] as String?
       ..value = json['value'] == null
           ? null
-          : OptInFlags.fromJson(json['value'] as int)
+          : OptInFlags.fromJson((json['value'] as num).toInt())
       ..setByDefault = json['setByDefault'] as bool?
       ..dependentSubscriptions = (json['dependentSubscriptions']
               as List<dynamic>?)

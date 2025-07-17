@@ -54,6 +54,21 @@ class Destiny2CoreSettings{
 	@JsonKey(name:'guardianRankConstantsHash')
 	int? guardianRankConstantsHash;
 	
+	@JsonKey(name:'fireteamFinderConstantsHash')
+	int? fireteamFinderConstantsHash;
+	
+	@JsonKey(name:'inventoryItemConstantsHash')
+	int? inventoryItemConstantsHash;
+	
+	@JsonKey(name:'featuredItemsListHash')
+	int? featuredItemsListHash;
+	
+	@JsonKey(name:'armorArchetypePlugSetHash')
+	int? armorArchetypePlugSetHash;
+	
+	@JsonKey(name:'seasonalHubEventCardHash')
+	int? seasonalHubEventCardHash;
+	
 	@JsonKey(name:'guardianRanksRootNodeHash')
 	int? guardianRanksRootNodeHash;
 	
@@ -65,6 +80,9 @@ class Destiny2CoreSettings{
 	
 	@JsonKey(name:'insertPlugFreeBlockedSocketTypeHashes')
 	List<int>? insertPlugFreeBlockedSocketTypeHashes;
+	
+	@JsonKey(name:'enabledFireteamFinderActivityGraphHashes')
+	List<int>? enabledFireteamFinderActivityGraphHashes;
 	
 	@JsonKey(name:'undiscoveredCollectibleImage')
 	String? undiscoveredCollectibleImage;

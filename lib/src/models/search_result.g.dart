@@ -7,7 +7,7 @@ part of 'search_result.dart';
 // **************************************************************************
 
 SearchResult _$SearchResultFromJson(Map<String, dynamic> json) => SearchResult()
-  ..totalResults = json['totalResults'] as int?
+  ..totalResults = (json['totalResults'] as num?)?.toInt()
   ..hasMore = json['hasMore'] as bool?
   ..query = json['query'] == null
       ? null

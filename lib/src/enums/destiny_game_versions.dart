@@ -27,6 +27,12 @@ class DestinyGameVersions {
     static const DestinyGameVersions TheWitchQueen = DestinyGameVersions(256);
     ///Lightfall = 512
     static const DestinyGameVersions Lightfall = DestinyGameVersions(512);
+    ///TheFinalShape = 1024
+    static const DestinyGameVersions TheFinalShape = DestinyGameVersions(1024);
+    ///EdgeOfFate = 28535
+    static const DestinyGameVersions EdgeOfFate = DestinyGameVersions(28535);
+    ///Renegades = 28536
+    static const DestinyGameVersions Renegades = DestinyGameVersions(28536);
 
     int get value {
         return _value;

@@ -17,18 +17,19 @@ DestinySocialCommendationNodeDefinition
           ..color = json['color'] == null
               ? null
               : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+          ..tintedIcon = json['tintedIcon'] as String?
           ..parentCommendationNodeHash =
-              json['parentCommendationNodeHash'] as int?
+              (json['parentCommendationNodeHash'] as num?)?.toInt()
           ..childCommendationNodeHashes =
               (json['childCommendationNodeHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
           ..childCommendationHashes =
               (json['childCommendationHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
-          ..hash = json['hash'] as int?
-          ..index = json['index'] as int?
+          ..hash = (json['hash'] as num?)?.toInt()
+          ..index = (json['index'] as num?)?.toInt()
           ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinySocialCommendationNodeDefinitionToJson(
@@ -36,6 +37,7 @@ Map<String, dynamic> _$DestinySocialCommendationNodeDefinitionToJson(
     <String, dynamic>{
       'displayProperties': instance.displayProperties?.toJson(),
       'color': instance.color?.toJson(),
+      'tintedIcon': instance.tintedIcon,
       'parentCommendationNodeHash': instance.parentCommendationNodeHash,
       'childCommendationNodeHashes': instance.childCommendationNodeHashes,
       'childCommendationHashes': instance.childCommendationHashes,

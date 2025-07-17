@@ -9,11 +9,11 @@ part of 'destiny_item_instance_energy.dart';
 DestinyItemInstanceEnergy _$DestinyItemInstanceEnergyFromJson(
         Map<String, dynamic> json) =>
     DestinyItemInstanceEnergy()
-      ..energyTypeHash = json['energyTypeHash'] as int?
+      ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
       ..energyType = decodeDestinyEnergyType(json['energyType'])
-      ..energyCapacity = json['energyCapacity'] as int?
-      ..energyUsed = json['energyUsed'] as int?
-      ..energyUnused = json['energyUnused'] as int?;
+      ..energyCapacity = (json['energyCapacity'] as num?)?.toInt()
+      ..energyUsed = (json['energyUsed'] as num?)?.toInt()
+      ..energyUnused = (json['energyUnused'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemInstanceEnergyToJson(
         DestinyItemInstanceEnergy instance) =>

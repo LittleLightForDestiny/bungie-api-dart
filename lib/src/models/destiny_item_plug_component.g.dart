@@ -13,15 +13,17 @@ DestinyItemPlugComponent _$DestinyItemPlugComponentFromJson(
           ?.map((e) =>
               DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..plugItemHash = json['plugItemHash'] as int?
+      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt()
       ..canInsert = json['canInsert'] as bool?
       ..enabled = json['enabled'] as bool?
       ..insertFailIndexes = (json['insertFailIndexes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..enableFailIndexes = (json['enableFailIndexes'] as List<dynamic>?)
-          ?.map((e) => e as int)
-          .toList();
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..stackSize = (json['stackSize'] as num?)?.toInt()
+      ..maxStackSize = (json['maxStackSize'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemPlugComponentToJson(
         DestinyItemPlugComponent instance) =>
@@ -33,4 +35,6 @@ Map<String, dynamic> _$DestinyItemPlugComponentToJson(
       'enabled': instance.enabled,
       'insertFailIndexes': instance.insertFailIndexes,
       'enableFailIndexes': instance.enableFailIndexes,
+      'stackSize': instance.stackSize,
+      'maxStackSize': instance.maxStackSize,
     };

@@ -10,9 +10,6 @@ class NewsArticleRssResponse{
 	NewsArticleRssResponse();
 
 	
-	@JsonKey(name:'NewsArticles')
-	List<NewsArticleRssItem>? newsArticles;
-	
 	@JsonKey(name:'CurrentPaginationToken')
 	int? currentPaginationToken;
 	
@@ -22,8 +19,14 @@ class NewsArticleRssResponse{
 	@JsonKey(name:'ResultCountThisPage')
 	int? resultCountThisPage;
 	
+	@JsonKey(name:'NewsArticles')
+	List<NewsArticleRssItem>? newsArticles;
+	
 	@JsonKey(name:'CategoryFilter')
 	String? categoryFilter;
+	
+	@JsonKey(name:'PagerAction')
+	String? pagerAction;
 
 	factory NewsArticleRssResponse.fromJson(Map<String, dynamic> json) {
 		return _$NewsArticleRssResponseFromJson(json);

@@ -11,7 +11,7 @@ IgnoreResponse _$IgnoreResponseFromJson(Map<String, dynamic> json) =>
       ..isIgnored = json['isIgnored'] as bool?
       ..ignoreFlags = json['ignoreFlags'] == null
           ? null
-          : IgnoreStatus.fromJson(json['ignoreFlags'] as int);
+          : IgnoreStatus.fromJson((json['ignoreFlags'] as num).toInt());
 
 Map<String, dynamic> _$IgnoreResponseToJson(IgnoreResponse instance) =>
     <String, dynamic>{

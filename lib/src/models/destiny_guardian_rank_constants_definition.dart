@@ -18,6 +18,9 @@ class DestinyGuardianRankConstantsDefinition{
 	@JsonKey(name:'rankCount')
 	int? rankCount;
 	
+	@JsonKey(name:'guardianRankHashes')
+	List<int>? guardianRankHashes;
+	
 	@JsonKey(name:'rootNodeHash')
 	int? rootNodeHash;
 	

@@ -9,18 +9,19 @@ part of 'destiny_item_quality_block_definition.dart';
 DestinyItemQualityBlockDefinition _$DestinyItemQualityBlockDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemQualityBlockDefinition()
-      ..itemLevels =
-          (json['itemLevels'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..qualityLevel = json['qualityLevel'] as int?
+      ..itemLevels = (json['itemLevels'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..qualityLevel = (json['qualityLevel'] as num?)?.toInt()
       ..infusionCategoryName = json['infusionCategoryName'] as String?
-      ..infusionCategoryHash = json['infusionCategoryHash'] as int?
+      ..infusionCategoryHash = (json['infusionCategoryHash'] as num?)?.toInt()
       ..infusionCategoryHashes =
           (json['infusionCategoryHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..progressionLevelRequirementHash =
-          json['progressionLevelRequirementHash'] as int?
-      ..currentVersion = json['currentVersion'] as int?
+          (json['progressionLevelRequirementHash'] as num?)?.toInt()
+      ..currentVersion = (json['currentVersion'] as num?)?.toInt()
       ..versions = (json['versions'] as List<dynamic>?)
           ?.map((e) =>
               DestinyItemVersionDefinition.fromJson(e as Map<String, dynamic>))

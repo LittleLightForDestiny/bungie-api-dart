@@ -11,7 +11,7 @@ GroupOptionalConversationEditRequest
         GroupOptionalConversationEditRequest()
           ..chatEnabled = json['chatEnabled'] as bool?
           ..chatName = json['chatName'] as String?
-          ..chatSecurity = json['chatSecurity'] as int?;
+          ..chatSecurity = (json['chatSecurity'] as num?)?.toInt();
 
 Map<String, dynamic> _$GroupOptionalConversationEditRequestToJson(
         GroupOptionalConversationEditRequest instance) =>

@@ -29,6 +29,10 @@ class DestinyMaterialRequirement{
 	/// If True, this requirement is "silent": don't bother showing it in a material requirements display. I mean, I'm not your mom: I'm not going to tell you you *can't* show it. But we won't show it in our UI.
 	@JsonKey(name:'omitFromRequirements')
 	bool? omitFromRequirements;
+	
+	/// If true, this material requirement references a virtual item stack size value. You can get that value from a corresponding DestinyMaterialRequirementSetState.
+	@JsonKey(name:'hasVirtualStackSize')
+	bool? hasVirtualStackSize;
 
 	factory DestinyMaterialRequirement.fromJson(Map<String, dynamic> json) {
 		return _$DestinyMaterialRequirementFromJson(json);

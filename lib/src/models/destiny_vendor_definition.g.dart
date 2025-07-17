@@ -17,12 +17,12 @@ DestinyVendorDefinition _$DestinyVendorDefinitionFromJson(
           decodeDestinyVendorProgressionType(json['vendorProgressionType'])
       ..buyString = json['buyString'] as String?
       ..sellString = json['sellString'] as String?
-      ..displayItemHash = json['displayItemHash'] as int?
+      ..displayItemHash = (json['displayItemHash'] as num?)?.toInt()
       ..inhibitBuying = json['inhibitBuying'] as bool?
       ..inhibitSelling = json['inhibitSelling'] as bool?
-      ..factionHash = json['factionHash'] as int?
-      ..resetIntervalMinutes = json['resetIntervalMinutes'] as int?
-      ..resetOffsetMinutes = json['resetOffsetMinutes'] as int?
+      ..factionHash = (json['factionHash'] as num?)?.toInt()
+      ..resetIntervalMinutes = (json['resetIntervalMinutes'] as num?)?.toInt()
+      ..resetOffsetMinutes = (json['resetOffsetMinutes'] as num?)?.toInt()
       ..failureStrings = (json['failureStrings'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList()
@@ -83,10 +83,10 @@ DestinyVendorDefinition _$DestinyVendorDefinitionFromJson(
               DestinyVendorGroupReference.fromJson(e as Map<String, dynamic>))
           .toList()
       ..ignoreSaleItemHashes = (json['ignoreSaleItemHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorDefinitionToJson(

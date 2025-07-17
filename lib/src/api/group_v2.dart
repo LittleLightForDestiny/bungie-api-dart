@@ -31,6 +31,7 @@ import '../responses/list_of_entity_action_result_response.dart';
 import '../responses/list_of_group_theme_response.dart';
 import '../responses/list_of_group_v2_card_response.dart';
 import '../responses/search_result_of_group_ban_response.dart';
+import '../responses/search_result_of_group_edit_history_response.dart';
 import '../responses/search_result_of_group_member_application_response.dart';
 import '../responses/search_result_of_group_member_response.dart';
 class GroupV2{
@@ -388,6 +389,23 @@ class GroupV2{
         final HttpResponse response = await client.request(config);
         if(response.statusCode == 200) {
             return SearchResultOfGroupBanResponse.asyncFromJson(response.mappedBody);
+        }
+        throw Exception(response.mappedBody);
+    }
+    /// Get the list of edits made to a given group. Only accessible to group Admins and above.
+    static Future<SearchResultOfGroupEditHistoryResponse> getGroupEditHistory (
+        HttpClient client,
+        int currentpage,
+        String groupId,
+    ) async {
+        final Map<String, dynamic> params = Map<String, dynamic>();
+        final String _currentpage = '$currentpage';
+        final String _groupId = '$groupId';
+        final HttpClientConfig config = HttpClientConfig('GET', '/GroupV2/$_groupId/EditHistory/', params);
+        config.bodyContentType = null;
+        final HttpResponse response = await client.request(config);
+        if(response.statusCode == 200) {
+            return SearchResultOfGroupEditHistoryResponse.asyncFromJson(response.mappedBody);
         }
         throw Exception(response.mappedBody);
     }

@@ -2,6 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
+import 'destiny_season_pass_reference.dart';
+import 'destiny_season_act_definition.dart';
 import 'destiny_season_preview_definition.dart';
 
 part 'destiny_season_definition.g.dart';
@@ -31,6 +33,9 @@ class DestinySeasonDefinition{
 	@JsonKey(name:'seasonPassHash')
 	int? seasonPassHash;
 	
+	@JsonKey(name:'seasonPassList')
+	List<DestinySeasonPassReference>? seasonPassList;
+	
 	@JsonKey(name:'seasonPassProgressionHash')
 	int? seasonPassProgressionHash;
 	
@@ -39,6 +44,10 @@ class DestinySeasonDefinition{
 	
 	@JsonKey(name:'sealPresentationNodeHash')
 	int? sealPresentationNodeHash;
+	
+	/// A list of Acts for the Episode
+	@JsonKey(name:'acts')
+	List<DestinySeasonActDefinition>? acts;
 	
 	@JsonKey(name:'seasonalChallengesPresentationNodeHash')
 	int? seasonalChallengesPresentationNodeHash;

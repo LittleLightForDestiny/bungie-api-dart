@@ -9,9 +9,9 @@ part of 'destiny_item_vendor_source_reference.dart';
 DestinyItemVendorSourceReference _$DestinyItemVendorSourceReferenceFromJson(
         Map<String, dynamic> json) =>
     DestinyItemVendorSourceReference()
-      ..vendorHash = json['vendorHash'] as int?
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
       ..vendorItemIndexes = (json['vendorItemIndexes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList();
 
 Map<String, dynamic> _$DestinyItemVendorSourceReferenceToJson(

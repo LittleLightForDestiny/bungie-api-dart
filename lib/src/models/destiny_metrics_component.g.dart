@@ -13,7 +13,7 @@ DestinyMetricsComponent _$DestinyMetricsComponentFromJson(
         (k, e) => MapEntry(
             k, DestinyMetricComponent.fromJson(e as Map<String, dynamic>)),
       )
-      ..metricsRootNodeHash = json['metricsRootNodeHash'] as int?;
+      ..metricsRootNodeHash = (json['metricsRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMetricsComponentToJson(
         DestinyMetricsComponent instance) =>

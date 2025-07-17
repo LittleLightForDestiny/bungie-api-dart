@@ -10,9 +10,14 @@ DestinyPostGameCarnageReportData _$DestinyPostGameCarnageReportDataFromJson(
         Map<String, dynamic> json) =>
     DestinyPostGameCarnageReportData()
       ..period = json['period'] as String?
-      ..startingPhaseIndex = json['startingPhaseIndex'] as int?
+      ..startingPhaseIndex = (json['startingPhaseIndex'] as num?)?.toInt()
       ..activityWasStartedFromBeginning =
           json['activityWasStartedFromBeginning'] as bool?
+      ..activityDifficultyTier =
+          (json['activityDifficultyTier'] as num?)?.toInt()
+      ..selectedSkullHashes = (json['selectedSkullHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..activityDetails = json['activityDetails'] == null
           ? null
           : DestinyHistoricalStatsActivity.fromJson(
@@ -33,6 +38,8 @@ Map<String, dynamic> _$DestinyPostGameCarnageReportDataToJson(
       'startingPhaseIndex': instance.startingPhaseIndex,
       'activityWasStartedFromBeginning':
           instance.activityWasStartedFromBeginning,
+      'activityDifficultyTier': instance.activityDifficultyTier,
+      'selectedSkullHashes': instance.selectedSkullHashes,
       'activityDetails': instance.activityDetails?.toJson(),
       'entries': instance.entries?.map((e) => e.toJson()).toList(),
       'teams': instance.teams?.map((e) => e.toJson()).toList(),

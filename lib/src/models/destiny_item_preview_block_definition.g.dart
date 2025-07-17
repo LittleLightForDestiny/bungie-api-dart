@@ -10,8 +10,8 @@ DestinyItemPreviewBlockDefinition _$DestinyItemPreviewBlockDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemPreviewBlockDefinition()
       ..screenStyle = json['screenStyle'] as String?
-      ..previewVendorHash = json['previewVendorHash'] as int?
-      ..artifactHash = json['artifactHash'] as int?
+      ..previewVendorHash = (json['previewVendorHash'] as num?)?.toInt()
+      ..artifactHash = (json['artifactHash'] as num?)?.toInt()
       ..previewActionString = json['previewActionString'] as String?
       ..derivedItemCategories =
           (json['derivedItemCategories'] as List<dynamic>?)

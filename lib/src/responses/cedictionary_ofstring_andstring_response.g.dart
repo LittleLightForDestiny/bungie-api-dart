@@ -14,7 +14,7 @@ CEDictionaryOfstringAndstringResponse
             (k, e) => MapEntry(k, e as String),
           ),
           errorCode: decodePlatformErrorCodes(json['ErrorCode']),
-          throttleSeconds: json['ThrottleSeconds'] as int?,
+          throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
           errorStatus: json['ErrorStatus'] as String?,
           message: json['Message'] as String?,
           messageData: (json['MessageData'] as Map<String, dynamic>?)?.map(

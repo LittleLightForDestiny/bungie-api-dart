@@ -10,8 +10,8 @@ DestinySocketTypeScalarMaterialRequirementEntry
     _$DestinySocketTypeScalarMaterialRequirementEntryFromJson(
             Map<String, dynamic> json) =>
         DestinySocketTypeScalarMaterialRequirementEntry()
-          ..currencyItemHash = json['currencyItemHash'] as int?
-          ..scalarValue = json['scalarValue'] as int?;
+          ..currencyItemHash = (json['currencyItemHash'] as num?)?.toInt()
+          ..scalarValue = (json['scalarValue'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinySocketTypeScalarMaterialRequirementEntryToJson(
         DestinySocketTypeScalarMaterialRequirementEntry instance) =>

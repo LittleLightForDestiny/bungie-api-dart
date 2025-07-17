@@ -11,11 +11,11 @@ DestinyProfileCollectiblesComponent
         DestinyProfileCollectiblesComponent()
           ..recentCollectibleHashes =
               (json['recentCollectibleHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
           ..newnessFlaggedCollectibleHashes =
               (json['newnessFlaggedCollectibleHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
           ..collectibles = (json['collectibles'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(
@@ -24,9 +24,9 @@ DestinyProfileCollectiblesComponent
                     e as Map<String, dynamic>)),
           )
           ..collectionCategoriesRootNodeHash =
-              json['collectionCategoriesRootNodeHash'] as int?
+              (json['collectionCategoriesRootNodeHash'] as num?)?.toInt()
           ..collectionBadgesRootNodeHash =
-              json['collectionBadgesRootNodeHash'] as int?;
+              (json['collectionBadgesRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileCollectiblesComponentToJson(
         DestinyProfileCollectiblesComponent instance) =>

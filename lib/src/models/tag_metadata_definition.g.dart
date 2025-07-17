@@ -10,7 +10,7 @@ TagMetadataDefinition _$TagMetadataDefinitionFromJson(
         Map<String, dynamic> json) =>
     TagMetadataDefinition()
       ..description = json['description'] as String?
-      ..order = json['order'] as int?
+      ..order = (json['order'] as num?)?.toInt()
       ..items = (json['items'] as List<dynamic>?)
           ?.map((e) => TagMetadataItem.fromJson(e as Map<String, dynamic>))
           .toList()

@@ -11,7 +11,7 @@ DestinyItemMetricBlockDefinition _$DestinyItemMetricBlockDefinitionFromJson(
     DestinyItemMetricBlockDefinition()
       ..availableMetricCategoryNodeHashes =
           (json['availableMetricCategoryNodeHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList();
 
 Map<String, dynamic> _$DestinyItemMetricBlockDefinitionToJson(

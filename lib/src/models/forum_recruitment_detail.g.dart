@@ -15,8 +15,8 @@ ForumRecruitmentDetail _$ForumRecruitmentDetailFromJson(
       ..tone = decodeForumRecruitmentToneLabel(json['tone'])
       ..approved = json['approved'] as bool?
       ..conversationId = json['conversationId'] as String?
-      ..playerSlotsTotal = json['playerSlotsTotal'] as int?
-      ..playerSlotsRemaining = json['playerSlotsRemaining'] as int?
+      ..playerSlotsTotal = (json['playerSlotsTotal'] as num?)?.toInt()
+      ..playerSlotsRemaining = (json['playerSlotsRemaining'] as num?)?.toInt()
       ..fireteam = (json['Fireteam'] as List<dynamic>?)
           ?.map((e) => GeneralUser.fromJson(e as Map<String, dynamic>))
           .toList()

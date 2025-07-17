@@ -7,8 +7,8 @@ part of 'destiny_stat.dart';
 // **************************************************************************
 
 DestinyStat _$DestinyStatFromJson(Map<String, dynamic> json) => DestinyStat()
-  ..statHash = json['statHash'] as int?
-  ..value = json['value'] as int?;
+  ..statHash = (json['statHash'] as num?)?.toInt()
+  ..value = (json['value'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyStatToJson(DestinyStat instance) =>
     <String, dynamic>{

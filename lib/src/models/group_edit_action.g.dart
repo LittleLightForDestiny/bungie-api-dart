@@ -12,19 +12,19 @@ GroupEditAction _$GroupEditActionFromJson(Map<String, dynamic> json) =>
       ..about = json['about'] as String?
       ..motto = json['motto'] as String?
       ..theme = json['theme'] as String?
-      ..avatarImageIndex = json['avatarImageIndex'] as int?
+      ..avatarImageIndex = (json['avatarImageIndex'] as num?)?.toInt()
       ..tags = json['tags'] as String?
       ..isPublic = json['isPublic'] as bool?
-      ..membershipOption = json['membershipOption'] as int?
+      ..membershipOption = (json['membershipOption'] as num?)?.toInt()
       ..isPublicTopicAdminOnly = json['isPublicTopicAdminOnly'] as bool?
       ..allowChat = json['allowChat'] as bool?
-      ..chatSecurity = json['chatSecurity'] as int?
+      ..chatSecurity = (json['chatSecurity'] as num?)?.toInt()
       ..callsign = json['callsign'] as String?
       ..locale = json['locale'] as String?
-      ..homepage = json['homepage'] as int?
+      ..homepage = (json['homepage'] as num?)?.toInt()
       ..enableInvitationMessagingForAdmins =
           json['enableInvitationMessagingForAdmins'] as bool?
-      ..defaultPublicity = json['defaultPublicity'] as int?;
+      ..defaultPublicity = (json['defaultPublicity'] as num?)?.toInt();
 
 Map<String, dynamic> _$GroupEditActionToJson(GroupEditAction instance) =>
     <String, dynamic>{

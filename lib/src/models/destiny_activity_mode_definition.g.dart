@@ -20,18 +20,17 @@ DestinyActivityModeDefinition _$DestinyActivityModeDefinitionFromJson(
       ..isTeamBased = json['isTeamBased'] as bool?
       ..isAggregateMode = json['isAggregateMode'] as bool?
       ..parentHashes = (json['parentHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..friendlyName = json['friendlyName'] as String?
       ..activityModeMappings =
           (json['activityModeMappings'] as Map<String, dynamic>?)?.map(
-        (k, e) =>
-            MapEntry(k, _$enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
+        (k, e) => MapEntry(k, $enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
       )
       ..display = json['display'] as bool?
-      ..order = json['order'] as int?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..order = (json['order'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityModeDefinitionToJson(
@@ -47,39 +46,13 @@ Map<String, dynamic> _$DestinyActivityModeDefinitionToJson(
       'parentHashes': instance.parentHashes,
       'friendlyName': instance.friendlyName,
       'activityModeMappings': instance.activityModeMappings
-          ?.map((k, e) => MapEntry(k, _$DestinyActivityModeTypeEnumMap[e])),
+          ?.map((k, e) => MapEntry(k, _$DestinyActivityModeTypeEnumMap[e]!)),
       'display': instance.display,
       'order': instance.order,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.None: 0,
@@ -166,5 +139,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
+  DestinyActivityModeType.Relic: 92,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

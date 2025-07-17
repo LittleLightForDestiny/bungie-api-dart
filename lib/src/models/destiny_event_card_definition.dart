@@ -33,6 +33,9 @@ class DestinyEventCardDefinition{
 	@JsonKey(name:'sealPresentationNodeHash')
 	int? sealPresentationNodeHash;
 	
+	@JsonKey(name:'eventCardCurrencyList')
+	List<int>? eventCardCurrencyList;
+	
 	@JsonKey(name:'ticketCurrencyItemHash')
 	int? ticketCurrencyItemHash;
 	
@@ -44,6 +47,12 @@ class DestinyEventCardDefinition{
 	
 	@JsonKey(name:'endTime')
 	String? endTime;
+	
+	@JsonKey(name:'rewardProgressionHash')
+	int? rewardProgressionHash;
+	
+	@JsonKey(name:'weeklyChallengesPresentationNodeHash')
+	int? weeklyChallengesPresentationNodeHash;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

@@ -12,23 +12,23 @@ DestinyTalentNodeStepGroups _$DestinyTalentNodeStepGroupsFromJson(
       ..weaponPerformance = json['weaponPerformance'] == null
           ? null
           : DestinyTalentNodeStepWeaponPerformances.fromJson(
-              json['weaponPerformance'] as int)
+              (json['weaponPerformance'] as num).toInt())
       ..impactEffects = json['impactEffects'] == null
           ? null
           : DestinyTalentNodeStepImpactEffects.fromJson(
-              json['impactEffects'] as int)
+              (json['impactEffects'] as num).toInt())
       ..guardianAttributes = json['guardianAttributes'] == null
           ? null
           : DestinyTalentNodeStepGuardianAttributes.fromJson(
-              json['guardianAttributes'] as int)
+              (json['guardianAttributes'] as num).toInt())
       ..lightAbilities = json['lightAbilities'] == null
           ? null
           : DestinyTalentNodeStepLightAbilities.fromJson(
-              json['lightAbilities'] as int)
+              (json['lightAbilities'] as num).toInt())
       ..damageTypes = json['damageTypes'] == null
           ? null
           : DestinyTalentNodeStepDamageTypes.fromJson(
-              json['damageTypes'] as int);
+              (json['damageTypes'] as num).toInt());
 
 Map<String, dynamic> _$DestinyTalentNodeStepGroupsToJson(
         DestinyTalentNodeStepGroups instance) =>

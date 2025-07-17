@@ -15,7 +15,7 @@ TrendingEntryCommunityCreation _$TrendingEntryCommunityCreationFromJson(
       ..authorMembershipId = json['authorMembershipId'] as String?
       ..postId = json['postId'] as String?
       ..body = json['body'] as String?
-      ..upvotes = json['upvotes'] as int?;
+      ..upvotes = (json['upvotes'] as num?)?.toInt();
 
 Map<String, dynamic> _$TrendingEntryCommunityCreationToJson(
         TrendingEntryCommunityCreation instance) =>

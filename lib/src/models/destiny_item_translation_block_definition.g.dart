@@ -11,7 +11,7 @@ DestinyItemTranslationBlockDefinition
             Map<String, dynamic> json) =>
         DestinyItemTranslationBlockDefinition()
           ..weaponPatternIdentifier = json['weaponPatternIdentifier'] as String?
-          ..weaponPatternHash = json['weaponPatternHash'] as int?
+          ..weaponPatternHash = (json['weaponPatternHash'] as num?)?.toInt()
           ..defaultDyes = (json['defaultDyes'] as List<dynamic>?)
               ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
               .toList()

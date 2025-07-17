@@ -9,7 +9,7 @@ part of 'destiny_post_game_carnage_report_entry.dart';
 DestinyPostGameCarnageReportEntry _$DestinyPostGameCarnageReportEntryFromJson(
         Map<String, dynamic> json) =>
     DestinyPostGameCarnageReportEntry()
-      ..standing = json['standing'] as int?
+      ..standing = (json['standing'] as num?)?.toInt()
       ..score = json['score'] == null
           ? null
           : DestinyHistoricalStatsValue.fromJson(

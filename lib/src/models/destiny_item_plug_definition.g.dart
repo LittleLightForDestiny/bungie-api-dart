@@ -14,13 +14,14 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
               DestinyPlugRuleDefinition.fromJson(e as Map<String, dynamic>))
           .toList()
       ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String?
-      ..plugCategoryHash = json['plugCategoryHash'] as int?
+      ..plugCategoryHash = (json['plugCategoryHash'] as num?)?.toInt()
       ..onActionRecreateSelf = json['onActionRecreateSelf'] as bool?
       ..insertionMaterialRequirementHash =
-          json['insertionMaterialRequirementHash'] as int?
-      ..previewItemOverrideHash = json['previewItemOverrideHash'] as int?
+          (json['insertionMaterialRequirementHash'] as num?)?.toInt()
+      ..previewItemOverrideHash =
+          (json['previewItemOverrideHash'] as num?)?.toInt()
       ..enabledMaterialRequirementHash =
-          json['enabledMaterialRequirementHash'] as int?
+          (json['enabledMaterialRequirementHash'] as num?)?.toInt()
       ..enabledRules = (json['enabledRules'] as List<dynamic>?)
           ?.map((e) =>
               DestinyPlugRuleDefinition.fromJson(e as Map<String, dynamic>))
@@ -28,12 +29,12 @@ DestinyItemPlugDefinition _$DestinyItemPlugDefinitionFromJson(
       ..uiPlugLabel = json['uiPlugLabel'] as String?
       ..plugStyle = json['plugStyle'] == null
           ? null
-          : PlugUiStyles.fromJson(json['plugStyle'] as int)
+          : PlugUiStyles.fromJson((json['plugStyle'] as num).toInt())
       ..plugAvailability = decodePlugAvailabilityMode(json['plugAvailability'])
       ..alternateUiPlugLabel = json['alternateUiPlugLabel'] as String?
       ..alternatePlugStyle = json['alternatePlugStyle'] == null
           ? null
-          : PlugUiStyles.fromJson(json['alternatePlugStyle'] as int)
+          : PlugUiStyles.fromJson((json['alternatePlugStyle'] as num).toInt())
       ..isDummyPlug = json['isDummyPlug'] as bool?
       ..parentItemOverride = json['parentItemOverride'] == null
           ? null

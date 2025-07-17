@@ -10,7 +10,7 @@ DestinyItemSourceBlockDefinition _$DestinyItemSourceBlockDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemSourceBlockDefinition()
       ..sourceHashes = (json['sourceHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..sources = (json['sources'] as List<dynamic>?)
           ?.map((e) =>

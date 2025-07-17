@@ -10,8 +10,8 @@ DestinyActivityGraphDisplayObjectiveDefinition
     _$DestinyActivityGraphDisplayObjectiveDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyActivityGraphDisplayObjectiveDefinition()
-          ..id = json['id'] as int?
-          ..objectiveHash = json['objectiveHash'] as int?;
+          ..id = (json['id'] as num?)?.toInt()
+          ..objectiveHash = (json['objectiveHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityGraphDisplayObjectiveDefinitionToJson(
         DestinyActivityGraphDisplayObjectiveDefinition instance) =>

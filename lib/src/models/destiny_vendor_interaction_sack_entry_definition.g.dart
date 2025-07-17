@@ -10,7 +10,7 @@ DestinyVendorInteractionSackEntryDefinition
     _$DestinyVendorInteractionSackEntryDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyVendorInteractionSackEntryDefinition()
-          ..sackType = json['sackType'] as int?;
+          ..sackType = (json['sackType'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorInteractionSackEntryDefinitionToJson(
         DestinyVendorInteractionSackEntryDefinition instance) =>

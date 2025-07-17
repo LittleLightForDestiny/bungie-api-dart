@@ -11,7 +11,7 @@ DestinyVendorInventoryFlyoutBucketDefinition
             Map<String, dynamic> json) =>
         DestinyVendorInventoryFlyoutBucketDefinition()
           ..collapsible = json['collapsible'] as bool?
-          ..inventoryBucketHash = json['inventoryBucketHash'] as int?
+          ..inventoryBucketHash = (json['inventoryBucketHash'] as num?)?.toInt()
           ..sortItemsBy = decodeDestinyItemSortType(json['sortItemsBy']);
 
 Map<String, dynamic> _$DestinyVendorInventoryFlyoutBucketDefinitionToJson(

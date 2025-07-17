@@ -9,9 +9,9 @@ part of 'bungie_net_token.dart';
 BungieNetToken _$BungieNetTokenFromJson(Map<String, dynamic> json) =>
     BungieNetToken(
       accessToken: json['access_token'] as String,
-      expiresIn: json['expires_in'] as int,
+      expiresIn: (json['expires_in'] as num).toInt(),
       refreshToken: json['refresh_token'] as String,
-      refreshExpiresIn: json['refresh_expires_in'] as int,
+      refreshExpiresIn: (json['refresh_expires_in'] as num).toInt(),
       membershipId: json['membership_id'] as String,
     );
 

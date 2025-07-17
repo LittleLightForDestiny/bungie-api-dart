@@ -10,8 +10,8 @@ DestinyItemActionRequiredItemDefinition
     _$DestinyItemActionRequiredItemDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyItemActionRequiredItemDefinition()
-          ..count = json['count'] as int?
-          ..itemHash = json['itemHash'] as int?
+          ..count = (json['count'] as num?)?.toInt()
+          ..itemHash = (json['itemHash'] as num?)?.toInt()
           ..deleteOnAction = json['deleteOnAction'] as bool?;
 
 Map<String, dynamic> _$DestinyItemActionRequiredItemDefinitionToJson(

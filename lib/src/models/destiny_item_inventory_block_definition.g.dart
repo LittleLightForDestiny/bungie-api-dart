@@ -10,10 +10,11 @@ DestinyItemInventoryBlockDefinition
     _$DestinyItemInventoryBlockDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyItemInventoryBlockDefinition()
           ..stackUniqueLabel = json['stackUniqueLabel'] as String?
-          ..maxStackSize = json['maxStackSize'] as int?
-          ..bucketTypeHash = json['bucketTypeHash'] as int?
-          ..recoveryBucketTypeHash = json['recoveryBucketTypeHash'] as int?
-          ..tierTypeHash = json['tierTypeHash'] as int?
+          ..maxStackSize = (json['maxStackSize'] as num?)?.toInt()
+          ..bucketTypeHash = (json['bucketTypeHash'] as num?)?.toInt()
+          ..recoveryBucketTypeHash =
+              (json['recoveryBucketTypeHash'] as num?)?.toInt()
+          ..tierTypeHash = (json['tierTypeHash'] as num?)?.toInt()
           ..isInstanceItem = json['isInstanceItem'] as bool?
           ..tierTypeName = json['tierTypeName'] as String?
           ..tierType = decodeTierType(json['tierType'])
@@ -23,7 +24,7 @@ DestinyItemInventoryBlockDefinition
           ..expiredInOrbitMessage = json['expiredInOrbitMessage'] as String?
           ..suppressExpirationWhenObjectivesComplete =
               json['suppressExpirationWhenObjectivesComplete'] as bool?
-          ..recipeItemHash = json['recipeItemHash'] as int?;
+          ..recipeItemHash = (json['recipeItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemInventoryBlockDefinitionToJson(
         DestinyItemInventoryBlockDefinition instance) =>

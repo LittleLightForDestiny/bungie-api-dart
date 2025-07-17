@@ -20,6 +20,11 @@ class UserMembershipData{
 	@JsonKey(name:'primaryMembershipId')
 	String? primaryMembershipId;
 	
+	/// If this property is populated, it will have the membershipId for the Marathon Membership on this user's account
+	///  If null, this user has no Marathon (i.e. "GoliathGame") membership.
+	@JsonKey(name:'marathonMembershipId')
+	String? marathonMembershipId;
+	
 	@JsonKey(name:'bungieNetUser')
 	GeneralUser? bungieNetUser;
 

@@ -14,9 +14,9 @@ DestinyVendorComponent _$DestinyVendorComponentFromJson(
           ? null
           : DestinyProgression.fromJson(
               json['progression'] as Map<String, dynamic>)
-      ..vendorLocationIndex = json['vendorLocationIndex'] as int?
-      ..seasonalRank = json['seasonalRank'] as int?
-      ..vendorHash = json['vendorHash'] as int?
+      ..vendorLocationIndex = (json['vendorLocationIndex'] as num?)?.toInt()
+      ..seasonalRank = (json['seasonalRank'] as num?)?.toInt()
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
       ..nextRefreshDate = json['nextRefreshDate'] as String?
       ..enabled = json['enabled'] as bool?;
 

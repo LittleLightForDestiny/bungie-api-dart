@@ -9,7 +9,7 @@ part of 'destiny_activity_graph_node_definition.dart';
 DestinyActivityGraphNodeDefinition _$DestinyActivityGraphNodeDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyActivityGraphNodeDefinition()
-      ..nodeId = json['nodeId'] as int?
+      ..nodeId = (json['nodeId'] as num?)?.toInt()
       ..overrideDisplay = json['overrideDisplay'] == null
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(

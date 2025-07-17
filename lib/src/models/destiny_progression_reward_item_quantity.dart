@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import '../enums/destiny_progression_reward_item_acquisition_behavior.dart';
+import 'destiny_progression_socket_plug_override.dart';
 
 part 'destiny_progression_reward_item_quantity.g.dart';
 
@@ -9,6 +10,9 @@ part 'destiny_progression_reward_item_quantity.g.dart';
 class DestinyProgressionRewardItemQuantity{	
 	DestinyProgressionRewardItemQuantity();
 
+	
+	@JsonKey(name:'rewardItemIndex')
+	int? rewardItemIndex;
 	
 	@JsonKey(name:'rewardedAtProgressionLevel')
 	int? rewardedAtProgressionLevel;
@@ -21,6 +25,9 @@ class DestinyProgressionRewardItemQuantity{
 	
 	@JsonKey(name:'claimUnlockDisplayStrings')
 	List<String>? claimUnlockDisplayStrings;
+	
+	@JsonKey(name:'socketOverrides')
+	List<DestinyProgressionSocketPlugOverride>? socketOverrides;
 	
 	/// The hash identifier for the item in question. Use it to look up the item's DestinyInventoryItemDefinition.
 	@JsonKey(name:'itemHash')

@@ -11,7 +11,7 @@ DestinyItemSackBlockDefinition _$DestinyItemSackBlockDefinitionFromJson(
     DestinyItemSackBlockDefinition()
       ..detailAction = json['detailAction'] as String?
       ..openAction = json['openAction'] as String?
-      ..selectItemCount = json['selectItemCount'] as int?
+      ..selectItemCount = (json['selectItemCount'] as num?)?.toInt()
       ..vendorSackType = json['vendorSackType'] as String?
       ..openOnAcquire = json['openOnAcquire'] as bool?;
 

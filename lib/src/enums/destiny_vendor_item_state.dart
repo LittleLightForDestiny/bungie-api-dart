@@ -70,6 +70,14 @@ class DestinyVendorItemState {
     static const DestinyVendorItemState Paracausal = DestinyVendorItemState(524288);
     ///Cryptarch = 1048576
     static const DestinyVendorItemState Cryptarch = DestinyVendorItemState(1048576);
+    ///ArtifactPerkOwned = 2097152
+    static const DestinyVendorItemState ArtifactPerkOwned = DestinyVendorItemState(2097152);
+    ///Savings = 4194304
+    static const DestinyVendorItemState Savings = DestinyVendorItemState(4194304);
+    ///Ineligible = 8388608
+    static const DestinyVendorItemState Ineligible = DestinyVendorItemState(8388608);
+    ///ArtifactPerkBoosted = 16777216
+    static const DestinyVendorItemState ArtifactPerkBoosted = DestinyVendorItemState(16777216);
 
     int get value {
         return _value;

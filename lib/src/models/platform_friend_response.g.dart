@@ -9,8 +9,8 @@ part of 'platform_friend_response.dart';
 PlatformFriendResponse _$PlatformFriendResponseFromJson(
         Map<String, dynamic> json) =>
     PlatformFriendResponse()
-      ..itemsPerPage = json['itemsPerPage'] as int?
-      ..currentPage = json['currentPage'] as int?
+      ..itemsPerPage = (json['itemsPerPage'] as num?)?.toInt()
+      ..currentPage = (json['currentPage'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
       ..platformFriends = (json['platformFriends'] as List<dynamic>?)
           ?.map((e) => PlatformFriend.fromJson(e as Map<String, dynamic>))

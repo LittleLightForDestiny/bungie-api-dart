@@ -9,7 +9,7 @@ part of 'destiny_milestone_quest_definition.dart';
 DestinyMilestoneQuestDefinition _$DestinyMilestoneQuestDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyMilestoneQuestDefinition()
-      ..questItemHash = json['questItemHash'] as int?
+      ..questItemHash = (json['questItemHash'] as num?)?.toInt()
       ..displayProperties = json['displayProperties'] == null
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
@@ -25,7 +25,7 @@ DestinyMilestoneQuestDefinition _$DestinyMilestoneQuestDefinitionFromJson(
             DestinyMilestoneActivityDefinition.fromJson(
                 e as Map<String, dynamic>)),
       )
-      ..destinationHash = json['destinationHash'] as int?;
+      ..destinationHash = (json['destinationHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneQuestDefinitionToJson(
         DestinyMilestoneQuestDefinition instance) =>

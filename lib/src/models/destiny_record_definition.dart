@@ -74,6 +74,10 @@ class DestinyRecordDefinition{
 	@JsonKey(name:'rewardItems')
 	List<DestinyItemQuantity>? rewardItems;
 	
+	/// A display name for the type of record this is (Triumphs, Lore, Medals, Seasonal Challenge, etc.).
+	@JsonKey(name:'recordTypeName')
+	String? recordTypeName;
+	
 	@JsonKey(name:'presentationNodeType',fromJson:decodeDestinyPresentationNodeType,toJson:encodeDestinyPresentationNodeType)
 	DestinyPresentationNodeType? presentationNodeType;
 	

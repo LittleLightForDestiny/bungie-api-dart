@@ -27,11 +27,11 @@ PostSearchResponse _$PostSearchResponseFromJson(Map<String, dynamic> json) =>
           ?.map(
               (e) => ForumRecruitmentDetail.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..availablePages = json['availablePages'] as int?
+      ..availablePages = (json['availablePages'] as num?)?.toInt()
       ..results = (json['results'] as List<dynamic>?)
           ?.map((e) => PostResponse.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..totalResults = json['totalResults'] as int?
+      ..totalResults = (json['totalResults'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
       ..query = json['query'] == null
           ? null

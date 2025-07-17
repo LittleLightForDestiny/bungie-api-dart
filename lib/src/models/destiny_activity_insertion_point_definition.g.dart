@@ -10,7 +10,7 @@ DestinyActivityInsertionPointDefinition
     _$DestinyActivityInsertionPointDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyActivityInsertionPointDefinition()
-          ..phaseHash = json['phaseHash'] as int?;
+          ..phaseHash = (json['phaseHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityInsertionPointDefinitionToJson(
         DestinyActivityInsertionPointDefinition instance) =>

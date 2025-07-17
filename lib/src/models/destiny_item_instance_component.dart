@@ -68,6 +68,10 @@ class DestinyItemInstanceComponent{
 	/// IF populated, this item supports Energy mechanics (i.e. Armor 2.0), and these are the current details of its energy type and available capacity to spend energy points.
 	@JsonKey(name:'energy')
 	DestinyItemInstanceEnergy? energy;
+	
+	/// Gear Tier, if applicable, fished up from the unlock value items.gear_tier
+	@JsonKey(name:'gearTier')
+	int? gearTier;
 
 	factory DestinyItemInstanceComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyItemInstanceComponentFromJson(json);

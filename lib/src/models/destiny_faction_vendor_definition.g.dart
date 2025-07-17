@@ -9,8 +9,8 @@ part of 'destiny_faction_vendor_definition.dart';
 DestinyFactionVendorDefinition _$DestinyFactionVendorDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyFactionVendorDefinition()
-      ..vendorHash = json['vendorHash'] as int?
-      ..destinationHash = json['destinationHash'] as int?
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
+      ..destinationHash = (json['destinationHash'] as num?)?.toInt()
       ..backgroundImagePath = json['backgroundImagePath'] as String?;
 
 Map<String, dynamic> _$DestinyFactionVendorDefinitionToJson(

@@ -9,7 +9,7 @@ part of 'destiny_public_milestone_quest.dart';
 DestinyPublicMilestoneQuest _$DestinyPublicMilestoneQuestFromJson(
         Map<String, dynamic> json) =>
     DestinyPublicMilestoneQuest()
-      ..questItemHash = json['questItemHash'] as int?
+      ..questItemHash = (json['questItemHash'] as num?)?.toInt()
       ..activity = json['activity'] == null
           ? null
           : DestinyPublicMilestoneActivity.fromJson(

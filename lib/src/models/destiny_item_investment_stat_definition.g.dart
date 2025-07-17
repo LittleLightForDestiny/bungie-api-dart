@@ -9,8 +9,8 @@ part of 'destiny_item_investment_stat_definition.dart';
 DestinyItemInvestmentStatDefinition
     _$DestinyItemInvestmentStatDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyItemInvestmentStatDefinition()
-          ..statTypeHash = json['statTypeHash'] as int?
-          ..value = json['value'] as int?
+          ..statTypeHash = (json['statTypeHash'] as num?)?.toInt()
+          ..value = (json['value'] as num?)?.toInt()
           ..isConditionallyActive = json['isConditionallyActive'] as bool?;
 
 Map<String, dynamic> _$DestinyItemInvestmentStatDefinitionToJson(

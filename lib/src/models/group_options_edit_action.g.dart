@@ -13,10 +13,10 @@ GroupOptionsEditAction _$GroupOptionsEditActionFromJson(
       ..updateCulturePermissionOverride =
           json['UpdateCulturePermissionOverride'] as bool?
       ..hostGuidedGamePermissionOverride =
-          json['HostGuidedGamePermissionOverride'] as int?
+          (json['HostGuidedGamePermissionOverride'] as num?)?.toInt()
       ..updateBannerPermissionOverride =
           json['UpdateBannerPermissionOverride'] as bool?
-      ..joinLevel = json['JoinLevel'] as int?;
+      ..joinLevel = (json['JoinLevel'] as num?)?.toInt();
 
 Map<String, dynamic> _$GroupOptionsEditActionToJson(
         GroupOptionsEditAction instance) =>

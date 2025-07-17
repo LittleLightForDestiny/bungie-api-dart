@@ -9,8 +9,8 @@ part of 'destiny_item_transfer_request.dart';
 DestinyItemTransferRequest _$DestinyItemTransferRequestFromJson(
         Map<String, dynamic> json) =>
     DestinyItemTransferRequest()
-      ..itemReferenceHash = json['itemReferenceHash'] as int?
-      ..stackSize = json['stackSize'] as int?
+      ..itemReferenceHash = (json['itemReferenceHash'] as num?)?.toInt()
+      ..stackSize = (json['stackSize'] as num?)?.toInt()
       ..transferToVault = json['transferToVault'] as bool?
       ..itemId = json['itemId'] as String?
       ..characterId = json['characterId'] as String?

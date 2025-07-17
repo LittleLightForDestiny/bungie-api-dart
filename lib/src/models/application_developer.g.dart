@@ -10,7 +10,7 @@ ApplicationDeveloper _$ApplicationDeveloperFromJson(
         Map<String, dynamic> json) =>
     ApplicationDeveloper()
       ..role = decodeDeveloperRole(json['role'])
-      ..apiEulaVersion = json['apiEulaVersion'] as int?
+      ..apiEulaVersion = (json['apiEulaVersion'] as num?)?.toInt()
       ..user = json['user'] == null
           ? null
           : UserInfoCard.fromJson(json['user'] as Map<String, dynamic>);

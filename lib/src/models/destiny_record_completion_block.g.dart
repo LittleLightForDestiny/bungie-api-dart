@@ -10,8 +10,8 @@ DestinyRecordCompletionBlock _$DestinyRecordCompletionBlockFromJson(
         Map<String, dynamic> json) =>
     DestinyRecordCompletionBlock()
       ..partialCompletionObjectiveCountThreshold =
-          json['partialCompletionObjectiveCountThreshold'] as int?
-      ..scoreValue = json['ScoreValue'] as int?
+          (json['partialCompletionObjectiveCountThreshold'] as num?)?.toInt()
+      ..scoreValue = (json['ScoreValue'] as num?)?.toInt()
       ..shouldFireToast = json['shouldFireToast'] as bool?
       ..toastStyle = decodeDestinyRecordToastStyle(json['toastStyle']);
 

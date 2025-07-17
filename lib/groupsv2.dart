@@ -27,6 +27,7 @@ export 'src/models/group_optional_conversation_edit_request.dart';
 export 'src/models/group_member_leave_result.dart';
 export 'src/models/group_ban_request.dart';
 export 'src/models/group_ban.dart';
+export 'src/models/group_edit_history.dart';
 export 'src/models/group_member_application.dart';
 export 'src/models/group_application_request.dart';
 export 'src/models/group_application_list_request.dart';

@@ -10,7 +10,7 @@ DestinyMilestoneRewardCategoryDefinition
     _$DestinyMilestoneRewardCategoryDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyMilestoneRewardCategoryDefinition()
-          ..categoryHash = json['categoryHash'] as int?
+          ..categoryHash = (json['categoryHash'] as num?)?.toInt()
           ..categoryIdentifier = json['categoryIdentifier'] as String?
           ..displayProperties = json['displayProperties'] == null
               ? null
@@ -23,7 +23,7 @@ DestinyMilestoneRewardCategoryDefinition
                 DestinyMilestoneRewardEntryDefinition.fromJson(
                     e as Map<String, dynamic>)),
           )
-          ..order = json['order'] as int?;
+          ..order = (json['order'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneRewardCategoryDefinitionToJson(
         DestinyMilestoneRewardCategoryDefinition instance) =>

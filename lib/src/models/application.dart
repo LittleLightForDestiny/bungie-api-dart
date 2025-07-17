@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/oauth_application_type.dart';
 import '../enums/application_status.dart';
 import 'application_developer.dart';
 
@@ -10,6 +11,9 @@ part 'application.g.dart';
 class Application{	
 	Application();
 
+	
+	@JsonKey(name:'applicationType',fromJson:decodeOAuthApplicationType,toJson:encodeOAuthApplicationType)
+	OAuthApplicationType? applicationType;
 	
 	/// Unique ID assigned to the application
 	@JsonKey(name:'applicationId')

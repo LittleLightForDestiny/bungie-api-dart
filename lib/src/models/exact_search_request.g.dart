@@ -9,7 +9,7 @@ part of 'exact_search_request.dart';
 ExactSearchRequest _$ExactSearchRequestFromJson(Map<String, dynamic> json) =>
     ExactSearchRequest()
       ..displayName = json['displayName'] as String?
-      ..displayNameCode = json['displayNameCode'] as int?;
+      ..displayNameCode = (json['displayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$ExactSearchRequestToJson(ExactSearchRequest instance) =>
     <String, dynamic>{

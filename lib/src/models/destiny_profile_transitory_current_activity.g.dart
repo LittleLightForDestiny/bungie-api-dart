@@ -15,8 +15,8 @@ DestinyProfileTransitoryCurrentActivity
           ..score = (json['score'] as num?)?.toDouble()
           ..highestOpposingFactionScore =
               (json['highestOpposingFactionScore'] as num?)?.toDouble()
-          ..numberOfOpponents = json['numberOfOpponents'] as int?
-          ..numberOfPlayers = json['numberOfPlayers'] as int?;
+          ..numberOfOpponents = (json['numberOfOpponents'] as num?)?.toInt()
+          ..numberOfPlayers = (json['numberOfPlayers'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyProfileTransitoryCurrentActivityToJson(
         DestinyProfileTransitoryCurrentActivity instance) =>

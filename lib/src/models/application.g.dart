@@ -7,7 +7,8 @@ part of 'application.dart';
 // **************************************************************************
 
 Application _$ApplicationFromJson(Map<String, dynamic> json) => Application()
-  ..applicationId = json['applicationId'] as int?
+  ..applicationType = decodeOAuthApplicationType(json['applicationType'])
+  ..applicationId = (json['applicationId'] as num?)?.toInt()
   ..name = json['name'] as String?
   ..redirectUrl = json['redirectUrl'] as String?
   ..link = json['link'] as String?
@@ -24,6 +25,7 @@ Application _$ApplicationFromJson(Map<String, dynamic> json) => Application()
 
 Map<String, dynamic> _$ApplicationToJson(Application instance) =>
     <String, dynamic>{
+      'applicationType': encodeOAuthApplicationType(instance.applicationType),
       'applicationId': instance.applicationId,
       'name': instance.name,
       'redirectUrl': instance.redirectUrl,

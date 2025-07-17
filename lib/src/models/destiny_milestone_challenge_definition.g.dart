@@ -9,7 +9,8 @@ part of 'destiny_milestone_challenge_definition.dart';
 DestinyMilestoneChallengeDefinition
     _$DestinyMilestoneChallengeDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyMilestoneChallengeDefinition()
-          ..challengeObjectiveHash = json['challengeObjectiveHash'] as int?;
+          ..challengeObjectiveHash =
+              (json['challengeObjectiveHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneChallengeDefinitionToJson(
         DestinyMilestoneChallengeDefinition instance) =>

@@ -13,24 +13,26 @@ DestinyNodeStepDefinition _$DestinyNodeStepDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..stepIndex = json['stepIndex'] as int?
-      ..nodeStepHash = json['nodeStepHash'] as int?
+      ..stepIndex = (json['stepIndex'] as num?)?.toInt()
+      ..nodeStepHash = (json['nodeStepHash'] as num?)?.toInt()
       ..interactionDescription = json['interactionDescription'] as String?
       ..damageType = decodeDamageType(json['damageType'])
-      ..damageTypeHash = json['damageTypeHash'] as int?
+      ..damageTypeHash = (json['damageTypeHash'] as num?)?.toInt()
       ..activationRequirement = json['activationRequirement'] == null
           ? null
           : DestinyNodeActivationRequirement.fromJson(
               json['activationRequirement'] as Map<String, dynamic>)
       ..canActivateNextStep = json['canActivateNextStep'] as bool?
-      ..nextStepIndex = json['nextStepIndex'] as int?
+      ..nextStepIndex = (json['nextStepIndex'] as num?)?.toInt()
       ..isNextStepRandom = json['isNextStepRandom'] as bool?
-      ..perkHashes =
-          (json['perkHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+      ..perkHashes = (json['perkHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..startProgressionBarAtProgress =
-          json['startProgressionBarAtProgress'] as int?
-      ..statHashes =
-          (json['statHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
+          (json['startProgressionBarAtProgress'] as num?)?.toInt()
+      ..statHashes = (json['statHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..affectsQuality = json['affectsQuality'] as bool?
       ..stepGroups = json['stepGroups'] == null
           ? null

@@ -11,11 +11,11 @@ GroupQuery _$GroupQueryFromJson(Map<String, dynamic> json) => GroupQuery()
   ..groupType = decodeGroupType(json['groupType'])
   ..creationDate = decodeGroupDateRange(json['creationDate'])
   ..sortBy = decodeGroupSortBy(json['sortBy'])
-  ..groupMemberCountFilter = json['groupMemberCountFilter'] as int?
+  ..groupMemberCountFilter = (json['groupMemberCountFilter'] as num?)?.toInt()
   ..localeFilter = json['localeFilter'] as String?
   ..tagText = json['tagText'] as String?
-  ..itemsPerPage = json['itemsPerPage'] as int?
-  ..currentPage = json['currentPage'] as int?
+  ..itemsPerPage = (json['itemsPerPage'] as num?)?.toInt()
+  ..currentPage = (json['currentPage'] as num?)?.toInt()
   ..requestContinuationToken = json['requestContinuationToken'] as String?;
 
 Map<String, dynamic> _$GroupQueryToJson(GroupQuery instance) =>

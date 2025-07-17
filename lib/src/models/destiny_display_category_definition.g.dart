@@ -9,17 +9,17 @@ part of 'destiny_display_category_definition.dart';
 DestinyDisplayCategoryDefinition _$DestinyDisplayCategoryDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyDisplayCategoryDefinition()
-      ..index = json['index'] as int?
+      ..index = (json['index'] as num?)?.toInt()
       ..identifier = json['identifier'] as String?
-      ..displayCategoryHash = json['displayCategoryHash'] as int?
+      ..displayCategoryHash = (json['displayCategoryHash'] as num?)?.toInt()
       ..displayProperties = json['displayProperties'] == null
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
       ..displayInBanner = json['displayInBanner'] as bool?
-      ..progressionHash = json['progressionHash'] as int?
+      ..progressionHash = (json['progressionHash'] as num?)?.toInt()
       ..sortOrder = decodeVendorDisplayCategorySortOrder(json['sortOrder'])
-      ..displayStyleHash = json['displayStyleHash'] as int?
+      ..displayStyleHash = (json['displayStyleHash'] as num?)?.toInt()
       ..displayStyleIdentifier = json['displayStyleIdentifier'] as String?;
 
 Map<String, dynamic> _$DestinyDisplayCategoryDefinitionToJson(

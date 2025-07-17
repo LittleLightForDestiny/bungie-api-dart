@@ -8,14 +8,14 @@ part of 'group_features.dart';
 
 GroupFeatures _$GroupFeaturesFromJson(Map<String, dynamic> json) =>
     GroupFeatures()
-      ..maximumMembers = json['maximumMembers'] as int?
+      ..maximumMembers = (json['maximumMembers'] as num?)?.toInt()
       ..maximumMembershipsOfGroupType =
-          json['maximumMembershipsOfGroupType'] as int?
+          (json['maximumMembershipsOfGroupType'] as num?)?.toInt()
       ..capabilities = json['capabilities'] == null
           ? null
-          : Capabilities.fromJson(json['capabilities'] as int)
+          : Capabilities.fromJson((json['capabilities'] as num).toInt())
       ..membershipTypes = (json['membershipTypes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
           .toList()
       ..invitePermissionOverride = json['invitePermissionOverride'] as bool?
       ..updateCulturePermissionOverride =
@@ -32,7 +32,7 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
       'maximumMembershipsOfGroupType': instance.maximumMembershipsOfGroupType,
       'capabilities': instance.capabilities?.toJson(),
       'membershipTypes': instance.membershipTypes
-          ?.map((e) => _$BungieMembershipTypeEnumMap[e])
+          ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
       'invitePermissionOverride': instance.invitePermissionOverride,
       'updateCulturePermissionOverride':
@@ -43,32 +43,6 @@ Map<String, dynamic> _$GroupFeaturesToJson(GroupFeatures instance) =>
       'joinLevel': encodeRuntimeGroupMemberType(instance.joinLevel),
     };
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,
   BungieMembershipType.TigerXbox: 1,
@@ -78,6 +52,7 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerStadia: 5,
   BungieMembershipType.TigerEgs: 6,
   BungieMembershipType.TigerDemon: 10,
+  BungieMembershipType.GoliathGame: 20,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
   BungieMembershipType.ProtectedInvalidEnumValue: 999999999,

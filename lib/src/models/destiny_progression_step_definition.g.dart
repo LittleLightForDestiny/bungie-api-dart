@@ -12,7 +12,7 @@ DestinyProgressionStepDefinition _$DestinyProgressionStepDefinitionFromJson(
       ..stepName = json['stepName'] as String?
       ..displayEffectType =
           decodeDestinyProgressionStepDisplayEffect(json['displayEffectType'])
-      ..progressTotal = json['progressTotal'] as int?
+      ..progressTotal = (json['progressTotal'] as num?)?.toInt()
       ..rewardItems = (json['rewardItems'] as List<dynamic>?)
           ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList()

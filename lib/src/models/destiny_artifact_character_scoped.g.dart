@@ -9,9 +9,9 @@ part of 'destiny_artifact_character_scoped.dart';
 DestinyArtifactCharacterScoped _$DestinyArtifactCharacterScopedFromJson(
         Map<String, dynamic> json) =>
     DestinyArtifactCharacterScoped()
-      ..artifactHash = json['artifactHash'] as int?
-      ..pointsUsed = json['pointsUsed'] as int?
-      ..resetCount = json['resetCount'] as int?
+      ..artifactHash = (json['artifactHash'] as num?)?.toInt()
+      ..pointsUsed = (json['pointsUsed'] as num?)?.toInt()
+      ..resetCount = (json['resetCount'] as num?)?.toInt()
       ..tiers = (json['tiers'] as List<dynamic>?)
           ?.map((e) => DestinyArtifactTier.fromJson(e as Map<String, dynamic>))
           .toList();

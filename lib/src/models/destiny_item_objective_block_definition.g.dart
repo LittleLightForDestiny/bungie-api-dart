@@ -10,19 +10,19 @@ DestinyItemObjectiveBlockDefinition
     _$DestinyItemObjectiveBlockDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyItemObjectiveBlockDefinition()
           ..objectiveHashes = (json['objectiveHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
           ..displayActivityHashes =
               (json['displayActivityHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList()
           ..requireFullObjectiveCompletion =
               json['requireFullObjectiveCompletion'] as bool?
-          ..questlineItemHash = json['questlineItemHash'] as int?
+          ..questlineItemHash = (json['questlineItemHash'] as num?)?.toInt()
           ..narrative = json['narrative'] as String?
           ..objectiveVerbName = json['objectiveVerbName'] as String?
           ..questTypeIdentifier = json['questTypeIdentifier'] as String?
-          ..questTypeHash = json['questTypeHash'] as int?
+          ..questTypeHash = (json['questTypeHash'] as num?)?.toInt()
           ..perObjectiveDisplayProperties =
               (json['perObjectiveDisplayProperties'] as List<dynamic>?)
                   ?.map((e) => DestinyObjectiveDisplayProperties.fromJson(

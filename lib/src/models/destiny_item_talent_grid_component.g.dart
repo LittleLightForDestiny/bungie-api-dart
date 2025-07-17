@@ -9,7 +9,7 @@ part of 'destiny_item_talent_grid_component.dart';
 DestinyItemTalentGridComponent _$DestinyItemTalentGridComponentFromJson(
         Map<String, dynamic> json) =>
     DestinyItemTalentGridComponent()
-      ..talentGridHash = json['talentGridHash'] as int?
+      ..talentGridHash = (json['talentGridHash'] as num?)?.toInt()
       ..nodes = (json['nodes'] as List<dynamic>?)
           ?.map((e) => DestinyTalentNode.fromJson(e as Map<String, dynamic>))
           .toList()

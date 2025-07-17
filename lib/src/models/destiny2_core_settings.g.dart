@@ -9,34 +9,53 @@ part of 'destiny2_core_settings.dart';
 Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(
         Map<String, dynamic> json) =>
     Destiny2CoreSettings()
-      ..collectionRootNode = json['collectionRootNode'] as int?
-      ..badgesRootNode = json['badgesRootNode'] as int?
-      ..recordsRootNode = json['recordsRootNode'] as int?
-      ..medalsRootNode = json['medalsRootNode'] as int?
-      ..metricsRootNode = json['metricsRootNode'] as int?
-      ..activeTriumphsRootNodeHash = json['activeTriumphsRootNodeHash'] as int?
-      ..activeSealsRootNodeHash = json['activeSealsRootNodeHash'] as int?
-      ..legacyTriumphsRootNodeHash = json['legacyTriumphsRootNodeHash'] as int?
-      ..legacySealsRootNodeHash = json['legacySealsRootNodeHash'] as int?
-      ..medalsRootNodeHash = json['medalsRootNodeHash'] as int?
+      ..collectionRootNode = (json['collectionRootNode'] as num?)?.toInt()
+      ..badgesRootNode = (json['badgesRootNode'] as num?)?.toInt()
+      ..recordsRootNode = (json['recordsRootNode'] as num?)?.toInt()
+      ..medalsRootNode = (json['medalsRootNode'] as num?)?.toInt()
+      ..metricsRootNode = (json['metricsRootNode'] as num?)?.toInt()
+      ..activeTriumphsRootNodeHash =
+          (json['activeTriumphsRootNodeHash'] as num?)?.toInt()
+      ..activeSealsRootNodeHash =
+          (json['activeSealsRootNodeHash'] as num?)?.toInt()
+      ..legacyTriumphsRootNodeHash =
+          (json['legacyTriumphsRootNodeHash'] as num?)?.toInt()
+      ..legacySealsRootNodeHash =
+          (json['legacySealsRootNodeHash'] as num?)?.toInt()
+      ..medalsRootNodeHash = (json['medalsRootNodeHash'] as num?)?.toInt()
       ..exoticCatalystsRootNodeHash =
-          json['exoticCatalystsRootNodeHash'] as int?
-      ..loreRootNodeHash = json['loreRootNodeHash'] as int?
-      ..craftingRootNodeHash = json['craftingRootNodeHash'] as int?
-      ..loadoutConstantsHash = json['loadoutConstantsHash'] as int?
-      ..guardianRankConstantsHash = json['guardianRankConstantsHash'] as int?
-      ..guardianRanksRootNodeHash = json['guardianRanksRootNodeHash'] as int?
+          (json['exoticCatalystsRootNodeHash'] as num?)?.toInt()
+      ..loreRootNodeHash = (json['loreRootNodeHash'] as num?)?.toInt()
+      ..craftingRootNodeHash = (json['craftingRootNodeHash'] as num?)?.toInt()
+      ..loadoutConstantsHash = (json['loadoutConstantsHash'] as num?)?.toInt()
+      ..guardianRankConstantsHash =
+          (json['guardianRankConstantsHash'] as num?)?.toInt()
+      ..fireteamFinderConstantsHash =
+          (json['fireteamFinderConstantsHash'] as num?)?.toInt()
+      ..inventoryItemConstantsHash =
+          (json['inventoryItemConstantsHash'] as num?)?.toInt()
+      ..featuredItemsListHash = (json['featuredItemsListHash'] as num?)?.toInt()
+      ..armorArchetypePlugSetHash =
+          (json['armorArchetypePlugSetHash'] as num?)?.toInt()
+      ..seasonalHubEventCardHash =
+          (json['seasonalHubEventCardHash'] as num?)?.toInt()
+      ..guardianRanksRootNodeHash =
+          (json['guardianRanksRootNodeHash'] as num?)?.toInt()
       ..currentRankProgressionHashes =
           (json['currentRankProgressionHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..insertPlugFreeProtectedPlugItemHashes =
           (json['insertPlugFreeProtectedPlugItemHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..insertPlugFreeBlockedSocketTypeHashes =
           (json['insertPlugFreeBlockedSocketTypeHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..enabledFireteamFinderActivityGraphHashes =
+          (json['enabledFireteamFinderActivityGraphHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..undiscoveredCollectibleImage =
           json['undiscoveredCollectibleImage'] as String?
@@ -44,15 +63,15 @@ Destiny2CoreSettings _$Destiny2CoreSettingsFromJson(
       ..ammoTypeSpecialIcon = json['ammoTypeSpecialIcon'] as String?
       ..ammoTypePrimaryIcon = json['ammoTypePrimaryIcon'] as String?
       ..currentSeasonalArtifactHash =
-          json['currentSeasonalArtifactHash'] as int?
-      ..currentSeasonHash = json['currentSeasonHash'] as int?
+          (json['currentSeasonalArtifactHash'] as num?)?.toInt()
+      ..currentSeasonHash = (json['currentSeasonHash'] as num?)?.toInt()
       ..seasonalChallengesPresentationNodeHash =
-          json['seasonalChallengesPresentationNodeHash'] as int?
+          (json['seasonalChallengesPresentationNodeHash'] as num?)?.toInt()
       ..futureSeasonHashes = (json['futureSeasonHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..pastSeasonHashes = (json['pastSeasonHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList();
 
 Map<String, dynamic> _$Destiny2CoreSettingsToJson(
@@ -73,12 +92,19 @@ Map<String, dynamic> _$Destiny2CoreSettingsToJson(
       'craftingRootNodeHash': instance.craftingRootNodeHash,
       'loadoutConstantsHash': instance.loadoutConstantsHash,
       'guardianRankConstantsHash': instance.guardianRankConstantsHash,
+      'fireteamFinderConstantsHash': instance.fireteamFinderConstantsHash,
+      'inventoryItemConstantsHash': instance.inventoryItemConstantsHash,
+      'featuredItemsListHash': instance.featuredItemsListHash,
+      'armorArchetypePlugSetHash': instance.armorArchetypePlugSetHash,
+      'seasonalHubEventCardHash': instance.seasonalHubEventCardHash,
       'guardianRanksRootNodeHash': instance.guardianRanksRootNodeHash,
       'currentRankProgressionHashes': instance.currentRankProgressionHashes,
       'insertPlugFreeProtectedPlugItemHashes':
           instance.insertPlugFreeProtectedPlugItemHashes,
       'insertPlugFreeBlockedSocketTypeHashes':
           instance.insertPlugFreeBlockedSocketTypeHashes,
+      'enabledFireteamFinderActivityGraphHashes':
+          instance.enabledFireteamFinderActivityGraphHashes,
       'undiscoveredCollectibleImage': instance.undiscoveredCollectibleImage,
       'ammoTypeHeavyIcon': instance.ammoTypeHeavyIcon,
       'ammoTypeSpecialIcon': instance.ammoTypeSpecialIcon,

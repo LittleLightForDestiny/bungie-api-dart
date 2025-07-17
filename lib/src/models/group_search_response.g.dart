@@ -11,7 +11,7 @@ GroupSearchResponse _$GroupSearchResponseFromJson(Map<String, dynamic> json) =>
       ..results = (json['results'] as List<dynamic>?)
           ?.map((e) => GroupV2Card.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..totalResults = json['totalResults'] as int?
+      ..totalResults = (json['totalResults'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
       ..query = json['query'] == null
           ? null

@@ -10,7 +10,7 @@ DestinyItemCreationEntryLevelDefinition
     _$DestinyItemCreationEntryLevelDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyItemCreationEntryLevelDefinition()
-          ..level = json['level'] as int?;
+          ..level = (json['level'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemCreationEntryLevelDefinitionToJson(
         DestinyItemCreationEntryLevelDefinition instance) =>

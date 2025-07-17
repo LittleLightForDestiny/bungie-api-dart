@@ -51,13 +51,17 @@ class DestinyProfileComponent{
 	@JsonKey(name:'activeEventCardHash')
 	int? activeEventCardHash;
 	
-	/// The 'current' Guardian Rank value, which starts at rank 1.
+	/// The 'current' Guardian Rank value, which starts at rank 1. This rank value will drop at the start of a new season to your 'renewed' rank from the previous season.
 	@JsonKey(name:'currentGuardianRank')
 	int? currentGuardianRank;
 	
-	/// The 'lifetime highest' Guardian Rank value, which starts at rank 1.
+	/// The 'lifetime highest' Guardian Rank value, which starts at rank 1. This rank value should never go down.
 	@JsonKey(name:'lifetimeHighestGuardianRank')
 	int? lifetimeHighestGuardianRank;
+	
+	/// The seasonal 'renewed' Guardian Rank value. This rank value resets at the start of each new season to the highest-earned non-advanced rank.
+	@JsonKey(name:'renewedGuardianRank')
+	int? renewedGuardianRank;
 
 	factory DestinyProfileComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyProfileComponentFromJson(json);
