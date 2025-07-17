@@ -10,11 +10,11 @@ DestinyProfileTransitoryTrackingEntry
     _$DestinyProfileTransitoryTrackingEntryFromJson(
             Map<String, dynamic> json) =>
         DestinyProfileTransitoryTrackingEntry()
-          ..locationHash = json['locationHash'] as int?
-          ..itemHash = json['itemHash'] as int?
-          ..objectiveHash = json['objectiveHash'] as int?
-          ..activityHash = json['activityHash'] as int?
-          ..questlineItemHash = json['questlineItemHash'] as int?
+          ..locationHash = (json['locationHash'] as num?)?.toInt()
+          ..itemHash = (json['itemHash'] as num?)?.toInt()
+          ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
+          ..activityHash = (json['activityHash'] as num?)?.toInt()
+          ..questlineItemHash = (json['questlineItemHash'] as num?)?.toInt()
           ..trackedDate = json['trackedDate'] as String?;
 
 Map<String, dynamic> _$DestinyProfileTransitoryTrackingEntryToJson(

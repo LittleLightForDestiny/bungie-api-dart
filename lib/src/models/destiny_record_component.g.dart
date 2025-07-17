@@ -11,7 +11,7 @@ DestinyRecordComponent _$DestinyRecordComponentFromJson(
     DestinyRecordComponent()
       ..state = json['state'] == null
           ? null
-          : DestinyRecordState.fromJson(json['state'] as int)
+          : DestinyRecordState.fromJson((json['state'] as num).toInt())
       ..objectives = (json['objectives'] as List<dynamic>?)
           ?.map((e) =>
               DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
@@ -20,8 +20,9 @@ DestinyRecordComponent _$DestinyRecordComponentFromJson(
           ?.map((e) =>
               DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..intervalsRedeemedCount = json['intervalsRedeemedCount'] as int?
-      ..completedCount = json['completedCount'] as int?
+      ..intervalsRedeemedCount =
+          (json['intervalsRedeemedCount'] as num?)?.toInt()
+      ..completedCount = (json['completedCount'] as num?)?.toInt()
       ..rewardVisibilty = (json['rewardVisibilty'] as List<dynamic>?)
           ?.map((e) => e as bool)
           .toList();

@@ -10,7 +10,7 @@ DestinyMilestoneChallengeActivityPhase
     _$DestinyMilestoneChallengeActivityPhaseFromJson(
             Map<String, dynamic> json) =>
         DestinyMilestoneChallengeActivityPhase()
-          ..phaseHash = json['phaseHash'] as int?;
+          ..phaseHash = (json['phaseHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneChallengeActivityPhaseToJson(
         DestinyMilestoneChallengeActivityPhase instance) =>

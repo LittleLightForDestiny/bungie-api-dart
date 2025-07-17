@@ -12,7 +12,7 @@ TwitchDropHistoryResponse _$TwitchDropHistoryResponseFromJson(
       ..title = json['Title'] as String?
       ..description = json['Description'] as String?
       ..createdAt = json['CreatedAt'] as String?
-      ..claimState = json['ClaimState'] as int?;
+      ..claimState = (json['ClaimState'] as num?)?.toInt();
 
 Map<String, dynamic> _$TwitchDropHistoryResponseToJson(
         TwitchDropHistoryResponse instance) =>

@@ -11,10 +11,10 @@ DestinyPublicActivityStatus _$DestinyPublicActivityStatusFromJson(
     DestinyPublicActivityStatus()
       ..challengeObjectiveHashes =
           (json['challengeObjectiveHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..rewardTooltipItems = (json['rewardTooltipItems'] as List<dynamic>?)
           ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))

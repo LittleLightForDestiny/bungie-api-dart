@@ -10,9 +10,9 @@ DestinyVendorAcceptedItemDefinition
     _$DestinyVendorAcceptedItemDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyVendorAcceptedItemDefinition()
           ..acceptedInventoryBucketHash =
-              json['acceptedInventoryBucketHash'] as int?
+              (json['acceptedInventoryBucketHash'] as num?)?.toInt()
           ..destinationInventoryBucketHash =
-              json['destinationInventoryBucketHash'] as int?;
+              (json['destinationInventoryBucketHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorAcceptedItemDefinitionToJson(
         DestinyVendorAcceptedItemDefinition instance) =>

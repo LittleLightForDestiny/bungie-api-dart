@@ -10,8 +10,9 @@ DestinyPresentationNodeRecordChildEntry
     _$DestinyPresentationNodeRecordChildEntryFromJson(
             Map<String, dynamic> json) =>
         DestinyPresentationNodeRecordChildEntry()
-          ..recordHash = json['recordHash'] as int?
-          ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
+          ..recordHash = (json['recordHash'] as num?)?.toInt()
+          ..nodeDisplayPriority =
+              (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeRecordChildEntryToJson(
         DestinyPresentationNodeRecordChildEntry instance) =>

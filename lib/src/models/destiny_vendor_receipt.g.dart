@@ -16,10 +16,10 @@ DestinyVendorReceipt _$DestinyVendorReceiptFromJson(
           ? null
           : DestinyItemQuantity.fromJson(
               json['itemReceived'] as Map<String, dynamic>)
-      ..licenseUnlockHash = json['licenseUnlockHash'] as int?
+      ..licenseUnlockHash = (json['licenseUnlockHash'] as num?)?.toInt()
       ..purchasedByCharacterId = json['purchasedByCharacterId'] as String?
       ..refundPolicy = decodeDestinyVendorItemRefundPolicy(json['refundPolicy'])
-      ..sequenceNumber = json['sequenceNumber'] as int?
+      ..sequenceNumber = (json['sequenceNumber'] as num?)?.toInt()
       ..timeToExpiration = json['timeToExpiration'] as String?
       ..expiresOn = json['expiresOn'] as String?;
 

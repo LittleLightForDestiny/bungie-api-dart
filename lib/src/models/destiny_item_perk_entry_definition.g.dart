@@ -10,7 +10,7 @@ DestinyItemPerkEntryDefinition _$DestinyItemPerkEntryDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemPerkEntryDefinition()
       ..requirementDisplayString = json['requirementDisplayString'] as String?
-      ..perkHash = json['perkHash'] as int?
+      ..perkHash = (json['perkHash'] as num?)?.toInt()
       ..perkVisibility = decodeItemPerkVisibility(json['perkVisibility']);
 
 Map<String, dynamic> _$DestinyItemPerkEntryDefinitionToJson(

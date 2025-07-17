@@ -9,7 +9,7 @@ part of 'trending_entry_destiny_activity.dart';
 TrendingEntryDestinyActivity _$TrendingEntryDestinyActivityFromJson(
         Map<String, dynamic> json) =>
     TrendingEntryDestinyActivity()
-      ..activityHash = json['activityHash'] as int?
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
       ..status = json['status'] == null
           ? null
           : DestinyPublicActivityStatus.fromJson(

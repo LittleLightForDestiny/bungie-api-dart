@@ -18,7 +18,7 @@ class DestinyRecordState {
     /// If this is set, the objective for this Record has not yet been completed.
     static const DestinyRecordState ObjectiveNotCompleted = DestinyRecordState(4);
     ///Obscured = 8
-    /// If this is set, the game recommends that you replace the display text of this Record with DestinyRecordDefinition.stateInfo.obscuredString.
+    /// If this is set, the game recommends that you replace the display text of this Record with DestinyRecordDefinition.stateInfo.obscuredDescription.
     static const DestinyRecordState Obscured = DestinyRecordState(8);
     ///Invisible = 16
     /// If this is set, the game recommends that you not show this record. Do what you will with this recommendation.

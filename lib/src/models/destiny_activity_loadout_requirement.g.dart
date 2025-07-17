@@ -9,14 +9,14 @@ part of 'destiny_activity_loadout_requirement.dart';
 DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
         Map<String, dynamic> json) =>
     DestinyActivityLoadoutRequirement()
-      ..equipmentSlotHash = json['equipmentSlotHash'] as int?
+      ..equipmentSlotHash = (json['equipmentSlotHash'] as num?)?.toInt()
       ..allowedEquippedItemHashes =
           (json['allowedEquippedItemHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..allowedWeaponSubTypes =
           (json['allowedWeaponSubTypes'] as List<dynamic>?)
-              ?.map((e) => _$enumDecode(_$DestinyItemSubTypeEnumMap, e))
+              ?.map((e) => $enumDecode(_$DestinyItemSubTypeEnumMap, e))
               .toList();
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
@@ -25,35 +25,9 @@ Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
       'equipmentSlotHash': instance.equipmentSlotHash,
       'allowedEquippedItemHashes': instance.allowedEquippedItemHashes,
       'allowedWeaponSubTypes': instance.allowedWeaponSubTypes
-          ?.map((e) => _$DestinyItemSubTypeEnumMap[e])
+          ?.map((e) => _$DestinyItemSubTypeEnumMap[e]!)
           .toList(),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DestinyItemSubTypeEnumMap = {
   DestinyItemSubType.None: 0,

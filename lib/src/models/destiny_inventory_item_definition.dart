@@ -63,6 +63,10 @@ class DestinyInventoryItemDefinition{
 	@JsonKey(name:'iconWatermarkShelved')
 	String? iconWatermarkShelved;
 	
+	/// This is the active watermark for the item if it is currently Featured in-game. Clients should use the isFeaturedItem boolean to decide whether or not to show this as opposed to iconWatermark.
+	@JsonKey(name:'iconWatermarkFeatured')
+	String? iconWatermarkFeatured;
+	
 	/// A secondary icon associated with the item. Currently this is used in very context specific applications, such as Emblem Nameplates.
 	@JsonKey(name:'secondaryIcon')
 	String? secondaryIcon;
@@ -78,6 +82,10 @@ class DestinyInventoryItemDefinition{
 	/// Sometimes, an item will have a background color. Most notably this occurs with Emblems, who use the Background Color for small character nameplates such as the "friends" view you see in-game. There are almost certainly other items that have background color as well, though I have not bothered to investigate what items have it nor what purposes they serve: use it as you will.
 	@JsonKey(name:'backgroundColor')
 	DestinyColor? backgroundColor;
+	
+	/// Whether or not this item is currently featured in the game, giving it a special watermark
+	@JsonKey(name:'isFeaturedItem')
+	bool? isFeaturedItem;
 	
 	/// If we were able to acquire an in-game screenshot for the item, the path to that screenshot will be returned here. Note that not all items have screenshots: particularly not any non-equippable items.
 	@JsonKey(name:'screenshot')

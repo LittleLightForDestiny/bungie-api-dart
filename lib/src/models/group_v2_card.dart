@@ -44,6 +44,9 @@ class GroupV2Card{
 	@JsonKey(name:'capabilities')
 	Capabilities? capabilities;
 	
+	@JsonKey(name:'remoteGroupId')
+	String? remoteGroupId;
+	
 	/// This contract contains clan-specific group information. It does not include any investment data.
 	@JsonKey(name:'clanInfo')
 	GroupV2ClanInfo? clanInfo;

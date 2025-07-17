@@ -13,9 +13,9 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(
               json['displayProperties'] as Map<String, dynamic>)
-      ..completionValue = json['completionValue'] as int?
+      ..completionValue = (json['completionValue'] as num?)?.toInt()
       ..scope = decodeDestinyGatingScope(json['scope'])
-      ..locationHash = json['locationHash'] as int?
+      ..locationHash = (json['locationHash'] as num?)?.toInt()
       ..allowNegativeValue = json['allowNegativeValue'] as bool?
       ..allowValueChangeWhenCompleted =
           json['allowValueChangeWhenCompleted'] as bool?
@@ -30,7 +30,8 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
           ? null
           : DestinyObjectiveStatEntryDefinition.fromJson(
               json['stats'] as Map<String, dynamic>)
-      ..minimumVisibilityThreshold = json['minimumVisibilityThreshold'] as int?
+      ..minimumVisibilityThreshold =
+          (json['minimumVisibilityThreshold'] as num?)?.toInt()
       ..allowOvercompletion = json['allowOvercompletion'] as bool?
       ..showValueOnComplete = json['showValueOnComplete'] as bool?
       ..completedValueStyle =
@@ -39,8 +40,8 @@ DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
           decodeDestinyUnlockValueUIStyle(json['inProgressValueStyle'])
       ..uiLabel = json['uiLabel'] as String?
       ..uiStyle = decodeDestinyObjectiveUiStyle(json['uiStyle'])
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(

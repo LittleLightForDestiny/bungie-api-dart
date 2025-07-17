@@ -18,9 +18,9 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
           ? null
           : DestinyPresentationChildBlock.fromJson(
               json['presentationInfo'] as Map<String, dynamic>)
-      ..loreHash = json['loreHash'] as int?
+      ..loreHash = (json['loreHash'] as num?)?.toInt()
       ..objectiveHashes = (json['objectiveHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..recordValueStyle =
           decodeDestinyRecordValueStyle(json['recordValueStyle'])
@@ -53,17 +53,19 @@ DestinyRecordDefinition _$DestinyRecordDefinitionFromJson(
       ..rewardItems = (json['rewardItems'] as List<dynamic>?)
           ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList()
+      ..recordTypeName = json['recordTypeName'] as String?
       ..presentationNodeType =
           decodeDestinyPresentationNodeType(json['presentationNodeType'])
       ..traitIds =
           (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyRecordDefinitionToJson(
@@ -85,6 +87,7 @@ Map<String, dynamic> _$DestinyRecordDefinitionToJson(
       'expirationInfo': instance.expirationInfo?.toJson(),
       'intervalInfo': instance.intervalInfo?.toJson(),
       'rewardItems': instance.rewardItems?.map((e) => e.toJson()).toList(),
+      'recordTypeName': instance.recordTypeName,
       'presentationNodeType':
           encodeDestinyPresentationNodeType(instance.presentationNodeType),
       'traitIds': instance.traitIds,

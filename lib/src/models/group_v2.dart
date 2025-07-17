@@ -97,6 +97,9 @@ class GroupV2{
 	@JsonKey(name:'features')
 	GroupFeatures? features;
 	
+	@JsonKey(name:'remoteGroupId')
+	String? remoteGroupId;
+	
 	/// The same as GroupV2ClanInfo, but includes any investment data.
 	@JsonKey(name:'clanInfo')
 	GroupV2ClanInfoAndInvestment? clanInfo;

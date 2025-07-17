@@ -14,7 +14,8 @@ DestinyItemActionBlockDefinition _$DestinyItemActionBlockDefinitionFromJson(
       ..isPositive = json['isPositive'] as bool?
       ..overlayScreenName = json['overlayScreenName'] as String?
       ..overlayIcon = json['overlayIcon'] as String?
-      ..requiredCooldownSeconds = json['requiredCooldownSeconds'] as int?
+      ..requiredCooldownSeconds =
+          (json['requiredCooldownSeconds'] as num?)?.toInt()
       ..requiredItems = (json['requiredItems'] as List<dynamic>?)
           ?.map((e) => DestinyItemActionRequiredItemDefinition.fromJson(
               e as Map<String, dynamic>))
@@ -25,7 +26,7 @@ DestinyItemActionBlockDefinition _$DestinyItemActionBlockDefinitionFromJson(
           .toList()
       ..actionTypeLabel = json['actionTypeLabel'] as String?
       ..requiredLocation = json['requiredLocation'] as String?
-      ..requiredCooldownHash = json['requiredCooldownHash'] as int?
+      ..requiredCooldownHash = (json['requiredCooldownHash'] as num?)?.toInt()
       ..deleteOnAction = json['deleteOnAction'] as bool?
       ..consumeEntireStack = json['consumeEntireStack'] as bool?
       ..useOnAcquire = json['useOnAcquire'] as bool?;

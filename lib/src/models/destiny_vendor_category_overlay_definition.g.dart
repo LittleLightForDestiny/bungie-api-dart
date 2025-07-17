@@ -14,7 +14,7 @@ DestinyVendorCategoryOverlayDefinition
           ..description = json['description'] as String?
           ..icon = json['icon'] as String?
           ..title = json['title'] as String?
-          ..currencyItemHash = json['currencyItemHash'] as int?;
+          ..currencyItemHash = (json['currencyItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorCategoryOverlayDefinitionToJson(
         DestinyVendorCategoryOverlayDefinition instance) =>

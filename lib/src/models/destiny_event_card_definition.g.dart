@@ -22,14 +22,24 @@ DestinyEventCardDefinition _$DestinyEventCardDefinitionFromJson(
           : DestinyEventCardImages.fromJson(
               json['images'] as Map<String, dynamic>)
       ..triumphsPresentationNodeHash =
-          json['triumphsPresentationNodeHash'] as int?
-      ..sealPresentationNodeHash = json['sealPresentationNodeHash'] as int?
-      ..ticketCurrencyItemHash = json['ticketCurrencyItemHash'] as int?
-      ..ticketVendorHash = json['ticketVendorHash'] as int?
-      ..ticketVendorCategoryHash = json['ticketVendorCategoryHash'] as int?
+          (json['triumphsPresentationNodeHash'] as num?)?.toInt()
+      ..sealPresentationNodeHash =
+          (json['sealPresentationNodeHash'] as num?)?.toInt()
+      ..eventCardCurrencyList =
+          (json['eventCardCurrencyList'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
+      ..ticketCurrencyItemHash =
+          (json['ticketCurrencyItemHash'] as num?)?.toInt()
+      ..ticketVendorHash = (json['ticketVendorHash'] as num?)?.toInt()
+      ..ticketVendorCategoryHash =
+          (json['ticketVendorCategoryHash'] as num?)?.toInt()
       ..endTime = json['endTime'] as String?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..rewardProgressionHash = (json['rewardProgressionHash'] as num?)?.toInt()
+      ..weeklyChallengesPresentationNodeHash =
+          (json['weeklyChallengesPresentationNodeHash'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
@@ -41,10 +51,14 @@ Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
       'images': instance.images?.toJson(),
       'triumphsPresentationNodeHash': instance.triumphsPresentationNodeHash,
       'sealPresentationNodeHash': instance.sealPresentationNodeHash,
+      'eventCardCurrencyList': instance.eventCardCurrencyList,
       'ticketCurrencyItemHash': instance.ticketCurrencyItemHash,
       'ticketVendorHash': instance.ticketVendorHash,
       'ticketVendorCategoryHash': instance.ticketVendorCategoryHash,
       'endTime': instance.endTime,
+      'rewardProgressionHash': instance.rewardProgressionHash,
+      'weeklyChallengesPresentationNodeHash':
+          instance.weeklyChallengesPresentationNodeHash,
       'hash': instance.hash,
       'index': instance.index,
       'redacted': instance.redacted,

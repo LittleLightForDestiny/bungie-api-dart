@@ -11,11 +11,11 @@ PlatformFriend _$PlatformFriendFromJson(Map<String, dynamic> json) =>
       ..platformDisplayName = json['platformDisplayName'] as String?
       ..friendPlatform = decodePlatformFriendType(json['friendPlatform'])
       ..destinyMembershipId = json['destinyMembershipId'] as String?
-      ..destinyMembershipType = json['destinyMembershipType'] as int?
+      ..destinyMembershipType = (json['destinyMembershipType'] as num?)?.toInt()
       ..bungieNetMembershipId = json['bungieNetMembershipId'] as String?
       ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
       ..bungieGlobalDisplayNameCode =
-          json['bungieGlobalDisplayNameCode'] as int?;
+          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$PlatformFriendToJson(PlatformFriend instance) =>
     <String, dynamic>{

@@ -9,13 +9,13 @@ part of 'destiny_location_definition.dart';
 DestinyLocationDefinition _$DestinyLocationDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyLocationDefinition()
-      ..vendorHash = json['vendorHash'] as int?
+      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
       ..locationReleases = (json['locationReleases'] as List<dynamic>?)
           ?.map((e) => DestinyLocationReleaseDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyLocationDefinitionToJson(

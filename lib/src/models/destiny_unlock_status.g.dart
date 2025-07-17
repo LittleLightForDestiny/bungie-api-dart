@@ -8,7 +8,7 @@ part of 'destiny_unlock_status.dart';
 
 DestinyUnlockStatus _$DestinyUnlockStatusFromJson(Map<String, dynamic> json) =>
     DestinyUnlockStatus()
-      ..unlockHash = json['unlockHash'] as int?
+      ..unlockHash = (json['unlockHash'] as num?)?.toInt()
       ..isSet = json['isSet'] as bool?;
 
 Map<String, dynamic> _$DestinyUnlockStatusToJson(

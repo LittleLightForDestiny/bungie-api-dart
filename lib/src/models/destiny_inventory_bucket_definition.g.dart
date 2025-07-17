@@ -15,14 +15,14 @@ DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
               json['displayProperties'] as Map<String, dynamic>)
       ..scope = decodeBucketScope(json['scope'])
       ..category = decodeBucketCategory(json['category'])
-      ..bucketOrder = json['bucketOrder'] as int?
-      ..itemCount = json['itemCount'] as int?
+      ..bucketOrder = (json['bucketOrder'] as num?)?.toInt()
+      ..itemCount = (json['itemCount'] as num?)?.toInt()
       ..location = decodeItemLocation(json['location'])
       ..hasTransferDestination = json['hasTransferDestination'] as bool?
       ..enabled = json['enabled'] as bool?
       ..fifo = json['fifo'] as bool?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyInventoryBucketDefinitionToJson(

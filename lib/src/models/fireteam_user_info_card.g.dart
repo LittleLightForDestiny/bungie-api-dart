@@ -18,7 +18,7 @@ FireteamUserInfoCard _$FireteamUserInfoCardFromJson(
           decodeBungieMembershipType(json['crossSaveOverride'])
       ..applicableMembershipTypes =
           (json['applicableMembershipTypes'] as List<dynamic>?)
-              ?.map((e) => _$enumDecode(_$BungieMembershipTypeEnumMap, e))
+              ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
               .toList()
       ..isPublic = json['isPublic'] as bool?
       ..membershipType = decodeBungieMembershipType(json['membershipType'])
@@ -26,7 +26,7 @@ FireteamUserInfoCard _$FireteamUserInfoCardFromJson(
       ..displayName = json['displayName'] as String?
       ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
       ..bungieGlobalDisplayNameCode =
-          json['bungieGlobalDisplayNameCode'] as int?;
+          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$FireteamUserInfoCardToJson(
         FireteamUserInfoCard instance) =>
@@ -39,7 +39,7 @@ Map<String, dynamic> _$FireteamUserInfoCardToJson(
       'crossSaveOverride':
           encodeBungieMembershipType(instance.crossSaveOverride),
       'applicableMembershipTypes': instance.applicableMembershipTypes
-          ?.map((e) => _$BungieMembershipTypeEnumMap[e])
+          ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
           .toList(),
       'isPublic': instance.isPublic,
       'membershipType': encodeBungieMembershipType(instance.membershipType),
@@ -48,32 +48,6 @@ Map<String, dynamic> _$FireteamUserInfoCardToJson(
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
       'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.None: 0,
@@ -84,6 +58,7 @@ const _$BungieMembershipTypeEnumMap = {
   BungieMembershipType.TigerStadia: 5,
   BungieMembershipType.TigerEgs: 6,
   BungieMembershipType.TigerDemon: 10,
+  BungieMembershipType.GoliathGame: 20,
   BungieMembershipType.BungieNext: 254,
   BungieMembershipType.All: -1,
   BungieMembershipType.ProtectedInvalidEnumValue: 999999999,

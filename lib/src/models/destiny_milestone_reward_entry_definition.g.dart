@@ -10,18 +10,18 @@ DestinyMilestoneRewardEntryDefinition
     _$DestinyMilestoneRewardEntryDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyMilestoneRewardEntryDefinition()
-          ..rewardEntryHash = json['rewardEntryHash'] as int?
+          ..rewardEntryHash = (json['rewardEntryHash'] as num?)?.toInt()
           ..rewardEntryIdentifier = json['rewardEntryIdentifier'] as String?
           ..items = (json['items'] as List<dynamic>?)
               ?.map((e) =>
                   DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
               .toList()
-          ..vendorHash = json['vendorHash'] as int?
+          ..vendorHash = (json['vendorHash'] as num?)?.toInt()
           ..displayProperties = json['displayProperties'] == null
               ? null
               : DestinyDisplayPropertiesDefinition.fromJson(
                   json['displayProperties'] as Map<String, dynamic>)
-          ..order = json['order'] as int?;
+          ..order = (json['order'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneRewardEntryDefinitionToJson(
         DestinyMilestoneRewardEntryDefinition instance) =>

@@ -15,27 +15,28 @@ DestinyLoadoutConstantsDefinition _$DestinyLoadoutConstantsDefinitionFromJson(
               json['displayProperties'] as Map<String, dynamic>)
       ..whiteIconImagePath = json['whiteIconImagePath'] as String?
       ..blackIconImagePath = json['blackIconImagePath'] as String?
-      ..loadoutCountPerCharacter = json['loadoutCountPerCharacter'] as int?
+      ..loadoutCountPerCharacter =
+          (json['loadoutCountPerCharacter'] as num?)?.toInt()
       ..loadoutPreviewFilterOutSocketCategoryHashes =
           (json['loadoutPreviewFilterOutSocketCategoryHashes']
                   as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..loadoutPreviewFilterOutSocketTypeHashes =
           (json['loadoutPreviewFilterOutSocketTypeHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..loadoutNameHashes = (json['loadoutNameHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..loadoutIconHashes = (json['loadoutIconHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..loadoutColorHashes = (json['loadoutColorHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyLoadoutConstantsDefinitionToJson(

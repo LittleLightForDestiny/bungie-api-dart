@@ -4,7 +4,7 @@ import 'package:compute/compute.dart';
 import 'single_component_response_of_destiny_vendor_component.dart';
 import 'single_component_response_of_destiny_vendor_categories_component.dart';
 import 'dictionary_component_response_ofint32_and_destiny_vendor_sale_item_component.dart';
-import 'destiny_item_component_set_ofint32.dart';
+import 'destiny_vendor_item_component_set_ofint32.dart';
 import 'single_component_response_of_destiny_currencies_component.dart';
 import 'single_component_response_of_destiny_string_variables_component.dart';
 
@@ -32,9 +32,9 @@ class DestinyVendorResponse{
 	DictionaryComponentResponseOfint32AndDestinyVendorSaleItemComponent? sales;
 	
 	/// Item components, keyed by the vendorItemIndex of the active sale items.
-	/// COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component types.]
+	/// COMPONENT TYPE: [See inside the DestinyVendorItemComponentSet contract for component types.]
 	@JsonKey(name:'itemComponents')
-	DestinyItemComponentSetOfint32? itemComponents;
+	DestinyVendorItemComponentSetOfint32? itemComponents;
 	
 	/// A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
 	/// COMPONENT TYPE: CurrencyLookups

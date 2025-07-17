@@ -9,10 +9,10 @@ part of 'destiny_craftable_socket_plug_component.dart';
 DestinyCraftableSocketPlugComponent
     _$DestinyCraftableSocketPlugComponentFromJson(Map<String, dynamic> json) =>
         DestinyCraftableSocketPlugComponent()
-          ..plugItemHash = json['plugItemHash'] as int?
+          ..plugItemHash = (json['plugItemHash'] as num?)?.toInt()
           ..failedRequirementIndexes =
               (json['failedRequirementIndexes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList();
 
 Map<String, dynamic> _$DestinyCraftableSocketPlugComponentToJson(

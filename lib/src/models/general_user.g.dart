@@ -11,9 +11,9 @@ GeneralUser _$GeneralUserFromJson(Map<String, dynamic> json) => GeneralUser()
   ..uniqueName = json['uniqueName'] as String?
   ..normalizedName = json['normalizedName'] as String?
   ..displayName = json['displayName'] as String?
-  ..profilePicture = json['profilePicture'] as int?
-  ..profileTheme = json['profileTheme'] as int?
-  ..userTitle = json['userTitle'] as int?
+  ..profilePicture = (json['profilePicture'] as num?)?.toInt()
+  ..profileTheme = (json['profileTheme'] as num?)?.toInt()
+  ..userTitle = (json['userTitle'] as num?)?.toInt()
   ..successMessageFlags = json['successMessageFlags'] as String?
   ..isDeleted = json['isDeleted'] as bool?
   ..about = json['about'] as String?
@@ -45,7 +45,7 @@ GeneralUser _$GeneralUserFromJson(Map<String, dynamic> json) => GeneralUser()
   ..cachedBungieGlobalDisplayName =
       json['cachedBungieGlobalDisplayName'] as String?
   ..cachedBungieGlobalDisplayNameCode =
-      json['cachedBungieGlobalDisplayNameCode'] as int?
+      (json['cachedBungieGlobalDisplayNameCode'] as num?)?.toInt()
   ..egsDisplayName = json['egsDisplayName'] as String?;
 
 Map<String, dynamic> _$GeneralUserToJson(GeneralUser instance) =>

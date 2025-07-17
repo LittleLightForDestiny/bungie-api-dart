@@ -3,6 +3,7 @@ import 'package:compute/compute.dart';
 
 import 'destiny_progression_reset_entry.dart';
 import '../enums/destiny_progression_reward_item_state.dart';
+import 'destiny_progression_reward_item_socket_override_state.dart';
 
 part 'destiny_progression.g.dart';
 
@@ -67,6 +68,10 @@ class DestinyProgression{
 	/// Information about historical rewards for this progression, if there is any data for it.
 	@JsonKey(name:'rewardItemStates')
 	List<DestinyProgressionRewardItemState>? rewardItemStates;
+	
+	/// Information about items stats and states that have socket overrides, if there is any data for it.
+	@JsonKey(name:'rewardItemSocketOverrideStates')
+	Map<String, DestinyProgressionRewardItemSocketOverrideState>? rewardItemSocketOverrideStates;
 
 	factory DestinyProgression.fromJson(Map<String, dynamic> json) {
 		return _$DestinyProgressionFromJson(json);

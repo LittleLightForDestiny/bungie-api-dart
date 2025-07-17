@@ -11,9 +11,9 @@ DestinyActivityMatchmakingBlockDefinition
             Map<String, dynamic> json) =>
         DestinyActivityMatchmakingBlockDefinition()
           ..isMatchmade = json['isMatchmade'] as bool?
-          ..minParty = json['minParty'] as int?
-          ..maxParty = json['maxParty'] as int?
-          ..maxPlayers = json['maxPlayers'] as int?
+          ..minParty = (json['minParty'] as num?)?.toInt()
+          ..maxParty = (json['maxParty'] as num?)?.toInt()
+          ..maxPlayers = (json['maxPlayers'] as num?)?.toInt()
           ..requiresGuardianOath = json['requiresGuardianOath'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityMatchmakingBlockDefinitionToJson(

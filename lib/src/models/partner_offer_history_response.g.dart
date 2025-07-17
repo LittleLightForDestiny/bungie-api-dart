@@ -11,11 +11,11 @@ PartnerOfferHistoryResponse _$PartnerOfferHistoryResponseFromJson(
     PartnerOfferHistoryResponse()
       ..partnerOfferKey = json['PartnerOfferKey'] as String?
       ..membershipId = json['MembershipId'] as String?
-      ..membershipType = json['MembershipType'] as int?
+      ..membershipType = (json['MembershipType'] as num?)?.toInt()
       ..localizedName = json['LocalizedName'] as String?
       ..localizedDescription = json['LocalizedDescription'] as String?
       ..isConsumable = json['IsConsumable'] as bool?
-      ..quantityApplied = json['QuantityApplied'] as int?
+      ..quantityApplied = (json['QuantityApplied'] as num?)?.toInt()
       ..applyDate = json['ApplyDate'] as String?;
 
 Map<String, dynamic> _$PartnerOfferHistoryResponseToJson(

@@ -20,9 +20,9 @@ DestinyVendorInventoryFlyoutDefinition
                   DestinyVendorInventoryFlyoutBucketDefinition.fromJson(
                       e as Map<String, dynamic>))
               .toList()
-          ..flyoutId = json['flyoutId'] as int?
+          ..flyoutId = (json['flyoutId'] as num?)?.toInt()
           ..suppressNewness = json['suppressNewness'] as bool?
-          ..equipmentSlotHash = json['equipmentSlotHash'] as int?;
+          ..equipmentSlotHash = (json['equipmentSlotHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyVendorInventoryFlyoutDefinitionToJson(
         DestinyVendorInventoryFlyoutDefinition instance) =>

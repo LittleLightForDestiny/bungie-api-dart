@@ -16,10 +16,10 @@ DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
       ..transparentIconPath = json['transparentIconPath'] as String?
       ..showIcon = json['showIcon'] as bool?
       ..enumValue = decodeDestinyEnergyType(json['enumValue'])
-      ..capacityStatHash = json['capacityStatHash'] as int?
-      ..costStatHash = json['costStatHash'] as int?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..capacityStatHash = (json['capacityStatHash'] as num?)?.toInt()
+      ..costStatHash = (json['costStatHash'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEnergyTypeDefinitionToJson(

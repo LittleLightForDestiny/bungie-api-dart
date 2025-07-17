@@ -9,7 +9,7 @@ part of 'destiny_artifact_tier_definition.dart';
 DestinyArtifactTierDefinition _$DestinyArtifactTierDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyArtifactTierDefinition()
-      ..tierHash = json['tierHash'] as int?
+      ..tierHash = (json['tierHash'] as num?)?.toInt()
       ..displayTitle = json['displayTitle'] as String?
       ..progressRequirementMessage =
           json['progressRequirementMessage'] as String?
@@ -18,7 +18,7 @@ DestinyArtifactTierDefinition _$DestinyArtifactTierDefinitionFromJson(
               e as Map<String, dynamic>))
           .toList()
       ..minimumUnlockPointsUsedRequirement =
-          json['minimumUnlockPointsUsedRequirement'] as int?;
+          (json['minimumUnlockPointsUsedRequirement'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyArtifactTierDefinitionToJson(
         DestinyArtifactTierDefinition instance) =>

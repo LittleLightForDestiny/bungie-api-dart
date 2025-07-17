@@ -10,14 +10,15 @@ DestinyArrangementRegionFilterDefinition
     _$DestinyArrangementRegionFilterDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyArrangementRegionFilterDefinition()
-          ..artArrangementRegionHash = json['artArrangementRegionHash'] as int?
+          ..artArrangementRegionHash =
+              (json['artArrangementRegionHash'] as num?)?.toInt()
           ..artArrangementRegionIndex =
-              json['artArrangementRegionIndex'] as int?
-          ..statHash = json['statHash'] as int?
+              (json['artArrangementRegionIndex'] as num?)?.toInt()
+          ..statHash = (json['statHash'] as num?)?.toInt()
           ..arrangementIndexByStatValue =
               (json['arrangementIndexByStatValue'] as Map<String, dynamic>?)
                   ?.map(
-            (k, e) => MapEntry(k, e as int),
+            (k, e) => MapEntry(k, (e as num).toInt()),
           );
 
 Map<String, dynamic> _$DestinyArrangementRegionFilterDefinitionToJson(

@@ -11,7 +11,7 @@ DestinyStringVariablesComponent _$DestinyStringVariablesComponentFromJson(
     DestinyStringVariablesComponent()
       ..integerValuesByHash =
           (json['integerValuesByHash'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k, e as int),
+        (k, e) => MapEntry(k, (e as num).toInt()),
       );
 
 Map<String, dynamic> _$DestinyStringVariablesComponentToJson(

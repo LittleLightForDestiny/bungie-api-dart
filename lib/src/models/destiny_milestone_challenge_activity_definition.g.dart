@@ -10,7 +10,7 @@ DestinyMilestoneChallengeActivityDefinition
     _$DestinyMilestoneChallengeActivityDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyMilestoneChallengeActivityDefinition()
-          ..activityHash = json['activityHash'] as int?
+          ..activityHash = (json['activityHash'] as num?)?.toInt()
           ..challenges = (json['challenges'] as List<dynamic>?)
               ?.map((e) => DestinyMilestoneChallengeDefinition.fromJson(
                   e as Map<String, dynamic>))

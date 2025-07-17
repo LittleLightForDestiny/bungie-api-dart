@@ -9,11 +9,11 @@ part of 'destiny_inventory_item_stat_definition.dart';
 DestinyInventoryItemStatDefinition _$DestinyInventoryItemStatDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyInventoryItemStatDefinition()
-      ..statHash = json['statHash'] as int?
-      ..value = json['value'] as int?
-      ..minimum = json['minimum'] as int?
-      ..maximum = json['maximum'] as int?
-      ..displayMaximum = json['displayMaximum'] as int?;
+      ..statHash = (json['statHash'] as num?)?.toInt()
+      ..value = (json['value'] as num?)?.toInt()
+      ..minimum = (json['minimum'] as num?)?.toInt()
+      ..maximum = (json['maximum'] as num?)?.toInt()
+      ..displayMaximum = (json['displayMaximum'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyInventoryItemStatDefinitionToJson(
         DestinyInventoryItemStatDefinition instance) =>

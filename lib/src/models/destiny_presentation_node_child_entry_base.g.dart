@@ -10,7 +10,8 @@ DestinyPresentationNodeChildEntryBase
     _$DestinyPresentationNodeChildEntryBaseFromJson(
             Map<String, dynamic> json) =>
         DestinyPresentationNodeChildEntryBase()
-          ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
+          ..nodeDisplayPriority =
+              (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeChildEntryBaseToJson(
         DestinyPresentationNodeChildEntryBase instance) =>

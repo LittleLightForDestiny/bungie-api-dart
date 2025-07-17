@@ -13,7 +13,7 @@ AwaAuthorizationResult _$AwaAuthorizationResultFromJson(
       ..responseReason = decodeAwaResponseReason(json['responseReason'])
       ..developerNote = json['developerNote'] as String?
       ..actionToken = json['actionToken'] as String?
-      ..maximumNumberOfUses = json['maximumNumberOfUses'] as int?
+      ..maximumNumberOfUses = (json['maximumNumberOfUses'] as num?)?.toInt()
       ..validUntil = json['validUntil'] as String?
       ..type = decodeAwaType(json['type'])
       ..membershipType = decodeBungieMembershipType(json['membershipType']);

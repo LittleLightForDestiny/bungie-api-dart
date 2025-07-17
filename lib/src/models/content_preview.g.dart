@@ -12,8 +12,8 @@ ContentPreview _$ContentPreviewFromJson(Map<String, dynamic> json) =>
       ..path = json['path'] as String?
       ..itemInSet = json['itemInSet'] as bool?
       ..setTag = json['setTag'] as String?
-      ..setNesting = json['setNesting'] as int?
-      ..useSetId = json['useSetId'] as int?;
+      ..setNesting = (json['setNesting'] as num?)?.toInt()
+      ..useSetId = (json['useSetId'] as num?)?.toInt();
 
 Map<String, dynamic> _$ContentPreviewToJson(ContentPreview instance) =>
     <String, dynamic>{

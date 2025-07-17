@@ -2,6 +2,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
+import 'destiny_color.dart';
+import 'destiny_season_pass_images.dart';
 
 part 'destiny_season_pass_definition.g.dart';
 
@@ -22,6 +24,16 @@ class DestinySeasonPassDefinition{
 	///  Prestige progression is further progression that you can make on the Season pass after you gain max ranks, that will ultimately increase your power/light level over the theoretical limit.
 	@JsonKey(name:'prestigeProgressionHash')
 	int? prestigeProgressionHash;
+	
+	@JsonKey(name:'linkRedirectPath')
+	String? linkRedirectPath;
+	
+	/// Represents a color whose RGBA values are all represented as values between 0 and 255.
+	@JsonKey(name:'color')
+	DestinyColor? color;
+	
+	@JsonKey(name:'images')
+	DestinySeasonPassImages? images;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

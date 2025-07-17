@@ -9,9 +9,9 @@ part of 'destiny_loadout_component.dart';
 DestinyLoadoutComponent _$DestinyLoadoutComponentFromJson(
         Map<String, dynamic> json) =>
     DestinyLoadoutComponent()
-      ..colorHash = json['colorHash'] as int?
-      ..iconHash = json['iconHash'] as int?
-      ..nameHash = json['nameHash'] as int?
+      ..colorHash = (json['colorHash'] as num?)?.toInt()
+      ..iconHash = (json['iconHash'] as num?)?.toInt()
+      ..nameHash = (json['nameHash'] as num?)?.toInt()
       ..items = (json['items'] as List<dynamic>?)
           ?.map((e) =>
               DestinyLoadoutItemComponent.fromJson(e as Map<String, dynamic>))

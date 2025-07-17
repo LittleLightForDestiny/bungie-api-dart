@@ -24,12 +24,12 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
                   json['selectionScreenDisplayProperties']
                       as Map<String, dynamic>)
       ..releaseIcon = json['releaseIcon'] as String?
-      ..releaseTime = json['releaseTime'] as int?
-      ..activityLightLevel = json['activityLightLevel'] as int?
-      ..destinationHash = json['destinationHash'] as int?
-      ..placeHash = json['placeHash'] as int?
-      ..activityTypeHash = json['activityTypeHash'] as int?
-      ..tier = json['tier'] as int?
+      ..releaseTime = (json['releaseTime'] as num?)?.toInt()
+      ..activityLightLevel = (json['activityLightLevel'] as num?)?.toInt()
+      ..destinationHash = (json['destinationHash'] as num?)?.toInt()
+      ..placeHash = (json['placeHash'] as num?)?.toInt()
+      ..activityTypeHash = (json['activityTypeHash'] as num?)?.toInt()
+      ..tier = (json['tier'] as num?)?.toInt()
       ..pgcrImage = json['pgcrImage'] as String?
       ..rewards = (json['rewards'] as List<dynamic>?)
           ?.map((e) => DestinyActivityRewardDefinition.fromJson(
@@ -49,6 +49,22 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
               ?.map((e) => DestinyActivityUnlockStringDefinition.fromJson(
                   e as Map<String, dynamic>))
               .toList()
+      ..activityFamilyHashes = (json['activityFamilyHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..requirements = json['requirements'] == null
+          ? null
+          : DestinyActivityRequirementsBlock.fromJson(
+              json['requirements'] as Map<String, dynamic>)
+      ..difficultyTierCollectionHash =
+          (json['difficultyTierCollectionHash'] as num?)?.toInt()
+      ..selectableSkullCollectionHashes =
+          (json['selectableSkullCollectionHashes'] as List<dynamic>?)
+              ?.map((e) => (e as num).toInt())
+              .toList()
       ..playlistItems = (json['playlistItems'] as List<dynamic>?)
           ?.map((e) => DestinyActivityPlaylistItemDefinition.fromJson(
               e as Map<String, dynamic>))
@@ -65,17 +81,19 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
           ? null
           : DestinyActivityGuidedBlockDefinition.fromJson(
               json['guidedGame'] as Map<String, dynamic>)
-      ..directActivityModeHash = json['directActivityModeHash'] as int?
-      ..directActivityModeType = json['directActivityModeType'] as int?
+      ..directActivityModeHash =
+          (json['directActivityModeHash'] as num?)?.toInt()
+      ..directActivityModeType =
+          (json['directActivityModeType'] as num?)?.toInt()
       ..loadouts = (json['loadouts'] as List<dynamic>?)
           ?.map((e) => DestinyActivityLoadoutRequirementSet.fromJson(
               e as Map<String, dynamic>))
           .toList()
       ..activityModeHashes = (json['activityModeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..activityModeTypes = (json['activityModeTypes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
           .toList()
       ..isPvP = json['isPvP'] as bool?
       ..insertionPoints = (json['insertionPoints'] as List<dynamic>?)
@@ -87,8 +105,8 @@ DestinyActivityDefinition _$DestinyActivityDefinitionFromJson(
               ?.map((e) => DestinyEnvironmentLocationMapping.fromJson(
                   e as Map<String, dynamic>))
               .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityDefinitionToJson(
@@ -112,6 +130,12 @@ Map<String, dynamic> _$DestinyActivityDefinitionToJson(
       'challenges': instance.challenges?.map((e) => e.toJson()).toList(),
       'optionalUnlockStrings':
           instance.optionalUnlockStrings?.map((e) => e.toJson()).toList(),
+      'activityFamilyHashes': instance.activityFamilyHashes,
+      'traitHashes': instance.traitHashes,
+      'requirements': instance.requirements?.toJson(),
+      'difficultyTierCollectionHash': instance.difficultyTierCollectionHash,
+      'selectableSkullCollectionHashes':
+          instance.selectableSkullCollectionHashes,
       'playlistItems': instance.playlistItems?.map((e) => e.toJson()).toList(),
       'activityGraphList':
           instance.activityGraphList?.map((e) => e.toJson()).toList(),
@@ -122,7 +146,7 @@ Map<String, dynamic> _$DestinyActivityDefinitionToJson(
       'loadouts': instance.loadouts?.map((e) => e.toJson()).toList(),
       'activityModeHashes': instance.activityModeHashes,
       'activityModeTypes': instance.activityModeTypes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
+          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
           .toList(),
       'isPvP': instance.isPvP,
       'insertionPoints':
@@ -133,32 +157,6 @@ Map<String, dynamic> _$DestinyActivityDefinitionToJson(
       'index': instance.index,
       'redacted': instance.redacted,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.None: 0,
@@ -245,5 +243,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
+  DestinyActivityModeType.Relic: 92,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

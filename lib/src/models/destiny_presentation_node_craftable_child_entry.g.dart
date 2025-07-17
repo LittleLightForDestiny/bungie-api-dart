@@ -10,8 +10,9 @@ DestinyPresentationNodeCraftableChildEntry
     _$DestinyPresentationNodeCraftableChildEntryFromJson(
             Map<String, dynamic> json) =>
         DestinyPresentationNodeCraftableChildEntry()
-          ..craftableItemHash = json['craftableItemHash'] as int?
-          ..nodeDisplayPriority = json['nodeDisplayPriority'] as int?;
+          ..craftableItemHash = (json['craftableItemHash'] as num?)?.toInt()
+          ..nodeDisplayPriority =
+              (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeCraftableChildEntryToJson(
         DestinyPresentationNodeCraftableChildEntry instance) =>

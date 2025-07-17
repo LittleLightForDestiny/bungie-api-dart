@@ -11,7 +11,7 @@ DestinyCollectibleComponent _$DestinyCollectibleComponentFromJson(
     DestinyCollectibleComponent()
       ..state = json['state'] == null
           ? null
-          : DestinyCollectibleState.fromJson(json['state'] as int);
+          : DestinyCollectibleState.fromJson((json['state'] as num).toInt());
 
 Map<String, dynamic> _$DestinyCollectibleComponentToJson(
         DestinyCollectibleComponent instance) =>

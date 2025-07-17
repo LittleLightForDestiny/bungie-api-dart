@@ -9,7 +9,7 @@ part of 'destiny_stat_override_definition.dart';
 DestinyStatOverrideDefinition _$DestinyStatOverrideDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyStatOverrideDefinition()
-      ..statHash = json['statHash'] as int?
+      ..statHash = (json['statHash'] as num?)?.toInt()
       ..displayProperties = json['displayProperties'] == null
           ? null
           : DestinyDisplayPropertiesDefinition.fromJson(

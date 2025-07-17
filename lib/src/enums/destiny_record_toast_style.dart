@@ -31,6 +31,27 @@ enum DestinyRecordToastStyle {
   ///ToastGuardianRankDetails = 9
   @JsonValue(9)
   ToastGuardianRankDetails,
+  ///PathfinderObjectiveCompleteRituals = 10
+  @JsonValue(10)
+  PathfinderObjectiveCompleteRituals,
+  ///PathfinderObjectiveCompleteSchism = 11
+  @JsonValue(11)
+  PathfinderObjectiveCompleteSchism,
+  ///PathfinderObjectiveCompletePvp = 12
+  @JsonValue(12)
+  PathfinderObjectiveCompletePvp,
+  ///PathfinderObjectiveCompleteStrikes = 13
+  @JsonValue(13)
+  PathfinderObjectiveCompleteStrikes,
+  ///PathfinderObjectiveCompleteGambit = 14
+  @JsonValue(14)
+  PathfinderObjectiveCompleteGambit,
+  ///SeasonWeeklyComplete = 15
+  @JsonValue(15)
+  SeasonWeeklyComplete,
+  ///SeasonDailyComplete = 16
+  @JsonValue(16)
+  SeasonDailyComplete,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -71,6 +92,13 @@ const Map<DestinyRecordToastStyle, int> _$DestinyRecordToastStyleEnumMap = <Dest
     DestinyRecordToastStyle.GildedTitleComplete:7,
     DestinyRecordToastStyle.CraftingRecipeUnlocked:8,
     DestinyRecordToastStyle.ToastGuardianRankDetails:9,
+    DestinyRecordToastStyle.PathfinderObjectiveCompleteRituals:10,
+    DestinyRecordToastStyle.PathfinderObjectiveCompleteSchism:11,
+    DestinyRecordToastStyle.PathfinderObjectiveCompletePvp:12,
+    DestinyRecordToastStyle.PathfinderObjectiveCompleteStrikes:13,
+    DestinyRecordToastStyle.PathfinderObjectiveCompleteGambit:14,
+    DestinyRecordToastStyle.SeasonWeeklyComplete:15,
+    DestinyRecordToastStyle.SeasonDailyComplete:16,
 };
 const Map<int, DestinyRecordToastStyle> _$DestinyRecordToastStyleValueMap = <int, DestinyRecordToastStyle>{
     0:DestinyRecordToastStyle.None,
@@ -83,4 +111,11 @@ const Map<int, DestinyRecordToastStyle> _$DestinyRecordToastStyleValueMap = <int
     7:DestinyRecordToastStyle.GildedTitleComplete,
     8:DestinyRecordToastStyle.CraftingRecipeUnlocked,
     9:DestinyRecordToastStyle.ToastGuardianRankDetails,
+    10:DestinyRecordToastStyle.PathfinderObjectiveCompleteRituals,
+    11:DestinyRecordToastStyle.PathfinderObjectiveCompleteSchism,
+    12:DestinyRecordToastStyle.PathfinderObjectiveCompletePvp,
+    13:DestinyRecordToastStyle.PathfinderObjectiveCompleteStrikes,
+    14:DestinyRecordToastStyle.PathfinderObjectiveCompleteGambit,
+    15:DestinyRecordToastStyle.SeasonWeeklyComplete,
+    16:DestinyRecordToastStyle.SeasonDailyComplete,
 };

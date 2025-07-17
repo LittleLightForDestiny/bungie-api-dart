@@ -9,16 +9,17 @@ part of 'destiny_item_crafting_block_definition.dart';
 DestinyItemCraftingBlockDefinition _$DestinyItemCraftingBlockDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemCraftingBlockDefinition()
-      ..outputItemHash = json['outputItemHash'] as int?
+      ..outputItemHash = (json['outputItemHash'] as num?)?.toInt()
       ..requiredSocketTypeHashes =
           (json['requiredSocketTypeHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..failedRequirementStrings =
           (json['failedRequirementStrings'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList()
-      ..baseMaterialRequirements = json['baseMaterialRequirements'] as int?
+      ..baseMaterialRequirements =
+          (json['baseMaterialRequirements'] as num?)?.toInt()
       ..bonusPlugs = (json['bonusPlugs'] as List<dynamic>?)
           ?.map((e) => DestinyItemCraftingBlockBonusPlugDefinition.fromJson(
               e as Map<String, dynamic>))

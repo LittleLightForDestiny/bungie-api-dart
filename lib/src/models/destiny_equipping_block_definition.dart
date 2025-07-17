@@ -41,6 +41,10 @@ class DestinyEquippingBlockDefinition{
 	/// These are strings that represent the possible Game/Account/Character state failure conditions that can occur when trying to equip the item. They match up one-to-one with requiredUnlockExpressions.
 	@JsonKey(name:'displayStrings')
 	List<String>? displayStrings;
+	
+	/// If this item is part of an item set with bonus perks, this will the hash of that set.
+	@JsonKey(name:'equipableItemSetHash')
+	int? equipableItemSetHash;
 
 	factory DestinyEquippingBlockDefinition.fromJson(Map<String, dynamic> json) {
 		return _$DestinyEquippingBlockDefinitionFromJson(json);

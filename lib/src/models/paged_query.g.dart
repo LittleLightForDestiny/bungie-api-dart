@@ -7,8 +7,8 @@ part of 'paged_query.dart';
 // **************************************************************************
 
 PagedQuery _$PagedQueryFromJson(Map<String, dynamic> json) => PagedQuery()
-  ..itemsPerPage = json['itemsPerPage'] as int?
-  ..currentPage = json['currentPage'] as int?
+  ..itemsPerPage = (json['itemsPerPage'] as num?)?.toInt()
+  ..currentPage = (json['currentPage'] as num?)?.toInt()
   ..requestContinuationToken = json['requestContinuationToken'] as String?;
 
 Map<String, dynamic> _$PagedQueryToJson(PagedQuery instance) =>

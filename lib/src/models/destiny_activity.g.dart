@@ -8,14 +8,14 @@ part of 'destiny_activity.dart';
 
 DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) =>
     DestinyActivity()
-      ..activityHash = json['activityHash'] as int?
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
       ..isNew = json['isNew'] as bool?
       ..canLead = json['canLead'] as bool?
       ..canJoin = json['canJoin'] as bool?
       ..isCompleted = json['isCompleted'] as bool?
       ..isVisible = json['isVisible'] as bool?
-      ..displayLevel = json['displayLevel'] as int?
-      ..recommendedLight = json['recommendedLight'] as int?
+      ..displayLevel = (json['displayLevel'] as num?)?.toInt()
+      ..recommendedLight = (json['recommendedLight'] as num?)?.toInt()
       ..difficultyTier =
           decodeDestinyActivityDifficultyTier(json['difficultyTier'])
       ..challenges = (json['challenges'] as List<dynamic>?)
@@ -23,13 +23,14 @@ DestinyActivity _$DestinyActivityFromJson(Map<String, dynamic> json) =>
               (e) => DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
           .toList()
       ..modifierHashes = (json['modifierHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..booleanActivityOptions =
           (json['booleanActivityOptions'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as bool),
       )
-      ..loadoutRequirementIndex = json['loadoutRequirementIndex'] as int?;
+      ..loadoutRequirementIndex =
+          (json['loadoutRequirementIndex'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityToJson(DestinyActivity instance) =>
     <String, dynamic>{

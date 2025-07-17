@@ -9,7 +9,7 @@ part of 'destiny_activity_challenge_definition.dart';
 DestinyActivityChallengeDefinition _$DestinyActivityChallengeDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyActivityChallengeDefinition()
-      ..objectiveHash = json['objectiveHash'] as int?
+      ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
       ..dummyRewards = (json['dummyRewards'] as List<dynamic>?)
           ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList();

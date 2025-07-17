@@ -30,14 +30,14 @@ DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
       ..traitId = json['traitId'] as String?
       ..groupedCategoryHashes =
           (json['groupedCategoryHashes'] as List<dynamic>?)
-              ?.map((e) => e as int)
+              ?.map((e) => (e as num).toInt())
               .toList()
       ..parentCategoryHashes = (json['parentCategoryHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..groupCategoryOnly = json['groupCategoryOnly'] as bool?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(

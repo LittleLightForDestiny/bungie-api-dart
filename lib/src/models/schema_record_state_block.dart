@@ -12,8 +12,13 @@ class SchemaRecordStateBlock{
 	@JsonKey(name:'featuredPriority')
 	int? featuredPriority;
 	
-	@JsonKey(name:'obscuredString')
-	String? obscuredString;
+	/// A display name override to show when this record is 'obscured' instead of the default obscured display name.
+	@JsonKey(name:'obscuredName')
+	String? obscuredName;
+	
+	/// A display description override to show when this record is 'obscured' instead of the default obscured display description.
+	@JsonKey(name:'obscuredDescription')
+	String? obscuredDescription;
 
 	factory SchemaRecordStateBlock.fromJson(Map<String, dynamic> json) {
 		return _$SchemaRecordStateBlockFromJson(json);

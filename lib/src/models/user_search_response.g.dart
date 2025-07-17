@@ -12,7 +12,7 @@ UserSearchResponse _$UserSearchResponseFromJson(Map<String, dynamic> json) =>
           ?.map((e) =>
               UserSearchResponseDetail.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..page = json['page'] as int?
+      ..page = (json['page'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?;
 
 Map<String, dynamic> _$UserSearchResponseToJson(UserSearchResponse instance) =>

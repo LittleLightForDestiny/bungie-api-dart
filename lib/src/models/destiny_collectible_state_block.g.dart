@@ -9,7 +9,8 @@ part of 'destiny_collectible_state_block.dart';
 DestinyCollectibleStateBlock _$DestinyCollectibleStateBlockFromJson(
         Map<String, dynamic> json) =>
     DestinyCollectibleStateBlock()
-      ..obscuredOverrideItemHash = json['obscuredOverrideItemHash'] as int?
+      ..obscuredOverrideItemHash =
+          (json['obscuredOverrideItemHash'] as num?)?.toInt()
       ..requirements = json['requirements'] == null
           ? null
           : DestinyPresentationNodeRequirementsBlock.fromJson(

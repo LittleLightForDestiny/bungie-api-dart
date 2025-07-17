@@ -9,8 +9,9 @@ part of 'destiny_progression_reward_definition.dart';
 DestinyProgressionRewardDefinition _$DestinyProgressionRewardDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyProgressionRewardDefinition()
-      ..progressionMappingHash = json['progressionMappingHash'] as int?
-      ..amount = json['amount'] as int?
+      ..progressionMappingHash =
+          (json['progressionMappingHash'] as num?)?.toInt()
+      ..amount = (json['amount'] as num?)?.toInt()
       ..applyThrottles = json['applyThrottles'] as bool?;
 
 Map<String, dynamic> _$DestinyProgressionRewardDefinitionToJson(

@@ -12,7 +12,7 @@ SearchResultOfGroupMember _$SearchResultOfGroupMemberFromJson(
       ..results = (json['results'] as List<dynamic>?)
           ?.map((e) => GroupMember.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..totalResults = json['totalResults'] as int?
+      ..totalResults = (json['totalResults'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
       ..query = json['query'] == null
           ? null

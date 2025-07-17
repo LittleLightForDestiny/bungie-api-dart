@@ -9,7 +9,7 @@ part of 'destiny_objective_display_properties.dart';
 DestinyObjectiveDisplayProperties _$DestinyObjectiveDisplayPropertiesFromJson(
         Map<String, dynamic> json) =>
     DestinyObjectiveDisplayProperties()
-      ..activityHash = json['activityHash'] as int?
+      ..activityHash = (json['activityHash'] as num?)?.toInt()
       ..displayOnItemPreviewScreen =
           json['displayOnItemPreviewScreen'] as bool?;
 

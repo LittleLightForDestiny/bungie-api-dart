@@ -10,7 +10,7 @@ DestinyItemStatBlockDefinition _$DestinyItemStatBlockDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyItemStatBlockDefinition()
       ..disablePrimaryStatDisplay = json['disablePrimaryStatDisplay'] as bool?
-      ..statGroupHash = json['statGroupHash'] as int?
+      ..statGroupHash = (json['statGroupHash'] as num?)?.toInt()
       ..stats = (json['stats'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
             k,
@@ -18,7 +18,7 @@ DestinyItemStatBlockDefinition _$DestinyItemStatBlockDefinitionFromJson(
                 e as Map<String, dynamic>)),
       )
       ..hasDisplayableStats = json['hasDisplayableStats'] as bool?
-      ..primaryBaseStatHash = json['primaryBaseStatHash'] as int?;
+      ..primaryBaseStatHash = (json['primaryBaseStatHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemStatBlockDefinitionToJson(
         DestinyItemStatBlockDefinition instance) =>

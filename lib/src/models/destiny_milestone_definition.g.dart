@@ -52,9 +52,9 @@ DestinyMilestoneDefinition _$DestinyMilestoneDefinitionFromJson(
           ?.map((e) => DestinyMilestoneChallengeActivityDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..defaultOrder = json['defaultOrder'] as int?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..defaultOrder = (json['defaultOrder'] as num?)?.toInt()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyMilestoneDefinitionToJson(

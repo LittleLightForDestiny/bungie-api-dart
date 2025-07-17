@@ -15,8 +15,8 @@ DestinyCollectibleDefinition _$DestinyCollectibleDefinitionFromJson(
               json['displayProperties'] as Map<String, dynamic>)
       ..scope = decodeDestinyScope(json['scope'])
       ..sourceString = json['sourceString'] as String?
-      ..sourceHash = json['sourceHash'] as int?
-      ..itemHash = json['itemHash'] as int?
+      ..sourceHash = (json['sourceHash'] as num?)?.toInt()
+      ..itemHash = (json['itemHash'] as num?)?.toInt()
       ..acquisitionInfo = json['acquisitionInfo'] == null
           ? null
           : DestinyCollectibleAcquisitionBlock.fromJson(
@@ -33,13 +33,14 @@ DestinyCollectibleDefinition _$DestinyCollectibleDefinitionFromJson(
           decodeDestinyPresentationNodeType(json['presentationNodeType'])
       ..traitIds =
           (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyCollectibleDefinitionToJson(

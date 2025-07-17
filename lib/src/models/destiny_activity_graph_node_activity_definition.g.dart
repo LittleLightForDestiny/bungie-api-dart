@@ -10,8 +10,8 @@ DestinyActivityGraphNodeActivityDefinition
     _$DestinyActivityGraphNodeActivityDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyActivityGraphNodeActivityDefinition()
-          ..nodeActivityId = json['nodeActivityId'] as int?
-          ..activityHash = json['activityHash'] as int?;
+          ..nodeActivityId = (json['nodeActivityId'] as num?)?.toInt()
+          ..activityHash = (json['activityHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyActivityGraphNodeActivityDefinitionToJson(
         DestinyActivityGraphNodeActivityDefinition instance) =>

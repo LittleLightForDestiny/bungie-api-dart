@@ -8,9 +8,9 @@ part of 'poll_result.dart';
 
 PollResult _$PollResultFromJson(Map<String, dynamic> json) => PollResult()
   ..answerText = json['answerText'] as String?
-  ..answerSlot = json['answerSlot'] as int?
+  ..answerSlot = (json['answerSlot'] as num?)?.toInt()
   ..lastVoteDate = json['lastVoteDate'] as String?
-  ..votes = json['votes'] as int?
+  ..votes = (json['votes'] as num?)?.toInt()
   ..requestingUserVoted = json['requestingUserVoted'] as bool?;
 
 Map<String, dynamic> _$PollResultToJson(PollResult instance) =>

@@ -13,7 +13,7 @@ DestinyCraftablesComponent _$DestinyCraftablesComponentFromJson(
         (k, e) => MapEntry(
             k, DestinyCraftableComponent.fromJson(e as Map<String, dynamic>)),
       )
-      ..craftingRootNodeHash = json['craftingRootNodeHash'] as int?;
+      ..craftingRootNodeHash = (json['craftingRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCraftablesComponentToJson(
         DestinyCraftablesComponent instance) =>

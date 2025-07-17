@@ -16,9 +16,10 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
       ..originalIcon = json['originalIcon'] as String?
       ..rootViewIcon = json['rootViewIcon'] as String?
       ..nodeType = decodeDestinyPresentationNodeType(json['nodeType'])
+      ..isSeasonal = json['isSeasonal'] as bool?
       ..scope = decodeDestinyScope(json['scope'])
-      ..objectiveHash = json['objectiveHash'] as int?
-      ..completionRecordHash = json['completionRecordHash'] as int?
+      ..objectiveHash = (json['objectiveHash'] as num?)?.toInt()
+      ..completionRecordHash = (json['completionRecordHash'] as num?)?.toInt()
       ..children = json['children'] == null
           ? null
           : DestinyPresentationNodeChildrenBlock.fromJson(
@@ -32,18 +33,20 @@ DestinyPresentationNodeDefinition _$DestinyPresentationNodeDefinitionFromJson(
               json['requirements'] as Map<String, dynamic>)
       ..disableChildSubscreenNavigation =
           json['disableChildSubscreenNavigation'] as bool?
-      ..maxCategoryRecordScore = json['maxCategoryRecordScore'] as int?
+      ..maxCategoryRecordScore =
+          (json['maxCategoryRecordScore'] as num?)?.toInt()
       ..presentationNodeType =
           decodeDestinyPresentationNodeType(json['presentationNodeType'])
       ..traitIds =
           (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)?.map((e) => e as int).toList()
-      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
@@ -53,6 +56,7 @@ Map<String, dynamic> _$DestinyPresentationNodeDefinitionToJson(
       'originalIcon': instance.originalIcon,
       'rootViewIcon': instance.rootViewIcon,
       'nodeType': encodeDestinyPresentationNodeType(instance.nodeType),
+      'isSeasonal': instance.isSeasonal,
       'scope': encodeDestinyScope(instance.scope),
       'objectiveHash': instance.objectiveHash,
       'completionRecordHash': instance.completionRecordHash,

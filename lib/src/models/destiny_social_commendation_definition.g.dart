@@ -17,16 +17,16 @@ DestinySocialCommendationDefinition
           ..color = json['color'] == null
               ? null
               : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
-          ..displayPriority = json['displayPriority'] as int?
-          ..activityGivingLimit = json['activityGivingLimit'] as int?
+          ..displayPriority = (json['displayPriority'] as num?)?.toInt()
+          ..activityGivingLimit = (json['activityGivingLimit'] as num?)?.toInt()
           ..parentCommendationNodeHash =
-              json['parentCommendationNodeHash'] as int?
+              (json['parentCommendationNodeHash'] as num?)?.toInt()
           ..displayActivities = (json['displayActivities'] as List<dynamic>?)
               ?.map((e) => DestinyDisplayPropertiesDefinition.fromJson(
                   e as Map<String, dynamic>))
               .toList()
-          ..hash = json['hash'] as int?
-          ..index = json['index'] as int?
+          ..hash = (json['hash'] as num?)?.toInt()
+          ..index = (json['index'] as num?)?.toInt()
           ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinySocialCommendationDefinitionToJson(

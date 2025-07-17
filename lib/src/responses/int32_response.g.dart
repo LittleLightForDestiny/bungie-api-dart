@@ -8,9 +8,9 @@ part of 'int32_response.dart';
 
 Int32Response _$Int32ResponseFromJson(Map<String, dynamic> json) =>
     Int32Response(
-      response: json['Response'] as int?,
+      response: (json['Response'] as num?)?.toInt(),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
-      throttleSeconds: json['ThrottleSeconds'] as int?,
+      throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,
       message: json['Message'] as String?,
       messageData: (json['MessageData'] as Map<String, dynamic>?)?.map(

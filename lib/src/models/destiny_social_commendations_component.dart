@@ -12,6 +12,10 @@ class DestinySocialCommendationsComponent{
 	@JsonKey(name:'totalScore')
 	int? totalScore;
 	
+	/// The percentage for each commendation type out of total received
+	@JsonKey(name:'commendationNodePercentagesByHash')
+	Map<String, int>? commendationNodePercentagesByHash;
+	
 	@JsonKey(name:'scoreDetailValues')
 	List<int>? scoreDetailValues;
 	

@@ -13,10 +13,10 @@ DestinyPlugItemCraftingRequirements
               ?.map((e) => DestinyPlugItemCraftingUnlockRequirement.fromJson(
                   e as Map<String, dynamic>))
               .toList()
-          ..requiredLevel = json['requiredLevel'] as int?
+          ..requiredLevel = (json['requiredLevel'] as num?)?.toInt()
           ..materialRequirementHashes =
               (json['materialRequirementHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList();
 
 Map<String, dynamic> _$DestinyPlugItemCraftingRequirementsToJson(

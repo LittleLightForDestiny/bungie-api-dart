@@ -17,8 +17,8 @@ DestinyStatDefinition _$DestinyStatDefinitionFromJson(
           decodeDestinyStatAggregationType(json['aggregationType'])
       ..hasComputedBlock = json['hasComputedBlock'] as bool?
       ..statCategory = decodeDestinyStatCategory(json['statCategory'])
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyStatDefinitionToJson(

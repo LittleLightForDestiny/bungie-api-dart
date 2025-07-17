@@ -11,15 +11,16 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) =>
       ..fireteamId = json['fireteamId'] as String?
       ..groupId = json['groupId'] as String?
       ..platform = decodeFireteamPlatform(json['platform'])
-      ..activityType = json['activityType'] as int?
+      ..activityType = (json['activityType'] as num?)?.toInt()
       ..isImmediate = json['isImmediate'] as bool?
       ..scheduledTime = json['scheduledTime'] as String?
       ..ownerMembershipId = json['ownerMembershipId'] as String?
-      ..playerSlotCount = json['playerSlotCount'] as int?
-      ..alternateSlotCount = json['alternateSlotCount'] as int?
-      ..availablePlayerSlotCount = json['availablePlayerSlotCount'] as int?
+      ..playerSlotCount = (json['playerSlotCount'] as num?)?.toInt()
+      ..alternateSlotCount = (json['alternateSlotCount'] as num?)?.toInt()
+      ..availablePlayerSlotCount =
+          (json['availablePlayerSlotCount'] as num?)?.toInt()
       ..availableAlternateSlotCount =
-          json['availableAlternateSlotCount'] as int?
+          (json['availableAlternateSlotCount'] as num?)?.toInt()
       ..title = json['title'] as String?
       ..dateCreated = json['dateCreated'] as String?
       ..dateModified = json['dateModified'] as String?
@@ -29,11 +30,11 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) =>
       ..datePlayerModified = json['datePlayerModified'] as String?
       ..titleBeforeModeration = json['titleBeforeModeration'] as String?
       ..ownerCurrentGuardianRankSnapshot =
-          json['ownerCurrentGuardianRankSnapshot'] as int?
+          (json['ownerCurrentGuardianRankSnapshot'] as num?)?.toInt()
       ..ownerHighestLifetimeGuardianRankSnapshot =
-          json['ownerHighestLifetimeGuardianRankSnapshot'] as int?
+          (json['ownerHighestLifetimeGuardianRankSnapshot'] as num?)?.toInt()
       ..ownerTotalCommendationScoreSnapshot =
-          json['ownerTotalCommendationScoreSnapshot'] as int?;
+          (json['ownerTotalCommendationScoreSnapshot'] as num?)?.toInt();
 
 Map<String, dynamic> _$FireteamSummaryToJson(FireteamSummary instance) =>
     <String, dynamic>{

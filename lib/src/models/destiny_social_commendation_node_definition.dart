@@ -19,6 +19,10 @@ class DestinySocialCommendationNodeDefinition{
 	@JsonKey(name:'color')
 	DestinyColor? color;
 	
+	/// A version of the displayProperties icon tinted with the color of this node.
+	@JsonKey(name:'tintedIcon')
+	String? tintedIcon;
+	
 	@JsonKey(name:'parentCommendationNodeHash')
 	int? parentCommendationNodeHash;
 	

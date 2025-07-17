@@ -22,6 +22,24 @@ enum DestinyObjectiveUiStyle {
   ///CraftingMementoTitle = 6
   @JsonValue(6)
   CraftingMementoTitle,
+  ///DiscoverableMystery0 = 7
+  @JsonValue(7)
+  DiscoverableMystery0,
+  ///DiscoverableMystery1 = 8
+  @JsonValue(8)
+  DiscoverableMystery1,
+  ///DiscoverableMystery2 = 9
+  @JsonValue(9)
+  DiscoverableMystery2,
+  ///DiscoverableMystery3 = 10
+  @JsonValue(10)
+  DiscoverableMystery3,
+  ///DiscoverableMystery4 = 11
+  @JsonValue(11)
+  DiscoverableMystery4,
+  ///DiscoverableExotic = 12
+  @JsonValue(12)
+  DiscoverableExotic,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -59,6 +77,12 @@ const Map<DestinyObjectiveUiStyle, int> _$DestinyObjectiveUiStyleEnumMap = <Dest
     DestinyObjectiveUiStyle.CraftingWeaponTimestamp:4,
     DestinyObjectiveUiStyle.CraftingMementos:5,
     DestinyObjectiveUiStyle.CraftingMementoTitle:6,
+    DestinyObjectiveUiStyle.DiscoverableMystery0:7,
+    DestinyObjectiveUiStyle.DiscoverableMystery1:8,
+    DestinyObjectiveUiStyle.DiscoverableMystery2:9,
+    DestinyObjectiveUiStyle.DiscoverableMystery3:10,
+    DestinyObjectiveUiStyle.DiscoverableMystery4:11,
+    DestinyObjectiveUiStyle.DiscoverableExotic:12,
 };
 const Map<int, DestinyObjectiveUiStyle> _$DestinyObjectiveUiStyleValueMap = <int, DestinyObjectiveUiStyle>{
     0:DestinyObjectiveUiStyle.None,
@@ -68,4 +92,10 @@ const Map<int, DestinyObjectiveUiStyle> _$DestinyObjectiveUiStyleValueMap = <int
     4:DestinyObjectiveUiStyle.CraftingWeaponTimestamp,
     5:DestinyObjectiveUiStyle.CraftingMementos,
     6:DestinyObjectiveUiStyle.CraftingMementoTitle,
+    7:DestinyObjectiveUiStyle.DiscoverableMystery0,
+    8:DestinyObjectiveUiStyle.DiscoverableMystery1,
+    9:DestinyObjectiveUiStyle.DiscoverableMystery2,
+    10:DestinyObjectiveUiStyle.DiscoverableMystery3,
+    11:DestinyObjectiveUiStyle.DiscoverableMystery4,
+    12:DestinyObjectiveUiStyle.DiscoverableExotic,
 };

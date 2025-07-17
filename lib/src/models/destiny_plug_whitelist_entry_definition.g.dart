@@ -9,11 +9,11 @@ part of 'destiny_plug_whitelist_entry_definition.dart';
 DestinyPlugWhitelistEntryDefinition
     _$DestinyPlugWhitelistEntryDefinitionFromJson(Map<String, dynamic> json) =>
         DestinyPlugWhitelistEntryDefinition()
-          ..categoryHash = json['categoryHash'] as int?
+          ..categoryHash = (json['categoryHash'] as num?)?.toInt()
           ..categoryIdentifier = json['categoryIdentifier'] as String?
           ..reinitializationPossiblePlugHashes =
               (json['reinitializationPossiblePlugHashes'] as List<dynamic>?)
-                  ?.map((e) => e as int)
+                  ?.map((e) => (e as num).toInt())
                   .toList();
 
 Map<String, dynamic> _$DestinyPlugWhitelistEntryDefinitionToJson(

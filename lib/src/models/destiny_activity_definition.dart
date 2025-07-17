@@ -6,6 +6,7 @@ import 'destiny_activity_reward_definition.dart';
 import 'destiny_activity_modifier_reference_definition.dart';
 import 'destiny_activity_challenge_definition.dart';
 import 'destiny_activity_unlock_string_definition.dart';
+import 'destiny_activity_requirements_block.dart';
 import 'destiny_activity_playlist_item_definition.dart';
 import 'destiny_activity_graph_list_entry_definition.dart';
 import 'destiny_activity_matchmaking_block_definition.dart';
@@ -91,6 +92,21 @@ class DestinyActivityDefinition{
 	/// If there are status strings related to the activity and based on internal state of the game, account, or character, then this will be the definition of those strings and the states needed in order for the strings to be shown.
 	@JsonKey(name:'optionalUnlockStrings')
 	List<DestinyActivityUnlockStringDefinition>? optionalUnlockStrings;
+	
+	@JsonKey(name:'activityFamilyHashes')
+	List<int>? activityFamilyHashes;
+	
+	@JsonKey(name:'traitHashes')
+	List<int>? traitHashes;
+	
+	@JsonKey(name:'requirements')
+	DestinyActivityRequirementsBlock? requirements;
+	
+	@JsonKey(name:'difficultyTierCollectionHash')
+	int? difficultyTierCollectionHash;
+	
+	@JsonKey(name:'selectableSkullCollectionHashes')
+	List<int>? selectableSkullCollectionHashes;
 	
 	/// Represents all of the possible activities that could be played in the Playlist, along with information that we can use to determine if they are active at the present time.
 	@JsonKey(name:'playlistItems')

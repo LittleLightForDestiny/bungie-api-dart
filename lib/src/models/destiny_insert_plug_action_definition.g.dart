@@ -9,7 +9,7 @@ part of 'destiny_insert_plug_action_definition.dart';
 DestinyInsertPlugActionDefinition _$DestinyInsertPlugActionDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyInsertPlugActionDefinition()
-      ..actionExecuteSeconds = json['actionExecuteSeconds'] as int?
+      ..actionExecuteSeconds = (json['actionExecuteSeconds'] as num?)?.toInt()
       ..actionType = decodeSocketTypeActionType(json['actionType']);
 
 Map<String, dynamic> _$DestinyInsertPlugActionDefinitionToJson(

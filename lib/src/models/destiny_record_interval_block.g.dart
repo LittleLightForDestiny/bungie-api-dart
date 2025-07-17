@@ -18,7 +18,7 @@ DestinyRecordIntervalBlock _$DestinyRecordIntervalBlockFromJson(
               DestinyRecordIntervalRewards.fromJson(e as Map<String, dynamic>))
           .toList()
       ..originalObjectiveArrayInsertionIndex =
-          json['originalObjectiveArrayInsertionIndex'] as int?;
+          (json['originalObjectiveArrayInsertionIndex'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyRecordIntervalBlockToJson(
         DestinyRecordIntervalBlock instance) =>

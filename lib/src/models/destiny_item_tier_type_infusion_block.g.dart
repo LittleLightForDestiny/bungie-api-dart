@@ -11,7 +11,8 @@ DestinyItemTierTypeInfusionBlock _$DestinyItemTierTypeInfusionBlockFromJson(
     DestinyItemTierTypeInfusionBlock()
       ..baseQualityTransferRatio =
           (json['baseQualityTransferRatio'] as num?)?.toDouble()
-      ..minimumQualityIncrement = json['minimumQualityIncrement'] as int?;
+      ..minimumQualityIncrement =
+          (json['minimumQualityIncrement'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemTierTypeInfusionBlockToJson(
         DestinyItemTierTypeInfusionBlock instance) =>

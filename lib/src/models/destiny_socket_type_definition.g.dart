@@ -21,7 +21,7 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
           ?.map((e) => DestinyPlugWhitelistEntryDefinition.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..socketCategoryHash = json['socketCategoryHash'] as int?
+      ..socketCategoryHash = (json['socketCategoryHash'] as num?)?.toInt()
       ..visibility = decodeDestinySocketVisibility(json['visibility'])
       ..alwaysRandomizeSockets = json['alwaysRandomizeSockets'] as bool?
       ..isPreviewEnabled = json['isPreviewEnabled'] as bool?
@@ -33,8 +33,8 @@ DestinySocketTypeDefinition _$DestinySocketTypeDefinitionFromJson(
           ?.map((e) => DestinySocketTypeScalarMaterialRequirementEntry.fromJson(
               e as Map<String, dynamic>))
           .toList()
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinySocketTypeDefinitionToJson(

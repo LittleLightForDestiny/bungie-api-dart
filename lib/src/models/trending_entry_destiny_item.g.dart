@@ -8,7 +8,7 @@ part of 'trending_entry_destiny_item.dart';
 
 TrendingEntryDestinyItem _$TrendingEntryDestinyItemFromJson(
         Map<String, dynamic> json) =>
-    TrendingEntryDestinyItem()..itemHash = json['itemHash'] as int?;
+    TrendingEntryDestinyItem()..itemHash = (json['itemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$TrendingEntryDestinyItemToJson(
         TrendingEntryDestinyItem instance) =>

@@ -12,10 +12,10 @@ DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
       ..statId = json['statId'] as String?
       ..group = decodeDestinyStatsGroupType(json['group'])
       ..periodTypes = (json['periodTypes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$PeriodTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$PeriodTypeEnumMap, e))
           .toList()
       ..modes = (json['modes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
           .toList()
       ..category = decodeDestinyStatsCategoryType(json['category'])
       ..statName = json['statName'] as String?
@@ -23,10 +23,10 @@ DestinyHistoricalStatsDefinition _$DestinyHistoricalStatsDefinitionFromJson(
       ..statDescription = json['statDescription'] as String?
       ..unitType = decodeUnitType(json['unitType'])
       ..iconImage = json['iconImage'] as String?
-      ..mergeMethod = json['mergeMethod'] as int?
+      ..mergeMethod = (json['mergeMethod'] as num?)?.toInt()
       ..unitLabel = json['unitLabel'] as String?
-      ..weight = json['weight'] as int?
-      ..medalTierHash = json['medalTierHash'] as int?;
+      ..weight = (json['weight'] as num?)?.toInt()
+      ..medalTierHash = (json['medalTierHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
         DestinyHistoricalStatsDefinition instance) =>
@@ -34,9 +34,9 @@ Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
       'statId': instance.statId,
       'group': encodeDestinyStatsGroupType(instance.group),
       'periodTypes':
-          instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]).toList(),
+          instance.periodTypes?.map((e) => _$PeriodTypeEnumMap[e]!).toList(),
       'modes': instance.modes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
+          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
           .toList(),
       'category': encodeDestinyStatsCategoryType(instance.category),
       'statName': instance.statName,
@@ -49,32 +49,6 @@ Map<String, dynamic> _$DestinyHistoricalStatsDefinitionToJson(
       'weight': instance.weight,
       'medalTierHash': instance.medalTierHash,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$PeriodTypeEnumMap = {
   PeriodType.None: 0,
@@ -169,5 +143,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
+  DestinyActivityModeType.Relic: 92,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

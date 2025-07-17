@@ -13,7 +13,7 @@ ContentTypeDescription _$ContentTypeDescriptionFromJson(
       ..name = json['name'] as String?
       ..contentDescription = json['contentDescription'] as String?
       ..previewImage = json['previewImage'] as String?
-      ..priority = json['priority'] as int?
+      ..priority = (json['priority'] as num?)?.toInt()
       ..reminder = json['reminder'] as String?
       ..properties = (json['properties'] as List<dynamic>?)
           ?.map((e) => ContentTypeProperty.fromJson(e as Map<String, dynamic>))

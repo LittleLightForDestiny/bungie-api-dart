@@ -8,16 +8,16 @@ part of 'destiny_talent_node.dart';
 
 DestinyTalentNode _$DestinyTalentNodeFromJson(Map<String, dynamic> json) =>
     DestinyTalentNode()
-      ..nodeIndex = json['nodeIndex'] as int?
-      ..nodeHash = json['nodeHash'] as int?
+      ..nodeIndex = (json['nodeIndex'] as num?)?.toInt()
+      ..nodeHash = (json['nodeHash'] as num?)?.toInt()
       ..state = decodeDestinyTalentNodeState(json['state'])
       ..isActivated = json['isActivated'] as bool?
-      ..stepIndex = json['stepIndex'] as int?
+      ..stepIndex = (json['stepIndex'] as num?)?.toInt()
       ..materialsToUpgrade = (json['materialsToUpgrade'] as List<dynamic>?)
           ?.map((e) =>
               DestinyMaterialRequirement.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..activationGridLevel = json['activationGridLevel'] as int?
+      ..activationGridLevel = (json['activationGridLevel'] as num?)?.toInt()
       ..progressPercent = (json['progressPercent'] as num?)?.toDouble()
       ..hidden = json['hidden'] as bool?
       ..nodeStatsBlock = json['nodeStatsBlock'] == null

@@ -8,9 +8,9 @@ part of 'destiny_item_quantity.dart';
 
 DestinyItemQuantity _$DestinyItemQuantityFromJson(Map<String, dynamic> json) =>
     DestinyItemQuantity()
-      ..itemHash = json['itemHash'] as int?
+      ..itemHash = (json['itemHash'] as num?)?.toInt()
       ..itemInstanceId = json['itemInstanceId'] as String?
-      ..quantity = json['quantity'] as int?
+      ..quantity = (json['quantity'] as num?)?.toInt()
       ..hasConditionalVisibility = json['hasConditionalVisibility'] as bool?;
 
 Map<String, dynamic> _$DestinyItemQuantityToJson(

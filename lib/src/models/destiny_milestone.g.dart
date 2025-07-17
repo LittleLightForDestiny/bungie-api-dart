@@ -8,7 +8,7 @@ part of 'destiny_milestone.dart';
 
 DestinyMilestone _$DestinyMilestoneFromJson(Map<String, dynamic> json) =>
     DestinyMilestone()
-      ..milestoneHash = json['milestoneHash'] as int?
+      ..milestoneHash = (json['milestoneHash'] as num?)?.toInt()
       ..availableQuests = (json['availableQuests'] as List<dynamic>?)
           ?.map(
               (e) => DestinyMilestoneQuest.fromJson(e as Map<String, dynamic>))
@@ -21,7 +21,7 @@ DestinyMilestone _$DestinyMilestoneFromJson(Map<String, dynamic> json) =>
         (k, e) => MapEntry(k, (e as num).toDouble()),
       )
       ..vendorHashes = (json['vendorHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..vendors = (json['vendors'] as List<dynamic>?)
           ?.map(
@@ -33,7 +33,7 @@ DestinyMilestone _$DestinyMilestoneFromJson(Map<String, dynamic> json) =>
           .toList()
       ..startDate = json['startDate'] as String?
       ..endDate = json['endDate'] as String?
-      ..order = json['order'] as int?;
+      ..order = (json['order'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneToJson(DestinyMilestone instance) =>
     <String, dynamic>{

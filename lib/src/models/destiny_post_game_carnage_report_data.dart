@@ -24,6 +24,14 @@ class DestinyPostGameCarnageReportData{
 	@JsonKey(name:'activityWasStartedFromBeginning')
 	bool? activityWasStartedFromBeginning;
 	
+	/// Difficulty tier index value for the activity.
+	@JsonKey(name:'activityDifficultyTier')
+	int? activityDifficultyTier;
+	
+	/// Collection of player-selected skull hashes active for the activity.
+	@JsonKey(name:'selectedSkullHashes')
+	List<int>? selectedSkullHashes;
+	
 	/// Details about the activity.
 	@JsonKey(name:'activityDetails')
 	DestinyHistoricalStatsActivity? activityDetails;

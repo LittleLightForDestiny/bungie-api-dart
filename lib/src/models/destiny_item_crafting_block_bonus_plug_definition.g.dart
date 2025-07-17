@@ -10,8 +10,8 @@ DestinyItemCraftingBlockBonusPlugDefinition
     _$DestinyItemCraftingBlockBonusPlugDefinitionFromJson(
             Map<String, dynamic> json) =>
         DestinyItemCraftingBlockBonusPlugDefinition()
-          ..socketTypeHash = json['socketTypeHash'] as int?
-          ..plugItemHash = json['plugItemHash'] as int?;
+          ..socketTypeHash = (json['socketTypeHash'] as num?)?.toInt()
+          ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemCraftingBlockBonusPlugDefinitionToJson(
         DestinyItemCraftingBlockBonusPlugDefinition instance) =>

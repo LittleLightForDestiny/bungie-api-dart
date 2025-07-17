@@ -26,8 +26,10 @@ DestinyVendorsResponse _$DestinyVendorsResponseFromJson(
           : DictionaryComponentResponseOfuint32AndPersonalDestinyVendorSaleItemSetComponent
               .fromJson(json['sales'] as Map<String, dynamic>)
       ..itemComponents = (json['itemComponents'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(k,
-            DestinyItemComponentSetOfint32.fromJson(e as Map<String, dynamic>)),
+        (k, e) => MapEntry(
+            k,
+            DestinyVendorItemComponentSetOfint32.fromJson(
+                e as Map<String, dynamic>)),
       )
       ..currencyLookups = json['currencyLookups'] == null
           ? null

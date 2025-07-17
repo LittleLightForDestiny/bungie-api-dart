@@ -7,10 +7,10 @@ part of 'destiny_color.dart';
 // **************************************************************************
 
 DestinyColor _$DestinyColorFromJson(Map<String, dynamic> json) => DestinyColor()
-  ..red = json['red'] as int?
-  ..green = json['green'] as int?
-  ..blue = json['blue'] as int?
-  ..alpha = json['alpha'] as int?;
+  ..red = (json['red'] as num?)?.toInt()
+  ..green = (json['green'] as num?)?.toInt()
+  ..blue = (json['blue'] as num?)?.toInt()
+  ..alpha = (json['alpha'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyColorToJson(DestinyColor instance) =>
     <String, dynamic>{

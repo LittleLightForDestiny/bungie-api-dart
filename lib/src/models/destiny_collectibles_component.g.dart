@@ -14,9 +14,9 @@ DestinyCollectiblesComponent _$DestinyCollectiblesComponentFromJson(
             k, DestinyCollectibleComponent.fromJson(e as Map<String, dynamic>)),
       )
       ..collectionCategoriesRootNodeHash =
-          json['collectionCategoriesRootNodeHash'] as int?
+          (json['collectionCategoriesRootNodeHash'] as num?)?.toInt()
       ..collectionBadgesRootNodeHash =
-          json['collectionBadgesRootNodeHash'] as int?;
+          (json['collectionBadgesRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCollectiblesComponentToJson(
         DestinyCollectiblesComponent instance) =>

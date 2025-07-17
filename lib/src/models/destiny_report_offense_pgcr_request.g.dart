@@ -10,10 +10,10 @@ DestinyReportOffensePgcrRequest _$DestinyReportOffensePgcrRequestFromJson(
         Map<String, dynamic> json) =>
     DestinyReportOffensePgcrRequest()
       ..reasonCategoryHashes = (json['reasonCategoryHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..reasonHashes = (json['reasonHashes'] as List<dynamic>?)
-          ?.map((e) => e as int)
+          ?.map((e) => (e as num).toInt())
           .toList()
       ..offendingCharacterId = json['offendingCharacterId'] as String?;
 

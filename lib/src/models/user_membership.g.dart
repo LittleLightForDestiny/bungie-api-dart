@@ -13,7 +13,7 @@ UserMembership _$UserMembershipFromJson(Map<String, dynamic> json) =>
       ..displayName = json['displayName'] as String?
       ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
       ..bungieGlobalDisplayNameCode =
-          json['bungieGlobalDisplayNameCode'] as int?;
+          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
 
 Map<String, dynamic> _$UserMembershipToJson(UserMembership instance) =>
     <String, dynamic>{

@@ -9,7 +9,8 @@ part of 'destiny_milestone_activity_definition.dart';
 DestinyMilestoneActivityDefinition _$DestinyMilestoneActivityDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyMilestoneActivityDefinition()
-      ..conceptualActivityHash = json['conceptualActivityHash'] as int?
+      ..conceptualActivityHash =
+          (json['conceptualActivityHash'] as num?)?.toInt()
       ..variants = (json['variants'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
             k,

@@ -9,10 +9,10 @@ part of 'destiny_vendor_group_definition.dart';
 DestinyVendorGroupDefinition _$DestinyVendorGroupDefinitionFromJson(
         Map<String, dynamic> json) =>
     DestinyVendorGroupDefinition()
-      ..order = json['order'] as int?
+      ..order = (json['order'] as num?)?.toInt()
       ..categoryName = json['categoryName'] as String?
-      ..hash = json['hash'] as int?
-      ..index = json['index'] as int?
+      ..hash = (json['hash'] as num?)?.toInt()
+      ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorGroupDefinitionToJson(

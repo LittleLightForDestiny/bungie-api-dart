@@ -5,5 +5,6 @@ export 'src/models/datapoint.dart';
 export 'src/models/application.dart';
 export 'src/models/application_developer.dart';
 export 'src/enums/application_scopes.dart';
+export 'src/enums/oauth_application_type.dart';
 export 'src/enums/application_status.dart';
 export 'src/enums/developer_role.dart';

@@ -9,12 +9,12 @@ part of 'destiny_historical_stats_activity.dart';
 DestinyHistoricalStatsActivity _$DestinyHistoricalStatsActivityFromJson(
         Map<String, dynamic> json) =>
     DestinyHistoricalStatsActivity()
-      ..referenceId = json['referenceId'] as int?
-      ..directorActivityHash = json['directorActivityHash'] as int?
+      ..referenceId = (json['referenceId'] as num?)?.toInt()
+      ..directorActivityHash = (json['directorActivityHash'] as num?)?.toInt()
       ..instanceId = json['instanceId'] as String?
       ..mode = decodeDestinyActivityModeType(json['mode'])
       ..modes = (json['modes'] as List<dynamic>?)
-          ?.map((e) => _$enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
           .toList()
       ..isPrivate = json['isPrivate'] as bool?
       ..membershipType = decodeBungieMembershipType(json['membershipType']);
@@ -27,37 +27,11 @@ Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
       'instanceId': instance.instanceId,
       'mode': encodeDestinyActivityModeType(instance.mode),
       'modes': instance.modes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e])
+          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
           .toList(),
       'isPrivate': instance.isPrivate,
       'membershipType': encodeBungieMembershipType(instance.membershipType),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
 
 const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.None: 0,
@@ -144,5 +118,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.ZoneControl: 89,
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
+  DestinyActivityModeType.Relic: 92,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

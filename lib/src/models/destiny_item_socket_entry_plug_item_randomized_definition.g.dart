@@ -15,7 +15,7 @@ DestinyItemSocketEntryPlugItemRandomizedDefinition
               : DestinyPlugItemCraftingRequirements.fromJson(
                   json['craftingRequirements'] as Map<String, dynamic>)
           ..currentlyCanRoll = json['currentlyCanRoll'] as bool?
-          ..plugItemHash = json['plugItemHash'] as int?;
+          ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(
         DestinyItemSocketEntryPlugItemRandomizedDefinition instance) =>
