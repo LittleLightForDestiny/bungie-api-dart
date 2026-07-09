@@ -10,30 +10,30 @@ DestinyActivityPlaylistItemDefinition
 _$DestinyActivityPlaylistItemDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyActivityPlaylistItemDefinition()
       ..activityHash = (json['activityHash'] as num?)?.toInt()
-      ..directActivityModeHash =
-          (json['directActivityModeHash'] as num?)?.toInt()
-      ..directActivityModeType =
-          (json['directActivityModeType'] as num?)?.toInt()
-      ..activityModeHashes =
-          (json['activityModeHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..activityModeTypes =
-          (json['activityModeTypes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-              .toList();
+      ..directActivityModeHash = (json['directActivityModeHash'] as num?)
+          ?.toInt()
+      ..directActivityModeType = decodeDestinyActivityModeType(
+        json['directActivityModeType'],
+      )
+      ..activityModeHashes = (json['activityModeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..activityModeTypes = (json['activityModeTypes'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          .toList();
 
 Map<String, dynamic> _$DestinyActivityPlaylistItemDefinitionToJson(
   DestinyActivityPlaylistItemDefinition instance,
 ) => <String, dynamic>{
   'activityHash': instance.activityHash,
   'directActivityModeHash': instance.directActivityModeHash,
-  'directActivityModeType': instance.directActivityModeType,
+  'directActivityModeType': encodeDestinyActivityModeType(
+    instance.directActivityModeType,
+  ),
   'activityModeHashes': instance.activityModeHashes,
-  'activityModeTypes':
-      instance.activityModeTypes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
-          .toList(),
+  'activityModeTypes': instance.activityModeTypes
+      ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
+      .toList(),
 };
 
 const _$DestinyActivityModeTypeEnumMap = {
@@ -122,5 +122,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
   DestinyActivityModeType.Relic: 92,
+  DestinyActivityModeType.LawlessFrontier: 93,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

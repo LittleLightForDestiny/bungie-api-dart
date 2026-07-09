@@ -9,12 +9,9 @@ part of 'user_search_response_response.dart';
 UserSearchResponseResponse _$UserSearchResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => UserSearchResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : UserSearchResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : UserSearchResponse.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

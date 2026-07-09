@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_item_talent_grid_component.dart';
 SingleComponentResponseOfDestinyItemTalentGridComponent
 _$SingleComponentResponseOfDestinyItemTalentGridComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyItemTalentGridComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyItemTalentGridComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyItemTalentGridComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyItemTalentGridComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyItemTalentGridComponentToJson(

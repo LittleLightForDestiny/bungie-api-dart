@@ -8,27 +8,24 @@ part of 'group_member_application.dart';
 
 GroupMemberApplication _$GroupMemberApplicationFromJson(
   Map<String, dynamic> json,
-) =>
-    GroupMemberApplication()
-      ..groupId = json['groupId'] as String?
-      ..creationDate = json['creationDate'] as String?
-      ..resolveState = decodeGroupApplicationResolveState(json['resolveState'])
-      ..resolveDate = json['resolveDate'] as String?
-      ..resolvedByMembershipId = json['resolvedByMembershipId'] as String?
-      ..requestMessage = json['requestMessage'] as String?
-      ..resolveMessage = json['resolveMessage'] as String?
-      ..destinyUserInfo =
-          json['destinyUserInfo'] == null
-              ? null
-              : GroupUserInfoCard.fromJson(
-                json['destinyUserInfo'] as Map<String, dynamic>,
-              )
-      ..bungieNetUserInfo =
-          json['bungieNetUserInfo'] == null
-              ? null
-              : UserInfoCard.fromJson(
-                json['bungieNetUserInfo'] as Map<String, dynamic>,
-              );
+) => GroupMemberApplication()
+  ..groupId = json['groupId'] as String?
+  ..creationDate = json['creationDate'] as String?
+  ..resolveState = decodeGroupApplicationResolveState(json['resolveState'])
+  ..resolveDate = json['resolveDate'] as String?
+  ..resolvedByMembershipId = json['resolvedByMembershipId'] as String?
+  ..requestMessage = json['requestMessage'] as String?
+  ..resolveMessage = json['resolveMessage'] as String?
+  ..destinyUserInfo = json['destinyUserInfo'] == null
+      ? null
+      : GroupUserInfoCard.fromJson(
+          json['destinyUserInfo'] as Map<String, dynamic>,
+        )
+  ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
+      ? null
+      : UserInfoCard.fromJson(
+          json['bungieNetUserInfo'] as Map<String, dynamic>,
+        );
 
 Map<String, dynamic> _$GroupMemberApplicationToJson(
   GroupMemberApplication instance,

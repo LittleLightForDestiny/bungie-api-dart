@@ -8,40 +8,31 @@ part of 'destiny_public_milestone.dart';
 
 DestinyPublicMilestone _$DestinyPublicMilestoneFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyPublicMilestone()
-      ..milestoneHash = (json['milestoneHash'] as num?)?.toInt()
-      ..availableQuests =
-          (json['availableQuests'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPublicMilestoneQuest.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..activities =
-          (json['activities'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPublicMilestoneChallengeActivity.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..vendorHashes =
-          (json['vendorHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..vendors =
-          (json['vendors'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPublicMilestoneVendor.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..startDate = json['startDate'] as String?
-      ..endDate = json['endDate'] as String?
-      ..order = (json['order'] as num?)?.toInt();
+) => DestinyPublicMilestone()
+  ..milestoneHash = (json['milestoneHash'] as num?)?.toInt()
+  ..availableQuests = (json['availableQuests'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyPublicMilestoneQuest.fromJson(e as Map<String, dynamic>),
+      )
+      .toList()
+  ..activities = (json['activities'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyPublicMilestoneChallengeActivity.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList()
+  ..vendorHashes = (json['vendorHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..vendors = (json['vendors'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyPublicMilestoneVendor.fromJson(e as Map<String, dynamic>),
+      )
+      .toList()
+  ..startDate = json['startDate'] as String?
+  ..endDate = json['endDate'] as String?
+  ..order = (json['order'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPublicMilestoneToJson(
   DestinyPublicMilestone instance,

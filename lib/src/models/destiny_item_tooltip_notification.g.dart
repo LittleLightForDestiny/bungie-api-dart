@@ -8,10 +8,9 @@ part of 'destiny_item_tooltip_notification.dart';
 
 DestinyItemTooltipNotification _$DestinyItemTooltipNotificationFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemTooltipNotification()
-      ..displayString = json['displayString'] as String?
-      ..displayStyle = json['displayStyle'] as String?;
+) => DestinyItemTooltipNotification()
+  ..displayString = json['displayString'] as String?
+  ..displayStyle = json['displayStyle'] as String?;
 
 Map<String, dynamic> _$DestinyItemTooltipNotificationToJson(
   DestinyItemTooltipNotification instance,

@@ -8,22 +8,20 @@ part of 'destiny_energy_type_definition.dart';
 
 DestinyEnergyTypeDefinition _$DestinyEnergyTypeDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyEnergyTypeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..transparentIconPath = json['transparentIconPath'] as String?
-      ..showIcon = json['showIcon'] as bool?
-      ..enumValue = decodeDestinyEnergyType(json['enumValue'])
-      ..capacityStatHash = (json['capacityStatHash'] as num?)?.toInt()
-      ..costStatHash = (json['costStatHash'] as num?)?.toInt()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyEnergyTypeDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..transparentIconPath = json['transparentIconPath'] as String?
+  ..showIcon = json['showIcon'] as bool?
+  ..enumValue = decodeDestinyEnergyType(json['enumValue'])
+  ..capacityStatHash = (json['capacityStatHash'] as num?)?.toInt()
+  ..costStatHash = (json['costStatHash'] as num?)?.toInt()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEnergyTypeDefinitionToJson(
   DestinyEnergyTypeDefinition instance,

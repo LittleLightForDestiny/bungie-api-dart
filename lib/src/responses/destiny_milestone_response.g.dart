@@ -9,10 +9,9 @@ part of 'destiny_milestone_response.dart';
 DestinyMilestoneResponse _$DestinyMilestoneResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyMilestoneResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyMilestone.fromJson(json['Response'] as Map<String, dynamic>),
+  response: json['Response'] == null
+      ? null
+      : DestinyMilestone.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

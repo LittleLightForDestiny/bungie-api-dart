@@ -8,18 +8,16 @@ part of 'destiny_reward_source_definition.dart';
 
 DestinyRewardSourceDefinition _$DestinyRewardSourceDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyRewardSourceDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..category = decodeDestinyRewardSourceCategory(json['category'])
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyRewardSourceDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..category = decodeDestinyRewardSourceCategory(json['category'])
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyRewardSourceDefinitionToJson(
   DestinyRewardSourceDefinition instance,

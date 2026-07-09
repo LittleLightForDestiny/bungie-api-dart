@@ -8,12 +8,11 @@ part of 'destiny_item_metric_block_definition.dart';
 
 DestinyItemMetricBlockDefinition _$DestinyItemMetricBlockDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemMetricBlockDefinition()
-      ..availableMetricCategoryNodeHashes =
-          (json['availableMetricCategoryNodeHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList();
+) => DestinyItemMetricBlockDefinition()
+  ..availableMetricCategoryNodeHashes =
+      (json['availableMetricCategoryNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList();
 
 Map<String, dynamic> _$DestinyItemMetricBlockDefinitionToJson(
   DestinyItemMetricBlockDefinition instance,

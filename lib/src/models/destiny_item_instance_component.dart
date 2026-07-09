@@ -4,6 +4,7 @@ import 'package:compute/compute.dart';
 import '../enums/damage_type.dart';
 import 'destiny_stat.dart';
 import '../enums/equip_failure_reason.dart';
+import '../enums/destiny_breaker_type.dart';
 import 'destiny_item_instance_energy.dart';
 
 part 'destiny_item_instance_component.g.dart';
@@ -58,8 +59,8 @@ class DestinyItemInstanceComponent{
 	EquipFailureReason? cannotEquipReason;
 	
 	/// If populated, this item has a breaker type corresponding to the given value. See DestinyBreakerTypeDefinition for more details.
-	@JsonKey(name:'breakerType')
-	int? breakerType;
+	@JsonKey(name:'breakerType',fromJson:decodeDestinyBreakerType,toJson:encodeDestinyBreakerType)
+	DestinyBreakerType? breakerType;
 	
 	/// If populated, this is the hash identifier for the item's breaker type. See DestinyBreakerTypeDefinition for more details.
 	@JsonKey(name:'breakerTypeHash')

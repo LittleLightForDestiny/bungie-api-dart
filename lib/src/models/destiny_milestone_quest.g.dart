@@ -8,28 +8,19 @@ part of 'destiny_milestone_quest.dart';
 
 DestinyMilestoneQuest _$DestinyMilestoneQuestFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMilestoneQuest()
-      ..questItemHash = (json['questItemHash'] as num?)?.toInt()
-      ..status =
-          json['status'] == null
-              ? null
-              : DestinyQuestStatus.fromJson(
-                json['status'] as Map<String, dynamic>,
-              )
-      ..activity =
-          json['activity'] == null
-              ? null
-              : DestinyMilestoneActivity.fromJson(
-                json['activity'] as Map<String, dynamic>,
-              )
-      ..challenges =
-          (json['challenges'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    DestinyChallengeStatus.fromJson(e as Map<String, dynamic>),
-              )
-              .toList();
+) => DestinyMilestoneQuest()
+  ..questItemHash = (json['questItemHash'] as num?)?.toInt()
+  ..status = json['status'] == null
+      ? null
+      : DestinyQuestStatus.fromJson(json['status'] as Map<String, dynamic>)
+  ..activity = json['activity'] == null
+      ? null
+      : DestinyMilestoneActivity.fromJson(
+          json['activity'] as Map<String, dynamic>,
+        )
+  ..challenges = (json['challenges'] as List<dynamic>?)
+      ?.map((e) => DestinyChallengeStatus.fromJson(e as Map<String, dynamic>))
+      .toList();
 
 Map<String, dynamic> _$DestinyMilestoneQuestToJson(
   DestinyMilestoneQuest instance,

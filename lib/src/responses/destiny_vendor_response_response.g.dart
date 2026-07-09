@@ -9,12 +9,11 @@ part of 'destiny_vendor_response_response.dart';
 DestinyVendorResponseResponse _$DestinyVendorResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyVendorResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyVendorResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyVendorResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

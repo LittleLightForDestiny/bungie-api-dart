@@ -16,7 +16,7 @@ class DestinyPublicMilestoneChallengeActivity{
 	List<int>? challengeObjectiveHashes;
 	
 	/// If the activity has modifiers, this will be the list of modifiers that all variants have in common. Perform lookups against DestinyActivityModifierDefinition which defines the modifier being applied to get at the modifier data.
-	/// Note that, in the DestiyActivityDefinition, you will see many more modifiers than this being referred to: those are all *possible* modifiers for the activity, not the active ones. Use only the active ones to match what's really live.
+	/// Note that, in the DestinyActivityDefinition, you will see many more modifiers than this being referred to: those are all *possible* modifiers for the activity, not the active ones. Use only the active ones to match what's really live.
 	@JsonKey(name:'modifierHashes')
 	List<int>? modifierHashes;
 	

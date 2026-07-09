@@ -9,24 +9,20 @@ part of 'destiny_activity_skull_subcategory_definition.dart';
 DestinyActivitySkullSubcategoryDefinition
 _$DestinyActivitySkullSubcategoryDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivitySkullSubcategoryDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..parentSkullCategoryHash =
-          (json['parentSkullCategoryHash'] as num?)?.toInt()
-      ..availabilityTierRank = (json['availabilityTierRank'] as num?)?.toInt()
-      ..defaultSkullHashes =
-          (json['defaultSkullHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyActivitySkullSubcategoryDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..parentSkullCategoryHash = (json['parentSkullCategoryHash'] as num?)?.toInt()
+  ..availabilityTierRank = (json['availabilityTierRank'] as num?)?.toInt()
+  ..defaultSkullHashes = (json['defaultSkullHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivitySkullSubcategoryDefinitionToJson(
   DestinyActivitySkullSubcategoryDefinition instance,

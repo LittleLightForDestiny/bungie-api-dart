@@ -8,17 +8,15 @@ part of 'tag_metadata_definition.dart';
 
 TagMetadataDefinition _$TagMetadataDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    TagMetadataDefinition()
-      ..description = json['description'] as String?
-      ..order = (json['order'] as num?)?.toInt()
-      ..items =
-          (json['items'] as List<dynamic>?)
-              ?.map((e) => TagMetadataItem.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..datatype = json['datatype'] as String?
-      ..name = json['name'] as String?
-      ..isRequired = json['isRequired'] as bool?;
+) => TagMetadataDefinition()
+  ..description = json['description'] as String?
+  ..order = (json['order'] as num?)?.toInt()
+  ..items = (json['items'] as List<dynamic>?)
+      ?.map((e) => TagMetadataItem.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..datatype = json['datatype'] as String?
+  ..name = json['name'] as String?
+  ..isRequired = json['isRequired'] as bool?;
 
 Map<String, dynamic> _$TagMetadataDefinitionToJson(
   TagMetadataDefinition instance,

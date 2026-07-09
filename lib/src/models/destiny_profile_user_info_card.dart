@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import 'destiny_platform_silver_component.dart';
+import '../enums/destiny_game_versions.dart';
 import '../enums/bungie_membership_type.dart';
 
 part 'destiny_profile_user_info_card.g.dart';
@@ -31,7 +32,7 @@ class DestinyProfileUserInfoCard{
 	///  For the time being, we will not return this information for any membership that is in a cross save pairing. The gist is that, once the pairing occurs, we do not currently have a consistent way to get that information for the profile's original Platform, and thus gameVersions would be too inconsistent (based on the last platform they happened to play on) for the info to be useful.
 	///  If we ever can get this data, this field will be deprecated and replaced with data on the DestinyLinkedProfileResponse itself, with game versions per linked Platform. But since we can't get that, we have this as a stop-gap measure for getting the data in the only situation that we currently need it.
 	@JsonKey(name:'unpairedGameVersions')
-	int? unpairedGameVersions;
+	DestinyGameVersions? unpairedGameVersions;
 	
 	/// A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
 	@JsonKey(name:'supplementalDisplayName')

@@ -1,1 +1,0 @@
-export '../src/responses/destiny_fireteam_finder_offer_response.dart';

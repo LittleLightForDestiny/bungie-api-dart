@@ -8,10 +8,9 @@ part of 'group_name_search_request.dart';
 
 GroupNameSearchRequest _$GroupNameSearchRequestFromJson(
   Map<String, dynamic> json,
-) =>
-    GroupNameSearchRequest()
-      ..groupName = json['groupName'] as String?
-      ..groupType = decodeGroupType(json['groupType']);
+) => GroupNameSearchRequest()
+  ..groupName = json['groupName'] as String?
+  ..groupType = decodeGroupType(json['groupType']);
 
 Map<String, dynamic> _$GroupNameSearchRequestToJson(
   GroupNameSearchRequest instance,

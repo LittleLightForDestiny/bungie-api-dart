@@ -10,10 +10,9 @@ DestinyItemSocketCategoryDefinition
 _$DestinyItemSocketCategoryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyItemSocketCategoryDefinition()
       ..socketCategoryHash = (json['socketCategoryHash'] as num?)?.toInt()
-      ..socketIndexes =
-          (json['socketIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList();
+      ..socketIndexes = (json['socketIndexes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList();
 
 Map<String, dynamic> _$DestinyItemSocketCategoryDefinitionToJson(
   DestinyItemSocketCategoryDefinition instance,

@@ -9,12 +9,11 @@ part of 'partner_reward_history_response_response.dart';
 PartnerRewardHistoryResponseResponse
 _$PartnerRewardHistoryResponseResponseFromJson(Map<String, dynamic> json) =>
     PartnerRewardHistoryResponseResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : PartnerRewardHistoryResponse.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : PartnerRewardHistoryResponse.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

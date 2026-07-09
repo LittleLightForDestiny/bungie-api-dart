@@ -8,25 +8,20 @@ part of 'destiny_item_plug.dart';
 
 DestinyItemPlug _$DestinyItemPlugFromJson(Map<String, dynamic> json) =>
     DestinyItemPlug()
-      ..plugObjectives =
-          (json['plugObjectives'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyObjectiveProgress.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..plugObjectives = (json['plugObjectives'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..plugItemHash = (json['plugItemHash'] as num?)?.toInt()
       ..canInsert = json['canInsert'] as bool?
       ..enabled = json['enabled'] as bool?
-      ..insertFailIndexes =
-          (json['insertFailIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..enableFailIndexes =
-          (json['enableFailIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
+      ..insertFailIndexes = (json['insertFailIndexes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..enableFailIndexes = (json['enableFailIndexes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..stackSize = (json['stackSize'] as num?)?.toInt()
       ..maxStackSize = (json['maxStackSize'] as num?)?.toInt();
 

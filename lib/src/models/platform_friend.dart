@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
 import '../enums/platform_friend_type.dart';
+import '../enums/bungie_membership_type.dart';
 
 part 'platform_friend.g.dart';
 
@@ -19,8 +20,8 @@ class PlatformFriend{
 	@JsonKey(name:'destinyMembershipId')
 	String? destinyMembershipId;
 	
-	@JsonKey(name:'destinyMembershipType')
-	int? destinyMembershipType;
+	@JsonKey(name:'destinyMembershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
+	BungieMembershipType? destinyMembershipType;
 	
 	@JsonKey(name:'bungieNetMembershipId')
 	String? bungieNetMembershipId;

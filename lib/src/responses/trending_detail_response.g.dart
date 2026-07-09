@@ -9,10 +9,9 @@ part of 'trending_detail_response.dart';
 TrendingDetailResponse _$TrendingDetailResponseFromJson(
   Map<String, dynamic> json,
 ) => TrendingDetailResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : TrendingDetail.fromJson(json['Response'] as Map<String, dynamic>),
+  response: json['Response'] == null
+      ? null
+      : TrendingDetail.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

@@ -9,12 +9,11 @@ part of 'search_result_of_fireteam_response_response.dart';
 SearchResultOfFireteamResponseResponse
 _$SearchResultOfFireteamResponseResponseFromJson(Map<String, dynamic> json) =>
     SearchResultOfFireteamResponseResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : SearchResultOfFireteamResponse.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : SearchResultOfFireteamResponse.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

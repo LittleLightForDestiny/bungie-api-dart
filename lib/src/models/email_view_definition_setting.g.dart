@@ -8,30 +8,23 @@ part of 'email_view_definition_setting.dart';
 
 EmailViewDefinitionSetting _$EmailViewDefinitionSettingFromJson(
   Map<String, dynamic> json,
-) =>
-    EmailViewDefinitionSetting()
-      ..name = json['name'] as String?
-      ..localization = (json['localization'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          EMailSettingLocalization.fromJson(e as Map<String, dynamic>),
-        ),
+) => EmailViewDefinitionSetting()
+  ..name = json['name'] as String?
+  ..localization = (json['localization'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      EMailSettingLocalization.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..setByDefault = json['setByDefault'] as bool?
+  ..optInAggregateValue = json['optInAggregateValue'] == null
+      ? null
+      : OptInFlags.fromJson((json['optInAggregateValue'] as num).toInt())
+  ..subscriptions = (json['subscriptions'] as List<dynamic>?)
+      ?.map(
+        (e) => EmailSubscriptionDefinition.fromJson(e as Map<String, dynamic>),
       )
-      ..setByDefault = json['setByDefault'] as bool?
-      ..optInAggregateValue =
-          json['optInAggregateValue'] == null
-              ? null
-              : OptInFlags.fromJson(
-                (json['optInAggregateValue'] as num).toInt(),
-              )
-      ..subscriptions =
-          (json['subscriptions'] as List<dynamic>?)
-              ?.map(
-                (e) => EmailSubscriptionDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+      .toList();
 
 Map<String, dynamic> _$EmailViewDefinitionSettingToJson(
   EmailViewDefinitionSetting instance,

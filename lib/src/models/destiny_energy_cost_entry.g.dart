@@ -8,11 +8,10 @@ part of 'destiny_energy_cost_entry.dart';
 
 DestinyEnergyCostEntry _$DestinyEnergyCostEntryFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyEnergyCostEntry()
-      ..energyCost = (json['energyCost'] as num?)?.toInt()
-      ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
-      ..energyType = decodeDestinyEnergyType(json['energyType']);
+) => DestinyEnergyCostEntry()
+  ..energyCost = (json['energyCost'] as num?)?.toInt()
+  ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
+  ..energyType = decodeDestinyEnergyType(json['energyType']);
 
 Map<String, dynamic> _$DestinyEnergyCostEntryToJson(
   DestinyEnergyCostEntry instance,

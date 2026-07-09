@@ -9,8 +9,8 @@ part of 'destiny_activity_interactable_reference.dart';
 DestinyActivityInteractableReference
 _$DestinyActivityInteractableReferenceFromJson(Map<String, dynamic> json) =>
     DestinyActivityInteractableReference()
-      ..activityInteractableHash =
-          (json['activityInteractableHash'] as num?)?.toInt()
+      ..activityInteractableHash = (json['activityInteractableHash'] as num?)
+          ?.toInt()
       ..activityInteractableElementIndex =
           (json['activityInteractableElementIndex'] as num?)?.toInt();
 

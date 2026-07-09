@@ -8,13 +8,11 @@ part of 'destiny_loadout_item_component.dart';
 
 DestinyLoadoutItemComponent _$DestinyLoadoutItemComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyLoadoutItemComponent()
-      ..itemInstanceId = json['itemInstanceId'] as String?
-      ..plugItemHashes =
-          (json['plugItemHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList();
+) => DestinyLoadoutItemComponent()
+  ..itemInstanceId = json['itemInstanceId'] as String?
+  ..plugItemHashes = (json['plugItemHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList();
 
 Map<String, dynamic> _$DestinyLoadoutItemComponentToJson(
   DestinyLoadoutItemComponent instance,

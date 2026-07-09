@@ -51,6 +51,9 @@ class DestinyEventCardDefinition{
 	@JsonKey(name:'rewardProgressionHash')
 	int? rewardProgressionHash;
 	
+	@JsonKey(name:'rewardProgressionHashList')
+	List<int>? rewardProgressionHashList;
+	
 	@JsonKey(name:'weeklyChallengesPresentationNodeHash')
 	int? weeklyChallengesPresentationNodeHash;
 	

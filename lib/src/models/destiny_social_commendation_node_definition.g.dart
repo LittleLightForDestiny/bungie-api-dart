@@ -9,16 +9,14 @@ part of 'destiny_social_commendation_node_definition.dart';
 DestinySocialCommendationNodeDefinition
 _$DestinySocialCommendationNodeDefinitionFromJson(Map<String, dynamic> json) =>
     DestinySocialCommendationNodeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..color =
-          json['color'] == null
-              ? null
-              : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
+      ..color = json['color'] == null
+          ? null
+          : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
       ..tintedIcon = json['tintedIcon'] as String?
       ..parentCommendationNodeHash =
           (json['parentCommendationNodeHash'] as num?)?.toInt()

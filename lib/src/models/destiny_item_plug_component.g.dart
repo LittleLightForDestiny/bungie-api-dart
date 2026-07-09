@@ -8,29 +8,21 @@ part of 'destiny_item_plug_component.dart';
 
 DestinyItemPlugComponent _$DestinyItemPlugComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemPlugComponent()
-      ..plugObjectives =
-          (json['plugObjectives'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyObjectiveProgress.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt()
-      ..canInsert = json['canInsert'] as bool?
-      ..enabled = json['enabled'] as bool?
-      ..insertFailIndexes =
-          (json['insertFailIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..enableFailIndexes =
-          (json['enableFailIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..stackSize = (json['stackSize'] as num?)?.toInt()
-      ..maxStackSize = (json['maxStackSize'] as num?)?.toInt();
+) => DestinyItemPlugComponent()
+  ..plugObjectives = (json['plugObjectives'] as List<dynamic>?)
+      ?.map((e) => DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..plugItemHash = (json['plugItemHash'] as num?)?.toInt()
+  ..canInsert = json['canInsert'] as bool?
+  ..enabled = json['enabled'] as bool?
+  ..insertFailIndexes = (json['insertFailIndexes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..enableFailIndexes = (json['enableFailIndexes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..stackSize = (json['stackSize'] as num?)?.toInt()
+  ..maxStackSize = (json['maxStackSize'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemPlugComponentToJson(
   DestinyItemPlugComponent instance,

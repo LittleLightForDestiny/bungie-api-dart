@@ -8,11 +8,10 @@ part of 'destiny_insert_plugs_request_entry.dart';
 
 DestinyInsertPlugsRequestEntry _$DestinyInsertPlugsRequestEntryFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyInsertPlugsRequestEntry()
-      ..socketIndex = (json['socketIndex'] as num?)?.toInt()
-      ..socketArrayType = decodeDestinySocketArrayType(json['socketArrayType'])
-      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
+) => DestinyInsertPlugsRequestEntry()
+  ..socketIndex = (json['socketIndex'] as num?)?.toInt()
+  ..socketArrayType = decodeDestinySocketArrayType(json['socketArrayType'])
+  ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyInsertPlugsRequestEntryToJson(
   DestinyInsertPlugsRequestEntry instance,

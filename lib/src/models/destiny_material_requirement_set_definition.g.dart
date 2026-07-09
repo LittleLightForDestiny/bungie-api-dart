@@ -9,14 +9,12 @@ part of 'destiny_material_requirement_set_definition.dart';
 DestinyMaterialRequirementSetDefinition
 _$DestinyMaterialRequirementSetDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyMaterialRequirementSetDefinition()
-      ..materials =
-          (json['materials'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyMaterialRequirement.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..materials = (json['materials'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                DestinyMaterialRequirement.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;

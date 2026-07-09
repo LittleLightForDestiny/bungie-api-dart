@@ -9,12 +9,11 @@ part of 'bungie_friend_request_list_response_response.dart';
 BungieFriendRequestListResponseResponse
 _$BungieFriendRequestListResponseResponseFromJson(Map<String, dynamic> json) =>
     BungieFriendRequestListResponseResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : BungieFriendRequestListResponse.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : BungieFriendRequestListResponse.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

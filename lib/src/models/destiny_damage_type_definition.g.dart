@@ -8,24 +8,21 @@ part of 'destiny_damage_type_definition.dart';
 
 DestinyDamageTypeDefinition _$DestinyDamageTypeDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyDamageTypeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..transparentIconPath = json['transparentIconPath'] as String?
-      ..showIcon = json['showIcon'] as bool?
-      ..enumValue = decodeDamageType(json['enumValue'])
-      ..color =
-          json['color'] == null
-              ? null
-              : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyDamageTypeDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..transparentIconPath = json['transparentIconPath'] as String?
+  ..showIcon = json['showIcon'] as bool?
+  ..enumValue = decodeDamageType(json['enumValue'])
+  ..color = json['color'] == null
+      ? null
+      : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyDamageTypeDefinitionToJson(
   DestinyDamageTypeDefinition instance,

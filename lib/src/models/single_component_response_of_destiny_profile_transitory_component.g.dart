@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_profile_transitory_component.dart'
 SingleComponentResponseOfDestinyProfileTransitoryComponent
 _$SingleComponentResponseOfDestinyProfileTransitoryComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyProfileTransitoryComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyProfileTransitoryComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyProfileTransitoryComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyProfileTransitoryComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyProfileTransitoryComponentToJson(

@@ -8,27 +8,23 @@ part of 'destiny_checklist_definition.dart';
 
 DestinyChecklistDefinition _$DestinyChecklistDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyChecklistDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..viewActionString = json['viewActionString'] as String?
-      ..scope = decodeDestinyScope(json['scope'])
-      ..entries =
-          (json['entries'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyChecklistEntryDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyChecklistDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..viewActionString = json['viewActionString'] as String?
+  ..scope = decodeDestinyScope(json['scope'])
+  ..entries = (json['entries'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            DestinyChecklistEntryDefinition.fromJson(e as Map<String, dynamic>),
+      )
+      .toList()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyChecklistDefinitionToJson(
   DestinyChecklistDefinition instance,

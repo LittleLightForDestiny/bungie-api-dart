@@ -9,14 +9,13 @@ part of 'destiny_plug_item_crafting_requirements.dart';
 DestinyPlugItemCraftingRequirements
 _$DestinyPlugItemCraftingRequirementsFromJson(Map<String, dynamic> json) =>
     DestinyPlugItemCraftingRequirements()
-      ..unlockRequirements =
-          (json['unlockRequirements'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPlugItemCraftingUnlockRequirement.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..unlockRequirements = (json['unlockRequirements'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyPlugItemCraftingUnlockRequirement.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList()
       ..requiredLevel = (json['requiredLevel'] as num?)?.toInt()
       ..materialRequirementHashes =
           (json['materialRequirementHashes'] as List<dynamic>?)
@@ -26,8 +25,9 @@ _$DestinyPlugItemCraftingRequirementsFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$DestinyPlugItemCraftingRequirementsToJson(
   DestinyPlugItemCraftingRequirements instance,
 ) => <String, dynamic>{
-  'unlockRequirements':
-      instance.unlockRequirements?.map((e) => e.toJson()).toList(),
+  'unlockRequirements': instance.unlockRequirements
+      ?.map((e) => e.toJson())
+      .toList(),
   'requiredLevel': instance.requiredLevel,
   'materialRequirementHashes': instance.materialRequirementHashes,
 };

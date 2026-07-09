@@ -11,12 +11,11 @@ _$DestinyMilestoneRewardCategoryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyMilestoneRewardCategoryDefinition()
       ..categoryHash = (json['categoryHash'] as num?)?.toInt()
       ..categoryIdentifier = json['categoryIdentifier'] as String?
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..rewardEntries = (json['rewardEntries'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
           k,

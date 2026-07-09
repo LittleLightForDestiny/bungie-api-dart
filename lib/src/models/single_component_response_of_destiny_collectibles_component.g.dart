@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_collectibles_component.dart';
 SingleComponentResponseOfDestinyCollectiblesComponent
 _$SingleComponentResponseOfDestinyCollectiblesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyCollectiblesComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyCollectiblesComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyCollectiblesComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyCollectiblesComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyCollectiblesComponentToJson(

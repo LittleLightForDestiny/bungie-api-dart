@@ -8,31 +8,26 @@ part of 'destiny_milestone_quest_definition.dart';
 
 DestinyMilestoneQuestDefinition _$DestinyMilestoneQuestDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMilestoneQuestDefinition()
-      ..questItemHash = (json['questItemHash'] as num?)?.toInt()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..overrideImage = json['overrideImage'] as String?
-      ..questRewards =
-          json['questRewards'] == null
-              ? null
-              : DestinyMilestoneQuestRewardsDefinition.fromJson(
-                json['questRewards'] as Map<String, dynamic>,
-              )
-      ..activities = (json['activities'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyMilestoneActivityDefinition.fromJson(
-            e as Map<String, dynamic>,
-          ),
-        ),
-      )
-      ..destinationHash = (json['destinationHash'] as num?)?.toInt();
+) => DestinyMilestoneQuestDefinition()
+  ..questItemHash = (json['questItemHash'] as num?)?.toInt()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..overrideImage = json['overrideImage'] as String?
+  ..questRewards = json['questRewards'] == null
+      ? null
+      : DestinyMilestoneQuestRewardsDefinition.fromJson(
+          json['questRewards'] as Map<String, dynamic>,
+        )
+  ..activities = (json['activities'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyMilestoneActivityDefinition.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..destinationHash = (json['destinationHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMilestoneQuestDefinitionToJson(
   DestinyMilestoneQuestDefinition instance,

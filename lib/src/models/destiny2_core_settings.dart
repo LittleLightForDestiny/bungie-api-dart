@@ -48,6 +48,9 @@ class Destiny2CoreSettings{
 	@JsonKey(name:'craftingRootNodeHash')
 	int? craftingRootNodeHash;
 	
+	@JsonKey(name:'globalConstantsHash')
+	int? globalConstantsHash;
+	
 	@JsonKey(name:'loadoutConstantsHash')
 	int? loadoutConstantsHash;
 	
@@ -101,6 +104,9 @@ class Destiny2CoreSettings{
 	
 	@JsonKey(name:'currentSeasonHash')
 	int? currentSeasonHash;
+	
+	@JsonKey(name:'currentSeasonPassHash')
+	int? currentSeasonPassHash;
 	
 	@JsonKey(name:'seasonalChallengesPresentationNodeHash')
 	int? seasonalChallengesPresentationNodeHash;

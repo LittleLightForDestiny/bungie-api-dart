@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_profile_collectibles_component.dar
 SingleComponentResponseOfDestinyProfileCollectiblesComponent
 _$SingleComponentResponseOfDestinyProfileCollectiblesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyProfileCollectiblesComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyProfileCollectiblesComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyProfileCollectiblesComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyProfileCollectiblesComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyProfileCollectiblesComponentToJson(

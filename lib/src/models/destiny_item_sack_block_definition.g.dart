@@ -8,13 +8,12 @@ part of 'destiny_item_sack_block_definition.dart';
 
 DestinyItemSackBlockDefinition _$DestinyItemSackBlockDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemSackBlockDefinition()
-      ..detailAction = json['detailAction'] as String?
-      ..openAction = json['openAction'] as String?
-      ..selectItemCount = (json['selectItemCount'] as num?)?.toInt()
-      ..vendorSackType = json['vendorSackType'] as String?
-      ..openOnAcquire = json['openOnAcquire'] as bool?;
+) => DestinyItemSackBlockDefinition()
+  ..detailAction = json['detailAction'] as String?
+  ..openAction = json['openAction'] as String?
+  ..selectItemCount = (json['selectItemCount'] as num?)?.toInt()
+  ..vendorSackType = json['vendorSackType'] as String?
+  ..openOnAcquire = json['openOnAcquire'] as bool?;
 
 Map<String, dynamic> _$DestinyItemSackBlockDefinitionToJson(
   DestinyItemSackBlockDefinition instance,

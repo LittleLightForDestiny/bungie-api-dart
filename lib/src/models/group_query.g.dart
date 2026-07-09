@@ -6,19 +6,19 @@ part of 'group_query.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-GroupQuery _$GroupQueryFromJson(Map<String, dynamic> json) =>
-    GroupQuery()
-      ..name = json['name'] as String?
-      ..groupType = decodeGroupType(json['groupType'])
-      ..creationDate = decodeGroupDateRange(json['creationDate'])
-      ..sortBy = decodeGroupSortBy(json['sortBy'])
-      ..groupMemberCountFilter =
-          (json['groupMemberCountFilter'] as num?)?.toInt()
-      ..localeFilter = json['localeFilter'] as String?
-      ..tagText = json['tagText'] as String?
-      ..itemsPerPage = (json['itemsPerPage'] as num?)?.toInt()
-      ..currentPage = (json['currentPage'] as num?)?.toInt()
-      ..requestContinuationToken = json['requestContinuationToken'] as String?;
+GroupQuery _$GroupQueryFromJson(Map<String, dynamic> json) => GroupQuery()
+  ..name = json['name'] as String?
+  ..groupType = decodeGroupType(json['groupType'])
+  ..creationDate = decodeGroupDateRange(json['creationDate'])
+  ..sortBy = decodeGroupSortBy(json['sortBy'])
+  ..groupMemberCountFilter = decodeGroupMemberCountFilter(
+    json['groupMemberCountFilter'],
+  )
+  ..localeFilter = json['localeFilter'] as String?
+  ..tagText = json['tagText'] as String?
+  ..itemsPerPage = (json['itemsPerPage'] as num?)?.toInt()
+  ..currentPage = (json['currentPage'] as num?)?.toInt()
+  ..requestContinuationToken = json['requestContinuationToken'] as String?;
 
 Map<String, dynamic> _$GroupQueryToJson(GroupQuery instance) =>
     <String, dynamic>{
@@ -26,7 +26,9 @@ Map<String, dynamic> _$GroupQueryToJson(GroupQuery instance) =>
       'groupType': encodeGroupType(instance.groupType),
       'creationDate': encodeGroupDateRange(instance.creationDate),
       'sortBy': encodeGroupSortBy(instance.sortBy),
-      'groupMemberCountFilter': instance.groupMemberCountFilter,
+      'groupMemberCountFilter': encodeGroupMemberCountFilter(
+        instance.groupMemberCountFilter,
+      ),
       'localeFilter': instance.localeFilter,
       'tagText': instance.tagText,
       'itemsPerPage': instance.itemsPerPage,

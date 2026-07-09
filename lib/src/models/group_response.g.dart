@@ -8,22 +8,18 @@ part of 'group_response.dart';
 
 GroupResponse _$GroupResponseFromJson(Map<String, dynamic> json) =>
     GroupResponse()
-      ..detail =
-          json['detail'] == null
-              ? null
-              : GroupV2.fromJson(json['detail'] as Map<String, dynamic>)
-      ..founder =
-          json['founder'] == null
-              ? null
-              : GroupMember.fromJson(json['founder'] as Map<String, dynamic>)
-      ..alliedIds =
-          (json['alliedIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList()
-      ..parentGroup =
-          json['parentGroup'] == null
-              ? null
-              : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
+      ..detail = json['detail'] == null
+          ? null
+          : GroupV2.fromJson(json['detail'] as Map<String, dynamic>)
+      ..founder = json['founder'] == null
+          ? null
+          : GroupMember.fromJson(json['founder'] as Map<String, dynamic>)
+      ..alliedIds = (json['alliedIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList()
+      ..parentGroup = json['parentGroup'] == null
+          ? null
+          : GroupV2.fromJson(json['parentGroup'] as Map<String, dynamic>)
       ..allianceStatus = decodeGroupAllianceStatus(json['allianceStatus'])
       ..groupJoinInviteCount = (json['groupJoinInviteCount'] as num?)?.toInt()
       ..currentUserMembershipsInactiveForDestiny =

@@ -10,12 +10,11 @@ DestinyHistoricalStatsAccountResultResponse
 _$DestinyHistoricalStatsAccountResultResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyHistoricalStatsAccountResultResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyHistoricalStatsAccountResult.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyHistoricalStatsAccountResult.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

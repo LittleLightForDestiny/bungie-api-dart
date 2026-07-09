@@ -9,10 +9,9 @@ part of 'clan_banner_source_response.dart';
 ClanBannerSourceResponse _$ClanBannerSourceResponseFromJson(
   Map<String, dynamic> json,
 ) => ClanBannerSourceResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : ClanBannerSource.fromJson(json['Response'] as Map<String, dynamic>),
+  response: json['Response'] == null
+      ? null
+      : ClanBannerSource.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

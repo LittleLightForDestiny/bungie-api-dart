@@ -9,10 +9,9 @@ part of 'ienumerable_of_application_response.dart';
 IEnumerableOfApplicationResponse _$IEnumerableOfApplicationResponseFromJson(
   Map<String, dynamic> json,
 ) => IEnumerableOfApplicationResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => Application.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => Application.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

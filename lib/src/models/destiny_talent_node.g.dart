@@ -13,23 +13,20 @@ DestinyTalentNode _$DestinyTalentNodeFromJson(Map<String, dynamic> json) =>
       ..state = decodeDestinyTalentNodeState(json['state'])
       ..isActivated = json['isActivated'] as bool?
       ..stepIndex = (json['stepIndex'] as num?)?.toInt()
-      ..materialsToUpgrade =
-          (json['materialsToUpgrade'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyMaterialRequirement.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..materialsToUpgrade = (json['materialsToUpgrade'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                DestinyMaterialRequirement.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..activationGridLevel = (json['activationGridLevel'] as num?)?.toInt()
       ..progressPercent = (json['progressPercent'] as num?)?.toDouble()
       ..hidden = json['hidden'] as bool?
-      ..nodeStatsBlock =
-          json['nodeStatsBlock'] == null
-              ? null
-              : DestinyTalentNodeStatBlock.fromJson(
-                json['nodeStatsBlock'] as Map<String, dynamic>,
-              );
+      ..nodeStatsBlock = json['nodeStatsBlock'] == null
+          ? null
+          : DestinyTalentNodeStatBlock.fromJson(
+              json['nodeStatsBlock'] as Map<String, dynamic>,
+            );
 
 Map<String, dynamic> _$DestinyTalentNodeToJson(DestinyTalentNode instance) =>
     <String, dynamic>{
@@ -38,8 +35,9 @@ Map<String, dynamic> _$DestinyTalentNodeToJson(DestinyTalentNode instance) =>
       'state': encodeDestinyTalentNodeState(instance.state),
       'isActivated': instance.isActivated,
       'stepIndex': instance.stepIndex,
-      'materialsToUpgrade':
-          instance.materialsToUpgrade?.map((e) => e.toJson()).toList(),
+      'materialsToUpgrade': instance.materialsToUpgrade
+          ?.map((e) => e.toJson())
+          .toList(),
       'activationGridLevel': instance.activationGridLevel,
       'progressPercent': instance.progressPercent,
       'hidden': instance.hidden,

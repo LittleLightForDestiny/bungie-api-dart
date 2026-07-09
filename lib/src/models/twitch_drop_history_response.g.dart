@@ -8,12 +8,11 @@ part of 'twitch_drop_history_response.dart';
 
 TwitchDropHistoryResponse _$TwitchDropHistoryResponseFromJson(
   Map<String, dynamic> json,
-) =>
-    TwitchDropHistoryResponse()
-      ..title = json['Title'] as String?
-      ..description = json['Description'] as String?
-      ..createdAt = json['CreatedAt'] as String?
-      ..claimState = (json['ClaimState'] as num?)?.toInt();
+) => TwitchDropHistoryResponse()
+  ..title = json['Title'] as String?
+  ..description = json['Description'] as String?
+  ..createdAt = json['CreatedAt'] as String?
+  ..claimState = decodeDropStateEnum(json['ClaimState']);
 
 Map<String, dynamic> _$TwitchDropHistoryResponseToJson(
   TwitchDropHistoryResponse instance,
@@ -21,5 +20,5 @@ Map<String, dynamic> _$TwitchDropHistoryResponseToJson(
   'Title': instance.title,
   'Description': instance.description,
   'CreatedAt': instance.createdAt,
-  'ClaimState': instance.claimState,
+  'ClaimState': encodeDropStateEnum(instance.claimState),
 };

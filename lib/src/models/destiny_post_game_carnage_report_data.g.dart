@@ -8,40 +8,34 @@ part of 'destiny_post_game_carnage_report_data.dart';
 
 DestinyPostGameCarnageReportData _$DestinyPostGameCarnageReportDataFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyPostGameCarnageReportData()
-      ..period = json['period'] as String?
-      ..startingPhaseIndex = (json['startingPhaseIndex'] as num?)?.toInt()
-      ..activityWasStartedFromBeginning =
-          json['activityWasStartedFromBeginning'] as bool?
-      ..activityDifficultyTier =
-          (json['activityDifficultyTier'] as num?)?.toInt()
-      ..selectedSkullHashes =
-          (json['selectedSkullHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..activityDetails =
-          json['activityDetails'] == null
-              ? null
-              : DestinyHistoricalStatsActivity.fromJson(
-                json['activityDetails'] as Map<String, dynamic>,
-              )
-      ..entries =
-          (json['entries'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPostGameCarnageReportEntry.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..teams =
-          (json['teams'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyPostGameCarnageReportTeamEntry.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyPostGameCarnageReportData()
+  ..period = json['period'] as String?
+  ..startingPhaseIndex = (json['startingPhaseIndex'] as num?)?.toInt()
+  ..activityWasStartedFromBeginning =
+      json['activityWasStartedFromBeginning'] as bool?
+  ..activityDifficultyTier = (json['activityDifficultyTier'] as num?)?.toInt()
+  ..selectedSkullHashes = (json['selectedSkullHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..activityDetails = json['activityDetails'] == null
+      ? null
+      : DestinyHistoricalStatsActivity.fromJson(
+          json['activityDetails'] as Map<String, dynamic>,
+        )
+  ..entries = (json['entries'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyPostGameCarnageReportEntry.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList()
+  ..teams = (json['teams'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyPostGameCarnageReportTeamEntry.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportDataToJson(
   DestinyPostGameCarnageReportData instance,

@@ -8,14 +8,10 @@ part of 'destiny_character_peer_view.dart';
 
 DestinyCharacterPeerView _$DestinyCharacterPeerViewFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyCharacterPeerView()
-      ..equipment =
-          (json['equipment'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyItemPeerView.fromJson(e as Map<String, dynamic>),
-              )
-              .toList();
+) => DestinyCharacterPeerView()
+  ..equipment = (json['equipment'] as List<dynamic>?)
+      ?.map((e) => DestinyItemPeerView.fromJson(e as Map<String, dynamic>))
+      .toList();
 
 Map<String, dynamic> _$DestinyCharacterPeerViewToJson(
   DestinyCharacterPeerView instance,

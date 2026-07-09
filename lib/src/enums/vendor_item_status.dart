@@ -31,6 +31,7 @@ class VendorItemStatus {
     ///SellingInhibited = 2048
     static const VendorItemStatus SellingInhibited = VendorItemStatus(2048);
     ///AlreadyOwned = 4096
+    /// DEPRECATED - Owned items use the NoUnlock state and a failure string indicating the proper display state.
     static const VendorItemStatus AlreadyOwned = VendorItemStatus(4096);
     ///DisplayOnly = 8192
     static const VendorItemStatus DisplayOnly = VendorItemStatus(8192);

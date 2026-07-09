@@ -8,27 +8,24 @@ part of 'destiny_activity_loadout_requirement.dart';
 
 DestinyActivityLoadoutRequirement _$DestinyActivityLoadoutRequirementFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivityLoadoutRequirement()
-      ..equipmentSlotHash = (json['equipmentSlotHash'] as num?)?.toInt()
-      ..allowedEquippedItemHashes =
-          (json['allowedEquippedItemHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..allowedWeaponSubTypes =
-          (json['allowedWeaponSubTypes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$DestinyItemSubTypeEnumMap, e))
-              .toList();
+) => DestinyActivityLoadoutRequirement()
+  ..equipmentSlotHash = (json['equipmentSlotHash'] as num?)?.toInt()
+  ..allowedEquippedItemHashes =
+      (json['allowedEquippedItemHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+  ..allowedWeaponSubTypes = (json['allowedWeaponSubTypes'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$DestinyItemSubTypeEnumMap, e))
+      .toList();
 
 Map<String, dynamic> _$DestinyActivityLoadoutRequirementToJson(
   DestinyActivityLoadoutRequirement instance,
 ) => <String, dynamic>{
   'equipmentSlotHash': instance.equipmentSlotHash,
   'allowedEquippedItemHashes': instance.allowedEquippedItemHashes,
-  'allowedWeaponSubTypes':
-      instance.allowedWeaponSubTypes
-          ?.map((e) => _$DestinyItemSubTypeEnumMap[e]!)
-          .toList(),
+  'allowedWeaponSubTypes': instance.allowedWeaponSubTypes
+      ?.map((e) => _$DestinyItemSubTypeEnumMap[e]!)
+      .toList(),
 };
 
 const _$DestinyItemSubTypeEnumMap = {

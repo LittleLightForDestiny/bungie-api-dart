@@ -8,10 +8,9 @@ part of 'destiny_equip_item_result.dart';
 
 DestinyEquipItemResult _$DestinyEquipItemResultFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyEquipItemResult()
-      ..itemInstanceId = json['itemInstanceId'] as String?
-      ..equipStatus = decodePlatformErrorCodes(json['equipStatus']);
+) => DestinyEquipItemResult()
+  ..itemInstanceId = json['itemInstanceId'] as String?
+  ..equipStatus = decodePlatformErrorCodes(json['equipStatus']);
 
 Map<String, dynamic> _$DestinyEquipItemResultToJson(
   DestinyEquipItemResult instance,

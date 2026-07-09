@@ -9,12 +9,9 @@ part of 'trending_categories_response.dart';
 TrendingCategoriesResponse _$TrendingCategoriesResponseFromJson(
   Map<String, dynamic> json,
 ) => TrendingCategoriesResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : TrendingCategories.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : TrendingCategories.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

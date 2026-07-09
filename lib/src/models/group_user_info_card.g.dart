@@ -39,10 +39,9 @@ Map<String, dynamic> _$GroupUserInfoCardToJson(
   'supplementalDisplayName': instance.supplementalDisplayName,
   'iconPath': instance.iconPath,
   'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
-  'applicableMembershipTypes':
-      instance.applicableMembershipTypes
-          ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
-          .toList(),
+  'applicableMembershipTypes': instance.applicableMembershipTypes
+      ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
+      .toList(),
   'isPublic': instance.isPublic,
   'membershipType': encodeBungieMembershipType(instance.membershipType),
   'membershipId': instance.membershipId,

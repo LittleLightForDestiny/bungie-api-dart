@@ -18,6 +18,10 @@ class DestinyPostGameCarnageReportExtendedData{
 	/// Collection of stats for the player in this activity.
 	@JsonKey(name:'values')
 	Map<String, DestinyHistoricalStatsValue>? values;
+	
+	/// Collection of stats from the player scoreboard in this activity.
+	@JsonKey(name:'scoreboardValues')
+	Map<String, DestinyHistoricalStatsValue>? scoreboardValues;
 
 	factory DestinyPostGameCarnageReportExtendedData.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPostGameCarnageReportExtendedDataFromJson(json);

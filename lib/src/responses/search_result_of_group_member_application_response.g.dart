@@ -10,12 +10,11 @@ SearchResultOfGroupMemberApplicationResponse
 _$SearchResultOfGroupMemberApplicationResponseFromJson(
   Map<String, dynamic> json,
 ) => SearchResultOfGroupMemberApplicationResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : SearchResultOfGroupMemberApplication.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : SearchResultOfGroupMemberApplication.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

@@ -17,8 +17,8 @@ FireteamSummary _$FireteamSummaryFromJson(Map<String, dynamic> json) =>
       ..ownerMembershipId = json['ownerMembershipId'] as String?
       ..playerSlotCount = (json['playerSlotCount'] as num?)?.toInt()
       ..alternateSlotCount = (json['alternateSlotCount'] as num?)?.toInt()
-      ..availablePlayerSlotCount =
-          (json['availablePlayerSlotCount'] as num?)?.toInt()
+      ..availablePlayerSlotCount = (json['availablePlayerSlotCount'] as num?)
+          ?.toInt()
       ..availableAlternateSlotCount =
           (json['availableAlternateSlotCount'] as num?)?.toInt()
       ..title = json['title'] as String?

@@ -4,6 +4,7 @@ import 'package:compute/compute.dart';
 import '../enums/group_type.dart';
 import '../enums/group_date_range.dart';
 import '../enums/group_sort_by.dart';
+import '../enums/group_member_count_filter.dart';
 
 part 'group_query.g.dart';
 
@@ -29,8 +30,8 @@ class GroupQuery{
 	@JsonKey(name:'sortBy',fromJson:decodeGroupSortBy,toJson:encodeGroupSortBy)
 	GroupSortBy? sortBy;
 	
-	@JsonKey(name:'groupMemberCountFilter')
-	int? groupMemberCountFilter;
+	@JsonKey(name:'groupMemberCountFilter',fromJson:decodeGroupMemberCountFilter,toJson:encodeGroupMemberCountFilter)
+	GroupMemberCountFilter? groupMemberCountFilter;
 	
 	@JsonKey(name:'localeFilter')
 	String? localeFilter;

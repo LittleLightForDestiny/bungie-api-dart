@@ -8,12 +8,11 @@ part of 'destiny_item_tier_type_infusion_block.dart';
 
 DestinyItemTierTypeInfusionBlock _$DestinyItemTierTypeInfusionBlockFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemTierTypeInfusionBlock()
-      ..baseQualityTransferRatio =
-          (json['baseQualityTransferRatio'] as num?)?.toDouble()
-      ..minimumQualityIncrement =
-          (json['minimumQualityIncrement'] as num?)?.toInt();
+) => DestinyItemTierTypeInfusionBlock()
+  ..baseQualityTransferRatio = (json['baseQualityTransferRatio'] as num?)
+      ?.toDouble()
+  ..minimumQualityIncrement = (json['minimumQualityIncrement'] as num?)
+      ?.toInt();
 
 Map<String, dynamic> _$DestinyItemTierTypeInfusionBlockToJson(
   DestinyItemTierTypeInfusionBlock instance,

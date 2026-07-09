@@ -35,6 +35,10 @@ class DestinyProfileComponent{
 	@JsonKey(name:'seasonHashes')
 	List<int>? seasonHashes;
 	
+	/// A list of season passes aka reward passes that this profile owns. Unlike versionsOwned, these stay with the profile across Platforms, and thus will be valid.
+	@JsonKey(name:'seasonPassHashes')
+	List<int>? seasonPassHashes;
+	
 	/// A list of hashes for event cards that a profile owns. Unlike most values in versionsOwned, these stay with the profile across all platforms.
 	@JsonKey(name:'eventCardHashesOwned')
 	List<int>? eventCardHashesOwned;
@@ -42,6 +46,10 @@ class DestinyProfileComponent{
 	/// If populated, this is a reference to the season that is currently active.
 	@JsonKey(name:'currentSeasonHash')
 	int? currentSeasonHash;
+	
+	/// If populated, this is a reference to the season pass that is currently active.
+	@JsonKey(name:'currentSeasonPassHash')
+	int? currentSeasonPassHash;
 	
 	/// If populated, this is the reward power cap for the current season.
 	@JsonKey(name:'currentSeasonRewardPowerCap')

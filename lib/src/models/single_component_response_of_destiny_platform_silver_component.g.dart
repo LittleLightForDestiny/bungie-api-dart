@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_platform_silver_component.dart';
 SingleComponentResponseOfDestinyPlatformSilverComponent
 _$SingleComponentResponseOfDestinyPlatformSilverComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyPlatformSilverComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyPlatformSilverComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyPlatformSilverComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyPlatformSilverComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyPlatformSilverComponentToJson(

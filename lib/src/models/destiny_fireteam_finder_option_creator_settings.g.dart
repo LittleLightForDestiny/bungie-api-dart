@@ -9,14 +9,12 @@ part of 'destiny_fireteam_finder_option_creator_settings.dart';
 DestinyFireteamFinderOptionCreatorSettings
 _$DestinyFireteamFinderOptionCreatorSettingsFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyFireteamFinderOptionCreatorSettings()
-      ..control =
-          json['control'] == null
-              ? null
-              : DestinyFireteamFinderOptionSettingsControl.fromJson(
-                json['control'] as Map<String, dynamic>,
-              );
+) => DestinyFireteamFinderOptionCreatorSettings()
+  ..control = json['control'] == null
+      ? null
+      : DestinyFireteamFinderOptionSettingsControl.fromJson(
+          json['control'] as Map<String, dynamic>,
+        );
 
 Map<String, dynamic> _$DestinyFireteamFinderOptionCreatorSettingsToJson(
   DestinyFireteamFinderOptionCreatorSettings instance,

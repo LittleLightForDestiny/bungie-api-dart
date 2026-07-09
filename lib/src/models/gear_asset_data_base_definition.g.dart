@@ -8,10 +8,9 @@ part of 'gear_asset_data_base_definition.dart';
 
 GearAssetDataBaseDefinition _$GearAssetDataBaseDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    GearAssetDataBaseDefinition()
-      ..version = (json['version'] as num?)?.toInt()
-      ..path = json['path'] as String?;
+) => GearAssetDataBaseDefinition()
+  ..version = (json['version'] as num?)?.toInt()
+  ..path = json['path'] as String?;
 
 Map<String, dynamic> _$GearAssetDataBaseDefinitionToJson(
   GearAssetDataBaseDefinition instance,

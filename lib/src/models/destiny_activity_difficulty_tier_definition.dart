@@ -3,7 +3,6 @@ import 'package:compute/compute.dart';
 
 import 'destiny_display_properties_definition.dart';
 import 'destiny_activity_skull.dart';
-import 'destiny_unlock_expression_definition.dart';
 import '../enums/destiny_activity_difficulty_tier_type.dart';
 import 'destiny_activity_difficulty_tier_subcategory_override.dart';
 
@@ -23,11 +22,6 @@ class DestinyActivityDifficultyTierDefinition{
 	
 	@JsonKey(name:'fixedActivitySkulls')
 	List<DestinyActivitySkull>? fixedActivitySkulls;
-	
-	/// Where the sausage gets made. Unlock Expressions are the foundation of the game's gating mechanics and investment-related restrictions. They can test Unlock Flags and Unlock Values for certain states, using a sufficient amount of logical operators such that unlock expressions are effectively Turing complete.
-	/// Use UnlockExpressionParser to evaluate expressions using an IUnlockContext parsed from Babel.
-	@JsonKey(name:'tierEnabledUnlockExpression')
-	DestinyUnlockExpressionDefinition? tierEnabledUnlockExpression;
 	
 	@JsonKey(name:'tierType',fromJson:decodeDestinyActivityDifficultyTierType,toJson:encodeDestinyActivityDifficultyTierType)
 	DestinyActivityDifficultyTierType? tierType;

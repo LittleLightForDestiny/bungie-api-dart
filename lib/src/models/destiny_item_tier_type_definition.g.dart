@@ -8,23 +8,20 @@ part of 'destiny_item_tier_type_definition.dart';
 
 DestinyItemTierTypeDefinition _$DestinyItemTierTypeDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemTierTypeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..infusionProcess =
-          json['infusionProcess'] == null
-              ? null
-              : DestinyItemTierTypeInfusionBlock.fromJson(
-                json['infusionProcess'] as Map<String, dynamic>,
-              )
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyItemTierTypeDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..infusionProcess = json['infusionProcess'] == null
+      ? null
+      : DestinyItemTierTypeInfusionBlock.fromJson(
+          json['infusionProcess'] as Map<String, dynamic>,
+        )
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyItemTierTypeDefinitionToJson(
   DestinyItemTierTypeDefinition instance,

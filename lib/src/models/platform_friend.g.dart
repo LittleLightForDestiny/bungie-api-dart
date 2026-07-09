@@ -11,7 +11,9 @@ PlatformFriend _$PlatformFriendFromJson(Map<String, dynamic> json) =>
       ..platformDisplayName = json['platformDisplayName'] as String?
       ..friendPlatform = decodePlatformFriendType(json['friendPlatform'])
       ..destinyMembershipId = json['destinyMembershipId'] as String?
-      ..destinyMembershipType = (json['destinyMembershipType'] as num?)?.toInt()
+      ..destinyMembershipType = decodeBungieMembershipType(
+        json['destinyMembershipType'],
+      )
       ..bungieNetMembershipId = json['bungieNetMembershipId'] as String?
       ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
       ..bungieGlobalDisplayNameCode =
@@ -22,7 +24,9 @@ Map<String, dynamic> _$PlatformFriendToJson(PlatformFriend instance) =>
       'platformDisplayName': instance.platformDisplayName,
       'friendPlatform': encodePlatformFriendType(instance.friendPlatform),
       'destinyMembershipId': instance.destinyMembershipId,
-      'destinyMembershipType': instance.destinyMembershipType,
+      'destinyMembershipType': encodeBungieMembershipType(
+        instance.destinyMembershipType,
+      ),
       'bungieNetMembershipId': instance.bungieNetMembershipId,
       'bungieGlobalDisplayName': instance.bungieGlobalDisplayName,
       'bungieGlobalDisplayNameCode': instance.bungieGlobalDisplayNameCode,

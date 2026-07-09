@@ -8,36 +8,32 @@ part of 'destiny_activity_mode_definition.dart';
 
 DestinyActivityModeDefinition _$DestinyActivityModeDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivityModeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..pgcrImage = json['pgcrImage'] as String?
-      ..modeType = decodeDestinyActivityModeType(json['modeType'])
-      ..activityModeCategory = decodeDestinyActivityModeCategory(
-        json['activityModeCategory'],
+) => DestinyActivityModeDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..pgcrImage = json['pgcrImage'] as String?
+  ..modeType = decodeDestinyActivityModeType(json['modeType'])
+  ..activityModeCategory = decodeDestinyActivityModeCategory(
+    json['activityModeCategory'],
+  )
+  ..isTeamBased = json['isTeamBased'] as bool?
+  ..isAggregateMode = json['isAggregateMode'] as bool?
+  ..parentHashes = (json['parentHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..friendlyName = json['friendlyName'] as String?
+  ..activityModeMappings =
+      (json['activityModeMappings'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, $enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
       )
-      ..isTeamBased = json['isTeamBased'] as bool?
-      ..isAggregateMode = json['isAggregateMode'] as bool?
-      ..parentHashes =
-          (json['parentHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..friendlyName = json['friendlyName'] as String?
-      ..activityModeMappings =
-          (json['activityModeMappings'] as Map<String, dynamic>?)?.map(
-            (k, e) =>
-                MapEntry(k, $enumDecode(_$DestinyActivityModeTypeEnumMap, e)),
-          )
-      ..display = json['display'] as bool?
-      ..order = (json['order'] as num?)?.toInt()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+  ..display = json['display'] as bool?
+  ..order = (json['order'] as num?)?.toInt()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityModeDefinitionToJson(
   DestinyActivityModeDefinition instance,
@@ -148,5 +144,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
   DestinyActivityModeType.Relic: 92,
+  DestinyActivityModeType.LawlessFrontier: 93,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

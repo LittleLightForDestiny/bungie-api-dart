@@ -8,12 +8,11 @@ part of 'destiny_loadout_icon_definition.dart';
 
 DestinyLoadoutIconDefinition _$DestinyLoadoutIconDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyLoadoutIconDefinition()
-      ..iconImagePath = json['iconImagePath'] as String?
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyLoadoutIconDefinition()
+  ..iconImagePath = json['iconImagePath'] as String?
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyLoadoutIconDefinitionToJson(
   DestinyLoadoutIconDefinition instance,

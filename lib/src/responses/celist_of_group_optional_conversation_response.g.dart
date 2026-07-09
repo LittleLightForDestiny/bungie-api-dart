@@ -10,13 +10,11 @@ CEListOfGroupOptionalConversationResponse
 _$CEListOfGroupOptionalConversationResponseFromJson(
   Map<String, dynamic> json,
 ) => CEListOfGroupOptionalConversationResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map(
-            (e) =>
-                GroupOptionalConversation.fromJson(e as Map<String, dynamic>),
-          )
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map(
+        (e) => GroupOptionalConversation.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

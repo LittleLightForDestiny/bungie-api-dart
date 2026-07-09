@@ -8,11 +8,10 @@ part of 'destiny_energy_capacity_entry.dart';
 
 DestinyEnergyCapacityEntry _$DestinyEnergyCapacityEntryFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyEnergyCapacityEntry()
-      ..capacityValue = (json['capacityValue'] as num?)?.toInt()
-      ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
-      ..energyType = decodeDestinyEnergyType(json['energyType']);
+) => DestinyEnergyCapacityEntry()
+  ..capacityValue = (json['capacityValue'] as num?)?.toInt()
+  ..energyTypeHash = (json['energyTypeHash'] as num?)?.toInt()
+  ..energyType = decodeDestinyEnergyType(json['energyType']);
 
 Map<String, dynamic> _$DestinyEnergyCapacityEntryToJson(
   DestinyEnergyCapacityEntry instance,

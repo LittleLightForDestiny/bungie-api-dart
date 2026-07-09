@@ -9,10 +9,9 @@ part of 'list_of_entity_action_result_response.dart';
 ListOfEntityActionResultResponse _$ListOfEntityActionResultResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfEntityActionResultResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => EntityActionResult.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => EntityActionResult.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

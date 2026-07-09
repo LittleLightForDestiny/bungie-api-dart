@@ -8,27 +8,23 @@ part of 'destiny_stat_group_definition.dart';
 
 DestinyStatGroupDefinition _$DestinyStatGroupDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyStatGroupDefinition()
-      ..maximumValue = (json['maximumValue'] as num?)?.toInt()
-      ..uiPosition = (json['uiPosition'] as num?)?.toInt()
-      ..scaledStats =
-          (json['scaledStats'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyStatDisplayDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..overrides = (json['overrides'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyStatOverrideDefinition.fromJson(e as Map<String, dynamic>),
-        ),
+) => DestinyStatGroupDefinition()
+  ..maximumValue = (json['maximumValue'] as num?)?.toInt()
+  ..uiPosition = (json['uiPosition'] as num?)?.toInt()
+  ..scaledStats = (json['scaledStats'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyStatDisplayDefinition.fromJson(e as Map<String, dynamic>),
       )
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+      .toList()
+  ..overrides = (json['overrides'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyStatOverrideDefinition.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyStatGroupDefinitionToJson(
   DestinyStatGroupDefinition instance,

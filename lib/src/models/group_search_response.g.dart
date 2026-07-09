@@ -8,16 +8,14 @@ part of 'group_search_response.dart';
 
 GroupSearchResponse _$GroupSearchResponseFromJson(Map<String, dynamic> json) =>
     GroupSearchResponse()
-      ..results =
-          (json['results'] as List<dynamic>?)
-              ?.map((e) => GroupV2Card.fromJson(e as Map<String, dynamic>))
-              .toList()
+      ..results = (json['results'] as List<dynamic>?)
+          ?.map((e) => GroupV2Card.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..totalResults = (json['totalResults'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
-      ..query =
-          json['query'] == null
-              ? null
-              : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+      ..query = json['query'] == null
+          ? null
+          : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
       ..replacementContinuationToken =
           json['replacementContinuationToken'] as String?
       ..useTotalResults = json['useTotalResults'] as bool?;

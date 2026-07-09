@@ -9,12 +9,11 @@ part of 'destiny_aggregate_activity_results_response.dart';
 DestinyAggregateActivityResultsResponse
 _$DestinyAggregateActivityResultsResponseFromJson(Map<String, dynamic> json) =>
     DestinyAggregateActivityResultsResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : DestinyAggregateActivityResults.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : DestinyAggregateActivityResults.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

@@ -9,12 +9,9 @@ part of 'group_search_response_response.dart';
 GroupSearchResponseResponse _$GroupSearchResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => GroupSearchResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : GroupSearchResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : GroupSearchResponse.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

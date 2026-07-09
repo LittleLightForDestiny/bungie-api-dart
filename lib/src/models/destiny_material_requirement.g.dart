@@ -8,14 +8,13 @@ part of 'destiny_material_requirement.dart';
 
 DestinyMaterialRequirement _$DestinyMaterialRequirementFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMaterialRequirement()
-      ..itemHash = (json['itemHash'] as num?)?.toInt()
-      ..deleteOnAction = json['deleteOnAction'] as bool?
-      ..count = (json['count'] as num?)?.toInt()
-      ..countIsConstant = json['countIsConstant'] as bool?
-      ..omitFromRequirements = json['omitFromRequirements'] as bool?
-      ..hasVirtualStackSize = json['hasVirtualStackSize'] as bool?;
+) => DestinyMaterialRequirement()
+  ..itemHash = (json['itemHash'] as num?)?.toInt()
+  ..deleteOnAction = json['deleteOnAction'] as bool?
+  ..count = (json['count'] as num?)?.toInt()
+  ..countIsConstant = json['countIsConstant'] as bool?
+  ..omitFromRequirements = json['omitFromRequirements'] as bool?
+  ..hasVirtualStackSize = json['hasVirtualStackSize'] as bool?;
 
 Map<String, dynamic> _$DestinyMaterialRequirementToJson(
   DestinyMaterialRequirement instance,

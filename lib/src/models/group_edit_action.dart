@@ -1,6 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/membership_option.dart';
+import '../enums/chat_security_setting.dart';
+import '../enums/group_homepage.dart';
+import '../enums/group_post_publicity.dart';
 
 part 'group_edit_action.g.dart';
 
@@ -30,8 +34,8 @@ class GroupEditAction{
 	@JsonKey(name:'isPublic')
 	bool? isPublic;
 	
-	@JsonKey(name:'membershipOption')
-	int? membershipOption;
+	@JsonKey(name:'membershipOption',fromJson:decodeMembershipOption,toJson:encodeMembershipOption)
+	MembershipOption? membershipOption;
 	
 	@JsonKey(name:'isPublicTopicAdminOnly')
 	bool? isPublicTopicAdminOnly;
@@ -39,8 +43,8 @@ class GroupEditAction{
 	@JsonKey(name:'allowChat')
 	bool? allowChat;
 	
-	@JsonKey(name:'chatSecurity')
-	int? chatSecurity;
+	@JsonKey(name:'chatSecurity',fromJson:decodeChatSecuritySetting,toJson:encodeChatSecuritySetting)
+	ChatSecuritySetting? chatSecurity;
 	
 	@JsonKey(name:'callsign')
 	String? callsign;
@@ -48,14 +52,14 @@ class GroupEditAction{
 	@JsonKey(name:'locale')
 	String? locale;
 	
-	@JsonKey(name:'homepage')
-	int? homepage;
+	@JsonKey(name:'homepage',fromJson:decodeGroupHomepage,toJson:encodeGroupHomepage)
+	GroupHomepage? homepage;
 	
 	@JsonKey(name:'enableInvitationMessagingForAdmins')
 	bool? enableInvitationMessagingForAdmins;
 	
-	@JsonKey(name:'defaultPublicity')
-	int? defaultPublicity;
+	@JsonKey(name:'defaultPublicity',fromJson:decodeGroupPostPublicity,toJson:encodeGroupPostPublicity)
+	GroupPostPublicity? defaultPublicity;
 
 	factory GroupEditAction.fromJson(Map<String, dynamic> json) {
 		return _$GroupEditActionFromJson(json);

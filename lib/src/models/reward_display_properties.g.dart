@@ -8,11 +8,10 @@ part of 'reward_display_properties.dart';
 
 RewardDisplayProperties _$RewardDisplayPropertiesFromJson(
   Map<String, dynamic> json,
-) =>
-    RewardDisplayProperties()
-      ..name = json['Name'] as String?
-      ..description = json['Description'] as String?
-      ..imagePath = json['ImagePath'] as String?;
+) => RewardDisplayProperties()
+  ..name = json['Name'] as String?
+  ..description = json['Description'] as String?
+  ..imagePath = json['ImagePath'] as String?;
 
 Map<String, dynamic> _$RewardDisplayPropertiesToJson(
   RewardDisplayProperties instance,

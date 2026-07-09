@@ -9,12 +9,11 @@ part of 'destiny_activity_skull_category_definition.dart';
 DestinyActivitySkullCategoryDefinition
 _$DestinyActivitySkullCategoryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyActivitySkullCategoryDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;

@@ -11,12 +11,11 @@ _$DestinyProfileTransitoryJoinabilityFromJson(Map<String, dynamic> json) =>
     DestinyProfileTransitoryJoinability()
       ..openSlots = (json['openSlots'] as num?)?.toInt()
       ..privacySetting = decodeDestinyGamePrivacySetting(json['privacySetting'])
-      ..closedReasons =
-          json['closedReasons'] == null
-              ? null
-              : DestinyJoinClosedReasons.fromJson(
-                (json['closedReasons'] as num).toInt(),
-              );
+      ..closedReasons = json['closedReasons'] == null
+          ? null
+          : DestinyJoinClosedReasons.fromJson(
+              (json['closedReasons'] as num).toInt(),
+            );
 
 Map<String, dynamic> _$DestinyProfileTransitoryJoinabilityToJson(
   DestinyProfileTransitoryJoinability instance,

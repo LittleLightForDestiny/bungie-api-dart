@@ -22,6 +22,9 @@ class ItemState {
     ///HighlightedObjective = 16
     /// If this bit is set, the item has a 'highlighted' objective. You may want to represent this with an orange-red icon border color.
     static const ItemState HighlightedObjective = ItemState(16);
+    ///Enhanced = 32
+    /// If this bit is set, the item has been 'enhanced' by the player.
+    static const ItemState Enhanced = ItemState(32);
 
     int get value {
         return _value;

@@ -29,10 +29,10 @@ class DestinyGameVersions {
     static const DestinyGameVersions Lightfall = DestinyGameVersions(512);
     ///TheFinalShape = 1024
     static const DestinyGameVersions TheFinalShape = DestinyGameVersions(1024);
-    ///EdgeOfFate = 28535
-    static const DestinyGameVersions EdgeOfFate = DestinyGameVersions(28535);
-    ///Renegades = 28536
-    static const DestinyGameVersions Renegades = DestinyGameVersions(28536);
+    ///EdgeOfFate = 2048
+    static const DestinyGameVersions EdgeOfFate = DestinyGameVersions(2048);
+    ///Renegades = 4096
+    static const DestinyGameVersions Renegades = DestinyGameVersions(4096);
 
     int get value {
         return _value;

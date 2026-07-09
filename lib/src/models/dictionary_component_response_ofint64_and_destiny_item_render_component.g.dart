@@ -9,16 +9,15 @@ part of 'dictionary_component_response_ofint64_and_destiny_item_render_component
 DictionaryComponentResponseOfint64AndDestinyItemRenderComponent
 _$DictionaryComponentResponseOfint64AndDestinyItemRenderComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DictionaryComponentResponseOfint64AndDestinyItemRenderComponent()
-      ..data = (json['data'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyItemRenderComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => DictionaryComponentResponseOfint64AndDestinyItemRenderComponent()
+  ..data = (json['data'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyItemRenderComponent.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$DictionaryComponentResponseOfint64AndDestinyItemRenderComponentToJson(

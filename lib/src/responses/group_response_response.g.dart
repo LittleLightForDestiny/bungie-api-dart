@@ -9,10 +9,9 @@ part of 'group_response_response.dart';
 GroupResponseResponse _$GroupResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => GroupResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : GroupResponse.fromJson(json['Response'] as Map<String, dynamic>),
+  response: json['Response'] == null
+      ? null
+      : GroupResponse.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

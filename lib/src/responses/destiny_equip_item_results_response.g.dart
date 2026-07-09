@@ -9,12 +9,11 @@ part of 'destiny_equip_item_results_response.dart';
 DestinyEquipItemResultsResponse _$DestinyEquipItemResultsResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyEquipItemResultsResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyEquipItemResults.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyEquipItemResults.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

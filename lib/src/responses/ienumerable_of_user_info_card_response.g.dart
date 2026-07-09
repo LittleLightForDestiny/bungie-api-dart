@@ -9,10 +9,9 @@ part of 'ienumerable_of_user_info_card_response.dart';
 IEnumerableOfUserInfoCardResponse _$IEnumerableOfUserInfoCardResponseFromJson(
   Map<String, dynamic> json,
 ) => IEnumerableOfUserInfoCardResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => UserInfoCard.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => UserInfoCard.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

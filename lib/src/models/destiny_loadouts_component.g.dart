@@ -8,15 +8,10 @@ part of 'destiny_loadouts_component.dart';
 
 DestinyLoadoutsComponent _$DestinyLoadoutsComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyLoadoutsComponent()
-      ..loadouts =
-          (json['loadouts'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    DestinyLoadoutComponent.fromJson(e as Map<String, dynamic>),
-              )
-              .toList();
+) => DestinyLoadoutsComponent()
+  ..loadouts = (json['loadouts'] as List<dynamic>?)
+      ?.map((e) => DestinyLoadoutComponent.fromJson(e as Map<String, dynamic>))
+      .toList();
 
 Map<String, dynamic> _$DestinyLoadoutsComponentToJson(
   DestinyLoadoutsComponent instance,

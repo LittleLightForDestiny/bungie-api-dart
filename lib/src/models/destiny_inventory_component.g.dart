@@ -8,14 +8,10 @@ part of 'destiny_inventory_component.dart';
 
 DestinyInventoryComponent _$DestinyInventoryComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyInventoryComponent()
-      ..items =
-          (json['items'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>),
-              )
-              .toList();
+) => DestinyInventoryComponent()
+  ..items = (json['items'] as List<dynamic>?)
+      ?.map((e) => DestinyItemComponent.fromJson(e as Map<String, dynamic>))
+      .toList();
 
 Map<String, dynamic> _$DestinyInventoryComponentToJson(
   DestinyInventoryComponent instance,

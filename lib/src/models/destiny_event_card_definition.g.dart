@@ -8,45 +8,41 @@ part of 'destiny_event_card_definition.dart';
 
 DestinyEventCardDefinition _$DestinyEventCardDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyEventCardDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..linkRedirectPath = json['linkRedirectPath'] as String?
-      ..color =
-          json['color'] == null
-              ? null
-              : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
-      ..images =
-          json['images'] == null
-              ? null
-              : DestinyEventCardImages.fromJson(
-                json['images'] as Map<String, dynamic>,
-              )
-      ..triumphsPresentationNodeHash =
-          (json['triumphsPresentationNodeHash'] as num?)?.toInt()
-      ..sealPresentationNodeHash =
-          (json['sealPresentationNodeHash'] as num?)?.toInt()
-      ..eventCardCurrencyList =
-          (json['eventCardCurrencyList'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..ticketCurrencyItemHash =
-          (json['ticketCurrencyItemHash'] as num?)?.toInt()
-      ..ticketVendorHash = (json['ticketVendorHash'] as num?)?.toInt()
-      ..ticketVendorCategoryHash =
-          (json['ticketVendorCategoryHash'] as num?)?.toInt()
-      ..endTime = json['endTime'] as String?
-      ..rewardProgressionHash = (json['rewardProgressionHash'] as num?)?.toInt()
-      ..weeklyChallengesPresentationNodeHash =
-          (json['weeklyChallengesPresentationNodeHash'] as num?)?.toInt()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyEventCardDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..linkRedirectPath = json['linkRedirectPath'] as String?
+  ..color = json['color'] == null
+      ? null
+      : DestinyColor.fromJson(json['color'] as Map<String, dynamic>)
+  ..images = json['images'] == null
+      ? null
+      : DestinyEventCardImages.fromJson(json['images'] as Map<String, dynamic>)
+  ..triumphsPresentationNodeHash =
+      (json['triumphsPresentationNodeHash'] as num?)?.toInt()
+  ..sealPresentationNodeHash = (json['sealPresentationNodeHash'] as num?)
+      ?.toInt()
+  ..eventCardCurrencyList = (json['eventCardCurrencyList'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..ticketCurrencyItemHash = (json['ticketCurrencyItemHash'] as num?)?.toInt()
+  ..ticketVendorHash = (json['ticketVendorHash'] as num?)?.toInt()
+  ..ticketVendorCategoryHash = (json['ticketVendorCategoryHash'] as num?)
+      ?.toInt()
+  ..endTime = json['endTime'] as String?
+  ..rewardProgressionHash = (json['rewardProgressionHash'] as num?)?.toInt()
+  ..rewardProgressionHashList =
+      (json['rewardProgressionHashList'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+  ..weeklyChallengesPresentationNodeHash =
+      (json['weeklyChallengesPresentationNodeHash'] as num?)?.toInt()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
   DestinyEventCardDefinition instance,
@@ -63,6 +59,7 @@ Map<String, dynamic> _$DestinyEventCardDefinitionToJson(
   'ticketVendorCategoryHash': instance.ticketVendorCategoryHash,
   'endTime': instance.endTime,
   'rewardProgressionHash': instance.rewardProgressionHash,
+  'rewardProgressionHashList': instance.rewardProgressionHashList,
   'weeklyChallengesPresentationNodeHash':
       instance.weeklyChallengesPresentationNodeHash,
   'hash': instance.hash,

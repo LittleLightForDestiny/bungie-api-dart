@@ -9,24 +9,21 @@ part of 'destiny_guardian_rank_constants_definition.dart';
 DestinyGuardianRankConstantsDefinition
 _$DestinyGuardianRankConstantsDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyGuardianRankConstantsDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..rankCount = (json['rankCount'] as num?)?.toInt()
-      ..guardianRankHashes =
-          (json['guardianRankHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
+      ..guardianRankHashes = (json['guardianRankHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..rootNodeHash = (json['rootNodeHash'] as num?)?.toInt()
-      ..iconBackgrounds =
-          json['iconBackgrounds'] == null
-              ? null
-              : DestinyGuardianRankIconBackgroundsDefinition.fromJson(
-                json['iconBackgrounds'] as Map<String, dynamic>,
-              )
+      ..iconBackgrounds = json['iconBackgrounds'] == null
+          ? null
+          : DestinyGuardianRankIconBackgroundsDefinition.fromJson(
+              json['iconBackgrounds'] as Map<String, dynamic>,
+            )
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;

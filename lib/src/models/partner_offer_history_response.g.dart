@@ -8,23 +8,22 @@ part of 'partner_offer_history_response.dart';
 
 PartnerOfferHistoryResponse _$PartnerOfferHistoryResponseFromJson(
   Map<String, dynamic> json,
-) =>
-    PartnerOfferHistoryResponse()
-      ..partnerOfferKey = json['PartnerOfferKey'] as String?
-      ..membershipId = json['MembershipId'] as String?
-      ..membershipType = (json['MembershipType'] as num?)?.toInt()
-      ..localizedName = json['LocalizedName'] as String?
-      ..localizedDescription = json['LocalizedDescription'] as String?
-      ..isConsumable = json['IsConsumable'] as bool?
-      ..quantityApplied = (json['QuantityApplied'] as num?)?.toInt()
-      ..applyDate = json['ApplyDate'] as String?;
+) => PartnerOfferHistoryResponse()
+  ..partnerOfferKey = json['PartnerOfferKey'] as String?
+  ..membershipId = json['MembershipId'] as String?
+  ..membershipType = decodeBungieMembershipType(json['MembershipType'])
+  ..localizedName = json['LocalizedName'] as String?
+  ..localizedDescription = json['LocalizedDescription'] as String?
+  ..isConsumable = json['IsConsumable'] as bool?
+  ..quantityApplied = (json['QuantityApplied'] as num?)?.toInt()
+  ..applyDate = json['ApplyDate'] as String?;
 
 Map<String, dynamic> _$PartnerOfferHistoryResponseToJson(
   PartnerOfferHistoryResponse instance,
 ) => <String, dynamic>{
   'PartnerOfferKey': instance.partnerOfferKey,
   'MembershipId': instance.membershipId,
-  'MembershipType': instance.membershipType,
+  'MembershipType': encodeBungieMembershipType(instance.membershipType),
   'LocalizedName': instance.localizedName,
   'LocalizedDescription': instance.localizedDescription,
   'IsConsumable': instance.isConsumable,

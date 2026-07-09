@@ -9,26 +9,16 @@ part of 'destiny_activity_difficulty_tier_definition.dart';
 DestinyActivityDifficultyTierDefinition
 _$DestinyActivityDifficultyTierDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyActivityDifficultyTierDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..recommendedActivityLevelOffset =
           (json['recommendedActivityLevelOffset'] as num?)?.toInt()
-      ..fixedActivitySkulls =
-          (json['fixedActivitySkulls'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyActivitySkull.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
-      ..tierEnabledUnlockExpression =
-          json['tierEnabledUnlockExpression'] == null
-              ? null
-              : DestinyUnlockExpressionDefinition.fromJson(
-                json['tierEnabledUnlockExpression'] as Map<String, dynamic>,
-              )
+      ..fixedActivitySkulls = (json['fixedActivitySkulls'] as List<dynamic>?)
+          ?.map((e) => DestinyActivitySkull.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..tierType = decodeDestinyActivityDifficultyTierType(json['tierType'])
       ..optionalRequiredTrait = (json['optionalRequiredTrait'] as num?)?.toInt()
       ..activityLevel = (json['activityLevel'] as num?)?.toInt()
@@ -37,8 +27,8 @@ _$DestinyActivityDifficultyTierDefinitionFromJson(Map<String, dynamic> json) =>
           (json['minimumFireteamLeaderPower'] as num?)?.toInt()
       ..maximumFireteamLeaderPower =
           (json['maximumFireteamLeaderPower'] as num?)?.toInt()
-      ..scoreTimeLimitMultiplier =
-          (json['scoreTimeLimitMultiplier'] as num?)?.toInt()
+      ..scoreTimeLimitMultiplier = (json['scoreTimeLimitMultiplier'] as num?)
+          ?.toInt()
       ..selectableSkullCollectionHashes =
           (json['selectableSkullCollectionHashes'] as List<dynamic>?)
               ?.map((e) => (e as num).toInt())
@@ -58,9 +48,9 @@ Map<String, dynamic> _$DestinyActivityDifficultyTierDefinitionToJson(
 ) => <String, dynamic>{
   'displayProperties': instance.displayProperties?.toJson(),
   'recommendedActivityLevelOffset': instance.recommendedActivityLevelOffset,
-  'fixedActivitySkulls':
-      instance.fixedActivitySkulls?.map((e) => e.toJson()).toList(),
-  'tierEnabledUnlockExpression': instance.tierEnabledUnlockExpression?.toJson(),
+  'fixedActivitySkulls': instance.fixedActivitySkulls
+      ?.map((e) => e.toJson())
+      .toList(),
   'tierType': encodeDestinyActivityDifficultyTierType(instance.tierType),
   'optionalRequiredTrait': instance.optionalRequiredTrait,
   'activityLevel': instance.activityLevel,
@@ -69,6 +59,7 @@ Map<String, dynamic> _$DestinyActivityDifficultyTierDefinitionToJson(
   'maximumFireteamLeaderPower': instance.maximumFireteamLeaderPower,
   'scoreTimeLimitMultiplier': instance.scoreTimeLimitMultiplier,
   'selectableSkullCollectionHashes': instance.selectableSkullCollectionHashes,
-  'skullSubcategoryOverrides':
-      instance.skullSubcategoryOverrides?.map((e) => e.toJson()).toList(),
+  'skullSubcategoryOverrides': instance.skullSubcategoryOverrides
+      ?.map((e) => e.toJson())
+      .toList(),
 };

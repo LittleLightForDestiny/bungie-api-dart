@@ -23,12 +23,9 @@ _$DestinyCharacterProgressionComponentFromJson(Map<String, dynamic> json) =>
         (k, e) =>
             MapEntry(k, DestinyMilestone.fromJson(e as Map<String, dynamic>)),
       )
-      ..quests =
-          (json['quests'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyQuestStatus.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
+      ..quests = (json['quests'] as List<dynamic>?)
+          ?.map((e) => DestinyQuestStatus.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..uninstancedItemObjectives =
           (json['uninstancedItemObjectives'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry(
@@ -52,12 +49,15 @@ _$DestinyCharacterProgressionComponentFromJson(Map<String, dynamic> json) =>
       ..checklists = (json['checklists'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, Map<String, bool>.from(e as Map)),
       )
-      ..seasonalArtifact =
-          json['seasonalArtifact'] == null
-              ? null
-              : DestinyArtifactCharacterScoped.fromJson(
-                json['seasonalArtifact'] as Map<String, dynamic>,
-              );
+      ..seasonalArtifact = json['seasonalArtifact'] == null
+          ? null
+          : DestinyArtifactCharacterScoped.fromJson(
+              json['seasonalArtifact'] as Map<String, dynamic>,
+            )
+      ..unclaimedOrderRewards =
+          (json['unclaimedOrderRewards'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, (e as num).toInt()),
+          );
 
 Map<String, dynamic> _$DestinyCharacterProgressionComponentToJson(
   DestinyCharacterProgressionComponent instance,
@@ -74,4 +74,5 @@ Map<String, dynamic> _$DestinyCharacterProgressionComponentToJson(
   ),
   'checklists': instance.checklists,
   'seasonalArtifact': instance.seasonalArtifact?.toJson(),
+  'unclaimedOrderRewards': instance.unclaimedOrderRewards,
 };

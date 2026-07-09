@@ -8,15 +8,13 @@ part of 'destiny_metric_component.dart';
 
 DestinyMetricComponent _$DestinyMetricComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMetricComponent()
-      ..invisible = json['invisible'] as bool?
-      ..objectiveProgress =
-          json['objectiveProgress'] == null
-              ? null
-              : DestinyObjectiveProgress.fromJson(
-                json['objectiveProgress'] as Map<String, dynamic>,
-              );
+) => DestinyMetricComponent()
+  ..invisible = json['invisible'] as bool?
+  ..objectiveProgress = json['objectiveProgress'] == null
+      ? null
+      : DestinyObjectiveProgress.fromJson(
+          json['objectiveProgress'] as Map<String, dynamic>,
+        );
 
 Map<String, dynamic> _$DestinyMetricComponentToJson(
   DestinyMetricComponent instance,

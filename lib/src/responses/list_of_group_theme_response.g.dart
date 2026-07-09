@@ -9,10 +9,9 @@ part of 'list_of_group_theme_response.dart';
 ListOfGroupThemeResponse _$ListOfGroupThemeResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfGroupThemeResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => GroupTheme.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => GroupTheme.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

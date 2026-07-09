@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_profile_progression_component.dart
 SingleComponentResponseOfDestinyProfileProgressionComponent
 _$SingleComponentResponseOfDestinyProfileProgressionComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyProfileProgressionComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyProfileProgressionComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyProfileProgressionComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyProfileProgressionComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyProfileProgressionComponentToJson(

@@ -8,10 +8,9 @@ part of 'general_user_response.dart';
 
 GeneralUserResponse _$GeneralUserResponseFromJson(Map<String, dynamic> json) =>
     GeneralUserResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : GeneralUser.fromJson(json['Response'] as Map<String, dynamic>),
+      response: json['Response'] == null
+          ? null
+          : GeneralUser.fromJson(json['Response'] as Map<String, dynamic>),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

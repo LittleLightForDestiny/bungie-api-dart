@@ -9,12 +9,11 @@ part of 'content_item_public_contract_response.dart';
 ContentItemPublicContractResponse _$ContentItemPublicContractResponseFromJson(
   Map<String, dynamic> json,
 ) => ContentItemPublicContractResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : ContentItemPublicContract.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : ContentItemPublicContract.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

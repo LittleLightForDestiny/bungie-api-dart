@@ -9,12 +9,11 @@ part of 'destiny_entity_search_result_response.dart';
 DestinyEntitySearchResultResponse _$DestinyEntitySearchResultResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyEntitySearchResultResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyEntitySearchResult.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyEntitySearchResult.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

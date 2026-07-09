@@ -7,14 +7,17 @@ import 'destiny_activity_modifier_reference_definition.dart';
 import 'destiny_activity_challenge_definition.dart';
 import 'destiny_activity_unlock_string_definition.dart';
 import 'destiny_activity_requirements_block.dart';
+import 'destiny_activity_selectable_skull_collections.dart';
 import 'destiny_activity_playlist_item_definition.dart';
 import 'destiny_activity_graph_list_entry_definition.dart';
 import 'destiny_activity_matchmaking_block_definition.dart';
 import 'destiny_activity_guided_block_definition.dart';
-import 'destiny_activity_loadout_requirement_set.dart';
 import '../enums/destiny_activity_mode_type.dart';
+import 'destiny_activity_loadout_requirement_set.dart';
 import 'destiny_activity_insertion_point_definition.dart';
 import 'destiny_environment_location_mapping.dart';
+import 'destiny_activity_curator_block_definition.dart';
+import 'destiny_activity_duration_estimate.dart';
 
 part 'destiny_activity_definition.g.dart';
 
@@ -108,6 +111,9 @@ class DestinyActivityDefinition{
 	@JsonKey(name:'selectableSkullCollectionHashes')
 	List<int>? selectableSkullCollectionHashes;
 	
+	@JsonKey(name:'selectableSkullCollections')
+	List<DestinyActivitySelectableSkullCollections>? selectableSkullCollections;
+	
 	/// Represents all of the possible activities that could be played in the Playlist, along with information that we can use to determine if they are active at the present time.
 	@JsonKey(name:'playlistItems')
 	List<DestinyActivityPlaylistItemDefinition>? playlistItems;
@@ -129,8 +135,8 @@ class DestinyActivityDefinition{
 	int? directActivityModeHash;
 	
 	/// If the activity had an activity mode directly defined on it, this will be the enum value of that mode.
-	@JsonKey(name:'directActivityModeType')
-	int? directActivityModeType;
+	@JsonKey(name:'directActivityModeType',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
+	DestinyActivityModeType? directActivityModeType;
 	
 	/// The set of all possible loadout requirements that could be active for this activity. Only one will be active at any given time, and you can discover which one through activity-associated data such as Milestones that have activity info on them.
 	@JsonKey(name:'loadouts')
@@ -155,6 +161,14 @@ class DestinyActivityDefinition{
 	/// A list of location mappings that are affected by this activity. Pulled out of DestinyLocationDefinitions for our/your lookup convenience.
 	@JsonKey(name:'activityLocationMappings')
 	List<DestinyEnvironmentLocationMapping>? activityLocationMappings;
+	
+	/// Additional data used for display in the in-game Portal screen
+	@JsonKey(name:'curatorBlockDefinition')
+	DestinyActivityCuratorBlockDefinition? curatorBlockDefinition;
+	
+	/// Optional estimated duration, shown on the Portal tiles
+	@JsonKey(name:'durationEstimate')
+	DestinyActivityDurationEstimate? durationEstimate;
 	
 	/// The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
 	/// When entities refer to each other in Destiny content, it is this hash that they are referring to.

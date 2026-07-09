@@ -9,12 +9,9 @@ part of 'destiny_item_response_response.dart';
 DestinyItemResponseResponse _$DestinyItemResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyItemResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyItemResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyItemResponse.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

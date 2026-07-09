@@ -9,10 +9,9 @@ part of 'list_of_group_v2_card_response.dart';
 ListOfGroupV2CardResponse _$ListOfGroupV2CardResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfGroupV2CardResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => GroupV2Card.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => GroupV2Card.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

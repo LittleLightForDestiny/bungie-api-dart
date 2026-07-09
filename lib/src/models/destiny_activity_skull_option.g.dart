@@ -8,16 +8,15 @@ part of 'destiny_activity_skull_option.dart';
 
 DestinyActivitySkullOption _$DestinyActivitySkullOptionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivitySkullOption()
-      ..optionHash = (json['optionHash'] as num?)?.toInt()
-      ..stringValue = json['stringValue'] as String?
-      ..boolValue = json['boolValue'] as bool?
-      ..integerValue = (json['integerValue'] as num?)?.toInt()
-      ..floatValue = (json['floatValue'] as num?)?.toDouble()
-      ..minDisplayDifficultyId = decodeDestinyActivityDifficultyId(
-        json['minDisplayDifficultyId'],
-      );
+) => DestinyActivitySkullOption()
+  ..optionHash = (json['optionHash'] as num?)?.toInt()
+  ..stringValue = json['stringValue'] as String?
+  ..boolValue = json['boolValue'] as bool?
+  ..integerValue = (json['integerValue'] as num?)?.toInt()
+  ..floatValue = (json['floatValue'] as num?)?.toDouble()
+  ..minDisplayDifficultyId = decodeDestinyActivityDifficultyId(
+    json['minDisplayDifficultyId'],
+  );
 
 Map<String, dynamic> _$DestinyActivitySkullOptionToJson(
   DestinyActivitySkullOption instance,

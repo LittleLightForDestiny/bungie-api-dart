@@ -11,12 +11,14 @@ _$DestinyPublicMilestoneActivityVariantFromJson(Map<String, dynamic> json) =>
     DestinyPublicMilestoneActivityVariant()
       ..activityHash = (json['activityHash'] as num?)?.toInt()
       ..activityModeHash = (json['activityModeHash'] as num?)?.toInt()
-      ..activityModeType = (json['activityModeType'] as num?)?.toInt();
+      ..activityModeType = decodeDestinyActivityModeType(
+        json['activityModeType'],
+      );
 
 Map<String, dynamic> _$DestinyPublicMilestoneActivityVariantToJson(
   DestinyPublicMilestoneActivityVariant instance,
 ) => <String, dynamic>{
   'activityHash': instance.activityHash,
   'activityModeHash': instance.activityModeHash,
-  'activityModeType': instance.activityModeType,
+  'activityModeType': encodeDestinyActivityModeType(instance.activityModeType),
 };

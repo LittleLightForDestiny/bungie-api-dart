@@ -19,16 +19,14 @@ _$DestinyVendorCategoryEntryDefinitionFromJson(Map<String, dynamic> json) =>
       ..buyStringOverride = json['buyStringOverride'] as String?
       ..disabledDescription = json['disabledDescription'] as String?
       ..displayTitle = json['displayTitle'] as String?
-      ..overlay =
-          json['overlay'] == null
-              ? null
-              : DestinyVendorCategoryOverlayDefinition.fromJson(
-                json['overlay'] as Map<String, dynamic>,
-              )
-      ..vendorItemIndexes =
-          (json['vendorItemIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
+      ..overlay = json['overlay'] == null
+          ? null
+          : DestinyVendorCategoryOverlayDefinition.fromJson(
+              json['overlay'] as Map<String, dynamic>,
+            )
+      ..vendorItemIndexes = (json['vendorItemIndexes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..isPreview = json['isPreview'] as bool?
       ..isDisplayOnly = json['isDisplayOnly'] as bool?
       ..resetIntervalMinutesOverride =

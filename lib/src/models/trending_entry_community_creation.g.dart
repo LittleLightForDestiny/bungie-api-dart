@@ -8,15 +8,14 @@ part of 'trending_entry_community_creation.dart';
 
 TrendingEntryCommunityCreation _$TrendingEntryCommunityCreationFromJson(
   Map<String, dynamic> json,
-) =>
-    TrendingEntryCommunityCreation()
-      ..media = json['media'] as String?
-      ..title = json['title'] as String?
-      ..author = json['author'] as String?
-      ..authorMembershipId = json['authorMembershipId'] as String?
-      ..postId = json['postId'] as String?
-      ..body = json['body'] as String?
-      ..upvotes = (json['upvotes'] as num?)?.toInt();
+) => TrendingEntryCommunityCreation()
+  ..media = json['media'] as String?
+  ..title = json['title'] as String?
+  ..author = json['author'] as String?
+  ..authorMembershipId = json['authorMembershipId'] as String?
+  ..postId = json['postId'] as String?
+  ..body = json['body'] as String?
+  ..upvotes = (json['upvotes'] as num?)?.toInt();
 
 Map<String, dynamic> _$TrendingEntryCommunityCreationToJson(
   TrendingEntryCommunityCreation instance,

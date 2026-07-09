@@ -9,12 +9,11 @@ part of 'group_member_leave_result_response.dart';
 GroupMemberLeaveResultResponse _$GroupMemberLeaveResultResponseFromJson(
   Map<String, dynamic> json,
 ) => GroupMemberLeaveResultResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : GroupMemberLeaveResult.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : GroupMemberLeaveResult.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

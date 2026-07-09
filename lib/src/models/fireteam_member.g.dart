@@ -8,18 +8,16 @@ part of 'fireteam_member.dart';
 
 FireteamMember _$FireteamMemberFromJson(Map<String, dynamic> json) =>
     FireteamMember()
-      ..destinyUserInfo =
-          json['destinyUserInfo'] == null
-              ? null
-              : FireteamUserInfoCard.fromJson(
-                json['destinyUserInfo'] as Map<String, dynamic>,
-              )
-      ..bungieNetUserInfo =
-          json['bungieNetUserInfo'] == null
-              ? null
-              : UserInfoCard.fromJson(
-                json['bungieNetUserInfo'] as Map<String, dynamic>,
-              )
+      ..destinyUserInfo = json['destinyUserInfo'] == null
+          ? null
+          : FireteamUserInfoCard.fromJson(
+              json['destinyUserInfo'] as Map<String, dynamic>,
+            )
+      ..bungieNetUserInfo = json['bungieNetUserInfo'] == null
+          ? null
+          : UserInfoCard.fromJson(
+              json['bungieNetUserInfo'] as Map<String, dynamic>,
+            )
       ..characterId = json['characterId'] as String?
       ..dateJoined = json['dateJoined'] as String?
       ..hasMicrophone = json['hasMicrophone'] as bool?

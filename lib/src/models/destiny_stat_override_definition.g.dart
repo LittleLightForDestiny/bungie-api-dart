@@ -8,15 +8,13 @@ part of 'destiny_stat_override_definition.dart';
 
 DestinyStatOverrideDefinition _$DestinyStatOverrideDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyStatOverrideDefinition()
-      ..statHash = (json['statHash'] as num?)?.toInt()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              );
+) => DestinyStatOverrideDefinition()
+  ..statHash = (json['statHash'] as num?)?.toInt()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        );
 
 Map<String, dynamic> _$DestinyStatOverrideDefinitionToJson(
   DestinyStatOverrideDefinition instance,

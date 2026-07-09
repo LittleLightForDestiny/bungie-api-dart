@@ -9,10 +9,9 @@ part of 'destiny_presentation_node_collectible_child_entry.dart';
 DestinyPresentationNodeCollectibleChildEntry
 _$DestinyPresentationNodeCollectibleChildEntryFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyPresentationNodeCollectibleChildEntry()
-      ..collectibleHash = (json['collectibleHash'] as num?)?.toInt()
-      ..nodeDisplayPriority = (json['nodeDisplayPriority'] as num?)?.toInt();
+) => DestinyPresentationNodeCollectibleChildEntry()
+  ..collectibleHash = (json['collectibleHash'] as num?)?.toInt()
+  ..nodeDisplayPriority = (json['nodeDisplayPriority'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyPresentationNodeCollectibleChildEntryToJson(
   DestinyPresentationNodeCollectibleChildEntry instance,

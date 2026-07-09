@@ -9,12 +9,11 @@ part of 'destiny_historical_weapon_stats_data_response.dart';
 DestinyHistoricalWeaponStatsDataResponse
 _$DestinyHistoricalWeaponStatsDataResponseFromJson(Map<String, dynamic> json) =>
     DestinyHistoricalWeaponStatsDataResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : DestinyHistoricalWeaponStatsData.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : DestinyHistoricalWeaponStatsData.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

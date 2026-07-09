@@ -8,22 +8,18 @@ part of 'destiny_stat_definition.dart';
 
 DestinyStatDefinition _$DestinyStatDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyStatDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..aggregationType = decodeDestinyStatAggregationType(
-        json['aggregationType'],
-      )
-      ..hasComputedBlock = json['hasComputedBlock'] as bool?
-      ..statCategory = decodeDestinyStatCategory(json['statCategory'])
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyStatDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..aggregationType = decodeDestinyStatAggregationType(json['aggregationType'])
+  ..hasComputedBlock = json['hasComputedBlock'] as bool?
+  ..statCategory = decodeDestinyStatCategory(json['statCategory'])
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyStatDefinitionToJson(
   DestinyStatDefinition instance,

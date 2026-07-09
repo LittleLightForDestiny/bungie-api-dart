@@ -20,8 +20,8 @@ class DestinyActivityPlaylistItemDefinition{
 	int? directActivityModeHash;
 	
 	/// If the playlist entry had an activity mode directly defined on it, this will be the enum value of that mode.
-	@JsonKey(name:'directActivityModeType')
-	int? directActivityModeType;
+	@JsonKey(name:'directActivityModeType',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
+	DestinyActivityModeType? directActivityModeType;
 	
 	/// The hash identifiers for Activity Modes relevant to this entry.
 	@JsonKey(name:'activityModeHashes')

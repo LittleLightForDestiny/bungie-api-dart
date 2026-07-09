@@ -12,16 +12,15 @@ _$DestinyPresentationNodeBaseDefinitionFromJson(Map<String, dynamic> json) =>
       ..presentationNodeType = decodeDestinyPresentationNodeType(
         json['presentationNodeType'],
       )
-      ..traitIds =
-          (json['traitIds'] as List<dynamic>?)?.map((e) => e as String).toList()
-      ..traitHashes =
-          (json['traitHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..parentNodeHashes =
-          (json['parentNodeHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
+      ..traitIds = (json['traitIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList()
+      ..traitHashes = (json['traitHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+      ..parentNodeHashes = (json['parentNodeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;

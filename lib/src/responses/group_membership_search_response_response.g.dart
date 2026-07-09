@@ -9,12 +9,11 @@ part of 'group_membership_search_response_response.dart';
 GroupMembershipSearchResponseResponse
 _$GroupMembershipSearchResponseResponseFromJson(Map<String, dynamic> json) =>
     GroupMembershipSearchResponseResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : GroupMembershipSearchResponse.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : GroupMembershipSearchResponse.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

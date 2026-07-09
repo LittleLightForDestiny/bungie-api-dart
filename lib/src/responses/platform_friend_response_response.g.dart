@@ -9,12 +9,11 @@ part of 'platform_friend_response_response.dart';
 PlatformFriendResponseResponse _$PlatformFriendResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => PlatformFriendResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : PlatformFriendResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : PlatformFriendResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

@@ -8,17 +8,13 @@ part of 'destiny_milestone_reward_category.dart';
 
 DestinyMilestoneRewardCategory _$DestinyMilestoneRewardCategoryFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMilestoneRewardCategory()
-      ..rewardCategoryHash = (json['rewardCategoryHash'] as num?)?.toInt()
-      ..entries =
-          (json['entries'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyMilestoneRewardEntry.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyMilestoneRewardCategory()
+  ..rewardCategoryHash = (json['rewardCategoryHash'] as num?)?.toInt()
+  ..entries = (json['entries'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyMilestoneRewardEntry.fromJson(e as Map<String, dynamic>),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyMilestoneRewardCategoryToJson(
   DestinyMilestoneRewardCategory instance,

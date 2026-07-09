@@ -9,12 +9,11 @@ part of 'destiny_activity_selectable_skull_collection_selection_type.dart';
 DestinyActivitySelectableSkullCollectionSelectionType
 _$DestinyActivitySelectableSkullCollectionSelectionTypeFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivitySelectableSkullCollectionSelectionType()
-      ..selectionCount = (json['selectionCount'] as num?)?.toInt()
-      ..refreshTimeMinutes = (json['refreshTimeMinutes'] as num?)?.toInt()
-      ..refreshTimeOffsetMinutes =
-          (json['refreshTimeOffsetMinutes'] as num?)?.toInt();
+) => DestinyActivitySelectableSkullCollectionSelectionType()
+  ..selectionCount = (json['selectionCount'] as num?)?.toInt()
+  ..refreshTimeMinutes = (json['refreshTimeMinutes'] as num?)?.toInt()
+  ..refreshTimeOffsetMinutes = (json['refreshTimeOffsetMinutes'] as num?)
+      ?.toInt();
 
 Map<String, dynamic>
 _$DestinyActivitySelectableSkullCollectionSelectionTypeToJson(

@@ -8,21 +8,18 @@ part of 'group_membership_search_response.dart';
 
 GroupMembershipSearchResponse _$GroupMembershipSearchResponseFromJson(
   Map<String, dynamic> json,
-) =>
-    GroupMembershipSearchResponse()
-      ..results =
-          (json['results'] as List<dynamic>?)
-              ?.map((e) => GroupMembership.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..totalResults = (json['totalResults'] as num?)?.toInt()
-      ..hasMore = json['hasMore'] as bool?
-      ..query =
-          json['query'] == null
-              ? null
-              : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
-      ..replacementContinuationToken =
-          json['replacementContinuationToken'] as String?
-      ..useTotalResults = json['useTotalResults'] as bool?;
+) => GroupMembershipSearchResponse()
+  ..results = (json['results'] as List<dynamic>?)
+      ?.map((e) => GroupMembership.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..totalResults = (json['totalResults'] as num?)?.toInt()
+  ..hasMore = json['hasMore'] as bool?
+  ..query = json['query'] == null
+      ? null
+      : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+  ..replacementContinuationToken =
+      json['replacementContinuationToken'] as String?
+  ..useTotalResults = json['useTotalResults'] as bool?;
 
 Map<String, dynamic> _$GroupMembershipSearchResponseToJson(
   GroupMembershipSearchResponse instance,

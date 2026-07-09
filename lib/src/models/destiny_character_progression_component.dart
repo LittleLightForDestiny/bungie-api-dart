@@ -54,6 +54,10 @@ class DestinyCharacterProgressionComponent{
 	/// Data related to your progress on the current season's artifact that can vary per character.
 	@JsonKey(name:'seasonalArtifact')
 	DestinyArtifactCharacterScoped? seasonalArtifact;
+	
+	/// Unclaimed rewards earned by completing Orders.
+	@JsonKey(name:'unclaimedOrderRewards')
+	Map<String, int>? unclaimedOrderRewards;
 
 	factory DestinyCharacterProgressionComponent.fromJson(Map<String, dynamic> json) {
 		return _$DestinyCharacterProgressionComponentFromJson(json);

@@ -10,10 +10,9 @@ DestinyMilestoneContentItemCategory
 _$DestinyMilestoneContentItemCategoryFromJson(Map<String, dynamic> json) =>
     DestinyMilestoneContentItemCategory()
       ..title = json['title'] as String?
-      ..itemHashes =
-          (json['itemHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList();
+      ..itemHashes = (json['itemHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList();
 
 Map<String, dynamic> _$DestinyMilestoneContentItemCategoryToJson(
   DestinyMilestoneContentItemCategory instance,

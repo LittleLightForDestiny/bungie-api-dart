@@ -9,12 +9,9 @@ part of 'post_search_response_response.dart';
 PostSearchResponseResponse _$PostSearchResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => PostSearchResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : PostSearchResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : PostSearchResponse.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

@@ -8,11 +8,10 @@ part of 'destiny_material_requirement_state.dart';
 
 DestinyMaterialRequirementState _$DestinyMaterialRequirementStateFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMaterialRequirementState()
-      ..itemHash = (json['itemHash'] as num?)?.toInt()
-      ..count = (json['count'] as num?)?.toInt()
-      ..stackSize = (json['stackSize'] as num?)?.toInt();
+) => DestinyMaterialRequirementState()
+  ..itemHash = (json['itemHash'] as num?)?.toInt()
+  ..count = (json['count'] as num?)?.toInt()
+  ..stackSize = (json['stackSize'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMaterialRequirementStateToJson(
   DestinyMaterialRequirementState instance,

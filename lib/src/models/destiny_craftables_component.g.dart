@@ -8,15 +8,14 @@ part of 'destiny_craftables_component.dart';
 
 DestinyCraftablesComponent _$DestinyCraftablesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyCraftablesComponent()
-      ..craftables = (json['craftables'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyCraftableComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..craftingRootNodeHash = (json['craftingRootNodeHash'] as num?)?.toInt();
+) => DestinyCraftablesComponent()
+  ..craftables = (json['craftables'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyCraftableComponent.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..craftingRootNodeHash = (json['craftingRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCraftablesComponentToJson(
   DestinyCraftablesComponent instance,

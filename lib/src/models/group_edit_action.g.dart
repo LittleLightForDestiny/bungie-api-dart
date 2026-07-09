@@ -15,16 +15,16 @@ GroupEditAction _$GroupEditActionFromJson(Map<String, dynamic> json) =>
       ..avatarImageIndex = (json['avatarImageIndex'] as num?)?.toInt()
       ..tags = json['tags'] as String?
       ..isPublic = json['isPublic'] as bool?
-      ..membershipOption = (json['membershipOption'] as num?)?.toInt()
+      ..membershipOption = decodeMembershipOption(json['membershipOption'])
       ..isPublicTopicAdminOnly = json['isPublicTopicAdminOnly'] as bool?
       ..allowChat = json['allowChat'] as bool?
-      ..chatSecurity = (json['chatSecurity'] as num?)?.toInt()
+      ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity'])
       ..callsign = json['callsign'] as String?
       ..locale = json['locale'] as String?
-      ..homepage = (json['homepage'] as num?)?.toInt()
+      ..homepage = decodeGroupHomepage(json['homepage'])
       ..enableInvitationMessagingForAdmins =
           json['enableInvitationMessagingForAdmins'] as bool?
-      ..defaultPublicity = (json['defaultPublicity'] as num?)?.toInt();
+      ..defaultPublicity = decodeGroupPostPublicity(json['defaultPublicity']);
 
 Map<String, dynamic> _$GroupEditActionToJson(GroupEditAction instance) =>
     <String, dynamic>{
@@ -35,14 +35,14 @@ Map<String, dynamic> _$GroupEditActionToJson(GroupEditAction instance) =>
       'avatarImageIndex': instance.avatarImageIndex,
       'tags': instance.tags,
       'isPublic': instance.isPublic,
-      'membershipOption': instance.membershipOption,
+      'membershipOption': encodeMembershipOption(instance.membershipOption),
       'isPublicTopicAdminOnly': instance.isPublicTopicAdminOnly,
       'allowChat': instance.allowChat,
-      'chatSecurity': instance.chatSecurity,
+      'chatSecurity': encodeChatSecuritySetting(instance.chatSecurity),
       'callsign': instance.callsign,
       'locale': instance.locale,
-      'homepage': instance.homepage,
+      'homepage': encodeGroupHomepage(instance.homepage),
       'enableInvitationMessagingForAdmins':
           instance.enableInvitationMessagingForAdmins,
-      'defaultPublicity': instance.defaultPublicity,
+      'defaultPublicity': encodeGroupPostPublicity(instance.defaultPublicity),
     };

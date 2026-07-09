@@ -9,10 +9,9 @@ part of 'destiny_item_crafting_block_bonus_plug_definition.dart';
 DestinyItemCraftingBlockBonusPlugDefinition
 _$DestinyItemCraftingBlockBonusPlugDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemCraftingBlockBonusPlugDefinition()
-      ..socketTypeHash = (json['socketTypeHash'] as num?)?.toInt()
-      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
+) => DestinyItemCraftingBlockBonusPlugDefinition()
+  ..socketTypeHash = (json['socketTypeHash'] as num?)?.toInt()
+  ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemCraftingBlockBonusPlugDefinitionToJson(
   DestinyItemCraftingBlockBonusPlugDefinition instance,

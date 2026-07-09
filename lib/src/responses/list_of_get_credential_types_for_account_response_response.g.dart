@@ -10,14 +10,13 @@ ListOfGetCredentialTypesForAccountResponseResponse
 _$ListOfGetCredentialTypesForAccountResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfGetCredentialTypesForAccountResponseResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map(
-            (e) => GetCredentialTypesForAccountResponse.fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map(
+        (e) => GetCredentialTypesForAccountResponse.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

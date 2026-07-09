@@ -9,12 +9,11 @@ part of 'destiny_report_reason_category_definition.dart';
 DestinyReportReasonCategoryDefinition
 _$DestinyReportReasonCategoryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyReportReasonCategoryDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..reasons = (json['reasons'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(
           k,

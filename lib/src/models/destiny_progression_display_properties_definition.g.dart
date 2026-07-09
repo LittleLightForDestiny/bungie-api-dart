@@ -9,22 +9,20 @@ part of 'destiny_progression_display_properties_definition.dart';
 DestinyProgressionDisplayPropertiesDefinition
 _$DestinyProgressionDisplayPropertiesDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyProgressionDisplayPropertiesDefinition()
-      ..displayUnitsName = json['displayUnitsName'] as String?
-      ..description = json['description'] as String?
-      ..name = json['name'] as String?
-      ..icon = json['icon'] as String?
-      ..iconSequences =
-          (json['iconSequences'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyIconSequenceDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..highResIcon = json['highResIcon'] as String?
-      ..hasIcon = json['hasIcon'] as bool?;
+) => DestinyProgressionDisplayPropertiesDefinition()
+  ..displayUnitsName = json['displayUnitsName'] as String?
+  ..description = json['description'] as String?
+  ..name = json['name'] as String?
+  ..icon = json['icon'] as String?
+  ..iconHash = (json['iconHash'] as num?)?.toInt()
+  ..iconSequences = (json['iconSequences'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            DestinyIconSequenceDefinition.fromJson(e as Map<String, dynamic>),
+      )
+      .toList()
+  ..highResIcon = json['highResIcon'] as String?
+  ..hasIcon = json['hasIcon'] as bool?;
 
 Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(
   DestinyProgressionDisplayPropertiesDefinition instance,
@@ -33,6 +31,7 @@ Map<String, dynamic> _$DestinyProgressionDisplayPropertiesDefinitionToJson(
   'description': instance.description,
   'name': instance.name,
   'icon': instance.icon,
+  'iconHash': instance.iconHash,
   'iconSequences': instance.iconSequences?.map((e) => e.toJson()).toList(),
   'highResIcon': instance.highResIcon,
   'hasIcon': instance.hasIcon,

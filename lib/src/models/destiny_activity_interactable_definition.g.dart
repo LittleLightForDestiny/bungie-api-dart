@@ -9,14 +9,13 @@ part of 'destiny_activity_interactable_definition.dart';
 DestinyActivityInteractableDefinition
 _$DestinyActivityInteractableDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyActivityInteractableDefinition()
-      ..entries =
-          (json['entries'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyActivityInteractableEntryDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..entries = (json['entries'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyActivityInteractableEntryDefinition.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList()
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()
       ..redacted = json['redacted'] as bool?;

@@ -9,10 +9,9 @@ part of 'list_of_user_theme_response.dart';
 ListOfUserThemeResponse _$ListOfUserThemeResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfUserThemeResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => UserTheme.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => UserTheme.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

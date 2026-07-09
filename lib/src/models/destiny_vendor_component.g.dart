@@ -8,20 +8,16 @@ part of 'destiny_vendor_component.dart';
 
 DestinyVendorComponent _$DestinyVendorComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyVendorComponent()
-      ..canPurchase = json['canPurchase'] as bool?
-      ..progression =
-          json['progression'] == null
-              ? null
-              : DestinyProgression.fromJson(
-                json['progression'] as Map<String, dynamic>,
-              )
-      ..vendorLocationIndex = (json['vendorLocationIndex'] as num?)?.toInt()
-      ..seasonalRank = (json['seasonalRank'] as num?)?.toInt()
-      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
-      ..nextRefreshDate = json['nextRefreshDate'] as String?
-      ..enabled = json['enabled'] as bool?;
+) => DestinyVendorComponent()
+  ..canPurchase = json['canPurchase'] as bool?
+  ..progression = json['progression'] == null
+      ? null
+      : DestinyProgression.fromJson(json['progression'] as Map<String, dynamic>)
+  ..vendorLocationIndex = (json['vendorLocationIndex'] as num?)?.toInt()
+  ..seasonalRank = (json['seasonalRank'] as num?)?.toInt()
+  ..vendorHash = (json['vendorHash'] as num?)?.toInt()
+  ..nextRefreshDate = json['nextRefreshDate'] as String?
+  ..enabled = json['enabled'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorComponentToJson(
   DestinyVendorComponent instance,

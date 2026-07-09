@@ -9,16 +9,14 @@ part of 'destiny_item_socket_entry_plug_item_randomized_definition.dart';
 DestinyItemSocketEntryPlugItemRandomizedDefinition
 _$DestinyItemSocketEntryPlugItemRandomizedDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemSocketEntryPlugItemRandomizedDefinition()
-      ..craftingRequirements =
-          json['craftingRequirements'] == null
-              ? null
-              : DestinyPlugItemCraftingRequirements.fromJson(
-                json['craftingRequirements'] as Map<String, dynamic>,
-              )
-      ..currentlyCanRoll = json['currentlyCanRoll'] as bool?
-      ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
+) => DestinyItemSocketEntryPlugItemRandomizedDefinition()
+  ..craftingRequirements = json['craftingRequirements'] == null
+      ? null
+      : DestinyPlugItemCraftingRequirements.fromJson(
+          json['craftingRequirements'] as Map<String, dynamic>,
+        )
+  ..currentlyCanRoll = json['currentlyCanRoll'] as bool?
+  ..plugItemHash = (json['plugItemHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyItemSocketEntryPlugItemRandomizedDefinitionToJson(
   DestinyItemSocketEntryPlugItemRandomizedDefinition instance,

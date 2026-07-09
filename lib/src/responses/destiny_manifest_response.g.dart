@@ -9,10 +9,9 @@ part of 'destiny_manifest_response.dart';
 DestinyManifestResponse _$DestinyManifestResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyManifestResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyManifest.fromJson(json['Response'] as Map<String, dynamic>),
+  response: json['Response'] == null
+      ? null
+      : DestinyManifest.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

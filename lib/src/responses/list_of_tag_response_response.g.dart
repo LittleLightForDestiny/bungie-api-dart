@@ -9,10 +9,9 @@ part of 'list_of_tag_response_response.dart';
 ListOfTagResponseResponse _$ListOfTagResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => ListOfTagResponseResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => TagResponse.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => TagResponse.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

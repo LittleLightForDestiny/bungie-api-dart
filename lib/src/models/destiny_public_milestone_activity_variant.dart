@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/destiny_activity_mode_type.dart';
 
 part 'destiny_public_milestone_activity_variant.g.dart';
 
@@ -19,8 +20,8 @@ class DestinyPublicMilestoneActivityVariant{
 	int? activityModeHash;
 	
 	/// The enumeration equivalent of the most specific Activity Mode under which this activity is played.
-	@JsonKey(name:'activityModeType')
-	int? activityModeType;
+	@JsonKey(name:'activityModeType',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
+	DestinyActivityModeType? activityModeType;
 
 	factory DestinyPublicMilestoneActivityVariant.fromJson(Map<String, dynamic> json) {
 		return _$DestinyPublicMilestoneActivityVariantFromJson(json);

@@ -8,12 +8,11 @@ part of 'destiny_item_state_request.dart';
 
 DestinyItemStateRequest _$DestinyItemStateRequestFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemStateRequest()
-      ..state = json['state'] as bool?
-      ..itemId = json['itemId'] as String?
-      ..characterId = json['characterId'] as String?
-      ..membershipType = decodeBungieMembershipType(json['membershipType']);
+) => DestinyItemStateRequest()
+  ..state = json['state'] as bool?
+  ..itemId = json['itemId'] as String?
+  ..characterId = json['characterId'] as String?
+  ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyItemStateRequestToJson(
   DestinyItemStateRequest instance,

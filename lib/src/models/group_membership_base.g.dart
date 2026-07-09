@@ -8,10 +8,9 @@ part of 'group_membership_base.dart';
 
 GroupMembershipBase _$GroupMembershipBaseFromJson(Map<String, dynamic> json) =>
     GroupMembershipBase()
-      ..group =
-          json['group'] == null
-              ? null
-              : GroupV2.fromJson(json['group'] as Map<String, dynamic>);
+      ..group = json['group'] == null
+          ? null
+          : GroupV2.fromJson(json['group'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$GroupMembershipBaseToJson(
   GroupMembershipBase instance,

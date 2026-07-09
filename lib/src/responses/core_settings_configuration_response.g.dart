@@ -9,12 +9,11 @@ part of 'core_settings_configuration_response.dart';
 CoreSettingsConfigurationResponse _$CoreSettingsConfigurationResponseFromJson(
   Map<String, dynamic> json,
 ) => CoreSettingsConfigurationResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : CoreSettingsConfiguration.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : CoreSettingsConfiguration.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

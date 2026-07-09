@@ -10,14 +10,11 @@ DestinyQuestStatus _$DestinyQuestStatusFromJson(Map<String, dynamic> json) =>
     DestinyQuestStatus()
       ..questHash = (json['questHash'] as num?)?.toInt()
       ..stepHash = (json['stepHash'] as num?)?.toInt()
-      ..stepObjectives =
-          (json['stepObjectives'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyObjectiveProgress.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..stepObjectives = (json['stepObjectives'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyObjectiveProgress.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..tracked = json['tracked'] as bool?
       ..itemInstanceId = json['itemInstanceId'] as String?
       ..completed = json['completed'] as bool?

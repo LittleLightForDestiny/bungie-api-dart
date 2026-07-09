@@ -8,14 +8,10 @@ part of 'destiny_collectible_component.dart';
 
 DestinyCollectibleComponent _$DestinyCollectibleComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyCollectibleComponent()
-      ..state =
-          json['state'] == null
-              ? null
-              : DestinyCollectibleState.fromJson(
-                (json['state'] as num).toInt(),
-              );
+) => DestinyCollectibleComponent()
+  ..state = json['state'] == null
+      ? null
+      : DestinyCollectibleState.fromJson((json['state'] as num).toInt());
 
 Map<String, dynamic> _$DestinyCollectibleComponentToJson(
   DestinyCollectibleComponent instance,

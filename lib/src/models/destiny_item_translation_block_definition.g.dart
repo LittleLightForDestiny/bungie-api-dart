@@ -11,26 +11,22 @@ _$DestinyItemTranslationBlockDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyItemTranslationBlockDefinition()
       ..weaponPatternIdentifier = json['weaponPatternIdentifier'] as String?
       ..weaponPatternHash = (json['weaponPatternHash'] as num?)?.toInt()
-      ..defaultDyes =
-          (json['defaultDyes'] as List<dynamic>?)
-              ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..lockedDyes =
-          (json['lockedDyes'] as List<dynamic>?)
-              ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..customDyes =
-          (json['customDyes'] as List<dynamic>?)
-              ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..arrangements =
-          (json['arrangements'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyGearArtArrangementReference.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..defaultDyes = (json['defaultDyes'] as List<dynamic>?)
+          ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..lockedDyes = (json['lockedDyes'] as List<dynamic>?)
+          ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..customDyes = (json['customDyes'] as List<dynamic>?)
+          ?.map((e) => DyeReference.fromJson(e as Map<String, dynamic>))
+          .toList()
+      ..arrangements = (json['arrangements'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyGearArtArrangementReference.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList()
       ..hasGeometry = json['hasGeometry'] as bool?;
 
 Map<String, dynamic> _$DestinyItemTranslationBlockDefinitionToJson(

@@ -9,12 +9,11 @@ part of 'hard_linked_user_membership_response.dart';
 HardLinkedUserMembershipResponse _$HardLinkedUserMembershipResponseFromJson(
   Map<String, dynamic> json,
 ) => HardLinkedUserMembershipResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : HardLinkedUserMembership.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : HardLinkedUserMembership.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

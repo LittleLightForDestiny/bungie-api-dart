@@ -87,6 +87,14 @@ class DestinyInventoryItemDefinition{
 	@JsonKey(name:'isFeaturedItem')
 	bool? isFeaturedItem;
 	
+	/// Whether or not this item is holofoil, which has special icon treatment and in-game appearance.
+	@JsonKey(name:'isHolofoil')
+	bool? isHolofoil;
+	
+	/// Whether or not this item is adept, which has increased stats and/or perks.
+	@JsonKey(name:'isAdept')
+	bool? isAdept;
+	
 	/// If we were able to acquire an in-game screenshot for the item, the path to that screenshot will be returned here. Note that not all items have screenshots: particularly not any non-equippable items.
 	@JsonKey(name:'screenshot')
 	String? screenshot;

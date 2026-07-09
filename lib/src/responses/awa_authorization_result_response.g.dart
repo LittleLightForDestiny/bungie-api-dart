@@ -9,12 +9,11 @@ part of 'awa_authorization_result_response.dart';
 AwaAuthorizationResultResponse _$AwaAuthorizationResultResponseFromJson(
   Map<String, dynamic> json,
 ) => AwaAuthorizationResultResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : AwaAuthorizationResult.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : AwaAuthorizationResult.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

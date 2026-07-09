@@ -8,18 +8,16 @@ part of 'destiny_breaker_type_definition.dart';
 
 DestinyBreakerTypeDefinition _$DestinyBreakerTypeDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyBreakerTypeDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..enumValue = decodeDestinyBreakerType(json['enumValue'])
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyBreakerTypeDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..enumValue = decodeDestinyBreakerType(json['enumValue'])
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyBreakerTypeDefinitionToJson(
   DestinyBreakerTypeDefinition instance,

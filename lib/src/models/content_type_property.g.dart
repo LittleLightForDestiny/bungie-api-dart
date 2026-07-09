@@ -32,35 +32,30 @@ ContentTypeProperty _$ContentTypePropertyFromJson(Map<String, dynamic> json) =>
       ..attributes = (json['attributes'] as Map<String, dynamic>?)?.map(
         (k, e) => MapEntry(k, e as String),
       )
-      ..childProperties =
-          (json['childProperties'] as List<dynamic>?)
-              ?.map(
-                (e) => ContentTypeProperty.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
+      ..childProperties = (json['childProperties'] as List<dynamic>?)
+          ?.map((e) => ContentTypeProperty.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..contentTypeAllowed = json['contentTypeAllowed'] as String?
       ..bindToProperty = json['bindToProperty'] as String?
       ..boundRegex = json['boundRegex'] as String?
-      ..representationSelection = (json['representationSelection']
-              as Map<String, dynamic>?)
-          ?.map((k, e) => MapEntry(k, e as String))
-      ..defaultValues =
-          (json['defaultValues'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    ContentTypeDefaultValue.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
+      ..representationSelection =
+          (json['representationSelection'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          )
+      ..defaultValues = (json['defaultValues'] as List<dynamic>?)
+          ?.map(
+            (e) => ContentTypeDefaultValue.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..isExternalAllowed = json['isExternalAllowed'] as bool?
       ..propertySection = json['propertySection'] as String?
       ..weight = (json['weight'] as num?)?.toInt()
       ..entitytype = json['entitytype'] as String?
       ..isCombo = json['isCombo'] as bool?
       ..suppressProperty = json['suppressProperty'] as bool?
-      ..legalContentTypes =
-          (json['legalContentTypes'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList()
+      ..legalContentTypes = (json['legalContentTypes'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList()
       ..representationValidationString =
           json['representationValidationString'] as String?
       ..minWidth = (json['minWidth'] as num?)?.toInt()

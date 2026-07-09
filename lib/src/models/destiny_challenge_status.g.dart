@@ -8,14 +8,12 @@ part of 'destiny_challenge_status.dart';
 
 DestinyChallengeStatus _$DestinyChallengeStatusFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyChallengeStatus()
-      ..objective =
-          json['objective'] == null
-              ? null
-              : DestinyObjectiveProgress.fromJson(
-                json['objective'] as Map<String, dynamic>,
-              );
+) => DestinyChallengeStatus()
+  ..objective = json['objective'] == null
+      ? null
+      : DestinyObjectiveProgress.fromJson(
+          json['objective'] as Map<String, dynamic>,
+        );
 
 Map<String, dynamic> _$DestinyChallengeStatusToJson(
   DestinyChallengeStatus instance,

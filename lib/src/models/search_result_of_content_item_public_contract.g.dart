@@ -9,20 +9,17 @@ part of 'search_result_of_content_item_public_contract.dart';
 SearchResultOfContentItemPublicContract
 _$SearchResultOfContentItemPublicContractFromJson(Map<String, dynamic> json) =>
     SearchResultOfContentItemPublicContract()
-      ..results =
-          (json['results'] as List<dynamic>?)
-              ?.map(
-                (e) => ContentItemPublicContract.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
+      ..results = (json['results'] as List<dynamic>?)
+          ?.map(
+            (e) =>
+                ContentItemPublicContract.fromJson(e as Map<String, dynamic>),
+          )
+          .toList()
       ..totalResults = (json['totalResults'] as num?)?.toInt()
       ..hasMore = json['hasMore'] as bool?
-      ..query =
-          json['query'] == null
-              ? null
-              : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
+      ..query = json['query'] == null
+          ? null
+          : PagedQuery.fromJson(json['query'] as Map<String, dynamic>)
       ..replacementContinuationToken =
           json['replacementContinuationToken'] as String?
       ..useTotalResults = json['useTotalResults'] as bool?;

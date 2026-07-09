@@ -8,18 +8,16 @@ part of 'destiny_historical_stats_activity.dart';
 
 DestinyHistoricalStatsActivity _$DestinyHistoricalStatsActivityFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyHistoricalStatsActivity()
-      ..referenceId = (json['referenceId'] as num?)?.toInt()
-      ..directorActivityHash = (json['directorActivityHash'] as num?)?.toInt()
-      ..instanceId = json['instanceId'] as String?
-      ..mode = decodeDestinyActivityModeType(json['mode'])
-      ..modes =
-          (json['modes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-              .toList()
-      ..isPrivate = json['isPrivate'] as bool?
-      ..membershipType = decodeBungieMembershipType(json['membershipType']);
+) => DestinyHistoricalStatsActivity()
+  ..referenceId = (json['referenceId'] as num?)?.toInt()
+  ..directorActivityHash = (json['directorActivityHash'] as num?)?.toInt()
+  ..instanceId = json['instanceId'] as String?
+  ..mode = decodeDestinyActivityModeType(json['mode'])
+  ..modes = (json['modes'] as List<dynamic>?)
+      ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+      .toList()
+  ..isPrivate = json['isPrivate'] as bool?
+  ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
   DestinyHistoricalStatsActivity instance,
@@ -28,8 +26,9 @@ Map<String, dynamic> _$DestinyHistoricalStatsActivityToJson(
   'directorActivityHash': instance.directorActivityHash,
   'instanceId': instance.instanceId,
   'mode': encodeDestinyActivityModeType(instance.mode),
-  'modes':
-      instance.modes?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!).toList(),
+  'modes': instance.modes
+      ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
+      .toList(),
   'isPrivate': instance.isPrivate,
   'membershipType': encodeBungieMembershipType(instance.membershipType),
 };
@@ -120,5 +119,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
   DestinyActivityModeType.Relic: 92,
+  DestinyActivityModeType.LawlessFrontier: 93,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

@@ -9,12 +9,11 @@ part of 'destiny_progression_mapping_definition.dart';
 DestinyProgressionMappingDefinition
 _$DestinyProgressionMappingDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyProgressionMappingDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
+      ..displayProperties = json['displayProperties'] == null
+          ? null
+          : DestinyDisplayPropertiesDefinition.fromJson(
+              json['displayProperties'] as Map<String, dynamic>,
+            )
       ..displayUnits = json['displayUnits'] as String?
       ..hash = (json['hash'] as num?)?.toInt()
       ..index = (json['index'] as num?)?.toInt()

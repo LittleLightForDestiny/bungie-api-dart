@@ -9,16 +9,15 @@ part of 'dictionary_component_response_ofint32_and_destiny_item_objectives_compo
 DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent
 _$DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent()
-      ..data = (json['data'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyItemObjectivesComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponent()
+  ..data = (json['data'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyItemObjectivesComponent.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$DictionaryComponentResponseOfint32AndDestinyItemObjectivesComponentToJson(

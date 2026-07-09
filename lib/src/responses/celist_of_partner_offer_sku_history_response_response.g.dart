@@ -10,14 +10,12 @@ CEListOfPartnerOfferSkuHistoryResponseResponse
 _$CEListOfPartnerOfferSkuHistoryResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => CEListOfPartnerOfferSkuHistoryResponseResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map(
-            (e) => PartnerOfferSkuHistoryResponse.fromJson(
-              e as Map<String, dynamic>,
-            ),
-          )
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            PartnerOfferSkuHistoryResponse.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

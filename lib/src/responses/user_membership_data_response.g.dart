@@ -9,12 +9,9 @@ part of 'user_membership_data_response.dart';
 UserMembershipDataResponse _$UserMembershipDataResponseFromJson(
   Map<String, dynamic> json,
 ) => UserMembershipDataResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : UserMembershipData.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : UserMembershipData.fromJson(json['Response'] as Map<String, dynamic>),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

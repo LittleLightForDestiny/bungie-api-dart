@@ -2702,6 +2702,30 @@ enum PlatformErrorCodes {
   ///ErrorEgsJwtMalformedPayload = 4009
   @JsonValue(4009)
   ErrorEgsJwtMalformedPayload,
+  ///MarathonInternalError = 5000
+  @JsonValue(5000)
+  MarathonInternalError,
+  ///MarathonBabelConnectionTimeout = 5001
+  @JsonValue(5001)
+  MarathonBabelConnectionTimeout,
+  ///MarathonServiceFailure = 5002
+  @JsonValue(5002)
+  MarathonServiceFailure,
+  ///MarathonInvalidRequest = 5003
+  @JsonValue(5003)
+  MarathonInvalidRequest,
+  ///MarathonUnexpectedError = 5004
+  @JsonValue(5004)
+  MarathonUnexpectedError,
+  ///MarathonAccountNotFound = 5005
+  @JsonValue(5005)
+  MarathonAccountNotFound,
+  ///MarathonThrottledByGameServer = 5006
+  @JsonValue(5006)
+  MarathonThrottledByGameServer,
+  ///MarathonErrorDeserializationFailure = 5007
+  @JsonValue(5007)
+  MarathonErrorDeserializationFailure,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -3632,6 +3656,14 @@ const Map<PlatformErrorCodes, int> _$PlatformErrorCodesEnumMap = <PlatformErrorC
     PlatformErrorCodes.ErrorEgsJwksMissing:4007,
     PlatformErrorCodes.ErrorEgsJwtMalformedHeader:4008,
     PlatformErrorCodes.ErrorEgsJwtMalformedPayload:4009,
+    PlatformErrorCodes.MarathonInternalError:5000,
+    PlatformErrorCodes.MarathonBabelConnectionTimeout:5001,
+    PlatformErrorCodes.MarathonServiceFailure:5002,
+    PlatformErrorCodes.MarathonInvalidRequest:5003,
+    PlatformErrorCodes.MarathonUnexpectedError:5004,
+    PlatformErrorCodes.MarathonAccountNotFound:5005,
+    PlatformErrorCodes.MarathonThrottledByGameServer:5006,
+    PlatformErrorCodes.MarathonErrorDeserializationFailure:5007,
 };
 const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, PlatformErrorCodes>{
     0:PlatformErrorCodes.None,
@@ -4534,4 +4566,12 @@ const Map<int, PlatformErrorCodes> _$PlatformErrorCodesValueMap = <int, Platform
     4007:PlatformErrorCodes.ErrorEgsJwksMissing,
     4008:PlatformErrorCodes.ErrorEgsJwtMalformedHeader,
     4009:PlatformErrorCodes.ErrorEgsJwtMalformedPayload,
+    5000:PlatformErrorCodes.MarathonInternalError,
+    5001:PlatformErrorCodes.MarathonBabelConnectionTimeout,
+    5002:PlatformErrorCodes.MarathonServiceFailure,
+    5003:PlatformErrorCodes.MarathonInvalidRequest,
+    5004:PlatformErrorCodes.MarathonUnexpectedError,
+    5005:PlatformErrorCodes.MarathonAccountNotFound,
+    5006:PlatformErrorCodes.MarathonThrottledByGameServer,
+    5007:PlatformErrorCodes.MarathonErrorDeserializationFailure,
 };

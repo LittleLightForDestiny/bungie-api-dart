@@ -8,10 +8,9 @@ part of 'destiny_leaderboard_results.dart';
 
 DestinyLeaderboardResults _$DestinyLeaderboardResultsFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyLeaderboardResults()
-      ..focusMembershipId = json['focusMembershipId'] as String?
-      ..focusCharacterId = json['focusCharacterId'] as String?;
+) => DestinyLeaderboardResults()
+  ..focusMembershipId = json['focusMembershipId'] as String?
+  ..focusCharacterId = json['focusCharacterId'] as String?;
 
 Map<String, dynamic> _$DestinyLeaderboardResultsToJson(
   DestinyLeaderboardResults instance,

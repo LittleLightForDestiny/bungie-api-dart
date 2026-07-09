@@ -7,55 +7,81 @@ part of 'destiny_character_activities_component.dart';
 // **************************************************************************
 
 DestinyCharacterActivitiesComponent
-_$DestinyCharacterActivitiesComponentFromJson(Map<String, dynamic> json) =>
-    DestinyCharacterActivitiesComponent()
-      ..dateActivityStarted = json['dateActivityStarted'] as String?
-      ..availableActivities =
-          (json['availableActivities'] as List<dynamic>?)
-              ?.map((e) => DestinyActivity.fromJson(e as Map<String, dynamic>))
-              .toList()
-      ..availableActivityInteractables =
-          (json['availableActivityInteractables'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyActivityInteractableReference.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..currentActivityHash = (json['currentActivityHash'] as num?)?.toInt()
-      ..currentActivityModeHash =
-          (json['currentActivityModeHash'] as num?)?.toInt()
-      ..currentActivityModeType =
-          (json['currentActivityModeType'] as num?)?.toInt()
-      ..currentActivityModeHashes =
-          (json['currentActivityModeHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..currentActivityModeTypes =
-          (json['currentActivityModeTypes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
-              .toList()
-      ..currentPlaylistActivityHash =
-          (json['currentPlaylistActivityHash'] as num?)?.toInt()
-      ..lastCompletedStoryHash =
-          (json['lastCompletedStoryHash'] as num?)?.toInt();
+_$DestinyCharacterActivitiesComponentFromJson(
+  Map<String, dynamic> json,
+) => DestinyCharacterActivitiesComponent()
+  ..dateActivityStarted = json['dateActivityStarted'] as String?
+  ..availableActivities = (json['availableActivities'] as List<dynamic>?)
+      ?.map((e) => DestinyActivity.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..availableActivityInteractables =
+      (json['availableActivityInteractables'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyActivityInteractableReference.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList()
+  ..difficultyTierCollections =
+      (json['difficultyTierCollections'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          DestinyActivityDifficultyTierCollectionComponent.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        ),
+      )
+  ..selectableSkullCollections =
+      (json['selectableSkullCollections'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(
+          k,
+          DestinyActivitySelectableSkullCollectionComponent.fromJson(
+            e as Map<String, dynamic>,
+          ),
+        ),
+      )
+  ..currentActivityHash = (json['currentActivityHash'] as num?)?.toInt()
+  ..currentActivityModeHash = (json['currentActivityModeHash'] as num?)?.toInt()
+  ..currentActivityModeType = decodeDestinyActivityModeType(
+    json['currentActivityModeType'],
+  )
+  ..currentActivityModeHashes =
+      (json['currentActivityModeHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+  ..currentActivityModeTypes =
+      (json['currentActivityModeTypes'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$DestinyActivityModeTypeEnumMap, e))
+          .toList()
+  ..currentPlaylistActivityHash = (json['currentPlaylistActivityHash'] as num?)
+      ?.toInt()
+  ..lastCompletedStoryHash = (json['lastCompletedStoryHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyCharacterActivitiesComponentToJson(
   DestinyCharacterActivitiesComponent instance,
 ) => <String, dynamic>{
   'dateActivityStarted': instance.dateActivityStarted,
-  'availableActivities':
-      instance.availableActivities?.map((e) => e.toJson()).toList(),
-  'availableActivityInteractables':
-      instance.availableActivityInteractables?.map((e) => e.toJson()).toList(),
+  'availableActivities': instance.availableActivities
+      ?.map((e) => e.toJson())
+      .toList(),
+  'availableActivityInteractables': instance.availableActivityInteractables
+      ?.map((e) => e.toJson())
+      .toList(),
+  'difficultyTierCollections': instance.difficultyTierCollections?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
+  'selectableSkullCollections': instance.selectableSkullCollections?.map(
+    (k, e) => MapEntry(k, e.toJson()),
+  ),
   'currentActivityHash': instance.currentActivityHash,
   'currentActivityModeHash': instance.currentActivityModeHash,
-  'currentActivityModeType': instance.currentActivityModeType,
+  'currentActivityModeType': encodeDestinyActivityModeType(
+    instance.currentActivityModeType,
+  ),
   'currentActivityModeHashes': instance.currentActivityModeHashes,
-  'currentActivityModeTypes':
-      instance.currentActivityModeTypes
-          ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
-          .toList(),
+  'currentActivityModeTypes': instance.currentActivityModeTypes
+      ?.map((e) => _$DestinyActivityModeTypeEnumMap[e]!)
+      .toList(),
   'currentPlaylistActivityHash': instance.currentPlaylistActivityHash,
   'lastCompletedStoryHash': instance.lastCompletedStoryHash,
 };
@@ -146,5 +172,6 @@ const _$DestinyActivityModeTypeEnumMap = {
   DestinyActivityModeType.IronBannerRift: 90,
   DestinyActivityModeType.IronBannerZoneControl: 91,
   DestinyActivityModeType.Relic: 92,
+  DestinyActivityModeType.LawlessFrontier: 93,
   DestinyActivityModeType.ProtectedInvalidEnumValue: 999999999,
 };

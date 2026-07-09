@@ -8,10 +8,9 @@ part of 'email_setting_localization.dart';
 
 EMailSettingLocalization _$EMailSettingLocalizationFromJson(
   Map<String, dynamic> json,
-) =>
-    EMailSettingLocalization()
-      ..title = json['title'] as String?
-      ..description = json['description'] as String?;
+) => EMailSettingLocalization()
+  ..title = json['title'] as String?
+  ..description = json['description'] as String?;
 
 Map<String, dynamic> _$EMailSettingLocalizationToJson(
   EMailSettingLocalization instance,

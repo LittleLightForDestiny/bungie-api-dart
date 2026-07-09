@@ -9,12 +9,11 @@ part of 'destiny_activity_difficulty_tier_subcategory_override.dart';
 DestinyActivityDifficultyTierSubcategoryOverride
 _$DestinyActivityDifficultyTierSubcategoryOverrideFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivityDifficultyTierSubcategoryOverride()
-      ..skullSubcategoryHash = (json['skullSubcategoryHash'] as num?)?.toInt()
-      ..refreshTimeMinutes = (json['refreshTimeMinutes'] as num?)?.toInt()
-      ..refreshTimeOffsetMinutes =
-          (json['refreshTimeOffsetMinutes'] as num?)?.toInt();
+) => DestinyActivityDifficultyTierSubcategoryOverride()
+  ..skullSubcategoryHash = (json['skullSubcategoryHash'] as num?)?.toInt()
+  ..refreshTimeMinutes = (json['refreshTimeMinutes'] as num?)?.toInt()
+  ..refreshTimeOffsetMinutes = (json['refreshTimeOffsetMinutes'] as num?)
+      ?.toInt();
 
 Map<String, dynamic> _$DestinyActivityDifficultyTierSubcategoryOverrideToJson(
   DestinyActivityDifficultyTierSubcategoryOverride instance,

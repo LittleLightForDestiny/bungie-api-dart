@@ -8,16 +8,12 @@ part of 'destiny_historical_weapon_stats_data.dart';
 
 DestinyHistoricalWeaponStatsData _$DestinyHistoricalWeaponStatsDataFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyHistoricalWeaponStatsData()
-      ..weapons =
-          (json['weapons'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyHistoricalWeaponStats.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyHistoricalWeaponStatsData()
+  ..weapons = (json['weapons'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyHistoricalWeaponStats.fromJson(e as Map<String, dynamic>),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyHistoricalWeaponStatsDataToJson(
   DestinyHistoricalWeaponStatsData instance,

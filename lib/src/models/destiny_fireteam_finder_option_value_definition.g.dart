@@ -9,21 +9,16 @@ part of 'destiny_fireteam_finder_option_value_definition.dart';
 DestinyFireteamFinderOptionValueDefinition
 _$DestinyFireteamFinderOptionValueDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyFireteamFinderOptionValueDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..value = (json['value'] as num?)?.toInt()
-      ..flags =
-          json['flags'] == null
-              ? null
-              : FireteamFinderOptionValueFlags.fromJson(
-                (json['flags'] as num).toInt(),
-              );
+) => DestinyFireteamFinderOptionValueDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..value = (json['value'] as num?)?.toInt()
+  ..flags = json['flags'] == null
+      ? null
+      : FireteamFinderOptionValueFlags.fromJson((json['flags'] as num).toInt());
 
 Map<String, dynamic> _$DestinyFireteamFinderOptionValueDefinitionToJson(
   DestinyFireteamFinderOptionValueDefinition instance,

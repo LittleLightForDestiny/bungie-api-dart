@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_currencies_component.dart';
 SingleComponentResponseOfDestinyCurrenciesComponent
 _$SingleComponentResponseOfDestinyCurrenciesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyCurrenciesComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyCurrenciesComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyCurrenciesComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyCurrenciesComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyCurrenciesComponentToJson(

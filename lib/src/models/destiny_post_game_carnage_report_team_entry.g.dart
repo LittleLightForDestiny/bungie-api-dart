@@ -10,18 +10,16 @@ DestinyPostGameCarnageReportTeamEntry
 _$DestinyPostGameCarnageReportTeamEntryFromJson(Map<String, dynamic> json) =>
     DestinyPostGameCarnageReportTeamEntry()
       ..teamId = (json['teamId'] as num?)?.toInt()
-      ..standing =
-          json['standing'] == null
-              ? null
-              : DestinyHistoricalStatsValue.fromJson(
-                json['standing'] as Map<String, dynamic>,
-              )
-      ..score =
-          json['score'] == null
-              ? null
-              : DestinyHistoricalStatsValue.fromJson(
-                json['score'] as Map<String, dynamic>,
-              )
+      ..standing = json['standing'] == null
+          ? null
+          : DestinyHistoricalStatsValue.fromJson(
+              json['standing'] as Map<String, dynamic>,
+            )
+      ..score = json['score'] == null
+          ? null
+          : DestinyHistoricalStatsValue.fromJson(
+              json['score'] as Map<String, dynamic>,
+            )
       ..teamName = json['teamName'] as String?;
 
 Map<String, dynamic> _$DestinyPostGameCarnageReportTeamEntryToJson(

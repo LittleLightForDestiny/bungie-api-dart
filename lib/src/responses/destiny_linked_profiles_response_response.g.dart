@@ -9,12 +9,11 @@ part of 'destiny_linked_profiles_response_response.dart';
 DestinyLinkedProfilesResponseResponse
 _$DestinyLinkedProfilesResponseResponseFromJson(Map<String, dynamic> json) =>
     DestinyLinkedProfilesResponseResponse(
-      response:
-          json['Response'] == null
-              ? null
-              : DestinyLinkedProfilesResponse.fromJson(
-                json['Response'] as Map<String, dynamic>,
-              ),
+      response: json['Response'] == null
+          ? null
+          : DestinyLinkedProfilesResponse.fromJson(
+              json['Response'] as Map<String, dynamic>,
+            ),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

@@ -3,6 +3,8 @@ import 'package:compute/compute.dart';
 
 import 'destiny_activity.dart';
 import 'destiny_activity_interactable_reference.dart';
+import 'destiny_activity_difficulty_tier_collection_component.dart';
+import 'destiny_activity_selectable_skull_collection_component.dart';
 import '../enums/destiny_activity_mode_type.dart';
 
 part 'destiny_character_activities_component.g.dart';
@@ -25,6 +27,14 @@ class DestinyCharacterActivitiesComponent{
 	@JsonKey(name:'availableActivityInteractables')
 	List<DestinyActivityInteractableReference>? availableActivityInteractables;
 	
+	/// The activity difficulty tier states for this character.
+	@JsonKey(name:'difficultyTierCollections')
+	Map<String, DestinyActivityDifficultyTierCollectionComponent>? difficultyTierCollections;
+	
+	/// The selectable activity skulls states for this character.
+	@JsonKey(name:'selectableSkullCollections')
+	Map<String, DestinyActivitySelectableSkullCollectionComponent>? selectableSkullCollections;
+	
 	/// If the user is in an activity, this will be the hash of the Activity being played. Note that you must combine this info with currentActivityModeHash to get a real picture of what the user is doing right now. For instance, PVP "Activities" are just maps: it's the ActivityMode that determines what type of PVP game they're playing.
 	@JsonKey(name:'currentActivityHash')
 	int? currentActivityHash;
@@ -34,8 +44,8 @@ class DestinyCharacterActivitiesComponent{
 	int? currentActivityModeHash;
 	
 	/// And the current activity's most specific mode type, if it can be found.
-	@JsonKey(name:'currentActivityModeType')
-	int? currentActivityModeType;
+	@JsonKey(name:'currentActivityModeType',fromJson:decodeDestinyActivityModeType,toJson:encodeDestinyActivityModeType)
+	DestinyActivityModeType? currentActivityModeType;
 	
 	/// If the user is in an activity, this will be the hashes of the DestinyActivityModeDefinition being played. Combine with currentActivityHash to give a person a full picture of what they're doing right now.
 	@JsonKey(name:'currentActivityModeHashes')

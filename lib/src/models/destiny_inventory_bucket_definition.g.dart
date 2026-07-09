@@ -8,25 +8,23 @@ part of 'destiny_inventory_bucket_definition.dart';
 
 DestinyInventoryBucketDefinition _$DestinyInventoryBucketDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyInventoryBucketDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..scope = decodeBucketScope(json['scope'])
-      ..category = decodeBucketCategory(json['category'])
-      ..bucketOrder = (json['bucketOrder'] as num?)?.toInt()
-      ..itemCount = (json['itemCount'] as num?)?.toInt()
-      ..location = decodeItemLocation(json['location'])
-      ..hasTransferDestination = json['hasTransferDestination'] as bool?
-      ..enabled = json['enabled'] as bool?
-      ..fifo = json['fifo'] as bool?
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyInventoryBucketDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..scope = decodeBucketScope(json['scope'])
+  ..category = decodeBucketCategory(json['category'])
+  ..bucketOrder = (json['bucketOrder'] as num?)?.toInt()
+  ..itemCount = (json['itemCount'] as num?)?.toInt()
+  ..location = decodeItemLocation(json['location'])
+  ..hasTransferDestination = json['hasTransferDestination'] as bool?
+  ..enabled = json['enabled'] as bool?
+  ..fifo = json['fifo'] as bool?
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyInventoryBucketDefinitionToJson(
   DestinyInventoryBucketDefinition instance,

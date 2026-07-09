@@ -8,16 +8,14 @@ part of 'destiny_activity_history_results.dart';
 
 DestinyActivityHistoryResults _$DestinyActivityHistoryResultsFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivityHistoryResults()
-      ..activities =
-          (json['activities'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyHistoricalStatsPeriodGroup.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyActivityHistoryResults()
+  ..activities = (json['activities'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyHistoricalStatsPeriodGroup.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyActivityHistoryResultsToJson(
   DestinyActivityHistoryResults instance,

@@ -8,17 +8,15 @@ part of 'destiny_craftable_socket_component.dart';
 
 DestinyCraftableSocketComponent _$DestinyCraftableSocketComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyCraftableSocketComponent()
-      ..plugSetHash = (json['plugSetHash'] as num?)?.toInt()
-      ..plugs =
-          (json['plugs'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyCraftableSocketPlugComponent.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyCraftableSocketComponent()
+  ..plugSetHash = (json['plugSetHash'] as num?)?.toInt()
+  ..plugs = (json['plugs'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyCraftableSocketPlugComponent.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyCraftableSocketComponentToJson(
   DestinyCraftableSocketComponent instance,

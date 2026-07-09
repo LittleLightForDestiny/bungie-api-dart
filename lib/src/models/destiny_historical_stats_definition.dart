@@ -6,6 +6,7 @@ import '../enums/period_type.dart';
 import '../enums/destiny_activity_mode_type.dart';
 import '../enums/destiny_stats_category_type.dart';
 import '../enums/unit_type.dart';
+import '../enums/destiny_stats_merge_method.dart';
 
 part 'destiny_historical_stats_definition.g.dart';
 
@@ -55,8 +56,8 @@ class DestinyHistoricalStatsDefinition{
 	String? iconImage;
 	
 	/// Optional icon for the statistic
-	@JsonKey(name:'mergeMethod')
-	int? mergeMethod;
+	@JsonKey(name:'mergeMethod',fromJson:decodeDestinyStatsMergeMethod,toJson:encodeDestinyStatsMergeMethod)
+	DestinyStatsMergeMethod? mergeMethod;
 	
 	/// Localized Unit Name for the stat.
 	@JsonKey(name:'unitLabel')

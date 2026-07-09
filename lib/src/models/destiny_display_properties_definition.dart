@@ -23,6 +23,9 @@ class DestinyDisplayPropertiesDefinition{
 	@JsonKey(name:'icon')
 	String? icon;
 	
+	@JsonKey(name:'iconHash')
+	int? iconHash;
+	
 	@JsonKey(name:'iconSequences')
 	List<DestinyIconSequenceDefinition>? iconSequences;
 	

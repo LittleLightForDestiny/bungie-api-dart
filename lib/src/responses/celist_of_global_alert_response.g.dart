@@ -9,10 +9,9 @@ part of 'celist_of_global_alert_response.dart';
 CEListOfGlobalAlertResponse _$CEListOfGlobalAlertResponseFromJson(
   Map<String, dynamic> json,
 ) => CEListOfGlobalAlertResponse(
-  response:
-      (json['Response'] as List<dynamic>?)
-          ?.map((e) => GlobalAlert.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  response: (json['Response'] as List<dynamic>?)
+      ?.map((e) => GlobalAlert.fromJson(e as Map<String, dynamic>))
+      .toList(),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

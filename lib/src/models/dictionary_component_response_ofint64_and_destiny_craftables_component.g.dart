@@ -9,16 +9,15 @@ part of 'dictionary_component_response_ofint64_and_destiny_craftables_component.
 DictionaryComponentResponseOfint64AndDestinyCraftablesComponent
 _$DictionaryComponentResponseOfint64AndDestinyCraftablesComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DictionaryComponentResponseOfint64AndDestinyCraftablesComponent()
-      ..data = (json['data'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyCraftablesComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => DictionaryComponentResponseOfint64AndDestinyCraftablesComponent()
+  ..data = (json['data'] as Map<String, dynamic>?)?.map(
+    (k, e) => MapEntry(
+      k,
+      DestinyCraftablesComponent.fromJson(e as Map<String, dynamic>),
+    ),
+  )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$DictionaryComponentResponseOfint64AndDestinyCraftablesComponentToJson(

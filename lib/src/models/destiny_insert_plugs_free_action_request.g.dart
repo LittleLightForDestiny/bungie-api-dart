@@ -9,12 +9,11 @@ part of 'destiny_insert_plugs_free_action_request.dart';
 DestinyInsertPlugsFreeActionRequest
 _$DestinyInsertPlugsFreeActionRequestFromJson(Map<String, dynamic> json) =>
     DestinyInsertPlugsFreeActionRequest()
-      ..plug =
-          json['plug'] == null
-              ? null
-              : DestinyInsertPlugsRequestEntry.fromJson(
-                json['plug'] as Map<String, dynamic>,
-              )
+      ..plug = json['plug'] == null
+          ? null
+          : DestinyInsertPlugsRequestEntry.fromJson(
+              json['plug'] as Map<String, dynamic>,
+            )
       ..itemId = json['itemId'] as String?
       ..characterId = json['characterId'] as String?
       ..membershipType = decodeBungieMembershipType(json['membershipType']);

@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/bungie_membership_type.dart';
 
 part 'partner_offer_history_response.g.dart';
 
@@ -15,8 +16,8 @@ class PartnerOfferHistoryResponse{
 	@JsonKey(name:'MembershipId')
 	String? membershipId;
 	
-	@JsonKey(name:'MembershipType')
-	int? membershipType;
+	@JsonKey(name:'MembershipType',fromJson:decodeBungieMembershipType,toJson:encodeBungieMembershipType)
+	BungieMembershipType? membershipType;
 	
 	@JsonKey(name:'LocalizedName')
 	String? localizedName;

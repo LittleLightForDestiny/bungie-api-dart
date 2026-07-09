@@ -8,13 +8,12 @@ part of 'group_optional_conversation.dart';
 
 GroupOptionalConversation _$GroupOptionalConversationFromJson(
   Map<String, dynamic> json,
-) =>
-    GroupOptionalConversation()
-      ..groupId = json['groupId'] as String?
-      ..conversationId = json['conversationId'] as String?
-      ..chatEnabled = json['chatEnabled'] as bool?
-      ..chatName = json['chatName'] as String?
-      ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity']);
+) => GroupOptionalConversation()
+  ..groupId = json['groupId'] as String?
+  ..conversationId = json['conversationId'] as String?
+  ..chatEnabled = json['chatEnabled'] as bool?
+  ..chatName = json['chatName'] as String?
+  ..chatSecurity = decodeChatSecuritySetting(json['chatSecurity']);
 
 Map<String, dynamic> _$GroupOptionalConversationToJson(
   GroupOptionalConversation instance,

@@ -9,12 +9,11 @@ part of 'destiny_milestone_content_response.dart';
 DestinyMilestoneContentResponse _$DestinyMilestoneContentResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyMilestoneContentResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyMilestoneContent.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyMilestoneContent.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

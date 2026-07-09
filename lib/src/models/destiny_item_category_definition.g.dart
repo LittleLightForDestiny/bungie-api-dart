@@ -8,44 +8,36 @@ part of 'destiny_item_category_definition.dart';
 
 DestinyItemCategoryDefinition _$DestinyItemCategoryDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemCategoryDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..visible = json['visible'] as bool?
-      ..deprecated = json['deprecated'] as bool?
-      ..shortTitle = json['shortTitle'] as String?
-      ..itemTypeRegex = json['itemTypeRegex'] as String?
-      ..grantDestinyBreakerType = decodeDestinyBreakerType(
-        json['grantDestinyBreakerType'],
-      )
-      ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String?
-      ..itemTypeRegexNot = json['itemTypeRegexNot'] as String?
-      ..originBucketIdentifier = json['originBucketIdentifier'] as String?
-      ..grantDestinyItemType = decodeDestinyItemType(
-        json['grantDestinyItemType'],
-      )
-      ..grantDestinySubType = decodeDestinyItemSubType(
-        json['grantDestinySubType'],
-      )
-      ..grantDestinyClass = decodeDestinyClass(json['grantDestinyClass'])
-      ..traitId = json['traitId'] as String?
-      ..groupedCategoryHashes =
-          (json['groupedCategoryHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..parentCategoryHashes =
-          (json['parentCategoryHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..groupCategoryOnly = json['groupCategoryOnly'] as bool?
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyItemCategoryDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..visible = json['visible'] as bool?
+  ..deprecated = json['deprecated'] as bool?
+  ..shortTitle = json['shortTitle'] as String?
+  ..itemTypeRegex = json['itemTypeRegex'] as String?
+  ..grantDestinyBreakerType = decodeDestinyBreakerType(
+    json['grantDestinyBreakerType'],
+  )
+  ..plugCategoryIdentifier = json['plugCategoryIdentifier'] as String?
+  ..itemTypeRegexNot = json['itemTypeRegexNot'] as String?
+  ..originBucketIdentifier = json['originBucketIdentifier'] as String?
+  ..grantDestinyItemType = decodeDestinyItemType(json['grantDestinyItemType'])
+  ..grantDestinySubType = decodeDestinyItemSubType(json['grantDestinySubType'])
+  ..grantDestinyClass = decodeDestinyClass(json['grantDestinyClass'])
+  ..traitId = json['traitId'] as String?
+  ..groupedCategoryHashes = (json['groupedCategoryHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..parentCategoryHashes = (json['parentCategoryHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..groupCategoryOnly = json['groupCategoryOnly'] as bool?
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyItemCategoryDefinitionToJson(
   DestinyItemCategoryDefinition instance,

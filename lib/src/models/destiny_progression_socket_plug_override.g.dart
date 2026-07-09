@@ -10,8 +10,8 @@ DestinyProgressionSocketPlugOverride
 _$DestinyProgressionSocketPlugOverrideFromJson(Map<String, dynamic> json) =>
     DestinyProgressionSocketPlugOverride()
       ..socketTypeHash = (json['socketTypeHash'] as num?)?.toInt()
-      ..overrideSingleItemHash =
-          (json['overrideSingleItemHash'] as num?)?.toInt();
+      ..overrideSingleItemHash = (json['overrideSingleItemHash'] as num?)
+          ?.toInt();
 
 Map<String, dynamic> _$DestinyProgressionSocketPlugOverrideToJson(
   DestinyProgressionSocketPlugOverride instance,

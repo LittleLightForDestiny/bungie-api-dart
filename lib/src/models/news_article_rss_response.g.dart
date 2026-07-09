@@ -8,20 +8,15 @@ part of 'news_article_rss_response.dart';
 
 NewsArticleRssResponse _$NewsArticleRssResponseFromJson(
   Map<String, dynamic> json,
-) =>
-    NewsArticleRssResponse()
-      ..currentPaginationToken =
-          (json['CurrentPaginationToken'] as num?)?.toInt()
-      ..nextPaginationToken = (json['NextPaginationToken'] as num?)?.toInt()
-      ..resultCountThisPage = (json['ResultCountThisPage'] as num?)?.toInt()
-      ..newsArticles =
-          (json['NewsArticles'] as List<dynamic>?)
-              ?.map(
-                (e) => NewsArticleRssItem.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
-      ..categoryFilter = json['CategoryFilter'] as String?
-      ..pagerAction = json['PagerAction'] as String?;
+) => NewsArticleRssResponse()
+  ..currentPaginationToken = (json['CurrentPaginationToken'] as num?)?.toInt()
+  ..nextPaginationToken = (json['NextPaginationToken'] as num?)?.toInt()
+  ..resultCountThisPage = (json['ResultCountThisPage'] as num?)?.toInt()
+  ..newsArticles = (json['NewsArticles'] as List<dynamic>?)
+      ?.map((e) => NewsArticleRssItem.fromJson(e as Map<String, dynamic>))
+      .toList()
+  ..categoryFilter = json['CategoryFilter'] as String?
+  ..pagerAction = json['PagerAction'] as String?;
 
 Map<String, dynamic> _$NewsArticleRssResponseToJson(
   NewsArticleRssResponse instance,

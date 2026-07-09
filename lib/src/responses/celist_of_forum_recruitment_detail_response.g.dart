@@ -9,13 +9,11 @@ part of 'celist_of_forum_recruitment_detail_response.dart';
 CEListOfForumRecruitmentDetailResponse
 _$CEListOfForumRecruitmentDetailResponseFromJson(Map<String, dynamic> json) =>
     CEListOfForumRecruitmentDetailResponse(
-      response:
-          (json['Response'] as List<dynamic>?)
-              ?.map(
-                (e) =>
-                    ForumRecruitmentDetail.fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
+      response: (json['Response'] as List<dynamic>?)
+          ?.map(
+            (e) => ForumRecruitmentDetail.fromJson(e as Map<String, dynamic>),
+          )
+          .toList(),
       errorCode: decodePlatformErrorCodes(json['ErrorCode']),
       throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
       errorStatus: json['ErrorStatus'] as String?,

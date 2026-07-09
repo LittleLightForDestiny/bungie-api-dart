@@ -10,12 +10,11 @@ GroupPotentialMembershipSearchResponseResponse
 _$GroupPotentialMembershipSearchResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => GroupPotentialMembershipSearchResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : GroupPotentialMembershipSearchResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : GroupPotentialMembershipSearchResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

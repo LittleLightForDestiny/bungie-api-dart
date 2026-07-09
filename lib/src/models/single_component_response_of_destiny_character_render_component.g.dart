@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_character_render_component.dart';
 SingleComponentResponseOfDestinyCharacterRenderComponent
 _$SingleComponentResponseOfDestinyCharacterRenderComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinyCharacterRenderComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinyCharacterRenderComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinyCharacterRenderComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinyCharacterRenderComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinyCharacterRenderComponentToJson(

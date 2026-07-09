@@ -8,12 +8,11 @@ part of 'awa_permission_requested.dart';
 
 AwaPermissionRequested _$AwaPermissionRequestedFromJson(
   Map<String, dynamic> json,
-) =>
-    AwaPermissionRequested()
-      ..type = decodeAwaType(json['type'])
-      ..affectedItemId = json['affectedItemId'] as String?
-      ..membershipType = decodeBungieMembershipType(json['membershipType'])
-      ..characterId = json['characterId'] as String?;
+) => AwaPermissionRequested()
+  ..type = decodeAwaType(json['type'])
+  ..affectedItemId = json['affectedItemId'] as String?
+  ..membershipType = decodeBungieMembershipType(json['membershipType'])
+  ..characterId = json['characterId'] as String?;
 
 Map<String, dynamic> _$AwaPermissionRequestedToJson(
   AwaPermissionRequested instance,

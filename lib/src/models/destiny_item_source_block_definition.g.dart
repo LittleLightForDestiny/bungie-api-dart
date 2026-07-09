@@ -8,29 +8,23 @@ part of 'destiny_item_source_block_definition.dart';
 
 DestinyItemSourceBlockDefinition _$DestinyItemSourceBlockDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemSourceBlockDefinition()
-      ..sourceHashes =
-          (json['sourceHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..sources =
-          (json['sources'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyItemSourceDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList()
-      ..exclusive = decodeBungieMembershipType(json['exclusive'])
-      ..vendorSources =
-          (json['vendorSources'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyItemVendorSourceReference.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+) => DestinyItemSourceBlockDefinition()
+  ..sourceHashes = (json['sourceHashes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList()
+  ..sources = (json['sources'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyItemSourceDefinition.fromJson(e as Map<String, dynamic>),
+      )
+      .toList()
+  ..exclusive = decodeBungieMembershipType(json['exclusive'])
+  ..vendorSources = (json['vendorSources'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyItemVendorSourceReference.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList();
 
 Map<String, dynamic> _$DestinyItemSourceBlockDefinitionToJson(
   DestinyItemSourceBlockDefinition instance,

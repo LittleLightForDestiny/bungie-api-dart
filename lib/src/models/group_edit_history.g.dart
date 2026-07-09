@@ -18,10 +18,9 @@ GroupEditHistory _$GroupEditHistoryFromJson(Map<String, dynamic> json) =>
       ..clanCallsign = json['clanCallsign'] as String?
       ..clanCallsignEditors = json['clanCallsignEditors'] as String?
       ..editDate = json['editDate'] as String?
-      ..groupEditors =
-          (json['groupEditors'] as List<dynamic>?)
-              ?.map((e) => UserInfoCard.fromJson(e as Map<String, dynamic>))
-              .toList();
+      ..groupEditors = (json['groupEditors'] as List<dynamic>?)
+          ?.map((e) => UserInfoCard.fromJson(e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$GroupEditHistoryToJson(GroupEditHistory instance) =>
     <String, dynamic>{

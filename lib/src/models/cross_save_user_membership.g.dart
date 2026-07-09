@@ -8,31 +8,27 @@ part of 'cross_save_user_membership.dart';
 
 CrossSaveUserMembership _$CrossSaveUserMembershipFromJson(
   Map<String, dynamic> json,
-) =>
-    CrossSaveUserMembership()
-      ..crossSaveOverride = decodeBungieMembershipType(
-        json['crossSaveOverride'],
-      )
-      ..applicableMembershipTypes =
-          (json['applicableMembershipTypes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
-              .toList()
-      ..isPublic = json['isPublic'] as bool?
-      ..membershipType = decodeBungieMembershipType(json['membershipType'])
-      ..membershipId = json['membershipId'] as String?
-      ..displayName = json['displayName'] as String?
-      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-      ..bungieGlobalDisplayNameCode =
-          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
+) => CrossSaveUserMembership()
+  ..crossSaveOverride = decodeBungieMembershipType(json['crossSaveOverride'])
+  ..applicableMembershipTypes =
+      (json['applicableMembershipTypes'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
+          .toList()
+  ..isPublic = json['isPublic'] as bool?
+  ..membershipType = decodeBungieMembershipType(json['membershipType'])
+  ..membershipId = json['membershipId'] as String?
+  ..displayName = json['displayName'] as String?
+  ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+  ..bungieGlobalDisplayNameCode = (json['bungieGlobalDisplayNameCode'] as num?)
+      ?.toInt();
 
 Map<String, dynamic> _$CrossSaveUserMembershipToJson(
   CrossSaveUserMembership instance,
 ) => <String, dynamic>{
   'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
-  'applicableMembershipTypes':
-      instance.applicableMembershipTypes
-          ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
-          .toList(),
+  'applicableMembershipTypes': instance.applicableMembershipTypes
+      ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
+      .toList(),
   'isPublic': instance.isPublic,
   'membershipType': encodeBungieMembershipType(instance.membershipType),
   'membershipId': instance.membershipId,

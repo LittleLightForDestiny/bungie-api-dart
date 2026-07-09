@@ -8,11 +8,10 @@ part of 'destiny_vendor_base_component.dart';
 
 DestinyVendorBaseComponent _$DestinyVendorBaseComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyVendorBaseComponent()
-      ..vendorHash = (json['vendorHash'] as num?)?.toInt()
-      ..nextRefreshDate = json['nextRefreshDate'] as String?
-      ..enabled = json['enabled'] as bool?;
+) => DestinyVendorBaseComponent()
+  ..vendorHash = (json['vendorHash'] as num?)?.toInt()
+  ..nextRefreshDate = json['nextRefreshDate'] as String?
+  ..enabled = json['enabled'] as bool?;
 
 Map<String, dynamic> _$DestinyVendorBaseComponentToJson(
   DestinyVendorBaseComponent instance,

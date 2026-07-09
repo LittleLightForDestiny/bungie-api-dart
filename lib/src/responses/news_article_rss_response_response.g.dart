@@ -9,12 +9,11 @@ part of 'news_article_rss_response_response.dart';
 NewsArticleRssResponseResponse _$NewsArticleRssResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => NewsArticleRssResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : NewsArticleRssResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : NewsArticleRssResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

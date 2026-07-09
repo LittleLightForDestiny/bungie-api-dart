@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/host_guided_games_permission_level.dart';
+import '../enums/runtime_group_member_type.dart';
 
 part 'group_options_edit_action.g.dart';
 
@@ -27,8 +29,8 @@ class GroupOptionsEditAction{
 	/// Always Allowed: Founder, Acting Founder, Admin
 	/// Allowed Overrides: None, Member, Beginner
 	/// Default is Member for clans, None for groups, although this means nothing for groups.
-	@JsonKey(name:'HostGuidedGamePermissionOverride')
-	int? hostGuidedGamePermissionOverride;
+	@JsonKey(name:'HostGuidedGamePermissionOverride',fromJson:decodeHostGuidedGamesPermissionLevel,toJson:encodeHostGuidedGamesPermissionLevel)
+	HostGuidedGamesPermissionLevel? hostGuidedGamePermissionOverride;
 	
 	/// Minimum Member Level allowed to update banner
 	/// Always Allowed: Founder, Acting Founder
@@ -39,8 +41,8 @@ class GroupOptionsEditAction{
 	
 	/// Level to join a member at when accepting an invite, application, or joining an open clan
 	/// Default is Beginner.
-	@JsonKey(name:'JoinLevel')
-	int? joinLevel;
+	@JsonKey(name:'JoinLevel',fromJson:decodeRuntimeGroupMemberType,toJson:encodeRuntimeGroupMemberType)
+	RuntimeGroupMemberType? joinLevel;
 
 	factory GroupOptionsEditAction.fromJson(Map<String, dynamic> json) {
 		return _$GroupOptionsEditActionFromJson(json);

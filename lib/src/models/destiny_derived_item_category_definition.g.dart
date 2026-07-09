@@ -10,14 +10,13 @@ DestinyDerivedItemCategoryDefinition
 _$DestinyDerivedItemCategoryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyDerivedItemCategoryDefinition()
       ..categoryDescription = json['categoryDescription'] as String?
-      ..items =
-          (json['items'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyDerivedItemDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+      ..items = (json['items'] as List<dynamic>?)
+          ?.map(
+            (e) => DestinyDerivedItemDefinition.fromJson(
+              e as Map<String, dynamic>,
+            ),
+          )
+          .toList();
 
 Map<String, dynamic> _$DestinyDerivedItemCategoryDefinitionToJson(
   DestinyDerivedItemCategoryDefinition instance,

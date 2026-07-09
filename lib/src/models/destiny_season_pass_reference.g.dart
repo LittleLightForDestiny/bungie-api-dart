@@ -8,11 +8,10 @@ part of 'destiny_season_pass_reference.dart';
 
 DestinySeasonPassReference _$DestinySeasonPassReferenceFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinySeasonPassReference()
-      ..seasonPassHash = (json['seasonPassHash'] as num?)?.toInt()
-      ..seasonPassStartDate = json['seasonPassStartDate'] as String?
-      ..seasonPassEndDate = json['seasonPassEndDate'] as String?;
+) => DestinySeasonPassReference()
+  ..seasonPassHash = (json['seasonPassHash'] as num?)?.toInt()
+  ..seasonPassStartDate = json['seasonPassStartDate'] as String?
+  ..seasonPassEndDate = json['seasonPassEndDate'] as String?;
 
 Map<String, dynamic> _$DestinySeasonPassReferenceToJson(
   DestinySeasonPassReference instance,

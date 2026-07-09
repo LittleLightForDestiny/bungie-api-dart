@@ -1,0 +1,1 @@
+export '../src/models/destiny_activity_curator_block_definition.dart';

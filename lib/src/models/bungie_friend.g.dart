@@ -6,29 +6,22 @@ part of 'bungie_friend.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BungieFriend _$BungieFriendFromJson(Map<String, dynamic> json) =>
-    BungieFriend()
-      ..lastSeenAsMembershipId = json['lastSeenAsMembershipId'] as String?
-      ..lastSeenAsBungieMembershipType = decodeBungieMembershipType(
-        json['lastSeenAsBungieMembershipType'],
-      )
-      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-      ..bungieGlobalDisplayNameCode =
-          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt()
-      ..onlineStatus = decodePresenceStatus(json['onlineStatus'])
-      ..onlineTitle =
-          json['onlineTitle'] == null
-              ? null
-              : PresenceOnlineStateFlags.fromJson(
-                (json['onlineTitle'] as num).toInt(),
-              )
-      ..relationship = decodeFriendRelationshipState(json['relationship'])
-      ..bungieNetUser =
-          json['bungieNetUser'] == null
-              ? null
-              : GeneralUser.fromJson(
-                json['bungieNetUser'] as Map<String, dynamic>,
-              );
+BungieFriend _$BungieFriendFromJson(Map<String, dynamic> json) => BungieFriend()
+  ..lastSeenAsMembershipId = json['lastSeenAsMembershipId'] as String?
+  ..lastSeenAsBungieMembershipType = decodeBungieMembershipType(
+    json['lastSeenAsBungieMembershipType'],
+  )
+  ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+  ..bungieGlobalDisplayNameCode = (json['bungieGlobalDisplayNameCode'] as num?)
+      ?.toInt()
+  ..onlineStatus = decodePresenceStatus(json['onlineStatus'])
+  ..onlineTitle = json['onlineTitle'] == null
+      ? null
+      : PresenceOnlineStateFlags.fromJson((json['onlineTitle'] as num).toInt())
+  ..relationship = decodeFriendRelationshipState(json['relationship'])
+  ..bungieNetUser = json['bungieNetUser'] == null
+      ? null
+      : GeneralUser.fromJson(json['bungieNetUser'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$BungieFriendToJson(BungieFriend instance) =>
     <String, dynamic>{

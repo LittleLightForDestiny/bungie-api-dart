@@ -8,10 +8,9 @@ part of 'destiny_character_action_request.dart';
 
 DestinyCharacterActionRequest _$DestinyCharacterActionRequestFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyCharacterActionRequest()
-      ..characterId = json['characterId'] as String?
-      ..membershipType = decodeBungieMembershipType(json['membershipType']);
+) => DestinyCharacterActionRequest()
+  ..characterId = json['characterId'] as String?
+  ..membershipType = decodeBungieMembershipType(json['membershipType']);
 
 Map<String, dynamic> _$DestinyCharacterActionRequestToJson(
   DestinyCharacterActionRequest instance,

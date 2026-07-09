@@ -9,14 +9,15 @@ part of 'destiny_arrangement_region_filter_definition.dart';
 DestinyArrangementRegionFilterDefinition
 _$DestinyArrangementRegionFilterDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyArrangementRegionFilterDefinition()
-      ..artArrangementRegionHash =
-          (json['artArrangementRegionHash'] as num?)?.toInt()
-      ..artArrangementRegionIndex =
-          (json['artArrangementRegionIndex'] as num?)?.toInt()
+      ..artArrangementRegionHash = (json['artArrangementRegionHash'] as num?)
+          ?.toInt()
+      ..artArrangementRegionIndex = (json['artArrangementRegionIndex'] as num?)
+          ?.toInt()
       ..statHash = (json['statHash'] as num?)?.toInt()
-      ..arrangementIndexByStatValue = (json['arrangementIndexByStatValue']
-              as Map<String, dynamic>?)
-          ?.map((k, e) => MapEntry(k, (e as num).toInt()));
+      ..arrangementIndexByStatValue =
+          (json['arrangementIndexByStatValue'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, (e as num).toInt()),
+          );
 
 Map<String, dynamic> _$DestinyArrangementRegionFilterDefinitionToJson(
   DestinyArrangementRegionFilterDefinition instance,

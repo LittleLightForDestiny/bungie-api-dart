@@ -78,6 +78,8 @@ class DestinyVendorItemState {
     static const DestinyVendorItemState Ineligible = DestinyVendorItemState(8388608);
     ///ArtifactPerkBoosted = 16777216
     static const DestinyVendorItemState ArtifactPerkBoosted = DestinyVendorItemState(16777216);
+    ///SeasonalArchiveFree = 33554432
+    static const DestinyVendorItemState SeasonalArchiveFree = DestinyVendorItemState(33554432);
 
     int get value {
         return _value;

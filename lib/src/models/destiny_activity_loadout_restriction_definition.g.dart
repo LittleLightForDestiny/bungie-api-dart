@@ -9,17 +9,16 @@ part of 'destiny_activity_loadout_restriction_definition.dart';
 DestinyActivityLoadoutRestrictionDefinition
 _$DestinyActivityLoadoutRestrictionDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyActivityLoadoutRestrictionDefinition()
-      ..restrictedItemFilterHash =
-          (json['restrictedItemFilterHash'] as num?)?.toInt()
-      ..restrictedEquipmentSlotHashes =
-          (json['restrictedEquipmentSlotHashes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList()
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyActivityLoadoutRestrictionDefinition()
+  ..restrictedItemFilterHash = (json['restrictedItemFilterHash'] as num?)
+      ?.toInt()
+  ..restrictedEquipmentSlotHashes =
+      (json['restrictedEquipmentSlotHashes'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList()
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyActivityLoadoutRestrictionDefinitionToJson(
   DestinyActivityLoadoutRestrictionDefinition instance,

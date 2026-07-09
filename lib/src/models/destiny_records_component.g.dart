@@ -8,18 +8,15 @@ part of 'destiny_records_component.dart';
 
 DestinyRecordsComponent _$DestinyRecordsComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyRecordsComponent()
-      ..records = (json['records'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyRecordComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..recordCategoriesRootNodeHash =
-          (json['recordCategoriesRootNodeHash'] as num?)?.toInt()
-      ..recordSealsRootNodeHash =
-          (json['recordSealsRootNodeHash'] as num?)?.toInt();
+) => DestinyRecordsComponent()
+  ..records = (json['records'] as Map<String, dynamic>?)?.map(
+    (k, e) =>
+        MapEntry(k, DestinyRecordComponent.fromJson(e as Map<String, dynamic>)),
+  )
+  ..recordCategoriesRootNodeHash =
+      (json['recordCategoriesRootNodeHash'] as num?)?.toInt()
+  ..recordSealsRootNodeHash = (json['recordSealsRootNodeHash'] as num?)
+      ?.toInt();
 
 Map<String, dynamic> _$DestinyRecordsComponentToJson(
   DestinyRecordsComponent instance,

@@ -9,12 +9,11 @@ part of 'destiny_objective_stat_entry_definition.dart';
 DestinyObjectiveStatEntryDefinition
 _$DestinyObjectiveStatEntryDefinitionFromJson(Map<String, dynamic> json) =>
     DestinyObjectiveStatEntryDefinition()
-      ..stat =
-          json['stat'] == null
-              ? null
-              : DestinyItemInvestmentStatDefinition.fromJson(
-                json['stat'] as Map<String, dynamic>,
-              )
+      ..stat = json['stat'] == null
+          ? null
+          : DestinyItemInvestmentStatDefinition.fromJson(
+              json['stat'] as Map<String, dynamic>,
+            )
       ..style = decodeDestinyObjectiveGrantStyle(json['style']);
 
 Map<String, dynamic> _$DestinyObjectiveStatEntryDefinitionToJson(

@@ -8,50 +8,46 @@ part of 'destiny_objective_definition.dart';
 
 DestinyObjectiveDefinition _$DestinyObjectiveDefinitionFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyObjectiveDefinition()
-      ..displayProperties =
-          json['displayProperties'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['displayProperties'] as Map<String, dynamic>,
-              )
-      ..completionValue = (json['completionValue'] as num?)?.toInt()
-      ..scope = decodeDestinyGatingScope(json['scope'])
-      ..locationHash = (json['locationHash'] as num?)?.toInt()
-      ..allowNegativeValue = json['allowNegativeValue'] as bool?
-      ..allowValueChangeWhenCompleted =
-          json['allowValueChangeWhenCompleted'] as bool?
-      ..isCountingDownward = json['isCountingDownward'] as bool?
-      ..valueStyle = decodeDestinyUnlockValueUIStyle(json['valueStyle'])
-      ..progressDescription = json['progressDescription'] as String?
-      ..perks =
-          json['perks'] == null
-              ? null
-              : DestinyObjectivePerkEntryDefinition.fromJson(
-                json['perks'] as Map<String, dynamic>,
-              )
-      ..stats =
-          json['stats'] == null
-              ? null
-              : DestinyObjectiveStatEntryDefinition.fromJson(
-                json['stats'] as Map<String, dynamic>,
-              )
-      ..minimumVisibilityThreshold =
-          (json['minimumVisibilityThreshold'] as num?)?.toInt()
-      ..allowOvercompletion = json['allowOvercompletion'] as bool?
-      ..showValueOnComplete = json['showValueOnComplete'] as bool?
-      ..completedValueStyle = decodeDestinyUnlockValueUIStyle(
-        json['completedValueStyle'],
-      )
-      ..inProgressValueStyle = decodeDestinyUnlockValueUIStyle(
-        json['inProgressValueStyle'],
-      )
-      ..uiLabel = json['uiLabel'] as String?
-      ..uiStyle = decodeDestinyObjectiveUiStyle(json['uiStyle'])
-      ..hash = (json['hash'] as num?)?.toInt()
-      ..index = (json['index'] as num?)?.toInt()
-      ..redacted = json['redacted'] as bool?;
+) => DestinyObjectiveDefinition()
+  ..displayProperties = json['displayProperties'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['displayProperties'] as Map<String, dynamic>,
+        )
+  ..completionValue = (json['completionValue'] as num?)?.toInt()
+  ..scope = decodeDestinyGatingScope(json['scope'])
+  ..locationHash = (json['locationHash'] as num?)?.toInt()
+  ..allowNegativeValue = json['allowNegativeValue'] as bool?
+  ..allowValueChangeWhenCompleted =
+      json['allowValueChangeWhenCompleted'] as bool?
+  ..isCountingDownward = json['isCountingDownward'] as bool?
+  ..valueStyle = decodeDestinyUnlockValueUIStyle(json['valueStyle'])
+  ..progressDescription = json['progressDescription'] as String?
+  ..perks = json['perks'] == null
+      ? null
+      : DestinyObjectivePerkEntryDefinition.fromJson(
+          json['perks'] as Map<String, dynamic>,
+        )
+  ..stats = json['stats'] == null
+      ? null
+      : DestinyObjectiveStatEntryDefinition.fromJson(
+          json['stats'] as Map<String, dynamic>,
+        )
+  ..minimumVisibilityThreshold = (json['minimumVisibilityThreshold'] as num?)
+      ?.toInt()
+  ..allowOvercompletion = json['allowOvercompletion'] as bool?
+  ..showValueOnComplete = json['showValueOnComplete'] as bool?
+  ..completedValueStyle = decodeDestinyUnlockValueUIStyle(
+    json['completedValueStyle'],
+  )
+  ..inProgressValueStyle = decodeDestinyUnlockValueUIStyle(
+    json['inProgressValueStyle'],
+  )
+  ..uiLabel = json['uiLabel'] as String?
+  ..uiStyle = decodeDestinyObjectiveUiStyle(json['uiStyle'])
+  ..hash = (json['hash'] as num?)?.toInt()
+  ..index = (json['index'] as num?)?.toInt()
+  ..redacted = json['redacted'] as bool?;
 
 Map<String, dynamic> _$DestinyObjectiveDefinitionToJson(
   DestinyObjectiveDefinition instance,

@@ -13,12 +13,9 @@ _$DestinyPublicVendorSaleItemComponentFromJson(Map<String, dynamic> json) =>
       ..itemHash = (json['itemHash'] as num?)?.toInt()
       ..overrideStyleItemHash = (json['overrideStyleItemHash'] as num?)?.toInt()
       ..quantity = (json['quantity'] as num?)?.toInt()
-      ..costs =
-          (json['costs'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>),
-              )
-              .toList()
+      ..costs = (json['costs'] as List<dynamic>?)
+          ?.map((e) => DestinyItemQuantity.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..overrideNextRefreshDate = json['overrideNextRefreshDate'] as String?
       ..apiPurchasable = json['apiPurchasable'] as bool?;
 

@@ -8,15 +8,12 @@ part of 'destiny_metrics_component.dart';
 
 DestinyMetricsComponent _$DestinyMetricsComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyMetricsComponent()
-      ..metrics = (json['metrics'] as Map<String, dynamic>?)?.map(
-        (k, e) => MapEntry(
-          k,
-          DestinyMetricComponent.fromJson(e as Map<String, dynamic>),
-        ),
-      )
-      ..metricsRootNodeHash = (json['metricsRootNodeHash'] as num?)?.toInt();
+) => DestinyMetricsComponent()
+  ..metrics = (json['metrics'] as Map<String, dynamic>?)?.map(
+    (k, e) =>
+        MapEntry(k, DestinyMetricComponent.fromJson(e as Map<String, dynamic>)),
+  )
+  ..metricsRootNodeHash = (json['metricsRootNodeHash'] as num?)?.toInt();
 
 Map<String, dynamic> _$DestinyMetricsComponentToJson(
   DestinyMetricsComponent instance,

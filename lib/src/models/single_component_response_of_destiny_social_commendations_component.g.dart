@@ -9,16 +9,14 @@ part of 'single_component_response_of_destiny_social_commendations_component.dar
 SingleComponentResponseOfDestinySocialCommendationsComponent
 _$SingleComponentResponseOfDestinySocialCommendationsComponentFromJson(
   Map<String, dynamic> json,
-) =>
-    SingleComponentResponseOfDestinySocialCommendationsComponent()
-      ..data =
-          json['data'] == null
-              ? null
-              : DestinySocialCommendationsComponent.fromJson(
-                json['data'] as Map<String, dynamic>,
-              )
-      ..privacy = decodeComponentPrivacySetting(json['privacy'])
-      ..disabled = json['disabled'] as bool?;
+) => SingleComponentResponseOfDestinySocialCommendationsComponent()
+  ..data = json['data'] == null
+      ? null
+      : DestinySocialCommendationsComponent.fromJson(
+          json['data'] as Map<String, dynamic>,
+        )
+  ..privacy = decodeComponentPrivacySetting(json['privacy'])
+  ..disabled = json['disabled'] as bool?;
 
 Map<String, dynamic>
 _$SingleComponentResponseOfDestinySocialCommendationsComponentToJson(

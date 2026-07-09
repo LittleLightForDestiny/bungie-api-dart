@@ -12,8 +12,8 @@ _$DestinyItemInventoryBlockDefinitionFromJson(Map<String, dynamic> json) =>
       ..stackUniqueLabel = json['stackUniqueLabel'] as String?
       ..maxStackSize = (json['maxStackSize'] as num?)?.toInt()
       ..bucketTypeHash = (json['bucketTypeHash'] as num?)?.toInt()
-      ..recoveryBucketTypeHash =
-          (json['recoveryBucketTypeHash'] as num?)?.toInt()
+      ..recoveryBucketTypeHash = (json['recoveryBucketTypeHash'] as num?)
+          ?.toInt()
       ..tierTypeHash = (json['tierTypeHash'] as num?)?.toInt()
       ..isInstanceItem = json['isInstanceItem'] as bool?
       ..tierTypeName = json['tierTypeName'] as String?

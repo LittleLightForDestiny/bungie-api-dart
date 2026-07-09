@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/chat_security_setting.dart';
 
 part 'group_optional_conversation_edit_request.g.dart';
 
@@ -15,8 +16,8 @@ class GroupOptionalConversationEditRequest{
 	@JsonKey(name:'chatName')
 	String? chatName;
 	
-	@JsonKey(name:'chatSecurity')
-	int? chatSecurity;
+	@JsonKey(name:'chatSecurity',fromJson:decodeChatSecuritySetting,toJson:encodeChatSecuritySetting)
+	ChatSecuritySetting? chatSecurity;
 
 	factory GroupOptionalConversationEditRequest.fromJson(Map<String, dynamic> json) {
 		return _$GroupOptionalConversationEditRequestFromJson(json);

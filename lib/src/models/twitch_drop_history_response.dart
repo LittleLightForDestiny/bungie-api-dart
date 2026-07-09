@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:compute/compute.dart';
 
+import '../enums/drop_state_enum.dart';
 
 part 'twitch_drop_history_response.g.dart';
 
@@ -18,8 +19,8 @@ class TwitchDropHistoryResponse{
 	@JsonKey(name:'CreatedAt')
 	String? createdAt;
 	
-	@JsonKey(name:'ClaimState')
-	int? claimState;
+	@JsonKey(name:'ClaimState',fromJson:decodeDropStateEnum,toJson:encodeDropStateEnum)
+	DropStateEnum? claimState;
 
 	factory TwitchDropHistoryResponse.fromJson(Map<String, dynamic> json) {
 		return _$TwitchDropHistoryResponseFromJson(json);

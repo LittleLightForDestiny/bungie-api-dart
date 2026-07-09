@@ -9,12 +9,11 @@ part of 'destiny_profile_response_response.dart';
 DestinyProfileResponseResponse _$DestinyProfileResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => DestinyProfileResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : DestinyProfileResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : DestinyProfileResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

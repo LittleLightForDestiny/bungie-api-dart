@@ -8,28 +8,25 @@ part of 'fireteam_user_info_card.dart';
 
 FireteamUserInfoCard _$FireteamUserInfoCardFromJson(
   Map<String, dynamic> json,
-) =>
-    FireteamUserInfoCard()
-      ..fireteamDisplayName = json['FireteamDisplayName'] as String?
-      ..fireteamMembershipType = decodeBungieMembershipType(
-        json['FireteamMembershipType'],
-      )
-      ..supplementalDisplayName = json['supplementalDisplayName'] as String?
-      ..iconPath = json['iconPath'] as String?
-      ..crossSaveOverride = decodeBungieMembershipType(
-        json['crossSaveOverride'],
-      )
-      ..applicableMembershipTypes =
-          (json['applicableMembershipTypes'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
-              .toList()
-      ..isPublic = json['isPublic'] as bool?
-      ..membershipType = decodeBungieMembershipType(json['membershipType'])
-      ..membershipId = json['membershipId'] as String?
-      ..displayName = json['displayName'] as String?
-      ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
-      ..bungieGlobalDisplayNameCode =
-          (json['bungieGlobalDisplayNameCode'] as num?)?.toInt();
+) => FireteamUserInfoCard()
+  ..fireteamDisplayName = json['FireteamDisplayName'] as String?
+  ..fireteamMembershipType = decodeBungieMembershipType(
+    json['FireteamMembershipType'],
+  )
+  ..supplementalDisplayName = json['supplementalDisplayName'] as String?
+  ..iconPath = json['iconPath'] as String?
+  ..crossSaveOverride = decodeBungieMembershipType(json['crossSaveOverride'])
+  ..applicableMembershipTypes =
+      (json['applicableMembershipTypes'] as List<dynamic>?)
+          ?.map((e) => $enumDecode(_$BungieMembershipTypeEnumMap, e))
+          .toList()
+  ..isPublic = json['isPublic'] as bool?
+  ..membershipType = decodeBungieMembershipType(json['membershipType'])
+  ..membershipId = json['membershipId'] as String?
+  ..displayName = json['displayName'] as String?
+  ..bungieGlobalDisplayName = json['bungieGlobalDisplayName'] as String?
+  ..bungieGlobalDisplayNameCode = (json['bungieGlobalDisplayNameCode'] as num?)
+      ?.toInt();
 
 Map<String, dynamic> _$FireteamUserInfoCardToJson(
   FireteamUserInfoCard instance,
@@ -41,10 +38,9 @@ Map<String, dynamic> _$FireteamUserInfoCardToJson(
   'supplementalDisplayName': instance.supplementalDisplayName,
   'iconPath': instance.iconPath,
   'crossSaveOverride': encodeBungieMembershipType(instance.crossSaveOverride),
-  'applicableMembershipTypes':
-      instance.applicableMembershipTypes
-          ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
-          .toList(),
+  'applicableMembershipTypes': instance.applicableMembershipTypes
+      ?.map((e) => _$BungieMembershipTypeEnumMap[e]!)
+      .toList(),
   'isPublic': instance.isPublic,
   'membershipType': encodeBungieMembershipType(instance.membershipType),
   'membershipId': instance.membershipId,

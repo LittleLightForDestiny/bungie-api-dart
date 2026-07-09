@@ -8,27 +8,24 @@ part of 'destiny_fireteam_finder_option_values.dart';
 
 DestinyFireteamFinderOptionValues _$DestinyFireteamFinderOptionValuesFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyFireteamFinderOptionValues()
-      ..optionalNull =
-          json['optionalNull'] == null
-              ? null
-              : DestinyDisplayPropertiesDefinition.fromJson(
-                json['optionalNull'] as Map<String, dynamic>,
-              )
-      ..optionalFormatString = json['optionalFormatString'] as String?
-      ..displayFormatType = decodeFireteamFinderOptionDisplayFormat(
-        json['displayFormatType'],
+) => DestinyFireteamFinderOptionValues()
+  ..optionalNull = json['optionalNull'] == null
+      ? null
+      : DestinyDisplayPropertiesDefinition.fromJson(
+          json['optionalNull'] as Map<String, dynamic>,
+        )
+  ..optionalFormatString = json['optionalFormatString'] as String?
+  ..displayFormatType = decodeFireteamFinderOptionDisplayFormat(
+    json['displayFormatType'],
+  )
+  ..type = decodeFireteamFinderOptionValueProviderType(json['type'])
+  ..valueDefinitions = (json['valueDefinitions'] as List<dynamic>?)
+      ?.map(
+        (e) => DestinyFireteamFinderOptionValueDefinition.fromJson(
+          e as Map<String, dynamic>,
+        ),
       )
-      ..type = decodeFireteamFinderOptionValueProviderType(json['type'])
-      ..valueDefinitions =
-          (json['valueDefinitions'] as List<dynamic>?)
-              ?.map(
-                (e) => DestinyFireteamFinderOptionValueDefinition.fromJson(
-                  e as Map<String, dynamic>,
-                ),
-              )
-              .toList();
+      .toList();
 
 Map<String, dynamic> _$DestinyFireteamFinderOptionValuesToJson(
   DestinyFireteamFinderOptionValues instance,
@@ -39,6 +36,7 @@ Map<String, dynamic> _$DestinyFireteamFinderOptionValuesToJson(
     instance.displayFormatType,
   ),
   'type': encodeFireteamFinderOptionValueProviderType(instance.type),
-  'valueDefinitions':
-      instance.valueDefinitions?.map((e) => e.toJson()).toList(),
+  'valueDefinitions': instance.valueDefinitions
+      ?.map((e) => e.toJson())
+      .toList(),
 };

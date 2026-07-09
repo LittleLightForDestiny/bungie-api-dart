@@ -8,15 +8,13 @@ part of 'destiny_item_socket_state.dart';
 
 DestinyItemSocketState _$DestinyItemSocketStateFromJson(
   Map<String, dynamic> json,
-) =>
-    DestinyItemSocketState()
-      ..plugHash = (json['plugHash'] as num?)?.toInt()
-      ..isEnabled = json['isEnabled'] as bool?
-      ..isVisible = json['isVisible'] as bool?
-      ..enableFailIndexes =
-          (json['enableFailIndexes'] as List<dynamic>?)
-              ?.map((e) => (e as num).toInt())
-              .toList();
+) => DestinyItemSocketState()
+  ..plugHash = (json['plugHash'] as num?)?.toInt()
+  ..isEnabled = json['isEnabled'] as bool?
+  ..isVisible = json['isVisible'] as bool?
+  ..enableFailIndexes = (json['enableFailIndexes'] as List<dynamic>?)
+      ?.map((e) => (e as num).toInt())
+      .toList();
 
 Map<String, dynamic> _$DestinyItemSocketStateToJson(
   DestinyItemSocketState instance,

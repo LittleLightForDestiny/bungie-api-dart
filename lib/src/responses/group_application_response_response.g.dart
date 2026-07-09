@@ -9,12 +9,11 @@ part of 'group_application_response_response.dart';
 GroupApplicationResponseResponse _$GroupApplicationResponseResponseFromJson(
   Map<String, dynamic> json,
 ) => GroupApplicationResponseResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : GroupApplicationResponse.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : GroupApplicationResponse.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

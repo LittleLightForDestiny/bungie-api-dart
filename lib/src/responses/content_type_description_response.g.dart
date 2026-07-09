@@ -9,12 +9,11 @@ part of 'content_type_description_response.dart';
 ContentTypeDescriptionResponse _$ContentTypeDescriptionResponseFromJson(
   Map<String, dynamic> json,
 ) => ContentTypeDescriptionResponse(
-  response:
-      json['Response'] == null
-          ? null
-          : ContentTypeDescription.fromJson(
-            json['Response'] as Map<String, dynamic>,
-          ),
+  response: json['Response'] == null
+      ? null
+      : ContentTypeDescription.fromJson(
+          json['Response'] as Map<String, dynamic>,
+        ),
   errorCode: decodePlatformErrorCodes(json['ErrorCode']),
   throttleSeconds: (json['ThrottleSeconds'] as num?)?.toInt(),
   errorStatus: json['ErrorStatus'] as String?,

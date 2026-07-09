@@ -257,6 +257,9 @@ enum DestinyActivityModeType {
   ///Relic = 92
   @JsonValue(92)
   Relic,
+  ///LawlessFrontier = 93
+  @JsonValue(93)
+  LawlessFrontier,
   ///value not found fallback
   @JsonValue(999999999)
   ProtectedInvalidEnumValue
@@ -372,6 +375,7 @@ const Map<DestinyActivityModeType, int> _$DestinyActivityModeTypeEnumMap = <Dest
     DestinyActivityModeType.IronBannerRift:90,
     DestinyActivityModeType.IronBannerZoneControl:91,
     DestinyActivityModeType.Relic:92,
+    DestinyActivityModeType.LawlessFrontier:93,
 };
 const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int, DestinyActivityModeType>{
     0:DestinyActivityModeType.None,
@@ -459,4 +463,5 @@ const Map<int, DestinyActivityModeType> _$DestinyActivityModeTypeValueMap = <int
     90:DestinyActivityModeType.IronBannerRift,
     91:DestinyActivityModeType.IronBannerZoneControl,
     92:DestinyActivityModeType.Relic,
+    93:DestinyActivityModeType.LawlessFrontier,
 };
