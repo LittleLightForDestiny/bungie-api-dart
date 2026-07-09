@@ -1,3 +1,7 @@
+## 2026-07-09 (14.0.0)
+- updates to bungie's api definitions from v2.21.9
+- updates to latest flutter stable (3.44.5)
+
 ## 2023-03-02 (13.18.0)
 - updates to bungie's api definitions from v2.18.0
 
