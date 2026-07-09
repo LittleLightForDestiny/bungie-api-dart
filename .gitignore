@@ -7,3 +7,6 @@ lib/package-lock.json
 .npm-debug.log
 .dart_tool
 .vscode
+
+# FVM Version Cache
+.fvm/
